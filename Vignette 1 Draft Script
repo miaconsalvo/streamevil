@@ -1,0 +1,836 @@
+# This is the draft script for Vignette 1
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+define m = Character(("Moze"))
+define pilot = Character(("Jennica"), color="#e9791dff")
+define engineer = Character(("Teresa"), color="#b40d0dff")
+define mac = Character(("Mac"), color="#0bb6b6")
+define anatar = Character(("Anatar"), color="#e4e009")
+define merchant = Character(("Merchant"), color="#41b60b")
+define ama = Character(("Ama"), color="#770bb6")
+
+define macScolded = False
+
+
+label start:
+
+    show bridge with vpunch
+    show bridge with hpunch
+    "The bridge shakes as a bolt of energy collides with our shield."
+    "I rush to the forward station and pull up the scanner."
+    "A Wyvern-class ship, dead on our tail."
+    "I turn to give orders, but Jennica is already shouting into her coms."
+    show pilot at left with dissolve
+    pilot "I need all shields covering our rear! Redirect the rest of our power to thrusters!"
+    "A sharp voice calls back through the radio."
+    show engineer at right with dissolve
+    engineer "I'm working on it! Give me some time down here, doing these calculations under stress isn't easy!"
+    pilot "Make 'em fast or there won't be much of you left to be stressed!"
+    engineer "Keep yelling at me and I won't be able to save your ass for the forty-third time!"
+    with hpunch
+    show captain at truecenter with Dissolve(0.2)
+    m "Can it you two!"
+    "I interject before they can get any more at each other's throats."
+    m "Just do your damn jobs and we'll be fine."
+    m "Teresa, get that power diverted. Jennica, go evasive and buy us some time. I'll see what I can do about our new friends."
+    engineer "Aye aye, captain!"
+    pilot "Aye!"
+    hide engineer
+    hide pilot
+    show captain at left with move
+    "I hop over the railing and slide into the gunner position." 
+    with vpunch
+    "A screen lights up in front of me and I turn the turret to aim behind us."
+    "I see the ship. It's small, has two omnidirectional cannons, an auto-turret, and the telltale blue glow of blaster shields. A hunt and pursuit vehicle. Fast and nimble, but low shielding."
+    with vpunch
+    "They picked the wrong hunt."
+    $ enemyShield = True
+    jump turretFight
+    
+label turretFight:
+    if enemyShield == True:
+        "Time to fight back."
+    else:
+        "Time to finish this."
+    menu:
+        "Select Machine Guns":
+            if enemyShield == True:
+                "I grip the joysticks in front of me and flick open the machine guns."
+                "Flashes of yellow light spark in the abyss of space as I rain a hail of fire on the encroaching vessel."
+                "It dives out of the way as several bolts slam harmlessly into its front shielding."
+                with vpunch
+                engineer "I just need a bit more time!"
+                jump turretFight
+            else:
+                "Yellow bolts streak out from the screen."
+                "The enemy ship tries to roll out of the way, but I keep the fire going."
+                "The pilot can maneuver all they want, but they can't avoid everything."
+                "Shocks of orange light ingnite all over the ship as the blaster fire collides with metal." 
+                "The ship slows, trying to drop out of the hunt."
+                menu:
+                    "The ship slows, trying to drop out of the hunt."
+                    "Don't try to follow us (mercy)":
+                        "The ship fades into the distance."
+                        "I keep the guns trained directly at it, just in case."
+                        engineer "Power diverted!"
+                        pilot "Let's get out of here!"
+                        "I feel the tug in my gut as the lights in front of me elongate and the ship lurches into hyperspace."
+                        jump councilScene
+                    "You made your choice (cruelty)":
+                        "I pour on the guns."
+                        "Bolts rip into the hull, shearing off chunks at a time."
+                        "The rain continues until I can't even make out the shape of a ship through the smoke and sparks."
+                        "The cloud dissipates into space, leaving nothing but debris."
+                        engineer "Power diverted!"
+                        pilot "Let's get out of here!"
+                        "I feel the tug in my gut as the lights in front of me elongate and the ship lurches into hyperspace."
+                        jump councilScene
+        "Select Ion Torpedos":
+            if enemyShield == True:
+                "I grip the joysticks in front of me and flick open the ion torpedos."
+                "A small red circle appears on the screen. I focus it on the enemy and keep it still as a high-pitched beep rings in my ear."
+                "The beep turns into a long ring. I fire."
+                "A spiral of blue light rips through space."
+                "It collides with the front of the ship, sending a rippling vibration across its shields."
+                "There's flash and the blue light that once surrounded the hunk of metal has now dissipated."
+                $ enemyShield = False
+                with hpunch
+                pilot "We can't take many more of those captain!"
+                jump turretFight
+            else:
+                "The mercenary pilot is wary now, and I can't get a lock."
+                jump turretFight
+    return
+
+label councilScene:
+    scene council with dissolve
+    show captain at left with dissolve
+    "\"Jennica, Teresa, come up to the council room. We have to talk.\""
+    "I take my finger off the loudspeaker and slump into a chair."
+    "It feels like it's been weeks since I've had any time to myself."
+    $ councilIncrement = 0
+    $ thinkMac = False
+    $ thinkAma = False
+    $ thinkJob = False
+    label councilLoop:
+        if councilIncrement == 3:
+            jump councilConversation
+        else:
+            $ councilIncrement = councilIncrement
+        menu:
+            "It feels like it's been weeks since I've had any time to myself."
+            "We're in a mess." if thinkJob == False:
+                "Things have been crazy ever since we took the Big Corp's gig."
+                "It was supposed to be simple. \"Stop a rogue company scientist from selling company secrets,\" they said."
+                "They didn't say anything about a sentient robot with a limitless power source."
+                "Now we're in the middle of a turf war between the Alliance and the Big Corps."
+                "And we're trying to get to the middle of nowhere we can maybe hand MAC off to the Fireflies."
+                "If we don't get caught before then."
+                "And for no profit."
+                "And we don't have any back up."
+                "I glance up at the holo map of the galaxy. So much space, so many places to go. And we basically have to move in a straight line."
+                m "Shit."
+                $ councilIncrement += 1
+                $ thinkJob = True
+                jump councilLoop
+            "Think about Ama" if thinkAma == False:
+                "I wonder what Ama would say about this."
+                "I look down at the tatoo on the back of my left hand."
+                "A snake coils around the outstretched wings of a hawk."
+                "Moze as Ama" "Always look out for yourself, your sisters, and your brothers." 
+                "Moze as Ama" "And never do a good thing without proper compensation."
+                "The way of the Snake Hawks."
+                "I wish I could still see the galaxy that way."
+                "Wherever you are Ama, I hope you've found some peace."
+                $ councilIncrement += 1
+                $ thinkAma = True
+                jump councilLoop
+            "What is MAC?" if thinkMac == False:
+                "Machine Automated Courier. If only it were that simple."
+                "The Big Corp told us it held some valuable company secrets."
+                "But it's aware. And not only are they aware, it can...feel?"
+                "When the stun blast hit it, it seemed like it was hurt. And when it talks about their fath--creator, they seem kind of sad."
+                "If you take away the metal exterior, it's almost like it's a child."
+                "Almost."
+                $ councilIncrement += 1
+                $ thinkMac = True
+                jump councilLoop
+
+label councilConversation:
+    show engineer at right with dissolve
+    show pilot behind engineer with dissolve
+    "Teresa arrives first, followed shortly by Jennica."
+    "They both have grim looks on their faces. I don't blame them."
+    menu:
+        "\"How are we doing, team?\"":
+            m "How are we doing, team?"
+            pilot "We're low on fuel and our shields have sustained some damage. If we run into another merc again we'll be in trouble."
+            engineer "She asked about us, not the ship."
+            pilot "Our wellbeing may as well be the ship's."
+        "\"I won't lie, things don't look great.\"":
+            m "I won't lie, things don't look great."
+            engineer "How do you figure? Is it cause we've got a piece of BC's IP that they're literally willing to go to war for or because we just burned all our connections to everyone we've ever worked with?"
+            pilot "Teresa, that's not helpful."
+            engineer "No but it's where we're at."
+    m "Ok, look, I know things look bad. But right now, we need to focus."
+    m "BC's probably put a bounty out on us already which means every merc in the sector is going to be after us."
+    m "That wyvern is just the start."
+    m "So we need to focus, and work together. We can get through this."
+    engineer "What exactly does getting through this look like?"
+    menu:
+        "Get MAC to safety.":
+            m "The Big Corp wants MAC. Bad. That threatens the entire galaxy. We have to get it somewhere where they won't be found."
+        "Get MAC off this ship.":
+            m "MAC is a target on our backs. We can't let the Big Corp get it, but we're stuck with it for now."
+    m "We rendezvous with the Fireflies at Solus, pass MAC to people who know what to do with it."
+    pilot "There's a lot of space between us and Solus."
+    pilot "And we can't use any of the BC-sponsored flight docks or waystations." 
+    engineer "And all our old contacts are probably after us for the bounty."
+    engineer "But the closer we get to Solus, the more we move away from BC headquarters."
+    engineer "I say we move fast. Get to the edge of the Outposts as quick as possible."
+    pilot "That kind of movement makes us easier to track though. We have to do it safely."
+    pilot "And not only that, but MAC isn't doing great since it took that stun blast."
+    "???" "{i}Bzzrt{/i}. Ratio of salinity to alkaline in spatial vortex is 0 to 0."
+    "As if on queue, the door to the council room slides open, and in walks MAC."
+    show mac at truecenter
+    mac "Hello captain Moze! It's a fine day isn't it?"
+    mac "Oh, Ms. Brown and Ms. Prismari {\i}known plagiarist of AI data, doctorate from Denari University revoked{i}."
+    "Teresa starts to roll up her sleeves."
+    engineer "Now listen here you little shit, I'm not going to sit around while--"
+    pilot "Teresa please."
+    "Jennica slides in between Teresa and MAC."
+    pilot "It's malfunctioning. It doesn't mean to offend you."
+    engineer "Intentions aren't always the best judge of character."
+    "MAC leans out from around Jennica. It waves at Teresa."
+    mac "It's good to see you Dr. Teresa!"
+    menu:
+        "Scold MAC":
+            m "Teresa's right, you can't just go around talking about people's private lives."
+            "MAC looks down at the ground. Did something like disappointment cross its face?"
+            $ macScolded = True
+        "\"It's not their fault.\"":
+            m "Jennica's right, Teresa. It's not MAC's fault."
+            "MAC almost seems to smile at me before its attention turns to the ground."
+    "Suddenly MAC's face jolts back up right, its arms starting to twitch and its facial features jumping erratically."
+    mac "Salinity-jzq-valu-ios-limit-akx"
+    pilot "He's not well, Moze. We have to stop somewhere, refuel, and get him fixed."
+    engineer "Much as I want to get this mission over with as soon as possible, flying around with it acting up like this could be dangerous."
+    m "Sounds like we're of one mind then."
+    m "I know a place. A small town on the planet Cromuu. Should be off the radar from Big Corp mercenaries."
+    "I brush my right hand lightly over the back of my left hand."
+    m "And I have an old friend there. Unafilliated with the BC. Good with robots."
+    pilot "Cromuu? Isn't that the planet that fought for independence a while back?"
+    engineer "Yeah, and it didn't work out particularly well for them."
+    with Fade (0.5, 0.5, 0.5, color="#FFFFFF")
+    pause (0.5)
+    "In my mind I see bursts of explosion in low orbit. Lazer beams arcing through the sky into space."
+    "The detritous of ruined fleets stretch before me."
+    m "That doesn't matter. BC only has a small presence there and this is our best shot to fix MAC and get underway."
+    "Mac's arms stick straight up vertically in the air."
+    mac "Whee! I'm gonna be fixed!"
+    engineer "Sounds dangerous, but I guess every move for us will be now."
+    pilot "Agreed. I'll plot a course. Cromuu's not too far, we should be there by the start of the new day."
+    m "Sounds good. Dismissed."
+    jump spaceport
+
+label spaceport:
+    scene spaceport with dissolve
+    show captain at left with dissolve
+    "I feel a slight bump as the ship lands on solid ground. Jennica's voice comes over the ship coms."
+    pilot "Docking procedure complete. Opening bay doors."
+    "The main door of the ship opens and sunlight bursts into the hangar, blinding me for a moment."
+    "Then I can see the small town of Grand Junction, surrounded by vast desert stretching out in every direction."
+    "A ramp extends from the ship to the dusty ground below."
+    "I glance back to Teresa."
+    show engineer at right with dissolve
+    "She's holding a small crate in her arms and mutters under her breath."
+    engineer "Why'd I get stuck on babysitting duty."
+    mac "{i}Bzzrt{/i}"
+    "The sound comes from inside the box."
+    m "Try to be quiet MAC. We want to get you through the town without attracting attention."
+    "There's no response."
+    m "MAC?"
+    mac "Oh, sorry. I heard you, but was busy being silent."
+    engineer "It's going to be a long day."
+    pilot "I'll get us refueled and take care of some of the damage we took from our last encounter while you're on your errand."
+    pilot "Careful out there, captain."
+    m "Thanks, Jennica."
+    "I turn back to Teresa and nod my head in the direction of the town."
+    m "Let's go."
+    jump townWalk
+
+label townWalk:
+    scene desert with dissolve
+    show captain at left with dissolve
+    "The \"spaceport,\" if you could call it that, is small, only four or so docking stations with a high ringed wall cordoning it off from the rest of the town."
+    "There's not much activity, just another ship unloading some cargo into boxes, and we pass through the gate in the wall without trouble."
+    "The town of Grand Junction is small. Just a single main road flanked by several rows of shops and two-story homes with some smaller buildings randomly dotting the immediate outskirts."
+    "The saloon is located right out from the spaceport while the town hall lies at the end of the main road."
+    "In the distance, on a high hill, I can see the sun glinting off a tall metal construct." 
+    "The Palladium mine, the reason for the town's existence."
+    "Very few people are out and about. And I can't blame them."
+    "It's hot."
+    "But I remember the town being cheerier, welcoming even, the last time I came through here."
+    "I can feel attention on me and Teresa as we walk toward the building with a low neon \"Mechanic\" sign above it."
+    "A couple of people keep their eyes on us as we walk. The back of my left hand starts to itch."
+    "As we come up to the door, it swings open."
+    show mac at right
+    "MAC strolls forward out of the building."
+    "Words catch in my throat for a moment before the unnaturally electronic voice barks out."
+    "Machine Operated Courier" "Excuse me, I am running an errand for Elastor Dorian. Please move out of the way."
+    "I turn to the side and let the small mac continue strolling down the dusty street, watching as it moves around the corner of one of the buildings."
+    hide mac
+    anatar "Moze?"
+    "I turn back around."
+    show mechanic at truecenter with dissolve
+    "Anatar is standing at the door. He's wearing a light but weathered shirt and a greasy towel is drooped over one shoulder."
+    "A tattoo on his right shoulder pokes out from under the shirt. The same one on my left hand."
+    m "Anatar, good to see you friend!"
+    anatar "Good to see you as well!"
+    "We embrace, briefly."
+    anatar "To what do I owe the pleasure? Trouble with the ship?"
+    m "Actually no, our lovely Teresa here keeps the Nesting Hawk running." 
+    m "But we've run into trouble with an automated friend and we were hoping you could take a look."
+    anatar "Of course, please come in."
+    jump workshop1
+
+label workshop1:
+    scene workshop with dissolve
+    show mechanic at right with dissolve
+    show captain at left with dissolve
+    "Anatar's workshop first appears like a chaotic mess."
+    "But knowing him, every piece of machinery, every tool, and every pile of seemingly rusted out trash, is exactly where he wants it to be."
+    anatar "Welcome to my workplace, my playground, and my home."
+    "He sits down in a chair and affixes a small glass visor over one of his eyes."
+    "He nods at the box in Teresa's hands."
+    anatar "Now what seems to be the trouble."
+    "I give Teresa a nod. She puts the box down and removes the lid."
+    show mac at center
+    "MAC's head pops up out of the box just a little bit, its digital eyes glance at me."
+    m "It's ok. You can trust him."
+    mac "Hi Anatar, my name is Mac. Captain has told me a lot about you, and I'm excited to be fixed!"
+    "Anatar's eyes go wide the second he hears Mac's more-than-robotic voice."
+    anatar "You're, \"excited\"?"
+    mac "Of course! I've got this {i}bzzrt{/i} thing that I can't control, and sometimes I--"
+    mac "{i}\"Anatar Collins, member of the disbanded Snake Hawk pirate group, noted war criminal for his leadership in instigating the Cromuu rebellion.\"{/i}"
+    mac "Oh, sorry. Captain told me that was bad. But I can't {i}bzzrt{/i} seem to stop it."
+    anatar "Moze, what did you bring into my shop?"
+    menu:
+        anatar "Moze, what did you bring into my shop?"
+        "Just some cargo":
+            m "It's just some cargo we lifted from BC on the last job."
+            "{i}{b}MAC will remember that.{/i}{/b}"
+            anatar "\"Just some cargo?\" This is a fully sentient AI. They're basically a person."
+        "Something important":
+            m "MAC is something that the BC wants {i}bad{/i}. We can't let them have it."
+            "{i}{b}MAC will remember that.{/i}{/b}"
+            anatar "\"Important?\" I'll say. This is a fully sentient AI. They're basically a person."
+    anatar "What makes you think I can fix this?"
+    mac "I believe there is nothing wrong with my neural cortex."
+    m "The complicated stuff is fine. He got shocked on our way out of the BC headquarters and is having some malfunctions."
+    "Anatar stares at Mac for a long time."
+    anatar "Moze, what have you gotten yourself into?"
+    m "Can you fix it?"
+    "Anatar sighs."
+    anatar "I'll give it a shot. C'mere, Mac."
+    "Mac goes over to Anatar who lifts a belt of tools onto a table."
+    anatar "Is it, umm, ok for me to open up some bits of you?"
+    mac "Of course! Anything to help me {i}bzrrt{/i} feel better."
+    anatar "\"Feel.\" Right."
+    hide mac
+    hide mechanic
+    show engineer at right with dissolve
+    m "Teresa, I think we should be good here. Head back to the ship and help Jennica with refuel and ship repairs."
+    engineer "Are you sure?"
+    "She looks over my shoulder at Anatar and Mac."
+    "Anatar is asking the small robot questions to which Mac responds enthusiastically."
+    m "I'm sure. I'll let you know if I need anything."
+    "Teresa nods and walks out of the workshop."
+    hide engineer
+    show mechanic at right with dissolve
+    show mac at center with dissolve
+    "Anatar has unscrewed a panel on Mac's back and is lifting wires around a circuit board."
+    anatar "So, Moze, it's been, what, five years? How have you been since the Snake Hawks dissolved?"
+    menu:
+        anatar "So, Moze, it's been, what, five years? How have you been since the Snake Hawks dissolved?"
+        "\"Better than ever.\"":
+            m "Better than ever. It's nice being a captain, charting my own course."
+            anatar "I suppose that's true. But you have your own crew to be responsible for now, no?"
+            m "Yes. But I don't have to answer to Ama, or her \"code.\""
+        "\"I miss the crew.\"":
+            m "I miss the crew. Delaney, Venra, Jur. It was nice when we could all get together and talk, y'know."
+            anatar "Yeah, there were nice moments. Until Ama would come in to take her cut."
+            m "Did she not have a right? She brought us all together after all."
+            anatar "I suppose."
+        "\"Busy.\"":
+            m "I've been busy. BC has ramped up their presence in the Outposts."
+            anatar "And that means a steady paycheck for you and Ama, no?"
+            m "Yes. I suppose."
+            m "Have you heard from her?"
+            anatar "Ama? No. Not since she took the deal. Honestly, I hope I never see her again."
+    mac "Who's Ama?"
+    anatar "Ama Reyes. Our old boss. Though that might not be quite the right descriptor."
+    m "She was the leader of the Snake Hawks, a group she recruited both me and Anatar into."
+    anatar "That's how I met young Moze. Aspiring space pirate and future First Mate to the \"Deadeye\" herself."
+    mac "\"Deadeye?\""
+    m "Her nickname. Cleanest sharpshooter in the Outposts. Fastest too."
+    anatar "She also only had one eye so, you know, appropriate."
+    mac "Why didn't she get a replacement eye? Like the one aunty Jennica has?"
+    anatar "I offered her one a number of times. She always turned me down."
+    m "Said the rest of the galaxy needed the handicap."
+    anatar "Always so damn cocky."
+    m "Can you blame her."
+    anatar "I don't blame her for being cocky. I blame her cockiness for what happened to Sadyr."
+    "{i}zzzap{/i}"
+    "A sudden burst of electricity arcs out from Mac's back, stabbing into Anatar's right hand."
+    anatar "Shit."
+    "Anatar shakes his right hand, wincing."
+    menu:
+        "Anatar shakes his right hand, wincing."
+        "Ask Anatar if they're ok":
+            m "Are you okay?"
+            anatar "Yeah, I'm good."
+            "Anatar pokes his head back into the opening."
+            mac "I feel fine too!"
+        "Ask Mac if they're ok":
+            m "Are you okay?"
+            mac "Oh, yes, I believe so. Thanks for asking!"
+            anatar "Yea, no, I'm good too."
+            "Anatar pokes his head back into the opening."
+            anatar "{size=-20}Not that you were wondering."
+    anatar "I see the problem. An electrical discharge fried some circuits that weren't properly insulated."
+    anatar "I can fix it, but without insulation the same problem is just going to happen again the second you fly too close to a sun."
+    anatar "I'm fresh out of thermal paste but there's a market across town where you can pick some up."
+    anatar "It's run by a woman named Neviru. You go get it and I'll get everything ready to go here for when you get back."
+    m "Okay. Be good Mac."
+    "Mac watches me as I exit the workshop."
+    if macScolded == False:
+        "I turn back as I open the door, and it almost seems as if they're looking at me...longingly."
+    jump merchantScene
+
+label merchantScene:
+    scene market with dissolve
+    "The market is just a short walk to the town outskirts, identifiable by a giant \"Market\" sign hanging above it."
+    "Grand Junction isn't really a town of subtlety."
+    show captain at left with dissolve
+    "The market is well organized, but rather small. There are some machine parts on sale in a corner, some wonkily shaped lamps decorated with crystals near the front, and all manner of daily use items strewn throughout."
+    show merchant at right with dissolve
+    "A merchant sits at a counter near the back. As I approach, they lift their eyes from a dusty book."
+    merchant "Can I help you?"
+    m "Hi, I'm just passing through town and am looking for some thermal paste. Do you have any here?"
+    "As I speak, Neviru's eyes glance down to my left hand."
+    "There's a slight shift in her placid expression as she brings her eyes back to mine. She's tensed."
+    merchant "I'm afraid we don't sell that here."
+    $ merchantAggression = False
+    label merchantConvo:
+        menu:
+            "\"Interested in tattoos?\" (Aggression)" if merchantAggression == False:
+                m "Oh, are you interested in tattoos?"
+                merchant "Only the ones worn by outlaws and murderers."
+                $ merchantAggression = True
+                $ issuePushed = False
+                label gunPull:
+                    menu:
+                        "Let it go":
+                            "You know what, this isn't worth my time."
+                            jump merchantConvo
+                        "Pull gun":
+                            "In one motion, I draw my blaster out of its holster on my right hip and point it directly at Neviru's forehead."
+                            "She barely reacts. Only a slight waver in her eyes lets me know that she even registers the weapon."
+                            m "You're right, I am a murderer. So how about we make this exchange quick."
+                            m "You go get me some thermal paste and put it on this counter. Then I'll take out some money and put it next to the paste."
+                            m "Then we both walk away from this stupid conversation. Me without a metaphorical hole in my head, and you without a very literal hole in yours."
+                            "I take out a stack of credits, adequate for the purchase, and place them on the counter."
+                            jump getPaste
+                        "Push the issue" if issuePushed == False:
+                            $ issuePushed = True
+                            m "And what makes you think I'm a murderer?"
+                            merchant "All Snake Hawks murder."
+                            m "I believe this is a matter you know nothing about."
+                            merchant "The Snake Hawks brought the wrath of the Big Corp. The Big Corp kills people to get Palladium."
+                            merchant "All Snake Hawks are killers."
+                            jump gunPull
+            "\"It's for Anatar Collins.\" (Diplomacy)":
+                m "It's for Anatar Collins."
+                merchant "If Mr. Collins wants the paste, he can come get it himself."
+                m "He's occupied at the moment."
+                merchant "That is unfortunate."
+                $ troubleConvo = False
+                label talkMerchant:
+                    menu:
+                        "What's the problem here?" if troubleConvo == False:
+                            $ troubleConvo = True
+                            m "Look, I don't want any trouble. I'm just trying to get some supplies so Anatar can fix my automaton and I can move on from this town."
+                            merchant "In my experience, where Snake Hawks go, trouble follows."
+                            menu:
+                                "What about Anatar?":
+                                    m "What about Anatar? Seems like he's reasonably respected."
+                                    merchant "He is. And he had to earn that respect."
+                                    merchant "I don't {i}know{/i} you."
+                                    jump talkMerchant
+                                "We didn't start the rebellion":
+                                    m "I understand you're mad, but we didn't start that rebellion."
+                                    merchant "No, but you escalated it. And for what?"
+                                    merchant "Not for justice. For your own profit."
+                                    jump talkMerchant
+                        "Cut a Deal":
+                            m "Ok, here's what we can do."
+                            "I take out a stack of credits, an amount I could use to buy a whole blaster, and drop them on the counter."
+                            m "This should cover the cost of whatever \"trouble\" follows me."
+                            "Neviru tries to maintain her calm expression, but I can tell she's holding back a glint of excitement."
+                            jump getPaste
+                           
+                            
+label getPaste:                        
+    "Without saying a word, she turns and disappears into the back of the shop."
+    "She comes back a moment later with a small tube, branded with BC's logo."
+    merchant "Go. And tell Anatar I don't want to see any of his \"friends\" again."
+    "I pick up the paste, turn, and leave."
+    jump returnToWorkshop
+
+label returnToWorkshop:
+    scene workshop with dissolve
+    show captain at left with dissolve
+    "I get back to the workshop without further incident, though I felt more eyes on me than before. Perhaps it was my imagination."
+    show mac at center with dissolve
+    "Mac is sitting down on a stool, humming a little tune. The resonance of his voice box gives it a whistling tone."
+    show mechanic at right with dissolve
+    "Anatar sits on a chair behind him, still working with his tools. He glances up as I close the door."
+    anatar "Did you know Mac likes music, Moze? It told me that Beethoven is its favorite composer."
+    mac "Technically he was my father's favorite, so I suppose I inherited that."
+    "Anatar smiles a little bit."
+    anatar "Parents tend to have that effect."
+    anatar "You said, \"father\"?"
+    mac "Yes, Dr. Vanas. He built me and taught me. Before he died that is."
+    anatar "Vanas. Why do I know that name?"
+    m "He was the head of research and development for the BC. Was working on a top secret project before he turned tail and ran off with company secrets."
+    anatar "What project?"
+    "I cock my head at Anatar. He glances from me to Mac. He sighs heavily."
+    anatar "I'm working on it, aren't I."
+    m "Vanas built Mac to be the foundation for a terraforming project. That would allow the BC to monopolize the Outposts even further and oppose the Galactic Alliance in perpetuity."
+    anatar "And you brought it to my shop."
+    m "I didn't have a choice."
+    "Anatar pauses for a moment, his head hanging."
+    "He reaches his hand out toward me."
+    anatar "Thermal paste."
+    "I pass him the tube."
+    anatar "Maybe Neviru is right. Maybe all we do is bring trouble."
+    m "What's her problem with the Snake Hawks?"
+    anatar "Family died in the war for independence from the Alliance. She blames us. Most of the people in this town do."
+    m "We didn't start that war though."
+    anatar "No, but we involved the BC. Remember? Ama thought it would give us an \"in\" for that heist."
+    m "She was right."
+    anatar "And look how that turned out. For us and them."
+    "He gestures to a window as he says this."
+    anatar "BC took control over the planet and promised the citizens liberty, as long as they supplied their quota of palladium each quarter."
+    anatar "So now they're squeezed. Free, technically, but not really."
+    anatar "We replaced one regime with another."
+    menu:
+        anatar "We replaced one regime with another."
+        "That's life in this galaxy.":
+            m "That's life in this galaxy. We're all crushed between a rock and a hard place."
+            anatar "True. But that doesn't make their pain any less real."
+        "It can't be as bad as it was.":
+            m "It can't be as bad as it was. The Alliance directly occupied virtually every mine on the planet."
+            anatar "Technically, it isn't. But it feels as bad to them. That's the cost of losing loved ones."
+    m "Why did you come here if they hate us so much?"
+    anatar "Guilt, I suppose. I felt like we had done enough harm, I wanted to go somewhere quiet, do what I could to make people's lives a bit easier."
+    "He gestures at the shop around him."
+    anatar "This was pretty much the only thing I could come up with."
+    anatar "People hated me for a while. That's what this tattoo does these days."
+    anatar "But after a couple years, they realized I had put that life behind me."
+    anatar "Most people still don't like me. But they are at least grateful for my work. I can live with that."
+    "He leans back from Mac and starts screwing the metal plate back onto its back. Then puts the tools down on the counter."
+    anatar "There, all done. Circuits should be resistant to electricity now and those malfunctions shouldn't get in the way of its functioning."
+    "Mac hops off the chair and spins on one of its legs."
+    mac "Ooh I feel so much better now! Thank you Dr. Collins!"
+    "Mac starts running around the room and spinning around the piles of mechanical pieces."
+    anatar "Hahaha I'm no doctor, but you're very welcome my young friend."
+    m "He gets to you, doesn't he?"
+    "Anatar glances from me to the little robot."
+    anatar "Yes, I suppose he does."
+    jump shipCall
+
+label shipCall:
+    m "Thanks for your help, Anatar. We'll be on our way now."
+    "{i}beep beep beeeep{/i}"
+    "My communicator rings in my pocket. I take it out and flip it open. Jennica's voice crackles out."
+    pilot "Moze? We've got some trouble. I've got a call coming through from a long distance and they're insisting on speaking with you."
+    pilot "Says they want to warn us about something."
+    m "Patch the call through."
+    pilot "Aye captain."
+    "Faint static crunches as the lines switch."
+    m "This is captain Moze Oakley. Who is this and what is this warning about?"
+    "???" "Ah my dear Moze. It's good to hear your voice again."
+    "I almost drop the communicator. Anatar has gone silent and stairs at the device."
+    anatar "No."
+    m "Ama? Why are you calling?"
+    ama "Always so direct, Moze. I always liked that about you. Your penchant for sloppy scores, however, has gotten a bit tiring."
+    ama "I'll be similarly direct. Authorities from the Big Corp recently identified your vessel docked in the spaceport of Grand Junction."
+    ama "Several squads have been dispatched from the nearest headquartes on Cromuu to apprehend you and your crew. You'll be surrounded in about fifteen minutes."
+    m "How do you know this? Why are you telling me?"
+    ama "BC hired me to hunt you down and return that little droid you've stolen."
+    "My teeth grit."
+    m "Of course they did."
+    ama "It's nothing personal, dear. Only business."
+    ama "Of course, I won't get any reward if BC apprehends you themselves. So why don't you run along to your little ship and set sail."
+    ama "Oh, and take Anatar with you. Chatter on the BC coms has labeled him an accomplice, and I'd hate for him to suffer in a prison on your account."
+    ama "Take care, Moze. And do try to make this hunt a challenge."
+    "The line cuts. The room is silent. Mac has stopped running and is standing in front of me."
+    mac "Captain? Moze? Is everything alright?"
+    "{i}Zshhcs{/i}"
+    "Another crackle from the communicator. Teresa's voice comes out, frantic and rushed."
+    engineer "Captain! We just identified several BC land cruisers heading toward Grand Junction."
+    "The sound of blaster fire suddenly comes through the coms."
+    pilot "Light speeders have already arrived at the town. They're firing on the ship."
+    engineer "We can hold them off for a bit, but you have to get back here before those cruisers arrive or we're trapped!"
+    pilot "Shit! Teresa, guard that ramp! I'll cover you with the turrets!"
+    "Adrenaline pumps through my veins."
+    m "Time to move, Anatar. Mac, let's go."
+    "I move to the door, and turn around to see that Anatar hasn't moved."
+    anatar "Moze, what have you done?"
+    m "I protected this galaxy, now either you come help us keep doing that or stay here and go to prison."
+    "Anatar holds for one moment, then rushes to a drawer and lifts out a blaster. He sets it to stun."
+    anatar "Check the windows, make sure we're not being watched. There's a back exit we can take to avoid the main road but they'll find us quick anyway."
+    "I follow Anatar into the back of the shop. He grips the handle of a small door and looks back to me."
+    mac "What's happening, Captain?"
+    m "Things are going to be a little chaotic Mac. We have to run back to the ship."
+    m "There are going to be bad people in the streets so if you see anyone with a gun, point them out to me."
+    m "Stay low, follow me, and keep close. You'll do great."
+    anatar "Ready?"
+    menu:
+        "Set blaster to stun":
+            m "Ready."
+        "Set blaster to lethal":
+            m "Ready."
+    "The door opens and light bursts into my eyes."
+    jump streetShootout
+
+label streetShootout:
+    scene desert with Fade (0.5, 0.5, 0.5, color="#FFFFFF")
+    show captain at left with dissolve
+    show mechanic at right with dissolve
+    show mac at center with dissolve
+    "Anatar rushes across the sand to take cover behind another building." 
+    "Mac and I sprint to follow him. Glancing around the corner, we can see two Big Corp enforcers atop buildings, aiming rifles at the workshop."
+    anatar "Stay close."
+    "We follow as he turns the corner and runs from a crouch up to the backside of one of the buildings the enforcers are perched on."
+    "In the distance we can hear the {i}ping{/i} of blaster fire off the shield of a ship."
+    mac "I hope Teresa and Jennica are ok."
+    "I turn to shush Mac, but as I do so someone from the town rounds the corner in front of us."
+    "They stop mid-step."
+    "A gun is holstered on their hip."
+    "Their hands waver."
+    anatar "Do--"
+    menu:
+        "Shoot":
+            "I fire a blast directly into the person's chest."
+            "They slump to the floor."
+        "Don't shoot":
+            "The man lifts their gun and fires a shot."
+            "It goes wide into the building."
+            "Anatar lifts his gun and fires."
+            "The bolt hits the man in the chest."
+            "He slumps to the floor."
+    "We hear a call go out from the building above us."
+    anatar "Run!"
+    "The three of us break into a sprint as blaster bolts thud into the space where we were just taking cover."
+    "Anatar dives behind a stack of barrels and fires behind us at the enforcers on the roof."
+    "I slide into the side of another building with Mac at my side and peek around the corner. Another enforcer is coming our way."
+    "I fire quickly at them then pop back into cover."
+    "Mac tugs at my leg."
+    mac "Over there!"
+    "He points west at a single enforcer riding a light speeder between buildings, directly at us."
+    "The enforcers on the roof are closing in and so is the one around the corner."
+    menu:
+        "Fire on rooftop":
+            "I turn my attention to the rooftop threat."
+            "Mine and Annatar's fire forces them into cover, but not before one of them takes a shot and falls off the back of the building."
+            "The last one pokes their head up and Anatar hits them right between the eyes."
+            "At that moment the speeder rushes by, the enforcer swinging a wooden club. Anatar tries to dodge out of the way, but the club connects with his shoulder and he falls to the ground."
+            "The other enforcer rounds the corner, about to fire."
+            "I knock the blaster out of their hand and tackle them to the ground."
+            "We roll over one another as they reach for their pistol."
+            menu:
+                "Pummel":
+                    "Instincts kick in and I batter their outstretched arm and punch them until they stop putting up resistance."
+                "Shoot":
+                    "I pull my gun to their chest and fire directly into their ribs. Their body seizes up and they stop resisting."
+            "I struggle to my feet as the speeder curves back around, bearing down on Mac who is running down the street."
+            "I fire at it but every shot goes wide into the windows of the saloon."
+            "The speeder is almost at Mac, the enforcer reaching down to lift him up."
+            "{i}Zzzzap{/i}"
+            "A blaster bolt collides with the front of the speeder. It goes off balance as the nose dips into the sand, sending the enforcer flying through the air and skidding into the hardpacked sand."
+            "I turn back around. Anatar is slumped against the barrels. His right shoulder is limp, but his left hand holds a smoking blaster upright."
+            "He grimaces."
+            anatar "Lucky shot."
+        "Fire at speeder":
+            "I fire at the speeder, sending bolts direct into the metal."
+            "They force the vehicle off balance as the nose dips into the sand, sending the enforcer flying through the air and skidding into the hardpacked sand."
+            "As they do so, the enforcers up above bear down on us."
+            "Anatar and I quickly return fire from our precarious position, forcing them into cover."
+            "A hail of blaster bolts go in both directions, but as they move to get closer, I manage to land a shot in one of their chests, knocking them down."
+            "Enforcer" "Freeze!"
+            "The enforcer on the ground rounds the corner. That single word of hesitation gives me just enough time. I dive forward as they try to fire."
+            "The blast goes wide and I tackle them to the ground."
+            "We roll over each other. Biting, punching, kicking. But they land on top of me and wrap their arms around my throat."
+            "They start squeezing as I frantically push my hands up against their face, trying to find purchase, trying to knock them off."
+            "{i}CLANG{/i}"
+            "Mac headbutts the enforcer directly in the head, and they stumble back with blood seeping from their nose."
+            "I reach for the blaster just to my right and fire into their chest before they can register what happened."
+            "Enforcer" "Aiieea!"
+            "The last enforcer on the rooftop screams as he falls off from one well-placed shot by Anatar."
+            "He holds his right shoulder gingerly where a bolt hit him. He grimaces."
+            anatar "Lucky shot."
+        "Fire at ground enforcer":
+            "I pop back around the corner to fire at the enforcer on the ground."
+            "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
+            "I hit it with a direct shot, taking them out of the battle."
+            "As they slump to the ground, the speeder bears down on Anatar, the enforcer atop it wielding a club."
+            "Anatar faces the speeder and fires, landing two shots into the enforcer to knock them to the ground while the speeder crashes into the side of a building."
+            anatar "Lucky shot."
+            "Fire comes from above Anatar's position. He tries to stick tight to the barrels for cover, but a blaster bolt his the back of his right shoulder."
+            "I return fire on the enforcers up above and land two quick shots while they're out in the open. They slump to the ceiling, limp."
+    "I rush to Anatar."
+    m "Anatar, are you ok."
+    "He shakes his head."
+    anatar "No. My shoulder's fucked. We have to go though."
+    "He struggles to his feet and we rush off down the street in the direction of the spaceport."
+    jump spaceportEscape
+
+label spaceportEscape:
+    scene spaceport with dissolve
+    show captain at left with dissolve
+    show mac at center with dissolve
+    show mechanic at right with dissolve
+    "We rush through the spaceport gate, firing at enforcers trying to block our way."
+    "We come into view of the ship and see the turret on top of the vehicle firing manically at enforcers in cover surrounding the ship."
+    show engineer at truecenter with dissolve
+    "Teresa is in cover inside the ship, popping out to fire at enforcers trying to make a run to different positions."
+    "She catches sight of us and waves, turning around to shout something into the ship."
+    "We dispatch two enforcers on our way as the turret ramps up its cover fire, forcing enforcers to take shelter as we rush up the ramp and onto the ship."
+    engineer "They're inside, Jennica! Get us out of here!"
+    pilot "Copy!"
+    hide mechanic
+    hide engineer
+    show pilot at right with dissolve
+    "I rush up to the ship's bridge and take over cover fire as Jennica begins liftoff procedures."
+    "Just as the ship begins to push off the ground, I look through the window outside to see four immense BC cruisers speeding over the land."
+    m "Jennica? We have to go NOW!"
+    pilot "I know, I know, I see them too!"
+    "Jennica slams a thruster forward and the ship lurches into the air."
+    "Bolts of fire from the cruisers explode all around us as we ascend into the atmosphere."
+    "And then the fire stops. The resistance on the ship dissipates. We're floating in space."
+    "Jennica breathes a sigh of relief and punches something in on the keypad."
+    "With a flick of a switch, the Nesting Hawk lurches forward into hyperspace. Away from Cromuu and Grand Junction."
+    jump councilDebrief
+
+label councilDebrief:
+    scene council with dissolve
+    show captain at truecenter with dissolve
+    show engineer at right with dissolve
+    show pilot at left with dissolve
+    pilot "We've been in hyperspace for about an hour. And we got out before the cruisers were within range of us. We should be clear of any BC tracking devices."
+    engineer "\"Should\" be. They shouldn't have been able to track us to Cromuu in the first place."
+    m "Maybe that wyvern-class mercenary wasn't as random as we thought. They might have transmitted coordinates to BC before we dusted them."
+    pilot "And from there, there are only a handful of habitable planets in the sector."
+    engineer "They could have increased surveillance on each of them."
+    m "Could have. Hard to know for certain. But we'll need to be more careful in the future, and find a way to navigate the interstellar pathways with more stealth."
+    pilot "Any ideas?"
+    m "Maybe. I need to think."
+    "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives."
+    "...no Mac."
+    m "Does anyone know where Mac is?"
+    "Ship Intercom" "Attention crew, escape pod procedure activated."
+    m "Shit, what trouble is he getting into now."
+    "I rush out of the council room."
+    jump escapePodConfrontation
+
+label escapePodConfrontation:
+    scene hallway with dissolve
+    show captain at left
+    "I run down the halls of the ship and leap over the railing leading down to the escape pod bay."
+    "As I near the pods, I hear Anatar's voice."
+    anatar "Come on Mac, you can trust me. We can live a safe life. You don't have to be on the run all the time."
+    mac "But Captain said to stay close to her."
+    anatar "I know Mac. But Moze isn't always right. This place is dangerous."
+    "I turn the corner."
+    show mac at right with dissolve
+    show mechanic at truecenter with dissolve
+    "Mac is standing in the center of the hall. Anatar has one foot inside an open escape pod."
+    "As I step into the light, Anatar sees me and reaches for Mac." 
+    "I pull my blaster and point it at him, but by the time I do he has already grabbed Mac with his left arm and is holding him in the air in front of him."
+    m "What are you doing, Anatar?"
+    anatar "I'm getting {i}out{/i} of this crazy life, Moze."
+    anatar "You saw what happened just now, right?"
+    anatar "Ama said BC was going to hold me as an accomplice. What do you think that means they're going to do to Grand Junction?"
+    anatar "That's beside the ruin we left of the spaceport. Or the people who got hurt in the crossfire."
+    m "I know. None of that was right. But we didn't have a choice."
+    anatar "We {i}always{/i} have a choice."
+    m "If BC gets Mac, things are only going to get worse."
+    anatar "Things are already worse!"
+    anatar "They get worse everywhere we go!"
+    anatar "No, everywhere {i}you{/i} go."
+    anatar "I know you think Ama's code is selfish, but at least it's a code. At least she lives by rules."
+    anatar "You, Moze, you just go anywhere you want, do anything you want, and try to justify it by saying, \"I didn't have a choice.\""
+    anatar "Grow up and start living in this galaxy with the rest of us. You don't change anything for the better. You just bring pain and death."
+    m "I've heard enough."
+    menu:
+        m "I've heard enough."
+        "Fire (cruelty)":
+            "I fire a bolt. It lands right between Anatar's eyes."
+            "He slumps to the ground."
+            "Mac hits the floor and crawls to the other end of the hall."
+            "I go over to Anatar's body. It's limp and cold."
+            "I activate my com."
+            m "Teresa, Jennica, Anatar tried to activate an escape pod and take Mac away."
+            pilot "He did what?"
+            engineer "Why?"
+            pilot "Are you okay?"
+            m "I don't know. I could use some help with the body."
+            engineer "Roger, I'll be right down."
+            "I gently move toward Mac and crouch down in front of him."
+            m "Hey, I'm sorry about that."
+            mac "Is he...is he dead?"
+            "I glance back at the body."
+            m "Yes."
+            mac "Why?"
+            m "He threatened you. He made his choice."
+            mac "But, did he have to die?"
+            m "It's safer than the alternative."
+            mac "So this ship is still safe?"
+            "I reach out my hand toward Mac."
+            m "I'll make sure it is."
+            jump endPrototype
+        "Stun (mercy)":
+            "I fire a bolt. It lands right between Anatar's eyes."
+            "He slumps to the ground."
+            "Mac hits the floor and crawls to the other end of the hall."
+            "I go over to Anatar's body. It's rigid and unmoving, but his eyes shift to stare at me."
+            "I can't tell if they're frightened or judging."
+            "I activate my com."
+            m "Teresa, Jennica, Anatar tried to activate an escape pod and take Mac away."
+            pilot "He did what?"
+            engineer "Why?"
+            pilot "Are you okay?"
+            m "I don't know. I could use some help. We'll have to lock him up in the brig."
+            engineer "Roger, I'll be right down."
+            "I gently move toward Mac and crouch down in front of him."
+            m "Hey, I'm sorry about that."
+            mac "Is he...is he dead?"
+            "I glance back at the body."
+            m "No, just stunned."
+            mac "Why did he do this?"
+            m "I'm hoping we'll find that out when he wakes up. Maybe he knows more about BC's plans than he was letting on."
+            m "Regardless of why, he made his choice and threatened you."
+            mac "So this ship is still safe?"
+            "I reach out my hand toward Mac."
+            m "I'll make sure it is."
+            jump endPrototype
+
+label endPrototype:
+    scene black with dissolve
+    "Thank you for playing the first prototype of \"Stream Evil\"!"
+    return
