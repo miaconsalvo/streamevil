@@ -39,7 +39,7 @@ init python:
         global comments_list
         global newChat
         if len(chats_list) >= 4:
-            comments_list.remove(chats_list[0])
+            chats_list.remove(chats_list[0])
             chats_list.append(newChat)
         else:
             chats_list.append(newChat)
