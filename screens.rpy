@@ -83,10 +83,10 @@ style frame:
 screen streamChat():
     frame:
         #Sets the borders and set up of the chat window
-        xpos 1525
-        ypos 170
-        xsize 300
-        ysize 600
+        xpos 1550
+        ypos 120
+        xsize 355
+        ysize 740
         xpadding 40
         ypadding 20
         text "This is chat" align (.5, .001)
@@ -248,15 +248,34 @@ style ig_dialogue:
 
     adjust_spacing False
 
+style ig_dial:
+    properties gui.text_properties("dialogue")
+
+    xpos 300 #since we're leaving the default settings for the macro game dialogue/narration, we need to edit
+    #the values for xpos and xsize to fit within the diminished textbox.
+    #xsize gui.dialogue_width
+    xsize 900
+    ypos 115
+
+    adjust_spacing False
+
 #The following are styles that adjust where the say screen will appear.
 style ig_window: #"in-game" window - identifies the window that is used for narration that takes place in the micro game. 
     xalign 0.5
     xoffset -240 #adjusts the alignment of the window relative to the screen.
     xfill True
-    yalign 0.7
+    yalign 0.78
     ysize 200
 
     background Image("gui/ig_textbox.png", xalign=0.5, yalign=1.0) #This image should be adjusted to a different size for textboxes appearing in the micro game.
+
+style ig_character:
+    xalign 0.9
+    xfill True 
+    yalign 0.73
+    ysize 200 
+
+    background Image("gui/ig_textboxblue.png", xalign=0.5, yalign = 1.0)
 
 ## Input screen ################################################################
 ##
@@ -331,7 +350,7 @@ style choice_vbox:
 #This is the style that modifies where the choice screen appears during the micro game
 style choice_vboxMicroGame:
     xalign 0.175
-    ypos 330
+    ypos 400
     yanchor 0.5
 
     spacing 20
