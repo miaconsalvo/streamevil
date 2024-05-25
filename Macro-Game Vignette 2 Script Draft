@@ -1,0 +1,166 @@
+#Script for Macro-Game Vignette 2
+
+#This script is a rought draft for what the macro-game section of vignette 2 might look like.
+#The scene involves the immediate aftermath of the stream with some comments from viewers 
+#and then a reflection with the Mod about how the Streamer feels about the decisions they've made and where the stream is heading.
+#I tried to keep the script and choices simple.
+#I also represented it using RenPy code to more easily show when choices would appear.
+#This could will not actually run in RenPy since none of the variables are defined and it is incorrectly formatted.
+#The goal was just to create a draft script that was readable while still indicating moments of choice for the player.
+
+#Here is the start of the script:
+#if choice == Renegade and viewership == high:
+    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+    "Squeejieboy33" "Interesting...I'm going mainly ParaMoze but RenMoze almost seems to fit her character more."
+    "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
+    "SeggsyBard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Meeloheelo" " Right choice imo. Shit's rough but so's the world right"
+    "just3catsinatrenchcoat" "Love the stream! Glad to see someone doing an \"evil\" run. Most people I see out here are just doing ParaMoze. Boring!"
+
+#if choice == Renegade and viewership == low:
+    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+    "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
+    "Seggsyard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Squeejieboy33" "Interesting...I'm going mainly ParaMoze but RenMoze almost seems to fit her character more."
+
+#if choice == Paragon and viewership == high
+    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+    "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
+    "Squeejieboy33" "I'm also running ParaMoze...but IDK. RenMoze might fit her character better??"
+    "Seggsybard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Meeloheelo" "@Squeejieboy33 ya, ParaMoze seems a bit contrived sometimes. Like it's a universe of outlaws but there's always a convenient good option?"
+    "karatkitcat" "Love the stream, such a good vibe!"
+
+#if choice == Paragon and viewership == low
+    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+    "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
+    "Seggsybard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "karatkitcat" "Love the stream, such a good vibe!"
+
+    "I receive a discord notification from my mod." #Again, in-game, would actually show this instead of telling.
+
+#if Renegade == True
+    "mod" "Hey man, great stream! Way to use the momentum from last week!"
+    "mod" "You must be feeling great, yea?"
+    menu:
+        "Streamer" "Actually, I feel kinda weird.":
+            #reluctance += 1
+            jump ModReluctance()
+        "Streamer" "I know right, this is so cool!":
+            #enthusiasm += 1
+            jump ModEnthusiasm()
+
+label ModReluctance():
+    "mod" "What do you mean? Weird how?"
+    menu:
+        "Streamer" "I'm trying to role-play this Renegade Moze. It feels less fun, but people seem to like it more.":
+            #disengagement += 1
+        "Streamer" "I'm curious to see how the narrative is different for RenMoze. But it's like...more tiring to do that?":
+            #curiosity +=1
+    "mod" "Ah I gotchu. Sry man, you want to change anything up with the stream?"
+        menu:
+            "Streamer" "Yeah, I'll probablly go back to playing ParaMoze. It just feels more right.":
+                #reluctance += 1
+            "Streamer" "It's not a big deal really. It is kind of exciting to play differently, just takes a bit more out of me, y'know?":
+                #energy -= 1
+                #enthusiasm += 1
+            "Streamer" "No, I think this is still the best way to get Affiliate. It's only one game.":
+                #disengagement += 1
+            "Streamer" "No, it is still interesting to see how the game plays out with these bad choices":
+                #curiosity += 1
+    "mod" "Ok well, y'know, you've got this momentum now. Might be a good idea to capitalize on it while it's there."
+    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
+    "mod" "I got your back."
+    "Streamer" "Thanks."
+    "mod" "np. Aight, gotta go get some ramen, peace!"
+
+
+label ModEnthusiasm():
+    "mod" "So many viewers stuck around from that raid last week."
+    "mod" "I noticed you're playing the game a bit differently than you usually do. How's that feeling?"
+        menu:
+            "Streamer" "It was a bit of an adjustment, but it's kinda like a performance, like I'm giving the audience what they want":
+                #disengagement += 1
+            "Streamer" "Yeah, I haven't played games like this before, but it's really interesting to see how they respond to bad playthroughs":
+                #curiosity += 1
+    "mod" "Yeah, it's good for the numbers too. People are really responding to it."
+    "mod" "You think you'll keep going that route?"
+        menu:
+            "Streamer" "Yeah! I'm having a lot of fun!":
+                #enthusiasm += 1
+            "Streamer" "Probably. Seems like a good way to get viewers.":
+                #disengagement += 1
+            "Streamer" "I  might change it up. It's been fun, but it also makes playing the game a bit more tiring.":
+                #energy -= 1
+            "Streamer" "Probably not, it's starting to feel kinda wrong":
+                #reluctance += 1
+    "mod" "Ok well, y'know, you've got this momentum now. Might be a good idea to capitalize on it while it's there."
+    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
+    "mod" "I got your back."
+    "Streamer" "Thanks."
+    "mod" "np. Aight, gotta go get some ramen, peace!"
+
+#If Paragon == True
+    "mod" "Hey man, great stream! The vibe in chat was popping off."
+    menu:
+        "Streamer" "Yeah it was a great time!":
+            #energy += 1
+            jump ModGoodTime()
+        "Streamer" "Yea the convo in chat was great. But what happened to all those viewers":
+            #energy -= 1
+            jump ModConfusion()
+
+label ModGoodTime():
+    "mod" "Glad to hear it!"
+    "mod" "We did lose some of those viewers from the Raid, but that happens. You feeling good about the stream?"
+    menu:
+        "Streamer" "I saw that. But I want to play this game the way I want to play it. They can find vids of other people playing Ren Moze.":
+            #reluctance += 1
+        "Streamer" "I saw that. Maybe I should switch back to playing RenMoze, instead? People seemed to respond to that a lot.":
+            #enthusiasm += 1 (seems counterintuitive, BUT if Enthusiasm is specifically about enthusiasm for dark play, this increase would make sense)
+    "mod" "I hear you."
+    "mod" "I mean, yeah, going that Renegade route seems good for the numbers. Like there's not a lot of people out there doing it, so it would set you apart."
+    "mod" "Your enjoyment is important too, but I also know reaching Affiliate is important to you."
+    menu:
+        "Streamer" "You're right. Maybe playing Renegade is the best way to get to Affiliate.":
+            #disengagement += 1
+        "Streamer" "True. I'll think about it. It was interesting seeing how the game responded to a Renegade choice.":
+            #curiosity +=1
+        "Streamer" "Yeah, but it still feels kinda wrong to play RenMoze instead of Paragon.":
+            #reluctance += 1
+        "Streamer" "You're not wrong. And it was exciting to stream for so many people...that adrenaline high was crazy":
+            #energy += 1
+    "mod" "Things to consider, right? Some of the momentum from the raid is gone, but the viewership numbers are up."
+    "mod" "I still think we can get there in the window."
+    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
+    "mod" "I got your back."
+    "Streamer" "Thanks."
+    "mod" "np. Aight, gotta go get some ramen, peace!"
+
+label ModConfusion():
+    "mod" "I mean, you saw the chats, a lot of people carried over from the raid last week."
+    "mod" "And you kinda didn't give them what they were expecting."
+    menu:
+        "Streamer" "I know, but I didn't mean to kill Anatar. Like I don't want to play the game as RenMoze. What was I supposed to do?":
+            #reluctance +=1
+        "Streamer" "Yeah, I guess I thought they would still be interested in the stream. Like, we had a good time in chat, right?":
+            #energy += 1
+    "mod" "It's just the way of the business, right?"
+    "mod" "A lot of those people just came from Durango's stream and he's already doing a Para Moze run."
+    "mod" "So you can capitalize on that and differentiate yourself. You're entertaining these people, y'know. Rewatching the same content isn't necessarily gonna grab everyone.":
+    menu:
+        "Streamer" "You're right. I can give the Renegade run another shot!":
+            #enthusiasm += 1
+        "Streamer" "Yeah, I get it. Still, I want to get to Affiliate my own way, y'know?":
+            #reluctance += 1
+            #paragon += 1 ### - do we want macro-game choices affecting paragon and renegade things?
+        "Streamer" "This is true. Streaming is different than playing the game solo. Maybe I should play to the audience a bit more.":
+            #disengagement += 1
+        "Streamer" "I get it, but I think if I'm gonna go Ren Moze, it's more to see how the game looks with that Outlaw style, rather than for the audience.":
+            #curiosity += 1
+    "mod" "For sure. Things to consider, right? Some of the momentum from the raid is gone, but the viewership numbers are up."
+    "mod" "I still think we can get there in the window."
+    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
+    "mod" "I got your back."
+    "Streamer" "Thanks."
+    "mod" "np. Aight, gotta go get some ramen, peace!"
