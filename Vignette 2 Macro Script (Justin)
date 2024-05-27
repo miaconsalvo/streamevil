@@ -1,0 +1,110 @@
+#this is the conversation post stream 2
+#I made this inspirde by Jules' script but with the intention of condensing some of the variables as written in my notes on our doc 
+#For this I'm focusing on the RENEGADE outcome 
+#ENERGY IS LOW from the stream 
+
+--End of the stream--
+
+*The stream ends on the final renegade choice, Moze and the crew are riding in the train engine straing out of the blown out wall of the cart. The detached body of the train growing small in the distance, your excort taking final shots at you before the train explodes. MAC buries themselves in Moze's arms out of fear.#
+
+"Wow..." 
+"Don't really know how we're gonna top that, so this will be a great spot to end" 
+
+if energy < __ #energy is low
+"That's gonna be it for me see ya next time." 
+
+if energy > __ #energy is high 
+"Alright everyone! Thank you all for coming out, gonna play us out with some Lil Hero, see ya next time!" 
+
+ - Chat Reactions -
+ 
+	if choice == Renegade and viewership == high	
+	@PickledDragons "Wow, that was insane..."
+	@A.slice.of.Ry	"Oh hell yeah! Bye by supervisor man" 
+	@CapitalGamer "That's dark dude" 
+	@Kitkat "Fabulous stream! See ya next time everyone 
+
+	if choice == Renegade and viewership == low
+	@PickledDragons "Wow, that was insane..." 
+	@KitKat "Fabulous stream!
+
+ scene discordview 
+
+"Taking off my headset as I lean back in my chair, I can hear the faint music from them as I let it the song play out" 
+"A notification?" 
+
+Mod "Hey bud, great stream again, so glad you decided to keep going with the game!" 
+
+if energy < __ #energy is low
+"You doin alright tho? Saw ya run out of steam near the end there" 
+
+
+if energy < __ #energy is high 
+"How're you doin? Seemed like you were getting real into it" 
+
+menu: 
+	S "Yeah I'm good!" 
+	Enthusiam += 1
+	jump macro_vig2_chat1_enthusiam #We should do some ultra specific naming conventions for this 
+
+	S "Honestly, I'm not feelin so great about it." 
+	Reluctance += 1
+	jump macro_vig2_chat1_reluctance_nuetral 
+	
+	S "Sort of? It's complicated." 
+	#No value is changed here but branches into negative due to apprehension 
+	jump macro_vig2_chat1_reluctance_nuetral 
+
+label macro_vig2_chat1_enthusiam(): 
+mod "Glad you're feeling good about things! I looks like you're enjoying it" 
+mod "How does it feel being the bad guy this time ;)" 
+
+	menu: 
+	S "Surprisngly really fun!" 
+	enthusiam += 2 (Rather than have multiple variables maybe we can increase the increments# 
+	jump macro_vig2_chat2_end 
+	S "I like how people are sticking around but it still is not my usual play style" 
+	enthusiam += 1 
+	jump macro_vig2_chat2_end 
+	S "I'm happy for the feedback but I'm thinking of switching things up honestly" 
+	reluctance += 1
+	jump macro_vig2_chat2_end 
+	S "Genuinely the more I think about it, it's entertaining but doesn't feel great to play" 
+	reluctance += 2 
+	jump macro_vig2_chat2_end 
+
+
+label macro_vig2_chat1_reluctance_nuetral(): 
+mod "Oh? What's up? Talk to me." 
+	menu: 
+	S "I was feeling really good with the feedback from playing Outlaw but it starting to weigh on me a bit." 
+	jump macro_vig2_chat1.5_reluctance_nuetral 
+	S "It's really cool that I get to see more of the story but it's real tiring to play."
+	jump macro_vig2_chat1.5_reluctance_nuetral 
+	
+label macro_vig2_chat1.5_reluctance_nuetral 
+	"mod" You thinking of changing it up? 
+ 
+	menu:
+            S "I really thinking I should go back to playing Marshal, it's more fun for me:
+                reluctance += 2
+		jump macro_vig2_chat2_end
+            S "It's not a big deal really. But it does take a lot out of me so I might pivot:
+                reluctance += 1
+		jump macro_vig2_chat2_end
+            S "No, I think this is still the best way to get Affiliate. It's keeping me going honestly":
+                enthusiasm += 1
+		jump macro_vig2_chat2_end
+            S "No, the more I think about it I do like seeing these options, plus it gets good views":
+                curiosity += 1
+		jump macro_vig2_chat2_end
+
+label macro_vig2_chat2_end
+	"mod" "Well you have this momentum now, and the audience clearly wants you to play Outlaw but what you decide to do with it is up to you." 
+	"mod" "If you're feeling good, then keep it going!" 
+	"mod" "If you're not then don't" 
+	"mod" "But I got your back man whatever you choose 
+
+	S "Thanks b, I appreciate it" 
+	"mod" "Gonna go grab some pho with a friend, chat later ya?" 
+	S "For sure, enjoy!" 
