@@ -1,166 +1,267 @@
-#Script for Macro-Game Vignette 2
+##2nd Draft for Macro-Game Vignette 2
 
-#This script is a rought draft for what the macro-game section of vignette 2 might look like.
-#The scene involves the immediate aftermath of the stream with some comments from viewers 
-#and then a reflection with the Mod about how the Streamer feels about the decisions they've made and where the stream is heading.
-#I tried to keep the script and choices simple.
-#I also represented it using RenPy code to more easily show when choices would appear.
-#This could will not actually run in RenPy since none of the variables are defined and it is incorrectly formatted.
-#The goal was just to create a draft script that was readable while still indicating moments of choice for the player.
+#Accounts for player's decision
 
-#Here is the start of the script:
+"Wow..." 
+"Don't really know how we're gonna top that, so this will be a great spot to end" 
+
+if energy < __ #energy is low
+"That's gonna be it for me see ya next time." 
+
+if energy > __ #energy is high 
+"Alright everyone! Thank you all for coming out, gonna play us out with some Lil Hero, see ya next time!" 
+
+"Taking off my headset as I lean back in my chair, I listen to the faint music as people sign off from the chat." 
+
 #if choice == Renegade and viewership == high:
     "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
-    "Squeejieboy33" "Interesting...I'm going mainly ParaMoze but RenMoze almost seems to fit her character more."
+    "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze almost seems to fit her character more."
     "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
-    "SeggsyBard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
-    "Meeloheelo" " Right choice imo. Shit's rough but so's the world right"
+    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Meeloheelo" "Right choice imo. Shit's rough but so's the world right"
+    "@CapitalGamer" "That's dark dude."
     "just3catsinatrenchcoat" "Love the stream! Glad to see someone doing an \"evil\" run. Most people I see out here are just doing ParaMoze. Boring!"
 
 #if choice == Renegade and viewership == low:
     "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
     "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
-    "Seggsyard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
-    "Squeejieboy33" "Interesting...I'm going mainly ParaMoze but RenMoze almost seems to fit her character more."
+    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze almost seems to fit her character more."
 
 #if choice == Paragon and viewership == high
     "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
-    "Squeejieboy33" "I'm also running ParaMoze...but IDK. RenMoze might fit her character better??"
-    "Seggsybard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Squeejieboy33" "I'm also running MMoze...but IDK. OMoze might fit her character better??"
+    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
     "Meeloheelo" "@Squeejieboy33 ya, ParaMoze seems a bit contrived sometimes. Like it's a universe of outlaws but there's always a convenient good option?"
-    "karatkitcat" "Love the stream, such a good vibe!"
+    "@CapitalGamer" "@Meeloheelo. Idk, can't really picture Outlaw Moze personally."
+    "KitKat" "Love the stream, such a good vibe!"
 
 #if choice == Paragon and viewership == low
     "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
-    "Seggsybard89" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
-    "karatkitcat" "Love the stream, such a good vibe!"
+    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Kitkat" "Love the stream, such a good vibe!"
 
-    "I receive a discord notification from my mod." #Again, in-game, would actually show this instead of telling.
+play sound discordNotification
+"A notification?" 
+
+scene discordview 
+
+Mod "Hey bud, great stream again, so glad you decided to keep going with the game!" 
+
+if energy < __ #energy is low
+"You doin alright tho? Saw ya run out of steam near the end there" 
+
+
+if energy < __ #energy is high 
+"How're you doin? Seemed like you were getting real into it" 
+
 
 #if Renegade == True
-    "mod" "Hey man, great stream! Way to use the momentum from last week!"
-    "mod" "You must be feeling great, yea?"
-    menu:
-        "Streamer" "Actually, I feel kinda weird.":
-            #reluctance += 1
-            jump ModReluctance()
-        "Streamer" "I know right, this is so cool!":
-            #enthusiasm += 1
-            jump ModEnthusiasm()
+    menu: 
+        "Streamer" "Yeah, the stream feels really good!" 
+        Enthusiam += 1
+        jump macro_vig2_chat1_enthusiam #We should do some ultra specific naming conventions for this 
 
-label ModReluctance():
-    "mod" "What do you mean? Weird how?"
-    menu:
-        "Streamer" "I'm trying to role-play this Renegade Moze. It feels less fun, but people seem to like it more.":
-            #disengagement += 1
-        "Streamer" "I'm curious to see how the narrative is different for RenMoze. But it's like...more tiring to do that?":
-            #curiosity +=1
-    "mod" "Ah I gotchu. Sry man, you want to change anything up with the stream?"
+        "Streamer" "Honestly, I'm not feelin so great about it." 
+        Reluctance += 1
+        jump macro_vig2_chat1_reluctance_neutral 
+        
+        "Streamer" "I'm ok? Idk, it's complicated." 
+        #No value is changed here but branches into negative due to apprehension 
+        jump macro_vig2_chat1_reluctance_neutral 
+
+label macro_vig2_mod_chat1_enthusiam(): 
+    "mod" "Hell yeah!" 
+    "mod" "How does it feel being the bad guy this time ;)" 
+
+        menu: 
+        "Streamer" "Surprisngly really fun!" 
+            enthusiam += 2 #Rather than have multiple variables maybe we can increase the increments# 
+            jump macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+        "Streamer" "A little tough cause it's not my usual style, but it's cool!" 
+            enthusiam += 1 
+            jump macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+        "Streamer" "That part's feelin kinda weird, I'm thinking of switching things up honestly" 
+            reluctance += 1
+            jump macro_vig2_mod_chat1_reluctance_neutral
+
+
+label macro_vig2_mod_chat1_reluctance_neutral(): 
+    "mod" "Oh? What's up? Talk to me." 
+        menu: 
+        "Streamer" "I was feeling really good with the response from playing Outlaw but it starting to weigh on me a bit.": 
+            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+        "Streamer" "It's really cool that I get to see more of the story but it's real tiring to play.":
+            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+
+label macro_vig2_mod_chat2_acknowledge_decision_reluctance():
+    "mod" "For sure, that makes sense."
+    "mod" "I could kind of tell you weren't really into allying with Savilian"
         menu:
-            "Streamer" "Yeah, I'll probablly go back to playing ParaMoze. It just feels more right.":
-                #reluctance += 1
-            "Streamer" "It's not a big deal really. It is kind of exciting to play differently, just takes a bit more out of me, y'know?":
-                #energy -= 1
-                #enthusiasm += 1
-            "Streamer" "No, I think this is still the best way to get Affiliate. It's only one game.":
-                #disengagement += 1
-            "Streamer" "No, it is still interesting to see how the game plays out with these bad choices":
-                #curiosity += 1
-    "mod" "Ok well, y'know, you've got this momentum now. Might be a good idea to capitalize on it while it's there."
-    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
-    "mod" "I got your back."
-    "Streamer" "Thanks."
-    "mod" "np. Aight, gotta go get some ramen, peace!"
+            "Streamer" "That obvious? Yeah, I guess I went that route cause it seemed like what stream wanted.":
+                curiosity = False
+                jump macro_vig2_mod_chat3_reluctance_neutral
+            "Streamer" "Tbh, I kinda had to disassociate from that one. I thought of Moze as OUTLAW Moze, instead of thinking about what I'd do in that position.":
+                curiosity = False
+                menu:
+                    "Streamer" "It was pretty cool actually":
+                        jump macro_vig2_mod_chat3_reluctance_neutral
+                    "Streamer" "Kind of a weird sensation.":
+                        jump macro_vig2_mod_chat3_reluctance_neutral
+            "Streamer" "Yeah, it didn't feel great. But it was interesting to see a different spin on the story.":
+                curiosity = True
+                jump macro_vig2_mod_chat3_reluctance_neutral
+            "Streamer" "Really? That felt fine actually":
+                energy += 1
+                jump macro_vig2_mod_chat3_reluctance_neutral
 
+label macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+        "mod" "Great to hear!"
+        "mod" "I thought I saw a sly smile when you chose to ally with Savilian haha"
+            menu:
+                "Streamer" "omg the chat went {i}wild[/i] at that part. They're so fun!":
+                    curiosity = False
+                    jump macro_vig2_mod_end
+                "Streamer" "The different story paths are crazy, man! I never realized.":
+                    curiosity = True
+                    jump macro_vig2_mod_end
+                "Streamer" "Really? Honestly, I was so stressed out making that choice.":
+                    energy -= 1
+                    "mod" "Huh, I couldn't tell. Way to play it off!"
+                    jump macro_vig2_mod_end
 
-label ModEnthusiasm():
-    "mod" "So many viewers stuck around from that raid last week."
-    "mod" "I noticed you're playing the game a bit differently than you usually do. How's that feeling?"
+label macro_vig2_mod_chat3_reluctance_neutral():
+    "mod" "So you thinking of changing it up?"
         menu:
-            "Streamer" "It was a bit of an adjustment, but it's kinda like a performance, like I'm giving the audience what they want":
-                #disengagement += 1
-            "Streamer" "Yeah, I haven't played games like this before, but it's really interesting to see how they respond to bad playthroughs":
-                #curiosity += 1
-    "mod" "Yeah, it's good for the numbers too. People are really responding to it."
-    "mod" "You think you'll keep going that route?"
-        menu:
-            "Streamer" "Yeah! I'm having a lot of fun!":
-                #enthusiasm += 1
-            "Streamer" "Probably. Seems like a good way to get viewers.":
-                #disengagement += 1
-            "Streamer" "I  might change it up. It's been fun, but it also makes playing the game a bit more tiring.":
-                #energy -= 1
-            "Streamer" "Probably not, it's starting to feel kinda wrong":
-                #reluctance += 1
-    "mod" "Ok well, y'know, you've got this momentum now. Might be a good idea to capitalize on it while it's there."
-    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
-    "mod" "I got your back."
-    "Streamer" "Thanks."
-    "mod" "np. Aight, gotta go get some ramen, peace!"
+            "Streamer" "Yeah, it feels like I should go back to playing Marshal, it's more fun for me":
+                    reluctance += 2
+                jump macro_vig2_mod_chat2_end
+            "Streamer" "It's not a big deal, really. But it does take a lot out of me so I might pivot":
+                    reluctance += 1
+                jump macro_vig2_mod_chat2_end
+            "Streamer" "No, I think this is still the best way to get Affiliate. It's keeping me going honestly":
+                    enthusiasm += 1
+                jump macro_vig2_mod_chat2_end
 
-#If Paragon == True
-    "mod" "Hey man, great stream! The vibe in chat was popping off."
-    menu:
-        "Streamer" "Yeah it was a great time!":
-            #energy += 1
-            jump ModGoodTime()
-        "Streamer" "Yea the convo in chat was great. But what happened to all those viewers":
-            #energy -= 1
-            jump ModConfusion()
+label macro_vig2_mod_end():
+    "mod" "Well you have this momentum now, and the audience does seem to like when you play Outlaw."
+    "mod" "But it's your stream, y'know" 
+    "mod" "If you're feeling good, then keep it going!" 
+    "mod" "If not then don't" 
+    "mod" "I got your back man, whatever you choose" 
 
-label ModGoodTime():
-    "mod" "Glad to hear it!"
-    "mod" "We did lose some of those viewers from the Raid, but that happens. You feeling good about the stream?"
-    menu:
-        "Streamer" "I saw that. But I want to play this game the way I want to play it. They can find vids of other people playing Ren Moze.":
-            #reluctance += 1
-        "Streamer" "I saw that. Maybe I should switch back to playing RenMoze, instead? People seemed to respond to that a lot.":
-            #enthusiasm += 1 (seems counterintuitive, BUT if Enthusiasm is specifically about enthusiasm for dark play, this increase would make sense)
-    "mod" "I hear you."
-    "mod" "I mean, yeah, going that Renegade route seems good for the numbers. Like there's not a lot of people out there doing it, so it would set you apart."
-    "mod" "Your enjoyment is important too, but I also know reaching Affiliate is important to you."
-    menu:
-        "Streamer" "You're right. Maybe playing Renegade is the best way to get to Affiliate.":
-            #disengagement += 1
-        "Streamer" "True. I'll think about it. It was interesting seeing how the game responded to a Renegade choice.":
-            #curiosity +=1
-        "Streamer" "Yeah, but it still feels kinda wrong to play RenMoze instead of Paragon.":
-            #reluctance += 1
-        "Streamer" "You're not wrong. And it was exciting to stream for so many people...that adrenaline high was crazy":
-            #energy += 1
-    "mod" "Things to consider, right? Some of the momentum from the raid is gone, but the viewership numbers are up."
-    "mod" "I still think we can get there in the window."
-    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
-    "mod" "I got your back."
-    "Streamer" "Thanks."
-    "mod" "np. Aight, gotta go get some ramen, peace!"
+    "Streamer" "Thanks b, I appreciate it" 
+    "mod" "Np. Gonna go grab some pho with a friend, chat later ya?" 
+    "Streamer" "For sure, enjoy!"
+    jump macro_vig2_bro_chat1
 
-label ModConfusion():
-    "mod" "I mean, you saw the chats, a lot of people carried over from the raid last week."
-    "mod" "And you kinda didn't give them what they were expecting."
+label macro_vig2_bro_chat1(): #Elliot is placeholder name for little bro
+    "I shut down the computer and wind down for the evening."
+    "As I'm brushing my teeth, I see another notification I missed."
+    "It's from Elliot, a couple hours ago"
+    "Elliot" "Hey bro, just wanted to let you know I caught the first stream VOD for Renegade Space 2."
+    "Elliot" "Crazy stuff! I really like the direction they're taking Moze's character."
+    "Elliot" "And OMG MAC IS SO FCKING CUTE!"
+    "Elliot" "I love him. Would die for him. 1000%."
+    "Elliot" "You're going \"bad guy\" Moze this time around?"
+    "Elliot" "You've changed bro. A couple years at college and suddenly you're a big bad Outlaw"
+    "Elliot" "Haha Hope you're having fun, excited to follow the stream!"
+    "Based on the time change, Elliot's probably already asleep, but I'll shoot him a message anyway."
     menu:
-        "Streamer" "I know, but I didn't mean to kill Anatar. Like I don't want to play the game as RenMoze. What was I supposed to do?":
-            #reluctance +=1
-        "Streamer" "Yeah, I guess I thought they would still be interested in the stream. Like, we had a good time in chat, right?":
-            #energy += 1
-    "mod" "It's just the way of the business, right?"
-    "mod" "A lot of those people just came from Durango's stream and he's already doing a Para Moze run."
-    "mod" "So you can capitalize on that and differentiate yourself. You're entertaining these people, y'know. Rewatching the same content isn't necessarily gonna grab everyone.":
+        "Streamer" "Thanks man, really appreciate you checking it out!":
+            #neutral response
+        "Streamer" "Figured it was time for a change of pace, Outlaw life is pretty good!":
+            Enthusiasm += 1
+        "Streamer" "That was an accident, had to play it off on stream":
+            menu:
+                "Streamer" "But it's been real fun to play around with chat. You'll see next episode":
+                    Enthusiasm += 1
+                "Streamer" "But it's the branching story is really interesting.":
+                    Enthusiasm += 1
+                "Streamer" "I'm debating going back to Marshal. Doesn't feel as fun as when we were playing":
+                    Reluctance += 2
+                "Streamer" "Could go back to Marshal. Will have to see where the story goes":
+                    Reluctance += 1
+        "Streamer" "Hope things with Jackson are going good! Love you"
+    jump macro_vig2_sleep
+
+label macro_vig2_sleep():
+    "You lay your head on the pillow." #how do we feel about 2nd person???
+    if energy == low:
+        "It's been a long day and the stream took a lot out of you."
+        "Your mind is foggy, a cloud of robots, outlaws, and spaceships."
+        "What do you think about as you drift to sleep?"
+    else:
+        "There's still some leftover adrenaline from the stream."
+        "Your mind leaps through a series of images, robots, outlaws, and spaceships."
+        "What do you think about as you lay awake in bed?"
     menu:
-        "Streamer" "You're right. I can give the Renegade run another shot!":
-            #enthusiasm += 1
-        "Streamer" "Yeah, I get it. Still, I want to get to Affiliate my own way, y'know?":
-            #reluctance += 1
-            #paragon += 1 ### - do we want macro-game choices affecting paragon and renegade things?
-        "Streamer" "This is true. Streaming is different than playing the game solo. Maybe I should play to the audience a bit more.":
-            #disengagement += 1
-        "Streamer" "I get it, but I think if I'm gonna go Ren Moze, it's more to see how the game looks with that Outlaw style, rather than for the audience.":
-            #curiosity += 1
-    "mod" "For sure. Things to consider, right? Some of the momentum from the raid is gone, but the viewership numbers are up."
-    "mod" "I still think we can get there in the window."
-    "mod" "But it's you're stream, man. As long as you're happy with it, that's what matters."
-    "mod" "I got your back."
-    "Streamer" "Thanks."
-    "mod" "np. Aight, gotta go get some ramen, peace!"
+            "Think about your conversations with people in chat.":
+                "So many people who watch you play a game. It's fun...right?"
+                menu:
+                    "Yes!":
+                        energy += 1
+                    "Yea":
+                        #nothing
+                    "Sometimes":
+                        #nothing
+                    "Not always":
+                        energy -= 1
+            "Think about how tired you are.":
+                "Sleep is going to feel so good."
+                energy += 1
+            "Think about getting to Affiliate":
+                "It's not going to be easy, but you know you can do this."
+                "In your mind you picture it: a glossier stream set up, better microphones, and 100+ viewers in Chat."
+            "Think about the last episode of Renegade Space 2":
+                if Renegade == True:
+                    "You picture Doctor Kynes's face and feel..."
+                    menu:
+                        "Regret":
+                            "Even though it's just a game, you feel like you made the wrong choice."
+                            Reluctance += 1
+                        "Regret?":
+                            "A mixture of both regret and excitement."
+                            "Even though it's just a game, you feel confused."
+                        "Confidence":
+                            "You had to do what you had to do. You know this."
+                            Enthusiasm += 1
+                        "A desire to replay the game":
+                            "You imagine how the end game scenario would have played out if you chose differently, and you feel excitement."
+                            "You can always play the game again, after all."
+                            Energy += 1
+                        "Nothing":
+                            "You don't really feel anything in particular."
+                        "Pressure from chat":
+                            "You remember the comments from Chat, like small weights on a scale."
+                            Reluctance += 1
+                if Renegade == False:
+                    "You picture Savilian Matticus's face and feel..."
+                    menu:
+                        "Regret":
+                            "Even though it's just a game, you feel like you made the wrong choice."
+                            "What if MAC is more in danger now?"
+                            Enthusiasm += 1
+                        "Regret?":
+                            "A mixture of both regret and excitement."
+                            "Even though it's just a game, you feel confused."
+                        "A desire to replay the game":
+                            "You imagine how the end game scenario would have played out if you chose differently, and you feel excitement."
+                            "You can always play the game again, after all."
+                            Energy += 1
+                        "Confidence":
+                            "There was no other choice. You couldn't ally with him."
+                            Reluctance += 1
+                        "Nothing":
+                            "You don't really feel anything in particular."
+                        "Pressure from chat":
+                            "You remember the comments from Chat, like small weights on a scale."
+                            Reluctance += 1
+    "As your eyes finally start to become heavy, you hear a slight buzz from the nightstand."
+    "A discord notification. From Elliot."
+    "You don't unlock the phone, because you can read the message on the screen saver."
+    "Elliot" "Love you too!"
+
+return
