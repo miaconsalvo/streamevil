@@ -1,6 +1,6 @@
 ##2nd Draft for Macro-Game Vignette 2
 
-#The second episode of Renegade Space 2 concludes.
+#Accounts for player's decision
 
 "Wow..." 
 "Don't really know how we're gonna top that, so this will be a great spot to end" 
@@ -13,8 +13,7 @@ if energy > __ #energy is high
 
 "Taking off my headset as I lean back in my chair, I listen to the faint music as people sign off from the chat." 
 
-#if choice == Renegade and viewership == high:
-    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+if choice == Renegade and viewership == high:
     "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze almost seems to fit her character more."
     "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
     "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
@@ -22,14 +21,12 @@ if energy > __ #energy is high
     "@CapitalGamer" "That's dark dude."
     "just3catsinatrenchcoat" "Love the stream! Glad to see someone doing an \"evil\" run. Most people I see out here are just doing ParaMoze. Boring!"
 
-#if choice == Renegade and viewership == low:
-    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+if choice == Renegade and viewership == low:
     "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!?"
     "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
     "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze almost seems to fit her character more."
 
-#if choice == Paragon and viewership == high
-    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+if choice == Paragon and viewership == high
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
     "Squeejieboy33" "I'm also running MMoze...but IDK. OMoze might fit her character better??"
     "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
@@ -37,8 +34,7 @@ if energy > __ #energy is high
     "@CapitalGamer" "@Meeloheelo. Idk, can't really picture Outlaw Moze personally."
     "KitKat" "Love the stream, such a good vibe!"
 
-#if choice == Paragon and viewership == low
-    "The stream ends and comments flood the chat." #would cut and show comments in-game instead of having this line.
+if choice == Paragon and viewership == low
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
     "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
     "Kitkat" "Love the stream, such a good vibe!"
@@ -56,96 +52,99 @@ if energy < __ #energy is low
 
 if energy < __ #energy is high 
 "How're you doin? Seemed like you were getting real into it" 
+if Renegade >= Paragon:
+    jump macro_vig2_renegade
+else:
+    jump macro_vig2_paragon
 
-
-#if Renegade == True
+#### if Renegade == True #### (Paragon is at line 160) 
+label macro_vig2_renegade():
     menu: 
-        "Streamer" "Yeah, the stream feels really good!" 
-        Enthusiam += 1
-        jump macro_vig2_chat1_enthusiam #We should do some ultra specific naming conventions for this 
+        "Streamer" "Yeah, the stream feels really good!": 
+            Enthusiam += 1
+            jump macro_vig2_mod_renegade_chat1_enthusiam #We should do some ultra specific naming conventions for this 
 
-        "Streamer" "Honestly, I'm not feelin so great about it." 
-        Reluctance += 1
-        jump macro_vig2_chat1_reluctance_neutral 
+        "Streamer" "Honestly, I'm not feelin so great about it.": 
+            Reluctance += 1
+            jump macro_vig2_mod_renegade_chat1_reluctance_neutral 
         
-        "Streamer" "I'm ok? Idk, it's complicated." 
-        #No value is changed here but branches into negative due to apprehension 
-        jump macro_vig2_chat1_reluctance_neutral 
+        "Streamer" "I'm ok? Idk, it's complicated.": 
+            #No value is changed here but branches into negative due to apprehension 
+            jump macro_vig2_mod_renegade_chat1_reluctance_neutral 
 
-label macro_vig2_mod_chat1_enthusiam(): 
+label macro_vig2_mod_renegade_chat1_enthusiam(): 
     "mod" "Hell yeah!" 
     "mod" "How does it feel being the bad guy this time ;)" 
 
         menu: 
         "Streamer" "Surprisngly really fun!" 
             enthusiam += 2 #Rather than have multiple variables maybe we can increase the increments# 
-            jump macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+            jump macro_vig2_mod_renegade_chat2_acknowledge_decision_enthusiasm():
         "Streamer" "A little tough cause it's not my usual style, but it's cool!" 
             enthusiam += 1 
-            jump macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+            jump macro_vig2_mod_renegade_chat2_acknowledge_decision_enthusiasm():
         "Streamer" "That part's feelin kinda weird, I'm thinking of switching things up honestly" 
             reluctance += 1
-            jump macro_vig2_mod_chat1_reluctance_neutral
+            jump macro_vig2_mod_renegade_chat1_reluctance_neutral
 
-
-label macro_vig2_mod_chat1_reluctance_neutral(): 
+label macro_vig2_mod_renegade_chat1_reluctance_neutral(): 
     "mod" "Oh? What's up? Talk to me." 
         menu: 
         "Streamer" "I was feeling really good with the response from playing Outlaw but it starting to weigh on me a bit.": 
-            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+            jump macro_vig2_mod_renegade_chat2_acknowledge_decision_reluctance
         "Streamer" "It's really cool that I get to see more of the story but it's real tiring to play.":
-            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+            jump macro_vig2_mod_renegade_chat2_acknowledge_decision_reluctance
 
-label macro_vig2_mod_chat2_acknowledge_decision_reluctance():
+label macro_vig2_mod_renegade_chat2_acknowledge_decision_reluctance():
     "mod" "For sure, that makes sense."
     "mod" "I could kind of tell you weren't really into allying with Savilian"
         menu:
             "Streamer" "That obvious? Yeah, I guess I went that route cause it seemed like what stream wanted.":
                 curiosity = False
-                jump macro_vig2_mod_chat3_reluctance_neutral
+                jump macro_vig2_mod_renegade_chat3_reluctance_neutral
             "Streamer" "Tbh, I kinda had to disassociate from that one. I thought of Moze as OUTLAW Moze, instead of thinking about what I'd do in that position.":
                 curiosity = False
                 menu:
                     "Streamer" "It was pretty cool actually":
-                        jump macro_vig2_mod_chat3_reluctance_neutral
+                        jump macro_vig2_mod_renegade_chat3_reluctance_neutral
                     "Streamer" "Kind of a weird sensation.":
-                        jump macro_vig2_mod_chat3_reluctance_neutral
+                        jump macro_vig2_mod_renegade_chat3_reluctance_neutral
             "Streamer" "Yeah, it didn't feel great. But it was interesting to see a different spin on the story.":
                 curiosity = True
-                jump macro_vig2_mod_chat3_reluctance_neutral
+                jump macro_vig2_mod_renegade_chat3_reluctance_neutral
             "Streamer" "Really? That felt fine actually":
                 energy += 1
-                jump macro_vig2_mod_chat3_reluctance_neutral
+                jump macro_vig2_mod_renegade_chat3_reluctance_neutral
 
-label macro_vig2_mod_chat2_acknowledge_decision_enthusiasm():
+label macro_vig2_mod_renegade_chat2_acknowledge_decision_enthusiasm():
         "mod" "Great to hear!"
         "mod" "I thought I saw a sly smile when you chose to ally with Savilian haha"
             menu:
                 "Streamer" "omg the chat went {i}wild[/i] at that part. They're so fun!":
                     curiosity = False
-                    jump macro_vig2_mod_end
+                    jump macro_vig2_mod_renegade_end
                 "Streamer" "The different story paths are crazy, man! I never realized.":
                     curiosity = True
-                    jump macro_vig2_mod_end
+                    jump macro_vig2_mod_renegade_end
                 "Streamer" "Really? Honestly, I was so stressed out making that choice.":
                     energy -= 1
                     "mod" "Huh, I couldn't tell. Way to play it off!"
-                    jump macro_vig2_mod_end
+                    jump macro_vig2_mod_renegade_end
 
-label macro_vig2_mod_chat3_reluctance_neutral():
+label macro_vig2_mod_renegade_chat3_reluctance_neutral():
     "mod" "So you thinking of changing it up?"
         menu:
             "Streamer" "Yeah, it feels like I should go back to playing Marshal, it's more fun for me":
                     reluctance += 2
-                jump macro_vig2_mod_chat2_end
+                jump macro_vig2_mod_renegade_chat2_end
             "Streamer" "It's not a big deal, really. But it does take a lot out of me so I might pivot":
                     reluctance += 1
-                jump macro_vig2_mod_chat2_end
+                jump macro_vig2_mod_renegade_chat2_end
             "Streamer" "No, I think this is still the best way to get Affiliate. It's keeping me going honestly":
                     enthusiasm += 1
-                jump macro_vig2_mod_chat2_end
+                jump macro_vig2_mod_renegade_chat2_end
 
-label macro_vig2_mod_end():
+label macro_vig2_mod_renegade_end():
     "mod" "Well you have this momentum now, and the audience does seem to like when you play Outlaw."
     "mod" "But it's your stream, y'know" 
     "mod" "If you're feeling good, then keep it going!" 
@@ -156,6 +155,108 @@ label macro_vig2_mod_end():
     "mod" "Np. Gonna go grab some pho with a friend, chat later ya?" 
     "Streamer" "For sure, enjoy!"
     jump macro_vig2_bro_chat1
+
+
+### if Paragon == True ##### (Renegade is at line 60)
+label macro_vig2_paragon():
+    "Mod" "How're you doin?"
+    menu: 
+        "Streamer" "Yeah, the stream feels really good!": 
+            Reluctance += 1 #It's weird, but for Paragon we have to think of the Streamer's Enthusiasm for Paragon as Reluctance and vice versa.
+            jump macro_vig2_mod_paragon_chat1_enthusiasm 
+
+        "Streamer" "Honestly, I feel kinda confused.": 
+            Enthusiasm += 1
+            jump macro_vig2_mod_paragon_chat1_reluctance_neutral 
+        
+        "Streamer" "I'm ok? Idk, it's complicated.": 
+        #No value is changed here but branches into negative due to apprehension 
+            jump macro_vig2_mod_paragon_chat1_reluctance_neutral 
+
+label macro_vig2_mod_paragon_chat1_enthusiasm(): 
+    "mod" "Hell yeah!" 
+    "mod" "Going back to Marshal feld like the right call then?" 
+
+        menu: 
+        "Streamer" "Definitely, it just feels more right to me." 
+            reluctance += 2
+            jump macro_vig2_mod_paragon_chat2_acknowledge_decision_enthusiasm():
+        "Streamer" "Yeah, I think the vibes in Chat are better cause of it honestly."
+            reluctance += 1
+            jump macro_vig2_mod_paragon_chat2_acknowledge_decision_enthusiasm():
+        "Streamer" "Actually, I'm not sure. I kinda miss the excitement of Outlaw style." 
+            enthusisam += 1 
+            jump macro_vig2_mod_paragon_chat2_acknowledge_decision_reluctance_neutral():
+
+label macro_vig2_mod_paragon_chat1_reluctance_neutral(): 
+    "mod" "Oh? What's up? Talk to me." 
+        menu: 
+        "Streamer" "It's like...I definitely prefer playing Marshal Moze. But I feel like that's not what the Stream wants to see.": 
+            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+        "Streamer" "I don't know. The story felt a little predictable. Like I'd kind of seen it before.":
+            jump macro_vig2_mod_chat2_acknowledge_decision_reluctance
+
+label macro_vig2_mod_chat2_acknowledge_decision_reluctance(): 
+    "mod" "No that makes sense."
+    "mod" "You did seem to take longer than usual to ally with Doctor Kynes"
+        menu:
+            "Streamer" "That obvious? I guess I kind of second-guessed myself there.":
+                energy -= 1
+                jump macro_vig2_mod_paragon_chat3_reluctance_neutral
+            "Streamer" "Yea, I needed some time to take stock of the chat.":
+                curiosity = False
+                menu:
+                    "Streamer" "I was open to going Outlaw, but I liked the arguments for Marshal better.":
+                        jump macro_vig2_mod_paragon_chat3_reluctance_neutral
+                    "Streamer" "But it felt more right for Moze to side with Kynes than Savilian.":
+                        jump macro_vig2_mod_paragon_chat3_reluctance_neutral
+            "Streamer" "I was thinking about what would happen if I made the Outlaw choice.":
+                curiosity = True
+                jump macro_vig2_mod_paragon_chat3_reluctance_neutral
+            "Streamer" "Really? That felt fine actually.":
+                energy += 1
+                jump macro_vig2_mod_paragon_chat3_reluctance_neutral
+
+label macro_vig2_mod_paragon_chat2_acknowledge_decision_enthusiasm():
+        "mod" "Great to hear!"
+        "mod" "You seemed pretty stoked to side with Doctor Kynes"
+            menu:
+                "Streamer" "Honestly, that was mostly talking through the choice with chat":
+                    curiosity = False
+                    jump macro_vig2_mod_paragon_end
+                "Streamer" "100% the right move. I am curious what would've happened if I went Outlaw there tho.":
+                    curiosity = True
+                    jump macro_vig2_mod_paragon_end
+                "Streamer" "Really? Honestly, I was so stressed out making that choice.":
+                    energy -= 1
+                    "mod" "Huh, I couldn't tell. Way to play it off!"
+                    jump macro_vig2_mod_paragon_end
+
+label macro_vig2_mod_paragon_chat3_reluctance_neutral():
+    "mod" "So you thinking of changing it up?"
+        menu:
+            "Streamer" "Yeah, it kinda feels like I should try Outlaw again. May be the best shot to get Affiliate":
+                    enthusiasm += 1
+                jump macro_vig2_mod_paragon_chat2_end
+            "Streamer" "Maybe. Tbh, I'm still not sure.":
+                    reluctance += 1
+                jump macro_vig2_mod_paragon_chat2_end
+            "Streamer" "No. Even if Outlaw gets more views, this still feels right to me.":
+                    reluctance += 2
+                jump macro_vig2_mod_paragon_chat2_end
+
+label macro_vig2_mod_paragon_chat2_end():
+    "mod" "Well the audience does seem to like when you play Outlaw, but there are definitely some Marshal vibes in there too.."
+    "mod" "It's your stream, tho." 
+    "mod" "If you're feeling good, then keep it going!" 
+    "mod" "If not then change it up" 
+    "mod" "I got your back man, whatever you choose" 
+
+    "Streamer" "Thanks b, I appreciate it" 
+    "mod" "Np. Gonna go grab some pho with a friend, chat later ya?" 
+    "Streamer" "For sure, enjoy!"
+    jump macro_vig2_bro_chat1
+
 
 label macro_vig2_bro_chat1(): #Elliot is placeholder name for little bro
     "I shut down the computer and wind down for the evening."
@@ -263,5 +364,79 @@ label macro_vig2_sleep():
     "A discord notification. From Elliot."
     "You don't unlock the phone, because you can read the message on the screen saver."
     "Elliot" "Love you too!"
+
+
+#### Renegade Epilogues ####
+    if Renegade >= Paragon and energy == high and curiosity == True and Enthusasim >= Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "As the weeks go by, your curiosity about playing the \"bad guy\" makes it even easier to to play as Outlaw Moze."
+        "Exploring that curiosity adds a new level of enjoyment to the game."
+        "Not only do you ultimately obtain Affiliate status, but you also decide to experiment with similar moral choices when streaming future games."
+    elif Renegade >= Paragon and energy == high and curiosity == True and Enthusiasm < Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "As the weeks go by, your curiosity about playing the \"bad guy\" makes it easier to to play as Outlaw Moze, but it never really feels comfortable."
+        "While you do obtain Affiliate status, you're unlikely to play games like this in the future and you go back to Marshal Moze in the eventual Renegade Spce 3."
+    elif Renegade >= Paragon and energy == high and curiosity == False Enthusiasm >= Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "As the weeks go by, you settle into a flow of cracking jokes with your viewers and taking the choices less seriously."
+        "Discussing these moral choices with your viewers adds a new level of enjoyment to the game."
+        "Not only do you obtain Affiliate status, but you see yourself continuing to play this Outlaw style in the future."
+    elif Renegade >= Paragon and energy == high and curiosity == False Enthusiasm < Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "As the weeks go by, you settle into a flow of cracking jokes with your viewers and taking the choices less seriously."
+        "Discussing these moral choices with your viewers adds a new level of enjoyment to the game."
+        "While this is fun, you never fully feel comfortable playing the game as an Outlaw."
+        "You do gain Affiliate status, but you don't see yourself playing games in this style in the future."
+    elif Renegade >= Paragon and energy == low and curiosity == False and Enthusiasm >= Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "However, the grind of getting to Affiliate leaves you burnt out by the process."
+        "As the weeks go by, you settle into a flow of cracking jokes with your viewers and taking the choices less seriously."
+        "Discussing these moral choices with your viewers adds a new level of enjoyment to the game."
+        "Not only do you obtain Affiliate status, but you see yourself continuing to play this Outlaw style in the future."
+    elif Renegade >= Paragon and energy == low and curiosity == False and Enthusiasm < Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "As the weeks go by, you settle into a flow of cracking jokes with your viewers and taking the choices less seriously."
+        "Discussing these moral choices with your viewers adds a new level of enjoyment to the game, though you never become fully comfortable as an Outlaw."
+        "While you do obtain Affiliate status, you're unlikely to play games like this in the future and you go back to Marshal Moze in the eventual Renegade Spce 3."
+    elif Renegade >= Paragon and energy == low and and curiosity == True Enthusiasm >= Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "However, the grind of getting to Affiliate leaves you burnt out by the process."
+        "As the weeks go by, your curiosity about playing the \"bad guy\" makes it easier to to play as Outlaw Moze."
+        "Exploring that curiosity adds a new level of enjoyment to the game."
+        "Not only do you obtain Affiliate status, but you see yourself continuing to play this Outlaw style in the future."
+    elif Renegade >= Paragon and energy == low and curiosity == True Enthusiasm < Reluctance:
+        "Over the next few weeks, you continue to play through Renegade Space 2 as an Outlaw."
+        "However, the grind of getting to Affiliate leaves you burnt out by the process."
+        "As the weeks go by, your curiosity about playing the \"bad guy\" makes it easier to to play as Outlaw Moze, but it never really feels comfortable."
+        "Discussing these moral choices with your viewers adds a new level of enjoyment to the game."
+        "While you do obtain Affiliate status, you're unlikely to play games like this in the future and you go back to Marshal Moze in the eventual Renegade Spce 3."
+    
+    
+### Paragon Epilogues ###
+    elif Renegade < Paragon and energy == high and Enthusiasm >= Reluctance:
+        "Over the next few weeks, you decide to play through the rest of Renegade Space 2 as a Marshal."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "Although you stuck to your original playstyle, you occasionally find yourself reflecting on the decisions you made and wondering if they were the right ones."
+        "It gets close at the end, but you do manage to obtain Affiliate status and celebrate with your brother next time you're back home."
+    elif Renegade < Paragon and energy == high and Enthusiasm < Reluctance:
+        "Over the next few weeks, you decide to play through the rest of Renegade Space 2 as a Marshal."
+        "Despite the difficulties of streaming, you manage to keep up your energy through the process."
+        "You feel content with how you played through the game. You know there were other options, but you had fun, and that's what matters."
+        "It gets close at the end, but you do manage to obtain Affiliate status and celebrate with your brother next time you're back home."
+    elif Renegade < Paragon and energy == low and Enthusiasm < Reluctance:
+        "Over the next few weeks, you decide to play through the rest of Renegade Space 2 as a Marshal."
+        "However, the grind of getting to Affiliate leaves you burnt out by the process."
+        "You feel content with how you played through the game. You know there were other options, but you had fun, and that's what matters."
+        "It gets close at the end, but you do manage to obtain Affiliate status and celebrate with your brother next time you're back home."
+    elif Renegade < Paragon and energy == low and Enthusiasm >= Reluctance:
+        "Over the next few weeks, you decide to play through the rest of Renegade Space 2 as a Marshal."
+        "However, the grind of getting to Affiliate leaves you burnt out by the process."
+        "You feel content with how you played through the game. You know there were other options, but you had fun, and that's what matters."
+        "It gets close at the end, but you do manage to obtain Affiliate status and celebrate with your brother next time you're back home."
 
 return
