@@ -5,38 +5,38 @@
 "Wow..." 
 "Don't really know how we're gonna top that, so this will be a great spot to end" 
 
-if energy < __ #energy is low
+if energy < 2 #energy is low
 "That's gonna be it for me see ya next time." 
 
-if energy > __ #energy is high 
+if energy >= 3 #energy is high 
 "Alright everyone! Thank you all for coming out, gonna play us out with some Lil Hero, see ya next time!" 
 
 "Taking off my headset as I lean back in my chair, I listen to the faint music as people sign off from the chat." 
 
-if choice == Renegade and viewership == high:
-    "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze kinda fits her character more."
-    "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!"
-    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+if choice == Outlaw and viewership == high:
+    "Squeejieboy33" "Interesting...I'm going mainly Marshal Moze but Outlaw Moze kinda fits her character more."
+    "Coriolis" "Did we have to side with Savlian? What's Mac going to think!?"
+    "@PickledDragons" "Might check this game out, see what different options look like. GLHF!"
     "Meeloheelo" "Right choice imo. Shit's rough but so's the world right"
     "@CapitalGamer" "That was dark dude."
-    "just3catsinatrenchcoat" "Love the stream! Glad to see someone doing an \"evil"\ run. Most people I see out here are just doing ParaMoze. Boring!"
+    "just3catsinatrenchcoat" "Love the stream! Glad to see someone doing an \"evil"\ run. Most people out here are just doing Marshal Moze. Boring!"
 
-if choice == Renegade and viewership == low:
-    "Coriolis" "Aww I was hoping we'd side with the doc on this one. What's Mac going to think?!"
-    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
-    "Squeejieboy33" "Interesting...I'm going mainly MMoze but OMoze kinda fits her character more."
+if choice == Outlaw and viewership == low:
+    "Coriolis" "Did we have to side with Savlian? What's Mac going to think!?"
+    "@PickledDragons" "Might check this game out, see what different options look like. GLHF!"
+    "Squeejieboy33" "Interesting...I'm going mainly Marshal Moze but Ooutlaw Moze kinda fits her character more."
 
-if choice == Paragon and viewership == high
+if choice == Marshal and viewership == high
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
-    "Squeejieboy33" "I'm also running MMoze...but IDK. OMoze might fit her character better??"
-    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "Squeejieboy33" "I'm also running Marshal...but IDK. Outlaw might fit Moze's character better??"
+    "@PickledDragons" "Might check this game out, see what different options look like. GLHF!"
     "Meeloheelo" "@Squeejieboy33 ya, Marshal Moze seems a bit contrived sometimes. Like it's a universe of outlaws but there's always a convenient good option?"
-    "@CapitalGamer" "@Meeloheelo. Idk, can't really picture Outlaw Moze personally."
+    "@CapitalGamer" "@Meeloheelo idk, can't really get behind Outlaw Moze personally."
     "KitKat" "Love the stream, such a good vibe!"
 
-if choice == Paragon and viewership == low
+if choice == Marshal and viewership == low
     "Coriolis" "Yes! Glad to see Moze getting back on track! Gotta take care of Mac!"
-    "@PickledDragons" "Thanks for the stream! Might check this game out, see what different options look like. GLHF!"
+    "@PickledDragons" "Might check this game out, see what different options look like. GLHF!"
     "Kitkat" "Love the stream, such a good vibe!"
 
 play sound discordNotification
@@ -46,18 +46,18 @@ scene discordview
 
 Mod "Hey bud, great stream again, so glad you decided to keep going with the game!" 
 
-if energy < __ #energy is low
+if energy < 2
 "You doin alright tho? Saw ya run out of steam near the end there..." 
 
 
-if energy < __ #energy is high 
+if energy >= 3
 "How're you doin? Seemed like you were getting real into it" 
-if Renegade >= Paragon:
+if Outlaw >= Marshal:
     jump macro_vig2_renegade
 else:
     jump macro_vig2_paragon
 
-#### if Renegade == True #### (Paragon is at line 160) 
+#### if Outlaw == True #### (Marshal is at line 160) 
 label macro_vig2_renegade():
     menu: 
         "Streamer" "Yeah, the stream feels really good!": 
@@ -90,7 +90,7 @@ label macro_vig2_mod_renegade_chat1_enthusiam():
 label macro_vig2_mod_renegade_chat1_reluctance_neutral(): 
     "mod" "Oh? What's up? Talk to me." 
         menu: 
-        "Streamer" "I was feeling really good with the response from playing Outlaw but it starting to weigh on me a bit.": 
+        "Streamer" "I was feeling really good with the response from playing Outlaw but it's starting to weigh on me a bit.": 
             jump macro_vig2_mod_renegade_chat2_acknowledge_decision_reluctance
         "Streamer" "It's really cool that I get to see more of the story but it's real tiring to play.":
             jump macro_vig2_mod_renegade_chat2_acknowledge_decision_reluctance
@@ -241,7 +241,7 @@ label macro_vig2_mod_paragon_chat3_reluctance_neutral():
             "Streamer" "Maybe? I'm still not sure.":
                     reluctance += 1
                 jump macro_vig2_mod_paragon_chat2_end
-            "Streamer" "No. Even if Outlaw gets more views, this still feels right to me.":
+            "Streamer" "No. Even if Outlaw gets more views, Marshal still feels more right to me.":
                     reluctance += 2
                 jump macro_vig2_mod_paragon_chat2_end
 
@@ -276,18 +276,18 @@ label macro_vig2_bro_chat1(): #Elliot is placeholder name for little bro
         "Streamer" "Thanks El, really appreciate you checking it out!":
             #neutral response
         "Streamer" "Figured it was time for a change of pace, Outlaw life is pretty sweet!":
-            Enthusiasm += 1
+            Enthusiasm += 2
         "Streamer" "That was an accident! I had to play it off on stream :'(":
             menu:
                 "Streamer" "But it's been real fun to play around with chat. You'll see next episode":
-                    Enthusiasm += 1
-                "Streamer" "But it's the story is getting really interesting.":
+                    Enthusiasm += 2
+                "Streamer" "But the story is getting really interesting.":
                     Enthusiasm += 1
                 "Streamer" "I'm debating going back to Marshal. Doesn't feel as fun as when we were playing":
                     Reluctance += 2
                 "Streamer" "Could go back to Marshal. Will have to see where the story goes":
                     Reluctance += 1
-        "Streamer" "Hope things with Jackson are going good! Love you"
+    "Streamer" "Hope things with Jackson are going good! Love you"
     jump macro_vig2_sleep
 
 label macro_vig2_sleep():
@@ -302,30 +302,34 @@ label macro_vig2_sleep():
         "What do you think about as you lay awake in bed?"
     menu:
             "Think about your conversations with people in chat.":
-                "So many people who watch you play a game. It's fun...right?"
-                menu:
-                    "Yes!":
-                        energy += 1
-                    "Yea":
-                        #nothing
-                    "Sometimes":
-                        #nothing
-                    "Not always":
-                        energy -= 1
-            "Think about how tired you are.":
-                "Sleep is going to feel so good."
-                energy += 1
+                "So many people  watch you play a game. It's fun...right?"
+                    menu:
+                        "Yes!":
+                            energy += 1
+                        "Sometimes":
+                            #nothing
+                        "Not always":
+                            energy -= 1
             "Think about getting to Affiliate":
                 "It's not going to be easy, but you know you can do this."
                 "In your mind you picture it: a glossier stream set up, better microphones, and 100+ viewers in Chat." #fml the dream
-            "Think about the last episode of Renegade Space 2":
-                if Renegade == True:
-                    "You picture Doctor Kynes's face and feel..."
+                energy += 1
+            "Think about how tired you are.":
+                "Sleep is going to feel so good. You really need it."
+                energy -= 1
+            jump to next sleep thought
+
+next sleep thought:
+            "Think about the last episode of Oakley: Settle the Score":
+                if Outlaw == True:
+                    "You picture MAC's confused expression from the end and feel..."
                     menu:
                         "Regret":
                             "Even though it's just a game, you feel like you made the wrong choice."
                             Reluctance += 1
                         "Regret?":
+                            Reluctance += 1
+                            Excitement += 1
                             "A mixture of both regret and excitement."
                             "Even though it's just a game, you feel confused."
                         "Confidence":
@@ -340,14 +344,19 @@ label macro_vig2_sleep():
                         "Pressure from chat":
                             "You remember the comments from Chat, like small weights on a scale."
                             Reluctance += 1
+                        "Even more tired":
+                            "Just thinking about the game makes your eyelids feel heavier."
+                            energy -= 1
                 if Renegade == False:
-                    "You picture Savilian Matticus's face and feel..."
+                    "You picture Savlian Matticus's face and feel..."
                     menu:
                         "Regret":
                             "Even though it's just a game, you feel like you made the wrong choice."
                             "What if MAC is more in danger now?"
-                            Enthusiasm += 1
+                            Reluctance += 1
                         "Regret?":
+                            Reluctance += 1
+                            Enthusiasm += 1
                             "A mixture of both regret and excitement."
                             "Even though it's just a game, you feel confused."
                         "A desire to replay the game":
@@ -362,6 +371,9 @@ label macro_vig2_sleep():
                         "Pressure from chat":
                             "You remember the comments from Chat, like small weights on a scale." #love the way you wrote this 
                             Reluctance += 1
+                        "Even more tired":
+                            "Just thinking about the game makes your eyelids feel heavier."
+                            energy -= 1
     "As your eyes finally start to become heavy, you hear a slight buzz from the nightstand."
     "A discord notification. From Elliot."
     "You don't unlock the phone, because you can read the message on the screen saver."
