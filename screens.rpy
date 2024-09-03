@@ -83,23 +83,37 @@ style frame:
 screen streamChat():
     frame:
         #Sets the borders and set up of the chat window
-        xpos 1550
-        ypos 120
-        xsize 355
-        ysize 740
-        xpadding 40
-        ypadding 20
-        text "This is chat" align (.5, .001)
-        #Establishes a "verical box" that displays the objects in chats_list
-        vbox:
+        xpos 1465
+        ypos 170
+        xsize 450
+        ysize 200
+        xpadding 10 #These padding variables Will affect how close the position of the scrollbar relative to the frame as well
+        ypadding 10
+        frame: #establishes a separate "heading" frame from chat
             xalign 0.5
-            yalign 0.15
-            spacing 5
-            for c in (chats_list): #checks through chats_list and displays the objects within that list in the vertical boxes.
-                if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
-                    textbutton c.prompt action Call(c.target)
-                else:
-                    text c.prompt #if the ChatEntry object has "self.click = False" it will be plain text
+            ypos -70
+            xsize 200
+            ysize 60
+            #padding (5, 5)
+            text "This is chat" align (0.5, 0.5)
+        viewport id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
+            draggable True #allows scrollbar to be dragged
+            mousewheel True #allows mousewheel to scroll viewport
+            scrollbars "vertical" #sets vertical scroll bar
+            yinitial 1.0 #should place scrollbar at bottom of viewport by default - not working though
+            #Establishes a "vertical box" that displays the objects in chats_list
+            vbox:
+                box_reverse True #current way to make us see the newest chat by having it appear at top instead of bottom.
+                #null height 10 #adds space at top of chat - doesn't seem useful at moment due to padding.
+                #yfill True
+                spacing 10
+                for c in (chats_list): #checks through chats_list and displays the objects within that list in the vertical boxes.
+                    if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
+                        textbutton c.prompt action Call(c.target) #text_size 9
+                        #"text_size" can adjust how large the text is. But it would probably be best to define this in the chat_entry class
+                    else:
+                        text c.prompt #if the ChatEntry object has "self.click = False" it will be plain text
+                #null height 10 #adds space below the chat
 
 #A basic screen to display stream details. All the numbers will likely need to change
 screen streamDetails():
