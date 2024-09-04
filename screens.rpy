@@ -109,11 +109,19 @@ screen streamChat():
                 spacing 10
                 for c in (chats_list): #checks through chats_list and displays the objects within that list in the vertical boxes.
                     if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
-                        textbutton c.prompt action Call(c.target) #text_size 9
+                        textbutton c.prompt:
+                            action Call(c.target)
+                            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+                            text_hover_color "#ffffffc7" #
+                            text_selected_color "#ffffff94"
+                            background "#eeff00cb" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
+                        #text_size 9
                         #"text_size" can adjust how large the text is. But it would probably be best to define this in the chat_entry class
+                        #in Chat_entry, add a "size" property and set it for individual ones. Then here, do "text_size = c.size"
+                        #-useful if you want the size to be variable. If constant, may as well just hard code it here instead of in Class.
                     else:
-                        text c.prompt #if the ChatEntry object has "self.click = False" it will be plain text
-                #null height 10 #adds space below the chat
+                        text c.prompt color c.colour #if the ChatEntry object has "self.click = False" it will be plain text
+                        #You can change color with c.colour (an attribute that was added to ChatEntry class in Lists script). The Textbutton is a bit more complicated
 
 #A basic screen to display stream details. All the numbers will likely need to change
 screen streamDetails():
@@ -129,6 +137,7 @@ screen streamDetails():
         image "captain" align (.06, .99) size (120, 120) #displays a profile pic for the streamer
 
 #The following screens allow for discord navigation
+#add viewports to screen elements to display discord chats with a scrollbar.
 screen discordChat():
     frame:
         background "#c0b2b200"
