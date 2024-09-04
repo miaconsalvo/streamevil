@@ -6,12 +6,15 @@ init python:
     class ChatEntry():
         #This function defines a new class of objects called ChatEntry.
         #ChatEntry objects have four potential attributes that can be defined.
-        def __init__(self, click, prompt, tag, target = "", ): #"click" has to go earlier because of the kind of argument it is.
+        def __init__(self, click, prompt, tag, colour = "", target = "", ): #"click" has to go earlier because of the kind of argument it is.
             #self identifies the object as itself, allowing the object to reference its own attributes
             self.click = click #click is a boolean that determines if a comment is clickable or not. True is clickable, False is not.
             self.prompt = prompt #prompt is the string that will appear when the chat is shown
             self.tag = tag #tag is a numeric identifier that will allow us to "batch" comments together.
                             #Then we can do things like remove every object in the comments list with a tag == 2.
+            self.colour = colour #added an attribute that will allow us to change the color of the text that appears.
+                                #this probably won't be necessary, but wanted to play around with some possibilities.
+                                #called it "colour" because "color" is often used by Renpy to refer to specific things and handle already determined attributes.
             self.target = target #target indicates a label that a clickable object will call.
     
 init python:
@@ -26,6 +29,8 @@ init python:
         if len(chats_list) >= 4: #Checks the "length" of the chats_list - how many objects are currently stored in it.
         #If the number of items in Chats gets to a certain threshold, we need to remove the earliest object to make room for new ones.
             chats_list.remove(chats_list[0]) #removes the earliest object in the chats list.
+            #WE DON'T NEED TO DO THIS REMOVAL ANYMORE! Now that the chat screen is scrollable. 
+            #Or, at least, you should make the length of chats_list much longer.
             chats_list.append(comments_list[0]) #adds the first object from the comments list (after shuffling) to the chats_list
             #comments_list.remove(comments_list[0]) -- This line would remove the top of the comments list that was just added to chats (currently disabled for testing)
         else:
@@ -57,11 +62,12 @@ init python:
 
 #The following five lines define five ChatEntry objects that can be added and rearranged amongst the "comments" and "chats" lists
 #Note how many of these do not have a "target" attribute. Only clickable ChatEntries require "targets"
-default comment1 = ChatEntry( False, "Hi! I'm the first chat!", 1 )
-default comment2 = ChatEntry( False, "Sup, I'm second in chat", 2 )
-default comment3 = ChatEntry( True, "Help, I'm the third chat and I'm stuck in here" , 1, "comment3Choice")
-default comment4 = ChatEntry( False, "This is the legendary 4th chat", 1 )
-default comment5 = ChatEntry( False, "And I'm the godlike 5th chat", 1)
+#These have been updated to include the "colour" attribute
+default comment1 = ChatEntry( False, "Hi! I'm the first chat!", 1, "#f03535ff",)
+default comment2 = ChatEntry( False, "Sup, I'm second in chat", 2, "#04cdffff", )
+default comment3 = ChatEntry( True, "Help, I'm the third chat and I'm stuck in here" , 1, "#ffffffff", "comment3Choice")
+default comment4 = ChatEntry( False, "This is the legendary 4th chat", 1, "#18f110ff", )
+default comment5 = ChatEntry( False, "And I'm the godlike 5th chat", 1, "#720ee6ff",)
 
 
 default comments_list = [comment1, comment2, comment3] #This list contains the objects that will be shuffled and chosen from to add to "chats"
