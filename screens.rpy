@@ -83,12 +83,12 @@ style frame:
 screen streamChat():
     frame:
         #Sets the borders and set up of the chat window
-        xpos 1465
-        ypos 170
-        xsize 450
-        ysize 200
-        xpadding 10 #These padding variables Will affect how close the position of the scrollbar relative to the frame as well
-        ypadding 10
+        xpos 1550
+        ypos 120
+        xsize 355
+        ysize 740
+        xpadding 10 #These padding variables will affect how close the position of the scrollbar relative to the frame as well
+        ypadding 20
         frame: #establishes a separate "heading" frame from chat
             xalign 0.5
             ypos -70
