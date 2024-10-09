@@ -200,12 +200,10 @@ init python:
 #Example Chat Entries:
 #default comment1 = ChatEntry( False, "{b}Squeejieboy33:{/b} Hope everyone's week is going well!", 1, "#000000ff" )
 #default kkAsksRomance = ChatEntry (True, "{b}KitKat:{/b} Hey [pName]! Who are you thinking of romancing on this playthrough?", 0, "#000000ff", target = "streamAsksRomance")
-#default comment2 = ChatEntry( False, "{b}topOmornin:{/b} Really dig the art style of this game", 2, "#000000ff", "comment2Choice")
-#default comment3 = ChatEntry( True, "{b}xKSamuraiKx:{/b} Hey [pName], how's your week been?" , 1, "#000000ff", "comment3Choice")
-#default comment4 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} Glad to see you still streaming this game!", 1, "#000000ff", )
+
 
 default chatter_list = [ ] #This is the list that displays on the Stream UI
-default comments_list = [comment1, comment2, comment4] #This list contains the objects that will be shuffled and chosen from to add to "chats"
+default comments_list = [ ] #This list contains the objects that will be shuffled and chosen from to add to "chats"
 #Objects will be taken from this list and added to "chats_list"
     
 init python:
@@ -227,47 +225,6 @@ init python:
         return
 
 ##labels for chatter targets
-
-label comment2Choice():
-    $ macroChoice = True
-    $ comment2.click = False 
-
-    $ narrator = reg_narrator 
-    menu:
-        "It's cool!":
-            pName "I love all the little details too with all the different characters."
-            $ csEngagement += 1
-        "I prefer the previous game, actually.":
-            pName "I actually think some things took a step back. The UI especially just looks a little generic to me."
-            $ pdEngagement += 1
-    $ macroChoice = False 
-    if macroNarration == False:
-        $ narrator = alt_narrator #And you will need to manually revert the narrator back to the in-game narrator to shift their textbox properly.
-    else:
-        $ narrator = reg_narrator
-    return
-
-label comment3Choice():
-    $ macroChoice = True #If this is a decision happening in the macrogame, change this boolean so that the choice screen will appear in its default state
-    $ comment3.click = False #makes the chat unclickable once it has been clicked.
-    #This should reference the specific ChatEntry object that directs here through its target attribute.
-    # eg. if comment64 directs to a certain label, add $ comment64.click = False, to turn it off
-    $ narrator = reg_narrator # you also need to manually change the narrator so that the text appears outside the micro game
-    menu:
-        "Kinda rough":
-            pName "Oh man, I had this test earlier in the week. Spent all Monday and Tuesday cramming."
-            pName "Fingers crossed I passed, essay tests are not my forte."
-            $ pdEngagement -= 1
-            $ csEngagement += 1
-        "It was fine":
-            pName "Nothing much happened actually. School is what it is. Glad to be back on the game now!"
-    $ macroChoice = False #set macroChoice back to false at the end of this interaction so that the 
-    #choice screen will appear appropriately for micro-game choices.
-    if macroNarration == False:
-        $ narrator = alt_narrator #And you will need to manually revert the narrator back to the in-game narrator to shift their textbox properly.
-    else:
-        $ narrator = reg_narrator
-    return
 
 label streamAsksRomance():
     $ macroChoice = True
