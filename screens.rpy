@@ -76,6 +76,10 @@ style frame:
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 ################################################################################
+## In-game screens
+################################################################################
+
+################################################################################
 ## Stream Details Screens
 ################################################################################
 
@@ -89,38 +93,28 @@ screen streamChat():
         ysize 740
         xpadding 10 #These padding variables will affect how close the position of the scrollbar relative to the frame as well
         ypadding 20
-        frame: #establishes a separate "heading" frame from chat
-            xalign 0.5
-            ypos -70
-            xsize 200
-            ysize 60
-            #padding (5, 5)
-            text "This is chat" align (0.5, 0.5)
         viewport id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
             draggable True #allows scrollbar to be dragged
             mousewheel True #allows mousewheel to scroll viewport
             scrollbars "vertical" #sets vertical scroll bar
             yinitial 1.0 #should place scrollbar at bottom of viewport by default - not working though
-            #Establishes a "vertical box" that displays the objects in chats_list
-            vbox:
+            vbox:             #Establishes a "vertical box" that displays the objects in chats_list
                 box_reverse True #current way to make us see the newest chat by having it appear at top instead of bottom.
-                #null height 10 #adds space at top of chat - doesn't seem useful at moment due to padding.
-                #yfill True
                 spacing 10
-                for c in (chats_list): #checks through chats_list and displays the objects within that list in the vertical boxes.
+                for c in (chatter_list): #checks through chatter_list and displays the objects within that list in the vertical boxes.
                     if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
                         textbutton c.prompt:
-                            action Call(c.target)
+                            action Call(c.target, from_current = True)
                             text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-                            text_hover_color "#ffffffc7" #
-                            text_selected_color "#ffffff94"
+                            text_hover_color "#000000a1" 
+                            text_selected_color "#0000004f"
                             background "#eeff00cb" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-                        #text_size 9
+                        #text_size 25
                         #"text_size" can adjust how large the text is. But it would probably be best to define this in the chat_entry class
                         #in Chat_entry, add a "size" property and set it for individual ones. Then here, do "text_size = c.size"
                         #-useful if you want the size to be variable. If constant, may as well just hard code it here instead of in Class.
                     else:
-                        text c.prompt color c.colour #if the ChatEntry object has "self.click = False" it will be plain text
+                        text c.prompt color c.colour size 25 #if the ChatEntry object has "self.click = False" it will be plain text
                         #You can change color with c.colour (an attribute that was added to ChatEntry class in Lists script). The Textbutton is a bit more complicated
 
 #A basic screen to display stream details. All the numbers will likely need to change
@@ -172,10 +166,6 @@ screen modDiscord():
         spacing 20
         text "This is for the mod convo"
         text "this is the second text for the mod convo"
-
-################################################################################
-## In-game screens
-################################################################################
 
 
 ## Say screen ##################################################################
