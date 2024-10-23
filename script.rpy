@@ -13,7 +13,7 @@ define enS = Character ("Engineer", window_style = "ig_character", what_style = 
 
 define p = Character("Pilot", window_style = "window", who_color="#ef8f3a", what_color="#000000", image = "pilot", window_background = "images/textbox/textbox_orange.png")
 define pS = Character ("Pilot", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#ef8f3a", what_color="#000000", image = "pilot_stream.png", window_background = "images/textbox/ig_textbox_orange.png")
-3
+
 default alt_narrator = Character(None, window_style = "ig_window", what_style = "ig_dialogue")
 default reg_narrator = Character(None, window_style = "window")
 define pName = Character("[my_name]") #represents the protagonist's name which will be defined by the player via an input screen.
