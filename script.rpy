@@ -20,10 +20,6 @@ define pS = Character ("Jennica", window_style = "ig_character", what_style = "i
 define mac = Character("MAC", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/textbox_blue.png")
 define macS = Character("MAC", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#a333ff", what_color = "#000000", image = "captain_stream", window_background="images/textbox/ig_textbox_blue.png")
 
-#Arbitrary charcters for vignette 1
-define shipcom = Character("Ship Intercom", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, what_color = "#000000", image = "captain_stream", window_background="images/textbox/ig_textbox_red.png")
-define agent1 = Character("Customs Agent", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, what_color = "#000000", image = "captain_stream", window_background="images/textbox/ig_textbox_orange.png")
-
 #Additional variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
@@ -101,8 +97,6 @@ label gameStart():
     show pilot_stream at stream_left with dissolve
     show engineer_stream at stream_right with dissolve
     "Moze wakes up to find Jennica (the Pilot) and Teresa (the Engineer) arguing about contacting corrupt cop Savlian Matticus."
-    shipcom "sound alarm"
-    agent1 "Why am I here"
     pS "Jennica states that he can't be trusted but Teresa counters that they don't have any other options."
 
     "What do you do?"
