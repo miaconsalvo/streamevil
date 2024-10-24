@@ -126,7 +126,7 @@ label councilScene:
                 "It was supposed to be simple. \"Stop a rogue company scientist from selling company secrets,\" they said."
                 "They didn't say anything about a sentient robot with a limitless power source."
                 "Now we're in the middle of a turf war between the Alliance and the Big Corps."
-                "And we're trying to get to the middle of nowhere we can maybe hand MAC off to the Fireflies."
+                "And we're trying to get to the middle of nowhere so we can maybe hand MAC off to the Fireflies."
                 "If we don't get caught before then."
                 "And for no profit."
                 "And we don't have any back up."
@@ -137,7 +137,7 @@ label councilScene:
                 jump councilLoop
             "Think about Ama" if thinkAma == False:
                 "I wonder what Ama would say about this."
-                "I look down at the tatoo on the back of my left hand."
+                "I look down at the tattoo on the back of my left hand."
                 "A snake coils around the outstretched wings of a hawk."
                 "Moze as Ama" "Always look out for yourself, your sisters, and your brothers." 
                 "Moze as Ama" "And never do a good thing without proper compensation."
