@@ -47,7 +47,7 @@ default commentNothingPD = ChatEntry (False, "{b}PickledDragons:{/b} Yessss! OMG
 default commentNothingKK2 = ChatEntry (False, "{b}KitKat:{/b} Turn the big bad with love? Dig it!", 0, "#000000ff")
 default kkAsksRomance = ChatEntry (True, "{b}KitKat:{/b} Hey [player]! Who are you thinking of romancing on this playthrough?", 0, "#000000ff", target = "streamAsksRomance")
 default csJennica = ChatEntry(False, "{b}Coriolis:{/b} Jennica ftw!", 0, "#000000ff")
-default kkTeresa = ChatEntry(False, "{b}Teresa:{/b} Crazy engineer ftw!", 0, "#000000ff")
+default kkTeresa = ChatEntry(False, "{b}KitKat:{/b} Crazy engineer ftw!", 0, "#000000ff")
 
 #comments for decision 2
 default pdLovesChaos = ChatEntry (False, "{b}PickledDragons:{/b} chaos chaos chaos chaos", 0, "#000000ff")
