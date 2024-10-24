@@ -1,0 +1,449 @@
+mc - streamer main character
+lbro - streamers little brother
+mod - streamers mod
+
+begins at end of stream
+
+mc "Wow..."
+mc "Guess that's the end of the chapter! This seems like a great spot to end." 
+mc "Alright everyone! Thank you all for coming out, gonna play us out with some Lil Hero, see ya next time!" 
+"You take off your headset and lean back into the chair, listening to the faint music as people sign off from the chat."
+"You receive a notification on discord. It’s from the mod of your stream."
+mod "Hey bud, great stream again, so glad you decided to keep going with the game!" 
+mod "How're you doin? Seemed like you were getting real into it."
+
+outlawmacroplayerchoice1
+choice
+
+enthusedoutlaw1
+mc "Yeah, the stream feels really good!"
+mod "Hell yeah!"
+mod "How does it feel being the bad guy this time? ;)" 
+go to enthusedoutlaw1
+
+reluctantoutlaw1
+mc "Honestly, I'm not feelin so great about it."
+go to reluctantoutlaw1
+
+
+puntoutlaw1
+mc "I'm ok? IDK it's complicated."
+go to reluctantoutlaw1
+
+
+enthusedoutlaw1
+choice
+
+mc "Surprisingly, really fun!"
+mod "Great to hear!"
+mod "I thought I saw a sly smile when you chose to ally with Savlian haha"
+go to enthusedoutlaw2
+
+mc "A little tough cause it's not my usual style, but it's cool!"
+mod "Ah gotcha! It's fun to dabble though!"
+mod "I thought I saw a sly smile when you chose to ally with Savlian haha"
+go to enthusedoutlaw2
+
+mc "That part's feelin kinda weird, I'm thinking of switching things up honestly"
+mod "Oh? What's up? Talk to me."
+go to reluctantoutlaw1
+
+
+reluctantoutlaw1
+choice
+
+mc "I was feeling really good with the response from playing Outlaw but it's starting to weigh on me a bit."
+go to reluctantoutlaw2
+
+mc "It's really cool that I get to see more of the story but it's real tiring to play."
+go to reluctantoutlaw2
+
+enthusedoutlaw2
+choice
+
+mc "omg the chat went {i}wild{/i} at that part. So fun!"
+go to macromodoutlawend
+
+mc "The different story paths are crazy, man! I never realized."
+go to macromodoutlawend
+
+mc "Really? Honestly, I was so stressed out making that choice."
+go to reluctantoutlaw1
+
+
+reluctantoutlaw2
+
+mod "For sure, that makes sense."
+mod "I could kind of tell you weren't really into doing Savlian’s dirty work."
+
+choice
+
+mc "That obvious? Yeah, I guess I went that route cause it seemed like what stream wanted."
+go to reluctantoutlaw3
+
+mc "Tbh, I kinda had to disassociate from that one. I thought of Moze as Outlaw Moze, instead of thinking about what I'd do in that position."
+mod "Oh yeah? How was that?"
+choice again
+mc "It was pretty cool actually"
+mc "Kind of a weird sensation."
+go to reluctantoutlaw3
+
+mc "Yeah, it didn't feel great. But it was interesting to see a different spin on the story."
+go to reluctantoutlaw3
+
+mc "Really? That felt fine actually"
+go to reluctantoutlaw3
+
+
+reluctantoutlaw3
+mod "So you're thinking of changing it up?"
+
+choice
+
+mc "Yeah, it feels like I should go back to playing Marshal, it's more fun for me."
+go to macromodoutlawend
+
+mc "It's not a big deal, really. But it does take a lot out of me so I might pivot."
+go to macromodoutlawend
+
+mc "No, I think this is still the best way to get Affiliate. It's keeping me going tbh."
+go to macromodoutlawend
+
+
+macromodoutlawend
+
+mod "Well you have this momentum now, and the audience does seem to like when you play Outlaw."
+mod "But it's your stream, y'know." 
+mod "If you're feeling good, then keep it going!" 
+mod "If not then don't." 
+mod "I got your back man, whatever you choose." 
+mc "Thanks b, I appreciate it." 
+mod "Np. Gonna go grab some pho with a friend, chat later ya?"
+mc "For sure, enjoy!"
+
+go to brotherconvo1
+
+
+marshalmacroplayerchoice1
+
+mc "Yeah, the stream feels really good!"
+go to enthusedmarshal1
+
+mc "Honestly, I feel kinda confused."
+go to reluctantmarshal1
+
+mc "I'm ok? Idk, it's complicated."
+go to reluctantmarshal1
+
+
+
+
+enthusedmarshal1
+
+mod "Hell yeah!" 
+mod "Going back to Marshal felt like the right call then?" 
+
+choice 
+
+mc "Definitely, it just feels more right to me." 
+go to enthusedmarshal2
+
+mc "Yeah, I think the vibes in chat are better cause of it honestly."
+go to enthusedmarshal2
+
+mc "Actually, I'm not sure. I kinda miss the excitement of Outlaw style."
+go to reluctantmarshal1
+
+
+reluctantmarshal1
+
+mod "Oh? What's up? Talk to me." 
+
+choice
+
+mc "It's like...I definitely prefer playing Marshal Moze. But I feel like that's not what the Stream wants to see."
+go to reluctantmarshal2
+
+mc "I don't know. The story felt a little predictable. Like I'd kind of seen it before."
+go to reluctantmarshal2
+
+enthusedmarshal2
+
+mod "Great to hear!"
+mod "You seemed pretty stoked to betray Matticus."
+
+choice
+
+mc "Honestly, that was mostly talking through the choice with chat"
+go to macromodmarshalend
+
+mc "100% the right move. I wonder what would've happened if I went Outlaw there tho."
+go to macromodmarshalend
+
+mc "Really? Honestly, I was so stressed out making that choice."
+mod "Huh, I couldn't tell. Way to play it off!"
+go to macromodmarshalend
+
+
+reluctantmarshal2
+
+mod "No, that makes sense."
+mod "You did seem to take longer than usual to ally with the humanitarians."
+
+choice
+
+mc "That obvious? I guess I kind of second-guessed myself there."
+go to reluctantmarshal3 
+
+mc "I was thinking about what would happen if I made the Outlaw choice."
+go to reluctantmarshal3
+
+mc "Really? That felt fine actually."
+go to reluctantmarshal3
+
+mc "Yea, I needed some time to take stock of the chat."
+mod "Oh yeah? What convinced you?"
+choice again
+
+mc "I was open to going Outlaw, but I liked the arguments for Marshal better."
+go to reluctantmarshal3
+
+mc "It felt more right for Moze to side with the humanitarians than Savlian."
+go to reluctantmarshal3
+
+
+reluctantmarshal3
+
+mod "So you thinking of changing it up?"
+
+choice
+
+mc "Yeah, it kinda feels like I should try Outlaw again. May be the best shot to get Affiliate?"
+go to macromodmarshalend
+
+mc "Maybe? I'm still not sure."
+go to macromodmarshalend
+
+mc "No. Even if Outlaw gets more views, Marshal still feels more right to me."
+go to macromodmarshalend
+
+
+
+macromodmarshalend
+
+mod "Well the audience does seem to like when you play Outlaw, but there's still some Marshal fans in there too..."
+mod "It's your stream, tho." 
+mod "If you're feeling good, then keep it going!" 
+mod "If not then change it up." 
+mod "I got your back man, whatever you choose." 
+mc "Thanks b, I appreciate it." 
+mod "Np. Gonna go grab some bibimbap with a friend, chat later ya?" 
+mc "For sure, enjoy!"
+
+go to brotherconvo1
+
+
+
+
+brotherconvo1
+
+"You shut down the computer and wind down for the evening."
+"As you brush your teeth, you notice another notification."
+"It's from Elliot, a couple hours ago."
+lbro "Hey bro, just wanted to let you know I caught the first stream VOD for Oakley 2." 
+lbro "Crazy stuff! I really like the direction they're taking Moze's character."
+lbro "And OMG MAC"
+lbro "SO FCKING CUTE!"
+lbro "I love him. Would die for him. we stan 1000%."
+lbro "Also...
+lbro "Not you going \"bad guy\" Moze this time around?"
+lbro "You've changed bro. Like a couple years at college and now you're a big bad Outlaw, crazyyyy"
+lbro "Jk jk, hope you're having fun, excited to follow the stream!"
+"Based on the time change, Elliot's probably already asleep, but you decide to shoot him a message anyway."
+
+choice
+
+mc "Thanks El, really appreciate you checking it out!"
+go to brotherconvo2
+
+mc "Figured it was time for a change of pace, Outlaw life is pretty sweet!"
+go to brotherconvo2
+
+mc "That was an accident! I had to play it off on stream :'( "
+choice again
+mc "But it's been real fun to play around with chat. You'll see next episode"
+go to brotherconvo2
+
+mc "But the story is getting really interesting."
+go to brotherconvo2
+
+mc "I'm debating going back to Marshal. Doesn't feel as fun as when we were playing"
+go to brotherconvo2
+
+mc "Could go back to Marshal. Will have to see where the story goes"
+go to brotherconvo2
+
+
+brotherconvo2
+
+mc "Hope things with Jackson are going good! Love you"
+"You turn off the computer."
+
+if player chose enthusedoutlaw or enthusedmarshal
+
+"There's still some leftover adrenaline from the stream."
+"Your mind leaps through a series of images, robots, outlaws, and spaceships."
+"What do you think about as you lay awake in bed?"
+
+choice
+
+"Think about your conversations with people in chat."
+"So many people  watch you play a game. It's fun...right?"
+choice again
+"Yes!"
+go to brotherconvo3
+
+"Sometimes"
+go to brotherconvo3
+
+"Not always"
+go to brotherconvo3
+
+
+"Think about getting to Affiliate"
+"It's not going to be easy, but you know you can do this."
+"In your mind you picture it: a glossier stream set up, better microphones, and 100+ viewers in Chat."
+go to brotherconvo3
+
+ 
+"Think about how tired you are."
+"Sleep is going to feel so good. You really need it."
+go to brotherconvo3
+
+
+if player chose reluctantoutlaw or reluctantmarshal
+
+"You lay your head on the pillow." 
+"It's been a long day and the stream took a lot out of you."
+"Your mind is foggy, a cloud of robots, outlaws, and spaceships."
+"What do you think about as you drift to sleep?"
+
+choice
+
+"Think about your conversations with people in chat.":
+"So many people watch you play a game. It's fun...right?"
+choice again
+"Yes!"
+go to brotherconvo3
+
+"Sometimes"
+go to brotherconvo3
+
+"Not always"
+go to brotherconvo3
+
+"Think about getting to Affiliate"
+"It's not going to be easy, but you know you can do this."
+"In your mind you picture it: a glossier stream set up, better microphones, and 100+ viewers in Chat." 
+go to brotherconvo3
+
+"Think about how tired you are."
+"Sleep is going to feel so good. You really need it."
+go to brotherconvo3
+
+
+brotherconvo3
+
+
+if player chose marshal route
+
+“As you start to drift to sleep, you can’t stop your mind from wandering back to the last episode of Oakley: Settle the Score.”
+"You picture Savlian Matticus's face and feel..."
+
+choice 
+
+"Regret"
+"Even though it's just a game, you feel like you made the wrong choice."
+"What if MAC is more in danger now?"
+go to brotherconvo4
+
+"A mixture of both regret and excitement."
+"Even though it's just a game, you feel confused."
+go to brotherconvo4
+
+"A desire to replay the game"
+“You imagine how the end game scenario would have played out if you chose differently, and you feel excitement.”
+“You can always play the game again, after all.”
+go to brotherconvo4
+
+"Confidence"
+"You had to do what you had to do. You know this."
+go to brotherconvo4
+
+"Nothing"
+"You don't really feel anything in particular."
+go to brotherconvo4
+
+"Pressure from chat"
+"You remember the comments from Chat, like small weights on a scale."
+go to brotherconvo4
+
+"Even more tired"
+"Just thinking about the game makes your eyelids feel heavier."
+go to brotherconvo4
+
+
+if player chose outlaw route
+
+“As you start to drift to sleep, you can’t stop your mind from wandering back to the last episode of Oakley: Settle the Score.”
+"You picture MAC's confused expression from the end and feel..."
+
+choice
+
+"Regret"
+"Even though it's just a game, you feel like you made the wrong choice."
+go to brotherconvo4
+
+"A mixture of both regret and excitement."
+"Even though it's just a game, you feel confused."
+go to brotherconvo4
+
+"Confidence"
+"You had to do what you had to do. You know this."
+go to brotherconvo4
+
+"A desire to replay the game"
+"You imagine how the end game scenario would have played out if you chose differently, and you feel excitement."
+“You can always play the game again, after all.”
+go to brotherconvo4
+
+"Nothing"
+"You don't really feel anything in particular."
+go to brotherconvo4
+
+"Pressure from chat"
+"You remember the comments from Chat, like small weights on a scale."
+go to brotherconvo4
+
+"Even more tired"
+"Just thinking about the game makes your eyelids feel heavier."
+go to brotherconvo4
+
+
+brotherconvo4
+
+"As your eyes finally start to become heavy, you hear a slight buzz from the nightstand."
+"A discord notification. From Elliot."
+"You don't unlock the phone, because you can read the message on the screen saver."
+lbro "Love you too!"
+
+end
+
+
+
+
+
+
+
+
+
