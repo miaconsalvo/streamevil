@@ -120,52 +120,21 @@ screen streamChat():
 #A basic screen to display stream details. All the numbers will likely need to change
 screen streamDetails():
     frame:
-        xpos 280
-        ypos 850
-        xsize 900
-        ysize 200
-        xpadding 20
-        ypadding 20
-        text "[pName]" align (.01, .001) #displays the name that players chose for themselves at the beginning of the game.
-        text "Viewers [viewCount]" align (.99, .001) #displays the current viewer count
-        image "captain" align (.06, .99) size (120, 120) #displays a profile pic for the streamer
-
-#The following screens allow for discord navigation
-#add viewports to screen elements to display discord chats with a scrollbar.
-screen discordChat():
-    frame:
-        background "#c0b2b200"
-        xalign 0.0
-        yalign 0.0
-        xsize 300
-        ysize 600
-        xpadding 20
-        ypadding 20
-        vbox:
-            #set up profile images on the left of the screen that can be selected to view specific chats (screens)
-            imagebutton idle "profile1small" action Call("brotherChat") #Sets the button to a specific image that displays when it is "idle"
-            imagebutton idle "profile2small" action Call("modChat") #And defines an action that occurs when the button is activated
-            image "profile3" size (120, 120) #Just a blank character profile image.
-            spacing 25
-
-screen brotherDiscord():
-    #A screen that can display the chat with the brother character
-    #The settings of the vbox can be adjusted to display a chat history that looks closer to actual Discord
-    vbox:
-        xalign 0.25
-        yalign 0.7
-        spacing 20
-        text "This is the first chat"
-        text "this is the second chat"
-
-screen modDiscord():
-    #A screen that would display the chat with the mod character
-    vbox:
-        xalign 0.25
-        yalign 0.7
-        spacing 20
-        text "This is for the mod convo"
-        text "this is the second text for the mod convo"
+        background Solid("#ffffff00")
+        xpos 0
+        ypos 900
+        xsize 1530
+        ysize 150
+        xpadding 5
+        ypadding 5
+        text "[player]" align (.1, .44) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
+        text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
+        text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
+        text "KitKat\n{u}Interest:{/u}\n      [kkEngagement]" align (0.45, 0.5) color "#f03535ff"
+        text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
+        text "Outlaw Score: [outlaw]" align (0.8, 0.25) color "#e6a20eff"
+        text "Marshal Score: [marshal]" align (0.8, 0.7) color "#27e60eff"
+        image "captain" align (.001, .5) size (100, 100) #displays a profile pic for the streamer
 
 
 ## Say screen ##################################################################
@@ -253,11 +222,11 @@ style say_dialogue:
 style ig_dialogue:
     properties gui.text_properties("dialogue")
 
-    xpos 500 #since we're leaving the default settings for the macro game dialogue/narration, we need to edit
+    xpos 300 #since we're leaving the default settings for the macro game dialogue/narration, we need to edit
     #the values for xpos and xsize to fit within the diminished textbox.
     #xsize gui.dialogue_width
     xsize 900
-    ypos gui.dialogue_ypos
+    ypos 50
 
     adjust_spacing False
 
@@ -274,10 +243,9 @@ style ig_dial:
 
 #The following are styles that adjust where the say screen will appear.
 style ig_window: #"in-game" window - identifies the window that is used for narration that takes place in the micro game. 
-    xalign 0.5
-    xoffset -240 #adjusts the alignment of the window relative to the screen.
+    xpos 996
     xfill True
-    yalign 0.78
+    yalign 0.771
     ysize 200
 
     background Image("gui/ig_textbox.png", xalign=0.5, yalign=1.0) #This image should be adjusted to a different size for textboxes appearing in the micro game.
