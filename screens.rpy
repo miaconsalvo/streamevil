@@ -227,7 +227,7 @@ style ig_dialogue:
     #the values for xpos and xsize to fit within the diminished textbox.
     #xsize gui.dialogue_width
     xsize 900
-    ypos 50
+    ypos 75
 
     adjust_spacing False
 
@@ -244,9 +244,9 @@ style ig_dial:
 
 #The following are styles that adjust where the say screen will appear.
 style ig_window: #"in-game" window - identifies the window that is used for narration that takes place in the micro game. 
-    xpos 996
+    xalign 0.5
     xfill True
-    yalign 0.771
+    yalign 0.73
     ysize 200
 
     background Image("gui/ig_textbox.png", xalign=0.5, yalign=1.0) #This image should be adjusted to a different size for textboxes appearing in the micro game.
