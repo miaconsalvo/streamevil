@@ -168,11 +168,10 @@ label CustomsDepot:
     $ narrator = reg_narrator
     $ macroNarration = True
     "Now the game will end"
-    "But because I haven't been able to figure out a piece of code that will enable us to delay the end inevitable"
-    "All these lines of narration are just here to vamp so we can experiment with chatter list"
-    "vamp"
-    "vampvampvampvamp"
-    "VAMP"
+    "But I put some buffer lines here in case we want to do some extra testing"
+    "buffer"
+    "bufferbufferbuffer"
+    "BUFFER"
     "Click one more time to close the game"
     return
 
