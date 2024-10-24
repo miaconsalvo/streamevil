@@ -16,84 +16,58 @@ init python:
                                 #this probably won't be necessary, but wanted to play around with some possibilities.
                                 #called it "colour" because "color" is often used by Renpy to refer to specific things and handle already determined attributes.
             self.target = target #target indicates a label that a clickable object will call.
-    
+
+#defining useful functions
 init python:
-    def AddToChats():
-    #This function will add a random comment from the list "comments" to the "chats" list
-    #This "chats" list will be displayed on the stream UI
-    #To reference where this is appearing, go to the Screens script and check the streamChat screen on line 83
+    def AddToChatter():
+
         global comment_list
-        global chats_list
+        global chatter_list
 
         renpy.random.shuffle(comments_list) #This shuffles the comments_list so they appear in a random order
-        if len(chats_list) >= 4: #Checks the "length" of the chats_list - how many objects are currently stored in it.
-        #If the number of items in Chats gets to a certain threshold, we need to remove the earliest object to make room for new ones.
-            chats_list.remove(chats_list[0]) #removes the earliest object in the chats list.
-            #WE DON'T NEED TO DO THIS REMOVAL ANYMORE! Now that the chat screen is scrollable. 
-            #Or, at least, you should make the length of chats_list much longer.
-            chats_list.append(comments_list[0]) #adds the first object from the comments list (after shuffling) to the chats_list
-            #comments_list.remove(comments_list[0]) -- This line would remove the top of the comments list that was just added to chats (currently disabled for testing)
-        else:
-            chats_list.append(comments_list[0]) #If the chats list is not at the threshold yet, we don't need to delete any objects
-        return
-
-    def addStoryBeat(): #This function allows us to add a specific chat to the stream
-    #Priror to implementing this function, you must set the variable "newChat" equal to the comment you would like to be added
-    #Ex: newChat = comment5
-        global chats_list
-        global comments_list
-        global newChat
-        if len(chats_list) >= 4:
-            chats_list.remove(chats_list[0])
-            chats_list.append(newChat)
-        else:
-            chats_list.append(newChat)
+        chatter_list.append(comments_list[0]) 
+        comments_list.remove(comments_list[0])
         return
     
-    #The following function is an example for how we can use a ChatEntry's .tag attribute to modify the list.
-    #This function will delete all objects in the "comments" list that have a tag of 1.
-    def removeChatsv1():
-        global comments_list
-        global chats_list
-        for c in comments_list:
-            if c.tag == 1:
-                comments_list.remove(c)
-        return
-
-#The following five lines define five ChatEntry objects that can be added and rearranged amongst the "comments" and "chats" lists
-#Note how many of these do not have a "target" attribute. Only clickable ChatEntries require "targets"
-#These have been updated to include the "colour" attribute
-default comment1 = ChatEntry( False, "Hi! I'm the first chat!", 1, "#f03535ff",)
-default comment2 = ChatEntry( False, "Sup, I'm second in chat", 2, "#04cdffff", )
-default comment3 = ChatEntry( True, "Help, I'm the third chat and I'm stuck in here" , 1, "#ffffffff", "comment3Choice")
-default comment4 = ChatEntry( False, "This is the legendary 4th chat", 1, "#18f110ff", )
-default comment5 = ChatEntry( False, "And I'm the godlike 5th chat", 1, "#720ee6ff",)
-
-
-default comments_list = [comment1, comment2, comment3] #This list contains the objects that will be shuffled and chosen from to add to "chats"
+default chatter_list = [] #This is the list that displays on the Stream UI
+default comments_list = [ ] #This list contains the objects that will be shuffled and chosen from to add to "chats"
 #Objects will be taken from this list and added to "chats_list"
 
-default chats_list = [ ] #This is the list that displays on the Stream UI
+#Example Chat Entries:
+default comment1 = ChatEntry( False, "{b}Squeejieboy33:{/b} Hope everyone's week is going well!", 1, "#000000ff" )
+default comment2 = ChatEntry( False, "{b}topOmornin:{/b} Really dig the art style of this game", 2, "#000000ff", "comment2Choice")
+default comment3 = ChatEntry( True, "{b}xKSamuraiKx:{/b} Hey [player], how's your week been?" , 1, "#000000ff", "comment3Choice")
+default comment4 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} Glad to see you still streaming this game!", 1, "#000000ff", )
 
-#############################################################################
-#Below this point contains the labels that are called by clickable comments:
-label comment3Choice():
-    $ macroChoice = True #If this is a decision happening in the macrogame, change this boolean so that the choice screen will appear in its default state
-    $ comment3.click = False #makes the chat unclickable once it has been clicked.
-    #This should reference the specific ChatEntry object that directs here through its target attribute.
-    # eg. if comment64 directs to a certain label, add $ comment64.click = False, to turn it off
-    $ narrator = reg_narrator # you also need to manually change the narrator so that the text appears outside the micro game
-    menu:
-        "Make a Choice"
-        "Who let you out of your hole?":
-            "A bit rude. Morality -1."
-        "Why is my computer sentient?":
-            "Recognizing agency outside of humans. Morality +1."
-    "See how the menu appeared in the center of the screen?"
-    $ macroChoice = False #set macroChoice back to false at the end of this interaction so that the 
-    #choice screen will appear appropriately for micro-game choices.
-    $ narrator = alt_narrator #And you will need to manually revert the narrator back to the in-game narrator to shift their textbox properly.
-    return
+#comments for decision 1
+default commentEngineerPD = ChatEntry (False, "{b}PickledDragons:{/b} Yo good to be back in stream!", 0, "#000000ff")
+default commentPilotCS = ChatEntry (False, "{b}Coriolis:{/b} Good to see Jennica speaking some sense!", 0, "#000000ff")
+default commentNothingKK = ChatEntry (False, "{b}KitKat:{/b} Playing, neutral captain, I respect that", 0, "#000000ff")
+default commentNothingPD = ChatEntry (False, "{b}PickledDragons:{/b} Yessss! OMG I want the Ama drama so bad!", 0, "#000000ff")
+default commentNothingKK2 = ChatEntry (False, "{b}KitKat:{/b} Turn the big bad with love? Dig it!", 0, "#000000ff")
+default kkAsksRomance = ChatEntry (True, "{b}KitKat:{/b} Hey [player]! Who are you thinking of romancing on this playthrough?", 0, "#000000ff", target = "streamAsksRomance")
+default csJennica = ChatEntry(False, "{b}Coriolis:{/b} Jennica ftw!", 0, "#000000ff")
+default kkTeresa = ChatEntry(False, "{b}Teresa:{/b} Crazy engineer ftw!", 0, "#000000ff")
+
+#comments for decision 2
+default pdLovesChaos = ChatEntry (False, "{b}PickledDragons:{/b} chaos chaos chaos chaos", 0, "#000000ff")
+default kkMac = ChatEntry (False, "{b}KitKat:{/b} Oh no Mac!", 0, "#000000ff")
+#comments for outlaw decision 2
+default pdOutlawD2 = ChatEntry (False, "{b}PickledDragons:{/b} CHAOS CHAOS CHAOS", 0, "#000000ff")
+default csOutlawD2 = ChatEntry(True, "{b}Coriolis:{/b} bahahaha just like my DnD group's stealth rols", 0, "#000000ff", "CoriolisTalksDnDOutlaw")
+
+#comments for marshal decision 2
+default csMarshalD2 = ChatEntry(True, "{b}Coriolis:{/b} Jennica the top-tier support character of the DnD party", 0, "#000000ff", "CoriolisTalksDnDMarshal")
+default kkMarshalD2 = ChatEntry(False, "{b}KitKat:{/b} Awww I wanted to see what Teresa had up her sleeve", 0, "#000000ff" )
+
+#comments for CoriolisDnD talk
+default csDnDvg2 = ChatEntry (False, "{b}Coriolis:{/b} nooooo hit her up again, make it happen!", 0, "#000000ff")
+default csDnD2vg2 = ChatEntry (False, "{b}Coriolis:{/b} same! I go cleric a lot of the time, though I typically spec it to be effective in combat too", 0, "#000000ff" )
+default kkDnDvg2 = ChatEntry (True, "{b}KitKat:{/b} What class do you think [player] would run?", 0, "#000000ff", "DnDClassTalk")
+default kkDnDvg2play = ChatEntry (True, "{b}KitKat:{/b} What class do you think [player] runs?", 0, "#000000ff", "DnDClassTalkplay")
+default pdDnDvg2 = ChatEntry (False, "{b}PickledDragons:{/b} I'm seeing Paladin for some reason personally", 0, "#000000ff")
+default pdDnD2vg2 = ChatEntry (False, "{b}PickledDragons:{/b} Called it!", 0, "#000000ff")
+
 
 
 
