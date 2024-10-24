@@ -235,7 +235,7 @@ label justinTests():
  
     "Now we'll test the stream set up"
 
-     $ narrator = alt_narrator
+    $ narrator = alt_narrator
 
     "Just to make sure we can play the game!"
     "Let's bring in the characters again!"
