@@ -87,6 +87,7 @@ style frame:
 screen streamChat():
     frame:
         #Sets the borders and set up of the chat window
+        background Solid("#ffffff00")
         xpos 1550
         ypos 120
         xsize 355
@@ -105,11 +106,11 @@ screen streamChat():
                     if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
                         textbutton c.prompt:
                             action Call(c.target, from_current = True)
-                            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+                            text_color c.colour #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
                             text_hover_color "#000000a1" 
                             text_selected_color "#0000004f"
                             background "#eeff00cb" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-                        #text_size 25
+                            text_size 25
                         #"text_size" can adjust how large the text is. But it would probably be best to define this in the chat_entry class
                         #in Chat_entry, add a "size" property and set it for individual ones. Then here, do "text_size = c.size"
                         #-useful if you want the size to be variable. If constant, may as well just hard code it here instead of in Class.
