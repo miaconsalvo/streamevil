@@ -85,7 +85,7 @@ label gameStart():
     $ comments_list.append(comment2)
     $ comments_list.append(comment4)
     pause 1.0
-    $ AddToChats()
+    $ AddToChatter()
     pause 1.0
     $ chatter_list.append(comment3)
 
