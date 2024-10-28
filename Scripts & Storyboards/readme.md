@@ -18,6 +18,7 @@ Micro Game Script_V2_8 (this is the 8th version of the micro game script dialogu
 Scripts should be produced in text files that follow the Ren’Py conventions outlined by Jules. This is to make implementation into Ren’Py much easier <3
 
 **Adding New Folders**
+
 When you are adding a new folder (i.e. adding a file whose folder does not already exist), add the new file under the larger folder then under the name type in: Folder Name/Folder Name/File. If this doesn't make sense you can touch base with Beck who has just learnt how to do this!
 
 **Archived Content**
