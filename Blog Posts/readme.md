@@ -25,7 +25,7 @@ https://docs.google.com/spreadsheets/d/1JbhWFj307b6aytD3bQPghK517Tx13vqboNsSGDjM
 
 **SEO Guidelines**
 
-I’m working on this, should see it soon ;)
+There's a document here as well as in the google drive :)
 
 **Title Options/Abandoned Category Names**
 
