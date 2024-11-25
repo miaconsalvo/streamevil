@@ -2,6 +2,8 @@
 
 This folder is for all assets and art documentation/information. There will be 3 folders within this folder in order to better categorize our assets: Backgrounds, Characters, and User Interface. Eventually, we will likely also have "Sound" as a folder here.
 
+The github is for finalized products, for works in progress/drafts/unfinalized items please refer to the google drive: https://drive.google.com/drive/folders/1SfMhZqXLcADxwKeiQblHs9yLK_gJWlnI.
+
 **Asset Naming Conventions**
 
 Note that Ren’Py has specific file types that it can use as well as specific naming conventions for the art assets. Below is (my understanding) of it.
