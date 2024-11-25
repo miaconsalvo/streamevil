@@ -1,0 +1,122 @@
+
+marshall epilogue
+
+engineer "Thank goodness that's over. If I never make it back to Gibian V it'll be too soon."
+pilot "I couldn't agree more! Although it felt good sticking it to Matticus like that."
+pilot "Wish I coulda seen his face..."
+"The meeting is interrupted by a ship intercom alert."
+shipcom "Incoming call from Magistrate Savlian Matticus."
+m "Be careful what you wish for."
+m "Accept."
+"Matticus appears on the ship computer. He is incensed."
+smatt "You idiots! You don't know how much you just screwed me."
+m "Sorry Sav I'm picking up some bullshit on this line, what was that?"
+smatt "I should've known you didn't have the stomach for real work."
+m "Real work like blowing up medicine for some bumpkins?"
+smatt "Since when do you care about anyone but yourself Moze?!"
+smatt "You've done worse. This wouldn't have even cracked your top ten!"
+m "Is that it?"
+"I hear Jennica snicker behind me."
+smatt "Don't worry. You'll get yours. You think I got to where I am by letting people screw me over?"
+m "Lose this channel Teresa."
+engineer "With pleasure."
+"The screen powers off."
+pilot "Maybe we shouldnta added insult to injury?"
+m "Maybe. But didn't that feel good?"
+"Jennica smiles and chuckles warmly"
+pilot "Like fresh underwear after a shower."
+m "Alright, do you two have anything else to report?"
+engineer "All systems are functional Captain."
+pilot "Steady as she goes cap."
+m "Good. I'll be in my quarters."
+"I move to leave the briefing room when I feel a tug on my sleeve."
+mac "May I ask a question?"
+m "Of course MAC."
+mac "I am confused about the nature of our mission? Why do we need to hide if we are good people?"
+
+marshallepiloguechoice
+
+
+choice 1 - the people in power are bad
+
+m "Sometimes the people in power are bad, and to do good we need to hide from them."
+mac "But we broke the law many times. How can we be doing good by breaking the law?"
+m "I don't know MAC. The universe is more complicated than that."
+m "If we didn't break the law, we might've gotten caught. And then a lot more innocent people would be hurt."
+mac "I see. The universe is confusing."
+m "Agreed."
+
+
+choice 2 - the universe is bad and we cant trust anyone
+
+m "The universe is a dangerous place. We can never know who's looking to stab us in the back."
+m "Better to hide than risk that I'd say."
+mac "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
+m "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
+m "We should focus on what we can change, instead of what we can't."
+mac "I see. The universe is confusing."
+m "No kidding."
+
+
+
+
+
+
+
+
+outlaw epilogue
+
+"The ship computer powers on."
+shipcom "Incoming call from Magistrate Savlian Matticus."
+m "Accept."
+"Matticus appears on the ship computer."
+smatt "Oh Moze. Its been so wonderful working with you again."
+smatt "We have to catch up some time!"
+"Jennica is visibly annoyed."
+m "And your end of the deal?"
+smatt "It's already done! As far as anyone is knows, the Oakley's doing a grand tour of the Mauritz nebula."
+pilot "Make sure he's not lying Teresa."
+"Teresa nods and begins typing on her computer."
+smatt "Oh Jenn. You're a real ice queen."
+smatt "So cold."
+"Matticus mimes himself shivering."
+engineer "It's true. Our logged coordinates are on the other side of the galaxy right now."
+smatt "See? I would never deceive you guys. We old Snake Hawks need to look out for each other."
+"Jennica rolls her eyes."
+smatt "Alright, now that our business has concluded, I'm going to have a drink."
+smatt "Let me know when you're done playing hero with the robot Moze. I've got lots more work where that came from."
+m "Goodbye Sav."
+smatt "Think about it."
+"Matticus winks before the screen powers off."
+engineer "Well at least we have some breathing room."
+engineer "Ama won't trouble us for the foreseeable future."
+pilot "I suppose. The Ama we ran with won't chase red herrings for long."
+m "Agreed. We ought to keep an eye out."
+m "Anything else to report?"
+engineer "All systems are functional Captain."
+pilot "Steady as she goes cap."
+m "Good. I'll be in my quarters."
+"I move to leave the briefing room when I feel a tug on my sleeve."
+mac "May I ask a question?"
+m "Of course MAC."
+mac "I do not know how to feel about our mission. Why did we need to help the skeeve Matticus?"
+
+outlawepiloguechoice
+
+choice 1 - doing bad things now sometimes can let us do good later
+
+m "Sometimes we have to do bad things so that we can do better things later."
+mac "But our conduct hurt innocent people. Does that not make us skeeves?"
+m "I don't know MAC. The universe is more complicated than that."
+m "If we didn't help Matticus, we might've gotten caught. And then a lot more innocent people would be hurt."
+mac "I see. The universe is confusing."
+m "Agreed."
+
+choice 2 - the universe is bad, and we can only save people if we're alive
+
+m "Because that skeeve was able to keep us safe."
+mac "But our conduct hurt innocent people. Does that not make us skeeves?"
+m "Maybe? But there are much worse people out there than us or skeeves like Matticus."
+m "If we didn't help him, they might find us. And then a lot more innocent people will get hurt."
+mac "I see. The universe is confusing."
+m "No kidding."
