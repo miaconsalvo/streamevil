@@ -70,6 +70,10 @@ default teresaApproval = 3
 default jennicaApproval = 4
 default shnzi = True
 
+init python:
+    yadjValue = float("inf")
+    yadj = ui.adjustment()
+
 init: 
     $ stream_left = Position (xpos=0.13, ypos=0.6) #stream view
     $ stream_right = Position (xpos = 0.67, ypos=0.6)
