@@ -85,6 +85,9 @@ style frame:
 
 #This establishes a screen in which chats will appear
 screen streamChat():
+    python:
+        yadj.value = yadjValue
+
     frame:
         #Sets the borders and set up of the chat window
         background Solid("#ffffff00")
@@ -94,13 +97,15 @@ screen streamChat():
         ysize 740
         xpadding 10 #These padding variables will affect how close the position of the scrollbar relative to the frame as well
         ypadding 20
-        viewport id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
+        viewport yadjustment yadj: #id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
+            #yadjustment yadj #Using the "yadj" values determined at start of main script, this should set the viewport to adjust to the bottom whenever it's updated. It's only working 70ish% of the time though
             draggable True #allows scrollbar to be dragged
             mousewheel True #allows mousewheel to scroll viewport
             scrollbars "vertical" #sets vertical scroll bar
             yinitial 1.0 #should place scrollbar at bottom of viewport by default - not working though
             vbox:             #Establishes a "vertical box" that displays the objects in chats_list
-                box_reverse True #current way to make us see the newest chat by having it appear at top instead of bottom.
+                #box_reverse True #current way to make us see the newest chat by having it appear at top instead of bottom.
+                #yalign 1.0 #This will place these at the bottom
                 spacing 10
                 for c in (chatter_list): #checks through chatter_list and displays the objects within that list in the vertical boxes.
                     if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
