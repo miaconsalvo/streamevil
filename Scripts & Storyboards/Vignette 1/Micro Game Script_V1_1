@@ -832,5 +832,5 @@ label escapePodConfrontation:
 
 label endPrototype:
     scene black with dissolve
-    "Thank you for playing the first prototype of \"Stream Evil\"!"
+    "Thank you for playing the first vignette of \"Stream Evil\"!"
     return
