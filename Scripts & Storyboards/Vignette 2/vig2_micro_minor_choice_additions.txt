@@ -1,0 +1,328 @@
+(Insert at line 178, replacing lines 181-184)
+
+"But Teresa's also got a point, we aren't exactly spoilt for choice."
+"Better the devil you know eh?"
+
+
+minor player choice 1 - We don't have a choice.
+
+m "I understand the concern. But we don't really have another option."
+m "We don't have to trust him, I certainly don't."
+m "But we can't afford to be picky with our contacts."
+
+minor player choice 1 - We can trust rational self interest.
+
+m "We don't need to trust him, per se..."
+m "We just need to trust his greed and selfishness."
+m "Have you ever known Matticus to turn down something that benefits him?"
+
+
+"A look of begrudging acceptance flashes across Jennica's face."
+pilot "Fair enough. So what's the plan?"
+
+______
+
+
+(Insert at line 203, replacing line 204)
+
+mac "Who is this \"Skeeve?\""
+engineer "Savlian Matticus. He was in our old crew."
+pilot "He certainly landed on his feet since we disbanded."
+engineer "Yeah, he's been remarkably successful for a magistrate of a tiny frontier planet."
+mac "He is abusing his authority for personal gain?"
+
+minor player choice 2 - Yeah he's a scumbag.
+
+m "Yeah. He always did have a uh... flexible moral compass."
+pilot "So flexible it's like water. Fills any container."
+m "I wouldn't be surprised if this isn't even his main palace."
+pilot "Yeah. Bet he has a ranch or something on the other side of the planet."
+engineer "You think someone who has the money to spend on a ranch would buy one on Gibian V?"
+"Jennica looks puzzled for a moment."
+pilot "I aint given much thought to it I guess."
+
+minor player choice 2 - He's sketchy but he's our sketchy.
+
+m "Probably. It comes with the territory."
+m "He's just trying to survive."
+pilot "Mighty successful surviving he's doing."
+m "That's part of the deal. He needs to flaunt his wealth or his underlings might get ideas."
+engineer "True. If they see weakness they might try to usurp him."
+pilot "Of course. He's stealing and profiting so nobly."
+"Jennica rolls her eyes."
+
+
+pilot "Alright, so it'll be easy to find him. What's the deal with the customs depot?"
+engineer "Seems typical for a small planet. Standard issue scanners from half a decade ago."
+engineer "Shouldn't be too much of a problem to fool them."
+
+
+______
+
+(within customs choice marshall route)
+(Insert at line 322, replacing lines 323-338)
+
+"Teresa nods to us. Let's do this."
+
+minor choice 3 - Smile and look him in the eyes.
+
+"As I approach the customs officer, his eyes perk up."
+agent1 "Hello Maam. How might I assist you today?"
+
+minor choice 3a - You're such a hard worker!
+
+m "You strike me as a hard worker sir. 
+agent1 "Excuse me?"
+"He seems a little confused."
+m "It seems like this whole place is propped up by you eh?"
+"His eyes relax as he begins to get what I'm saying."
+agent1 "You don't know the half of it." 
+agent1 "I've been working back to back shifts this whole week!" 
+m "Really?! That doesn't sit right with me."
+m "Not one bit."
+
+
+minor choice 3a - You look overworked.
+
+m "Man they really have you guys stretched thin eh?"
+agent1 "Excuse me?"
+"He's a little confused."
+m "You guys are so understaffed, this is ridiculous!"
+m "How can they expect you to work like this!?"
+"He seems to be getting what I'm saying"
+agent1 "Yeah it's bogus."
+agent1 "Night shift quit on us so now I'm stuck picking up the slack."
+m "Yeah that {b}is{/b} bogus."
+m "You deserve a bonus."
+
+
+minor choice 3 - Ring the bell.
+
+"I ring the bell on his desk."
+"DING"
+"He's instantly jolted out of his stupor, looking bewildered."
+"In his panic, I notice a wedding band on his ring finger."
+agent1 "GAAH!"
+m "Sorry bout that!"
+"His face begins to relax"
+agent1 "No it's my fault. How can I assist you today?"
+
+minor choice 3b - How long has this shift been?
+
+m "Man, you look exhausted."
+agent1 "Excuse me?"
+"He's a little confused. And annoyed."
+m "How many hours have they got you working this shift?"
+agent1 "Ugh. Like 16?"
+agent1 "Nightshift quit the other day, I have to pick up his hours until we can find someone new."
+m "No overtime I assume?"
+agent1 "Overtime?"
+m "Really?! That doesn't sit right with me."
+"His eyes relax as he finally understands what I'm saying"
+
+minor choice 3b - You got kids?
+
+m "You got kids?"
+agent1 "Excuse me?"
+"He's confused, and a little annoyed."
+m "Sorry I just noticed your ring."
+agent1 "Oh. Sorry, yeah got a daughter. She's 4."
+"He pulls out a picture and shows me."
+m "Ahhhhhhh. Cute!"
+"He smiles."
+agent1 "Yeah, she's my world."
+m "She deserves nice things eh?"
+"He's still a little confused."
+m "Especially from such a hard working dad!"
+"His eyes relax as he finally clues in."
+
+
+"A smirk begins to spread across his face."
+agent1 "I do appreciate that."
+m "I wouldn't be able to sleep if I didn't make it right."
+"I extend my hand to shake his, slipping him a 100 credit note."
+"He quickly slips it into his pocket before looking around the depot at his fellow employees."
+agent1 "Wait by the breakroom for me."
+
+_____
+
+(Insert at line 542, replacing lines 543-545)
+
+
+smatt "What a delightful surprise. And you brought Jenn too."
+"Jennica silently nods, trying to redirect the smoke away from her face."
+smatt "Quite a reunion!"
+
+minor choice 4 - Great to see you.
+
+m "Yeah. Always great to see old friends."
+m "Right Jenn?"
+"Jennica looks annoyed."
+pilot "Yeah. It's been too long Sav."
+"Matticus smirks knowingly."
+smatt "Oh Jenn. You don't have to lie."
+
+minor choice 4 - Reunion implies a lot.
+
+m "Reunion implies that we were united at one point."
+smatt "Ice cold as always Moze!"
+smatt "Yknow, I miss this banter. I've missed you guys."
+pilot "Really?"
+"Matticus smirks and looks at Jennica."
+smatt "No."
+
+
+"Matticus takes a long drag on his cigar before looking at me expectantly. The fake smile fades from his face."
+smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
+
+_____
+
+(Insert at line 561, replacing lines 562-571)
+
+"Matticus' guards spring into action and draw their weapons."
+"MAC sheepishly opens the crate lid and pokes his head out."
+smatt "Who's this?"
+
+minor choice 5 - What we stole from bigcorp.
+
+m "He's what was in that facility."
+"Matticus approaches MAC, looking him over."
+smatt "Neat. So how much you figure it's worth?"
+smatt "bigcorp's burning money to get it back, must be something important."
+
+
+minor choice 5 - Nunyabizness.
+
+m "None of your business."
+"Matticus looks back at me, one eyebrow raised."
+smatt "Oh really?"
+smatt "Looks like a courier bot..."
+"Matticus looks back at MAC."
+smatt "But they don't talk like {i}that{/i}."
+smatt "What're a couple of outlaws doing with something like this?"
+
+
+m "We're just looking to get him to the Dragonflies."
+"Matticus' eyes widen. His voice takes on a singsong quality."
+smatt "Moze! You've gone soft!"
+smatt "I never figured you for a tenderhearted philanthropist!"
+"Jennica rolls her eyes."
+
+____
+
+(Insert at line 588, replacing until 595)
+
+pilot "What's in the shipment?"
+"Matticus continues to smirk as he takes another long drag off his cigar."
+smatt "It's not important."
+pilot "I don't care for that answer one bit."
+smatt "You'll have to learn to like it, or you'll find out what Deadeye's got planned for you."
+engineer "That's a reasonable point Captain."
+
+minor choice 6 - Why are you so cagey?
+
+m "What aren't you telling us?"
+"Matticus smirks at me."
+smatt "Any number of things really."
+m "Don't play dumb. Why are you being so sketchy about what's in the shipment?"
+"A twinge of anger passes through Matticus' face for a moment."
+smatt "Since when do you care?"
+smatt "Awful late in the game to start thinking about details like that."
+"Matticus' anger subsides, his smug facade is back up."
+smatt "Besides. Where else are you gonna go?"
+smatt "You're not out here because you've got options."
+"I turn to Jennica."
+m "He's not wrong."
+
+minor choice 6 - Trying to screw us over?
+
+m "Seems suspicious Sav. What are you trying to pull here?"
+"Matticus smirks at me."
+smatt "Moze! After all our time together..."
+m "After all our time together I know you well enough to know when you're hiding something."
+smatt "So what if I am?" 
+smatt "Look, if I really wanted to turn you in, don't you think I'd have done it by now?"
+pilot "You might yet."
+"Matticus chuckles."
+smatt "You think I want the inspectors poking around my operation?"
+smatt "Besides. Where else are you gonna go?"
+smatt "You're not out here because you've got options."
+"I turn to Jennica."
+m "He's not wrong."
+
+
+m "What alternatives do we have Jenn?"
+"Jennica reluctantly agrees."
+
+___
+
+(Insert at line 613)
+
+"Matticus looks at me impatiently."
+smatt "Don't waste my time. Do we have a deal?"
+
+
+minor choice 7 - Deal.
+
+"Guess we don't have much choice."
+m "On your honor as a Snakehawk?"
+"Matticus chuckles to himself."
+smatt "How nostalgic."
+smatt "On my honor."
+
+
+minor choice 7 - Wait this still seems sketchy.
+
+"This still seems fishy."
+m "Wait. This all seems too good to be true."
+smatt "Things aren't always what they seem Moze."
+smatt "Besides, I'm done with this haggling. Do you want to work together or not?"
+
+
+minor choice 7a - Fine. Deal.
+
+"Guess we don't have much choice."
+m "On your honor as a Snakehawk?"
+"Matticus chuckles to himself."
+smatt "How nostalgic."
+smatt "On my honor."
+
+
+minor choice 7a - Keep asking questions.
+
+m "I can't help but feel like you're manipulating us."
+smatt "Feelings lie Moze."
+"Matticus rolls his eyes."
+smatt "I don't have time for this. Take the deal or get lost."
+engineer "Captain we really can't afford to get caught."
+"Guess we don't have much choice."
+
+
+m "Alright. Deal."
+smatt "Good. My pointman Reginald will brief and supervise."
+
+_____
+
+(Insert at line 621)
+
+smatt "I'll see you ladies later. It's been lovely catching up."
+
+minor choice 8 - Bye.
+
+m "Later Sav."
+
+minor choice 8 - Piss off.
+
+m "Get bent you ugly warthog."
+"Jennica chuckles."
+engineer "Mature."
+
+
+"Matticus waves as he leaves the warehouse."
+
+
+
+
+
+
+
