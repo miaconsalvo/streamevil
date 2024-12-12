@@ -174,7 +174,7 @@ label Vig2BridgeScene():
     enS "Let me just pull a \"forger with a heart of gold and access to bigcorp databases\" out of my purse and we'll be set!"
     pS "That doesn't mean we should trust Matticus, the wannabe godfather of a one-horse po-dunk  planet!"
     $ chatter_list.append(vig2_sc1_comment10)
-    "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snake-Hawks."
+    "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
     "But Teresa's also got a point, we aren't exactly spoilt for choice."
     $ chatter_list.append(vig2_sc1_comment11)
     "Better the devil you know, eh?"
@@ -190,7 +190,7 @@ label Vig2BridgeScene():
     "The visualization zooms in on the capital of Gibian V, Montserrat."
     "A map of the city appears on the computer, along with images of the spaceport, customs depot, and Matticus's compound."
     enS "One benefit of Gibian being such a middle-of-nowhere planet is that we won't have to go far to find our guy."
-    enS "Matticus became the magistrate and Bigcorp security rep for this sector a couple of years back."
+    enS "Matticus became the magistrate and bigcorp security rep for this sector a couple of years back."
     enS "He's never really been one for subtleties."
     "The visualization zooms in on images of Matticus' compound."
     "It's enormous, by far the largest building in town, complete with ostentatious fences emblazoned with his initials."
@@ -486,7 +486,7 @@ label matticusDoor():
     mattdoorbell "The boss doesn't see \"friends.\" He doesn't have em."
     $ chatter_list.append(vig2_sc3_comment4)
     mS "Real old. Before his coronation."
-    mattdoorbell "Snake Hawks?"
+    mattdoorbell "Snakehawks?"
     mS "I don't like to brag."
     mattdoorbell "Thought there weren't any left after your last job."
     mS "Yeah me too. Can we come in?"
@@ -546,7 +546,7 @@ label meetingMatticus():
     smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
     mS "No. We need a favor."
     smatt "Do you now?"
-    mS "Bigcorp is looking for us. We want to make that difficult."
+    mS "bigcorp is looking for us. We want to make that difficult."
     smatt "I see. I wonder if it has to do with the break in to their top secret facility a few weeks back."
     "The smoke wafts out of Matticus' grin like fog."
     mS "It might."
@@ -569,7 +569,7 @@ label meetingMatticus():
     hide goon_stream
     smatt "Neat. So how much you figure it's worth?"
     $ chatter_list.append(vig2_sc4_comment2)
-    mS "We're just looking to get him to the Fireflies."
+    mS "We're just looking to get him to the Dragonflies."
     "Matticus' eyes widen. His voice takes on a singsong quality."
     smatt "Moze! You've gone soft!"
     smatt "I never figured you for a tenderhearted philanthropist!"
@@ -596,7 +596,7 @@ label meetingMatticus():
     "Jennica reluctantly agrees."
     $ chatter_list.append(vig2_sc4_comment6)
     mS "And if we do this?"
-    smatt "I'll feed false reports into the Bigcorp security database."
+    smatt "I'll feed false reports into the bigcorp security database."
     smatt "Deadeye'll be looking for you in every corner of the galaxy, except for where you actually are."
     smatt "And you bleeding hearts will be free to save the universe."
     enS "Not an unreasonable agreement."
@@ -1432,7 +1432,7 @@ label vig2epilogue_OUT():
     "Matticus mimes himself shivering."
     $ chatter_list.append(vig2_epilogue_out_comment6)
     enS "It's true. Our logged coordinates are on the other side of the galaxy right now."
-    smatt "See? I would never deceive you guys. We old Snake Hawks need to look out for each other."
+    smatt "See? I would never deceive you guys. We old Snakehawks need to look out for each other."
     "Jennica rolls her eyes."
     smatt "Alright, now that our business has concluded, I'm going to have a drink."
     smatt "Let me know when you're done playing hero with the robot Moze. I've got lots more work where that came from."
