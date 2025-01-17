@@ -1651,11 +1651,19 @@ label vig2_macro_start():
     scene discord with dissolve
     mod_nvl "Hey bud, great stream again, so glad you decided to keep going with the game!"
     mod_nvl "How're you holding up?"
-    if outlaw >= marshal:
-        mod_nvl "Seemed like the chat got really into the Outlaw route"
+    if vig2_outlawEpilogue == True:
+        mod_nvl "The chat got really excited by diving into the Outlaw stuff"
+        if outlaw >= marshal:
+            mod_nvl "And you seemed pretty into it too!"
+        else:
+            mod_nvl "You seemed a bit on the fence tho"
         jump vig2_macro_mod_outlaw1
     else:
         mod_nvl "Seemed like you had to manage the chat a bit this time around"
+        if outlaw >= marshal:
+            mod_nvl "They were pretty hype about the Outlaw choices"
+        else:
+            mod_nvl "It was cool to see you stick to your guns tho"
         jump vig2_macro_mod_marshal1
 
 ###Labels for the Outlaw playthrough###
@@ -1676,7 +1684,6 @@ label vig2_macro_mod_outlaw1():
 label vig2_macro_mod_outlaw2_enthusiastic():
     mod_nvl "Hell yeah!"
     mod_nvl "How does it feel being the bad guy this time ;)"
-    #$ menu = adv_menu
     menu:
         "•It's fun!":
             $ enthusiasm += 2
@@ -1698,6 +1705,7 @@ label vig2_macro_mod_outlaw2_reluctant():
             player_nvl "I feel really good about the response from the stream, but the choices are starting to weigh on me a bit."
             jump vig2_macro_mod_outlaw3_reluctant
         "•It's exhausting":
+            $ energy -= 1
             player_nvl "It's really cool that I get to see more of the story, but it's real tiring to play."
             jump vig2_macro_mod_outlaw3_reluctant
 
@@ -1787,7 +1795,7 @@ label vig2_macro_mod_outlawEnd():
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some pho with a friend, chat later ya?"
     player_nvl "For sure, enjoy!"
-    jump vig2_macro_bro1
+    jump vig2_macro_viewerChat_1
 
 
 ###Labels for Marshal playthrough###
@@ -1822,7 +1830,7 @@ label vig2_macro_mod_marshal2_reluctant():
         "•I'm not so sure, actually":
             $ enthusiasm += 1
             player_nvl "Actually, I'm not so sure." 
-            player_nvl "I kinda miss the excitement ofthe Outlaw style"
+            player_nvl "I kinda miss the excitement of the Outlaw style"
             jump vig2_macro_mod_marshal3_enthusiastic
 
 label vig2_macro_mod_marshal2_enthusiastic():
@@ -1867,7 +1875,7 @@ label vig2_macro_mod_marshal3_reluctant():
             jump vig2_macro_mod_marshalEnd
         "•Definitely, I wonder about the Outlaw choice":
             $ curiosity = True
-            player_nvl "100\% the right move."
+            player_nvl "100% the right move."
             player_nvl "I do wonder what would've happened if I went Outlaw there tho."
             jump vig2_macro_mod_marshalEnd
         "•I was kind of stressed":
@@ -1908,12 +1916,300 @@ label vig2_macro_mod_marshalEnd():
     mod_nvl "Gotta run, gonna go grab some fried rice with a friend"
     mod_nvl "chat later, ya?"
     player_nvl "For sure, enjoy!"
-    jump vig2_macro_bro1
+    jump vig2_macro_viewerChat_1
+
+label vig2_macro_viewerChat_1():
+    nvl clear
+    "I'm about to move away from my computer when I hear another notification."
+    if csEngagement >= pdEngagement and csEngagement >= kcEngagement:
+        "Its Coriolis?"
+        cs_nvl "Hey [player], that was such a cool stream!"
+        if gunsBlazing == True:
+            cs_nvl "It was fun to see you go out of your comfort zone and be a bit chaotic."
+            cs_nvl "Honestly, I wasn't expecting to have as much fun with it as I did haha"
+            cs_nvl "Anyway, thanks for the stream!"
+            "Coriolis is so nice. Should I respond?"
+            menu:
+                "•You haven't seen anything yet":
+                    $ enthusiasm += 1
+                    player_nvl "Well get ready for more chaos!"
+                    player_nvl "Outlaws on the loose!"
+                "•Thank you":
+                    $ csEngagement += 1
+                    player_nvl "Thanks, Coriolis"
+                    player_nvl "It means a lot to have you in the chat"
+                "•Don't respond":
+                    $ csEngagement -= 3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            cs_nvl "I liked that stealth run on the base"
+            cs_nvl "It felt really tense"
+            cs_nvl "Anyway, thanks for the stream!"
+            "Coriolis is so nice. Should I respond?"
+            menu:
+                "•Good to go back to basics":
+                    $ reluctance += 1
+                    player_nvl "Yeah, I wanted to go back to basics"
+                    player_nvl "Get into some outlaw thievery vibes"
+                "•I'm glad you're liking it":
+                    $ csEngagement += 1
+                    player_nvl "Thanks, Coriolis"
+                    player_nvl "It means a lot to have you in the chat"
+                "•Don't respond":
+                    $ csEngagement -= 3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        jump vig2_macro_bro1
+
+
+    elif kcEngagement > pdEngagement and kcEngagement > csEngagement:
+        "It's KitCat?"
+        kc_nvl "[player], hi! How's it goin!"
+        kc_nvl "Sry to message randomly, hope it's not weird"
+        kc_nvl "But I have to ask about your romance path"
+        kc_nvl "gotta read the tea leaves of your soul!"
+        kc_nvl "jk, sort of, anyway"
+        if romanceAma == True:
+            kc_nvl "Ama. Great pick! Honestly, I didn't even think about that"
+            kc_nvl "Do you think it's an actual path the devs made?"
+            kc_nvl "Or are you just fanshipping this vibe hard?"
+            menu:
+                "Woah, KitCat's a little intense. Should I respond?"
+                "•I think it'll be a choice":
+                    $ kcEngagement += 1
+                    player_nvl "No I think they'll give you that option"
+                    player_nvl "I mean, the drama is right there"
+                    player_nvl "And I get more of a family vibe from the other crew members"
+                "•Just a fan theory tbh":
+                    $ kcEngagement += 1
+                    player_nvl "It's just a fan ship"
+                    player_nvl "Ama's probably not in the game enough for that to make sense"
+                    kc_nvl "Yeah, you're probably right"
+                    kc_nvl "It's a great idea though, they should hire you to write on the next one!"
+                "•Don't respond":
+                    $ kcEngagement -=5
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif romanceTeresa == True:
+            kc_nvl "Ok, so Teresa, I'm into this"
+            kc_nvl "I feel like Jennica's the dev-intended romance"
+            kc_nvl "And I just think the tension with Teresa is more interesting, no?"
+            menu:
+                "Woah, KitCat's a little intense. Should I respond?"
+                '•Totally agree':
+                    $ kcEngagement += 2
+                    player_nvl "100% agree"
+                    player_nvl "Jennica's sweet, but I think the connection with Teresa feels more real"
+                    player_nvl "Probably because there's more tension there"
+                    kc_nvl "Exactly!"
+                    kc_nvl "I knew you'd get it"
+                "•IDK, seemed fun":
+                    $ kcEngagement += 1
+                    player_nvl "I dunno, I didn't think about it too much."
+                    player_nvl "Guess I just feel it more with Teresa?"
+                    kc_nvl "Ah ic, more just an intuition thing"
+                    kc_nvl "I can respect that"
+                "•Don't respond":
+                    $ kcEngagement -=5
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif romanceJennica == True:
+            kc_nvl "Ok, so, Jennica. What's the deal with that?"
+            kc_nvl "Like, I see people fawning over her online and..."
+            kc_nvl "idk, she just feels like the dev canon romance to me, which just seems kinda uninteresting"
+            menu:
+                "Woah, KitCat's a little intense. Should I respond?"
+                '•Yes, but that\'s what makes it good':
+                    $ kcEngagement += 2
+                    player_nvl "That's kind of the thing though"
+                    player_nvl "I don't really buy a romance path with Teresa"
+                    player_nvl "Even though it's more \'on rails\' I guess, the Jennica romance just feels more real"
+                    player_nvl "There's more there because the devs spent more time on it"
+                    kc_nvl "mmmm true. It does feel like Teresa doesn\'t always get a lot of shine"
+                    kc_nvl "I'm into the maximize content view. Makes sense!"
+                "•IDK, seemed fun":
+                    player_nvl "I dunno, I didn't think about it too much."
+                    player_nvl "Guess I just feel it more with Jennica?"
+                    kc_nvl "Ah ic, more just an intuition thing"
+                    kc_nvl "I can respect that"
+                "•Don\'t respond":
+                    $ kcEngagement -=5
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            kc_nvl "Who are you thinking of romancing? You didn't say during stream"
+            kc_nvl "I feel like Jennica is canon, but Teresa's compelling too"
+            menu:
+                "Woah, KitCat's a little intense. Should I respond?"
+                "•I'm thinking Jennica":
+                    player "Jennica's sweet, I'm leaning her at the moment!"
+                    $ romanceJennica = True
+                    $ romanceTeresa = False
+                    $ romanceAma = False
+                    kc_nvl "Sure sure"
+                    kc_nvl "Can't go wrong with the dev-authored path"
+                "•Probably Teresa":
+                    $ kcEngagemnet += 2
+                    player "Teresa for sure. She's got an edge I appreciate."
+                    kc_nvl "Yes!"
+                    kc_nvl "I'm also into the crazy engineer!"
+                "•Ama all day, for sure":
+                    $ kcEngagement += 3
+                    player "Actually, I'm holding out that there will be an Ama romance path."
+                    $ romanceAma = True
+                    $ romanceTeresa = False
+                    $ romanceJennica = False
+                    kc_nvl "Oh WOW I hadn't even thought that they would do that"
+                    kc_nvl "Gotta go scour some forums for thoughts on that ship!"
+                "•Don\'t respond":
+                    $ kcEngagement -=5
+                    "Nah, don't really want to encourage a parasocial relationship."
+        jump vig2_macro_bro1
+
+
+    elif pdEngagement > kcEngagement and pdEngagement > csEngagement:
+        "It's PickledDragons?"
+        pd_nvl "Hey [player], hope this isn't weird. Just wanted to share some thoughts on the stream."
+        if gunsBlazing == True and vig2_outlawEpilogue == True:
+            pd_nvl "I appreciate how you leaned into the edginess of these characters"
+            pd_nvl "And I hope it's not weird what I'm typing into chat"
+            pd_nvl "I just feel like...these are supposed to be outlaws"
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
+            pd_nvl "Like, to believe that Moze is going to grow as a character, we have to see some of that internal tension"
+            pd_nvl "I've been on the fence with this game, but you're making me think about picking it up!"
+            menu:
+                "Interesting thoughts from PickledDragons. Should I respond?"
+                "•100% agree, these are complex characters":
+                    $ pdEngagement += 2
+                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
+                    player_nvl "I was all Marshal before this, but it's been a really compelling experience"
+                    pd_nvl "Well, glad I caught when you made the switch!"
+                    pd_nvl "Looking forward to the next stream!"
+                "•That's more thought than I put in tbh":
+                    $ pdEngagement += 1
+                    player_nvl "Honestly, that's more thought than I put in haha"
+                    player_nvl "I'm kinda just going by feel"
+                    pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
+                "•Don't respond":
+                    $ pdEngagement -= 1
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif gunsBlazing == True and vig2_outlawEpilogue == False:
+            pd_nvl "I appreciate how you're playing around with the edginess of these characters"
+            pd_nvl "I just feel like...these are supposed to be outlaws"
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
+            pd_nvl "I like the blend you're going with here. Curious if you'll keep it up?"
+            menu:
+                "Interesting thoughts from PickledDragons. Should I respond?"
+                "•I'm digging the outlaw vibe":
+                    $ pdEngagement += 2
+                    $ promisedPDOutlaw = True
+                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
+                    player_nvl "I was all Marshal before this, but it's been a really compelling experience"
+                    pd_nvl "Well, glad I caught when you made the switch!"
+                "•Most decisions are spontaneous":
+                    player_nvl "Honestly, that's more thought than I put in haha"
+                    player_nvl "I'm kinda just going by feel"
+                    player_nvl "So maybe it's still a blend, maybe it changes"
+                    player_nvl "Gotta see what the Galaxy throws at us!"
+                    pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
+                "•Don't respond":
+                    $ pdEngagement -= 1
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif gunsBlazing == False and vig2_outlawEpilogue == True:
+            pd_nvl "I was really surprised by the choice you made at the end, shooting down the aid ship"
+            pd_nvl "Quite the pivot from the quiet infiltration, but very interesting!"
+            pd_nvl "I just feel like...these are supposed to be outlaws"
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
+            pd_nvl "Just curious how you see it?"
+            menu:
+                "Interesting thoughts from PickledDragons. Should I respond?"
+                "•It's all complicated":
+                    $ pdEngagement += 4
+                    player_nvl "I think it's hard to say one way or the other."
+                    player_nvl "I was all Marshal before this, but it's been really compelling to do some outlaw stuff"
+                    player_nvl "Sometimes it makes sense for the characters to go that route. Sometimes it doesn't."
+                    player_nvl "That's what makes the game interesting imo"
+                    pd_nvl "100% agree"
+                    pd_nvl "I typically go all outlaw in games"
+                    pd_nvl "But maybe the characters will feel more compelling if I sprinkle some marshal in there too"
+                    pd_nvl "Thx for the quick chat!"
+                "•Most decisions are spontaneous":
+                    player_nvl "Honestly, that's more thought than I put in haha"
+                    player_nvl "I'm kinda just going by feel"
+                    player_nvl "The blend is cool, but it depends on how I'm feeling each day"
+                    player_nvl "Gotta see what the Galaxy throws at us!"
+                    pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
+                "•Don't respond":
+                    $ pdEngagement -= 1
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            pd_nvl "I really like your stream"
+            pd_nvl "The energy in chat is great, you're fun to watch"
+            pd_nvl "Even though you go Marshal most of the time, I'm still having a good time"
+            pd_nvl "Ordinarily I go all for the Outlaw routes"
+            pd_nvl "So I just wanted to say kudos for making Marshal so entertaining!"
+            menu:
+                "Some thoughtful messages from PickledDragons. Should I respond?"
+                "•I feel good with Marshal":
+                    player_nvl "Thanks!"
+                    player_nvl "Marshal's for sure my comfort zone. Been playing with outlaw stuff"
+                    player_nvl "but I think the stream is better when I'm on the Marshal path"
+                    pd_nvl "Makes sense. Even though it's jut a game"
+                    pd_nvl "Thx for the quick chat!"
+                "•I could see myself switching it up":
+                    $ pdEngagement += 2
+                    $ promisedPDOutlaw = True
+                    player_nvl "Thanks!"
+                    player_nvl "I'm glad you dig it. tbh, I'm kinda considering sprinkling more outlaw choices in"
+                    pd_nvl "Hell yeah, I think you'd enjoy that!"
+                    pd_nvl "Just play around with that edge a little bit more. Why not?"
+                    pd_nvl "It's just a game after all"
+                "•Don't respond":
+                    $ pdEngagement -= 1
+                    "Nah, don't really want to encourage a parasocial relationship."
+        jump vig2_macro_bro1
+    
+    else:
+        "Its Coriolis?"
+        cs_nvl "Hey [player], that was such a cool stream!"
+        if gunsBlazing == True:
+            cs_nvl "It was fun to see you go out of your comfort zone and be a bit chaotic."
+            cs_nvl "Honestly, I wasn't expecting to have as much fun with it as I did haha"
+            cs_nvl "Anyway, thanks for the stream!"
+            "Coriolis is so nice. Should I respond?"
+            menu:
+                "•You haven't seen anything yet":
+                    $ enthusiasm += 1
+                    player_nvl "Well get ready for more chaos!"
+                    player_nvl "Outlaws on the loose!"
+                "•Thank you":
+                    $ csEngagement += 1
+                    player_nvl "Thanks, Coriolis"
+                    player_nvl "It means a lot to have you in the chat"
+                "•Don't respond":
+                    $ csEngagement -= 5
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            cs_nvl "I liked that stealth run on the base"
+            cs_nvl "It felt really tense"
+            cs_nvl "Anyway, thanks for the stream!"
+            "Coriolis is so nice. Should I respond?"
+            menu:
+                "•Good to go back to basics":
+                    $ reluctance += 1
+                    player_nvl "Yeah, I wanted to go back to basics"
+                    player_nvl "Get into some outlaw thievery vibes"
+                "•I'm glad you're liking it":
+                    $ csEngagement += 1
+                    player_nvl "Thanks, Coriolis"
+                    player_nvl "It means a lot to have you in the chat"
+                "•Don't respond":
+                    $ csEngagement -= 3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        jump vig2_macro_bro1
 
 label vig2_macro_bro1():
     hide discord with dissolve
     scene black with dissolve
     nvl clear
+    "You weren't expecting that. But it was kind of nice for them to reach out."
+    "But now it's time to walk away from your computer."
     "You shut down the computer and start winding down for the evening."
     "You have a quick dinner and then finish up homework for class the next day."
     "As you brush your teeth, you see a notification on your phone that you missed while reading."
