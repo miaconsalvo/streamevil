@@ -42,14 +42,14 @@ define shipcom = Character("Ship Intercom", window_style = "ig_window", what_sty
 define agent1 = Character("Customs Agent", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
 define smatt = Character("Matticus", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus_stream", window_background="images/textbox/ig_textbox_blue.png")
 define goon =  Character("Reginald", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "goon_stream", window_background="images/textbox/ig_textbox_blue.png")
-define worker = Character("Otacon", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker_stream", window_background="images/textbox/ig_textbox_blue.png")
+define worker = Character("Technician", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker_stream", window_background="images/textbox/ig_textbox_blue.png")
 define mattdoorbell = Character("Doorcom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
 define hsguard1 = Character("Guard", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
 
 #Additional variables
 default viewCount = 8 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
-default macroNarration = True #this variable helps determine if a macro game choice should return us to narration style that is micro game or macro game
+#default macroNarration = True #this variable helps determine if a macro game choice should return us to narration style that is micro game or macro game
 default commentPing = False
 
 #variables to track morality
@@ -133,7 +133,7 @@ label vig2Start():
     #scene ship_hallway_stream at topleft with dissolve -- These two lines of code were the previous way of displaying backgrounds
     #show streamview at center onlayer master -- now we just need the line of code above them since streamview is always visible
     #BUT we need to hide these backgrounds whenever the scene transitions
-    $ macroNarration = False
+    #$ macroNarration = False
     $ narrator = alt_narrator
     #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
     $ AddChatter(vig2_sc1_comment1)
@@ -155,7 +155,7 @@ label vig2Start():
     jump Vig2BridgeScene
 
 label Vig2BridgeScene():
-    show bridge_stream at center onlayer background with dissolve
+    show vig2_shiphub_stream at center onlayer background with dissolve
     hide ship_hallway_stream
     show pilot_stream at stream_left with Dissolve(0.5)
     show engineer_stream at stream_right with Dissolve(0.5)
@@ -260,8 +260,8 @@ label Vig2BridgeScene():
 
 ###SCENE 2###
 label GibianVCustomsDepot(): 
-    show port_stream at topleft onlayer background with dissolve
-    hide bridge_stream
+    show customs_stream at topleft onlayer background with dissolve
+    hide vig2_shiphub_stream
     "The depot bustles with loud and chaotic life."
     "The tiny barebones facility seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
@@ -550,7 +550,7 @@ label GibianVCustomsOutlaw():
 ###SCENE 3###
 label matticusDoor():
     show compound_stream at topleft onlayer background with dissolve
-    hide port_stream
+    hide customs_stream
     "It's only a few blocks to Matticus' compound."
     "Not like we could miss it though."
     show pilot_stream at stream_left with dissolve
@@ -678,13 +678,16 @@ label meetingMatticus():
     smatt "Who's this?"
     menu: #minorchoice5
         "What we stole from bigcorp.": 
+            hide mac_stream with dissolve
             mS "He's what was in that facility."
             show matticus_stream at stream_center with move
             "Matticus approaches MAC, looking him over."
             smatt "Neat. So how much you figure it's worth?"
             smatt "bigcorps's burning money to get it back, must be something important."
         "Mind your own business.":
+            hide mac_stream with dissolve
             mS "None of your business."
+            show matticus_stream at stream_center with move
             "Matticus looks back at me, one eyebrow raised."
             smatt "Oh really?"
             smatt "Looks like a courier bot..."
@@ -832,7 +835,7 @@ label approachingBase():
     enS "Fitting for a cheapo planet like this."
     mS "Pipe down you two. Focus up."
     "Jennica and Teresa nod to me."
-    show mac_stream at stream_center
+    show mac_stream at stream_center with Dissolve(0.5)
     "The brief silence is broken by MAC."
     macS "What is a \"cheapo planet?\" My database does not have a category \"cheapo.\""
     enS "What about that?"
@@ -948,7 +951,7 @@ label approachingBase():
 
 ####SCENE 6####
 label commsBase_MAR1():
-    show vig2_compound_hall at topleft onlayer background with dissolve
+    show vig2_compound_hall_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     show engineer_stream at stream_right with Dissolve (0.3)
     "As we approach the base, Teresa signals to stay quiet."
@@ -1000,7 +1003,7 @@ label commsBase_MAR1():
             jump commsBase_MAR2
 
 label commsBase_MAR2():
-    show vig2_compound_hall at topleft onlayer background with dissolve
+    show vig2_compound_hall_stream at topleft onlayer background with dissolve
     #Do we need to cut some of these "show" statements?
     show engineer_stream at stream_right with Dissolve(0.5)
     show pilot_stream at stream_left with Dissolve(0.5)
@@ -1065,7 +1068,7 @@ label commsBase_MAR2():
             jump commsBase_DataCenter
 
 label commsBase_OUT1():
-    show vig2_compound_hall at topleft onlayer background with dissolve
+    show vig2_compound_hall_stream at topleft onlayer background with dissolve
     show engineer_stream at stream_right with Dissolve(0.5)
     show pilot_stream at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
@@ -1079,7 +1082,7 @@ label commsBase_OUT1():
     "I give the signal to Teresa."
     hide pilot_stream
     hide engineer_stream
-    show vig2_compound_hall with vpunch
+    show vig2_compound_hall_stream with vpunch
     "With a deafening bang, the door is obliterated into countless pieces."
     "An instant later I'm running through the smoke."
     "MAC's footsteps clink behind me."
@@ -1216,7 +1219,7 @@ label commsBase_OUT1():
 ###SCENE 7###
 label commsBase_DataCenter():
     show datacenter_stream at topleft onlayer background with dissolve
-    hide vig2_compound_hall
+    hide vig2_compound_hall_stream
     "The datacenter is underwhelming."
     "At the center of the small room is a computer workstation, with numerous monitors displaying a variety of shipments and other logistic info."
     show worker_stream at stream_center with dissolve
@@ -1328,8 +1331,8 @@ label commsBase_DataCenter_MAR():
     menu:
         "Signal Jennica to stun him":
             $ outlaw += 1
-            $ jennicaApproval += 1
-            $ teresaApproval += 1
+            $ pilotApproval += 1
+            $ engineerApproval += 1
             "I look over to Jennica and give her the signal."
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide goon_stream with Dissolve(0.2)
@@ -1580,7 +1583,7 @@ label shuttleDestruction():
     jump vig2epilogue_OUT
 
 label vig2epilogue_MAR():
-    show bridge_stream at topleft onlayer background with dissolve
+    show vig2_shiphub_stream at topleft onlayer background with dissolve
     hide datacenter_stream
     show engineer_stream at stream_right with dissolve
     show pilot_stream at stream_left with dissolve  
@@ -1654,13 +1657,14 @@ label vig2epilogue_MAR():
             macS "I see. The universe is confusing."
             mS "Agreed."
     $ narrator = reg_narrator
-    $ macroNarration = True
+    #$ macroNarration = True
+    $ macroChoice = True
     $ AddChatter(vig2_epilogue_mar_comment9)
     hide mac_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
     player "Alright everyone, thank you all for coming out! See ya next time!"
-    hide bridge_stream with dissolve
+    hide vig2_shiphub_stream with dissolve
     "You quit out of the game and watch as the people in the stream discuss the game."            
     $ AddChatter(vig2_epilogue_mar_comment10)
     pause 0.5
@@ -1677,7 +1681,7 @@ label vig2epilogue_MAR():
     jump vig2_macro_start
 
 label vig2epilogue_OUT():
-    show bridge_stream at topleft onlayer background with dissolve
+    show vig2_shiphub_stream at topleft onlayer background with dissolve
     hide orbit_stream
     show engineer_stream at stream_right with dissolve
     show pilot_stream at stream_left with dissolve 
@@ -1766,14 +1770,15 @@ label vig2epilogue_OUT():
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
     $ narrator = reg_narrator
-    $ macroNarration = True
+    #$ macroNarration = True
+    $ macroChoice = True
     $ AddChatter(vig2_epilogue_out_comment18)
     hide mac_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
     $ AddChatter(vig2_epilogue_out_comment19)
     player "Alright everyone, thank you all for coming out! See ya next time!"
-    hide bridge_stream with dissolve
+    hide vig2_shiphub_stream with dissolve
     "You quit out of the game and watch as the people in the stream discuss the game."
     pause 0.5
     $ AddChatter(vig2_epilogue_out_comment20)
@@ -1803,7 +1808,7 @@ label vig2epilogue_OUT():
 #### MACRO GAME #######
 label vig2_macro_start():
     $ narrator = reg_narrator
-    $ macroNarration = True
+    #$ macroNarration = True
     $ macroChoice = True
     $ menu = nvl_menu
     "You lean back in your chair and let your body relax now that you're no longer on camera."
@@ -2133,8 +2138,8 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ama. Great pick! Honestly, I didn't even think about that"
             kc_nvl "Do you think it's an actual path the devs made?"
             kc_nvl "Or are you just fanshipping this vibe hard?"
+            "Woah, KitCat's a little intense. Should I respond?"
             menu:
-                "Woah, KitCat's a little intense. Should I respond?"
                 "•I think it'll be a choice":
                     $ kcEngagement += 1
                     player_nvl "No I think they'll give you that option"
@@ -2153,6 +2158,7 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ok, so Teresa, I'm into this"
             kc_nvl "I feel like Jennica's the dev-intended romance"
             kc_nvl "And I just think the tension with Teresa is more interesting, no?"
+            "Woah, KitCat's a little intense. Should I respond?"           
             menu:
                 "Woah, KitCat's a little intense. Should I respond?"
                 '•Totally agree':
@@ -2175,8 +2181,8 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ok, so, Jennica. What's the deal with that?"
             kc_nvl "Like, I see people fawning over her online and..."
             kc_nvl "idk, she just feels like the dev canon romance to me, which just seems kinda uninteresting"
+            "Woah, KitCat's a little intense. Should I respond?"
             menu:
-                "Woah, KitCat's a little intense. Should I respond?"
                 '•Yes, but that\'s what makes it good':
                     $ kcEngagement += 2
                     player_nvl "That's kind of the thing though"
@@ -2196,10 +2202,10 @@ label vig2_macro_viewerChat_1():
         else:
             kc_nvl "Who are you thinking of romancing? You didn't say during stream"
             kc_nvl "I feel like Jennica is canon, but Teresa's compelling too"
+            "Woah, KitCat's a little intense. Should I respond?"
             menu:
-                "Woah, KitCat's a little intense. Should I respond?"
                 "•I'm thinking Jennica":
-                    player "Jennica's sweet, I'm leaning her at the moment!"
+                    player_nvl "Jennica's sweet, I'm leaning her at the moment!"
                     $ romanceJennica = True
                     $ romanceTeresa = False
                     $ romanceAma = False
@@ -2207,12 +2213,12 @@ label vig2_macro_viewerChat_1():
                     kc_nvl "Can't go wrong with the dev-authored path"
                 "•Probably Teresa":
                     $ kcEngagemnet += 2
-                    player "Teresa for sure. She's got an edge I appreciate."
+                    player_nvl "Teresa for sure. She's got an edge I appreciate."
                     kc_nvl "Yes!"
                     kc_nvl "I'm also into the crazy engineer!"
                 "•Ama all day, for sure":
                     $ kcEngagement += 3
-                    player "Actually, I'm holding out that there will be an Ama romance path."
+                    player_nvl "Actually, I'm holding out that there will be an Ama romance path."
                     $ romanceAma = True
                     $ romanceTeresa = False
                     $ romanceJennica = False
@@ -2234,8 +2240,8 @@ label vig2_macro_viewerChat_1():
             pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
             pd_nvl "Like, to believe that Moze is going to grow as a character, we have to see some of that internal tension"
             pd_nvl "I've been on the fence with this game, but you're making me think about picking it up!"
+            "Interesting thoughts from PickledDragons. Should I respond?"
             menu:
-                "Interesting thoughts from PickledDragons. Should I respond?"
                 "•100% agree, these are complex characters":
                     $ pdEngagement += 2
                     player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
@@ -2255,8 +2261,8 @@ label vig2_macro_viewerChat_1():
             pd_nvl "I just feel like...these are supposed to be outlaws"
             pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
             pd_nvl "I like the blend you're going with here. Curious if you'll keep it up?"
+            "Interesting thoughts from PickledDragons. Should I respond?"
             menu:
-                "Interesting thoughts from PickledDragons. Should I respond?"
                 "•I'm digging the outlaw vibe":
                     $ pdEngagement += 2
                     $ promisedPDOutlaw = True
@@ -2278,8 +2284,8 @@ label vig2_macro_viewerChat_1():
             pd_nvl "I just feel like...these are supposed to be outlaws"
             pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
             pd_nvl "Just curious how you see it?"
+            "Interesting thoughts from PickledDragons. Should I respond?"
             menu:
-                "Interesting thoughts from PickledDragons. Should I respond?"
                 "•It's all complicated":
                     $ pdEngagement += 4
                     player_nvl "I think it's hard to say one way or the other."
@@ -2305,8 +2311,8 @@ label vig2_macro_viewerChat_1():
             pd_nvl "Even though you go Marshal most of the time, I'm still having a good time"
             pd_nvl "Ordinarily I go all for the Outlaw routes"
             pd_nvl "So I just wanted to say kudos for making Marshal so entertaining!"
+            "Some thoughtful messages from PickledDragons. Should I respond?"
             menu:
-                "Some thoughtful messages from PickledDragons. Should I respond?"
                 "•I feel good with Marshal":
                     player_nvl "Thanks!"
                     player_nvl "Marshal's for sure my comfort zone. Been playing with outlaw stuff"
@@ -2323,45 +2329,6 @@ label vig2_macro_viewerChat_1():
                     pd_nvl "It's just a game after all"
                 "•Don't respond":
                     $ pdEngagement -= 1
-                    "Nah, don't really want to encourage a parasocial relationship."
-        jump vig2_macro_bro1
-    
-    else:
-        "Its Coriolis?"
-        cs_nvl "Hey [player], that was such a cool stream!"
-        if gunsBlazing == True:
-            cs_nvl "It was fun to see you go out of your comfort zone and be a bit chaotic."
-            cs_nvl "Honestly, I wasn't expecting to have as much fun with it as I did haha"
-            cs_nvl "Anyway, thanks for the stream!"
-            "Coriolis is so nice. Should I respond?"
-            menu:
-                "•You haven't seen anything yet":
-                    $ enthusiasm += 1
-                    player_nvl "Well get ready for more chaos!"
-                    player_nvl "Outlaws on the loose!"
-                "•Thank you":
-                    $ csEngagement += 1
-                    player_nvl "Thanks, Coriolis"
-                    player_nvl "It means a lot to have you in the chat"
-                "•Don't respond":
-                    $ csEngagement -= 5
-                    "Nah, don't really want to encourage a parasocial relationship."
-        else:
-            cs_nvl "I liked that stealth run on the base"
-            cs_nvl "It felt really tense"
-            cs_nvl "Anyway, thanks for the stream!"
-            "Coriolis is so nice. Should I respond?"
-            menu:
-                "•Good to go back to basics":
-                    $ reluctance += 1
-                    player_nvl "Yeah, I wanted to go back to basics"
-                    player_nvl "Get into some outlaw thievery vibes"
-                "•I'm glad you're liking it":
-                    $ csEngagement += 1
-                    player_nvl "Thanks, Coriolis"
-                    player_nvl "It means a lot to have you in the chat"
-                "•Don't respond":
-                    $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
         jump vig2_macro_bro1
 
