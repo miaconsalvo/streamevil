@@ -186,11 +186,17 @@ label Vig2BridgeScene():
     "But Teresa's also got a point, we aren't exactly spoilt for choice."
     $ AddChatter(vig2_sc1_comment11)
     "Better the devil you know, eh?"
-    mS "I understand the concern. But we don't really have another option."
-    mS "We don't have to trust him, I certainly don't."
-    $ AddChatter(vig2_sc1_comment12)
-    mS "But we can't afford to be picky with our contacts."
+    menu: #minorchoice1
+        "We don't have a choice.":      
+            mS "I understand the concern. But we don't really have another option."
+            mS "We don't have to trust him, I certainly don't."
+            mS "But we can't afford to be picky with our contacts."
+        "We can trust his selfishness":
+            mS "We don't need to trust him, per se..."
+            mS "We just need to trust his greed and selfishness."
+            mS "Have you ever known Matticus to turn down something that benefits him?"
     "A look of begrudging acceptance flashes across Jennica's face."
+    $ AddChatter(vig2_sc1_comment12)
     pS "Ok. So what's the plan?"
     pause 1.0
     "Teresa inputs a set of coordinates into the ship computer."
@@ -209,7 +215,23 @@ label Vig2BridgeScene():
     pS "He certainly landed on his feet since we disbanded."
     enS "Yeah, he's been remarkably successful for a magistrate of a tiny frontier planet."
     macS "He is abusing his authority for personal gain?"
-    mS "No, kidding." 
+    menu: #minorchoice2
+        "Yeah he's a scumbag":
+            mS "Yeah. He always did have a uh... flexible moral compass."
+            pS "So flexible it's like water. Fills any container."
+            mS "I wouldn't be surprised if this isn't even his main palace."
+            pS "Yeah. Bet he has a ranch or something on the other side of the planet."
+            enS "You think someone who has the money to spend on a ranch would buy one on Gibian V?"
+            "Jennica looks puzzled for a moment."
+            ps "I aint given much thought to it I guess."
+        "He's a skeeve, but he's our skeeve.":
+            mS "Probably. It comes with the territory."
+            mS "He's just trying to survive."
+            pS "Mighty successful surviving he's doing."
+            mS "That's part of the deal. He needs to flaunt his wealth or his underlings might get ideas."
+            enS "True. If they see weakness they might try to usurp him."
+            pS "Of course. He's stealing and profiting so nobly."
+            "Jennica rolls her eyes."
     pS "Alright, so it'll be easy to find him. What's the deal with the customs depot?"
     enS "Seems typical for a small planet. Standard issue scanners from half a decade ago."
     enS "Shouldn't be too much of a problem to fool them."
@@ -339,19 +361,71 @@ label GibianVCustomsMarshal():
     "Teresa nods to us. Let's do this."
     hide engineer_stream with Dissolve(0.4)
     show customs_stream at stream_center with Dissolve(0.6)
-    "As I approach the customs officer, his eyes perk up."
-    $ AddChatter(vig2_sc2_mar_comment6)
-    agent1 "Hello Ma'am. How might I assist you today?"
-    mS "You strike me as a hard worker sir." 
-    agent1 "Excuse me?"
-    "He seems a little confused."
-    $ AddChatter(vig2_sc2_mar_comment7)
-    mS "It seems like this whole place is propped up by you eh?"
-    "His eyes relax as he begins to get what I'm saying."
-    agent1 "You don't know the half of it." 
-    agent1 "I've been working back to back shifts this whole week!" 
-    mS "Really?! That doesn't sit right with me."
-    mS "Not one bit."
+    menu: #minorchoice3
+        "Smile and look him in the eyes":
+            "As I approach the customs officer, his eyes perk up."
+            $ AddChatter(vig2_sc2_mar_comment6)
+            agent1 "Hello Ma'am. How might I assist you today?"
+            $ AddChatter(vig2_sc2_mar_comment7)
+            menu: #minorchoice3a
+                "You're such a hard worker!":
+                    mS "You strike me as a hard worker sir." 
+                    agent1 "Excuse me?"
+                    "He seems a little confused."
+                    mS "It seems like this whole place is propped up by you eh?"
+                    "His eyes relax as he begins to get what I'm saying."
+                    agent1 "You don't know the half of it." 
+                    agent1 "I've been working back to back shifts this whole week!" 
+                    mS "Really?! That doesn't sit right with me."
+                    mS "Not one bit."
+                "You look overworked":
+                    mS "Man they really have you guys stretched thin eh?"
+                    agent1 "Excuse me?"
+                    "He's a little confused."
+                    mS "You guys are so understaffed, this is ridiculous!"
+                    mS "How can they expect you to work like this!?"
+                    "He seems to be getting what I'm saying"
+                    agent1 "Yeah it's bogus."
+                    agent1 "Night shift quit on us so now I'm stuck picking up the slack."
+                    mS "Yeah that {b}is{/b} bogus."
+                    mS "You deserve a bonus."
+        "Ring the bell.":
+            "I ring the bell on his desk."
+            "DING"
+            "He's instantly jolted out of his stupor, looking bewildered."
+            "In his panic, I notice a wedding band on his ring finger."
+            agent1 "GAAH!"
+            mS "Sorry bout that!"
+            "His face begins to relax"
+            $ AddChatter(vig2_sc2_mar_comment6)
+            agent1 "No it's my fault. How can I assist you today?"
+            $ AddChatter(vig2_sc2_mar_comment7)
+            menu: #minorchoice3b
+                "How long has this shift been?":
+                    mS "Man, you look exhausted."
+                    agent1 "Excuse me?"
+                    "He's a little confused. And annoyed."
+                    mS "How many hours have they got you working this shift?"
+                    agent1 "Ugh. Like 16?"
+                    agent1 "Nightshift quit the other day, I have to pick up his hours until we can find someone new."
+                    mS "No overtime I assume?"
+                    agent1 "Overtime?"
+                    mS "Really?! That doesn't sit right with me."
+                    "His eyes relax as he finally understands what I'm saying"
+                "You got kids?":
+                    mS "You got kids?"
+                    agent1 "Excuse me?"
+                    "He's confused, and a little annoyed."
+                    mS "Sorry I just noticed your ring."
+                    agent1 "Oh. Sorry, yeah got a daughter. She's 4."
+                    "He pulls out a picture and shows me."
+                    mS "Ahhhhhhh. Cute!"
+                    "He smiles."
+                    agent1 "Yeah, she's my world."
+                    mS "She deserves nice things eh?"
+                    "He's still a little confused."
+                    mS "Especially from such a hard working dad!"
+                    "His eyes relax as he finally clues in."
     "A smirk begins to spread across his face."
     agent1 "I do appreciate that."
     mS "I wouldn't be able to sleep if I didn't make it right."
@@ -566,6 +640,21 @@ label meetingMatticus():
     smatt "What a delightful surprise. And you brought Jenn too."
     "Jennica silently nods, trying to redirect the smoke away from her face."
     smatt "Quite a reunion!"
+    menu: #minorchoice4
+        "Great to see you.":
+            mS "Yeah. Always great to see old friends."
+            mS "Right Jenn?"
+            "Jennica looks annoyed."
+            pS "Yeah. It's been too long Sav."
+            "Matticus smirks knowingly."
+            smatt "Oh Jenn. You don't have to lie."
+        "Reunion implies a lot":
+            mS "Reunion implies that we were united at one point."
+            smatt "Ice cold as always Moze!"
+            smatt "Yknow, I miss this banter. I've missed you guys."
+            pS "Really?"
+            "Matticus smirks and looks at Jennica."
+            smatt "No."
     "Matticus takes a long drag on his cigar before looking at me expectantly. The fake smile fades from his face."
     smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
     mS "No. We need a favor."
@@ -587,10 +676,21 @@ label meetingMatticus():
     "MAC sheepishly opens the crate lid and pokes his head out."
     hide goon_stream with Dissolve (0.5)
     smatt "Who's this?"
-    mS "He's what was in that facility."
-    show matticus_stream at stream_center with move
-    "Matticus approaches MAC, looking him over."
-    smatt "Neat. So how much you figure it's worth?"
+    menu: #minorchoice5
+        "What we stole from bigcorp.": 
+            mS "He's what was in that facility."
+            show matticus_stream at stream_center with move
+            "Matticus approaches MAC, looking him over."
+            smatt "Neat. So how much you figure it's worth?"
+            smatt "bigcorps's burning money to get it back, must be something important."
+        "Mind your own business.":
+            mS "None of your business."
+            "Matticus looks back at me, one eyebrow raised."
+            smatt "Oh really?"
+            smatt "Looks like a courier bot..."
+            "Matticus looks back at MAC."
+            smatt "But they don't talk like {i}that{/i}."
+            smatt "What're a couple of outlaws doing with something like this?"
     $ AddChatter(vig2_sc4_comment2)
     mS "We're just looking to get him to the Dragonflies."
     "Matticus' eyes widen. His voice takes on a singsong quality."
@@ -616,6 +716,34 @@ label meetingMatticus():
     pS "I don't care for that answer one bit."
     smatt "You'll have to learn to like it, or you'll find out what Deadeye's got planned for you."
     enS "That's a reasonable point Captain."
+    menu: #minorchoice6
+        "Why are you so cagey?":
+            mS "What aren't you telling us?"
+            "Matticus smirks at me."
+            smatt "Any number of things really."
+            mS "Don't play dumb. Why are you being so sketchy about what's in the shipment?"
+            "A twinge of anger passes through Matticus' face for a moment."
+            smatt "Since when do you care?"
+            smatt "Awful late in the game to start thinking about details like that."
+            "Matticus' anger subsides, his smug facade is back up."
+            smatt "Besides. Where else are you gonna go?"
+            smatt "You're not out here because you've got options."
+            "I turn to Jennica."
+            mS "He's not wrong."
+        "Trying to screw us over?":
+            mS "Seems suspicious Sav. What are you trying to pull here?"
+            "Matticus smirks at me."
+            smatt "Moze! After all our time together..."
+            mS "After all our time together I know you well enough to know when you're hiding something."
+            smatt "So what if I am?" 
+            smatt "Look, if I really wanted to turn you in, don't you think I'd have done it by now?"
+            pS "You might yet."
+            "Matticus chuckles."
+            smatt "You think I want the inspectors poking around my operation?"
+            smatt "Besides. Where else are you gonna go?"
+            smatt "You're not out here because you've got options."
+            "I turn to Jennica."
+            mS "He's not wrong."
     mS "What alternatives do we have Jenn?"
     "Jennica reluctantly agrees."
     $ AddChatter(vig2_sc4_comment6)
@@ -636,6 +764,32 @@ label meetingMatticus():
     smatt "Oh? Did I?"
     "Matticus looks at me impatiently."
     smatt "Don't waste my time. Do we have a deal?"
+    menu: #minorchoice7
+        "Deal":
+            "Guess we don't have much choice."
+            mS "On your honor as a Snakehawk?"
+            "Matticus chuckles to himself."
+            smatt "How nostalgic."
+            smatt "On my honor."
+        "Wait this still seems suspicious":
+            "This still seems fishy."
+            mS "Wait. This all seems too good to be true."
+            smatt "Things aren't always what they seem Moze."
+            smatt "Besides, I'm done with this haggling. Do you want to work together or not?"
+            menu: #minorchoice7a
+                "Fine. Deal.":
+                    "Guess we don't have much choice."
+                    mS "On your honor as a Snakehawk?"
+                    "Matticus chuckles to himself."
+                    smatt "How nostalgic."
+                    smatt "On my honor."
+                "Keep asking questions.":
+                    mS "I can't help but feel like you're manipulating us."
+                    smatt "Feelings lie Moze."
+                    "Matticus rolls his eyes."
+                    smatt "I don't have time for this. Take the deal or get lost."
+                    enS "Captain we really can't afford to get caught."
+                    "Guess we don't have much choice."
     mS "Alright. Deal."
     smatt "Good. My pointman Reginald will brief and supervise."
     hide engineer_stream
@@ -643,6 +797,13 @@ label meetingMatticus():
     "One of the henchmen nods to us."
     $ AddChatter(vig2_sc4_comment9)
     smatt "I'll see you ladies later. It's been lovely catching up."
+    menu: #minorchoice8
+        "Bye.":
+            mS "Later Sav."
+        "Piss off.":
+            mS "Get bent you ugly warthog."
+            "Jennica chuckles."
+            enS "Mature."
     "Matticus waves as he leaves the warehouse."
     hide matticus_stream with dissolve
     "Reginald turns to us."
