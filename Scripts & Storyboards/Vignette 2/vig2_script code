@@ -18,6 +18,9 @@ define bro = Character("El")
 define player_nvl = Character("[my_name]", kind = nvl, image = "captain_stream")
 define mod_nvl = Character("Jessie", kind = nvl, image = "profile1small")
 define bro_nvl = Character("El", kind = nvl )
+define cs_nvl = Character("Coriolis", kind = nvl, )
+define kc_nvl = Character("KitCat", kind = nvl, )
+define pd_nvl = Character("PickledDragons", kind = nvl, )
 define adv_menu = menu
 
 #Justin: this is how I define the micro game characters in their stream and non-stream versions
@@ -47,12 +50,13 @@ define hsguard1 = Character("Guard", window_style = "ig_window", what_style = "i
 default viewCount = 8 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
 default macroNarration = True #this variable helps determine if a macro game choice should return us to narration style that is micro game or macro game
+default commentPing = False
 
 #variables to track morality
 default marshal = 2
 default outlaw = 3
 
-#variables to track interest of player
+#variables to track interest of player - tracked for macro game purposes
 default reluctance = 0
 default enthusiasm = 0
 default energy = 5
@@ -63,16 +67,19 @@ default curiosity = False
 #variables to track viewer engagement
 default csEngagement = 5
 default pdEngagement = 3
-default kkEngagement = 4
+default kcEngagement = 4
 
 #Approval of micro-game characters
-default teresaApproval = 3
-default jennicaApproval = 4
+default engineerApproval = 3
+default pilotApproval = 4
 default shnzi = True
 
-init python:
-    yadjValue = float("inf")
-    yadj = ui.adjustment()
+#default yadj = ui.adjustment()
+
+#init python: - code to change for adjusting stream chat box lowering
+    #yadjValue = float("inf")
+    #yadj = ui.adjustment()
+    #yadj.value = yadjValue
 
 init: 
     $ stream_left = Position (xpos=0.13, ypos=0.6) #stream view
@@ -80,10 +87,12 @@ init:
     $ stream_center = Position (xpos=0.40, ypos=0.6)
     $ screen_left = Position (xpos = 0.2, ypos = 0.7) #non-stream view
     $ screen_right = Position (xpos = 0.8, ypos = 0.7)
+    $ renpy.add_layer("background", below = "master") #created a layer called "background" for displaying micro-game scenes
+    #this layer is below the master so we can define the streamview as a "scene", which means that the streamview won't
+    #fade out whenever we transition to another label
 
 label start:
     #these six lines define transforms that can be used to align microgame characters where we want them on the screen
-    #They're based on two images (profile1small and profile2small) and will need to be changed once we know the dimensions of character portraits
     #We'll want all our character portraits to be the same size so this method of defining transforms works consistently
     transform gameleft:
         xpos 0
@@ -108,85 +117,84 @@ label start:
     jump gameStart
 
 label gameStart():
-    show streamview
+    scene streamview with dissolve 
+    #We now use the "scene" function to show the streamview
+    #This makes it constantly viewable without being affected by transitions between labels
+    #show streamview
     show screen streamDetails
     show screen streamChat
-    $ comments_list.append(comment1)
-    $ comments_list.append(comment2)
-    $ comments_list.append(comment4)
-
-    "You begin the stream and see some of your viewers commenting in the chat."
-    "You take a second to check in with the viewers."
-    "And then boot up the game."
+    "You begin the stream and then boot up the game."
     "You load the save file you were previously playing, and are ready to go."
     jump vig2Start
 
 ###SCENE 1###
 label vig2Start(): 
-    scene ship_hallway_stream at topleft with dissolve
-    show streamview at center onlayer master
-
+    show ship_hallway_stream at topleft onlayer background with dissolve
+    #scene ship_hallway_stream at topleft with dissolve -- These two lines of code were the previous way of displaying backgrounds
+    #show streamview at center onlayer master -- now we just need the line of code above them since streamview is always visible
+    #BUT we need to hide these backgrounds whenever the scene transitions
     $ macroNarration = False
     $ narrator = alt_narrator
-    $ chatter_list.append(vig2_sc1_comment1)
+    #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
+    $ AddChatter(vig2_sc1_comment1)
     $ viewCount += 1
     "The \"Approaching Planet\" notification alarm jolts me out of bed."
-    $ chatter_list.append(vig2_sc1_comment2)
+    $ AddChatter(vig2_sc1_comment2)
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
     show captain_stream at stream_left
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
     "I haven't been able to get any real sleep since Anatar forced my hand."
     "What did he think I was gonna do? Just let him go?"
-    shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
+    shipcom "Alert! Approaching planet Gibian V. All hands on deck."
     "Right. Maybe it's a blessing that I don't have so much time to reflect."
-    $ chatter_list.append(vig2_sc1_comment3)
+    $ AddChatter(vig2_sc1_comment3)
     "Better get down there."
     hide captain_stream with Dissolve (0.4)
 
     jump Vig2BridgeScene
 
 label Vig2BridgeScene():
-    scene bridge_stream at center with dissolve
-    show streamview at center onlayer master
-    show pilot_stream at stream_left
-    show engineer_stream at stream_right
-    show mac_stream at stream_center
+    show bridge_stream at center onlayer background with dissolve
+    hide ship_hallway_stream
+    show pilot_stream at stream_left with Dissolve(0.5)
+    show engineer_stream at stream_right with Dissolve(0.5)
+    show mac_stream at stream_center with Dissolve(0.5)
     #repeat for additional characters
     "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
-    $ chatter_list.append(vig2_sc1_comment4)
+    $ AddChatter(vig2_sc1_comment4)
     "The visualization shows Gibian V, a backwater frontier planet."
     "A backwater with an old associate running it."
     mS "We ready to land?"
-    $ chatter_list.append(vig2_sc1_comment5)
+    $ AddChatter(vig2_sc1_comment5)
     pS "Can I reiterate again that this is a bad idea?"
     "Teresa rolls her eyes."
-    $ chatter_list.append(vig2_sc1_comment6)
+    $ AddChatter(vig2_sc1_comment6)
     enS "Here we go again."
-    $ chatter_list.append(vig2_sc1_comment7)
+    $ AddChatter(vig2_sc1_comment7)
     pS "Look, I know we need to cover our trail from Ama."
-    $ chatter_list.append(vig2_sc1_comment8)
+    $ AddChatter(vig2_sc1_comment8)
     pS "But is Matticus really the one we want to do it? The guy was a skeeve when we knew him."
     macS "Skeeve. Noun. An immoral or repulsive person."
     enS "What other options do we have? Who else is gonna help us?"
-    $ chatter_list.append(vig2_sc1_comment9)
+    $ AddChatter(vig2_sc1_comment9)
     pS "I don't know, I just think-"
     enS "Let me just pull a \"forger with a heart of gold and access to bigcorp databases\" out of my purse and we'll be set!"
     pS "That doesn't mean we should trust Matticus, the wannabe godfather of a one-horse po-dunk  planet!"
-    $ chatter_list.append(vig2_sc1_comment10)
+    $ AddChatter(vig2_sc1_comment10)
     "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
     "But Teresa's also got a point, we aren't exactly spoilt for choice."
-    $ chatter_list.append(vig2_sc1_comment11)
+    $ AddChatter(vig2_sc1_comment11)
     "Better the devil you know, eh?"
     mS "I understand the concern. But we don't really have another option."
     mS "We don't have to trust him, I certainly don't."
-    $ chatter_list.append(vig2_sc1_comment12)
+    $ AddChatter(vig2_sc1_comment12)
     mS "But we can't afford to be picky with our contacts."
     "A look of begrudging acceptance flashes across Jennica's face."
     pS "Ok. So what's the plan?"
     pause 1.0
     "Teresa inputs a set of coordinates into the ship computer."
-    $ chatter_list.append(vig2_sc1_comment13)
+    $ AddChatter(vig2_sc1_comment13)
     "The visualization zooms in on the capital of Gibian V, Montserrat."
     "A map of the city appears on the computer, along with images of the spaceport, customs depot, and Matticus's compound."
     enS "One benefit of Gibian being such a middle-of-nowhere planet is that we won't have to go far to find our guy."
@@ -213,19 +221,25 @@ label Vig2BridgeScene():
     enS "I'm not convinced they even do."
     pS "All the same, we're going to have to take him along."
     pS "We can't risk them finding him here in a surprise scan of the ship while we're away."
-    $ chatter_list.append(vig2_sc1_comment14)
+    $ AddChatter(vig2_sc1_comment14)
     mS "That's going to have to be good enough. Are we all good with this plan?"
     "Teresa nods. Jennica looks vexed, but eventually nods as well." 
     mS "Alright let's get moving."
     pS "Aye Aye."
     "Jennica begins the ship's descent to the spaceport."
+    #Now that we've defined the streamview as the background, we have to manually hide characters before we transition between labels
+    #If we don't want them to immediately be on screen in the next scene.
+    #There are useful aspects of this - see the transition into the Marshal or Outlaw routes out of the Customs Depot for example
+    hide mac_stream with Dissolve(0.5)
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
 
     jump GibianVCustomsDepot
 
 ###SCENE 2###
 label GibianVCustomsDepot(): 
-    scene port_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show port_stream at topleft onlayer background with dissolve
+    hide bridge_stream
     "The depot bustles with loud and chaotic life."
     "The tiny barebones facility seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
@@ -234,7 +248,7 @@ label GibianVCustomsDepot():
     show engineer_stream at stream_right with dissolve
     "Teresa sighs as we arrive at the main depot."
     enS "I hate customs."
-    $ chatter_list.append(vig2_sc2_comment1)
+    $ AddChatter(vig2_sc2_comment1)
     "Teresa's eyes dart around the depot facilities."
     show pilot_stream at stream_left with dissolve
     pS "Well getting a permit to fly our ship around here would attract a lot more attention."
@@ -242,7 +256,7 @@ label GibianVCustomsDepot():
     "Jennica gestures to the small crate holding MAC."
     pS "Which is a nonstarter." 
     "Teresa rolls her eyes as we get in the line marked \"New Arrivals.\""
-    $ chatter_list.append(vig2_sc2_comment2)
+    $ AddChatter(vig2_sc2_comment2)
     "Those same eyes grow wide and panicked."
     enS "Shit! We have a problem."
     mS "I knew this was too easy. What is it?"
@@ -254,21 +268,21 @@ label GibianVCustomsDepot():
     enS "Agreed."
     "Teresa pulls out a metal sphere with numerous access ports."
     enS "I think I could whip up a diversion with this if you buy me a little time."
-    $ chatter_list.append(vig2_sc2_comment3)
+    $ AddChatter(vig2_sc2_comment3)
     pS "One of {i}your{/i} diversions? Here?"
     "Jennica appears irritated by this idea."
     pS "With all these people? It's going to cause a panic and stampede!"
-    $ chatter_list.append(vig2_sc2_comment4)
+    $ AddChatter(vig2_sc2_comment4)
     enS "You have a better plan?"
     pS "Yeah. We may be overthinking this."
-    $ chatter_list.append(vig2_sc2_comment5)
+    $ AddChatter(vig2_sc2_comment5)
     pS "These customs guys can't exactly be flush with cash, especially since they're working for Matticus."
-    $ chatter_list.append(vig2_sc2_comment6)
+    $ AddChatter(vig2_sc2_comment6)
     pS "A little grease in the right palm should do the trick."
     "Teresa scoffs."
     enS "Sure, unless one of them happens to have ambitions of a promotion?"
     enS "An employee-of-the-month type will report us to bigcorp in a heartbeat!"
-    $ chatter_list.append(vig2_sc2_comment7)
+    $ AddChatter(vig2_sc2_comment7)
     pS "As opposed to causing a stampede and killing people?"
     pS "A whole bunch of dead innocent bystanders isn't exactly clandestine."
     "The crew looks to me."
@@ -278,32 +292,35 @@ label GibianVCustomsDepot():
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
         "Have Teresa prep the distraction":
-            $ outlaw += 1
-            $ pdEngagement += 1
-            $ kkEngagement += 1
+            $ outlaw += 2
+            $ pdEngagement += 2
+            $ kcEngagement += 1
+            $ engineerApproval += 1
+            $ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard":
-            $ marshal += 1
+            $ marshal += 2
             $ pdEngagement -= 1
             $ csEngagement += 1
-            $ kkEngagement -= 1
+            $ kcEngagement -= 1
+            $ pilotApproval += 1
+            $ customsDistraction = False
             jump GibianVCustomsMarshal
 
 label GibianVCustomsMarshal():
-    scene port_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
-    show engineer_stream at stream_right with dissolve
-    show pilot_stream at stream_left with dissolve
+    #show engineer_stream at stream_right with dissolve
+    #show pilot_stream at stream_left with dissolve
+    #Now that we're not changing scenes between labels, we also don't need to show characters at the beginning of every label
     "Jennica's right. A diversion could hurt a lot of people."
     "And it could definitely attract the wrong attention."
-    $ chatter_list.append(vig2_sc2_mar_comment1)
+    $ AddChatter(vig2_sc2_mar_comment1)
     mS "We can't cause a panic here. We're going with Jennica's plan."
     "Teresa reluctantly puts away her device."
-    $ chatter_list.append(vig2_sc2_mar_comment2)
+    $ AddChatter(vig2_sc2_mar_comment2)
     enS "Fine. I hope we don't regret this."
     pS "Good. Let's see if we can find an agent who looks like they could use a break."
     mS "Right, let's do a quick scout."
-    $ chatter_list.append(vig2_sc2_mar_comment3)
+    $ AddChatter(vig2_sc2_mar_comment3)
     "There's a few different agents spread across the depot."
     "Most look pretty... ordinary."
     "Teresa gestures towards a younger looking agent with glasses."
@@ -312,23 +329,23 @@ label GibianVCustomsMarshal():
     "Jennica zeros in on an agent at the \"Hazardous Luggage\" counter, subtly gesturing to me to look at him."
     "His uniform is wrinkled, shirt half tucked in a rushed panic."
     "The man looks deflated, with dark bags under his eyes."
-    $ chatter_list.append(vig2_sc2_mar_comment4)
+    $ AddChatter(vig2_sc2_mar_comment4)
     "He looks like he may collapse at any moment."
     pS "That's our mark."
     mS "Good find. He looks like the dictionary page for \"disheartened.\""
-    $ chatter_list.append(vig2_sc2_mar_comment5)
+    $ AddChatter(vig2_sc2_mar_comment5)
     "Jennica chuckles."
     hide pilot_stream with Dissolve(0.4)
     "Teresa nods to us. Let's do this."
     hide engineer_stream with Dissolve(0.4)
     show customs_stream at stream_center with Dissolve(0.6)
     "As I approach the customs officer, his eyes perk up."
-    $ chatter_list.append(vig2_sc2_mar_comment6)
+    $ AddChatter(vig2_sc2_mar_comment6)
     agent1 "Hello Ma'am. How might I assist you today?"
     mS "You strike me as a hard worker sir." 
     agent1 "Excuse me?"
     "He seems a little confused."
-    $ chatter_list.append(vig2_sc2_mar_comment7)
+    $ AddChatter(vig2_sc2_mar_comment7)
     mS "It seems like this whole place is propped up by you eh?"
     "His eyes relax as he begins to get what I'm saying."
     agent1 "You don't know the half of it." 
@@ -340,20 +357,20 @@ label GibianVCustomsMarshal():
     mS "I wouldn't be able to sleep if I didn't make it right."
     "I extend my hand to shake his, slipping him a 100 credit note."
     "He quickly slips it into his pocket before looking around the depot at his fellow employees."
-    $ chatter_list.append(vig2_sc2_mar_comment8)
+    $ AddChatter(vig2_sc2_mar_comment8)
     agent1 "Wait by the breakroom for me."
     "I see his eyes are pointing at the staff breakroom on the other side of the depot."
     agent1 "Five minutes."
     "All of a sudden, he raises his voice to be easily audible by nearby bystanders and co-workers."
-    agent1 "I'm terribly sorry but I can't help you Maam, you need to enter customs regularly."
+    agent1 "I'm terribly sorry but I can't help you Ma'am, you need to enter customs regularly."
     "He motions for me to move on."
     hide customs_stream with dissolve
+    show pilot_stream at stream_left with Dissolve(0.5)
+    show engineer_stream at stream_right with Dissolve(0.5)
     "I signal the direction of the breakroom to Teresa and Jennica as I begin strolling towards it."
-    show engineer_stream at stream_right with Dissolve (0.4)
-    show pilot_stream at stream_left with Dissolve(0.4)
     "Teresa looks worried."
     "A minute passes."
-    $ chatter_list.append(vig2_sc2_mar_comment9)
+    $ AddChatter(vig2_sc2_mar_comment9)
     "And another."
     "Three minutes." 
     enS "You sure he's not ratting us out as we speak?"
@@ -366,29 +383,27 @@ label GibianVCustomsMarshal():
     "The customs official peeks his head through the door."
     agent1 "Quick. Stay close."
     "We don't need to be told twice."
-    hide engineer_stream with Dissolve(0.3)
-    hide pilot_stream with Dissolve(0.3)
-    $ chatter_list.append(vig2_sc2_mar_comment10)
+    $ AddChatter(vig2_sc2_mar_comment10)
     "The agent whisks us from room to room, out from one backdoor to another."
     "Soon we're outside, next to the trash dump for the depot."
-    #$ addStoryBeat()
     pause 1.0
     "We're out."
     agent1 "Right so..."
     agent1 "Y'all strike me as the types to not need reminding that we never met."
+    show pilot_stream at stream_left with Dissolve(0.4)
     pS "Mighty nice of ya to help us out!"
     "The agent wordlessly tips his hat before disappearing through the door."
+    hide customs_stream with Dissolve (0.4)
+    show engineer_stream at stream_right with Dissolve (0.4)
     pS "Simple as it gets!"
     enS "Yes. Almost too much so..."
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
 
     jump matticusDoor
 
 label GibianVCustomsOutlaw():
-    scene port_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
-    show engineer_stream at stream_right with Dissolve(0.4)
-    show pilot_stream at stream_left with Dissolve(0.4)
-    $ chatter_list.append(vig2_sc2_out_comment1)
+    $ AddChatter(vig2_sc2_out_comment1)
     "Teresa's right. We can't afford a goody-two-shoes ratting us out."
     "We can't trust the officials here. We'll have to get through our own way."
     mS "Bribing's too risky. We're going with Teresa's plan."
@@ -396,39 +411,39 @@ label GibianVCustomsOutlaw():
     pS "Alright, but we better make it quick. I don't want too many people to get hurt."
     enS "Hurt? Please! This will be the most exciting thing to happen to them in years!"
     mS "Maybe let's keep the excitement to a minimum?"
-    $ chatter_list.append(vig2_sc2_out_comment2)
+    $ AddChatter(vig2_sc2_out_comment2)
     "Teresa rolls her eyes at me."
     enS "I was only joking. Anyhow..."
     "Teresa begins surveying the depot."
-    $ chatter_list.append(vig2_sc2_out_comment3)
+    $ AddChatter(vig2_sc2_out_comment3)
     enS "Right. So, Jennica will slip this device into the customs declaration box."
     enS "Once she is clear, I will activate it."
     enS "Then we make a break for the exit as soon as the second phase begins."
     mS "What's the second phase?"
-    $ chatter_list.append(vig2_sc2_out_comment4)
+    $ AddChatter(vig2_sc2_out_comment4)
     enS "I'm glad you ask! It is the {i}conflagrant{/i} phase."
     "A muffled voice perks up from the crate."
     macS "Conflagrant. Adjective. Burning or bl-."
     enS "SHUSH!"
-    $ chatter_list.append(vig2_sc2_out_comment5)
+    $ AddChatter(vig2_sc2_out_comment5)
     pS "Seriously?"
-    mS "We're trying {i}not{/i} to a attract attention Teresa."
+    mS "We're trying {i}not{/i} to attract attention Teresa."
     enS "Fires happen in these depots all the time!"
     enS "They'll blame it on some farmer using too much fertilizer or something."
     mS "Just keep it under control."
     "Teresa smirks slyly."
     enS "I always do."
     "Teresa pulls several parts from her bag and begins plugging them into her device."
-    $ chatter_list.append(vig2_sc2_out_comment6)
+    $ AddChatter(vig2_sc2_out_comment6)
     enS "Just a little tweak to the capacitors should do the trick!"
     enS "There!"
-    $ chatter_list.append(vig2_sc2_out_comment7)
+    $ AddChatter(vig2_sc2_out_comment7)
     "A spark flies off of the device as Teresa hands it to Jennica."
     pS "Sure this is safe? Looks like it's gonna turn my face into ash."
     enS "As safe as one of your daring escape maneuvers at the very least."
     "Jennica chuckles."
     pS "Good one."
-    $ chatter_list.append(vig2_sc2_out_comment8)
+    $ AddChatter(vig2_sc2_out_comment8)
     mS "We ready?"
     "Jennica and Teresa nod to me."
     "Teresa and I head towards the customs declarations line."
@@ -437,7 +452,7 @@ label GibianVCustomsOutlaw():
     enS "Let's show these rubes a good time."
     "A thin plume of white smoke begins to emanate from the box."
     "As the smoke grows thicker, security officials approach the box to investigate."
-    $ chatter_list.append(vig2_sc2_out_comment9)
+    $ AddChatter(vig2_sc2_out_comment9)
     "A commotion begins to spread across the depot as more and more of the crowd notices the smoke."
     enS "Get ready."
     "Once the security guards close in on the box, Teresa activates the device again."
@@ -447,19 +462,21 @@ label GibianVCustomsOutlaw():
     mS "You read my mind."
     "The crowd explodes into a panic. Hordes of bodies rush towards the exit."
     "It's easy enough to slip through the crowd unnoticed."
-    $ chatter_list.append(vig2_sc2_out_comment10)
+    $ AddChatter(vig2_sc2_out_comment10)
     "Whatever security was covering the exit is long gone by the time we reach the doors."
     "The doors burst open as the crowd pours out of the depot."
-    $ chatter_list.append(vig2_sc2_out_comment11)
+    $ AddChatter(vig2_sc2_out_comment11)
     mS "Let's get off the main street!"
     "Teresa and Jennica nod as I point towards a small alleyway."
     "We're out and on our way to Matticus's compound."
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
     jump matticusDoor
 
 ###SCENE 3###
 label matticusDoor():
-    scene compound_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show compound_stream at topleft onlayer background with dissolve
+    hide port_stream
     "It's only a few blocks to Matticus' compound."
     "Not like we could miss it though."
     show pilot_stream at stream_left with dissolve
@@ -467,24 +484,24 @@ label matticusDoor():
     pS "Holy smokes!"
     "The gates dwarf the rest of the block."
     "They're taller than the whole building across the street, and shining with gaudy golden accents and initials."
-    $ chatter_list.append(vig2_sc3_comment1)
+    $ AddChatter(vig2_sc3_comment1)
     show engineer_stream at stream_right with dissolve
     enS "Understated. How classy."
     mS "Yeah I need a second to just appreciate the elegance of it all."
     pS "Can we get this over with?"
-    $ chatter_list.append(vig2_sc3_comment2)
+    $ AddChatter(vig2_sc3_comment2)
     "Jennica motions to the intercom."
     pS "I'd like to spend as little time dealing with this slum-king as possible."
     "I press on the intercom button outside the gate."
     "A dial tone begins to play"
     mattdoorbell "Name and ID?"
     mS "We're old friends of Sav."
-    $ chatter_list.append(vig2_sc3_comment3)
+    $ AddChatter(vig2_sc3_comment3)
     mattdoorbell "Sure. And my wife loves me more than anything."
     mS "What?"
     mattdoorbell "Oh sorry, I thought we were practicing how to believe our own delusions."
     mattdoorbell "The boss doesn't see \"friends.\" He doesn't have em."
-    $ chatter_list.append(vig2_sc3_comment4)
+    $ AddChatter(vig2_sc3_comment4)
     mS "Real old. Before his coronation."
     mattdoorbell "Snakehawks?"
     mS "I don't like to brag."
@@ -493,43 +510,50 @@ label matticusDoor():
     mattdoorbell "I need a little more proof than that."
     menu:
         "Bring up an old debt": #Lore
+            $ marshal += 1
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright give me a sec."
             "The line goes quiet."
-            $ chatter_list.append(vig2_sc3_lore_comment1)
+            $ AddChatter(vig2_sc3_lore_comment1)
+            $ pilotApproval -= 1
             pS "Not sure if {i}that{/i} was the best story to bring up Cap."
             mS "I mean, there's no way he forgot about it."
-            pS "That's my point..."
+            pS "That's the point..."
             "The intercom lights up again."
-            $ chatter_list.append(vig2_sc3_lore_comment2)
+            $ AddChatter(vig2_sc3_lore_comment2)
             mattdoorbell "You're good. But not here."
             mattdoorbell "The boss has to be careful who he's seen with."
             mattdoorbell "He'll meet you in the warehouse down the road. Here's the coordinates."
             jump meetingMatticus
         "Threaten the doorman": #Threaten
+            $ outlaw += 1
+            $ pdEngagement += 1
             mS "Listen buddy. Just let us in."
             mS "Do you wanna explain to him that you pissed off his old merc crew?"
             mattdoorbell "No, I just-"
             "He's flustered."
-            $ chatter_list.append(vig2_sc3_threat_comment1)
-            mS "Tell him Moze is going to do to this gate what you did to that bar on Forsteuk if you don't let her in."
+            $ AddChatter(vig2_sc3_threat_comment1)
+            mS "Tell him Moze is going to do to this gate what he did to that bar on Forsteuk if you don't let her in."
             mattdoorbell "Fine. Have it your way."
             "The line goes quiet."
-            $ chatter_list.append(vig2_sc3_threat_comment2)
+            $ AddChatter(vig2_sc3_threat_comment2)
+            $ engineerApproval -= 1
             enS "As much as it amuses me to see you coerce some mook..."
             enS "Was that really the best course of action?"
             mS "He's a big boy. He'll be fine."
-            $ chatter_list.append(vig2_sc3_threat_comment3)
+            $ AddChatter(vig2_sc3_threat_comment3)
             mattdoorbell "You're good. But not here."
             mattdoorbell "The boss has to be careful who he's seen with."
             mattdoorbell "He'll meet you in the warehouse down the road. Here's the coordinates."
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
     jump meetingMatticus
 
 ###SCENE4###
 label meetingMatticus():
-    scene warehouse_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
-    $ chatter_list.append(vig2_sc4_comment1)
+    show warehouse_stream at topleft onlayer background with dissolve
+    hide compound_stream
+    $ AddChatter(vig2_sc4_comment1)
     "The dingy warehouse has a hint of stale air."
     "Just as I think to look how long we've been waiting, the doors swing open."
     show matticus_stream at stream_left with dissolve
@@ -561,19 +585,19 @@ label meetingMatticus():
     "Matticus' guards spring into action and draw their weapons."
     show mac_stream at stream_center with Dissolve(.5)
     "MAC sheepishly opens the crate lid and pokes his head out."
+    hide goon_stream with Dissolve (0.5)
     smatt "Who's this?"
-    hide mac_stream with dissolve
     mS "He's what was in that facility."
     show matticus_stream at stream_center with move
     "Matticus approaches MAC, looking him over."
-    hide goon_stream
     smatt "Neat. So how much you figure it's worth?"
-    $ chatter_list.append(vig2_sc4_comment2)
+    $ AddChatter(vig2_sc4_comment2)
     mS "We're just looking to get him to the Dragonflies."
     "Matticus' eyes widen. His voice takes on a singsong quality."
+    hide mac_stream with dissolve
     smatt "Moze! You've gone soft!"
     smatt "I never figured you for a tenderhearted philanthropist!"
-    $ chatter_list.append(vig2_sc4_comment3)
+    $ AddChatter(vig2_sc4_comment3)
     show pilot_stream at stream_left with Dissolve(0.5)
     show engineer_stream at stream_right with Dissolve(0.5)
     "Jennica rolls her eyes."
@@ -581,20 +605,20 @@ label meetingMatticus():
     "His face twists into a grin again."
     smatt "I might. First I need you to do something for me."
     mS "I'm listening."
-    $ chatter_list.append(vig2_sc4_comment4)
+    $ AddChatter(vig2_sc4_comment4)
     smatt "It's a simple job. Right in your wheelhouse."
     smatt "There's an off-world shipment coming in later today. It's going to have an abrupt reunion with gravity."
     smatt "I was gonna hire mercs, but you'll save me a few bucks."
     pS "What's in the shipment?"
     "Matticus continues to smirk as he takes another long drag off his cigar."
     smatt "It's not important."
-    $ chatter_list.append(vig2_sc4_comment5)
+    $ AddChatter(vig2_sc4_comment5)
     pS "I don't care for that answer one bit."
     smatt "You'll have to learn to like it, or you'll find out what Deadeye's got planned for you."
     enS "That's a reasonable point Captain."
     mS "What alternatives do we have Jenn?"
     "Jennica reluctantly agrees."
-    $ chatter_list.append(vig2_sc4_comment6)
+    $ AddChatter(vig2_sc4_comment6)
     mS "And if we do this?"
     smatt "I'll feed false reports into the bigcorp security database."
     smatt "Deadeye'll be looking for you in every corner of the galaxy, except for where you actually are."
@@ -602,13 +626,13 @@ label meetingMatticus():
     enS "Not an unreasonable agreement."
     pS "I don't buy it. Something seems fishy."
     smatt "Oh Jenn. I'm wounded. After all we've been through?"
-    $ chatter_list.append(vig2_sc4_comment7)
+    $ AddChatter(vig2_sc4_comment7)
     smatt "You still don't trust me?"
     pS "Are you surprised?"
     smatt "I don't get surprised honey."
     pS "Seemed surprised at the door."
     "Matticus smirks at Jennica."
-    $ chatter_list.append(vig2_sc4_comment8)
+    $ AddChatter(vig2_sc4_comment8)
     smatt "Oh? Did I?"
     "Matticus looks at me impatiently."
     smatt "Don't waste my time. Do we have a deal?"
@@ -617,25 +641,28 @@ label meetingMatticus():
     hide engineer_stream
     show goon_stream at stream_right with dissolve
     "One of the henchmen nods to us."
-    $ chatter_list.append(vig2_sc4_comment9)
+    $ AddChatter(vig2_sc4_comment9)
     smatt "I'll see you ladies later. It's been lovely catching up."
     "Matticus waves as he leaves the warehouse."
+    hide matticus_stream with dissolve
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     goon "They're stored at a communications array on the outskirts of the city."
-    $ chatter_list.append(vig2_sc4_comment10)
+    $ AddChatter(vig2_sc4_comment10)
     mS "Matticus doesn't have the target's location?"
     pS "Yeah why is this our job? I thought the {i}king{/i} would have mooks to do that for him."
     goon "His guys can't be seen doing this."
     pS "How reassuring."
     goon "We don't have time for this. Let's get to the shuttle."
     mS "Agreed."
+    hide goon_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
     jump approachingBase
 
 ###SCENE 5###
 label approachingBase():
-    scene targetbase_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show targetbase_stream at topleft onlayer background with dissolve
+    hide warehouse_stream
     show pilot_stream at stream_left with dissolve
     show engineer_stream at stream_right with dissolve
     "The shuttle lands in the grass near the base."
@@ -657,27 +684,28 @@ label approachingBase():
     mS "MAC you're going to stick to me like glue, got it?"
     macS "Like an adhesive? Would that not damage your clothes and person?"
     "Jennica chuckles under her breath."
-    $ chatter_list.append(vig2_sc5_comment1)
+    $ AddChatter(vig2_sc5_comment1)
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
     macS "This is a dangerous place? Are these people \"skeeves\" like Matticus?"
     menu:
         "They're bad people":
-            $ chatter_list.append(vig2_sc5_comment2)
+            $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
-            $ chatter_list.append(vig2_sc5_comment3)
+            $ AddChatter(vig2_sc5_comment3)
             macS "Understood. I will stay close to Moze."
-            $ chatter_list.append(vig2_sc5_comment4)
+            $ AddChatter(vig2_sc5_comment4)
             mS "Good. Let's move."
         "Maybe":
             mS "I don't know. But they will try to hurt us."
-            $ chatter_list.append(vig2_sc5_comment2)
+            $ AddChatter(vig2_sc5_comment2)
             macS "Why do we need to work for \"skeeves?\""
             mS "We don't have the time to discuss it right now."
-            $ chatter_list.append(vig2_sc5_comment5)
+            $ AddChatter(vig2_sc5_comment5)
             mS "You just need to stay close to me."
             macS "Understood. I will stay close to Moze."
             mS "Good. Let's move."
             hide mac_stream with dissolve
+        #Should NPC approval adjustments happen here?
     show goon_stream at stream_center with Dissolve(0.5)
     pS "So what's the plan?"
     goon "Plan? This is your operation. We just gotta get to the main datacenter computer."
@@ -689,7 +717,9 @@ label approachingBase():
     enS "You're not coming with us?"
     goon "You think I get paid enough to get shot at? As if."
     "Reginald lights a cigarette and walks off."
-    $ chatter_list.append(vig2_sc5_comment6)
+    hide goon_stream with dissolve
+    #$ chatter_list.append(vig2_sc5_comment6)
+    $ AddChatter(vig2_sc5_comment6)
     enS "I'm inclined to agree with him. We don't know how much firepower they'll have in there."
     enS "I say we go in heavy and take them out expeditiously. Minimize the hazards to ourselves and the cargo."
     pS "The fewer people who know we were here the better. And an explosion might tip a few folks off"
@@ -698,52 +728,67 @@ label approachingBase():
     menu:
         "A full offensive is more tactically sound":
             $ gunsBlazing = True
-            $ outlaw += 2
+            $ outlaw += 3
+            $ pdEngagement += 3
+            $ kcEngagement += 2
+            $ engineerApproval += 2
             "We don't know what kind of security we're walking into."
-            $ chatter_list.append(vig2_sc6_out_comment1)
+            $ AddChatter(vig2_sc6_out_comment1)
             "Getting caught off guard is a risk we can't afford to take."
             mS "I agree with Teresa. We can't know what's waiting for us inside."
             mS "We'll get in and out quick and dirty."
-            $ chatter_list.append(vig2_sc6_out_comment2)
+            $ AddChatter(vig2_sc6_out_comment2)
             pS "Your call Cap."
-            enS "I'll whip up a door breeching charge."
+            enS "I'll whip up a door breaching charge."
             mS "I'll take point, you two cover me when I go in."
             $ viewCount += 1
-            $ chatter_list.append(vig2_sc6_out_comment3)
+            $ AddChatter(vig2_sc6_out_comment3)
             "Teresa and Jennica nod in agreement."
+            show goon_stream at stream_center with dissolve
             "I wave over Reginald."
             goon "So what are we doing?"
             mS "Going in the front door guns blazing."
             goon "Legends. This should be entertaining."
             "Teresa signals to me that she's ready."
             mS "Alright let's get to it."
+            hide engineer_stream with Dissolve(0.5)
+            hide pilot_stream with Dissolve(0.5)
+            hide goon_stream with Dissolve(0.5)
             jump commsBase_OUT1
         "Better to be as quiet as possible":
             $ marshal += 2
             $ gunsBlazing = False
-            $ chatter_list.append(vig2_sc6_mar_comment1)
+            $ csEngagement += 2
+            $ pdEngagement -= 2
+            $ kcEngagement -= 1
+            $ pilotApproval += 2
+            $ AddChatter(vig2_sc6_mar_comment1)
             "Quick and quiet would be safer."
             mS "Jennica's right, lets try to avoid attention."
             enS "Very well. I'll get to work disabling the alarm."
-            $ chatter_list.append(vig2_sc6_mar_comment2)
+            $ AddChatter(vig2_sc6_mar_comment2)
             $ shnzi = False
             $ viewCount -= 1
             pS "There's a fire escape on the left side. That could be our way in."
             mS "Good. Remember, quick and quiet."
             "Jennica and Teresa nod in agreement."
-            $ chatter_list.append(vig2_sc6_mar_comment3)
+            $ AddChatter(vig2_sc6_mar_comment3)
             "I wave Reginald over."
+            show goon_stream at stream_center with dissolve
             mS "We're going in quiet."
             "Reginald chuckles."
-            $ chatter_list.append(vig2_sc6_mar_comment4)
+            $ AddChatter(vig2_sc6_mar_comment4)
             goon "Really? I didn't think Ex-Snakehawks would be so demure."
             goon "Whatever. I'll follow behind you."
+            hide engineer_stream with Dissolve(0.5)
+            hide pilot_stream with Dissolve(0.5)
+            hide goon_stream with Dissolve(0.5)
             jump commsBase_MAR1
 
 ####SCENE 6####
 label commsBase_MAR1():
-    scene baseinfiltration_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show vig2_compound_hall at topleft onlayer background with dissolve
+    hide targetbase_stream
     show engineer_stream at stream_right with Dissolve (0.3)
     "As we approach the base, Teresa signals to stay quiet."
     "After climbing up the fire escape, Teresa takes out a device and affixes it to the door."
@@ -761,17 +806,24 @@ label commsBase_MAR1():
     menu:
         "My instincts take over."
         "Stun him":
+            $ kcEngagement -= 1
+            $ pdEngagement -= 1
+            $ engineerApproval += 1
             "I instantly flick my blaster to stun before shooting him in the chest."
-            $ chatter_list.append(vig2_sc6_mar_choice1_stun_comment1)
+            $ AddChatter(vig2_sc6_mar_choice1_stun_comment1)
             "He can barely react as the stunning blast ripples through his body, incapacitating him."
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
+            show goon_stream at stream_center with Dissolve(0.5)
             goon "Keep moving!"
             mS "I know!"
             "I can't afford to hesitate."
             jump commsBase_MAR2
         "Bluff":
-            $ marshal += 1
+            $ pdEngagement += 1
+            $ csEngagement += 1
+            $ kcEngagement -= 1
+            $ pilotApproval += 1
             mS "Hey! How's it going?"
             "His hand raises into a wave as he greets us"
             hsguard1 "Hey! Sorry I don't think we've met."
@@ -780,14 +832,15 @@ label commsBase_MAR1():
             mS "Yeah I was shocked too. I'll see you around?"
             hsguard1 "Sure."
             "He continues along his patrol, oblivious."
-            $ chatter_list.append(vig2_sc6_mar_choice1_bluff_comment1)
+            $ AddChatter(vig2_sc6_mar_choice1_bluff_comment1)
+            show pilot_stream at stream_left with Dissolve(0.5)
             pS "That was too easy."
             mS "Tell me about it."
             jump commsBase_MAR2
 
 label commsBase_MAR2():
-    scene baseinfiltration_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show vig2_compound_hall at topleft onlayer background with dissolve
+    #Do we need to cut some of these "show" statements?
     show engineer_stream at stream_right with Dissolve(0.5)
     show pilot_stream at stream_left with Dissolve(0.5)
     show goon_stream at stream_center with Dissolve(0.5)
@@ -802,48 +855,56 @@ label commsBase_MAR2():
     "They might come back though."
     menu:
         "Knock them out":
-            $ outlaw += 1
+            $ pdEngagement += 1
+            $ csEngagement -= 1
             "We can't risk them coming back and finding us."
-            $ chatter_list.append(vig2_sc6_mar_choice2_stun_comment1)
+            $ AddChatter(vig2_sc6_mar_choice2_stun_comment1)
             "We need to neutralize these guys."
             "I signal to Jennica and Teresa that we're going to stun them."
             "I'll take the one on the right, Jennica will get the middle one, and Teresa the left."
             "Jennica and Teresa take position behind me."
             "Once everyone's ready, I kick the door open."
-            $ chatter_list.append(vig2_sc6_mar_choice2_stun_comment2)
+            $ AddChatter(vig2_sc6_mar_choice2_stun_comment2)
             "It's over in a flash, the guards barely have time to react."
             "Like clockwork, they all fall to the ground."
             pS "This all feels way too easy."
             enS "Why is that a bad thing?"
-            $ chatter_list.append(vig2_sc6_mar_choice2_stun_comment3)
+            $ AddChatter(vig2_sc6_mar_choice2_stun_comment3)
             enS "I rather like things being easy."
             "Reginald signals us to follow him."
             goon "The main datacenter is through this door here."
             "Reginald opens the door."
+            hide engineer_stream with Dissolve(0.5)
+            hide pilot_stream with Dissolve(0.5)
+            hide goon_stream with Dissolve(0.5)
             jump commsBase_DataCenter
         "Go with a diversion":
-            $ marshal += 1
+            $ csEngagement += 1
+            $ kcEngagement -= 1
+            $ pdEngagement -= 1
             "We can get through without firing a shot."
             "Quick and quiet."
             "I signal to Teresa to prepare a fake radio diversion."
             "She nods, and begins inputting code into her computer."
-            $ chatter_list.append(vig2_sc6_mar_choice2_dist_comment1)
+            $ AddChatter(vig2_sc6_mar_choice2_dist_comment1)
             "In an instant, all three of the guard's radios begin blaring with a distress call."
             "A sense of urgency hits them as they begin running out of the room to the source of the call."
             "Once their out, I wave over Reginald."
             goon "Wow so much work for what?"
             pS "This all feels way too easy."
-            $ chatter_list.append(vig2_sc6_mar_choice2_dist_comment2)
+            $ AddChatter(vig2_sc6_mar_choice2_dist_comment2)
             enS "Why is that a bad thing?"
             enS "I rather like things being easy."
             "Reginald signals us to follow him."
             goon "The main datacenter is through this door here."
             "Reginald opens the door."
+            hide engineer_stream with Dissolve(0.5)
+            hide pilot_stream with Dissolve(0.5)
+            hide goon_stream with Dissolve(0.5)
             jump commsBase_DataCenter
 
 label commsBase_OUT1():
-    scene baseinfiltration_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show vig2_compound_hall at topleft onlayer background with dissolve
     show engineer_stream at stream_right with Dissolve(0.5)
     show pilot_stream at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
@@ -852,42 +913,44 @@ label commsBase_OUT1():
     "I notice MAC looks a little worried."
     mS "Just stay close to me."
     macS "Affirmative. Sticking to Moze."
-    $ chatter_list.append(vig2_sc6_out_comment5)
+    $ AddChatter(vig2_sc6_out_comment5)
     hide mac_stream with Dissolve(0.5)
     "I give the signal to Teresa."
     hide pilot_stream
     hide engineer_stream
+    show vig2_compound_hall with vpunch
     "With a deafening bang, the door is obliterated into countless pieces."
     "An instant later I'm running through the smoke."
     "MAC's footsteps clink behind me."
     "I make a dive for a piece of rubble as shots fly around me."
-    $ chatter_list.append(vig2_sc6_out_comment6)
+    $ AddChatter(vig2_sc6_out_comment6)
     "I peek out from cover."
-    $ chatter_list.append(vig2_sc6_out_comment7)
+    $ AddChatter(vig2_sc6_out_comment7)
     "Two of the guards are dead already from the explosion."
-    $ chatter_list.append(vig2_sc6_out_comment8)
+    $ AddChatter(vig2_sc6_out_comment8)
     "Two more are shooting at us from the other side of the room."
-    $ chatter_list.append(vig2_sc6_out_comment9)
+    $ AddChatter(vig2_sc6_out_comment9)
     "I think I have a good shot on one of them."
     menu:
         "Shoot to kill":
-            $ outlaw += 1
+            $ pdEngagement += 1
+            $ csEngagement -= 1
             "I take a deep breath and fire my blaster."
             "The guard's head snaps back before he slumps over."
-            $ chatter_list.append(vig2_sc6_out_shoot_comment1)
-            $ chatter_list.append(vig2_sc6_out_shoot_comment2)
-            $ chatter_list.append(vig2_sc6_out_shoot_comment3)
+            $ AddChatter(vig2_sc6_out_shoot_comment1)
+            $ AddChatter(vig2_sc6_out_shoot_comment2)
+            $ AddChatter(vig2_sc6_out_shoot_comment3)
             "I hear shots ringing out from behind me."
-            $ chatter_list.append(vig2_sc6_out_shoot_comment4)
+            $ AddChatter(vig2_sc6_out_shoot_comment4)
             pS "Nice shooting!"
             show pilot_stream at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
         "Suppressing fire":
-            $ marshal += 1
+            $ kcEngagement += 1
             "Too risky."
-            $ chatter_list.append(vig2_sc6_out_suppress_comment1)
+            $ AddChatter(vig2_sc6_out_suppress_comment1)
             "I fire a few more shots from cover."
-            $ chatter_list.append(vig2_sc6_out_suppress_comment2)
+            $ AddChatter(vig2_sc6_out_suppress_comment2)
             "Shots ring out from behind me, hitting one of the guards."
             pS "Thanks for the cover!"
             show pilot_stream at stream_left with Dissolve(0.2)
@@ -898,91 +961,101 @@ label commsBase_OUT1():
     "Jennica leaps out of cover and begins running towards the guard."
     "Three more guards emerge from the door, guns drawn."
     pS "Shit! We got company!"
-    $ chatter_list.append(vig2_sc6_out_comment11)
+    $ AddChatter(vig2_sc6_out_comment11)
     "Jennica takes cover behind another piece of rubble."
     "I hear shots whizzing over my head as the guards fire at us."
     "I pull out a grenade and lob it at the guards."
-    $ chatter_list.append(vig2_sc6_out_comment12)
+    $ AddChatter(vig2_sc6_out_comment12)
     hsguard1 "GRENADE! GET DOWN!"
     "Two of the guards are able to dive out of the way in time."
-    $ chatter_list.append(vig2_sc6_out_comment13)
+    $ AddChatter(vig2_sc6_out_comment13)
     "The grenade detonates with an unnerving concussive thump."
     "I peek out of cover and spot one of the guards running."
     "Jennica fires her blaster, hitting the fleeing guard."
-    $ chatter_list.append(vig2_sc6_out_comment14)
+    $ AddChatter(vig2_sc6_out_comment14)
     "Teresa continues shooting."
     "Only one guard is left."
-    $ chatter_list.append(vig2_sc6_out_comment15)
+    $ AddChatter(vig2_sc6_out_comment15)
     show guard1_stream at stream_right with Dissolve(0.4)
     hsguard1 "I surrender!"
     mS "Stand up and put your hands where I can see them!"
     "The guard complies."
     hsguard1 "Please Miss, just let me go, I promise I'll never breathe a word of this to anyone."
     "He's terrified. This is probably the first time anyone's shot at him."
-    $ chatter_list.append(vig2_sc6_out_comment16)
+    $ AddChatter(vig2_sc6_out_comment16)
     pause 0.5
-    $ chatter_list.append(vig2_sc6_out_comment17)
+    $ AddChatter(vig2_sc6_out_comment17)
     pause 0.5
-    $ chatter_list.append(vig2_sc6_out_comment18)
+    $ AddChatter(vig2_sc6_out_comment18)
     menu:
         "This isn't his fault":
             $ marshal += 2
-            $ chatter_list.append(vig2_sc6_out_spare_comment1)
+            $ pilotApproval += 2
+            $ pdEngagement -= 1
+            $ kcEngagement += 1
+            $ csEngagement += 1
+            $ AddChatter(vig2_sc6_out_spare_comment1)
             "This guy was just doing his job."
             mS "Alright."
-            $ chatter_list.append(vig2_sc6_out_spare_comment2)
+            $ AddChatter(vig2_sc6_out_spare_comment2)
             hsguard1 "Thank you miss! I-"
             hide guard1_stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show goon_stream at stream_center with dissolve
             "Reginald stands over the corpse."
-            $ chatter_list.append(vig2_sc6_out_spare_comment3)
+            $ AddChatter(vig2_sc6_out_spare_comment3)
             goon "Come on. We're almost done."
-            $ chatter_list.append(vig2_sc6_out_spare_comment4)
+            $ AddChatter(vig2_sc6_out_spare_comment4)
             pS "What the hell!"
             mS "He didn't need to die!"
-            $ chatter_list.append(vig2_sc6_out_spare_comment5)
+            $ AddChatter(vig2_sc6_out_spare_comment5)
             show engineer_stream at stream_right with Dissolve(0.5)
             enS "Better him than us I suppose."
-            $ chatter_list.append(vig2_sc6_out_spare_comment6)
+            $ AddChatter(vig2_sc6_out_spare_comment6)
             "Jennica scowls at Teresa."
             goon "We haven't got all day!"
-            $ chatter_list.append(vig2_sc6_out_spare_comment7)
+            $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacenter."
         "I can't risk survivors":
             $ outlaw += 2
+            $ engineerApproval += 1
+            $ pdEngagement += 1
+            $ csEngagement -= 1
             "The less witnesses the better."
-            $ chatter_list.append(vig2_sc6_out_execute_comment1)
-            $ chatter_list.append(vig2_sc6_out_execute_comment2)
+            $ AddChatter(vig2_sc6_out_execute_comment1)
+            $ AddChatter(vig2_sc6_out_execute_comment2)
             "I raise my blaster."
-            $ chatter_list.append(vig2_sc6_out_execute_comment3)
+            $ AddChatter(vig2_sc6_out_execute_comment3)
             hsguard1 "Miss I have kids."
-            $ chatter_list.append(vig2_sc6_out_execute_comment4)
+            $ AddChatter(vig2_sc6_out_execute_comment4)
             hide guard1_stream with Dissolve(0.1)
             "His body slumps to the ground lifelessly."
-            $ chatter_list.append(vig2_sc6_out_execute_comment5)
-            $ chatter_list.append(vig2_sc6_out_execute_comment6)
-            $ chatter_list.append(vig2_sc6_out_execute_comment7)
+            $ AddChatter(vig2_sc6_out_execute_comment5)
+            $ AddChatter(vig2_sc6_out_execute_comment6)
+            $ AddChatter(vig2_sc6_out_execute_comment7)
             pS "Damn Cap. That was cold."
-            $ chatter_list.append(vig2_sc6_out_execute_comment8)
-            $ chatter_list.append(vig2_sc6_out_execute_comment9)
-            $ chatter_list.append(vig2_sc6_out_execute_comment10)
+            $ AddChatter(vig2_sc6_out_execute_comment8)
+            $ AddChatter(vig2_sc6_out_execute_comment9)
+            $ AddChatter(vig2_sc6_out_execute_comment10)
             enS "Better safe than sorry."
-            $ chatter_list.append(vig2_sc6_out_execute_comment11)
+            $ AddChatter(vig2_sc6_out_execute_comment11)
             show goon_stream at stream_right with dissolve
             "Reginald emerges through the door."
-            $ chatter_list.append(vig2_sc6_out_execute_comment12)
-            $ chatter_list.append(vig2_sc6_out_execute_comment13)
+            $ AddChatter(vig2_sc6_out_execute_comment12)
+            $ AddChatter(vig2_sc6_out_execute_comment13)
             pS "Nice of you to join us."
-            $ chatter_list.append(vig2_sc6_out_execute_comment14)
+            $ AddChatter(vig2_sc6_out_execute_comment14)
             goon "Come on. We're almost done."
-            $ chatter_list.append(vig2_sc6_out_execute_comment15)
+            $ AddChatter(vig2_sc6_out_execute_comment15)
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
+    hide goon_stream with Dissolve(0.5)
     jump commsBase_DataCenter
 
 ###SCENE 7###
 label commsBase_DataCenter():
-    scene datacenter_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show datacenter_stream at topleft onlayer background with dissolve
+    hide vig2_compound_hall
     "The datacenter is underwhelming."
     "At the center of the small room is a computer workstation, with numerous monitors displaying a variety of shipments and other logistic info."
     show worker_stream at stream_center with dissolve
@@ -997,15 +1070,15 @@ label commsBase_DataCenter():
     show pilot_stream at stream_left with Dissolve(0.4)
     pS "What did he say?"
     worker "Why do you want the tracking coordinates of an aid shipment?"
-    $ chatter_list.append(vig2_sc7_comment1)
+    $ AddChatter(vig2_sc7_comment1)
     pS "Yeah Reginald, why {i}do{/i} we want the tracking coordinates of an aid shipment?"
     "Reginald sighs exasperatedly."
     goon "I don't get paid enough for this."
     goon "The shipment's going to a town called Sallent."
     goon "They haven't paid their protection money this month."
-    $ chatter_list.append(vig2_sc7_comment2)
+    $ AddChatter(vig2_sc7_comment2)
     goon "The boss wants to send a \"message\" to them and any other would-be heroes who don't think they need protection."
-    $ chatter_list.append(vig2_sc7_comment3)
+    $ AddChatter(vig2_sc7_comment3)
     pS "I knew this was too easy!"
     hide worker_stream
     show mac_stream at stream_center with dissolve
@@ -1026,48 +1099,58 @@ label commsBase_DataCenter():
     hide worker_stream with Dissolve (0.4)
     goon "People from a town you had never heard of until now might die."
     goon "You really care that much about them?"
-    $ chatter_list.append(vig2_sc7_comment4)
-    show engineer_stream at stream_center with Dissolve(0.4)
+    hide goon_stream with Dissolve(0.5)
+    $ AddChatter(vig2_sc7_comment4)
+    show engineer_stream at stream_right with Dissolve(0.4)
     enS "As much as I loathe to admit it, I agree."
     enS "We came here to cover our trail."
-    $ chatter_list.append(vig2_sc7_comment5)
+    $ AddChatter(vig2_sc7_comment5)
     enS "If we renege on the deal now, we'll be no closer to doing that, and will have made an enemy in Matticus."
     enS "All the people we save here won't matter if we get caught!"
     show pilot_stream at stream_left with Dissolve (0.3)
     pS "They're people!"
     pS "Just because they were born here doesn't make them disposable!"
     pS "Can you really go through with this Cap?"
-    $ chatter_list.append(vig2_sc7_comment6)
+    $ AddChatter(vig2_sc7_comment6)
     "MAC looks worried." 
-    $ chatter_list.append(vig2_sc7_comment7)
+    $ AddChatter(vig2_sc7_comment7)
     menu:
         "This has gone too far":
-            $ marshal += 3
+            $ marshal += 5
+            $ csEngagement += 3
+            $ pdEngagement -= 3
+            $ kcEngagement += 1
+            $ pilotApproval += 3
+            $ engineerApproval -= 1
             "This is just plain wrong."
             "We have to be better."
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
         "We don't have a choice":
-            $ outlaw += 3
+            $ outlaw += 5
+            $ csEngagement -= 3
+            $ pdEngagement +=3
+            $ kcEngagement += 1
+            $ engineerApproval += 2
+            $ pilotApproval -= 2
+            #This way, either choice produces the same difference in micro-game NPC Approval
+            #BUT if we want to do things where like only certain dialogues trigger if Approval with
+            #someone is high enough, the difference in individual scales can matter
             "We've come this far."
-            $ chatter_list.append(vig2_sc7_out_comment1)
+            $ AddChatter(vig2_sc7_out_comment1)
             "We have to do this."
             mS "We don't have a choice anymore."
             jump commsBase_DataCenter_OUT
 
 label commsBase_DataCenter_MAR():
-    scene datacenter_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
-    show pilot_stream at stream_left with Dissolve(0.5)
-    show engineer_stream at stream_right with Dissolve (0.5)
     mS "We can't do this."
     pS "Cap?"
-    $ chatter_list.append(vig2_sc7_mar_comment1)
+    $ AddChatter(vig2_sc7_mar_comment1)
     mS "We've come this far because we wanted to try and make this galaxy better."
     mS "How can we honestly say that if we follow through with this?"
     enS "Yes, but what does that matter if we get caught and bigcorp takes the robot back?"
     pS "We'll have tried."
-    $ chatter_list.append(vig2_sc7_mar_comment2)
+    $ AddChatter(vig2_sc7_mar_comment2)
     enS "I don't like this any more than you two, but what's the alternative?"
     enS "If we don't cover our tracks, The Deadeye will be on our asses in no time! We need Matticus' access to the security database."
     pS "He's not the only one with access!"
@@ -1078,17 +1161,19 @@ label commsBase_DataCenter_MAR():
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
     goon "How did the most infamous outlaw merc group become soft as baby shit?"
-    $ chatter_list.append(vig2_sc7_mar_comment3)
+    $ AddChatter(vig2_sc7_mar_comment3)
     goon "You really think I'm gonna let you just bail on this deal?"
     "I notice Jennica reaching for her blaster."
     menu:
         "Signal Jennica to stun him":
             $ outlaw += 1
+            $ jennicaApproval += 1
+            $ teresaApproval += 1
             "I look over to Jennica and give her the signal."
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide goon_stream with Dissolve(0.2)
             pS "Wish we coulda done that hours ago."
-            $ chatter_list.append(vig2_sc7_mar_stun_comment1)
+            $ AddChatter(vig2_sc7_mar_stun_comment1)
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
@@ -1105,12 +1190,12 @@ label commsBase_DataCenter_MAR():
             "Reginald's brow furrows."
             goon "A couple grand I guess?"
             pS "A couple grand?!"
-            $ chatter_list.append(vig2_sc7_mar_bribe_comment1)
+            $ AddChatter(vig2_sc7_mar_bribe_comment1)
             goon "I need to make it off world in one piece. Money don't spend if I'm dead."
             mS "We can afford that."
             "I reach into my pocket and grab 2000 credits."
             goon "Pleasure doing business."
-            $ chatter_list.append(vig2_sc7_mar_bribe_comment2)            
+            $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
             hide goon_stream with dissolve
             pS "{i}Can{/i} we afford that?"
@@ -1128,30 +1213,30 @@ label commsBase_DataCenter_MAR():
     pS "Well butter my biscuit!"
     mS "How do you have access? Sounds awfully convenient."
     worker "The Intergalactic Humanitarian Society has observer access to the database, to stay informed about pirates and solar storm sightings."
-    $ chatter_list.append(vig2_sc7_mar_comment4)
+    $ AddChatter(vig2_sc7_mar_comment4)
     worker "Once I'm in, I just need to spoof the ID to make it look like I'm an ordinary security grunt."
     enS "Where did you learn how to do all of this?"
     "The technician continues to shift uneasily."
     worker "I... might use the Society's remote shipments to smuggle cargo."
     worker "The tariffs are insane! Matticus isn't exactly a free trade advocate."
     "This feels too good to be true."
-    $ chatter_list.append(vig2_sc7_mar_comment5)
+    $ AddChatter(vig2_sc7_mar_comment5)
     mS "Why are you helping us?"
     if gunsBlazing == False:
-        worker "You care enough about strangers from a small to make an enemy out of Matticus."
+        worker "You care enough about strangers from a small town to make an enemy out of Matticus."
         worker "You're obviously good people. And you risked your neck to spare all of my colleagues here."
         worker "I saw on the security cameras."
         "The technician smiles at me."
-        $ chatter_list.append(vig2_sc7_mar_comment6)
+        $ AddChatter(vig2_sc7_mar_comment6)
     if gunsBlazing == True:
-        worker "What choice do I have?!"
+        worker "What choice do I have!?"
         worker "You killed everyone here! I saw on the security cameras."
         "The technician sighs."
         worker "But you're better than Matticus. At least you refused to let all those people to die of gray fever."
-        $ chatter_list.append(vig2_sc7_mar_comment7)
+        $ AddChatter(vig2_sc7_mar_comment7)
         worker "Better the lesser evil."
     mS "Fair enough. So what do you need to do this?"
-    $ chatter_list.append(vig2_sc7_mar_comment8)
+    $ AddChatter(vig2_sc7_mar_comment8)
     worker "I can do it right here. I just need your ship's registration code, planet of origin and operating name."
     enS "How can we know you're not going to betray us?"
     worker "You can't. You're going to have to trust me."
@@ -1167,90 +1252,96 @@ label commsBase_DataCenter_MAR():
     "The technician nods. He begins typing a series of commands into the computer."
     worker "Alright it should be set up. It'll begin sending in the reports once you're off world."
     mS "Great. Needless to say, we were never here."
-    $ chatter_list.append(vig2_sc7_mar_comment9)
+    $ AddChatter(vig2_sc7_mar_comment9)
     "The technician smiles and winks at me."
     worker "I don't know who you're talking about. I wasn't even working that night!"
+    hide worker_stream with Dissolve(0.5)
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
     jump vig2epilogue_MAR
 
 label commsBase_DataCenter_OUT():
-    scene datacenter_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
-    show pilot_stream at stream_left
-    show engineer_stream at stream_right    
+    show datacenter_stream at topleft onlayer background with dissolve
     pS "And let all those people die?!"
     enS "Thousands more will die as well if they get MAC."
     if shnzi == True:
-        $ chatter_list.append(vig2_sc7_out_comment2_shnzi)
+        $ AddChatter(vig2_sc7_out_comment2_shnzi)
     else:
-        $ chatter_list.append(vig2_sc7_out_comment2_AFK)
+        $ AddChatter(vig2_sc7_out_comment2_AFK)
     mS "I don't like this any more than you do Jen, but we're out of options."
     pS "Damnit Cap."
-    $ chatter_list.append(vig2_sc7_out_comment3)
-    $ chatter_list.append(vig2_sc7_out_comment4)    
+    $ AddChatter(vig2_sc7_out_comment3)
+    $ AddChatter(vig2_sc7_out_comment4)
     enS "If you have a better way to cover our trail please do share."
     pS "I thought we were trying to do better than this."
-    $ chatter_list.append(vig2_sc7_out_comment5)
+    $ AddChatter(vig2_sc7_out_comment5)
     mS "We can't do better if we're in jail, and considering how close we got last time..."
     mS "I can't lose you guys. You're all I've got."
-    $ chatter_list.append(vig2_sc7_out_comment6)
+    $ AddChatter(vig2_sc7_out_comment6)
     hide pilot_stream
     hide engineer_stream
     show goon_stream at stream_left with Dissolve(0.5)
     goon "Are we done with this yet?"
     goon "I ain't got all day."
-    $ chatter_list.append(vig2_sc7_out_comment7)
+    $ AddChatter(vig2_sc7_out_comment7)
     mS "Yeah. Lets get the tracking code and get out of here."
-    $ chatter_list.append(vig2_sc7_out_comment8)
+    $ AddChatter(vig2_sc7_out_comment8)
     goon "Good."
-    $ chatter_list.append(vig2_sc7_out_comment9)
+    $ AddChatter(vig2_sc7_out_comment9)
     "Reginald turns to the technician."
-    $ chatter_list.append(vig2_sc7_out_comment10)
+    $ AddChatter(vig2_sc7_out_comment10)
     show worker_stream at stream_center with Dissolve(0.5)
     goon "I'm not going to ask nicely again. The tracking code, now."
-    $ chatter_list.append(vig2_sc7_out_comment11)
+    $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
     worker "44s-73f-94c-21o."
-    $ chatter_list.append(vig2_sc7_out_comment12)
-    $ chatter_list.append(vig2_sc7_out_comment13)
+    $ AddChatter(vig2_sc7_out_comment12)
+    $ AddChatter(vig2_sc7_out_comment13)
     worker "You realise these people have nothing right?"
-    $ chatter_list.append(vig2_sc7_out_comment14)
-    $ chatter_list.append(vig2_sc7_out_comment15)
+    $ AddChatter(vig2_sc7_out_comment14)
+    $ AddChatter(vig2_sc7_out_comment15)
     "Reginald logs the code into his agenda."
     goon "I don't get paid to realise things."
-    $ chatter_list.append(vig2_sc7_out_comment16)
-    $ chatter_list.append(vig2_sc7_out_comment17)
-    $ chatter_list.append(vig2_sc7_out_comment18)
+    $ AddChatter(vig2_sc7_out_comment16)
+    $ AddChatter(vig2_sc7_out_comment17)
+    $ AddChatter(vig2_sc7_out_comment18)
     show engineer_stream at stream_right with Dissolve(0.5)
     enS "What do we do with the Technician?"
     if shnzi == True:
-        $ chatter_list.append(vig2_sc7_out_comment19_shnzi)
+        $ AddChatter(vig2_sc7_out_comment19_shnzi)
     else:
-        $ chatter_list.append(vig2_sc7_out_comment19_shnzi)
+        $ AddChatter(vig2_sc7_out_comment19_bacon)
     goon "I'll leave that to you. Meet me back at the shuttle."
-    $ chatter_list.append(vig2_sc7_out_comment20)
-    $ chatter_list.append(vig2_sc7_out_comment21)
+    $ AddChatter(vig2_sc7_out_comment20)
+    $ AddChatter(vig2_sc7_out_comment21)
     "Reginald walks out of the room."
-    $ chatter_list.append(vig2_sc7_out_comment22)
-    $ chatter_list.append(vig2_sc7_out_comment23)
-    $ chatter_list.append(vig2_sc7_out_comment24)
+    $ AddChatter(vig2_sc7_out_comment22)
+    $ AddChatter(vig2_sc7_out_comment23)
+    $ AddChatter(vig2_sc7_out_comment24)
     hide goon_stream with dissolve
     show pilot_stream at stream_left with Dissolve(0.5)
     menu:
         "Convince him not to say anything":
             $ marshal += 1
+            $ pdEngagement += 1
+            $ csEngagement += 1
+            $ kcEngagement += 1
+            $ pilotApproval += 1
+            $ engineerApproval += 1
+            $ killHacker = False
             "We don't need to hurt him. Just need to make him think we will."
             mS "Look, it's in your best interest that you forget everything that happened here."
-            $ chatter_list.append(vig2_sc7_out_coerce_comment1)
+            $ AddChatter(vig2_sc7_out_coerce_comment1)
             worker "What?"
             mS "Spreading word of this around is just gonna make things more difficult."
             mS "For us..."
-            $ chatter_list.append(vig2_sc7_out_coerce_comment2)
+            $ AddChatter(vig2_sc7_out_coerce_comment2)
             "I pull out my blaster and slowly drag the muzzle across his chest."
             mS "And for you. We really don't want to have to come back and deal with you."
-            $ chatter_list.append(vig2_sc7_out_coerce_comment3)
+            $ AddChatter(vig2_sc7_out_coerce_comment3)
             mS "You don't want that either."
             "The technician is shaking, paralyzed with fear."
-            $ chatter_list.append(vig2_sc7_out_coerce_comment4)
+            $ AddChatter(vig2_sc7_out_coerce_comment4)
             mS "Do we understand each other?"
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
@@ -1259,16 +1350,22 @@ label commsBase_DataCenter_OUT():
             enS "If it works it works."
         "Kill him":
             $ outlaw += 2
-            $ chatter_list.append(vig2_sc7_out_execute_comment1)
+            $ pdEngagement += 2
+            $ csEngagement -= 1
+            $ kcEngagement -= 1
+            $ pilotApproval -= 1
+            $ engineerApproval += 1
+            $ killHacker = True
+            $ AddChatter(vig2_sc7_out_execute_comment1)
             "Only one way to make sure this never leaves the building."
-            $ chatter_list.append(vig2_sc7_out_execute_comment2)
+            $ AddChatter(vig2_sc7_out_execute_comment2)
             "I raise my blaster up to the technician's face."
             worker "Wait! You don't have to do-"
             hide worker_stream with Dissolve(0.1)
-            $ chatter_list.append(vig2_sc7_out_execute_comment3)
+            $ AddChatter(vig2_sc7_out_execute_comment3)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             pS "Damn Cap, that was dark."
-            $ chatter_list.append(vig2_sc7_out_execute_comment4)
+            $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
             mS "Enough blabbing. Lets go."
     show goon_stream at stream_center with Dissolve(0.5)
@@ -1283,11 +1380,14 @@ label commsBase_DataCenter_OUT():
     goon "This shuttle has a bigcorp missle loaded on it. When they try and trace it, it'll just lead back to their own factories."
     mS "Sounds simple enough."
     goon "Swell."
+    hide pilot_stream with Dissolve(0.5)
+    hide engineer_stream with Dissolve(0.5)
+    hide goon_stream with Dissolve(0.5)
     jump shuttleDestruction
 
 label shuttleDestruction():
-    scene orbit_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show orbit_stream at topleft onlayer background with dissolve
+    hide datacenter_stream
     show goon_stream at stream_center with dissolve
     show pilot_stream at stream_left with dissolve
     show engineer_stream at stream_right with dissolve       
@@ -1300,57 +1400,60 @@ label shuttleDestruction():
     "Out of the corner of my eye, I see a small light approaching us."
     "An unmanned aid ship comes into view. It's small, barely larger than the shuttle."
     goon "That's it."
-    $ chatter_list.append(vig2_sc7_out_comment25)
+    $ AddChatter(vig2_sc7_out_comment25)
     mS "Alright Jen."
     pS "You sure about this Cap?"
     mS "Yeah. Hit it."
-    $ chatter_list.append(vig2_sc7_out_comment26)
+    $ AddChatter(vig2_sc7_out_comment26)
     "Jennica pulls the trigger."
     "A rush of momentum shakes the shuttle as the missle flies out from under it."
     "The missle races across the sky before colliding with the ship, obliterating it in a fireball."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
-    $ chatter_list.append(vig2_sc7_out_comment27)
+    $ AddChatter(vig2_sc7_out_comment27)
     pS "I hope this is worth it."
-    $ chatter_list.append(vig2_sc7_out_comment28)
+    $ AddChatter(vig2_sc7_out_comment28)
+    hide engineer_stream with Dissolve(0.5)
+    hide pilot_stream with Dissolve(0.5)
+    hide goon_stream with Dissolve(0.5)
     jump vig2epilogue_OUT
 
 label vig2epilogue_MAR():
-    scene bridge_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master 
+    show bridge_stream at topleft onlayer background with dissolve
+    hide datacenter_stream
     show engineer_stream at stream_right with dissolve
     show pilot_stream at stream_left with dissolve  
     enS "Thank goodness that's over. If I never make it back to Gibian V it'll be too soon."
-    $ chatter_list.append(vig2_epilogue_mar_comment1)
+    $ AddChatter(vig2_epilogue_mar_comment1)
     pS "I couldn't agree more! Although it felt good sticking it to Matticus like that."
     pS "Wish I coulda seen his face..."
-    $ chatter_list.append(vig2_epilogue_mar_comment2)
+    $ AddChatter(vig2_epilogue_mar_comment2)
     "The meeting is interrupted by a ship intercom alert."
     shipcom "Incoming call from Magistrate Savlian Matticus."
     mS "Be careful what you wish for."
     mS "Accept."
     show matticus_stream at stream_center with Dissolve(0.5)
     "Matticus appears on the ship computer. He is incensed."
-    $ chatter_list.append(vig2_epilogue_mar_comment3)
-    $ chatter_list.append(vig2_epilogue_mar_comment4)
+    $ AddChatter(vig2_epilogue_mar_comment3)
+    $ AddChatter(vig2_epilogue_mar_comment4)
     smatt "You idiots! You don't know how much you just screwed me."
     mS "Sorry Sav I'm picking up some bullshit on this line, what was that?"
     smatt "I should've known you didn't have the stomach for real work."
-    $ chatter_list.append(vig2_epilogue_mar_comment5)
+    $ AddChatter(vig2_epilogue_mar_comment5)
     mS "Real work like blowing up medicine for some bumpkins?"
     smatt "Since when do you care about anyone but yourself Moze?!"
     smatt "You've done worse. This wouldn't have even cracked your top ten!"
     mS "Is that it?"
-    $ chatter_list.append(vig2_epilogue_mar_comment6)
+    $ AddChatter(vig2_epilogue_mar_comment6)
     "I hear Jennica snicker behind me."
     smatt "Don't worry. You'll get yours. You think I got to where I am by letting people screw me over?"
     mS "Lose this channel Teresa."
-    $ chatter_list.append(vig2_epilogue_mar_comment7)
+    $ AddChatter(vig2_epilogue_mar_comment7)
     enS "With pleasure."
     hide matticus_stream with dissolve
     "The screen powers off."
     pS "Maybe we shouldnta added insult to injury?"
-    $ chatter_list.append(vig2_epilogue_mar_comment8)
+    $ AddChatter(vig2_epilogue_mar_comment8)
     mS "Maybe. But didn't that feel good?"
     "Jennica smiles and chuckles warmly"
     pS "Like fresh underwear after a shower."
@@ -1367,6 +1470,9 @@ label vig2epilogue_MAR():
     macS "I am confused about the nature of our mission? Why do we need to hide if we are good people?"
     menu:
         "The people in power are bad":
+            $ marshal += 1
+            $ pdEngagement -= 1
+            $ csEngagement += 1
             mS "Sometimes the people in power are bad, and to do good we need to hide from them."
             macS "But we broke the law many times. How can we be doing good by breaking the law?"
             mS "Laws aren't always good. Sometimes they're put in place by bad people."
@@ -1376,6 +1482,9 @@ label vig2epilogue_MAR():
             macS "I see. The universe is confusing."
             mS "Agreed."
         "The universe is bad and we can't trust anyone":
+            $ outlaw += 1
+            $ pdEngagement += 1
+            $ kcEngagement += 1
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
             macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
@@ -1385,20 +1494,21 @@ label vig2epilogue_MAR():
             mS "Agreed."
     $ narrator = reg_narrator
     $ macroNarration = True
-    $ chatter_list.append(vig2_epilogue_mar_comment9)
+    $ AddChatter(vig2_epilogue_mar_comment9)
     hide mac_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
     player "Alright everyone, thank you all for coming out! See ya next time!"
     hide bridge_stream with dissolve
     "You quit out of the game and watch as the people in the stream discuss the game."            
-    $ chatter_list.append(vig2_epilogue_mar_comment10)
+    $ AddChatter(vig2_epilogue_mar_comment10)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_mar_comment11)
+    $ AddChatter(vig2_epilogue_mar_comment11)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_mar_comment12)
+    $ AddChatter(vig2_epilogue_mar_comment12)
     pause 0.5
-    $ marshal += 10
+    $ vig2_marshalEpilogue = True
+    $ vig2_outlawEpilogue = False
     "As the chat winds down, you take off your headset, and sign off of Twitch."
     hide screen streamChat
     hide screen streamDetails
@@ -1406,113 +1516,122 @@ label vig2epilogue_MAR():
     jump vig2_macro_start
 
 label vig2epilogue_OUT():
-    scene bridge_stream at topleft onlayer master with dissolve
-    show streamview at center onlayer master
+    show bridge_stream at topleft onlayer background with dissolve
+    hide orbit_stream
     show engineer_stream at stream_right with dissolve
     show pilot_stream at stream_left with dissolve 
     "The ship computer powers on."
-    $ chatter_list.append(vig2_epilogue_out_comment1)
+    $ AddChatter(vig2_epilogue_out_comment1)
     shipcom "Incoming call from Magistrate Savlian Matticus."
     mS "Accept."
-    $ chatter_list.append(vig2_epilogue_out_comment2)
+    $ AddChatter(vig2_epilogue_out_comment2)
     show matticus_stream at stream_center with dissolve
     "Matticus appears on the ship computer."
     smatt "Oh Moze. Its been so wonderful working with you again."
     smatt "We have to catch up some time!"
     "Jennica is visibly annoyed."
     mS "And your end of the deal?"
-    $ chatter_list.append(vig2_epilogue_out_comment3)
+    $ AddChatter(vig2_epilogue_out_comment3)
     smatt "It's already done! As far as anyone is knows, the Oakley's doing a grand tour of the Mauritz nebula."
-    $ chatter_list.append(vig2_epilogue_out_comment4)
+    $ AddChatter(vig2_epilogue_out_comment4)
     pS "Make sure he's not lying Teresa."
     "Teresa nods and begins typing on her computer."
-    $ chatter_list.append(vig2_epilogue_out_comment5)
+    $ AddChatter(vig2_epilogue_out_comment5)
     smatt "Oh Jenn. You're a real ice queen."
     smatt "So cold."
     "Matticus mimes himself shivering."
-    $ chatter_list.append(vig2_epilogue_out_comment6)
+    $ AddChatter(vig2_epilogue_out_comment6)
     enS "It's true. Our logged coordinates are on the other side of the galaxy right now."
     smatt "See? I would never deceive you guys. We old Snakehawks need to look out for each other."
     "Jennica rolls her eyes."
     smatt "Alright, now that our business has concluded, I'm going to have a drink."
     smatt "Let me know when you're done playing hero with the robot Moze. I've got lots more work where that came from."
-    $ chatter_list.append(vig2_epilogue_out_comment7)
+    $ AddChatter(vig2_epilogue_out_comment7)
     mS "Goodbye Sav."
     smatt "Think about it."
-    $ chatter_list.append(vig2_epilogue_out_comment8)
+    $ AddChatter(vig2_epilogue_out_comment8)
     "Matticus winks before the screen powers off."
     hide matticus_stream with dissolve
     enS "Well at least we have some breathing room."
-    $ chatter_list.append(vig2_epilogue_out_comment9)
+    $ AddChatter(vig2_epilogue_out_comment9)
     enS "Ama won't trouble us for the foreseeable future."
     pS "I suppose. The Ama we ran with won't chase red herrings for long."
-    $ chatter_list.append(vig2_epilogue_out_comment10)
+    $ AddChatter(vig2_epilogue_out_comment10)
     mS "Agreed. We ought to keep an eye out."
     mS "Anything else to report?"
     enS "All systems are functional Captain."
     pS "Steady as she goes cap."
-    $ chatter_list.append(vig2_epilogue_out_comment11)
+    $ AddChatter(vig2_epilogue_out_comment11)
     mS "Good. I'll be in my quarters."
     hide pilot_stream with dissolve
     hide engineer_stream with dissolve
     "I move to leave the briefing room when I feel a tug on my sleeve."
-    $ chatter_list.append(vig2_epilogue_out_comment12)
-    $ chatter_list.append(vig2_epilogue_out_comment13)
+    $ AddChatter(vig2_epilogue_out_comment12)
+    $ AddChatter(vig2_epilogue_out_comment13)
     show mac_stream at stream_center with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
     macS "I do not know how to feel about our mission. Why did we need to help the skeeve Matticus?"
-    $ chatter_list.append(vig2_epilogue_out_comment14)
+    $ AddChatter(vig2_epilogue_out_comment14)
     menu:
         "Doing bad things now can let us do good things later":
+            $ outlaw += 2
+            $ pdEngagement += 2
+            $ csEngagement -= 2
+            $ kcEngagement += 1
             mS "Sometimes we have to do bad things so that we can do better things later."
             macS "But our conduct hurt innocent people. Does that not make us skeeves?"
-            $ chatter_list.append(vig2_epilogue_out_comment15)
+            $ AddChatter(vig2_epilogue_out_comment15)
             mS "It's more complicated than that. Sometimes skeeves do good things, and sometimes non-skeeves do bad things."
             mS "There's no one-size-fits-all rule."
-            $ chatter_list.append(vig2_epilogue_out_comment16)
+            $ AddChatter(vig2_epilogue_out_comment16)
             mS "If we didn't help Matticus, we might've gotten caught. And then a lot more innocent people would be hurt."
             macS "I see. The universe is confusing."
-            $ chatter_list.append(vig2_epilogue_out_comment17)
+            $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
         "The universe is bad and we can't trust anyone":
+            $ outlaw += 1
+            $ pdEngagement += 2
+            $ csEngagement += 1
+            $ kcEngagement += 1
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
-            $ chatter_list.append(vig2_epilogue_out_comment15)
+            $ AddChatter(vig2_epilogue_out_comment15)
             macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
-            $ chatter_list.append(vig2_epilogue_out_comment16)
+            $ AddChatter(vig2_epilogue_out_comment16)
             mS "To change bad things, sometimes we have to do dangerous things."
             macS "I see. The universe is confusing."
-            $ chatter_list.append(vig2_epilogue_out_comment17)
+            $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
     $ narrator = reg_narrator
     $ macroNarration = True
-    $ chatter_list.append(vig2_epilogue_out_comment18)
+    $ AddChatter(vig2_epilogue_out_comment18)
     hide mac_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
-    $ chatter_list.append(vig2_epilogue_out_comment19)
+    $ AddChatter(vig2_epilogue_out_comment19)
     player "Alright everyone, thank you all for coming out! See ya next time!"
     hide bridge_stream with dissolve
     "You quit out of the game and watch as the people in the stream discuss the game."
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment20)
+    $ AddChatter(vig2_epilogue_out_comment20)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment21)
+    $ AddChatter(vig2_epilogue_out_comment21)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment22)
+    $ AddChatter(vig2_epilogue_out_comment22)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment23)
+    $ AddChatter(vig2_epilogue_out_comment23)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment24)
+    $ AddChatter(vig2_epilogue_out_comment24)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment25)
+    $ AddChatter(vig2_epilogue_out_comment25)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment26)
+    $ AddChatter(vig2_epilogue_out_comment26)
     pause 0.5
-    $ chatter_list.append(vig2_epilogue_out_comment27)
-    $ outlaw += 10
+    $ AddChatter(vig2_epilogue_out_comment27)
+    $ vig2_outlawEpilogue = True
+    $ vig2_marshalEpilogue = False
     "As the chat winds down, you take off your headset, and sign off of Twitch."
     hide screen streamChat
     hide screen streamDetails
