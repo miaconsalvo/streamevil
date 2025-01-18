@@ -33,7 +33,7 @@ screen DiscordDialogue(dialogue, items=None):
                 null height 20
                 #use nvl_dialogue(dialogue)
                 use nvl_phonetext(dialogue)
-                null height 100
+                null height 0
             ## Displays the menu, if given. The menu may be displayed incorrectly if
             ## config.narrator_menu is set to True.
     ###Below this is for the menu
