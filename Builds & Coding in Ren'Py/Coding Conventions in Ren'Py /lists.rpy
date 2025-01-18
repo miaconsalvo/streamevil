@@ -18,8 +18,27 @@ init python:
             self.target = target #target indicates a label that a clickable object will call.
 
 #defining useful functions
+default yadj = ui.adjustment()
+
 init python:
-    def AddToChatter():
+
+    def AddChatter(message):
+        global chatter_list
+        global yadj
+
+        chatter_list.append(message)
+        renpy.pause(0.01) #bc reasons
+        yadj.change(float('inf'))
+        #yadj.value = float('inf') #- Getting this to work would be ideal
+        #but it's still behaving weird, so stick with yadj.change for now
+
+        if commentPing == True:
+            renpy.sound.play("audio/ReceiveText.ogg")
+        else:
+            pass #Is there a "Pass" syntax?
+        return
+
+    def AddRandomChatter():
 
         global comment_list
         global chatter_list
@@ -28,6 +47,17 @@ init python:
         chatter_list.append(comments_list[0]) 
         comments_list.remove(comments_list[0])
         return
+
+label TurnSound():
+    #$ commentPing = ! commentPing #There's a one liner for this but I don't know the syntax
+    #so we do it unwieldy
+    if commentPing == False:
+        $ commentPing = True
+        $ textContent = "Sound is On"
+    elif commentPing == True:
+        $ commentPing = False
+        $ textContent = "Sound is Off"
+    return
     
 default chatter_list = [] #This is the list that displays on the Stream UI
 default comments_list = [ ] #This list contains the objects that will be shuffled and chosen from to add to "chats"
