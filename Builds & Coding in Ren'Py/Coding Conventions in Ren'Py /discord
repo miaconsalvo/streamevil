@@ -33,7 +33,7 @@ screen DiscordDialogue(dialogue, items=None):
                 null height 20
                 #use nvl_dialogue(dialogue)
                 use nvl_phonetext(dialogue)
-                null height 0
+                null height 0 #space between bottom of nvl dialogue screen and most recent dialogue line
             ## Displays the menu, if given. The menu may be displayed incorrectly if
             ## config.narrator_menu is set to True.
     ###Below this is for the menu
@@ -47,9 +47,10 @@ screen DiscordDialogue(dialogue, items=None):
             ypos 900
             xpadding 10
             ypadding 20
+
     else:   
         frame:
-            background Solid("#000000b9")
+            background Solid("#00000000")
             xsize 1200
             ysize 150
             xpos 400
@@ -104,9 +105,9 @@ screen nvl_phonetext(dialogue):
             #It's from the phone script, trying to replicate how received messages have different color frames
             #Not necessary for discord, but currently kept just in case we want to use
             if d.who == my_name:
-                $ message_frame = "#0000000a"
+                $ message_frame = "#1b56adab"
             else:
-                $ message_frame = "#0000000a"
+                $ message_frame = "#8b1e1e9a"
 
             hbox:
                 xalign 0.5 #Shifts the hbox to the right for the display of discord
@@ -167,7 +168,7 @@ screen nvl_phonetext(dialogue):
                         #        at message_appear(-1)
 
                         text d.what:
-                            size 30 #changes size of text
+                            size 30 #changes size of text in NVL dialogue
                             pos (0,0)
                             xsize 1200 #This establishes the length of the actual dialogue. 
                             #If this is shorter than the "xsize" above, you'll see the text use margins that aren't the same size as the frame displays
@@ -184,7 +185,7 @@ screen nvl_phonetext(dialogue):
 
                                 
                             id d.what_id
-        $ previous_d_who = d.who
+        $ previous_d_who = d.who #This line of code sets the current speaker to be the previous speaker for reference at the top of the script
 
 style discordFrame is default
 
