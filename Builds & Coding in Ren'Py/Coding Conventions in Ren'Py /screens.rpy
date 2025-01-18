@@ -1,4 +1,4 @@
-﻿################################################################################
+################################################################################
 ## Initialization
 ################################################################################
 
@@ -85,20 +85,20 @@ style frame:
 
 #This establishes a screen in which chats will appear
 screen streamChat():
-    python:
-        yadj.value = yadjValue
+    #python:
+    #    yadj.value = yadjValue
 
     frame:
         #Sets the borders and set up of the chat window
-        background Solid("#ffffff00")
+        background Solid("#00000000")
         xpos 1550
         ypos 120
         xsize 355
         ysize 740
         xpadding 10 #These padding variables will affect how close the position of the scrollbar relative to the frame as well
         ypadding 20
-        viewport yadjustment yadj: #id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
-            #yadjustment yadj #Using the "yadj" values determined at start of main script, this should set the viewport to adjust to the bottom whenever it's updated. It's only working 70ish% of the time though
+        viewport: #id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
+            yadjustment yadj #Using the "yadj" values determined at start of main script, this should set the viewport to adjust to the bottom whenever it's updated. It's only working 70ish% of the time though
             draggable True #allows scrollbar to be dragged
             mousewheel True #allows mousewheel to scroll viewport
             scrollbars "vertical" #sets vertical scroll bar
@@ -126,7 +126,7 @@ screen streamChat():
 #A basic screen to display stream details. All the numbers will likely need to change
 screen streamDetails():
     frame:
-        background Solid("#ffffff00")
+        background Solid("#00000000")
         xpos 0
         ypos 900
         xsize 1530
@@ -136,11 +136,20 @@ screen streamDetails():
         text "[player]" align (.1, .44) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
         text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
         text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
-        text "KitKat\n{u}Interest:{/u}\n      [kkEngagement]" align (0.45, 0.5) color "#f03535ff"
+        text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
         text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
         text "Outlaw Score: [outlaw]" align (0.8, 0.25) color "#e6a20eff"
         text "Marshal Score: [marshal]" align (0.8, 0.7) color "#27e60eff"
-        image "captain" align (.001, .5) size (100, 100) #displays a profile pic for the streamer
+        textbutton textContent:
+            action Call("TurnSound", from_current = True)
+            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#ffffffd5" 
+            text_selected_color "#ffffffff"
+            background "#000000ff" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
+            text_size 25
+            align (1.19, .85)
+            #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
+        image "profile1" align (.001, .5) size (100, 100) #displays a profile pic for the streamer
 
 
 ## Say screen ##################################################################
@@ -232,7 +241,7 @@ style ig_dialogue:
     #the values for xpos and xsize to fit within the diminished textbox.
     #xsize gui.dialogue_width
     xsize 900
-    ypos 75
+    ypos 115
 
     adjust_spacing False
 
@@ -1415,35 +1424,36 @@ style notify_text:
 
 
 screen nvl(dialogue, items=None):
+    if nvl_mode == "discord":
+        use DiscordDialogue(dialogue, items)
+    else:
+        window:
+            style "nvl_window"
 
-    window:
-        style "nvl_window"
+            has vbox:
+                spacing gui.nvl_spacing
 
-        has vbox:
-            spacing gui.nvl_spacing
+            ## Displays dialogue in either a vpgrid or the vbox.
+            if gui.nvl_height:
 
-        ## Displays dialogue in either a vpgrid or the vbox.
-        if gui.nvl_height:
+                vpgrid:
+                    cols 1
+                    yinitial 1.0
 
-            vpgrid:
-                cols 1
-                yinitial 1.0
+                    use nvl_dialogue(dialogue)
+
+            else:
 
                 use nvl_dialogue(dialogue)
 
-        else:
+            ## Displays the menu, if given. The menu may be displayed incorrectly if
+            ## config.narrator_menu is set to True.
+            for i in items:
+                textbutton i.caption:
+                    action i.action
+                    style "nvl_button"
 
-            use nvl_dialogue(dialogue)
-
-        ## Displays the menu, if given. The menu may be displayed incorrectly if
-        ## config.narrator_menu is set to True.
-        for i in items:
-
-            textbutton i.caption:
-                action i.action
-                style "nvl_button"
-
-    add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 screen nvl_dialogue(dialogue):
@@ -1459,15 +1469,20 @@ screen nvl_dialogue(dialogue):
                 if d.who is not None:
 
                     text d.who:
+                        size 30
+                        bold True
+                        color "#ffffffff"
                         id d.who_id
 
                 text d.what:
+                    size 25
+                    color "#ffffffff"
                     id d.what_id
 
 
 ## This controls the maximum number of NVL-mode entries that can be displayed at
 ## once.
-define config.nvl_list_length = gui.nvl_list_length
+define config.nvl_list_length = 150 #gui.nvl_list_length
 
 style nvl_window is default
 style nvl_entry is default
@@ -1481,25 +1496,30 @@ style nvl_button_text is button_text
 style nvl_window:
     xfill True
     yfill True
-
-    background "gui/nvl.png"
+    background Solid("#00000000") #"gui/nvl.png"
+    xsize 1368
+    ysize 800
+    xpos 313
+    ypos 100
     padding gui.nvl_borders.padding
 
 style nvl_entry:
     xfill True
-    ysize gui.nvl_height
+    ysize 50
 
 style nvl_label:
-    xpos gui.nvl_name_xpos
-    xanchor gui.nvl_name_xalign
-    ypos gui.nvl_name_ypos
+    #xpos #gui.nvl_name_xpos
+    xalign 0.1
+    xanchor 1.0 #gui.nvl_name_xalign
+    ypos 0 #gui.nvl_name_ypos
     yanchor 0.0
     xsize gui.nvl_name_width
     min_width gui.nvl_name_width
     textalign gui.nvl_name_xalign
 
 style nvl_dialogue:
-    xpos gui.nvl_text_xpos
+    #xpos gui.nvl_text_xpos
+    xalign 0.11
     xanchor gui.nvl_text_xalign
     ypos gui.nvl_text_ypos
     xsize gui.nvl_text_width
@@ -1520,6 +1540,7 @@ style nvl_button:
     properties gui.button_properties("nvl_button")
     xpos gui.nvl_button_xpos
     xanchor gui.nvl_button_xalign
+    
 
 style nvl_button_text:
     properties gui.button_text_properties("nvl_button")
