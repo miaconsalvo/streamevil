@@ -151,6 +151,14 @@ screen streamDetails():
             #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
         image "profile1" align (.001, .5) size (100, 100) #displays a profile pic for the streamer
 
+screen NVLnarration():
+    image "gui/textbox.png" align (0.5, 1.0)
+    frame:
+        xpos 400
+        ypos 810
+        right_margin 700
+        background Solid("#00000000")
+        text "[playerNVLNarration]" color "#ffffff"
 
 ## Say screen ##################################################################
 ##
