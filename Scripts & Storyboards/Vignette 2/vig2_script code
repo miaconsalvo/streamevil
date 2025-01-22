@@ -77,6 +77,7 @@ default shnzi = True
 default romanceAma = False
 default romanceJennica = False
 default romanceTeresa = False
+default baseGuardKilled = False
 
 #default yadj = ui.adjustment()
 
@@ -161,7 +162,7 @@ label Vig2BridgeScene():
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show mac stream at stream_center with Dissolve(0.5)
     #repeat for additional characters
-    "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
+    "As I step onto the bridge, Jennica, Teresa, and Mac are discussing the visualization on the ship's computer."
     $ AddChatter(vig2_sc1_comment4)
     "The visualization shows Gibian V, a backwater frontier planet."
     "A backwater with an old associate running it."
@@ -179,12 +180,12 @@ label Vig2BridgeScene():
     macS "Skeeve. Noun. An immoral or repulsive person."
     enS "What other options do we have? Who else is gonna help us?"
     $ AddChatter(vig2_sc1_comment9)
-    pS "I don't know, I just think-"
+    pS "I don't know, I just think--"
     enS "Let me just pull a \"forger with a heart of gold and access to bigcorp databases\" out of my purse and we'll be set!"
     pS "That doesn't mean we should trust Matticus, the wannabe godfather of a one-horse po-dunk  planet!"
     $ AddChatter(vig2_sc1_comment10)
     "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
-    "But Teresa's also got a point, we aren't exactly spoilt for choice."
+    "But Teresa's also got a point, we aren't exactly spoiled for choice."
     $ AddChatter(vig2_sc1_comment11)
     "Better the devil you know, eh?"
     menu: #minorchoice1
@@ -201,7 +202,6 @@ label Vig2BridgeScene():
     "A look of begrudging acceptance flashes across Jennica's face."
     $ AddChatter(vig2_sc1_comment12)
     pS "Ok. So what's the plan?"
-    pause 1.0
     "Teresa inputs a set of coordinates into the ship computer."
     show teresa stream neutral at stream_right
     show jennica stream neutral at stream_left
@@ -222,13 +222,13 @@ label Vig2BridgeScene():
     macS "He is abusing his authority for personal gain?"
     menu: #minorchoice2
         "Yeah he's a scumbag":
-            mS "Yeah. He always did have a uh... flexible moral compass."
+            mS "Yeah. He always did have a {i}uh{/i}... flexible moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
             pS "Yeah. Bet he has a ranch or something on the other side of the planet."
             enS "You think someone who has the money to spend on a ranch would buy one on Gibian V?"
             "Jennica looks puzzled for a moment."
-            pS "I aint given much thought to it I guess."
+            pS "I ain't given much thought to it I guess."
         "He's a skeeve, but he's our skeeve.":
             mS "Probably. It comes with the territory."
             mS "He's just trying to survive."
@@ -319,7 +319,7 @@ label GibianVCustomsDepot():
     "The crew looks to me."
     enS "Your call captain. What do you think?"
     "Jennica has a point. There's a ton of innocent people here, it's very likely someone will get hurt if we cause a panic."
-    "Teresa's is also right though, if one of these officials reports us to bigcorp then we might be looking at the inside of the jail cell quick."
+    "Teresa's point is just as valid, if one of these officials reports us to bigcorp then we might be looking at the inside of the jail cell quick."
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
         "Have Teresa prep the distraction":
@@ -358,7 +358,7 @@ label GibianVCustomsMarshal():
     "Teresa gestures towards a younger looking agent with glasses."
     "His uniform is spotless, perfectly tucked and pleated with meticulous precision."
     enS "That one looks pretty eager, definitely not him." 
-    "Jennica zeros in on an agent at the \"Hazardous Luggage\" counter, subtly gesturing to me to look at him."
+    "Jennica zeroes in on an agent at the \"Hazardous Luggage\" counter, subtly gesturing to me to look at him."
     "His uniform is wrinkled, shirt half tucked in a rushed panic."
     "The man looks deflated, with dark bags under his eyes."
     $ AddChatter(vig2_sc2_mar_comment4)
@@ -372,7 +372,7 @@ label GibianVCustomsMarshal():
     hide teresa with Dissolve(0.4)
     show agent stream at stream_center with Dissolve(0.6)
     menu: #minorchoice3
-        "Smile and look him in the eyes":
+        "Smile and look him in the eyes.":
             "As I approach the customs officer, his eyes perk up."
             $ AddChatter(vig2_sc2_mar_comment6)
             agent1 "Hello Ma'am. How might I assist you today?"
@@ -388,7 +388,7 @@ label GibianVCustomsMarshal():
                     agent1 "I've been working back to back shifts this whole week!" 
                     mS "Really?! That doesn't sit right with me."
                     mS "Not one bit."
-                "You look overworked":
+                "You look overworked.":
                     mS "Man they really have you guys stretched thin eh?"
                     agent1 "Excuse me?"
                     "He's a little confused."
@@ -406,7 +406,7 @@ label GibianVCustomsMarshal():
             "In his panic, I notice a wedding band on his ring finger."
             agent1 "GAAH!"
             mS "Sorry bout that!"
-            "His face begins to relax"
+            "His face begins to relax."
             $ AddChatter(vig2_sc2_mar_comment6)
             agent1 "No it's my fault. How can I assist you today?"
             $ AddChatter(vig2_sc2_mar_comment7)
@@ -457,10 +457,10 @@ label GibianVCustomsMarshal():
     $ AddChatter(vig2_sc2_mar_comment9)
     "And another."
     "Three minutes." 
-    enS "You sure he's not ratting us out as we speak?"
+    enS "You sure he's not ratting us out?"
     enS "If I have to break us out of the Gibian V penitentiary..."
     "A muffled voice perks up from the crate."
-    macS "Penitentiary. Noun. A place for imprisoning crim-"
+    macS "Penitentiary. Noun. A place for imprisoning crim--"
     enS "SHUSH!"
     "The door creaks ajar."
     show agent stream at stream_center with Dissolve(0.2)
@@ -524,7 +524,7 @@ label GibianVCustomsOutlaw():
     enS "I always do."
     "Teresa pulls several parts from her bag and begins plugging them into her device."
     show teresa stream neutral at stream_right
-    $ AddChatter(vig2_sc2_out_comment6)
+    #$ AddChatter(vig2_sc2_out_comment6)
     enS "Just a little tweak to the capacitors should do the trick!"
     enS "There!"
     $ AddChatter(vig2_sc2_out_comment7)
@@ -569,7 +569,7 @@ label GibianVCustomsOutlaw():
 label matticusDoor():
     show compound_stream at topleft onlayer background with dissolve
     hide depot_stream
-    "It's only a few blocks to Matticus' compound."
+    "It's only a few blocks to Matticus's compound."
     "Not like we could miss it though."
     show jennica stream shock at stream_left with dissolve
     "Jennica's eyes widen as we first see the gates."
@@ -623,7 +623,7 @@ label matticusDoor():
             $ pdEngagement += 1
             mS "Listen buddy. Just let us in."
             mS "Do you wanna explain to him that you pissed off his old merc crew?"
-            mattdoorbell "No, I just-"
+            mattdoorbell "No, I just--"
             "He's flustered."
             $ AddChatter(vig2_sc3_threat_comment1)
             mS "Tell him Moze is going to do to this gate what he did to that bar on Forsteuk if you don't let her in."
@@ -668,10 +668,10 @@ label meetingMatticus():
             pS "Yeah. It's been too long Sav."
             "Matticus smirks knowingly."
             smatt "Oh Jenn. You don't have to lie."
-        "Reunion implies a lot":
+        "Reunion implies a lot.":
             mS "Reunion implies that we were united at one point."
             smatt "Ice cold as always Moze!"
-            smatt "Yknow, I miss this banter. I've missed you guys."
+            smatt "Y'know, I miss this banter. I've missed you ladies."
             pS "Really?"
             "Matticus smirks and looks at Jennica."
             smatt "No."
@@ -688,9 +688,9 @@ label meetingMatticus():
     mS "And they hired our old boss to hunt us."
     "Matticus stops smirking."
     smatt "Oh. Interesting. She doesn't come cheap."
-    smatt "You really kicked the hornet's nest eh?"
+    smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
-    macS "Kick the hornet's nest. Idiom. Provoking a situation whi-"
+    macS "Kick the hornet's nest. Idiom. Provoking a situation whi--"
     show goon stream at stream_right
     goon "What the hell!?"
     "Matticus' guards spring into action and draw their weapons."
@@ -792,10 +792,10 @@ label meetingMatticus():
     menu: #minorchoice7
         "Deal":
             "Guess we don't have much choice."
-            mS "On your honor as a Snakehawk?"
+            mS "On your honour as a Snakehawk?"
             "Matticus chuckles to himself."
             smatt "How nostalgic."
-            smatt "On my honor."
+            smatt "On my honour."
         "Wait this still seems suspicious":
             "This still seems fishy."
             mS "Wait. This all seems too good to be true."
@@ -865,7 +865,7 @@ label approachingBase():
     "Teresa gestures towards MAC."
     enS "Should we leave it?"
     mS "We're gonna have to bring him along. It's not ideal, but if he gets taken from the shuttle then all of this is pointless."
-    enS "True. However it is equally pointless if it gets damaged beyond repair."
+    enS "True. However, it is equally pointless if it gets damaged beyond repair."
     enS "And we \"lost\" the last mechanic we knew who could help out with that."
     mS "I'll protect him. It's my responsibility."
     mS "MAC you're going to stick to me like glue, got it?"
@@ -897,10 +897,10 @@ label approachingBase():
         #Should NPC approval adjustments happen here?
     show goon stream at stream_center with Dissolve(0.5)
     pS "So what's the plan?"
-    goon "Plan? This is your operation. We just gotta get to the main datacenter computer."
+    goon "Plan? This is your operation. We just gotta get to the main datacentre computer."
     enS "Do you even know where that is?"
     goon "Yeah. In there somewhere. This is Gibian V. There are maybe three or four rooms in there."
-    goon "How much traffic do you think comes here?"
+    goon "How much traffic do you think comes through here?"
     pS "Maybe we can get in and out without drawing any attention?"
     goon "Seems pointless, but I don't give a shit. It's your job."
     enS "You're not coming with us?"
@@ -971,7 +971,7 @@ label approachingBase():
             mS "We're going in quiet."
             "Reginald chuckles."
             $ AddChatter(vig2_sc6_mar_comment4)
-            goon "Really? I didn't think Ex-Snakehawks would be so demure."
+            goon "Really? I didn't think ex-Snakehawks would be so demure."
             goon "Whatever. I'll follow behind you."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -991,10 +991,10 @@ label commsBase_MAR1():
     "The door unlocks and pops ajar."
     hide teresa with dissolve
     show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    "We're inside. The base seems even smaller on the inside, and lightly guarded."
+    "We're inside. The base seems even smaller on the inside and lightly guarded."
     "Its just a few stairs down from the upper level to the ground floor."
     "The stairs lead to a hallway."
-    "We turn the corner, and run face-first into a lone guard on patrol."
+    "We turn the corner and run face-first into a lone guard on patrol."
     "He jumps up, startled, and begins raising his hand..."
     "My instincts take over."
     menu:
@@ -1038,8 +1038,8 @@ label commsBase_MAR2():
     #show jennica stream neutral at stream_left with Dissolve(0.5)
     show goon stream at stream_center with Dissolve(0.5)
     "At the end of the hall, we arrive at a door."
-    "Cracking the door ajar, I'm able to get a look at whats on the other side."
-    "There is a typical security desk, manned by three guards."
+    "Cracking the door ajar, I'm able to get a look at what's on the other side."
+    "There is a typical security desk manned by three guards."
     "They don't have much in the way of firepower, just their sidearms."
     "And they aren't so focused either. Shouldn't be too hard to get past them."
     "We could probably bust in and stun them all without an issue."
@@ -1063,7 +1063,7 @@ label commsBase_MAR2():
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment3)
             enS "I rather like things being easy."
             "Reginald signals us to follow him."
-            goon "The main datacenter is through this door here."
+            goon "The main datacentre is through this door here."
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -1078,16 +1078,16 @@ label commsBase_MAR2():
             "I signal to Teresa to prepare a fake radio diversion."
             "She nods, and begins inputting code into her computer."
             $ AddChatter(vig2_sc6_mar_choice2_dist_comment1)
-            "In an instant, all three of the guard's radios begin blaring with a distress call."
+            "In an instant, all three of the guards' radios begin blaring with a distress call."
             "A sense of urgency hits them as they begin running out of the room to the source of the call."
-            "Once their out, I wave over Reginald."
+            "Once they're out, I wave over Reginald."
             goon "Wow so much work for what?"
             pS "This all feels way too easy."
             $ AddChatter(vig2_sc6_mar_choice2_dist_comment2)
             enS "Why is that a bad thing?"
             enS "I rather like things being easy."
             "Reginald signals us to follow him."
-            goon "The main datacenter is through this door here."
+            goon "The main datacentre is through this door here."
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -1148,7 +1148,7 @@ label commsBase_OUT1():
             show jennica stream angry at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
     mS "There's only one left!"
-    mS "Teresa has him pinned down"
+    mS "Teresa has him pinned down."
     pS "I'll get him!"
     "Jennica leaps out of cover and begins running towards the guard."
     "Three more guards emerge from the door, guns drawn."
@@ -1182,6 +1182,7 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment18)
     menu:
         "This isn't his fault":
+            $ baseGuardKilled = False
             $ marshal += 2
             $ pilotApproval += 2
             $ pdEngagement -= 1
@@ -1191,7 +1192,7 @@ label commsBase_OUT1():
             "This guy was just doing his job."
             mS "Alright."
             $ AddChatter(vig2_sc6_out_spare_comment2)
-            hsguard1 "Thank you miss! I-"
+            hsguard1 "Thank you miss! I--"
             hide guard1 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show goon stream at stream_center with dissolve
@@ -1210,8 +1211,9 @@ label commsBase_OUT1():
             "Jennica scowls at Teresa."
             goon "We haven't got all day!"
             $ AddChatter(vig2_sc6_out_spare_comment7)
-            "Reginald approaches and opens the door to the datacenter."
+            "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors":
+            $ baseGuardKilled = True
             $ outlaw += 2
             $ engineerApproval += 1
             $ pdEngagement += 1
@@ -1251,15 +1253,15 @@ label commsBase_OUT1():
 label commsBase_DataCenter():
     show datacenter_stream at topleft onlayer background with dissolve
     hide vig2_compound_hall_stream
-    "The datacenter is underwhelming."
-    "At the center of the small room is a computer workstation, with numerous monitors displaying a variety of shipments and other logistic info."
+    "The datacentre is underwhelming."
+    "At the center of the small room is a computer workstation with numerous monitors displaying a variety of shipments and other logistic info."
     show worker stream at stream_center with dissolve
     "Sitting at the workstation is a scrawny technician in glasses, terrified."
     worker "What are you doing here?!"
     show goon stream at stream_right with Dissolve(0.2)
     "Before we have a chance to say anything, Reginald is in his face."
-    goon "Shut it! Whats the next shipment's tracking coordinates?!"
-    worker "The aid shipm-"
+    goon "Shut it! What's the next shipment's tracking coordinates?!"
+    worker "The aid shipm--"
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1293,7 +1295,7 @@ label commsBase_DataCenter():
     show worker stream at stream_center with Dissolve(0.4)
     worker "Sallent? There's an outbreak of gray fever there. They need that medicine!"
     hide worker stream with Dissolve (0.4)
-    goon "People from a town you had never heard of until now might die."
+    goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
     hide goon stream with Dissolve(0.5)
     $ AddChatter(vig2_sc7_comment4)
@@ -1301,7 +1303,7 @@ label commsBase_DataCenter():
     enS "As much as I loathe to admit it, I agree."
     enS "We came here to cover our trail."
     $ AddChatter(vig2_sc7_comment5)
-    enS "If we renege on the deal now, we'll be no closer to doing that, and will have made an enemy in Matticus."
+    enS "If we renege on the deal now, we'll be no closer to doing that, and we'll have made an enemy in Matticus."
     enS "All the people we save here won't matter if we get caught!"
     show jennica stream angry at stream_left with Dissolve (0.3)
     pS "They're people!"
@@ -1348,7 +1350,7 @@ label commsBase_DataCenter_MAR():
     pS "We'll have tried."
     $ AddChatter(vig2_sc7_mar_comment2)
     enS "I don't like this any more than you two, but what's the alternative?"
-    enS "If we don't cover our tracks, The Deadeye will be on our asses in no time! We need Matticus' access to the security database."
+    enS "If we don't cover our tracks, the Deadeye will be on our asses in no time! We need Matticus' access to the security database."
     pS "He's not the only one with access!"
     enS "Yes access to secure databases is easy to find and widespread! How could I forget?!"
     enS "That's what \"secure\" means right?"
@@ -1434,7 +1436,7 @@ label commsBase_DataCenter_MAR():
         worker "Better the lesser evil."
     mS "Fair enough. So what do you need to do this?"
     $ AddChatter(vig2_sc7_mar_comment8)
-    worker "I can do it right here. I just need your ship's registration code, planet of origin and operating name."
+    worker "I can do it right here. I just need your ship's registration code, planet of origin, and operating name."
     enS "How can we know you're not going to betray us?"
     worker "You can't. You're going to have to trust me."
     enS "Worrisome."
@@ -1558,7 +1560,7 @@ label commsBase_DataCenter_OUT():
             "Only one way to make sure this never leaves the building."
             $ AddChatter(vig2_sc7_out_execute_comment2)
             "I raise my blaster up to the technician's face."
-            worker "Wait! You don't have to do-"
+            worker "Wait! You don't have to do--"
             hide worker stream with Dissolve(0.1)
             $ AddChatter(vig2_sc7_out_execute_comment3)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
@@ -1577,7 +1579,7 @@ label commsBase_DataCenter_OUT():
     enS "How are we getting out of the desert?"
     goon "The boss has a crew waiting for us out there. They'll take care of the disposal."
     pS "And the firepower?"
-    goon "This shuttle has a bigcorp missle loaded on it. When they try and trace it, it'll just lead back to their own factories."
+    goon "This shuttle has a bigcorp missile loaded on it. When they try and trace it, it'll just lead back to their own factories."
     mS "Sounds simple enough."
     goon "Swell."
     hide jennica with Dissolve(0.5)
@@ -1607,7 +1609,7 @@ label shuttleDestruction():
     $ AddChatter(vig2_sc7_out_comment26)
     "Jennica pulls the trigger."
     "A rush of momentum shakes the shuttle as the missle flies out from under it."
-    "The missle races across the sky before colliding with the ship, obliterating it in a fireball."
+    "The missle races across the sky before colliding with the ship, obliterating it."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
     $ AddChatter(vig2_sc7_out_comment27)
@@ -1767,8 +1769,9 @@ label vig2epilogue_OUT():
     hide jennica stream neutral with dissolve
     hide teresa with dissolve
     "I move to leave the briefing room when I feel a tug on my sleeve."
-    $ AddChatter(vig2_epilogue_out_comment12)
-    $ AddChatter(vig2_epilogue_out_comment13)
+    if baseGuardKilled == True:
+        $ AddChatter(vig2_epilogue_out_comment12)
+        $ AddChatter(vig2_epilogue_out_comment13)
     show mac stream at stream_center with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
