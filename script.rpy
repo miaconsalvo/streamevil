@@ -27,7 +27,7 @@ default macroNarration = True #this variable helps determine if a macro game cho
 
 #variables to track morality
 default marshal = 2
-default outlaw = 3
+default outlaw = 5
 
 #variables to track interest of player
 default reluctance = 0
