@@ -54,7 +54,7 @@ default commentPing = False
 default textContent = "Sound is Off"
 
 #variables to track morality
-default marshal = 2
+default marshal = 5
 default outlaw = 3
 
 #variables to track interest of player - tracked for macro game purposes
