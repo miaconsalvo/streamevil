@@ -267,10 +267,9 @@ label Vig2BridgeScene():
 label GibianVCustomsDepot(): 
     show depot_stream at topleft onlayer background with dissolve
     hide vig2_shiphub_stream
-    "The tiny barebones facility seems like it's on the verge of bursting."
+    "The tiny barebones customs depot seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
     "New arrivals pile in hurriedly, while departures crowd at the checkpoint leading to the spaceport."
-    "The air is thick and humid with the sheer amount of people here."
     show teresa stream neutral at stream_right with dissolve
     "Teresa sighs as we arrive at the main depot."
     enS "I hate customs."
