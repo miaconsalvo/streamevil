@@ -386,7 +386,7 @@ label GibianVCustomsMarshal():
                     "His eyes relax as he begins to get what I'm saying."
                     agent1 "You don't know the half of it." 
                     agent1 "I've been working back to back shifts this whole week!" 
-                    mS "Really?! That doesn't sit right with me."
+                    mS "Really!? That doesn't sit right with me."
                     mS "Not one bit."
                 "You look overworked.":
                     mS "Man they really have you guys stretched thin eh?"
@@ -420,7 +420,7 @@ label GibianVCustomsMarshal():
                     agent1 "Nightshift quit the other day, I have to pick up his hours until we can find someone new."
                     mS "No overtime I assume?"
                     agent1 "Overtime?"
-                    mS "Really?! That doesn't sit right with me."
+                    mS "Really!? That doesn't sit right with me."
                     "His eyes relax as he finally understands what I'm saying"
                 "You got kids?":
                     mS "You got kids?"
@@ -1257,10 +1257,10 @@ label commsBase_DataCenter():
     "At the center of the small room is a computer workstation with numerous monitors displaying a variety of shipments and other logistic info."
     show worker stream at stream_center with dissolve
     "Sitting at the workstation is a scrawny technician in glasses, terrified."
-    worker "What are you doing here?!"
+    worker "What are you doing here!?"
     show goon stream at stream_right with Dissolve(0.2)
     "Before we have a chance to say anything, Reginald is in his face."
-    goon "Shut it! What's the next shipment's tracking coordinates?!"
+    goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm--"
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
@@ -1352,7 +1352,7 @@ label commsBase_DataCenter_MAR():
     enS "I don't like this any more than you two, but what's the alternative?"
     enS "If we don't cover our tracks, the Deadeye will be on our asses in no time! We need Matticus' access to the security database."
     pS "He's not the only one with access!"
-    enS "Yes access to secure databases is easy to find and widespread! How could I forget?!"
+    enS "Yes access to secure databases is easy to find and widespread! How could I forget!?"
     enS "That's what \"secure\" means right?"
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
     show goon stream at stream_center with Dissolve(0.3)
@@ -1388,7 +1388,7 @@ label commsBase_DataCenter_MAR():
             mS "What would it cost for you to get off world? I take it you have ambitions bigger than Gibian V?"
             "Reginald's brow furrows."
             goon "A couple grand I guess?"
-            pS "A couple grand?!"
+            pS "A couple grand!?"
             $ AddChatter(vig2_sc7_mar_bribe_comment1)
             goon "I need to make it off world in one piece. Money don't spend if I'm dead."
             mS "We can afford that."
@@ -1461,7 +1461,7 @@ label commsBase_DataCenter_MAR():
 
 label commsBase_DataCenter_OUT():
     show jennica stream shock at stream_left
-    pS "And let all those people die?!"
+    pS "And let all those people die!?"
     enS "Thousands more will die as well if they get MAC."
     if shnzi == True:
         $ AddChatter(vig2_sc7_out_comment2_shnzi)
@@ -1575,7 +1575,7 @@ label commsBase_DataCenter_OUT():
     goon "All sorted?"
     mS "Yeah. So how are we doing this?"
     goon "We need to make sure the shot can't be traced back to us."
-    goon "We'll make the incerception, and then ditch this shuttle in the desert."
+    goon "We'll make the interception, and then ditch this shuttle in the desert."
     enS "How are we getting out of the desert?"
     goon "The boss has a crew waiting for us out there. They'll take care of the disposal."
     pS "And the firepower?"
@@ -1643,7 +1643,7 @@ label vig2epilogue_MAR():
     smatt "I should've known you didn't have the stomach for real work."
     $ AddChatter(vig2_epilogue_mar_comment5)
     mS "Real work like blowing up medicine for some bumpkins?"
-    smatt "Since when do you care about anyone but yourself Moze?!"
+    smatt "Since when do you care about anyone but yourself Moze!?"
     smatt "You've done worse. This wouldn't have even cracked your top ten!"
     mS "Is that it?"
     $ AddChatter(vig2_epilogue_mar_comment6)
@@ -1657,7 +1657,7 @@ label vig2epilogue_MAR():
     pS "Maybe we shouldnta added insult to injury?"
     $ AddChatter(vig2_epilogue_mar_comment8)
     mS "Maybe. But didn't that feel good?"
-    "Jennica smiles and chuckles warmly"
+    "Jennica smiles and chuckles warmly."
     pS "Like fresh underwear after a shower."
     mS "Alright, do you two have anything else to report?"
     enS "All systems are functional Captain."
