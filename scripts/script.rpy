@@ -267,7 +267,6 @@ label Vig2BridgeScene():
 label GibianVCustomsDepot(): 
     show depot_stream at topleft onlayer background with dissolve
     hide vig2_shiphub_stream
-    "The depot bustles with loud and chaotic life."
     "The tiny barebones facility seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
     "New arrivals pile in hurriedly, while departures crowd at the checkpoint leading to the spaceport."
