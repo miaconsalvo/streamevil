@@ -1575,7 +1575,7 @@ label commsBase_DataCenter_OUT():
     goon "All sorted?"
     mS "Yeah. So how are we doing this?"
     goon "We need to make sure the shot can't be traced back to us."
-    goon "We'll make the incerception, and then ditch this shuttle in the desert."
+    goon "We'll make the interception, and then ditch this shuttle in the desert."
     enS "How are we getting out of the desert?"
     goon "The boss has a crew waiting for us out there. They'll take care of the disposal."
     pS "And the firepower?"
@@ -1657,7 +1657,7 @@ label vig2epilogue_MAR():
     pS "Maybe we shouldnta added insult to injury?"
     $ AddChatter(vig2_epilogue_mar_comment8)
     mS "Maybe. But didn't that feel good?"
-    "Jennica smiles and chuckles warmly"
+    "Jennica smiles and chuckles warmly."
     pS "Like fresh underwear after a shower."
     mS "Alright, do you two have anything else to report?"
     enS "All systems are functional Captain."
