@@ -1606,8 +1606,8 @@ label shuttleDestruction():
     mS "Yeah. Hit it."
     $ AddChatter(vig2_sc7_out_comment26)
     "Jennica pulls the trigger."
-    "A rush of momentum shakes the shuttle as the missle flies out from under it."
-    "The missle races across the sky before colliding with the ship, obliterating it."
+    "A rush of momentum shakes the shuttle as the missile flies out from under it."
+    "The missile races across the sky before colliding with the ship, obliterating it."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
     $ AddChatter(vig2_sc7_out_comment27)
@@ -1946,7 +1946,7 @@ label vig2_macro_mod_outlaw3_reluctant():
             jump vig2_macro_mod_outlaw4_reluctant
         "•I was trying to role play":
             $ curiosity = False
-            player_nvl "Tbh, I had to dissassociate from that one a bit."
+            player_nvl "Tbh, I had to disassociate from that one a bit."
             player_nvl "I thought of Moze as 'Outlaw Moze.'"
             player_nvl "So I wasn't really doing what like I would do in that position."
             menu:
@@ -2532,7 +2532,7 @@ label vig2_macro_bro1():
                     player_nvl "Lotta bits in the chat, you'll see next episode!"
                 "•The characters are really cool":
                     $ enthusiasm += 1
-                    player_nvl "But the character dynamics are reallying interesting this route"
+                    player_nvl "But the character dynamics are really interesting this route"
                     player_nvl "It's a compelling spin on Moze!"
                 "•Debating going back to Marshal, miss playing with you":
                     $ reluctance += 2
