@@ -769,6 +769,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_signoff_comment10)
     pause 0.5
     "As the viewers leave the stream, you deactivate your webcam and sign off of Flinch."
+    play music "postStreamGroove.wav" volume 0.7 loop fadein 0.5
     hide screen streamDetails
     hide screen streamChat
     hide streamview with Dissolve(2.0)
