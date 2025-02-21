@@ -10,7 +10,7 @@
 
 #narrator definitions
 default reg_narrator = Character(None, window_style = "window")
-default alt_narrator = Character(None, window_style = "ig_window", what_style = "ig_dialogue", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+default alt_narrator = Character(None, window_style = "ig_window", what_style = "ig_dialogue", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 
 define player = Character("[my_name]") #represents the protagonist's name which will be defined by the player via an input screen.
 define mod = Character("Jessie")
@@ -29,22 +29,22 @@ define m = Character("Moze", window_style = "window", who_color="#a333ff", what_
 define mS = Character ("Moze", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#a333ff", what_color = "#000000", image = "captain_stream", window_background="images/textbox/ig_textbox_purple.png")
 
 define en = Character("Teresa", window_style = "window", who_color="#FF3333", what_color="#000000", image = "engineer", window_background = "images/textbox/textbox_red.png")
-define enS = Character ("Teresa", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#FF3333", what_color="#000000", image = "teresa stream neutral", window_background="images/textbox/ig_textbox_red.png")
+define enS = Character ("Teresa", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#FF3333", what_color="#000000", image = "teresa stream neutral", window_background="images/textbox/ig_textbox_blue.png")
 
 define p = Character("Jennica", window_style = "window", who_color="#ef8f3a", what_color="#000000", image = "pilot", window_background = "images/textbox/textbox_orange.png")
-define pS = Character ("Jennica", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#ef8f3a", what_color="#000000", image = "jennica stream neutral.png", window_background = "images/textbox/ig_textbox_orange.png")
+define pS = Character ("Jennica", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#ef8f3a", what_color="#000000", image = "jennica stream neutral.png", window_background = "images/textbox/ig_textbox_red.png")
 
 define mac = Character("MAC", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/textbox_blue.png")
-define macS = Character("MAC", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/ig_textbox_blue.png")
+define macS = Character("MAC", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/ig_textbox_pink.png")
 
 
-define shipcom = Character("Ship Intercom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
-define agent1 = Character("Customs Agent", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
-define smatt = Character("Matticus", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus stream", window_background="images/textbox/ig_textbox_blue.png")
-define goon =  Character("Reginald", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "goon stream", window_background="images/textbox/ig_textbox_blue.png")
-define worker = Character("Technician", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker stream", window_background="images/textbox/ig_textbox_blue.png")
-define mattdoorbell = Character("Doorcom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
-define hsguard1 = Character("Guard", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+define shipcom = Character("Ship Intercom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
+define agent1 = Character("Customs Agent", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
+define smatt = Character("Matticus", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus stream", window_background="images/textbox/ig_textbox_grey.png")
+define goon =  Character("Reginald", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "goon stream", window_background="images/textbox/ig_textbox_grey.png")
+define worker = Character("Technician", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker stream", window_background="images/textbox/ig_textbox_grey.png")
+define mattdoorbell = Character("Doorcom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
+define hsguard1 = Character("Guard", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 
 #Additional variables
 default viewCount = 8 #viewCount changes how many viewers are displayed in the streamdetails screen
@@ -87,9 +87,12 @@ default baseGuardKilled = False
     #yadj.value = yadjValue
 
 init: 
-    $ stream_left = Position (xpos=0.13, ypos=0.65) #stream view
-    $ stream_right = Position (xpos = 0.67, ypos=0.65)
-    $ stream_center = Position (xpos=0.40, ypos=0.65)
+    $ stream_left = Position (xpos=0.13, ypos=0.82) #stream view
+    $ stream_right = Position (xpos = 0.67, ypos=0.82)
+    $ stream_center = Position (xpos=0.40, ypos=0.82)
+    $ stream_center_mac = Position (xpos=0.40, ypos=0.70)
+    $ stream_left_mac = Position (xpos=0.13, ypos=0.70)
+    $ stream_right_mac =  Position (xpos = 0.67, ypos=0.70)
     $ screen_left = Position (xpos = 0.2, ypos = 0.7) #non-stream view
     $ screen_right = Position (xpos = 0.8, ypos = 0.7)
     $ renpy.add_layer("background", below = "master") #created a layer called "background" for displaying micro-game scenes
@@ -160,7 +163,7 @@ label Vig2BridgeScene():
     hide ship_hallway_stream
     show jennica stream neutral at stream_left with Dissolve(0.5)
     show teresa stream neutral at stream_right with Dissolve(0.5)
-    show mac stream at stream_center with Dissolve(0.5)
+    show mac stream at stream_center_mac with Dissolve(0.5)
     #repeat for additional characters
     "As I step onto the bridge, Jennica, Teresa, and Mac are discussing the visualization on the ship's computer."
     $ AddChatter(vig2_sc1_comment4)
@@ -674,7 +677,7 @@ label meetingMatticus():
             "Matticus smirks and looks at Jennica."
             smatt "No."
     "Matticus takes a long drag on his cigar before looking at me expectantly. The fake smile fades from his face."
-    hide jennica
+    hide jennica with dissolve
     show matticus stream at stream_left with move
     smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
     mS "No. We need a favor."
@@ -689,7 +692,7 @@ label meetingMatticus():
     smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi--"
-    show goon stream at stream_right
+    show goon stream at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus' guards spring into action and draw their weapons."
     show mac stream at stream_center with Dissolve(.5)
@@ -1033,7 +1036,7 @@ label commsBase_MAR2():
     show vig2_compound_hall_stream at topleft onlayer background with dissolve
     #Do we need to cut some of these "show" statements?
     show teresa stream neutral at stream_right with Dissolve(0.5)
-    #show jennica stream neutral at stream_left with Dissolve(0.5)
+    show jennica stream neutral at stream_left with Dissolve(0.5)
     show goon stream at stream_center with Dissolve(0.5)
     "At the end of the hall, we arrive at a door."
     "Cracking the door ajar, I'm able to get a look at what's on the other side."
