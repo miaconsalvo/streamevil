@@ -1,0 +1,1200 @@
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+# The script of the game goes in this file.
+
+# Declare characters used by this game. The color argument colorizes the
+# name of the character.
+
+#narrator definitions
+default reg_narrator = Character(None, window_style = "window")
+default alt_narrator = Character(None, window_style = "ig_window", what_style = "ig_dialogue", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+
+define player = Character("[my_name]") #represents the protagonist's name IRL which will be defined by the player via an input screen.
+define streamer = Character("[username]") #represents protagonist's username on Flinch
+define mod = Character("Jessie")
+define bro = Character("El")
+define player_nvl = Character("[my_name]", kind = nvl, image = "captain_stream")
+define streamer_nvl = Character("[username]", kind = nvl, image = "captain_stream")
+define mod_nvl = Character("Jessie", kind = nvl, image = "profile1small")
+define bro_nvl = Character("El", kind = nvl )
+define cs_nvl = Character("Coriolis", kind = nvl, )
+define kc_nvl = Character("KitCat", kind = nvl, )
+define pd_nvl = Character("PickledDragons", kind = nvl, )
+define adv_menu = menu
+
+define m = Character("Moze", window_style = "window", who_color="#a333ff", what_color="#000000", image = "captain", window_background = "images/textbox/textbox_purple.png")
+define mS = Character ("Moze", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#a333ff", what_color = "#000000", image = "captain_stream", window_background="images/textbox/ig_textbox_purple.png")
+
+define en = Character("Teresa", window_style = "window", who_color="#FF3333", what_color="#000000", image = "engineer", window_background = "images/textbox/textbox_red.png")
+define enS = Character ("Teresa", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#FF3333", what_color="#000000", image = "teresa stream neutral", window_background="images/textbox/ig_textbox_red.png")
+
+define p = Character("Jennica", window_style = "window", who_color="#ef8f3a", what_color="#000000", image = "pilot", window_background = "images/textbox/textbox_orange.png")
+define pS = Character ("Jennica", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#ef8f3a", what_color="#000000", image = "jennica stream neutral.png", window_background = "images/textbox/ig_textbox_orange.png")
+
+define mac = Character("MAC", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/textbox_blue.png")
+define macS = Character("MAC", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/ig_textbox_blue.png")
+
+define a = Character("Anatar", window_style = "window", who_color="#d0c231", what_color="#000000", image = "anatar neutral", window_background = "images/textbox/textbox_orange.png")
+define aS = Character("Anatar", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#d0c231", what_color = "#000000", image = "anatar stream neutral", window_background="images/textbox/ig_textbox_orange.png")
+
+define shipcom = Character("Ship Intercom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+define agent1 = Character("Customs Agent", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+define smatt = Character("Matticus", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus stream", window_background="images/textbox/ig_textbox_blue.png")
+define goon =  Character("Reginald", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "goon stream", window_background="images/textbox/ig_textbox_blue.png")
+define worker = Character("Technician", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker stream", window_background="images/textbox/ig_textbox_blue.png")
+define mattdoorbell = Character("Doorcom", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+define hsguard1 = Character("Guard", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_blue.png")
+
+#Additional variables
+default viewCount = 4 
+default macroChoice = False  
+default commentPing = False
+default textContent = "Sound is Off"
+
+#variables to track morality
+default marshal = 2
+default outlaw = 3
+
+#variables to track interest of player - tracked for macro game purposes
+default reluctance = 0
+default enthusiasm = 0
+default energy = 5
+
+#variables to track attributes
+default curiosity = False
+
+#variables to track viewer engagement
+default csEngagement = 5
+default pdEngagement = 3
+default kcEngagement = 4
+
+#Approval of micro-game characters
+default engineerApproval = 3
+default pilotApproval = 4
+default shnzi = True
+default romanceAma = False
+default romanceJennica = False
+default romanceTeresa = False
+default baseGuardKilled = False
+
+#Variables to track viewers for Analytics screen in MacroGame
+default viewCheck1 = 0
+default viewCheck2 = 0
+default viewCheck3 = 0
+default viewCheck4 = 0
+default viewCheck5 = 0
+default vbar1 = 0 #make sure to set these vbar values back to zero at the start of every vignette (or just when you leave the analytics screen)
+default vbar2 = 0
+default vbar3 = 0
+default vbar4 = 0
+default vbar5 = 0
+default max_viewers = 40
+
+default topfan = ""
+
+init: 
+    $ stream_left = Position (xpos=0.13, ypos=0.65) 
+    $ stream_right = Position (xpos = 0.67, ypos=0.65)
+    $ stream_center = Position (xpos=0.40, ypos=0.65)
+    $ screen_left = Position (xpos = 0.2, ypos = 0.7) 
+    $ screen_right = Position (xpos = 0.8, ypos = 0.7)
+    $ renpy.add_layer("background", below = "master")
+
+# The game starts here.
+
+label start:
+    show bg black at topleft onlayer background
+
+    "Hello, this is the start of a new game"
+
+    "Please tell me your streamer username"
+    $ username = renpy.input("Your username is: ", length = 16)
+    "Now please tell me your first name in real life"
+    $ my_name = renpy.input("Your character's real name is: ", length = 16)
+
+    "Here you would select a streaming profile picture"
+    #Add chatter to stream here
+    $ AddChatter(vig1_sc1_comment1)
+    $ AddChatter(vig1_sc1_comment2)
+    $ AddChatter(vig1_sc1_comment3)
+    $ AddChatter(vig1_sc1_comment4)
+    $ AddChatter(vig1_sc1_comment5)
+    $ AddChatter(vig1_sc1_comment6)
+    $ AddChatter(vig1_sc1_comment7)
+    $ AddChatter(vig1_sc1_comment8)
+    $ AddChatter(vig1_sc1_comment9)
+    $ AddChatter(vig1_sc1_comment10)
+    $ AddChatter(vig1_sc1_comment11)
+    "And now we begin"
+    jump gamestart
+
+label gamestart():
+    scene streamview
+    show screen streamChat
+    show screen streamerCommentary
+    show screen streamDetails
+    show vig1_town_stream at topleft onlayer background with vpunch
+    $ narrator = alt_narrator
+    $ viewCheck1 = 2
+    $ viewCheck2 = 4
+    $ viewCheck3 = viewCount
+    "I dive behind cover just in time to dodge the grenade blast as three BigCorp enforcers open fire."
+    "A hail of blaster bolts rain down on me."
+    mS "BC scum."
+    aS "Moze!"
+    show anatar stream neutral at stream_left with Dissolve(0.5)
+    "Anatar scrunches himself against the corner of a house, blindly firing his pistol around the cover."
+    aS "They're going to surround us!"
+    aS "We can't stay here!"
+    "A light bump taps me on the knee."
+    show mac stream at stream_right with Dissolve(0.5)
+    macS "Affirmative, our survival rate in the current situation is 5\%"
+    $ AddChatter(vig1_sc2_comment1)
+    menu:
+        macS "Affirmative, our survival rate in the current situation is 5\%"
+        "MAC, not right now":
+            $ kcEngagement += 1
+            mS "Mac, I'm glad you're trying to help."
+            "A bolt collides in the dirt. I quickly fire a shot back into the haze and duck back down as a body slumps off a nearby building."
+            mS "But we need something more than probabilities right now."
+        "Not helping!":
+            mS "Not helping, MAC!"
+            "A bolt collides in the dirt. I quickly fire a shot back into the haze and duck back down as a body slumps off a nearby building."
+            $ AddChatter(vig1_sc2_comment1_kc)
+            mS "Can you find us an escape route?"
+    aS "Already on it."
+    "The sound of wood splintering--"
+    "Anatar kicks down a door into the adjacent building."
+    default anatarSuspicious = False #This variable is controlled by choices in the next comment
+    #We're setting it here so that later on we can reference it, even if they don't  click on the comment
+    $ AddChatter(vig1_sc2_comment2)
+    show screen chatTutorial
+    aS "Follow me!"
+    "He vanishes through the doorway."
+    mS "MAC, follow Anatar!"
+    "I return fire as MAC and I rush into the building."
+    "It's a saloon."
+    "Anatar has set himself up behind the door and peeks through the windows."
+    hide screen chatTutorial
+    mS "What's the situation?"
+    aS "Four enforcers on the buildings across the street. Two rifles aimed at us, two with pistols."
+    aS "Any bright ideas?"
+    $ vig1_sc2_comment2.click = False
+    "I glance out one of the angled windows to my side. Down to the east of town, I can see the spaceport."
+    "The sound of distant fire echoes on the suddenly quiet wind."
+    "I hope Jennica and Teresa can hold out."
+    "We need a plan."
+    menu:
+        "We need a plan."
+        "I've got some smoke bombs":
+            mS "I've got some smoke bombs in my pack."
+            mS "If we can put them in the right spot we might be able to make a safe pa--"
+        "I need a distraction":
+            mS "It's risky, but if you run a diversion, I can take out the snipers."
+            mS "Then we can outrun the ones with pist--"
+    macS "Captain, behind you!"
+    show guard1 stream at stream_center with Dissolve(0.1)
+    "I whip around just as a huge man in a BigCorp uniform shoulder charges me."
+    "My gun goes flying as I tumble over the table and my back slams into the ground."
+    "Through my blurry vision, I watch a smaller BigCorp enforcer rush Anatar and knock the pistol from his hands."
+    "They tumble to the ground."
+    hide anatar with Dissolve (0.4)
+    macS "Captain, help!"
+    "I push myself to my feet."
+    "The huge BigCorp officer has chased MAC into a corner. He picks him up."
+    "Crouching into a fighting stance, I approach the enforcer."
+    $ AddChatter(vig1_sc2_comment3)
+    menu:
+        "Crouching into a fighting stance, I approach the enforcer."
+        "That was a dirty move":
+            "I spit a bit of blood at his feet."
+            mS "You're gonna regret that cheap shot."
+        "Drop him":
+            "I spit a bit of blood at his feet."
+            mS "Drop him."
+    "The enforcer turns and looks me up and down."
+    "He places MAC down on his side so he can't wheel away, then squares up to face me."
+    hide mac with Dissolve (0.7)
+    "I can't take him in a direct fight. What can I use around me?"
+    "My gun is a couple meters to the side and there's a broken bottle at my feet."
+    "The enforcer throws a fist."
+    menu:
+        "The enforcer throws a fist."
+        "Gun":
+            "I dive out of the way and roll toward the gun."
+            "My hand wraps around the grip but he's already back on top of me."
+            "I pull the gun up, but he reaches out and grabs it with both hands, holding the barrel away."
+            menu:
+                "I pull the gun up, but he reaches out and grabs it with both hands, holding the barrel away."
+                "Punch his arms":
+                    "I release with one hand and lash out at his forearms, trying to break his grip."
+                    "They won't budge."
+                    "He grins."
+                "Struggle to point the gun at him":
+                    "My jaw clenches as I try to force the barrel to point at his head."
+                    "It won't move."
+                    "He grins."
+            macS "Moze!"
+            show mac stream at stream_left
+            show mac at stream_center with move
+            hide mac with Dissolve (0.5)
+            "MAC, now fully upright, rams into the enforcer at top speed."
+            "Something snap in the enforcer's leg."
+            "He howls in pain and drops to the floor, grip loosening on the gun."
+            "I kick him flat on his back and fire three shots straight into his chest."
+            "He doesn't move. Blood seeps into the saloon floor."
+            $ AddChatter(vig1_sc2_comment4)
+            hide guard1 stream with dissolve
+        "Bottle":
+            "I crouch out of the way and pick up the broken bottle."
+            "Rising up, I aim the bottle's sharp edge at his throat."
+            "He catches my arm with both hands, holding the sharp point just inches from his neck."
+            menu:
+                "He catches my arm with both hands, holding the sharp point just inches from his neck."
+                "Punch his exposed side":
+                    "I punch at his exposed chest, but he won't flinch."
+                    "He starts to pull my hand away from his neck."
+                    "He grins."
+                "Put my weight behind the stab":
+                    "I grab the bottle with both hands and try to force it toward his exposed skin."
+                    "There's no way. He starts to pull the bottle away from his neck."
+                    "He grins."
+            macS "Moze!"
+            show mac stream at stream_left
+            show mac at stream_center with move
+            hide mac with Dissolve (0.5)
+            "MAC, now fully upright, rams into the enforcer at top speed, and I hear something snap in the enforcer's leg."
+            "He howls in pain and drops to the floor, grip completely lost."
+            "I stab down, driving the bottle deep into his neck."
+            "He slumps to the ground. Blood sleeps into the saloon floorboards."
+            $ AddChatter(vig1_sc2_comment4)
+            hide guard1 stream with dissolve
+    aS "Moze!"
+    show anatar stream neutral at stream_right
+    "Anatar limps over to me. The enforcer he was entangled with is flat and unmoving on the ground."
+    menu:
+        "Anatar limps over to me. The enforcer he was entangled with is flat and unmoving on the ground."
+        "Anatar, are you ok?":
+            mS "Anatar, are you ok?"
+            $ csEngagement += 1
+            aS "We don't have time, the enforcers are coming arou--"
+        "MAC, are you ok?":
+            mS "MAC, are you ok?"
+            $ kcEngagement += 1
+            "MAC starts to hum something, but Anatar shouts over him."
+            aS "We don't have time, the enforcers are coming arou--"
+    show streamview with vpunch
+    "The door to the saloon creaks open."
+    "Anatar whips around immediately and fires."
+    show pilot_stream1 at stream_center with Dissolve (0.4) #this should be a different character
+    pause (0.2)
+    hide pilot_stream1 with Dissolve (0.2)
+    "Neviru's body slumps to the ground, their hands held up in a show of peace."
+    $ AddChatter(vig1_sc2_comment5)
+    $ AddChatter(vig1_sc2_comment6)
+    show screen chatTutorial2
+    $ AddCommentary(vig1_sc2_streamer1)
+    "Anatar's eyes go wide."
+    "He stares at the body, then looks at the gun in his hand."
+    "Shouts filter in from outside."
+    aS "I--I didn't--This wasn't supposed to--"
+    hide screen chatTutorial2
+    default bigCorpFault = False
+    menu:
+        "I grab Anatar and turn him to face me."
+        "This is BigCorp's fault":
+            $ bigCorpFault = True
+            mS "Anatar, listen to me: this is BigCorp's fault."
+            mS "They started this firefight. They put these people in danger."
+            mS "This is on them, not you."
+            mS "We need to leave, now!"
+        "You couldn't know":
+            mS "Anatar, listen to me: you couldn't have known."
+            mS "There was no parley signal, no announcement, nothing."
+            mS "This isn't your fault and we need to get out of here now!"
+    "Anatar nods and clenches his fists."
+    aS "You're right. You're right."
+    aS "What's the plan?"
+    menu:
+        aS "What's the plan?"
+        "Smoke bombs":
+            mS "Crack that door and I'll toss the smoke bombs."
+            "Then we break through the smoke and make a run for the spaceport."
+            aS "You're not gonna leave me out to dry, will you?"
+            mS "Never."
+            "Anatar takes a deep breath."
+            aS "Okay then."
+            "He takes a position by the door and places his hand on it."
+            show mac stream at stream_left with Dissolve (0.5)
+            mS "Stay close to me MAC."
+            "He hums low in affirmation."
+            "I pull out two smoke bombs and give Anatar a nod."
+            "He glances back at Neviru, then exhales."
+            "The door swings open."
+            "I whip the small spheres through the open space."
+            "Sparks light up in the dirt. A thick layer of smoke erupts into the air."
+            mS "Now!"
+            "Mac, Anatar, and I rush out of the saloon."
+            "We're enveloped in smoke almost immediately."
+            $ AddChatter(vig1_sc2_comment7)
+            mS "Run!"
+            "I sprint as hard as I can in the direction of the spaceport." 
+            "Blaster bolts streak through the smoke cloud."
+            "The whirring of MAC's wheels continues ahead of us."
+            "The smoke starts to thin out and we emerge."
+            "The enforcers are all behind us, their bolts kicking up dust around our feet."
+            "We're getting close to the spaceport."
+        "Diversion":
+            mS "Dive out there and grab some cover."
+            mS "I'll spot you and take some of them out when they pop up."
+            aS "You're not gonna leave me out to dry, will you?"
+            mS "Never."
+            "Anatar takes a deep breath."
+            aS "Okay then."
+            "He takes a position by the door and places his hand on it."
+            show mac stream at stream_left with Dissolve (0.5)
+            mS "Stay close to me MAC."
+            "He hums low in affirmation."
+            "He glances back at Neviru, then exhales."
+            "The door swings open and Anatar dives out to take cover by a low wall."
+            "As he leaps into the air, two enforcers on the other building pop out of their cover."
+            "I fire twice."
+            "The bolts land home knocking the enforcers off the building."
+            $ AddChatter(vig1_sc2_comment7)
+            mS "Now! Run!"
+            "Mac and I rush out the door and sprint down the dirt path as Anatar gets up and follows."
+            "The other enforcers appear on buildings close by, but it's too late, we've already committed."
+            "And we're close to the spaceport."
+    mS "Keep running!"
+    "MAC is just a few paces ahead of me, Anatar a couple steps behind as blaster bolts kick up dust all around us."
+    hide anatar
+    hide mac
+    "A shout comes from up ahead."
+    "On top of a building just to my left, an enforcer stands up with a rifle aimed directly at MAC."
+    "I lift my pistol but lose the shot as I run under the building's eaves."
+    "MAC's completely exposed, one shot will destroy him."
+    $ AddChatter(vig1_sc2_comment8)
+    "I glance back down and see a tank of fertilizer next to the building."
+    "One shot could send the whole place to Hell."
+    "Then I see through the window, a couple cowering in the corner."
+    "I process the information in less than a second, then react."
+    jump saveMAC
+
+label saveMAC():
+    default houseExplosion = False
+    menu:
+        "I process the information in less than a second, then react."
+        "Dive in front of the shot":
+            $ kcEngagement += 1
+            "The thought doesn't even linger in my mind."
+            "I take one more step then dive in front of MAC."
+            "The sound of a rifle firing resonates behind me as my shadow falls over MAC."
+            "Pain explodes in my left shoulder as I fall to the ground."
+            aS "Moze!"
+            macS "Captain!?"
+            "The sound of another shot fired and a body hitting the ground from a great height."
+            show anatar stream neutral at stream_right with dissolve
+            "Anatar crouches beside me and wraps my right arm over his shoulder."
+            mS "The sniper?"
+            $ AddChatter(vig1_sc2_comment9)
+            aS "I got him. Time to go."
+            show mac stream at stream_left with Dissolve(0.5)
+            macS "Are you okay, Moze?"
+            mS "I'm fine MAC, we have to go now."
+            "Anatar helps me to my feet."
+            aS "Can you run?"
+            mS "I'm going to have to."
+            jump spacePortEscape
+        "Blow up the house":
+            $ houseExplosion = 0
+            $ houseExplosion += 1
+            $ narrator = reg_narrator
+            "Actually, do I really want to do that? Probably not."
+            $ narrator = alt_narrator
+            if houseExplosion >= 3:
+                pass
+                #AddChatter(kitcat comment about time)
+            jump saveMAC
+
+label spacePortEscape():
+    $ viewCheck4 = viewCount
+    if houseExplosion >= 1:
+        $ AddChatter(vig1_sc2_comment10)
+    macS "Are you okay, Moze?"
+    mS "I'm fine MAC, we have to go now."
+    "Anatar helps me to my feet."
+    aS "Can you run?"
+    mS "I'm going to have to."
+    "Anatar helps me get my bearings and then we're off running again."
+    "We rush through the spaceport gate, firing at enforcers trying to block our way."
+    "We come into view of the ship and see the turret on top of the vehicle firing wildy at enforcers hiding behind debris surrounding the ship."
+    show teresa stream shock at stream_center with dissolve
+    "Teresa is in cover inside the ship, popping out to fire at enforcers trying to make a run to different positions."
+    "She catches sight of us and waves, turning around to shout something into the ship."
+    $ vig1_sc2_comment10.click = False
+    $ AddChatter(vig1_sc2_comment11)
+    "We dispatch two enforcers on our way as the turret ramps up its cover fire, forcing the enemy to take shelter as we rush up the ramp and onto the ship."
+    enS "They're inside, Jennica! Get us out of here!"
+    pS "Copy!"
+    hide teresa with dissolve
+    show jennica stream angry at stream_center with dissolve
+    "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
+    $ AddChatter(vig1_sc2_comment12)
+    pS "Nice of y'all to join us. Remind me NEVER to visit Cromuu again."
+    "Just as the ship begins to push off the ground, I look through the window outside to see four immense BigCorp cruisers speeding over the land."
+    mS "Jennica? We have to go NOW!"
+    pS "I know, I know, I see them too!"
+    "Jennica slams a thruster forward and the ship lurches into the air."
+    "Bolts of fire from the cruisers explode all around us as we ascend into the atmosphere."
+    "And then the fire stops. The resistance on the ship dissipates. We're floating in space."
+    "Jennica breathes a sigh of relief and punches something in on the keypad."
+    "With a flick of a switch, the Oakley lurches forward into hyperspace. Away from Cromuu and Grand Junction."
+    hide jennica with dissolve
+    hide mac with dissolve
+    hide anatar with dissolve
+    jump councilDebrief
+
+label councilDebrief():
+    show vig2_shiphub_stream at topleft onlayer background with dissolve
+    hide vig1_town_stream
+    show teresa stream neutral at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    pS "We've been in hyperspace for about an hour. And we got out before the cruisers were within range of us. We should be clear of any BC tracking devices."
+    enS "\"Should\" be. Deadeye shouldn't have been able to track us to Cromuu in the first place."
+    mS "Maybe that wyvern-class mercenary wasn't as random as we thought."
+    $ AddChatter(vig1_sc3_comment1)
+    mS "They might have transmitted coordinates to BC before we dusted them."
+    pS "And from there, there are only a handful of habitable planets in the sector."
+    enS "They could have increased surveillance on each of them."
+    mS "Could have. Hard to know for certain. But we'll need to be more careful in the future, and find a way to navigate the interstellar pathways with more stealth."
+    pS "Any ideas?"
+    mS "Maybe. I need to think."
+    "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives."
+    "...no Mac."
+    mS "Does anyone know where Mac is?"
+    shipcom "Attention crew, escape pod procedure activated."
+    $ viewCount += 1
+    $ AddChatter(vig1_sc3_raid_comment1)
+    pause 1.0
+    $ viewCount += 2
+    $ AddChatter(vig1_sc3_raid_comment2)
+    pause 1.0
+    $ viewCount += 5
+    $ AddChatter(vig1_sc3_raid_comment3)
+    pause 0.3
+    $ AddChatter(vig1_sc3_raid_comment4)
+    $ narrator = reg_narrator
+    "Woah, that view count can't be right."
+    pause 0.05
+    $ viewCount += 17
+    $ AddChatter(vig1_sc3_raid_comment5)
+    pause 0.7
+    $ AddChatter(vig1_sc3_raid_comment6)
+    pause 0.5
+    $ AddChatter(vig1_sc3_raid_comment7)
+    pause 0.7
+    $ AddChatter(vig1_sc3_raid_comment8)
+    pause 0.8
+    $ narrator = alt_narrator
+    mS "Shit, what trouble is he getting into now."
+    "I rush out of the council room."
+    hide teresa with dissolve
+    hide jennica with dissolve
+    $ narrator = reg_narrator
+    "A private discord notification from my mod, Jessie."
+    #insert discord sound effect
+    call screen discordNotification
+    $ AddChatter(vig1_sc3_raid_comment9)
+    pause 0.8
+    $ AddChatter(vig1_sc3_raid_comment10)
+    pause 0.7
+    $ AddChatter(vig1_sc3_comment2)
+    pause 0.5
+    $ AddChatter(vig1_sc3_raid_comment11)
+    pause 0.7
+    $ AddChatter(vig1_sc3_raid_comment12)
+    pause 0.7
+    $ AddChatter(vig1_sc3_raid_comment13)
+    pause 0.7
+    "A raid!? I have to say something."
+    $ macroChoice = True
+    menu:
+        "A raid!? I have to say something."
+        "What's up guys!":
+            player "What's up guys!"
+            player "Great to have new friends in chat."
+            player "Let's settle some scores!"
+        "Wow, that's a lot of people":
+            player "Wow, that's a lot of people."
+            player "Hope y'all are ready for some fun!"
+        "Welcome":
+            player "Hi everyone, welcome to chat!"
+            player "I'm [streamer] and I'm pumped to have y'all!"
+    $ macroChoice = False
+    "Shit, was that cringey?"
+    $ narrator = alt_narrator
+    $ AddChatter(vig1_sc3_comment3)
+    jump escapePodConfrontation
+
+label escapePodConfrontation:
+    show ship_hallway_stream at topleft onlayer background with dissolve
+    hide vig2_shiphub_stream
+    "I run down the halls of the ship and leap over the railing leading down to the escape pod bay."
+    $ AddChatter(vig1_sc3_comment4)
+    "As I near the pods, I hear Anatar's voice."
+    aS "Come on Mac, you can trust me. We can live a safe life. You don't have to be on the run all the time."
+    macS "But Captain said to stay close to her."
+    aS "I know Mac. But Moze isn't always right. This place is dangerous."
+    $ AddChatter(vig1_sc3_comment5)
+    "I turn the corner."
+    show mac stream at stream_right with dissolve
+    show anatar stream neutral at stream_center with dissolve
+    "Mac is standing in the center of the hall. Anatar has one foot inside an open escape pod."
+    $ AddChatter(vig1_sc3_comment6)
+    "As I step into the light, Anatar sees me and reaches for Mac." 
+    "I pull my blaster and point it at him, but by the time I do he has already grabbed Mac with his left arm and is holding him in the air in front of him."
+    $ AddChatter(vig1_sc3_comment7)
+    mS "What are you doing, Anatar?"
+    aS "I'm getting {i}out{/i} of this crazy life, Moze."
+    $ AddChatter(vig1_sc3_comment8)
+    aS "You saw what happened just now, right?"
+    aS "Ama said BC was going to hold me as an accomplice. What do you think that means they're going to do to Grand Junction?"
+    aS "That's beside the ruin we left of the spaceport. Or the people who got hurt in the crossfire."
+    if anatarSuspicious == True:
+        $ AddChatter(vig1_sc3_suspicion_callback)
+    mS "I know. None of that was right. But we didn't have a choice."
+    aS "We {i}always{/i} have a choice."
+    $ AddChatter(vig1_sc3_comment9)
+    mS "If BC gets Mac, things are only going to get worse."
+    $ AddChatter(vig1_sc3_comment10)
+    aS "Things are already worse!"
+    aS "They get worse everywhere we go!"
+    $ AddChatter(vig1_sc3_comment11)
+    aS "No, everywhere {i}you{/i} go."
+    $ AddChatter(vig1_sc3_comment12)
+    aS "I know you think Ama's code is selfish, but at least it's a code. At least she lives by rules."
+    aS "You, Moze, you just go anywhere you want, do anything you want, and try to justify it by saying, \"I didn't have a choice.\""
+    $ AddChatter(vig1_sc3_comment13)
+    aS "Grow up and start living in this galaxy with the rest of us. You don't change anything for the better. You just bring pain and death."
+    if bigCorpFault == True:
+        aS "Neviru's death isn't on BigCorp. It's on you."
+    mS "I've heard enough."
+    $ AddChatter(vig1_sc3_comment14)
+    pause 1.0
+    $ AddChatter(vig1_sc3_comment15)
+    pause 1.0
+    $ AddChatter(vig1_sc3_comment16)
+    pause 1.0
+    $ AddChatter(vig1_sc3_comment17)
+    pause 1.0
+    menu:
+        mS "I've heard enough."
+        "Kill Anatar":
+            $ pdEngagement += 3
+            $ csEngagement -= 1
+            $ kcEngagement += 2
+            $ narrator = reg_narrator
+            "Hmm, I don't know if I want to kill Anatar."
+            "I go to select the stun option."
+            "But as I hover the mouse over the choice, a loud bang comes from down the hall."
+            "I jolt a little bit."
+            "My cursor slips."
+            "The words \"Kill Anatar\" glow red in the game's UI."
+            $ narrator = alt_narrator
+        "Stun Anatar":
+            $ pdEngagement += 3
+            $ csEngagement -= 1
+            $ kcEngagement += 2
+            $ narrator = reg_narrator
+            "I go to select the stun option."
+            "But as I hover the mouse over the choice, a loud bang comes from down the hall."
+            "I jolt a little bit."
+            "My cursor slips."
+            "The words \"Kill Anatar\" glow red in the game's UI."
+            $ narrator = alt_narrator
+    $ viewCheck5 = viewCount
+    "I fire a bolt. It lands right between Anatar's eyes."
+    "He slumps to the ground."
+    hide anatar with dissolve
+    $ AddChatter(vig1_sc3_shot_comment1)
+    pause 0.4
+    $ AddChatter(vig1_sc3_shot_comment2)
+    pause 0.5
+    $ AddChatter(vig1_sc3_shot_comment3)
+    pause 0.5
+    $ narrator = reg_narrator
+    $ macroChoice = True
+    "I killed Anatar...What do I do?"
+    default omegaDead = False
+    default misclick = False
+    menu:
+        "I killed Anatar. What do I do?"
+        "\"That was a mistake!\"":
+            $ misclick = True
+            $ pdEngagement -= 1
+            player "Wait, no!"
+            player "I misclicked!"
+            $ AddChatter(vig1_sc3_shot_mistake_comment1)
+            pause 0.5
+            $ AddChatter(vig1_sc3_shot_mistake_comment2)
+            pause 1.0
+            $ AddChatter(vig1_sc3_shot_mistake_comment3)
+            pause 0.5
+            "I'm on stream, I can't go back now."
+        "Play it off":
+            player "Consider this score settled."
+            $ AddChatter(vig1_sc3_shot_cool_comment1)
+            pause 0.5
+            $ AddChatter(vig1_sc3_shot_cool_comment2)
+            pause 0.5
+            "I'm on stream, I can't go back now."
+        "Shout":
+            player "Woooooah!"
+            player "Chat! Chat is he dead!?"
+            $ AddChatter(vig1_sc3_shot_shout_comment1)
+            pause 0.5
+            $ AddChatter(vig1_sc3_shot_shout_comment2)
+            pause 0.8
+            $ AddChatter(vig1_sc3_shot_shout_comment3)
+            pause 0.5
+            $ omegaDead = True
+            $ AddChatter(vig1_sc3_shot_shout_comment4)
+            pause 0.5
+    $ narrator = alt_narrator
+    "Mac hits the floor and rolls to the other end of the hall."
+    "I go over to Anatar's body. It's limp and cold."
+    "But I still feel the weight of his eyes."
+    "I can't tell if they're frightened or judging."
+    $ AddChatter(vig1_sc3_shot_comment4)
+    pause 0.5
+    "I activate my com."
+    mS "Teresa, Jennica, Anatar tried to activate an escape pod and take Mac away."
+    pS "He did what!?"
+    $ AddChatter(vig1_sc3_shot_comment5)
+    pause 0.5
+    enS "Why!?"
+    pS "Are you okay!?"
+    mS "I don't know. I could use some help with the body."
+    enS "Roger, I'll be right down."
+    $ AddChatter(vig1_sc3_shot_comment6)
+    pause 0.5
+    "I gently move toward Mac and crouch down in front of him."
+    mS "Hey, I'm sorry about that."
+    macS "Is he...is he dead?"
+    "I glance back at the body."
+    mS "Yes."
+    if omegaDead == True:
+        $ AddChatter(vig1_sc3_shot_comment7)
+        pause 0.5
+    macS "Why?"
+    mS "He threatened you. He made his choice."
+    macS "But, did he have to die?"
+    $ AddChatter(vig1_sc3_shot_comment8)
+    pause 0.5
+    mS "It's safer than the alternative."
+    macS "So this ship is still safe?"
+    $ AddChatter(vig1_sc3_shot_comment9)
+    pause 0.5
+    "I reach out my hand toward Mac."
+    mS "I'll make sure it is."
+    hide mac with Dissolve(1.2)
+    hide ship_hallway_stream with Dissolve(1.2)
+    $ narrator = reg_narrator
+    "The screen fades as the episode closes out."
+    $ AddChatter(vig1_sc3_shot_comment10)
+    pause 0.5
+    player "Oookay stream, guess we're closing out on a cliffhanger today"
+    $ AddChatter(vig1_sc3_shot_comment11)
+    pause 0.5
+    $ AddChatter(vig1_sc3_shot_comment12)
+    pause 0.5
+    "How do I sign off from here?"
+    menu:
+        "How do I sign off from here?"
+        "Shout out the day one viewers":
+            $ csEngagement += 1
+            player "Shout out to the viewers who were here from the beginning!"
+            $ AddChatter(vig1_sc3_end_olds_comment1)
+            pause 0.5
+            player "Y'all saw a crazy progression today."
+            player "And also thanks to 8bitBANDIT and the new folks."
+            player "This chat popped off today"
+            $ AddChatter(vig1_sc3_end_olds_comment2)
+            pause 0.5
+        "Thanks to the new folks":
+            $ pdEngagement += 1
+            player "Huge thanks to 8bitBANDIT and the new folks!"
+            player "Y'all got to see some crazy stuff today."
+            $ AddChatter(vig1_sc3_end_olds_comment2)
+            pause 0.5
+            player "And to the og viewers, this was a wild ride, thanks for sticking it out with me!"
+        "Next episode should be crazy":
+            $ kcEngagement += 1
+            player "This next episode is shaping up to be crazy."
+            $ AddChatter(vig1_sc3_end_next_comment1)
+            pause 0.5
+            player "Thanks to everyone in chat!"
+    $ AddChatter(vig1_sc3_signoff_comment1)
+    pause 0.5
+    player "This was awesome and I hope to see y'all around next time!"
+    $ AddChatter(vig1_sc3_signoff_comment2)
+    pause 0.7
+    $ viewCount -= 5
+    $ AddChatter(vig1_sc3_signoff_comment3)
+    pause 0.5
+    $ AddChatter(vig1_sc3_signoff_comment4)
+    pause 1.5
+    $ viewCount -= 6
+    $ AddChatter(vig1_sc3_signoff_comment5)
+    pause 1.0
+    $ viewCount -= 2
+    $ AddChatter(vig1_sc3_signoff_comment6)
+    pause 0.5
+    $ viewCount -= 3
+    $ AddChatter(vig1_sc3_signoff_comment7)
+    $ viewCount -= 3
+    pause 0.5
+    $ AddChatter(vig1_sc3_signoff_comment8)
+    pause 0.5
+    $ viewCount -= 2
+    $ AddChatter(vig1_sc3_signoff_comment9)
+    pause 0.5
+    $ viewCount -= 3
+    $ AddChatter(vig1_sc3_signoff_comment10)
+    pause 0.5
+    "As the viewers leave the stream, you deactivate your webcam and sign off of Flinch."
+    hide screen streamDetails
+    hide screen streamChat
+    hide streamview with Dissolve(2.0)
+                  
+    jump modConvo_Day1
+
+label modConvo_Day1():
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    $ menu = nvl_menu
+    "That was crazy."
+    "The most viewers you ever had in stream before was twelve."
+    "And that felt like a ton."
+    $ renpy.sound.play("audio/ReceiveText.ogg")
+    "Another discord notification?"
+    scene discord with dissolve
+    "It's Jessie."
+    mod_nvl "Dooooood"
+    mod_nvl "That was nuts!"
+    mod_nvl "8bitBANDIT brought in so many people"
+    mod_nvl "You hit like 33 viewers?"
+    jump modConvo_Day1_Bandit
+
+label modConvo_Day1_Bandit():
+    default askBandit = False
+    menu:
+        "Who's 8bitBandit?" if askBandit == False:
+            $ askBandit = True
+            streamer_nvl "Who's 8bitBandit?"
+            streamer_nvl "I don't know if I've heard of him before"
+            mod_nvl "Oh rly?"
+            mod_nvl "He's like a mid-tier streamer, tends to play RPGs"
+            mod_nvl "Apparently he was a big fan of Oakley 1 and was streaming this day 1 too"
+            mod_nvl "Lucky for us haha"
+            jump modConvo_Day1_Bandit
+        "That was overwhelming.":
+            $ energy -= 1
+            streamer_nvl "ngl, that was so overwhelming"
+            streamer_nvl "Like, I was shaking so much"
+            mod_nvl "Honestly, you played it off pretty well!"
+            streamer_nvl "Actually? It wasn't like cringey or awkward?"
+            mod_nvl "I mean...maybe a little XD"
+            mod_nvl "But it was like the endearing kind of awkward!"
+            streamer_nvl "lmao thanks man"
+            mod_nvl "Gotchu bro"
+        "That was so cool!":
+            $ energy += 1
+            streamer_nvl "That was so cool!"
+            streamer_nvl "I think that was like four times the most viewers I ever had"
+            streamer_nvl "The chat was going wild, I could barely keep up with it"
+            mod_nvl "I thought you played it off well!"
+            mod_nvl "Cool, calm, and collected, just like Moze lol"
+    mod_nvl "but omg, that moment when you killed Anatar"
+    if misclick == True:
+        mod_nvl "Even though you didn't mean to do it, it reallly got the chat going"
+    else:
+        mod_nvl "blew my mind, didn't see that coming at all"
+    menu:
+        "I thought about reloading":
+            streamer_nvl "My first instinct was honestly to reload a save"
+            streamer_nvl "But it didn't feel in the spirit of the stream to do that"
+            mod_nvl "For sure, plus the chat was going wild"
+            mod_nvl "They {i}feasted{/i} on that"
+        "I just had to roll with it":
+            streamer_nvl "Ya, I didn't meant to do that"
+            streamer_nvl "But then it happened and I just had to roll with it"
+            if misclick == True:
+                mod_nvl "Considering it was an accident, you handled it well"
+                mod_nvl "idk what I would've done in that situation"
+                mod_nvl "Chat seemed to love it tho"
+            else:
+                mod_nvl "I didn't notice"
+                mod_nvl "I glanced away for a sec cause I was like \"Oh he's for sure going stun\""
+                mod_nvl "Then I looked back and just {i}death{/i} lol"
+                mod_nvl "Chat seemed to love it tho"
+    mod_nvl "I guess 8bitBANDIT went the mercy route"
+    mod_nvl "There's a reddit thread and apparently like 95\% of people stunned Anatar"
+    menu:
+        "That makes sense":
+            streamer_nvl "Makes a lot of sense"
+            streamer_nvl "He is a fan favorite"
+            mod_nvl "People love their himbo mechanics"
+        "Really?":
+            streamer_nvl "Really? I know he's a fan fave"
+            streamer_nvl "But like threatening to take MAC"
+            streamer_nvl "I would've assumed more people would've gone lethal there"
+    menu:
+        "I just had an idea":
+            streamer_nvl "Actually, that might give me an idea"
+    mod_nvl "Oh?"
+    streamer_nvl "How many viewers do I need to average per week to get to Affiliate status?"
+    mod_nvl "10"
+    mod_nvl "I remember cause you wound up at 9 last time and {i}just{/i} missed it"
+    streamer_nvl "Right"
+    menu:
+        "What if I played Outlaw?":
+            streamer_nvl "So, what do you think about this"
+            streamer_nvl "What if I play Outlaw?"
+    mod_nvl "Playing against type?"
+    streamer_nvl "Like, people seemed really surprised by it"
+    streamer_nvl "And you said almost everyone took the Marshal route this episode"
+    streamer_nvl "Maybe I can fill that niche"
+    mod_nvl "Hmmm it's not outrageous"
+    mod_nvl "Could be a safe route to get Affiliate"
+    mod_nvl "And I know you said this kinda felt like your last push for it"
+    mod_nvl "But do you want to do that?"
+    mod_nvl "You were really excited to play this game"
+    menu:
+        "I don't know":
+            $ reluctance += 1
+            streamer_nvl "Yeah, idk, was just a thought"
+            streamer_nvl "Maybe I'll sleep on it, see how I'm feeling when the next episode rolls around"
+            mod_nvl "True, no reason to make up your mind right now"
+        "Why not?":
+            streamer_nvl "Yea, I mean, why not?"
+            streamer_nvl "I can always replay the game later on my own time"
+            mod_nvl "True, it's just one playthrough"
+        "It sounds fun":
+            $ reluctance += 1
+            streamer_nvl "Actually, it sounds kinda fun"
+            streamer_nvl "Especially the way the chat reacted, it could be exciting!"
+            mod_nvl "For sure, I mean if you're feeling up to it then I say go for it!"
+    streamer_nvl "I do really want to get Affiliate man"
+    mod_nvl "I know"
+    streamer_nvl "Like even if I don't do any streaming after that, at least to get somewhere after like 3 years"
+    mod_nvl "Yeah man"
+    streamer_nvl "It would feel validating"
+    mod_nvl "It's not a crazy idea dude"
+    mod_nvl "Maybe check out the game's subreddit, see how people are talking about the game and if it makes sense"
+    streamer_nvl "Ya a lil bit of research"
+    mod_nvl "Write it off as \"work\" while you're procrastinating on studying for that comp sci test"
+    menu:
+        "I forgot about that":
+            streamer_nvl "shiiiiiit"
+            streamer_nvl "I forgot about that"
+            mod_nvl "That's why I'm here! To keep your ass in line"
+            mod_nvl "In game and in life apparently lol"
+            streamer_nvl "For real man"
+        "I'm not stressed about that":
+            streamer_nvl "Ah, I'm not worried about that"
+            streamer_nvl "Material's not too complex"
+            mod_nvl "ooooh look at me, my name is [player] and I'm a badass who corrects college profs"
+            streamer_nvl "That only happened one time"
+            mod_nvl "ya, thus proving my point"
+            streamer_nvl "shut up"
+            mod_nvl "love you too bud"
+    mod_nvl "Alright, I gotta go, gonna grab some ramen with the boys"
+    menu:
+        "Goodnight!":
+            streamer_nvl "For sure man, have a good dinner!"
+            streamer_nvl "And thanks for the chat, really appreciate it"
+    mod_nvl "Anytime"
+    mod_nvl "You take care!"
+    streamer_nvl "you too, night!"
+    nvl clear #necessary when transitioning to other conversations
+    jump FlinchAnalytics
+
+label FlinchAnalytics():
+    $ menu = adv_menu
+    default flinchCheck = 0
+    "Jessie's right, checking out the game's subreddit would be a good call."
+    "But first you decide to look at your analytics overview for the stream."
+    scene stream_analytics with dissolve
+    #The six lines below this allow us to change who the topfan is
+    #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
+    #    $ topfan = "Coriolis"
+    #elif kcEngagement > csEngagement and kcEngagement > pdEngagement:
+    #    $ topfan = "kitcat"
+    #else:
+    #    $ topfan = "pickledDragons"
+    #For this particular vignette though, we want it to be Coriolis
+    $ topfan = "Coriolis"
+    "Let's explore the analytics page"
+    $ vbar1 += viewCheck1
+    $ vbar2 += viewCheck2
+    $ vbar3 += viewCheck3
+    $ vbar4 += viewCheck4
+    $ vbar5 += viewCheck5
+    call screen streamAnalytics with dissolve
+    hide screen streamAnalytics with dissolve
+    default redditCheck = 0
+    jump redditVignette1
+
+label redditVignette1():
+    #scene Reddit with dissolve - would show reddit scene but we're not going to bother
+    scene bg black with dissolve
+    call screen reddit with dissolve
+    return
+
+label vig1_brother_1():
+    $ menu = nvl_menu
+    nvl clear
+    "You close Reddit and check your watch."
+    "It's 8pm. Your little brother wanted to catch up at nine."
+    "You decide to make a late dinner and start catching up on the new season of Invincible in the meantime."
+    "You finish an episode and wash your dishes."
+    "Then you sit back down at your computer and shoot Elliot a message."
+    scene discord with dissolve
+    player_nvl "Hey El! How's it going?"
+    bro_nvl "Hey [player], things are good!"
+    bro_nvl "School is busy, but I'm managing. There's a concert coming up for orchestra that I'm kinda anxious about tbh"
+    menu:
+        "Is it the conductor again?":
+            player_nvl "Ah man"
+            player_nvl "Is Doc Frida getting on your guys' case again?"
+            bro_nvl "Always"
+            bro_nvl "You know how she gets before a concert"
+            player_nvl "Way too crazy"
+            player_nvl "Though I was never in the front like you"
+            player_nvl "Gotta be crazier"
+            bro_nvl "Maybe"
+            bro_nvl "At least she doesn't throw chalk any more"
+            player_nvl "gotta love personal growth lol"
+        "You're going to be great!":
+            player_nvl "Ah, I'm sorry you're nervous"
+            player_nvl "But you're gonna do great!"
+            player_nvl "You're already better than I was at your age mr. 1st chair ;)"
+            bro_nvl "lol I guess"
+            bro_nvl "Thanks man, mom and dad say the same thing"
+            bro_nvl "I just gotta practice to make sure, y'know"
+            player_nvl "For sure, for sure"
+    player_nvl "So is this what was on your mind?"
+    player_nvl "Or was it something else?"
+    "A couple of minutes pass where you don't see any new messages."
+    "You can see \"El is typing\" in the chatbox, but no messages sent yet."
+    "Then you get one."
+    bro_nvl "Something else"
+    menu:
+        "Is everything ok?":
+            player_nvl "Is everything ok?"
+            player_nvl "That was a long pause to type two words"
+            bro_nvl "Yeah, everything is ok"
+        "What's up?":
+            player_nvl "You can tell me anything El. What's up?"
+    bro_nvl "I'm just kinda embarrased"
+    player_nvl "Of what?"
+    bro_nvl "Well, I sort of have this crush"
+    menu:
+        "YES!":
+            player_nvl "YOOOOO!"
+            player_nvl "What's his name?"
+            player_nvl "Do you have a picture?"
+            player_nvl "nvm just gimme his insta, I'll stalk the shit out of him"
+            bro_nvl "[player]!"
+            player_nvl "sorry sorry, just joshing you"
+            player_nvl "That's awesome man!"
+            player_nvl "For real though, tell me about him"
+        "That's not embarrassing":
+            player_nvl "lol El, there's nothing embarrassing about that"
+            player_nvl "What's his name? What's he like"
+    bro_nvl "His name is Cedric. He's a new student, family just moved here from England"
+    player_nvl "oooh exotic"
+    bro_nvl "And he plays cello"
+    bro_nvl "We actually sit next to each other in orchestra"
+    player_nvl "cute!"
+    bro_nvl "shut up"
+    player_nvl "love you too bud"
+    bro_nvl "I wanted to ask some advice"
+    bro_nvl "How do you like, talk to people that you like without it feeling...weird?"
+    menu:
+        "It's always weird":
+            player_nvl "I mean, it's never not weird really"
+            player_nvl "That's the thing."
+        "Don't overthink it":
+            player_nvl "The main thing is not to overthink it"
+    player_nvl "You just have to be yourself"
+    player_nvl "And if he doesn't like you back when you're yourself, then it wasn't going to be good anyway"
+    bro_nvl "I know"
+    bro_nvl "But being myself is being shy"
+    bro_nvl "and being shy doesn't get me anywhere!"
+    player_nvl "Fair lol"
+    player_nvl "But shyness can also be endearing"
+    jump vig1_brother_2
+
+label vig1_brother_2():
+    default askLike = False
+    default askTalk = False
+    if askLike == True and askTalk == True:
+        jump vig1_brother_3
+    else: 
+        menu:
+            "What do you like about him?" if askLike == False and askTalk == False:
+                $ askLike = True
+                player_nvl "Well, what do you like about him?"
+                player_nvl "Do you guys have any similar interests? Aside from orchestra"
+                bro_nvl "Well...he's hot"
+                player_nvl "Doesn't hurt lol"
+                bro_nvl "But he's also funny and really sweet!"
+                bro_nvl "Today a bunch of people were walking home from an after school practice and I forgot my tuner in the class so I ran back to get it"
+                bro_nvl "And he waited for me while everyone else kept walking"
+                player_nvl "Sounds like he's already in love"
+                bro_nvl "OMG SHUT UP!"
+                player_nvl "lol I can feel you blushing through the internet"
+                player_nvl "This is really good though!"
+                player_nvl "Seems like he's interested in getting to know you too"
+                bro_nvl "Yeah, but that was like the first time we actually talked"
+                player_nvl "Hey, a start's a start"
+            "Have you guys talked much?" if askTalk == False and askLike == False:
+                $ askTalk = True
+                player_nvl "Have you two talked much?"
+                bro_nvl "Not a ton"
+                bro_nvl "You know how busy orchestra is"
+                bro_nvl "But today a bunch of people were walking home from an after school practice and I forgot my tuner in the class so I ran back to get it"
+                bro_nvl "And he waited for me while everyone else kept walking"
+                player_nvl "Sounds like he's already in love"
+                bro_nvl "OMG SHUT UP!"
+                player_nvl "lol I can feel you blushing through the internet"
+                player_nvl "This is really good though!"
+                player_nvl "Seems like he's interested in getting to know you too"
+                bro_nvl "Yeah, but that was like the first time we actually talked"
+                player_nvl "Hey, a start's a start"
+    player_nvl "So what did you two talk about?"
+    bro_nvl "Orchestra mostly"
+    bro_nvl "He asked how long I'd been playing violin, I asked him about the cello"
+    bro_nvl "Apparently it's only been a couple years which is crazy because he's REALLY good"
+    bro_nvl "I asked him about his favorite composers"
+    player_nvl "Ok, so like just classical music stuff?"
+    bro_nvl "Yeah kind of. At the end though he asked what else I like to do for fun and I told him play videogames with my brother and draw."
+    player_nvl "Hey that's good"
+    player_nvl "Then you asked about his interests?"
+    bro_nvl "No"
+    player_nvl "wut?"
+    bro_nvl "We were basically already back at our house then and he asked if he could see some of my drawings"
+    bro_nvl "I panicked and said maybe later, then said goodbye and ran inside the house"
+    player_nvl "Ah"
+    bro_nvl "And now I feel like I messed up big time"
+    player_nvl "Now I see the embarrassment"
+    player_nvl "nononono you didn't mess up"
+    bro_nvl "I'm {i}mortified{/i}"
+    player_nvl "You're ok"
+    menu:
+        "Explain you're kind of shy about your art":
+            player_nvl "Next time you get a chance to chat, just tell him that you kind of like to keep your art private, but you didn't want to be rude"
+            bro_nvl "Then I'm admitting I did something weird though"
+            player_nvl "No, you're just being honest"
+            player_nvl "honesty is sexy"
+            bro_nvl "bro, british accents are sexy"
+            player_nvl "I don't doubt it"
+            player_nvl "but just say you got nervous about talking about your art and that you're sorry for leaving randomly"
+            player_nvl "It's really understandable"
+        "Next time ask him about what he does for fun":
+            player_nvl "Next time you have the opportunity, just say you didn't get a chance to ask him about his interests and you want to know what he does for fun"
+            bro_nvl "So just restart the conversation?"
+            player_nvl "Yeah, why not"
+            bro_nvl "I mean, don't I have to address me basically running away?"
+            player_nvl "You can if you want, it probably won't hurt"
+            player_nvl "But like, I guarantee it's not a big deal"
+            player_nvl "And if this person does think it's a big deal, then they're not right for you anyway"
+            bro_nvl "Ok, I guess that makes sense"
+    player_nvl "Wait, do you know if this person's gay?"
+    bro_nvl "You don't think I do my research!?"
+    player_nvl "I mean, I dunno"
+    bro_nvl "I saw on his FB page that he used to have a boyfriend"
+    player_nvl "sly"
+    bro_nvl "right"
+    player_nvl "Yeah man, just start up a conversation, ask him about what he likes, and try not to talk about orchestra too much"
+    player_nvl "Just be yourself"
+    bro_nvl "Ok, this is making me feel a bit better"
+    bro_nvl "Thanks [player]"
+    player_nvl "no problem!"
+    jump vig1_brother_3
+
+label vig1_brother_3():
+    bro_nvl "So, today was the launch of Oakley 2"
+    bro_nvl "How'd the stream go???"
+    bro_nvl "Sry I couldn't make it, gonna catch up on the VOD later!"
+    menu:
+        "I got raided!":
+            $ energy += 1
+            player_nvl "Dude, it was crazy, I got raided by a streamer today and had like 40 people in chat"
+            bro_nvl "No way!"
+            player_nvl "Yeah, it was at the end of the first episode"
+            player_nvl "Before that it was just the regulars, and this new person called \"kitcat\""
+            bro_nvl "Ah man, wish I could've been there live"
+            bro_nvl "Sounds like a great way to start the race for affiliate!"
+        "Stream was ok":
+            $ energy -= 1
+            player_nvl "Stream ways ok"
+            player_nvl "I only had like 4 viewers in chat for most of it"
+            player_nvl "Not ideal for the first week of the affiliate hunt"
+            player_nvl "But then I got raided and had like 40 people in chat"
+            bro_nvl "No way!"
+            player_nvl "It got kinda overwhelming tbh"
+            bro_nvl "Aw I'm sorry to hear that"
+            bro_nvl "Wish I could've been there live to support you"
+            bro_nvl "Still sounds like a pretty good way to start the race for affiliate though, no?"
+    player_nvl "Yeah, it's definitely picked up my average viewer count"
+    bro_nvl "Do you think some people will stay from the raid?"
+    menu:
+        "I think so":
+            player_nvl "Yeah I think so"
+            player_nvl "They seemed to be into the stream"
+            bro_nvl "Not surprised, you're awesome"
+            player_nvl "And they didn't immediately leave when I said something cringey"
+        "I don't know":
+            player_nvl "I don't know, I feel like a lot of them will still watch the other streamer play Oakley 2"
+            player_nvl "But maybe one or two will stick around?"
+            player_nvl "At least they didn't leave immeidately when I said something cringey"
+    bro_nvl "lolol"
+    bro_nvl "Of course not!"
+    bro_nvl "A bit of cringe is part of the [username] stream charm!"
+    player_nvl "shut up"
+    bro_nvl "love you too bud"
+    bro_nvl "Alright, I think I gotta hit the hay"
+    bro_nvl "Got a test tomorrow in chemistry"
+    player_nvl "With Mrs. Webber"
+    bro_nvl "yep"
+    player_nvl "oof, good luck"
+    bro_nvl "Thanks bro, have a good night!"
+    player_nvl "Love you El!"
+    bro_nvl "Love you too [player]!"
+    hide discord with dissolve
+
+    "You say goodnight to Elliot then brush your teeth and get in bed."
+    "After watching a couple more episodes of Invincible on your phone, you start scrolling through social media."
+    "A couple posts are advertising the hot new game \"Oakley 2: Settle the Score.\""
+    "You turn off the phone and close your eyes, ready to fall asleep."
+    "Just as your eyes start to get heavy, a memory comes to you unbidden, almost like a dream."
+    "It's three years ago, you're still living back home, and you and Elliot are sitting in front of a TV."
+    "You hand a game controller to Elliot."
+    player "Alright El, your turn."
+    "Elliot" "But we have to decide together!"
+    player "It's ok, whatever you think is best: Anatar or Matticus, who's the right ally for us?"
+    "Elliot" "Well, it has to be Anatar, he's so hot!"
+    player "hahahahahaha"
+    "Elliot" "hahahahahaha"
+    "You fall asleep with the sound of your brother's laughter in your ears."
+    return
+
