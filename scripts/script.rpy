@@ -165,7 +165,7 @@ label Vig2BridgeScene():
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show mac stream at stream_center_mac with Dissolve(0.5)
     #repeat for additional characters
-    "As I step onto the bridge, Jennica, Teresa, and Mac are discussing the visualization on the ship's computer."
+    "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
     $ AddChatter(vig2_sc1_comment4)
     "The visualization shows Gibian V, a backwater frontier planet."
     "A backwater with an old associate running it."
@@ -183,8 +183,8 @@ label Vig2BridgeScene():
     macS "Skeeve. Noun. An immoral or repulsive person."
     enS "What other options do we have? Who else is gonna help us?"
     $ AddChatter(vig2_sc1_comment9)
-    pS "I don't know, I just think--"
-    enS "Let me just pull a \"forger with a heart of gold and access to bigcorp databases\" out of my purse and we'll be set!"
+    pS "I don't know, I just think—"
+    enS "Let me just pull a \"forger with a heart of gold and access to BigCorp databases\" out of my purse and we'll be set!"
     pS "That doesn't mean we should trust Matticus, the wannabe godfather of a one-horse po-dunk  planet!"
     $ AddChatter(vig2_sc1_comment10)
     "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
@@ -197,7 +197,7 @@ label Vig2BridgeScene():
             mS "I understand the concern. But we don't really have another option."
             mS "We don't have to trust him, I certainly don't."
             mS "But we can't afford to be picky with our contacts."
-        "We can trust his selfishness":
+        "We can trust his selfishness.":
             show teresa stream happy at stream_right      
             mS "We don't need to trust him, per se..."
             mS "We just need to trust his greed and selfishness."
@@ -212,9 +212,9 @@ label Vig2BridgeScene():
     "The visualization zooms in on the capital of Gibian V, Montserrat."
     "A map of the city appears on the computer, along with images of the spaceport, customs depot, and Matticus's compound."
     enS "One benefit of Gibian being such a middle-of-nowhere planet is that we won't have to go far to find our guy."
-    enS "Matticus became the magistrate and bigcorp security rep for this sector a couple of years back."
+    enS "Matticus became the magistrate and BigCorp security rep for this sector a couple of years back."
     enS "He's never really been one for subtleties."
-    "The visualization zooms in on images of Matticus' compound."
+    "The visualization zooms in on images of Matticus's compound."
     "It's enormous, by far the largest building in town, complete with ostentatious fences emblazoned with his initials."
     enS "Case in point."
     pS "Charming."
@@ -224,7 +224,7 @@ label Vig2BridgeScene():
     enS "Yeah, he's been remarkably successful for a magistrate of a tiny frontier planet."
     macS "He is abusing his authority for personal gain?"
     menu: #minorchoice2
-        "Yeah he's a scumbag":
+        "Yeah he's a scumbag.":
             mS "Yeah. He always did have a {i}uh{/i}... flexible moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
@@ -290,7 +290,7 @@ label GibianVCustomsDepot():
     enS "Shit! We have a problem."
     mS "I knew this was too easy. What is it?"
     "Teresa gestures towards a customs official, scanning cargo crates."
-    enS "That's a bigcorp scanner. I imagine it'll be able to detect their stolen property."
+    enS "That's a BigCorp scanner. I imagine it'll be able to detect their stolen property."
     pS "So APB's do make it out here..."
     mS "We don't have time to bicker."
     mS "We need a plan to get through without them finding MAC."
@@ -313,24 +313,24 @@ label GibianVCustomsDepot():
     pS "A little grease in the right palm should do the trick."
     "Teresa scoffs."
     enS "Sure, unless one of them happens to have ambitions of a promotion?"
-    enS "An employee-of-the-month type will report us to bigcorp in a heartbeat!"
+    enS "An employee-of-the-month type will report us to BigCorp in a heartbeat!"
     $ AddChatter(vig2_sc2_comment7)
     pS "As opposed to causing a stampede and killing people?"
     pS "A whole bunch of dead innocent bystanders isn't exactly clandestine."
     "The crew looks to me."
     enS "Your call captain. What do you think?"
     "Jennica has a point. There's a ton of innocent people here, it's very likely someone will get hurt if we cause a panic."
-    "Teresa's point is just as valid, if one of these officials reports us to bigcorp then we might be looking at the inside of the jail cell quick."
+    "Teresa's point is just as valid, if one of these officials reports us to BigCorp then we might be looking at the inside of the jail cell quick."
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
-        "Have Teresa prep the distraction":
+        "Have Teresa prep the distraction.":
             $ outlaw += 2
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ engineerApproval += 1
             $ customsDistraction = True
             jump GibianVCustomsOutlaw
-        "Follow Jennica and bribe a guard":
+        "Follow Jennica and bribe a guard.":
             $ marshal += 2
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -420,7 +420,7 @@ label GibianVCustomsMarshal():
                     agent1 "Ugh. Like 16?"
                     agent1 "Nightshift quit the other day, I have to pick up his hours until we can find someone new."
                     mS "No overtime I assume?"
-                    agent1 "Overtime?"
+                    agent1 "Overtime? Never heard of her."
                     mS "Really!? That doesn't sit right with me."
                     "His eyes relax as he finally understands what I'm saying"
                 "You got kids?":
@@ -461,7 +461,7 @@ label GibianVCustomsMarshal():
     enS "You sure he's not ratting us out?"
     enS "If I have to break us out of the Gibian V penitentiary..."
     "A muffled voice perks up from the crate."
-    macS "Penitentiary. Noun. A place for imprisoning crim--"
+    macS "Penitentiary. Noun. A place for imprisoning crim—"
     enS "SHUSH!"
     "The door creaks ajar."
     show agent stream at stream_center with Dissolve(0.2)
@@ -604,7 +604,7 @@ label matticusDoor():
     mS "Yeah me too. Can we come in?"
     mattdoorbell "I need a little more proof than that."
     menu:
-        "Bring up an old debt": #Lore
+        "Bring up an old debt.": #Lore
             $ marshal += 1
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright give me a sec."
@@ -619,12 +619,12 @@ label matticusDoor():
             mattdoorbell "You're good. But not here."
             mattdoorbell "The boss has to be careful who he's seen with."
             mattdoorbell "He'll meet you in the warehouse down the road. Here's the coordinates."
-        "Threaten the doorman": #Threaten
+        "Threaten the doorman.": #Threaten
             $ outlaw += 1
             $ pdEngagement += 1
             mS "Listen buddy. Just let us in."
             mS "Do you wanna explain to him that you pissed off his old merc crew?"
-            mattdoorbell "No, I just--"
+            mattdoorbell "No, I just—"
             "He's flustered."
             $ AddChatter(vig2_sc3_threat_comment1)
             mS "Tell him Moze is going to do to this gate what he did to that bar on Forsteuk if you don't let her in."
@@ -682,31 +682,31 @@ label meetingMatticus():
     smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
     mS "No. We need a favor."
     smatt "Do you now?"
-    mS "bigcorp is looking for us. We want to make that difficult."
+    mS "BigCorp is looking for us. We want to make that difficult."
     smatt "I see. I wonder if it has to do with the break in to their top secret facility a few weeks back."
-    "The smoke wafts out of Matticus' grin like fog."
+    "The smoke wafts out of Matticus's grin like fog."
     mS "It might."
     mS "And they hired our old boss to hunt us."
     "Matticus stops smirking."
     smatt "Oh. Interesting. She doesn't come cheap."
     smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
-    macS "Kick the hornet's nest. Idiom. Provoking a situation whi--"
+    macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
     show goon stream at stream_right with Dissolve (.5)
     goon "What the hell!?"
-    "Matticus' guards spring into action and draw their weapons."
+    "Matticus's guards spring into action and draw their weapons."
     show mac stream at stream_center with Dissolve(.5)
     "MAC sheepishly opens the crate lid and pokes his head out."
     hide goon stream with Dissolve (0.5)
     smatt "Who's this?"
     menu: #minorchoice5
-        "What we stole from bigcorp.": 
+        "What we stole from BigCorp.": 
             hide mac stream with dissolve
             mS "He's what was in that facility."
             show matticus stream at stream_center with move
             "Matticus approaches MAC, looking him over."
             smatt "Neat. So how much you figure it's worth?"
-            smatt "bigcorps's burning money to get it back, must be something important."
+            smatt "BigCorps's burning money to get it back, must be something important."
         "Mind your own business.":
             hide mac stream with dissolve
             mS "None of your business."
@@ -719,7 +719,7 @@ label meetingMatticus():
             smatt "What're a couple of outlaws doing with something like this?"
     $ AddChatter(vig2_sc4_comment2)
     mS "We're just looking to get him to the Dragonflies."
-    "Matticus' eyes widen. His voice takes on a singsong quality."
+    "Matticus's eyes widen. His voice takes on a singsong quality."
     hide mac stream with dissolve
     smatt "Moze! You've gone soft!"
     smatt "I never figured you for a tenderhearted philanthropist!"
@@ -748,10 +748,10 @@ label meetingMatticus():
             "Matticus smirks at me."
             smatt "Any number of things really."
             mS "Don't play dumb. Why are you being so sketchy about what's in the shipment?"
-            "A twinge of anger passes through Matticus' face for a moment."
+            "A twinge of anger passes through Matticus's face for a moment."
             smatt "Since when do you care?"
             smatt "Awful late in the game to start thinking about details like that."
-            "Matticus' anger subsides, his smug facade is back up."
+            "Matticus's anger subsides, his smug facade is back up."
             smatt "Besides. Where else are you gonna go?"
             smatt "You're not out here because you've got options."
             "I turn to Jennica."
@@ -774,7 +774,7 @@ label meetingMatticus():
     "Jennica reluctantly agrees."
     $ AddChatter(vig2_sc4_comment6)
     mS "And if we do this?"
-    smatt "I'll feed false reports into the bigcorp security database."
+    smatt "I'll feed false reports into the BigCorp security database."
     smatt "Deadeye'll be looking for you in every corner of the galaxy, except for where you actually are."
     smatt "And you bleeding hearts will be free to save the universe."
     enS "Not an unreasonable agreement."
@@ -791,13 +791,13 @@ label meetingMatticus():
     "Matticus looks at me impatiently."
     smatt "Don't waste my time. Do we have a deal?"
     menu: #minorchoice7
-        "Deal":
+        "Deal.":
             "Guess we don't have much choice."
             mS "On your honour as a Snakehawk?"
             "Matticus chuckles to himself."
             smatt "How nostalgic."
             smatt "On my honour."
-        "Wait this still seems suspicious":
+        "Wait this still seems suspicious.":
             "This still seems fishy."
             mS "Wait. This all seems too good to be true."
             smatt "Things aren't always what they seem Moze."
@@ -805,10 +805,10 @@ label meetingMatticus():
             menu: #minorchoice7a
                 "Fine. Deal.":
                     "Guess we don't have much choice."
-                    mS "On your honor as a Snakehawk?"
+                    mS "On your honour as a Snakehawk?"
                     "Matticus chuckles to himself."
                     smatt "How nostalgic."
-                    smatt "On my honor."
+                    smatt "On my honour."
                 "Keep asking questions.":
                     mS "I can't help but feel like you're manipulating us."
                     smatt "Feelings lie Moze."
@@ -876,7 +876,7 @@ label approachingBase():
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
     macS "This is a dangerous place? Are these people \"skeeves\" like Matticus?"
     menu:
-        "They're bad people":
+        "They're bad people.":
             $ pdEngagement -= 1
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
@@ -885,7 +885,7 @@ label approachingBase():
             $ AddChatter(vig2_sc5_comment4)
             mS "Good. Let's move."
             hide mac stream with dissolve
-        "Maybe":
+        "Maybe.":
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
             macS "Why do we need to work for \"skeeves?\""
@@ -916,7 +916,7 @@ label approachingBase():
     enS "On Gibian V? I doubt this news makes it off-world."
     pS "What do you think Cap?"
     menu:
-        "A full offensive is more tactically sound":
+        "A full offensive is more tactically sound.":
             $ gunsBlazing = True
             $ outlaw += 3
             $ pdEngagement += 3
@@ -948,7 +948,7 @@ label approachingBase():
             hide jennica with Dissolve(0.5)
             hide goon stream with Dissolve(0.5)
             jump commsBase_OUT1
-        "Better to be as quiet as possible":
+        "Better to be as quiet as possible.":
             $ marshal += 2
             $ gunsBlazing = False
             $ csEngagement += 2
@@ -1013,7 +1013,7 @@ label commsBase_MAR1():
             mS "I know!"
             "I can't afford to hesitate."
             jump commsBase_MAR2
-        "Bluff":
+        "Bluff.":
             $ pdEngagement += 1
             $ csEngagement += 1
             $ kcEngagement += 1
@@ -1048,7 +1048,7 @@ label commsBase_MAR2():
     "A fake radio call would probably get them all to leave too."
     "They might come back though."
     menu:
-        "Knock them out":
+        "Knock them out.":
             "We can't risk them coming back and finding us."
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment1)
             "We need to neutralize these guys."
@@ -1070,7 +1070,7 @@ label commsBase_MAR2():
             hide jennica with Dissolve(0.5)
             hide goon stream with Dissolve(0.5)
             jump commsBase_DataCenter
-        "Go with a diversion":
+        "Go with a diversion.":
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pdEngagement -= 1
@@ -1125,7 +1125,7 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment9)
     "I think I have a good shot on one of them."
     menu:
-        "Shoot to kill":
+        "Shoot to kill.":
             $ pdEngagement += 1
             $ csEngagement -= 1
             "I take a deep breath and fire my blaster."
@@ -1138,7 +1138,7 @@ label commsBase_OUT1():
             pS "Nice shooting!"
             show jennica stream angry at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
-        "Suppressing fire":
+        "Suppressing fire.":
             $ kcEngagement += 1
             "Too risky."
             $ AddChatter(vig2_sc6_out_suppress_comment1)
@@ -1182,7 +1182,7 @@ label commsBase_OUT1():
     pause 0.5
     $ AddChatter(vig2_sc6_out_comment18)
     menu:
-        "This isn't his fault":
+        "This isn't his fault.":
             $ baseGuardKilled = False
             $ marshal += 2
             $ pilotApproval += 2
@@ -1193,7 +1193,7 @@ label commsBase_OUT1():
             "This guy was just doing his job."
             mS "Alright."
             $ AddChatter(vig2_sc6_out_spare_comment2)
-            hsguard1 "Thank you miss! I--"
+            hsguard1 "Thank you miss! I—"
             hide guard1 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show goon stream at stream_center with dissolve
@@ -1213,7 +1213,7 @@ label commsBase_OUT1():
             goon "We haven't got all day!"
             $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacentre."
-        "I can't risk survivors":
+        "I can't risk survivors.":
             $ baseGuardKilled = True
             $ outlaw += 2
             $ engineerApproval += 1
@@ -1262,7 +1262,7 @@ label commsBase_DataCenter():
     show goon stream at stream_right with Dissolve(0.2)
     "Before we have a chance to say anything, Reginald is in his face."
     goon "Shut it! What's the next shipment's tracking coordinates!?"
-    worker "The aid shipm--"
+    worker "The aid shipm—"
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1304,7 +1304,7 @@ label commsBase_DataCenter():
     enS "As much as I loathe to admit it, I agree."
     enS "We came here to cover our trail."
     $ AddChatter(vig2_sc7_comment5)
-    enS "If we renege on the deal now, we'll be no closer to doing that, and we'll have made an enemy in Matticus."
+    enS "If we renege on the deal now, we'll be no closer to doing that, and we'll have made an enemy of Matticus."
     enS "All the people we save here won't matter if we get caught!"
     show jennica stream angry at stream_left with Dissolve (0.3)
     pS "They're people!"
@@ -1314,7 +1314,7 @@ label commsBase_DataCenter():
     "MAC looks worried." 
     $ AddChatter(vig2_sc7_comment7)
     menu:
-        "This has gone too far":
+        "This has gone too far.":
             $ marshal += 5
             $ csEngagement += 3
             $ pdEngagement -= 3
@@ -1325,7 +1325,7 @@ label commsBase_DataCenter():
             "We have to be better."
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
-        "We don't have a choice":
+        "We don't have a choice.":
             $ outlaw += 5
             $ csEngagement -= 3
             $ pdEngagement +=3
@@ -1347,11 +1347,11 @@ label commsBase_DataCenter_MAR():
     $ AddChatter(vig2_sc7_mar_comment1)
     mS "We've come this far because we wanted to try and make this galaxy better."
     mS "How can we honestly say that if we follow through with this?"
-    enS "Yes, but what does that matter if we get caught and bigcorp takes the robot back?"
+    enS "Yes, but what does that matter if we get caught and BigCorp takes the robot back?"
     pS "We'll have tried."
     $ AddChatter(vig2_sc7_mar_comment2)
     enS "I don't like this any more than you two, but what's the alternative?"
-    enS "If we don't cover our tracks, the Deadeye will be on our asses in no time! We need Matticus' access to the security database."
+    enS "If we don't cover our tracks, the Deadeye will be on our asses in no time! We need Matticus's access to the security database."
     pS "He's not the only one with access!"
     enS "Yes access to secure databases is easy to find and widespread! How could I forget!?"
     enS "That's what \"secure\" means right?"
@@ -1364,7 +1364,7 @@ label commsBase_DataCenter_MAR():
     goon "You really think I'm gonna let you just bail on this deal?"
     "I notice Jennica reaching for her blaster."
     menu:
-        "Signal Jennica to stun him":
+        "Signal Jennica to stun him.":
             $ outlaw += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
@@ -1378,7 +1378,7 @@ label commsBase_DataCenter_MAR():
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
             pS "Beats me."
-        "Bribe Reginald":
+        "Bribe Reginald.":
             $ marshal += 1
             "I signal to Jennica to wait."
             mS "How much do you really like working for Sav?"
@@ -1409,7 +1409,7 @@ label commsBase_DataCenter_MAR():
     "The technician shifts around uneasily."
     worker "I might be able to help you."
     enS "Oh?"
-    worker "I have some access to the bigcorp security database. Not as much as Matticus obviously, but I can get in and spread a few reports."
+    worker "I have some access to the BigCorp security database. Not as much as Matticus obviously, but I can get in and spread a few reports."
     pS "Well butter my biscuit!"
     mS "How do you have access? Sounds awfully convenient."
     worker "The Intergalactic Humanitarian Society has observer access to the database, to stay informed about pirates and solar storm sightings."
@@ -1437,7 +1437,7 @@ label commsBase_DataCenter_MAR():
         worker "Better the lesser evil."
     mS "Fair enough. So what do you need to do this?"
     $ AddChatter(vig2_sc7_mar_comment8)
-    worker "I can do it right here. I just need your ship's registration code, planet of origin, and operating name."
+    worker "I can do it right here. I just need your ship's registration code, planet of origin and operating name."
     enS "How can we know you're not going to betray us?"
     worker "You can't. You're going to have to trust me."
     enS "Worrisome."
@@ -1522,7 +1522,7 @@ label commsBase_DataCenter_OUT():
     hide goon stream with dissolve
     show jennica stream neutral at stream_left with Dissolve(0.5)
     menu:
-        "Convince him not to say anything":
+        "Convince him not to say anything.":
             $ marshal += 1
             $ pdEngagement += 1
             $ csEngagement += 1
@@ -1549,7 +1549,7 @@ label commsBase_DataCenter_OUT():
             hide worker stream with dissolve
             pS "Damn Cap, that was dark."
             enS "If it works it works."
-        "Kill him":
+        "Kill him.":
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 1
@@ -1561,7 +1561,7 @@ label commsBase_DataCenter_OUT():
             "Only one way to make sure this never leaves the building."
             $ AddChatter(vig2_sc7_out_execute_comment2)
             "I raise my blaster up to the technician's face."
-            worker "Wait! You don't have to do--"
+            worker "Wait! You don't have to do—"
             hide worker stream with Dissolve(0.1)
             $ AddChatter(vig2_sc7_out_execute_comment3)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
@@ -1580,7 +1580,7 @@ label commsBase_DataCenter_OUT():
     enS "How are we getting out of the desert?"
     goon "The boss has a crew waiting for us out there. They'll take care of the disposal."
     pS "And the firepower?"
-    goon "This shuttle has a bigcorp missile loaded on it. When they try and trace it, it'll just lead back to their own factories."
+    goon "This shuttle has a BigCorp missile loaded on it. When they try and trace it, it'll just lead back to their own factories."
     mS "Sounds simple enough."
     goon "Swell."
     hide jennica with Dissolve(0.5)
@@ -1672,7 +1672,7 @@ label vig2epilogue_MAR():
     mS "Of course MAC."
     macS "I am confused about the nature of our mission? Why do we need to hide if we are good people?"
     menu:
-        "The people in power are bad":
+        "The people in power are bad.":
             $ marshal += 1
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -1684,7 +1684,7 @@ label vig2epilogue_MAR():
             mS "The universe is just more complicated than that."
             macS "I see. The universe is confusing."
             mS "Agreed."
-        "The universe is bad and we can't trust anyone":
+        "The universe is bad and we can't trust anyone.":
             $ outlaw += 1
             $ pdEngagement += 1
             $ kcEngagement += 1
@@ -1779,7 +1779,7 @@ label vig2epilogue_OUT():
     macS "I do not know how to feel about our mission. Why did we need to help the skeeve Matticus?"
     $ AddChatter(vig2_epilogue_out_comment14)
     menu:
-        "Doing bad things now can let us do good things later":
+        "Doing bad things now can let us do good things later.":
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
@@ -1794,7 +1794,7 @@ label vig2epilogue_OUT():
             macS "I see. The universe is confusing."
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
-        "The universe is bad and we can't trust anyone":
+        "The universe is bad and we can't trust anyone.":
             $ outlaw += 1
             $ pdEngagement += 2
             $ csEngagement += 1
@@ -1880,11 +1880,11 @@ label vig2_macro_mod_outlaw1():
             $ enthusiasm += 1
             player_nvl "Yeah, the stream feels really good!"
             jump vig2_macro_mod_outlaw2_enthusiastic
-        "•Not feeling great":
+        "•Not feeling great.":
             $ reluctance += 1
             player_nvl "Honestly, I'm not feelin so great about it."
             jump vig2_macro_mod_outlaw2_reluctant
-        "•Kind of mixed":
+        "•Kind of mixed.":
             player_nvl "I'm ok? Idk, it's complicated."
             jump vig2_macro_mod_outlaw2_reluctant
 
@@ -1896,7 +1896,7 @@ label vig2_macro_mod_outlaw2_enthusiastic():
             $ enthusiasm += 2
             player_nvl "Surprisingly really fun!"
             jump vig2_macro_mod_outlaw3_enthusiastic
-        "•Hard but enjoyable":
+        "•Hard but enjoyable.":
             $ enthusiasm += 1
             player_nvl "It's a little tough cause it's not my usual style, but it's cool!"
             jump vig2_macro_mod_outlaw3_enthusiastic
@@ -1908,10 +1908,10 @@ label vig2_macro_mod_outlaw2_enthusiastic():
 label vig2_macro_mod_outlaw2_reluctant():
     mod_nvl "Oh? What's up? Talk to me."
     menu:
-        "•The choices are starting to weigh on me":
+        "•The choices are starting to weigh on me.":
             player_nvl "I feel really good about the response from the stream, but the choices are starting to weigh on me a bit."
             jump vig2_macro_mod_outlaw3_reluctant
-        "•It's exhausting":
+        "•It's exhausting.":
             $ energy -= 1
             player_nvl "It's really cool that I get to see more of the story, but it's real tiring to play."
             jump vig2_macro_mod_outlaw3_reluctant
@@ -1920,17 +1920,17 @@ label vig2_macro_mod_outlaw3_enthusiastic():
     mod_nvl "Great to hear!"
     mod_nvl "I thought I saw a sly smile when you chose to ally with Savlian haha"
     menu:
-        "•That got the chat going":
+        "•That got the chat going.":
             $ curiosity = False
             player_nvl "omg the chant went {i}WILD{/i} at that part!"
             player_nvl "so fun!"
             jump vig2_macro_mod_outlawEnd
-        "•It was a cool side of the story":
+        "•It was a cool side of the story.":
             $ curiosity = True
             player_nvl "The different story paths are crazy, man!"
             player_nvl "I never realized how different they could feel."
             jump vig2_macro_mod_outlawEnd
-        "•I was so stressed at that part":
+        "•I was so stressed at that part.":
             $ reluctance += 1
             player_nvl "Really?"
             player_nvl "Honestly, I was so stressed out making that choice."
@@ -1942,7 +1942,7 @@ label vig2_macro_mod_outlaw3_reluctant():
     mod_nvl "For sure, that makes sense."
     mod_nvl "I could kind of tell you weren't really into doing Savlian's dirty work"
     menu:
-        "•It was what the stream wanted":
+        "•It was what the stream wanted.":
             $ curiosity = False
             player_nvl "That obvious?"
             player_nvl "Yeah, I guess I went that route cause it seemed like what the stream wanted."
@@ -1953,19 +1953,19 @@ label vig2_macro_mod_outlaw3_reluctant():
             player_nvl "I thought of Moze as 'Outlaw Moze.'"
             player_nvl "So I wasn't really doing what like I would do in that position."
             menu:
-                "•It was cool":
+                "•It was cool.":
                     player_nvl "It was cool actually"
                     jump vig2_macro_mod_outlaw4_reluctant
-                "•It felt a little weird":
+                "•It felt a little weird.":
                     player_nvl "Kind of a weird 'out of body' sensation."
                     jump vig2_macro_mod_outlaw4_reluctant
-        "•I liked seeing another side of the story":
+        "•I liked seeing another side of the story.":
             $ curiosity = True
             player_nvl "It didn't feel great"
             player_nvl "But it was interesting to see a different spin on the story."
             player_nvl "Never really seen that side of Moze before"
             jump vig2_macro_mod_outlaw4_reluctant
-        "•That didn't really bother me":
+        "•That didn't really bother me.":
             $ enthusiasm += 1
             player_nvl "Really?"
             player_nvl "That felt fine actually"
@@ -1974,17 +1974,17 @@ label vig2_macro_mod_outlaw3_reluctant():
 label vig2_macro_mod_outlaw4_reluctant():
     mod_nvl "So you thinking of changing it up?"
     menu:
-        "•Yeah, Marshal feels more right":
+        "•Yeah, Marshal feels more right.":
             $ reluctance += 2
             player_nvl "Yeah I am."
             player_nvl "Marshal just feels more fun for me"
             jump vig2_macro_mod_outlawEnd
-        "•Maybe":
+        "•Maybe.":
             $ reluctance += 1
             player_nvl "It's not a big deal, really."
             player_nvl "But it does take a lot out of me. So maybe I'll pivot."
             jump vig2_macro_mod_outlawEnd
-        "•No, this is a good path to Affiliate":
+        "•No, this is a good path to Affiliate.":
             $ enthusiasm += 1
             player_nvl "No, I think this is still the best way to get Affiliate."
             player_nvl "It's keeping me going tbh"
@@ -1997,7 +1997,7 @@ label vig2_macro_mod_outlawEnd():
     mod_nvl "If not then don't"
     mod_nvl "I got your back, whatever you choose"
     menu:
-        "•Thanks":
+        "•Thanks.":
             player_nvl "Thanks b, I appreciate it"
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some pho with a friend, chat later ya?"
@@ -2008,16 +2008,16 @@ label vig2_macro_mod_outlawEnd():
 ###Labels for Marshal playthrough###
 label vig2_macro_mod_marshal1():
     menu:
-        "•Stream felt good":
+        "•Stream felt good.":
             $ reluctance += 1
             player_nvl "Yeah it was a bit hectic"
             player_nvl "But I really like where the stream is at!"
             jump vig2_macro_mod_marshal2_reluctant
-        "•A bit confused":
+        "•A bit confused.":
             $ enthusiasm += 1
             player_nvl "Honestly, I feel kinda confused"
             jump vig2_macro_mod_marshal2_enthusiastic
-        "•Complicated":
+        "•Complicated.":
             player_nvl "I'm ok?"
             player_nvl "Idk, it's complicated."
             jump vig2_macro_mod_marshal2_enthusiastic
@@ -2026,15 +2026,15 @@ label vig2_macro_mod_marshal2_reluctant():
     mod_nvl "Hell yeah!"
     mod_nvl "Going back to Marshal felt like the right call then?"
     menu:
-        "•Definitely, it felt good":
+        "•Definitely, it felt good.":
             $ reluctance += 2
             player_nvl "Definitely, it just feels more right to me"
             jump vig2_macro_mod_marshal3_reluctant
-        "•Pretty much, chat seemed nicer":
+        "•Pretty much, chat seemed nicer.":
             $ reluctance += 1
             player_nvl "Yeah, I think the vibes in chat are better for it"
             jump vig2_macro_mod_marshal3_reluctant
-        "•I'm not so sure, actually":
+        "•I'm not so sure, actually.":
             $ enthusiasm += 1
             player_nvl "Actually, I'm not so sure." 
             player_nvl "I kinda miss the excitement of the Outlaw style"
@@ -2043,7 +2043,7 @@ label vig2_macro_mod_marshal2_reluctant():
 label vig2_macro_mod_marshal2_enthusiastic():
     mod_nvl "Oh? What's up? Talk to me."
     menu:
-        "•Stream doesn't seem as entertained":
+        "•Stream doesn't seem as entertained.":
             player_nvl "It's like..."
             player_nvl "I definitely prefer player Marshal. But I feel like that's not what the stream wants to see."
             jump vig2_macro_mod_marshal3_enthusiastic
@@ -2056,19 +2056,19 @@ label vig2_macro_mod_marshal3_enthusiastic():
     mod_nvl "No that makes sense"
     mod_nvl "You did seem to take longer than usual to ally with that humanitarian group"
     menu:
-        "•I second-guessed myself a bit":
+        "•I second-guessed myself a bit.":
             player_nvl "That obvious?"
             player_nvl "I guess I kind of second-guessed myself there."
             jump vig2_macro_mod_marshal4_enthusiastic
-        "•Had to check in with chat":
+        "•Had to check in with chat.":
             $ curiosity = False
             player_nvl "Yea, I needed some time to take stock of the chat"
             jump vig2_macro_mod_marshal4_enthusiastic
-        "•I was considering the Outlaw choice":
+        "•I was considering the Outlaw choice.":
             $ curiosity = True
             player_nvl "I was open to going Outlaw, but I liked the arguments for Marshal better."
             jump vig2_macro_mod_marshal4_enthusiastic
-        "•I didn't notice":
+        "•I didn't notice.":
             player_nvl "Really? That felt fine actually."
             jump vig2_macro_mod_marshal4_enthusiastic
 
@@ -2076,16 +2076,16 @@ label vig2_macro_mod_marshal3_reluctant():
     mod_nvl "Great to hear!"
     mod_nvl "You seemed pretty stoked to betray Matticus"
     menu:
-        "•I felt good energy from chat with that":
+        "•I felt good energy from chat with that.":
             $ curiosity = False
             player_nvl "Honestly, that was mostly talking through the choice with chat."
             jump vig2_macro_mod_marshalEnd
-        "•Definitely, I wonder about the Outlaw choice":
+        "•Definitely, I wonder about the Outlaw choice.":
             $ curiosity = True
             player_nvl "100\% the right move."
             player_nvl "I do wonder what would've happened if I went Outlaw there tho."
             jump vig2_macro_mod_marshalEnd
-        "•I was kind of stressed":
+        "•I was kind of stressed.":
             player_nvl "Really?"
             player_nvl "Honestly, I was so stressed out making that choice."
             mod_nvl "Huh, I couldn't tell."
@@ -2095,17 +2095,17 @@ label vig2_macro_mod_marshal3_reluctant():
 label vig2_macro_mod_marshal4_enthusiastic():
     mod_nvl "So you thinking of changing it up?"
     menu:
-        "•Yeah, Outlaw's good for viewers":
+        "•Yeah, Outlaw's good for viewers.":
             $ enthusiasm += 1
             player_nvl "Yeah, it kinda feels like I should try Outlaw again."
             player_nvl "May be the best shot to get Affiliate?"
             jump vig2_macro_mod_marshalEnd
-        "•Maybe":
+        "•Maybe.":
             $ reluctance += 1
             player_nvl "Maybe?"
             player_nvl "I'm still not sure."
             jump vig2_macro_mod_marshalEnd
-        "•No, Marshal feels right":
+        "•No, Marshal feels right.":
             $ reluctance += 2
             player_nvl "No. Even if Outlaw gets more views, this still feels right to me."
             jump vig2_macro_mod_marshalEnd
@@ -2117,7 +2117,7 @@ label vig2_macro_mod_marshalEnd():
     mod_nvl "If not then change it up!"
     mod_nvl "I got your back, whatever you choose"            
     menu:
-        "•Thanks":
+        "•Thanks.":
             player_nvl "Thanks b, I appreciate it"
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some fried rice with a friend"
@@ -2139,18 +2139,18 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Coriolis is so nice. Should I respond?"
             show screen NVLnarration
             menu:
-                "•You haven't seen anything yet":
+                "•You haven't seen anything yet.":
                     hide screen NVLnarration
                     $ enthusiasm += 1
                     player_nvl "Well get ready for more chaos!"
                     player_nvl "Outlaws on the loose!"
-                "•Thank you":
+                "•Thank you.":
                     hide screen NVLnarration
                     $ csEngagement += 1
                     player_nvl "Thanks, Coriolis"
                     player_nvl "It means a lot to have you in the chat!"
                     cs_nvl "Aww, thanks [player]!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2166,26 +2166,26 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Coriolis is so nice. Should I respond?"
             show screen NVLnarration
             menu:
-                "•It was tough balancing both Outlaw and Marshal" if vig2_outlawEpilogue == True:
+                "•It was tough balancing both Outlaw and Marshal." if vig2_outlawEpilogue == True:
                     hide screen NVLnarration
                     $ reluctance += 1
                     player_nvl "Yeah, it was tough balancing the two styles"
                     player_nvl "Moze being both an Outlaw thief and a captain with Morals is interesting"
                     cs_nvl "Totally"
                     cs_nvl "Glad I don't have to be in that position haha"
-                "•Good to go back to basics" if vig2_outlawEpilogue == False:
+                "•Good to go back to basics." if vig2_outlawEpilogue == False:
                     hide screen NVLnarration
                     $ reluctance += 1
                     player_nvl "Yeah, I wanted to go back to basics"
                     player_nvl "Get into some outlaw thievery vibes"
                     cs_nvl "It was fun to see those vibes back!"
-                "•I'm glad you're liking it":
+                "•I'm glad you're liking it.":
                     hide screen NVLnarration
                     $ csEngagement += 1
                     player_nvl "Thanks, Coriolis"
                     player_nvl "It means a lot to have you in the chat!"
                     cs_nvl "Aww, thanks [player]!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2206,7 +2206,7 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
-                "•I think it'll be a choice":
+                "•I think it'll be a choice.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "No I think they'll give you that option"
@@ -2214,14 +2214,14 @@ label vig2_macro_viewerChat_1():
                     player_nvl "And I get more of a family vibe from the other crew members"
                     kc_nvl "icic"
                     kc_nvl "Great catch there! They should hire you to write on the next game!"
-                "•Just a fan theory tbh":
+                "•Just a fan theory tbh.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "It's just a fan ship"
                     player_nvl "Ama's probably not in the game enough for that to make sense"
                     kc_nvl "Yeah, you're probably right"
                     kc_nvl "It's a great idea though, they should hire you to write on the next one!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2232,7 +2232,7 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration           
             menu:
-                '•Totally agree':
+                '•Totally agree.':
                     hide screen NVLnarration
                     $ kcEngagement += 2
                     player_nvl "100\% agree"
@@ -2240,14 +2240,14 @@ label vig2_macro_viewerChat_1():
                     player_nvl "Probably because there's more tension there"
                     kc_nvl "Exactly!"
                     kc_nvl "I knew you'd get it"
-                "•IDK, seemed fun":
+                "•IDK, seemed fun.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "I dunno, I didn't think about it too much."
                     player_nvl "Guess I just feel it more with Teresa?"
                     kc_nvl "Ah ic, more just an intuition thing"
                     kc_nvl "I can respect that"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2258,7 +2258,7 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
-                '•Yes, but that\'s what makes it good':
+                '•Yes, but that\'s what makes it good.':
                     hide screen NVLnarration
                     $ kcEngagement += 2
                     player_nvl "That's kind of the thing though"
@@ -2267,13 +2267,13 @@ label vig2_macro_viewerChat_1():
                     player_nvl "There's more there because the devs spent more time on it"
                     kc_nvl "mmmm true. It does feel like Teresa doesn\'t always get a lot of shine"
                     kc_nvl "I'm into the maximize content view. Makes sense!"
-                "•IDK, seemed fun":
+                "•IDK, seemed fun.":
                     hide screen NVLnarration
                     player_nvl "I dunno, I didn't think about it too much."
                     player_nvl "Guess I just feel it more with Jennica?"
                     kc_nvl "Ah ic, more just an intuition thing"
                     kc_nvl "I can respect that"
-                "•Don\'t respond":
+                "•Don\'t respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2283,7 +2283,7 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
-                "•I'm thinking Jennica":
+                "•I'm thinking Jennica.":
                     hide screen NVLnarration
                     player_nvl "Jennica's sweet, I'm leaning her at the moment!"
                     $ romanceJennica = True
@@ -2291,13 +2291,13 @@ label vig2_macro_viewerChat_1():
                     $ romanceAma = False
                     kc_nvl "Sure sure"
                     kc_nvl "Can't go wrong with the dev-authored path"
-                "•Probably Teresa":
+                "•Probably Teresa.":
                     hide screen NVLnarration
                     $ kcEngagement += 2
                     player_nvl "Teresa for sure. She's got an edge I appreciate."
                     kc_nvl "Yes!"
                     kc_nvl "I'm also into the crazy engineer!"
-                "•Ama all day, for sure":
+                "•Ama all day, for sure.":
                     hide screen NVLnarration
                     $ kcEngagement += 3
                     player_nvl "Actually, I'm holding out that there will be an Ama romance path."
@@ -2306,7 +2306,7 @@ label vig2_macro_viewerChat_1():
                     $ romanceJennica = False
                     kc_nvl "Oh WOW I hadn't even thought that they would do that"
                     kc_nvl "Gotta go scour some forums for thoughts on that ship!"
-                "•Don\'t respond":
+                "•Don\'t respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2326,20 +2326,20 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
             menu:
-                "•100\% agree, these are complex characters":
+                "•100\% agree, these are complex characters.":
                     hide screen NVLnarration
                     $ pdEngagement += 2
                     player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
                     player_nvl "I was all Marshal before this, but it's been a really compelling experience"
                     pd_nvl "Well, glad I caught when you made the switch!"
                     pd_nvl "Looking forward to the next stream!"
-                "•That's more thought than I put in tbh":
+                "•That's more thought than I put in tbh.":
                     hide screen NVLnarration
                     $ pdEngagement += 1
                     player_nvl "Honestly, that's more thought than I put in haha"
                     player_nvl "I'm kinda just going by feel"
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2351,21 +2351,21 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
             menu:
-                "•I'm digging the outlaw vibe":
+                "•I'm digging the outlaw vibe.":
                     hide screen NVLnarration
                     $ pdEngagement += 2
                     $ promisedPDOutlaw = True
                     player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
                     player_nvl "I was all Marshal before this, but it's been a really compelling experience"
                     pd_nvl "Well, glad I caught when you made the switch!"
-                "•Most decisions are spontaneous":
+                "•Most decisions are spontaneous.":
                     hide screen NVLnarration
                     player_nvl "Honestly, that's more thought than I put in haha"
                     player_nvl "I'm kinda just going by feel"
                     player_nvl "So maybe it's still a blend, maybe it changes"
                     player_nvl "Gotta see what the Galaxy throws at us!"
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2378,7 +2378,7 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
             menu:
-                "•It's all complicated":
+                "•It's all complicated.":
                     hide screen NVLnarration
                     $ pdEngagement += 4
                     player_nvl "I think it's hard to say one way or the other."
@@ -2389,14 +2389,14 @@ label vig2_macro_viewerChat_1():
                     pd_nvl "I typically go all outlaw in games"
                     pd_nvl "But maybe the characters will feel more compelling if I sprinkle some marshal in there too"
                     pd_nvl "Thx for the quick chat!"
-                "•Most decisions are spontaneous":
+                "•Most decisions are spontaneous.":
                     hide screen NVLnarration
                     player_nvl "Honestly, that's more thought than I put in haha"
                     player_nvl "I'm kinda just going by feel"
                     player_nvl "The blend is cool, but it depends on how I'm feeling each day"
                     player_nvl "Gotta see what the Galaxy throws at us!"
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2409,14 +2409,14 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Some thoughtful messages from PickledDragons. Should I respond?"
             show screen NVLnarration
             menu:
-                "•I feel good with Marshal":
+                "•I feel good with Marshal.":
                     hide screen NVLnarration
                     player_nvl "Thanks!"
                     player_nvl "Marshal's for sure my comfort zone. Been playing with outlaw stuff"
                     player_nvl "but I think the stream is better when I'm on the Marshal path"
                     pd_nvl "Makes sense. Even though it's jut a game"
                     pd_nvl "Thx for the quick chat!"
-                "•I could see myself switching it up":
+                "•I could see myself switching it up.":
                     hide screen NVLnarration
                     $ pdEngagement += 2
                     $ promisedPDOutlaw = True
@@ -2425,7 +2425,7 @@ label vig2_macro_viewerChat_1():
                     pd_nvl "Hell yeah, I think you'd enjoy that!"
                     pd_nvl "Just play around with that edge a little bit more. Why not?"
                     pd_nvl "It's just a game after all"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2441,18 +2441,18 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Coriolis is so nice. Should I respond?"
             show screen NVLnarration
             menu:
-                "•You haven't seen anything yet":
+                "•You haven't seen anything yet.":
                     hide screen NVLnarration
                     $ enthusiasm += 1
                     player_nvl "Well get ready for more chaos!"
                     player_nvl "Outlaws on the loose!"
-                "•Thank you":
+                "•Thank you.":
                     hide screen NVLnarration
                     $ csEngagement += 1
                     player_nvl "Thanks, Coriolis"
                     player_nvl "It means a lot to have you in the chat!"
                     cs_nvl "Aww, thanks [player]!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2468,26 +2468,26 @@ label vig2_macro_viewerChat_1():
             $ playerNVLNarration = "Coriolis is so nice. Should I respond?"
             show screen NVLnarration
             menu:
-                "•It was tough balancing both Outlaw and Marshal" if vig2_outlawEpilogue == True:
+                "•It was tough balancing both Outlaw and Marshal." if vig2_outlawEpilogue == True:
                     hide screen NVLnarration
                     $ reluctance += 1
                     player_nvl "Yeah, it was tough balancing the two styles"
                     player_nvl "Moze being both an Outlaw thief and a captain with Morals is interesting"
                     cs_nvl "Totally"
                     cs_nvl "Glad I don't have to be in that position haha"
-                "•Good to go back to basics" if vig2_outlawEpilogue == False:
+                "•Good to go back to basics." if vig2_outlawEpilogue == False:
                     hide screen NVLnarration
                     $ reluctance += 1
                     player_nvl "Yeah, I wanted to go back to basics"
                     player_nvl "Get into some outlaw thievery vibes"
                     cs_nvl "It was fun to see those vibes back!"
-                "•I'm glad you're liking it":
+                "•I'm glad you're liking it.":
                     hide screen NVLnarration
                     $ csEngagement += 1
                     player_nvl "Thanks, Coriolis"
                     player_nvl "It means a lot to have you in the chat!"
                     cs_nvl "Aww, thanks [player]!"
-                "•Don't respond":
+                "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
@@ -2524,24 +2524,24 @@ label vig2_macro_bro1():
             $ enthusiasm += 1
             player_nvl "Felt like time for a change of pace"
             player_nvl "Outlaw life is pretty sweet!"
-        "•That was an accident":
+        "•That was an accident.":
             hide screen NVLnarration
             player_nvl "That was an accident lol"
             player_nvl "I had to play it off on stream :'("
             menu:
-                "•The chat's been a lot of fun":
+                "•The chat's been a lot of fun.":
                     $ enthusiasm += 1
                     player_nvl "But it's been real fun to play around with chat."
                     player_nvl "Lotta bits in the chat, you'll see next episode!"
-                "•The characters are really cool":
+                "•The characters are really cool.":
                     $ enthusiasm += 1
                     player_nvl "But the character dynamics are really interesting this route"
                     player_nvl "It's a compelling spin on Moze!"
-                "•Debating going back to Marshal, miss playing with you":
+                "•Debating going back to Marshal, miss playing with you.":
                     $ reluctance += 2
                     player_nvl "I'm debating going back to Marshal style."
                     player_nvl "Game doesnt feel as rewarding as when we were playing together"
-                "•Debating going back to Marshal, will see how story develops":
+                "•Debating going back to Marshal, will see how story develops.":
                     $ reluctance += 1
                     player_nvl "Could go back to Marshal, idk"
                     player_nvl "Will have to see how the story goes"
@@ -2579,11 +2579,11 @@ label vig2_macro_sleep():
                 "Yeah!":
                     $ energy += 1
                     "Yeah, it is fun!"
-                "Yes":
+                "Yes.":
                     "It is."
-                "Sometimes":
+                "Sometimes.":
                     "It is. Most of the time."
-                "Not always":
+                "Not always.":
                     $ energy -= 1
                     "A lot of the time it just feels draining."
         "Think about how tired you are":
@@ -2597,48 +2597,48 @@ label vig2_macro_sleep():
     if outlaw > marshal:
         "You picture the comms base and the characters inside and feel..."
         menu:
-            "Regret":
+            "Regret.":
                 $ reluctance += 1
                 "Even though it's just a game, you feel like you made the wrong choice."
             "Regret?":
                 "A mixture of both regret and excitement."
                 "Even though it's just a game, you feel confused."
-            "Confidence":
+            "Confidence.":
                 $ enthusiasm += 1
                 "You had to do what you had to do."
                 "You know this."
-            "A desire to replay the game":
+            "A desire to replay the game.":
                 $ energy += 1
                 "You imagine how the end game scenario would have played out if you chose differently, and you feel excitement."
                 "You can always play the game again, after all."
-            "Nothing":
+            "Nothing.":
                 "You don't feel anything in particular."
-            "Pressure from chat":
+            "Pressure from chat.":
                 $ reluctance += 1
                 "You remember the comments from chat, like small weights on a scale."
     else:
         "You picture MAC and feel..."
         menu:
-                "Regret":
+                "Regret.":
                     $ enthusiasm += 1
                     "Even though it's just a game, you feel like you made the wrong choice."
                     "What if MAC is more in danger now?"
                 "Regret?":
                     "A mixture of both regret and excitement."
                     "Even though it's just a game, you feel confused."
-                "A desire to replay the game":
+                "A desire to replay the game.":
                     $ energy += 1
                     "You imagine how the end game scenario would have played out if you chose differently, and you feel excitement."
                     "You can always play the game again, after all."
-                "Confidence":
+                "Confidence.":
                     $ reluctance += 1
                     "There was no other choice. You couldn't ally with Matticus."
-                "Nothing":
+                "Nothing.":
                     "You don't really feel anything in particular."
-                "Pressure from chat":
+                "Pressure from chat.":
                     $ reluctance += 1
                     "You remember the comments from Chat, like small weights on a scale."
-                "Even more tired":
+                "Even more tired.":
                     "Just thinking about the game makes your eyelids feel heavier."
         jump vig2_macro_end
 
