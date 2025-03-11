@@ -133,7 +133,7 @@ screen streamDetails():
         ysize 150
         xpadding 5
         ypadding 5
-        text "[player]" align (.1, .44) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
+        text "[player]" align (.1, .1) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
         text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
         text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
         text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
@@ -149,7 +149,7 @@ screen streamDetails():
             text_size 25
             align (1.19, .85)
             #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
-        image "profile1" align (.001, .5) size (100, 100) #displays a profile pic for the streamer
+        image "profile1" align (.001, 0) size (100, 100) #displays a profile pic for the streamer
 
 screen NVLnarration():
     image "gui/textbox.png" align (0.5, 1.0)
@@ -267,7 +267,8 @@ style ig_dial:
 
 #The following are styles that adjust where the say screen will appear.
 style ig_window: #"in-game" window - identifies the window that is used for narration that takes place in the micro game. 
-    xalign 0.5
+    #xalign 0.5
+    xpos 973
     xfill True
     yalign 0.73
     ysize 200
@@ -275,7 +276,8 @@ style ig_window: #"in-game" window - identifies the window that is used for narr
     background Image("gui/ig_textbox.png", xalign=0.5, yalign=1.0) #This image should be adjusted to a different size for textboxes appearing in the micro game.
 
 style ig_character:
-    xalign 0.9
+    #xalign 0.9
+    xpos 13
     xfill True 
     yalign 0.73
     ysize 200 
