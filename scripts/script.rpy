@@ -1351,7 +1351,7 @@ label commsBase_DataCenter_MAR():
     pS "We'll have tried."
     $ AddChatter(vig2_sc7_mar_comment2)
     enS "I don't like this any more than you two, but what's the alternative?"
-    enS "If we don't cover our tracks, the Deadeye will be on our asses in no time! We need Matticus's access to the security database."
+    enS "If we don't cover our tracks, Deadeye will be on our asses in no time! We need Matticus's access to the security database."
     pS "He's not the only one with access!"
     enS "Yes access to secure databases is easy to find and widespread! How could I forget!?"
     enS "That's what \"secure\" means right?"
