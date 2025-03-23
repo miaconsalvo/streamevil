@@ -1,4 +1,4 @@
-label gamestart():
+label vignette1Start():
     scene streamview
     show screen streamChat
     show screen streamDetails
@@ -989,7 +989,7 @@ label FlinchAnalytics():
 label blueitVignette1():
     #scene Reddit with dissolve - would show reddit scene but we're not going to bother
     hide screen viewershipButton
-    scene blueit_screen at truecenter with dissolve:
+    scene blueit_screen at truecenter with dissolve
     $ blueitPages.append(vig1_bThread1)
     $ blueitPages.append(vig1_bThread2)
     $ blueitPages.append(vig1_bThread3)
@@ -998,7 +998,7 @@ label blueitVignette1():
     jump blueitVignette2
 
 label blueitVignette2():
-    scene blueit_screen at truecenter:
+    scene blueit_screen at truecenter
     call screen blueit
     return
 

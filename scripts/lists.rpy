@@ -15,6 +15,12 @@ init python:
                                 #called it "colour" because "color" is often used by Renpy to refer to specific things and handle already determined attributes.
             self.target = target #target indicates a label that a clickable object will call.
 
+    class bThread():
+        def __init__(self, tag, target = "", image = ""):
+            self.tag = tag
+            self.target = target
+            self.image = image
+
 #defining useful functions
 default yadj = ui.adjustment()
 
@@ -60,6 +66,7 @@ label TurnSound():
     
 default chatter_list = [ ] #This is the list that displays on the Stream UI
 default comments_list = [ ] #This list contains the objects that will be shuffled and chosen from to add to "chats"
+default blueitPages = [ ]
 #Objects will be taken from this list and added to "chats_list"
 
 #Example Chat Entries:

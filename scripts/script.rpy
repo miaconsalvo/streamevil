@@ -13,9 +13,11 @@ default reg_narrator = Character(None, what_font="Mukta-Regular.ttf", window_sty
 default alt_narrator = Character(None, what_font="Lato-Regular.ttf", window_style = "ig_window", what_style = "ig_dialogue", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 
 define player = Character("[my_name]", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") #represents the protagonist's name which will be defined by the player via an input screen.
+define streamer = Character("[username]") #represents protagonist's username on Flinch
 define mod = Character("Jessie", what_font="Mukta-Regular.ttf")
 define bro = Character("El", what_font="Mukta-Regular.ttf")
 define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "captain_stream")
+define streamer_nvl = Character("[username]", kind = nvl, image = "captain_stream")
 define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "profile1small")
 define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
@@ -37,6 +39,12 @@ define pS = Character ("Jennica", what_font="Play-Regular.ttf", window_style = "
 define mac = Character("MAC", what_font="Play-Regular.ttf", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/textbox_blue.png")
 define macS = Character("MAC", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/ig_textbox_pink.png")
 
+define a = Character("Allistar", window_style = "window", who_color="#d0c231", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
+define aS = Character("Allistar", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#d0c231", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
+
+define ama = Character("Deadeye", window_style = "window", who_color="#1113a1", what_color="#000000", image = "ama neutral", window_background = "images/textbox/stream textbox npc.png")
+define amaS = Character("Deadeye", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#1113a1", what_color = "#000000", image = "ama stream neutral", window_background="images/textbox/stream textbox npc.png")
+
 
 define shipcom = Character("Ship Intercom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 define agent1 = Character("Customs Agent", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
@@ -46,12 +54,13 @@ define worker = Character("Technician", what_font="Play-Regular.ttf", window_sty
 define mattdoorbell = Character("Doorcom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 define hsguard1 = Character("Guard", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/ig_textbox_grey.png")
 
-#Additional variables
-default viewCount = 8 #viewCount changes how many viewers are displayed in the streamdetails screen
+#General system variables
+default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
-#default macroNarration = True #this variable helps determine if a macro game choice should return us to narration style that is micro game or macro game
 default commentPing = False
-default textContent = "Sound is Off"
+default pingText = "Sound is Off"
+default playerNVLNarration = ""
+default reactTarget = "vig1_sc1_startStream"
 
 #variables to track morality
 default marshal = 2
@@ -70,14 +79,59 @@ default csEngagement = 5
 default pdEngagement = 3
 default kcEngagement = 4
 
+#variables to track MAC's morality
+default macCynicism = 0
+default macTrust = 0
+default macViolence = 0
+
 #Approval of micro-game characters
 default engineerApproval = 3
 default pilotApproval = 4
+
+#Variables specific to vignette 1
+default allistarSuspicious = False
+default houseExplosion = False
+default omegaDead = False
+default misclick = False
+default askBandit = False
+
+#Variables to track viewers for Analytics screen in MacroGame
+default viewCheck1 = 0
+default viewCheck2 = 0
+default viewCheck3 = 0
+default viewCheck4 = 0
+default viewCheck5 = 0
+default vbar1 = 0 #make sure to set these vbar values back to zero at the start of every vignette (or just when you leave the analytics screen)
+default vbar2 = 0
+default vbar3 = 0
+default vbar4 = 0
+default vbar5 = 0
+default max_viewers = 40
+
+###Variables for tracking Flinch Analytics
+default topfan = ""
+default flinchCheck = 0
+default viewcountCheck = False
+default topfanCheck = False
+default alignmentCheck = False
+default audienceCheck = False
+
+#blueit variables
+default blueitCheck = 0
+default blueitImage = ""
+default yb = 0 #this sets how long the viewport of the blueit threads will scroll down to
+default blueitChoiceCheck = False
+default blueitLaunchCheck = False
+
+
+####Variables for Vignette 2#####
 default shnzi = True
 default romanceAma = False
 default romanceJennica = False
 default romanceTeresa = False
 default baseGuardKilled = False
+
+
 
 #default yadj = ui.adjustment()
 
@@ -100,29 +154,22 @@ init:
     #fade out whenever we transition to another label
 
 label start:
-    #these six lines define transforms that can be used to align microgame characters where we want them on the screen
-    #We'll want all our character portraits to be the same size so this method of defining transforms works consistently
-    transform gameleft:
-        xpos 0
-        ypos 615
-    transform gameright:
-        xpos 1249
-        ypos 615
     show bg black at topleft onlayer background
 
+    "Hello, this is the start of a new game"
 
-    "Hello! This is the start of the game!"
+    "Please tell me your streamer username"
+    $ username = renpy.input("Your username is: ", length = 16)
+    "Now please tell me your first name in real life"
+    $ my_name = renpy.input("Your character's real name is: ", length = 16)
 
-    "So you should make a new name!"
-    $ my_name = renpy.input("Your name is: ", length = 16) #invokes an input screen that allows player to define their own name. Length determines how long the name can be.
+    "Here you would select a streaming profile picture"
+    "And now we begin"
+    jump vignette1Start
 
-    "Your name is now [player]" #the player's name can now be interpellated using this method
 
-    $ narrator = reg_narrator
 
-    jump gameStart
-
-label gameStart():
+label vignette2Start():
     scene streamview with dissolve 
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels

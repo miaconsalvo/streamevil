@@ -83,82 +83,8 @@ style frame:
 ## Stream Details Screens
 ################################################################################
 
-#This establishes a screen in which chats will appear
-screen streamChat():
-    #python:
-    #    yadj.value = yadjValue
-
-    frame:
-        #Sets the borders and set up of the chat window
-        background Solid("#00000000")
-        xpos 1550
-        ypos 120
-        xsize 355
-        ysize 740
-        xpadding 10 #These padding variables will affect how close the position of the scrollbar relative to the frame as well
-        ypadding 20
-        viewport: #id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
-            yadjustment yadj #Using the "yadj" values determined at start of main script, this should set the viewport to adjust to the bottom whenever it's updated. It's only working 70ish% of the time though
-            draggable True #allows scrollbar to be dragged
-            mousewheel True #allows mousewheel to scroll viewport
-            scrollbars "vertical" #sets vertical scroll bar
-            yinitial 1.0 #should place scrollbar at bottom of viewport by default - not working though
-            vbox:             #Establishes a "vertical box" that displays the objects in chats_list
-                #box_reverse True #current way to make us see the newest chat by having it appear at top instead of bottom.
-                #yalign 1.0 #This will place these at the bottom
-                spacing 10
-                for c in (chatter_list): #checks through chatter_list and displays the objects within that list in the vertical boxes.
-                    if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
-                        textbutton c.prompt:
-                            action Call(c.target, from_current = True)
-                            text_color c.colour #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-                            text_hover_color "#000000a1" 
-                            text_selected_color "#0000004f"
-                            background "#eeff00cb" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-                            text_size 25
-                        #"text_size" can adjust how large the text is. But it would probably be best to define this in the chat_entry class
-                        #in Chat_entry, add a "size" property and set it for individual ones. Then here, do "text_size = c.size"
-                        #-useful if you want the size to be variable. If constant, may as well just hard code it here instead of in Class.
-                    else:
-                        text c.prompt color c.colour size 25 #if the ChatEntry object has "self.click = False" it will be plain text
-                        #You can change color with c.colour (an attribute that was added to ChatEntry class in Lists script). The Textbutton is a bit more complicated
-
-#A basic screen to display stream details. All the numbers will likely need to change
-screen streamDetails():
-    frame:
-        background Solid("#00000000")
-        xpos 0
-        ypos 900
-        xsize 1530
-        ysize 150
-        xpadding 5
-        ypadding 5
-        text "[player]" align (.1, .1) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
-        text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
-        text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
-        text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
-        text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
-        text "Outlaw Score: [outlaw]" align (0.8, 0.25) color "#e6a20eff"
-        text "Marshal Score: [marshal]" align (0.8, 0.7) color "#27e60eff"
-        textbutton textContent:
-            action Call("TurnSound", from_current = True)
-            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffd5" 
-            text_selected_color "#ffffffff"
-            background "#000000ff" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-            text_size 25
-            align (1.19, .85)
-            #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
-        image "profile1" align (.001, 0) size (100, 100) #displays a profile pic for the streamer
-
-screen NVLnarration():
-    image "gui/textbox.png" align (0.5, 1.0)
-    frame:
-        xpos 400
-        ypos 810
-        right_margin 700
-        background Solid("#00000000")
-        text "[playerNVLNarration]" color "#ffffff"
+##These were moved to the "streamscreens" script
+##NVLNarration was moved to "discord"
         
 
 ## Say screen ##################################################################
