@@ -9,14 +9,6 @@ label vignette1Start():
     $ viewCheck3 = 4
     $ viewCheck4 = 6
     $ viewCheck5 = viewCount
-    $ AddChatter(vig1_sc1_comment1)
-    $ AddChatter(vig1_sc1_comment2)
-    $ AddChatter(vig1_sc1_comment3)
-    $ AddChatter(vig1_sc1_comment4)
-    $ AddChatter(vig1_sc1_comment5)
-    $ AddChatter(vig1_sc1_comment6)
-    $ AddChatter(vig1_sc1_comment7)
-    $ AddChatter(vig1_sc1_comment8)
     jump returnToWorkshop
 
 label returnToWorkshop():
@@ -25,7 +17,7 @@ label returnToWorkshop():
     call screen streamFreeze
     "Thermal paste in hand I return to Allistar's workshop."
     show mac stream at stream_center_mac with dissolve
-    show allistar stream neutral at screen_left with dissolve
+    show allistar stream neutral at stream_right with dissolve
     "MAC is in the center of the room, a faint trill of classical music whistles from his voice box."
     "Allistar sits on a chair behind the droid, still working on the open circuit panel in MAC's back." 
     aS "Moze, did you know MAC likes music?" 
@@ -200,7 +192,7 @@ label streetShootout:
     "Two advance down the main street toward us."
     mS "BC scum."
     aS "Moze!"
-    show allistar stream neutral at screen_left with Dissolve (0.5)
+    show allistar stream neutral at stream_right with Dissolve (0.5)
     "Allistar ducks into cover behind some nearby barrels."
     aS "We can't get pinned down!"
     "A light bump taps me on the knee."
@@ -258,7 +250,7 @@ label streetShootout:
             "{i}Zzzzap{/i}"
             "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
-            show allistar stream neutral at screen_left with Dissolve (0.5)
+            show allistar stream neutral at stream_right with Dissolve (0.5)
             "I turn back around. Allistar holds a smoking blaster upright."
             show screen chatTutorial2
             show screen streamerCommentary
@@ -290,7 +282,7 @@ label streetShootout:
             enforcer "Aiieea!"
             hide customs with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
-            show allistar stream neutral at screen_left with Dissolve (0.5)
+            show allistar stream neutral at stream_right with Dissolve (0.5)
             "Allistar holds his right shoulder gingerly, a light trail of smoke from a blaster bolt flickers in the air."
             "He grimaces."
             show screen chatTutorial2
@@ -365,7 +357,7 @@ label saveMAC():
             aS "Moze!"
             macS "Captain!?"
             "The sound of another shot fired and a body hitting the ground from a great height."
-            show allistar stream neutral at screen_right with dissolve
+            show allistar stream neutral at stream_right with dissolve
             $ AddChatter(vig1_sc2_comment15)
             pause 0.5
             "Allistar crouches beside me and wraps my right arm over his shoulder."
@@ -421,8 +413,8 @@ label spacePortEscape():
     hide teresa with dissolve
     show jennica stream angry at stream_center with dissolve
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
-    show allistar stream neutral at screen_left with Dissolve (0.5)
-    show mac stream at stream_right_mac with Dissolve(0.5)
+    show allistar stream neutral at stream_right with Dissolve (0.5)
+    show mac stream at stream_left_mac with Dissolve(0.5)
     pause 0.5
     pS "Nice of y'all to join us. Remind me to never visit Cromuu again."
     "Just as the ship begins to push off the ground, four immense BigCorp cruisers crest over a nearby hill."
@@ -561,7 +553,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
     show mac stream at stream_right_mac with dissolve
-    show allistar stream neutral at screen_center with dissolve
+    show allistar stream neutral at stream_center with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
     "As I step into the light, Allistar sees me and reaches for MAC." 
