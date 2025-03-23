@@ -3,6 +3,15 @@
 
 define nvl_mode = "discord"
 
+screen NVLnarration():
+    image "gui/textbox.png" align (0.5, 1.0)
+    frame:
+        xpos 400
+        ypos 850
+        right_margin 700
+        background Solid("#00000000")
+        text "[playerNVLNarration]" color "#ffffff"
+
 screen DiscordDialogue(dialogue, items=None):
 
     style_prefix "discordFrame"
