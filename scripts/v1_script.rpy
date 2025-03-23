@@ -1183,4 +1183,5 @@ label vig1_brother_2():
     player "Hahahahahaha"
     "Elliot" "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
+    jump vignette2Start
     return
