@@ -230,7 +230,7 @@ label streetShootout:
     $ AddChatter(vig1_sc2_comment9)
     pause 0.5
     $ AddChatter(vig1_sc2_comment10)
-    $ reactTarget = "vig1_sc2_combatReact"
+    $ reactTarget = "vig1_sc2_combatReact" #We need to set this so the reaction button will direct to the label we want to go to
     $ viewCheck7 = viewCount
     menu:
         "They're advancing fast."
