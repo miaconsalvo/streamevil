@@ -12,7 +12,7 @@ label vignette1Start():
     jump returnToWorkshop
 
 label returnToWorkshop():
-    play music "vig1scratchtrack.wav" volume 1.0 loop fadein 0.5
+    play music "soundtrack/vig1scratchtrack.wav" volume 1.0 loop fadein 0.5
     show screen chatTutorial2
     call screen streamFreeze
     "Thermal paste in hand I return to Allistar's workshop."
@@ -180,7 +180,7 @@ label setBlasterVig1():
     jump streetShootout
 
 label streetShootout:
-    play music "savethegalaxy.wav" volume 1.0 loop fadein 0.5
+    play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 0.5
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
     "Allistar, MAC, and I rush into the deserted main street of Grand Junction."
     "My feet pound against the hardpacked ground. The spaceport is dead ahead of us."
@@ -350,7 +350,7 @@ label saveMAC():
         "I process the information in less than a second, then react."
         "Dive in front of the shot.":
             $ kcEngagement += 1
-            #play music "savethegalaxy.wav" volume 1.0 loop
+            #play music "soundtracksavethegalaxy.wav" volume 1.0 loop
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
@@ -434,7 +434,7 @@ label spacePortEscape():
     jump councilDebrief
 
 label councilDebrief():
-    play music "vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     show vig2_shiphub_stream at topleft onlayer background with dissolve
     hide vig1_town_stream
     show teresa stream neutral at stream_right with dissolve
@@ -786,7 +786,7 @@ label escapePodConfrontation:
     pause 0.5
     hide oakleyresultsv1 with dissolve
     "As the viewers leave the stream, you deactivate your webcam and sign off of Flinch."
-    play music "postStreamGroove.wav" volume 0.7 loop fadein 2.0
+    play music "soundtrack/postStreamGroove.wav" volume 0.7 loop fadein 2.0
     hide screen streamDetails
     hide screen streamChat
     hide streamview with Dissolve(2.0)
