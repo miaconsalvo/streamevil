@@ -131,13 +131,13 @@ screen nvl_phonetext(dialogue):
                 if previous_d_who != d.who:
                     #We'll want to specify if "d.who == Jessie" so we can assign specific images for each profile
                     if d.who == my_name:
-                        $ message_icon = "images/Socials/profilepics/profile2.png"
+                        $ message_icon = "images/socials/profilepics/profile2.png"
                     elif d.who == "Jessie":
-                        $ message_icon = "images/Socials/profilepics/profile3.png"
+                        $ message_icon = "images/socials/profilepics/profile3.png"
                     elif d.who == "El":
-                        $ message_icon = "images/Socials/profilepics/profile1.png"
+                        $ message_icon = "images/socials/profilepics/profile1.png"
                     else:
-                        $ message_icon = "images/Socials/profilepics/profile4.png"
+                        $ message_icon = "images/socials/profilepics/profile4.png"
                     #The line below this will add the message icon to the hbox. The lines below it add a transition animation that we aren't going to use
                     add message_icon#:
                         #if d.current:

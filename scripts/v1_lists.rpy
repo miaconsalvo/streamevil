@@ -126,7 +126,7 @@ default vig1_sc2_streamer1 = ChatEntry( True, "REACT", 1, "#ffffffff", "vig1_sc2
 default vig2_sc3_streamer1 = ChatEntry( True, "REACT", 1, "#ffffffff")
 
 #trying to create list of blueitthreads to display properly
-default vig1_bThread1 = bThread( 1, "vig1_blueit_firstchoice", "images/Socials/bThread_firstChoice.png")
-default vig1_bThread2 = bThread( 1, "vig1_blueit_firstgame", "images/Socials/bThread_firstGame.png")
-default vig1_bThread3 = bThread( 1, "vig1_blueit_romance", "images/Socials/bThread_romance.png")
-default vig1_bThread4 = bThread( 2, "vig1_blueit_glitch", "images/Socials/bThread_glitch.png")
+default vig1_bThread1 = bThread( 1, "vig1_blueit_firstchoice", "images/socials/bThread_firstChoice.png")
+default vig1_bThread2 = bThread( 1, "vig1_blueit_firstgame", "images/socials/bThread_firstGame.png")
+default vig1_bThread3 = bThread( 1, "vig1_blueit_romance", "images/socials/bThread_romance.png")
+default vig1_bThread4 = bThread( 2, "vig1_blueit_glitch", "images/socials/bThread_glitch.png")
