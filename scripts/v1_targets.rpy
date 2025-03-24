@@ -31,15 +31,15 @@ label vig1_sc2_whoQuestion():
         "A viewer wants to catch up on some back story."
         "Explain \"Deadeye\"":
             player "\"Deadeye\" is the nickname for Ama Reyes."
-            player "She was Moze's mentor when she was running with the Snake Hawks."
+            player "She was Moze's mentor when she was running with the Snakehawks."
             player "But then Ama ran a heist against BigCorp that went south and got almost the entire gang wiped out."
             player "This was all lore stuff from before the first game, actually."
             $ AddChatter(vig1_sc2_comment2_csSH)
             pause 0.5
             $ AddChatter(vig1_sc2_comment3)
             pause 0.5
-        "Explain Snake Hawks":
-            player "The Snake Hawks were the gang that Moze and Jennica ran with before they became mercenaries."
+        "Explain Snakehawks":
+            player "The Snakehawks were the gang that Moze and Jennica ran with before they became mercenaries."
             player "Allistar was part of the gang too, that's why he has the same tattoo as Moze."
             player "They used to be a big deal in the Outposts until most of 'em got wiped out."
             player "This was all lore stuff from before the first game, actually."
