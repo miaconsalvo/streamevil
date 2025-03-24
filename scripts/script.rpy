@@ -63,7 +63,7 @@ default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
 
 #variables to track morality
-default marshal = 2
+default marshal = 4
 default outlaw = 3
 
 #variables to track interest of player - tracked for macro game purposes
