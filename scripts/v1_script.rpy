@@ -12,7 +12,7 @@ label vignette1Start():
     jump returnToWorkshop
 
 label returnToWorkshop():
-    play music "soundtrack/vig1scratchtrack.wav" volume 1.0 loop fadein 0.5
+    play music "soundtrack/allistar.wav" volume 1.2 loop fadein 0.5
     show screen chatTutorial2
     call screen streamFreeze
     "Thermal paste in hand I return to Allistar's workshop."
