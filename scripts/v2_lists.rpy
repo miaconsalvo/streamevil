@@ -1,8 +1,8 @@
 ###This script contains the chatter comments for Vignette 2
 
 #Comments in Scene 1
-default vig2_sc1_comment1 = ChatEntry( False, "{b}Coriolis:{/b} I just got the live notification!", 2, "#000000")
-default vig2_sc1_comment2 = ChatEntry( True, "{b}Coriolis:{/b} It's just after dinner for you right? How did that test go?", 2, "#000000", "vig2_sc1_testquestion")
+default vig2_sc1_comment1 = ChatEntry( False, "{b}Coriolis:{/b} I just got the live notification!", 2, "#ffffff")
+default vig2_sc1_comment2 = ChatEntry( True, "{b}Coriolis:{/b} It's just after dinner for you right? How did that test go?", 2, "#ffffff", "vig2_sc1_testquestion")
 default vig2_sc1_comment3 = ChatEntry( False, "{b}Squeejieboy33:{/b} ehh back again! the ending last time was nuts", 2, "#000000")
 default vig2_sc1_comment4 = ChatEntry( False, "{b}kitcat:{/b} hey everyone!! ah im pumped for this one!", 2, "#000000")
 default vig2_sc1_comment5 = ChatEntry( False, "{b}_lostinmetr0:{/b} does anyone know if this is the whole crew?", 2, "#000000")

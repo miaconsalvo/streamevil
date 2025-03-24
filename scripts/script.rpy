@@ -101,11 +101,21 @@ default viewCheck2 = 0
 default viewCheck3 = 0
 default viewCheck4 = 0
 default viewCheck5 = 0
+default viewCheck6 = 0
+default viewCheck7 = 0
+default viewCheck8 = 0
+default viewCheck9 = 0
+default viewCheck10 = 0
 default vbar1 = 0 #make sure to set these vbar values back to zero at the start of every vignette (or just when you leave the analytics screen)
 default vbar2 = 0
 default vbar3 = 0
 default vbar4 = 0
 default vbar5 = 0
+default vbar6 = 0
+default vbar7 = 0
+default vbar8 = 0
+default vbar9 = 0
+default vbar10 = 0
 default max_viewers = 40
 
 ###Variables for tracking Flinch Analytics

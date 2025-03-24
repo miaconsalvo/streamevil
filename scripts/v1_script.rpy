@@ -67,7 +67,8 @@ label returnToWorkshop():
     aS "People didn't trust me for a while. That's what this tattoo is good for these days."
     aS "Most townsfolk still don't like me, but they are grateful for my work." 
     aS "I can live with that."
-    aS "But I keep thinking, what could the SnakeHawks...what could {i}we{/i} could have accomplished if we tried to be more than a gang of outlaws."
+    aS "But I keep thinking, what could the SnakeHawks..."
+    aS "What could {i}we{/i} could have accomplished if we tried to be more than a gang of outlaws."
     "He leans back from MAC and starts screwing the metal plate back in."
     aS "All done. Circuits should be resistant to electricity and overheating now."
     "MAC rolls forward into a clear space in the room."
@@ -196,7 +197,7 @@ label streetShootout:
     "Allistar ducks into cover behind some nearby barrels."
     aS "We can't get pinned down!"
     "A light bump taps me on the knee."
-    show mac stream at stream_right_mac with Dissolve(0.5)
+    show mac stream at stream_center_mac with Dissolve(0.5)
     macS "Affirmative, our survival rate in the current situation is 5\%."
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
@@ -231,11 +232,12 @@ label streetShootout:
             "I turn my attention to the rooftop threat."
             "Mine and Annatar's fire forces them into cover, but not before one of them takes a hit and falls off the back of the building."
             "The last one pokes their head up and Allistar hits them right between the eyes."
-            show customs agent at stream_center with Dissolve(0.3)
+            show customs agent at stream_left with Dissolve(0.3)
             "At that moment the ground enforcer rounds the corner, about to fire."
             hide allistar with Dissolve (0.3)
             mS "MAC, run!"
             hide mac with Dissolve(0.3)
+            show customs agent at stream_center with move
             "Knocking the blaster out of his hand, I tackle him to the ground."
             "We roll over one another as he reaches for his gun."
             "He's too slow."
@@ -792,6 +794,7 @@ label escapePodConfrontation:
     jump modConvo_Day1
 
 label modConvo_Day1():
+    $ chatter_list = [ ] #This should always be set to blank after a stream is finished
     $ macroChoice = True
     $ narrator = reg_narrator
     $ menu = nvl_menu
@@ -1175,5 +1178,7 @@ label vig1_brother_2():
     player "Hahahahahaha"
     "Elliot" "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
+    $ chatter_list = [ ]
     jump vignette2Start
+
     return
