@@ -1,4 +1,25 @@
 label vignette2Start():
+    #We want to reset these before the start of the vignette
+    $ viewCheck1 = 0
+    $ viewCheck2 = 0
+    $ viewCheck3 = 0
+    $ viewCheck4 = 0
+    $ viewCheck5 = 0
+    $ viewCheck6 = 0
+    $ viewCheck7 = 0
+    $ viewCheck8 = 0
+    $ viewCheck9 = 0
+    $ viewCheck10 = 0
+    $ vbar1 = 0 #make sure to set these vbar values back to zero at the start of every vignette (or just when you leave the analytics screen)
+    $ vbar2 = 0
+    $ vbar3 = 0
+    $ vbar4 = 0
+    $ vbar5 = 0
+    $ vbar6 = 0
+    $ vbar7 = 0
+    $ vbar8 = 0
+    $ vbar9 = 0
+    $ vbar10 = 0
     scene streamview with dissolve 
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
@@ -247,7 +268,7 @@ label GibianVCustomsMarshal():
     hide jennica with Dissolve(0.4)
     "Teresa nods to us. Let's do this."
     hide teresa with Dissolve(0.4)
-    show agent stream at stream_center with Dissolve(0.6)
+    show customs agent at stream_center with Dissolve(0.6)
     menu: #minorchoice3
         "Smile and look him in the eyes.":
             "As I approach the customs officer, his eyes perk up."
@@ -325,7 +346,7 @@ label GibianVCustomsMarshal():
     "All of a sudden, he raises his voice to be easily audible by nearby bystanders and co-workers."
     agent1 "I'm terribly sorry but I can't help you Ma'am, you need to enter customs regularly."
     "He motions for me to move on."
-    hide agent stream with dissolve
+    hide customs agent with dissolve
     show jennica stream neutral at stream_left with Dissolve(0.5)
     show teresa stream neutral at stream_right with Dissolve(0.5)
     "I signal the direction of the breakroom to Teresa and Jennica as I begin strolling towards it."
@@ -340,7 +361,7 @@ label GibianVCustomsMarshal():
     macS "Penitentiary. Noun. A place for imprisoning crim—"
     enS "SHUSH!"
     "The door creaks ajar."
-    show agent stream at stream_center with Dissolve(0.2)
+    show customs agent at stream_center with Dissolve(0.2)
     "The customs official peeks his head through the door."
     agent1 "Quick. Stay close."
     "We don't need to be told twice."
@@ -354,7 +375,7 @@ label GibianVCustomsMarshal():
     show jennica stream neutral at stream_left with Dissolve(0.4)
     pS "Mighty nice of ya to help us out!"
     "The agent wordlessly tips his hat before disappearing through the door."
-    hide agent stream with Dissolve (0.4)
+    hide customs agent with Dissolve (0.4)
     show teresa stream neutral at stream_right with Dissolve (0.4)
     pS "Simple as it gets!"
     enS "Yes. Almost too much so..."
@@ -568,12 +589,12 @@ label meetingMatticus():
     smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
-    show goon stream at stream_right with Dissolve (.5)
+    show reginald stream neutral at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
     show mac stream at stream_center with Dissolve(.5)
     "MAC sheepishly opens the crate lid and pokes his head out."
-    hide goon stream with Dissolve (0.5)
+    hide reginald with Dissolve (0.5)
     smatt "Who's this?"
     menu: #minorchoice5
         "What we stole from BigCorp.": 
@@ -708,7 +729,7 @@ label meetingMatticus():
             enS "Mature."
     "Matticus waves as he leaves the warehouse."
     hide matticus stream with dissolve
-    show goon stream at stream_center with dissolve
+    show reginald stream neutral at stream_center with dissolve
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     goon "They're stored at a communications array on the outskirts of the city."
@@ -719,7 +740,7 @@ label meetingMatticus():
     pS "How reassuring."
     goon "We don't have time for this. Let's get to the shuttle."
     mS "Agreed."
-    hide goon stream with Dissolve(0.5)
+    hide reginald with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump approachingBase
 
@@ -772,7 +793,7 @@ label approachingBase():
             mS "Good. Let's move."
             hide mac stream with dissolve
         #Should NPC approval adjustments happen here?
-    show goon stream at stream_center with Dissolve(0.5)
+    show reginald stream neutral at stream_center with Dissolve(0.5)
     pS "So what's the plan?"
     goon "Plan? This is your operation. We just gotta get to the main datacentre computer."
     enS "Do you even know where that is?"
@@ -783,7 +804,7 @@ label approachingBase():
     enS "You're not coming with us?"
     goon "You think I get paid enough to get shot at? As if."
     "Reginald lights a cigarette and walks off."
-    hide goon stream with dissolve
+    hide reginald with dissolve
     #$ chatter_list.append(vig2_sc5_comment6)
     $ AddChatter(vig2_sc5_comment6)
     enS "I'm inclined to agree with him. We don't know how much firepower they'll have in there."
@@ -813,7 +834,7 @@ label approachingBase():
             $ viewCount += 1
             $ AddChatter(vig2_sc6_out_comment3)
             "Teresa and Jennica nod in agreement."
-            show goon stream at stream_center with dissolve
+            show reginald stream neutral at stream_center with dissolve
             "I wave over Reginald."
             goon "So what are we doing?"
             mS "Going in the front door guns blazing."
@@ -822,7 +843,7 @@ label approachingBase():
             mS "Alright let's get to it."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
-            hide goon stream with Dissolve(0.5)
+            hide reginald with Dissolve(0.5)
             jump commsBase_OUT1
         "Better to be as quiet as possible.":
             $ marshal += 2
@@ -844,7 +865,7 @@ label approachingBase():
             "Jennica and Teresa nod in agreement."
             $ AddChatter(vig2_sc6_mar_comment3)
             "I wave Reginald over."
-            show goon stream at stream_center with dissolve
+            show reginald stream neutral at stream_center with dissolve
             mS "We're going in quiet."
             "Reginald chuckles."
             $ AddChatter(vig2_sc6_mar_comment4)
@@ -852,7 +873,7 @@ label approachingBase():
             goon "Whatever. I'll follow behind you."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
-            hide goon stream with Dissolve(0.5)
+            hide reginald with Dissolve(0.5)
             jump commsBase_MAR1
 
 ####SCENE 6####
@@ -884,7 +905,7 @@ label commsBase_MAR1():
             "He can barely react as the stunning blast ripples through his body, incapacitating him."
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
-            show goon stream at stream_center with Dissolve(0.5)
+            show reginald stream neutral at stream_center with Dissolve(0.5)
             goon "Keep moving!"
             mS "I know!"
             "I can't afford to hesitate."
@@ -913,7 +934,7 @@ label commsBase_MAR2():
     #Do we need to cut some of these "show" statements?
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show jennica stream neutral at stream_left with Dissolve(0.5)
-    show goon stream at stream_center with Dissolve(0.5)
+    show reginald stream neutral at stream_center with Dissolve(0.5)
     "At the end of the hall, we arrive at a door."
     "Cracking the door ajar, I'm able to get a look at what's on the other side."
     "There is a typical security desk manned by three guards."
@@ -944,7 +965,7 @@ label commsBase_MAR2():
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
-            hide goon stream with Dissolve(0.5)
+            hide reginald with Dissolve(0.5)
             jump commsBase_DataCenter
         "Go with a diversion.":
             $ csEngagement += 1
@@ -968,7 +989,7 @@ label commsBase_MAR2():
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
-            hide goon stream with Dissolve(0.5)
+            hide reginald with Dissolve(0.5)
             jump commsBase_DataCenter
 
 label commsBase_OUT1():
@@ -1072,7 +1093,7 @@ label commsBase_OUT1():
             hsguard1 "Thank you miss! I—"
             hide guard1 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
-            show goon stream at stream_center with dissolve
+            show reginald stream neutral at stream_center with dissolve
             "Reginald stands over the corpse."
             $ AddChatter(vig2_sc6_out_spare_comment3)
             goon "Come on. We're almost done."
@@ -1113,7 +1134,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment10)
             enS "Better safe than sorry."
             $ AddChatter(vig2_sc6_out_execute_comment11)
-            show goon stream at stream_right with dissolve
+            show reginald stream neutral at stream_right with dissolve
             "Reginald emerges through the door."
             $ AddChatter(vig2_sc6_out_execute_comment12)
             $ AddChatter(vig2_sc6_out_execute_comment13)
@@ -1123,7 +1144,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment15)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
-    hide goon stream with Dissolve(0.5)
+    hide reginald with Dissolve(0.5)
     jump commsBase_DataCenter
 
 ###SCENE 7###
@@ -1135,7 +1156,7 @@ label commsBase_DataCenter():
     show worker stream at stream_center with dissolve
     "Sitting at the workstation is a scrawny technician in glasses, terrified."
     worker "What are you doing here!?"
-    show goon stream at stream_right with Dissolve(0.2)
+    show reginald stream neutral at stream_right with Dissolve(0.2)
     "Before we have a chance to say anything, Reginald is in his face."
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
@@ -1174,7 +1195,7 @@ label commsBase_DataCenter():
     hide worker stream with Dissolve (0.4)
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
-    hide goon stream with Dissolve(0.5)
+    hide reginald with Dissolve(0.5)
     $ AddChatter(vig2_sc7_comment4)
     show teresa stream neutral at stream_right with Dissolve(0.4)
     enS "As much as I loathe to admit it, I agree."
@@ -1232,7 +1253,7 @@ label commsBase_DataCenter_MAR():
     enS "Yes access to secure databases is easy to find and widespread! How could I forget!?"
     enS "That's what \"secure\" means right?"
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
-    show goon stream at stream_center with Dissolve(0.3)
+    show reginald stream neutral at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
     goon "How did the most infamous outlaw merc group become soft as baby shit?"
@@ -1246,7 +1267,7 @@ label commsBase_DataCenter_MAR():
             $ engineerApproval += 1
             "I look over to Jennica and give her the signal."
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
-            hide goon stream with Dissolve(0.2)
+            hide reginald with Dissolve(0.2)
             #show jennica stream happy at stream_left
             pS "Wish we coulda done that hours ago."
             $ AddChatter(vig2_sc7_mar_stun_comment1)
@@ -1273,7 +1294,7 @@ label commsBase_DataCenter_MAR():
             goon "Pleasure doing business."
             $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
-            hide goon stream with dissolve
+            hide reginald with dissolve
             pS "{i}Can{/i} we afford that?"
             mS "I hope so."
             enS "We have bigger problems. Where are we to find someone to help us cover our tracks now?"
@@ -1357,7 +1378,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment6)
     hide jennica
     hide teresa
-    show goon stream at stream_left with Dissolve(0.5)
+    show reginald stream neutral at stream_left with Dissolve(0.5)
     goon "Are we done with this yet?"
     goon "I ain't got all day."
     $ AddChatter(vig2_sc7_out_comment7)
@@ -1395,7 +1416,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment22)
     $ AddChatter(vig2_sc7_out_comment23)
     $ AddChatter(vig2_sc7_out_comment24)
-    hide goon stream with dissolve
+    hide reginald with dissolve
     show jennica stream neutral at stream_left with Dissolve(0.5)
     menu:
         "Convince him not to say anything.":
@@ -1447,7 +1468,7 @@ label commsBase_DataCenter_OUT():
             enS "Perhaps. But now we can be certain he won't expose us."
             show jennica stream neutral at stream_left
             mS "Enough blabbing. Lets go."
-    show goon stream at stream_center with Dissolve(0.5)
+    show reginald stream neutral at stream_center with Dissolve(0.5)
     "Reginald is waiting by the shuttle for us."
     goon "All sorted?"
     mS "Yeah. So how are we doing this?"
@@ -1461,13 +1482,13 @@ label commsBase_DataCenter_OUT():
     goon "Swell."
     hide jennica with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
-    hide goon stream with Dissolve(0.5)
+    hide reginald with Dissolve(0.5)
     jump shuttleDestruction
 
 label shuttleDestruction():
     show orbit_stream at topleft onlayer background with dissolve
     hide datacenter_stream
-    show goon stream at stream_center with dissolve
+    show reginald stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve       
     "Once we're in low orbit, it's only a matter of time before the shuttle shows up."
@@ -1494,7 +1515,7 @@ label shuttleDestruction():
     $ AddChatter(vig2_sc7_out_comment28)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
-    hide goon stream with Dissolve(0.5)
+    hide reginald with Dissolve(0.5)
     jump vig2epilogue_OUT
 
 label vig2epilogue_MAR():
@@ -2523,4 +2544,5 @@ label vig2_macro_end():
     "A discord notification. From Elliot."
     "You don't unlock the phone, because you can read the message from the lock screen."
     bro "Love you too!"
+    $ renpy.full_restart()
     return

@@ -97,7 +97,7 @@ screen streamDetails():
             text_size 25
             align (1.21, -.3)
             #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
-        image "profile1" align (.001, 0) size (100, 100) #displays a profile pic for the streamer
+        image "[profilePic]" align (.001, 0) size (100, 100) #displays a profile pic for the streamer
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():

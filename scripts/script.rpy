@@ -61,6 +61,7 @@ default commentPing = False
 default pingText = "Sound is Off"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
+default profilePic = "images/Socials/profilepics/profile2.png"
 
 #variables to track morality
 default marshal = 2

@@ -37,9 +37,9 @@ label returnToWorkshop():
     "He reaches his hand out."
     aS "Thermal paste."
     "I pass him the tube."
-    aS "Do you ever think about the SnakeHawks, Moze? What the old crew was, what we became?"
+    aS "Do you ever think about the Snakehawks, Moze? What the old crew was, what we became?"
     menu:
-        aS "Do you ever think about the SnakeHawks, Moze? What our old crew was, what we became?"
+        aS "Do you ever think about the Snakehawks, Moze? What our old crew was, what we became?"
         "Not really.":
             mS "I don't dwell on the past much. These days I have to keep my attention on the present."
             aS "Almost seems like a luxury."
@@ -52,8 +52,8 @@ label returnToWorkshop():
             mS "We were always just a bunch of people who needed somewhere to go. And Ama was a good leader, paid well."
             aS "Surprising to hear from you considering how close you were with Deadeye. And that Jennica's stuck around with you."
     aS "I've been thinking a lot about our legacy ever since Deadeye's heist on BigCorp went wrong."
-    aS "The SnakeHawks are all dead, except a few of us, and now the great Ama \"Deadeye\" Reyes is a lapdog for BigCorp."
-    aS "BC's grip on their planets has tightened, and a lot of people blame us. When they think of \"SnakeHawks\" they just think of pain."
+    aS "The Snakehawks are all dead, except a few of us, and now the great Ama \"Deadeye\" Reyes is a lapdog for BigCorp."
+    aS "BC's grip on their planets has tightened, and a lot of people blame us. When they think of \"Snakehawks\" they just think of pain."
     aS "They {i}hate{/i} us here."
     show screen chatTutorial
     $ AddChatter(vig1_sc2_comment2)
@@ -67,7 +67,7 @@ label returnToWorkshop():
     aS "People didn't trust me for a while. That's what this tattoo is good for these days."
     aS "Most townsfolk still don't like me, but they are grateful for my work." 
     aS "I can live with that."
-    aS "But I keep thinking, what could the SnakeHawks..."
+    aS "But I keep thinking, what could the Snakehawks..."
     aS "What could {i}we{/i} could have accomplished if we tried to be more than a gang of outlaws."
     "He leans back from MAC and starts screwing the metal plate back in."
     aS "All done. Circuits should be resistant to electricity and overheating now."
@@ -1178,7 +1178,9 @@ label vig1_brother_2():
     player "Hahahahahaha"
     "Elliot" "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
+    #have to restore defaults before the next vignette
     $ chatter_list = [ ]
+    nvl clear
+    $ menu = adv_menu
     jump vignette2Start
-
     return
