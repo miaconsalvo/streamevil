@@ -296,7 +296,6 @@ label streetShootout:
             "I nod and we rush off toward MAC."
             hide screen streamerCommentary
             hide screen chatTutorial2
-            $ vig1_sc2_streamer1.click = False
         "Fire at ground enforcer (protect Moze)":
             "I pop back around the corner to fire at the enforcer on the ground."
             "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
