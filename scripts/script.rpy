@@ -39,8 +39,8 @@ define pS = Character ("Jennica", what_font="Play-Regular.ttf", window_style = "
 define mac = Character("MAC", what_font="Play-Regular.ttf", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/stream textbox MAC.png")
 define macS = Character("MAC", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/stream textbox MAC.png")
 
-define a = Character("Allistar", window_style = "window", who_color="#d0c231", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
-define aS = Character("Allistar", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#d0c231", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
+define a = Character("Allistar", window_style = "window", who_color="#ce1fd4", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
+define aS = Character("Allistar", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
 
 define ama = Character("Deadeye", window_style = "window", who_color="#1113a1", what_color="#000000", image = "ama neutral", window_background = "images/textbox/stream textbox npc.png")
 define amaS = Character("Deadeye", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#1113a1", what_color = "#000000", image = "ama stream neutral", window_background="images/textbox/stream textbox npc.png")

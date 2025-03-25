@@ -68,7 +68,7 @@ label returnToWorkshop():
     aS "Most townsfolk still don't like me, but they are grateful for my work." 
     aS "I can live with that."
     aS "But I keep thinking, what could the Snakehawks..."
-    aS "What could {i}we{/i} could have accomplished if we tried to be more than a gang of outlaws."
+    aS "What could {i}we{/i} have accomplished if we tried to be more than a gang of outlaws."
     "He leans back from MAC and starts screwing the metal plate back in."
     aS "All done. Circuits should be resistant to electricity and overheating now."
     "MAC rolls forward into a clear space in the room."
@@ -96,7 +96,7 @@ label shipCall:
     mS "Patch the call through."
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
-    stop music
+    play music "soundtrack/deadeye.wav" volume 1.0 fadein 4.0
     amaS "My dear Mozely. It's good to hear your voice again."
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
@@ -180,7 +180,7 @@ label setBlasterVig1():
     jump streetShootout
 
 label streetShootout:
-    play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 0.5
+    play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 1.5
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
     "Allistar, MAC, and I rush into the deserted main street of Grand Junction."
     "My feet pound against the hardpacked ground. The spaceport is dead ahead of us."

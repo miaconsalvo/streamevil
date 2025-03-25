@@ -84,7 +84,8 @@ label vig1_sc2_allistarhunk():
             player "Hunky mechanic coming up clutch!"
             $ allistarSuspicious = False
         "I'm a bit suspicious":
-            player "Honestly chat, I think we gotta be careful about him."
+            player "Yeah, maybe a bit too much."
+            player "Getting a bit suspicious of how they're buidling him up."
             $ allistarSuspicious = True
     $ macroChoice = False
     if macroChoice == False:
