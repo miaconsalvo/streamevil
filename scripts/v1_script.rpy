@@ -96,7 +96,7 @@ label shipCall:
     mS "Patch the call through."
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
-    play music "soundtrack/deadeye.wav" volume 1.0 fadein 4.0
+    play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 4.0
     amaS "My dear Mozely. It's good to hear your voice again."
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
@@ -553,6 +553,7 @@ label escapePodConfrontation:
     macS "But Captain said to stay close to her."
     aS "I know Mac. But Moze isn't always right. This place is dangerous."
     $ AddChatter(vig1_sc3_comment5)
+    stop music
     "I turn the corner."
     show mac stream at stream_right_mac with dissolve
     show allistar stream neutral at stream_center with dissolve
@@ -664,6 +665,7 @@ label escapePodConfrontation:
     $ viewCheck10 = viewCount
     "MAC hits the floor and rolls to the other end of the hall behind a crate."
     hide mac with Dissolve(0.5)
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I go over to Allistar's body. It's limp and cold."
     "But I still feel the weight of his eyes."
     "I can't tell if they're frightened or judging."
