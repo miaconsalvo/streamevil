@@ -124,10 +124,10 @@ label Vig2BridgeScene():
     enS "Savlian Matticus. He was in our old crew, quite proficient in tampering with databases and security protocols."
     pS "He certainly landed on his feet since we disbanded. I'd though he'd break a knee on the way down."
     enS "Remarkably successful for a magistrate of a tiny frontier planet."
-    macS "He is abusing his authority for personal gain?"
+    macS "He is abusing his authority and stealing from people?"
     menu: #minorchoice2
         "Yeah he's a scumbag.":
-            mS "Yeah. He always did have a {i}uh{/i}... flexible moral compass."
+            mS "Yeah. He always did have a... {i}flexible{/i} moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
             pS "Bet he's gotta a ranch or somethin' on the other side of the planet."
@@ -642,6 +642,7 @@ label meetingMatticus():
     "I hear MAC quietly chime in."
     show mac stream at stream_right with Dissolve(0.5)
     macS "\"Skeeve\" detected."
+    mS "Not now MAC."
     hide mac stream with dissolve
     enS "We don't have all day. Will you help us or not?"
     "His face twists into a grin again."
@@ -784,7 +785,7 @@ label approachingBase():
     "Jennica and Teresa nod to me."
     show mac stream at stream_center_mac with Dissolve(0.5)
     "The brief silence is broken by MAC."
-    macS "What is a \"cheapo planet?\" My database does not have a category \"cheapo.\""
+    macS "What is a \"cheapo planet?\" My database has no\"cheapo\" category."
     "Jennica laughs."
     pS "Similar to po-dunk."
     "A kind of realization flashes across MAC's eyes, like he's connecting the two."
@@ -796,7 +797,7 @@ label approachingBase():
     enS "And we \"lost\" the last mechanic we knew who could help out with that."
     mS "I'll protect him. It's my responsibility."
     mS "MAC you're going to stick to me like glue, got it?"
-    macS "Like an adhesive? Would that not damage your clothes and person?"
+    macS "Like an adhesive? I don't want to damage your clothes."
     "Jennica chuckles under her breath."
     $ AddChatter(vig2_sc5_comment1)
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
@@ -807,18 +808,18 @@ label approachingBase():
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
             $ AddChatter(vig2_sc5_comment3)
-            macS "Understood. I will stay close to Moze."
+            macS "I understand. I will stay close to Captain."
             $ AddChatter(vig2_sc5_comment4)
             mS "Good. Let's move."
             hide mac stream with dissolve
         "Maybe.":
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
-            macS "Why do we need to work for \"skeeves?\""
+            macS "Why do we need to work with \"skeeves?\""
             mS "We don't have the time to discuss it right now."
             $ AddChatter(vig2_sc5_comment5)
             mS "You just need to stay close to me."
-            macS "Understood. I will stay close to Moze."
+            macS "I understand. I will stay close to Captain."
             mS "Good. Let's move."
             hide mac stream with dissolve
         #Should NPC approval adjustments happen here?
@@ -1207,7 +1208,7 @@ label commsBase_DataCenter():
     pS "I knew this was too damn easy!"
     hide worker stream
     show mac stream at stream_center_mac with dissolve
-    macS "They were not skeeves?"
+    macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
     hide mac stream
     hide jennica
@@ -1506,6 +1507,7 @@ label commsBase_DataCenter_OUT():
             pS "Damn Cap, that was dark."
             $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
+            macS "Dead..."
             show jennica stream neutral at stream_left
             mS "Enough blabbing. Lets go."
             "MAC continues to stare at the technician's corpse."
@@ -1611,7 +1613,7 @@ label vig2epilogue_MAR():
     show mac stream at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
-    macS "I am confused about the nature of our mission? Why do we need to hide if we are good people?"
+    macS "I'm confused about our mission? Why do we need to hide if we are good people?"
     menu:
         "The people in power are bad.":
             $ marshal += 1
@@ -1631,7 +1633,7 @@ label vig2epilogue_MAR():
             $ kcEngagement += 1
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
-            macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
+            macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             mS "To change bad things, sometimes we have to do dangerous things."
             macS "I see. The universe is confusing."
@@ -1717,7 +1719,7 @@ label vig2epilogue_OUT():
     show mac stream at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
-    macS "I do not know how to feel about our mission. Why did we need to help the skeeve Matticus?"
+    macS "I don't know how to feel about our mission. Why did we need to help the skeeve Matticus?"
     $ AddChatter(vig2_epilogue_out_comment14)
     menu:
         "Doing bad things now can let us do good things later.":
@@ -1726,7 +1728,7 @@ label vig2epilogue_OUT():
             $ csEngagement -= 2
             $ kcEngagement += 1
             mS "Sometimes we have to do bad things so that we can do better things later."
-            macS "But our conduct hurt innocent people. Does that not make us skeeves?"
+            macS "But we hurt innocent people. Doesn't that make us skeeves?"
             $ AddChatter(vig2_epilogue_out_comment15)
             mS "It's more complicated than that. Sometimes skeeves do good things, and sometimes non-skeeves do bad things."
             mS "There's no one-size-fits-all rule."
@@ -1743,7 +1745,7 @@ label vig2epilogue_OUT():
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
             $ AddChatter(vig2_epilogue_out_comment15)
-            macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
+            macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             $ AddChatter(vig2_epilogue_out_comment16)
             mS "To change bad things, sometimes we have to do dangerous things."
