@@ -46,7 +46,7 @@ label vig2Start():
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
-    "I haven't been able to get any real sleep since Anatar forced my hand."
+    "I haven't been able to get any real sleep since Allistar forced my hand."
     "What did he think I was gonna do? Just let him go?"
     shipcom "Alert! Approaching planet Gibian V. All hands on deck."
     "Right. Maybe it's a blessing that I don't have so much time to reflect."
