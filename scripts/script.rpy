@@ -23,6 +23,8 @@ define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
 define kc_nvl = Character("KitCat", what_font="Mukta-Regular.ttf", kind = nvl, )
 define pd_nvl = Character("PickledDragons", what_font="Mukta-Regular.ttf", kind = nvl, )
+define elliotflashback = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") 
+
 define adv_menu = menu
 
 #Justin: this is how I define the micro game characters in their stream and non-stream versions
