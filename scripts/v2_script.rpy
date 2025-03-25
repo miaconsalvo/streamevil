@@ -1507,7 +1507,8 @@ label commsBase_DataCenter_OUT():
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             show jennica stream shock at stream_left
             show mac stream at stream_right with Dissolve(0.5)
-            pS "Damn Cap, that was dark."
+            pS "Damn Cap. Reckon we killed enough today."
+            pS "He really needed to die too?"
             $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
             macS "Dead..."
