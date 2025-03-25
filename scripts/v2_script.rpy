@@ -1405,8 +1405,10 @@ label commsBase_DataCenter_OUT():
     pS "Damnit Cap."
     $ AddChatter(vig2_sc7_out_comment3)
     $ AddChatter(vig2_sc7_out_comment4)
-    enS "If you have a better way to cover our trail please do share."
-    pS "I thought we were tryin' to be better than this."
+    enS "If you have a better way to cover our trail do share. Please."
+    "There's a long moment before Jennica answers" 
+    pS "I thought we were tryin' to be better than this..."
+    "Teresa turns away from her"
     $ AddChatter(vig2_sc7_out_comment5)
     mS "We can't do better if we're in jail, and considering how close we got last time..."
     mS "I can't lose you guys. You're all I've got."
