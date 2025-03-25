@@ -643,6 +643,7 @@ label meetingMatticus():
     show mac stream at stream_right with Dissolve(0.5)
     macS "\"Skeeve\" detected."
     mS "Not now MAC."
+    smatt "Oh and it's got jokes too! Fun."
     hide mac stream with dissolve
     enS "We don't have all day. Will you help us or not?"
     "His face twists into a grin again."
@@ -801,7 +802,7 @@ label approachingBase():
     "Jennica chuckles under her breath."
     $ AddChatter(vig2_sc5_comment1)
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
-    macS "This is a dangerous place? Are these people \"skeeves\" like Matticus?"
+    macS "This is a dangerous place? Are these bad people like Matticus?"
     menu:
         "They're bad people.":
             $ pdEngagement -= 1
@@ -815,7 +816,7 @@ label approachingBase():
         "Maybe.":
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
-            macS "Why do we need to work with \"skeeves?\""
+            macS "Why do we need to work with bad people?"
             mS "We don't have the time to discuss it right now."
             $ AddChatter(vig2_sc5_comment5)
             mS "You just need to stay close to me."
