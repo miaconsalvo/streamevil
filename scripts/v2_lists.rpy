@@ -65,7 +65,7 @@ default vig2_sc2_romance_pilot1 = ChatEntry(False, "{b}Coriolis:{/b} Jennica ftw
 default vig2_sc2_romance_engineer1 = ChatEntry(False, "{b}KitKat:{/b} Crazy engineer ftw!", 0, "#ffffff")
 
 #Comments in Scene 3
-default vig2_sc3_comment1 = ChatEntry( False, "{b}Coriolis:{/b} yeah classic bad guy gates", 2, "#000000")
+default vig2_sc3_comment1 = ChatEntry( False, "{b}Coriolis:{/b} yeah classic bad guy gates", 2, "#ffffff")
 default vig2_sc3_comment2 = ChatEntry( False, "{b}shnzi:{/b} character = bad is the same as character = has giant castle made of gold in generally poor area", 2, "#ffffff")
 default vig2_sc3_comment3 = ChatEntry( False, "{b}kitcat:{/b} brat", 2, "#ffffff")
 default vig2_sc3_comment4 = ChatEntry( False, "{b}AFKangel:{/b}: :P", 2, "#ffffff")
