@@ -283,7 +283,10 @@ default vig2_epilogue_out_rips5 = ChatEntry( False, "{b}bacon8r_6:{/b} rest", 2,
 default vig2_epilogue_out_rips6 = ChatEntry( False, "{b}_lostinmetr0:{/b} ripperoni", 2, "#ffffff")
 default vig2_epilogue_out_rips7 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} R I P", 2, "#ffffff")
 
+### Streamer react chats###
 
+default vig2_sc1_reactcomment1 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\npretty gud. got a pokebowl.", 1, "#ffffff")
+default vig2_sc1_reactcomment2 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nwe all about trouble!", 1, "#ffffff")
 
 
 ###################### OLD COMMENTS FROM PROTOTYPING########################
