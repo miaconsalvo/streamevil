@@ -95,7 +95,7 @@ default vig2_sc4_comment10 = ChatEntry( False, "{b}shnzi:{/b} same", 2, "#ffffff
 default vig2_sc4_against_comment1 = ChatEntry( False, "{b}shnzi:{/b} yeah I can't stand the guy", 2, "#ffffff")
 default vig2_sc4_against_comment2 = ChatEntry( False, "{b}kitcat:{/b} literally have no idea what he gives you because i never side with THE skeevy slum lord", 2, "#ffffff")
 default vig2_sc4_ally_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} Exactly!! why wouldn't you use your contact", 2, "#ffffff")
-default vig2_sc4_ally_comment2 = ChatEntry( False, "{b}bacon8r_6:{/b} ugh so glad someone is doing this, I heard you get much cooler plot points by allying matticus", 2, "#00ffffff0000")
+default vig2_sc4_ally_comment2 = ChatEntry( False, "{b}bacon8r_6:{/b} ugh so glad someone is doing this, I heard you get much cooler plot points by allying matticus", 2, "#ffffff")
 default vig2_sc4_ally_comment3 = ChatEntry( False, "{b}_lostinmetr0:{/b} he gives me the ick", 2, "#ffffff")
 default vig2_sc4_ally_comment4 = ChatEntry( False, "{b}turb0g00se:{/b} yea but for the plot bro", 2, "#ffffff")
 
