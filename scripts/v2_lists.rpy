@@ -46,7 +46,7 @@ default vig2_sc2_mar_comment9 = ChatEntry( False, "{b}AFKangel:{/b} for sure he 
 default vig2_sc2_mar_comment10 = ChatEntry( False, "{b}bacon8r_6:{/b} perfect ad time, no idea what's going on now", 2, "#ffffff")
 
 #Comments in Scene 2 - Outlaw Choice
-default vig2_sc2_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} ah yes exactly, better have your fate in your own hands", 2, "#0000ffffff00")
+default vig2_sc2_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} ah yes exactly, better have your fate in your own hands", 2, "#ffffff")
 default vig2_sc2_out_comment2 = ChatEntry( False, "{b}Coriolis:{/b} cant help but agree", 2, "#ffffff")
 default vig2_sc2_out_comment3 = ChatEntry( False, "{b}AFKangel:{/b} lmao teresa always makes it fun", 2, "#ffffff")
 default vig2_sc2_out_comment4 = ChatEntry( False, "{b}turb0g00se:{/b} YES literally whas the worst that can happen", 2, "#ffffff")
