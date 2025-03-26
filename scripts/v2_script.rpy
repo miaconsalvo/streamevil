@@ -79,7 +79,7 @@ label Vig2BridgeScene():
     $ AddChatter(vig2_sc1_comment8)
     pS "But is Matticus really the one we want to do it? Guy was a damn skeeve when we last knew him."
     macS "Skeeve. Noun. An immoral or repulsive person."
-    ps "Got that right."
+    pS "Got that right."
     enS "Fancy telling us what other options we have? Shall we go down the list of who else is ready and willing to help us?"
     $ AddChatter(vig2_sc1_comment9)
     pS "Look here, I just think—"
