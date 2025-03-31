@@ -196,7 +196,7 @@ style ig_window: #"in-game" window - identifies the window that is used for narr
     #xalign 0.5
     xpos 973
     xfill True
-    yalign 0.73
+    yalign 0.7
     ysize 200
 
     background Image("gui/ig_textbox.png", xalign=0.5, yalign=1.0) #This image should be adjusted to a different size for textboxes appearing in the micro game.
@@ -205,7 +205,7 @@ style ig_character:
     #xalign 0.9
     xpos 13
     xfill True 
-    yalign 0.73
+    yalign 0.7
     ysize 200 
 
     background Image("gui/ig_textboxblue.png", xalign=0.5, yalign = 1.0)

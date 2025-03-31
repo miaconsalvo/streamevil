@@ -39,15 +39,19 @@ label vig2Start():
     #$ macroNarration = False
     $ narrator = alt_narrator
     #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
-    $ AddChatter(vig2_sc1_comment1)
     $ viewCount += 1
+    $ reactTarget = "vig2_sc1_openingstream"
+    show screen streamerCommentary
     "The \"Approaching Planet\" notification alarm jolts me out of bed."
+    $ AddChatter(vig2_sc1_comment1)
     $ AddChatter(vig2_sc1_comment2)
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
-    "I haven't been able to get any real sleep since Anatar forced my hand."
+    "I haven't been able to get any real sleep since Allistar forced my hand."
     "What did he think I was gonna do? Just let him go?"
+    $ reactTarget = "vig2_sc1_mentionallistar"
+    show screen streamerCommentary
     shipcom "Alert! Approaching planet Gibian V. All hands on deck."
     "Right. Maybe it's a blessing that I don't have so much time to reflect."
     $ AddChatter(vig2_sc1_comment3)
@@ -79,7 +83,7 @@ label Vig2BridgeScene():
     $ AddChatter(vig2_sc1_comment8)
     pS "But is Matticus really the one we want to do it? Guy was a damn skeeve when we last knew him."
     macS "Skeeve. Noun. An immoral or repulsive person."
-    ps "Got that right."
+    pS "Got that right."
     enS "Fancy telling us what other options we have? Shall we go down the list of who else is ready and willing to help us?"
     $ AddChatter(vig2_sc1_comment9)
     pS "Look here, I just think—"
@@ -103,6 +107,8 @@ label Vig2BridgeScene():
             mS "We just need to trust his greed and selfishness."
             mS "Have you ever known Matticus to turn down something that benefits him?"
     "A look of begrudging acceptance flashes across Jennica's face."
+    $ reactTarget = "vig2_sc1_matticusjennicaopinion"
+    show screen streamerCommentary
     macS "Po-dunk..."
     mS "..."
     $ AddChatter(vig2_sc1_comment12)
@@ -124,10 +130,10 @@ label Vig2BridgeScene():
     enS "Savlian Matticus. He was in our old crew, quite proficient in tampering with databases and security protocols."
     pS "He certainly landed on his feet since we disbanded. I'd though he'd break a knee on the way down."
     enS "Remarkably successful for a magistrate of a tiny frontier planet."
-    macS "He is abusing his authority for personal gain?"
+    macS "He is abusing his authority and stealing from people?"
     menu: #minorchoice2
         "Yeah he's a scumbag.":
-            mS "Yeah. He always did have a {i}uh{/i}... flexible moral compass."
+            mS "Yeah. He always did have a... {i}flexible{/i} moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
             pS "Bet he's gotta a ranch or somethin' on the other side of the planet."
@@ -177,6 +183,8 @@ label GibianVCustomsDepot():
     "The tiny barebones customs depot seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
     "New arrivals pile in hurriedly, while departures crowd at the checkpoint leading to the spaceport."
+    $ reactTarget = "vig2_sc2_landingongibian"
+    show screen streamerCommentary
     show teresa stream neutral at stream_right with dissolve
     "Teresa sighs as we arrive at the main depot."
     enS "I hate customs."
@@ -186,13 +194,17 @@ label GibianVCustomsDepot():
     pS "Well getting a permit to fly our ship 'round here would attract a lot more attention."
     pS "And would require an inspection of all cargo."
     "Jennica gestures to the small crate holding MAC."
-    pS "Which is a nonstarter." 
+    pS "Which is a nonstarter."
+    $ reactTarget = "vig2_sc2_whywedidntfly"
+    show screen streamerCommentary 
     "Teresa rolls her eyes as we get in the line marked \"New Arrivals.\""
     $ AddChatter(vig2_sc2_comment2)
     show teresa stream shock at stream_right
     "Those same eyes grow wide and panicked."
     enS "Shit! We have a problem."
     mS "I knew this was too easy. What is it?"
+    $ reactTarget = "vig2_sc2_firstproblem"
+    show screen streamerCommentary
     "Teresa gestures towards a customs official, scanning cargo crates."
     enS "That's a BigCorp scanner. I imagine it'll be able to detect their stolen property."
     pS "So APB's do make it out here..."
@@ -249,7 +261,8 @@ label GibianVCustomsMarshal():
     #show teresa stream neutral at stream_right with dissolve
     #show jennica stream neutral at stream_left with dissolve
     #Now that we're not changing scenes between labels, we also don't need to show characters at the beginning of every label
-    
+    $ reactTarget = "vig2_sc2_customsdecision"
+    show screen streamerCommentary
     "Jennica's right. A diversion could hurt a lot of people."
     "And it could definitely attract the wrong attention."
     $ AddChatter(vig2_sc2_mar_comment1)
@@ -399,6 +412,8 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment1)
     show teresa stream happy at stream_right
     show jennica stream angry at stream_left
+    $ reactTarget = "vig2_sc2_customsdecision"
+    show screen streamerCommentary
     "Teresa's right. We can't afford a goody-two-shoes ratting us out."
     "We can't trust the officials here. We'll have to get through our own way."
     mS "Bribing's too risky. We're going with Teresa's plan."
@@ -478,6 +493,8 @@ label GibianVCustomsOutlaw():
 label matticusDoor():
     show compound_stream at topleft onlayer background with dissolve
     hide depot_stream
+    $ reactTarget = "vig2_sc3_aftercustoms"
+    show screen streamerCommentary
     "It's only a few blocks to Matticus's compound."
     "Not like we could miss it though."
     show jennica stream shock at stream_left with dissolve
@@ -565,6 +582,8 @@ label meetingMatticus():
     show matticus stream at stream_center with dissolve
     smatt "As I live and breathe!"
     "Matticus waddles through the doors into view, flanked on either side by henchmen."
+    $ reactTarget = "vig2_sc4_meetingmatticus"
+    show screen streamerCommentary
     "He approaches me smiling, revealing rows of yellowed teeth."
     smatt "I thought my doorman was lying! But here you are."
     "Matticus pulls out a cigar and lights it."
@@ -642,6 +661,8 @@ label meetingMatticus():
     "I hear MAC quietly chime in."
     show mac stream at stream_right with Dissolve(0.5)
     macS "\"Skeeve\" detected."
+    mS "Not now MAC."
+    smatt "Oh and it's got jokes too! Fun."
     hide mac stream with dissolve
     enS "We don't have all day. Will you help us or not?"
     "His face twists into a grin again."
@@ -688,6 +709,8 @@ label meetingMatticus():
             mS "He's not wrong."
     mS "What alternatives do we have Jenn?"
     "Jennica reluctantly agrees."
+    $ reactTarget = "vig2_sc4_plancheckin"
+    show screen streamerCommentary
     $ AddChatter(vig2_sc4_comment6)
     mS "And if we do this?"
     smatt "I'll feed false reports into the BigCorp security database."
@@ -784,7 +807,7 @@ label approachingBase():
     "Jennica and Teresa nod to me."
     show mac stream at stream_center_mac with Dissolve(0.5)
     "The brief silence is broken by MAC."
-    macS "What is a \"cheapo planet?\" My database does not have a category \"cheapo.\""
+    macS "What is a \"cheapo planet?\" My database has no\"cheapo\" category."
     "Jennica laughs."
     pS "Similar to po-dunk."
     "A kind of realization flashes across MAC's eyes, like he's connecting the two."
@@ -796,29 +819,33 @@ label approachingBase():
     enS "And we \"lost\" the last mechanic we knew who could help out with that."
     mS "I'll protect him. It's my responsibility."
     mS "MAC you're going to stick to me like glue, got it?"
-    macS "Like an adhesive? Would that not damage your clothes and person?"
+    macS "Like an adhesive? I don't want to damage your clothes."
     "Jennica chuckles under her breath."
     $ AddChatter(vig2_sc5_comment1)
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
-    macS "This is a dangerous place? Are these people \"skeeves\" like Matticus?"
+    macS "This is a dangerous place? Are these bad people like Matticus?"
     menu:
         "They're bad people.":
             $ pdEngagement -= 1
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
             $ AddChatter(vig2_sc5_comment3)
-            macS "Understood. I will stay close to Moze."
+            macS "I understand. I will stay close to Captain."
+            $ reactTarget = "vig2_sc5_macquestion"
+            show screen streamerCommentary
             $ AddChatter(vig2_sc5_comment4)
             mS "Good. Let's move."
             hide mac stream with dissolve
         "Maybe.":
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
-            macS "Why do we need to work for \"skeeves?\""
+            macS "Why do we need to work with bad people?"
             mS "We don't have the time to discuss it right now."
             $ AddChatter(vig2_sc5_comment5)
             mS "You just need to stay close to me."
-            macS "Understood. I will stay close to Moze."
+            macS "I understand. I will stay close to Captain."
+            $ reactTarget = "vig2_sc5_macquestion"
+            show screen streamerCommentary
             mS "Good. Let's move."
             hide mac stream with dissolve
         #Should NPC approval adjustments happen here?
@@ -991,6 +1018,8 @@ label commsBase_MAR2():
             enS "I rather like it when things are easy."
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
+            $ reactTarget = "vig2_sc6_mar_reflect"
+            show screen streamerCommentary
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -1015,6 +1044,8 @@ label commsBase_MAR2():
             enS "I rather like it when things are easy."
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
+            $ reactTarget = "vig2_sc6_mar_reflect"
+            show screen streamerCommentary
             "Reginald opens the door."
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -1137,6 +1168,8 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment6)
             "Jennica scowls at Teresa."
             goon "We haven't got all day!"
+            $ reactTarget = "vig2_sc6_out_reflect"
+            show screen streamerCommentary
             $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors.":
@@ -1168,6 +1201,8 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment12)
             $ AddChatter(vig2_sc6_out_execute_comment13)
             pS "Nice of you to join us."
+            $ reactTarget = "vig2_sc6_out_reflect"
+            show screen streamerCommentary
             $ AddChatter(vig2_sc6_out_execute_comment14)
             goon "Come on. We're almost done."
             $ AddChatter(vig2_sc6_out_execute_comment15)
@@ -1207,7 +1242,7 @@ label commsBase_DataCenter():
     pS "I knew this was too damn easy!"
     hide worker stream
     show mac stream at stream_center_mac with dissolve
-    macS "They were not skeeves?"
+    macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
     hide mac stream
     hide jennica
@@ -1218,6 +1253,8 @@ label commsBase_DataCenter():
     hide teresa with dissolve
     "Reginald turns to look me in the eyes."
     goon "Especially {i}you{/i}."
+    $ reactTarget = "vig2_sc7_bigreveal"
+    show screen streamerCommentary
     mS "So what happens if the town doesn't get that aid."
     show worker stream at stream_center with Dissolve(0.4)
     worker "Sallent? There's an outbreak of gray fever there. They need that medicine!"
@@ -1285,6 +1322,8 @@ label commsBase_DataCenter_MAR():
     show reginald stream neutral at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
+    $ reactTarget = "vig2_sc8_mar_reacttoregi"
+    show screen streamerCommentary
     goon "How did the most infamous outlaw merc group become soft as baby shit?"
     $ AddChatter(vig2_sc7_mar_comment3)
     goon "You really think I'm gonna let you just bail on this deal?"
@@ -1301,7 +1340,9 @@ label commsBase_DataCenter_MAR():
             pS "Wish I coulda done that hours ago."
             $ AddChatter(vig2_sc7_mar_stun_comment1)
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
-            show mac stream at stream_center_mac
+            $ reactTarget = "vig2_sc8_mar_reacttoregistun"
+            show screen streamerCommentary
+            show mac stream at stream_center_mac with Dissolve(0.2)
             macS "Take that \"skeeve!\""
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
@@ -1326,6 +1367,8 @@ label commsBase_DataCenter_MAR():
             goon "Pleasure doing business."
             $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
+            $ reactTarget = "vig2_sc8_mar_reacttoregibribe"
+            show screen streamerCommentary
             hide reginald with dissolve
             pS "{i}Can{/i} we afford that?"
             mS "I hope so."
@@ -1403,8 +1446,10 @@ label commsBase_DataCenter_OUT():
     pS "Damnit Cap."
     $ AddChatter(vig2_sc7_out_comment3)
     $ AddChatter(vig2_sc7_out_comment4)
-    enS "If you have a better way to cover our trail please do share."
-    pS "I thought we were tryin' to be better than this."
+    enS "If you have a better way to cover our trail do share. Please."
+    "There's a long moment before Jennica answers" 
+    pS "I thought we were tryin' to be better than this..."
+    "Teresa turns away from her"
     $ AddChatter(vig2_sc7_out_comment5)
     mS "We can't do better if we're in jail, and considering how close we got last time..."
     mS "I can't lose you guys. You're all I've got."
@@ -1503,9 +1548,11 @@ label commsBase_DataCenter_OUT():
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             show jennica stream shock at stream_left
             show mac stream at stream_right with Dissolve(0.5)
-            pS "Damn Cap, that was dark."
+            pS "Damn Cap. Reckon we killed enough today."
+            pS "He really needed to die too?"
             $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
+            macS "Dead..."
             show jennica stream neutral at stream_left
             mS "Enough blabbing. Lets go."
             "MAC continues to stare at the technician's corpse."
@@ -1514,6 +1561,8 @@ label commsBase_DataCenter_OUT():
             hide mac stream with Dissolve(0.1)
     show reginald stream neutral at stream_center with Dissolve(0.5)
     "Reginald is waiting by the shuttle for us."
+    $ reactTarget = "vig2_sc8_out_postchoice"
+    show screen streamerCommentary
     goon "All sorted?"
     mS "Yeah. So how are we doing this?"
     goon "We need to make sure the shot can't be traced back to us."
@@ -1551,6 +1600,8 @@ label shuttleDestruction():
     $ AddChatter(vig2_sc7_out_comment26)
     "Jennica pulls the trigger."
     "A rush of momentum shakes the shuttle as the missile flies out from under it."
+    $ reactTarget = "vig2_sc8_out_reflect"
+    show screen streamerCommentary
     "The missile races across the sky before colliding with the ship, obliterating it."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
@@ -1568,6 +1619,8 @@ label vig2epilogue_MAR():
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve  
     enS "Thank goodness that's over. If I never see Gibian V again it'll be too soon."
+    $ reactTarget = "vig2_sc9_mar_end"
+    show screen streamerCommentary
     $ AddChatter(vig2_epilogue_mar_comment1)
     pS "Couldn't agree more! Although it felt good sticking it to Matticus like that."
     pS "Wish I coulda seen his face..."
@@ -1611,7 +1664,7 @@ label vig2epilogue_MAR():
     show mac stream at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
-    macS "I am confused about the nature of our mission? Why do we need to hide if we are good people?"
+    macS "I'm confused about our mission? Why do we need to hide if we are good people?"
     menu:
         "The people in power are bad.":
             $ marshal += 1
@@ -1631,7 +1684,7 @@ label vig2epilogue_MAR():
             $ kcEngagement += 1
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
-            macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
+            macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             mS "To change bad things, sometimes we have to do dangerous things."
             macS "I see. The universe is confusing."
@@ -1696,6 +1749,8 @@ label vig2epilogue_OUT():
     smatt "Think about it."
     $ AddChatter(vig2_epilogue_out_comment8)
     "Matticus winks before the screen powers off."
+    $ reactTarget = "vig2_sc9_out_end"
+    show screen streamerCommentary
     hide matticus stream with dissolve
     enS "Well at least we have some breathing room."
     $ AddChatter(vig2_epilogue_out_comment9)
@@ -1717,7 +1772,7 @@ label vig2epilogue_OUT():
     show mac stream at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
-    macS "I do not know how to feel about our mission. Why did we need to help the skeeve Matticus?"
+    macS "I don't know how to feel about our mission. Why did we need to help the skeeve Matticus?"
     $ AddChatter(vig2_epilogue_out_comment14)
     menu:
         "Doing bad things now can let us do good things later.":
@@ -1726,7 +1781,7 @@ label vig2epilogue_OUT():
             $ csEngagement -= 2
             $ kcEngagement += 1
             mS "Sometimes we have to do bad things so that we can do better things later."
-            macS "But our conduct hurt innocent people. Does that not make us skeeves?"
+            macS "But we hurt innocent people. Doesn't that make us skeeves?"
             $ AddChatter(vig2_epilogue_out_comment15)
             mS "It's more complicated than that. Sometimes skeeves do good things, and sometimes non-skeeves do bad things."
             mS "There's no one-size-fits-all rule."
@@ -1743,7 +1798,7 @@ label vig2epilogue_OUT():
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
             $ AddChatter(vig2_epilogue_out_comment15)
-            macS "But we broke the law many times. How can we be good if we contribute to the danger of the universe?"
+            macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             $ AddChatter(vig2_epilogue_out_comment16)
             mS "To change bad things, sometimes we have to do dangerous things."

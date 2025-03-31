@@ -17,12 +17,14 @@ define streamer = Character("[username]") #represents protagonist's username on 
 define mod = Character("Jessie", what_font="Mukta-Regular.ttf")
 define bro = Character("El", what_font="Mukta-Regular.ttf")
 define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "captain_stream")
-define streamer_nvl = Character("[username]", kind = nvl, image = "captain_stream")
+define streamer_nvl = Character("[username]", what_font="Mukta-Regular.ttf", kind = nvl, image = "captain_stream")
 define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "profile1small")
 define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
 define kc_nvl = Character("KitCat", what_font="Mukta-Regular.ttf", kind = nvl, )
 define pd_nvl = Character("PickledDragons", what_font="Mukta-Regular.ttf", kind = nvl, )
+define elliotflashback = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") 
+
 define adv_menu = menu
 
 #Justin: this is how I define the micro game characters in their stream and non-stream versions
@@ -39,12 +41,13 @@ define pS = Character ("Jennica", what_font="Play-Regular.ttf", window_style = "
 define mac = Character("MAC", what_font="Play-Regular.ttf", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/stream textbox MAC.png")
 define macS = Character("MAC", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/stream textbox MAC.png")
 
-define a = Character("Allistar", window_style = "window", who_color="#ce1fd4", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
-define aS = Character("Allistar", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
+define a = Character("Allistar", what_font="Play-Regular.ttf", window_style = "window", who_color="#ce1fd4", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
+define aS = Character("Allistar", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
 
-define ama = Character("Deadeye", window_style = "window", who_color="#1113a1", what_color="#000000", image = "ama neutral", window_background = "images/textbox/stream textbox npc.png")
-define amaS = Character("Deadeye", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#1113a1", what_color = "#000000", image = "ama stream neutral", window_background="images/textbox/stream textbox npc.png")
+define ama = Character("Deadeye", what_font="Play-Regular.ttf", window_style = "window", who_color="#1113a1", what_color="#000000", image = "ama neutral", window_background = "images/textbox/stream textbox npc.png")
+define amaS = Character("Deadeye", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#1113a1", what_color = "#000000", image = "ama stream neutral", window_background="images/textbox/stream textbox npc.png")
 
+define enforcer = Character("Enforcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "enforcer neutral", window_background="images/textbox/stream textbox npc.png")
 
 define shipcom = Character("Ship Intercom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define agent1 = Character("Customs Agent", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")

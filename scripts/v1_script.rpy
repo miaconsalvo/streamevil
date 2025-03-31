@@ -296,7 +296,6 @@ label streetShootout:
             "I nod and we rush off toward MAC."
             hide screen streamerCommentary
             hide screen chatTutorial2
-            $ vig1_sc2_streamer1.click = False
         "Fire at ground enforcer (protect Moze)":
             "I pop back around the corner to fire at the enforcer on the ground."
             "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
@@ -1172,13 +1171,13 @@ label vig1_brother_2():
     "It's three years ago, you're still living back home, and you and Elliot are sitting in front of a TV."
     "You hand a game controller to Elliot."
     player "Alright El, your turn."
-    "Elliot" "But we have to decide together!"
+    elliotflashback "But we have to decide together!"
     player "It's ok, whatever you think is best: Allistar or Matticus, who's the right ally?"
-    "Elliot" "Well, it has to be Allistar, he's so hot!"
+    elliotflashback "Well, it has to be Allistar, he's so hot!"
     player "But you think they're all hot."
-    "Elliot" "Are you gonna tell me I'm wrong?"
+    elliotflashback "Are you gonna tell me I'm wrong?"
     player "Hahahahahaha"
-    "Elliot" "Hahahahahaha"
+    elliotflashback "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
     #have to restore defaults before the next vignette
     $ chatter_list = [ ]

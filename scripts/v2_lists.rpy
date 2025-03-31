@@ -46,14 +46,14 @@ default vig2_sc2_mar_comment9 = ChatEntry( False, "{b}AFKangel:{/b} for sure he 
 default vig2_sc2_mar_comment10 = ChatEntry( False, "{b}bacon8r_6:{/b} perfect ad time, no idea what's going on now", 2, "#ffffff")
 
 #Comments in Scene 2 - Outlaw Choice
-default vig2_sc2_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} ah yes exactly, better have your fate in your own hands", 2, "#0000ffffff00")
+default vig2_sc2_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} ah yes exactly, better have your fate in your own hands", 2, "#ffffff")
 default vig2_sc2_out_comment2 = ChatEntry( False, "{b}Coriolis:{/b} cant help but agree", 2, "#ffffff")
 default vig2_sc2_out_comment3 = ChatEntry( False, "{b}AFKangel:{/b} lmao teresa always makes it fun", 2, "#ffffff")
 default vig2_sc2_out_comment4 = ChatEntry( False, "{b}turb0g00se:{/b} YES literally whas the worst that can happen", 2, "#ffffff")
 default vig2_sc2_out_comment5 = ChatEntry( True, "{b}shnzi:{/b} hey [player], are you romancing teresa?", 2, "#ffffff", "vig2_sc2_out_romance")
 default vig2_sc2_out_comment6 = ChatEntry( False, "{b}kitcat:{/b} it's hard to, unless you make some whack choices", 2, "#ffffff")
-default vig2_sc2_out_comment7 = ChatEntry( False, "{b}bacon8r_6:{/b} don't understand why more people don't pick what an actual outlaw crew would do", 2, "#0ffffff00000")
-default vig2_sc2_out_comment8 = ChatEntry( False, "{b}PickledDragons:{/b} even Jennica's having fun - crew bonding at max capacity", 2, "#000ffffff000")
+default vig2_sc2_out_comment7 = ChatEntry( False, "{b}bacon8r_6:{/b} don't understand why more people don't pick what an actual outlaw crew would do", 2, "#ffffff")
+default vig2_sc2_out_comment8 = ChatEntry( False, "{b}PickledDragons:{/b} even Jennica's having fun - crew bonding at max capacity", 2, "#ffffff")
 default vig2_sc2_out_comment9 = ChatEntry( False, "{b}R4dioRobbie:{/b} RUBES", 2, "#ffffff")
 default vig2_sc2_out_comment10 = ChatEntry( False, "{b}Coriolis:{/b} that was actually so cute - go team!", 2, "#ffffff")
 default vig2_sc2_out_comment11 = ChatEntry( False, "{b}AFKangel:{/b} easy peasy", 2, "#ffffff")
@@ -65,7 +65,7 @@ default vig2_sc2_romance_pilot1 = ChatEntry(False, "{b}Coriolis:{/b} Jennica ftw
 default vig2_sc2_romance_engineer1 = ChatEntry(False, "{b}KitKat:{/b} Crazy engineer ftw!", 0, "#ffffff")
 
 #Comments in Scene 3
-default vig2_sc3_comment1 = ChatEntry( False, "{b}Coriolis:{/b} yeah classic bad guy gates", 2, "#000000")
+default vig2_sc3_comment1 = ChatEntry( False, "{b}Coriolis:{/b} yeah classic bad guy gates", 2, "#ffffff")
 default vig2_sc3_comment2 = ChatEntry( False, "{b}shnzi:{/b} character = bad is the same as character = has giant castle made of gold in generally poor area", 2, "#ffffff")
 default vig2_sc3_comment3 = ChatEntry( False, "{b}kitcat:{/b} brat", 2, "#ffffff")
 default vig2_sc3_comment4 = ChatEntry( False, "{b}AFKangel:{/b}: :P", 2, "#ffffff")
@@ -95,7 +95,7 @@ default vig2_sc4_comment10 = ChatEntry( False, "{b}shnzi:{/b} same", 2, "#ffffff
 default vig2_sc4_against_comment1 = ChatEntry( False, "{b}shnzi:{/b} yeah I can't stand the guy", 2, "#ffffff")
 default vig2_sc4_against_comment2 = ChatEntry( False, "{b}kitcat:{/b} literally have no idea what he gives you because i never side with THE skeevy slum lord", 2, "#ffffff")
 default vig2_sc4_ally_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} Exactly!! why wouldn't you use your contact", 2, "#ffffff")
-default vig2_sc4_ally_comment2 = ChatEntry( False, "{b}bacon8r_6:{/b} ugh so glad someone is doing this, I heard you get much cooler plot points by allying matticus", 2, "#00ffffff0000")
+default vig2_sc4_ally_comment2 = ChatEntry( False, "{b}bacon8r_6:{/b} ugh so glad someone is doing this, I heard you get much cooler plot points by allying matticus", 2, "#ffffff")
 default vig2_sc4_ally_comment3 = ChatEntry( False, "{b}_lostinmetr0:{/b} he gives me the ick", 2, "#ffffff")
 default vig2_sc4_ally_comment4 = ChatEntry( False, "{b}turb0g00se:{/b} yea but for the plot bro", 2, "#ffffff")
 
@@ -283,7 +283,10 @@ default vig2_epilogue_out_rips5 = ChatEntry( False, "{b}bacon8r_6:{/b} rest", 2,
 default vig2_epilogue_out_rips6 = ChatEntry( False, "{b}_lostinmetr0:{/b} ripperoni", 2, "#ffffff")
 default vig2_epilogue_out_rips7 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} R I P", 2, "#ffffff")
 
+### Streamer react chats###
 
+default vig2_sc1_reactcomment1 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\npretty gud. got a pokebowl.", 1, "#ffffff")
+default vig2_sc1_reactcomment2 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nwe all about trouble!", 1, "#ffffff")
 
 
 ###################### OLD COMMENTS FROM PROTOTYPING########################
