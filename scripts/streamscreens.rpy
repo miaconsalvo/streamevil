@@ -174,3 +174,41 @@ screen raidFreeze():
             idle "#eeff0081"
             hover "#eeff0060"
             action [Return(), Call("vig1_sc3_banditConvo")] #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
+
+
+#screen for selecting profile picture
+screen selectProfilePic():
+    text "Now select your streaming profile picture.":
+        align (0.33, 0.843)
+    imagebutton:
+        action [SetVariable("profilePic", "socials/profilepics/profile1.png"), Return()]
+        background Image("socials/profilepics/profile1.png")
+        idle Image("socials/profilepics/profile1.png")
+        hover Solid("#5e5e5e4b")
+        xsize 100
+        ysize 100
+        align (0.2, 0.5)
+    imagebutton:
+        action [SetVariable("profilePic", "socials/profilepics/profile2.png"), Return()]
+        background Image("socials/profilepics/profile2.png")
+        idle Image("socials/profilepics/profile2.png")
+        hover Solid("#5e5e5e4b")
+        xsize 100
+        ysize 100
+        align (0.4, 0.5)
+    imagebutton:
+        action [SetVariable("profilePic", "socials/profilepics/profile3.png"), Return()]
+        background Image("socials/profilepics/profile3.png")
+        idle Image("socials/profilepics/profile3.png")
+        hover Solid("#5e5e5e4b")
+        xsize 100
+        ysize 100
+        align (0.6, 0.5)
+    #imagebutton: #turned off for time being so the mod has their own profile pic
+    #    action [SetVariable("profilePic", "socials/profilepics/profile4.png"), Return()]
+    #    background Image("socials/profilepics/profile4.png")
+    #    idle Image("socials/profilepics/profile4.png")
+    #    hover Solid("#5e5e5e4b")
+    #    xsize 100
+    #    ysize 100
+    #    align (0.8, 0.5)

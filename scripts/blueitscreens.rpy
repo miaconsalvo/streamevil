@@ -31,7 +31,7 @@ screen blueit():
                         background Image(t.image)
                         idle Image(t.image)
                         hover Solid("#2a6c9742")
-                        xsize 1000
+                        xsize 1010
                         ysize 340
                 else:
                     imagebutton:
@@ -39,7 +39,7 @@ screen blueit():
                         background Image(t.image)
                         idle Image(t.image)
                         hover Solid("#2a6c9742")
-                        xsize 1000
+                        xsize 1010
                         ysize 620
         #This frame displays the main page of Blueit Threads as a single image, like how we'll show specific threads
         #Downside to this is lack of flexibility if we want to change anything about the threads. We'll be displaying the whole image

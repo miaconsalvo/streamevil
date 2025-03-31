@@ -12,7 +12,7 @@ label vignette1Start():
     jump returnToWorkshop
 
 label returnToWorkshop():
-    play music "soundtrack/allistar.wav" volume 1.2 loop fadein 0.5
+    play music "soundtrack/allistar.wav" volume 1.2 loop fadein 1.0
     show screen chatTutorial2
     call screen streamFreeze
     "Thermal paste in hand I return to Allistar's workshop."
@@ -349,7 +349,7 @@ label saveMAC():
         "I process the information in less than a second, then react."
         "Dive in front of the shot.":
             $ kcEngagement += 1
-            #play music "soundtracksavethegalaxy.wav" volume 1.0 loop
+            play music "soundtracksavethegalaxy.wav" volume 1.0 loop
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
@@ -434,7 +434,7 @@ label spacePortEscape():
 
 label councilDebrief():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
-    show vig2_shiphub_stream at topleft onlayer background with dissolve
+    show shiphub_stream at topleft onlayer background with dissolve
     hide vig1_town_stream
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
@@ -478,6 +478,8 @@ label councilDebrief():
     hide teresa with dissolve
     hide jennica with dissolve
     $ narrator = reg_narrator
+    $ renpy.sound.play("audio/ReceiveText.ogg")
+    pause 0.5
     "A private notification on Chaos from my mod, Jessie."
     #insert discord sound effect
     call screen discordNotification
@@ -543,7 +545,7 @@ label councilDebrief():
 
 label escapePodConfrontation:
     show ship_hallway_stream at topleft onlayer background with dissolve
-    hide vig2_shiphub_stream
+    hide shiphub_stream
     $ macroChoice = False
     "I run down the halls of the ship and leap over the railing leading down to the escape pod bay."
     #$ AddChatter(vig1_sc3_comment4)
@@ -554,11 +556,12 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment5)
     stop music
     "I turn the corner."
-    show mac stream at stream_right_mac with dissolve
     show allistar stream neutral at stream_center with dissolve
+    show mac stream at stream_right_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
     "As I step into the light, Allistar sees me and reaches for MAC." 
+    show allistar at stream_right with move
     "I pull my blaster and point it at him, but by the time I do he has already grabbed MAC, and is holding him in the air in front of him."
     $ AddChatter(vig1_sc3_comment7)
     mS "What are you doing, Allistar?"
@@ -598,7 +601,7 @@ label escapePodConfrontation:
             $ narrator = reg_narrator
             "Hmm, I don't know if I want to kill Allistar."
             "I go to select the stun option."
-            "But as I hover the mouse over the choice, a loud bang comes from down the hall."
+            "But as I hover the mouse over the choice, a loud bang comes from down the apartment above me."
             "I jolt a little bit."
             "My cursor slips."
             "The words \"Kill Allistar\" glow red in the game's UI."
@@ -609,7 +612,7 @@ label escapePodConfrontation:
             $ kcEngagement += 2
             $ narrator = reg_narrator
             "I go to select the stun option."
-            "But as I hover the mouse over the choice, a loud bang comes from down the hall."
+            "But as I hover the mouse over the choice, a loud bang comes from down the apartment above me."
             "I jolt a little bit."
             "My cursor slips."
             "The words \"Kill Allistar\" glow red in the game's UI."
@@ -664,12 +667,12 @@ label escapePodConfrontation:
     $ viewCheck10 = viewCount
     "MAC hits the floor and rolls to the other end of the hall behind a crate."
     hide mac with Dissolve(0.5)
-    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I go over to Allistar's body. It's limp and cold."
     "But I still feel the weight of his eyes."
     "I can't tell if they're frightened or judging."
     $ AddChatter(vig1_sc3_shot_comment4)
     pause 0.5
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I activate my com."
     mS "Teresa, Jennica, Allistar tried to activate an escape pod and take MAC away."
     pS "He did what!?"
@@ -990,7 +993,7 @@ label blueitVignette1():
     $ blueitPages.append(vig1_bThread2)
     $ blueitPages.append(vig1_bThread3)
     $ blueitPages.append(vig1_bThread4)
-    "I should check the threads about the game's launch and also see what people are saying about the first major choice."
+    "I should see what people are saying about the Allistar choice and maybe see what else has the community's attention."
     jump blueitVignette2
 
 label blueitVignette2():
@@ -1002,8 +1005,8 @@ label vig1_brother_1():
     $ menu = nvl_menu
     nvl clear
     scene bg black with dissolve
-    "You close Blueit and check your watch."
-    "It's 8pm. Your little brother wanted to chat at 9:30."
+    "As you close Blueit, you remember that you're little brother asked to chat at 9:30."
+    "It's 8pm so you have a bit of time."
     "You decide to make a late dinner and start catching up on the new season of Iron Goddess."
     "After finishing an episode, you wash your dishes then sit back down at your computer and shoot Elliot a message."
     scene discord with dissolve
@@ -1077,7 +1080,7 @@ label vig1_brother_1():
     player_nvl "You don't have to be outgoing or do anything big"
     player_nvl "You just have to get the ball rolling and be honest"
     player_nvl "Ask him about things. What are his hobbies, what does he want to study in college"
-    player_nvl "What does he hate most about Doc Frida"
+    player_nvl "What's his theory about how Doc Frida gets that crazy hair"
     player_nvl "I know it takes some courage, but once you start you can get the chance to show him the real you (the one I know isn't that shy anyways)"
     bro_nvl "I guess that makes sense"
     menu:
@@ -1155,7 +1158,7 @@ label vig1_brother_2():
     player_nvl "With Mrs. Webber?"
     bro_nvl "Yep"
     player_nvl "Oof, good luck"
-    bro_nvl "Thanks [player], have a good night!"
+    bro_nvl "Thanks, have a good night!"
     menu:
         "•Love you":
             player_nvl "Love you, El!"

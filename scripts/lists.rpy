@@ -57,10 +57,10 @@ label TurnSound():
     #so we do it unwieldy
     if commentPing == False:
         $ commentPing = True
-        $ textContent = "Sound is On"
+        $ pingText = "Sound is On"
     elif commentPing == True:
         $ commentPing = False
-        $ textContent = "Sound is Off"
+        $ pingText = "Sound is Off"
     return
 
     

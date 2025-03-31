@@ -231,7 +231,9 @@ label vig2_epilogue_outlaw():
         $ narrator = reg_narrator
     return
 
+#################
 ### streamer react moments ###
+#################
 
 label vig2_sc1_openingstream():
     hide screen streamerCommentary

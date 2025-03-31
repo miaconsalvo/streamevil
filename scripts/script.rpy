@@ -16,9 +16,9 @@ define player = Character("[my_name]", who_font="Mukta-Regular.ttf", what_font="
 define streamer = Character("[username]") #represents protagonist's username on Flinch
 define mod = Character("Jessie", what_font="Mukta-Regular.ttf")
 define bro = Character("El", what_font="Mukta-Regular.ttf")
-define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "captain_stream")
-define streamer_nvl = Character("[username]", what_font="Mukta-Regular.ttf", kind = nvl, image = "captain_stream")
-define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "profile1small")
+define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile2.png")
+define streamer_nvl = Character("[username]", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile2.png")
+define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile1.png")
 define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
 define kc_nvl = Character("KitCat", what_font="Mukta-Regular.ttf", kind = nvl, )
@@ -64,7 +64,7 @@ default commentPing = False
 default pingText = "Sound is Off"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
-default profilePic = "images/Socials/profilepics/profile2.png"
+default profilePic = "images/socials/profilepics/profile2.png"
 
 #variables to track morality
 default marshal = 2
@@ -164,6 +164,7 @@ init:
     $ screen_left = Position (xpos = 0.2, ypos = 0.6) #non-stream view
     $ screen_right = Position (xpos = 0.7, ypos = 0.6)
     $ screen_center = Position(xpos = 0.4, ypos = 0.6)
+    $ renpy.music.register_channel("backAudio")
     $ renpy.add_layer("background", below = "master") #created a layer called "background" for displaying micro-game scenes
     #this layer is below the master so we can define the streamview as a "scene", which means that the streamview won't
     #fade out whenever we transition to another label
@@ -178,7 +179,8 @@ label start:
     "Now please tell me your first name in real life"
     $ my_name = renpy.input("Your character's real name is: ", length = 16)
 
-    "Here you would select a streaming profile picture"
+    "Now select your streaming profile picture."
+    call screen selectProfilePic
     #We add chatter here, otherwise you would see them come in like super fast when the game starts
     $ AddChatter(vig1_sc1_comment1)
     $ AddChatter(vig1_sc1_comment2)

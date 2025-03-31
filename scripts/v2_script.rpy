@@ -20,10 +20,12 @@ label vignette2Start():
     $ vbar8 = 0
     $ vbar9 = 0
     $ vbar10 = 0
-    scene streamview with dissolve 
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
+    "It's been four weeks since you last streamed Oakley 2."
+    "Episode 2 just dropped so it's time to get back into it."
+    scene streamview with dissolve
     show screen streamDetails
     show screen streamChat
     "You begin the stream and then boot up the game."
@@ -39,13 +41,14 @@ label vig2Start():
     #$ macroNarration = False
     $ narrator = alt_narrator
     #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
-    $ viewCount += 1
+    $ viewCount += 3
     $ reactTarget = "vig2_sc1_openingstream"
     show screen streamerCommentary
     "The \"Approaching Planet\" notification alarm jolts me out of bed."
     $ AddChatter(vig2_sc1_comment1)
     $ AddChatter(vig2_sc1_comment2)
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
     "I haven't been able to get any real sleep since Allistar forced my hand."
@@ -55,6 +58,7 @@ label vig2Start():
     shipcom "Alert! Approaching planet Gibian V. All hands on deck."
     "Right. Maybe it's a blessing that I don't have so much time to reflect."
     $ AddChatter(vig2_sc1_comment3)
+    hide screen streamerCommentary
     "Better get down there."
 
     jump Vig2BridgeScene
@@ -70,12 +74,14 @@ label Vig2BridgeScene():
     $ AddChatter(vig2_sc1_comment4)
     enS "The visualization shows Gibian V, oh swell a backwater frontier planet."
     "A backwater with a certain old associate running it."
+    $ viewCount += 4
     mS "We ready to land?"
     $ AddChatter(vig2_sc1_comment5)
     show jennica stream angry at stream_left
     pS "Can I reiterate again that this is a bad idea?"
     "Teresa rolls her eyes."
     $ AddChatter(vig2_sc1_comment6)
+    $ viewCheck1 = viewCount
     enS "Must we go through this again?"
     $ AddChatter(vig2_sc1_comment7)
     pS "Look, I know we need to cover our trail from Ama."
@@ -117,6 +123,7 @@ label Vig2BridgeScene():
     show teresa stream neutral at stream_right
     show jennica stream neutral at stream_left
     $ AddChatter(vig2_sc1_comment13)
+    $ viewCount += 1
     "The visualization zooms in on the capital of Gibian V, Montserrat."
     "A map of the city appears on the computer, along with images of the spaceport, customs depot, and Matticus's compound."
     enS "One benefit of Gibian V being such a middle-of-nowhere planet is that finding Matticus will be the easy part."
@@ -180,6 +187,7 @@ label Vig2BridgeScene():
 label GibianVCustomsDepot(): 
     show depot_stream at topleft onlayer background with dissolve
     hide vig2_shiphub_stream
+    play backAudio "bgcrowd.wav" volume 0.4 loop fadein 0.5
     "The tiny barebones customs depot seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
     "New arrivals pile in hurriedly, while departures crowd at the checkpoint leading to the spaceport."

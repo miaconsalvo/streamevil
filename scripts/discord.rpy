@@ -115,6 +115,8 @@ screen nvl_phonetext(dialogue):
             #Not necessary for discord, but currently kept just in case we want to use
             if d.who == my_name:
                 $ message_frame = "#1b56adab"
+            elif d.who == username:
+                $ message_frame = "#1b56adab"
             else:
                 $ message_frame = "#8b1e1e9a"
 
@@ -131,9 +133,11 @@ screen nvl_phonetext(dialogue):
                 if previous_d_who != d.who:
                     #We'll want to specify if "d.who == Jessie" so we can assign specific images for each profile
                     if d.who == my_name:
-                        $ message_icon = "images/socials/profilepics/profile2.png"
+                        $ message_icon = profilePic
+                    elif d.who == username:
+                        $ message_icon = profilePic
                     elif d.who == "Jessie":
-                        $ message_icon = "images/socials/profilepics/profile3.png"
+                        $ message_icon = "images/socials/profilepics/profile4.png"
                     elif d.who == "El":
                         $ message_icon = "images/socials/profilepics/profile1.png"
                     else:
