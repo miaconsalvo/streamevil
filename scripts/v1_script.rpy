@@ -349,7 +349,7 @@ label saveMAC():
         "I process the information in less than a second, then react."
         "Dive in front of the shot.":
             $ kcEngagement += 1
-            play music "soundtracksavethegalaxy.wav" volume 1.0 loop
+            play music "soundtrack/savethegalaxy.wav" volume 1.0 loop
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
