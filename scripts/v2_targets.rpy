@@ -269,9 +269,12 @@ label vig2_sc1_mentionallistar():
         "Talk about Allistar?"
         "I still feel bad about that.":
             player "Not gonna lie, I feel a bit bad for that one."
+            $ AddChatter(vig2_sc1_reactcomment3)
+            $ AddChatter(vig2_sc1_reactcomment4)
             pause 0.5
         "Don't mess with MAC!":
             player "Listen, you mess with MAC, you mess with me!"
+            $ AddChatter(vig2_sc1_reactcomment5)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -288,9 +291,12 @@ label vig2_sc1_matticusjennicaopinion():
         "Think about the relationships with other characters."
         "What's the relationship system in this game like?":
             player "I wonder what the relationship track is like in this one..."
+            $ AddChatter(vig2_sc1_reactcomment6)
             pause 0.5
         "Jennica looks pissed.":
             player "She is definitely not happy, that's not a good sign."
+            $ AddChatter(vig2_sc1_reactcomment7)
+            $ AddChatter(vig2_sc1_reactcomment8)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -307,12 +313,16 @@ label vig2_sc2_landingongibian():
         "Speculate about what happens next."
         "How bad do you guys think this'll go?":
             player "Alright on a scale of 1 to 10 how fast is this gonna go bad?"
+            $ AddChatter(vig2_sc2_reactcomment1)
+            $ AddChatter(vig2_sc2_reactcomment2)
+            $ AddChatter(vig2_sc2_reactcomment3)
             pause 0.5
         "I wanna explore!":
             player "I wonder how much exploring we'll get to do…"
             pause 0.5
         "Is Ama gonna show up?":
             player "If Ama shows up, I'm gonna FREAK!"
+            $ AddChatter(vig2_sc2_reactcomment4)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -329,9 +339,13 @@ label vig2_sc2_whywedidntfly():
         "Hype the chat about MAC."
         "MAC's so cool!":
             player "MAC best cargo confirmed."
+            $ AddChatter(vig2_sc2_reactcomment5)
+            $ AddChatter(vig2_sc2_reactcomment6)
             pause 0.5
         "MAC would get away with it.":
             player "I think they would just let MAC go they're too cute."
+            $ AddChatter(vig2_sc2_reactcomment7)
+            $ AddChatter(vig2_sc2_reactcomment8)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -348,12 +362,17 @@ label vig2_sc2_firstproblem():
         "Call back to speculating what will happen."
         "I called it!":
             player "Well, that didn't take very long…."
+            $ AddChatter(vig2_sc2_reactcomment9)
+            $ AddChatter(vig2_sc2_reactcomment10)
+            $ AddChatter(vig2_sc2_reactcomment11)
             pause 0.5
         "Guess we can't explore.":
             player "Guess that's a no on the exploring."
             pause 0.5
         "We're definitely getting exposed.":
             player "Well if Ama wasn't here already, she'll definitely be on her way after this."
+            $ AddChatter(vig2_sc2_reactcomment12)
+            $ AddChatter(vig2_sc2_reactcomment13)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -370,12 +389,15 @@ label vig2_sc2_customsdecision():
         "Think about if you made the right choice."
         "All good!":
             player "This will be fine!"
+            $ AddChatter(vig2_sc2_reactcomment14)
+            $ AddChatter(vig2_sc2_reactcomment15)
             pause 0.5
         "Maybe we should reload.":
             player "We can always save scum right?"
             pause 0.5
         "It's so over.":
             player "We're so boned, but we're boned together!"
+            $ AddChatter(vig2_sc2_reactcomment16)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -392,12 +414,17 @@ label vig2_sc3_aftercustoms():
         "Reflect about the choice you just made."
         "We were fine all along!":
             player "See! Everything went perfect!"
+            $ AddChatter(vig2_sc3_reactcomment1)
+            $ AddChatter(vig2_sc3_reactcomment2)
+            $ AddChatter(vig2_sc3_reactcomment3)
             pause 0.5
         "Phew. That was close.":
             player "I won't lie, I was scared about how that was going to go."
             pause 0.5
         "Weak.":
             player "Honestly that was a bit disappointing."
+            $ AddChatter(vig2_sc3_reactcomment4)
+            $ AddChatter(vig2_sc3_reactcomment5)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -414,12 +441,17 @@ label vig2_sc4_meetingmatticus():
         "Tell the chat how you feel about Matticus."
         "This guy sucks.":
             player "I wonder if he ever thought about not breathing... forever."
+            $ AddChatter(vig2_sc4_reactcomment1)
+            $ AddChatter(vig2_sc4_reactcomment2)
             pause 0.5
         "Cool design!":
             player "Ooooo cool character redesign!"
+            $ AddChatter(vig2_sc4_reactcomment3)
             pause 0.5
         "Oh boy here comes chaos!":
             player "This is gonna be so bad, I'm so excited."
+            $ AddChatter(vig2_sc4_reactcomment4)
+            $ AddChatter(vig2_sc4_reactcomment5)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -436,12 +468,16 @@ label vig2_sc4_plancheckin():
         "Check-in with the chat."
         "Matticus is gonna make this tough.":
             player "Of course. Matticus needs to make this complicated."
+            $ AddChatter(vig2_sc4_reactcomment6)
+            $ AddChatter(vig2_sc4_reactcomment7)
+            $ AddChatter(vig2_sc4_reactcomment8)
             pause 0.5
         "Things are never easy.":
             player "Why did I expect an easy mission this time around?"
             pause 0.5
         "Just like old times!":
             player "Back to the ol' Snakehawk playbook!"
+            $ AddChatter(vig2_sc4_reactcomment9)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -458,12 +494,17 @@ label vig2_sc5_macquestion():
         "Inquire about MAC's learning."
         "MAC's seems inquisitive.":
             player "MAC is asking a lot of questions, maybe I should be more careful."
+            $ AddChatter(vig2_sc5_reactcomment1)
+            $ AddChatter(vig2_sc5_reactcomment2)
             pause 0.5
         "Is MAC remembering everything?":
             player "Do y'all think MAC will develop based on what we do?"
+            $ AddChatter(vig2_sc5_reactcomment3)
             pause 0.5
         "MAC shield your eyes!":
             player "MAC, not gonna lie to you buddy, we might kill so many people."
+            $ AddChatter(vig2_sc5_reactcomment4)
+            $ AddChatter(vig2_sc5_reactcomment5)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -480,12 +521,16 @@ label vig2_sc6_out_reflect():
         "Reflect on the confrontation."
         "Lotta violence.":
             player "Well that was messy..."
+            $ AddChatter(vig2_sc6_out_reactcomment1)
             pause 0.5
         "I messed up.":
             player "Definitely could've done that a lot better."
+            $ AddChatter(vig2_sc6_out_reactcomment2)
+            $ AddChatter(vig2_sc6_out_reactcomment3)
             pause 0.5
         "Hell yeah!":
             player "Yeah that feels like the way that should've gone."
+            $ AddChatter(vig2_sc6_out_reactcomment4)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -502,12 +547,16 @@ label vig2_sc6_mar_reflect():
         "Reflect on the stealth mission."
         "We just had to sneak in?":
             player "So that was the big stealth mission?"
+            $ AddChatter(vig2_sc6_mar_reactcomment1)
+            $ AddChatter(vig2_sc6_mar_reactcomment2)
             pause 0.5
         "Definitely the right way.":
             player "Quick and quient, best strategy."
+            $ AddChatter(vig2_sc6_mar_reactcomment3)
             pause 0.5
         "We're gonna get caught for sure!":
             player "Those guards are definitely coming back after us afterwards."
+            $ AddChatter(vig2_sc6_mar_reactcomment4)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -524,9 +573,13 @@ label vig2_sc7_bigreveal():
         "Respond to Reginald."
         "True.":
             player "I mean he's not wrong..."
+            $ AddChatter(vig2_sc7_reactcomment1)
+            $ AddChatter(vig2_sc7_reactcomment2)
             pause 0.5
         "This is another level though.":
             player "Listen I've done some terrible things, but destroying an aid ship is crazy."
+            $ AddChatter(vig2_sc7_reactcomment3)
+            $ AddChatter(vig2_sc7_reactcomment4)
             pause 0.5
         "Say nothing.":
             player "..."

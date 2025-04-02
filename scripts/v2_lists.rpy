@@ -287,6 +287,72 @@ default vig2_epilogue_out_rips7 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} R I P", 
 
 default vig2_sc1_reactcomment1 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\npretty gud. got a pokebowl.", 1, "#ffffff")
 default vig2_sc1_reactcomment2 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nwe all about trouble!", 1, "#ffffff")
+default vig2_sc1_reactcomment3 = ChatEntry( False, "{b}AFKangel - 6:59{/b}\nhimbo dead sadge.", 1, "#ffffff")
+default vig2_sc1_reactcomment4 = ChatEntry( False, "{b}jerrybean784 - 7:00{/b}\nbuyers remorse lol.", 1, "#ffffff")
+default vig2_sc1_reactcomment5 = ChatEntry( False, "{b}n0sc0pes0yb0y - 6:58{/b}\nyaaah dont mess with MAC!", 1, "#ffffff")
+default vig2_sc1_reactcomment6 = ChatEntry( False, "{b}crozzxgold - 7:02{/b}\nlooks like a lot!", 1, "#ffffff")
+default vig2_sc1_reactcomment7 = ChatEntry( False, "{b}s1n1st4R - 7:02{/b}\njennica T_T.", 1, "#ffffff")
+default vig2_sc1_reactcomment8 = ChatEntry( False, "{b}undergrog_ - 7:04{/b}\nnooooooo.", 1, "#ffffff")
+
+default vig2_sc2_reactcomment1 = ChatEntry( False, "{b}turb0g00se1 - 6:56{/b}\ndef 10.", 1, "#ffffff")
+default vig2_sc2_reactcomment2 = ChatEntry( False, "{b}marxky8 - 6:56{/b}\n10 fsho.", 1, "#ffffff")
+default vig2_sc2_reactcomment3 = ChatEntry( False, "{b}el33T_sn1per - 6:56{/b}\n8!", 1, "#ffffff")
+default vig2_sc2_reactcomment4 = ChatEntry( False, "{b}crozzxgold - 6:56{/b}\nNot Ama!!.", 1, "#ffffff")
+
+default vig2_sc2_reactcomment5 = ChatEntry( False, "{b}HYP3RV3N0M - 6:56{/b}\ncutest cargo!", 1, "#ffffff")
+default vig2_sc2_reactcomment6 = ChatEntry( False, "{b}AFKangel - 6:56{/b}\nadorbs package lol.", 1, "#ffffff")
+default vig2_sc2_reactcomment7 = ChatEntry( False, "{b}undergrog_ - 6:56{/b}\nhypnotized by the cuteness uwu.", 1, "#ffffff")
+default vig2_sc2_reactcomment8 = ChatEntry( False, "{b}s1n1st4r - 6:56{/b}\ncute robot OP!", 1, "#ffffff")
+
+default vig2_sc2_reactcomment9 = ChatEntry( False, "{b}el33T_sn1per - 6:56{/b}\neasiest prediction ever LOL.", 1, "#ffffff")
+default vig2_sc2_reactcomment10 = ChatEntry( False, "{b}turb0g00se1 - 6:56{/b}\nfr", 1, "#ffffff")
+default vig2_sc2_reactcomment11 = ChatEntry( False, "{b}virgom00n - 6:56{/b}\nthere's always a problem.", 1, "#ffffff")
+default vig2_sc2_reactcomment12 = ChatEntry( False, "{b}l00ts33kr - 6:56{/b}\nLOL!", 1, "#ffffff")
+default vig2_sc2_reactcomment13 = ChatEntry( False, "{b}n0sc0pes0yb0y - 6:56{/b}\nThe jig is up!", 1, "#ffffff")
+
+default vig2_sc2_reactcomment14 = ChatEntry( False, "{b}_lostinmetr0 - 6:56{/b}\nFamous last words LOL!", 1, "#ffffff")
+default vig2_sc2_reactcomment15 = ChatEntry( False, "{b}llamabama22 - 6:56{/b}\neverythings cool!", 1, "#ffffff")
+default vig2_sc2_reactcomment16 = ChatEntry( False, "{b}jerrybean784 - 6:56{/b}\ndying together <3", 1, "#ffffff")
+
+default vig2_sc3_reactcomment1 = ChatEntry( False, "{b}el33T_sn1per - 6:56{/b}\nNever punished never learn!", 1, "#ffffff")
+default vig2_sc3_reactcomment2 = ChatEntry( False, "{b}AFKangel - 6:56{/b}\nfrfr.", 1, "#ffffff")
+default vig2_sc3_reactcomment3 = ChatEntry( False, "{b}undergrog_ - 6:56{/b}\nLOL.", 1, "#ffffff")
+default vig2_sc3_reactcomment4 = ChatEntry( False, "{b}n0sc0pes0yb0y - 6:56{/b}\nWay too easy!", 1, "#ffffff")
+default vig2_sc3_reactcomment5 = ChatEntry( False, "{b}HYP3RV3N0M - 6:56{/b}\nyah idk.", 1, "#ffffff")
+
+default vig2_sc4_reactcomment1 = ChatEntry( False, "{b}l00ts33kr - 6:56{/b}\nRoasted.", 1, "#ffffff")
+default vig2_sc4_reactcomment2 = ChatEntry( False, "{b}duckduckdi3 - 6:56{/b}\nyah i dont trust this guy.", 1, "#ffffff")
+default vig2_sc4_reactcomment3 = ChatEntry( False, "{b}marxky8 - 6:56{/b}\nlove the his new design too!", 1, "#ffffff")
+default vig2_sc4_reactcomment4 = ChatEntry( False, "{b}crozzxgold - 6:56{/b}\nwooo team chaos!", 1, "#ffffff")
+default vig2_sc4_reactcomment5 = ChatEntry( False, "{b}turb0g00se1 - 6:56{/b}\nso in for being bad.", 1, "#ffffff")
+
+default vig2_sc4_reactcomment6 = ChatEntry( False, "{b}virgom00n - 6:56{/b}\nI mean you think the mob boss does favours lol.", 1, "#ffffff")
+default vig2_sc4_reactcomment7 = ChatEntry( False, "{b}AFKangel - 6:56{/b}\nfr. <3", 1, "#ffffff")
+default vig2_sc4_reactcomment8 = ChatEntry( False, "{b}n0sc0pes0yb0y - 6:56{/b}\nlol lemme just risk myself for nothing.", 1, "#ffffff")
+default vig2_sc4_reactcomment9 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nwe are so back!", 1, "#ffffff")
+
+default vig2_sc5_reactcomment1 = ChatEntry( False, "{b}n0sc0pes0yb0y - 6:56{/b}\ndont be a bad robo-parent lol.", 1, "#ffffff")
+default vig2_sc5_reactcomment2 = ChatEntry( False, "{b}duckduckdi3 - 6:56{/b}\nyah hes already repeating skeeve.", 1, "#ffffff")
+default vig2_sc5_reactcomment3 = ChatEntry( False, "{b}undergrog_ - 6:56{/b}\nlil bot is learning!", 1, "#ffffff")
+default vig2_sc5_reactcomment4 = ChatEntry( False, "{b}llamabama22 - 6:56{/b}\nnooooo MAC!", 1, "#ffffff")
+default vig2_sc5_reactcomment5 = ChatEntry( False, "{b}_lostinmetr0 - 6:56{/b}\nShield MAC's pure eyes!", 1, "#ffffff")
+
+default vig2_sc6_out_reactcomment1 = ChatEntry( False, "{b}turb0g00se1 - 6:56{/b}\nwhole lotta murder!", 1, "#ffffff")
+default vig2_sc6_out_reactcomment2 = ChatEntry( False, "{b}l00ts33kr - 6:56{/b}\nmoze is tryna do better lol.", 1, "#ffffff")
+default vig2_sc6_out_reactcomment3 = ChatEntry( False, "{b}undergrog_ - 6:56{/b}\ngotta do what ya gotta do.", 1, "#ffffff")
+default vig2_sc6_out_reactcomment4 = ChatEntry( False, "{b}HYP3RV3N0M - 6:56{/b}\nlol.", 1, "#ffffff")
+
+default vig2_sc6_mar_reactcomment1 = ChatEntry( False, "{b}_lostinmetr0 - 6:56{/b}\nDamn yeah, kinda underwhelming.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment2 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nim whelmed.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment3 = ChatEntry( False, "{b}crozzxgold - 6:56{/b}\nmost boring strat lol.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment4 = ChatEntry( False, "{b}jerrybean784 - 6:56{/b}\nleaving a lot of loose ends lol.", 1, "#ffffff")
+
+default vig2_sc7_reactcomment1 = ChatEntry( False, "{b}llamabama22 - 6:56{/b}\nmoze gettin called out!", 1, "#ffffff")
+default vig2_sc7_reactcomment2 = ChatEntry( False, "{b}l00ts33kr - 6:56{/b}\damn straight!", 1, "#ffffff")
+default vig2_sc7_reactcomment3 = ChatEntry( False, "{b}el33T_sn1per - 6:56{/b}\nI mean its all a matter of degrees.", 1, "#ffffff")
+default vig2_sc7_reactcomment4 = ChatEntry( False, "{b}HYP3RV3N0M - 6:56{/b}\nfr.", 1, "#ffffff")
+
+
 
 
 ###################### OLD COMMENTS FROM PROTOTYPING########################
