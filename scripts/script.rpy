@@ -144,7 +144,8 @@ default romanceAma = False
 default romanceJennica = False
 default romanceTeresa = False
 default baseGuardKilled = False
-
+default gunsBlazing = False
+default customsSpeculation = False
 
 
 #default yadj = ui.adjustment()

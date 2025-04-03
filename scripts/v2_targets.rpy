@@ -313,6 +313,7 @@ label vig2_sc2_landingongibian():
         "Speculate about what happens next."
         "How bad do you guys think this'll go?":
             player "Alright on a scale of 1 to 10 how fast is this gonna go bad?"
+            $ customsSpeculation = True
             $ AddChatter(vig2_sc2_reactcomment1)
             $ AddChatter(vig2_sc2_reactcomment2)
             $ AddChatter(vig2_sc2_reactcomment3)
@@ -360,7 +361,7 @@ label vig2_sc2_firstproblem():
     $ narrator = reg_narrator
     menu:
         "Call back to speculating what will happen."
-        "I called it!":
+        "I called it!" if customsSpeculation == True:
             player "Well, that didn't take very long…."
             $ AddChatter(vig2_sc2_reactcomment9)
             $ AddChatter(vig2_sc2_reactcomment10)
@@ -599,9 +600,15 @@ label vig2_sc8_out_postchoice():
         "After your choice."
         "We had no choice.":
             player "I have to do what I have to do."
+            $ AddChatter(vig2_sc8_out_reactcomment1)
+            $ AddChatter(vig2_sc8_out_reactcomment2)
+            $ AddChatter(vig2_sc8_out_reactcomment3)
             pause 0.5
         "It's good to be bad!":
             player "That felt better than I expected."
+            $ AddChatter(vig2_sc8_out_reactcomment4)
+            $ AddChatter(vig2_sc8_out_reactcomment5)
+            $ AddChatter(vig2_sc8_out_reactcomment6)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -621,12 +628,22 @@ label vig2_sc8_out_reflect():
         "Reflect on your choice."
         "Jennica's upset.":
             player "I think we lost Jennica's trust a bit."
+            $ AddChatter(vig2_sc8_out_reactcomment7)
+            $ AddChatter(vig2_sc8_out_reactcomment8)
+            $ AddChatter(vig2_sc8_out_reactcomment9)
             pause 0.5
         "Was that wrong?":
             player "Maybe that was too much..."
+            $ AddChatter(vig2_sc8_out_reactcomment10)
+            $ AddChatter(vig2_sc8_out_reactcomment11)
+            $ AddChatter(vig2_sc8_out_reactcomment12)
             pause 0.5
         "Get wrecked!":
             player "Bye bye, Sallent."
+            $ AddChatter(vig2_sc8_out_reactcomment13)
+            $ AddChatter(vig2_sc8_out_reactcomment14)
+            $ AddChatter(vig2_sc8_out_reactcomment15)
+            $ AddChatter(vig2_sc8_out_reactcomment16) if baseGuardKilled == True
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -643,12 +660,18 @@ label vig2_sc9_out_end():
         "Reflect on the Outlaw choice."
         "Matticus will get his karma.":
             player "Don't worry, I'll make sure Matticus gets his."
+            $ AddChatter(vig2_sc9_out_reactcomment1)
+            $ AddChatter(vig2_sc9_out_reactcomment2)
             pause 0.5
         "A new friend?":
             player "A Matticus ally run maybe?"
+            $ AddChatter(vig2_sc9_out_reactcomment3)
+            $ AddChatter(vig2_sc9_out_reactcomment4)
             pause 0.5
         "So much more content!":
             player "I can't believe I missed stuff like this on my first playthrough."
+            $ AddChatter(vig2_sc9_out_reactcomment5)
+            $ AddChatter(vig2_sc9_out_reactcomment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -663,14 +686,20 @@ label vig2_sc8_mar_reacttoregi():
     $ narrator = reg_narrator
     menu:
         "React to Reginald."
-        "Add him to the pile!":
+        "Add him to the pile!" if gunsBlazing == True:
             player "Looks like we're going to get another body."
+            $ AddChatter(vig2_sc8_mar_reactcomment1)
+            $ AddChatter(vig2_sc8_mar_reactcomment2)
             pause 0.5
         "Predictable.":
             player "Of course he does."
+            $ AddChatter(vig2_sc8_mar_reactcomment3)
+            $ AddChatter(vig2_sc8_mar_reactcomment4)
             pause 0.5
         "Can we persuade him?":
             player "Maybe we can talk our way out of this?"
+            $ AddChatter(vig2_sc8_mar_reactcomment5)
+            $ AddChatter(vig2_sc8_mar_reactcomment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -687,12 +716,17 @@ label vig2_sc8_mar_reacttoregistun():
         "React to stunning Reginald."
         "Better than he deserved.":
             player "I mean if we would've killed him that wouldn't be a problem."
+            $ AddChatter(vig2_sc8_mar_reactcomment7)
+            $ AddChatter(vig2_sc8_mar_reactcomment8)
             pause 0.5
         "Fair enough.":
             player "I guess that makes sense."
+            $ AddChatter(vig2_sc8_mar_reactcomment9)
             pause 0.5
         "Get stunned!":
             player "That felt pretty good."
+            $ AddChatter(vig2_sc8_mar_reactcomment10)
+            $ AddChatter(vig2_sc8_mar_reactcomment11)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -709,12 +743,18 @@ label vig2_sc8_mar_reacttoregibribe():
         "React to the bribe."
         "Easy.":
             player "Welp, that was easy."
+            $ AddChatter(vig2_sc8_mar_reactcomment12)
+            $ AddChatter(vig2_sc8_mar_reactcomment13)
+            $ AddChatter(vig2_sc8_mar_reactcomment14)
             pause 0.5
         "Better than he deserved.":
             player "It would've felt better to shoot him."
+            $ AddChatter(vig2_sc8_mar_reactcomment15)
+            $ AddChatter(vig2_sc8_mar_reactcomment16)
             pause 0.5
         "This is getting expensive.":
             player "Do we even have that kind of money?"
+            $ AddChatter(vig2_sc8_mar_reactcomment17)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -731,12 +771,18 @@ label vig2_sc9_mar_end():
         "Reflect on the Marshal choice."
         "Too easy tbh.":
             player "That was a bit too convenient, to be honest."
+            $ AddChatter(vig2_sc9_mar_reactcomment1)
+            $ AddChatter(vig2_sc9_mar_reactcomment2)
             pause 0.5
         "Sweet!":
             player "Honestly couldn't ask to be in a better spot."
+            $ AddChatter(vig2_sc9_mar_reactcomment3)
+            $ AddChatter(vig2_sc9_mar_reactcomment4)
             pause 0.5
         "Was this the best choice?":
             player "Definitely should've blown up the ship."
+            $ AddChatter(vig2_sc9_mar_reactcomment5)
+            $ AddChatter(vig2_sc9_mar_reactcomment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
