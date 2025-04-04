@@ -180,14 +180,14 @@ screen raidFreeze():
 screen selectProfilePic():
     text "Now select your streaming profile picture.":
         align (0.33, 0.843)
-    imagebutton:
-        action [SetVariable("profilePic", "socials/profilepics/profile1.png"), Return()]
-        background Image("socials/profilepics/profile1.png")
-        idle Image("socials/profilepics/profile1.png")
-        hover Solid("#5e5e5e4b")
-        xsize 100
-        ysize 100
-        align (0.2, 0.5)
+    #imagebutton:
+    #    action [SetVariable("profilePic", "socials/profilepics/profile1.png"), Return()]
+    #    background Image("socials/profilepics/profile1.png")
+    #    idle Image("socials/profilepics/profile1.png")
+    #    hover Solid("#5e5e5e4b")
+    #    xsize 100
+    #    ysize 100
+    #    align (0.2, 0.5)
     imagebutton:
         action [SetVariable("profilePic", "socials/profilepics/profile2.png"), Return()]
         background Image("socials/profilepics/profile2.png")
