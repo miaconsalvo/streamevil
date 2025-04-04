@@ -10,7 +10,7 @@ default vig2_sc1_comment6 = ChatEntry( False, "{b}AFKangel:{/b} dunno. havent pl
 default vig2_sc1_comment7 = ChatEntry( False, "{b}kitcat:{/b} from where im at, yup that's it!", 2, "#ffffff")
 default vig2_sc1_comment8 = ChatEntry( False, "{b}turb0g00se:{/b} matticus alignment might give some interesting options", 2, "#ffffff")
 default vig2_sc1_comment9 = ChatEntry( False, "{b}_lostinmetr0:{/b} yeah it would give them a lot more access to the underground.", 2, "#ffffff")
-default vig2_sc1_comment10 = ChatEntry( False, "{b}Coriolis:{/b} if [player] can convince him! like in the {i}Treck Down{/i} stream with the underworlder chief.", 2, "#ffffff")
+default vig2_sc1_comment10 = ChatEntry( False, "{b}Coriolis:{/b} if [streamer] can convince him! like in the {i}Treck Down{/i} stream with the underworlder chief.", 2, "#ffffff")
 default vig2_sc1_comment11 = ChatEntry( False, "{b}turb0g00se:{/b} true true", 2, "#ffffff")
 default vig2_sc1_comment12 = ChatEntry( False, "{b}PickledDragons:{/b} yeah and definitely would lead to some shenanigans", 2, "#ffffff")
 default vig2_sc1_comment13 = ChatEntry( True, "{b}shnzi:{/b} new to stream! did you like matticus in the first game?", 2, "#ffffff", "vig2_sc1_matticusopinion")
@@ -50,7 +50,7 @@ default vig2_sc2_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} ah yes
 default vig2_sc2_out_comment2 = ChatEntry( False, "{b}Coriolis:{/b} cant help but agree", 2, "#ffffff")
 default vig2_sc2_out_comment3 = ChatEntry( False, "{b}AFKangel:{/b} lmao teresa always makes it fun", 2, "#ffffff")
 default vig2_sc2_out_comment4 = ChatEntry( False, "{b}turb0g00se:{/b} YES literally whas the worst that can happen", 2, "#ffffff")
-default vig2_sc2_out_comment5 = ChatEntry( True, "{b}shnzi:{/b} hey [player], are you romancing teresa?", 2, "#ffffff", "vig2_sc2_out_romance")
+default vig2_sc2_out_comment5 = ChatEntry( True, "{b}shnzi:{/b} hey [streamer], are you romancing teresa?", 2, "#ffffff", "vig2_sc2_out_romance")
 default vig2_sc2_out_comment6 = ChatEntry( False, "{b}kitcat:{/b} it's hard to, unless you make some whack choices", 2, "#ffffff")
 default vig2_sc2_out_comment7 = ChatEntry( False, "{b}bacon8r_6:{/b} don't understand why more people don't pick what an actual outlaw crew would do", 2, "#ffffff")
 default vig2_sc2_out_comment8 = ChatEntry( False, "{b}PickledDragons:{/b} even Jennica's having fun - crew bonding at max capacity", 2, "#ffffff")
@@ -118,7 +118,7 @@ default vig2_sc6_mar_choice2_stun_comment1 = ChatEntry( False, "{b}kitcat:{/b} n
 default vig2_sc6_mar_choice2_stun_comment2 = ChatEntry( False, "{b}AFKangel:{/b} we all picked that one didn't we? :')", 2, "#ffffff")
 default vig2_sc6_mar_choice2_stun_comment3 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} we are united in our lameness <3", 2, "#ffffff")
 default vig2_sc6_mar_choice2_dist_comment1 = ChatEntry( False, "{b}_lostinmetr0:{/b} the tried and true distract and run", 2, "#ffffff")
-default vig2_sc6_mar_choice2_dist_comment2 = ChatEntry( False, "{b}Coriolis:{/b} a [player] classic", 2, "#ffffff")
+default vig2_sc6_mar_choice2_dist_comment2 = ChatEntry( False, "{b}Coriolis:{/b} a [streamer] classic", 2, "#ffffff")
 
 #Comments in Scene 6 - Outlaw Assault
 default vig2_sc6_out_comment1 = ChatEntry( False, "{b}PickledDragons:{/b} YES! Outlaws being outlaws!", 2, "#ffffff")
@@ -206,7 +206,7 @@ default vig2_sc7_out_comment10 = ChatEntry( False, "{b}PickledDragons:{/b} nonon
 default vig2_sc7_out_comment11 = ChatEntry( False, "{b}Coriolis:{/b} good LOL", 2, "#ffffff")
 default vig2_sc7_out_comment12 = ChatEntry( False, "{b}PickledDragons:{/b} I'm just having fun that we're picking things a lot of people don't", 2, "#ffffff")
 default vig2_sc7_out_comment13 = ChatEntry( False, "{b}turb0g00se:{/b} same!!", 2, "#ffffff")
-default vig2_sc7_out_comment14 = ChatEntry( False, "{b}Coriolis:{/b} yeah [player]'s fun to watch", 2, "#ffffff")
+default vig2_sc7_out_comment14 = ChatEntry( False, "{b}Coriolis:{/b} yeah [streamer]'s fun to watch", 2, "#ffffff")
 default vig2_sc7_out_comment15 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} yes!", 2, "#ffffff")
 default vig2_sc7_out_comment16 = ChatEntry( False, "{b}R4dioRobbie:{/b} LIVE STREAM backwards iS EVIL (maerts) >:)", 2, "#ffffff")
 default vig2_sc7_out_comment17 = ChatEntry( False, "{b}turb0g00se:{/b} that's so corny", 2, "#ffffff")
@@ -285,8 +285,126 @@ default vig2_epilogue_out_rips7 = ChatEntry( False, "{b}J4MIR0QU4I:{/b} R I P", 
 
 ### Streamer react chats###
 
-default vig2_sc1_reactcomment1 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\npretty gud. got a pokebowl.", 1, "#ffffff")
-default vig2_sc1_reactcomment2 = ChatEntry( False, "{b}_swayy0scar - 6:56{/b}\nwe all about trouble!", 1, "#ffffff")
+default vig2_sc1_reactcomment1 = ChatEntry( False, "{b}_swayy0scar:{/b}\npretty gud. got a pokebowl.", 1, "#ffffff")
+default vig2_sc1_reactcomment2 = ChatEntry( False, "{b}_swayy0scar:{/b}\nwe all about trouble!", 1, "#ffffff")
+default vig2_sc1_reactcomment3 = ChatEntry( False, "{b}AFKangel:{/b}\nhimbo dead sadge.", 1, "#ffffff")
+default vig2_sc1_reactcomment4 = ChatEntry( False, "{b}jerrybean784:{/b}\nbuyers remorse lol.", 1, "#ffffff")
+default vig2_sc1_reactcomment5 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nyaaah dont mess with MAC!", 1, "#ffffff")
+default vig2_sc1_reactcomment6 = ChatEntry( False, "{b}crozzxgold:{/b}\nlooks like a lot!", 1, "#ffffff")
+default vig2_sc1_reactcomment7 = ChatEntry( False, "{b}s1n1st4R:{/b}\njennica T_T.", 1, "#ffffff")
+default vig2_sc1_reactcomment8 = ChatEntry( False, "{b}undergrog_:{/b}\nnooooooo.", 1, "#ffffff")
+
+default vig2_sc2_reactcomment1 = ChatEntry( False, "{b}turb0g00se1 - {/b}\ndef 10.", 1, "#ffffff")
+default vig2_sc2_reactcomment2 = ChatEntry( False, "{b}marxky8 - {/b}\n10 fsho.", 1, "#ffffff")
+default vig2_sc2_reactcomment3 = ChatEntry( False, "{b}el33T_sn1per:{/b}\n8!", 1, "#ffffff")
+default vig2_sc2_reactcomment4 = ChatEntry( False, "{b}crozzxgold:{/b}\nNot Ama!!.", 1, "#ffffff")
+
+default vig2_sc2_reactcomment5 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\ncutest cargo!", 1, "#ffffff")
+default vig2_sc2_reactcomment6 = ChatEntry( False, "{b}AFKangel:{/b}\nadorbs package lol.", 1, "#ffffff")
+default vig2_sc2_reactcomment7 = ChatEntry( False, "{b}undergrog_:{/b}\nhypnotized by the cuteness uwu.", 1, "#ffffff")
+default vig2_sc2_reactcomment8 = ChatEntry( False, "{b}s1n1st4r:{/b}\ncute robot OP!", 1, "#ffffff")
+
+default vig2_sc2_reactcomment9 = ChatEntry( False, "{b}el33T_sn1per:{/b}\neasiest prediction ever LOL.", 1, "#ffffff")
+default vig2_sc2_reactcomment10 = ChatEntry( False, "{b}turb0g00se1:{/b}\nfr", 1, "#ffffff")
+default vig2_sc2_reactcomment11 = ChatEntry( False, "{b}virgom00n:{/b}\nthere's always a problem.", 1, "#ffffff")
+default vig2_sc2_reactcomment12 = ChatEntry( False, "{b}l00ts33kr:{/b}\nLOL!", 1, "#ffffff")
+default vig2_sc2_reactcomment13 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nThe jig is up!", 1, "#ffffff")
+
+default vig2_sc2_reactcomment14 = ChatEntry( False, "{b}_lostinmetr0:{/b}\nFamous last words LOL!", 1, "#ffffff")
+default vig2_sc2_reactcomment15 = ChatEntry( False, "{b}llamabama22:{/b}\neverythings cool!", 1, "#ffffff")
+default vig2_sc2_reactcomment16 = ChatEntry( False, "{b}jerrybean784:{/b}\ndying together <3", 1, "#ffffff")
+
+default vig2_sc3_reactcomment1 = ChatEntry( False, "{b}el33T_sn1per:{/b}\nNever punished never learn!", 1, "#ffffff")
+default vig2_sc3_reactcomment2 = ChatEntry( False, "{b}AFKangel:{/b}\nfrfr.", 1, "#ffffff")
+default vig2_sc3_reactcomment3 = ChatEntry( False, "{b}undergrog_:{/b}\nLOL.", 1, "#ffffff")
+default vig2_sc3_reactcomment4 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nWay too easy!", 1, "#ffffff")
+default vig2_sc3_reactcomment5 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\nyah idk.", 1, "#ffffff")
+
+default vig2_sc4_reactcomment1 = ChatEntry( False, "{b}l00ts33kr:{/b}\nRoasted.", 1, "#ffffff")
+default vig2_sc4_reactcomment2 = ChatEntry( False, "{b}duckduckdi3:{/b}\nyah i dont trust this guy.", 1, "#ffffff")
+default vig2_sc4_reactcomment3 = ChatEntry( False, "{b}marxky8:{/b}\nlove the his new design too!", 1, "#ffffff")
+default vig2_sc4_reactcomment4 = ChatEntry( False, "{b}crozzxgold:{/b}\nwooo team chaos!", 1, "#ffffff")
+default vig2_sc4_reactcomment5 = ChatEntry( False, "{b}turb0g00se1:{/b}\nso in for being bad.", 1, "#ffffff")
+
+default vig2_sc4_reactcomment6 = ChatEntry( False, "{b}virgom00n:{/b}\nI mean you think the mob boss does favours lol.", 1, "#ffffff")
+default vig2_sc4_reactcomment7 = ChatEntry( False, "{b}AFKangel:{/b}\nfr. <3", 1, "#ffffff")
+default vig2_sc4_reactcomment8 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nlol lemme just risk myself for nothing.", 1, "#ffffff")
+default vig2_sc4_reactcomment9 = ChatEntry( False, "{b}_swayy0scar:{/b}\nwe are so back!", 1, "#ffffff")
+
+default vig2_sc5_reactcomment1 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\ndont be a bad robo-parent lol.", 1, "#ffffff")
+default vig2_sc5_reactcomment2 = ChatEntry( False, "{b}duckduckdi3:{/b}\nyah hes already repeating skeeve.", 1, "#ffffff")
+default vig2_sc5_reactcomment3 = ChatEntry( False, "{b}undergrog_:{/b}\nlil bot is learning!", 1, "#ffffff")
+default vig2_sc5_reactcomment4 = ChatEntry( False, "{b}llamabama22:{/b}\nnooooo MAC!", 1, "#ffffff")
+default vig2_sc5_reactcomment5 = ChatEntry( False, "{b}_lostinmetr0:{/b}\nShield MAC's pure eyes!", 1, "#ffffff")
+
+default vig2_sc6_out_reactcomment1 = ChatEntry( False, "{b}turb0g00se1:{/b}\nwhole lotta murder!", 1, "#ffffff")
+default vig2_sc6_out_reactcomment2 = ChatEntry( False, "{b}l00ts33kr:{/b}\nmoze is tryna do better lol.", 1, "#ffffff")
+default vig2_sc6_out_reactcomment3 = ChatEntry( False, "{b}undergrog_:{/b}\ngotta do what ya gotta do.", 1, "#ffffff")
+default vig2_sc6_out_reactcomment4 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\nlol.", 1, "#ffffff")
+
+default vig2_sc6_mar_reactcomment1 = ChatEntry( False, "{b}_lostinmetr0:{/b}\nDamn yeah, kinda underwhelming.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment2 = ChatEntry( False, "{b}_swayy0scar:{/b}\nim whelmed.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment3 = ChatEntry( False, "{b}crozzxgold:{/b}\nmost boring strat lol.", 1, "#ffffff")
+default vig2_sc6_mar_reactcomment4 = ChatEntry( False, "{b}jerrybean784:{/b}\nleaving a lot of loose ends lol.", 1, "#ffffff")
+
+default vig2_sc7_reactcomment1 = ChatEntry( False, "{b}llamabama22:{/b}\nmoze gettin called out!", 1, "#ffffff")
+default vig2_sc7_reactcomment2 = ChatEntry( False, "{b}l00ts33kr:{/b}\damn straight!", 1, "#ffffff")
+default vig2_sc7_reactcomment3 = ChatEntry( False, "{b}el33T_sn1per:{/b}\nI mean its all a matter of degrees.", 1, "#ffffff")
+default vig2_sc7_reactcomment4 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\nfr.", 1, "#ffffff")
+
+default vig2_sc8_out_reactcomment1 = ChatEntry( False, "{b}crozzxgold:{/b}\nwooooo team chaos!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment2 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\makes sense.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment3 = ChatEntry( False, "{b}turb0g00se1:{/b}\ndaaaaaaaaaaamn.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment4 = ChatEntry( False, "{b}l00ts33kr:{/b}\nwow crazy!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment5 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\n[streamer]'s doing some evil shit!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment6 = ChatEntry( False, "{b}duckduckdi3:{/b}\nits good to be bad!", 1, "#ffffff")
+
+default vig2_sc8_out_reactcomment7 = ChatEntry( False, "{b}llamabama22:{/b}\neeeeh shell get over it.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment8 = ChatEntry( False, "{b}undergrog_:{/b}\nye prolly pissed her off.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment9 = ChatEntry( False, "{b}s1n1st4R:{/b}\nnooooo Jenn T_T!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment10 = ChatEntry( False, "{b}crozzxgold:{/b}\nno such thing as too much!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment11 = ChatEntry( False, "{b}marxky8:{/b}\nya probably.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment12 = ChatEntry( False, "{b}el33T_sn1per:{/b}\nMaybe way too much lol.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment13 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\nwow brutal.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment14 = ChatEntry( False, "{b}crozzxgold:{/b}\nget rekt villagers!", 1, "#ffffff")
+default vig2_sc8_out_reactcomment15 = ChatEntry( False, "{b}duckduckdi3:{/b}\nlol, lmao even.", 1, "#ffffff")
+default vig2_sc8_out_reactcomment16 = ChatEntry( False, "{b}R4dioRobbie:{/b}\nno rugrats fr this time lol.", 1, "#ffffff")
+
+default vig2_sc9_out_reactcomment1 = ChatEntry( False, "{b}l00ts33kr:{/b}\nhope we get a shot.", 1, "#ffffff")
+default vig2_sc9_out_reactcomment2 = ChatEntry( False, "{b}duckduckdi3:{/b}\nhe deserves worse!", 1, "#ffffff")
+default vig2_sc9_out_reactcomment3 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\ndamn [streamer]'s really getting into outlaw!", 1, "#ffffff")
+default vig2_sc9_out_reactcomment4 = ChatEntry( False, "{b}turb0g00se1:{/b}\nmob boss route lol.", 1, "#ffffff")
+default vig2_sc9_out_reactcomment5 = ChatEntry( False, "{b}undergrog_:{/b}\nyah ppl miss so much.", 1, "#ffffff")
+default vig2_sc9_out_reactcomment6 = ChatEntry( False, "{b}crozzxgold:{/b}\noutlawlife!", 1, "#ffffff")
+
+default vig2_sc8_mar_reactcomment1 = ChatEntry( False, "{b}turb0g00se1:{/b}\naddem to the pile!", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment2 = ChatEntry( False, "{b}duckduckdi3:{/b}\nMoze just loves killin!", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment3 = ChatEntry( False, "{b}_lostinmetr0:{/b}\ncant be so easy lol.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment4 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nhenchman so loyal.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment5 = ChatEntry( False, "{b}s1n1st4r:{/b}\nno chance.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment6 = ChatEntry( False, "{b}crozzxgold:{/b}\nbribe again wow.", 1, "#ffffff")
+
+
+default vig2_sc8_mar_reactcomment7 = ChatEntry( False, "{b}crozzxgold:{/b}\nsigh lol.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment8 = ChatEntry( False, "{b}R4dioRobbie:{/b}\nshoulda killed him lol.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment9 = ChatEntry( False, "{b}s1n1st4R:{/b}\nlol Jenn is ruthless!", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment10 = ChatEntry( False, "{b}HYP3RV3N0M:{/b}\nHell yah!", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment11 = ChatEntry( False, "{b}duckduckdi3:{/b}\ngood but not too good lol.", 1, "#ffffff")
+
+default vig2_sc8_mar_reactcomment12 = ChatEntry( False, "{b}AFKangel:{/b}\nMoney is the best weapon lol.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment13 = ChatEntry( False, "{b}jerrybean784:{/b}\ntoo easy.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment14 = ChatEntry( False, "{b}crozzxgold:{/b}\nbribe is like the default.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment15 = ChatEntry( False, "{b}turb0g00se1:{/b}\nyah fr.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment16 = ChatEntry( False, "{b}bacon8r_6:{/b}\nnah reggies so cool.", 1, "#ffffff")
+default vig2_sc8_mar_reactcomment17 = ChatEntry( False, "{b}virgom00n:{/b}\nhow is the oakley so flush with cash lol.", 1, "#ffffff")
+
+default vig2_sc9_mar_reactcomment1 = ChatEntry( False, "{b}jerrybean784:{/b}\nlol forger pops up to bail you out.", 1, "#ffffff")
+default vig2_sc9_mar_reactcomment2 = ChatEntry( False, "{b}_lostinmetr0:{/b}\nwaaaaaay too convenient.", 1, "#ffffff")
+default vig2_sc9_mar_reactcomment3 = ChatEntry( False, "{b}n0sc0pes0yb0y:{/b}\nbest of both worlds!", 1, "#ffffff")
+default vig2_sc9_mar_reactcomment4 = ChatEntry( False, "{b}duckduckdi3:{/b}\nbut matticus!", 1, "#ffffff")
+default vig2_sc9_mar_reactcomment5 = ChatEntry( False, "{b}crozzxgold:{/b}\nooof feeling bad about not killin?", 1, "#ffffff")
+default vig2_sc9_mar_reactcomment6 = ChatEntry( False, "{b}R4dioRobbie:{/b}\nlol.", 1, "#ffffff")
+
 
 
 ###################### OLD COMMENTS FROM PROTOTYPING########################
@@ -306,7 +424,7 @@ default kkMarshalD2 = ChatEntry(False, "{b}KitKat:{/b} Awww I wanted to see what
 #comments for CoriolisDnD talk
 default csDnDvg2 = ChatEntry (False, "{b}Coriolis:{/b} nooooo hit her up again, make it happen!", 0, "#000000ff")
 default csDnD2vg2 = ChatEntry (False, "{b}Coriolis:{/b} same! I go cleric a lot of the time, though I typically spec it to be effective in combat too", 0, "#000000ff" )
-default kkDnDvg2 = ChatEntry (True, "{b}KitKat:{/b} What class do you think [player] would run?", 0, "#000000ff", "DnDClassTalk")
-default kkDnDvg2play = ChatEntry (True, "{b}KitKat:{/b} What class do you think [player] runs?", 0, "#000000ff", "DnDClassTalkplay")
+default kkDnDvg2 = ChatEntry (True, "{b}KitKat:{/b} What class do you think [streamer] would run?", 0, "#000000ff", "DnDClassTalk")
+default kkDnDvg2play = ChatEntry (True, "{b}KitKat:{/b} What class do you think [streamer] runs?", 0, "#000000ff", "DnDClassTalkplay")
 default pdDnDvg2 = ChatEntry (False, "{b}PickledDragons:{/b} I'm seeing Paladin for some reason personally", 0, "#000000ff")
 default pdDnD2vg2 = ChatEntry (False, "{b}PickledDragons:{/b} Called it!", 0, "#000000ff")
