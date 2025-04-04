@@ -184,11 +184,13 @@ label streetShootout:
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
     "Allistar, MAC, and I rush into the deserted main street of Grand Junction."
     "My feet pound against the hardpacked ground. The spaceport is dead ahead of us."
+    show bc_enforcer at stream_center with dissolve
     "And so are BigCorp goons, six enforcers wearing telltale blue and grey uniforms."
     "We shoot on instinct, blaster bolts streaking across the desert sand."
     "I dive into cover around the side of a building as they return fire."
     $ AddChatter(vig1_sc2_comment7)
     pause 0.5
+    hide bc_enforcer with dissolve
     "The enforcers disperse. One takes a speeder and veers off while three duck into the alleys."
     "Two advance down the main street toward us."
     mS "BC scum."
@@ -232,17 +234,17 @@ label streetShootout:
             "I turn my attention to the rooftop threat."
             "Mine and Annatar's fire forces them into cover, but not before one of them takes a hit and falls off the back of the building."
             "The last one pokes their head up and Allistar hits them right between the eyes."
-            show customs agent at stream_left with Dissolve(0.3)
+            show bc_enforcer at stream_left with Dissolve(0.3)
             "At that moment the ground enforcer rounds the corner, about to fire."
             hide allistar with Dissolve (0.3)
             mS "MAC, run!"
             hide mac with Dissolve(0.3)
-            show customs agent at stream_center with move
+            show bc_enforcer at stream_center with move
             "Knocking the blaster out of his hand, I tackle him to the ground."
             "We roll over one another as he reaches for his gun."
             "He's too slow."
             "I pull my pistol to his chest and fire two rapid shots."
-            hide customs with Dissolve (0.3)
+            hide bc_enforcer with Dissolve (0.3)
             "Struggling to my feet, I look up to see MAC rolling quickly down the street toward the port."
             "Then the speeder rushes past me, bearing down on MAC."
             $ AddChatter(vig1_sc2_comment11)
@@ -271,7 +273,7 @@ label streetShootout:
             "The enforcers on the rooftop bear down on us."
             "Allistar and I quickly return fire from our precarious position, forcing them into cover."
             "A hail of blaster bolts go in both directions, but as they move to get closer, I manage to land a shot in one of their chests, knocking them down."
-            show customs agent at stream_center with Dissolve(0.3)
+            show bc_enforcer at stream_center with Dissolve(0.3)
             enforcer "Freeze!"
             hide allistar with Dissolve(0.3)
             "The enforcer on the ground rounds the corner, but that single word of hesitation gives me just enough time."
@@ -282,7 +284,7 @@ label streetShootout:
             "We roll over each other. Biting, punching, kicking. But he lands on top of me and wraps his hands around my throat."
             "He starts squeezing as I frantically push my hands up against his face, trying to find purchase, trying to knock him off."
             enforcer "Aiieea!"
-            hide customs with Dissolve (0.3)
+            hide bc_enforcer with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
             show allistar stream neutral at stream_right with Dissolve (0.5)
             "Allistar holds his right shoulder gingerly, a light trail of smoke from a blaster bolt flickers in the air."

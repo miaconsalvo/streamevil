@@ -643,7 +643,8 @@ label vig2_sc8_out_reflect():
             $ AddChatter(vig2_sc8_out_reactcomment13)
             $ AddChatter(vig2_sc8_out_reactcomment14)
             $ AddChatter(vig2_sc8_out_reactcomment15)
-            $ AddChatter(vig2_sc8_out_reactcomment16) if baseGuardKilled == True
+            if baseGuardKilled == True:
+                $ AddChatter(vig2_sc8_out_reactcomment16)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
