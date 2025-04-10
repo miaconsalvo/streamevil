@@ -82,7 +82,7 @@ screen streamDetails():
         xpadding 5
         ypadding 5
         text "[streamer]" align (.1, .1) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
-        text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
+        text "Viewers [viewCount]" align (1.208, -8.38) color "#ffffffff" #displays the current viewer count
         #text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
         #text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
         #text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
@@ -195,7 +195,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.4, 0.5)
+        align (0.3, 0.5)
     imagebutton:
         action [SetVariable("profilePic", "socials/profilepics/profile5.png"), Return()]
         background Image("socials/profilepics/profile5.png")
@@ -203,7 +203,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.6, 0.5)
+        align (0.7, 0.5)
     #imagebutton: #turned off for time being so the mod has their own profile pic
     #    action [SetVariable("profilePic", "socials/profilepics/profile4.png"), Return()]
     #    background Image("socials/profilepics/profile4.png")
