@@ -197,9 +197,9 @@ screen selectProfilePic():
         ysize 100
         align (0.4, 0.5)
     imagebutton:
-        action [SetVariable("profilePic", "socials/profilepics/profile3.png"), Return()]
-        background Image("socials/profilepics/profile3.png")
-        idle Image("socials/profilepics/profile3.png")
+        action [SetVariable("profilePic", "socials/profilepics/profile5.png"), Return()]
+        background Image("socials/profilepics/profile5.png")
+        idle Image("socials/profilepics/profile5.png")
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
