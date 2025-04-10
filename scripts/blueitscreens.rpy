@@ -67,21 +67,29 @@ screen blueitButtonCheck():
         text_color "#ffffffd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
         text_hover_color "#ffffffff" 
         text_selected_color "#ffffffff"
-        text_size 50
-        align (0.5, 0.98)
+        text_size 25
+        align (0.74, 0.39)
 
 screen blueitThread():
-    frame:
-        #background Image("launch thread.png") xalign 0.5
-        viewport id "blueitView":
-            area (0, 0, 1920, 1080)
-            draggable True #allows scrollbar to be dragged
-            mousewheel True #allows mousewheel to scroll viewport
-            scrollbars "vertical"
-            frame:
-                background Image(blueitImage)
-                xsize 1920
-                ysize yb
+    viewport:
+        area (430, 460, 1050, 580)
+        draggable True #allows scrollbar to be dragged
+        mousewheel True #allows mousewheel to scroll viewport
+        scrollbars "vertical" #sets vertical scroll bar
+        image(blueitImage)
+
+#screen blueitThread():
+#    frame:
+#        #background Image("launch thread.png") xalign 0.5
+#        viewport id "blueitView":
+#            area (0, 0, 1920, 1080)
+#            draggable True #allows scrollbar to be dragged
+#            mousewheel True #allows mousewheel to scroll viewport
+#            scrollbars "vertical"
+#            frame:
+#                background Image(blueitImage)
+#                xsize 1920
+#                ysize yb
 
 
 

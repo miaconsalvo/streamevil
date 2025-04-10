@@ -34,7 +34,7 @@ label vignette2Start():
 
 ###SCENE 1###
 label vig2Start(): 
-    show ship_hallway_stream at topleft onlayer background with dissolve
+    show ship_hallway at topleft onlayer background with dissolve
     #scene ship_hallway_stream at topleft with dissolve -- These two lines of code were the previous way of displaying backgrounds
     #show streamview at center onlayer master -- now we just need the line of code above them since streamview is always visible
     #BUT we need to hide these backgrounds whenever the scene transitions
@@ -44,6 +44,7 @@ label vig2Start():
     $ viewCount += 3
     $ reactTarget = "vig2_sc1_openingstream"
     show screen streamerCommentary
+    play audio "shipAlarm.wav"
     "The \"Approaching Planet\" notification alarm jolts me out of bed."
     $ AddChatter(vig2_sc1_comment1)
     $ AddChatter(vig2_sc1_comment2)

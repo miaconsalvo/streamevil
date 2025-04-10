@@ -1229,6 +1229,7 @@ label vig1_brother_2():
     player "Hahahahahaha"
     elliotflashback "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
+    pause 3.0
     #have to restore defaults before the next vignette
     $ chatter_list = [ ]
     nvl clear

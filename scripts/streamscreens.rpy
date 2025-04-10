@@ -195,7 +195,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.3, 0.5)
+        align (0.4, 0.5)
     imagebutton:
         action [SetVariable("profilePic", "socials/profilepics/profile5.png"), Return()]
         background Image("socials/profilepics/profile5.png")
@@ -203,7 +203,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.7, 0.5)
+        align (0.6, 0.5)
     #imagebutton: #turned off for time being so the mod has their own profile pic
     #    action [SetVariable("profilePic", "socials/profilepics/profile4.png"), Return()]
     #    background Image("socials/profilepics/profile4.png")

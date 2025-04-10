@@ -173,9 +173,9 @@ init:
 label start:
     show bg black at topleft onlayer background
 
-    "Hello, this is the start of a new game"
+    "Hello, this is the start of a new game."
 
-    "Please tell me your streamer username"
+    "Please tell me your streamer username."
     $ username = renpy.input("Your username is: ", length = 16)
     "Now please tell me your first name in real life"
     $ my_name = renpy.input("Your character's real name is: ", length = 16)
@@ -191,6 +191,6 @@ label start:
     $ AddChatter(vig1_sc1_comment6)
     $ AddChatter(vig1_sc1_comment7)
     $ AddChatter(vig1_sc1_comment8)
-    "And now we begin"
+    "And now we begin."
     jump vignette1Start
 
