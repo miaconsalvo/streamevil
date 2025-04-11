@@ -141,6 +141,13 @@ default audienceCheck = False
 
 ###Variabels for tracking Flinch Analytics Vignette 2
 default viewcountCheck_vig2 = False
+default topfanCheck_vig2 = False
+default audienceCheck_vig2 = False
+default viewershipThoughtCheck = False
+default flinchViewershipShnzi = False
+default flinchViewershipOutlaw = False
+default flinchViewershipMarshal = False
+default flinchViewershipAssault = False
 
 #blueit variables
 default blueitCheck = 0

@@ -4,6 +4,7 @@
 #Yeah, separate screen would be easiest by far
 screen streamAnalytics():
     #zorder 100 #determines how much overlayed it is
+    image "[profilePic]" align (.0455, .135) size (220, 220)
     
     if flinchCheck >= 3 and vignette1 == True:
         textbutton "Open Blueit":
@@ -175,9 +176,11 @@ screen viewershipButton:
     #    text_size 50
     #    align (0.78, 0.15)
 
-
+######Screens for Vignette 2########
 screen streamAnalytics_vig2():
     #zorder 100 #determines how much overlayed it is
+    image "[profilePic]" align (.0455, .135) size (220, 220)
+    
     if flinchCheck >= 3:
         textbutton "Close Flinch":
             background Solid("#66439eff")
@@ -196,8 +199,8 @@ screen streamAnalytics_vig2():
         ysize 260
         xalign 0.53
         yalign 0.935
-        if audienceCheck == False:
-            action Call("vig1_analytics_audience", from_current = True) #Change these to new target labels for vignette 2
+        if audienceCheck_vig2 == False:
+            action Call("vig2_analytics_audience", from_current = True) #Change these to new target labels for vignette 2
         else:
             action NullAction()
     
@@ -209,8 +212,8 @@ screen streamAnalytics_vig2():
         yalign 0.47
         idle Solid("#00000036")
         hover Solid("#0000006b")
-        if topfanCheck == False:
-            action Call("vig1_analytics_topfan", from_current = True)
+        if topfanCheck_vig2 == False:
+            action Call("vig2_analytics_topfan", from_current = True)
         else:
             action NullAction()
 

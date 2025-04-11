@@ -25,6 +25,8 @@ label vignette2Start():
     $ vbar9 = 0
     $ vbar10 = 0
     $ blueitPages = []
+    $ blueitChoiceCheck = False
+    $ flinchCheck = 0
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
@@ -2320,7 +2322,8 @@ label blueitVignette2_1:
 
 label FlinchAnalytics_vig2():
     $ menu = adv_menu
-    "I should probably checkout Flinch too."
+    "I should probably check out Flinch too."
+    $ flinchCheck = 0
     scene flinch_screen with dissolve
     #The six lines below this allow us to change who the topfan is
     #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
@@ -2355,6 +2358,7 @@ label FlinchAnalytics_vig2():
     hide screen streamAnalytics_vig2 with dissolve
 
 label vig2_macro_viewerChat_1():
+    $ menu = nvl_menu
     hide screen viewershipButton_vig2
     $ renpy.sound.play("audio/ReceiveText.ogg")
     "I'm about to move away from my computer when I hear another notification."

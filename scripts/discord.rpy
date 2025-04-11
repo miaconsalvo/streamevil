@@ -7,7 +7,7 @@ screen NVLnarration():
     image "gui/textbox.png" align (0.5, 1.0)
     frame:
         xpos 400
-        ypos 850
+        ypos 800
         right_margin 700
         background Solid("#00000000")
         text "[playerNVLNarration]" color "#ffffff"

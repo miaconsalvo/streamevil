@@ -12,7 +12,7 @@ screen blueit():
             align (0.395, 0.007)
 
     elif blueitChoiceCheck == True and vignette2 == True:
-        textbutton "Close Blueit":
+        textbutton "Open Flinch":
             action Jump("FlinchAnalytics_vig2")
             background Solid("#66439eff")
             text_color "#ffffffff"
