@@ -285,12 +285,12 @@ label vig1_analytics_audience():
     $ flinchCheck += 1
     $ audienceCheck = True
     hide screen viewershipButton
-    "That spike from the raid boosted your average audience all the way to thirteen."
+    "That spike from the raid got you a bunch of new followers!"
+    "You'll still have to get several more followers and keep an average viewership of ten per stream to get Affiliate."
     "Not everyone from the raid will stick around next time though."
-    "You'll still have to keep around ten viewers per stream to get Affiliate."
     menu:
         "Think about your last attempt":
-            "Last time you tried this you missed by just one average viewer."
+            "Last time you tried this you missed by just one viewer."
             "It was brutal."
         "Think about your conversation with Jessie":
             "Playing the Outlaw route might help with that."

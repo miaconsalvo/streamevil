@@ -75,8 +75,17 @@ default reluctance = 0
 default enthusiasm = 0
 default energy = 5
 
+#Flags to track what vignette we're on
+default vignette1 = False
+default vignette2 = False
+default vignette3 = False
+default vignette4 = False
+
 #variables to track attributes
 default curiosity = False
+default vibes = False
+default humour = False
+default story = False
 
 #variables to track viewer engagement
 default csEngagement = 5
@@ -84,8 +93,8 @@ default pdEngagement = 3
 default kcEngagement = 4
 
 #variables to track MAC's morality
-default macCynicism = 0
-default macTrust = 0
+default macHope = 0
+default macHonesty = 0
 default macViolence = 0
 
 #Approval of micro-game characters
@@ -192,5 +201,7 @@ label start:
     $ AddChatter(vig1_sc1_comment7)
     $ AddChatter(vig1_sc1_comment8)
     "And now we begin."
+    $ vignette2 = True
+    jump vig2_macro_mod_marshalEnd
     jump vignette1Start
 

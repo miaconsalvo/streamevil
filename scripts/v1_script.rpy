@@ -1,4 +1,8 @@
 label vignette1Start():
+    $ vignette1 = True
+    $ vignette2 = False
+    $ vignette3 = False
+    $ vignette4 = False
     scene streamview
     show screen streamChat
     show screen streamDetails
@@ -43,16 +47,16 @@ label returnToWorkshop():
     show allistar stream thinking
     aS "Do you ever think about the Snakehawks, Moze? What the old crew was, what we became?"
     menu:
-        aS "Do you ever think about the Snakehawks, Moze? What our old crew was, what we became?"
+        aS "Do you ever think about the Snakehawks, Moze? What the old crew was, what we became?"
         "Not really.":
             mS "I don't dwell on the past much. These days I have to keep my attention on the present."
             aS "Almost seems like a luxury."
         "We were a family.":
-            $ macCynicism -= 1
+            $ macHope += 1
             mS "It's simple: Ama took care of us and we took care of each other. We were all we had. A family."
             aS "And now that family's completely disintegrated."
         "We were just a bunch of people getting by.":
-            $ macCynicism += 1
+            $ macHope -= 1
             mS "We were always just a bunch of people who needed somewhere to go. And Ama was a good leader, paid well."
             aS "Surprising to hear from you considering how close you were with Deadeye. And that Jennica's stuck around with you."
     aS "I've been thinking a lot about our legacy ever since Deadeye's heist on BigCorp went wrong."
@@ -146,10 +150,12 @@ label shipCall:
     menu:
         aS "Moze, what have you done?"
         "What I had to do.":
+            $ macHope -= 1
             mS "I did what I had to do."
             mS "BigCorp {i}cannot{/i} get hold of MAC."
             mS "They didn't leave me with a choice."
         "Saved the galaxy.":
+            $ macHope += 1 
             mS "I saved the galaxy."
             mS "We don't know what BC wants with MAC, but we know it's bad."
             mS "We {i}cannot{/i} let them get hold of him."
@@ -222,11 +228,13 @@ label streetShootout:
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
         "Good initiave, MAC.":
+            $ macHonesty += 1
             $ kcEngagement += 1
             mS "I'm glad you're trying to help, MAC."
             "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
             mS "But we need something more than probabilities right now."
         "Not helping!":
+            $ macHonesty -= 1
             mS "Not helping, MAC!"
             "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
             $ AddChatter(vig1_sc2_comment8_kc)
@@ -338,6 +346,7 @@ label streetShootout:
             "A break in the hail of bullets."
             "Popping out of cover, Allistar and I land two quick shots while the enforcers are out in the open."
             "They fall limply to the ceiling."
+            stop backAudio
             "As Allistar and I stand up from the cover, the speeder careens past us, bearing down on MAC."
             $ AddChatter(vig1_sc2_comment11)
             pause 0.5
@@ -360,8 +369,9 @@ label streetShootout:
     mS "MAC!"
     "MAC stops and turns to face us."
     macS "Captain, the probability of our safe escape has risen to nearly 100\%!"
-    #$ renpy.music.set_volume(0.2)
-    play music "audio/soundtrack/decisionTime.wav" volume 0.5 fadein 1.0 loop
+    stop music fadeout 2.0
+    #$ renpy.music.set_volume(0.2, 1)
+    #play music "audio/soundtrack/decisionTime.wav" volume 0.5 fadein 1.0 loop
     #stop music
     "As MAC finishes, I see it out of the corner of my eye."
     "A rifle perched delicately on a roof. The shooter hidden from view."
@@ -379,6 +389,7 @@ label saveMAC():
         "I process the information in less than a second, then react."
         "Dive in front of the shot.":
             $ kcEngagement += 1
+            $ macViolence -= 1
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
@@ -401,13 +412,13 @@ label saveMAC():
             menu:
                 macS "But my sensors indicate you are in great pain."
                 "I'm {i}fine{/i}.":
-                    $ macTrust -= 1
+                    $ macHonesty -= 1
                     "I grimace."
                     mS "MAC, I said I'm {i}fine{/i}."
                     play audio "macSad.wav" volume 1.5
                     "MAC whirs lowly and tilts his head downward."
                 "I am in pain.":
-                    $ macTrust += 1
+                    $ macHonesty += 1
                     "I grimace."
                     mS "I am in pain, MAC."
                     mS "But we have to go."
@@ -432,6 +443,8 @@ label saveMAC():
 
 label spacePortEscape():
     play music "soundtrack/savethegalaxy.wav" volume 1.0 fadein 1.0 loop
+    show vig1_spaceport at topleft onlayer background with dissolve
+    hide vig1_town_stream
     $ viewCheck8 = viewCount
     if houseExplosion >= 1:
         $ AddChatter(vig1_sc2_comment16)
@@ -447,21 +460,23 @@ label spacePortEscape():
     "The enforcers have to take shelter while we rush up the ramp and into the ship."
     enS "They're inside! Jennica, get us out of here!"
     pS "Copy!"
-    stop backAudio fadeout 16.0
     hide teresa with dissolve
     show jennica stream angry at stream_center with dissolve
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
     show allistar stream neutral at stream_right with Dissolve (0.5)
     show mac stream at stream_left_mac with Dissolve(0.5)
     pause 0.5
+    stop backAudio fadeout 16.0
     pS "Nice of y'all to join us. Remind me to never visit Cromuu again."
     "Just as the ship begins to push off the ground, four immense BigCorp cruisers crest over a nearby hill."
     mS "Jennica? We have to go {i}now{/i}!"
     pS "I know, I know, I see them too!"
-    play audio "jetLaunch.wav" volume 3.0
+    play audio "jetLaunch.wav" volume 4.0
+    play backAudio "jetEngines.wav" volume 1.0
     "Jennica slams a thruster forward and the ship lurches into the air."
     "Bolts fire from the cruisers and detonate all around us as we ascend into the atmosphere."
-    stop music fadeout 3.0
+    stop music fadeout 4.0
+    stop backAudio fadeout 4.0
     "And then the attack stops. The turbulence on the ship dissipates. We're floating in space."
     "Jennica breathes a sigh of relief and punches something in on a keypad."
     "With a flick of a switch, the Oakley lurches forward into hyperspace. Away from Cromuu and Grand Junction."
@@ -473,7 +488,7 @@ label spacePortEscape():
 label councilDebrief():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     show shiphub_stream at topleft onlayer background with dissolve
-    hide vig1_town_stream
+    hide vig1_spaceport
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     pS "We've been in hyperspace for about an hour. And we got out before the cruisers were within range of us." 
@@ -521,7 +536,7 @@ label councilDebrief():
     $ narrator = reg_narrator
     $ renpy.sound.play("audio/ReceiveText.ogg")
     pause 0.5
-    "A private notification on Chaos from my mod, Jessie."
+    "A private notification on Clamor from my mod, Jessie."
     #insert discord sound effect
     call screen discordNotification
     $ viewCount += 8
@@ -553,6 +568,7 @@ label councilDebrief():
     player "For all the new folks, I'm [streamer]."
     menu:
         "My stream is story-focused.":
+            $ story = True
             player "I've been streaming for almost three years now, usually RPGs, every now and then some action games."
             player "Usually we like to chat about the game's writing."
             player "What we like about the stories, details to critique, theories about where the narrative's going, things like that."
@@ -561,6 +577,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream loves a good joke.":
+            $ humour = True
             player "I've been streaming for almost three years now, usually RPGs and occasionally a multiplayer shooter."
             player "Chat's always the spot for some solid memes and funny bits!"
             player "Good jokes keep me on my toes and helps us all be entertained."
@@ -569,6 +586,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream is all about vibes":
+            $ vibes = True
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
             player "We're all about chill vibes hear."
             player "So we take it easy and just go wherever the games take us!"
@@ -663,6 +681,7 @@ label escapePodConfrontation:
             "The words \"Kill Allistar\" glow red in the game's UI."
             $ narrator = alt_narrator
     play audio "lazer.wav" volume 5.0
+    $ macViolence += 1
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
     hide allistar with dissolve
@@ -755,9 +774,11 @@ label escapePodConfrontation:
     menu:
         macS "But, did he have to die?"
         "I didn't have a choice.":
+            $ macHope -= 1
             mS "There wasn't another way."
             mS "Not one where I could guarantee your safety."
         "It's safer this way.":
+            $ macViolence += 1
             mS "It's safer than the alternative."
             mS "I have to take care of my crew."
     macS "So this ship is still safe?"
@@ -853,7 +874,7 @@ label modConvo_Day1():
     "The most viewers you ever had in stream before was thirteen."
     "And that felt like a ton."
     $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Another Chaos notification?"
+    "Another Clamor notification?"
     scene discord with dissolve
     "It's Jessie."
     mod_nvl "Yoooooo"
@@ -1041,9 +1062,9 @@ label blueitVignette1():
     $ blueitPages.append(vig1_bThread3)
     $ blueitPages.append(vig1_bThread4)
     "I should see what people are saying about the Allistar choice and maybe see what else has the community's attention."
-    jump blueitVignette2
+    jump blueitVignette1_2
 
-label blueitVignette2():
+label blueitVignette1_2():
     scene blueit_screen at truecenter
     call screen blueit
     return

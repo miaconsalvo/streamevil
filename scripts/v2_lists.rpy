@@ -407,6 +407,22 @@ default vig2_sc9_mar_reactcomment6 = ChatEntry( False, "{b}R4dioRobbie:{/b}\nlol
 
 
 
+######Setting up Bluit Threads###########
+default vig2_bThread1 = bThread( 1, "vig2_blueit_allistarthread", "images/socials/bThread_firstChoice.png") #tag, target, image
+default vig2_bThread2 = bThread( 1, "vig2_blueit_matticusthread", "images/socials/bThread_firstGame.png")
+default vig2_bThread3 = bThread( 1, "vig2_blueit_copoutthread", "images/socials/bThread_romance.png")
+default vig2_bThread4 = bThread( 2, "vig2_blueit_stealththread", "images/socials/bThread_glitch.png")
+
+
+
+
+
+
+
+
+
+
+
 ###################### OLD COMMENTS FROM PROTOTYPING########################
 
 
