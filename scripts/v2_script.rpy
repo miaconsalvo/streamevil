@@ -24,6 +24,7 @@ label vignette2Start():
     $ vbar8 = 0
     $ vbar9 = 0
     $ vbar10 = 0
+    $ blueitPages = []
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
@@ -1662,14 +1663,16 @@ label commsBase_DataCenter_OUT():
             mS "Do we understand each other?"
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
-            hide worker stream with dissolve
-            show mac stream at stream_right with Dissolve(0.5)
+            hide datacenter_agent with dissolve
+            show mac stream at stream_center_mac with Dissolve(0.5)
             "MAC stares at the terrified technician."
             pS "Damn Cap, that was dark."
             enS "If it works it works."
+            hide teresa with dissolve
+            hide jennica with dissolve
             mS "Come MAC."
             "MAC begins to follow."
-            hide mac stream with Dissolve(0.1)
+            hide mac stream with Dissolve(1.5)
         "Kill him.":
             $ macViolence += 2
             $ outlaw += 2
@@ -1866,7 +1869,7 @@ label vig2epilogue_MAR():
     pause 0.5
     $ vig2_marshalEpilogue = True
     $ vig2_outlawEpilogue = False
-    "As the chat winds down, you take off your headset, and sign off of Twitch."
+    "As the chat winds down, you take off your headset, and sign off of Flinch."
     hide screen streamChat
     hide screen streamDetails
     scene black with dissolve
@@ -2004,7 +2007,7 @@ label vig2epilogue_OUT():
     $ vig2_outlawEpilogue = True
     $ vig2_marshalEpilogue = False
     stop music fadeout 6.0
-    "As the chat winds down, you take off your headset, and sign off of Twitch."
+    "As the chat winds down, you take off your headset, and sign off of Flinch."
     hide screen streamChat
     hide screen streamDetails
     scene black with dissolve
@@ -2172,6 +2175,7 @@ label vig2_macro_mod_outlawEnd():
     scene bg black
     nvl clear
     "I should check out the subblueit to see how people are reacting to Episode 2."
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     $ blueitPages.append(vig2_bThread1)
     $ blueitPages.append(vig2_bThread2)
     $ blueitPages.append(vig2_bThread3)
@@ -2300,6 +2304,7 @@ label vig2_macro_mod_marshalEnd():
     scene bg black
     nvl clear
     "I should check out the subblueit to see how people are reacting to Episode 2."
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     $ blueitPages.append(vig2_bThread1)
     $ blueitPages.append(vig2_bThread2)
     $ blueitPages.append(vig2_bThread3)
@@ -2719,9 +2724,9 @@ label vig2_macro_viewerChat_1():
         jump vig2_macro_bro1
 
 label vig2_macro_bro1():
+    nvl clear
     hide discord with dissolve
     scene black with dissolve
-    nvl clear
     "You weren't expecting that. But it was kind of nice for them to reach out."
     "But now it's time to walk away from your computer."
     "You shut down the computer and start winding down for the evening."
@@ -2770,7 +2775,7 @@ label vig2_macro_bro1():
                     $ reluctance += 1
                     player_nvl "Could go back to Marshal, idk"
                     player_nvl "Will have to see how the story goes"
-    player_nvl "Hope things with Jackson are going good! Love you <3"
+    player_nvl "Hope things with Cedric are going good! Love you <3"
     "You send the texts and then finish getting ready for bed."
     jump vig2_macro_sleep
 

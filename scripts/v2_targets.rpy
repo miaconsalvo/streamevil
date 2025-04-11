@@ -891,7 +891,7 @@ label vig2_blueit_stealththread():
 ###Targets for Flinch#####
 label vig2_analytics_viewcount():
     $ flinchCheck += 3
-    $ viewcountCheck = True
+    $ viewcountCheck_vig2 = True
     hide screen viewershipButton_vig2
     "this is a test"
     show screen viewershipButton_vig2

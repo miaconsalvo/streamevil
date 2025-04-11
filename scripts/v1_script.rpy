@@ -603,7 +603,7 @@ label councilDebrief():
     jump escapePodConfrontation
 
 label escapePodConfrontation:
-    show ship_hallway at topleft onlayer background with dissolve
+    show ship_hallway_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     $ macroChoice = False
     "I run down the halls of the ship and leap over the railing leading down to the escape pod bay."

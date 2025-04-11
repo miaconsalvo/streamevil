@@ -131,13 +131,16 @@ default vbar9 = 0
 default vbar10 = 0
 default max_viewers = 40
 
-###Variables for tracking Flinch Analytics
+###Variables for tracking Flinch Analytics Vignette 1
 default topfan = ""
 default flinchCheck = 0
 default viewcountCheck = False
 default topfanCheck = False
 default alignmentCheck = False
 default audienceCheck = False
+
+###Variabels for tracking Flinch Analytics Vignette 2
+default viewcountCheck_vig2 = False
 
 #blueit variables
 default blueitCheck = 0
@@ -201,7 +204,5 @@ label start:
     $ AddChatter(vig1_sc1_comment7)
     $ AddChatter(vig1_sc1_comment8)
     "And now we begin."
-    $ vignette2 = True
-    jump vig2_macro_mod_marshalEnd
     jump vignette1Start
 

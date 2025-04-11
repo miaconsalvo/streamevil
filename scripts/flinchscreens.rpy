@@ -179,7 +179,7 @@ screen viewershipButton:
 screen streamAnalytics_vig2():
     #zorder 100 #determines how much overlayed it is
     if flinchCheck >= 3:
-        textbutton "Open Blueit":
+        textbutton "Close Flinch":
             background Solid("#66439eff")
             action [Hide("viewership"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
             text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
@@ -222,7 +222,7 @@ screen viewershipButton_vig2:
             yalign .475
             idle Solid("#00000036")
             hover Solid("#0000006b")
-            if viewcountCheck == False:
+            if viewcountCheck_vig2 == False:
                 action Call("vig2_analytics_viewcount", from_current = True) #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
             else:
                 action NullAction()
