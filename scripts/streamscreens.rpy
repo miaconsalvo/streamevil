@@ -102,35 +102,37 @@ screen streamDetails():
 ###Tutorial screens for vignette 1
 screen chatTutorial():
     frame:
-        ypos 40 
+        ypos 100 
         xsize 1000
         ysize 230
+        xpadding 15 
+        ypadding 15 
         right_margin 200
-        background Solid("#000000ff")
+        background Image("images/stream ui/tutorialUI.png")
         text "Sometimes your chat will make comments you can respond to.\nThese are highlighted in yellow.\nClick on them to interact with your viewers."
         textbutton "Close Tutorial":
             action Hide("chatTutorial")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            align (1.35, 1.0)
 
 screen chatTutorial2():
     frame:
-        ypos 40 
+        ypos 100 
         xsize 1000
         ysize 230
+        xpadding 15 
+        ypadding 15 
         right_margin 200
-        background Solid("#000000ff")
+        background Image("images/stream ui/tutorialUI.png")
         text "When the textbox at the bottom of the chat is highlighted in blue and says \"React\",\nyou can click on it to initiate a conversation with your viewers."
         textbutton "Close Tutorial":
             action Hide("chatTutorial2")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            align (1.35, 1.0)
 
 screen discordNotification():
     frame:
