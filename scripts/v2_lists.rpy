@@ -2,7 +2,7 @@
 
 #Comments in Scene 1
 default vig2_sc1_comment1 = ChatEntry( False, "{b}Coriolis - 5:40{/b}\nI just got the live notification!", 2, "#ffffff")
-default vig2_sc1_comment2 = ChatEntry( True, "{b}Coriolis - 5:41{/b}\nIt's just after dinner for you right? How did that test go?", 2, "#ffffff", "vig2_sc1_testquestion")
+default vig2_sc1_comment2 = ChatEntry( True, "{b}Coriolis - 5:41{/b}\nIt's just after class for you right? How did that test go?", 2, "#ffffff", "vig2_sc1_testquestion")
 default vig2_sc1_comment3 = ChatEntry( False, "{b}Squeejieboy33 - 5:42{/b}\nehh back again! the ending last time was nuts", 2, "#ffffff")
 default vig2_sc1_comment4 = ChatEntry( False, "{b}kitcat - 5:44{/b}\nhey everyone!! ah im pumped for this one!", 2, "#ffffff")
 default vig2_sc1_comment5 = ChatEntry( False, "{b}_lostinmetr0 - 5:46{/b}\ndoes anyone know if this is the whole crew?", 2, "#ffffff")
