@@ -1108,12 +1108,13 @@ label commsBase_MAR2():
             pS "This all feels way too easy."
             enS "Why is that a bad thing?"
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment3)
+            $ reactTarget = "vig2_sc6_mar_reflect"
+            show screen streamerCommentary
             enS "I rather like it when things are easy."
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
-            $ reactTarget = "vig2_sc6_mar_reflect"
-            show screen streamerCommentary
             "Reginald opens the door."
+            hide screen streamerCommentary
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
