@@ -22,7 +22,7 @@ label returnToWorkshop():
     "Thermal paste in hand I return to Allistar's workshop."
     show vig1_allistar_workshop at topleft onlayer background with dissolve
     hide vig1_town_stream
-    show mac stream at stream_center_mac with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     show allistar stream neutral at stream_right with dissolve
     "MAC is in the center of the room, a faint trill of classical music whistles from his voice box."
     "Allistar sits on a chair behind the droid, still working on the open circuit panel in MAC's back." 
@@ -223,7 +223,7 @@ label streetShootout:
     "Allistar ducks into cover behind some nearby barrels."
     aS "We can't get pinned down!"
     "A light bump taps me on the knee."
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     macS "Affirmative, our survival rate in the current situation is 5\%."
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
@@ -365,7 +365,7 @@ label streetShootout:
             hide screen streamerCommentary
             hide screen chatTutorial2
     hide allistar with Dissolve(0.5)
-    show mac stream at stream_center_mac with Dissolve (0.5)
+    show mac stream neutral at stream_center_mac with Dissolve (0.5)
     mS "MAC!"
     "MAC stops and turns to face us."
     macS "Captain, the probability of our safe escape has risen to nearly 100\%!"
@@ -464,7 +464,7 @@ label spacePortEscape():
     show jennica stream angry at stream_center with dissolve
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
     show allistar stream neutral at stream_right with Dissolve (0.5)
-    show mac stream at stream_left_mac with Dissolve(0.5)
+    show mac stream neutral at stream_left_mac with Dissolve(0.5)
     pause 0.5
     stop backAudio fadeout 16.0
     pS "Nice of y'all to join us. Remind me to never visit Cromuu again."
@@ -616,7 +616,7 @@ label escapePodConfrontation:
     "I turn the corner."
     play music "soundtrack/decisionTime.wav" volume 1.2
     show allistar stream thinking at stream_right with dissolve
-    show mac stream at stream_center_mac with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
     "As I step into the light, Allistar sees me and reaches for MAC." 
@@ -755,7 +755,7 @@ label escapePodConfrontation:
     enS "Roger, I'll be right down."
     $ AddChatter(vig1_sc3_shot_comment6)
     pause 0.5
-    show mac stream at stream_center_mac with Dissolve (0.5)
+    show mac stream neutral at stream_center_mac with Dissolve (0.5)
     #play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I gently move toward MAC and crouch down in front of him."
     mS "Hey, I'm sorry about that."

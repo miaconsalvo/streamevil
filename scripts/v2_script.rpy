@@ -206,7 +206,7 @@ label Vig2BridgeScene():
 
 ###SCENE 2###
 label GibianVCustomsDepot(): 
-    show depot_stream at topleft onlayer background with dissolve
+    show vig2_depot_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     play music "soundtrack/gibianV.wav" volume 1.0 loop fadein 2.0
     play backAudio "bgcrowd.wav" volume 0.4 loop fadein 0.5
@@ -542,8 +542,8 @@ label GibianVCustomsOutlaw():
 
 ###SCENE 3###
 label matticusDoor():
-    show compound_stream at topleft onlayer background with dissolve
-    hide depot_stream
+    show vig2_compound_stream at topleft onlayer background with dissolve
+    hide vig2_depot_stream
     play music "soundtrack/allistar.wav" fadein 1.0
     $ reactTarget = "vig2_sc3_aftercustoms"
     show screen streamerCommentary
@@ -633,7 +633,7 @@ label matticusDoor():
 ###SCENE4###
 label meetingMatticus():
     show warehouse_stream at topleft onlayer background with dissolve
-    hide compound_stream
+    hide vig2_compound_stream
     $ AddChatter(vig2_sc4_comment1)
     $ viewCheck5 += viewCount
     "The dingy warehouse has a hint of stale air."
@@ -874,7 +874,7 @@ label meetingMatticus():
 
 ###SCENE 5###
 label approachingBase():
-    show targetbase_stream at topleft onlayer background with dissolve
+    show vig2_targetbase_stream at topleft onlayer background with dissolve
     hide warehouse_stream
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
@@ -1036,7 +1036,7 @@ label commsBase_MAR1():
     "The door unlocks and pops ajar."
     hide teresa with dissolve
     show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
+    hide vig2_targetbase_stream
     "We're inside. The base seems even smaller on the inside and lightly guarded."
     "Its just a few stairs down from the upper level to the ground floor."
     "The stairs lead to a hallway."
@@ -1149,7 +1149,7 @@ label commsBase_MAR2():
 
 label commsBase_OUT1():
     #show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    hide targetbase_stream with dissolve
+    hide vig2_targetbase_stream with dissolve
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show jennica stream neutral at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
@@ -1333,12 +1333,12 @@ label commsBase_OUT1():
 ###SCENE 7###
 label commsBase_DataCenter():
     #Placeholder
-    show datacenter_stream at topleft onlayer background with dissolve
+    show vig2_datacenter_stream at topleft onlayer background with dissolve
     hide vig2_compound_hall_stream
     "The datacentre is underwhelming."
     "At the center of the small room is a computer workstation with numerous monitors displaying a variety of shipments and other logistic info."
     hide screen streamerCommentary
-    show datacenter_agent scared at stream_center with dissolve
+    show data agent scared at stream_center with dissolve
     "Sitting at the workstation is a scrawny technician in glasses, terrified."
     stop music fadeout 3.0
     worker "What are you doing here!?"
@@ -1381,7 +1381,7 @@ label commsBase_DataCenter():
     $ reactTarget = "vig2_sc7_bigreveal"
     show screen streamerCommentary
     mS "So what happens if the town doesn't get that aid."
-    show datacenter_agent scared at stream_center with Dissolve(0.4)
+    show data agent scared at stream_center with Dissolve(0.4)
     worker "Sallent? There's an outbreak of gray fever there. They need that medicine!"
     hide datacenter_agent with Dissolve (0.4)
     goon "People from a town you've never heard of until now {i}might{/i} die."
@@ -1511,7 +1511,7 @@ label commsBase_DataCenter_MAR():
             enS "We have bigger problems. Where are we to find someone to help us cover our tracks now?"
             "I notice MAC watching Reginald run away, lost in thought."
             hide screen streamerCommentary
-    show datacenter_agent calm at stream_center with Dissolve(0.5)
+    show data agent nuetral at stream_center with Dissolve(0.5)
     worker "I uh... Couldn't help but overhear your predicament..."
     enS "Eavesdropping are we?" 
     worker "You're holding me uh... hostage."
@@ -1607,7 +1607,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment9)
     "Reginald turns to the technician."
     $ AddChatter(vig2_sc7_out_comment10)
-    show datacenter_agent scared at stream_center with Dissolve(0.5)
+    show data agent scared at stream_center with Dissolve(0.5)
     goon "I'm not going to ask nicely again. The tracking code, now."
     $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
@@ -1711,8 +1711,8 @@ label commsBase_DataCenter_OUT():
             $ vig2_sc7_out_execute_comment4.click = False
             "MAC begins to follow."
             hide mac stream with Dissolve(2.0)
-    show targetbase_stream at topleft onlayer background with dissolve
-    hide datacenter_stream
+    show vig2_targetbase_stream at topleft onlayer background with dissolve
+    hide vig2_datacenter_stream
     show reginald stream neutral at stream_center with Dissolve(0.5)
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
@@ -1737,7 +1737,7 @@ label commsBase_DataCenter_OUT():
 
 label shuttleDestruction():
     show orbit_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
+    hide vig2_targetbase_stream
     show reginald stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve       
@@ -1774,7 +1774,7 @@ label shuttleDestruction():
 label vig2epilogue_MAR():
     play music "soundtrack/vig1scratchtrack.wav" volume 1.2
     show shiphub_stream at topleft onlayer background with dissolve
-    hide datacenter_stream
+    hide vig2_datacenter_stream
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve  
     enS "Thank goodness that's over. If I never see Gibian V again it'll be too soon."
