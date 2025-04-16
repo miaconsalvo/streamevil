@@ -70,6 +70,20 @@ default profilePic = "images/socials/profilepics/profile2.png"
 default marshal = 2
 default outlaw = 3
 
+#variables to track MAC's morality
+default macHope = 0
+default macHonesty = 0
+default macViolence = 0
+
+#Approval of micro-game characters
+default engineerApproval = 3
+default pilotApproval = 4
+
+#variables to track viewer engagement
+default csEngagement = 5
+default pdEngagement = 3
+default kcEngagement = 4
+
 #variables to track interest of player - tracked for macro game purposes
 default reluctance = 0
 default enthusiasm = 0
@@ -87,19 +101,6 @@ default vibes = False
 default humour = False
 default story = False
 
-#variables to track viewer engagement
-default csEngagement = 5
-default pdEngagement = 3
-default kcEngagement = 4
-
-#variables to track MAC's morality
-default macHope = 0
-default macHonesty = 0
-default macViolence = 0
-
-#Approval of micro-game characters
-default engineerApproval = 3
-default pilotApproval = 4
 
 #Variables specific to vignette 1
 default allistarSuspicious = False
