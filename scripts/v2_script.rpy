@@ -80,7 +80,7 @@ label Vig2BridgeScene():
     hide ship_hallway_stream
     show jennica stream neutral at stream_left with Dissolve(0.5)
     show teresa stream neutral at stream_right with Dissolve(0.5)
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     #repeat for additional characters
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
@@ -198,7 +198,7 @@ label Vig2BridgeScene():
     #There are useful aspects of this - see the transition into the Marshal or Outlaw routes out of the Customs Depot for example
     $ viewCheck2 += viewCount
     stop music fadeout 4.0
-    hide mac stream with Dissolve(0.5)
+    hide mac with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
 
@@ -689,7 +689,7 @@ label meetingMatticus():
     show reginald stream neutral at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
-    show mac stream at stream_center_mac with Dissolve(.5)
+    show mac stream neutral at stream_center_mac with Dissolve(.5)
     play audio "macSad.wav" volume 1.5
     "MAC sheepishly opens the crate lid and pokes his head out."
     hide reginald with Dissolve (0.5)
@@ -699,7 +699,7 @@ label meetingMatticus():
             $ macHonesty += 1
             $ pilotApproval -= 1
             $ engineerApproval -= 1
-            hide mac stream with dissolve
+            hide mac with dissolve
             mS "He's what was in that facility."
             show matticus stream at stream_center with move
             "Matticus approaches MAC, looking him over."
@@ -707,7 +707,7 @@ label meetingMatticus():
             smatt "BigCorps's burning money to get it back, must be something important."
         "Mind your own business.":
             $ macHonesty -= 1
-            hide mac stream with dissolve
+            hide mac with dissolve
             mS "None of your business."
             show matticus stream at stream_center with move
             "Matticus looks back at me, one eyebrow raised."
@@ -719,19 +719,19 @@ label meetingMatticus():
     $ AddChatter(vig2_sc4_comment2)
     mS "We're just looking to get him to the Dragonflies."
     "Matticus's eyes widen. His voice takes on a singsong quality."
-    hide mac stream with dissolve
+    hide mac with dissolve
     smatt "Moze! You've gone soft!"
     smatt "I never figured you for a tenderhearted philanthropist!"
     $ AddChatter(vig2_sc4_comment3)
     show jennica stream angry at stream_left with Dissolve(0.5)
     "Jennica rolls her eyes."
     "I hear MAC quietly chime in."
-    show mac stream at stream_right_mac with Dissolve(0.5)
+    show mac stream neutral at stream_right_mac with Dissolve(0.5)
     play audio "macAlarmed.wav" volume 2.0
     macS "\"Skeeve\" detected."
     mS "Not now MAC."
     smatt "Oh and it's got jokes too! Fun."
-    hide mac stream with dissolve
+    hide mac with dissolve
     show teresa stream neutral at stream_right with Dissolve(0.5)
     enS "We don't have all day. Will you help us or not?"
     "His face twists into a grin again."
@@ -852,7 +852,7 @@ label meetingMatticus():
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     "MAC pipes up from his crate."
-    show mac stream at stream_right with dissolve
+    show mac stream neutral at stream_right with dissolve
     play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
     "Reginald rolls his eyes."
@@ -868,7 +868,7 @@ label meetingMatticus():
     hide reginald with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
-    hide mac stream with Dissolve(0.5)
+    hide mac with Dissolve(0.5)
     #stop music fadeout 2.0 - want to keep the matticus music going thru next scene
     jump approachingBase
 
@@ -886,7 +886,7 @@ label approachingBase():
     enS "Fitting for a cheapo planet like this."
     mS "Pipe down you two. Focus up."
     "Jennica and Teresa nod to me."
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     "The brief silence is broken by MAC."
     play audio "macPing.wav" volume 1.5
     macS "What is a \"cheapo planet?\" My database has no\"cheapo\" category."
@@ -918,7 +918,7 @@ label approachingBase():
             show screen streamerCommentary
             $ AddChatter(vig2_sc5_comment4)
             mS "Good. Let's move."
-            hide mac stream with dissolve
+            hide mac with dissolve
         "Maybe.":
             $ macHonesty += 1
             mS "I don't know. But they will try to hurt us."
@@ -931,7 +931,7 @@ label approachingBase():
             $ reactTarget = "vig2_sc5_macquestion"
             show screen streamerCommentary
             mS "Good. Let's move."
-            hide mac stream with dissolve
+            hide mac with dissolve
         #Should NPC approval adjustments happen here?
     show reginald stream neutral at stream_center with Dissolve(0.5)
     pS "So, you got a plan?"
@@ -1155,7 +1155,7 @@ label commsBase_OUT1():
     "Teresa begins placing the charge on the front door."
     "We line up on either side of the entrance."
     play audio "macGrumble.wav"
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     "I notice MAC looks a little worried."
     menu:
         "I notice MAC looks a little worried."
@@ -1170,7 +1170,7 @@ label commsBase_OUT1():
     play audio "macAffirmative.wav"
     macS "Affirmative. Sticking to Captain."
     $ AddChatter(vig2_sc6_out_comment5)
-    hide mac stream with Dissolve(0.5)
+    hide mac with Dissolve(0.5)
     "I give the signal to Teresa."
     hide jennica stream neutral
     hide teresa stream neutral
@@ -1366,10 +1366,10 @@ label commsBase_DataCenter():
     pS "I knew this was too damn easy!"
     hide data
     play audio "macAlarmed.wav"
-    show mac stream at stream_center_mac with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
-    hide mac stream
+    hide mac
     hide jennica
     show teresa stream shock at stream_left with Dissolve(0.4)
     enS "Well they were still cops."
@@ -1400,7 +1400,7 @@ label commsBase_DataCenter():
     pS "We really going through with this Cap?"
     hide screen streamerCommentary
     $ AddChatter(vig2_sc7_comment6)
-    show mac stream at stream_center_mac with Dissolve (0.5)
+    show mac stream neutral at stream_center_mac with Dissolve (0.5)
     "MAC is almost completely quiet. They've been looking at me the entire time." 
     $ AddChatter(vig2_sc7_comment7)
     $ viewCheck8 += viewCount
@@ -1475,14 +1475,14 @@ label commsBase_DataCenter_MAR():
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
             $ reactTarget = "vig2_sc8_mar_reacttoregistun"
             show screen streamerCommentary
-            show mac stream at stream_center_mac with Dissolve(0.2)
+            show mac stream neutral at stream_center_mac with Dissolve(0.2)
             #We could use a conditional here based on Mac's violence trait to alter his respone to Reggie getting tagged.
             macS "Take that \"skeeve!\""
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
             pS "Beats me."
             hide screen streamerCommentary
-            hide mac stream with Dissolve(0.2)
+            hide mac with Dissolve(0.2)
         "Bribe Reginald.":
             $ marshal += 1
             $ macViolence -= 1
@@ -1667,7 +1667,7 @@ label commsBase_DataCenter_OUT():
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
             hide data with dissolve
-            show mac stream at stream_center_mac with Dissolve(0.5)
+            show mac stream neutral at stream_center_mac with Dissolve(0.5)
             "MAC stares at the terrified technician."
             pS "Damn Cap, that was dark."
             enS "If it works it works."
@@ -1675,7 +1675,7 @@ label commsBase_DataCenter_OUT():
             hide jennica with dissolve
             mS "Come MAC."
             "MAC begins to follow."
-            hide mac stream with Dissolve(1.5)
+            hide mac with Dissolve(1.5)
         "Kill him.":
             $ macViolence += 2
             $ outlaw += 2
@@ -1695,7 +1695,7 @@ label commsBase_DataCenter_OUT():
             hide data with Dissolve(0.1)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             show jennica stream shock at stream_left
-            show mac stream at stream_center_mac with Dissolve(1.0)
+            show mac stream neutral at stream_center_mac with Dissolve(1.0)
             pS "Damn Cap. Reckon we killed enough today."
             pS "He really needed to die too?"
             $ AddChatter(vig2_sc7_out_execute_comment4)
@@ -1710,7 +1710,7 @@ label commsBase_DataCenter_OUT():
             mS "Come MAC."
             $ vig2_sc7_out_execute_comment4.click = False
             "MAC begins to follow."
-            hide mac stream with Dissolve(2.0)
+            hide mac with Dissolve(2.0)
     show vig2_targetbase_stream at topleft onlayer background with dissolve
     hide vig2_datacenter_stream
     show reginald stream neutral at stream_center with Dissolve(0.5)
@@ -1824,7 +1824,7 @@ label vig2epilogue_MAR():
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     "I move to leave the briefing room when I feel a tug on my sleeve."
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course MAC."
     macS "I'm confused about our mission? Why do we need to hide if we are good people?"
@@ -1858,7 +1858,7 @@ label vig2epilogue_MAR():
     #$ macroNarration = True
     $ macroChoice = True
     $ AddChatter(vig2_epilogue_mar_comment9)
-    hide mac stream with dissolve
+    hide mac with dissolve
     hide shiphub_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
@@ -1940,7 +1940,7 @@ label vig2epilogue_OUT():
     if baseGuardKilled == True:
         $ AddChatter(vig2_epilogue_out_comment12)
         $ AddChatter(vig2_epilogue_out_comment13)
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
     mS "Of course, MAC."
     play audio "macGrumble.wav" volume 1.5
@@ -1984,7 +1984,7 @@ label vig2epilogue_OUT():
     #$ macroNarration = True
     $ macroChoice = True
     $ AddChatter(vig2_epilogue_out_comment18)
-    hide mac stream with dissolve
+    hide mac with dissolve
     hide shiphub_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
