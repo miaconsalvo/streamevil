@@ -1,9 +1,19 @@
 #This script contains code to make the blueit sections of the game function.
 
 screen blueit():
-    if blueitChoiceCheck == True:
+    if blueitChoiceCheck == True and vignette1 == True:
         textbutton "Close Blueit":
             action Jump("vig1_brother_1")
+            background Solid("#66439eff")
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.395, 0.007)
+
+    elif blueitChoiceCheck == True and vignette2 == True:
+        textbutton "Open Flinch":
+            action Jump("FlinchAnalytics_vig2")
             background Solid("#66439eff")
             text_color "#ffffffff"
             text_hover_color "#ffffffce" 
@@ -61,27 +71,45 @@ screen blueit():
         #        ypos 1000
 
 screen blueitButtonCheck():
-    textbutton "Back to Main Page":
-        action [Hide("blueitThread"), Jump("blueitVignette2")]
-        background Solid("#000000ff")
-        text_color "#ffffffd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-        text_hover_color "#ffffffff" 
-        text_selected_color "#ffffffff"
-        text_size 50
-        align (0.5, 0.98)
+    if vignette1 == True:
+        textbutton "Back to Main Page":
+            action [Hide("blueitThread"), Jump("blueitVignette1_2")]
+            background Solid("#000000ff")
+            text_color "#039fddd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#039fdd91" 
+            text_selected_color "#ffffffff"
+            text_size 25
+            align (0.74, 0.39)
+    elif vignette2 == True:
+        textbutton "Back to Main Page":
+            action [Hide("blueitThread"), Jump("blueitVignette2_1")]
+            background Solid("#000000ff")
+            text_color "#039fddd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#039fdd91" 
+            text_selected_color "#ffffffff"
+            text_size 25
+            align (0.74, 0.39)
 
 screen blueitThread():
-    frame:
-        #background Image("launch thread.png") xalign 0.5
-        viewport id "blueitView":
-            area (0, 0, 1920, 1080)
-            draggable True #allows scrollbar to be dragged
-            mousewheel True #allows mousewheel to scroll viewport
-            scrollbars "vertical"
-            frame:
-                background Image(blueitImage)
-                xsize 1920
-                ysize yb
+    viewport:
+        area (430, 460, 1050, 580)
+        draggable True #allows scrollbar to be dragged
+        mousewheel True #allows mousewheel to scroll viewport
+        scrollbars "vertical" #sets vertical scroll bar
+        image(blueitImage)
+
+#screen blueitThread():
+#    frame:
+#        #background Image("launch thread.png") xalign 0.5
+#        viewport id "blueitView":
+#            area (0, 0, 1920, 1080)
+#            draggable True #allows scrollbar to be dragged
+#            mousewheel True #allows mousewheel to scroll viewport
+#            scrollbars "vertical"
+#            frame:
+#                background Image(blueitImage)
+#                xsize 1920
+#                ysize yb
 
 
 

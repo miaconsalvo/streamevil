@@ -70,27 +70,37 @@ default profilePic = "images/socials/profilepics/profile2.png"
 default marshal = 2
 default outlaw = 3
 
-#variables to track interest of player - tracked for macro game purposes
-default reluctance = 0
-default enthusiasm = 0
-default energy = 5
+#variables to track MAC's morality
+default macHope = 0
+default macHonesty = 0
+default macViolence = 0
 
-#variables to track attributes
-default curiosity = False
+#Approval of micro-game characters
+default engineerApproval = 3
+default pilotApproval = 4
 
 #variables to track viewer engagement
 default csEngagement = 5
 default pdEngagement = 3
 default kcEngagement = 4
 
-#variables to track MAC's morality
-default macCynicism = 0
-default macTrust = 0
-default macViolence = 0
+#variables to track interest of player - tracked for macro game purposes
+default reluctance = 0
+default enthusiasm = 0
+default energy = 5
 
-#Approval of micro-game characters
-default engineerApproval = 3
-default pilotApproval = 4
+#Flags to track what vignette we're on
+default vignette1 = False
+default vignette2 = False
+default vignette3 = False
+default vignette4 = False
+
+#variables to track attributes
+default curiosity = False
+default vibes = False
+default humour = False
+default story = False
+
 
 #Variables specific to vignette 1
 default allistarSuspicious = False
@@ -122,13 +132,23 @@ default vbar9 = 0
 default vbar10 = 0
 default max_viewers = 40
 
-###Variables for tracking Flinch Analytics
+###Variables for tracking Flinch Analytics Vignette 1
 default topfan = ""
 default flinchCheck = 0
 default viewcountCheck = False
 default topfanCheck = False
 default alignmentCheck = False
 default audienceCheck = False
+
+###Variabels for tracking Flinch Analytics Vignette 2
+default viewcountCheck_vig2 = False
+default topfanCheck_vig2 = False
+default audienceCheck_vig2 = False
+default viewershipThoughtCheck = False
+default flinchViewershipShnzi = False
+default flinchViewershipOutlaw = False
+default flinchViewershipMarshal = False
+default flinchViewershipAssault = False
 
 #blueit variables
 default blueitCheck = 0
@@ -173,9 +193,9 @@ init:
 label start:
     show bg black at topleft onlayer background
 
-    "Hello, this is the start of a new game"
+    "Hello, this is the start of a new game."
 
-    "Please tell me your streamer username"
+    "Please tell me your streamer username."
     $ username = renpy.input("Your username is: ", length = 16)
     "Now please tell me your first name in real life"
     $ my_name = renpy.input("Your character's real name is: ", length = 16)
@@ -191,6 +211,6 @@ label start:
     $ AddChatter(vig1_sc1_comment6)
     $ AddChatter(vig1_sc1_comment7)
     $ AddChatter(vig1_sc1_comment8)
-    "And now we begin"
+    "And now we begin."
     jump vignette1Start
 

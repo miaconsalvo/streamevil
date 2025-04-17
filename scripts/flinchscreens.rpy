@@ -1,10 +1,12 @@
 ###This script contains code to make the Flinch sections of the game function.
 
-
+#probably easier to just make a separate screen for vignette 2. Or at least a separate screen that can hold all the buttons. 
+#Yeah, separate screen would be easiest by far
 screen streamAnalytics():
     #zorder 100 #determines how much overlayed it is
+    image "[profilePic]" align (.0455, .135) size (220, 220)
     
-    if flinchCheck >= 3:
+    if flinchCheck >= 3 and vignette1 == True:
         textbutton "Open Blueit":
             background Solid("#66439eff")
             action [Hide("viewership"), Jump("blueitVignette1")] #can change this to a [variable] so we can adjust on the fly
@@ -13,7 +15,17 @@ screen streamAnalytics():
             text_selected_color "#ffffffff"
             text_size 22
             align (0.4, 0.008)
-    
+
+    elif flinchCheck >= 3 and vignette2 == True:
+        textbutton "Open Blueit":
+            background Solid("#66439eff")
+            action [Hide("viewership"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 22
+            align (0.4, 0.008)
+
     #The frame below this is for identifying the average audience number
     imagebutton:
         idle Solid("#00000036")
@@ -164,4 +176,56 @@ screen viewershipButton:
     #    text_size 50
     #    align (0.78, 0.15)
 
+######Screens for Vignette 2########
+screen streamAnalytics_vig2():
+    #zorder 100 #determines how much overlayed it is
+    image "[profilePic]" align (.0455, .135) size (220, 220)
+    
+    if flinchCheck >= 3:
+        textbutton "Close Flinch":
+            background Solid("#66439eff")
+            action [Hide("viewership"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 22
+            align (0.4, 0.008)
 
+    #The frame below this is for identifying the average audience number
+    imagebutton:
+        idle Solid("#00000036")
+        hover Solid("#0000006b")
+        xsize 360
+        ysize 260
+        xalign 0.53
+        yalign 0.935
+        if audienceCheck_vig2 == False:
+            action Call("vig2_analytics_audience", from_current = True) #Change these to new target labels for vignette 2
+        else:
+            action NullAction()
+    
+    imagebutton:
+        xsize 353
+        ysize 200
+        #background Solid("#0000001c")
+        xalign 0.278
+        yalign 0.47
+        idle Solid("#00000036")
+        hover Solid("#0000006b")
+        if topfanCheck_vig2 == False:
+            action Call("vig2_analytics_topfan", from_current = True)
+        else:
+            action NullAction()
+
+screen viewershipButton_vig2:
+        imagebutton:
+            xsize 1020
+            ysize 400
+            xalign 0.92
+            yalign .475
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            if viewcountCheck_vig2 == False:
+                action Call("vig2_analytics_viewcount", from_current = True) #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
+            else:
+                action NullAction()

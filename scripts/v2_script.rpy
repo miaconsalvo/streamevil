@@ -1,5 +1,9 @@
 label vignette2Start():
     #We want to reset these before the start of the vignette
+    $ vignette1 = False
+    $ vignette2 = True
+    $ vignette3 = False
+    $ vignette4 = False
     $ viewCheck1 = 0
     $ viewCheck2 = 0
     $ viewCheck3 = 0
@@ -20,6 +24,9 @@ label vignette2Start():
     $ vbar8 = 0
     $ vbar9 = 0
     $ vbar10 = 0
+    $ blueitPages = []
+    $ blueitChoiceCheck = False
+    $ flinchCheck = 0
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
@@ -29,6 +36,8 @@ label vignette2Start():
     show screen streamDetails
     show screen streamChat
     "You begin the stream and then boot up the game."
+    $ reactTarget = "vig2_sc1_openingstream"
+    show screen streamerCommentary
     "You load the save file you were previously playing, and are ready to go."
     jump vig2Start
 
@@ -42,59 +51,64 @@ label vig2Start():
     $ narrator = alt_narrator
     #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
     $ viewCount += 3
-    $ reactTarget = "vig2_sc1_openingstream"
-    show screen streamerCommentary
+    play audio "shipAlarmShort.wav"
     "The \"Approaching Planet\" notification alarm jolts me out of bed."
+    hide screen streamerCommentary
     $ AddChatter(vig2_sc1_comment1)
+    pause 1.0
     $ AddChatter(vig2_sc1_comment2)
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
-    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
     "I haven't been able to get any real sleep since Allistar forced my hand."
     "What did he think I was gonna do? Just let him go?"
     $ reactTarget = "vig2_sc1_mentionallistar"
     show screen streamerCommentary
+    play audio "shipAlarmShort.wav"
     shipcom "Alert! Approaching planet Gibian V. All hands on deck."
     "Right. Maybe it's a blessing that I don't have so much time to reflect."
+    $ viewCheck1 = viewCount
     $ AddChatter(vig2_sc1_comment3)
     hide screen streamerCommentary
+    $ vig2_sc1_comment2.click = False
     "Better get down there."
 
     jump Vig2BridgeScene
 
 label Vig2BridgeScene():
-    show vig2_shiphub_stream at topleft onlayer background with dissolve
+    show shiphub_stream at topleft onlayer background with dissolve
     hide ship_hallway_stream
     show jennica stream neutral at stream_left with Dissolve(0.5)
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show mac stream at stream_center_mac with Dissolve(0.5)
     #repeat for additional characters
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
     $ AddChatter(vig2_sc1_comment4)
-    enS "The visualization shows Gibian V, oh swell a backwater frontier planet."
+    enS "Oh swell, Gibian V, another backwater frontier planet."
     "A backwater with a certain old associate running it."
-    $ viewCount += 4
+    $ viewCount += 3
     mS "We ready to land?"
     $ AddChatter(vig2_sc1_comment5)
     show jennica stream angry at stream_left
     pS "Can I reiterate again that this is a bad idea?"
     "Teresa rolls her eyes."
     $ AddChatter(vig2_sc1_comment6)
-    $ viewCheck1 = viewCount
     enS "Must we go through this again?"
     $ AddChatter(vig2_sc1_comment7)
     pS "Look, I know we need to cover our trail from Ama."
     enS "An astute observation—"
     $ AddChatter(vig2_sc1_comment8)
     pS "But is Matticus really the one we want to do it? Guy was a damn skeeve when we last knew him."
+    play audio "macPing.wav" volume 1.5
     macS "Skeeve. Noun. An immoral or repulsive person."
     pS "Got that right."
     enS "Fancy telling us what other options we have? Shall we go down the list of who else is ready and willing to help us?"
     $ AddChatter(vig2_sc1_comment9)
     pS "Look here, I just think—"
-    enS "Pardon me Jen why don't I pull a \"forger with a heart of gold and access to BigCorp databases\" out of my purse and we'll be set!"
+    enS "Pardon me Jen, why don't I pull a \"forger with a heart of gold and access to BigCorp databases\" out of my purse and we'll be set!"
     pS "Doesn't mean we should trust Matticus, some wannabe godfather of a one-horse po-dunk planet!"
+    play audio "macPing.wav" volume 1.5
     macS "Po-dunk, adjective, slang word amongst inhabitants of Kohle, denoting of a less than adequate status."
     $ AddChatter(vig2_sc1_comment10)
     "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
@@ -119,6 +133,7 @@ label Vig2BridgeScene():
     mS "..."
     $ AddChatter(vig2_sc1_comment12)
     pS "Ok. So what's the plan?"
+    hide screen streamerCommentary
     "Teresa inputs a set of coordinates into the ship computer."
     show teresa stream neutral at stream_right
     show jennica stream neutral at stream_left
@@ -135,11 +150,13 @@ label Vig2BridgeScene():
     pS "Charming."
     macS "Who is this \"Skeeve?\""
     enS "Savlian Matticus. He was in our old crew, quite proficient in tampering with databases and security protocols."
-    pS "He certainly landed on his feet since we disbanded. I'd though he'd break a knee on the way down."
+    pS "He certainly landed on his feet since we disbanded. I'd thought he'd break a knee on the way down."
     enS "Remarkably successful for a magistrate of a tiny frontier planet."
     macS "He is abusing his authority and stealing from people?"
+    $ vig2_sc1_comment13.click = False
     menu: #minorchoice2
         "Yeah he's a scumbag.":
+            $ macHope += 1
             mS "Yeah. He always did have a... {i}flexible{/i} moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
@@ -148,6 +165,7 @@ label Vig2BridgeScene():
             "Jennica looks puzzled for a moment."
             pS "Fair 'nough."
         "At least we know him.":
+            $ macHope -= 1
             mS "He's a skeeve, but he's our skeeve."
             mS "He's just trying to survive."
             pS "Mighty successful surviving he's doing."
@@ -164,6 +182,7 @@ label Vig2BridgeScene():
     mS "They did put out an APB."
     enS "I doubt it. Takes a while for those bulletins to make it out here."
     enS "If they even do."
+    play audio "macHappy.wav" volume 1.5
     macS "Po-dunk!"
     enS "Precisely."
     pS "All the same, we needa take him along."
@@ -177,6 +196,8 @@ label Vig2BridgeScene():
     #Now that we've defined the streamview as the background, we have to manually hide characters before we transition between labels
     #If we don't want them to immediately be on screen in the next scene.
     #There are useful aspects of this - see the transition into the Marshal or Outlaw routes out of the Customs Depot for example
+    $ viewCheck2 += viewCount
+    stop music fadeout 4.0
     hide mac stream with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
@@ -185,8 +206,9 @@ label Vig2BridgeScene():
 
 ###SCENE 2###
 label GibianVCustomsDepot(): 
-    show depot_stream at topleft onlayer background with dissolve
-    hide vig2_shiphub_stream
+    show vig2_depot_stream at topleft onlayer background with dissolve
+    hide shiphub_stream
+    play music "soundtrack/gibianV.wav" volume 1.0 loop fadein 2.0
     play backAudio "bgcrowd.wav" volume 0.4 loop fadein 0.5
     "The tiny barebones customs depot seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
@@ -199,12 +221,15 @@ label GibianVCustomsDepot():
     $ AddChatter(vig2_sc2_comment1)
     "Teresa's eyes dart around the depot facilities."
     show jennica stream neutral at stream_left with dissolve
+    hide screen streamerCommentary
     pS "Well getting a permit to fly our ship 'round here would attract a lot more attention."
     pS "And would require an inspection of all cargo."
-    "Jennica gestures to the small crate holding MAC."
-    pS "Which is a nonstarter."
     $ reactTarget = "vig2_sc2_whywedidntfly"
-    show screen streamerCommentary 
+    show screen streamerCommentary ###I would cut this one. It feels like too many right in a row
+    "Jennica gestures to the small crate holding MAC."
+    $ viewCount += 2
+    pS "Which is a nonstarter."
+    hide screen streamerCommentary
     "Teresa rolls her eyes as we get in the line marked \"New Arrivals.\""
     $ AddChatter(vig2_sc2_comment2)
     show teresa stream shock at stream_right
@@ -219,8 +244,10 @@ label GibianVCustomsDepot():
     enS "Something to say Brown?"
     mS "We don't have the time!"
     mS "We need a plan to get through without them finding MAC."
+    hide screen streamerCommentary
     show teresa stream neutral at stream_right
     enS "Agreed."
+    play audio "bagSearch.wav" volume 5.0
     "Teresa pulls out a metal sphere with numerous access ports."
     enS "I could whip up a diversion with this if you buy me a little time."
     $ AddChatter(vig2_sc2_comment3)
@@ -247,6 +274,7 @@ label GibianVCustomsDepot():
     "Jennica has a point. There's a ton of innocent people here, it's very likely someone will get hurt if we cause a panic."
     "Teresa's point is just as valid, if one of these officials reports us to BigCorp then we might be looking at the inside of the jail cell quick."
     "MAC has gone quiet, but I can feel him toss delicately around in the crate."
+    $ viewCheck3 += viewCount
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
         "Have Teresa prep the distraction.":
@@ -270,22 +298,24 @@ label GibianVCustomsMarshal():
     #show jennica stream neutral at stream_left with dissolve
     #Now that we're not changing scenes between labels, we also don't need to show characters at the beginning of every label
     $ reactTarget = "vig2_sc2_customsdecision"
-    show screen streamerCommentary
     "Jennica's right. A diversion could hurt a lot of people."
     "And it could definitely attract the wrong attention."
     $ AddChatter(vig2_sc2_mar_comment1)
     mS "We can't cause a panic here. We're going with Jennica's plan."
+    show screen streamerCommentary
     "Teresa reluctantly puts away her device."
     $ AddChatter(vig2_sc2_mar_comment2)
     enS "Fine. I just hope we don't regret this."
     pS "Good. Let's find an agent who looks like they could use a break."
     mS "Right, let's do a quick scout."
     $ AddChatter(vig2_sc2_mar_comment3)
+    hide screen streamerCommentary
     "There's a few different agents spread across the depot."
     "Most look pretty... ordinary."
     "Teresa gestures towards a younger looking agent with glasses."
     "His uniform is spotless, perfectly tucked and pleated with meticulous precision."
     enS "That one looks pretty eager, definitely not him." 
+    $ vig2_sc2_mar_comment3.click = False
     "Jennica zeroes in on an agent at the \"Hazardous Luggage\" counter, subtly gesturing to me to look at him."
     "His uniform is wrinkled, shirt half tucked in a rushed panic."
     "The man looks deflated, with dark bags under his eyes."
@@ -317,7 +347,7 @@ label GibianVCustomsMarshal():
                     mS "Really!? That doesn't sit right with me."
                     mS "Not one bit."
                 "You look overworked.":
-                    mS "Man they really have you guys stretched thin eh?"
+                    mS "Man, they really have you guys stretched thin eh?"
                     agent1 "Excuse me?"
                     "He's a little confused."
                     mS "You guys are so understaffed, this is ridiculous!"
@@ -329,7 +359,7 @@ label GibianVCustomsMarshal():
                     mS "A guy like you deserves a bonus."
         "Ring the bell.":
             "I ring the bell on his desk."
-            "DING"
+            play audio "ding.wav" volume 8.0
             "He's instantly jolted out of his stupor, looking bewildered."
             "In his panic, I notice a wedding band on his ring finger."
             agent1 "GAAH!"
@@ -390,6 +420,7 @@ label GibianVCustomsMarshal():
     "Teresa's head whips around to face Jennica."
     enS "I swear, if I have to break us out of the Gibian V penitentiary..."
     "A muffled voice perks up from the crate."
+    play audio "macPing.wav" volume 2.0
     macS "Penitentiary. Noun. A place for imprisoning crim—"
     enS "SHUSH!"
     "The door creaks ajar."
@@ -399,6 +430,7 @@ label GibianVCustomsMarshal():
     "We don't need to be told twice."
     $ AddChatter(vig2_sc2_mar_comment10)
     "The agent whisks us from room to room, out from one backdoor to another."
+    stop backAudio fadeout 15.0
     "Soon we're outside, next to the trash dump for the depot."
     pause 1.0
     "We're out."
@@ -411,6 +443,8 @@ label GibianVCustomsMarshal():
     show teresa stream neutral at stream_right with Dissolve (0.4)
     pS "Simple as it gets! Right sweetheart?"
     enS "Yes. Almost too much so..."
+    stop music fadeout 2.0
+    $ viewCheck4 += viewCount
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
 
@@ -420,15 +454,16 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment1)
     show teresa stream happy at stream_right
     show jennica stream angry at stream_left
-    $ reactTarget = "vig2_sc2_customsdecision"
-    show screen streamerCommentary
     "Teresa's right. We can't afford a goody-two-shoes ratting us out."
     "We can't trust the officials here. We'll have to get through our own way."
     mS "Bribing's too risky. We're going with Teresa's plan."
+    $ reactTarget = "vig2_sc2_customsdecision"
+    show screen streamerCommentary
     "Jennica sighs."
     pS "Alright, but let's make it quick. I don't want too many people to get hurt."
     enS "Hurt? Please! This will be by far the most exciting thing to happen here in years!"
     mS "Maybe let's keep the excitement to a minimum?"
+    hide screen streamerCommentary
     $ AddChatter(vig2_sc2_out_comment2)
     show jennica stream neutral at stream_left
     "Teresa rolls her eyes at me."
@@ -443,6 +478,7 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment4)
     enS "I'm glad you ask! It is the {i}conflagrant{/i} phase."
     "A muffled voice perks up from the crate."
+    play audio "macPing.wav" volume 1.5
     macS "Conflagrant. Adjective. Burning or bl-."
     enS "SHUSH!"
     $ AddChatter(vig2_sc2_out_comment5)
@@ -455,6 +491,7 @@ label GibianVCustomsOutlaw():
     "Teresa smirks slyly."
     enS "Of course Captain, I always do."
     "Teresa pulls several parts from her bag and begins plugging them into her device."
+    $ vig2_sc2_out_comment5.click = False
     show teresa stream neutral at stream_right
     #$ AddChatter(vig2_sc2_out_comment6)
     enS "Now, just a liiiiiittle tweak to the capacitors, and that should do the trick!"
@@ -474,16 +511,19 @@ label GibianVCustomsOutlaw():
     "Jennica carefully walks by the customs declaration box and slips the device inside."
     "As soon as Jennica begins making her way back to us, Teresa presses a button on her wrist computer."
     enS "Let's show these rubes a good time."
+    # music should get more exciting here?
     "A thin plume of white smoke begins to emanate from the box."
     "As the smoke grows thicker, security officials approach the box to investigate."
     $ AddChatter(vig2_sc2_out_comment9)
     "A commotion begins to spread across the depot as more and more of the crowd notices the smoke."
+    $ renpy.music.set_volume(5.0, 2.0, "backAudio")
     enS "Get ready."
     "Once the security guards close in on the box, Teresa activates the device again."
     "A powerful blaze erupts from the box."
     "Black smoke begins to billow into the depot as the fire alarm starts blaring."
     pS "Time to haul ass."
     mS "You read my mind."
+    $ renpy.music.set_volume(10.0, 1.0, "backAudio")
     "The crowd explodes into a panic. Hordes of bodies rush towards the exit."
     "It's easy enough to slip through the crowd unnoticed."
     $ AddChatter(vig2_sc2_out_comment10)
@@ -492,21 +532,26 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment11)
     mS "Let's get off the main street!"
     "Teresa and Jennica nod as I point towards a small alleyway."
+    stop backAudio fadeout 1.0
     "We're out and on our way to Matticus's compound."
+    $ viewCheck4 += viewCount
+    stop music fadeout 2.0
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump matticusDoor
 
 ###SCENE 3###
 label matticusDoor():
-    show compound_stream at topleft onlayer background with dissolve
-    hide depot_stream
+    show vig2_compound_stream at topleft onlayer background with dissolve
+    hide vig2_depot_stream
+    play music "soundtrack/allistar.wav" fadein 1.0
     $ reactTarget = "vig2_sc3_aftercustoms"
     show screen streamerCommentary
     "It's only a few blocks to Matticus's compound."
     "Not like we could miss it though."
     show jennica stream shock at stream_left with dissolve
     "Jennica's eyes widen as we first see the gates."
+    hide screen streamerCommentary
     pS "Holy smokes!"
     "The gates dwarf the rest of the block."
     "They're taller than the whole building across the street, and shining with gaudy golden accents and initials."
@@ -520,10 +565,12 @@ label matticusDoor():
     "Jennica motions to the intercom."
     pS "I'd like be done dealing with with this slum-king as soon as possible."
     "A muffled voice pipes up from the crate."
+    play audio "macAffirmative.wav" volume 1.5
     macS "Po-dunk king!"
     "Jennica hides her laughter."
     enS "Quiet!"
     "I press on the intercom button outside the gate."
+    play audio "callRing.wav" volume 2.0
     "A dial tone begins to play"
     show jennica stream neutral at stream_left
     mattdoorbell "Name and ID?"
@@ -542,6 +589,7 @@ label matticusDoor():
     mattdoorbell "I need a little more proof than that."
     menu:
         "Bring up an old debt.": #Lore
+            $ macHope -= 1
             $ marshal += 1
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright give me a sec."
@@ -557,6 +605,7 @@ label matticusDoor():
             mattdoorbell "The boss has to be careful who he's seen with."
             mattdoorbell "He'll meet you in the warehouse down the road. Here's the coordinates."
         "Threaten the doorman.": #Threaten
+            $ macViolence += 1
             $ outlaw += 1
             $ pdEngagement += 1
             mS "Listen buddy. Just let us in."
@@ -576,6 +625,7 @@ label matticusDoor():
             mattdoorbell "You're good. But not here."
             mattdoorbell "The boss has to be careful who he's seen with."
             mattdoorbell "He'll meet you in the warehouse down the road. Here's the coordinates."
+    stop music fadeout 2.0
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump meetingMatticus
@@ -583,13 +633,16 @@ label matticusDoor():
 ###SCENE4###
 label meetingMatticus():
     show warehouse_stream at topleft onlayer background with dissolve
-    hide compound_stream
+    hide vig2_compound_stream
     $ AddChatter(vig2_sc4_comment1)
+    $ viewCheck5 += viewCount
     "The dingy warehouse has a hint of stale air."
     "Just as I think to look how long we've been waiting, the doors swing open."
+    play music "soundtrack/matticus.wav"
     show matticus stream at stream_center with dissolve
     smatt "As I live and breathe!"
     "Matticus waddles through the doors into view, flanked on either side by henchmen."
+    $ vig2_sc4_comment1.click = False
     $ reactTarget = "vig2_sc4_meetingmatticus"
     show screen streamerCommentary
     "He approaches me smiling, revealing rows of yellowed teeth."
@@ -600,6 +653,7 @@ label meetingMatticus():
     show jennica stream angry at stream_left with dissolve
     "Jennica silently nods, trying to redirect the smoke away from her face."
     smatt "Quite a reunion!"
+    hide screen streamerCommentary
     menu: #minorchoice4
         "Great to see you.":
             mS "Yeah. Always great to see old friends."
@@ -630,16 +684,21 @@ label meetingMatticus():
     smatt "Oh. Interesting. She doesn't come cheap."
     smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
+    play audio "macPing.wav" volume 3.0
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
     show reginald stream neutral at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
     show mac stream at stream_center_mac with Dissolve(.5)
+    play audio "macSad.wav" volume 1.5
     "MAC sheepishly opens the crate lid and pokes his head out."
     hide reginald with Dissolve (0.5)
     smatt "Who's this?"
     menu: #minorchoice5
         "What we stole from BigCorp.": 
+            $ macHonesty += 1
+            $ pilotApproval -= 1
+            $ engineerApproval -= 1
             hide mac stream with dissolve
             mS "He's what was in that facility."
             show matticus stream at stream_center with move
@@ -647,6 +706,7 @@ label meetingMatticus():
             smatt "Neat. So how much you figure it's worth?"
             smatt "BigCorps's burning money to get it back, must be something important."
         "Mind your own business.":
+            $ macHonesty -= 1
             hide mac stream with dissolve
             mS "None of your business."
             show matticus stream at stream_center with move
@@ -664,14 +724,15 @@ label meetingMatticus():
     smatt "I never figured you for a tenderhearted philanthropist!"
     $ AddChatter(vig2_sc4_comment3)
     show jennica stream angry at stream_left with Dissolve(0.5)
-    show teresa stream neutral at stream_right with Dissolve(0.5)
     "Jennica rolls her eyes."
     "I hear MAC quietly chime in."
-    show mac stream at stream_right with Dissolve(0.5)
+    show mac stream at stream_right_mac with Dissolve(0.5)
+    play audio "macAlarmed.wav" volume 2.0
     macS "\"Skeeve\" detected."
     mS "Not now MAC."
     smatt "Oh and it's got jokes too! Fun."
     hide mac stream with dissolve
+    show teresa stream neutral at stream_right with Dissolve(0.5)
     enS "We don't have all day. Will you help us or not?"
     "His face twists into a grin again."
     smatt "I might. First I need you to do something for me."
@@ -735,11 +796,14 @@ label meetingMatticus():
     "Matticus smirks at Jennica."
     $ AddChatter(vig2_sc4_comment8)
     smatt "Oh? Did I?"
+    play audio "macGrumble.wav" volume 1.0
     "MAC anxiously looks around."
+    hide screen streamerCommentary
     smatt "Don't waste my time. Do we have a deal?"
     "Matticus looks at me impatiently."
     menu: #minorchoice7
         "Deal.":
+            $ macHope += 1
             "Guess we don't have much choice."
             mS "On your honour as a Snakehawk?"
             "Matticus chuckles to himself."
@@ -758,6 +822,7 @@ label meetingMatticus():
                     smatt "How nostalgic."
                     smatt "On my honour."
                 "Keep asking questions.":
+                    $ macHope -= 1
                     mS "I can't help but feel like you're manipulating us."
                     smatt "Feelings lie Moze."
                     "Matticus rolls his eyes."
@@ -772,8 +837,11 @@ label meetingMatticus():
     menu: #minorchoice8
         "Bye.":
             mS "Later Sav."
+            $ engineerApproval += 1
         "Piss off.":
             $ pdEngagement += 1
+            $ pilotApproval += 1
+            $ engineerApproval -=1
             mS "Get bent you ugly warthog."
             #show jennica stream happy at stream_left
             "Jennica chuckles."
@@ -785,6 +853,7 @@ label meetingMatticus():
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     "MAC pipes up from his crate."
     show mac stream at stream_right with dissolve
+    play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
     "Reginald rolls his eyes."
     goon "They're stored at a communications array on the outskirts of the city."
@@ -795,18 +864,22 @@ label meetingMatticus():
     pS "Reassuring."
     goon "We don't have time for this. Let's get to the shuttle."
     mS "Agreed."
+    play backAudio "jetEngines.wav" volume 1.0 fadein 2.0
     hide reginald with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide mac stream with Dissolve(0.5)
+    #stop music fadeout 2.0 - want to keep the matticus music going thru next scene
     jump approachingBase
 
 ###SCENE 5###
 label approachingBase():
-    show targetbase_stream at topleft onlayer background with dissolve
+    show vig2_targetbase_stream at topleft onlayer background with dissolve
     hide warehouse_stream
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
+    stop backAudio fadeout 5.0
+    #play music "soundtrack/gibianV.wav"
     "The shuttle lands in the grass near the base."
     "Hardly a base, more of an outpost with a big antenna."
     pS "Forgot how cramped these cheapo shuttles are."
@@ -815,6 +888,7 @@ label approachingBase():
     "Jennica and Teresa nod to me."
     show mac stream at stream_center_mac with Dissolve(0.5)
     "The brief silence is broken by MAC."
+    play audio "macPing.wav" volume 1.5
     macS "What is a \"cheapo planet?\" My database has no\"cheapo\" category."
     "Jennica laughs."
     pS "Similar to po-dunk."
@@ -834,6 +908,7 @@ label approachingBase():
     macS "This is a dangerous place? Are these bad people like Matticus?"
     menu:
         "They're bad people.":
+            $ macHope -= 1
             $ pdEngagement -= 1
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
@@ -845,6 +920,7 @@ label approachingBase():
             mS "Good. Let's move."
             hide mac stream with dissolve
         "Maybe.":
+            $ macHonesty += 1
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
             macS "Why do we need to work with bad people?"
@@ -860,6 +936,7 @@ label approachingBase():
     show reginald stream neutral at stream_center with Dissolve(0.5)
     pS "So, you got a plan?"
     goon "Plan? This is your operation. We just gotta get to the main datacentre computer."
+    hide screen streamerCommentary
     enS "Do you even know where it is?"
     goon "Yeah. In there somewhere. This is Gibian V. There are maybe three or four rooms in there."
     goon "How much traffic do you think comes through here?"
@@ -871,6 +948,8 @@ label approachingBase():
     hide reginald with dissolve
     #$ chatter_list.append(vig2_sc5_comment6)
     $ AddChatter(vig2_sc5_comment6)
+    hide ship_hallway_stream
+    hide shiphub_stream
     enS "I'm inclined to agree with him. We don't know how much firepower they'll have in there."
     enS "I say we go in heavy and take them out expeditiously. Minimize the hazards to ourselves and the cargo."
     pS "The fewer people who know we were here the better. And an explosion'll tip a few folks off"
@@ -884,6 +963,7 @@ label approachingBase():
             $ kcEngagement += 2
             $ csEngagement -= 1
             $ engineerApproval += 2
+            $ macViolence += 3
             "We don't know what kind of security we're walking into."
             $ AddChatter(vig2_sc6_out_comment1)
             "Getting caught off guard is a risk we can't afford to take."
@@ -903,8 +983,10 @@ label approachingBase():
             goon "So what are we doing?"
             mS "Going in the front door guns blazing."
             goon "Legends. This should be entertaining."
+            $ viewCheck6 += viewCount
             "Teresa signals to me that she's ready."
             mS "Alright let's get to it."
+            stop music fadeout 6.0
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
@@ -916,6 +998,7 @@ label approachingBase():
             $ pdEngagement -= 2
             $ kcEngagement -= 1
             $ pilotApproval += 2
+            $ macViolence -= 1
             $ AddChatter(vig2_sc6_mar_comment1)
             "Quick and quiet would be safer."
             mS "Jennica's right, lets try to avoid attention."
@@ -933,9 +1016,9 @@ label approachingBase():
             mS "We're going in quiet."
             "Reginald chuckles."
             $ AddChatter(vig2_sc6_mar_comment4)
+            $ viewCheck6 += viewCount
             goon "Really? I didn't think ex-Snakehawks would be so demure."
             goon "Whatever. I'll follow behind you."
-            hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
             jump commsBase_MAR1
@@ -943,16 +1026,17 @@ label approachingBase():
 ####SCENE 6####
 label commsBase_MAR1():
     #show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
     show teresa stream neutral at stream_right with Dissolve (0.3)
     "As we approach the base, Teresa signals to stay quiet."
     "After climbing up the fire escape, Teresa takes out a device and affixes it to the door."
+    play audio "unlock.wav" volume 2.5
     "The devices begins to beep and its lights flicker on and off."
     "Teresa mutters under her breath."
     enS "Child's play."
     "The door unlocks and pops ajar."
     hide teresa with dissolve
     show vig2_compound_hall_stream at topleft onlayer background with dissolve
+    hide vig2_targetbase_stream
     "We're inside. The base seems even smaller on the inside and lightly guarded."
     "Its just a few stairs down from the upper level to the ground floor."
     "The stairs lead to a hallway."
@@ -1008,6 +1092,7 @@ label commsBase_MAR2():
     "But that might get a little hairy."
     "A fake radio call would probably get them all to leave too."
     "They might come back though."
+    $ viewCheck7 += viewCount
     menu:
         "Knock them out.":
             "We can't risk them coming back and finding us."
@@ -1023,12 +1108,13 @@ label commsBase_MAR2():
             pS "This all feels way too easy."
             enS "Why is that a bad thing?"
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment3)
+            $ reactTarget = "vig2_sc6_mar_reflect"
+            show screen streamerCommentary
             enS "I rather like it when things are easy."
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
-            $ reactTarget = "vig2_sc6_mar_reflect"
-            show screen streamerCommentary
             "Reginald opens the door."
+            hide screen streamerCommentary
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
@@ -1047,14 +1133,15 @@ label commsBase_MAR2():
             "Once they're out, I wave over Reginald."
             goon "Wow so much work for what?"
             pS "This all feels way too easy."
+            $ reactTarget = "vig2_sc6_mar_reflect"
+            show screen streamerCommentary
             $ AddChatter(vig2_sc6_mar_choice2_dist_comment2)
             enS "Why is that a bad thing?"
             enS "I rather like it when things are easy."
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
-            $ reactTarget = "vig2_sc6_mar_reflect"
-            show screen streamerCommentary
             "Reginald opens the door."
+            hide screen streamerCommentary
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
@@ -1062,24 +1149,38 @@ label commsBase_MAR2():
 
 label commsBase_OUT1():
     #show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    hide targetbase_stream with dissolve
+    hide vig2_targetbase_stream with dissolve
     show teresa stream neutral at stream_right with Dissolve(0.5)
     show jennica stream neutral at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
     "We line up on either side of the entrance."
+    play audio "macGrumble.wav"
     show mac stream at stream_center_mac with Dissolve(0.5)
     "I notice MAC looks a little worried."
-    mS "Just stay close to me."
+    menu:
+        "I notice MAC looks a little worried."
+        "It's gonna be ok":
+            $ macHope += 1
+            mS "Don't worry MAC, everything's gonna be ok."
+            mS "Just stay close to me."
+        "It's gonna be chaotic":
+            $ macHonesty += 1
+            mS "Things are going to get hectic in there, MAC."
+            mS "Just stay close to me."
+    play audio "macAffirmative.wav"
     macS "Affirmative. Sticking to Captain."
     $ AddChatter(vig2_sc6_out_comment5)
     hide mac stream with Dissolve(0.5)
     "I give the signal to Teresa."
     hide jennica stream neutral
     hide teresa stream neutral
+    play music "soundtrack/saveTheGalaxy.wav" volume 1.2
     show vig2_compound_hall_stream at topleft onlayer background with vpunch
     "With a deafening bang, the door is obliterated into countless pieces."
     "An instant later I'm running through the smoke."
-    "MAC's footsteps clink behind me."
+    play backAudio "lazerFire.wav" volume 2.0
+    play audio "macSpin.wav" volume 0.5
+    "MAC's motor whirs behind me."
     "I make a dive for a piece of rubble as shots fly around me."
     $ AddChatter(vig2_sc6_out_comment6)
     "I peek out from cover."
@@ -1091,6 +1192,7 @@ label commsBase_OUT1():
     "I think I have a good shot on one of them."
     menu:
         "Shoot to kill.":
+            $ macViolence += 1
             $ pdEngagement += 1
             $ csEngagement -= 1
             "I take a deep breath and fire my blaster."
@@ -1134,6 +1236,8 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment14)
     "Teresa continues shooting."
     "Only one guard is left."
+    stop backAudio fadeout 1.0
+    $ renpy.music.set_volume(0.4, 1.0)
     $ AddChatter(vig2_sc6_out_comment15)
     show guard1 stream at stream_right with Dissolve(0.4)
     hsguard1 "I surrender!"
@@ -1146,8 +1250,11 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment17)
     pause 0.5
     $ AddChatter(vig2_sc6_out_comment18)
+    $ viewCheck7 += viewCount
     menu:
         "This isn't his fault.":
+            $ macViolence -= 1
+            $ macHope += 1
             $ baseGuardKilled = False
             $ marshal += 2
             $ pilotApproval += 2
@@ -1159,6 +1266,7 @@ label commsBase_OUT1():
             mS "Alright."
             $ AddChatter(vig2_sc6_out_spare_comment2)
             hsguard1 "Thank you miss! I—"
+            play audio "lazer.wav" volume 5.0
             hide guard1 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show reginald stream neutral at stream_center with dissolve
@@ -1181,6 +1289,8 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors.":
+            $ macViolence += 1
+            $ macHope -= 1
             $ baseGuardKilled = True
             $ outlaw += 2
             $ engineerApproval += 1
@@ -1193,6 +1303,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment3)
             hsguard1 "Miss I have kids."
             $ AddChatter(vig2_sc6_out_execute_comment4)
+            play audio "lazer.wav" volume 5.0
             hide guard1 stream with Dissolve(0.1)
             "His body slumps to the ground lifelessly."
             $ AddChatter(vig2_sc6_out_execute_comment5)
@@ -1221,14 +1332,18 @@ label commsBase_OUT1():
 
 ###SCENE 7###
 label commsBase_DataCenter():
-    show datacenter_stream at topleft onlayer background with dissolve
+    #Placeholder
+    show vig2_datacenter_stream at topleft onlayer background with dissolve
     hide vig2_compound_hall_stream
     "The datacentre is underwhelming."
     "At the center of the small room is a computer workstation with numerous monitors displaying a variety of shipments and other logistic info."
-    show worker stream at stream_center with dissolve
+    hide screen streamerCommentary
+    show data agent scared at stream_center with dissolve
     "Sitting at the workstation is a scrawny technician in glasses, terrified."
+    stop music fadeout 3.0
     worker "What are you doing here!?"
     show reginald stream neutral at stream_right with Dissolve(0.2)
+    play audio "chairRush.wav" volume 4.0
     "Before we have a chance to say anything, Reginald is in his face."
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
@@ -1239,6 +1354,7 @@ label commsBase_DataCenter():
     worker "Why do you want the tracking coordinates of an aid shipment?"
     $ AddChatter(vig2_sc7_comment1)
     pS "Yeah Reginald, why {i}do{/i} we want the tracking coordinates of an aid shipment?"
+    play music "soundtrack/decisionTime.wav" volume 1.2 
     "Reginald sighs exasperatedly."
     goon "I don't get paid enough for this."
     goon "The shipment's going to a town called Sallent."
@@ -1248,7 +1364,8 @@ label commsBase_DataCenter():
     $ AddChatter(vig2_sc7_comment3)
     show jennica stream shock at stream_left
     pS "I knew this was too damn easy!"
-    hide worker stream
+    hide datacenter_agent
+    play audio "macAlarmed.wav"
     show mac stream at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
@@ -1264,9 +1381,9 @@ label commsBase_DataCenter():
     $ reactTarget = "vig2_sc7_bigreveal"
     show screen streamerCommentary
     mS "So what happens if the town doesn't get that aid."
-    show worker stream at stream_center with Dissolve(0.4)
+    show data agent scared at stream_center with Dissolve(0.4)
     worker "Sallent? There's an outbreak of gray fever there. They need that medicine!"
-    hide worker stream with Dissolve (0.4)
+    hide datacenter_agent with Dissolve (0.4)
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
     hide reginald with Dissolve(0.5)
@@ -1281,9 +1398,12 @@ label commsBase_DataCenter():
     pS "They're people!"
     pS "Being born {i}here{/i} doesn't make 'em disposable!"
     pS "We really going through with this Cap?"
+    hide screen streamerCommentary
     $ AddChatter(vig2_sc7_comment6)
-    "MAC has been uncharateristically quiet. They've been worriedly looking at us the whole time." 
+    show mac stream at stream_center_mac with Dissolve (0.5)
+    "MAC is almost completely quiet. They've been looking at me the entire time." 
     $ AddChatter(vig2_sc7_comment7)
+    $ viewCheck8 += viewCount
     menu:
         "This has gone too far.":
             $ marshal += 5
@@ -1292,11 +1412,13 @@ label commsBase_DataCenter():
             $ kcEngagement += 1
             $ pilotApproval += 3
             $ engineerApproval -= 1
+            $ macHope += 3
             "This is just plain wrong."
             "We have to be better."
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
         "We don't have a choice.":
+            $ macViolence += 3
             $ outlaw += 5
             $ csEngagement -= 3
             $ pdEngagement +=3
@@ -1326,6 +1448,7 @@ label commsBase_DataCenter_MAR():
     pS "We can find someone else with access!"
     enS "Yes access to secure databases is easy to find and widespread! How could I forget!?"
     enS "That's what \"secure\" means right!?"
+    hide mac with dissolve
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
     show reginald stream neutral at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
@@ -1336,11 +1459,13 @@ label commsBase_DataCenter_MAR():
     $ AddChatter(vig2_sc7_mar_comment3)
     goon "You really think I'm gonna let you just bail on this deal?"
     "I notice Jennica reaching for her blaster."
+    hide screen streamerCommentary
     menu:
         "Signal Jennica to stun him.":
             $ outlaw += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
+            $ macViolence += 1
             "I look over to Jennica and give her the signal."
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide reginald with Dissolve(0.2)
@@ -1351,13 +1476,16 @@ label commsBase_DataCenter_MAR():
             $ reactTarget = "vig2_sc8_mar_reacttoregistun"
             show screen streamerCommentary
             show mac stream at stream_center_mac with Dissolve(0.2)
+            #We could use a conditional here based on Mac's violence trait to alter his respone to Reggie getting tagged.
             macS "Take that \"skeeve!\""
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
             pS "Beats me."
+            hide screen streamerCommentary
             hide mac stream with Dissolve(0.2)
         "Bribe Reginald.":
             $ marshal += 1
+            $ macViolence -= 1
             "I signal to Jennica to wait."
             mS "How much do you really like working for Sav?"
             goon "Like?"
@@ -1382,7 +1510,8 @@ label commsBase_DataCenter_MAR():
             mS "I hope so."
             enS "We have bigger problems. Where are we to find someone to help us cover our tracks now?"
             "I notice MAC watching Reginald run away, lost in thought."
-    show worker stream at stream_center with Dissolve(0.5)
+            hide screen streamerCommentary
+    show data agent nuetral at stream_center with Dissolve(0.5)
     worker "I uh... Couldn't help but overhear your predicament..."
     enS "Eavesdropping are we?" 
     worker "You're holding me uh... hostage."
@@ -1400,6 +1529,7 @@ label commsBase_DataCenter_MAR():
     "The technician continues to shift uneasily."
     worker "I... might use the Society's remote shipments to smuggle cargo."
     worker "The tariffs are insane! Matticus isn't exactly a free trade advocate."
+    $ viewCheck9 += viewCount
     "This feels too good to be true."
     $ AddChatter(vig2_sc7_mar_comment5)
     mS "Why are you helping us?"
@@ -1409,7 +1539,7 @@ label commsBase_DataCenter_MAR():
         worker "I saw on the security cameras."
         "The technician smiles at me."
         $ AddChatter(vig2_sc7_mar_comment6)
-    if gunsBlazing == True:
+    else:
         worker "What choice do I have!?"
         worker "You killed everyone here! I saw on the security cameras."
         "The technician sighs."
@@ -1436,7 +1566,8 @@ label commsBase_DataCenter_MAR():
     $ AddChatter(vig2_sc7_mar_comment9)
     "The technician smiles and winks at me."
     worker "I don't know who you're talking about. I wasn't even working that night!"
-    hide worker stream with Dissolve(0.5)
+    stop music fadeout 8.0
+    hide datacenter_agent with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump vig2epilogue_MAR
@@ -1454,6 +1585,7 @@ label commsBase_DataCenter_OUT():
     pS "Damnit Cap."
     $ AddChatter(vig2_sc7_out_comment3)
     $ AddChatter(vig2_sc7_out_comment4)
+    $ vig2_sc7_out_comment1.click = False
     enS "If you have a better way to cover our trail do share. Please."
     "There's a long moment before Jennica answers" 
     pS "I thought we were tryin' to be better than this..."
@@ -1462,9 +1594,10 @@ label commsBase_DataCenter_OUT():
     mS "We can't do better if we're in jail, and considering how close we got last time..."
     mS "I can't lose you guys. You're all I've got."
     $ AddChatter(vig2_sc7_out_comment6)
-    hide jennica
-    hide teresa
-    show reginald stream neutral at stream_left with Dissolve(0.5)
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide mac with dissolve
+    show reginald stream neutral at stream_right with Dissolve(0.5)
     goon "Are we done with this yet?"
     goon "I ain't got all day."
     $ AddChatter(vig2_sc7_out_comment7)
@@ -1474,7 +1607,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment9)
     "Reginald turns to the technician."
     $ AddChatter(vig2_sc7_out_comment10)
-    show worker stream at stream_center with Dissolve(0.5)
+    show data agent scared at stream_center with Dissolve(0.5)
     goon "I'm not going to ask nicely again. The tracking code, now."
     $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
@@ -1484,7 +1617,8 @@ label commsBase_DataCenter_OUT():
     worker "You realise these people have nothing right?"
     $ AddChatter(vig2_sc7_out_comment14)
     $ AddChatter(vig2_sc7_out_comment15)
-    "Reginald logs the code into his agenda."
+    show reginald at stream_left with move
+    "Reginald walks past the technician as he logs the code into his agenda."
     goon "I don't get paid to realise things."
     $ AddChatter(vig2_sc7_out_comment16)
     $ AddChatter(vig2_sc7_out_comment17)
@@ -1505,8 +1639,10 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment24)
     hide reginald with dissolve
     show jennica stream neutral at stream_left with Dissolve(0.5)
+    $ viewCheck9 += viewCount
     menu:
         "Convince him not to say anything.":
+            $ macViolence += 1
             $ marshal += 1
             $ pdEngagement += 1
             $ csEngagement += 1
@@ -1530,15 +1666,18 @@ label commsBase_DataCenter_OUT():
             mS "Do we understand each other?"
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
-            hide worker stream with dissolve
-            show mac stream at stream_right with Dissolve(0.5)
+            hide datacenter_agent with dissolve
+            show mac stream at stream_center_mac with Dissolve(0.5)
             "MAC stares at the terrified technician."
             pS "Damn Cap, that was dark."
             enS "If it works it works."
+            hide teresa with dissolve
+            hide jennica with dissolve
             mS "Come MAC."
             "MAC begins to follow."
-            hide mac stream with Dissolve(0.1)
+            hide mac stream with Dissolve(1.5)
         "Kill him.":
+            $ macViolence += 2
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 1
@@ -1550,24 +1689,33 @@ label commsBase_DataCenter_OUT():
             "Only one way to make sure this never leaves the building."
             $ AddChatter(vig2_sc7_out_execute_comment2)
             "I raise my blaster up to the technician's face."
-            worker "Wait! You don't have to do—"
-            hide worker stream with Dissolve(0.1)
             $ AddChatter(vig2_sc7_out_execute_comment3)
+            worker "Wait! You don't have to do—"
+            play audio "lazer.wav" volume 5.0
+            hide datacenter_agent with Dissolve(0.1)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             show jennica stream shock at stream_left
-            show mac stream at stream_right with Dissolve(0.5)
+            show mac stream at stream_center_mac with Dissolve(1.0)
             pS "Damn Cap. Reckon we killed enough today."
             pS "He really needed to die too?"
             $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
+            play audio "macSad.wav" volume 1.0
             macS "Dead..."
             show jennica stream neutral at stream_left
             mS "Enough blabbing. Lets go."
+            hide teresa with dissolve
+            hide jennica with dissolve
             "MAC continues to stare at the technician's corpse."
             mS "Come MAC."
+            $ vig2_sc7_out_execute_comment4.click = False
             "MAC begins to follow."
-            hide mac stream with Dissolve(0.1)
+            hide mac stream with Dissolve(2.0)
+    show vig2_targetbase_stream at topleft onlayer background with dissolve
+    hide vig2_datacenter_stream
     show reginald stream neutral at stream_center with Dissolve(0.5)
+    show teresa stream neutral at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
     "Reginald is waiting by the shuttle for us."
     $ reactTarget = "vig2_sc8_out_postchoice"
     show screen streamerCommentary
@@ -1581,6 +1729,7 @@ label commsBase_DataCenter_OUT():
     goon "This shuttle has a BigCorp missile loaded on it. When they try and trace it, it'll just lead back to their own factories."
     mS "Sounds simple enough."
     goon "Swell."
+    hide screen streamerCommentary
     hide jennica with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide reginald with Dissolve(0.5)
@@ -1588,7 +1737,7 @@ label commsBase_DataCenter_OUT():
 
 label shuttleDestruction():
     show orbit_stream at topleft onlayer background with dissolve
-    hide datacenter_stream
+    hide vig2_targetbase_stream
     show reginald stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve       
@@ -1615,6 +1764,7 @@ label shuttleDestruction():
     "Jennica sighs."
     $ AddChatter(vig2_sc7_out_comment27)
     pS "Hope this is worth it."
+    hide screen streamerCommentary
     $ AddChatter(vig2_sc7_out_comment28)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
@@ -1622,8 +1772,9 @@ label shuttleDestruction():
     jump vig2epilogue_OUT
 
 label vig2epilogue_MAR():
-    show vig2_shiphub_stream at topleft onlayer background with dissolve
-    hide datacenter_stream
+    play music "soundtrack/vig1scratchtrack.wav" volume 1.2
+    show shiphub_stream at topleft onlayer background with dissolve
+    hide vig2_datacenter_stream
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve  
     enS "Thank goodness that's over. If I never see Gibian V again it'll be too soon."
@@ -1634,9 +1785,11 @@ label vig2epilogue_MAR():
     pS "Wish I coulda seen his face..."
     $ AddChatter(vig2_epilogue_mar_comment2)
     "The meeting is interrupted by a ship intercom alert."
+    play audio "callRing.wav" volume 1.5
     shipcom "Incoming call from Magistrate Savlian Matticus."
     mS "Be careful what you wish for."
     mS "Accept."
+    hide screen streamerCommentary
     show matticus stream at stream_center with Dissolve(0.5)
     "Matticus appears on the ship computer. He's incensed."
     $ AddChatter(vig2_epilogue_mar_comment3)
@@ -1655,7 +1808,9 @@ label vig2epilogue_MAR():
     mS "Lose this channel Teresa."
     $ AddChatter(vig2_epilogue_mar_comment7)
     enS "With pleasure."
+    play audio "cutCall.wav" volume 1.5
     hide matticus stream with dissolve
+    $ viewCheck10 += viewCount
     "The screen powers off."
     pS "Maybe we shouldnta added insult to injury?"
     $ AddChatter(vig2_epilogue_mar_comment8)
@@ -1675,6 +1830,7 @@ label vig2epilogue_MAR():
     macS "I'm confused about our mission? Why do we need to hide if we are good people?"
     menu:
         "The people in power are bad.":
+            $ macHope += 1
             $ marshal += 1
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -1687,6 +1843,7 @@ label vig2epilogue_MAR():
             macS "I see. The universe is confusing."
             mS "Agreed."
         "The universe is bad and we can't trust anyone.":
+            $ macHope -= 1
             $ outlaw += 1
             $ pdEngagement += 1
             $ kcEngagement += 1
@@ -1715,19 +1872,21 @@ label vig2epilogue_MAR():
     pause 0.5
     $ vig2_marshalEpilogue = True
     $ vig2_outlawEpilogue = False
-    "As the chat winds down, you take off your headset, and sign off of Twitch."
+    "As the chat winds down, you take off your headset, and sign off of Flinch."
     hide screen streamChat
     hide screen streamDetails
     scene black with dissolve
     jump vig2_macro_start
 
 label vig2epilogue_OUT():
-    show vig2_shiphub_stream at topleft onlayer background with dissolve
+    play music "soundtrack/vig1scratchtrack.wav" volume 1.2
+    show shiphub_stream at topleft onlayer background with dissolve
     hide orbit_stream
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve 
-    "The ship computer powers on."
     $ AddChatter(vig2_epilogue_out_comment1)
+    "The ship computer powers on."
+    play audio "callRing.wav" volume 1.5
     shipcom "Incoming call from Magistrate Savlian Matticus."
     mS "Accept."
     $ AddChatter(vig2_epilogue_out_comment2)
@@ -1759,13 +1918,17 @@ label vig2epilogue_OUT():
     "Matticus winks before the screen powers off."
     $ reactTarget = "vig2_sc9_out_end"
     show screen streamerCommentary
+    play audio "cutCall.wav" volume 1.5
     hide matticus stream with dissolve
+    $ viewCheck10 += viewCount
     enS "Well at least we have some breathing room."
     $ AddChatter(vig2_epilogue_out_comment9)
     enS "Deadeye won't trouble us for the foreseeable future."
     pS "I suppose. I doubt the Ama we ran with'll chase red herrings for long though."
     $ AddChatter(vig2_epilogue_out_comment10)
     mS "Agreed. We ought to keep an eye out."
+    $ vig2_epilogue_out_comment6.click = False
+    hide screen streamerCommentary
     mS "Anything else to report?"
     enS "All systems are functional Captain."
     pS "Steady as she goes cap."
@@ -1779,11 +1942,14 @@ label vig2epilogue_OUT():
         $ AddChatter(vig2_epilogue_out_comment13)
     show mac stream at stream_center_mac with Dissolve(0.5)
     macS "May I ask a question?"
-    mS "Of course MAC."
+    mS "Of course, MAC."
+    play audio "macGrumble.wav" volume 1.5
     macS "I don't know how to feel about our mission. Why did we need to help the skeeve Matticus?"
     $ AddChatter(vig2_epilogue_out_comment14)
     menu:
+        macS "I don't know how to feel about our mission. Why did we need to help the skeeve Matticus?"
         "Doing bad things now can let us do good things later.":
+            $ macHope += 1
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
@@ -1799,6 +1965,7 @@ label vig2epilogue_OUT():
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
         "The universe is bad and we can't trust anyone.":
+            $ macHope -= 1
             $ outlaw += 1
             $ pdEngagement += 2
             $ csEngagement += 1
@@ -1842,7 +2009,8 @@ label vig2epilogue_OUT():
     $ AddChatter(vig2_epilogue_out_comment27)
     $ vig2_outlawEpilogue = True
     $ vig2_marshalEpilogue = False
-    "As the chat winds down, you take off your headset, and sign off of Twitch."
+    stop music fadeout 6.0
+    "As the chat winds down, you take off your headset, and sign off of Flinch."
     hide screen streamChat
     hide screen streamDetails
     scene black with dissolve
@@ -1851,30 +2019,31 @@ label vig2epilogue_OUT():
 
 #### MACRO GAME #######
 label vig2_macro_start():
+    play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
     $ macroChoice = True
     $ menu = nvl_menu
     "You lean back in your chair and let your body relax now that you're no longer on camera."
     $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Then you get a discord notification message."
-    "It's from Jessie, your mod."
+    "Then you get a Clamor notification."
+    "It's from Jessie."
     scene discord with dissolve
     mod_nvl "Hey bud, great stream again, so glad you decided to keep going with the game!"
     mod_nvl "How're you holding up?"
     if vig2_outlawEpilogue == True:
-        mod_nvl "The chat got really excited by diving into the Outlaw stuff"
+        mod_nvl "The chat got really excited by diving into the Outlaw stuff."
         if outlaw >= marshal:
             mod_nvl "And you seemed pretty into it too!"
         else:
-            mod_nvl "You seemed a bit on the fence tho"
+            mod_nvl "You seemed a bit on the fence tho."
         jump vig2_macro_mod_outlaw1
     else:
-        mod_nvl "Seemed like you had to manage the chat a bit this time around"
+        mod_nvl "Seemed like you had to manage the chat a bit this time around."
         if outlaw >= marshal:
-            mod_nvl "They were pretty hype about the Outlaw choices even though you went Marshal at the end"
+            mod_nvl "They were pretty hype about the Outlaw choices even though you went Marshal at the end."
         else:
-            mod_nvl "It was cool to see you stick to your guns tho"
+            mod_nvl "It was cool to see you stick to your guns tho."
         jump vig2_macro_mod_marshal1
 
 ###Labels for the Outlaw playthrough###
@@ -1906,7 +2075,7 @@ label vig2_macro_mod_outlaw2_enthusiastic():
             jump vig2_macro_mod_outlaw3_enthusiastic
         "•Odd...":
             $ reluctance += 1
-            player_nvl "That part's feelin kinda weird, I'm thinking of switching things up honestly"
+            player_nvl "That part's feelin kinda weird, I'm thinking of switching things up honestly."
             jump vig2_macro_mod_outlaw3_reluctant
 
 label vig2_macro_mod_outlaw2_reluctant():
@@ -1938,41 +2107,41 @@ label vig2_macro_mod_outlaw3_enthusiastic():
             $ reluctance += 1
             player_nvl "Really?"
             player_nvl "Honestly, I was so stressed out making that choice."
-            mod_nvl "Huh, I couldn't tell"
+            mod_nvl "Huh, I couldn't tell."
             mod_nvl "Way to play it off!"
             jump vig2_macro_mod_outlawEnd
 
 label vig2_macro_mod_outlaw3_reluctant():
     mod_nvl "For sure, that makes sense."
-    mod_nvl "I could kind of tell you weren't really into doing Savlian's dirty work"
+    mod_nvl "I could kind of tell you weren't really into doing Savlian's dirty work."
     menu:
         "•It was what the stream wanted.":
             $ curiosity = False
             player_nvl "That obvious?"
             player_nvl "Yeah, I guess I went that route cause it seemed like what the stream wanted."
             jump vig2_macro_mod_outlaw4_reluctant
-        "•I was trying to role play":
+        "•I was trying to role play.":
             $ curiosity = False
             player_nvl "Tbh, I had to disassociate from that one a bit."
             player_nvl "I thought of Moze as 'Outlaw Moze.'"
             player_nvl "So I wasn't really doing what like I would do in that position."
             menu:
                 "•It was cool.":
-                    player_nvl "It was cool actually"
+                    player_nvl "It was cool actually."
                     jump vig2_macro_mod_outlaw4_reluctant
                 "•It felt a little weird.":
                     player_nvl "Kind of a weird 'out of body' sensation."
                     jump vig2_macro_mod_outlaw4_reluctant
         "•I liked seeing another side of the story.":
             $ curiosity = True
-            player_nvl "It didn't feel great"
+            player_nvl "It didn't feel great."
             player_nvl "But it was interesting to see a different spin on the story."
-            player_nvl "Never really seen that side of Moze before"
+            player_nvl "Never really seen that side of Moze before."
             jump vig2_macro_mod_outlaw4_reluctant
         "•That didn't really bother me.":
             $ enthusiasm += 1
             player_nvl "Really?"
-            player_nvl "That felt fine actually"
+            player_nvl "That felt fine actually."
             jump vig2_macro_mod_outlaw4_reluctant
 
 label vig2_macro_mod_outlaw4_reluctant():
@@ -1981,7 +2150,7 @@ label vig2_macro_mod_outlaw4_reluctant():
         "•Yeah, Marshal feels more right.":
             $ reluctance += 2
             player_nvl "Yeah I am."
-            player_nvl "Marshal just feels more fun for me"
+            player_nvl "Marshal just feels more fun for me."
             jump vig2_macro_mod_outlawEnd
         "•Maybe.":
             $ reluctance += 1
@@ -1991,22 +2160,30 @@ label vig2_macro_mod_outlaw4_reluctant():
         "•No, this is a good path to Affiliate.":
             $ enthusiasm += 1
             player_nvl "No, I think this is still the best way to get Affiliate."
-            player_nvl "It's keeping me going tbh"
+            player_nvl "It's keeping me going tbh."
             jump vig2_macro_mod_outlawEnd
 
 label vig2_macro_mod_outlawEnd():
-    mod_nvl "Well you have this momentum now, and the audience does seem to like when you play Outlaw"
-    mod_nvl "But it's your stream y'know"
+    mod_nvl "Well you have this momentum now, and the audience does seem to like when you play Outlaw."
+    mod_nvl "But it's your stream y'know."
     mod_nvl "If you're feeling good, then keep it going!"
-    mod_nvl "If not then don't"
-    mod_nvl "I got your back, whatever you choose"
+    mod_nvl "If not then don't."
+    mod_nvl "I got your back, whatever you choose!"
     menu:
         "•Thanks.":
-            player_nvl "Thanks b, I appreciate it"
+            player_nvl "Thanks b, I appreciate it."
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some pho with a friend, chat later ya?"
     player_nvl "For sure, enjoy!"
-    jump vig2_macro_viewerChat_1
+    scene bg black
+    nvl clear
+    "I should check out the subblueit to see how people are reacting to Episode 2."
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
+    $ blueitPages.append(vig2_bThread1)
+    $ blueitPages.append(vig2_bThread2)
+    $ blueitPages.append(vig2_bThread3)
+    $ blueitPages.append(vig2_bThread4)
+    jump blueitVignette2_1
 
 
 ###Labels for Marshal playthrough###
@@ -2127,15 +2304,69 @@ label vig2_macro_mod_marshalEnd():
     mod_nvl "Gotta run, gonna go grab some fried rice with a friend"
     mod_nvl "chat later, ya?"
     player_nvl "For sure, enjoy!"
+    scene bg black
+    nvl clear
+    "I should check out the subblueit to see how people are reacting to Episode 2."
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
+    $ blueitPages.append(vig2_bThread1)
+    $ blueitPages.append(vig2_bThread2)
+    $ blueitPages.append(vig2_bThread3)
+    $ blueitPages.append(vig2_bThread4)
+    jump blueitVignette2_1
+
+###label for blueit
+label blueitVignette2_1:
+    scene blueit_screen at truecenter
+    call screen blueit
+    return
     jump vig2_macro_viewerChat_1
 
+label FlinchAnalytics_vig2():
+    $ menu = adv_menu
+    "I should probably check out Flinch too."
+    $ flinchCheck = 0
+    scene flinch_screen with dissolve
+    #The six lines below this allow us to change who the topfan is
+    #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
+    #    $ topfan = "Coriolis"
+    #elif kcEngagement > csEngagement and kcEngagement > pdEngagement:
+    #    $ topfan = "kitcat"
+    #else:
+    #    $ topfan = "pickledDragons"
+    #For this particular vignette though, we want it to be Coriolis
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "KitCat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "PickledDragons"
+    else:
+        $ topfan = "Coriolis"
+    "Time to explore the Flinch analytics page."
+    show screen viewership with dissolve
+    $ vbar1 += viewCheck1
+    $ vbar2 += viewCheck2
+    $ vbar3 += viewCheck3
+    $ vbar4 += viewCheck4
+    $ vbar5 += viewCheck5
+    $ vbar6 += viewCheck6
+    $ vbar7 += viewCheck7
+    $ vbar8 += viewCheck8
+    $ vbar9 += viewCheck9
+    $ vbar10 += viewCheck10
+    show screen viewershipButton_vig2
+    call screen streamAnalytics_vig2
+    hide screen streamAnalytics_vig2 with dissolve
+
 label vig2_macro_viewerChat_1():
-    nvl clear
+    $ menu = nvl_menu
+    hide screen viewershipButton_vig2
     $ renpy.sound.play("audio/ReceiveText.ogg")
     "I'm about to move away from my computer when I hear another notification."
+    scene discord with dissolve
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         "It's Coriolis?"
-        cs_nvl "Hey [player], that was such a cool stream!"
+        cs_nvl "Hey [username], that was such a cool stream!"
         if gunsBlazing == True:
             cs_nvl "It was fun to see you go out of your comfort zone and be a bit chaotic."
             cs_nvl "Honestly, I wasn't expecting to have as much fun with it as I did haha"
@@ -2151,18 +2382,18 @@ label vig2_macro_viewerChat_1():
                 "•Thank you.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "Thanks, Coriolis"
+                    player_nvl "Thanks, Coriolis."
                     player_nvl "It means a lot to have you in the chat!"
-                    cs_nvl "Aww, thanks [player]!"
+                    cs_nvl "Aww, thanks [username]!"
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
-            cs_nvl "I liked that stealth run on the base"
-            cs_nvl "It felt really tense"
+            cs_nvl "I liked that stealth run on the base."
+            cs_nvl "It felt really tense."
             if vig2_outlawEpilogue == True:
-                cs_nvl "I was surprised by siding with Matticus at the end, though"
+                cs_nvl "I was surprised by siding with Matticus at the end, though."
                 cs_nvl "But I get it, tough to weigh the safety of MAC and the wider galaxy in that moment."
             else:
                 cs_nvl "And I was stoked to see you side against the 'skeeve' Matticus haha"
@@ -2173,20 +2404,20 @@ label vig2_macro_viewerChat_1():
                 "•It was tough balancing both Outlaw and Marshal." if vig2_outlawEpilogue == True:
                     hide screen NVLnarration
                     $ reluctance += 1
-                    player_nvl "Yeah, it was tough balancing the two styles"
-                    player_nvl "Moze being both an Outlaw thief and a captain with Morals is interesting"
-                    cs_nvl "Totally"
+                    player_nvl "Yeah, it was tough balancing the two styles."
+                    player_nvl "Moze being both an Outlaw thief and a captain with Morals is interesting."
+                    cs_nvl "Totally."
                     cs_nvl "Glad I don't have to be in that position haha"
                 "•Good to go back to basics." if vig2_outlawEpilogue == False:
                     hide screen NVLnarration
                     $ reluctance += 1
-                    player_nvl "Yeah, I wanted to go back to basics"
-                    player_nvl "Get into some outlaw thievery vibes"
+                    player_nvl "Yeah, I wanted to go back to basics."
+                    player_nvl "Get into some outlaw thievery vibes."
                     cs_nvl "It was fun to see those vibes back!"
                 "•I'm glad you're liking it.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "Thanks, Coriolis"
+                    player_nvl "Thanks, Coriolis."
                     player_nvl "It means a lot to have you in the chat!"
                     cs_nvl "Aww, thanks [player]!"
                 "•Don't respond.":
@@ -2198,13 +2429,13 @@ label vig2_macro_viewerChat_1():
 
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
         "It's KitCat?"
-        kc_nvl "[player], hi! How's it goin!"
+        kc_nvl "[username], hi! How's it goin!"
         kc_nvl "Sry to message randomly, hope it's not weird"
-        kc_nvl "But I have to ask about your romance path"
+        kc_nvl "But I have to ask about your romance path."
         kc_nvl "gotta read the tea leaves of your soul!"
-        kc_nvl "jk, sort of, anyway"
+        kc_nvl "jk, sort of, anyway."
         if romanceAma == True:
-            kc_nvl "Ama. Great pick! Honestly, I didn't even think about that"
+            kc_nvl "Ama. Great pick! Honestly, I didn't even think about that."
             kc_nvl "Do you think it's an actual path the devs made?"
             kc_nvl "Or are you just fanshipping this vibe hard?"
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
@@ -2213,25 +2444,25 @@ label vig2_macro_viewerChat_1():
                 "•I think it'll be a choice.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
-                    player_nvl "No I think they'll give you that option"
-                    player_nvl "I mean, the drama is right there"
-                    player_nvl "And I get more of a family vibe from the other crew members"
+                    player_nvl "No I think they'll give you that option."
+                    player_nvl "I mean, the drama is right there."
+                    player_nvl "And I get more of a family vibe from the other crew members."
                     kc_nvl "icic"
                     kc_nvl "Great catch there! They should hire you to write on the next game!"
                 "•Just a fan theory tbh.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "It's just a fan ship"
-                    player_nvl "Ama's probably not in the game enough for that to make sense"
-                    kc_nvl "Yeah, you're probably right"
+                    player_nvl "Ama's probably not in the game enough for that to make sense."
+                    kc_nvl "Yeah, you're probably right."
                     kc_nvl "It's a great idea though, they should hire you to write on the next one!"
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
         elif romanceTeresa == True:
-            kc_nvl "Ok, so Teresa, I'm into this"
-            kc_nvl "I feel like Jennica's the dev-intended romance"
+            kc_nvl "Ok, so Teresa, I'm into this."
+            kc_nvl "I feel like Jennica's the dev-intended romance."
             kc_nvl "And I just think the tension with Teresa is more interesting, no?"
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration           
@@ -2239,18 +2470,18 @@ label vig2_macro_viewerChat_1():
                 '•Totally agree.':
                     hide screen NVLnarration
                     $ kcEngagement += 2
-                    player_nvl "100\% agree"
-                    player_nvl "Jennica's sweet, but I think the connection with Teresa feels more real"
-                    player_nvl "Probably because there's more tension there"
+                    player_nvl "100\% agree."
+                    player_nvl "Jennica's sweet, but I think the connection with Teresa feels more real."
+                    player_nvl "Probably because there's more tension there."
                     kc_nvl "Exactly!"
-                    kc_nvl "I knew you'd get it"
+                    kc_nvl "I knew you'd get it."
                 "•IDK, seemed fun.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "I dunno, I didn't think about it too much."
                     player_nvl "Guess I just feel it more with Teresa?"
-                    kc_nvl "Ah ic, more just an intuition thing"
-                    kc_nvl "I can respect that"
+                    kc_nvl "Ah ic, more just an intuition thing."
+                    kc_nvl "I can respect that."
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
@@ -2258,32 +2489,32 @@ label vig2_macro_viewerChat_1():
         elif romanceJennica == True:
             kc_nvl "Ok, so, Jennica. What's the deal with that?"
             kc_nvl "Like, I see people fawning over her online and..."
-            kc_nvl "idk, she just feels like the dev canon romance to me, which just seems kinda uninteresting"
+            kc_nvl "idk, she just feels like the dev canon romance to me, which just seems kinda uninteresting."
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
                 '•Yes, but that\'s what makes it good.':
                     hide screen NVLnarration
                     $ kcEngagement += 2
-                    player_nvl "That's kind of the thing though"
-                    player_nvl "I don't really buy a romance path with Teresa"
-                    player_nvl "Even though it's more \'on rails\' I guess, the Jennica romance just feels more real"
-                    player_nvl "There's more there because the devs spent more time on it"
-                    kc_nvl "mmmm true. It does feel like Teresa doesn\'t always get a lot of shine"
+                    player_nvl "That's kind of the thing though."
+                    player_nvl "I don't really buy a romance path with Teresa."
+                    player_nvl "Even though it's more \'on rails\' I guess, the Jennica romance just feels more real."
+                    player_nvl "There's more there because the devs spent more time on it."
+                    kc_nvl "mmmm true. It does feel like Teresa doesn\'t always get a lot of shine."
                     kc_nvl "I'm into the maximize content view. Makes sense!"
                 "•IDK, seemed fun.":
                     hide screen NVLnarration
                     player_nvl "I dunno, I didn't think about it too much."
                     player_nvl "Guess I just feel it more with Jennica?"
-                    kc_nvl "Ah ic, more just an intuition thing"
-                    kc_nvl "I can respect that"
+                    kc_nvl "Ah ic, more just an intuition thing."
+                    kc_nvl "I can respect that."
                 "•Don\'t respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
-            kc_nvl "Who are you thinking of romancing? You didn't say during stream"
-            kc_nvl "I feel like Jennica is canon, but Teresa's compelling too"
+            kc_nvl "Who are you thinking of romancing? You didn't say during stream."
+            kc_nvl "I feel like Jennica is canon, but Teresa's compelling too."
             $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
@@ -2294,7 +2525,7 @@ label vig2_macro_viewerChat_1():
                     $ romanceTeresa = False
                     $ romanceAma = False
                     kc_nvl "Sure sure"
-                    kc_nvl "Can't go wrong with the dev-authored path"
+                    kc_nvl "Can't go wrong with the dev-authored path."
                 "•Probably Teresa.":
                     hide screen NVLnarration
                     $ kcEngagement += 2
@@ -2308,7 +2539,7 @@ label vig2_macro_viewerChat_1():
                     $ romanceAma = True
                     $ romanceTeresa = False
                     $ romanceJennica = False
-                    kc_nvl "Oh WOW I hadn't even thought that they would do that"
+                    kc_nvl "Oh WOW I hadn't even thought that they would do that."
                     kc_nvl "Gotta go scour some forums for thoughts on that ship!"
                 "•Don\'t respond.":
                     hide screen NVLnarration
@@ -2319,13 +2550,13 @@ label vig2_macro_viewerChat_1():
 
     elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
         "It's PickledDragons?"
-        pd_nvl "Hey [player], hope this isn't weird. Just wanted to share some thoughts on the stream."
+        pd_nvl "Hey [username], hope this isn't weird. Just wanted to share some thoughts on the stream."
         if gunsBlazing == True and vig2_outlawEpilogue == True:
-            pd_nvl "I appreciate how you leaned into the edginess of these characters"
-            pd_nvl "And I hope it's not weird what I'm typing into chat"
-            pd_nvl "I just feel like...these are supposed to be outlaws"
-            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
-            pd_nvl "Like, to believe that Moze is going to grow as a character, we have to see some of that internal tension"
+            pd_nvl "I appreciate how you leaned into the edginess of these characters."
+            pd_nvl "And I hope it's not weird what I'm typing into chat."
+            pd_nvl "I just feel like...these are supposed to be outlaws."
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters."
+            pd_nvl "Like, to believe that Moze is going to grow as a character, we have to see some of that internal tension."
             pd_nvl "I've been on the fence with this game, but you're making me think about picking it up!"
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
@@ -2333,24 +2564,24 @@ label vig2_macro_viewerChat_1():
                 "•100\% agree, these are complex characters.":
                     hide screen NVLnarration
                     $ pdEngagement += 2
-                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
-                    player_nvl "I was all Marshal before this, but it's been a really compelling experience"
+                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more."
+                    player_nvl "I was all Marshal before this, but it's been a really compelling experience."
                     pd_nvl "Well, glad I caught when you made the switch!"
                     pd_nvl "Looking forward to the next stream!"
                 "•That's more thought than I put in tbh.":
                     hide screen NVLnarration
                     $ pdEngagement += 1
                     player_nvl "Honestly, that's more thought than I put in haha"
-                    player_nvl "I'm kinda just going by feel"
+                    player_nvl "I'm kinda just going by feel."
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
         elif gunsBlazing == True and vig2_outlawEpilogue == False:
-            pd_nvl "I appreciate how you're playing around with the edginess of these characters"
-            pd_nvl "I just feel like...these are supposed to be outlaws"
-            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
+            pd_nvl "I appreciate how you're playing around with the edginess of these characters."
+            pd_nvl "I just feel like...these are supposed to be outlaws."
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters."
             pd_nvl "I like the blend you're going with here. Curious if you'll keep it up?"
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
@@ -2359,14 +2590,14 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ pdEngagement += 2
                     $ promisedPDOutlaw = True
-                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more"
-                    player_nvl "I was all Marshal before this, but it's been a really compelling experience"
+                    player_nvl "Completely agree, I think the Outlaw path shows the character nuances more."
+                    player_nvl "I was all Marshal before this, but it's been a really compelling experience."
                     pd_nvl "Well, glad I caught when you made the switch!"
                 "•Most decisions are spontaneous.":
                     hide screen NVLnarration
                     player_nvl "Honestly, that's more thought than I put in haha"
-                    player_nvl "I'm kinda just going by feel"
-                    player_nvl "So maybe it's still a blend, maybe it changes"
+                    player_nvl "I'm kinda just going by feel."
+                    player_nvl "So maybe it's still a blend, maybe it changes."
                     player_nvl "Gotta see what the Galaxy throws at us!"
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
                 "•Don't respond.":
@@ -2374,10 +2605,10 @@ label vig2_macro_viewerChat_1():
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
         elif gunsBlazing == False and vig2_outlawEpilogue == True:
-            pd_nvl "I was really surprised by the choice you made at the end, shooting down the aid ship"
+            pd_nvl "I was really surprised by the choice you made at the end, shooting down the aid ship."
             pd_nvl "Quite the pivot from the quiet infiltration, but very interesting!"
-            pd_nvl "I just feel like...these are supposed to be outlaws"
-            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters"
+            pd_nvl "I just feel like...these are supposed to be outlaws."
+            pd_nvl "If they only ever make \"good guy\" type decisions, they kind of become less interesting characters."
             pd_nvl "Just curious how you see it?"
             $ playerNVLNarration = "Interesting thoughts from PickledDragons. Should I respond?"
             show screen NVLnarration
@@ -2386,18 +2617,18 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ pdEngagement += 4
                     player_nvl "I think it's hard to say one way or the other."
-                    player_nvl "I was all Marshal before this, but it's been really compelling to do some outlaw stuff"
+                    player_nvl "I was all Marshal before this, but it's been really compelling to do some outlaw stuff."
                     player_nvl "Sometimes it makes sense for the characters to go that route. Sometimes it doesn't."
-                    player_nvl "That's what makes the game interesting imo"
-                    pd_nvl "100\% agree"
-                    pd_nvl "I typically go all outlaw in games"
-                    pd_nvl "But maybe the characters will feel more compelling if I sprinkle some marshal in there too"
+                    player_nvl "That's what makes the game interesting imo."
+                    pd_nvl "100\% agree."
+                    pd_nvl "I typically go all outlaw in games."
+                    pd_nvl "But maybe the characters will feel more compelling if I sprinkle some marshal in there too."
                     pd_nvl "Thx for the quick chat!"
                 "•Most decisions are spontaneous.":
                     hide screen NVLnarration
                     player_nvl "Honestly, that's more thought than I put in haha"
-                    player_nvl "I'm kinda just going by feel"
-                    player_nvl "The blend is cool, but it depends on how I'm feeling each day"
+                    player_nvl "I'm kinda just going by feel."
+                    player_nvl "The blend is cool, but it depends on how I'm feeling each day."
                     player_nvl "Gotta see what the Galaxy throws at us!"
                     pd_nvl "For sure, nothing wrong with flying by the seat of your pants!"
                 "•Don't respond.":
@@ -2405,10 +2636,10 @@ label vig2_macro_viewerChat_1():
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
-            pd_nvl "I really like your stream"
-            pd_nvl "The energy in chat is great, you're fun to watch"
-            pd_nvl "Even though you go Marshal most of the time, I'm still having a good time"
-            pd_nvl "Ordinarily I go all for the Outlaw routes"
+            pd_nvl "I really like your stream."
+            pd_nvl "The energy in chat is great, you're fun to watch."
+            pd_nvl "Even though you go Marshal most of the time, I'm still having a good time."
+            pd_nvl "Ordinarily I go all for the Outlaw routes."
             pd_nvl "So I just wanted to say kudos for making Marshal so entertaining!"
             $ playerNVLNarration = "Some thoughtful messages from PickledDragons. Should I respond?"
             show screen NVLnarration
@@ -2416,19 +2647,19 @@ label vig2_macro_viewerChat_1():
                 "•I feel good with Marshal.":
                     hide screen NVLnarration
                     player_nvl "Thanks!"
-                    player_nvl "Marshal's for sure my comfort zone. Been playing with outlaw stuff"
-                    player_nvl "but I think the stream is better when I'm on the Marshal path"
-                    pd_nvl "Makes sense. Even though it's jut a game"
+                    player_nvl "Marshal's for sure my comfort zone. Been playing with outlaw stuff."
+                    player_nvl "but I think the stream is better when I'm on the Marshal path."
+                    pd_nvl "Makes sense. Even though it's jut a game."
                     pd_nvl "Thx for the quick chat!"
                 "•I could see myself switching it up.":
                     hide screen NVLnarration
                     $ pdEngagement += 2
                     $ promisedPDOutlaw = True
                     player_nvl "Thanks!"
-                    player_nvl "I'm glad you dig it. tbh, I'm kinda considering sprinkling more outlaw choices in"
+                    player_nvl "I'm glad you dig it. tbh, I'm kinda considering sprinkling more outlaw choices in."
                     pd_nvl "Hell yeah, I think you'd enjoy that!"
                     pd_nvl "Just play around with that edge a little bit more. Why not?"
-                    pd_nvl "It's just a game after all"
+                    pd_nvl "It's just a game after all."
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ pdEngagement -= 1
@@ -2437,7 +2668,7 @@ label vig2_macro_viewerChat_1():
     
     else:
         "It's Coriolis?"
-        cs_nvl "Hey [player], that was such a cool stream!"
+        cs_nvl "Hey [username], that was such a cool stream!"
         if gunsBlazing == True:
             cs_nvl "It was fun to see you go out of your comfort zone and be a bit chaotic."
             cs_nvl "Honestly, I wasn't expecting to have as much fun with it as I did haha"
@@ -2453,9 +2684,9 @@ label vig2_macro_viewerChat_1():
                 "•Thank you.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "Thanks, Coriolis"
+                    player_nvl "Thanks, Coriolis."
                     player_nvl "It means a lot to have you in the chat!"
-                    cs_nvl "Aww, thanks [player]!"
+                    cs_nvl "Aww, thanks [username]!"
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 3
@@ -2498,9 +2729,9 @@ label vig2_macro_viewerChat_1():
         jump vig2_macro_bro1
 
 label vig2_macro_bro1():
+    nvl clear
     hide discord with dissolve
     scene black with dissolve
-    nvl clear
     "You weren't expecting that. But it was kind of nice for them to reach out."
     "But now it's time to walk away from your computer."
     "You shut down the computer and start winding down for the evening."
@@ -2549,7 +2780,7 @@ label vig2_macro_bro1():
                     $ reluctance += 1
                     player_nvl "Could go back to Marshal, idk"
                     player_nvl "Will have to see how the story goes"
-    player_nvl "Hope things with Jackson are going good! Love you <3"
+    player_nvl "Hope things with Cedric are going good! Love you <3"
     "You send the texts and then finish getting ready for bed."
     jump vig2_macro_sleep
 

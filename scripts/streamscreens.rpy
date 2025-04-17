@@ -82,7 +82,7 @@ screen streamDetails():
         xpadding 5
         ypadding 5
         text "[streamer]" align (.1, .1) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
-        text "Viewers [viewCount]" align (.99, .7) color "#000000ff" #displays the current viewer count
+        text "Viewers [viewCount]" align (1.208, -8.38) color "#ffffffff" #displays the current viewer count
         #text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
         #text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
         #text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
@@ -102,35 +102,37 @@ screen streamDetails():
 ###Tutorial screens for vignette 1
 screen chatTutorial():
     frame:
-        ypos 40 
+        ypos 100 
         xsize 1000
         ysize 230
+        xpadding 15 
+        ypadding 15 
         right_margin 200
-        background Solid("#000000ff")
+        background Image("images/stream ui/tutorialUI.png")
         text "Sometimes your chat will make comments you can respond to.\nThese are highlighted in yellow.\nClick on them to interact with your viewers."
         textbutton "Close Tutorial":
             action Hide("chatTutorial")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            align (1.35, 1.0)
 
 screen chatTutorial2():
     frame:
-        ypos 40 
+        ypos 100 
         xsize 1000
         ysize 230
+        xpadding 15 
+        ypadding 15 
         right_margin 200
-        background Solid("#000000ff")
+        background Image("images/stream ui/tutorialUI.png")
         text "When the textbox at the bottom of the chat is highlighted in blue and says \"React\",\nyou can click on it to initiate a conversation with your viewers."
         textbutton "Close Tutorial":
             action Hide("chatTutorial2")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            align (1.35, 1.0)
 
 screen discordNotification():
     frame:
@@ -197,9 +199,9 @@ screen selectProfilePic():
         ysize 100
         align (0.4, 0.5)
     imagebutton:
-        action [SetVariable("profilePic", "socials/profilepics/profile3.png"), Return()]
-        background Image("socials/profilepics/profile3.png")
-        idle Image("socials/profilepics/profile3.png")
+        action [SetVariable("profilePic", "socials/profilepics/profile5.png"), Return()]
+        background Image("socials/profilepics/profile5.png")
+        idle Image("socials/profilepics/profile5.png")
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100

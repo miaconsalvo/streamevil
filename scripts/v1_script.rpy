@@ -1,4 +1,8 @@
 label vignette1Start():
+    $ vignette1 = True
+    $ vignette2 = False
+    $ vignette3 = False
+    $ vignette4 = False
     scene streamview
     show screen streamChat
     show screen streamDetails
@@ -12,16 +16,19 @@ label vignette1Start():
     jump returnToWorkshop
 
 label returnToWorkshop():
-    play music "soundtrack/allistar.wav" volume 1.2 loop fadein 1.0
+    play music "soundtrack/allistar.wav" volume 1.0 loop fadein 1.0
     show screen chatTutorial2
     call screen streamFreeze
     "Thermal paste in hand I return to Allistar's workshop."
-    show mac stream at stream_center_mac with dissolve
+    show vig1_allistar_workshop at topleft onlayer background with dissolve
+    hide vig1_town_stream
+    show mac stream neutral at stream_center_mac with dissolve
     show allistar stream neutral at stream_right with dissolve
     "MAC is in the center of the room, a faint trill of classical music whistles from his voice box."
     "Allistar sits on a chair behind the droid, still working on the open circuit panel in MAC's back." 
     aS "Moze, did you know MAC likes music?" 
     aS "It has recordings of every Beethoven symphony stored in its memory banks."
+    play audio "macAffirmative.wav" volume 1.5
     macS "Ludwig van Beethoven was my father's favorite composer."
     $ AddChatter(vig1_sc2_comment1)
     pause 0.5
@@ -37,18 +44,19 @@ label returnToWorkshop():
     "He reaches his hand out."
     aS "Thermal paste."
     "I pass him the tube."
+    show allistar stream thinking
     aS "Do you ever think about the Snakehawks, Moze? What the old crew was, what we became?"
     menu:
-        aS "Do you ever think about the Snakehawks, Moze? What our old crew was, what we became?"
+        aS "Do you ever think about the Snakehawks, Moze? What the old crew was, what we became?"
         "Not really.":
             mS "I don't dwell on the past much. These days I have to keep my attention on the present."
             aS "Almost seems like a luxury."
         "We were a family.":
-            $ macCynicism -= 1
+            $ macHope += 1
             mS "It's simple: Ama took care of us and we took care of each other. We were all we had. A family."
             aS "And now that family's completely disintegrated."
         "We were just a bunch of people getting by.":
-            $ macCynicism += 1
+            $ macHope -= 1
             mS "We were always just a bunch of people who needed somewhere to go. And Ama was a good leader, paid well."
             aS "Surprising to hear from you considering how close you were with Deadeye. And that Jennica's stuck around with you."
     aS "I've been thinking a lot about our legacy ever since Deadeye's heist on BigCorp went wrong."
@@ -69,13 +77,16 @@ label returnToWorkshop():
     aS "I can live with that."
     aS "But I keep thinking, what could the Snakehawks..."
     aS "What could {i}we{/i} have accomplished if we tried to be more than a gang of outlaws."
+    show allistar stream neutral
     "He leans back from MAC and starts screwing the metal plate back in."
     aS "All done. Circuits should be resistant to electricity and overheating now."
     "MAC rolls forward into a clear space in the room."
     macS "System functions restored to normal.\nProbability of celebration: 100\%."
+    play audio "macSpin.wav" volume 1.5
     "The music from MAC's voice box crescendoes as he begins spinning rapidly in place."
     $ AddChatter(vig1_sc2_comment4)
     pause 0.5
+    play audio "macHappy.wav" volume 1.5
     macS "Thank you, Dr. Collins!"
     aS "Hahaha I'm no doctor, but you're very welcome."
     menu:
@@ -89,7 +100,8 @@ label shipCall:
     $ viewCheck6 = viewCount
     "I put a hand on Allistar's shoulder."
     mS "Thanks for your help, Al. We'll be on our way now."
-    "{i}beep beep beeeep{/i}"
+    play audio "callRing.wav" volume 1.5
+    #"{i}beep beep beeeep{/i}"
     "My communicator rings. Jennica's voice crackles out."
     pS "Moze? We've got some trouble: there's a long range caller insisting on speaking with you."
     pS "Says they want to warn us about something. Teresa confirmed it's not BigCorp."
@@ -98,6 +110,7 @@ label shipCall:
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 4.0
     amaS "My dear Mozely. It's good to hear your voice again."
+    show allistar stream mad
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
     mS "Ama? Why are you calling?"
@@ -114,17 +127,21 @@ label shipCall:
     amaS "So why don't you run along to your little ship and set sail."
     amaS "Oh, and take Allistar with you." 
     amaS "BigCorp has labeled him an accomplice, and I'd hate for him to suffer in a prison on your account."
+    show allistar stream thinking
     amaS "Take care, Mozely. Do try to make this hunt interesting."
+    play audio "cutCall.wav" volume 1.5
     "The line cuts. The room is silent."
     macS "Captain? You appear distressed."
-    "{i}Zshhcs{/i}"
-    "Another crackle from the communicator. It's Teresa; her voice is frantic and rushed."
+    play audio "callRing.wav" volume 1.5
+    "Another ring from the communicator. It's Teresa; her voice is frantic and rushed."
     enS "Captain! We just identified several BC land cruisers heading toward Grand Junction."
+    play backAudio "lazerFireCall.wav" volume 1.0 loop
     "The sound of blaster fire erupts through the coms."
     pS "Light speeders have already dropped a couple squads in the port. They're firing on the ship!"
     enS "We can hold them off for a bit, but you have to get back here before those cruisers or we're done for!"
     pS "Shit, Teresa, guard that ramp! I'll cover you with the turrets!"
-    "{i}zzshrc{/i}"
+    stop backAudio
+    play audio "cutCall.wav" volume 1.5
     "The line cuts."
     "Adrenaline floods my body."
     mS "Time to move. MAC, let's go."
@@ -133,14 +150,17 @@ label shipCall:
     menu:
         aS "Moze, what have you done?"
         "What I had to do.":
+            $ macHope -= 1
             mS "I did what I had to do."
             mS "BigCorp {i}cannot{/i} get hold of MAC."
             mS "They didn't leave me with a choice."
         "Saved the galaxy.":
+            $ macHope += 1 
             mS "I saved the galaxy."
             mS "We don't know what BC wants with MAC, but we know it's bad."
             mS "We {i}cannot{/i} let them get hold of him."
     "Allistar is perfectly still."
+    show allistar stream mad
     "Then he rushes to a nearby drawer, lifts out a blaster, and sets it to stun."
     aS "It's a straight shot to the spaceport. Our best bet is a full sprint."
     $ AddChatter(vig1_sc2_comment6)
@@ -156,6 +176,7 @@ label shipCall:
         "Everything's going to be okay.":
             mS "We've run into a bit of trouble, but it's okay, Allistar and I can handle it."
             mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get the ship."
+    play audio "macAffirmative.wav" volume 1.5
     "MAC hums back an affirmative beep."
     aS "You ready?"
     "What should I set my blaster to?"
@@ -182,33 +203,38 @@ label setBlasterVig1():
 label streetShootout:
     play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 1.5
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
+    hide vig1_allistar_workshop
     "Allistar, MAC, and I rush into the deserted main street of Grand Junction."
     "My feet pound against the hardpacked ground. The spaceport is dead ahead of us."
     show bc_enforcer at stream_center with dissolve
     "And so are BigCorp goons, six enforcers wearing telltale blue and grey uniforms."
+    play backAudio "lazerFire.wav" volume 1.5 loop
     "We shoot on instinct, blaster bolts streaking across the desert sand."
     "I dive into cover around the side of a building as they return fire."
     $ AddChatter(vig1_sc2_comment7)
     pause 0.5
-    hide bc_enforcer with dissolve
     "The enforcers disperse. One takes a speeder and veers off while three duck into the alleys."
     "Two advance down the main street toward us."
+    hide bc_enforcer with dissolve
+    play backAudio "lazerFire.wav" volume 0.6
     mS "BC scum."
     aS "Moze!"
-    show allistar stream neutral at stream_right with Dissolve (0.5)
+    show allistar stream mad at stream_right with Dissolve (0.5)
     "Allistar ducks into cover behind some nearby barrels."
     aS "We can't get pinned down!"
     "A light bump taps me on the knee."
-    show mac stream at stream_center_mac with Dissolve(0.5)
+    show mac stream neutral at stream_center_mac with Dissolve(0.5)
     macS "Affirmative, our survival rate in the current situation is 5\%."
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
         "Good initiave, MAC.":
+            $ macHonesty += 1
             $ kcEngagement += 1
             mS "I'm glad you're trying to help, MAC."
             "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
             mS "But we need something more than probabilities right now."
         "Not helping!":
+            $ macHonesty -= 1
             mS "Not helping, MAC!"
             "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
             $ AddChatter(vig1_sc2_comment8_kc)
@@ -216,6 +242,7 @@ label streetShootout:
             mS "Can you locate those other enforcers?"
     macS "Right."
     mS "Thank you."
+    play audio "macPing.wav" volume 1.5
     macS "No, Captain. Right. As in East."
     "I glance to my right. There's a single enforcer riding a light speeder between buildings. It's making a beeline for MAC."
     aS "Moze, on the building!"
@@ -235,6 +262,7 @@ label streetShootout:
             "Mine and Annatar's fire forces them into cover, but not before one of them takes a hit and falls off the back of the building."
             "The last one pokes their head up and Allistar hits them right between the eyes."
             show bc_enforcer at stream_left with Dissolve(0.3)
+            stop backAudio
             "At that moment the ground enforcer rounds the corner, about to fire."
             hide allistar with Dissolve (0.3)
             mS "MAC, run!"
@@ -244,6 +272,9 @@ label streetShootout:
             "We roll over one another as he reaches for his gun."
             "He's too slow."
             "I pull my pistol to his chest and fire two rapid shots."
+            play audio "lazer.wav" volume 5.0
+            pause 0.4
+            play audio "lazer.wav" volume 5.0
             hide bc_enforcer with Dissolve (0.3)
             "Struggling to my feet, I look up to see MAC rolling quickly down the street toward the port."
             "Then the speeder rushes past me, bearing down on MAC."
@@ -251,10 +282,10 @@ label streetShootout:
             pause 0.5
             "I fire at it, but every shot goes wide."
             "The speeder is almost at MAC, the enforcer reaching down to lift him up."
-            "{i}Zzzzap{/i}"
+            play audio "lazer.wav" volume 6.0
             "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
-            show allistar stream neutral at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.5)
             "I turn back around. Allistar holds a smoking blaster upright."
             show screen chatTutorial2
             show screen streamerCommentary
@@ -273,20 +304,24 @@ label streetShootout:
             "The enforcers on the rooftop bear down on us."
             "Allistar and I quickly return fire from our precarious position, forcing them into cover."
             "A hail of blaster bolts go in both directions, but as they move to get closer, I manage to land a shot in one of their chests, knocking them down."
-            show bc_enforcer at stream_center with Dissolve(0.3)
+            show bc_enforcer at stream_left with Dissolve(0.3)
+            stop backAudio
             enforcer "Freeze!"
             hide allistar with Dissolve(0.3)
             "The enforcer on the ground rounds the corner, but that single word of hesitation gives me just enough time."
             "I dive forward as they try to fire."
             mS "MAC, run!"
+            play audio "lazer.wav" volume 5.0
             hide mac with Dissolve(0.3)
             "The blast goes wide and I tackle him to the ground."
+            show bc_enforcer at stream_center with move
             "We roll over each other. Biting, punching, kicking. But he lands on top of me and wraps his hands around my throat."
             "He starts squeezing as I frantically push my hands up against his face, trying to find purchase, trying to knock him off."
+            play audio "lazer.wav" volume 4.0
             enforcer "Aiieea!"
             hide bc_enforcer with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
-            show allistar stream neutral at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.5)
             "Allistar holds his right shoulder gingerly, a light trail of smoke from a blaster bolt flickers in the air."
             "He grimaces."
             show screen chatTutorial2
@@ -311,12 +346,13 @@ label streetShootout:
             "A break in the hail of bullets."
             "Popping out of cover, Allistar and I land two quick shots while the enforcers are out in the open."
             "They fall limply to the ceiling."
+            stop backAudio
             "As Allistar and I stand up from the cover, the speeder careens past us, bearing down on MAC."
             $ AddChatter(vig1_sc2_comment11)
             pause 0.5
             "I fire at it, but every shot goes wide."
             "The speeder is almost at MAC, the enforcer reaching down to lift him up."
-            "{i}Zzzzap{/i}"
+            play audio "lazer.wav" volume 6.0
             "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
             "Allistar holds his shoulder, wincing in pain."
@@ -329,12 +365,14 @@ label streetShootout:
             hide screen streamerCommentary
             hide screen chatTutorial2
     hide allistar with Dissolve(0.5)
-    show mac stream at stream_center_mac with Dissolve (0.5)
+    show mac stream neutral at stream_center_mac with Dissolve (0.5)
     mS "MAC!"
     "MAC stops and turns to face us."
     macS "Captain, the probability of our safe escape has risen to nearly 100\%!"
-    #$ renpy.music.set_volume(0.2)
-    stop music
+    stop music fadeout 2.0
+    #$ renpy.music.set_volume(0.2, 1)
+    #play music "audio/soundtrack/decisionTime.wav" volume 0.5 fadein 1.0 loop
+    #stop music
     "As MAC finishes, I see it out of the corner of my eye."
     "A rifle perched delicately on a roof. The shooter hidden from view."
     "MAC is completely exposed, one shot will destroy him."
@@ -351,14 +389,16 @@ label saveMAC():
         "I process the information in less than a second, then react."
         "Dive in front of the shot.":
             $ kcEngagement += 1
-            play music "soundtrack/savethegalaxy.wav" volume 1.0 loop
+            $ macViolence -= 1
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
+            play audio "lazer.wav" volume 7.0
             "The sound of a rifle firing resonates behind me."
             "Pain explodes in my left shoulder as I fall to the ground."
             aS "Moze!"
             macS "Captain!?"
+            play audio "lazer.wav" volume 2.0
             "The sound of another shot fired and a body hitting the ground from a great height."
             show allistar stream neutral at stream_right with dissolve
             $ AddChatter(vig1_sc2_comment15)
@@ -372,18 +412,21 @@ label saveMAC():
             menu:
                 macS "But my sensors indicate you are in great pain."
                 "I'm {i}fine{/i}.":
-                    $ macTrust -= 1
+                    $ macHonesty -= 1
                     "I grimace."
                     mS "MAC, I said I'm {i}fine{/i}."
+                    play audio "macSad.wav" volume 1.5
                     "MAC whirs lowly and tilts his head downward."
                 "I am in pain.":
-                    $ macTrust += 1
+                    $ macHonesty += 1
                     "I grimace."
                     mS "I am in pain, MAC."
                     mS "But we have to go."
+                    play audio "macPing.wav" volume 1.0
             "Allistar helps me to my feet."
             aS "Can you run?"
             mS "I'm going to have to."
+            stop music fadeout 4.0
             hide mac with dissolve
             hide allistar with dissolve
             jump spacePortEscape
@@ -399,10 +442,14 @@ label saveMAC():
             jump saveMAC
 
 label spacePortEscape():
+    play music "soundtrack/savethegalaxy.wav" volume 1.0 fadein 1.0 loop
+    show vig1_spaceport at topleft onlayer background with dissolve
+    hide vig1_town_stream
     $ viewCheck8 = viewCount
     if houseExplosion >= 1:
         $ AddChatter(vig1_sc2_comment16)
         pause 0.5
+    play backAudio "lazerFire.wav" volume 0.7 loop
     "Rushing through the spaceport gate, we fire at enforcers trying to block our way."
     "The Oakley is under siege, its mounted turrets firing wildy."
     show teresa stream shock at stream_center with dissolve
@@ -417,15 +464,19 @@ label spacePortEscape():
     show jennica stream angry at stream_center with dissolve
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
     show allistar stream neutral at stream_right with Dissolve (0.5)
-    show mac stream at stream_left_mac with Dissolve(0.5)
+    show mac stream neutral at stream_left_mac with Dissolve(0.5)
     pause 0.5
+    stop backAudio fadeout 16.0
     pS "Nice of y'all to join us. Remind me to never visit Cromuu again."
     "Just as the ship begins to push off the ground, four immense BigCorp cruisers crest over a nearby hill."
     mS "Jennica? We have to go {i}now{/i}!"
     pS "I know, I know, I see them too!"
+    play audio "jetLaunch.wav" volume 4.0
+    play backAudio "jetEngines.wav" volume 1.0
     "Jennica slams a thruster forward and the ship lurches into the air."
     "Bolts fire from the cruisers and detonate all around us as we ascend into the atmosphere."
-    stop music fadeout 1.0
+    stop music fadeout 4.0
+    stop backAudio fadeout 4.0
     "And then the attack stops. The turbulence on the ship dissipates. We're floating in space."
     "Jennica breathes a sigh of relief and punches something in on a keypad."
     "With a flick of a switch, the Oakley lurches forward into hyperspace. Away from Cromuu and Grand Junction."
@@ -437,7 +488,7 @@ label spacePortEscape():
 label councilDebrief():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     show shiphub_stream at topleft onlayer background with dissolve
-    hide vig1_town_stream
+    hide vig1_spaceport
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     pS "We've been in hyperspace for about an hour. And we got out before the cruisers were within range of us." 
@@ -451,6 +502,7 @@ label councilDebrief():
     "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives or percentage calculations."
     "...no MAC."
     mS "Does anyone know where MAC is?"
+    play backAudio "shipAlarm.wav" volume 1.0
     shipcom "Attention crew, escape pod procedure activated."
     $ viewCount += 1
     $ AddChatter(vig1_sc3_raid_comment1)
@@ -464,6 +516,7 @@ label councilDebrief():
     $ AddChatter(vig1_sc3_raid_comment4)
     $ narrator = reg_narrator
     "Woah, that view count can't be right."
+    $ renpy.music.set_volume(0.4, 1,"backAudio")
     pause 0.05
     $ viewCount += 17
     $ AddChatter(vig1_sc3_raid_comment5)
@@ -479,10 +532,11 @@ label councilDebrief():
     "I rush out of the council room."
     hide teresa with dissolve
     hide jennica with dissolve
+    stop backAudio
     $ narrator = reg_narrator
     $ renpy.sound.play("audio/ReceiveText.ogg")
     pause 0.5
-    "A private notification on Chaos from my mod, Jessie."
+    "A private notification on Clamor from my mod, Jessie."
     #insert discord sound effect
     call screen discordNotification
     $ viewCount += 8
@@ -514,6 +568,7 @@ label councilDebrief():
     player "For all the new folks, I'm [streamer]."
     menu:
         "My stream is story-focused.":
+            $ story = True
             player "I've been streaming for almost three years now, usually RPGs, every now and then some action games."
             player "Usually we like to chat about the game's writing."
             player "What we like about the stories, details to critique, theories about where the narrative's going, things like that."
@@ -522,6 +577,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream loves a good joke.":
+            $ humour = True
             player "I've been streaming for almost three years now, usually RPGs and occasionally a multiplayer shooter."
             player "Chat's always the spot for some solid memes and funny bits!"
             player "Good jokes keep me on my toes and helps us all be entertained."
@@ -530,6 +586,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream is all about vibes":
+            $ vibes = True
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
             player "We're all about chill vibes hear."
             player "So we take it easy and just go wherever the games take us!"
@@ -556,17 +613,17 @@ label escapePodConfrontation:
     macS "But Captain said to stay close to her."
     aS "I know Mac. But Moze isn't always right. This place is dangerous."
     $ AddChatter(vig1_sc3_comment5)
-    stop music
     "I turn the corner."
-    show allistar stream neutral at stream_center with dissolve
-    show mac stream at stream_right_mac with dissolve
+    play music "soundtrack/decisionTime.wav" volume 1.2
+    show allistar stream thinking at stream_right with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
     "As I step into the light, Allistar sees me and reaches for MAC." 
-    show allistar at stream_right with move
     "I pull my blaster and point it at him, but by the time I do he has already grabbed MAC, and is holding him in the air in front of him."
     $ AddChatter(vig1_sc3_comment7)
     mS "What are you doing, Allistar?"
+    show allistar stream mad
     aS "I'm getting {i}out{/i} of this crazy life, Moze."
     $ AddChatter(vig1_sc3_comment8)
     aS "You saw what happened just now!"
@@ -603,6 +660,8 @@ label escapePodConfrontation:
             $ narrator = reg_narrator
             "Hmm, I don't know if I want to kill Allistar."
             "I go to select the stun option."
+            play audio "disruptiveBang.wav" volume 6.0
+            show streamview with vpunch
             "But as I hover the mouse over the choice, a loud bang comes from down the apartment above me."
             "I jolt a little bit."
             "My cursor slips."
@@ -614,11 +673,15 @@ label escapePodConfrontation:
             $ kcEngagement += 2
             $ narrator = reg_narrator
             "I go to select the stun option."
+            show streamview with vpunch
+            play audio "disruptiveBang.wav" volume 6.0
             "But as I hover the mouse over the choice, a loud bang comes from down the apartment above me."
             "I jolt a little bit."
             "My cursor slips."
             "The words \"Kill Allistar\" glow red in the game's UI."
             $ narrator = alt_narrator
+    play audio "lazer.wav" volume 5.0
+    $ macViolence += 1
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
     hide allistar with dissolve
@@ -674,7 +737,6 @@ label escapePodConfrontation:
     "I can't tell if they're frightened or judging."
     $ AddChatter(vig1_sc3_shot_comment4)
     pause 0.5
-    play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I activate my com."
     mS "Teresa, Jennica, Allistar tried to activate an escape pod and take MAC away."
     pS "He did what!?"
@@ -693,7 +755,8 @@ label escapePodConfrontation:
     enS "Roger, I'll be right down."
     $ AddChatter(vig1_sc3_shot_comment6)
     pause 0.5
-    show mac stream at stream_center_mac with Dissolve (0.5)
+    show mac stream neutral at stream_center_mac with Dissolve (0.5)
+    #play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I gently move toward MAC and crouch down in front of him."
     mS "Hey, I'm sorry about that."
     macS "Is he...is he dead?"
@@ -711,9 +774,11 @@ label escapePodConfrontation:
     menu:
         macS "But, did he have to die?"
         "I didn't have a choice.":
+            $ macHope -= 1
             mS "There wasn't another way."
             mS "Not one where I could guarantee your safety."
         "It's safer this way.":
+            $ macViolence += 1
             mS "It's safer than the alternative."
             mS "I have to take care of my crew."
     macS "So this ship is still safe?"
@@ -727,8 +792,8 @@ label escapePodConfrontation:
     $ narrator = reg_narrator
     stop music fadeout 15.0
     "The screen fades as the episode ends."
-    show oakleyresultsv1 at topleft onlayer background with dissolve:
-        zoom 0.82
+    #show oakleyresultsv1 at topleft onlayer background with dissolve:
+    #    zoom 0.82
     $ AddChatter(vig1_sc3_shot_comment10)
     pause 0.5
     player "Oookay stream, guess we're closing out on a pretty intense note today."
@@ -790,7 +855,8 @@ label escapePodConfrontation:
     $ viewCount -= 8
     $ AddChatter(vig1_sc3_signoff_comment10)
     pause 0.5
-    hide oakleyresultsv1 with dissolve
+    #hide oakleyresultsv1 with dissolve
+    #hide vig1_allistar_workshop
     "As the viewers leave the stream, you deactivate your webcam and sign off of Flinch."
     play music "soundtrack/postStreamGroove.wav" volume 0.7 loop fadein 2.0
     hide screen streamDetails
@@ -808,7 +874,7 @@ label modConvo_Day1():
     "The most viewers you ever had in stream before was thirteen."
     "And that felt like a ton."
     $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Another Chaos notification?"
+    "Another Clamor notification?"
     scene discord with dissolve
     "It's Jessie."
     mod_nvl "Yoooooo"
@@ -996,9 +1062,9 @@ label blueitVignette1():
     $ blueitPages.append(vig1_bThread3)
     $ blueitPages.append(vig1_bThread4)
     "I should see what people are saying about the Allistar choice and maybe see what else has the community's attention."
-    jump blueitVignette2
+    jump blueitVignette1_2
 
-label blueitVignette2():
+label blueitVignette1_2():
     scene blueit_screen at truecenter
     call screen blueit
     return
@@ -1184,6 +1250,7 @@ label vig1_brother_2():
     player "Hahahahahaha"
     elliotflashback "Hahahahahaha"
     "You fall asleep with the sound of your brother's laughter in your ears."
+    pause 3.0
     #have to restore defaults before the next vignette
     $ chatter_list = [ ]
     nvl clear
