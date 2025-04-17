@@ -1364,7 +1364,7 @@ label commsBase_DataCenter():
     $ AddChatter(vig2_sc7_comment3)
     show jennica stream shock at stream_left
     pS "I knew this was too damn easy!"
-    hide datacenter_agent
+    hide data
     play audio "macAlarmed.wav"
     show mac stream at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
@@ -1383,7 +1383,7 @@ label commsBase_DataCenter():
     mS "So what happens if the town doesn't get that aid."
     show data agent scared at stream_center with Dissolve(0.4)
     worker "Sallent? There's an outbreak of gray fever there. They need that medicine!"
-    hide datacenter_agent with Dissolve (0.4)
+    hide data with Dissolve (0.4)
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
     hide reginald with Dissolve(0.5)
@@ -1567,7 +1567,7 @@ label commsBase_DataCenter_MAR():
     "The technician smiles and winks at me."
     worker "I don't know who you're talking about. I wasn't even working that night!"
     stop music fadeout 8.0
-    hide datacenter_agent with Dissolve(0.5)
+    hide data with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump vig2epilogue_MAR
@@ -1666,7 +1666,7 @@ label commsBase_DataCenter_OUT():
             mS "Do we understand each other?"
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
-            hide datacenter_agent with dissolve
+            hide data with dissolve
             show mac stream at stream_center_mac with Dissolve(0.5)
             "MAC stares at the terrified technician."
             pS "Damn Cap, that was dark."
@@ -1692,7 +1692,7 @@ label commsBase_DataCenter_OUT():
             $ AddChatter(vig2_sc7_out_execute_comment3)
             worker "Wait! You don't have to do—"
             play audio "lazer.wav" volume 5.0
-            hide datacenter_agent with Dissolve(0.1)
+            hide data with Dissolve(0.1)
             "The shot rings out. The technician's body slumps to the floor, lifeless."
             show jennica stream shock at stream_left
             show mac stream at stream_center_mac with Dissolve(1.0)
@@ -1859,7 +1859,7 @@ label vig2epilogue_MAR():
     $ macroChoice = True
     $ AddChatter(vig2_epilogue_mar_comment9)
     hide mac stream with dissolve
-    hide vig2_shiphub_stream with dissolve
+    hide shiphub_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
     player "Alright everyone, thank you all for coming out! See ya next time!"
@@ -1985,7 +1985,7 @@ label vig2epilogue_OUT():
     $ macroChoice = True
     $ AddChatter(vig2_epilogue_out_comment18)
     hide mac stream with dissolve
-    hide vig2_shiphub_stream with dissolve
+    hide shiphub_stream with dissolve
     player "Wow..."
     player "Guess that's the end of the chapter, seems like a good spot to end."
     $ AddChatter(vig2_epilogue_out_comment19)
@@ -2748,8 +2748,10 @@ label vig2_macro_bro1():
     bro_nvl "Not you going \"bad guy\" Moze this time around?"
     bro_nvl "You've changed bro. Like a couple years at college and now you're a big bad Outlaw, crazyyyy"
     bro_nvl "Jkjk, hope you're having fun, excited to follow the stream!"
-    $ playerNVLNarration = "Based on the time change, Elliot's probably already asleep. But you decide to shoot him a message anyway." #check if this messes with the NVL sequence
+    $ playerNVLNarration = "Based on the time change, Elliot's probably already asleep." #check if this messes with the NVL sequence
     show screen NVLnarration
+    pause
+    $ playerNVLNarration = "But you decide to shoot him a message anyway."
     menu:
         "•Thanks!":
             hide screen NVLnarration
