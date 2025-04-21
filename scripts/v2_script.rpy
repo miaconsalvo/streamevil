@@ -855,6 +855,7 @@ label meetingMatticus():
     show mac stream neutral at stream_right with dissolve
     play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
+    show reginald stream mad at stream_center with dissolve
     "Reginald rolls his eyes."
     goon "They're stored at a communications array on the outskirts of the city."
     $ AddChatter(vig2_sc4_comment10)
@@ -942,6 +943,7 @@ label approachingBase():
     goon "How much traffic do you think comes through here?"
     pS "Maybe we can get in and out before drawing attention?"
     goon "Seems pointless, but I don't give a shit. It's your job."
+    show reginald stream mad at stream_center with dissolve
     enS "You're not coming with us?"
     goon "You think I get paid enough to get shot at? As if."
     "Reginald lights a cigarette and walks off."
@@ -982,6 +984,7 @@ label approachingBase():
             "I wave over Reginald."
             goon "So what are we doing?"
             mS "Going in the front door guns blazing."
+            show reginald stream impressed at stream_center with dissolve
             goon "Legends. This should be entertaining."
             $ viewCheck6 += viewCount
             "Teresa signals to me that she's ready."
@@ -1017,6 +1020,7 @@ label approachingBase():
             "Reginald chuckles."
             $ AddChatter(vig2_sc6_mar_comment4)
             $ viewCheck6 += viewCount
+            show reginald stream surprised at stream_center with dissolve
             goon "Really? I didn't think ex-Snakehawks would be so demure."
             goon "Whatever. I'll follow behind you."
             hide jennica with Dissolve(0.5)
@@ -1131,6 +1135,7 @@ label commsBase_MAR2():
             "In an instant, all three of the guards' radios begin blaring with a distress call."
             "A sense of urgency hits them as they begin running out of the room to the source of the call."
             "Once they're out, I wave over Reginald."
+            show reginald stream mad at stream_center with dissolve
             goon "Wow so much work for what?"
             pS "This all feels way too easy."
             $ reactTarget = "vig2_sc6_mar_reflect"
@@ -1277,6 +1282,7 @@ label commsBase_OUT1():
             show jennica stream shock at stream_left
             pS "What the hell!?"
             mS "He didn't need to die!"
+            show reginald stream mad at stream_center with dissolve
             $ AddChatter(vig2_sc6_out_spare_comment5)
             show teresa stream neutral at stream_right with Dissolve(0.5)
             enS "Better him than us I suppose."
@@ -1347,6 +1353,7 @@ label commsBase_DataCenter():
     "Before we have a chance to say anything, Reginald is in his face."
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
+    show reginald stream mad at stream_right
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1450,7 +1457,7 @@ label commsBase_DataCenter_MAR():
     enS "That's what \"secure\" means right!?"
     hide mac with dissolve
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
-    show reginald stream neutral at stream_center with Dissolve(0.3)
+    show reginald stream mad at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
     $ reactTarget = "vig2_sc8_mar_reacttoregi"
@@ -1490,6 +1497,7 @@ label commsBase_DataCenter_MAR():
             mS "How much do you really like working for Sav?"
             goon "Like?"
             mS "You strike me as someone with flexible attitudes towards allegiance, not a true believer."
+            show reginald stream surprised at stream center with dissolve
             "Reginald begins to lower his blaster."
             goon "Go on."
             mS "What would it cost for you to get off world? I take it you have ambitions bigger than Gibian V?"
@@ -1500,6 +1508,7 @@ label commsBase_DataCenter_MAR():
             goon "I need to make it off world in one piece. Money don't spend if I'm dead."
             mS "We can afford that."
             "I reach into my pocket and grab 2000 credits."
+            show reginald stream impressed at stream center with dissolve
             goon "Pleasure doing business."
             $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
@@ -1608,10 +1617,12 @@ label commsBase_DataCenter_OUT():
     "Reginald turns to the technician."
     $ AddChatter(vig2_sc7_out_comment10)
     show data agent scared at stream_center with Dissolve(0.5)
+    show reginald stream mad at stream_right
     goon "I'm not going to ask nicely again. The tracking code, now."
     $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
     worker "44s-73f-94c-21o."
+    show reginald stream impressed at stream_right
     $ AddChatter(vig2_sc7_out_comment12)
     $ AddChatter(vig2_sc7_out_comment13)
     worker "You realise these people have nothing right?"
@@ -1744,6 +1755,7 @@ label shuttleDestruction():
     "Once we're in low orbit, it's only a matter of time before the shuttle shows up."
     goon "You're sure we're in the right spot?"
     pS "Think I can't read a damn tracking code?"
+    show reginald stream mad at stream_center with dissolve
     goon "I think you don't want to."
     "Jennica scoffs."
     enS "My scanner says it's incoming."
