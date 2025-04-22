@@ -1747,7 +1747,7 @@ label commsBase_DataCenter_OUT():
     jump shuttleDestruction
 
 label shuttleDestruction():
-    show orbit_stream at topleft onlayer background with dissolve
+    show vig2_orbit_stream at topleft onlayer background with dissolve
     hide vig2_targetbase_stream
     show reginald stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
@@ -1893,7 +1893,7 @@ label vig2epilogue_MAR():
 label vig2epilogue_OUT():
     play music "soundtrack/vig1scratchtrack.wav" volume 1.2
     show shiphub_stream at topleft onlayer background with dissolve
-    hide orbit_stream
+    hide vig2_orbit_stream
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve 
     $ AddChatter(vig2_epilogue_out_comment1)
