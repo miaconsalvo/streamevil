@@ -1780,7 +1780,7 @@ label shuttleDestruction():
     show vig2_orbit_stream at topleft onlayer background with dissolve
     hide vig2_targetbase_stream
     show reginald stream neutral at stream_center with dissolve
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream crossed at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve       
     "Once we're in low orbit, it's only a matter of time before the shuttle shows up."
     goon "You're sure we're in the right spot?"
@@ -1934,6 +1934,7 @@ label vig2epilogue_OUT():
     mS "Accept."
     $ AddChatter(vig2_epilogue_out_comment2)
     show matticus phone neutral at stream_center_mac with dissolve
+    show jennica stream crossed
     "Matticus appears on the ship computer."
     smatt "Oh Moze. Its been so wonderful working with you again."
     smatt "We have to catch up some time!"
@@ -1943,6 +1944,7 @@ label vig2epilogue_OUT():
     smatt "It's already done! As far as anyone else knows, the Oakley's doing a grand tour of the Mauritz nebula."
     $ AddChatter(vig2_epilogue_out_comment4)
     pS "Make damn sure he's not lying Teresa."
+    show teresa stream think
     "Teresa nods and begins typing on her computer."
     $ AddChatter(vig2_epilogue_out_comment5)
     smatt "Oh Jenn. You're a real ice queen."
@@ -1964,9 +1966,11 @@ label vig2epilogue_OUT():
     play audio "cutCall.wav" volume 1.5
     hide matticus with dissolve
     $ viewCheck10 += viewCount
+    show teresa stream neutral
     enS "Well at least we have some breathing room."
     $ AddChatter(vig2_epilogue_out_comment9)
     enS "Deadeye won't trouble us for the foreseeable future."
+    show jennica stream neutral
     pS "I suppose. I doubt the Ama we ran with'll chase red herrings for long though."
     $ AddChatter(vig2_epilogue_out_comment10)
     mS "Agreed. We ought to keep an eye out."
