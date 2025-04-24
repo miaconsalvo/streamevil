@@ -1045,7 +1045,7 @@ label approachingBase():
             show reginald stream surprised at stream_center with dissolve
             goon "Really? I didn't think ex-Snakehawks would be so demure."
             goon "Whatever. I'll follow behind you."
-            stop music fadeout 2.0
+            stop music fadeout 3.0
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
             jump commsBase_MAR1
@@ -1053,7 +1053,7 @@ label approachingBase():
 ####SCENE 6####
 label commsBase_MAR1():
     #show vig2_compound_hall_stream at topleft onlayer background with dissolve
-    play music "soundtrack/stealthmode.wav" volume 2.8 fadein 1.0
+    play music "soundtrack/stealthmode.wav" volume 1.8 fadein 1.0
     show teresa stream neutral at stream_right with Dissolve (0.3)
     "As we approach the base, Teresa signals to stay quiet."
     "After climbing up the fire escape, Teresa takes out a device and affixes it to the door."
