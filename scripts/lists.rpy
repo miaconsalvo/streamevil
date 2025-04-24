@@ -58,9 +58,11 @@ label TurnSound():
     if commentPing == False:
         $ commentPing = True
         $ pingText = "Sound is On"
+        $ pingImage = "stream ui/soundon.png"
     elif commentPing == True:
         $ commentPing = False
         $ pingText = "Sound is Off"
+        $ pingImage = "stream ui/soundoff.png"
     return
 
     

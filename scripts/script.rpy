@@ -38,8 +38,8 @@ define enS = Character ("Teresa", what_font="Play-Regular.ttf", window_style = "
 define p = Character("Jennica", what_font="Play-Regular.ttf", window_style = "window", who_color="#ef8f3a", what_color="#000000", image = "pilot", window_background = "images/textbox/stream textbox Jennica.png")
 define pS = Character ("Jennica", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color="#ef8f3a", what_color="#000000", image = "jennica stream neutral.png", window_background = "images/textbox/stream textbox Jennica.png")
 
-define mac = Character("MAC", what_font="Play-Regular.ttf", window_style = "window", who_color="#33a3ff", what_color="#000000", image = "mac", window_background = "images/textbox/stream textbox MAC.png")
-define macS = Character("MAC", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#33a3ff", what_color = "#000000", image = "mac stream", window_background="images/textbox/stream textbox MAC.png")
+define mac = Character("MAC", what_font="Play-Regular.ttf", window_style = "window", who_color="#a622c7e1", what_color="#000000", image = "mac", window_background = "images/textbox/stream textbox MAC.png")
+define macS = Character("MAC", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#a622c7e1", what_color = "#000000", image = "mac stream", window_background="images/textbox/stream textbox MAC.png")
 
 define a = Character("Allistar", what_font="Play-Regular.ttf", window_style = "window", who_color="#ce1fd4", what_color="#000000", image = "allistar neutral", window_background = "images/textbox/stream textbox npc.png")
 define aS = Character("Allistar", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "allistar stream neutral", window_background="images/textbox/stream textbox npc.png")
@@ -62,6 +62,7 @@ default viewCount = 4 #viewCount changes how many viewers are displayed in the s
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
 default commentPing = False
 default pingText = "Sound is Off"
+default pingImage = "stream ui/soundoff.png"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
 default profilePic = "images/socials/profilepics/profile2.png"
@@ -182,6 +183,7 @@ init:
     $ stream_center_mac = Position (xpos=0.40, ypos=0.70)
     $ stream_left_mac = Position (xpos=0.13, ypos=0.70)
     $ stream_right_mac =  Position (xpos = 0.67, ypos=0.70)
+    $ stream_grab_mac = Position (xpos =0.50, ypos=0.70)
     $ screen_left = Position (xpos = 0.2, ypos = 0.6) #non-stream view
     $ screen_right = Position (xpos = 0.7, ypos = 0.6)
     $ screen_center = Position(xpos = 0.4, ypos = 0.6)
@@ -191,14 +193,33 @@ init:
     #fade out whenever we transition to another label
 
 label start:
+    $ macroChoice = True
     show bg black at topleft onlayer background
 
     "Hello, this is the start of a new game."
+    jump userName
 
+label userName:
     "Please tell me your streamer username."
     $ username = renpy.input("Your username is: ", length = 16)
-    "Now please tell me your first name in real life"
+    "Your streamer username will be {b}\"[username]\"{/b}. Is this correct?"
+    menu:
+        "Your streamer username will be {b}\"[username]\"{/b}. Is this correct?"
+        "Yes":
+            jump playerName
+        "No":
+            jump userName
+
+label playerName:
+    "Now please tell me your first name in real life."
     $ my_name = renpy.input("Your character's real name is: ", length = 16)
+    "Your name in real life will be {b}\"[my_name]\"{/b}. Is this correct?"
+    menu:
+        "Your name in real life will be {b}\"[my_name]\"{/b}. Is this correct?"
+        "Yes":
+            pass
+        "No":
+            jump playerName
 
     "Now select your streaming profile picture."
     call screen selectProfilePic

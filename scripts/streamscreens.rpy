@@ -52,7 +52,7 @@ screen streamerCommentary(): #This screen appears when the player can interact w
         text_hover_color "#ffffffa1" 
         text_selected_color "#ffffff4f"
         background "#00aeffcb"
-        align (0.95, 0.93)
+        align (0.95, 0.925)
         #vbox:
         #    spacing 10
         #    align (0.5, 0.5)
@@ -88,16 +88,23 @@ screen streamDetails():
         #text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
         #text "Outlaw Score: [outlaw]" align (0.8, 0.25) color "#e6a20eff"
         #text "Marshal Score: [marshal]" align (0.8, 0.7) color "#27e60eff"
-        textbutton pingText:
+#        textbutton pingText:
+#            action Call("TurnSound", from_current = True)
+#            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+#            text_hover_color "#ffffffd5" 
+#            text_selected_color "#ffffffff"
+#            background "#000000ff" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
+#            text_size 25
+#            align (1.21, -.3)
+        imagebutton:
             action Call("TurnSound", from_current = True)
-            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffd5" 
-            text_selected_color "#ffffffff"
-            background "#000000ff" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-            text_size 25
-            align (1.21, -.3)
-            #align (0.06, .95) # - this is an ok alignment to the left and bottom of streamDetails screen
-        image "[profilePic]" align (.001, 0) size (100, 100) #displays a profile pic for the streamer
+            background Image(pingImage)
+            idle Solid("#00000000")
+            hover Solid("#00000044")
+            xsize 80
+            ysize 72
+            align (1.1, -0.8)
+        image "[profilePic]" align (.001, -0.5) size (100, 100) #displays a profile pic for the streamer
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():
@@ -141,7 +148,7 @@ screen discordNotification():
         ysize 230
         right_margin 200
         background Solid("#000000ff")
-        text "Dude, it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!"
+        text "[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!"
         textbutton "Close Notification":
             action Return() #Hide("discordNotification")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 

@@ -1,4 +1,5 @@
 label vignette1Start():
+    $ macroChoice = False
     $ vignette1 = True
     $ vignette2 = False
     $ vignette3 = False
@@ -33,8 +34,8 @@ label returnToWorkshop():
     $ AddChatter(vig1_sc2_comment1)
     pause 0.5
     aS "\"Father\"?"
-    macS "Yes, Dr. Cog. He built and educated me. Before he died that is."
-    aS "Cog. Why do I know that name?"
+    macS "Yes, Dr. Vanas. He built and educated me. Before he died that is."
+    aS "Vanas. Why do I know that name?"
     mS "He was BigCorp's head of research and development. Was working on a top secret project before he ran off with company secrets."
     aS "What project?"
     "Allistar looks up to me, then back to MAC."
@@ -82,6 +83,7 @@ label returnToWorkshop():
     aS "All done. Circuits should be resistant to electricity and overheating now."
     "MAC rolls forward into a clear space in the room."
     macS "System functions restored to normal.\nProbability of celebration: 100\%."
+    show mac stream happy
     play audio "macSpin.wav" volume 1.5
     "The music from MAC's voice box crescendoes as he begins spinning rapidly in place."
     $ AddChatter(vig1_sc2_comment4)
@@ -98,17 +100,19 @@ label returnToWorkshop():
 
 label shipCall:
     $ viewCheck6 = viewCount
+    show mac stream neutral
     "I put a hand on Allistar's shoulder."
     mS "Thanks for your help, Al. We'll be on our way now."
     play audio "callRing.wav" volume 1.5
     #"{i}beep beep beeeep{/i}"
     "My communicator rings. Jennica's voice crackles out."
+    stop music fadeout 6.0
     pS "Moze? We've got some trouble: there's a long range caller insisting on speaking with you."
     pS "Says they want to warn us about something. Teresa confirmed it's not BigCorp."
     mS "Patch the call through."
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
-    play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 4.0
+    play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
     amaS "My dear Mozely. It's good to hear your voice again."
     show allistar stream mad
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
@@ -397,9 +401,11 @@ label saveMAC():
             "The sound of a rifle firing resonates behind me."
             "Pain explodes in my left shoulder as I fall to the ground."
             aS "Moze!"
+            show mac stream shock
             macS "Captain!?"
             play audio "lazer.wav" volume 2.0
             "The sound of another shot fired and a body hitting the ground from a great height."
+            show mac stream neutral
             show allistar stream neutral at stream_right with dissolve
             $ AddChatter(vig1_sc2_comment15)
             pause 0.5
@@ -452,7 +458,7 @@ label spacePortEscape():
     play backAudio "lazerFire.wav" volume 0.7 loop
     "Rushing through the spaceport gate, we fire at enforcers trying to block our way."
     "The Oakley is under siege, its mounted turrets firing wildy."
-    show teresa stream shock at stream_center with dissolve
+    show teresa stream fight at stream_center with dissolve
     "Teresa is in cover inside the ship, popping out occasionally to shoot at advancing enforcers."
     "She catches sight of us and turns around to shout something into the ship."
     $ vig1_sc2_comment16.click = False
@@ -495,6 +501,7 @@ label councilDebrief():
     $ AddChatter(vig1_sc3_comment1)
     pause 0.5
     pS "We should be clear of any BC tracking devices."
+    show teresa stream think
     enS "\"Should\" be. Deadeye shouldn't have been able to track us to Cromuu in the first place."
     mS "We'll need to be more careful in the future, and find a way to stay under the radar."
     pS "Any ideas?"
@@ -532,11 +539,11 @@ label councilDebrief():
     "I rush out of the council room."
     hide teresa with dissolve
     hide jennica with dissolve
-    stop backAudio
+    stop backAudio fadeout 1.0
     $ narrator = reg_narrator
     $ renpy.sound.play("audio/ReceiveText.ogg")
     pause 0.5
-    "A private notification on Clamor from my mod, Jessie."
+    "A private notification on Loop'd from my mod, Jessie."
     #insert discord sound effect
     call screen discordNotification
     $ viewCount += 8
@@ -556,8 +563,8 @@ label councilDebrief():
     $ macroChoice = True
     menu:
         "A raid!? I have to say something."
-        "What's up guys!":
-            player "What's up guys!"
+        "What's up, guys!":
+            player "What's up, guys!"
             player "Great to have new friends in chat."
         "Wow, that's a lot of people.":
             player "Wow, that's a lot of people."
@@ -614,13 +621,15 @@ label escapePodConfrontation:
     aS "I know Mac. But Moze isn't always right. This place is dangerous."
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
-    play music "soundtrack/decisionTime.wav" volume 1.2
+    play music "soundtrack/decisionTime.wav" volume 1.2 fadein 1.0
     show allistar stream thinking at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
-    "As I step into the light, Allistar sees me and reaches for MAC." 
-    "I pull my blaster and point it at him, but by the time I do he has already grabbed MAC, and is holding him in the air in front of him."
+    show mac stream shock at stream_grab_mac with MoveTransition(0.15)
+    "As I step into the light, Allistar sees me and reaches for MAC."
+    macS "Ahhhh! Captain, help me!"
+    "I pull my blaster and point it at Allistar, but by the time I do he has already grabbed MAC, and holds him in the air between us."
     $ AddChatter(vig1_sc3_comment7)
     mS "What are you doing, Allistar?"
     show allistar stream mad
@@ -643,6 +652,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment12)
     aS "You just go anywhere you want, do anything you want, and try to justify it by saying, \"I didn't have a choice.\""
     $ AddChatter(vig1_sc3_comment13)
+    aS "Wake up and start taking responsibility for the consequences of your actions."
     mS "I've heard enough."
     $ AddChatter(vig1_sc3_comment14)
     pause 1.0
@@ -730,8 +740,8 @@ label escapePodConfrontation:
             pause 0.5
     $ narrator = alt_narrator
     $ viewCheck10 = viewCount
-    "MAC hits the floor and rolls to the other end of the hall behind a crate."
     hide mac with Dissolve(0.5)
+    "MAC hits the floor and rolls to the other end of the hall behind a crate."
     "I go over to Allistar's body. It's limp and cold."
     "But I still feel the weight of his eyes."
     "I can't tell if they're frightened or judging."
@@ -749,8 +759,8 @@ label escapePodConfrontation:
     enS "{i}WHAT{/i}!?"
     pS "Allistar's dead!?"
     mS "I had to protect my crew. He was a threat we can't afford."
-    enS "I understand Cap, it's just...I can't believe it."
-    pS "Is MAC okay?"
+    pS "I understand Cap, it's just...I can't believe it."
+    enS "Is MAC okay?"
     mS "I don't know. I could use some help with the body."
     enS "Roger, I'll be right down."
     $ AddChatter(vig1_sc3_shot_comment6)
@@ -775,11 +785,11 @@ label escapePodConfrontation:
         macS "But, did he have to die?"
         "I didn't have a choice.":
             $ macHope -= 1
-            mS "There wasn't another way."
-            mS "Not one where I could guarantee your safety."
+            mS "He didn't give me a choice."
+            mS "There are consequences for putting my crew at risk."
         "It's safer this way.":
             $ macViolence += 1
-            mS "It's safer than the alternative."
+            mS "I couldn't take a risk on him."
             mS "I have to take care of my crew."
     macS "So this ship is still safe?"
     $ AddChatter(vig1_sc3_shot_comment9)
@@ -874,8 +884,8 @@ label modConvo_Day1():
     "The most viewers you ever had in stream before was thirteen."
     "And that felt like a ton."
     $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Another Clamor notification?"
-    scene discord with dissolve
+    "Another Loop'd notification?"
+    scene discordview with dissolve
     "It's Jessie."
     mod_nvl "Yoooooo"
     mod_nvl "That was nuts!"
@@ -994,7 +1004,7 @@ label modConvo_Day1_Bandit():
     mod_nvl "It's not a crazy idea"
     mod_nvl "Maybe check out the game's subblueit, see how people are talking about it"
     streamer_nvl "Ya a lil bit of research"
-    mod_nvl "Write it off as \"work\" while you're procrastinating on studying for that comp sci test"
+    mod_nvl "Write it off as \"work\" while you're procrastinating on studying for next week's comp sci test"
     menu:
         "•I forgot about that":
             streamer_nvl "shiiiiiit"
@@ -1061,7 +1071,7 @@ label blueitVignette1():
     $ blueitPages.append(vig1_bThread2)
     $ blueitPages.append(vig1_bThread3)
     $ blueitPages.append(vig1_bThread4)
-    "I should see what people are saying about the Allistar choice and maybe see what else has the community's attention."
+    "I should check out what people are saying about the Allistar choice and maybe see what else has the community's attention."
     jump blueitVignette1_2
 
 label blueitVignette1_2():
@@ -1077,7 +1087,7 @@ label vig1_brother_1():
     "It's 8pm so you have a bit of time."
     "You decide to make a late dinner and start catching up on the new season of Iron Goddess."
     "After finishing an episode, you wash your dishes then sit back down at your computer and shoot Elliot a message."
-    scene discord with dissolve
+    scene discordview with dissolve
     player_nvl "Hey El! How's it going?"
     bro_nvl "Hey [player], things are good!"
     bro_nvl "School is busy, but I'm managing. There's a concert coming up for orchestra that I'm kinda anxious about tbh"
@@ -1232,7 +1242,7 @@ label vig1_brother_2():
             player_nvl "Love you, El!"
     bro_nvl "Love you too, [player]!"
     stop music fadeout 4.0
-    hide discord with dissolve
+    hide discordview with dissolve
 
     "You say goodnight to Elliot then brush your teeth and get in bed."
     "After watching a couple more episodes of Iron Goddess on your phone, you start scrolling through social media."

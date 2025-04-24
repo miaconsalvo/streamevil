@@ -11,7 +11,7 @@ label vig1_sc1_startStream():
     "Let's catch up to speed."
     "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities and we are {i}not{/i} giving him back."
     "But he's been having some wiring issues that we gotta fix before we get to dropping him off with the humanitarian organization."
-    "So we hit up our old pal Allistar the mechanic to fix up MAC and had to grab some thermal paste from the local shop." 
+    "So we hit up our old pal Allistar the mechanic to fix up MAC, and had to grab some thermal paste from the local shop." 
     "And I'ma be honest, that shopkeep was quite rude."
     "But we did a bit of bribing, got the paste, and now we're meeting back up with the boys."
     "Let's go!"
@@ -85,7 +85,8 @@ label vig1_sc2_allistarhunk():
             $ allistarSuspicious = False
         "I'm a bit suspicious":
             player "Yeah, maybe a bit too much."
-            player "Getting a bit suspicious of how they're buidling him up."
+            player "Feels like they're building up to something with him."
+            player "Just not sure what."
             $ allistarSuspicious = True
     $ macroChoice = False
     if macroChoice == False:
@@ -179,7 +180,7 @@ label vig1_sc3_banditConvo():
             pause 1.0
     menu:
         "Ask Bandit's favorite Oakley character.":
-            player "So, Bandit, time to read the tea leaves of your soul."
+            player "So, Bandit, time to ask the tough question."
             player "Who's your favorite Oakley character?"
             $ AddChatter(vig1_sc3_comment3_bandit5)
             pause 2.0

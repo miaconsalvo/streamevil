@@ -90,8 +90,9 @@ label Vig2BridgeScene():
     $ viewCount += 3
     mS "We ready to land?"
     $ AddChatter(vig2_sc1_comment5)
-    show jennica stream angry at stream_left
+    show jennica stream crossed at stream_left
     pS "Can I reiterate again that this is a bad idea?"
+    show teresa stream upset
     "Teresa rolls her eyes."
     $ AddChatter(vig2_sc1_comment6)
     enS "Must we go through this again?"
@@ -105,7 +106,9 @@ label Vig2BridgeScene():
     pS "Got that right."
     enS "Fancy telling us what other options we have? Shall we go down the list of who else is ready and willing to help us?"
     $ AddChatter(vig2_sc1_comment9)
+    show jennica stream angry
     pS "Look here, I just think—"
+    show teresa stream neutral
     enS "Pardon me Jen, why don't I pull a \"forger with a heart of gold and access to BigCorp databases\" out of my purse and we'll be set!"
     pS "Doesn't mean we should trust Matticus, some wannabe godfather of a one-horse po-dunk planet!"
     play audio "macPing.wav" volume 1.5
@@ -114,8 +117,9 @@ label Vig2BridgeScene():
     "Jennica's not wrong. Matticus was always particularly unscrupulous, even amongst the Snakehawks."
     "But Teresa's also got a point, we aren't exactly spoiled for choice."
     $ AddChatter(vig2_sc1_comment11)
-    enS "I say better the devil you know, eh?"
+    enS "I say better the devil we know."
     menu: #minorchoice1
+        enS "I say better the devil we know."
         "We don't have a choice.":
             show teresa stream happy at stream_right      
             mS "I understand the concern. But we don't really have another option."
@@ -155,6 +159,7 @@ label Vig2BridgeScene():
     macS "He is abusing his authority and stealing from people?"
     $ vig2_sc1_comment13.click = False
     menu: #minorchoice2
+        macS "He is abusing his authority and stealing from people?"
         "Yeah he's a scumbag.":
             $ macHope += 1
             mS "Yeah. He always did have a... {i}flexible{/i} moral compass."
@@ -240,12 +245,14 @@ label GibianVCustomsDepot():
     show screen streamerCommentary
     "Teresa gestures towards a customs official, scanning cargo crates."
     enS "That's a BigCorp scanner. I imagine it'll be able to detect their stolen property."
+    show jennica stream crossed
     pS "So APB's do make it out here..."
+    show teresa stream neutral
     enS "Something to say Brown?"
     mS "We don't have the time!"
+    show jennica stream neutral
     mS "We need a plan to get through without them finding MAC."
     hide screen streamerCommentary
-    show teresa stream neutral at stream_right
     enS "Agreed."
     play audio "bagSearch.wav" volume 5.0
     "Teresa pulls out a metal sphere with numerous access ports."
@@ -336,6 +343,7 @@ label GibianVCustomsMarshal():
             agent1 "Hello Ma'am. How might I assist you today?"
             $ AddChatter(vig2_sc2_mar_comment7)
             menu: #minorchoice3a
+                agent1 "Hello Ma'am. How might I assist you today?"
                 "You're such a hard worker!":
                     mS "You strike me as a hard worker sir." 
                     agent1 "Excuse me?"
@@ -369,6 +377,7 @@ label GibianVCustomsMarshal():
             agent1 "No it's my fault. How can I assist you today?"
             $ AddChatter(vig2_sc2_mar_comment7)
             menu: #minorchoice3b
+                agent1 "No it's my fault. How can I assist you today?"
                 "How long has this shift been?":
                     mS "Man, you look exhausted."
                     agent1 "Excuse me?"
@@ -453,7 +462,7 @@ label GibianVCustomsMarshal():
 label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment1)
     show teresa stream happy at stream_right
-    show jennica stream angry at stream_left
+    show jennica stream crossed at stream_left
     "Teresa's right. We can't afford a goody-two-shoes ratting us out."
     "We can't trust the officials here. We'll have to get through our own way."
     mS "Bribing's too risky. We're going with Teresa's plan."
@@ -499,12 +508,14 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment7)
     "A spark flies off of the device as Teresa hands it to Jennica."
     pS "Sure this is safe? Looks like it's gonna turn my face into ash."
+    show teresa stream happy
     enS "As safe as one of your daring escape maneuvers at the very least."
     #show jennica stream happy at stream_left
     "Jennica chuckles."
     pS "Fair 'nough."
     $ AddChatter(vig2_sc2_out_comment8)
     mS "We ready?"
+    show teresa stream neutral
     #show jennica stream neutral at stream_left
     "Jennica and Teresa nod to me."
     "Teresa and I head towards the customs declarations line."
@@ -567,6 +578,7 @@ label matticusDoor():
     "A muffled voice pipes up from the crate."
     play audio "macAffirmative.wav" volume 1.5
     macS "Po-dunk king!"
+    show jennica stream neutral
     "Jennica hides her laughter."
     enS "Quiet!"
     "I press on the intercom button outside the gate."
@@ -588,6 +600,7 @@ label matticusDoor():
     mS "Yeah me too. Can we come in?"
     mattdoorbell "I need a little more proof than that."
     menu:
+        mattdoorbell "I need a little more proof than that."
         "Bring up an old debt.": #Lore
             $ macHope -= 1
             $ marshal += 1
@@ -655,6 +668,7 @@ label meetingMatticus():
     smatt "Quite a reunion!"
     hide screen streamerCommentary
     menu: #minorchoice4
+        smatt "Quite a reunion!"
         "Great to see you.":
             mS "Yeah. Always great to see old friends."
             mS "Right Jenn?"
@@ -681,7 +695,8 @@ label meetingMatticus():
     mS "It might."
     mS "And they hired our old boss to hunt us."
     "Matticus stops smirking."
-    smatt "Oh. Interesting. She doesn't come cheap."
+    smatt "Oh."
+    smatt "She doesn't come cheap."
     smatt "You really kicked the hornet's nest, eh?"
     "A voice perks up from the crate."
     play audio "macPing.wav" volume 3.0
@@ -695,6 +710,7 @@ label meetingMatticus():
     hide reginald with Dissolve (0.5)
     smatt "Who's this?"
     menu: #minorchoice5
+        smatt "Who's this?"
         "What we stole from BigCorp.": 
             $ macHonesty += 1
             $ pilotApproval -= 1
@@ -719,7 +735,6 @@ label meetingMatticus():
     $ AddChatter(vig2_sc4_comment2)
     mS "We're just looking to get him to the Dragonflies."
     "Matticus's eyes widen. His voice takes on a singsong quality."
-    hide mac with dissolve
     smatt "Moze! You've gone soft!"
     smatt "I never figured you for a tenderhearted philanthropist!"
     $ AddChatter(vig2_sc4_comment3)
@@ -802,6 +817,7 @@ label meetingMatticus():
     smatt "Don't waste my time. Do we have a deal?"
     "Matticus looks at me impatiently."
     menu: #minorchoice7
+        "Matticus looks at me impatiently."
         "Deal.":
             $ macHope += 1
             "Guess we don't have much choice."
@@ -815,6 +831,7 @@ label meetingMatticus():
             smatt "Things aren't always what they seem Moze."
             smatt "Besides, I'm done with this haggling. Do you want to work together or not?"
             menu: #minorchoice7a
+                smatt "Besides, I'm done with this haggling. Do you want to work together or not?"
                 "Fine. Deal.":
                     "Guess we don't have much choice."
                     mS "On your honour as a Snakehawk?"
@@ -835,6 +852,7 @@ label meetingMatticus():
     $ AddChatter(vig2_sc4_comment9)
     smatt "I'll see you ladies later. It's been lovely catching up."
     menu: #minorchoice8
+        smatt "I'll see you ladies later. It's been lovely catching up."
         "Bye.":
             mS "Later Sav."
             $ engineerApproval += 1
@@ -852,11 +870,12 @@ label meetingMatticus():
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     "MAC pipes up from his crate."
-    show mac stream neutral at stream_right with dissolve
+    show mac stream shock at stream_right with dissolve
     play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
     show reginald stream mad at stream_center with dissolve
     "Reginald rolls his eyes."
+    show mac stream neutral
     goon "They're stored at a communications array on the outskirts of the city."
     $ AddChatter(vig2_sc4_comment10)
     mS "Matticus doesn't have the target's location?"
@@ -880,7 +899,8 @@ label approachingBase():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     stop backAudio fadeout 5.0
-    #play music "soundtrack/gibianV.wav"
+    $ renpy.music.set_volume(0.7, 1)
+    #play music "soundtrack/gibianV.wav" fadein 2.0
     "The shuttle lands in the grass near the base."
     "Hardly a base, more of an outpost with a big antenna."
     pS "Forgot how cramped these cheapo shuttles are."
@@ -908,6 +928,7 @@ label approachingBase():
     mS "No MAC, you need to stay close to me. It's dangerous in there and I need to protect you."
     macS "This is a dangerous place? Are these bad people like Matticus?"
     menu:
+        macS "This is a dangerous place? Are these bad people like Matticus?"
         "They're bad people.":
             $ macHope -= 1
             $ pdEngagement -= 1
@@ -942,8 +963,8 @@ label approachingBase():
     goon "Yeah. In there somewhere. This is Gibian V. There are maybe three or four rooms in there."
     goon "How much traffic do you think comes through here?"
     pS "Maybe we can get in and out before drawing attention?"
-    goon "Seems pointless, but I don't give a shit. It's your job."
     show reginald stream mad at stream_center with dissolve
+    goon "Seems pointless, but I don't give a shit. It's your job."
     enS "You're not coming with us?"
     goon "You think I get paid enough to get shot at? As if."
     "Reginald lights a cigarette and walks off."
@@ -958,6 +979,7 @@ label approachingBase():
     enS "On Gibian V? I doubt this news makes it off-world."
     pS "What's your call Cap?"
     menu:
+        pS "What's your call Cap?"
         "A full offensive is more tactically sound.":
             $ gunsBlazing = True
             $ outlaw += 3
@@ -1025,6 +1047,7 @@ label approachingBase():
             goon "Whatever. I'll follow behind you."
             hide jennica with Dissolve(0.5)
             hide reginald with Dissolve(0.5)
+            stop music fadeout 3.0
             jump commsBase_MAR1
 
 ####SCENE 6####
@@ -1155,8 +1178,8 @@ label commsBase_MAR2():
 label commsBase_OUT1():
     #show vig2_compound_hall_stream at topleft onlayer background with dissolve
     hide vig2_targetbase_stream with dissolve
-    show teresa stream neutral at stream_right with Dissolve(0.5)
-    show jennica stream neutral at stream_left with Dissolve(0.5)
+    show teresa stream fight at stream_right with Dissolve(0.5)
+    show jennica stream fight at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
     "We line up on either side of the entrance."
     play audio "macGrumble.wav"
@@ -1177,8 +1200,8 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment5)
     hide mac with Dissolve(0.5)
     "I give the signal to Teresa."
-    hide jennica stream neutral
-    hide teresa stream neutral
+    hide jennica
+    hide teresa
     play music "soundtrack/saveTheGalaxy.wav" volume 1.2
     show vig2_compound_hall_stream at topleft onlayer background with vpunch
     "With a deafening bang, the door is obliterated into countless pieces."
@@ -1196,6 +1219,7 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment9)
     "I think I have a good shot on one of them."
     menu:
+        "I think I have a good shot on one of them."
         "Shoot to kill.":
             $ macViolence += 1
             $ pdEngagement += 1
@@ -1208,7 +1232,7 @@ label commsBase_OUT1():
             "I hear shots ringing out from behind me."
             $ AddChatter(vig2_sc6_out_shoot_comment4)
             pS "Nice shooting!"
-            show jennica stream angry at stream_left with Dissolve(0.2)
+            show jennica stream fight at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
         "Suppressing fire.":
             $ kcEngagement += 1
@@ -1218,7 +1242,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_suppress_comment2)
             "Shots ring out from behind me, hitting one of the guards."
             pS "Thanks for the cover!"
-            show jennica stream angry at stream_left with Dissolve(0.2)
+            show jennica stream fight at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
     mS "There's only one left!"
     mS "Teresa has him pinned down."
@@ -1249,7 +1273,7 @@ label commsBase_OUT1():
     mS "Stand up and put your hands where I can see them!"
     "The guard complies."
     hsguard1 "Please Miss, just let me go, I promise I'll never breathe a word of this to anyone."
-    "He's terrified. This is probably the first time anyone's shot at him."
+    "He's terrified, as if this is the first time anyone's shot at him."
     $ AddChatter(vig2_sc6_out_comment16)
     pause 0.5
     $ AddChatter(vig2_sc6_out_comment17)
@@ -1257,6 +1281,7 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment18)
     $ viewCheck7 += viewCount
     menu:
+        "He's terrified, as if this is the first time anyone's shot at him."
         "This isn't his fault.":
             $ macViolence -= 1
             $ macHope += 1
@@ -1281,6 +1306,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment4)
             show jennica stream shock at stream_left
             pS "What the hell!?"
+            show jennica stream angry
             mS "He didn't need to die!"
             show reginald stream mad at stream_center with dissolve
             $ AddChatter(vig2_sc6_out_spare_comment5)
@@ -1395,10 +1421,11 @@ label commsBase_DataCenter():
     goon "You really care that much about them?"
     hide reginald with Dissolve(0.5)
     $ AddChatter(vig2_sc7_comment4)
-    show teresa stream neutral at stream_right with Dissolve(0.4)
+    show teresa stream think at stream_right with Dissolve(0.4)
     enS "As much as I loathe to admit it, I agree."
     enS "We came here to cover our trail."
     $ AddChatter(vig2_sc7_comment5)
+    show teresa stream neutral
     enS "If we renege on the deal now, we'll be no closer to doing that, and we'll have made an enemy of Matticus."
     enS "All the people we save here won't matter if we get caught!"
     show jennica stream angry at stream_left with Dissolve (0.3)
@@ -1412,6 +1439,7 @@ label commsBase_DataCenter():
     $ AddChatter(vig2_sc7_comment7)
     $ viewCheck8 += viewCount
     menu:
+        "MAC is almost completely quiet. They've been looking at me the entire time." 
         "This has gone too far.":
             $ marshal += 5
             $ csEngagement += 3
@@ -1468,6 +1496,7 @@ label commsBase_DataCenter_MAR():
     "I notice Jennica reaching for her blaster."
     hide screen streamerCommentary
     menu:
+        "I notice Jennica reaching for her blaster."
         "Signal Jennica to stun him.":
             $ outlaw += 1
             $ pilotApproval += 1
@@ -1482,7 +1511,7 @@ label commsBase_DataCenter_MAR():
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
             $ reactTarget = "vig2_sc8_mar_reacttoregistun"
             show screen streamerCommentary
-            show mac stream neutral at stream_center_mac with Dissolve(0.2)
+            show mac stream happy at stream_center_mac with Dissolve(0.2)
             #We could use a conditional here based on Mac's violence trait to alter his respone to Reggie getting tagged.
             macS "Take that \"skeeve!\""
             enS "I suppose the die is cast then."
@@ -1497,7 +1526,7 @@ label commsBase_DataCenter_MAR():
             mS "How much do you really like working for Sav?"
             goon "Like?"
             mS "You strike me as someone with flexible attitudes towards allegiance, not a true believer."
-            show reginald stream surprised at stream center with dissolve
+            show reginald stream surprised at stream_center with dissolve
             "Reginald begins to lower his blaster."
             goon "Go on."
             mS "What would it cost for you to get off world? I take it you have ambitions bigger than Gibian V?"
@@ -1508,7 +1537,7 @@ label commsBase_DataCenter_MAR():
             goon "I need to make it off world in one piece. Money don't spend if I'm dead."
             mS "We can afford that."
             "I reach into my pocket and grab 2000 credits."
-            show reginald stream impressed at stream center with dissolve
+            show reginald stream impressed at stream_center with dissolve
             goon "Pleasure doing business."
             $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
@@ -1652,6 +1681,7 @@ label commsBase_DataCenter_OUT():
     show jennica stream neutral at stream_left with Dissolve(0.5)
     $ viewCheck9 += viewCount
     menu:
+        "Reginald walks out of the room."
         "Convince him not to say anything.":
             $ macViolence += 1
             $ marshal += 1
@@ -1802,7 +1832,7 @@ label vig2epilogue_MAR():
     mS "Be careful what you wish for."
     mS "Accept."
     hide screen streamerCommentary
-    show matticus stream at stream_center with Dissolve(0.5)
+    show matticus phone neutral at stream_center_mac with Dissolve(0.5)
     "Matticus appears on the ship computer. He's incensed."
     $ AddChatter(vig2_epilogue_mar_comment3)
     $ AddChatter(vig2_epilogue_mar_comment4)
@@ -1821,7 +1851,7 @@ label vig2epilogue_MAR():
     $ AddChatter(vig2_epilogue_mar_comment7)
     enS "With pleasure."
     play audio "cutCall.wav" volume 1.5
-    hide matticus stream with dissolve
+    hide matticus with dissolve
     $ viewCheck10 += viewCount
     "The screen powers off."
     pS "Maybe we shouldnta added insult to injury?"
@@ -1841,6 +1871,7 @@ label vig2epilogue_MAR():
     mS "Of course MAC."
     macS "I'm confused about our mission? Why do we need to hide if we are good people?"
     menu:
+        macS "I'm confused about our mission? Why do we need to hide if we are good people?"
         "The people in power are bad.":
             $ macHope += 1
             $ marshal += 1
@@ -1902,7 +1933,7 @@ label vig2epilogue_OUT():
     shipcom "Incoming call from Magistrate Savlian Matticus."
     mS "Accept."
     $ AddChatter(vig2_epilogue_out_comment2)
-    show matticus stream at stream_center with dissolve
+    show matticus phone neutral at stream_center_mac with dissolve
     "Matticus appears on the ship computer."
     smatt "Oh Moze. Its been so wonderful working with you again."
     smatt "We have to catch up some time!"
@@ -1931,7 +1962,7 @@ label vig2epilogue_OUT():
     $ reactTarget = "vig2_sc9_out_end"
     show screen streamerCommentary
     play audio "cutCall.wav" volume 1.5
-    hide matticus stream with dissolve
+    hide matticus with dissolve
     $ viewCheck10 += viewCount
     enS "Well at least we have some breathing room."
     $ AddChatter(vig2_epilogue_out_comment9)
@@ -2038,9 +2069,9 @@ label vig2_macro_start():
     $ menu = nvl_menu
     "You lean back in your chair and let your body relax now that you're no longer on camera."
     $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Then you get a Clamor notification."
+    "Then you get a Loop'd notification."
     "It's from Jessie."
-    scene discord with dissolve
+    scene discordview with dissolve
     mod_nvl "Hey bud, great stream again, so glad you decided to keep going with the game!"
     mod_nvl "How're you holding up?"
     if vig2_outlawEpilogue == True:
@@ -2375,7 +2406,7 @@ label vig2_macro_viewerChat_1():
     hide screen viewershipButton_vig2
     $ renpy.sound.play("audio/ReceiveText.ogg")
     "I'm about to move away from my computer when I hear another notification."
-    scene discord with dissolve
+    scene discordview with dissolve
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         "It's Coriolis?"
         cs_nvl "Hey [username], that was such a cool stream!"
@@ -2442,9 +2473,9 @@ label vig2_macro_viewerChat_1():
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
         "It's KitCat?"
         kc_nvl "[username], hi! How's it goin!"
-        kc_nvl "Sry to message randomly, hope it's not weird"
+        kc_nvl "Sry to message randomly, hope it's not weird."
         kc_nvl "But I have to ask about your romance path."
-        kc_nvl "gotta read the tea leaves of your soul!"
+        kc_nvl "I wanna read the tea leaves of your soul!"
         kc_nvl "jk, sort of, anyway."
         if romanceAma == True:
             kc_nvl "Ama. Great pick! Honestly, I didn't even think about that."
@@ -2742,14 +2773,14 @@ label vig2_macro_viewerChat_1():
 
 label vig2_macro_bro1():
     nvl clear
-    hide discord with dissolve
+    hide discordview with dissolve
     scene black with dissolve
     "You weren't expecting that. But it was kind of nice for them to reach out."
     "But now it's time to walk away from your computer."
     "You shut down the computer and start winding down for the evening."
     "You have a quick dinner and then finish up homework for class the next day."
     "As you brush your teeth, you see a notification on your phone that you missed while reading."
-    scene discord with dissolve
+    scene discordview with dissolve
     "It's from Elliot, a couple hours ago."
     bro_nvl "Hey bro, just wanted to let you know I caught the first stream VOD for Oakley 2."
     bro_nvl "Crazy stuff! I really like the direction they're taking Moze's character."
@@ -2893,7 +2924,7 @@ label vig2_macro_sleep():
 
 label vig2_macro_end():
     "As your eyes finally start to become heavy, you hear a slight buzz from the nightstand."
-    "A discord notification. From Elliot."
+    "A Loop'd notification. From Elliot."
     "You don't unlock the phone, because you can read the message from the lock screen."
     bro "Love you too!"
     $ renpy.full_restart()
