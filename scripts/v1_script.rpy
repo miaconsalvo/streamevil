@@ -17,9 +17,9 @@ label vignette1Start():
     jump returnToWorkshop
 
 label returnToWorkshop():
-    play music "soundtrack/allistar.wav" volume 1.0 loop fadein 1.0
     show screen chatTutorial2
     call screen streamFreeze
+    play music "soundtrack/allistar.wav" volume 1.0 loop fadein 1.0
     "Thermal paste in hand I return to Allistar's workshop."
     show vig1_allistar_workshop at topleft onlayer background with dissolve
     hide vig1_town_stream
