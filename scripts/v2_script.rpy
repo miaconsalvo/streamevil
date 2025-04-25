@@ -543,7 +543,7 @@ label GibianVCustomsOutlaw():
     $ AddChatter(vig2_sc2_out_comment11)
     mS "Let's get off the main street!"
     "Teresa and Jennica nod as I point towards a small alleyway."
-    stop backAudio fadeout 1.0
+    stop backAudio fadeout 3.0
     "We're out and on our way to Matticus's compound."
     $ viewCheck4 += viewCount
     stop music fadeout 2.0
@@ -1582,7 +1582,7 @@ label commsBase_DataCenter_MAR():
         worker "What choice do I have!?"
         worker "You killed everyone here! I saw on the security cameras."
         "The technician sighs."
-        worker "But you're better than Matticus. At least you refused to let all those people to die of gray fever."
+        worker "But you're better than Matticus. At least you refused to let all those people die of gray fever."
         $ AddChatter(vig2_sc7_mar_comment7)
         worker "Better the lesser evil."
     mS "Fair enough. So what do you need to do this?"
@@ -2223,7 +2223,7 @@ label vig2_macro_mod_outlawEnd():
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some pho with a friend, chat later ya?"
     player_nvl "For sure, enjoy!"
-    scene bg black
+    scene bg black with dissolve
     nvl clear
     "I should check out the subblueit to see how people are reacting to Episode 2."
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
@@ -2352,7 +2352,7 @@ label vig2_macro_mod_marshalEnd():
     mod_nvl "Gotta run, gonna go grab some fried rice with a friend"
     mod_nvl "chat later, ya?"
     player_nvl "For sure, enjoy!"
-    scene bg black
+    scene bg black with dissolve
     nvl clear
     "I should check out the subblueit to see how people are reacting to Episode 2."
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
@@ -2787,14 +2787,14 @@ label vig2_macro_bro1():
     "As you brush your teeth, you see a notification on your phone that you missed while reading."
     scene discordview with dissolve
     "It's from Elliot, a couple hours ago."
-    bro_nvl "Hey bro, just wanted to let you know I caught the first stream VOD for Oakley 2."
+    bro_nvl "Hey [player], just wanted to let you know I caught the first stream VOD for Oakley 2."
     bro_nvl "Crazy stuff! I really like the direction they're taking Moze's character."
     bro_nvl "and OMG MAC"
     bro_nvl "SO CUTE!"
     bro_nvl "I love him. Would die for him. we stan 1000\%"
     bro_nvl "Also..."
     bro_nvl "Not you going \"bad guy\" Moze this time around?"
-    bro_nvl "You've changed bro. Like a couple years at college and now you're a big bad Outlaw, crazyyyy"
+    bro_nvl "You've changed. Like a couple years at college and now you're a big bad Outlaw, crazyyyy"
     bro_nvl "Jkjk, hope you're having fun, excited to follow the stream!"
     $ playerNVLNarration = "Based on the time change, Elliot's probably already asleep." #check if this messes with the NVL sequence
     show screen NVLnarration

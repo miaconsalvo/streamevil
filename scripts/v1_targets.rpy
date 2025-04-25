@@ -7,14 +7,14 @@ label vig1_sc1_startStream():
     $ narrator = reg_narrator
     hide screen streamerCommentary
     hide screen chatTutorial2
-    "Alright, gang, sorry for the extended break! Roommate needed help moving some furniture."
-    "Let's catch up to speed."
-    "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities and we are {i}not{/i} giving him back."
-    "But he's been having some wiring issues that we gotta fix before we get to dropping him off with the humanitarian organization."
-    "So we hit up our old pal Allistar the mechanic to fix up MAC, and had to grab some thermal paste from the local shop." 
-    "And I'ma be honest, that shopkeep was quite rude."
-    "But we did a bit of bribing, got the paste, and now we're meeting back up with the boys."
-    "Let's go!"
+    player "Alright, gang, sorry for the extended break! Roommate needed help moving some furniture."
+    player "Let's catch up to speed."
+    player "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities and we are {i}not{/i} giving him back."
+    player "But he's been having some wiring issues that we gotta fix before we get to dropping him off with the humanitarian organization."
+    player "So we hit up our old pal Allistar the mechanic to fix up MAC, and had to grab some thermal paste from the local shop." 
+    player "And I'ma be honest, that shopkeep was quite rude."
+    player "But we did a bit of bribing, got the paste, and now we're meeting back up with the boys."
+    player "Let's go!"
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator

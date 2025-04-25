@@ -592,10 +592,10 @@ label councilDebrief():
                 player "Good jokes keep me on my toes and helps us all be entertained."
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
-        "My stream is all about vibes":
+        "My stream is all about vibes.":
             $ vibes = True
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
-            player "We're all about chill vibes hear."
+            player "We're all about chill vibes here."
             player "So we take it easy and just go wherever the games take us!"
             menu:
                 player "So we take it easy and just go wherever the games take us!"
@@ -977,7 +977,7 @@ label modConvo_Day1_Bandit():
     #streamer_nvl "So almost everyone else is going to see the story where Allistar's alive and not the one where he's dead"
     streamer_nvl "Maybe I can fill that niche"
     mod_nvl "Hmmm it's not outrageous"
-    mod_nvl "Could be a good generate some buzz for Affiliate"
+    mod_nvl "Could be a good way to generate some buzz for Affiliate"
     mod_nvl "And I know you said this kinda felt like your last push for it"
     mod_nvl "But do you want to do that?"
     mod_nvl "You were really excited to play this game"
@@ -1083,7 +1083,7 @@ label vig1_brother_1():
     $ menu = nvl_menu
     nvl clear
     scene bg black with dissolve
-    "As you close Blueit, you remember that you're little brother asked to chat at 9:30."
+    "As you close Blueit, you remember that your little brother asked to chat at 9:30."
     "It's 8pm so you have a bit of time."
     "You decide to make a late dinner and start catching up on the new season of Iron Goddess."
     "After finishing an episode, you wash your dishes then sit back down at your computer and shoot Elliot a message."
