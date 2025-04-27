@@ -204,6 +204,7 @@ init:
     #fade out whenever we transition to another label
 
 label start:
+    #$ quick_menu = False - for when we don't want players to be able to go "back" in the game
     $ macroChoice = True
     show bg black at topleft onlayer background
 
