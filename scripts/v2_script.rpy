@@ -285,6 +285,8 @@ label GibianVCustomsDepot():
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
         "Have Teresa prep the distraction.":
+            $ customsDepot = "Teresa Distraction" #playtest variable
+            $ customsStampede = True
             $ outlaw += 2
             $ pdEngagement += 2
             $ kcEngagement += 1
@@ -292,6 +294,8 @@ label GibianVCustomsDepot():
             $ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
+            $ customsDepot = "Jennica Bribe" #playtest variable
+            $ customsStampede = False
             $ marshal += 2
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -981,6 +985,7 @@ label approachingBase():
     menu:
         pS "What's your call Cap?"
         "A full offensive is more tactically sound.":
+            $ dataBase = "All-Out Assault" #playtest variable
             $ gunsBlazing = True
             $ outlaw += 3
             $ pdEngagement += 3
@@ -1017,6 +1022,7 @@ label approachingBase():
             hide reginald with Dissolve(0.5)
             jump commsBase_OUT1
         "Better to be as quiet as possible.":
+            $ dataBase = "Stealth Infiltration" #playtest variable
             $ marshal += 2
             $ gunsBlazing = False
             $ csEngagement += 2
@@ -1284,6 +1290,7 @@ label commsBase_OUT1():
     menu:
         "He's terrified, as if this is the first time anyone's shot at him."
         "This isn't his fault.":
+            $ spareGuard = "Spared" #playtest variable
             $ macViolence -= 1
             $ macHope += 1
             $ baseGuardKilled = False
@@ -1322,6 +1329,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors.":
+            $ spareGuard = "Killed" #playtest variable
             $ macViolence += 1
             $ macHope -= 1
             $ baseGuardKilled = True
@@ -1342,13 +1350,15 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment5)
             $ AddChatter(vig2_sc6_out_execute_comment6)
             $ AddChatter(vig2_sc6_out_execute_comment7)
+            show jennica stream shock at stream_left with Dissolve(0.5)
             pS "Damn Cap. That was cold."
             $ AddChatter(vig2_sc6_out_execute_comment8)
             $ AddChatter(vig2_sc6_out_execute_comment9)
             $ AddChatter(vig2_sc6_out_execute_comment10)
+            show teresa stream neutral at stream_right with Dissolve(0.5)
             enS "Better safe than sorry."
             $ AddChatter(vig2_sc6_out_execute_comment11)
-            show reginald stream neutral at stream_right with dissolve
+            show reginald stream neutral at stream_center with dissolve
             "Reginald emerges through the door."
             $ AddChatter(vig2_sc6_out_execute_comment12)
             $ AddChatter(vig2_sc6_out_execute_comment13)
@@ -1442,6 +1452,7 @@ label commsBase_DataCenter():
     menu:
         "MAC is almost completely quiet. They've been looking at me the entire time." 
         "This has gone too far.":
+            $ aidShip = "Spared Aid Ship" #playtest variable
             $ marshal += 5
             $ csEngagement += 3
             $ pdEngagement -= 3
@@ -1454,6 +1465,7 @@ label commsBase_DataCenter():
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
         "We don't have a choice.":
+            $ aidShip = "Blew up Aid Ship" #playtest variable
             $ macViolence += 3
             $ outlaw += 5
             $ csEngagement -= 3
@@ -1499,6 +1511,7 @@ label commsBase_DataCenter_MAR():
     menu:
         "I notice Jennica reaching for her blaster."
         "Signal Jennica to stun him.":
+            $ reginaldChoice = "Stunned" #playtest variable
             $ outlaw += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
@@ -1521,6 +1534,7 @@ label commsBase_DataCenter_MAR():
             hide screen streamerCommentary
             hide mac with Dissolve(0.2)
         "Bribe Reginald.":
+            $ reginaldChoice = "Bribed" #playtest variable
             $ marshal += 1
             $ macViolence -= 1
             "I signal to Jennica to wait."
@@ -1684,6 +1698,7 @@ label commsBase_DataCenter_OUT():
     menu:
         "Reginald walks out of the room."
         "Convince him not to say anything.":
+            $ technicianChoice = "Threatened (spared)" #Playtest variable
             $ macViolence += 1
             $ marshal += 1
             $ pdEngagement += 1
@@ -1719,6 +1734,7 @@ label commsBase_DataCenter_OUT():
             "MAC begins to follow."
             hide mac with Dissolve(1.5)
         "Kill him.":
+            $ technicianChoice = "Killed" #playtest variable
             $ macViolence += 2
             $ outlaw += 2
             $ pdEngagement += 2
@@ -2226,11 +2242,11 @@ label vig2_macro_mod_outlawEnd():
     scene bg black with dissolve
     nvl clear
     "I should check out the subblueit to see how people are reacting to Episode 2."
-    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
-    $ blueitPages.append(vig2_bThread1)
-    $ blueitPages.append(vig2_bThread2)
-    $ blueitPages.append(vig2_bThread3)
-    $ blueitPages.append(vig2_bThread4)
+    #$ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
+    #$ blueitPages.append(vig2_bThread1)
+    #$ blueitPages.append(vig2_bThread2)
+    #$ blueitPages.append(vig2_bThread3)
+    #$ blueitPages.append(vig2_bThread4)
     jump blueitVignette2_1
 
 
@@ -2354,17 +2370,21 @@ label vig2_macro_mod_marshalEnd():
     player_nvl "For sure, enjoy!"
     scene bg black with dissolve
     nvl clear
-    "I should check out the subblueit to see how people are reacting to Episode 2."
+    jump blueitVignette2_1
+
+###label for blueit
+label blueitVignette2_1:
+    scene blueit_v2screen at truecenter with dissolve
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     $ blueitPages.append(vig2_bThread1)
     $ blueitPages.append(vig2_bThread2)
     $ blueitPages.append(vig2_bThread3)
     $ blueitPages.append(vig2_bThread4)
-    jump blueitVignette2_1
-
-###label for blueit
-label blueitVignette2_1:
-    scene blueit_screen at truecenter
+    "I should check out the subblueit to see how people are reacting to Episode 2."
+    jump blueitVignette2_2
+    
+label blueitVignette2_2():
+    scene blueit_v2screen at truecenter
     call screen blueit
     return
     jump vig2_macro_viewerChat_1
@@ -2373,7 +2393,7 @@ label FlinchAnalytics_vig2():
     $ menu = adv_menu
     "I should probably check out Flinch too."
     $ flinchCheck = 0
-    scene flinch_screen with dissolve
+    scene flinch_v2screen with dissolve
     #The six lines below this allow us to change who the topfan is
     #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
     #    $ topfan = "Coriolis"
@@ -2390,6 +2410,8 @@ label FlinchAnalytics_vig2():
         $ topfan = "PickledDragons"
     else:
         $ topfan = "Coriolis"
+    $ followerGoal = 2
+    show screen streamAnalytics_Details
     "Time to explore the Flinch analytics page."
     show screen viewership with dissolve
     $ vbar1 += viewCheck1
@@ -2409,6 +2431,7 @@ label FlinchAnalytics_vig2():
 label vig2_macro_viewerChat_1():
     $ menu = nvl_menu
     hide screen viewershipButton_vig2
+    scene bg black
     $ renpy.sound.play("audio/ReceiveText.ogg")
     "I'm about to move away from my computer when I hear another notification."
     scene discordview with dissolve
@@ -2804,11 +2827,26 @@ label vig2_macro_bro1():
         "•Thanks!":
             hide screen NVLnarration
             player_nvl "Thanks El, really appreciate you checking it out!"
-        "•Outlaw life is good!":
+        "•Outlaw life is good!" if vig2_outlawEpilogue == True:
             hide screen NVLnarration
-            $ enthusiasm += 1
+            $ enthusiasm += 2
             player_nvl "Felt like time for a change of pace"
             player_nvl "Outlaw life is pretty sweet!"
+        "•Outlaw life is interesting." if customsStampede == True and gunsBlazing == False and vig2_outlawEpilogue == False:
+            hide screen NVLnarration
+            $ enthusiasm += 1
+            player_nvl "It's a change of pace for sure."
+            player_nvl "Still trying to see how it feels, but it's interesting."
+        "•Outlaw life is good." if customsStampede == True and gunsBlazing == True and vig2_outlawEpilogue == False:
+            hide screen NVLnarration
+            $ enthusiasm += 1
+            player_nvl "It's a change of pace."
+            player_nvl "Been checking out how it feels to walk on the wild side!"
+        "•Outlaw life is good." if customsStampede == False and gunsBlazing == True and vig2_outlawEpilogue == False:
+            hide screen NVLnarration
+            $ enthusiasm += 1
+            player_nvl "It's a change of pace."
+            player_nvl "Just kinda trying it out, seeing how the wild side feels."
         "•That was an accident.":
             hide screen NVLnarration
             player_nvl "That was an accident lol"
@@ -2932,5 +2970,21 @@ label vig2_macro_end():
     "A Loop'd notification. From Elliot."
     "You don't unlock the phone, because you can read the message from the lock screen."
     bro "Love you too!"
+    stop music fadeout 8.0
+    jump endPlaytest
+
+label endPlaytest():
+    pause 2.0
+    scene game_main_menu with dissolve
+    "Thank you for participating in this playtest of Stream Evil!"
+    "Our team is very grateful for your time and would love to hear from you."
+    "If you're doing a remote test, please go to this {a=https://docs.google.com/forms/d/e/1FAIpQLScDUvazO6ajENISfpBgtitvIo3aI8ffpTi_Hvs7qu15Dec9Dw/viewform}google form{/a} and fill out a quick survey."
+    "If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu)"
+    "Once again, thank you very much for your time!"
+    "We hope you have a wonderful day!\n\n-Beck, Josh, Jules, Justin, and Mia"
+
+    scene bg black with dissolve
+    call screen playtestRecord
+
     $ renpy.full_restart()
     return

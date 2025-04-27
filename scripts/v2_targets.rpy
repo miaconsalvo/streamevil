@@ -848,7 +848,7 @@ label vig2_sc9_mar_end():
 
 ######Below this is code for Blueit and Flinch in Vignette 2##############
 label vig2_blueit_allistarthread():
-    $ blueitImage = "socials/allistar thread.png"
+    $ blueitImage = "socials/v2_allistar thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
@@ -858,7 +858,7 @@ label vig2_blueit_allistarthread():
     return
 
 label vig2_blueit_matticusthread():
-    $ blueitImage = "socials/matticus thread.png"
+    $ blueitImage = "socials/v2_matticus thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
@@ -868,7 +868,7 @@ label vig2_blueit_matticusthread():
     return
 
 label vig2_blueit_copoutthread():
-    $ blueitImage = "socials/copout thread.png"
+    $ blueitImage = "socials/v2_copout thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
@@ -880,7 +880,7 @@ label vig2_blueit_copoutthread():
 label vig2_blueit_stealththread():
     #show first game thread at top:
     #    zoom 1.5
-    $ blueitImage = "socials/stealth thread.png"
+    $ blueitImage = "socials/v2_stealth thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
@@ -903,7 +903,7 @@ label vig2_analytics_viewcount2():
         "What's the average viewer count?" if viewershipThoughtCheck == False:
             "The average viewer count for the stream is about 10.4."
             "Over 10! That's great!"
-            "You just have to keep that momentum for the next couple weeks."
+            "It's a little close to dropping below 10, so you'll have to keep up the momentum for the next couple weeks."
             "Your other streams have been a bit lower than that, but if this count stays stable, you should be on track!" #Here's the issue, we can say this, what can people do to change this if they weren't on track
             $ viewershipThoughtCheck = True
             jump vig2_analytics_viewcount2

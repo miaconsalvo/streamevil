@@ -4,12 +4,12 @@
 #Yeah, separate screen would be easiest by far
 screen streamAnalytics():
     #zorder 100 #determines how much overlayed it is
-    image "[profilePic]" align (.0455, .135) size (220, 220)
-    
+
+
     if flinchCheck >= 3 and vignette1 == True:
         textbutton "Open Blueit":
             background Solid("#66439eff")
-            action [Hide("viewership"), Jump("blueitVignette1")] #can change this to a [variable] so we can adjust on the fly
+            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")] #can change this to a [variable] so we can adjust on the fly
             text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffce" 
             text_selected_color "#ffffffff"
@@ -19,7 +19,7 @@ screen streamAnalytics():
     elif flinchCheck >= 3 and vignette2 == True:
         textbutton "Open Blueit":
             background Solid("#66439eff")
-            action [Hide("viewership"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
             text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffce" 
             text_selected_color "#ffffffff"
@@ -75,7 +75,15 @@ screen streamAnalytics():
         #    text_size 50
         #    align (0.5, 0.5)
 
-    #The frame below this is for the viewership analytics
+###The screen below this ensures that these details won't disappear whenever the player selects an option on the flinch screen.
+screen streamAnalytics_Details():
+    image "[profilePic]" align (.0455, .135) size (220, 220)
+    text "{b}[username]{/b}" align (0.078, 0.37) size 30
+    text "{b}[topfan]{/b}" align (0.256, 0.51) size 30
+    text "{b}[followerGoal] fans{/b}" align (0.527, 0.908) size 40 
+
+
+#The frame below this is for the viewership analytics
 screen viewership:
     frame:
         background Solid("#00000000")
@@ -179,12 +187,10 @@ screen viewershipButton:
 ######Screens for Vignette 2########
 screen streamAnalytics_vig2():
     #zorder 100 #determines how much overlayed it is
-    image "[profilePic]" align (.0455, .135) size (220, 220)
-    
     if flinchCheck >= 3:
         textbutton "Close Flinch":
             background Solid("#66439eff")
-            action [Hide("viewership"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
             text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffce" 
             text_selected_color "#ffffffff"

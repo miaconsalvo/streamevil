@@ -15,7 +15,7 @@ default alt_narrator = Character(None, what_font="Lato-Regular.ttf", window_styl
 define player = Character("[my_name]", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") #represents the protagonist's name which will be defined by the player via an input screen.
 define streamer = Character("[username]") #represents protagonist's username on Flinch
 define mod = Character("Jessie", what_font="Mukta-Regular.ttf")
-define bro = Character("El", what_font="Mukta-Regular.ttf")
+define bro = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf")
 define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile2.png")
 define streamer_nvl = Character("[username]", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile2.png")
 define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile1.png")
@@ -102,6 +102,15 @@ default vibes = False
 default humour = False
 default story = False
 
+###Variables for Playtest Data###
+default streamVibes = "unchosen"
+default killAllistar = "unchosen"
+default customsDepot = "unchosen"
+default dataBase = "unchosen"
+default spareGuard = "N/A (Marshal route selected)"
+default aidShip = "unchosen"
+default technicianChoice = "N/A (Marshal route selected)"
+default reginaldChoice = "N/A (Outlaw route selected)"
 
 #Variables specific to vignette 1
 default allistarSuspicious = False
@@ -135,6 +144,7 @@ default max_viewers = 40
 
 ###Variables for tracking Flinch Analytics Vignette 1
 default topfan = ""
+default followerGoal = "8"
 default flinchCheck = 0
 default viewcountCheck = False
 default topfanCheck = False
@@ -160,6 +170,7 @@ default blueitLaunchCheck = False
 
 
 ####Variables for Vignette 2#####
+default customsStampede = False
 default shnzi = True
 default romanceAma = False
 default romanceJennica = False

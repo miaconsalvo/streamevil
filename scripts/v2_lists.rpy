@@ -408,10 +408,10 @@ default vig2_sc9_mar_reactcomment6 = ChatEntry( False, "{b}R4dioRobbie - 7:15{/b
 
 
 ######Setting up Bluit Threads###########
-default vig2_bThread1 = bThread( 1, "vig2_blueit_allistarthread", "images/socials/bThread_firstChoice.png") #tag, target, image
-default vig2_bThread2 = bThread( 1, "vig2_blueit_matticusthread", "images/socials/bThread_firstGame.png")
-default vig2_bThread3 = bThread( 1, "vig2_blueit_copoutthread", "images/socials/bThread_romance.png")
-default vig2_bThread4 = bThread( 2, "vig2_blueit_stealththread", "images/socials/bThread_glitch.png")
+default vig2_bThread1 = bThread( 1, "vig2_blueit_allistarthread", "images/socials/bThread_v2_allistar.png") #tag, target, image
+default vig2_bThread2 = bThread( 1, "vig2_blueit_matticusthread", "images/socials/bThread_v2_matticusDesign.png")
+default vig2_bThread3 = bThread( 1, "vig2_blueit_copoutthread", "images/socials/bThread_v2_copout.png")
+default vig2_bThread4 = bThread( 1, "vig2_blueit_stealththread", "images/socials/bThread_v2_muchStealth.png")
 
 
 

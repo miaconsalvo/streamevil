@@ -82,7 +82,7 @@ screen blueitButtonCheck():
             align (0.74, 0.39)
     elif vignette2 == True:
         textbutton "Back to Main Page":
-            action [Hide("blueitThread"), Jump("blueitVignette2_1")]
+            action [Hide("blueitThread"), Jump("blueitVignette2_2")]
             background Solid("#000000ff")
             text_color "#039fddd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#039fdd91" 
@@ -98,7 +98,13 @@ screen blueitThread():
         scrollbars "vertical" #sets vertical scroll bar
         image(blueitImage)
 
-#screen blueitThread():
+
+
+
+
+
+############OLD VERSIONS###############
+#screen blueitThread(): - this was an old version that didn't use the "built in" viewport space, but directed to a separate screen entirely
 #    frame:
 #        #background Image("launch thread.png") xalign 0.5
 #        viewport id "blueitView":
@@ -110,18 +116,6 @@ screen blueitThread():
 #                background Image(blueitImage)
 #                xsize 1920
 #                ysize yb
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #The code below this was used back when I was defining all the buttons of BlueIt manually and without the right background.

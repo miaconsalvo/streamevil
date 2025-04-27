@@ -221,3 +221,28 @@ screen selectProfilePic():
     #    xsize 100
     #    ysize 100
     #    align (0.8, 0.5)
+
+
+
+###PLAYTESTING RECORD SCREEN###
+screen playtestRecord():
+    text "These are the choices that were made during this playtest":
+        align(0.5, 0.1)
+    textbutton "End Game":
+        action Return()
+        align (0.9, 1.0)
+        text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+        text_hover_color "#ffffffd5" 
+        text_selected_color "#ffffffff"
+    vbox:
+        spacing 25
+        align (0.5, 0.4)
+        text "Stream vibes: {b}[streamVibes]{/b}"
+        text "Kill Allistar: {b}[killAllistar]{/b}"
+        text "Customs Depot: {b}[customsDepot]{/b}"
+        text "Data Base: {b}[dataBase]{/b}"
+        text "Spare Guard with Family: {b}[spareGuard]{/b}"
+        text "Aid Ship: {b}[aidShip]{/b}"
+        text "Technician: {b}[technicianChoice]{/b}"
+        text "Reginald: {b}[reginaldChoice]{/b}"
+        text "Top Fan: {b}[topfan]{/b}"
