@@ -695,8 +695,9 @@ label escapePodConfrontation:
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
     hide allistar with dissolve
+    hide mac with Dissolve(0.5)
     $ AddChatter(vig1_sc3_shot_comment1)
-    pause 0.4
+    pause 0.3
     $ AddChatter(vig1_sc3_shot_comment2)
     pause 0.5
     $ AddChatter(vig1_sc3_shot_comment3)
@@ -740,7 +741,6 @@ label escapePodConfrontation:
             pause 0.5
     $ narrator = alt_narrator
     $ viewCheck10 = viewCount
-    hide mac with Dissolve(0.5)
     "MAC hits the floor and rolls to the other end of the hall behind a crate."
     "I go over to Allistar's body. It's limp and cold."
     "But I still feel the weight of his eyes."
