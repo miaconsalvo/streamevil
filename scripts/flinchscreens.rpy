@@ -79,7 +79,7 @@ screen streamAnalytics():
 screen streamAnalytics_Details():
     image "[profilePic]" align (.0455, .135) size (220, 220)
     text "{b}[username]{/b}" align (0.078, 0.37) size 30
-    text "{b}[topfan]{/b}" align (0.256, 0.51) size 30
+    text "{b}[topfan]{/b}" align (0.28, 0.51) size 30
     text "{b}[followerGoal] fans{/b}" align (0.527, 0.908) size 40 
 
 

@@ -21,7 +21,7 @@ define streamer_nvl = Character("[username]", what_font="Mukta-Regular.ttf", kin
 define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile1.png")
 define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
-define kc_nvl = Character("KitCat", what_font="Mukta-Regular.ttf", kind = nvl, )
+define kc_nvl = Character("kitcat", what_font="Mukta-Regular.ttf", kind = nvl, )
 define pd_nvl = Character("PickledDragons", what_font="Mukta-Regular.ttf", kind = nvl, )
 define elliotflashback = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") 
 

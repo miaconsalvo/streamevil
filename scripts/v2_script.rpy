@@ -1074,6 +1074,7 @@ label commsBase_MAR1():
     "We're inside. The base seems even smaller on the inside and lightly guarded."
     "Its just a few stairs down from the upper level to the ground floor."
     "The stairs lead to a hallway."
+    show guard1 stream at stream_center with Dissolve(0.2)
     "We turn the corner and run face-first into a lone guard on patrol."
     "He jumps up, startled, and begins raising his hand..."
     "My instincts take over."
@@ -1087,6 +1088,7 @@ label commsBase_MAR1():
             "He can barely react as the stunning blast ripples through his body, incapacitating him."
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
+            hide guard1 stream with dissolve
             show reginald stream neutral at stream_center with Dissolve(0.5)
             goon "Keep moving!"
             mS "I know!"
@@ -1104,6 +1106,7 @@ label commsBase_MAR1():
             hsguard1 "We have money for new recruits?"
             mS "Yeah I was shocked too. I'll see you around?"
             hsguard1 "Sure."
+            hide guard1 stream with dissolve
             "He continues along his patrol, oblivious."
             $ AddChatter(vig2_sc6_mar_choice1_bluff_comment1)
             show jennica stream neutral at stream_left with Dissolve(0.5)
@@ -1275,7 +1278,7 @@ label commsBase_OUT1():
     stop backAudio fadeout 1.0
     $ renpy.music.set_volume(0.4, 1.0)
     $ AddChatter(vig2_sc6_out_comment15)
-    show guard1 stream at stream_right with Dissolve(0.4)
+    show guard1 stream at stream_center with Dissolve(0.4)
     hsguard1 "I surrender!"
     mS "Stand up and put your hands where I can see them!"
     "The guard complies."
@@ -2894,7 +2897,7 @@ label vig2_macro_sleep():
         "Your mind is foggy, a cloud of robots, outlaws, and spaceships."
         "What do you think about as you drift to sleep?"
     menu:
-        "What do you think about?"
+        "What do you think about as you drift to sleep?"
         "Think about your conversations with chat":
             "So many people watch you play a game."
             "It's fun...right?"
@@ -2977,11 +2980,11 @@ label endPlaytest():
     pause 2.0
     scene game_main_menu with dissolve
     "Thank you for participating in this playtest of Stream Evil!"
-    "Our team is very grateful for your time and would love to hear from you."
+    "Our team is very grateful for your time and would love to hear your feedback!"
     "If you're doing a remote test, please go to this {a=https://docs.google.com/forms/d/e/1FAIpQLScDUvazO6ajENISfpBgtitvIo3aI8ffpTi_Hvs7qu15Dec9Dw/viewform}google form{/a} and fill out a quick survey."
     "If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu)"
     "Once again, thank you very much for your time!"
-    "We hope you have a wonderful day!\n\n-Beck, Josh, Jules, Justin, and Mia"
+    "We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
 
     scene bg black with dissolve
     call screen playtestRecord
