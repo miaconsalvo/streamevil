@@ -60,9 +60,9 @@ define hsguard1 = Character("Guard", what_font="Play-Regular.ttf", window_style 
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
-default commentPing = False
+default commentPing = True
 default pingText = "Sound is Off"
-default pingImage = "stream ui/soundoff.png"
+default pingImage = "stream ui/soundon.png"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
 default profilePic = "images/socials/profilepics/profile2.png"
@@ -204,8 +204,10 @@ init:
     #fade out whenever we transition to another label
 
 label start:
-    #$ quick_menu = False - for when we don't want players to be able to go "back" in the game
+    $ quick_menu = False #- for when we don't want players to be able to go "back" in the game
     $ macroChoice = True
+    $ chatter_list = [vig1_sc1_comment1, vig1_sc1_comment2, vig1_sc1_comment3, vig1_sc1_comment4, vig1_sc1_comment5, vig1_sc1_comment6, vig1_sc1_comment7, vig1_sc1_comment8]
+
     show bg black at topleft onlayer background
 
     "Hello, this is the start of a new game."
@@ -236,14 +238,14 @@ label playerName:
     "Now select your streaming profile picture."
     call screen selectProfilePic
     #We add chatter here, otherwise you would see them come in like super fast when the game starts
-    $ AddChatter(vig1_sc1_comment1)
-    $ AddChatter(vig1_sc1_comment2)
-    $ AddChatter(vig1_sc1_comment3)
-    $ AddChatter(vig1_sc1_comment4)
-    $ AddChatter(vig1_sc1_comment5)
-    $ AddChatter(vig1_sc1_comment6)
-    $ AddChatter(vig1_sc1_comment7)
-    $ AddChatter(vig1_sc1_comment8)
+    #$ AddChatter(vig1_sc1_comment1)
+    #$ AddChatter(vig1_sc1_comment2)
+    #$ AddChatter(vig1_sc1_comment3)
+    #$ AddChatter(vig1_sc1_comment4)
+    #$ AddChatter(vig1_sc1_comment5)
+    #$ AddChatter(vig1_sc1_comment6)
+    #$ AddChatter(vig1_sc1_comment7)
+    #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
     jump vignette1Start
 
