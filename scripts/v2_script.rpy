@@ -2982,7 +2982,7 @@ label endPlaytest():
     "Thank you for participating in this playtest of Stream Evil!"
     "Our team is very grateful for your time and would love to hear your feedback!"
     "If you're doing a remote test, please go to this {a=https://docs.google.com/forms/d/e/1FAIpQLScDUvazO6ajENISfpBgtitvIo3aI8ffpTi_Hvs7qu15Dec9Dw/viewform}google form{/a} and fill out a quick survey."
-    "If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu)"
+    "If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu, then click on an empty square)"
     "Once again, thank you very much for your time!"
     "We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
 
