@@ -210,7 +210,15 @@ label start:
 
     show bg black at topleft onlayer background
 
-    "Hello, this is the start of a new game."
+    "Hello, welcome to Stream Evil!"
+    "Please note: we ask that you do not redistribute or replicate any portion of this game."
+    "The copy you have downloaded is for testing purposes only."
+    "By clicking \"Continue\" to play the game you acknowledge this fact. Thank you."
+    menu:
+        "By clicking \"Continue\" to play the game you acknowledge this fact. Thank you."
+        "Continue":
+            pass
+    "This is the start of a new game."
     jump userName
 
 label userName:
@@ -225,7 +233,7 @@ label userName:
             jump userName
 
 label playerName:
-    "Now please tell me your first name in real life."
+    "Now please tell me your character's first name in real life."
     $ my_name = renpy.input("Your character's real name is: ", length = 16)
     "Your name in real life will be {b}\"[my_name]\"{/b}. Is this correct?"
     menu:
