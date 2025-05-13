@@ -49,14 +49,4 @@ label vig3Start():
     else:
         jump vig3marshalstart
 
-label vig3marshalstart():
-    
-
-
-
-
-
-
-label vig3outlawstart():
-
 
