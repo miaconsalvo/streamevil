@@ -28,6 +28,8 @@ label vignette3Start():
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
     $ macroChoice = False
+    $ chatter_list = []
+    #narrator needs to be set to alt_narrator here as well
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
