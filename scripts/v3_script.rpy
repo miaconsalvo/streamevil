@@ -29,7 +29,7 @@ label vignette3Start():
     $ flinchCheck = 0
     $ macroChoice = False
     $ chatter_list = []
-    #narrator needs to be set to alt_narrator here as well
+    #narrator needs to be set to alt_narrator in the next label as well
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
