@@ -576,8 +576,7 @@ label vig3_sc6():
     enS "Always."
     "I raise mine in response."
     mS "Long live the Oakley!"
-    
-label vig3_sc6():
+    # maybe fade in and out, show the passage of time
     "As the night continues on, the Broken Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks as a barkeep cleans them."
     "Rec is telling MAC a story that has him fully engaged."
     "Teresa is in a corner watching in unwavering curiosity at the plants that line the ceiling, tossing bits of food up for them to catch."
