@@ -578,7 +578,153 @@ label vig3_sc6():
     mS "Long live the Oakley!"
     
 label vig3_sc6():
-
+    "As the night continues on, the Broken Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks as a barkeep cleans them."
+    "Rec is telling MAC a story that has him fully engaged."
+    "Teresa is in a corner watching in unwavering curiosity at the plants that line the ceiling, tossing bits of food up for them to catch."
+    "Jennica is at a pool table, chatting away with some couple who stare at her in amazement."
+    "I should check in on one of them...."
+    "Just as I get up to see them I notice that wide brimmed hat again, long dark hair, she walks right past me and out the door."
+    "There's a chill that runs down my spine."
+    ###Recount choice again###
+    "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
+    hide bbpub_stream with dissolve
+    show akarplaza_stream at topleft onlayer background with dissolve 
+    "I struggle to navigate the dark winding streets the stranger tucks away behind an alley and I move to close in on them."
+    "As I turn the corner I'm met with a knife to my throat. So clearly not Ama's style."
+    show stranger 1 stream at stream_center with dissolve
+    "The stranger eyes bright and blue with a heart-shaped face and a mole under her left eye."
+    strngr1 "Why are you following me?"
+    mS "I'm sorry I just-"
+    "She presses the knife into my neck."
+    strngr1 "You what? Thought I was some easy mark."
+    "She's young in her voice and her confidence."
+    mS "No, I just thought you were someone else."
+    "She doesn't let go of the knife."
+    strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
+    "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
+    mS "Oh, I'm far from disappointed." #flirt
+    "A small smile comes on her face."
+    strngr1 "Oh yeah?"
+    mS "You're a much more pleasant sight if I say so myself."
+    "She doesn't let go of the knife but moves in closer."
+    strngr1 "You're not a eyesore yourself."
+    mS "Ouch I'm hurt."
+    strngr1 "Not yet, but the night's young."
+    "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
+    hide stranger 1 stream with dissolve 
+    "I return to the Broken Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
+    hide akarplaza_stream
+    show bbpub_stream at topleft onlayer background with dissolve
+    "A part of the bar goes silent as a bald burly man stands to address the crowd."
+    show zan stream at stream_center with dissolve
+    zan "Patrons! Who is brave enough to ride Karousel!"
+    "Oh god not this game. What kind of idiot would even take that challenge-"
+    pS "Right here!"
+    "Jennica marches to the man who laughs."
+    show jennica neutral stream at stream_left with dissolve
+    zan "So small, already tipping over, I fear you may not survive haha!"
+    "A small group of patrons at a table behind him laugh."
+    pS "Then you have nothin' to worry about."
+    zan "Apologies but I will not pick you up from the floor when you lose."
+    pS "Please."
+    "Teresa saddles up next to Jennica."
+    show teresa neutral stream at stream_right with dissolve
+    enS "The lady said she'd like to ride the karousel."
+    zan "Two of you! I'll need a bigger mop!"
+    "A woman from the table flanks him, she rivals him in size."
+    enS "So does that mean you're ready to play?"
+    zan "HAHA, I like you, moxie!"
+    pS "Moxie's our middle name."
+    zan "That is strange...but ZAN APPROVES!"
+    "He lifts up two thumbs and points to himself then speaks to the woman in a language I do not understand."
+    "She nods and picks up a large table to make the play area. Jennica and Zan speak for a moment before shaking hands."
+    zan "The bet is done! Mr. Stein. The Karousel please!"
+    "Bet? What bet?"
+    "A small man holds up the karousel high over his head, I barely see him before it appears on the table and the door to the back room swings closed."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide zan with dissolve
+    show mac neutral stream at stream_center_mac with dissolve
+    show rec neutral stream at stream_right with dissolve 
+    macS "Are they playing Brikarousel?"
+    recS "Aren't you too young to know that game?"
+    macS "I have a full database that allows me to know a myriad of games."
+    recS "Got me there... You know I never understood this game."
+    macS "Well Brikarousel was invented by Brika Alphonse approximately 30 years ago when..."
+    recS "I meant why people are so eager to play."
+    macS "Alcohol?"
+    recS "You're learning fast."
+    "I look over at the table as a pit in my stomach forms."
+    mS "Bet? What did they bet?"
+    recS "I didn't hear but I read lips a bit, a “sh” something?"
+    mS "\"Sh\" something."
+    macS "Shirt, shoes, shilling Ship? They wouldn't-"
+    hide rec with dissolve
+    hide mac with dissolve
+    "No that's stupid."
+    "Then I remember who's playing the game." 
+    "Shit."
+    show jennica neutral stream at stream_left with dissolve
+    show teresa neutral stream at stream_right with dissolve
+    show zan stream at stream_center with dissolve
+    "Contrary to my belief the tough woman next to Zan is not participating instead it's a small man with dark hair and modified gray skin."
+    pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
+    zan "Ovid is strong of heart, muscles on the inside."
+    enS "That tends to be where they go yes."
+    ovid "Zan must we always play this game whenever we go out?"
+    "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool. Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the karousel."
+    "The first team that withdraws or has a member drop loses."
+    "By round ten, it's not looking good."
+    zan "How is moxie?"
+    pS "Stronger than my momma's back!"
+    enS "I'm starting to feel mine in the back of my throat."
+    "Teresa and Jennica look wrung out but surprisingly Zan and Ovid are sturdy despite drinking their fill."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide zan with dissolve
+    show mac neutral stream at stream_center_mac with dissolve
+    show rec neutral stream at stream_right with dissolve
+    macS "They're cheating."
+    recS "How did you-"
+    recS "Of course! We've been out of the game too long."
+    macS "We must tell someone, this is improper."
+    mS "MAC I'm going to lay this out for you plainly. No one cares if something is improper here."
+    macS "Then we should do something."
+    mS "I'm on it."
+    macS "And I'll help."
+    mS "You will sit down and say nothing and let me handle it."
+    macS "But I-"
+    mS "Understand?"
+    macS "But I'm part of this crew too Ama!"
+    "That was my voice. Upset, scared of being left behind."
+    mS "You are, and you'll have other chances to prove it. Just not right now."
+    "When Jennica calls for a short recess I know that's my time to head over. Players can't leave the table so I go to them."
+    hide rec with dissolve
+    hide mac with dissolve
+    show jennica neutral stream at stream_left with dissolve
+    show teresa neutral stream at stream_right with dissolve
+    mS "I don't know if you've noticed..."
+    pS "We're losing-"
+    enS "They're cheating."
+    enS "So are we just not as effectively."
+    mS "Better think of something fast after what you just bet."
+    pS "Ya Resa, I don't think hand signals are going to cut it here."
+    "I swallow the knowledge that hand signals were the only thing they thought of after betting our ship."
+    "There has to be signs for how they're doing this."
+    "Ovid stares blankly across the room poking at something metal in his mouth."
+    pS "Ovid's not drinking."
+    enS "An evaporator..."
+    pS "Was wondering how that little guy is still standing."
+    "I look around the room for more signs."
+    mS "The deck isn't right. I know a standard set when I see one."
+    pS "That makes sense, the feel was off."
+    "What else. Teresa's eyes are fixed on the Karousel."
+    enS "The Karousel. There's a delay before it settles. And one of their friends has been staring at his communicator all night."
+    "Ovid's tube, the deck, the karousel. We have to deal with them."
+    pS "We need to tip the table."
+    enS "Can't do that while we play."
+    pS "I got it covered, just stay standing until I do."
+    "The game resumes and I step away."
 
 
 
