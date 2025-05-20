@@ -576,7 +576,6 @@ label councilDebrief():
     menu:
         "My stream is story-focused.":
             $ story = True
-            $ streamVibes = "Story-focused" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs, every now and then some action games."
             player "Usually we like to chat about the game's writing."
             player "What we like about the stories, details to critique, theories about where the narrative's going, things like that."
@@ -586,7 +585,6 @@ label councilDebrief():
                     player "So welcome aboard, and let's settle some scores!"
         "My stream loves a good joke.":
             $ humour = True
-            $ streamVibes = "Humor" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs and occasionally a multiplayer shooter."
             player "Chat's always the spot for some solid memes and funny bits!"
             player "Good jokes keep me on my toes and helps us all be entertained."
@@ -596,7 +594,6 @@ label councilDebrief():
                     player "So welcome aboard, and let's settle some scores!"
         "My stream is all about vibes.":
             $ vibes = True
-            $ streamVibes = "Chill vibes" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
             player "We're all about chill vibes here."
             player "So we take it easy and just go wherever the games take us!"
@@ -666,7 +663,7 @@ label escapePodConfrontation:
     menu:
         mS "I've heard enough."
         "Kill Allistar":
-            $ killAllistar = "Tried to Kill" #playtest variable
+            $ killAllistar = True 
             $ macViolence += 1
             $ pdEngagement += 3
             $ csEngagement -= 1
@@ -682,7 +679,7 @@ label escapePodConfrontation:
             "The words \"Kill Allistar\" glow red in the game's UI."
             $ narrator = alt_narrator
         "Stun Allistar":
-            $ killAllistar = "Tried to Stun" #playtest variable
+            $ killAllistar = False
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
