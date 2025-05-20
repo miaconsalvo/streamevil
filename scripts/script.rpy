@@ -110,19 +110,10 @@ default vibes = False
 default humour = False
 default story = False
 
-###Variables for Playtest Data###
-default streamVibes = "unchosen"
-default killAllistar = "unchosen"
-default customsDepot = "unchosen"
-default dataBase = "unchosen"
-default spareGuard = "N/A (Marshal route selected)"
-default aidShip = "unchosen"
-default technicianChoice = "N/A (Marshal route selected)"
-default reginaldChoice = "N/A (Outlaw route selected)"
-
 #Variables specific to vignette 1
 default allistarSuspicious = False
 default houseExplosion = False
+default killAllistar = False #if you tried to killallistar = true
 default omegaDead = False
 default misclick = False
 default askBandit = False
@@ -183,9 +174,14 @@ default shnzi = True
 default romanceAma = False
 default romanceJennica = False
 default romanceTeresa = False
-default baseGuardKilled = False
+default baseGuardKilled = False #if you killed the guard at the commsbase  = true (outlaw route)
 default gunsBlazing = False
+default technicianChoice = False #if you spared the technician = false (outlaw route)
+default reginaldChoice = False #if you stunned reginald = true (marshal route)
 default customsSpeculation = False
+default vig2_marshalEpilogue = False
+default vig2_outlawEpilogue = False
+default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
 
 
 #default yadj = ui.adjustment()
