@@ -291,7 +291,7 @@ label GibianVCustomsDepot():
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ engineerApproval += 1
-            $ customsDistraction = True
+            #$ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
             $ customsStampede = False
@@ -300,7 +300,7 @@ label GibianVCustomsDepot():
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pilotApproval += 1
-            $ customsDistraction = False
+            #$ customsDistraction = False
             jump GibianVCustomsMarshal
 
 label GibianVCustomsMarshal():
