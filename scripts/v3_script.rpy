@@ -516,6 +516,7 @@ label vig3_sc5():
     "They're tall and well built with a wide brimmed hat, in all dark leather, and long black familiar hair."
     macS "Are you coming Captain?"
     mS "Sure thing kid."
+    jump vig3_sc6
 
 label vig3_sc6():
     hide akarplaza_stream
@@ -526,6 +527,10 @@ label vig3_sc6():
     "The Burnt Bulb Pub feels like it's been stuck in time. 
     It's wooden paneling, the carnivorous plants that line its ceilings."
     "There's a warmth to this place, I feel like that young Outlaw scared out of my mind, clinging to Ama and hoping I won't get bulldozed at my first brawl."
+    show rec stream neutral at stream_center with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
+    show mac stream neutral at stram_left with dissolve
     macS "Cozy."
     "MAC's face drops as a someone yells and then is quickly tossed through a window. He clings to my leg."
     macS "Aren't their children around outside?"
@@ -553,6 +558,8 @@ label vig3_sc6():
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b-"
     recS "WOAH! How about I go an get us another round. C'mon buddy, I'll get you a treat."
+    hide rec with dissolve
+    hide mac with dissolve
     "MAC looks at me expectantly."
     mS "In eyesight, got it?"
     "MAC lets out an excited noise and heads to the bar with Rec."
@@ -577,6 +584,8 @@ label vig3_sc6():
     "I raise mine in response."
     mS "Long live the Oakley!"
     # maybe fade in and out, show the passage of time
+    hide teresa with dissolve
+    hide jennica with dissolve
     "As the night continues on, the Broken Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks as a barkeep cleans them."
     "Rec is telling MAC a story that has him fully engaged."
     "Teresa is in a corner watching in unwavering curiosity at the plants that line the ceiling, tossing bits of food up for them to catch."
