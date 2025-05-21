@@ -680,7 +680,8 @@ label vig3_sc6():
     zan "Ovid is strong of heart, muscles on the inside."
     enS "That tends to be where they go yes."
     ovid "Zan must we always play this game whenever we go out?"
-    "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool. Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the karousel."
+    "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
+    "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the karousel."
     "The first team that withdraws or has a member drop loses."
     "By round ten, it's not looking good."
     zan "How is moxie?"
@@ -733,6 +734,137 @@ label vig3_sc6():
     enS "Can't do that while we play."
     pS "I got it covered, just stay standing until I do."
     "The game resumes and I step away."
+    show zan stream at stream_center with dissolve
+    zan "Now! Moxie!"
+    "I scan my options."
+    "If I start a fight I'm sure I can get someone slammed into the table. That should take care of some of the issues."
+    "I look at the ceiling where the carnivorous plants lie waiting and salivating."
+    "One of the ropes for their netting looks frayed and worn if I undo it then it's open season on that table. Maybe quits for the Karousel."
+    hide zan with dissolve
+    hide jennica with dissolve
+    hide teresa with dissolve
+    #player makes choice#
+    "I see a young couple pinning each other on a pillar near the table." #bar fight choice
+    "When they separate I go up to the young man and shove him."
+    show husbnpc stream at stream_right with dissolve
+    mS "How dare you! We spent five glorious nights together, you tell me you love me and after months of not hearing from you I find you here with a random woman!"
+    show wifenpc stream at stream_left with dissolve
+    wifenpc "Random! I'm his wife!"
+    husbnpc "What? huh? I don't-"
+    mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
+    wifenpc "PROPOSE! So that's what you've been doing on your business trips huh?"
+    husbnpc "No-what?!? I don't even know her!"
+    "Before I can even add fuel to the fire. With a one-two combo that almost lands the young woman a spot on the Oakley, the man fumbles onto Ovid and the table."
+    "Cards fly everywhere and before I can process what happens Zan has the man in a chokehold."
+    show zan stream at stream_center with dissolve
+    zan "Idiot! You interrupt the Karousel!"
+    "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
+    hide wifenpc with dissolve
+    hide husbnpc with dissolve
+    hide zan with dissolve
+    #maybe fade in and out to show passage of time again?#
+    "Ovid coughs loudly before putting something in his pocket, with cards scattered all over the floor the deck is replaced."
+    "The karousel is untouched, the rounds continue."
+    "Round 25 is rough. Even with some of the obstacles out of the way Teresa and Jennica are barely holding on. Ovid is finally looking like he's playing the game and Zan is rocking in his seat like a child."
+    ovid "Please, call it quits?"
+    show teresa stream neutral at stream_right with dissolve 
+    enS "Not likely."
+    show zan stream at stream_center with dissolve
+    zan "Hehehe, I say I am impressed. And having the best of times!"
+    show jennica stream neutral at stream_left with dissolve
+    pS "Not after this you aren't."
+    "When Zan and Ovid lose the round an opportunity presents itself. Zan will tip his chair back, one clean shot to the leg and he's on the ground. But that's risky."
+    "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs. But if they actually bet the ship then I don't know how we're gonna get it back."
+    ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
+    "I can't leave it up to chance, the crowd is completely absorbed by this game. I set my pistol to stun and take my position."
+    "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
+    "Then I see them, a small group near the door, half watching the game. Is that - Ama's crew? No. My vision is still betraying me and I don't have time to get a better look."
+    zan "FOR MY LOYAL FANS!"
+    "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
+    "As I pull the trigger Zan's eyes meet mine. Damn."
+    play audio "lazer.wav" volume 5.0
+    hide zan with Dissolve (0.1)
+    "Zan falls hard, the pub is silent."
+    pS "HELL YEAH!!!"
+    "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
+    show zan stream at stream_center with dissolve
+    "Zan gets up to accept defeat, Ovid has fully crawled under the table."
+    "I look over again to where I saw Ama's crew, no one is there."
+    "The door has just swung closed."
+    ovid "Thank the Makers it's over."
+    zan "Good, good! NOW! I must go and throw up. HAHA!"
+    "The three exchange handshakes as Zan passes by me and stops."
+    zan "You are Captain, no? Good shot, well played, but messy. Have more faith next time."
+    #maybe different line if you didnt shoot?
+    "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
+    hide zan with dissolve
+    "I move to greet my victors."
+    mS "I can't believe you pulled that off. That was some risky business."
+    pS "C'mon Cap, just harmless fun."
+    mS "Betting the ship is harmless to you?"
+    enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+    mS "A show?"
+    pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
+    enS "Agreed."
+    pS "But alls well, big guy told us he'd comp our room for the night."
+    "I'm truly losing it."
+    mS "Alright, well congrats then. I'm turning in."
+    hide teresa with dissolve
+    hide jennica with dissolve
+    "Turning away from the two of them, I head back to Rec and MAC."
+    show rec stream neutral at stream_right with dissolve
+    show mac stream neutral at stream_left_mac with dissolve
+    mS "I'm taking the kid, we'll check in with you tomorrow at the shop, alright?"
+    recS "Got it!"
+    recS "See ya later little buddy!"
+    macS "Bye bye!"
+    "Reccrin goes to say their goodbyes to the rest of the crew before heading out."
+    hide rec with dissolve
+    mS "Ready to turn in, kid?"
+    "MAC looks at me almost offended."
+    macS "Yes, Captain."
+    "We head upstairs and turn in for the night."
+    hide mac with dissolve
+    jump vig3_sc7
+
+label vig3_sc7():
+    hide bbpub_stream 
+    show akarplaza_stream at topleft onlayer background with dissolve
+    "The next day is hot, the hangover in my brain is smashing at my skull like it's the bars of a prison."
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
+    enS "We spent all day searching, and nothing?"
+    pS "Well there was that one guy."
+    mS "He tried to sell a walking stick he carved when we asked for a range extender."
+    pS "I thought it was quite lovely."
+    "MAC is silent."
+    mS "Alright kid?"
+    show mac stream neutral at stream_center_mac with dissolve
+    macS "Yes, I hope we can find a lead soon."
+    ##Conversation with MAC?##
+    hide mac with dissolve
+    "Rec gave us some good starting points but after searching for hours we've notice most operations aren't running with their usual stock because of the Inventor's fair."
+    mS "We might need to split up."
+    enS "I agree we'll cover more ground."
+    pS "Are we just looking to buy?"
+    #player choice
+    mS "Do whatever it takes, we need that part and we might have to take it if necessary."
+    pS "Go for option A prepare for option B. Got it."
+    enS "I'll sweep the plaza, Jennica the outskirts, Moze you take MAC and do another sweep of the shops near Rec."
+    mS "Perfect Resa, let's get started then. Now MAC-"
+    "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
+    mS "MAC!"
+    "I know Teresa and Jennica are screaming for him to but I can't hear them, I can't hear anything but the pounding of my heart in my skull."
+    "Where is he?"
+    "WHERE IS HE?"
+    "Then I see him far in the distance, wheeling himself slowly to a group of people."
+    "Hounds."
+    "My feet move before my brain can register what is happening."
+    "It happens so fast, MAC runs into the leader, his arms frantic."
+    "They swarm him, my feet aren't moving fast enough. I can't think of anything but how fast my legs should be moving." 
+    "MOVE FASTER."
+    "When they take him and drive away, I don't register how a cruiser almost hit me, I don't feel the pain of my knees when they hit the ground in defeat."
+    "All I can hear is Ama's voice in my head, \"You'll have the chance to prove it, just not right now.\"" ##Consider changing this line##
 
 
 
