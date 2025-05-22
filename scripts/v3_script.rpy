@@ -200,7 +200,11 @@ label vig3_sc2():
     mS "MAC respectfully, I don't have time for this-"
     macS "Which is precisely why I have a suggestion, see I was scanning BigCorp databases..."
     "I feel the anger twisting my face." ##Dialogue choice thatlinks to MAC's reaction here.##
-    mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
+    menu:
+        "MAC you're going to blow our cover!":
+            mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
+        "Placeholder option 2":
+            mS "Dialogue here." #more gentle way of chiding MAC about being inconspicuous#
     "MAC rolls back" ## this reaction can differ based on choices##
     macS "I just wanted to be helpful..."
     "I let out a heavy sigh."
@@ -330,7 +334,14 @@ label vig3_sc4():
     "If I could die right now I would. Reccrin just starts at MAC blinking rapidly."
     recS "... What?"
     #mS (Multiple Response options about how to lie)
-    mS "Just a courier bot we found and outfitted figured we could use an extra hand and a morale boost..."
+    menu:
+        "Might be too dangerous to tell Rec everything."
+        "Just a courier bot we picked up.":
+            mS "Just a courier bot we found and outfitted figured we could use an extra hand and a morale boost..."
+        "Placeholder choice 2":
+            "Dialogue here."
+        "Placeholder choice 3":
+            "also dialogue here."
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
     recS "Mind if I take a closer look?"
     "MAC looks up at me. I guess we're in it now...."
@@ -356,7 +367,14 @@ label vig3_sc4():
     mS "I'm not feeling too inclined."
     macS "But they have a right to know..."
     "I need to think about how to approach this." ###Add multipleoptions###
-    mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
+    menu:
+        "Mac thinks Rec has a right to know about their brother."
+        "We can't talk about this right now.":
+            mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
+        "Placeholder choice 2":
+            mS "dialogue here."
+        "Placeholder choice 3":
+            mS "More dialogue"
     "Reccrin comes out after a brief moment with a long antennae and some internal parts for our Comms."
     show mac stream neutral at stream_left with move
     #show rec stream neutral at stream_center with dissolve
@@ -390,6 +408,20 @@ label vig3_sc4():
     "We stand back as the group rummages through the store, knocking over shelves and taking random items." 
     "They're armed to the teeth and now I understand why Rec is so quick to comply."
     ###Describe the wreck this group is leaving and give the players two opportunities to intervene or continue to comply silently.###
+    menu:
+        "They trash the place"
+        "That's enough!":
+            mS "Alright that's enough!"
+        "Let them continue":
+            "They keep trashing it."
+            "Description of them trashing Rec's shop."
+            menu:
+                "Do I intervene?"
+                "That's enough!":
+                    mS "Alright that's enough!"
+                "Stay quiet.":
+                    "They continue to trash the shop."
+                    "Something forces Moze to intervene."
     mS "Alright that's enough!"
     houndgoon "You'd be best to stay out of official business."
     "Another gangster chimes in."
@@ -405,24 +437,49 @@ label vig3_sc4():
     "I slowly walk up to the counter moving to get into his face."
     mS "So I'd like it back now."
     "The Hounds turn to us and I know they're gearing up for a fight. They probably won't kill us, but I can't imagine how banged up we'll be or what happens if they find MAC." ###The player must decide between three actions, fight, let them have it, or Bribe - IF THEY HAVEN'T BRIBED REGI###.
-    "(Fight) I get into his face - let him pry my gear from my cold dead hands. He smiles and throws the first punch before I can react." 
-    "It knocks the wind out of me and I hit the ground."
-    "Then impact after impact to my stomach before I can catch my breath. He gets low, right to my ear."
-    houndleader "You should've died with the rest of the Snakehawks."
-    "He takes the antennae as I struggle to get up from the floor."
-    houndleader "Pleasure doing business with you."
-    "The Hounds leave us to pick ourselves up and walk out of the shop. MAC who has thankfully been hiding rolls forward."
-    hide houndgoon with dissolve
-    hide houndleader with dissolve
-    show mac stream neutral at stream_left with dissolve
-    show jennica stream neutral at stream_left with dissolve
-    show teresa stream neutral at stream_right with dissolve
-    macS "Captain are you hurt?"
-    mS "Just my pride."
-    "Teresa goes to pull me up."
-    enS "I want to blow that man up from the inside."
-    pS "Maybe we can use him as our antennae instead."
-    mS "Now that's a thought. Rec, you know those guys?"
+    menu:
+        "How do I deal with this?"
+        "Fight them.":
+            "I get into his face - let him pry my gear from my cold dead hands. He smiles and throws the first punch before I can react." 
+            "It knocks the wind out of me and I hit the ground."
+            "Then impact after impact to my stomach before I can catch my breath. He gets low, right to my ear."
+            houndleader "You should've died with the rest of the Snakehawks."
+            "He takes the antennae as I struggle to get up from the floor."
+            houndleader "Pleasure doing business with you."
+            "The Hounds leave us to pick ourselves up and walk out of the shop. MAC who has thankfully been hiding rolls forward."
+            hide houndgoon with dissolve
+            hide houndleader with dissolve
+            show mac stream neutral at stream_left with dissolve
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
+            macS "Captain are you hurt?" 
+            mS "Just my pride."
+            "Teresa goes to pull me up."
+            enS "I want to blow that man up from the inside."
+            pS "Maybe we can use him as our antennae instead."
+            mS "Now that's a thought. Rec, you know those guys?"
+        "Let them take the antenna.":
+            "They take the antenna."
+            "Dialogue placeholder here."
+            houndleader "Pleasure doing business with you."
+            "Hounds leave placeholder."
+            hide houndgoon with dissolve
+            hide houndleader with dissolve
+            show mac stream neutral at stream_left with dissolve
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
+            mS "Rec who were those guys?"
+        "Try and bribe them" if reginaldChoice == False:
+            "You try and bribe them."
+            "Dialogue placeholder here." #it doesnt work right? they need to take the antenna to force the crew to keep looking
+            houndleader "Pleasure doing business with you."
+            "Hounds leave placeholder."
+            hide houndgoon with dissolve
+            hide houndleader with dissolve
+            show mac stream neutral at stream_left with dissolve
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
+            mS "Rec who were those guys?"
     "They pull out five glasses. And drop a bottle of brandy on the counter"
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in giving it to MAC."
     macS "Thank you!"
@@ -594,35 +651,56 @@ label vig3_sc6():
     "Just as I get up to see them I notice that wide brimmed hat again, long dark hair, she walks right past me and out the door."
     "There's a chill that runs down my spine."
     ###Recount choice again###
-    "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
-    hide bbpub_stream with dissolve
-    show akarplaza_stream at topleft onlayer background with dissolve 
-    "I struggle to navigate the dark winding streets the stranger tucks away behind an alley and I move to close in on them."
-    "As I turn the corner I'm met with a knife to my throat. So clearly not Ama's style."
-    show stranger 1 stream at stream_center with dissolve
-    "The stranger eyes bright and blue with a heart-shaped face and a mole under her left eye."
-    strngr1 "Why are you following me?"
-    mS "I'm sorry I just-"
-    "She presses the knife into my neck."
-    strngr1 "You what? Thought I was some easy mark."
-    "She's young in her voice and her confidence."
-    mS "No, I just thought you were someone else."
-    "She doesn't let go of the knife."
-    strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
-    "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
-    mS "Oh, I'm far from disappointed." #flirt
-    "A small smile comes on her face."
-    strngr1 "Oh yeah?"
-    mS "You're a much more pleasant sight if I say so myself."
-    "She doesn't let go of the knife but moves in closer."
-    strngr1 "You're not a eyesore yourself."
-    mS "Ouch I'm hurt."
-    strngr1 "Not yet, but the night's young."
-    "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
-    hide stranger 1 stream with dissolve 
-    "I return to the Broken Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
-    hide akarplaza_stream
-    show bbpub_stream at topleft onlayer background with dissolve
+    menu:
+        "Do I investigate this stranger?"
+        "Follow them":
+            "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
+            hide bbpub_stream with dissolve
+            show akarplaza_stream at topleft onlayer background with dissolve 
+            "I struggle to navigate the dark winding streets the stranger tucks away behind an alley and I move to close in on them."
+            "As I turn the corner I'm met with a knife to my throat. So clearly not Ama's style."
+            show stranger 1 stream at stream_center with dissolve
+            "The stranger eyes bright and blue with a heart-shaped face and a mole under her left eye."
+            strngr1 "Why are you following me?"
+            mS "I'm sorry I just-"
+            "She presses the knife into my neck."
+            strngr1 "You what? Thought I was some easy mark."
+            "She's young in her voice and her confidence."
+            mS "No, I just thought you were someone else."
+            "She doesn't let go of the knife."
+            strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
+            "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
+            menu:
+                "How do I get out of this?"
+                "Flirt.":
+                    mS "Oh, I'm far from disappointed." #flirt
+                    "A small smile comes on her face."
+                    strngr1 "Oh yeah?"
+                    mS "You're a much more pleasant sight if I say so myself."
+                    "She doesn't let go of the knife but moves in closer."
+                    strngr1 "You're not a eyesore yourself."
+                    mS "Ouch I'm hurt."
+                    strngr1 "Not yet, but the night's young."
+                    "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
+                    hide stranger 1 stream with dissolve 
+                    "I return to the Broken Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
+                    hide akarplaza_stream
+                    show bbpub_stream at topleft onlayer background with dissolve
+                "Hands up, walk away.":
+                    "placeholder dialogue."
+                    hide stranger 1 stream with dissolve 
+                    "I return to the Broken Bulb a bit disheveled."
+                    hide akarplaza_stream
+                    show bbpub_stream at topleft onlayer background with dissolve
+                "Wrestle the knife away":
+                    "Placeholder dialogue here."
+                    "violence ensues."
+                    hide stranger 1 stream with dissolve 
+                    "I return to the Broken Bulb a bit disheveled."
+                    hide akarplaza_stream
+                    show bbpub_stream at topleft onlayer background with dissolve
+        "Placeholder choice 2": #dont follow them? maybe a similar flashback with ama to have the same effect?
+            "Dialogue placeholder."
     "A part of the bar goes silent as a bald burly man stands to address the crowd."
     show zan stream at stream_center with dissolve
     zan "Patrons! Who is brave enough to ride Karousel!"
@@ -743,25 +821,30 @@ label vig3_sc6():
     hide zan with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
-    #player makes choice#
-    "I see a young couple pinning each other on a pillar near the table." #bar fight choice
-    "When they separate I go up to the young man and shove him."
-    show husbnpc stream at stream_right with dissolve
-    mS "How dare you! We spent five glorious nights together, you tell me you love me and after months of not hearing from you I find you here with a random woman!"
-    show wifenpc stream at stream_left with dissolve
-    wifenpc "Random! I'm his wife!"
-    husbnpc "What? huh? I don't-"
-    mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
-    wifenpc "PROPOSE! So that's what you've been doing on your business trips huh?"
-    husbnpc "No-what?!? I don't even know her!"
-    "Before I can even add fuel to the fire. With a one-two combo that almost lands the young woman a spot on the Oakley, the man fumbles onto Ovid and the table."
-    "Cards fly everywhere and before I can process what happens Zan has the man in a chokehold."
-    show zan stream at stream_center with dissolve
-    zan "Idiot! You interrupt the Karousel!"
-    "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
-    hide wifenpc with dissolve
-    hide husbnpc with dissolve
-    hide zan with dissolve
+    menu:
+        "How do I help Jennica and Teresa?"
+        "Start a bar fight.":
+            "I see a young couple pinning each other on a pillar near the table." #bar fight choice
+            "When they separate I go up to the young man and shove him."
+            show husbnpc stream at stream_right with dissolve
+            mS "How dare you! We spent five glorious nights together, you tell me you love me and after months of not hearing from you I find you here with a random woman!"
+            show wifenpc stream at stream_left with dissolve
+            wifenpc "Random! I'm his wife!"
+            husbnpc "What? huh? I don't-"
+            mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
+            wifenpc "PROPOSE! So that's what you've been doing on your business trips huh?"
+            husbnpc "No-what?!? I don't even know her!"
+            "Before I can even add fuel to the fire. With a one-two combo that almost lands the young woman a spot on the Oakley, the man fumbles onto Ovid and the table."
+            "Cards fly everywhere and before I can process what happens Zan has the man in a chokehold."
+            show zan stream at stream_center with dissolve
+            zan "Idiot! You interrupt the Karousel!"
+            "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
+            hide wifenpc with dissolve
+            hide husbnpc with dissolve
+            hide zan with dissolve
+        "Shoot the rope holding the carnivorous plants":
+            "Placeholder dialogue here."
+            "Plants do some stuff, problem ensues."
     #maybe fade in and out to show passage of time again?#
     "Ovid coughs loudly before putting something in his pocket, with cards scattered all over the floor the deck is replaced."
     "The karousel is untouched, the rounds continue."
@@ -776,41 +859,62 @@ label vig3_sc6():
     "When Zan and Ovid lose the round an opportunity presents itself. Zan will tip his chair back, one clean shot to the leg and he's on the ground. But that's risky."
     "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs. But if they actually bet the ship then I don't know how we're gonna get it back."
     ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
-    "I can't leave it up to chance, the crowd is completely absorbed by this game. I set my pistol to stun and take my position."
-    "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
-    "Then I see them, a small group near the door, half watching the game. Is that - Ama's crew? No. My vision is still betraying me and I don't have time to get a better look."
-    zan "FOR MY LOYAL FANS!"
-    "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
-    "As I pull the trigger Zan's eyes meet mine. Damn."
-    play audio "lazer.wav" volume 5.0
-    hide zan with Dissolve (0.1)
-    "Zan falls hard, the pub is silent."
-    pS "HELL YEAH!!!"
-    "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
-    show zan stream at stream_center with dissolve
-    "Zan gets up to accept defeat, Ovid has fully crawled under the table."
-    "I look over again to where I saw Ama's crew, no one is there."
-    "The door has just swung closed."
-    ovid "Thank the Makers it's over."
-    zan "Good, good! NOW! I must go and throw up. HAHA!"
-    "The three exchange handshakes as Zan passes by me and stops."
-    zan "You are Captain, no? Good shot, well played, but messy. Have more faith next time."
-    #maybe different line if you didnt shoot?
-    "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
-    hide zan with dissolve
-    "I move to greet my victors."
-    mS "I can't believe you pulled that off. That was some risky business."
-    pS "C'mon Cap, just harmless fun."
-    mS "Betting the ship is harmless to you?"
-    enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
-    mS "A show?"
-    pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
-    enS "Agreed."
-    pS "But alls well, big guy told us he'd comp our room for the night."
-    "I'm truly losing it."
-    mS "Alright, well congrats then. I'm turning in."
-    hide teresa with dissolve
-    hide jennica with dissolve
+    menu:
+        "How do I finish this?"
+        "Shoot the chair":
+            "I can't leave it up to chance, the crowd is completely absorbed by this game. I set my pistol to stun and take my position."
+            "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
+            "Then I see them, a small group near the door, half watching the game. Is that - Ama's crew? No. My vision is still betraying me and I don't have time to get a better look."
+            zan "FOR MY LOYAL FANS!"
+            "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
+            "As I pull the trigger Zan's eyes meet mine. Damn."
+            play audio "lazer.wav" volume 5.0
+            hide zan with Dissolve (0.1)
+            "Zan falls hard, the pub is silent."
+            pS "HELL YEAH!!!"
+            "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
+            show zan stream at stream_center with dissolve
+            "Zan gets up to accept defeat, Ovid has fully crawled under the table."
+            "I look over again to where I saw Ama's crew, no one is there."
+            "The door has just swung closed."
+            ovid "Thank the Makers it's over."
+            zan "Good, good! NOW! I must go and throw up. HAHA!"
+            "The three exchange handshakes as Zan passes by me and stops."
+            zan "You are Captain, no? Good shot, well played, but messy. Have more faith next time."
+            "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
+            hide zan with dissolve
+            "I move to greet my victors."
+            mS "I can't believe you pulled that off. That was some risky business."
+            pS "C'mon Cap, just harmless fun."
+            mS "Betting the ship is harmless to you?"
+            enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+            mS "A show?"
+            pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
+            enS "Agreed."
+            pS "But alls well, big guy told us he'd comp our room for the night."
+            "I'm truly losing it."
+            mS "Alright, well congrats then. I'm turning in."
+            hide teresa with dissolve
+            hide jennica with dissolve
+        "Trust the crew to win.":
+            #need a variable to determine if they win or not. 
+            "Placeholder dialogue."
+            "We are victorious." #if the variable determines that they win.
+            "I move to greet my victors."
+            mS "I can't believe you pulled that off. That was some risky business."
+            pS "C'mon Cap, just harmless fun."
+            mS "Betting the ship is harmless to you?"
+            enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+            mS "A show?"
+            pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
+            enS "Agreed."
+            pS "But alls well, big guy told us he'd comp our room for the night."
+            "I'm truly losing it."
+            mS "Alright, well congrats then. I'm turning in."
+            hide teresa with dissolve
+            hide jennica with dissolve
+            #if they lose, some dialogue here explaining that they didnt actually lose the ship.
+            # "Jennica and Teresa make good on their end of the deal, begin singing."
     "Turning away from the two of them, I head back to Rec and MAC."
     show rec stream neutral at stream_right with dissolve
     show mac stream neutral at stream_left_mac with dissolve
@@ -841,6 +945,12 @@ label vig3_sc7():
     mS "Alright kid?"
     show mac stream neutral at stream_center_mac with dissolve
     macS "Yes, I hope we can find a lead soon."
+    menu:
+        "Conversation with MAC placeholder."
+        "Placeholder dialogue 1":
+            "Dialogue placeholder."
+        "Placeholder dialogue 2":
+            "Dialogue placeholder"
     ##Conversation with MAC?##
     hide mac with dissolve
     "Rec gave us some good starting points but after searching for hours we've notice most operations aren't running with their usual stock because of the Inventor's fair."
@@ -848,8 +958,13 @@ label vig3_sc7():
     enS "I agree we'll cover more ground."
     pS "Are we just looking to buy?"
     #player choice
-    mS "Do whatever it takes, we need that part and we might have to take it if necessary."
-    pS "Go for option A prepare for option B. Got it."
+    menu:
+        "How do we want to approach getting the antenna?"
+        "Whatever it takes, maybe violence.":
+            mS "Do whatever it takes, we need that part and we might have to take it if necessary."
+            pS "Go for option A prepare for option B. Got it."
+        "Placeholder choice 2":
+            "Dialogue placeholder."
     enS "I'll sweep the plaza, Jennica the outskirts, Moze you take MAC and do another sweep of the shops near Rec."
     mS "Perfect Resa, let's get started then. Now MAC-"
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
