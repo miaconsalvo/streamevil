@@ -86,6 +86,8 @@ label vig3outlawstart():
     enS "We can't always expect to feel good about what we do. It's a difficult call to make."
     mS "Please."
     enS "SHE WON'T EVEN LOOK AT ME MOZE!"
+    $ reactTarget = "vig3_sc1_out"
+    show screen streamerCommentary
     "She slams the table and her glass spills on the ground with a clang spilling. Her breath is strained as she calms herself."
     "I set my cup down gently."
     enS "We weren't the best people before we started this, and I know you and Jennica have more history than even I know about." 
@@ -93,6 +95,7 @@ label vig3outlawstart():
     "I don't respond. Teresa needs this."
     enS "But ever since we took that- took MAC, it's been one awful choice after another. Barely escaping every time..."
     "Teresa lets out a defeated sigh. Before I can respond Jennica's voice echoes through the speaker."
+    hide screen streamerCommentary
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
     "Teresa shoots up, I place hand on her shoulder."
     mS "Take ten seconds."
@@ -141,6 +144,8 @@ label vig3marshalstart():
     mS "Please."
     "Jennica goes quiet."
     pS "She can barely look at me Moze..."
+    $ reactTarget = "vig3_sc1_mar"
+    show screen streamerCommentary
     "Jennica smacks the glass away from her, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
     "I set my cup down gently."
     pS "We're doing better, and that's all fine and good. And hell I'll stand by what I said."
@@ -149,6 +154,7 @@ label vig3marshalstart():
     pS "I like the kid. But we've been over our heads from the start..." 
     pS "She's gonna find us, and I'm sure BigCorp isn't hung up on whether or not we're brought back in one piece."
     "Jennica lets out a defeated sigh. Teresa's voice echoes through the speaker before I can answer."
+    hide screen streamerCommentary
     enS "Captain! There's a transmission for us - I'm certain it's the Dragonflies."
     "Jennica shoots up, I place a hand on her shoulder."
     mS "Take ten seconds."
@@ -177,6 +183,8 @@ label vig3_sc2():
     mS "We should be used to a tight schedule by now."
     "We take a moment to think."
     macS "Dad..."
+    $ reactTarget = "vig3_sc2_macdad"
+    show screen streamerCommentary
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
     "MAC sits innocently in his chair, eyes looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
     mS "What's going on bud?"
@@ -185,6 +193,7 @@ label vig3_sc2():
     enS "That's remarkable." #(multiple=2) #might break the dialogue box positions
     "The two exchange a quick look before turning away, remembering that they're still fighting. I turn the focus away from MAC."
     mS "Let's consider our options, come up with a plan to get our Comms back in working order. Meet at the Bridge in an hour to debrief."
+    hide screen streamerCommentary
     pS "Yes Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     enS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf."
@@ -232,6 +241,8 @@ label vig3_sc3():
     enS "Quite a lot of fanfare."
     pS "Really cleaned up the place."
     macS "I believe I just saw someone steal candy from a child..."
+    $ reactTarget = "vig3_sc3_maccandy"
+    show screen streamerCommentary
     mS "Yeah stick close bud, don't go running off around here."
     pS "Moze why'd ya bring us here? Fancy gettin' caught by Ama?"
     enS "It's risky even by your standards."
@@ -243,6 +254,7 @@ label vig3_sc3():
     macS "There doesn't seem to be many enforcers operating here. Curious."
     mS "Yeah they tried that once, didn't go so hot."
     enS "But doesn't mean there aren't some off duty grunts here."
+    hide screen streamerCommentary
     mS "Resa look, the Inventor's Fair is in town." 
     mS "Most of the security will be looking at the Vineyard- not here." 
     mS "Let's see if we can find some old friends, grab what we need, and maybe a drink or two..."
@@ -261,6 +273,8 @@ label vig3_sc3():
     "Before anyone can respond, Jennica punches the man in the face. He falls down hard she puts her boot on his throat, Teresa leans over grinning." 
     #hide houndleader with dissolve
     "I can feel MAC on my leg as he hides behind me."
+    $ reactTarget = "vig3_sc3_firstfight"
+    show screen streamerCommentary
     enS "How's this, sweetcheeks?"
     "I can hear footsteps rushing to us. He's not alone. I pull my gun in the direction of the sound."
     #show houndgoon stream neutral at stream_center with dissolve 
@@ -268,6 +282,7 @@ label vig3_sc3():
     mS "Not likely boys."
     "The two men fall back, well built but not sharp enough for a fight like this. I give the signal to Jennica as she lets their friend scramble up before heading out."
     #hide houndgoon with dissolve
+    hide screen streamerCommentary
     "The city moves as normal, uninterested in what just happened."
     enS "It's good to be back."
     hide teresa with Dissolve(0.5)
@@ -390,6 +405,8 @@ label vig3_sc4():
     #show houndleader at stream left with dissolve
     "A group of five enter the shop, dark uniforms with a wolf patched on their right shoulder." 
     "I know some of these guys, they're ones who gave Resa a hard time." ##The Hound Leader##
+    $ reactTarget = "vig3_sc4_houndraid"
+    show screen streamerCommentary
     houndleader "Alright Reccrin, you know the drill! Mandatory sweep!"
     houndleader "Don't cause any-oh!"
     enS "You must be joking."
@@ -401,6 +418,7 @@ label vig3_sc4():
     #show houndgoon at stream_right with dissolve
     "A smaller one moves up next to the big guy, she's the next toughest and looks like she has something to prove."
     houndgoon "I suggest you get yourself and your crew in order and stay out of the way."
+    hide screen streamerCommentary
     "Rec looks at me with a forced smile."
     recS "Please Moze."
     recS "Hounds! We don't want any trouble, just do what you need to do."
@@ -550,6 +568,8 @@ label vig3_sc5():
     mS "I'd bet money this place hasn't seen a bigger stunt than that."
     amaS "...You bet?"
     "I jump and turn to the direction of the voice, this time I make it to my gun."
+    $ reactTarget = "vig3_sc5_amahallu"
+    show screen streamerCommentary
     "When I come to I realize I've scared the young showgirl behind me near to death."
     mS "What?"
     "She stares wide eyed and is taken her off script."
@@ -560,6 +580,7 @@ label vig3_sc5():
     "She attempts to hand me a casino card, it's holographic with an animation of a supernova and 50 credits in big lettering."
     mS "Thanks but no thanks."
     showgirl "Well, have a nice day!"
+    hide streamerCommentary
     "Daisy hurriedly leaves adn heads to another group to perform the same spiel. I see her carefully get their attention this time."
     pS "Alright alright, what's this about?"
     enS "You've been anxious all day Captain."

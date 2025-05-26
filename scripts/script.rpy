@@ -192,6 +192,10 @@ default vig2_marshalEpilogue = False
 default vig2_outlawEpilogue = False
 default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
 
+####Variables for Vignette 3####
+default firstfightprediction = False
+
+
 
 #default yadj = ui.adjustment()
 
