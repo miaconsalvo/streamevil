@@ -546,6 +546,10 @@ label vig3_sc5():
     recS "Why don't you ask your friends kid."
     mS "It was a long time ago."
     pS "Mighty legendary."
+    hide rec with dissolve
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide mac with dissolve
     "I'm taken back to the plaza several years back, rowdy and riotous."
     "BigCorp officers scattered attempting to suppress the riot."
     "With small fires everywhere Teresa hangs from the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
@@ -564,6 +568,7 @@ label vig3_sc5():
     "I'm barely able to catch her in time."
     mS "I got ya!"
     "I carry Teresa in my arms as Jennica trails quickly behind just as the bomb detonates and blows the statue sky high."
+    show teresa stream neutral at stream_right with dissolve
     enS "It was an insane idea."
     mS "I'd bet money this place hasn't seen a bigger stunt than that."
     amaS "...You bet?"
@@ -571,6 +576,7 @@ label vig3_sc5():
     $ reactTarget = "vig3_sc5_amahallu"
     show screen streamerCommentary
     "When I come to I realize I've scared the young showgirl behind me near to death."
+    show showgirl stream at stream_left with dissolve 
     mS "What?"
     "She stares wide eyed and is taken her off script."
     showgirl "Uh um, name's Daisy, do you bet?"
@@ -581,7 +587,11 @@ label vig3_sc5():
     mS "Thanks but no thanks."
     showgirl "Well, have a nice day!"
     hide streamerCommentary
-    "Daisy hurriedly leaves adn heads to another group to perform the same spiel. I see her carefully get their attention this time."
+    "Daisy hurriedly leaves and heads to another group to perform the same spiel. I see her carefully get their attention this time."
+    hide showgirl with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show mac stream neutral at stream_left with dissolve
+    show rec stream neutral at stream_center with dissolve
     pS "Alright alright, what's this about?"
     enS "You've been anxious all day Captain."
     mS "I'm fine."
@@ -594,6 +604,10 @@ label vig3_sc5():
     "They're tall and well built with a wide brimmed hat, in all dark leather, and long black familiar hair."
     macS "Are you coming Captain?"
     mS "Sure thing kid."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide rec with dissolve
+    hide mac with dissolve
     jump vig3_sc6
 
 label vig3_sc6():
@@ -847,9 +861,7 @@ label vig3_sc6():
         "Start a bar fight.":
             "I see a young couple pinning each other on a pillar near the table." #bar fight choice
             "When they separate I go up to the young man and shove him."
-            show husbnpc stream at stream_right with dissolve
             mS "How dare you! We spent five glorious nights together, you tell me you love me and after months of not hearing from you I find you here with a random woman!"
-            show wifenpc stream at stream_left with dissolve
             wifenpc "Random! I'm his wife!"
             husbnpc "What? huh? I don't-"
             mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
@@ -860,8 +872,6 @@ label vig3_sc6():
             show zan stream at stream_center with dissolve
             zan "Idiot! You interrupt the Karousel!"
             "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
-            hide wifenpc with dissolve
-            hide husbnpc with dissolve
             hide zan with dissolve
         "Shoot the rope holding the carnivorous plants":
             "Placeholder dialogue here."
@@ -1088,14 +1098,11 @@ label vig3_sc8():
 label vig3_sc9():
     hide vineyardinventorfair_stream
     show inventorfairgallery_stream at topleft onlayer background
-    show invfairnpc1 at stream_center with dissolve
     invfairnpc1 "I told them raising Silver Badgers was a terrible idea! Now they have a torn up farm and no coats to show for it."
     "My eyes nearly roll out of my head at the forced laughter from the surrounding guests."
     "I hate schmoozing, the evening has droned on and absolutely no leads or sign of MAC anywhere."
-    hide invfairnpc1 with dissolve
     "I see Jenn taking an interested sip of her drink as Rec chats up some presenters near their inventions. One of the other guest follows my sight line." 
     "I think their name was Mills?"
-    show invfairnpc2 at stream_center with dissolve
     invfairnpc2 "I know it's such an eyesore, that arm should be scrapped honestly."
     mS "Don't you have modified teeth."
     invfairnpc2 "Of course but you could never tell!"
@@ -1106,14 +1113,12 @@ label vig3_sc9():
         "Let it be.":
             "Placeholder dialogue."
             "Better let this go."
-            hide invfairnpc2 with dissolve
         "Take him down a peg.":
             "Now I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gentle on the fabric of their flared pants."
             "They tumble over knocking several drinks around and onto them."
             mS "Oh dear are you alright!"
             invfairnpc2 "MY SUIT! I knew I should've had these pants hemmed. Damn stylist!"
             "Mills walks away dripping on a few guests with them."
-            hide invfairnpc2 with dissolve
             mS "I guess some folks can't hold their drink."
             "From the crowd, I hear a voice murmuring"
             invfairnpc1 "There's one every year." #using invfairnpc1 because it's just labeled as "Inventor's fair guest." works for offscreen npc.
@@ -1166,7 +1171,6 @@ label vig3_sc9():
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
     "The music dies down an a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
     "A finely dressed man walks up to the platform an attendant wheels in something covered by a blanket."
-    show bcrep stream at stream_left with dissolve
     bcrep "Ladies and Gentlemen, honorable guests of the Vineyard. We at Big Corp would like to thank Reynar for this opportunity to present a prototype for a new and exciting venture."
     "The crowd murmurs at the word prototype, I move closer to the corner of the room. Ready to make an escape."
     "Until the representative pulls off the sheet revealing their newest invention, a small purple robot with an unmistakable leaf over his head."
@@ -1180,7 +1184,6 @@ label vig3_sc9():
     "The room chuckles as the representative keeps talking. I look over at the crew who are frozen, unsure of how to proceed. Jennica begins to move up to me but stops and turns white as a ghost."
     amaS "Now isn't this just a stroke of bad luck."
     hide mac with dissolve
-    hide bcrep with dissolve
     "I turn to the voice and am certain I've fully lost it." 
     "Because there she is, full ballgown staring at me with that same condescending look I've always known."
     show ama stream neutral at stream_center with dissolve
