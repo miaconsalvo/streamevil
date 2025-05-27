@@ -70,9 +70,11 @@ define zan = Character("Zan", what_font="Play-Regular.ttf", window_style = "ig_w
 define ovid = Character("Ovid", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "ovid stream", window_background="images/textbox/stream textbox npc.png") 
 define wifenpc = Character("Young Woman", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "wifenpc stream", window_background="images/textbox/stream textbox npc.png")
 define husbnpc = Character("Young Man", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "husbnpc stream", window_background="images/textbox/stream textbox npc.png")
-
-
-
+define vyattend = Character("Ryo", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "vyattend stream", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc1 = Character("Inventor's Fair Guest", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "invfairnpc1 stream", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc2 = Character("Mills", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "invfairnpc2 stream", window_background="images/textbox/stream textbox npc.png")
+define invfairannounce = Character("Announcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000",image = "bcrep stream", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen

@@ -1001,6 +1001,197 @@ label vig3_sc7():
     "MOVE FASTER."
     "When they take him and drive away, I don't register how a cruiser almost hit me, I don't feel the pain of my knees when they hit the ground in defeat."
     "All I can hear is Ama's voice in my head, \"You'll have the chance to prove it, just not right now.\"" ##Consider changing this line##
+    hide jennica with dissolve
+    hide teresa with dissolve
+    jump vig3_sc8
+
+label vig3_sc8():
+    hide akarplaza_stream
+    show bg black at topleft onlayer background
+    "We knew we couldn't chase down the Hounds. There was nothing that could be done once MAC was out of sight."
+    "It was Rec who gave us the suggestion to intercept them where they were. That meant in the belly of the beast, Reynar's Vineyard."
+    "It was nothing short of the worst case scenario."
+    hide bg black
+    show vineyardinventorfair_stream at topleft onlayer background
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
+    pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
+    "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
+    "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
+    pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
+    "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
+    enS "Can you give it a rest there are people around."
+    pS "I thought you'd want me to look presentable?"
+    mS "You need to be serious about."
+    pS "Oh I'm very serious, just my face doesn't look bugged out. Y'all should consider fixing yours."
+    "I relax my shoulders as an attendant walks over to us."
+    show vineyardattendnpc stream at stream_center with dissolve
+    vyattend "Good afternoon, my name Ryo and it is my pleasure to welcome you to the Vineyard." 
+    vyattend "Are you perhaps here for the Inventor's Fair?"
+    enS "Pleased to make your acquaintance Ryo. Please check the list for Vira Prismari and retinue."
+    "They raise an eyebrow before checking a screen."
+    vyattend "Prismari? How wonderful, we were certain to receive another refusal gift this year."
+    enS "Well we so desperately missed the inspiration of the Inventor's Fair. I hope you are well to accommodate us?"
+    vyattend "I must say your posse is such a surprise it's so... pleasantly unexpected."
+    "It's like watching a tennis match with a bomb for a ball."
+    enS "You know we are so thankful to Reynar for his consideration every year, and so lovely to see our donations put to such good use."
+    enS "You've truly spared no expense."
+    vyattend "Of course, we want to celebrate all those who contribute to research and development of the Outposts."
+    enS "The Prismari family is always proud to support this iconic hub of innovation."
+    vyattend "Very thoughtful, we are pleased to have you Miss Prismari, right this way."
+    "The attendant makes a gesture to the main ballroom and leaves us to check in other guests."
+    hide vineyardattendnpc with dissolve
+    pS "You're a bit scary when you're proper."
+    show rec stream neutral at stream_center with dissolve
+    recS "Can you kill someone by being too nice?"
+    enS "I'm sure someone has."
+    mS "Your sister isn't going to be mad with you using her name?"
+    enS "Please. My family hasn't come to these since I was exiled. Doubtful they'll even know I was here."
+    mS "I appreciate you going through this so we can get in."
+    enS "Couldn't have done it without Rec getting us ready."
+    recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
+    recS "The Inventor's is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
+    "Reynar and his Vineyard have spared no expense. His finely dressed guests being served by his android wait staff." 
+    "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
+    enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
+    pS "That why some of these statues don't have arms?"
+    "It's excess at its highest degree, it's so much that I can't imagine us finding MAC in all of this."
+    recS "Reynar likes to personally assess what the Hounds find so they're probably holding MAC somewhere close by."
+    pS "Let's rough up some suits and find out where they've got him."
+    "Teresa turns around and stops us in our tracks."
+    enS "Okay lets get this clear. We're not going to do anything of the like."
+    pS "Resa-"
+    enS "Listen Jenn, I appreciate how readuy are to fight for MAC. But I don't think you understand what situation we're in." 
+    pS "I ain't scared of the Hounds."
+    enS "The reason Reynar is using the Hounds in the first place is because all of his actual security is here. Look around." 
+    "I'm almost embarrassed by how long it took me to realize. Even now with us just talking I can feel dozens of eyes on us."
+    "The androids here aren't just waiting, they're scanning, searching. A step too far out of line and that's it for us."
+    pS "So now what?"
+    enS "Schmooze, flirt, impress, find anyway for someone to give you information but more importantly access."
+    pS "I ain't much of a talker..."
+    recS "How about we do this together? I'd like to see the work maybe even chat up some of the researchers here."
+    pS "I'd like that."
+    enS "Perfect! Cap let's fan out and figure this out."
+    mS "Got it, let's play up the part and be perfect guests for the Fair. More importantly stay in eyesight."
+    enS "And Jenn..."
+    pS "Hmm?"
+    enS "Mind your manners please."
+    pS "Course, milady."
+    "Jenn tips an imaginary hat and walks away with Rec."
+    hide jennica with dissolve
+    hide rec with dissolve
+    enS "We're doomed."
+    mS "Yeah..."
+    hide teresa with dissolve
+    jump vig3_sc9
+
+label vig3_sc9():
+    hide vineyardinventorfair_stream
+    show inventorfairgallery_stream at topleft onlayer background
+    show invfairnpc1 at stream_center with dissolve
+    invfairnpc1 "I told them raising Silver Badgers was a terrible idea! Now they have a torn up farm and no coats to show for it."
+    "My eyes nearly roll out of my head at the forced laughter from the surrounding guests."
+    "I hate schmoozing, the evening has droned on and absolutely no leads or sign of MAC anywhere."
+    hide invfairnpc1 with dissolve
+    "I see Jenn taking an interested sip of her drink as Rec chats up some presenters near their inventions. One of the other guest follows my sight line." 
+    "I think their name was Mills?"
+    show invfairnpc2 at stream_center with dissolve
+    invfairnpc2 "I know it's such an eyesore, that arm should be scrapped honestly."
+    mS "Don't you have modified teeth."
+    invfairnpc2 "Of course but you could never tell!"
+    invfairnpc2 "I swear they let anyone in the Fair nowadays."
+    mS "Truly..."
+    menu:
+        "This guy's an snob"
+        "Let it be.":
+            "Placeholder dialogue."
+            "Better let this go."
+            hide invfairnpc2 with dissolve
+        "Take him down a peg.":
+            "Now I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gentle on the fabric of their flared pants."
+            "They tumble over knocking several drinks around and onto them."
+            mS "Oh dear are you alright!"
+            invfairnpc2 "MY SUIT! I knew I should've had these pants hemmed. Damn stylist!"
+            "Mills walks away dripping on a few guests with them."
+            hide invfairnpc2 with dissolve
+            mS "I guess some folks can't hold their drink."
+            "From the crowd, I hear a voice murmuring"
+            invfairnpc1 "There's one every year." #using invfairnpc1 because it's just labeled as "Inventor's fair guest." works for offscreen npc.
+    "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
+    showgirl "It's you!"
+    show showgirl stream at stream_center with dissolve
+    "A familiar batch of feathers block my view, Daisy stands there very much a showgirl with a bit more refinement to her outfit."
+    mS "Oh hello, Daisy was it?"
+    showgirl "You bet?"
+    mS "50 Credits at Nova Casino."
+    showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
+    mS "I guess the only big win anyone is getting is at the bar."
+    "We both laugh, a genuine laugh."
+    mS "I'm sorry for earlier, I've been on edge."
+    showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
+    mS "Costume is great though."
+    showgirl "You think? Why you flatter me. It is one of my favorite parts."
+    "Daisy sways in front of me to show me the movement of her feathers."
+    mS "Fabulous. Truly."
+    "She has such a sweet smile."
+    showgirl "Well I should be off then."
+    mS "Actually wait! Daisy. I have a question for you."
+    showgirl "Oh?"
+    mS "If someone would want to maybe go around and check out some of the off the floor pieces. Could she?"
+    showgirl "Not without attracting some serious attention."
+    showgirl "Unless they waited for a big presentation and had someone to help them through."
+    mS "When's the next one scheduled?"
+    showgirl "The Big Corp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
+    "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it. I'm still trying to process what she just said."
+    mS "Big Corp is here?"
+    showgirl "Oh yeah, big reveal! Heard Reynar is hedging new investments and maybe some property in the Outposts, hard to expand without greasing some palms."
+    mS "Noted. I'll make sure to check out that view."
+    "Daisy nods and heads over to navigate the large crowd of guests. I rush to find the rest of my crew."
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
+    show rec stream neutral at stream_center with dissolve
+    pS "Oh so we're really in it now."
+    enS "Guess we didn't get much distance after all."
+    recS "What happens if they spot you?"
+    enS "Oh I assume chained to a factory for the rest of our natural lives."
+    pS "I'd rather a bullet to the eyes."
+    mS "We need to find MAC and get the hell out of here."
+    recS "If we can trust your friend Daisy we might find whatever storeroom they put him in, hell maybe even your range extender on the way."
+    mS "Makers willing. Okay, once the presentation starts then we'll head out."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide rec with dissolve
+    "We go back to our parts and my eyes dart around the room. How many enforcers, are they all guests, maybe some waiting in the wings?"
+    "Do they already have MAC and are just waiting for this presentation before heading off?"
+    invfairannounce "And now a feature presentation from the Big Corp laboratories."
+    "The music dies down an a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
+    "A finely dressed man walks up to the platform an attendant wheels in something covered by a blanket."
+    show bcrep stream at stream_left with dissolve
+    bcrep "Ladies and Gentlemen, honorable guests of the Vineyard. We at Big Corp would like to thank Reynar for this opportunity to present a prototype for a new and exciting venture."
+    "The crowd murmurs at the word prototype, I move closer to the corner of the room. Ready to make an escape."
+    "Until the representative pulls off the sheet revealing their newest invention, a small purple robot with an unmistakable leaf over his head."
+    show mac stream neutral at stream_center_mac with dissolve
+    bcrep "Machine Automated Couriers or M.A.C is our revolutionary new courier bot that we are outfitting with fully adaptable AI technology."
+    "His little eyes lock on mine."
+    bcrep "As I said is just our prototype as we continue to look for new ways to truly develop our AI databases. But our scientists are hard at work to..."
+    "This is a nightmare. A true honest to Maker nightmare."
+    bcrep "Say hi M.A.C!"
+    macS "Hi MAC..."
+    "The room chuckles as the representative keeps talking. I look over at the crew who are frozen, unsure of how to proceed. Jennica begins to move up to me but stops and turns white as a ghost."
+    amaS "Now isn't this just a stroke of bad luck."
+    hide mac with dissolve
+    hide bcrep with dissolve
+    "I turn to the voice and am certain I've fully lost it." 
+    "Because there she is, full ballgown staring at me with that same condescending look I've always known."
+    show ama stream neutral at stream_center with dissolve
+    "But this time, it doesn't go away. Ama smiles."
+    mS "Deadeye?"
+    amaS "Hello Mozely." 
+
+
+
+
+
 
 
 
