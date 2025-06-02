@@ -50,21 +50,21 @@ label vignette3Start():
 label vig3outlawstart():
     show shiphub_stream at topleft onlayer background with dissolve
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
-    mS "It's nice to be first one up, actually is it even morning?"
+    mS "It's nice always being the first one up, if it's even morning?"
     "I check the clock on the wall, yep, morning."
     "\"I've got lots more work where that came from.\" Arrogant rat. I should've gone back and blown his fortress to ash."
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I can't believe I'm letting this get to me. Hell I've done worse, we've done worse. This probably wouldn't even crack the top five."
-    "But we're supposed to do better." 
-    "That's the point of all of this isn't it?"
+    "But are we doing right if we hurt people in the process?" 
+    "What's the point of all of this?"
     "I find myself staring off into the distance." 
     "With my back to the door I don't see Teresa come in."
     show teresa stream neutral at stream_right with dissolve
     "She's in her usual clothes, her shirt is uncharacteristically wrinkled and half tucked, a button undone at the bottom."
     enS "Early start Captain?"
-    mS "You know me, first one up, last one down."
+    mS "You know me, first one up, last one down." #Maybe cheekier##
     enS "That's a recipe for sleep deprivation I fear."
-    "She pulls up a chair next to me grabs the warm metal pitcher from the table and fills a glass of her own."
+    "She pulls up a chair next to me grabs the warm metal pitcher from the table and fills her own cup."
     mS "And aren't you just the picture of a good night's sleep."
     enS "Hardly..."
     mS "Fighting with Jennica didn't tire either of you out?"
@@ -82,7 +82,7 @@ label vig3outlawstart():
     "There's a long pause."
     enS "I don't...this isn't proper to say."
     enS "I wondering if you - if we - made the right choice."
-    "She's looking away from me now, she never had a problem speaking plainly before."
+    "She's looking away from me now, its not regret it's just the weight of it all."
     enS "We did what we did to keep safe and what we're doing requires... tough choices. Such is the nature of our mission."
     mS "Resa..."
     enS "We can't always expect to feel good about what we do. It's a difficult call to make."
@@ -96,13 +96,17 @@ label vig3outlawstart():
     show teresa stream neutral
     enS "We weren't the best people before we started this, and I know you and Jennica have more history than even I know about." 
     enS "But at least we dealt with things together."
-    "I don't respond. Teresa needs this."
+    "I don't respond. Teresa needs this." #Consider adding choices
     enS "But ever since we took that- took MAC, it's been one awful choice after another. Barely escaping every time..."
     "Teresa lets out a defeated sigh. Before I can respond Jennica's voice echoes through the speaker."
     hide screen streamerCommentary
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
     "Teresa shoots up, I place hand on her shoulder."
-    mS "Take ten seconds."
+    menu:
+        "Be calm":
+            mS "Take ten seconds. I'll see you there."
+        "Be firm":
+            mS "You can't go in like that. Fix yourself, I'll see you there."
     "I wait until I can feel her shoulder relax and walk out and down the hall, alone."
     hide teresa with dissolve
     jump vig3_sc2
@@ -110,15 +114,15 @@ label vig3outlawstart():
 label vig3marshalstart(): 
     show shiphub_stream at topleft onlayer background with dissolve
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
-    mS "It's nice to be first one up, if it's even morning?"
+    mS "It's nice to always be first one up, if it's even morning?"
     "I check the clock on the wall, yep, morning."
     "\"Don't worry. You'll get yours.\""
     "Annoying rat. He's lucky I didn't turn back and blow his fortress to ash."
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I'm letting this get to me. When have I ever taken one of Sav's threats seriously?" 
-    "I'm sure he wants to see *her* even less than me."
+    "I'm sure he wants to see {b}her{/b} even less than me."
     "We're trying to be better, but what's the point if we're all arrested, if they take MAC away."
-    "I find myself staring off staring off into the distance." 
+    "I find myself staring off into the distance." 
     "With my back to the door I don't see Jennica come in."
     show jennica stream neutral at stream_right with dissolve
     "She's wearing her usual clothes but her eyes dark from exhaustion."
@@ -138,40 +142,45 @@ label vig3marshalstart():
     "I straighten myself."
     pS "I keep dreaming about getting a hit on the scanners, and I don't make it to the helm in time."
     mS "You're not the only who can fly the Oakley."
-    pS "No, but I'm the only one that can outrun Ama. We got lucky but - no offense to our saving grace - I don't like not knowing how much distance we might or might not have."
+    pS "No, but I'm the only one that can outrun Ama. We got lucky but - no offense to our saving grace - I don't like not knowing how much distance we may or may not have."
     "There's a long pause."
-    pS "Every little blip on the scanner make me jump, Captain. That's until I find out it's some stoved-up space junk floatin' in from a click over."
+    pS "Every little blip on the scanner make me jump, Cap. That's until I find out it's some stoved-up space junk floatin' from a click over."
     "She looks away from me to find the words."
     pS "I wonder...if we made the right choice. As wrong as it sounds."
     mS "Jenn..."
-    pS "You're right, those people needed that aid but we gotta be okay with the tough choices ya know, be more logical, make the hard call."
-    mS "Please."
+    pS "You're right, those people needed that aid, I don't regret it."
+    pS "But we gotta be okay with the tough choices sometimes, be more logical, make the hard call."
+    mS "Is that really how you feeling?"
     "Jennica goes quiet."
     pS "She can barely look at me Moze..."
     show jennica stream angry
     $ reactTarget = "vig3_sc1_mar"
     show screen streamerCommentary
-    "Jennica smacks the glass away from her, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
+    "Jennica smacks her glass away, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
     "I set my cup down gently."
     pS "We're doing better, and that's all fine and good. And hell I'll stand by what I said."
     ps "But we need to be more united on things if we're gonna make it."
-    "I don't respond."
+    "I don't respond." #Consider adding multiple options#
     pS "I like the kid. But we've been over our heads from the start..." 
     show jennica stream neutral
-    pS "She's gonna find us, and I'm sure BigCorp isn't hung up on whether or not we're brought back in one piece."
+    pS "She's gonna find us, and I'm sure BigCorp isn't hung up on whether we're brought back in one piece."
     "Jennica lets out a defeated sigh. Teresa's voice echoes through the speaker before I can answer."
     hide screen streamerCommentary
     enS "Captain! There's a transmission for us - I'm certain it's the Dragonflies."
     "Jennica shoots up, I place a hand on her shoulder."
-    mS "Take ten seconds."
+    menu:
+        "Be calm":
+            mS "Take ten seconds. I'll see you there."
+        "Be firm":
+            mS "You can't go in like that. Fix yourself, I'll see you there."
     "When Jennica's shoulder relaxes I walk out and down the hall, alone."
     hide jennica with dissolve
     jump vig3_sc2
 
 label vig3_sc2():
     #show cockpit_stream at topleft onlayer background with dissolve
-    "The Cockpit is a mess, Jennica has made quick work at putting some of her effects in here. MAC's been sitting patiently in the corner, he's been spending more time here than usual."
-    "Teresa works to get the message on the screen while Jennica hangs back next to him."
+    "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
+    "Teresa is working to get the message on the screen while Jennica hangs back next to him."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     enS "Here it is..."
@@ -188,7 +197,11 @@ label vig3_sc2():
     dflycontact "...at a planet known as {b}static{/b} sector, coordinates {b}static{/b} message {b}static{/b} lost {b}static{/b} reattempt {b}static{/b} five days. Over and {b}static{/b}."
     enS "I've recorded the message for what its worth but if we want those coordinates in five days we'll need better gear."
     pS "That ain't much time."
-    mS "We should be used to a tight schedule by now."
+    menu:
+        "Not the first time.":
+            mS "Not the first time we've been pressed against the wall."
+        "We're used to it.":
+            mS "We should be used to a tight schedule by now. "
     "We take a moment to think."
     show mac stream shock at stream_center_mac with dissolve
     macS "Dad..."
@@ -197,7 +210,7 @@ label vig3_sc2():
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
     show jennica stream happy at stream_left
     show mac stream neutral at stream_center_mac
-    "MAC sits innocently in his chair, eyes looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
+    "MAC sits innocently in his chair, looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
     mS "What's going on bud?"
     macS "I- do not know."
     show jennica stream neutral at stream_left
@@ -210,29 +223,29 @@ label vig3_sc2():
     enS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     hide jennica with dissolve
     hide teresa with dissolve
-    "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf."
+    "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
     #hide cockpit_stream
     show ship_hallway_stream at topleft onlayer background with dissolve
     macS "Captain."
     show mac stream neutral at stream_center_mac with dissolve
     "I can't help but jump."
-    mS "Jeez MAC, don't sneak up on me like that!"
+    mS "Jeez MAC, remind me to let you take point on stealth missions next time."
     macS "Might I make a suggestion?"
-    mS "Only if it's after a stiff drink."
-    macS "Pardon me but, it's the morning..."
+    mS "A suggestion?"
+    macS "Yes I have ideas"
     mS "MAC respectfully, I don't have time for this-"
     macS "Which is precisely why I have a suggestion, see I was scanning BigCorp databases..."
-    "I feel the anger twisting my face." ##Dialogue choice thatlinks to MAC's reaction here.##
+    "I feel frustration twisting my face." ##Dialogue choice that links to MAC's reaction here.##
     menu:
-        "MAC you're going to blow our cover!":
+        "MAC that's dangerous!":
             mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
-        "Placeholder option 2":
-            mS "Dialogue here." #more gentle way of chiding MAC about being inconspicuous#
-    "MAC rolls back" ## this reaction can differ based on choices##
+        "MAC it's not safe":
+            mS "MAC don't go poking into BigCorp networks. After all the work the keep you safe." #more gentle way of chiding MAC about being inconspicuous#
+    "MAC's head lowers" ## this reaction can differ based on choices##
     macS "I just wanted to be helpful..."
     "I let out a heavy sigh."
     mS "MAC you are it's just- What's your suggestion?"
-    macS "An initial search suggests a nearby planet known as Solara, specifically the city of Akar. It may be suitable for *both* of your needs." 
+    macS "An initial search suggests a nearby planet known as Solara, specifically the city of Akar. It may be suitable for our needs." 
     macS "However I should caution you..."
     "For a moment, the Oakley falls away from my view."
     "The low hum of the ship replaced by a crowded bar, the starting lines of song that will bellow out to bustling streets."
@@ -243,7 +256,8 @@ label vig3_sc2():
     "With every step I can't help but feel my smile grow, knowing this will be the calmest hour that I've had in a very long time."
     hide mac with dissolve
     jump vig3_sc3
-###Scene 3###
+
+##START OF ACT 1###
 label vig3_sc3():
     #show akarstreet_stream at topleft onlayer background with dissolve
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
@@ -269,9 +283,10 @@ label vig3_sc3():
     mS "Well a BigCorp prison probably has better food than some of the places we've seen."
     macS "There doesn't seem to be many enforcers operating here. Curious."
     mS "Yeah they tried that once, didn't go so hot."
-    enS "But doesn't mean there aren't some off duty grunts here."
+    macS "There seems to be reports of a large altercation in Akar...Is that..."
+    enS "Moze, there could be some off duty grunts here."
     hide screen streamerCommentary
-    mS "Resa look, the Inventor's Fair is in town." 
+    mS "Resa look, the Inventor's Fair is in town." #Choices here?
     mS "Most of the security will be looking at the Vineyard- not here." 
     mS "Let's see if we can find some old friends, grab what we need, and maybe a drink or two..."
     pS "And a softer bed."
@@ -290,17 +305,22 @@ label vig3_sc3():
     #show houndleader stream neutral at stream_center with dissolve
     houndleaderunknown "Aw, smile a bit sweetcheeks, it's a celebration!"
     show jennica stream fight at stream_left
-    "Before anyone can respond, Jennica punches the man in the face. He falls down hard she puts her boot on his throat, Teresa leans over grinning." 
+    "Before anyone can respond, Jennica punches the man in the face. He falls down hard and she puts her boot on his throat, Teresa leans over grinning." 
     #hide houndleader with dissolve
     "I can feel MAC on my leg as he hides behind me."
     $ reactTarget = "vig3_sc3_firstfight"
     show screen streamerCommentary
     enS "How's this, sweetcheeks?"
-    "I can hear footsteps rushing to us. He's not alone. I pull my gun in the direction of the sound."
+    "I can hear footsteps rushing to us. He's not alone."
+    menu:
+        "Pull out your gun.":
+            "I pull out my gun in the direction of the sound." 
+            mS "Not likely boys."
+        "Show them you're a Snakehawk":
+            "I pull up my sleeve to real my Snakehawks tattoo"
+            mS "I really wouldn't do that."
     #show houndgoon stream neutral at stream_center with dissolve 
-    "The two 'tough' guys back away."
-    mS "Not likely boys."
-    "The two men fall back, well built but not sharp enough for a fight like this. I give the signal to Jennica as she lets their friend scramble up before heading out."
+    "The two men back away and fall back, they're well built but not sharp enough for a fight like this. I give the signal to Jennica as she lets their friend scramble up before heading out."
     #hide houndgoon with dissolve
     hide screen streamerCommentary
     "The city moves as normal, uninterested in what just happened."
@@ -335,6 +355,8 @@ label vig3_sc4():
     pS "Hope you still have that Vira Brandy!"
     enS "From four years ago?"
     pS "It ages well!"
+    macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his late partner has a shelf life of 5 years."
+    pS "See? Barely made it!"
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
     "Someone comes out from the back room."
@@ -345,40 +367,43 @@ label vig3_sc4():
     show jennica stream happy at stream_left
     show teresa stream happy at stream_right
     pS "REC!"
-    "Jennica runs up to hug Rec, they embrace and Jen lifts them off the ground. Teresa goes to join in."
-    enS "It's wonderful to see you kid."
-    recS "Not much of a kid anymore."
+    "Jennica runs up to hug Rec, they embrace and Jenn lifts them off the ground."
+    pS "It's wonderful to see you kid."
+    enS "Looking good, Reccrin!"
+    recS "Thanks but I'm not much of a kid anymore."
     mS "I'll say."
-    "I walk over slower than I should and go for a hug."
+    "I walk over slower than I should and go for a hug. Pushing the guilt down as I do."
     mS "What happened to Steele?"
     recS "Old man passed two years back, so I took over."
     mS "I know he was up in years but to think."
     pS "What happened?"
     recS "Nothing, just age, the years caught up to him."
-    enS "A shame. Good man."
+    enS "Oh all the things I can't believe the years were what got him."
     pS "I was really lookin' forward to sharin' that brandy."
     recS "Well you're in luck."
     pS "Hell yeah!"
     show mac stream neutral at stream_left with dissolve
-    macS "It's still the afternoon..."
-    "As Rec turns to get the brandy they pause to look down to see MAC."
+    macS "Vira Brandy is first invention using edible chimereon fruit. Which is quite odd."
+    pS "And delicious!"
+    "As Rec turns to get the brandy they pause to look down at MAC."
     recS "And who's this little guy?"
     macS "I'm MAC!"
     recS "I bet you are!"
     "Rec's eyes grow wide, it's the same look Allistar gave him when they first met."
-    recS "And where did they pick you up from?"
+    recS "And where did they pick you up?"
     macS "From a top secret research facility in BigCorp headquarters."
-    "If I could die right now I would. Reccrin just starts at MAC blinking rapidly."
+    "If I could die right now I would. Reccrin just stares at MAC blinking rapidly."
     recS "... What?"
     #mS (Multiple Response options about how to lie)
     menu:
-        "Might be too dangerous to tell Rec everything."
+        "Might be too dangerous to tell Rec everything right now."
         "Just a courier bot we picked up.":
             mS "Just a courier bot we found and outfitted figured we could use an extra hand and a morale boost..."
-        "Placeholder choice 2":
-            "Dialogue here."
-        "Placeholder choice 3":
-            "also dialogue here."
+        "Top secret? Please.":
+            mS "If by top secret you mean of a random shelf, then sure, keep it hush hush though."
+        "Teresa did you program that?":
+            mS "That's the last time I let you touch our gear Teresa."
+    #^All of these feel mean....could use a rewrite#
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
     recS "Mind if I take a closer look?"
     "MAC looks up at me. I guess we're in it now...."
@@ -391,8 +416,8 @@ label vig3_sc4():
     mS "Had to be a rushed job, we've been on the move."
     mS "But look not to interrupt your analysis, we're here to fix our Comms."
     recS "Sorry yeah got carried away. What do you need? New parts?"
-    mS "Definitely a range extender."
-    enS "Honestly even the base parts could use an upgrade. If you have some to spare."
+    enS "Definitely a range extender."
+    pS "Honestly even the base parts could use an upgrade. If you have some to spare."
     mS "We needa get outfitted and going in the next few days."
     recS "Got it, lemme check the back, I might have something for you."
     #hide rec with dissolve
@@ -406,27 +431,27 @@ label vig3_sc4():
     "I need to think about how to approach this." ###Add multipleoptions###
     menu:
         "Mac thinks Rec has a right to know about their brother."
-        "We can't talk about this right now.":
+        "I'm not being fair.":
             mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
-        "Placeholder choice 2":
-            mS "dialogue here."
-        "Placeholder choice 3":
-            mS "More dialogue"
+        "They'll know after we get the part":
+            mS "Range extender first, hard talk later. We can't leave here without it."
+        "I have no love for Allistar":
+            mS "I'm not about to apologize for what I needed to do. They'll find out eventually."
     "Reccrin comes out after a brief moment with a long antennae and some internal parts for our Comms."
     show mac stream neutral at stream_left with move
     #show rec stream neutral at stream_center with dissolve
-    recS "Definitely an older model but she should still work fine. Need an install?"
+    recS "Definitely an older model but she should work better than what you got. Need an install?"
     enS "I could use the hand."
     pS "Thanks Rec."
     mS "It's very appreciated."
     recS "No worries! Hey since y'all have been on the move, you wouldn't have happened by Al at all?" 
     recS "I haven't heard from him in while."
-    "There's too long of a pause that I can't think of something fast enough to end. But thankfully I didn't have to as the shop door swings open."
+    "There's too long of a pause that I can't think of something fast enough. But thankfully I didn't have to as the shop door swings open."
     hide mac with dissolve
     hide jennica with dissolve
     #show houndleader at stream left with dissolve
-    "A group of five enter the shop, dark uniforms with a wolf patched on their right shoulder." 
-    "I know some of these guys, they're ones who gave Resa a hard time." ##The Hound Leader##
+    "A group of five enter the shop, dark uniforms with a dog patched on their right shoulder." 
+    "These guys, they're ones who gave Resa a hard time." ##The Hound Leader##
     $ reactTarget = "vig3_sc4_houndraid"
     show screen streamerCommentary
     houndleader "Alright Reccrin, you know the drill! Mandatory sweep!"
@@ -438,7 +463,7 @@ label vig3_sc4():
     hide teresa with dissolve
     mS "Didn't know Akar hired rent-a-cops."
     #show houndgoon at stream_right with dissolve
-    "A smaller one moves up next to the big guy, she's the next toughest and looks like she has something to prove."
+    "A smaller Hound one moves up next to leader, she's clearly the next toughest and with something to prove."
     houndgoon "I suggest you get yourself and your crew in order and stay out of the way."
     hide screen streamerCommentary
     "Rec looks at me with a forced smile."
@@ -454,27 +479,29 @@ label vig3_sc4():
             mS "Alright that's enough!"
         "Let them continue":
             "They keep trashing it."
-            "Description of them trashing Rec's shop."
+            "Every weird invention and new gadget clatters to the ground. Broken parts start to litter the floor."
             menu:
                 "Do I intervene?"
                 "That's enough!":
                     mS "Alright that's enough!"
                 "Stay quiet.":
-                    "They continue to trash the shop."
-                    "Something forces Moze to intervene."
+                    "They continue to trash the shop. More carnage. They're laughing to each other tossing equipment like a hackey sac."
+                    "I see one of them try to head to the back room."
     mS "Alright that's enough!"
     houndgoon "You'd be best to stay out of official business."
     "Another gangster chimes in."
     houndgoon "We're under order to collect contraband."
-    mS "Contraband? And what classifies as contraband?"
-    houndgoon "Whatever we say."
+    mS "Contraband? That's rich, learned that from the little pamphlet they gave you?"
+    houndgoon "Tryna be smart are we?"
+    mS "Someone has to."
+    houndgoon "Contraband is whatever we say it is."
     houndleader "We'll also be taking this."
     "The Hound's leader goes to pick up the antennae for the Coms that's sitting on Rec's store counter." 
     ###Streamer reaction: Of course he does###
-    recS "This is item is being sold to customers at the moment. I can assure you it's perfectly legitimate."
+    recS "This item is being sold to customers at the moment. I can assure you it's perfectly legitimate."
     houndleader "Are you admitting to selling contraband Reccrin? That's cause for reprimand."
     mS "That so called \"contraband\" is mine. And they said it's perfectly legit."
-    "I slowly walk up to the counter moving to get into his face."
+    "I slowly walk up to the counter moving to take the parts."
     mS "So I'd like it back now."
     "The Hounds turn to us and I know they're gearing up for a fight. They probably won't kill us, but I can't imagine how banged up we'll be or what happens if they find MAC." ###The player must decide between three actions, fight, let them have it, or Bribe - IF THEY HAVEN'T BRIBED REGI###.
     menu:
@@ -499,27 +526,41 @@ label vig3_sc4():
             pS "Maybe we can use him as our antennae instead."
             mS "Now that's a thought. Rec, you know those guys?"
         "Let them take the antenna.":
-            "They take the antenna."
-            "Dialogue placeholder here."
+            "I take a step back, we can't afford a fight right now, it's too risky."
             houndleader "Pleasure doing business with you."
-            "Hounds leave placeholder."
+            "The Hounds turn to leave knocking some stuff around."
+            "On the way out with the parts, the Leader hits me with a good punch while I'm off guard."
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show mac stream neutral at stream_left with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
-            mS "Rec who were those guys?"
-        "Try and bribe them" if reginaldChoice == False:
-            "You try and bribe them."
-            "Dialogue placeholder here." #it doesnt work right? they need to take the antenna to force the crew to keep looking
+            macS "Captain are you hurt?" 
+            mS "Just my pride."
+            "Teresa goes to pull me up."
+            "Sorry I didn't want to put you all in more danger."
+            enS "You're good Captain."
+            enS "Makers I'd like to blow that man up from the inside."
+            pS "Maybe we can use him as our antennae instead."
+            mS "Now that's a thought. Rec, you know those guys?"
+        "Try and bribe them" if reginaldChoice == False: #This option shoudl still be here but different outcomes based on the variable.
+            "I take out my communicator,"
+            mS "Listen this doesn't need to be ugly, we'll pay the tarriff and get out of your hair."
+            houndleader "Finally a sensible idea." #it doesnt work right? they need to take the antenna to force the crew to keep looking
+            "We do the transfer and as it completes I'm hit dead on without warning."
+            "He grabs the part and the Hounds move out."
             houndleader "Pleasure doing business with you."
-            "Hounds leave placeholder."
+            "The Hounds commit some extra carnage on the way out."
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show mac stream neutral at stream_left with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
-            mS "Rec who were those guys?"
+            mS "Just my pride, and my wallet."
+            "Teresa goes to pull me up."
+            enS "I want to blow that man up from the inside."
+            pS "Maybe we can use him as our antennae instead."
+            mS "Now that's a thought. Rec, you know those guys?"
     "They pull out five glasses. And drop a bottle of brandy on the counter"
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in giving it to MAC."
     macS "Thank you!"
@@ -545,6 +586,10 @@ label vig3_sc4():
     hide rec with dissolve
     hide mac with dissolve
     jump vig3_sc5
+
+#END OF ACT 1#
+
+#START OF ACT 2#
 
 label vig3_sc5():
     hide reccshop_stream
