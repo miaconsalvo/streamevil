@@ -704,7 +704,7 @@ label meetingMatticus():
     "A voice perks up from the crate."
     play audio "macPing.wav" volume 3.0
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
-    show reginald stream neutral at stream_right with Dissolve (.5)
+    show reginald stream bigmad at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
     show mac stream neutral at stream_center_mac with Dissolve(.5)
@@ -1086,7 +1086,7 @@ label commsBase_MAR1():
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
             hide guard1 stream with dissolve
-            show reginald stream neutral at stream_center with Dissolve(0.5)
+            show reginald stream bigmad at stream_center with Dissolve(0.5)
             goon "Keep moving!"
             mS "I know!"
             "I can't afford to hesitate."
@@ -1361,6 +1361,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment12)
             $ AddChatter(vig2_sc6_out_execute_comment13)
             pS "Nice of you to join us."
+            show reginald stream mad
             $ reactTarget = "vig2_sc6_out_reflect"
             show screen streamerCommentary
             $ AddChatter(vig2_sc6_out_execute_comment14)
@@ -1386,9 +1387,9 @@ label commsBase_DataCenter():
     show reginald stream neutral at stream_right with Dissolve(0.2)
     play audio "chairRush.wav" volume 4.0
     "Before we have a chance to say anything, Reginald is in his face."
+    show reginald stream bigmad
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
-    show reginald stream mad at stream_right
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1396,7 +1397,8 @@ label commsBase_DataCenter():
     worker "Why do you want the tracking coordinates of an aid shipment?"
     $ AddChatter(vig2_sc7_comment1)
     pS "Yeah Reginald, why {i}do{/i} we want the tracking coordinates of an aid shipment?"
-    play music "soundtrack/decisionTime.wav" volume 1.2 
+    play music "soundtrack/decisionTime.wav" volume 1.2
+    show reginald stream mad 
     "Reginald sighs exasperatedly."
     goon "I don't get paid enough for this."
     goon "The shipment's going to a town called Sallent."
@@ -1494,7 +1496,7 @@ label commsBase_DataCenter_MAR():
     enS "That's what \"secure\" means right!?"
     hide mac with dissolve
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
-    show reginald stream mad at stream_center with Dissolve(0.3)
+    show reginald stream bigmad at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
     $ reactTarget = "vig2_sc8_mar_reacttoregi"
@@ -1513,9 +1515,10 @@ label commsBase_DataCenter_MAR():
             $ engineerApproval += 1
             $ macViolence += 1
             "I look over to Jennica and give her the signal."
+            play audio "lazer.wav" volume 5.0
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide reginald with Dissolve(0.2)
-            #show jennica stream happy at stream_left
+            show jennica stream fight at stream_left
             pS "Wish I coulda done that hours ago."
             $ AddChatter(vig2_sc7_mar_stun_comment1)
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""

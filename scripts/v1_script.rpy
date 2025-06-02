@@ -114,7 +114,7 @@ label shipCall:
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
     amaS "My dear Mozely. It's good to hear your voice again."
-    show allistar stream mad
+    show allistar stream surprised
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
     mS "Ama? Why are you calling?"
@@ -131,7 +131,7 @@ label shipCall:
     amaS "So why don't you run along to your little ship and set sail."
     amaS "Oh, and take Allistar with you." 
     amaS "BigCorp has labeled him an accomplice, and I'd hate for him to suffer in a prison on your account."
-    show allistar stream thinking
+    show allistar stream mad
     amaS "Take care, Mozely. Do try to make this hunt interesting."
     play audio "cutCall.wav" volume 1.5
     "The line cuts. The room is silent."
@@ -163,9 +163,10 @@ label shipCall:
             mS "I saved the galaxy."
             mS "We don't know what BC wants with MAC, but we know it's bad."
             mS "We {i}cannot{/i} let them get hold of him."
+    show allistar stream thinking
     "Allistar is perfectly still."
-    show allistar stream mad
     "Then he rushes to a nearby drawer, lifts out a blaster, and sets it to stun."
+    show allistar stream mad
     aS "It's a straight shot to the spaceport. Our best bet is a full sprint."
     $ AddChatter(vig1_sc2_comment6)
     pause 0.5
@@ -622,7 +623,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
     play music "soundtrack/decisionTime.wav" volume 1.2 fadein 1.0
-    show allistar stream thinking at stream_right with dissolve
+    show allistar stream surprised at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
@@ -694,6 +695,7 @@ label escapePodConfrontation:
             $ narrator = alt_narrator
     play audio "lazer.wav" volume 5.0
     $ macViolence += 1
+    show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
     hide allistar with dissolve
