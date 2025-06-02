@@ -709,7 +709,7 @@ label vig3_sc6():
     "And then another."
     "And another."
     show mac stream neutral at stream_left with move
-    show rec stream neutral at stream center with dissolve
+    show rec stream neutral at stream_center with dissolve
     recS " So I said, \"You should've been more specific about the screw!\""
     show teresa stream happy at stream_right
     show jennica stream happy at stream_left 
