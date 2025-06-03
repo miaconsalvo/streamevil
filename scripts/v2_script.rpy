@@ -286,23 +286,21 @@ label GibianVCustomsDepot():
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
         "Have Teresa prep the distraction.":
-            $ customsDepot = "Teresa Distraction" #playtest variable
             $ customsStampede = True
             $ outlaw += 2
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ engineerApproval += 1
-            $ customsDistraction = True
+            #$ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
-            $ customsDepot = "Jennica Bribe" #playtest variable
             $ customsStampede = False
             $ marshal += 2
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pilotApproval += 1
-            $ customsDistraction = False
+            #$ customsDistraction = False
             jump GibianVCustomsMarshal
 
 label GibianVCustomsMarshal():
@@ -706,7 +704,7 @@ label meetingMatticus():
     "A voice perks up from the crate."
     play audio "macPing.wav" volume 3.0
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
-    show reginald stream neutral at stream_right with Dissolve (.5)
+    show reginald stream bigmad at stream_right with Dissolve (.5)
     goon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
     show mac stream neutral at stream_center_mac with Dissolve(.5)
@@ -986,7 +984,6 @@ label approachingBase():
     menu:
         pS "What's your call Cap?"
         "A full offensive is more tactically sound.":
-            $ dataBase = "All-Out Assault" #playtest variable
             $ gunsBlazing = True
             $ outlaw += 3
             $ pdEngagement += 3
@@ -1023,7 +1020,6 @@ label approachingBase():
             hide reginald with Dissolve(0.5)
             jump commsBase_OUT1
         "Better to be as quiet as possible.":
-            $ dataBase = "Stealth Infiltration" #playtest variable
             $ marshal += 2
             $ gunsBlazing = False
             $ csEngagement += 2
@@ -1090,7 +1086,7 @@ label commsBase_MAR1():
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
             hide guard1 stream with dissolve
-            show reginald stream neutral at stream_center with Dissolve(0.5)
+            show reginald stream bigmad at stream_center with Dissolve(0.5)
             goon "Keep moving!"
             mS "I know!"
             "I can't afford to hesitate."
@@ -1294,7 +1290,6 @@ label commsBase_OUT1():
     menu:
         "He's terrified, as if this is the first time anyone's shot at him."
         "This isn't his fault.":
-            $ spareGuard = "Spared" #playtest variable
             $ macViolence -= 1
             $ macHope += 1
             $ baseGuardKilled = False
@@ -1333,7 +1328,6 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment7)
             "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors.":
-            $ spareGuard = "Killed" #playtest variable
             $ macViolence += 1
             $ macHope -= 1
             $ baseGuardKilled = True
@@ -1367,6 +1361,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment12)
             $ AddChatter(vig2_sc6_out_execute_comment13)
             pS "Nice of you to join us."
+            show reginald stream mad
             $ reactTarget = "vig2_sc6_out_reflect"
             show screen streamerCommentary
             $ AddChatter(vig2_sc6_out_execute_comment14)
@@ -1392,9 +1387,9 @@ label commsBase_DataCenter():
     show reginald stream neutral at stream_right with Dissolve(0.2)
     play audio "chairRush.wav" volume 4.0
     "Before we have a chance to say anything, Reginald is in his face."
+    show reginald stream bigmad
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
-    show reginald stream mad at stream_right
     "Reginald shoves his gun into the technician's face."
     goon "NOW!"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1402,7 +1397,8 @@ label commsBase_DataCenter():
     worker "Why do you want the tracking coordinates of an aid shipment?"
     $ AddChatter(vig2_sc7_comment1)
     pS "Yeah Reginald, why {i}do{/i} we want the tracking coordinates of an aid shipment?"
-    play music "soundtrack/decisionTime.wav" volume 1.2 
+    play music "soundtrack/decisionTime.wav" volume 1.2
+    show reginald stream mad 
     "Reginald sighs exasperatedly."
     goon "I don't get paid enough for this."
     goon "The shipment's going to a town called Sallent."
@@ -1456,7 +1452,6 @@ label commsBase_DataCenter():
     menu:
         "MAC is almost completely quiet. They've been looking at me the entire time." 
         "This has gone too far.":
-            $ aidShip = "Spared Aid Ship" #playtest variable
             $ marshal += 5
             $ csEngagement += 3
             $ pdEngagement -= 3
@@ -1469,7 +1464,6 @@ label commsBase_DataCenter():
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
         "We don't have a choice.":
-            $ aidShip = "Blew up Aid Ship" #playtest variable
             $ macViolence += 3
             $ outlaw += 5
             $ csEngagement -= 3
@@ -1502,7 +1496,7 @@ label commsBase_DataCenter_MAR():
     enS "That's what \"secure\" means right!?"
     hide mac with dissolve
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
-    show reginald stream mad at stream_center with Dissolve(0.3)
+    show reginald stream bigmad at stream_center with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
     "Reginald points his blaster at me."
     $ reactTarget = "vig2_sc8_mar_reacttoregi"
@@ -1515,15 +1509,16 @@ label commsBase_DataCenter_MAR():
     menu:
         "I notice Jennica reaching for her blaster."
         "Signal Jennica to stun him.":
-            $ reginaldChoice = "Stunned" #playtest variable
+            $ reginaldChoice = True
             $ outlaw += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
             $ macViolence += 1
             "I look over to Jennica and give her the signal."
+            play audio "lazer.wav" volume 5.0
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide reginald with Dissolve(0.2)
-            #show jennica stream happy at stream_left
+            show jennica stream fight at stream_left
             pS "Wish I coulda done that hours ago."
             $ AddChatter(vig2_sc7_mar_stun_comment1)
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
@@ -1538,7 +1533,7 @@ label commsBase_DataCenter_MAR():
             hide screen streamerCommentary
             hide mac with Dissolve(0.2)
         "Bribe Reginald.":
-            $ reginaldChoice = "Bribed" #playtest variable
+            $ reginaldChoice = False
             $ marshal += 1
             $ macViolence -= 1
             "I signal to Jennica to wait."
@@ -1702,7 +1697,7 @@ label commsBase_DataCenter_OUT():
     menu:
         "Reginald walks out of the room."
         "Convince him not to say anything.":
-            $ technicianChoice = "Threatened (spared)" #Playtest variable
+            $ technicianChoice = False
             $ macViolence += 1
             $ marshal += 1
             $ pdEngagement += 1
@@ -1710,7 +1705,6 @@ label commsBase_DataCenter_OUT():
             $ kcEngagement += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
-            $ killHacker = False
             "We don't need to hurt him. Just need to make him think we will."
             mS "Look, it's in your best interest that you forget everything that happened here."
             $ AddChatter(vig2_sc7_out_coerce_comment1)
@@ -1738,7 +1732,7 @@ label commsBase_DataCenter_OUT():
             "MAC begins to follow."
             hide mac with Dissolve(1.5)
         "Kill him.":
-            $ technicianChoice = "Killed" #playtest variable
+            $ technicianChoice = True
             $ macViolence += 2
             $ outlaw += 2
             $ pdEngagement += 2
@@ -1746,7 +1740,6 @@ label commsBase_DataCenter_OUT():
             $ kcEngagement -= 1
             $ pilotApproval -= 1
             $ engineerApproval += 1
-            $ killHacker = True
             $ AddChatter(vig2_sc7_out_execute_comment1)
             "Only one way to make sure this never leaves the building."
             $ AddChatter(vig2_sc7_out_execute_comment2)
@@ -2975,20 +2968,20 @@ label vig2_macro_end():
     "You don't unlock the phone, because you can read the message from the lock screen."
     bro "Love you too!"
     stop music fadeout 8.0
-    jump endPlaytest
+    jump vignette3Start
 
-label endPlaytest():
-    pause 2.0
-    scene game_main_menu with dissolve
-    "Thank you for participating in this playtest of Stream Evil!"
-    "Our team is very grateful for your time and would love to hear your feedback!"
-    "If you're doing a remote test, please go to this {a=https://docs.google.com/forms/d/e/1FAIpQLScDUvazO6ajENISfpBgtitvIo3aI8ffpTi_Hvs7qu15Dec9Dw/viewform}google form{/a} and fill out a quick survey."
-    "If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu, then click on an empty square)"
-    "Once again, thank you very much for your time!"
-    "We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
+#label endPlaytest():
+    #pause 2.0
+    #scene game_main_menu with dissolve
+    #"Thank you for participating in this playtest of Stream Evil!"
+    #"Our team is very grateful for your time and would love to hear your feedback!"
+    #"If you're doing a remote test, please go to this {a=https://docs.google.com/forms/d/e/1FAIpQLScDUvazO6ajENISfpBgtitvIo3aI8ffpTi_Hvs7qu15Dec9Dw/viewform}google form{/a} and fill out a quick survey."
+    #"If you're conducting an in-person test, please save your game in an empty slot, then notify your facilitator that you have finished the playtest.\n(Press ESC and select \"Save\" from the menu, then click on an empty square)"
+    #"Once again, thank you very much for your time!"
+    #"We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
 
-    scene bg black with dissolve
-    call screen playtestRecord
+    #scene bg black with dissolve
+    #call screen playtestRecord
 
-    $ renpy.full_restart()
-    return
+    #$ renpy.full_restart()
+    #return

@@ -49,6 +49,7 @@ define amaS = Character("Deadeye", what_font="Play-Regular.ttf", window_style = 
 
 define enforcer = Character("Enforcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "enforcer neutral", window_background="images/textbox/stream textbox npc.png")
 
+#vig2 characters
 define shipcom = Character("Ship Intercom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define agent1 = Character("Customs Agent", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define smatt = Character("Matticus", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus stream", window_background="images/textbox/stream textbox npc.png")
@@ -56,6 +57,24 @@ define goon =  Character("Reginald", what_font="Play-Regular.ttf", window_style 
 define worker = Character("Technician", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "worker stream", window_background="images/textbox/stream textbox npc.png")
 define mattdoorbell = Character("Doorcom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define hsguard1 = Character("Guard", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+
+#vig3 characters
+define houndleaderunknown = Character("Gangster", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "hound leader stream", window_background="images/textbox/stream textbox npc.png")
+define houndleader = Character("Hound Leader", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "hound leader stream", window_background="images/textbox/stream textbox npc.png")
+define houndgoon = Character("Hound Gangster", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "hound goon stream", window_background="images/textbox/stream textbox npc.png")
+define recS = Character("Reccrin", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "reccrin stream neutral", window_background="images/textbox/stream textbox npc.png")
+define showgirl = Character("Daisy", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "showgirl stream", window_background="images/textbox/stream textbox npc.png")
+define dflycontact = Character("Dragonfly", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "dragonfly contact stream", window_background="images/textbox/stream textbox npc.png")
+define strngr1 = Character("Stranger", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "stranger 1 stream", window_background="images/textbox/stream textbox npc.png")
+define zan = Character("Zan", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "zan stream", window_background="images/textbox/stream textbox npc.png")
+define ovid = Character("Ovid", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "ovid stream", window_background="images/textbox/stream textbox npc.png") 
+define wifenpc = Character("Young Woman", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define husbnpc = Character("Young Man", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define vyattend = Character("Ryo", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "vyattend stream", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc1 = Character("Inventor's Fair Guest", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc2 = Character("Mills", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define invfairannounce = Character("Announcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
@@ -102,19 +121,10 @@ default vibes = False
 default humour = False
 default story = False
 
-###Variables for Playtest Data###
-default streamVibes = "unchosen"
-default killAllistar = "unchosen"
-default customsDepot = "unchosen"
-default dataBase = "unchosen"
-default spareGuard = "N/A (Marshal route selected)"
-default aidShip = "unchosen"
-default technicianChoice = "N/A (Marshal route selected)"
-default reginaldChoice = "N/A (Outlaw route selected)"
-
 #Variables specific to vignette 1
 default allistarSuspicious = False
 default houseExplosion = False
+default killAllistar = False #if you tried to kill allistar = true
 default omegaDead = False
 default misclick = False
 default askBandit = False
@@ -175,9 +185,18 @@ default shnzi = True
 default romanceAma = False
 default romanceJennica = False
 default romanceTeresa = False
-default baseGuardKilled = False
+default baseGuardKilled = False #if you killed the guard at the commsbase  = true (outlaw route)
 default gunsBlazing = False
+default technicianChoice = False #if you spared the technician = false (outlaw route)
+default reginaldChoice = False #if you stunned reginald = true (marshal route)
 default customsSpeculation = False
+default vig2_marshalEpilogue = False
+default vig2_outlawEpilogue = False
+default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
+
+####Variables for Vignette 3####
+default firstfightprediction = False
+
 
 
 #default yadj = ui.adjustment()
@@ -255,5 +274,118 @@ label playerName:
     #$ AddChatter(vig1_sc1_comment7)
     #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
-    jump vignette1Start
+    "For testing purposes, you can jump ahead to other vignettes."
+    menu:
+        "Which Vignette would you like to begin with?"
+        "Vignette 1":
+            jump vignette1Start
+        "Vignette 2":
+            jump testing_jumpahead_vig2
+        "Vignette 3":
+            jump testing_jumpahead_vig3
+    
+label testing_jumpahead_vig2():
+    "Choose the decisions you want to have made in Vignette 1"
+    menu:
+        "How did you describe your stream during the raid?"
+        "Vibes focused":
+            $ vibes = True
+        "Humour focused":
+            $ humour = True
+        "Story focused":
+            $ story = True
+    "Next, what did you pick when given the choice to stun or kill Allistar?"
+    menu:
+        "Allistar choice?"
+        "Stunned Allistar":
+            $ killAllistar = False
+        "Killed Allistar":
+            $ killAllistar = True
+    "Lastly, when you shot Allistar, did you say it was a misclick?"
+    menu:
+        "Did you say killing Allistar was a misclick?"
+        "Yes":
+            $ misclick = True
+        "No":
+            $ misclick = False
+    "Excellent. You will now begin Vignette 2."
+    jump vignette2Start
+
+label testing_jumpahead_vig3():
+    "First, you must choose the decisions you want to have made in Vignette 1"
+    menu:
+        "How did you describe your stream during the raid?"
+        "All about Vibes":
+            $ vibes = True
+        "Humour focused":
+            $ humour = True
+        "Story focused":
+            $ story = True
+    "Next, what did you pick when given the choice to stun or kill Allistar?"
+    menu:
+        "Allistar choice?"
+        "Stunned Allistar":
+            $ killAllistar = False
+        "Killed Allistar":
+            $ killAllistar = True
+    "Lastly, when you shot Allistar, did you say it was a misclick?"
+    menu:
+        "Did you say killing Allistar was a misclick?"
+        "Yes":
+            $ misclick = True
+        "No":
+            $ misclick = False
+    "Now you will decide what choices you made in Vignette 2."
+    menu:
+        "How did you get through the customs depot?"
+        "Bribed an agent.":
+            $ customsStampede = False
+        "Caused a stampede.":
+            $ customsStampede = True
+    "Next, how did you get into the communications base?"
+    menu:
+        "How did you get into the commsbase?"
+        "Stealthily, sneaking in":
+            $ gunsBlazing = False
+        "Guns blazing":
+            $ gunsBlazing = True
+            "Did you kill the guard who wanted to surrender?"
+            menu:
+                "Did you kill the surrendering guard?"
+                "Yes":
+                    $ baseGuardKilled = True
+                "No":
+                    $ baseGuardKilled = False
+    "Lastly, did you choose to follow through with Matticus's plan and blow up the aid ship?"
+    menu:
+        "Did you blow up the aid ship?"
+        "No":
+            $ vig2_marshalEpilogue = True
+            "How did you deal with Reginald?"
+            menu:
+                "What did you do with Reginald?"
+                "Stunned him":
+                    $ reginaldChoice = True
+                "Bribed him":
+                    $ reginaldChoice = False
+        "Yes":
+            $ vig2_outlawEpilogue = True
+            "How did you deal with the technician?"
+            menu:
+                "What did you do with the technician?"
+                "Threatened him":
+                    $ technicianChoice = False
+                "Killed him":
+                    $ technicianChoice = True
+    "Excellent. You will now jump to the start of Vignette 3."
+    jump vignette3Start
+
+
+
+
+
+
+
+
+    #jump vignette1Start
 

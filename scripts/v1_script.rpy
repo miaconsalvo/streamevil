@@ -114,7 +114,7 @@ label shipCall:
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
     amaS "My dear Mozely. It's good to hear your voice again."
-    show allistar stream mad
+    show allistar stream surprised
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
     mS "Ama? Why are you calling?"
@@ -131,7 +131,7 @@ label shipCall:
     amaS "So why don't you run along to your little ship and set sail."
     amaS "Oh, and take Allistar with you." 
     amaS "BigCorp has labeled him an accomplice, and I'd hate for him to suffer in a prison on your account."
-    show allistar stream thinking
+    show allistar stream mad
     amaS "Take care, Mozely. Do try to make this hunt interesting."
     play audio "cutCall.wav" volume 1.5
     "The line cuts. The room is silent."
@@ -163,9 +163,10 @@ label shipCall:
             mS "I saved the galaxy."
             mS "We don't know what BC wants with MAC, but we know it's bad."
             mS "We {i}cannot{/i} let them get hold of him."
+    show allistar stream thinking
     "Allistar is perfectly still."
-    show allistar stream mad
     "Then he rushes to a nearby drawer, lifts out a blaster, and sets it to stun."
+    show allistar stream mad
     aS "It's a straight shot to the spaceport. Our best bet is a full sprint."
     $ AddChatter(vig1_sc2_comment6)
     pause 0.5
@@ -576,7 +577,6 @@ label councilDebrief():
     menu:
         "My stream is story-focused.":
             $ story = True
-            $ streamVibes = "Story-focused" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs, every now and then some action games."
             player "Usually we like to chat about the game's writing."
             player "What we like about the stories, details to critique, theories about where the narrative's going, things like that."
@@ -586,7 +586,6 @@ label councilDebrief():
                     player "So welcome aboard, and let's settle some scores!"
         "My stream loves a good joke.":
             $ humour = True
-            $ streamVibes = "Humor" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs and occasionally a multiplayer shooter."
             player "Chat's always the spot for some solid memes and funny bits!"
             player "Good jokes keep me on my toes and helps us all be entertained."
@@ -596,7 +595,6 @@ label councilDebrief():
                     player "So welcome aboard, and let's settle some scores!"
         "My stream is all about vibes.":
             $ vibes = True
-            $ streamVibes = "Chill vibes" #playtest variable
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
             player "We're all about chill vibes here."
             player "So we take it easy and just go wherever the games take us!"
@@ -625,7 +623,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
     play music "soundtrack/decisionTime.wav" volume 1.2 fadein 1.0
-    show allistar stream thinking at stream_right with dissolve
+    show allistar stream surprised at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
@@ -666,7 +664,7 @@ label escapePodConfrontation:
     menu:
         mS "I've heard enough."
         "Kill Allistar":
-            $ killAllistar = "Tried to Kill" #playtest variable
+            $ killAllistar = True 
             $ macViolence += 1
             $ pdEngagement += 3
             $ csEngagement -= 1
@@ -682,7 +680,7 @@ label escapePodConfrontation:
             "The words \"Kill Allistar\" glow red in the game's UI."
             $ narrator = alt_narrator
         "Stun Allistar":
-            $ killAllistar = "Tried to Stun" #playtest variable
+            $ killAllistar = False
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
@@ -697,6 +695,7 @@ label escapePodConfrontation:
             $ narrator = alt_narrator
     play audio "lazer.wav" volume 5.0
     $ macViolence += 1
+    show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
     hide allistar with dissolve
