@@ -146,8 +146,8 @@ screen nvl_phonetext(dialogue):
                     #    $ message_icon = "images/socials/profilepics/profile3.png"
                     #elif d.who == "kitcat":
                     #    $ message_icon = "images/socials/profilepics/profile3.png"
-                    #else:
-                    #    $ message_icon = "images/socials/profilepics/profile1.png"
+                    else:
+                        $ message_icon = "images/socials/profilepics/profile1.png"
                     #The line below this will add the message icon to the hbox. The lines below it add a transition animation that we aren't going to use
                     add message_icon#:
                         #if d.current:

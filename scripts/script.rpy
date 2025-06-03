@@ -152,6 +152,12 @@ default vbar9 = 0
 default vbar10 = 0
 default max_viewers = 40
 
+###Variables to make free navigation of pos-stream scenes possible:
+default flinchView = False #When set to "True," this will turn off the button to open the Flinch page
+default blueitView = False #When set to "True," this will turn off the button to open the Blueit page
+default loopdView = False #You're never gonna gues what this does
+default screenComplete = False #Another gate to regulate when the webNavigation screen will display
+
 ###Variables for tracking Flinch Analytics Vignette 1
 default topfan = ""
 default followerGoal = "8"

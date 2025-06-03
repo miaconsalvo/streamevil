@@ -1035,19 +1035,21 @@ label modConvo_Day1_Bandit():
     streamer_nvl "You too, night!"
     nvl clear #necessary when transitioning to other conversations
     jump webPage_vig1
-    jump FlinchAnalytics
+    jump FlinchAnalytics_vig1
 
 label webPage_vig1():
     scene streamview with dissolve
-    "Jessie's right, checking out the game's subblueit would be a good call."
-    "I can also check on my analytics from the past stream."
-    call screen webNavigation
-
-
-label FlinchAnalytics():
     $ menu = adv_menu
-    "Jessie's right, checking out the game's subblueit would be a good call."
-    "But first you decide to look at your analytics overview for the stream."
+    $ screenComplete = True
+    "Jessie's right, checking out the forums on Blueit would be a good call."
+    "You can also check on the analytics from Flinch for the past stream."
+    call screen webNavigation_vig1
+
+
+label FlinchAnalytics_vig1():
+    $ screenComplete = False
+    $ flinchView = True
+    #"You navigate to the."
     scene flinch_v1screen with dissolve
     #The six lines below this allow us to change who the topfan is
     #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
@@ -1073,13 +1075,16 @@ label FlinchAnalytics():
     $ vbar9 += viewCheck9
     $ vbar10 += viewCheck10
     show screen viewershipButton
+    show screen webNavigation_vig1
     call screen streamAnalytics
     hide screen streamAnalytics with dissolve
     jump blueitVignette1
 
 label blueitVignette1():
     #scene Reddit with dissolve - would show reddit scene but we're not going to bother
-    hide screen viewershipButton
+    $ screenComplete = False
+    $ blueitView = True
+    show screen webNavigation_vig1
     scene blueit_v1screen at truecenter with dissolve
     $ blueitPages.append(vig1_bThread1)
     $ blueitPages.append(vig1_bThread2)

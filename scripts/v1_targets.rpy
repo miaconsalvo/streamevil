@@ -238,6 +238,11 @@ label vig1_analytics_topfan():
     "Coriolis has been around since your second year of streaming."
     "You haven't even talked to them outside of the stream, but they always seem to be so happy to be in the chat."
     "It's almost like they're a second mod."
+    ###The clause below this will check to see if we should consider the scene as finished
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
     show screen viewershipButton
     return
 
@@ -279,6 +284,11 @@ label vig1_analytics_viewcount():
             "You were just lucky."
             "But luck is opportunity plus preparation."
     "Hopefully you can keep up this momentum."
+    ###The clause below this will check to see if we should consider the scene as finished
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
     show screen viewershipButton
     return
 
@@ -300,6 +310,11 @@ label vig1_analytics_audience():
     "If you don't, you'll probably stop streaming."
     "It's just hard to justify the time while your schoolwork is so busy."
     "It wouldn't be the end of the world...but it would suck."
+    ###The clause below this will check to see if we should consider the scene as finished
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
     show screen viewershipButton
     return
 
@@ -321,6 +336,10 @@ label vig1_blueit_firstchoice():
     show screen blueitThread
     #show major choice thread at top:
     #    zoom 1.5
+    ###The clause below this will check to see if we should consider the scene as finished.
+    ###Since we're just checking if they've looked at one blueit thread, we just need it here.
+    ###If we want to make players spend more time on this page, we can add an increment like for Flinch
+    $ screenComplete = True
     call screen blueitButtonCheck
     return
 

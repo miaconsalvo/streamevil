@@ -27,6 +27,11 @@ label vignette2Start():
     $ blueitPages = []
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
+    $ flinchView = False
+    $ blueitView = False
+    $ loopdView = False
+    $ screenComplete = False
+    $ loopdView = False
     $ macroChoice = False
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
@@ -2084,12 +2089,21 @@ label vig2_macro_start():
     $ narrator = reg_narrator
     #$ macroNarration = True
     $ macroChoice = True
-    $ menu = nvl_menu
     "You lean back in your chair and let your body relax now that you're no longer on camera."
     $ renpy.sound.play("audio/ReceiveText.ogg")
     "Then you get a Loop'd notification."
+    scene streamview with dissolve
     "It's from Jessie."
+    "You should see what he has to say, and check on Flinch and Blueit."
+    $ screenComplete = True
+    call screen webNavigation_vig2
+    jump vig2_macro_modStart
+
+label vig2_macro_modStart():
     scene discordview with dissolve
+    $ screenComplete = False
+    $ loopdView = True
+    $ menu = nvl_menu
     mod_nvl "Hey bud, great stream again, so glad you decided to keep going with the game!"
     mod_nvl "How're you holding up?"
     if vig2_outlawEpilogue == True:
@@ -2236,15 +2250,15 @@ label vig2_macro_mod_outlawEnd():
     mod_nvl "Np."
     mod_nvl "Gotta run, gonna go grab some pho with a friend, chat later ya?"
     player_nvl "For sure, enjoy!"
-    scene bg black with dissolve
-    nvl clear
-    "I should check out the subblueit to see how people are reacting to Episode 2."
     #$ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     #$ blueitPages.append(vig2_bThread1)
     #$ blueitPages.append(vig2_bThread2)
     #$ blueitPages.append(vig2_bThread3)
     #$ blueitPages.append(vig2_bThread4)
-    jump blueitVignette2_1
+    $ screenComplete = True
+    call screen webNavigation_vig2
+    scene bg black with dissolve
+    #jump blueitVignette2_1
 
 
 ###Labels for Marshal playthrough###
@@ -2365,31 +2379,39 @@ label vig2_macro_mod_marshalEnd():
     mod_nvl "Gotta run, gonna go grab some fried rice with a friend"
     mod_nvl "chat later, ya?"
     player_nvl "For sure, enjoy!"
+    $ screenComplete = True
+    call screen webNavigation_vig2
     scene bg black with dissolve
-    nvl clear
-    jump blueitVignette2_1
+    #jump blueitVignette2_1
 
 ###label for blueit
 label blueitVignette2_1:
+    $ menu = adv_menu
     scene blueit_v2screen at truecenter with dissolve
+    $ screenComplete = False
+    $ blueitView = True
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     $ blueitPages.append(vig2_bThread1)
     $ blueitPages.append(vig2_bThread2)
     $ blueitPages.append(vig2_bThread3)
     $ blueitPages.append(vig2_bThread4)
-    "I should check out the subblueit to see how people are reacting to Episode 2."
+    "You go to check out the subblueit to see how people are reacting to Episode 2."
     jump blueitVignette2_2
     
 label blueitVignette2_2():
     scene blueit_v2screen at truecenter
+    show screen webNavigation_vig2
     call screen blueit
     return
     jump vig2_macro_viewerChat_1
 
 label FlinchAnalytics_vig2():
     $ menu = adv_menu
-    "I should probably check out Flinch too."
+    $ screenComplete = False
+    $ flinchView = True
+    "You should probably check out Flinch too."
     $ flinchCheck = 0
+    show screen webNavigation_vig2
     scene flinch_v2screen with dissolve
     #The six lines below this allow us to change who the topfan is
     #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
@@ -2426,6 +2448,7 @@ label FlinchAnalytics_vig2():
     hide screen streamAnalytics_vig2 with dissolve
 
 label vig2_macro_viewerChat_1():
+    nvl clear
     $ menu = nvl_menu
     hide screen viewershipButton_vig2
     scene bg black

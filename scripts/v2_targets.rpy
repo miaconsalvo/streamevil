@@ -854,6 +854,7 @@ label vig2_blueit_allistarthread():
     show screen blueitThread
     #show launch thread at top:
     #    zoom 1.0
+    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -864,6 +865,7 @@ label vig2_blueit_matticusthread():
     show screen blueitThread
     #show major choice thread at top:
     #    zoom 1.5
+    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -874,6 +876,7 @@ label vig2_blueit_copoutthread():
     show screen blueitThread
     #show romance thread at top:
     #    zoom 1.5
+    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -884,6 +887,7 @@ label vig2_blueit_stealththread():
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
+    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -940,6 +944,10 @@ label vig2_analytics_viewcount2():
             $ flinchViewershipMarshal = True
             jump vig2_analytics_viewcount2
         "Go back to the main Flinch page" if viewershipThoughtCheck == True:
+            if flinchCheck >= 3:
+                $ screenComplete = True
+            else:
+                pass
             show screen viewershipButton_vig2
             return
     return
@@ -968,6 +976,10 @@ label vig2_analytics_topfan():
         if vig2_outlawEpilogue == True:
             "It's a bit surprising considering some of the turns your stream has taken."
         "They're support feels really genuine."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
     show screen viewershipButton_vig2
     return
 
@@ -996,5 +1008,9 @@ label vig2_analytics_audience():
             "Is it cliche to say that maybe the people you've met have been the real prize?"
             "Probably."
             "But does that make them less valuable?"
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
     show screen viewershipButton_vig2
     return

@@ -5,26 +5,26 @@
 screen streamAnalytics():
     #zorder 100 #determines how much overlayed it is
 
+    ####Below is commented out to set up webNavigation screen as the guide through the poststream events
+    #if flinchCheck >= 3 and vignette1 == True:
+    #    textbutton "Open Blueit":
+    #        background Solid("#a03f2eff")
+    #        action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")] #can change this to a [variable] so we can adjust on the fly
+    #        text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+    #        text_hover_color "#ffffffce" 
+    #        text_selected_color "#ffffffff"
+    #        text_size 22
+    #        align (0.4, 0.008)
 
-    if flinchCheck >= 3 and vignette1 == True:
-        textbutton "Open Blueit":
-            background Solid("#66439eff")
-            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")] #can change this to a [variable] so we can adjust on the fly
-            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 22
-            align (0.4, 0.008)
-
-    elif flinchCheck >= 3 and vignette2 == True:
-        textbutton "Open Blueit":
-            background Solid("#66439eff")
-            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
-            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 22
-            align (0.4, 0.008)
+    #elif flinchCheck >= 3 and vignette2 == True:
+    #    textbutton "Open Blueit":
+    #        background Solid("#a03f2eff")
+    #        action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+    #        text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+    #        text_hover_color "#ffffffce" 
+    #        text_selected_color "#ffffffff"
+    #        text_size 22
+    #        align (0.4, 0.008)
 
     #The frame below this is for identifying the average audience number
     imagebutton:
@@ -187,15 +187,15 @@ screen viewershipButton:
 ######Screens for Vignette 2########
 screen streamAnalytics_vig2():
     #zorder 100 #determines how much overlayed it is
-    if flinchCheck >= 3:
-        textbutton "Close Flinch":
-            background Solid("#66439eff")
-            action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
-            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 22
-            align (0.4, 0.008)
+    #if flinchCheck >= 3:
+    #    textbutton "Close Flinch":
+    #        background Solid("#66439eff")
+    #        action [Hide("viewership"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")] #can change this to a [variable] so we can adjust on the fly
+    #        text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+    #        text_hover_color "#ffffffce" 
+    #        text_selected_color "#ffffffff"
+    #        text_size 22
+    #        align (0.4, 0.008)
 
     #The frame below this is for identifying the average audience number
     imagebutton:
