@@ -222,6 +222,28 @@ screen selectProfilePic():
     #    ysize 100
     #    align (0.8, 0.5)
 
+screen webNavigation_v1():
+    textbutton "Open Flinch":
+        action [Hide("blueit"), Jump("FlinchAnalytics_vig1")]
+        #background Solid("#66439eff")
+        background Solid("#a03f2eff")
+        #above is color for SGA build
+        text_color "#ffffffff"
+        text_hover_color "#ffffffce" 
+        text_selected_color "#ffffffff"
+        text_size 20
+        align (0.395, 0.007)    
+
+    textbutton "Open Blueit":
+        action [Hide("blueit"), Jump("blueitVignette1")]
+        #background Solid("#66439eff")
+        background Solid("#a03f2eff")
+        #above is color for SGA build
+        text_color "#ffffffff"
+        text_hover_color "#ffffffce" 
+        text_selected_color "#ffffffff"
+        text_size 20
+        align (0.42, 0.007)  
 
 
 ###PLAYTESTING RECORD SCREEN###

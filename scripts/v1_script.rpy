@@ -1035,7 +1035,15 @@ label modConvo_Day1_Bandit():
     mod_nvl "Take care!"
     streamer_nvl "You too, night!"
     nvl clear #necessary when transitioning to other conversations
+    jump webPage_vig1
     jump FlinchAnalytics
+
+label webPage_vig1():
+    scene streamview with dissolve
+    "Jessie's right, checking out the game's subblueit would be a good call."
+    "I can also check on my analytics from the past stream."
+    call screen webNavigation
+
 
 label FlinchAnalytics():
     $ menu = adv_menu
