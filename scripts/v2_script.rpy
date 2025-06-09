@@ -582,7 +582,7 @@ label matticusDoor():
     pS "Can we get this over with?"
     $ AddChatter(vig2_sc3_comment2)
     "Jennica motions to the intercom."
-    pS "I'd like be done dealing with with this slum-king as soon as possible."
+    pS "I'd like to be done dealing with with this slum-king as soon as possible."
     "A muffled voice pipes up from the crate."
     play audio "macAffirmative.wav" volume 1.5
     macS "Po-dunk king!"
@@ -909,7 +909,7 @@ label approachingBase():
     stop backAudio fadeout 5.0
     $ renpy.music.set_volume(0.7, 1)
     #play music "soundtrack/gibianV.wav" fadein 2.0
-    "The shuttle lands in the grass near the base."
+    "The shuttle lands on the ground near the base."
     "Hardly a base, more of an outpost with a big antenna."
     pS "Forgot how cramped these cheapo shuttles are."
     enS "Fitting for a cheapo planet like this."

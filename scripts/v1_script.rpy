@@ -177,10 +177,10 @@ label shipCall:
         "The bad people are here.":
             mS "The bad people who want to take you away are here."
             mS "But Allistar and I are not going to let that happen."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get the ship."
+            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
         "Everything's going to be okay.":
             mS "We've run into a bit of trouble, but it's okay, Allistar and I can handle it."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get the ship."
+            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
     play audio "macAffirmative.wav" volume 1.5
     "MAC hums back an affirmative beep."
     aS "You ready?"
@@ -236,12 +236,12 @@ label streetShootout:
             $ macHonesty += 1
             $ kcEngagement += 1
             mS "I'm glad you're trying to help, MAC."
-            "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
+            "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             mS "But we need something more than probabilities right now."
         "Not helping!":
             $ macHonesty -= 1
             mS "Not helping, MAC!"
-            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
+            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             $ AddChatter(vig1_sc2_comment8_kc)
             pause 0.5
             mS "Can you locate those other enforcers?"
