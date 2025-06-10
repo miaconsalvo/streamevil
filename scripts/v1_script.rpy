@@ -290,7 +290,7 @@ label streetShootout:
             play audio "lazer.wav" volume 6.0
             "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
-            show allistar stream mad at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.3)
             "I turn back around. Allistar holds a smoking blaster upright."
             show screen chatTutorial2
             show screen streamerCommentary
@@ -326,7 +326,7 @@ label streetShootout:
             enforcer "Aiieea!"
             hide bc_enforcer with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
-            show allistar stream mad at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.3)
             "Allistar holds his right shoulder gingerly, a light trail of smoke from a blaster bolt flickers in the air."
             "He grimaces."
             show screen chatTutorial2
@@ -698,7 +698,7 @@ label escapePodConfrontation:
     show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
-    hide allistar with dissolve
+    hide allistar with dissolve(0.2)
     hide mac with Dissolve(0.5)
     $ AddChatter(vig1_sc3_shot_comment1)
     pause 0.3
