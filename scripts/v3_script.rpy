@@ -856,8 +856,11 @@ label vig3_sc6():
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
         "Chat with Teresa":
+            pass
         "Chat with Jennica":
+            pass
         "Check in on MAC and Rec":
+            pass
     "A part of the bar goes silent as a bald burly man stands to address the crowd."
     show zan stream at stream_center with dissolve
     zan "Patrons! Who is brave enough to ride Karousel!"
