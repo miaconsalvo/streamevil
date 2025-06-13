@@ -1319,6 +1319,8 @@ label vig3_sc9():
     "But this time, it doesn't go away. Ama smiles."
     mS "Deadeye?"
     amaS "Hello Mozely." 
+    "This is the end of the current build"
+    "Going back now."
 
 
 
