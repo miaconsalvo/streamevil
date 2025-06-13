@@ -222,6 +222,86 @@ screen selectProfilePic():
     #    ysize 100
     #    align (0.8, 0.5)
 
+###These screens set up the "Gates" for players to navigate the post-stream session based on their desires.
+screen webNavigation_vig1():
+    if flinchView == False and screenComplete == True:
+        textbutton "Open Flinch":
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig1")]
+            #background Solid("#66439eff")
+            background Solid("#a03f2eff")
+            #above is color for SGA build
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.44, 0.007)    
+    if blueitView == False and screenComplete == True:
+        textbutton "Open Blueit":
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")]
+            #background Solid("#66439eff")
+            background Solid("#a03f2eff")
+            #above is color for SGA build
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.525, 0.007)  
+    if flinchView == True and blueitView == True and screenComplete == True:
+        textbutton "Close Computer":
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("vig1_brother_1")]
+            background Solid("#a03f2eff")
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.8, 0.007)
+
+screen webNavigation_vig2():
+    if loopdView == False and screenComplete == True:
+        textbutton "Open Loop'd":
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_modStart")]
+            #background Solid("#66439eff")
+            background Solid("#a03f2eff")
+            #above is color for SGA build
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.355, 0.007)            
+
+    if flinchView == False and screenComplete == True:
+        textbutton "Open Flinch":
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig2")]
+            #background Solid("#66439eff")
+            background Solid("#a03f2eff")
+            #above is color for SGA build
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.44, 0.007)    
+
+    if blueitView == False and screenComplete == True:
+        textbutton "Open Blueit":
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("blueitVignette2_1")]
+            #background Solid("#66439eff")
+            background Solid("#a03f2eff")
+            #above is color for SGA build
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.525, 0.007)
+
+    if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
+        textbutton "Close Computer":
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")]
+            background Solid("#a03f2eff")
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.8, 0.007)      
 
 
 ###PLAYTESTING RECORD SCREEN###

@@ -1,26 +1,28 @@
 #This script contains code to make the blueit sections of the game function.
 
 screen blueit():
-    if blueitChoiceCheck == True and vignette1 == True:
-        textbutton "Close Blueit":
-            action Jump("vig1_brother_1")
-            background Solid("#66439eff")
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.395, 0.007)
+    ####Below is commented out to set up webNavigation screen as the guide through the poststream events####
+    #if blueitChoiceCheck == True and vignette1 == True:
+    #    textbutton "Close Blueit":
+    #        action Jump("vig1_brother_1")
+    #        background Solid("#a03f2eff")
+    #        text_color "#ffffffff"
+    #        text_hover_color "#ffffffce" 
+    #        text_selected_color "#ffffffff"
+    #        text_size 20
+    #        align (0.395, 0.007)
 
-    elif blueitChoiceCheck == True and vignette2 == True:
-        textbutton "Open Flinch":
-            action Jump("FlinchAnalytics_vig2")
-            background Solid("#66439eff")
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.395, 0.007)
-
+    #elif blueitChoiceCheck == True and vignette2 == True:
+    #    textbutton "Open Flinch":
+    #        action [Hide("blueit"), Jump("FlinchAnalytics_vig2")]
+    #        #background Solid("#66439eff")
+    #        background Solid("#a03f2eff")
+    #        #above is color for SGA build
+    #        text_color "#ffffffff"
+    #        text_hover_color "#ffffffce" 
+    #        text_selected_color "#ffffffff"
+    #        text_size 20
+    #        align (0.395, 0.007)
     viewport:
         area (430, 460, 1050, 580)
         draggable True #allows scrollbar to be dragged

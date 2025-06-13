@@ -114,7 +114,7 @@ label shipCall:
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
     amaS "My dear Mozely. It's good to hear your voice again."
-    show allistar stream mad
+    show allistar stream surprised
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
     aS "Deadeye."
     mS "Ama? Why are you calling?"
@@ -131,7 +131,7 @@ label shipCall:
     amaS "So why don't you run along to your little ship and set sail."
     amaS "Oh, and take Allistar with you." 
     amaS "BigCorp has labeled him an accomplice, and I'd hate for him to suffer in a prison on your account."
-    show allistar stream thinking
+    show allistar stream mad
     amaS "Take care, Mozely. Do try to make this hunt interesting."
     play audio "cutCall.wav" volume 1.5
     "The line cuts. The room is silent."
@@ -163,9 +163,10 @@ label shipCall:
             mS "I saved the galaxy."
             mS "We don't know what BC wants with MAC, but we know it's bad."
             mS "We {i}cannot{/i} let them get hold of him."
+    show allistar stream thinking
     "Allistar is perfectly still."
-    show allistar stream mad
     "Then he rushes to a nearby drawer, lifts out a blaster, and sets it to stun."
+    show allistar stream mad
     aS "It's a straight shot to the spaceport. Our best bet is a full sprint."
     $ AddChatter(vig1_sc2_comment6)
     pause 0.5
@@ -176,10 +177,10 @@ label shipCall:
         "The bad people are here.":
             mS "The bad people who want to take you away are here."
             mS "But Allistar and I are not going to let that happen."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get the ship."
+            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
         "Everything's going to be okay.":
             mS "We've run into a bit of trouble, but it's okay, Allistar and I can handle it."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get the ship."
+            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
     play audio "macAffirmative.wav" volume 1.5
     "MAC hums back an affirmative beep."
     aS "You ready?"
@@ -235,12 +236,12 @@ label streetShootout:
             $ macHonesty += 1
             $ kcEngagement += 1
             mS "I'm glad you're trying to help, MAC."
-            "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
+            "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             mS "But we need something more than probabilities right now."
         "Not helping!":
             $ macHonesty -= 1
             mS "Not helping, MAC!"
-            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the floor."
+            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             $ AddChatter(vig1_sc2_comment8_kc)
             pause 0.5
             mS "Can you locate those other enforcers?"
@@ -289,7 +290,7 @@ label streetShootout:
             play audio "lazer.wav" volume 6.0
             "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
-            show allistar stream mad at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.3)
             "I turn back around. Allistar holds a smoking blaster upright."
             show screen chatTutorial2
             show screen streamerCommentary
@@ -325,7 +326,7 @@ label streetShootout:
             enforcer "Aiieea!"
             hide bc_enforcer with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
-            show allistar stream mad at stream_right with Dissolve (0.5)
+            show allistar stream mad at stream_right with Dissolve (0.3)
             "Allistar holds his right shoulder gingerly, a light trail of smoke from a blaster bolt flickers in the air."
             "He grimaces."
             show screen chatTutorial2
@@ -622,7 +623,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
     play music "soundtrack/decisionTime.wav" volume 1.2 fadein 1.0
-    show allistar stream thinking at stream_right with dissolve
+    show allistar stream surprised at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
     $ AddChatter(vig1_sc3_comment6)
@@ -694,9 +695,10 @@ label escapePodConfrontation:
             $ narrator = alt_narrator
     play audio "lazer.wav" volume 5.0
     $ macViolence += 1
+    show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
-    hide allistar with dissolve
+    hide allistar with dissolve(0.2)
     hide mac with Dissolve(0.5)
     $ AddChatter(vig1_sc3_shot_comment1)
     pause 0.3
@@ -1032,12 +1034,22 @@ label modConvo_Day1_Bandit():
     mod_nvl "Take care!"
     streamer_nvl "You too, night!"
     nvl clear #necessary when transitioning to other conversations
-    jump FlinchAnalytics
+    jump webPage_vig1
+    jump FlinchAnalytics_vig1
 
-label FlinchAnalytics():
+label webPage_vig1():
+    scene streamview with dissolve
     $ menu = adv_menu
-    "Jessie's right, checking out the game's subblueit would be a good call."
-    "But first you decide to look at your analytics overview for the stream."
+    $ screenComplete = True
+    "Jessie's right, checking out the forums on Blueit would be a good call."
+    "You can also check on the analytics from Flinch for the past stream."
+    call screen webNavigation_vig1
+
+
+label FlinchAnalytics_vig1():
+    $ screenComplete = False
+    $ flinchView = True
+    #"You navigate to the."
     scene flinch_v1screen with dissolve
     #The six lines below this allow us to change who the topfan is
     #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
@@ -1063,13 +1075,16 @@ label FlinchAnalytics():
     $ vbar9 += viewCheck9
     $ vbar10 += viewCheck10
     show screen viewershipButton
+    show screen webNavigation_vig1
     call screen streamAnalytics
     hide screen streamAnalytics with dissolve
     jump blueitVignette1
 
 label blueitVignette1():
     #scene Reddit with dissolve - would show reddit scene but we're not going to bother
-    hide screen viewershipButton
+    $ screenComplete = False
+    $ blueitView = True
+    show screen webNavigation_vig1
     scene blueit_v1screen at truecenter with dissolve
     $ blueitPages.append(vig1_bThread1)
     $ blueitPages.append(vig1_bThread2)

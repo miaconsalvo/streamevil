@@ -49,6 +49,7 @@ define amaS = Character("Deadeye", what_font="Play-Regular.ttf", window_style = 
 
 define enforcer = Character("Enforcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "enforcer neutral", window_background="images/textbox/stream textbox npc.png")
 
+#vig2 characters
 define shipcom = Character("Ship Intercom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define agent1 = Character("Customs Agent", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define smatt = Character("Matticus", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "matticus stream", window_background="images/textbox/stream textbox npc.png")
@@ -63,7 +64,17 @@ define houndleader = Character("Hound Leader", what_font="Play-Regular.ttf", win
 define houndgoon = Character("Hound Gangster", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "hound goon stream", window_background="images/textbox/stream textbox npc.png")
 define recS = Character("Reccrin", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#ce1fd4", what_color = "#000000", image = "reccrin stream neutral", window_background="images/textbox/stream textbox npc.png")
 define showgirl = Character("Daisy", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "showgirl stream", window_background="images/textbox/stream textbox npc.png")
-define dflycontact = Character("Daisy", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "showgirl stream", window_background="images/textbox/stream textbox npc.png")
+define dflycontact = Character("Dragonfly", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "dragonfly contact stream", window_background="images/textbox/stream textbox npc.png")
+define strngr1 = Character("Stranger", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "stranger 1 stream", window_background="images/textbox/stream textbox npc.png")
+define zan = Character("Zan", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "zan stream", window_background="images/textbox/stream textbox npc.png")
+define ovid = Character("Ovid", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "ovid stream", window_background="images/textbox/stream textbox npc.png") 
+define wifenpc = Character("Young Woman", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define husbnpc = Character("Young Man", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define vyattend = Character("Ryo", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "vyattend stream", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc1 = Character("Inventor's Fair Guest", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define invfairnpc2 = Character("Mills", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define invfairannounce = Character("Announcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
@@ -141,6 +152,12 @@ default vbar9 = 0
 default vbar10 = 0
 default max_viewers = 40
 
+###Variables to make free navigation of pos-stream scenes possible:
+default flinchView = False #When set to "True," this will turn off the button to open the Flinch page
+default blueitView = False #When set to "True," this will turn off the button to open the Blueit page
+default loopdView = False #You're never gonna gues what this does
+default screenComplete = False #Another gate to regulate when the webNavigation screen will display
+
 ###Variables for tracking Flinch Analytics Vignette 1
 default topfan = ""
 default followerGoal = "8"
@@ -182,6 +199,10 @@ default customsSpeculation = False
 default vig2_marshalEpilogue = False
 default vig2_outlawEpilogue = False
 default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
+
+####Variables for Vignette 3####
+default firstfightprediction = False
+
 
 
 #default yadj = ui.adjustment()
