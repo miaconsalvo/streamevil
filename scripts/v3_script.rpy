@@ -349,14 +349,15 @@ label vig3_sc4():
     pS "He gets it from you."
     #hide akarstreet_stream with dissolve
     #show reccshop_stream at topleft onlayer background with dissolve
-    "We walk into Specs and Steele the inside is a chaotic mess of equipment and gear stacked wildly against the walls."
-    "Thankfully there's enough space to move with it being empty."
+    "We walk into Specs and Steele the inside is...neat?"
+    "Steele's usual brand of chaotic mess has been replaced with with a refined and uncharacteristic organization."
+    "At least now you can walk through it."
     mS "Hey Steele! You in?"
     pS "Hope you still have that Vira Brandy!"
     enS "From four years ago?"
     pS "It ages well!"
     macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his late partner has a shelf life of 5 years."
-    pS "See? Barely made it!"
+    pS "See? Just made it!"
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
     "Someone comes out from the back room."
@@ -479,17 +480,17 @@ label vig3_sc4():
             mS "Alright that's enough!"
         "Let them continue":
             "They keep trashing it."
-            "Every weird invention and new gadget clatters to the ground. Broken parts start to litter the floor."
+            "I cringe as each piece falls. Broken parts start to litter the floor."
             menu:
                 "Do I intervene?"
                 "That's enough!":
                     mS "Alright that's enough!"
                 "Stay quiet.":
-                    "They continue to trash the shop. More carnage. They're laughing to each other tossing equipment like a hackey sac."
+                    "They continue to trash the shop. More carnage. They're laughing to each other, tossing equipment like a hackey sac."
                     "I see one of them try to head to the back room."
     mS "Alright that's enough!"
     houndgoon "You'd be best to stay out of official business."
-    "Another gangster chimes in."
+    "Another uniform chimes in."
     houndgoon "We're under order to collect contraband."
     mS "Contraband? That's rich, learned that from the little pamphlet they gave you?"
     houndgoon "Tryna be smart are we?"
@@ -503,7 +504,7 @@ label vig3_sc4():
     mS "That so called \"contraband\" is mine. And they said it's perfectly legit."
     "I slowly walk up to the counter moving to take the parts."
     mS "So I'd like it back now."
-    "The Hounds turn to us and I know they're gearing up for a fight. They probably won't kill us, but I can't imagine how banged up we'll be or what happens if they find MAC." ###The player must decide between three actions, fight, let them have it, or Bribe - IF THEY HAVEN'T BRIBED REGI###.
+    "The uniforms turn to us and I know they're gearing up for a fight. They probably won't kill us, but I can't imagine how banged up we'll be or what happens if they find MAC." ###The player must decide between three actions, fight, let them have it, or Bribe - IF THEY HAVEN'T BRIBED REGI###.
     menu:
         "How do I deal with this?"
         "Fight them.":
@@ -522,7 +523,7 @@ label vig3_sc4():
             macS "Captain are you hurt?" 
             mS "Just my pride."
             "Teresa goes to pull me up."
-            enS "I want to blow that man up from the inside."
+            enS "I want to burn that man from the inside."
             pS "Maybe we can use him as our antennae instead."
             mS "Now that's a thought. Rec, you know those guys?"
         "Let them take the antenna.":
@@ -558,7 +559,7 @@ label vig3_sc4():
             show teresa stream neutral at stream_right with dissolve
             mS "Just my pride, and my wallet."
             "Teresa goes to pull me up."
-            enS "I want to blow that man up from the inside."
+            enS "I want to burn that man up from the inside."
             pS "Maybe we can use him as our antennae instead."
             mS "Now that's a thought. Rec, you know those guys?"
     "They pull out five glasses. And drop a bottle of brandy on the counter"
@@ -756,7 +757,7 @@ label vig3_sc6():
     hide mac with dissolve
     "MAC looks at me expectantly."
     mS "In eyesight, got it?"
-    "MAC lets out an excited noise and heads  to the bar with Rec."
+    "MAC lets out an excited noise and heads to the bar with Rec."
     "The table is silent."
     mS "I owe you both an apology"
     "Jennica and Teresa perk their heads towards me."
@@ -785,19 +786,13 @@ label vig3_sc6():
     hide teresa with dissolve
     hide jennica with dissolve
     "As the night continues on, the Broken Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks as a barkeep cleans them."
-    "Rec is telling MAC a story that has him fully engaged."
     "Teresa is in a corner watching in unwavering curiosity at the plants that line the ceiling, tossing bits of food up for them to catch."
     "Jennica is at a pool table, chatting away with some couple who stare at her in amazement."
-   
-    #I would want to have the stranger choice be an interruption after picking a choice with the crew. Doing it like this for simplicity. 
-    menu:
-        "I should check in on one of them...."
-        "Check in on Teresa":
-            "Teresa and I haven't had some alone time in a while. "
-        "Check in on Jennica":
-            "Jennica and I should talk."
-        "Check in on Mac and Rec":
-            "This place is probably overwhelming, I should check-in."
+    "Rec is telling MAC a story that has him fully engaged. But he keeps looking around the room nervously."
+
+    #This would normally be a menu with multiple choices but for simplicity and time we'll only have MAC and Rec and the stranger
+
+    "I should check in on MAC, see how he's holding up." 
     "Just as I get up I notice that wide brimmed hat again, long dark hair, she walks right past me and out the door."
     "There's a chill that runs down my spine."
     ###Recount choice again###
@@ -834,6 +829,7 @@ label vig3_sc6():
                     "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
                     hide stranger 1 stream with dissolve 
                     "I return to the Broken Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
+                    "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Hands up, walk away.":
@@ -846,47 +842,86 @@ label vig3_sc6():
                     "Her knife doesn't move but she nods her head to tell me to get lost."
                     "I don't take my eyes off her when I back away"
                     "I return to the Broken Bulb disappointed."
+                    "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Wrestle the knife away":
-                    "Placeholder dialogue here."
-                    "violence ensues."
+                    mS "I don't have time for this."
+                    "I grab her wrist before she can cut me open and twist her arm down and awake." 
+                    "She yells as something snaps."
+                    "Knee to the chest."
+                    "It's over before it even starts."
+                    mS "Need me to call someone for you."
+                    strngr1 "Go to hell."
+                    mS "Trust me they know I'm coming."
                     hide stranger 1 stream with dissolve 
-                    "I return to the Broken Bulb a bit disheveled."
+                    "I return to the Broken Bulb and wipe a bit of dust off my jacket before heading in."
+                    "I go to see Mac and Rec"
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
-        "Chat with Teresa":
-            pass
-        "Chat with Jennica":
-            pass
+
         "Check in on MAC and Rec":
-            pass
-    "A part of the bar goes silent as a bald burly man stands to address the crowd."
-    show zan stream at stream_center with dissolve
-    zan "Patrons! Who is brave enough to ride Karousel!"
-    "Oh god not this game. What kind of idiot would even take that challenge-"
-    pS "Right here!"
-    "Jennica marches to the man who laughs."
-    show jennica happy stream at stream_left with dissolve
-    zan "So small, already tipping over, I fear you may not survive haha!"
-    "A small group of patrons at a table behind him laugh."
-    pS "Then you have nothin' to worry about."
-    zan "Apologies but I will not pick you up from the floor when you lose."
-    pS "Please."
-    "Teresa saddles up next to Jennica."
-    show teresa happy stream at stream_right with dissolve
-    enS "The lady said she'd like to ride the karousel."
-    zan "Two of you! I'll need a bigger mop!"
-    "A woman from the table flanks him, she rivals him in size."
-    enS "So does that mean you're ready to play?"
-    zan "HAHA, I like you, moxie!"
-    pS "Moxie's our middle name."
-    zan "That is strange...but ZAN APPROVES!"
-    "He lifts up two thumbs and points to himself then speaks to the woman in a language I do not understand."
-    "She nods and picks up a large table to make the play area. Jennica and Zan speak for a moment before shaking hands."
-    zan "The bet is done! Mr. Stein. The Karousel please!"
+            "I can't follow paranoid hunches, I gotta stick to my crew."
+            "Rec and MAC are chatting at the bar, I get the tail end of their conversation."
+            recS "You know when you've lived here for so long you get used to it truly."
+            macS "But it's so dangerous, are you not worried?"
+            recS "Of course I worry, but no use in worrying all the time."
+            menu: 
+                "Say something."
+                    "They're right you know.":
+                        mS "They're right, just because something is difficult doesn't mean you need to be consumed by it."
+                        mS "People do plenty of things that make them worried, how you wrok through that is more important."
+                        macS "I think I understand."
+                        recS "Thanks Moze. You know I do admire what you do, it's a tough life but it's yours."
+                        "I smile."
+                        mS "It has it's good moments."
+                        macS "Like candy!" 
+                        mS "Exactly. That's why we go through the worry."
+                    "You should really consider moving":
+                        mS "Rec every thought moving would be the right call?"
+                        recS "Oh that's rich coming from you."
+                        mS "I'm just saying there's better places than one riddled with Hounds."
+                        macS "I didn't see much of a dog population here."
+                        recS "I like my shop and my community, I don't regret planting roots here."
+                        recS "I'm happy I didn't become a Snakehawk."
+                        "A pit forms in my stomach."
+                        mS "I'm happy your found a place that is yours."
+                        recS "I'll be sure to fight for it."
+                    "Akar is beautiful if you look in the right places":
+                        mS "It may not look it but Akar is beautiful."
+                        mS "Sometimes the worrying makes sense if you have a community where you are."
+                        macS "Like what we have?"
+                        mS "Yeah kid."
+                        recS "So cute..."
+                        "I feel my face get warm."
+                        mS "You always look for the beautiful parts it's the whole point."
+            "A part of the bar goes silent as a bald burly man stands to address the crowd."
+            show zan stream at stream_center with dissolve
+            zan "Patrons! Who is brave enough to ride Karousel!"
+            "Oh god not this game. What kind of idiot would even take that challenge-"
+            pS "Right here!"
+            "Jennica marches to the man who laughs."
+            show jennica happy stream at stream_left with dissolve
+            zan "So small, already tipping over, I fear you may not survive haha!"
+            "A small group of patrons at a table behind him laugh."
+            pS "Then you have nothin' to worry about."
+            zan "Apologies but I will not pick you up from the floor when you lose."
+            pS "Please."
+            "Teresa saddles up next to Jennica."
+            show teresa happy stream at stream_right with dissolve
+            enS "The lady said she'd like to ride the karousel."
+            zan "Two of you! I'll need a bigger mop!"
+            "A woman from the table flanks him, she rivals him in size."
+            enS "So does that mean you're ready to play?"
+            zan "HAHA, I like you, moxie!"
+            pS "Moxie's our middle name."
+            zan "That is strange...but ZAN APPROVES!"
+            "He lifts up two thumbs and points to himself then speaks to the woman in a language I do not understand."
+            "She nods and picks up a large table to make the play area. Jennica and Zan speak for a moment before shaking hands."
+    #This will be where we start after the stranger track#
+    zan "The bet is done! Mr. Stein. Zan requests The Karousel please!"
     "Bet? What bet?"
-    "A small man holds up the karousel high over his head, I barely see him before it appears on the table and the door to the back room swings closed."
+    "A small man holds up the Karousel high over his head, I barely see him before it appears on the table and the door to the back room swings closed."
     hide jennica with dissolve
     hide teresa with dissolve
     hide zan with dissolve
@@ -895,16 +930,20 @@ label vig3_sc6():
     macS "Are they playing Brikarousel?"
     recS "Aren't you too young to know that game?"
     macS "I have a full database that allows me to know a myriad of games."
-    recS "Got me there... You know I never understood this game."
+    recS "A full database..."
+    "Rec's eyes move back on the gambling table, Jennica and Teresa are deep in conversation."
+    recS "You know I never understood this game."
     macS "Well Brikarousel was invented by Brika Alphonse approximately 30 years ago when..."
     recS "I meant why people are so eager to play."
+    macS "Oh."
     macS "Alcohol?"
-    recS "You're learning fast."
+    mS "You catch on quick."
     "I look over at the table as a pit in my stomach forms."
     mS "Bet? What did they bet?"
     recS "I didn't hear but I read lips a bit, a “sh” something?"
-    mS "\"Sh\" something."
-    macS "Shirt, shoes, shilling Ship? They wouldn't-"
+    mS "\"Sh\" something???"
+    macS "Shirt, shoes, shilling..."
+    "Ship? They wouldn't-"
     hide rec with dissolve
     hide mac with dissolve
     "No that's stupid."
@@ -913,19 +952,20 @@ label vig3_sc6():
     show jennica neutral stream at stream_left with dissolve
     show teresa neutral stream at stream_right with dissolve
     show zan stream at stream_center with dissolve
-    "Contrary to my belief the tough woman next to Zan is not participating instead it's a small man with dark hair and modified gray skin."
+    "Though I would assume Zan (as he keeps reminding everyone) would pick the tough looking women as his partner, instead it's a small man with dark hair and modified gray skin."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
     zan "Ovid is strong of heart, muscles on the inside."
     enS "That tends to be where they go yes."
     ovid "Zan must we always play this game whenever we go out?"
+    zan "OF COURSE! HAHA!"
     "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
     "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the karousel."
     "The first team that withdraws or has a member drop loses."
-    "By round ten, it's not looking good."
+    "...By round ten, it's not looking good."
     zan "How is moxie?"
-    pS "Stronger than my momma's back!"
+    pS "Stronger than my mama's back!"
     enS "I'm starting to feel mine in the back of my throat."
-    "Teresa and Jennica look wrung out but surprisingly Zan and Ovid are sturdy despite drinking their fill."
+    "Teresa and Jennica look wrung out but Zan and Ovid are sturdy despite drinking their fill."
     hide jennica with dissolve
     hide teresa with dissolve
     hide zan with dissolve
@@ -933,20 +973,26 @@ label vig3_sc6():
     show rec neutral stream at stream_right with dissolve
     macS "They're cheating."
     recS "How did you-"
-    recS "Of course! We've been out of the game too long."
+    mS "Of course! We've been out of the game too long."
     macS "We must tell someone, this is improper."
-    mS "MAC I'm going to lay this out for you plainly. No one cares if something is improper here."
+    mS "MAC I'm going to lay this out for you. No one cares if something is improper here."
     macS "Then we should do something."
-    mS "I'm on it."
+    mS "I'm already on it."
     macS "And I'll help."
-    mS "You will sit down and say nothing and let me handle it."
-    macS "But I-"
-    mS "Understand?"
-    macS "But I'm part of this crew too Ama!"
+    menu: 
+        "Say something."
+        "Abosultely not!":
+            mS "You will sit down and say nothing and let me handle it."
+            macS "But I-"
+            mS "Understand?"
+        "It's better if I just do it.":
+            mS "This is better as a solo mission."
+            macS "But I-"
+            mS "It'll be fine don't worry."            
+    macS "But I'm part of this crew too *Ama*!"
     "That was my voice. Upset, scared of being left behind."
     mS "You are, and you'll have other chances to prove it. Just not right now."
-    "When Jennica calls for a short recess I know that's my time to head over. Players can't leave the table so I go to them."
-    hide rec with dissolve
+    "When Jennica calls for a short recess I know that's my time to head over."
     hide mac with dissolve
     show jennica neutral stream at stream_left with dissolve
     show teresa neutral stream at stream_right with dissolve
@@ -963,8 +1009,8 @@ label vig3_sc6():
     enS "An evaporator..."
     pS "Was wondering how that little guy is still standing."
     "I look around the room for more signs."
-    mS "The deck isn't right. I know a standard set when I see one."
-    pS "That makes sense, the feel was off."
+    pS "The deck isn't right. I know a standard set when I see one."
+    mS "That makes sense, especially if they're regulars."
     "What else. Teresa's eyes are fixed on the Karousel."
     enS "The Karousel. There's a delay before it settles. And one of their friends has been staring at his communicator all night."
     "Ovid's tube, the deck, the karousel. We have to deal with them."
@@ -997,13 +1043,14 @@ label vig3_sc6():
             show zan stream at stream_center with dissolve
             zan "Idiot! You interrupt the Karousel!"
             "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
+            "Ovid coughs loudly before putting something in his pocket, with cards scattered all over the floor the deck is replaced."
+            "The Karousel is untouched, the rounds continues."
             hide zan with dissolve
         "Shoot the rope holding the carnivorous plants":
             "Placeholder dialogue here."
             "Plants do some stuff, problem ensues."
     #maybe fade in and out to show passage of time again?#
-    "Ovid coughs loudly before putting something in his pocket, with cards scattered all over the floor the deck is replaced."
-    "The karousel is untouched, the rounds continue."
+    
     "Round 25 is rough. Even with some of the obstacles out of the way Teresa and Jennica are barely holding on. Ovid is finally looking like he's playing the game and Zan is rocking in his seat like a child."
     ovid "Please, call it quits?"
     show teresa stream neutral at stream_right with dissolve 
