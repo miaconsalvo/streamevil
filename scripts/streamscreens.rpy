@@ -46,13 +46,15 @@ screen streamChat():
                         #You can change color with c.colour (an attribute that was added to ChatEntry class in Lists script). The Textbutton is a bit more complicated
 
 screen streamerCommentary(): #This screen appears when the player can interact with the stream of their own volition
-    textbutton "React":
+    image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
+    
+    imagebutton: #just the overlay that you click on
         action Call(reactTarget, from_current = True)
-        text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-        text_hover_color "#ffffffa1" 
-        text_selected_color "#ffffff4f"
-        background "#00aeffcb"
-        align (0.95, 0.925)
+        idle Solid("#00000000")
+        hover Solid("#44444463")
+        xsize 192
+        ysize 120
+        align (0.005, 0.12)
         #vbox:
         #    spacing 10
         #    align (0.5, 0.5)
@@ -75,27 +77,10 @@ screen streamerCommentary(): #This screen appears when the player can interact w
 screen streamDetails():
     frame:
         background Solid("#00000000")
-        xpos 0
-        ypos 900
-        xsize 1530
-        ysize 150
-        xpadding 5
-        ypadding 5
-        text "[streamer]" align (.1, .1) color "#d418acff" #displays the name that players chose for themselves at the beginning of the game.
-        text "Viewers [viewCount]" align (1.208, -8.38) color "#ffffffff" #displays the current viewer count
-        #text "PickledDragons\n{u}Interest:{/u}\n      [pdEngagement]" align (0.25, 0.5) color "#04cdffff"
-        #text "KitCat\n{u}Interest:{/u}\n      [kcEngagement]" align (0.45, 0.5) color "#f03535ff"
-        #text "Coriolis\n{u}Interest:{/u}\n      [csEngagement]" align (0.6, 0.5) color "#720ee6ff"
-        #text "Outlaw Score: [outlaw]" align (0.8, 0.25) color "#e6a20eff"
-        #text "Marshal Score: [marshal]" align (0.8, 0.7) color "#27e60eff"
-#        textbutton pingText:
-#            action Call("TurnSound", from_current = True)
-#            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-#            text_hover_color "#ffffffd5" 
-#            text_selected_color "#ffffffff"
-#            background "#000000ff" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
-#            text_size 25
-#            align (1.21, -.3)
+        xsize 1920
+        ysize 1080
+        text "[streamer]" align (.07, 0.89) color "#d418acff"
+        text "Viewers [viewCount]" align (0.94, 0.05) color "#ffffffff"
         imagebutton:
             action Call("TurnSound", from_current = True)
             background Image(pingImage)
@@ -103,8 +88,10 @@ screen streamDetails():
             hover Solid("#00000044")
             xsize 80
             ysize 72
-            align (1.1, -0.8)
-        image "[profilePic]" align (.001, -0.5) size (100, 100) #displays a profile pic for the streamer
+            align (0.85, 0.85)
+        image "[profilePic]" align (1, 0.91) size (100, 100) #displays a profile pic for the streamer
+        image "[reactImage]" align (-0.02, 0.105) size (263.1, 131.7)
+        #image ["stream ui/reactalert.png"] align (0.13, 0.125) size (40, 40)
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():

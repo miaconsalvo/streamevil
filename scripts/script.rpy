@@ -85,6 +85,7 @@ default pingImage = "stream ui/soundon.png"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
 default profilePic = "images/socials/profilepics/profile2.png"
+default reactImage = "stream ui/reactneutral.png"
 
 #variables to track morality
 default marshal = 4

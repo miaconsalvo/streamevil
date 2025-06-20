@@ -21,6 +21,7 @@ label vig2_sc1_testquestion():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc1_matticusopinion():
@@ -44,6 +45,7 @@ label vig2_sc1_matticusopinion():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_mar_consistency():
@@ -70,6 +72,7 @@ label vig2_sc2_mar_consistency():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_out_romance():
@@ -114,6 +117,7 @@ label vig2_sc2_out_romance():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc4_gameplan():
@@ -149,6 +153,7 @@ label vig2_sc4_gameplan():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc7_toofar():
@@ -173,6 +178,7 @@ label vig2_sc7_toofar():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc7_rips():
@@ -214,6 +220,7 @@ label vig2_sc7_rips():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_epilogue_outlaw():
@@ -235,6 +242,7 @@ label vig2_epilogue_outlaw():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 #################
@@ -248,15 +256,18 @@ label vig2_sc1_openingstream():
     menu:
         "Introduce the stream."
         "Welcome back!":
+            $ reactImage = "stream ui/reactthumbsup.png"
             player "Hey guys! Welcome back to the stream!"
             player "Lets get into the next episode!"
             pause 0.5
         "How's it going everyone!":
+            $ reactImage = "stream ui/reactconversational.png"
             player "Oh damn here we go again!" 
             player "How's it going everyone?"
             $ AddChatter(vig2_sc1_reactcomment1)
             pause 0.5
         "Trouble time!":
+            $ reactImage = "stream ui/reactconfident.png"
             player "Hey folks!"
             player "Are you guys ready to get into some trouble?"
             $ AddChatter(vig2_sc1_reactcomment2)
@@ -265,6 +276,7 @@ label vig2_sc1_openingstream():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc1_mentionallistar():
@@ -288,6 +300,7 @@ label vig2_sc1_mentionallistar():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc1_matticusjennicaopinion():
@@ -311,6 +324,7 @@ label vig2_sc1_matticusjennicaopinion():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_landingongibian():
@@ -340,6 +354,7 @@ label vig2_sc2_landingongibian():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_whywedidntfly():
@@ -365,6 +380,7 @@ label vig2_sc2_whywedidntfly():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_firstproblem():
@@ -395,6 +411,7 @@ label vig2_sc2_firstproblem():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc2_customsdecision():
@@ -421,6 +438,7 @@ label vig2_sc2_customsdecision():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc3_aftercustoms():
@@ -451,6 +469,7 @@ label vig2_sc3_aftercustoms():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc4_meetingmatticus():
@@ -480,6 +499,7 @@ label vig2_sc4_meetingmatticus():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc4_plancheckin():
@@ -508,6 +528,7 @@ label vig2_sc4_plancheckin():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc5_macquestion():
@@ -537,6 +558,7 @@ label vig2_sc5_macquestion():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc6_out_reflect():
@@ -564,6 +586,7 @@ label vig2_sc6_out_reflect():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc6_mar_reflect():
@@ -591,6 +614,7 @@ label vig2_sc6_mar_reflect():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc7_bigreveal():
@@ -619,6 +643,7 @@ label vig2_sc7_bigreveal():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc8_out_postchoice():
@@ -651,6 +676,7 @@ label vig2_sc8_out_postchoice():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc8_out_reflect():
@@ -690,6 +716,7 @@ label vig2_sc8_out_reflect():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc9_out_end():
@@ -721,6 +748,7 @@ label vig2_sc9_out_end():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc8_mar_reacttoregi():
@@ -752,6 +780,7 @@ label vig2_sc8_mar_reacttoregi():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc8_mar_reacttoregistun():
@@ -781,6 +810,7 @@ label vig2_sc8_mar_reacttoregistun():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc8_mar_reacttoregibribe():
@@ -812,6 +842,7 @@ label vig2_sc8_mar_reacttoregibribe():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 label vig2_sc9_mar_end():
@@ -843,6 +874,7 @@ label vig2_sc9_mar_end():
         $ narrator = alt_narrator
     else:
         $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
     return
 
 
