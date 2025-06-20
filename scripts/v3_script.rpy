@@ -867,7 +867,7 @@ label vig3_sc6():
             macS "But it's so dangerous, are you not worried?"
             recS "Of course I worry, but no use in worrying all the time."
             menu: 
-                "Say something."
+                "Say something.":
                     "They're right you know.":
                         mS "They're right, just because something is difficult doesn't mean you need to be consumed by it."
                         mS "People do plenty of things that make them worried, how you wrok through that is more important."
