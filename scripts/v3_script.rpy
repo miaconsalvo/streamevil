@@ -357,7 +357,7 @@ label vig3_sc4():
     pS "Hope you still have that Vira Brandy!"
     enS "From four years ago?"
     pS "It ages well!"
-    macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his late partner has a shelf life of 5 years."
+    macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his partner has a shelf life of 5 years."
     pS "See? Just made it!"
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
@@ -1350,8 +1350,8 @@ label vig3_sc9():
         "Let it be.":
             "I can feel the anger boiling up to my throat."
             "It's so tempting just to trip these snobs into the drink table."
-            invfairnpc2 "And that dress, what off the rack from Akar."
-            invfairnpc1 "Not Akar, a half-way town for drunks and undesirables."
+            invfairnpc2 "And that dress? What off the rack from Akar."
+            invfairnpc1 "Not Akar! A half-way town for drunks and undesirables."
             invfairnpc2 "Sometimes makes you wish BigCorps took over."
             invfairnpc1 "All hail the Snakehawks."
             invfairnpc2 "And now the former leader is their personal dog."
@@ -1436,6 +1436,151 @@ label vig3_sc9():
     amaS "Hello Mozely." 
     "This is the end of the current build"
     "Going back now."
+    jump vig3_sc10 
+
+label vig3_sc10():
+    # Black Screen
+    "I flinch as a shot rings outs, echoing in my ears."
+    "My body is buzzing, heart pounding."
+    "Ama takes the blaster away from me."
+    # Ext. Akar - A Decade Ago 
+    amaS "Kid, if you're gonna jump everytime someone shoots at you, they'll be playing target practice with your head."
+    mS "I can't help it. I'm trying."
+    amaS "You're scared."
+    mS "I'm not scared. I'm a SnakeHawk!"
+    amaS "Not after this you aren't."
+    "What does she know? I am a SnakeHawk. A better one than that stupid Matticus at least."
+    mS "Let me go again!"
+    amaS "Please..."
+    mS "Let me prove myself."
+    amaS "All you've proven is that you're a liability."
+    ms "Oh yeah like Jenn is any better."
+    amaS "At least she can fire a blaster without flinching."
+    "I feel tears swell up in my eyes."
+    mS "Screw you! You don't know anything about me."
+    amaS "We're done here."
+    "Ama raised the blaster and points it at me. My body starts to freeze."
+    "NO!"
+    "I move out of the way just as the impact hits my shoulder, a hair's breadth away from my heart."
+    "My arm is limp but there's no blood, she set it to stun."
+    "Ama walks up to me, and turns the blaster, handle pointed at me."
+    "I see the insignia of the Snakehawks branded on the handle."
+    amaS "Again."
+    "I get up and take the blaster. I grip the handle it like it's mine. Because it is." 
+    "I point it at the targets."
+    "And fire."
+    jump vig3_sc11()
+
+label vig3_sc11():
+    #Int. Inventor's Fair. 
+    menu:
+        "Ama stand in front of me steely gaze."
+            "Of course you found us...": #Flirt
+                mS "Of course you found us..."
+                mS "I shouldn't have expected less from the great Deadeye."
+                amaS "You flatter me."
+                amaS "Gotta say getting into an event like this is impressive."
+                amaS "You look...well."
+            "Impossible":
+                mS "Impossible."
+                mS "How could you have possibly found us?"
+                amaS "You think so little of me."
+                amaS "Thought that stunt on Gibian V was going to keep me away?"
+                amaS "How's Sallent doing?"
+            "I see we're still playing the lapdog?":
+                mS "Still playing the obedient lapdog I see?"
+                mS "Money must be good."
+                amaS "Even know you're still that arrogant little girl."
+                amaS "How has playing the hero been? Finally found that purpose you've been missing?"
+
+    "Her tone is playful but there's no mistaking that her shotgun is folded behind her long jacket."
+    "Big Corps presentation continues and I hope that the crew has taken this as a moment to leave."
+    "It's up to Resa and Jenn, now."
+    amaS "So tell me how is that little crew of yours, the Willow?"
+    mS "The Oakley."
+    amaS "Right right, quaint."
+    amaS "So let me cut to it, you give me what I want and I won't gut your crew and make you watch."
+    "I look up at the platform."
+    "I could laugh."
+    "That smart little devil."
+    mS "I don't know what you mean Ama, left something behind have you?"
+    amaS "Oh we're playing dumb are we, the droid Mozely, give me the droid."
+        menu: 
+            "Ama doesn't have MAC, we can use this."
+                "Why don't you just enjoy the party?": #Flirt
+                    mS "Ama please, it's a celebration, have a drink."
+                    mS "All this stress will give you wrinkles."
+                    "A smile forms on her face, anger mixed with something else."
+                    amaS "You little shit..."
+                    mS "Now, now, don't make a scene. You're better than that."
+                "I don't have the droid you're looking for.":
+                    mS "I don't have it."
+                    amaS "Are you playing dumb with me?"
+                    mS "I lost it, he's not with me."
+                    "Ama furrows her brow."
+                    amaS "This isn't the time to yank my chain."
+                    mS "Isn't that BigCorp's job?"
+                "But he's right there on the platform, no?":
+                    mS "Why are you asking me?"
+                    mS "It's right there isn't it?"
+                    "Ama turns to the platform then back at me, unimpressed."
+                    amaS "Don't quit your day job Moze."
+                    amaS "I want that droid and I want it now."
+    "Ama stalks towards me and I know what's coming."
+    "I move to my blaster hidden in my clothes."#choice here?
+    "I'm sorry Resa."
+    vyattend "Ladies, I hope your evening is going well."
+    vyattend "May I present to you."
+    amaS "Reynar."
+    reynar "Hello Ama, a pleasure as always."
+    reynar "And this must be young Moze. All grown up."
+    mS "Reynar, thank you for having us this evening."
+    reynar "If only you were invited..."
+    reynar "Ryo, leave us please."
+    vyattend "Of course, Sir."
+    "Ryo walks carefully away speaking quietly to the patrons who are taking too much of an interest in this situation."
+    "A waiter passes by with a full tray, Reynar grabs a bubbling drink without even looking."
+    reynar "I sincerely hope, the two of your aren't about to do what I think you are."
+    amaS "Respectfully this is Big Corp buisness."
+    reynar "Is it now? Funny I didn't know that I ever gave them jurisdiction to conduct buisness in MY Vineyard."
+    amaS "Consider it a favor, we're removing a known fugitive from the premises."
+    reynar "Oh what a shame that you'll leaving so soon."
+    amaS "Oh don't be such an incessant queen."
+    menu: 
+        "Get in the mix."
+            "Bold coming from you.": #This is a choice. 
+                mS "Bold coming from you."
+                ama "Oh? You're speaking now?"
+                mS "Hard to get a word in when you love hearing yourself talk."
+                reynar "Haha little chick has grown up!"
+                reynar "And with a considerable bite."
+            "Placeholder 2":
+                "Placeholder text."
+            "Placeholder 3":
+                "Placeholder text."
+    "I am thankful for Reynar's intervention but even he isn't known for hand outs."
+    mS "Reynar, pardon my intrusion but I am here because your Hounds stole a piece of merchandis of mine."
+    reynar "Did they now?"
+    mS "A range extender, a small repair for my ship I'd like it back."
+    reynar "Well you can leave your information with Ryo and we'd be happy to oblige you after the festivities."
+    "Ama chuckles under her breath."
+    mS "I'd like to have this matter resolved as soon as possible."
+    reynar "Of course! But first things first."
+    "Which a snap of his fingers Ryo reemerges."
+    reynar "Ryo please take out guests to the east balcony, they could use the privacy."
+    "A nasty smile creeps on Ama's face."
+    "I can feel the eyes around me."
+    "The presentation is over and some attends are ushering the BigCrop rep away from the crowd."
+    reynar "It was wonderful to see you both."
+    "Reynar gives a forced hug and double cheek kiss to Ama. Then moves to me."
+    "He offers the same gesture then whispers quietly."
+    reynar "I do hope to see you later for the toast."
+    "He slips something into my back pocket."
+    "Ryo ushers us both in the direction of the east balcony."
+    "Ama walks in front of me and I watch as her jacket hits something solid on her back."
+
+
+
 
 
 
