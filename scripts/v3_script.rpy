@@ -356,7 +356,7 @@ label vig3_sc4():
     pS "Hope you still have that Vira Brandy!"
     enS "From four years ago?"
     pS "It ages well!"
-    macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his late partner has a shelf life of 5 years."
+    macS "A delicacy from the Vineyard, Reynar's Vira Brandy, named after his partner has a shelf life of 5 years."
     pS "See? Just made it!"
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
