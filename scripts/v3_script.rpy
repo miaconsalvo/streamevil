@@ -42,6 +42,7 @@ label vignette3Start():
     #$ reactTarget = "vig2_sc1_openingstream"
     #show screen streamerCommentary
     "You load the save file you were previously playing, and are ready to go."
+    $ narrator = alt_narrator
     if vig2_outlawEpilogue == True:
         jump vig3outlawstart
     else:
@@ -159,7 +160,7 @@ label vig3marshalstart():
     "Jennica smacks her glass away, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
     "I set my cup down gently."
     pS "We're doing better, and that's all fine and good. And hell I'll stand by what I said."
-    ps "But we need to be more united on things if we're gonna make it."
+    pS "But we need to be more united on things if we're gonna make it."
     "I don't respond." #Consider adding multiple options#
     pS "I like the kid. But we've been over our heads from the start..." 
     show jennica stream neutral
@@ -603,7 +604,7 @@ label vig3_sc5():
     show rec stream neutral at stream_center with dissolve
     show jennica stream happy at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
     macS "Wow...."
     pS "Surprised it's still standing."
@@ -702,7 +703,7 @@ label vig3_sc6():
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     macS "Cozy."
     "MAC's face drops as a someone yells and is then quickly tossed through a window. He clings to my leg."
     macS "Aren't their children around outside?"
@@ -1087,7 +1088,8 @@ label vig3_sc6():
         "How do I finish this?"
         "Shoot Zan's Leg":
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
-            "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully" "I take my position."
+            "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully." 
+            "I take my position."
             "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
             "Then I see them, a small group near the door, half watching the game. Is that? No. My vision is still betraying me and I don't have time to get a better look."
             zan "FOR MY LOYAL FANS!"
