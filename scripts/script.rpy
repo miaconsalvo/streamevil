@@ -75,7 +75,7 @@ define invfairnpc1 = Character("Inventor's Fair Guest", what_font="Play-Regular.
 define invfairnpc2 = Character("Mills", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define invfairannounce = Character("Announcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
-
+define reynar = Character("Reynar", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
