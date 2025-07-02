@@ -96,7 +96,8 @@ screen streamDetails():
 ###Tutorial screens for vignette 1
 screen chatTutorial():
     frame:
-        ypos 100 
+        ypos 100
+        xpos 530 
         xsize 1000
         ysize 230
         xpadding 15 
@@ -113,14 +114,15 @@ screen chatTutorial():
 
 screen chatTutorial2():
     frame:
-        ypos 100 
+        ypos 100
+        xpos 530 
         xsize 1000
         ysize 230
         xpadding 15 
         ypadding 15 
         right_margin 200
         background Image("images/stream ui/tutorialUI.png")
-        text "When the textbox at the bottom of the chat is highlighted in blue and says \"React\",\nyou can click on it to initiate a conversation with your viewers."
+        text "When the face-cam image in the top left has a red exclamation point, you can click on it to initiate a conversation with your viewers."
         textbutton "Close Tutorial":
             action Hide("chatTutorial2")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
@@ -130,7 +132,8 @@ screen chatTutorial2():
 
 screen discordNotification():
     frame:
-        ypos 40 
+        ypos 653
+        xpos 731 
         xsize 1000
         ysize 230
         right_margin 200
@@ -145,17 +148,29 @@ screen discordNotification():
             align (0.5, 1.0)
 
 screen streamFreeze():
+    #frame:
+        #xsize 1920
+        #ysize 1080
+        #background Solid("#00000000")
+        #textbutton "React":
+            #action [Return(), Call(reactTarget)]
+            #align (0.95, 0.93)
+            #text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            #text_hover_color "#ffffffa1" 
+            #text_selected_color "#ffffff4f"
+            #background "#00aeffcb"
     frame:
         xsize 1920
         ysize 1080
         background Solid("#00000000")
-        textbutton "React":
+        image ["stream ui/reactalert.png"] align (0.09, 0.095) size (30, 30) #the red exclaim image itself
+        imagebutton: #just the overlay that you click on
             action [Return(), Call(reactTarget)]
-            align (0.95, 0.93)
-            text_color "#ffffffff" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
-            text_hover_color "#ffffffa1" 
-            text_selected_color "#ffffff4f"
-            background "#00aeffcb"
+            idle Solid("#00000000")
+            hover Solid("#44444463")
+            xsize 192
+            ysize 120
+            align (0.002, 0.115)
 
 screen raidFreeze():
     frame:
