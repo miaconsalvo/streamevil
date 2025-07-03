@@ -847,9 +847,17 @@ label vig3_sc6():
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Wrestle the knife away":
                     mS "I don't have time for this."
-                    "I grab her wrist before she can cut me open and twist her arm down and awake." 
-                    "She yells as something snaps."
-                    "Knee to the chest."
+                    "I grab her wrist before she can cut me open and twist her arm down and away."
+                    menu:
+                        "Make it hurt?"
+                        "Yes. Just like Ama taught me.": 
+                            "She yells as something snaps."
+                            strngr1 "Po dunk!"
+                            "Sweat is pouring down her face."
+                            "Knee to the chest."
+                        "No. I've made my point.": 
+                            "I shove her against the wall and she falls over."
+                            "The knife clatters away."
                     "It's over before it even starts."
                     mS "Need me to call someone for you."
                     strngr1 "Go to hell."
@@ -1467,29 +1475,29 @@ label vig3_sc10():
     "I get up and take the blaster. I grip the handle it like it's mine. Because it is." 
     "I point it at the targets."
     "And fire."
-    jump vig3_sc11()
+    jump vig3_sc11
 
 label vig3_sc11():
     #Int. Inventor's Fair. 
     menu:
         "Ama stand in front of me steely gaze."
-            "Of course you found us...": #Flirt
-                mS "Of course you found us..."
-                mS "I shouldn't have expected less from the great Deadeye."
-                amaS "You flatter me."
-                amaS "Gotta say getting into an event like this is impressive."
-                amaS "You look...well."
-            "Impossible":
-                mS "Impossible."
-                mS "How could you have possibly found us?"
-                amaS "You think so little of me."
-                amaS "Thought that stunt on Gibian V was going to keep me away?"
-                amaS "How's Sallent doing?"
-            "I see we're still playing the lapdog?":
-                mS "Still playing the obedient lapdog I see?"
-                mS "Money must be good."
-                amaS "Even know you're still that arrogant little girl."
-                amaS "How has playing the hero been? Finally found that purpose you've been missing?"
+        "Of course you found us...": #Flirt
+            mS "Of course you found us..."
+            mS "I shouldn't have expected less from the great Deadeye."
+            amaS "You flatter me."
+            amaS "Gotta say getting into an event like this is impressive."
+            amaS "You look...well."
+        "Impossible":
+            mS "Impossible."
+            mS "How could you have possibly found us?"
+            amaS "You think so little of me."
+            amaS "Thought that stunt on Gibian V was going to keep me away?"
+            amaS "How's Sallent doing?"
+        "I see we're still playing the lapdog?":
+            mS "Still playing the obedient lapdog I see?"
+            mS "Money must be good."
+            amaS "Even know you're still that arrogant little girl."
+            amaS "How has playing the hero been? Finally found that purpose you've been missing?"
 
     "Her tone is playful but there's no mistaking that her shotgun is folded behind her long jacket."
     "Big Corps presentation continues and I hope that the crew has taken this as a moment to leave."
@@ -1503,27 +1511,27 @@ label vig3_sc11():
     "That smart little devil."
     mS "I don't know what you mean Ama, left something behind have you?"
     amaS "Oh we're playing dumb are we, the droid Mozely, give me the droid."
-        menu: 
-            "Ama doesn't have MAC, we can use this."
-                "Why don't you just enjoy the party?": #Flirt
-                    mS "Ama please, it's a celebration, have a drink."
-                    mS "All this stress will give you wrinkles."
-                    "A smile forms on her face, anger mixed with something else."
-                    amaS "You little shit..."
-                    mS "Now, now, don't make a scene. You're better than that."
-                "I don't have the droid you're looking for.":
-                    mS "I don't have it."
-                    amaS "Are you playing dumb with me?"
-                    mS "I lost it, he's not with me."
-                    "Ama furrows her brow."
-                    amaS "This isn't the time to yank my chain."
-                    mS "Isn't that BigCorp's job?"
-                "But he's right there on the platform, no?":
-                    mS "Why are you asking me?"
-                    mS "It's right there isn't it?"
-                    "Ama turns to the platform then back at me, unimpressed."
-                    amaS "Don't quit your day job Moze."
-                    amaS "I want that droid and I want it now."
+    menu: 
+        "Ama doesn't have MAC, we can use this."
+        "Why don't you just enjoy the party?": #Flirt
+            mS "Ama please, it's a celebration, have a drink."
+            mS "All this stress will give you wrinkles."
+            "A smile forms on her face, anger mixed with something else."
+            amaS "You little shit..."
+            mS "Now, now, don't make a scene. You're better than that."
+        "I don't have the droid you're looking for.":
+            mS "I don't have it."
+            amaS "Are you playing dumb with me?"
+            mS "I lost it, he's not with me."
+            "Ama furrows her brow."
+            amaS "This isn't the time to yank my chain."
+            mS "Isn't that BigCorp's job?"
+        "But he's right there on the platform, no?":
+            mS "Why are you asking me?"
+            mS "It's right there isn't it?"
+            "Ama turns to the platform then back at me, unimpressed."
+            amaS "Don't quit your day job Moze."
+            amaS "I want that droid and I want it now."
     "Ama stalks towards me and I know what's coming."
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry Resa."
@@ -1548,18 +1556,18 @@ label vig3_sc11():
     amaS "Oh don't be such an incessant queen."
     menu: 
         "Get in the mix."
-            "Bold coming from you.": #This is a choice. 
-                mS "Bold coming from you."
-                ama "Oh? You're speaking now?"
-                mS "Hard to get a word in when you love hearing yourself talk."
-                ama "Haha little chick has grown up!"
-                reynar "And with a considerable bite."
+        "Bold coming from you.": #This is a choice. 
+            mS "Bold coming from you."
+            ama "Oh? You're speaking now?"
+            mS "Hard to get a word in when you love hearing yourself talk."
+            ama "Haha little chick has grown up!"
+            reynar "And with a considerable bite."
                 mS "You don't know the half of it."
                 "There is hunger in Ama's eyes."
-            "Placeholder 2":
-                "Placeholder text."
-            "Placeholder 3":
-                "Placeholder text."
+        "Placeholder 2":
+            "Placeholder text."
+        "Placeholder 3":
+            "Placeholder text."
     "I am thankful for Reynar's intervention but even he isn't known for hand outs."
     mS "Reynar, pardon my intrusion but I am here because your Hounds stole a piece of merchandis of mine."
     reynar "Did they now?"

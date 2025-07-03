@@ -18,6 +18,7 @@ label vignette1Start():
 
 label returnToWorkshop():
     show screen chatTutorial2
+    $ reactTarget = "vig1_sc1_startStream"
     call screen streamFreeze
     play music "soundtrack/allistar.wav" volume 1.0 loop fadein 1.0
     "Thermal paste in hand I return to Allistar's workshop."
@@ -565,17 +566,21 @@ label councilDebrief():
     menu:
         "A raid!? I have to say something."
         "What's up, guys!":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "What's up, guys!"
             player "Great to have new friends in chat."
         "Wow, that's a lot of people.":
+            $ reactImage = "stream ui/reactshocked.png"
             player "Wow, that's a lot of people."
             player "Hope y'all are ready for some fun!"
         "Welcome.":
+            $ reactImage = "stream ui/reactconfident.png"
             player "Hi everyone, welcome to chat!"
             player "I'm pumped to have y'all!"
     player "For all the new folks, I'm [streamer]."
     menu:
         "My stream is story-focused.":
+            $ reactImage = "stream ui/reactconversational.png"
             $ story = True
             player "I've been streaming for almost three years now, usually RPGs, every now and then some action games."
             player "Usually we like to chat about the game's writing."
@@ -585,6 +590,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream loves a good joke.":
+            $ reactImage = "stream ui/reactthumbsup.png"
             $ humour = True
             player "I've been streaming for almost three years now, usually RPGs and occasionally a multiplayer shooter."
             player "Chat's always the spot for some solid memes and funny bits!"
@@ -594,6 +600,7 @@ label councilDebrief():
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
         "My stream is all about vibes.":
+            $ reactImage = "stream ui/reactconversational.png"
             $ vibes = True
             player "I've been streaming for almost three years now, usually RPGs and some small indie games too."
             player "We're all about chill vibes here."
