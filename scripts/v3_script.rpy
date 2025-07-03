@@ -1562,8 +1562,8 @@ label vig3_sc11():
             mS "Hard to get a word in when you love hearing yourself talk."
             ama "Haha little chick has grown up!"
             reynar "And with a considerable bite."
-                mS "You don't know the half of it."
-                "There is hunger in Ama's eyes."
+            mS "You don't know the half of it."
+            "There is hunger in Ama's eyes."
         "Placeholder 2":
             "Placeholder text."
         "Placeholder 3":
@@ -1588,7 +1588,7 @@ label vig3_sc11():
     "He slips something into my back pocket."
     "Ryo ushers us both in the direction of the east balcony."
     "Ama walks in front of me and I watch as her jacket hits something solid on her back."
-    jump vig3_sc12():
+    jump vig3_sc12
 
 label vig3_sc12():
     #Ext. Vineyard Balcony
@@ -1617,20 +1617,20 @@ label vig3_sc12():
     "When Ama lets him go, he spills to the ground, tears in their eyes."
     menu: 
         "Say something?"
-            "Being a little rough are we?": #This is a choice. 
-                mS "Being a bit too rough maybe?"
-                ama "Just handling business."
-                mS "I can see that."
-                ama "Don't worry I'll get to you later..."
-            "That was unnecessary":
-                mS "A tad unnecessary."
-                ama "I'd suggest you let me handle business."
-                ama "I'll get to you soon."
-            "Say nothing.":
-                "I let the scene unfold."
-                "The rep is desperately catching their breath."
-                ama "Enjoying the show?"
-                ama "Don't worry I haven't forgotten about you."
+        "Being a little rough are we?": #This is a choice. 
+            mS "Being a bit too rough maybe?"
+            ama "Just handling business."
+            mS "I can see that."
+            ama "Don't worry I'll get to you later..."
+        "That was unnecessary":
+            mS "A tad unnecessary."
+            ama "I'd suggest you let me handle business."
+            ama "I'll get to you soon."
+        "Say nothing.":
+            "I let the scene unfold."
+            "The rep is desperately catching their breath."
+            ama "Enjoying the show?"
+            ama "Don't worry I haven't forgotten about you."
     bcrep "Who's this? One of Reynar's goons?"
     ama "You academics are so up your own asses."
     "Their eyes widen as they stand to look at me."
@@ -1642,33 +1642,33 @@ label vig3_sc12():
     "They're moving to kick MAC off the balcony."
     menu: 
         "How do you stop him?"
-            "Fire your blaster.":
-                "Absolutely not!"
-                "I raise my blaster on instinct."
-                mS "Hands off him!"
-                "A shot rings out and my blaster flies out of my hand."
-                ama "Not likely Moze."
-                "Ama stands with rifle in hand aimed at me."
-                "The commotion is enough to stop the rep in his tracks."
-            "Rush them down.":
-                mS "No!"
-                "I rush the rep ready to tackle him to the ground."
-                "A shot rings out and the ground in front of kicks up with stone and dust."
-                "I fall to the ground, my blaster flies out of my holster."
-                ama "Not likely Moze"
-                "Ama stands with rifle in hand aimed at me."
-                "The commotion is enough to stop the rep in his tracks."
-            "You can't react fast enough."
-                "This is crazy."
-                "All of this, we are so over our heads."
-                "I can't will my body to move"
-                rep "STUPID JUNK!"
-                "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle."
-                ama "Hold it!"
-                "The rep backs away."
-                "The rifle turns to me."
-                ama "Blaster on the ground Mozely."
-                "I toss my blaster away from me."
+        "Fire your blaster.":
+            "Absolutely not!"
+            "I raise my blaster on instinct."
+            mS "Hands off him!"
+            "A shot rings out and my blaster flies out of my hand."
+            ama "Not likely Moze."
+            "Ama stands with rifle in hand aimed at me."
+            "The commotion is enough to stop the rep in his tracks."
+        "Rush them down.":
+            mS "No!"
+            "I rush the rep ready to tackle him to the ground."
+            "A shot rings out and the ground in front of kicks up with stone and dust."
+            "I fall to the ground, my blaster flies out of my holster."
+            ama "Not likely Moze"
+            "Ama stands with rifle in hand aimed at me."
+            "The commotion is enough to stop the rep in his tracks."
+        "You can't react fast enough.":
+            "This is crazy."
+            "All of this, we are so over our heads."
+            "I can't will my body to move"
+            rep "STUPID JUNK!"
+            "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle."
+            ama "Hold it!"
+            "The rep backs away."
+            "The rifle turns to me."
+            ama "Blaster on the ground Mozely."
+            "I toss my blaster away from me."
     ama "You always did play with your heart out Moze."
     "She looks to MAC."
     ama "That's it, isn't it."
@@ -1701,14 +1701,14 @@ label vig3_sc12():
     #Choices happen based on MAC's alignment.
     menu: 
         "What is MAC's alignment"
-            "Violence/Hope":
-                "Placeholder text."
-            "Violence/Pessimism":
-                "Placeholder text."
-            "Peace/Hope":
-                "Placeholder text."
-            "Peace/Pessimism":
-                "Placeholder text."
+        "Violence/Hope":
+            "Placeholder text."
+        "Violence/Pessimism":
+            "Placeholder text."
+        "Peace/Hope":
+            "Placeholder text."
+        "Peace/Pessimism":
+            "Placeholder text."
 
 
 
