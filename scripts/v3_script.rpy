@@ -42,7 +42,6 @@ label vignette3Start():
     #$ reactTarget = "vig2_sc1_openingstream"
     #show screen streamerCommentary
     "You load the save file you were previously playing, and are ready to go."
-    $ narrator = alt_narrator
     if vig2_outlawEpilogue == True:
         jump vig3outlawstart
     else:
@@ -107,7 +106,7 @@ label vig3outlawstart():
         "Be calm":
             mS "Take ten seconds. I'll see you there."
         "Be firm":
-            mS "You can't go in like that. Fix yourself."
+            mS "You can't go in like that. Fix yourself, I'll see you there."
     "I wait until I can feel her shoulder relax and walk out and down the hall, alone."
     hide teresa with dissolve
     jump vig3_sc2
@@ -160,7 +159,7 @@ label vig3marshalstart():
     "Jennica smacks her glass away, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
     "I set my cup down gently."
     pS "We're doing better, and that's all fine and good. And hell I'll stand by what I said."
-    pS "But we need to be more united on things if we're gonna make it."
+    ps "But we need to be more united on things if we're gonna make it."
     "I don't respond." #Consider adding multiple options#
     pS "I like the kid. But we've been over our heads from the start..." 
     show jennica stream neutral
@@ -201,18 +200,14 @@ label vig3_sc2():
     menu:
         "Not the first time.":
             mS "Not the first time we've been pressed against the wall."
-            ps "Fair 'nough Cap."
-            "She looks annoyed."
-        "You should be used it.":
-            mS "You should be used to a tight schedule by now."
-            ps "Don't mean I gotta like it."
-            "She rolls her eye."
-    "I need a moment to think."
+        "We're used to it.":
+            mS "We should be used to a tight schedule by now. "
+    "We take a moment to think."
     show mac stream shock at stream_center_mac with dissolve
     macS "Dad..."
     $ reactTarget = "vig3_sc2_macdad"
     show screen streamerCommentary
-    "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity." 
+    "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
     show jennica stream happy at stream_left
     show mac stream neutral at stream_center_mac
     "MAC sits innocently in his chair, looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
@@ -244,12 +239,9 @@ label vig3_sc2():
     menu:
         "MAC that's dangerous!":
             mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
-            "MAC's head turns up with shock."
-            "He wheels a bit back"
         "MAC it's not safe":
             mS "MAC don't go poking into BigCorp networks. After all the work the keep you safe." #more gentle way of chiding MAC about being inconspicuous#
-            "MAC lowers his head."
-            "He wheels a bit closer to me."
+    "MAC's head lowers" ## this reaction can differ based on choices##
     macS "I just wanted to be helpful..."
     "I let out a heavy sigh."
     mS "MAC you are it's just- What's your suggestion?"
@@ -323,11 +315,9 @@ label vig3_sc3():
     menu:
         "Pull out your gun.":
             "I pull out my gun in the direction of the sound." 
-            "They stop in their tracks."
             mS "Not likely boys."
-        "Show them your Snakehawk tattoo":
-            "I pull up my right sleeve to real my Snakehawks tattoo."
-            "The large piece is "
+        "Show them you're a Snakehawk":
+            "I pull up my sleeve to real my Snakehawks tattoo"
             mS "I really wouldn't do that."
     #show houndgoon stream neutral at stream_center with dissolve 
     "The two men back away and fall back, they're well built but not sharp enough for a fight like this. I give the signal to Jennica as she lets their friend scramble up before heading out."
@@ -394,7 +384,7 @@ label vig3_sc4():
     recS "Well you're in luck."
     pS "Hell yeah!"
     show mac stream neutral at stream_left with dissolve
-    macS "Vira Brandy is first invention using edible chimereon fruit. Which is quite odd."
+    macS "Vira Brandy is first invention using edible chimaeron fruit. Which is quite odd."
     pS "And delicious!"
     "As Rec turns to get the brandy they pause to look down at MAC."
     recS "And who's this little guy?"
@@ -407,21 +397,13 @@ label vig3_sc4():
     recS "... What?"
     #mS (Multiple Response options about how to lie)
     menu:
-        "It's too dangerous to tell Rec everything right now."
+        "Might be too dangerous to tell Rec everything right now."
         "Just a courier bot we picked up.":
-            mS "Just a courier bot we found and outfitted."
-            mS "Figured we could use an extra hand and a morale boost..."
-            "I hear Jennica speak low behind me."
-            pS "Just a courier bot..."
+            mS "Just a courier bot we found and outfitted figured we could use an extra hand and a morale boost..."
         "Top secret? Please.":
             mS "If by top secret you mean off a random shelf, then sure, keep it hush hush though."
-            "No one responds."
-            recS "Good thing you became an outlaw instead of a comedian."
         "Teresa did you program that?":
             mS "That's the last time I let you touch our gear Teresa."
-            eS "Excuse me?"
-            "I give her a look."
-            eS "Oh haha yeah... of course Cap."
     #^All of these feel mean....could use a rewrite#
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
     recS "Mind if I take a closer look?"
@@ -429,7 +411,7 @@ label vig3_sc4():
     mS "Up to you buddy."
     macS "I do not mind."
     mS "Go for it."
-    "Rec carefully examines MAC, seeing the mismatched metal in some of his body parts."
+    "Rec carefully examines MAC, seeing the mismatched metal in some of his body parts where Allistar worked."
     recS "So interesting, the work is a bit rushed but still clean, almost reminds me of how Allistar would do it."
     "The room goes still I don't know what to say to them."
     mS "Had to be a rushed job, we've been on the move."
@@ -452,16 +434,10 @@ label vig3_sc4():
         "Mac thinks Rec has a right to know about their brother."
         "I'm not being fair.":
             mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
-            mS "Okay?"
-            mac "Yes Captain."
-        "We'll tell them after we get the part":
+        "They'll know after we get the part":
             mS "Range extender first, hard talk later. We can't leave here without it."
-            mS "So it'll be hush hush for right now, okay?"
-            mac "Yes Captain."
         "I have no love for Allistar":
             mS "I'm not about to apologize for what I needed to do. They'll find out eventually."
-            mS "Understood?"
-            mac "Yes Captain."
     "Reccrin comes out after a brief moment with a long antennae and some internal parts for our Comms."
     show mac stream neutral at stream_left with move
     #show rec stream neutral at stream_center with dissolve
@@ -475,7 +451,7 @@ label vig3_sc4():
     hide mac with dissolve
     hide jennica with dissolve
     #show houndleader at stream left with dissolve
-    "A group of five enter the shop, dark uniforms with a hound patched on their right shoulder." 
+    "A group of five enter the shop, dark uniforms with a dog patched on their right shoulder." 
     "These guys, they're ones who gave Resa a hard time." ##The Hound Leader##
     $ reactTarget = "vig3_sc4_houndraid"
     show screen streamerCommentary
@@ -499,14 +475,11 @@ label vig3_sc4():
     "They're armed to the teeth and now I understand why Rec is so quick to comply."
     ###Describe the wreck this group is leaving and give the players two opportunities to intervene or continue to comply silently.###
     menu:
-        "Like restless children they stick their hands in every possible shelf and knock over part after part."
-        "It's a big show they snicker to each other, incoherently mumble protocols and giggle."
-        "Reccrin is looking down at their desk."
+        "They trash the place"
         "That's enough!":
             mS "Alright that's enough!"
         "Let them continue":
-            "They're relentless."
-            "Doesn't matter the material or how fragile or how important, they don't stop."
+            "They keep trashing it."
             "I cringe as each piece falls. Broken parts start to litter the floor."
             menu:
                 "Do I intervene?"
@@ -515,7 +488,7 @@ label vig3_sc4():
                 "Stay quiet.":
                     "They continue to trash the shop. More carnage. They're laughing to each other, tossing equipment like a hackey sac."
                     "I see one of them try to head to the back room."
-                    mS "Alright that's enough!"
+    mS "Alright that's enough!"
     houndgoon "You'd be best to stay out of official business."
     "Another uniform chimes in."
     houndgoon "We're under order to collect contraband."
@@ -595,10 +568,7 @@ label vig3_sc4():
     recS "They're the Hounds. Reynar's new security detail."
     recS "Usually they're more of nuisance than anything. Shaking down shops and bars."
     recS "But with the Inventor's Fair they've gotten more excitable. Not surprised they'd come by here just terrible timing is all."
-    mS "I'm sorry about your shop."
-    recS "Don't worry everything out here is a fake."
-    enS "Smart."
-    macS "Sorry what's the Inventor's Fair?"
+    pS "Sorry what's the Inventor's Fair? I forgot to ask."
     enS "Big conference. Lots of tech companies, scholars, and start-ups from all over. Schmoozing and rubbing shoulders, the like."
     pS "Sounds like a party."
     enS "One of the biggest."
@@ -633,7 +603,7 @@ label vig3_sc5():
     show rec stream neutral at stream_center with dissolve
     show jennica stream happy at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
-    show mac stream neutral at stream_left with dissolve
+    show mac stream neutral at stram_left with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
     macS "Wow...."
     pS "Surprised it's still standing."
@@ -732,7 +702,7 @@ label vig3_sc6():
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at stream_left with dissolve
+    show mac stream neutral at stram_left with dissolve
     macS "Cozy."
     "MAC's face drops as a someone yells and is then quickly tossed through a window. He clings to my leg."
     macS "Aren't their children around outside?"
@@ -744,31 +714,20 @@ label vig3_sc6():
     hide rec with dissolve
     mS "Thanks guys, we'll get a spot."
     show mac stream neutral at stream_center_mac with move
-    "As we walk through the bar, I notice how may regulars have been lost to time."
-    "Akar is different now."
+    "As we walk through the bar, I notice how may regulars have been lost to time.
+    Akar is different now."
     menu:
-        "How do you feel about how Akar has changed?"
+        "It's been a while since the Oakley was in Akar."
         "Being invisible is what we need.":
             "There's a small comfort in not being immediately recognized."
             "It's better for MAC."
-            "We hug a wall and find any available table."
-            "When we find it, I gently push off a passed out patron and buy us a round."
         "Surely not everyone forgot us.":
             "I'm sure some more people remember who we are."
             "May need to be careful from here on out."
-            "We move through the bar, I scan for any familiar faces."
-            "Apart from a waitress who waved as a part of her job, no one."
-            "When we find our table, I gently push off a passed out patron and buy us a round."
-        "Let's make sure they don't forget us.":
+        "They could never forget us.":
             "I don't care how long its been the Oakley is still legendary."
             "Maybe we should remind them who we are..."
-            "We barrel through the crowd to find a table."
-            mS "Make way for the Oakley everyone."
-            mS "C'mon let's move let's move."
-            "I bump into a patron who decides to take a swung and me ends up meeting the floor."
-            mS "Pardon us."
-            "When we find our table, I gently push off a passed out patron at it and buy us a round."
-   
+    "I make sure we get our table, gently pushing off a passed out patron by themselves. I buy us a round."
     "And then another."
     "And another."
     show mac stream neutral at stream_left with move
@@ -886,19 +845,11 @@ label vig3_sc6():
                     "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
-                "Wrestle the knife away.":
+                "Wrestle the knife away":
                     mS "I don't have time for this."
-                    "I grab her wrist before she can cut me open and twist her arm down and away."
-                        menu:
-                            "Make it hurt?"
-                            "Yes. Just like Ama taught me.": 
-                                "She yells as something snaps."
-                                strngr1 "Po dunk!"
-                                "Sweat is pouring down her face."
-                                "Knee to the chest."
-                            "No. I've made my point.": 
-                                "I shove her against the wall and she falls over."
-                                "The knife clatters away."
+                    "I grab her wrist before she can cut me open and twist her arm down and awake." 
+                    "She yells as something snaps."
+                    "Knee to the chest."
                     "It's over before it even starts."
                     mS "Need me to call someone for you."
                     strngr1 "Go to hell."
@@ -918,29 +869,27 @@ label vig3_sc6():
             menu: 
                 "Say something."
                 "They're right you know.":
-                    mS "They're right, just because something is difficult doesn't mean you meed to worry all the time."
-                    mS "How you work through that is more important."
+                    mS "They're right, just because something is difficult doesn't mean you need to be consumed by it."
+                    mS "People do plenty of things that make them worried, how you wrok through that is more important."
                     macS "I think I understand."
                     recS "Thanks Moze. You know I do admire what you do, it's a tough life but it's yours."
                     "I smile."
                     mS "It has it's good moments."
                     macS "Like candy!" 
                     mS "Exactly. That's why we go through the worry."
-                "Rec should really consider moving":
+                "You should really consider moving":
                     mS "Rec every thought moving would be the right call?"
                     recS "Oh that's rich coming from you."
-                    mS "I'm just saying there's better places than this one."
-                    mS "With less Hounds."
+                    mS "I'm just saying there's better places than one riddled with Hounds."
+                    macS "I didn't see much of a dog population here."
                     recS "I like my shop and my community, I don't regret planting roots here."
                     recS "I'm happy I didn't become a Snakehawk."
                     "A pit forms in my stomach."
-                    mS "You found a place that is yours."
+                    mS "I'm happy your found a place that is yours."
                     recS "I'll be sure to fight for it."
                 "Akar is beautiful if you look in the right places":
                     mS "It may not look it but Akar is beautiful."
-                    mS "Didn't you see all the colour and community here?"
-                    mac "People were getting hurt."
-                    mS "Sure, but that's not all the time and doesn't mean you can't surround yourself with good people."
+                    mS "Sometimes the worrying makes sense if you have a community where you are."
                     macS "Like what we have?"
                     mS "Yeah kid."
                     recS "So cute..."
@@ -1035,11 +984,11 @@ label vig3_sc6():
         "Abosultely not!":
             mS "You will sit down and say nothing and let me handle it."
             macS "But I-"
-            mS "But nothing, I don't need a liability right now. Understand?"
+            mS "Understand?"
         "It's better if I just do it.":
             mS "This is better as a solo mission."
             macS "But I-"
-            mS "I know you want to help some things work better with less people."            
+            mS "It'll be fine don't worry."            
     macS "But I'm part of this crew too *Ama*!"
     "That was my voice. Upset, scared of being left behind."
     mS "You are, and you'll have other chances to prove it. Just not right now."
@@ -1075,8 +1024,6 @@ label vig3_sc6():
     "If I start a fight I'm sure I can get someone slammed into the table. That should take care of some of the issues."
     "I look at the ceiling where the carnivorous plants lie waiting and salivating."
     "One of the ropes for their netting looks frayed and worn if I undo it then it's open season on that table. Maybe quits for the Karousel."
-    "As I scan my options I can feel MAC's eyes on me."
-    "He's really not gonna like this at all."
     hide zan with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
@@ -1101,13 +1048,12 @@ label vig3_sc6():
             hide zan with dissolve
         "Cut the rope holding the carnivorous plants":
             "I take a look at the frayed rope and the netting that is so carefully holding back the plants."
-            "How has no one changed the rope yet?"
-            "It's too easy and so dangerous."
+            "It's too easy and so dangerous, people might definitely get hurt."
             "I move carefully to the hook with the rope."
             mS "Excuse me sorry just tryna get a decent view"
-            husbnpc "Watch it man, we all want a good view."
+            husbnpc "Watch it mna, c'mon we all want a good view."
             "I push my way to wall and lean just behind it."
-            "The rounds continue."
+            "The rounds are continue."
             zan "Another victory, another shot for you."
             pS "Fine meathead, you got it."
             enS "Makers this is insanity."
@@ -1116,16 +1062,12 @@ label vig3_sc6():
             "The bar is in an uproar people are going to grab their nearest cups."
             "They're slamming the floor, the room is shaking"
             "A roaring cheer, I cut the rope."
-            "The scream that is let out is so high, I couldn't believe it came from Zan."
-            zan "YEEEEEEOWWWWWWWW"
-            zan "They're alive"
-            "He swatting at them like whack-a-moles. One's head pops like a grape."
-            enS "Stein get these out of here."
-            zan "Ah ah AHHHHHHHHHHH"
-            "Ten patrons were injured from Zan's wild flailing, the attacking plants destroyed."
-            "Stein with the help of his crew subdued the other plants and have begun to put up new netting."
-            "Zan;s eyes dart from the game to the ceiling."
-            "Ovid coughs loudly before putting something in his pocket, The Karousel is replaced by an older model."
+            "It's hand fifteen, and the plants decend onto the crowd, it's madness."
+            "One took a solid swipt at Jeneca and another a bite of Teresa's arm."
+            enS "GET IT OFF!!!"
+            "Ten patrons were injured, the attacking plants destroyed, two people carted off to the backroom until help arrived."
+            "Stein with the help of his crew subdued the other plants, who sleep restfully over a new net with strung up."
+            "Ovid coughs loudly before putting something in his pocket, The Karousel is replaced by a beat up version."
             "The round continues."
 
     #maybe fade in and out to show passage of time again?#
@@ -1145,8 +1087,7 @@ label vig3_sc6():
         "How do I finish this?"
         "Shoot Zan's Leg":
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
-            "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully." 
-            "I take my position."
+            "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully" "I take my position."
             "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
             "Then I see them, a small group near the door, half watching the game. Is that? No. My vision is still betraying me and I don't have time to get a better look."
             zan "FOR MY LOYAL FANS!"
@@ -1169,7 +1110,7 @@ label vig3_sc6():
             zan "You are Captain, no?" 
             menu: 
                 "Respond to Zan."
-                "And what's it to you?":
+                "And what's it too you?":
                     mS "And what's it to you?"
                     zan "You have a good crew, good moxie."
                     mS "I'm aware."
@@ -1223,37 +1164,13 @@ label vig3_sc6():
             "I'm truly losing it."
             "Just then Zan comes over to us and kneels."
             zan "I must make good on promise."
-            "Teresa and Jennica each take a seat on one flexed arm."
+            "Teresa and Jeneca each take a seat on one flexed arm."
             "Zan hoists them in the are and parades them around the bar."
             zan "MOXIE MOXIE MOXIE MOXIE!"
             "When they look back I give them a nod like I'm ready to turn in."
             hide teresa with dissolve
             hide jennica with dissolve
             #if they lose, some dialogue here explaining that they didnt actually lose the ship.
-            "Jennica's under the table"
-            mS "Oh no..."
-            "The whole bar is roaring!"
-            "Zan pushes the table away and goes to hug Ovid who looks like his eyes are about to pop out."
-            "I move to help Jennica"
-            enS "C'mon Jenn, you're good, you're alright."
-            pS "Did... Did we win?"
-            enS "Sorry sweerheart we didn't."
-            mS "Makers, why did you bet the ship?"
-            enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
-            mS "A show?"
-            pS "A show! Oh scrap, you sound horrible when you sing Resa."
-            enS "Still better than you."
-            pS "But we must press on! *hick*"
-            "I'm truly losing it."
-            "Just then Zan comes over to us."
-            zan "You must make good on promise."
-            "Teresa helps Jennica get up and they stand on the Karousel table."
-            "Zan begins to clap on beat." #The melody is "C'est a ton tour"
-            "Teresa and Jennica begin to sing"
-            pS "Zan is the man! Zan has a plan! Zan's got the muscles to beat any man." 
-            enS "Ovid's the best! Above all the the rest! With muscles inside he'll pass any test."
-            "When they look back I give them a nod like I'm ready to turn in."
-            "They continue in broken harmnony"
             # "Jennica and Teresa make good on their end of the deal, begin singing."
     "I head back to Rec and MAC."
     show rec stream neutral at stream_right with dissolve
@@ -1264,17 +1181,14 @@ label vig3_sc6():
     "They look serious."
     mS "What's going on?"
     recS "MAC isn't a normal bot is he?"
-    "I take a moment and look down at MAC."
-    "It's been long enough."
     mS "No he's not."
     recS "BigCorp has been deploying agents everywhere."
     recS "They're looking for something..."
-    "MAC looks away." 
+    "MAC is looking at us now." 
     mS "So then you can imagine why we can't let them have him."
     hide rec with dissolve
     "Rec looks down at MAC."
     recS "He's a special kid."
-    "Something flashes behind their eyes. I remeber Allistar."
     recS "We'll keep looking for that part tomorrow."
     "MAC waves to Rec as they leave. We turn in."
     hide mac with dissolve
@@ -1313,10 +1227,10 @@ label vig3_sc7():
         "How do we want to approach getting the antenna?"
         "Whatever it takes.":
             mS "Do whatever it takes, we need that part and we'll take it if necessary."
-            pS "All in then. Got it."
+            pS "Go for option A prepare for option B. Got it."
         "Don't cause any unnecessary drama.":
-            ms "We need to do everything we can to get that part but we can't cause problems."
-            enS "Go for option A, option B if necessary."
+            ms "We need to do everything we can to get that part but we can't be afraid to cause problems."
+            enS "Play it demure until we have to push."
     enS "I'll head to the plaza, Jennica the outskirts, Moze you take MAC and do another sweep of the shops near Rec."
     mS "Perfect Resa, let's get started then. Now MAC-"
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
@@ -1618,8 +1532,10 @@ label vig3_sc11():
     amaS "Reynar."
     reynar "Hello Ama, a pleasure as always."
     reynar "And this must be young Moze. All grown up."
+    "I relax my shoulders."
     mS "Reynar, thank you for having us this evening."
     reynar "If only you were invited..."
+    "A pause."
     reynar "Ryo, leave us please."
     vyattend "Of course, Sir."
     "Ryo walks carefully away speaking quietly to the patrons who are taking too much of an interest in this situation."
@@ -1636,8 +1552,10 @@ label vig3_sc11():
                 mS "Bold coming from you."
                 ama "Oh? You're speaking now?"
                 mS "Hard to get a word in when you love hearing yourself talk."
-                reynar "Haha little chick has grown up!"
+                ama "Haha little chick has grown up!"
                 reynar "And with a considerable bite."
+                mS "You don't know the half of it."
+                "There is hunger in Ama's eyes."
             "Placeholder 2":
                 "Placeholder text."
             "Placeholder 3":
@@ -1662,9 +1580,127 @@ label vig3_sc11():
     "He slips something into my back pocket."
     "Ryo ushers us both in the direction of the east balcony."
     "Ama walks in front of me and I watch as her jacket hits something solid on her back."
+    jump vig3_sc12():
 
-
-
+label vig3_sc12():
+    #Ext. Vineyard Balcony
+    "Overlooking the lush chimaeron trees, the east balcony was as ornate as it was private."
+    "The noise of the Fair cuts as the large doors close on the balcony."
+    "Clearly this space is meant for more quiet buisness."
+    "In the distance I see Akar, lights gleaming like little stars."
+    "It's so far away..."
+    bcrep "Absolute garbage!"
+    "I hear the sound of metal on the ground, a small pained whine."
+    "I press down my white hot anger."
+    bcrep "What did you say to him? What did you do?"
+    "He's talking to Ama, who arrogantly has he back to me."
+    bcrep "I swear to the Makers if you screwed up again!"
+    "The representative hasn't noticed me yet."
+    "And soon had more pressing matters as he strained and struggled against Ama's grip on his throat."
+    "I forgot how fast Ama was. How deadly."
+    ama "I suggest you watch that mouth of yours."
+    bcrep "My...boss'...sign...your checks."
+    ama "Yes THEY do."
+    "Her grip tightens."
+    "I see MAC on the ground just passed them, still."
+    "Then his eyes lock on mine, he perks up."
+    "I put my finger to my lips."
+    bcrep "P-l-ease..."
+    "When Ama lets him go, he spills to the ground, tears in their eyes."
+    menu: 
+        "Say something?"
+            "Being a little rough are we?": #This is a choice. 
+                mS "Being a bit too rough maybe?"
+                ama "Just handling business."
+                mS "I can see that."
+                ama "Don't worry I'll get to you later..."
+            "That was unnecessary":
+                mS "A tad unnecessary."
+                ama "I'd suggest you let me handle business."
+                ama "I'll get to you soon."
+            "Say nothing.":
+                "I let the scene unfold."
+                "The rep is desperately catching their breath."
+                ama "Enjoying the show?"
+                ama "Don't worry I haven't forgotten about you."
+    bcrep "Who's this? One of Reynar's goons?"
+    ama "You academics are so up your own asses."
+    "Their eyes widen as they stand to look at me."
+    "They laugh in dsibelief."
+    bcrep "Incredible! Absolutely incredible!"
+    bcrep "Do you have any idea how terrible this has been?"
+    "He walks up to MAC."
+    bcrep "But now that we have you, no more of this STUPID PIECE OF JUNK."
+    "They're moving to kick MAC off the balcony."
+    menu: 
+        "How do you stop him?"
+            "Fire your blaster.":
+                "Absolutely not!"
+                "I raise my blaster on instinct."
+                mS "Hands off him!"
+                "A shot rings out and my blaster flies out of my hand."
+                ama "Not likely Moze."
+                "Ama stands with rifle in hand aimed at me."
+                "The commotion is enough to stop the rep in his tracks."
+            "Rush them down.":
+                mS "No!"
+                "I rush the rep ready to tackle him to the ground."
+                "A shot rings out and the ground in front of kicks up with stone and dust."
+                "I fall to the ground, my blaster flies out of my holster."
+                ama "Not likely Moze"
+                "Ama stands with rifle in hand aimed at me."
+                "The commotion is enough to stop the rep in his tracks."
+            "You can't react fast enough."
+                "This is crazy."
+                "All of this, we are so over our heads."
+                "I can't will my body to move"
+                rep "STUPID JUNK!"
+                "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle."
+                ama "Hold it!"
+                "The rep backs away."
+                "The rifle turns to me."
+                ama "Blaster on the ground Mozely."
+                "I toss my blaster away from me."
+    ama "You always did play with your heart out Moze."
+    "She looks to MAC."
+    ama "That's it, isn't it."
+    ama "All that struggle. All that runnin'"
+    ama "Was it worth it?"
+    "I looked at MAC and then Ama."
+    "I start walking towards her."
+    ama "Woah now, stay right there."
+    "I take another step."
+    ama "I'm warnin' ya Mozely."
+    "She's hesitating."
+    "Another step."
+    ama "You're gonna make me shoot you?"
+    "Until I'm close enough."
+    "I pause."
+    mS "Yeah."
+    "I grab the gun as it fires inches from my face in the air."
+    "I try to pry it from her hands but she's as strong as I remember."
+    ama "You little shit!"
+    "I struggle against her strength as we pull the rifle back and forth."
+    "BANG!"
+    "Dust kicks up around us."
+    "BANG!"
+    "A chunk of the rail explodes out."
+    mac "ENOUGH!"
+    "Ama and I hit a stalemate as we turn to MAC."
+    "The rep is white as a ghost, back to the rails as if he'll throw himself off."
+    "And there's MAC with my blaster in his hand."
+    "Gripping the handle like its his own."
+    #Choices happen based on MAC's alignment.
+    menu: 
+        "What is MAC's alignment"
+            "Violence/Hope":
+                "Placeholder text."
+            "Violence/Pessimism":
+                "Placeholder text."
+            "Peace/Hope":
+                "Placeholder text."
+            "Peace/Pessimism":
+                "Placeholder text."
 
 
 
