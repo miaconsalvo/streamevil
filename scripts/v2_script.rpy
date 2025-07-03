@@ -455,7 +455,7 @@ label GibianVCustomsMarshal():
     "We're out."
     agent1 "Right so..."
     agent1 "Y'all strike me as the types to not need reminding that we never met."
-    show jennica stream happy at stream_left
+    #show jennica stream happy at stream_left
     pS "Sorry who're you again? Can't seem to recall."
     "The agent wordlessly tips his hat before disappearing through the door."
     hide customs agent with Dissolve (0.4)
@@ -1449,13 +1449,13 @@ label commsBase_DataCenter():
     show mac stream neutral at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
-    hide mac with dissolve(0.1)
-    hide jennica with dissolve(0.2)
+    hide mac with Dissolve(0.1)
+    hide jennica with Dissolve(0.2)
     show teresa stream shock at stream_left with Dissolve(0.2)
     enS "Well they were still cops."
     goon "Look. This is the mission. Don't act like you've never done worse."
     goon "I've heard stories of what you all did."
-    hide teresa with dissolve(0.2)
+    hide teresa with Dissolve(0.2)
     "Reginald turns to look me in the eyes."
     goon "Especially {i}you{/i}."
     $ reactTarget = "vig2_sc7_bigreveal"

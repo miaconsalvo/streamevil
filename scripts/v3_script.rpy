@@ -42,6 +42,7 @@ label vignette3Start():
     #$ reactTarget = "vig2_sc1_openingstream"
     #show screen streamerCommentary
     "You load the save file you were previously playing, and are ready to go."
+    $ narrator = alt_narrator
     if vig2_outlawEpilogue == True:
         jump vig3outlawstart
     else:
@@ -178,7 +179,7 @@ label vig3marshalstart():
     jump vig3_sc2
 
 label vig3_sc2():
-    #show cockpit_stream at topleft onlayer background with dissolve
+    show cockpit_stream at topleft onlayer background with dissolve
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
     show jennica stream neutral at stream_left with dissolve
@@ -208,7 +209,7 @@ label vig3_sc2():
     $ reactTarget = "vig3_sc2_macdad"
     show screen streamerCommentary
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
-    show jennica stream happy at stream_left
+    show jennica stream neutral at stream_left
     show mac stream neutral at stream_center_mac
     "MAC sits innocently in his chair, looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
     mS "What's going on bud?"
@@ -259,7 +260,7 @@ label vig3_sc2():
 
 ##START OF ACT 1###
 label vig3_sc3():
-    #show akarstreet_stream at topleft onlayer background with dissolve
+    show akarstreet_stream at topleft onlayer background with dissolve
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     "It's beaming with colour and life, red and orange banners bridge the spaces between the buildings a jubilant feeling in the air."
     "Being attached to the Vineyard, Akar's blend of nature and technology are a sight to be sure." ## Rich and vibrant plant life merging with the surrounding infrastructure brightly adorned by lights and striking signage - think eco-futurist Vegas.##
@@ -277,7 +278,7 @@ label vig3_sc3():
     enS "It's risky even by your standards."
     mS "You both know that this is where we'll get quality upgrades for what we need."
     mS "And I figured it'd be nice to take a break while we're at it."
-    show jennica stream happy at stream_left
+    show jennica stream neutral at stream_left
     pS "I think you're too nostalgic."
     enS "And eager to get arrested."
     mS "Well a BigCorp prison probably has better food than some of the places we've seen."
@@ -347,8 +348,8 @@ label vig3_sc4():
     macS "I fear I have not stopped worrying since we landed."
     "Jennica glares at Teresa."
     pS "He gets it from you."
-    #hide akarstreet_stream with dissolve
-    #show reccshop_stream at topleft onlayer background with dissolve
+    hide akarstreet_stream with dissolve
+    show reccshop_stream at topleft onlayer background with dissolve
     "We walk into Specs and Steele the inside is...neat?"
     "Steele's usual brand of chaotic mess has been replaced with with a refined and uncharacteristic organization."
     "At least now you can walk through it."
@@ -361,11 +362,11 @@ label vig3_sc4():
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
     "Someone comes out from the back room."
-    #show rec stream neutral at stream_center 
+    show rec stream neutral at stream_center 
     ###RECCRIN (Late 20s) enters from the back room. They looks like an older version of their brother Allistar, long hair, tougher build.##
     recS "Well I'll be..."
     "We can't help our silence in this moment."
-    show jennica stream happy at stream_left
+    show jennica stream neutral at stream_left
     show teresa stream happy at stream_right
     pS "REC!"
     "Jennica runs up to hug Rec, they embrace and Jenn lifts them off the ground."
@@ -440,7 +441,7 @@ label vig3_sc4():
             mS "I'm not about to apologize for what I needed to do. They'll find out eventually."
     "Reccrin comes out after a brief moment with a long antennae and some internal parts for our Comms."
     show mac stream neutral at stream_left with move
-    #show rec stream neutral at stream_center with dissolve
+    show rec stream neutral at stream_center with dissolve
     recS "Definitely an older model but she should work better than what you got. Need an install?"
     enS "I could use the hand."
     pS "Thanks Rec."
@@ -601,7 +602,7 @@ label vig3_sc5():
     "At the center is a park area that sits a large statue of a man sitting at a tree, staring at an apple in his hand." 
     "The statue has a massive hole blown out of it."
     show rec stream neutral at stream_center with dissolve
-    show jennica stream happy at stream_left with dissolve
+    show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
     show mac stream neutral at stram_left with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
@@ -692,7 +693,7 @@ label vig3_sc5():
 
 label vig3_sc6():
     hide akarplaza_stream
-    show pub_stream at topleft onlayer background with dissolve
+    show bbpub_stream at topleft onlayer background with dissolve
     "It took some time to get through Akar, MAC wanted to see everything he could."
     "As if it would disappear if he took his eyes off it."
     "The days are shorter this time of year and when night falls we make it to the Burnt Bulb."
@@ -734,7 +735,7 @@ label vig3_sc6():
     show rec stream neutral at stream_center with dissolve
     recS " So I said, \"You should've been more specific about the screw!\""
     show teresa stream happy at stream_right
-    show jennica stream happy at stream_left 
+    show jennica stream neutral at stream_left 
     "Raucous laughter pours out of us, barely audible in this crowded bar."
     enS "Makers, that's dumb."
     macS "Now I found that funny but can someone clarify the part about the screw?"
@@ -767,7 +768,7 @@ label vig3_sc6():
     mS "But I can't have the two of you blowing up at each other over something I decided."
     mS "When it comes down to it, we need to look out for each other." 
     mS "You're the ones I can rely on, the only ones I trust and I need that to be the same between all of us."
-    show jennica stream happy at stream_left
+    show jennica stream neutral at stream_left
     show teresa stream happy at stream_right
     "When the two of them begin to smile at each other I know that something I said stuck."
     enS "You know I was wondering when we'd get an inspiring heart to heart from you."
@@ -1104,7 +1105,7 @@ label vig3_sc6():
             play audio "lazer.wav" volume 5.0
             hide zan with Dissolve (0.1)
             "Zan falls hard, the pub is silent."
-            show jennica stream happy at stream_left
+            show jennica stream neutral at stream_left
             show teresa stream happy at stream_right
             pS "HELL YEAH!!!"
             "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
@@ -1154,7 +1155,7 @@ label vig3_sc6():
             mS "No way" 
             macS "Oh my..."
             #if the variable determines that they win.
-            show jennica stream happy at stream_left
+            show jennica stream neutral at stream_left
             show teresa stream happy at stream_right
             "Ovid is under the table."
             mS "WE DID IT!"
@@ -1265,7 +1266,7 @@ label vig3_sc8():
     "It was Rec who gave us the suggestion to intercept them where they were. That meant in the belly of the beast, Reynar's Vineyard."
     "It was nothing short of the worst case scenario."
     hide bg black
-    show vineyardinventorfair_stream at topleft onlayer background
+    show exteriorvineyard_stream at topleft onlayer background
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
@@ -1339,7 +1340,7 @@ label vig3_sc8():
     jump vig3_sc9
 
 label vig3_sc9():
-    hide vineyardinventorfair_stream
+    hide exteriorvineyard_stream
     show inventorfairgallery_stream at topleft onlayer background
     invfairnpc1 "I told them raising Silver Badgers was a terrible idea! Now they have a torn up farm and no coats to show for it."
     "My eyes nearly roll out of my head at the forced laughter from the surrounding guests."
@@ -1443,7 +1444,8 @@ label vig3_sc9():
     jump vig3_sc10 
 
 label vig3_sc10():
-    # Black Screen
+    hide inventorfairgallery_stream
+    show bg black at topleft onlayer background with dissolve
     "I flinch as a shot rings outs, echoing in my ears."
     "My body is buzzing, heart pounding."
     "Ama takes the blaster away from me."
@@ -1476,6 +1478,8 @@ label vig3_sc10():
     jump vig3_sc11
 
 label vig3_sc11():
+    show inventorfairgallery_stream at topleft onlayer background with dissolve
+    hide bg black
     #Int. Inventor's Fair. 
     menu:
         "Ama stand in front of me steely gaze."
@@ -1590,6 +1594,8 @@ label vig3_sc11():
 
 label vig3_sc12():
     #Ext. Vineyard Balcony
+    show exteriorvineyard_stream at topleft onlayer background with dissolve
+    hide inventorfairgallery_stream
     "Overlooking the lush chimaeron trees, the east balcony was as ornate as it was private."
     "The noise of the Fair cuts as the large doors close on the balcony."
     "Clearly this space is meant for more quiet buisness."
