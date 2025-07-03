@@ -1096,6 +1096,9 @@ label vig3_sc6():
     menu:
         "How do I finish this?"
         "Shoot Zan's Leg":
+            $ outlaw += 1
+            $ macViolence += 1
+            $ macPessimism += 1
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
             "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully" "I take my position."
             "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
@@ -1145,7 +1148,10 @@ label vig3_sc6():
             hide teresa with dissolve
             hide jennica with dissolve
         "Trust the crew to win.":
-            #need a variable to determine if they win or not. 
+            $ marshal += 1
+            $ macHope += 1
+            $ macPeace += 1
+            #need a variable to determine if they win or not.
             "There's a part of me that know I'll regret this but I don't go for my pistol."
             "These two are idiots but they're my idiots and I have to trust they'll pull through."
             "The hands keep going."
@@ -1154,34 +1160,63 @@ label vig3_sc6():
             "...29..."
             "Then a loud crash."
             mS "No way" 
-            macS "Oh my..."
-            #if the variable determines that they win.
-            show jennica stream neutral at stream_left
-            show teresa stream happy at stream_right
-            "Ovid is under the table."
-            mS "WE DID IT!"
-            "The whole bar is roaring!"
-            "Zan pushes the table away and goes to make sure Ovid is alright "
-            "I move to greet my victors."
-            mS "I can't believe you pulled that off. That was some risky business."
-            pS "C'mon Cap, just harmless fun."
-            mS "Betting the ship is harmless to you?"
-            enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
-            mS "A show?"
-            pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
-            enS "Agreed."
-            pS "But alls well-"
-            "I'm truly losing it."
-            "Just then Zan comes over to us and kneels."
-            zan "I must make good on promise."
-            "Teresa and Jeneca each take a seat on one flexed arm."
-            "Zan hoists them in the are and parades them around the bar."
-            zan "MOXIE MOXIE MOXIE MOXIE!"
-            "When they look back I give them a nod like I'm ready to turn in."
-            hide teresa with dissolve
-            hide jennica with dissolve
-            #if they lose, some dialogue here explaining that they didnt actually lose the ship.
-            # "Jennica and Teresa make good on their end of the deal, begin singing."
+            macS "Oh my..." 
+            $ vig3_brika = renpy.random.randint(0, 1)
+            if vig3_brika == 0:
+                show jennica stream neutral at stream_left
+                show teresa stream happy at stream_right
+                "Ovid is under the table."
+                mS "WE DID IT!"
+                "The whole bar is roaring!"
+                "Zan pushes the table away and goes to make sure Ovid is alright "
+                "I move to greet my victors."
+                mS "I can't believe you pulled that off. That was some risky business."
+                pS "C'mon Cap, just harmless fun."
+                mS "Betting the ship is harmless to you?"
+                enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+                mS "A show?"
+                pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
+                enS "Agreed."
+                pS "But alls well-"
+                "I'm truly losing it."
+                "Just then Zan comes over to us and kneels."
+                zan "I must make good on promise."
+                "Teresa and Jeneca each take a seat on one flexed arm."
+                "Zan hoists them in the are and parades them around the bar."
+                zan "MOXIE MOXIE MOXIE MOXIE!"
+                "When they look back I give them a nod like I'm ready to turn in."
+                hide teresa with dissolve
+                hide jennica with dissolve
+            else:
+                show jennica stream neutral at stream_left
+                show teresa stream happy at stream_right
+                "Jennica's under the table"
+                mS "Oh no..."
+                "The whole bar is roaring!"
+                "Zan pushes the table away and goes to hug Ovid who looks like his eyes are about to pop out."
+                "I move to help Jennica"
+                enS "C'mon Jenn, you're good, you're alright."
+                pS "Did... Did we win?"
+                enS "Sorry sweerheart we didn't."
+                mS "Makers, why did you bet the ship?"
+                enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+                mS "A show?"
+                pS "A show! Oh scrap, you sound horrible when you sing Resa."
+                enS "Still better than you."
+                pS "But we must press on! *hick*"
+                "I'm truly losing it."
+                "Just then Zan comes over to us."
+                zan "You must make good on promise."
+                "Teresa helps Jennica get up and they stand on the Karousel table."
+                "Zan begins to clap on beat." #The melody is "C'est a ton tour"
+                "Teresa and Jennica begin to sing"
+                pS "Zan is the man! Zan has a plan! Zan's got the muscles to beat any man." 
+                enS "Ovid's the best! Above all the the rest! With muscles inside he'll pass any test."
+                "When they look back I give them a nod like I'm ready to turn in."
+                "They continue in broken harmnony" 
+                hide teresa with dissolve
+                hide jennica with dissolve         
+                
     "I head back to Rec and MAC."
     show rec stream neutral at stream_right with dissolve
     show mac stream neutral at stream_left_mac with dissolve
@@ -1707,6 +1742,18 @@ label vig3_sc12():
     "And there's MAC with my blaster in his hand."
     "Gripping the handle like it's his own."
     #Choices happen based on MAC's alignment.
+    if macViolence >= macPeace and macPessimism >= macHope:
+        "MAC is a violent pessimist."
+    elif macViolence >= macPeace and macPessimism < macHope:
+        "MAC is a violent optimist."
+    elif macViolence < macPeace and macPessimism >= macHope:
+        "MAC is a peaceful pessimist."
+    else:
+        "MAC is a peaceful optimist."
+    #elif macViolence < macPeace and macPessimism < macHope:
+    #    "MAC is a peaceful optimist."
+
+    
     menu: 
         "What is MAC's alignment?"
         "Violence, Hope.":#Ama route
@@ -1732,7 +1779,7 @@ label vig3_sc12():
             macS "My records show a long list of... accomplishments perpetrated by you."
             amaS "And what about it?"
             macS "... You're better than this."
-            "Ama is speechles"
+            "Ama is speechless"
             "Without losing my sights on her we head inside."
         "Violence, Pesimism.":
             "He fires the blaster in-between us, it hits the wall with a definitive smack."
@@ -1854,7 +1901,7 @@ label vig3_sc13():
                 jump vig3outlawcomms
             else:
                 jump vig3marshalcomms 
-        "Mad Dash to the shuttles.":
+        "Mad dash to the shuttles.":
             "No time to lose lets make a break for it!"
             mac "SO SORRY!"
             "This was the third security guad MAC had run over with reckless abandon."

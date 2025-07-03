@@ -93,12 +93,14 @@ default outlaw = 3
 
 #variables to track MAC's morality
 default macHope = 0
-default macHonesty = 0
+default macPessimism = 0
 default macViolence = 0
+default macPeace = 0
 
 #Approval of micro-game characters
 default engineerApproval = 3
 default pilotApproval = 4
+default deadeyeApproval = 0
 
 #variables to track viewer engagement
 default csEngagement = 5
@@ -203,6 +205,7 @@ default promisedPDOutlaw = False #if you told pickleddragons that you want to do
 
 ####Variables for Vignette 3####
 default firstfightprediction = False
+default vig3_brika = 0
 
 
 
@@ -281,6 +284,7 @@ label playerName:
     #$ AddChatter(vig1_sc1_comment7)
     #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
+    
     "For testing purposes, you can jump ahead to other vignettes."
     menu:
         "Which Vignette would you like to begin with?"
