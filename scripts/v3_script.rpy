@@ -1440,8 +1440,6 @@ label vig3_sc9():
     show ama stream neutral at stream_center with dissolve
     "But this time, it doesn't go away. Ama smiles."
     amaS "Hello Mozely." 
-    "This is the end of the current build"
-    "Going back now."
     jump vig3_sc10 
 
 label vig3_sc10():
@@ -1709,6 +1707,8 @@ label vig3_sc12():
             "Placeholder text."
         "Peace/Pessimism":
             "Placeholder text."
+    "This is the end of the current build."
+    "Click to go back to main menu."
 
 
 
