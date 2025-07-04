@@ -2081,7 +2081,7 @@ label vig3_sc14():
             "We don't have time to process before we head for the shuttle."
             jump vig3_epilogue
 
-label vig3_sc14():
+label vig3_epilogue():
     "As the shuttle zooms to Akar, the Vineyard is alight with fireworks."
     "The screens in the shuttle spring to life."
     "Reynar is there, glass in hand toasting it to the camera."
