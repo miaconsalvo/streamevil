@@ -3,6 +3,7 @@
 ###Attacking Polaris with Ama
 label vig4_sc6_attack_1_ama():
     show vig1_town_stream onlayer background with dissolve
+    hide targetbase_stream
     "Polaris burns."
     "The dull roar of battle echoes in the distance."
     "We make our way quickly down the clear street, hopping between pieces of cover as we do so."
@@ -13,7 +14,7 @@ label vig4_sc6_attack_1_ama():
     enS "Shit, patrol, get down!"
     hide jennica with dissolve
     hide teresa with dissolve
-    "The four of us dive over the rubble of the building and and crouch behind the ruined stones."
+    "The four of us dive over the rubble of a nearby building and crouch behind the ruined stones."
     "A low hum gets closer, muddying the sound of several voices."
     "One breaks through, shouting."
     enforcer "Halt! Halt I said!"
@@ -36,7 +37,7 @@ label vig4_sc6_attack_1_ama():
     show ama at stream_center with dissolve
     amaS "You're thinking too small."
     "Ama points at the hover tank."
-    amaS "We take that, and we don't have to worry about hiding and cover anymore."
+    amaS "We take that, we don't have to worry about hiding and cover anymore."
     menu:
         amaS "We take that, we don't have to worry about hiding and cover anymore."
         "You can't be serious.":
@@ -389,7 +390,7 @@ label vig4_sc6_attack_2_ama():
     hide ama with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
-    jump vi4_sc6__attack_3_ama
+    jump vig4_sc6_attack_3_ama
 
 label vig4_sc6_attack_3_ama():
     "Smoke billows all around us as we navigate Polaris's ruined roads."
@@ -422,7 +423,7 @@ label vig4_sc6_attack_3_ama():
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, engulfing some BC enforcers in flames and shaking our hull."
-            enS "Tough hit but shiels are still at 85\% and holding."
+            enS "Tough hit but shields are still at 85\% and holding."
             "I grip the cannon controls and point at a squad of Dragonflies huddled behind nearby cover."
             "The whole tank thrums with energy as the cannon charges."
             "A beam of blue light bursts from the cannon, striking through the rubble."
@@ -463,14 +464,14 @@ label vig4_sc6_attack_3_ama():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
         "Attack BigCorp, rush the barricade.":
             mS "No. BigCorp is still the enemy."
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
             mS "Resa, keep those shields up."
-            enS "Roger, we're at 95/% currently!"
+            enS "Roger, we're at 95\% currently!"
             mS "Ama, open fire on any BC goons you see."
             amaS "I don't like losing the surprise, but I do like killing some BC goons."
             "Ama grabs the machine gun controls and whips it around, aiming for the squads enforcers at the frontline."
@@ -514,7 +515,7 @@ label vig4_sc6_attack_3_ama():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
         "Attack both Dragonflies and BigCorp.":
             $ vig4_killDflies = True
@@ -522,7 +523,7 @@ label vig4_sc6_attack_3_ama():
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye aye."
             mS "Resa, keep our shields up."
-            enS "Roger, we're at 95% currently!"
+            enS "Roger, we're at 95\% currently!"
             mS "Ama, fire at will."
             amaS "Oh I've been waiting for this!"    
             "Ama grabs the machine gun controls and whips it around."
@@ -542,7 +543,7 @@ label vig4_sc6_attack_3_ama():
             "An explosion suddenly detonates against our side."
             mS "Teresa, report!"
             "I whip the monitor around, looking for the assailants."
-            enS "Shields are down to 60%. We're taking fire from both sides and losing energy rapidlly!"
+            enS "Shields are down to 60\%. We're taking fire from both sides and losing energy rapidlly!"
             "I locate the smoke streaking through the air."
             "Dragonflies on a nearby building are loading rocket launchers."
             "I drop the cannon to aim at the base of the building, charging up another blast."
@@ -570,7 +571,7 @@ label vig4_sc6_attack_3_ama():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
     "The tank rushes into the plaza as Jennica slams the controls to the side, and we go almost completely sideways."
     "The tank isn't supposed to go this fast. And it's not supposed to turn this hard."
@@ -614,7 +615,7 @@ label vig4_sc6_attack_3_ama():
         "Three more fighers fly by immediately after. Then another. Then another."
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"
-        show reginald at stream_center with dissolve
+        show reginald stream bigmad at stream_center with dissolve
         goon "I really don't get paid enough for this shit."
         show jennica stream shock at stream_left with dissolve
         pS "Reginald!?"
@@ -629,7 +630,7 @@ label vig4_sc6_attack_3_ama():
                 mS "Reginald...thank you."
                 goon "Now don't go getting soft on me."
                 goon "You just do your job and I'll do mine."
-                goon "Even though it's a massive pain.."
+                goon "Even though it's a massive pain."
                 mS "Copy that."
             "Affirmative.":
                 mS "Copy that."
@@ -664,6 +665,9 @@ label vig4_sc6_attack_3_ama():
                 enS "Go do what you do best, Moze."                
             else:
                 pass
+            mS "Guys...thank you. And be careful. I want a clean escape route when I come down with MAC."
+            pS "You betcha."
+            enS "Affirmative."
         "Thank you.":
             mS "Jenn, Resa, I--"
             if jennicaRomance == True:
@@ -690,7 +694,7 @@ label vig4_sc6_attack_3_ama():
     mS "Ready."
     "Ama and I rush toward the tower's tall doors."
     "Behind us, we hear shouts of BC enforcers as they pour into the plaza, the echo of blaster fire."
-    "And and the warm vibration of a tank's cannon charging up to full power."
+    "And the warm vibration of a tank's cannon charging up to full power."
     jump vig4_sc7_1_attack_ama
 
 label vig4_sc7_1_attack_ama():
@@ -796,9 +800,9 @@ label vig4_sc7_1_attack_ama():
         "I came to help.":
             mS "I came to help, to fight off BigCorp."
             "Coil tilts his head, as if inspecting me."
-                cS "Help?"
-                cS "I think we've had enough of your \"help.\""
-                cS "You had to come back and visit more destruction upon us."
+            cS "Help?"
+            cS "I think we've had enough of your \"help.\""
+            cS "You had to come back and visit more destruction upon us."
             if vig4_killDflies == True:
                 cS "You killed my men because you wanted to, didn't you?"
                 cS "You never even thought about helping us."
@@ -840,6 +844,7 @@ label vig4_sc7_1_attack_ama():
 
 label vig4_sc6_attack_1():
     show vig1_town_stream onlayer background with dissolve
+    hide targetbase_stream
     "Polaris burns."
     "The dull roar of battle echoes in the distance."
     "We make our way quickly down the clear street, hopping between pieces of cover as we do so."
@@ -916,14 +921,9 @@ label vig4_sc6_attack_1_assault():
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
     play audio "lazer.wav"
     show bc_enforcer at stream_center with dissolve
-    "Ama does the same, taking out the lead enforcer, while Jennica and Teresa stay in cover and shift along the side of the rubble."
-    hide jennica with dissolve
-    hide teresa with dissolve
-    show ama at stream_right with dissolve
-    show bc_enforcer at stream_center with dissolve
+    "Jennica and Teresa stay in cover and shift along the side of the rubble."
     "There's a moment of pause before the rain of blaster fire hits my position."
     "I hear the tank rumble as it shifts its position. The sound of a shot charging resonates from its chamber."
-    mS "Just follow my lead."
     "I rush out of cover, leaping over the rubble as the tank's blast erupts."
     "The explosion propels me through the air."
     "Landing in the dirt, I roll quickly as blaster bolts thud into the ground where I was just a moment before."
@@ -935,7 +935,7 @@ label vig4_sc6_attack_1_assault():
     "The shot fires, sending the enforcers flying into the air as the top hatch of the tank pops open."
     "Amdist the chaos, the Dragonflies have dispersed."
     "Some ran into the shelter of buildings while others have started brawling with BC goons."
-    "Teresa and Jennica have dragged thrown some goons out of the hatch."
+    "Teresa and Jennica drag some goons out of the hatch."
     "Jennica scrambles inside while Teresa makes quick work of them with her pistol."
     "Some of the BC troops are retreating back to the tank, but the bulk of them advance on my position."
     menu:
@@ -1004,9 +1004,7 @@ label vig4_sc6_attack_1_assault():
             "Six blaster shots echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
     "I turn my back on the quiet street, and stride toward the tank."
-    hide teresa with dissolve
-    hide ama with dissolve
-    jump vig4_sc6_attack_2_ama
+    jump vig4_sc6_attack_2
 
 label vig4_sc6_attack_1_split():
     mS "Teresa's right, if we're going to do this we have to do it smart."
@@ -1202,7 +1200,7 @@ label vig4_sc6_attack_2():
     "We glide smoothly over the ground as a calm before the storm settles over Polaris."
     hide jennica with dissolve
     hide teresa with dissolve
-    jump vi4_sc6__attack_3_ama
+    jump vig4_sc6_attack_3
 
 label vig4_sc6_attack_3():
     "Smoke billows all around us as we navigate Polaris's ruined roads."
@@ -1236,7 +1234,7 @@ label vig4_sc6_attack_3():
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, engulfing some BC enforcers in flames and shaking our hull."
-            enS "Tough hit but shiels are still at 85\% and holding."
+            enS "Tough hit but shields are still at 85\% and holding."
             "I grip the cannon controls and point at a squad of Dragonflies huddled behind nearby cover."
             "The whole tank thrums with energy as the cannon charges."
             "A beam of blue light bursts from the cannon, striking through the rubble."
@@ -1263,7 +1261,7 @@ label vig4_sc6_attack_3():
             show vig1_town_stream with hpunch
             "Another rocket streaks through the air and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
-            enS "Bad hits. We're at 40\% shields, but holding. We just don't want to take two more of those."
+            enS "Bad hits. We're at 40\% shields, but holding. We can't take many more of those."
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
             "She's right, we're closing in."
@@ -1276,13 +1274,13 @@ label vig4_sc6_attack_3():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
         "Attack BigCorp, rush the barricade.":
             mS "No. BigCorp is still the enemy."
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
-            enS "Our shields are at 95/% currently!"
+            enS "Our shields are at 95\% currently!"
             mS "Good. Resa, open fire on any BC goons you see."
             enS "Roger!"
             "Teresa grabs the machine gun controls and aims for the enforcers at the frontline."
@@ -1325,14 +1323,14 @@ label vig4_sc6_attack_3():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
         "Attack both Dragonflies and BigCorp.":
             $ vig4_killDflies = True
             mS "Screw it." 
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
-            enS "Our shields are at 95/% currently!"
+            enS "Our shields are at 95\% currently!"
             mS "Good. Resa, open fire at will."
             enS "Roger!"
             "Teresa grabs the machine gun controls and whips it around."
@@ -1351,7 +1349,7 @@ label vig4_sc6_attack_3():
             "An explosion suddenly detonates against our side."
             mS "Teresa, report!"
             "I whip the monitor around, looking for the assailants."
-            enS "Shields are down to 60%. We're taking fire from both sides and losing energy rapidlly!"
+            enS "Shields are down to 60\%. We're taking fire from both sides and losing energy rapidlly!"
             "I locate the smoke streaking through the air."
             "Dragonflies on a nearby building are loading rocket launchers."
             "I drop the cannon to aim at the base of the building, charging up another blast."
@@ -1378,7 +1376,7 @@ label vig4_sc6_attack_3():
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
-            "The barricade us shatters as the cannon's blast collides with it."
+            "The barricade shatters as the cannon's blast collides with it."
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
     "The tank rushes into the plaza as Jennica slams the controls to the side, and we go almost completely sideways."
     "The tank isn't supposed to go this fast. And it's not supposed to turn this hard."
@@ -1407,7 +1405,7 @@ label vig4_sc6_attack_3():
         "Three more fighers fly by immediately after. Then another. Then another."
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"
-        show reginald at stream_center with dissolve
+        show reginald stream bigmad at stream_center with dissolve
         goon "I really don't get paid enough for this shit."
         show jennica stream shock at stream_left with dissolve
         pS "Reginald!?"
@@ -1422,7 +1420,7 @@ label vig4_sc6_attack_3():
                 mS "Reginald...thank you."
                 goon "Now don't go getting soft on me."
                 goon "You just do your job and I'll do mine."
-                goon "Even though it's a massive pain.."
+                goon "Even though it's a massive pain."
                 mS "Copy that."
             "Affirmative.":
                 mS "Copy that."
@@ -1430,7 +1428,7 @@ label vig4_sc6_attack_3():
     #if vig3_marshalChoice == True:
     else:
         show jennica stream neutral at stream_left with dissolve
-    pS "Uh, gang, you're gonna want to move." 
+    pS "Cap, you're gonna want to move." 
     mS "Not without you two."
     show teresa stream neutral at stream_center with dissolve
     enS "Negative, Captain."
@@ -1507,7 +1505,7 @@ label vig4_sc7_1_attack():
     show coil at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     cS "Well, you made it."
-    if vig4_battle_killDflies == True:
+    if vig4_killDflies == True:
         cS "You had to murder some good people to do it. But you arrived."
     else:
         pass
@@ -1612,6 +1610,8 @@ label vig4_sc7_1_attack():
             cS "MAC is gone."
             amaS "Bullshit."
             amaS "If that were true you wouldn't still be here."
+            cS "How perceptive. And yet you still have no idea what you're doing."
+            cS "Flailing around in the darkness with no purpose."
         "I came to help.":
             mS "I came to help, to fight off BigCorp."
             "Coil tilts his head, as if inspecting me."

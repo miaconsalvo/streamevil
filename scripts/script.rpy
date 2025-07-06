@@ -78,7 +78,7 @@ define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf"
 define reynar = Character("Reynar", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #vig4 Characters
-define cS = Character ("Coil", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#05ac2f", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
+define cS = Character ("Coil", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#b60873", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
 define vS = Character ("Vega", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#dd6819", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
 define townguy = Character("Townsperson", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define diceP1 = Character("Dice Player 1", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
@@ -173,7 +173,7 @@ default rudeMACGoodbye = False
 default vig4_amaOffer = False
 default vig4_defendPolaris = False
 default vig4_attackPolaris = False
-default vig4_battle_killDflies = False
+default vig4_killDflies = False
 default amaRomance = False
 default jennicaDate = False
 default teresaDate = False

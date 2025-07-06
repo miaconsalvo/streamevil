@@ -2,6 +2,7 @@
 
 label vig4_sc6_defend_1():
     show vig1_town_stream onlayer background with dissolve
+    hide targetbase_stream
     "The dull roar of battle echoes in the distance."
     "No danger on the roofs."
     "No enemies on the street."
@@ -84,6 +85,7 @@ label vig4_sc6_defend_1():
     "One, two, three, four, five..."
     "Where's the sixth?"
     enforcer "Freeze!"
+    show bc_enforcer at stream_center with dissolve
     "An enforcer taps my back with his gun."
     enforcer "Tell your crew to stand down!"
     mS "Easy."
@@ -121,9 +123,9 @@ label vig4_sc6_defend_1():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     vS "Big gun. Think you and your crew know how to use it?"
-    "Jennica's voice is muffled as she speaks from inside the tank."
     pS "Please, I can drive anything!"
-    enS "It's cannon, not rocket science."
+    enS "It's a cannon, not rocket science."
+    enS "And I understand rocket science too."
     vS "Good."
     vS "We repelled BigCorp's first attack, but we know they're not going to give up."
     "She puts a hand on the vehicle."
@@ -137,7 +139,7 @@ label vig4_sc6_defend_1():
     vS "For safety, he's been taken into the tower already."
     vS "They won't use artillery. Don't want to risk hitting MAC."
     vS "So if we can hold them on the ground, we can win."
-    ps "So we're the bait?"
+    pS "So we're the bait?"
     vS "No. We're the wall."        
     "Vega turns and signals to the other Dragonflies."
     "They hesitate for a moment, then disperse, rushing down the street toward the plaza."
@@ -252,6 +254,7 @@ label vig4_sc6_defend_1():
     mS "We'll talk soon."
     pS "Be good, kid!"
     enS "Take care of yourself!"
+    hide mac with dissolve
     "The hologram shivers, then fades."
     "I look up to the sky. The approaching dropships, then turn to my crew."
     if teresaRomance == True:
@@ -278,7 +281,6 @@ label vig4_sc6_defend_2():
     mS "How're we looking, Jenn?"
     pS "Fine, Cap, doesn't look too complex. We'll just have to work as a team."
     pS "I'll take maneuvering. Teresa, take care of our shields and engine power."
-    show teresa stream neutral at stream_right with dissolve
     enS "Makes sense."
     pS "Vega, if you're on navigation, take that scope and give me directions."
     vS "Gotcha."
@@ -300,7 +302,7 @@ label vig4_sc6_defend_2():
     #show plaza onlayer background with dissolve
     #hide previous scene
     "We arrive at the plaza's perimeter, just in front of the central barriade." 
-    "Dragonflies stand atop the barricade at our entrance, cheering."
+    "Dragonflies stand atop the barricade, cheering at our arrival."
     vS "They know we might have a chance now."
     mS "Might."
     pS "Eyes up, we've got dropships!"
@@ -309,7 +311,7 @@ label vig4_sc6_defend_2():
     vS "Guess they figured out we aren't friendly."
     "Looking through a monitor, I see dropships landing at the outskirts of Polaris and dropping off battalions of BC enforcers."
     "Dragonflies move across the ruined rooftops, and rush past the tank to take cover in the ruins of the street."
-    "taking offensive positions as they fire at the approaching battalions."
+    "They bring the fight to the approaching army, firing at the BC battalions."
     "The true battle for Polaris begins."
     "A dropship careens down toward the central street, as if to fly directly overhead."
     mS "Vega, use the machine guns and hit the enforcers with suppressing fire."
@@ -382,7 +384,7 @@ label vig4_sc6_defend_3_barricade():
             "The barricade is too important. I couldn't risk it on them."
     show vig1_town_stream with vpunch
     "A grenade explodes at our side."
-    enS "Shields are at 60/%. We can maintain this position for a bit longer."
+    enS "Shields are at 60\%. We can maintain this position for a bit longer."
     vS "Scumbags!"
     "Vega screams as she lays on the trigger for the machine gun."
     "Bolts rip into the BC army, tearing up the frontline."
@@ -429,7 +431,7 @@ label vig4_sc6_defend_3_frontline():
     mS "Keep firing!"
     "The cannon discharges into the encroaching swarm, disintegrating a line of soldiers in an instant."
     "Vega's machine guns keep the closest enemies at bay."
-    "But then they stop firing."
+    "But then the machine guns stop firing."
     vS "Crap, they're overheated!"
     pS "So we only have the cannon?"
     enS "Shields at 25\%!"
@@ -438,11 +440,12 @@ label vig4_sc6_defend_3_frontline():
     "It rips through a drop ship that collides into the street, taking more soldiers out with it."
     pS "Aye!"
     "The tank rumbles as Jennica pulls it in reverse, slamming it back toward the barricade as fast as it can go."
-    "We peel into a stop"
+    "We peel into a stop, just a few meters from the barricade."
+    mS "Teresa, find a way to recharge those shields. Jenn I nee--"
     jump vig4_sc6_defend_4
 
 label vig4_sc6_defend_4():
-    vS "Shit, contact on the roof top!"
+    vS "Shit, contact on the rooftop!"
     "I glance through a monitor just in time to see it: a BC enforcer with a rocket launcher."
     "I reach for the cannon, but it's too late."
     "Smoke streaks through the air."
@@ -462,14 +465,13 @@ label vig4_sc6_defend_4():
     "The launcher is aimed directly at the tank."
     "I leap to the ground and rush toward the barricade."
     "Behind me, I feel the heat against my back as the rocket detonates against the tank."
-    "A shockwave ripples out, sending me flying through the and rolling through the dirt."
+    "A shockwave ripples out, sending me flying through the air and rolling into the dirt."
     "Picking myself up, I turn around to see the hull of the tank engulfed in flames."
     "The BC army marches up from the distance."
     vS "Come on!"
     show vega at stream_center with dissolve
     "Vega grabs me by the hand and pulls me up, sprinting the final few feet to the barricade."
-    "We clamber over the pile of tables, chairs, and metal."
-    "We slide down the other end as people climb to shoot back at the approaching enemies."
+    "We clamber over and slide down the other end as people climb to shoot back at the approaching enemies."
     hide vega with dissolve
     "Taking a couple steps back from the barricade, I drop to one knee, glancing around me."
     "Polaris burns."
@@ -479,7 +481,7 @@ label vig4_sc6_defend_4():
 
 label vig4_sc6_defend_5():
     vS "Moze!"
-    show vega at stream_center with dissolve
+    show vega at stream_left with dissolve
     vS "What do we do?"
     "Just then, the thrum of a ship screeches over head."
     "I look up in time to see a dropship pull into a hover above us."
@@ -577,6 +579,7 @@ label vig4_sc6_defend_5():
         hide reginald with dissolve
     #if vig3_marshalChoice == True:
     else:
+        "Vega pauses for a moment."
         vS "Go, Moze."
         vS "We'll do what we have to do out here."
         enS "We will too."
@@ -663,7 +666,7 @@ label vig4_sc7_1_defend():
     amaS "Was wondering when you would finish playing around outside and join us."
     amaS "Took you longer than expected."
     menu:
-        amaS "I suppose I should thank you for leading me here."
+        amaS "Took you longer than expected."
         "Thanks for saving me.":
             mS "I appreciate you saving me earlier."
             mS "Will make this even sweeter."      
@@ -688,11 +691,12 @@ label vig4_sc7_1_defend():
             cS "MAC is gone."
             amaS "Bullshit."
             amaS "If that were true you wouldn't still be here."
+            cS "How perceptive. And yet you still have no idea what you're doing."
+            cS "Flailing around in the darkness with no purpose."
         "I came to help.":
             mS "I came to help, to fight off BigCorp."
-            if vig4_defendPolaris == True:
-                cS "And you have done an admirable job." 
-                cS "Without you, we probably would already have been overrun."
+            cS "And you have done an admirable job." 
+            cS "Without you, we probably would already have been overrun."
     amaS "I've heard enough!"
     "Ama moves to fire her rifle."
     menu:

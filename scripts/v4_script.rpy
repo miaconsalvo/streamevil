@@ -28,7 +28,7 @@ label vignette4Start():
     $ chatter_list = []
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
-    $ macroChoice = False
+    $ macroChoice = True
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
@@ -79,6 +79,7 @@ label vignette4Start():
             $ vig2_outlawEpilogue = False
     "Have you earned or will you earn Ama's approval?"
     menu:
+        "Have you earned or will you earn Ama's approval?"
         "Yes.":
             $ deadeyeApproval = 6
         "No.":
@@ -95,6 +96,7 @@ label vignette4Start():
 
 label vig4_sc1_1():
     $ narrator = alt_narrator
+    $ macroChoice = False
     show ship_hallway_stream at topleft onlayer background with dissolve
     "There is a harmonious hum to the Oakley's engines."    
     "No alarms going off."
@@ -140,7 +142,7 @@ label vig4_sc1_1():
             mS "A surprise?"
             macS "Yes, captain. Shall I provide a definition of \"surprise\"?"
             "I look from MAC to Teresa. She puts her hands in the air."
-            enS "I'm no narc."
+            enS "I'm no snitch."
             mS "Alright, keep your secrets."
             menu:
                 mS "Alright, keep your secrets."
@@ -239,9 +241,9 @@ label vig4_sc1_2():
             mS "What's so odd about an artificial atmosphere?"
             pS "Yeah, I've been on rocks with them before. Tough to breathe at first, but you adjust."
             enS "They're not uncommon. But the technology to produce them is expensive."
-            enS "And this moon with nothing of value of it, in no strategic position, has access to one?"
+            enS "And this moon with nothing of value on it, in no strategic position, has access to one?"
             menu:
-                enS "And this moon with nothing of value of it, in no strategic position, has access to one?"
+                enS "And this moon with nothing of value on it, in no strategic position, has access to one?"
                 "Maybe the Dragonflies are well-connected.":
                     mS "Maybe the Dragonflies have more tech than we expected."
                     enS "It's possible."
@@ -521,7 +523,7 @@ label vig2_sc2_3():
         "What do you mean?":
             mS "Changing how?"
             enS "His vocabulary and grammar."
-            enS "Jennica first pointed it out to me afte we left Akar."
+            enS "Jennica first pointed it out to me after we left Akar."
             enS "Wanted to see what you think of it?"
             menu:
                 enS "Wanted to see what you think of it?"
@@ -535,7 +537,7 @@ label vig2_sc2_3():
                     enS "It's like he's starting to talk like us."
                     enS "It's a little...disconcerting."
                     menu:
-                        enS "It's a little... disconcerting."
+                        enS "It's a little...disconcerting."
                         "We just have to get him to the Dragonflies.":
                             mS "We're almost there. All we have to do is get him to the Dragonflies."
                             mS "They can worry about his personality after that."
@@ -549,9 +551,9 @@ label vig2_sc2_3():
             enS "Exactly!"
             enS "Jennica noticed it after we left Akar."
             enS "It's like he's starting to talk like us."
-            enS "It's a little... disconcerting."
+            enS "It's a little...disconcerting."
             menu:
-                enS "It's a little... disconcerting."
+                enS "It's a little...disconcerting."
                 "We just have to get him to the Dragonflies.":
                     mS "We're almost there. All we have to do is get him to the Dragonflies."
                     mS "They can worry about his personality after that."
@@ -605,7 +607,6 @@ label vig2_sc2_3():
             mS "I've had enough skulking around. And we've dealt with more dangerous situations before."
             enS "All the same, I'd prefer not to make a hasty getaway if we don't have to."
             enS "But I'll follow your lead, Captain."
-    mS "Thanks, Resa."
     hide teresa with dissolve
     jump vig4_sc2_4
 
@@ -706,7 +707,7 @@ label vig4_sc2_4():
             "A bolt fires from Teresa's blaster."
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
             cS "You should treat \"relics\" with more respect."         
-        "Don't threaten my crew.":
+        "Don't threaten my crew (draw weapon).":
             "I give Teresa a signal under the counter."
             mS "Sounds like a threat."
             mS "And nobody threatens my crew."
@@ -920,7 +921,7 @@ label vig4_sc2_6():
             cS "Complicity is how they hold us hostage. So I left."
             cS "I endeavored to convince Vanas to join me. He refused."
             "Coil suddenly gets a distant look in his eye. Like he's gazing past me."
-            cS "I said some thing I have regretted ever since."
+            cS "I said some things I have regretted ever since."
             cS "You can probably guess what happened next. I wandered the stars, lost myself in the bottle."
             "Coil turns to look at Vega."
             cS "Until I met Vega."
@@ -968,7 +969,7 @@ label vig4_sc2_6():
                     mS "When we first took the mission, we knew this was how it would end."
                     pS "Yeah, but..."
                     enS "I guess I wanted to forget that part."
-            cS "It's not up to me. Even Vanas was to be left behind."
+            cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
             cS "After all you have been through, everything that has gone wrong, they might listen."
             vS "Pops can be very persuasive. Trust him."
@@ -991,7 +992,7 @@ label vig4_sc2_6():
             "Coil turns around and heads to the back of the shop."
             "The sounds from outside are suddenly loud and lively."
             "Music drifts in through the windows and the cries of laughter and joy hang in the air."
-            "We step outside into the cool, night air."
+            "We step outside into the cool night."
             hide vega with dissolve
             hide coil with dissolve
             hide mac with dissolve
@@ -1006,7 +1007,7 @@ label vig4_sc3_1():
     "I stand on the periphery, silently watching as MAC roves from group to group, introducing himself to new people."
     "Maybe, making new friends."
     vS "Hey, Moze."
-    show vega at stream_left with dissolve
+    show vega at stream_center with dissolve
     vS "Having a good time?"
     menu:
         vS "Having a good time?"
@@ -1119,7 +1120,7 @@ label vig4_sc3_2_vega():
         vS "Ahhh damn, if I just got those last ones I would have beat you."
     mS "Well done, it was an impressive showing!"
     vS "Thanks! That means a lot coming from you."
-    "We put the air rifles back on the counter and step aside to let new players take their position."
+    "We put the zap rifles back on the counter and step aside to let new players take their position."
     jump vig4_sc3_2_vega_2
 
 label vig4_sc3_2_vega_2():
@@ -1127,7 +1128,7 @@ label vig4_sc3_2_vega_2():
     "Vega stops at the periphery, looking over the crowd."
     "She isn't scanning for anything or anyone in particular."
     "She's just...looking. Taking it all in."
-    "Then I picture the ready warrior I just played in the carnival game."
+    "Then I picture the ready warrior I just competed against in the carnival game."
     "Vega hasn't spent her whole life on Polaris. She has experience with the rest of the galaxy."
     "Should I say something?"
     menu:    
@@ -1219,6 +1220,7 @@ label vig4_sc3_2_vega_2():
             "Vega smiles and blushes."
             vS "You should probably go check in with your crew, Coil might have news."
         "Think about joining us?":
+            mS "What do you think about joining us? The Oakley always has room for a sharp new recruit."
             "Vega's eyes go wide for an instant."
             vS "Bahahaha!"
             "Then she doubles over, laughing."
@@ -1233,6 +1235,7 @@ label vig4_sc3_2_vega_2():
     mS "I was just thinking the same thing."
     vS "Take care, Captain Moze."
     mS "Take care, Vega."
+    hide vega with dissolve
     "Vega steps away and into the crowded plaza as I survey the area in front of me."
     jump vig4_sc3_3
 
@@ -2171,8 +2174,9 @@ label vig4_sc3_6():
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica are in between the guards."
+            "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
-            cS "I found your friends trying to grab your weapons from the storage stall."
+            dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is hiding behind my legs, arms wrapped around me."
@@ -2231,7 +2235,7 @@ label vig4_sc3_6():
                 "Resa puts her hand on my shoulder."
             else:
                 "I feel both of their hands on my shoulder."
-            enS "Farewell, friend. Remember, no narcs in this family."
+            enS "Farewell, friend. Remember, no snitches in this family."
             pS "Bye lil' guy. Don't listen to anyone who tells you you can't do something."
             "MAC nods at both of them."
             macS "Goodbye, Teresa. Goodbye, Jennica."
@@ -2263,8 +2267,9 @@ label vig4_sc3_6():
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica are in between the guards."
+            "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
-            cS "I found your friends trying to grab your weapons from the storage stall."
+            dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is hiding behind my legs, his arms wrapped around me."
@@ -2323,7 +2328,7 @@ label vig4_sc3_6():
                 "Resa puts her hand on my shoulder."
             else:
                 "I feel both of their hands on my shoulder."
-            enS "Farewell, friend. Remember, no narcs in this family."
+            enS "Farewell, friend. Remember, no snitches in this family."
             pS "Bye lil' guy. Don't listen to anyone who tells you you can't do something."
             "MAC nods at both of them."
             macS "Goodbye, Teresa. Goodbye, Jennica."
@@ -2356,8 +2361,9 @@ label vig4_sc3_6():
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica are in between the guards."
+            "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
-            cS "I found your friends trying to grab your weapons from the storage stall."
+            dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is frozen still."
@@ -2398,7 +2404,7 @@ label vig4_sc3_6():
                 "Resa puts her hand on my shoulder."
             else:
                 "I feel both of their hands on my shoulder."
-            enS "Farewell, MAC. Remember, no narcs."
+            enS "Farewell, MAC. Remember, no snitches."
             pS "Bye lil' guy. Don't listen to anyone who tells you you can't do something."
             "MAC doesn't move."
             macS "Goodbye, engineer Prismari. Goodbye, pilot Brown."
@@ -2461,7 +2467,7 @@ label vig4_sc4_1():
             "My voice tears out of my mouth as if I have no control over it."
             mS "It's over, do you understand me!?"
             mS "MAC is with the Dragonflies now. You lost!"
-            mS "Do you hear me? Ama \"Deadeye\" Reyes, BC's biggest lapdog and company bitch failed."
+            mS "Do you hear me? Ama \"Deadeye\" Reyes, BC's biggest lapdog and company stooge failed."
             mS "So why don't you hang up and leave me and my crew alone!?"
     "Silence on the other end."
     amaS "Did you say that you \"handed over\" the robot to the Dragonflies?"
@@ -2516,7 +2522,7 @@ label vig4_sc4_1():
                     mS "But this isn't for you. It's for the SnakeHawks."
                     mS "It's our time to get payback."
                     amaS "Couldn't have said it better myself."
-                    amaS "I'll make contact once I've reached the planet."
+                    amaS "I'll make contact once I've reached the moon."
                     amaS "Be seeing you, Mozely."
                     play audio "cutCall.wav" volume 1.5
                 "This is for MAC.":
@@ -2525,7 +2531,7 @@ label vig4_sc4_1():
                     mS "The Dragonflies put him at risk the second I left."
                     mS "He's coming home."
                     amaS "Whatever gets you on board."
-                    amaS "I'll make contact once I've reached the planet."
+                    amaS "I'll make contact once I've reached the moon."
                     amaS "Be seeing you, Mozely."
                     play audio "cutCall.wav" volume 1.5
     "BigCorp is coming for MAC."
@@ -2858,28 +2864,7 @@ label vig4_sc5_1():
     "The outskirts are almost entirely ablaze."
     "A handful of blockades have been set up throughout the town."
     "The people of Polaris exchange blaster fire with BigCorp enforcers."
-    jump vig4_sc5_2
-
-label vig4_sc5_2():
-    "We reach the top of the ridge."
-    show targetbase_stream at topleft onlayer background with dissolve
-    hide oakley_ruin
-    "Polaris is under siege."
-    "Flames dance among the buildings. Smoke billows into the air."
-    "The sound of screams and blaster fire drift to us on the wind."
-    "The BC Cruiser hangs in orbit, a shadow looming over the moon."
-    "Bursts of gleaming energy fall towards the town."
-    "They impact upon thin veils of blue light just above clusters of the buildings."
-    mS "Coil's shields?"
-    enS "Looks like it, but a lot bigger. They're in pockets all over Polaris."
-    enS "The cruiser's been deploying shock troops for the last half hour and dropping artillery shells on those shields."
-    pS "But those Dragonflies aren't going without a fight."
-    "Jennica hands me a set of binoculars."
-    "Adjusting the zoom, I'm able to focus my attention on the different parts of the conflict."
-    "The outskirts are almost entirely ablaze."
-    "A handful of blockades have been set up throughout the town."
-    "The people of Polaris exchange blaster fire with BigCorp enforcers."
-    "They've got defensible positions, but there's no way they can withstand this siege."
+    "They've got defensible positions, but there's no way they can withstand a siege."
     "I follow the blockades toward the center of town."
     "The plaza is still decorated as if in celebration, but tools of war now join the streamers and banners."
     "Vega stands on a rooftop, firing into BC enforcers who get close."
@@ -2902,9 +2887,9 @@ label vig4_sc5_2():
                 mS "He shouldn't be anywhere near the frontline."
     else:
         mS "MAC is sitting in the seat of a turret aimed up at the sky."
-        "He's firing at will, taking out some of the drop pods before they can even hit the town."
+        "He's firing at will, taking out some of the dropships before they can even hit the town."
         menu:
-            "He's firing at will, taking out some of the drop pods before they can even hit the town."
+            "He's firing at will, taking out some of the dropships before they can even hit the town."
             "Not backing down from a fight.":
                 mS "Not backing down from a fight, I see."
                 mS "Proud of you MAC."
@@ -2929,8 +2914,6 @@ label vig4_sc5_2():
             "For MAC.":
                 mS "This is for MAC."
                 mS "No one messes with our family."
-            "For the SnakeHawks.":
-                mS "This is for the SnakeHawks and a new dawn."
             "For the Galaxy.":
                 mS "This is for the Galaxy."
                 mS "BigCorp doesn't own us and they never will."
@@ -3033,10 +3016,18 @@ label vig4_sc5_3():
     hide jennica with dissolve
     hide teresa with dissolve
     hide ama with dissolve
-    jump vig4_sc6_attack_ama
+    jump vig4_sc6_attack_1_ama
+
+
+
+
 
 ###The next sequence splits into two separate scripts: v4_script_sc6_attack and v4_script_sc6_defend
 ###These scripts reconnect at the next set of code in scene 7 (vig4_sc7_2)
+
+
+
+
 
 label vig4_sc7_2():
     cS "The time has come."
@@ -3109,7 +3100,7 @@ label vig4_sc7_3_ama():
         "He leans to the side, faster than I would expect his elderly physique to move."
         "Jump Coil.":
             "I leap at Coil, throwing a kick at his exposed side."
-            "It slowls slightly at his shield, but doesn't stop completely."
+            "It slows slightly at his shield, but doesn't stop completely."
             "He quickly spins away."
         "Shoot Coil.":
             "I raise my pistol and fire two quick shots, but they dissipate into his shields."
@@ -3829,7 +3820,7 @@ label vig4_epilogue_coil():
     macS "Really!?"
     mS "Sure. Turn around there, bud, let me find a good spot on you."
     pS "Oh no, come on Teresa, she's gonna need some help."
-    enS "I'll say. Remember when I asked her to do a tatto for me."
+    enS "I'll say. Remember when I asked her to do a tattoo for me."
     pS "The sketches were so atrocious you completely backed out hahaha."
     mS "Hey, knock it off you two, that's an order!"
     enS "Alright, alright."
@@ -3899,7 +3890,7 @@ label vig4_epilogue_coil():
     cS "He has sharp eyes."
     mS "What do you mean?"
     cS "Just watch."
-    "As I gaze into the vastness of space, suddenly I start to notice it to."
+    "As I gaze into the vastness of space, I start to notice it too."
     "Some of the stars are flickering."
     "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
     "Then it starts."
@@ -4043,7 +4034,7 @@ label vig4_epilogue_ama():
     macS "Really!?"
     mS "Sure. Turn around there, bud, let me find a good spot on you."
     pS "Oh no, come on Teresa, she's gonna need some help."
-    enS "I'll say. Remember when I asked her to do a tatto for me."
+    enS "I'll say. Remember when I asked her to do a tattoo for me."
     pS "The sketches were so atrocious you completely backed out hahaha."
     mS "Hey, knock it off you two, that's an order!"
     enS "Alright, alright."
@@ -4102,7 +4093,7 @@ label vig4_epilogue_ama():
     "The four of us move up to the cockpit."
     if amaRomance == True:
         "I step up behind Ama's chair and reach for her hand."
-        "Almsot automatically, as if we've been doing it for years, she takes it."
+        "Almost automatically, as if we've been doing it for years, she takes it."
     else:
         pass
     mS "What seems to be the trouble, Ama?"
@@ -4117,7 +4108,7 @@ label vig4_epilogue_ama():
     mS "See what?"
     macS "It was a little flicker in front of one of the stars!"
     amaS "So I'm not going crazy."
-    "As I gaze into the vastness of space, suddenly I start to notice it to."
+    "As I gaze into the vastness of space, I start to notice it too."
     "Some of the stars are flickering."
     "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
     "Then it starts."
