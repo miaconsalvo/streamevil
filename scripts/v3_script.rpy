@@ -51,8 +51,9 @@ label vignette3Start():
 label vig3outlawstart():
     show shiphub_stream at topleft onlayer background with dissolve
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
-    mS "It's nice always being the first one up, if it's even morning?"
-    "I check the clock on the wall, yep, morning."
+    "It's nice always being the first one up, if it's even morning?"
+    "I check the clock on the wall"
+    mS "Yep, morning."
     "\"I've got lots more work where that came from.\" Arrogant rat. I should've gone back and blown his fortress to ash."
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I can't believe I'm letting this get to me. Hell I've done worse, we've done worse. This probably wouldn't even crack the top five."
@@ -106,8 +107,10 @@ label vig3outlawstart():
     menu:
         "Be calm":
             mS "Take ten seconds. I'll see you there."
+            #no approval change
         "Be firm":
             mS "You can't go in like that. Fix yourself, I'll see you there."
+            #increase approval
     "I wait until I can feel her shoulder relax and walk out and down the hall, alone."
     hide teresa with dissolve
     jump vig3_sc2
@@ -115,8 +118,9 @@ label vig3outlawstart():
 label vig3marshalstart(): 
     show shiphub_stream at topleft onlayer background with dissolve
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
-    mS "It's nice to always be first one up, if it's even morning?"
-    "I check the clock on the wall, yep, morning."
+    "It's nice always being the first one up, if it's even morning?"
+    "I check the clock on the wall"
+    mS "Yep, morning."
     "\"Don't worry. You'll get yours.\""
     "Annoying rat. He's lucky I didn't turn back and blow his fortress to ash."
     "I take an uninterested sip of my drink wrapping both hands around the glass."
@@ -220,26 +224,28 @@ label vig3_sc2():
     "The two exchange a quick look before turning away, remembering that they're still fighting. I turn the focus away from MAC."
     mS "Let's consider our options, come up with a plan to get our Comms back in working order. Meet at the Bridge in an hour to debrief."
     hide screen streamerCommentary
-    pS "Yes Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
+    pS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     enS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     hide jennica with dissolve
     hide teresa with dissolve
     "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
     #hide cockpit_stream
     show ship_hallway_stream at topleft onlayer background with dissolve
-    macS "Captain."
-    show mac stream neutral at stream_center_mac with dissolve
+    macS "Captain!"
+    show mac stream shock at stream_center_mac with dissolve
     "I can't help but jump."
     mS "Jeez MAC, remind me to let you take point on stealth missions next time."
+    show mac stream neutral at stream_center_mac with dissolve
     macS "Might I make a suggestion?"
     mS "A suggestion?"
-    macS "Yes I have ideas"
+    macS "Yes I have ideas!"
     mS "MAC respectfully, I don't have time for this-"
     macS "Which is precisely why I have a suggestion, see I was scanning BigCorp databases..."
     "I feel frustration twisting my face." ##Dialogue choice that links to MAC's reaction here.##
     menu:
         "MAC that's dangerous!":
             mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
+            #Pessimism
         "MAC it's not safe":
             mS "MAC don't go poking into BigCorp networks. After all the work the keep you safe." #more gentle way of chiding MAC about being inconspicuous#
     "MAC's head lowers" ## this reaction can differ based on choices##
@@ -248,11 +254,13 @@ label vig3_sc2():
     mS "MAC you are it's just- What's your suggestion?"
     macS "An initial search suggests a nearby planet known as Solara, specifically the city of Akar. It may be suitable for our needs." 
     macS "However I should caution you..."
+    #Add a black screen function here. 
     "For a moment, the Oakley falls away from my view."
     "The low hum of the ship replaced by a crowded bar, the starting lines of song that will bellow out to bustling streets."
     "An old crew of Outlaws, drunk off a job well done."
     macS "Now there seems to be a significant amount of criminal activity, the crime rate is actually quite abnormal-"
     "I pat MAC's head interrupting him."
+    show mac stream happy at stream_center_mac
     mS "Good job buddy, rest up. I'll see you in an hour."
     "With every step I can't help but feel my smile grow, knowing this will be the calmest hour that I've had in a very long time."
     hide mac with dissolve
