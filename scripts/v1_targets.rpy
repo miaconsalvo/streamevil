@@ -65,6 +65,7 @@ label vig1_sc2_thankCS():
     $ vig1_sc2_comment2_csAma.click = False
     $ narrator = reg_narrator
     menu:
+        "Coriolis helped me explain."
         "Thanks, Coriolis!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
@@ -138,6 +139,7 @@ label vig1_sc2_houseExplosion():
     $ vig1_sc2_comment16.click = False
     $ narrator = reg_narrator
     menu:
+        "Coriolis thought I was going to destroy the house."
         "I did consider it":
             $ reactImage = "stream ui/reactconfident.png"
             player "I thought about it for a second."
@@ -195,6 +197,7 @@ label vig1_sc3_banditConvo():
             $ AddChatter(vig1_sc3_comment3_bandit2)
             pause 1.0
     menu:
+        "How do I normally play?"
         "Marshal.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I would always tell myself I was gonna replay Oakley 1 as Outlaw Moze."
@@ -203,6 +206,7 @@ label vig1_sc3_banditConvo():
             pause 1.0
             $ reactImage = "stream ui/reactneutral.png"
     menu:
+        "I should ask how Bandit plays."
         "Ask Bandit's favorite Oakley character.":
             $ reactImage = "stream ui/reactconfident.png"
             player "So, Bandit, time to ask the tough question."
