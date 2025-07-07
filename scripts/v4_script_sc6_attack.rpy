@@ -34,7 +34,7 @@ label vig4_sc6_attack_1_ama():
     pS "Bastard."
     show teresa stream neutral at stream_right with dissolve
     enS "Position looks bad. We can't leave here without exposing ourselves."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     amaS "You're thinking too small."
     "Ama points at the hover tank."
     amaS "We take that, we don't have to worry about hiding and cover anymore."
@@ -60,7 +60,7 @@ label vig4_sc6_attack_1_ama():
     enS "Guess he and his squad were more talk than bite after all."
     pS "They're still hostages. We should help them."
     hide customs agent with dissolve
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     amaS "Well, Mozely, what's the call?"
     menu:
         amaS "Well, Mozely, what's the call?"
@@ -92,7 +92,7 @@ label vig4_sc6_attack_1_assault_ama():
     "Ama does the same, taking out the lead enforcer, while Jennica and Teresa stay in cover and shift along the side of the rubble."
     hide jennica with dissolve
     hide teresa with dissolve
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     show bc_enforcer at stream_center with dissolve
     "There's a moment of pause before the rain of blaster fire hits mine and Ama's position."
     amaS "Hope this isn't suicide, Mozely."
@@ -217,7 +217,7 @@ label vig4_sc6_attack_1_split_ama():
     hide teresa with dissolve
     hide jennica with dissolve
     "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
-    show ama at stream_right with move
+    show ama stream neutral at stream_right with move
     "Ama and I duck close together."
     enforcer "Alright you maggots, break time's over. Time to get moving."
     "The sound of dozens of steps as the battalion moves off down the road."
@@ -288,7 +288,7 @@ label vig4_sc6_attack_2_ama():
     show teresa stream neutral at stream_right with dissolve
     enS "Makes sense."
     pS "Ama, take control of the machine guns."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     amaS "Music to my ears."
     pS "Cap, you stay in the center, be our spotter and take the main cannon."
     mS "Roger, let's roll out."
@@ -589,7 +589,7 @@ label vig4_sc6_attack_3_ama():
         "We're not making it out of this.":
             mS "I don't know if I see a way out of this."
     mS "This is where our score gets settled."
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     amaS "Then let's make sure it's settled in our favor."
     "Ama hops out of the tank, standing opposite me."
     "Suddenly, I feel something. Standing here. At war. With her."
@@ -1526,7 +1526,7 @@ label vig4_sc7_1_attack():
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
-                show ama at stream_right with dissolve
+                show ama stream neutral at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the bloodlust."
@@ -1540,7 +1540,7 @@ label vig4_sc7_1_attack():
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
-                show ama at stream_right with dissolve
+                show ama stream neutral at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the altruistic urge to help other people."
@@ -1564,7 +1564,7 @@ label vig4_sc7_1_attack():
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
-                show ama at stream_right with dissolve
+                show ama stream neutral at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the bloodlust."
@@ -1577,7 +1577,7 @@ label vig4_sc7_1_attack():
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
-                show ama at stream_right with dissolve
+                show ama stream neutral at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 amaS "Mozely can be quite stubborn."

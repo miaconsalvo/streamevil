@@ -652,7 +652,7 @@ label vig4_sc7_1_defend():
     "I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
     show coil at stream_left with dissolve
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     "Coil stands in the center, in front of a massive computer console."
     "Ama holds her rifle, aiming it at Coil's back."
     cS "I will never tell you, and you will never find him."

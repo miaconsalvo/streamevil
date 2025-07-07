@@ -2955,7 +2955,7 @@ label vig4_sc5_1():
 
 label vig4_sc5_3():
     amaS "Sounds like we have to make our move now."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     "Perched on a rock higher up the ridge, rifle relaxed into her shoulder, is Ama."
     amaS "Hello ladies. Good to see you all again."
     show jennica stream angry
@@ -3140,7 +3140,7 @@ label vig4_sc7_3_ama():
         "Don't think you're invincible.":
             mS "You have a weakness, and we're going to exploit it."
             cS "I'm sure you will."
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     "Ama puts a hand on my shoulder."
     "Her other hand is holding her side."
     amaS "Sorry, kid, took a bad knock there. But I'm back in the hunt."
@@ -3187,7 +3187,7 @@ label vig4_sc7_3_ama():
             "I'm on the floor facing Coil. He opens a palm in my direction."
             "I don't have time to stand."
     amaS "Moze!"
-    show ama at stream_left with Dissolve(0.2)
+    show ama stream neutral at stream_left with Dissolve(0.2)
     "Ama leaps in front of Coil, and thrusts her hand forward."
     "A blast of energy slams her back to the floor."
     hide ama with dissolve
@@ -3260,7 +3260,7 @@ label vig4_sc7_3_ama():
     vS "No. Don't go. Don't go. Don't leave me."
     "Ama."
     hide vega with dissolve
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     "I rush over to Ama's body and turn her onto her side."
     amaS "Ahhh, shit."
     "She opens her eyes and looks right into mine."
@@ -3360,7 +3360,7 @@ label vig4_sc7_3_ama():
     mS "I missed you."
     macS "I missed you too, Moze."
     "We step back and I stand up."
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
     "Ama is standing now, and she points across the room."
     show vega at stream_left with dissolve
@@ -3519,7 +3519,7 @@ label vig4_sc7_3_coil():
     vS "Pops!"
     macS "Moze! Get up! Get up!"
     "Finally, I push myself into a sitting position."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     show coil at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
@@ -4088,7 +4088,7 @@ label vig4_epilogue_ama():
     hide teresa with dissolve
     hide shiphub_stream with dissolve
     show shiphub_stream onlayer background with dissolve
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "The four of us move up to the cockpit."
     if amaRomance == True:
