@@ -76,6 +76,15 @@ define invfairnpc2 = Character("Mills", what_font="Play-Regular.ttf", window_sty
 define invfairannounce = Character("Announcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define reynar = Character("Reynar", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+
+#vig4 Characters
+define cS = Character ("Coil", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#b60873", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
+define vS = Character ("Vega", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#dd6819", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
+define townguy = Character("Townsperson", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define diceP1 = Character("Dice Player 1", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define diceP2 = Character("Dice Player 2", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define dflyGuard = Character("Dragonfly Guard", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
 default macroChoice = False  #this variable adjusts where the choice screen will appear. It should be False when decisions happen in microgame. It should be True when decisions happen in macro game.
@@ -124,13 +133,51 @@ default vibes = False
 default humour = False
 default story = False
 
-#Variables specific to vignette 1
+###Variables for Vignette 1###
 default allistarSuspicious = False
 default houseExplosion = False
 default killAllistar = False #if you tried to kill allistar = true
 default omegaDead = False
 default misclick = False
 default askBandit = False
+
+####Variables for Vignette 2#####
+default customsStampede = False
+default shnzi = True
+default romanceAma = False
+default romanceJennica = False
+default romanceTeresa = False
+default baseGuardKilled = False #if you killed the guard at the commsbase  = true (outlaw route)
+default gunsBlazing = False
+default technicianChoice = False #if you spared the technician = false (outlaw route)
+default reginaldChoice = False #if you stunned reginald = true (marshal route)
+default customsSpeculation = False
+default vig2_marshalEpilogue = False
+default vig2_outlawEpilogue = False
+default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
+
+####Variables for Vignette 3####
+default firstfightprediction = False
+default vig3_brika = 0
+
+###Variables for Vignette 4###
+default stunGuy = False
+default polarisQuestion = False
+default vegacoilQuestion = False
+default vig4_checkSights = False
+default vig4_checkTrigger = False
+default vig4_vegaVictory = False
+default jennicaRomance = False
+default teresaRomance = False
+default rudeMACGoodbye = False
+default vig4_amaOffer = False
+default vig4_defendPolaris = False
+default vig4_attackPolaris = False
+default vig4_killDflies = False
+default amaRomance = False
+default jennicaDate = False
+default teresaDate = False
+default vegaDate = False
 
 #Variables to track viewers for Analytics screen in MacroGame
 default viewCheck1 = 0
@@ -186,27 +233,6 @@ default blueitImage = ""
 default yb = 0 #this sets how long the viewport of the blueit threads will scroll down to
 default blueitChoiceCheck = False
 default blueitLaunchCheck = False
-
-
-####Variables for Vignette 2#####
-default customsStampede = False
-default shnzi = True
-default romanceAma = False
-default romanceJennica = False
-default romanceTeresa = False
-default baseGuardKilled = False #if you killed the guard at the commsbase  = true (outlaw route)
-default gunsBlazing = False
-default technicianChoice = False #if you spared the technician = false (outlaw route)
-default reginaldChoice = False #if you stunned reginald = true (marshal route)
-default customsSpeculation = False
-default vig2_marshalEpilogue = False
-default vig2_outlawEpilogue = False
-default promisedPDOutlaw = False #if you told pickleddragons that you want to do outlaw = true
-
-####Variables for Vignette 3####
-default firstfightprediction = False
-default vig3_brika = 0
-
 
 
 #default yadj = ui.adjustment()
@@ -294,6 +320,8 @@ label playerName:
             jump testing_jumpahead_vig2
         "Vignette 3":
             jump testing_jumpahead_vig3
+        "Vignette 4":
+            jump vignette4Start
     
 label testing_jumpahead_vig2():
     "Choose the decisions you want to have made in Vignette 1"
