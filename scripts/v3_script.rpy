@@ -184,6 +184,7 @@ label vig3marshalstart():
 
 label vig3_sc2():
     show cockpit_stream at topleft onlayer background with dissolve
+    hide shiphub_stream
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
     show jennica stream neutral at stream_left with dissolve
@@ -269,6 +270,7 @@ label vig3_sc2():
 ##START OF ACT 1###
 label vig3_sc3():
     show akarstreet_stream at topleft onlayer background with dissolve
+    hide cockpit_stream
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     "It's beaming with colour and life, red and orange banners bridge the spaces between the buildings a jubilant feeling in the air."
     "Being attached to the Vineyard, Akar's blend of nature and technology are a sight to be sure." ## Rich and vibrant plant life merging with the surrounding infrastructure brightly adorned by lights and striking signage - think eco-futurist Vegas.##
@@ -343,9 +345,7 @@ label vig3_sc3():
     jump vig3_sc4
 
 label vig3_sc4():
-    show mac stream neutral at stream_center_mac with dissolve
-    #hide akarstreet_stream
-    #show akarstreet_stream at topleft onlayer background with dissolve   
+    show mac stream neutral at stream_center_mac with dissolve   
     "We arrive at the storefront of Specs and Steele, a small body shop just off the side of the main road."
     macS "Is this the most suitable store for our needs?"
     mS "Definitely. Run by an old friend. Probably one of the only ones that won't shoot first before taking our credits."
@@ -450,7 +450,6 @@ label vig3_sc4():
     pS "Honestly even the base parts could use an upgrade. If you have some to spare."
     mS "We needa get outfitted and going in the next few days."
     recS "Got it, lemme check the back, I might have something for you."
-    #hide rec with dissolve
     hide rec stream neutral with dissolve 
     "Rec disappears to the back of the shop. MAC turns to me and I already know he's vibrating with a question."
     show mac stream neutral at stream_center_mac with move
@@ -647,10 +646,6 @@ label vig3_sc4():
     "When I swallow my drink, it goes down hard."
     hide jennica with dissolve
     jump vig3_sc5
-
-#END OF ACT 1#
-
-#START OF ACT 2#
 
 label vig3_sc5():
     hide reccshop_stream
@@ -1377,9 +1372,7 @@ label vig3_sc7():
     hide jennica with dissolve
     hide teresa with dissolve
     jump vig3_sc8
-#END of ACT 3 
 
-#Start of ACT 4
 label vig3_sc8():
     hide akarplaza_stream
     show bg black at topleft onlayer background
@@ -1560,7 +1553,8 @@ label vig3_sc9():
     "Because there she is, full ballgown staring at me with that same condescending look I've always known."
     show ama stream neutral at stream_center with dissolve
     "But this time, it doesn't go away. Ama smiles."
-    amaS "Hello Mozely." 
+    amaS "Hello Mozely."
+    hide ama with dissolve
     jump vig3_sc10 
 
 label vig3_sc10():
@@ -1570,6 +1564,7 @@ label vig3_sc10():
     "My body is buzzing, heart pounding."
     "Ama takes the blaster away from me."
     # Ext. Akar - A Decade Ago 
+    show ama stream neutral at stream_center with dissolve
     amaS "Kid, if you're gonna jump everytime someone shoots at you, they'll be playing target practice with your head."
     mS "I can't help it. I'm trying."
     amaS "You're scared."
@@ -1595,12 +1590,14 @@ label vig3_sc10():
     "I get up and take the blaster. I grip the handle it like it's mine. Because it is." 
     "I point it at the target."
     "And fire."
+    hide ama with dissolve
     jump vig3_sc11
 
 label vig3_sc11():
     show inventorfairgallery_stream at topleft onlayer background with dissolve
     hide bg black
     #Int. Inventor's Fair. 
+    show ama stream neutral at stream_center with dissolve
     menu:
         "Ama stand in front of me steely gaze."
         "Of course you found us...": #Flirt
@@ -1657,6 +1654,7 @@ label vig3_sc11():
     "Ama stalks towards me and I know what's coming."
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry Resa."
+    #show reynar at stream_left with dissolve
     reynar "Ladies, I hope your evening is going well."
     amaS "Reynar."
     reynar "Hello Ama, a pleasure as always."
@@ -1706,6 +1704,8 @@ label vig3_sc11():
     "He slips something into my back pocket."
     "Ryo ushers us both in the direction of the east balcony."
     "Ama walks in front of me and I watch as her jacket hits something solid on her back."
+    hide ama with dissolve
+    #hide reyanr with dissolve
     jump vig3_sc12
 
 label vig3_sc12():
@@ -1717,6 +1717,9 @@ label vig3_sc12():
     "Clearly this space is meant for more quiet buisness."
     "In the distance I see Akar, lights gleaming like little stars."
     "It's so far away..."
+    show ama stream neutral at streamer_right with dissolve
+    #show bcrep stream neutral at stream_center with dissolve
+    show mac stream neutral at stream_left_mac with dissolve
     bcrep "Absolute garbage!"
     "I hear the sound of metal on the ground, a small pained whine."
     "I press down my white hot anger."
@@ -1919,6 +1922,8 @@ label vig3_sc12():
     # "MAC is a peaceful optimist."            
     "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
     "We break into a sprint down the hall."
+    hide ama with dissolve
+    #hide bcrep with dissolve
     jump vig3_sc13
 
 label vig3_sc13():
@@ -1937,13 +1942,17 @@ label vig3_sc13():
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and brings his hand to it as the door swings open."
     "Two blasters meet me as the door swings open."
     mS "Well don't be too happy to see me!"
+    show mac stream neutral at stream5_leftmac with move
+    show teresa stream neutral at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show rec stream neutral at stream5_right with dissolve
     enS "Captain!"
     pS "Thought ya dead, I won't lie."
     "MAC rushed past me to grab Teresa's legs. The door closes behind me as I walk in."
     enS "Good to see you buddy."
-    pS "Where's Deadeye."
+    pS "Where's Deadeye?"
     mS "Left her on the east balcony might be on our tail but didn't see where we went."
-    pS "That gives us sometime."
+    pS "That gives us some time."
     enS "But we have MAC and that's important."
     recS "Not just MAC."
     "They hold up the range extender laying on the counter near them."
@@ -1958,7 +1967,7 @@ label vig3_sc13():
     mS "Okay let's focus up. What's going on here."
     enS "Rec found a private comms room. We were hoping to at least catch our breath before we head out."
     pS "Can't go back through the party."
-    recS "But there's still a shuttle system that can get us to Akar.Usually used by the workers and it should be a quick run here."
+    recS "But there's still a shuttle system that can get us to Akar. Usually used by the workers and it should be a quick run here."
     enS "Ama will probably head there too."
     mS "If she's not already getting her ship off the ground to scan for us."
     "We need to act now."
@@ -1992,6 +2001,7 @@ label vig3_sc13():
             jump vig3_sc14
 
 label vig3outlawcomms():
+    show matticus phone neutral at stream_center with dissolve
     smatt "Well hello ladies! Need a hand from little ole me?"
     "Matticus smiles in that shit-eating grin that he loves."
     pS "This is a terrible idea"
@@ -2016,6 +2026,7 @@ label vig3outlawcomms():
     mS "Fabulous."
     smatt "Aren't I?"
     smatt "Bye bye and try not to die. I'll be looking for you to repay the favour."
+    hide matticus with dissolve
     "The comms go dead."
     macS "Skeeve."
     recS "The biggest."
@@ -2024,6 +2035,7 @@ label vig3outlawcomms():
     jump vig3_sc14
 
 label vig3marshalcomms():
+    show matticus phone neutral at stream_center with dissolve
     smatt "Well hello ladies! To what do I owe the pleasure?"
     "Matticus smiles in that shit-eating grin that he loves."
     pS "Disrespectfully, we didn't call you."
@@ -2046,11 +2058,12 @@ label vig3marshalcomms():
     smatt "From the bottom of my heart."
     smatt "I hope Deadeye skins your crew alive while you watch."
     smatt "Bye bye now!"
+    hide matticus with dissolve
     "The comms go dead."
     macS "Skeeve."
     recS "The biggest."
     mS "Let's get out of here."
-    "Carefully we make it to the shuttles. Not sure what awaits us on the other side. "
+    "Carefully we make it to the shuttles. Not sure what awaits us on the other side."
     jump vig3_sc14
 
 label vig3_sc14():
@@ -2058,7 +2071,10 @@ label vig3_sc14():
     "Reynar hasn't toasted to the crowd and people wouldn't dare to leave before his address."
     recS "This one, it'll take us right to the plaza!"
     "With quick work MAC undoes the security protocol and gets us loaded in."
+    show ama stream neutral at stream_center with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
+    show teresa stream fight
+    show jennica stream fight
     "Teresa and Jen are quick to act."
     enS "Let her go Ama!"
     pS "We'll drag your body out of here if necessary."
@@ -2077,9 +2093,9 @@ label vig3_sc14():
     recS "What?"
     amaS "Oh you didn't know?"
     "Guilt stains all of our faces."
-    recS "Is this true."
+    recS "Is this true?"
     mS "It is..."
-    recS "Well! where is he?"
+    recS "Well!? Where is he!?"
     "I can't lie anymore."
     mS "He's dead Rec, I shot him."
     "Rec's eys widen, as they step back, horrified."
@@ -2097,6 +2113,7 @@ label vig3_sc14():
             mS "I'm so sorry Rec, it's my greatest failure."
             "There's a long moment where Rec just looks at us."
             "But they say nothing and turn to walk away."
+            hide rec with dissolve
             "Teresa and Jennica don't turn to them, still fixed on Ama."
             "MAC clings to Teresa."
             amaS "How disappointing, he was a talented kid."
@@ -2106,6 +2123,7 @@ label vig3_sc14():
             amaS "Let's finish this later, shall we?"
             "We don't move as she backs away from us."
             "Then out of sight."
+            hide ama with dissolve
             "We don't have time to process before we head for the shuttle."
             macS "Moze?"
             mS "Yes MAC."
@@ -2113,6 +2131,9 @@ label vig3_sc14():
             mS "I don't know."
             macS "Are you okay?"
             mS "I don't know."
+            hide mac with dissolve
+            hide jennica with dissolve
+            hide teresa with dissolve
             jump vig3_epilogue
 
         "I did what I had to do.":
@@ -2130,12 +2151,17 @@ label vig3_sc14():
             "I see Reynar's security detail bounding for us in the distance."
             recS "Well I'm not going to stick around to bail you out of this."
             "They turn to walk away."
+            hide rec with dissolve
             amaS "How disappointing, Allistar was a talented kid."
             "Ama looks to Teresa and Jennica."
             amaS "Let's finish this later, shall we?"
             "We don't move as she backs away from us."
             "Then out of sight."
+            hide ama with dissolve
             "We don't have time to process before we head for the shuttle."
+            hide mac with dissolve
+            hide jennica with dissolve
+            hide teresa with dissolve
             jump vig3_epilogue
 
         "I did it because he deserved it.":
@@ -2154,13 +2180,18 @@ label vig3_sc14():
             "They look at me and Ama."
             recS "You two deserve each other."
             "Rec turns around and walks away from us."
+            hide rec with dissolve
             "Ama leans in close."
             amaS "That was cold Mozely, even for me."
             "Ama takes the knife off my neck. And puts her hands in the air."
             amaS "Let's finish this later, shall we?"
             "We don't move as she backs away from us."
             "Then out of sight."
+            hide ama with dissolve
             "We don't have time to process before we head for the shuttle."
+            hide mac with dissolve
+            hide jennica with dissolve
+            hide teresa with dissolve
             jump vig3_epilogue
 
 label vig3_epilogue():
@@ -2178,6 +2209,9 @@ label vig3_epilogue():
     "Rec refuses to answer Jenn or Teresa's transmissions."
     "MAC has be silent, spending time alone."
     "Then the transmission comes through."
+    show teresa stream neutral at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show mac stream neutral at stream5_leftmac with dissolve
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
     dflycontact "I hear you are in possession of Dr. Vanas' work."
     dflycontact "We are contacting you regarding the drop off point."
@@ -2188,16 +2222,21 @@ label vig3_epilogue():
     mS "Jenn?"
     pS "On it Cap."
     mS "Thank you, I'll be in my quarters."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     "As I walk down the hall, I'm once again intercepted."
+    show mac stream neutral at stream_center_mac with dissolve
     "It's MAC."
     "We stare at each other in silence."
     "I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
     "The Oakley presses forward to Akar."
-    "This is the end of the current build"
-    "Going back now."
+    "This is where the post-stream macro game for vignette 3 would start."
+    "Since we don't have that yet, the game will now jump to vignette 4."
+    jump vignette4Start
 
 
 
