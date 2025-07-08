@@ -1617,7 +1617,6 @@ label vig3_sc11():
             mS "Money must be good."
             amaS "Even know you're still that arrogant little girl."
             amaS "How has playing the hero been? Finally found that purpose you've been missing?"
-
     "Her tone is playful but there's no mistaking that her rifle is folded behind her long jacket."
     "Big Corps presentation continues and I hope that the crew has taken this as a moment to leave."
     "It's up to Resa and Jenn, now."
@@ -1687,7 +1686,7 @@ label vig3_sc11():
     "I am thankful for Reynar's intervention but even he isn't known for hand outs."
     mS "Reynar, pardon my intrusion but I am here because your Hounds stole a piece of merchandise of mine."
     reynar "Did they now?"
-    mS "A range extender, a small repair for my ship I'd like it back."
+    mS "A range extender, a small repair for my ship. I'd like it back."
     reynar "Well you can leave your information with Ryo and we'd be happy to oblige you after the festivities."
     "Ama chuckles under her breath."
     mS "I'd like to have this matter resolved as soon as possible."
@@ -1705,7 +1704,7 @@ label vig3_sc11():
     "Ryo ushers us both in the direction of the east balcony."
     "Ama walks in front of me and I watch as her jacket hits something solid on her back."
     hide ama with dissolve
-    #hide reyanr with dissolve
+    #hide reynar with dissolve
     jump vig3_sc12
 
 label vig3_sc12():

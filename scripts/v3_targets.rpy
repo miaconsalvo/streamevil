@@ -189,7 +189,336 @@ label vig3_sc5_amahallu():
         $ narrator = reg_narrator
     return
 
+label vig3_sc6_crewspat():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "The crew's mad at each other."
+        "They're at each other's throats.":
+            player "Oh damn! The girls are angry!"
+            player "Some serious shade getting thrown!"
+            pause 0.5
+        "Jennica's so protective of MAC.":
+            player "Awww. Jennica doesn't want MAC to hear the bad words!"
+            player "Cute!"
+            #add chatter
+            pause 0.5
+        "Relax Jennica, he's a bot.":
+            player "I mean he's just a robot."
+            player "C'mon now, his database def has worse no?"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
 
+label vig3_sc6_stranger():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Moze is following someone."
+        "Moze is super paranoid.":
+            player "Damn Moze is following strangers now!"
+            player "I don't like the looks of this!"
+            pause 0.5
+        "This seems dangerous.":
+            player "Oh god, this is going to go badly!"
+            player "What you doing Moze!"
+            #add chatter
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc6_recbonding():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Rec is opening up."
+        "Rec is cool!":
+            player "Rec is so cool!"
+            player "Really love their character!"
+            pause 0.5
+        "Rec is cute!":
+            player "Rec is so cute!"
+            player "Really love their design!"
+            #add chatter
+            pause 0.5
+        "Damn I'm guilty.":
+            player "Oh god we kill their brother."
+            player "This is going to come back to bite us!"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc6_shipbet1():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "They bet the ship on this game?"
+        "Classic Jenn and Resa.":
+            player "Oh damn! Bit of an overbet!"
+            player "Now we gotta win!"
+            pause 0.5
+        "What the hell!":
+            player "Holy smokes!"
+            player "That's crazy! Now we gotta win!"
+            #add chatter
+            pause 0.5
+        "I don't buy it.":
+            player "Naw chat. I'm calling cap."
+            player "They're reckless but not like that."
+            #variable to track you predicting this
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc6_trustcrew():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Moze isn't going to help them cheat."
+        "Got to have integrity.":
+            player "They got themselves into this mess."
+            player "They'll have to get themselves out of it!"
+            pause 0.5
+        "I trust Jennica and Teresa.":
+            player "Trust the crew!"
+            player "Jenn and Resa got this!"
+            #add chatter
+            pause 0.5
+        "Oh no I hope they win!":
+            player "Crap this there's a lot riding on this!"
+            player "Was this a mistake?"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc6_shootingzan():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Moze shot Zan to help them."
+        "Blast em!":
+            player "Get blasted Zan!"
+            pause 0.5
+        "Wow crazy!":
+            player "Woah that was awesome!"
+            player "Crazy!"
+            #add chatter
+            pause 0.5
+        "That was cheating!":
+            player "Damn, feels weird that we had to cheat to win."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc6_shipbet2():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "The crew didn't actually bet the ship."
+        "What a relief.":
+            player "Phew. That's a relief"
+            player "That coulda been bad!"
+            pause 0.5
+        "I knew it!":
+            #if the player predicted it
+            player "I called it chat!"
+            player "No way they'd bet the ship!"
+            #add chatter
+            pause 0.5
+        "Wow cop out.":
+            player "Hahaha"
+            player "Of course they didn't bet the ship."
+            player "What a cop out."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc7_lostmac():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to losing MAC."
+        "Oh no!":
+            player "MAC!"
+            player "Nooooo!"
+            pause 0.5
+        "The plot thickens.":
+            player "Oh damn! Things are getting interesting!"
+            player "Cool!"
+            #add chatter
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc8_teresabluff():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on Teresa's bluff."
+        "Teresa's in her element.":
+            player "Wow! Teresa knows her high society."
+            player "That's so cool!"
+            pause 0.5
+        "How lucky.":
+            player "Lucky Teresa was here!"
+            #add chatter
+            pause 0.5
+        "This is boring.": #maybe have this only if you stealthed into the commsbase in vig2 or maybe different based on vig2
+            player "Wow more stealth?"
+            player "Really seems like that's always an option."
+            player "Wish we could go loud!"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc9_daisyreturns():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Say something about Daisy."
+        "She's back!":
+            player "Daisy returns!"
+            player "Love it! She's the realest person in this room."
+            pause 0.5
+        "Maybe she is following us?":
+            player "Oh damn! Maybe she was following us?"
+            player "Pretty sus chat."
+            #add chatter
+            pause 0.5
+        "Cute!":
+            player "She's so cute!"
+            player "I love her design!"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc9_amasurprise():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Ama."
+        "Oh no!":
+            player "This is bad!"
+            player "This is really bad!"
+            pause 0.5
+        "Not so paranoid after all!":
+            player "Oh wow!"
+            player "Guess Moze wasn't being paranoid after all!"
+            #add chatter
+            pause 0.5
+        "It's go time.":
+            player "Oh it's time to rumble."
+            player "Let's get loud!"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc11_amabacksass():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on Moze and Ama's insults."
+        "Burn Ama!":
+            player "Damn Ama!"
+            player "Get roasted!"
+            pause 0.5
+        "Love this sass.":
+            player "Feel like they haven't missed a step!"
+            player "Just like old times hahaha!"
+            #add chatter
+            pause 0.5
+        "Let them fight!":
+            player "Boo. Let me fight."
+            player "She's got a whole lot coming to her."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc12_amachoke():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on Ama's workplace relations."
+        "Don't mess with Ama.":
+            player "Damn!"
+            player "Watch out, don't piss off Ama!"
+            pause 0.5
+        "Better call HR!":
+            player "Better file an HR report!"
+            player "Terrible workplace conduct from Ama!"
+            #add chatter
+            pause 0.5
+        "Buddy got off easy.":
+            player "Yeah I'd have done worse."
+            player "This guy was asking for trouble!"
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
 
 
 
