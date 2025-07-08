@@ -65,11 +65,7 @@ label vig1_sc2_thankCS():
     $ vig1_sc2_comment2_csAma.click = False
     $ narrator = reg_narrator
     menu:
-<<<<<<< HEAD
-        "Should I thank Coriolis?"
-=======
         "Coriolis helped me explain."
->>>>>>> aedeb9f3b271a74df5b5115dc6ea909d1bb578b2
         "Thanks, Coriolis!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
