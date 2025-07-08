@@ -230,7 +230,7 @@ label vig3_sc2():
     hide jennica with dissolve
     hide teresa with dissolve
     "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
-    #hide cockpit_stream
+    hide cockpit_stream with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     macS "Captain!"
     show mac stream shock at stream_center_mac with dissolve
@@ -265,6 +265,7 @@ label vig3_sc2():
     mS "Good job buddy, rest up. I'll see you in an hour."
     "With every step I can't help but feel my smile grow, knowing this will be the calmest hour that I've had in a very long time."
     hide mac with dissolve
+    hide ship_hallway_stream
     jump vig3_sc3
 
 ##START OF ACT 1###
@@ -373,7 +374,7 @@ label vig3_sc4():
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
     "Someone comes out from the back room."
-    show rec stream neutral at stream_center 
+    show rec stream neutral at stream_center with dissolve
     ###RECCRIN (Late 20s) enters from the back room. They looks like an older version of their brother Allistar, long hair, tougher build.##
     recS "Well I'll be..."
     "We can't help our silence in this moment."
@@ -658,7 +659,7 @@ label vig3_sc5():
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
     macS "Wow...."
     pS "Surprised it's still standing."
@@ -730,8 +731,8 @@ label vig3_sc5():
     recS "You just yelled at girl wearing feathers, I beg to differ."
     macS "We are concerned."
     mS "I'm tired is all."
-    show teresa stream neutral at stream_left
-    show jennica stream neutral at stream_right
+    show teresa stream neutral at stream_right
+    show jennica stream neutral at stream_left
     recS "You know most of the shops are closing for the day. Let's set you up somewhere for the night."
     recS "I think the Broken Bulb has a deal on pints."
     "We begin to move out. Jennica begins a story involving a lamp, three chickens, and a guitar. MAC is confused but enthralled."
@@ -757,7 +758,7 @@ label vig3_sc6():
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     macS "Cozy."
     "MAC's face drops as a someone yells and is then quickly tossed through a window. He clings to my leg."
     macS "Aren't their children around outside?"
@@ -817,6 +818,8 @@ label vig3_sc6():
     show teresa stream angry at stream_right
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b-"
+    $ reactTarget = "vig3_sc6_crewspat"
+    show screen streamerCommentary
     recS "WOAH! How about I go and get us another round."
     recS "C'mon buddy, I'll get you a treat."
     hide rec with dissolve
@@ -827,6 +830,7 @@ label vig3_sc6():
     "The table is silent."
     mS "I owe you both an apology"
     "Jennica and Teresa perk their heads towards me."
+    hide screen streamerCommentary
     show teresa stream neutral at stream_right
     show jennica stream neutral at stream_left
     mS "I'm not going to say that I regret what we did in Gibian V, that doesn't matter now."
@@ -865,6 +869,8 @@ label vig3_sc6():
     menu:
         "Do I investigate this stranger?"
         "Follow them":
+            $ reactTarget = "vig3_sc6_stranger"
+            show screen streamerCommentary
             "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
             hide bbpub_stream with dissolve
             show akarplaza_stream at topleft onlayer background with dissolve 
@@ -880,6 +886,7 @@ label vig3_sc6():
             mS "No, I just thought you were someone else."
             "She doesn't let go of the knife."
             strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
+            hide screen streamerCommentary
             "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
             menu:
                 "How do I get out of this?"
@@ -1826,12 +1833,12 @@ label vig3_sc12():
     #Choices happen based on MAC's alignment.
     if macViolence >= macPeace and macPessimism >= macHope:
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        repS "Makers!" 
+        bcrep "Makers!" 
         "Ama just stares at MAC who is resolute in his stance."
         amaS "You gonna do something with that baby blaster?"
         amaS "If you're gonna shoot, you better shoot straight."
         macS "My programming ensures perfect accuracy. Shall I demonstrate?" 
-        repS "Programming..."
+        bcrep "Programming..."
         amaS "Well then, let's-"
         "The blaster rings out and before I can react Ama is on the ground clutching her side."
         amaS "Bastard!" 
@@ -1847,12 +1854,12 @@ label vig3_sc12():
         "Without losing my sights on her we head inside."
     elif macViolence >= macPeace and macPessimism < macHope:
         "He fires the blaster in between us, it hits the wall with a definitive smack."
-        repS "Makers!" 
+        bcrep "Makers!" 
         "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
         amaS "You gonna do something with that baby blaster?"
         amaS "If you're gonna shoot, you better shoot straight."
         macS "My programming ensures perfect accuracy when required." 
-        repS "Programming..." 
+        bcrep "Programming..." 
         amaS "Well then, let's see it."
         macS "I know you don't want BigCorp to succeed anymore than we do."
         amaS "I don't know I'm being paid quite well."
@@ -1872,12 +1879,12 @@ label vig3_sc12():
         "Without losing my sights on her we head inside."
     elif macViolence < macPeace and macPessimism >= macHope:
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        repS "Makers!" 
+        bcrep "Makers!" 
         "Ama just stares at MAC who is resolute in his stance."
         amaS "You gonna do something with that baby blaster?"
         amaS "If you're gonna shoot, you better shoot straight."
         macS "My programming... ensures perfect accuracy."
-        repS "Programming..."
+        bcrep "Programming..."
         "Ama flashes him her famous condescending smile."
         amaS "But did they program any nerve in you?"
         "MAC is struggling to keep the blaster straight" 
@@ -1895,12 +1902,12 @@ label vig3_sc12():
         "Without losing my sights on her we head inside."
     else:
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        repS "Makers!" 
+        bcrep "Makers!" 
         "Ama just stares at MAC who is resolute in his stance."
         amaS "You gonna do something with that baby blaster?"
         amaS "If you're gonna shoot, you better shoot straight."
         macS "My programming ensures perfect accuracy. But I won't need this."
-        repS "Programming..."
+        bcrep "Programming..."
         amaS "Mighty confident are we? Gonna take me on with hands?"
         macS "I will not do that."
         macS "You're going to let us go."

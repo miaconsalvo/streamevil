@@ -520,8 +520,238 @@ label vig3_sc12_amachoke():
         $ narrator = reg_narrator
     return
 
+label vig3_sc12_amafindsout():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Ama knows that it's the real MAC!"
+        "The jig is up!":
+            player "This is really bad!"
+            player "Ama figured it out!"
+            pause 0.5
+        "Time to fight!":
+            player "Finally time for some battle!"
+            player "Don't get between Mozely and her MAC!"
+            #add chatter
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
 
+label vig3_sc12_macalignment_violencepessimism():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "MAC shot Ama!"
+        "MAC's a badass!":
+            player "Wow he shot her!"
+            player "Zero hesitation! Ice cold!"
+            player "MAC for the win! Crack shot!"
+            pause 0.5
+        "MAC no!":
+            player "Noooo!"
+            player "MAC you're supposed to be better than us!"
+            #add chatter
+            pause 0.5
+        "Is this because of our choices?":
+            player "What!?"
+            player "Has MAC been learning this whole time?"
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
 
+label vig3_sc12_macalignment_violenceoptimism():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "MAC almost shot Ama!"
+        "MAC's a badass!":
+            player "Damn! MAC's a crack shot!"
+            player "Zero hesitation! Warning shot right a hair away from her face!"
+            player "So cool!"
+            pause 0.5
+        "So much for MAC's innocence.":
+            player "Did MAC just fire a warning shot a hair away from her face?"
+            player "Damn MAC, you're supposed to be better..."
+            #add chatter
+            pause 0.5
+        "Is this because of our choices?":
+            player "What!?"
+            player "Has MAC been learning this whole time?"
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc12_macalignment_peacepessimism():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "MAC just tried to intimidate Ama!"
+        "Good thing Moze is here!":
+            player "MAC with the distraction!"
+            player "Good thing Moze is here to take advantage though!"
+            pause 0.5
+        "MAC is so innocent!":
+            player "Oh MAC!"
+            player "Too pure for this world!"
+            #add chatter
+            pause 0.5
+        "Is this because of our choices?":
+            player "What!?"
+            player "Has MAC been learning this whole time?"
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc12_macalignment_peaceoptimism():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "MAC just read Ama perfectly!"
+        "Did MAC just do that?":
+            player "What!?"
+            player "Did MAC just hard read Ama!?"
+            player "She's a softie underneath it all!"
+            pause 0.5
+        "Mac for the win!":
+            player "Did MAC just grow up!?"
+            player "Like he just saw right through Ama!"
+            player "What is going on!?"
+            #add chatter
+            pause 0.5
+        "Is this because of our choices?":
+            player "What!?"
+            player "Has MAC been learning this whole time?"
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc14_recfindsout_regret():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Moze's confession."
+        "Finally coming clean.":
+            player "Wow. Brutal."
+            player "But at least she's taking accountability for once."
+            pause 0.5
+        "Sorry Rec.":
+            player "Noooo!"
+            player "This is so sad chat."
+            #add chatter
+            pause 0.5
+        "Sorry, not sorry.":
+            player "I guess it was the right thing to do."
+            player "Not sure we should be apologizing though."
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc14_recfindsout_ihadto():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Moze's confession."
+        "Damn right.":
+            player "I mean she's right. Allistar betrayed them."
+            player "What did he expect?"
+            #add chatter
+            pause 0.5
+        "Moze with the cop out!":
+            player "\"I had no choice!\""
+            player "Classic Moze!"
+            player "We never have any choice hahahaha!"
+            pause 0.5
+        "Sorry, not sorry.":
+            player "Yeah I guess that was the right thing to do."
+            player "They shouldn't expect an apology though. Allistar crossed us!"
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
+
+label vig3_sc14_recfindsout_noremorse():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Moze's admission."
+        "No remorse!":
+            player "Hell yeah!"
+            player "Allistar deserved it! No regrets."
+            pause 0.5
+        "Damn that was cold.":
+            player "Wow maybe that was too far?"
+            player "Even if Allistar deserved it..."
+            player "Might've been too cruel."
+            #add chatter
+            pause 0.5
+        "Hahaha get owned Rec!":
+            player "Hahahaha!"
+            player "f's in the chat for Rec!"
+            player "Traitor brother got what he deserved."
+            #add chatter #many f's 
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    return
 
 
 
