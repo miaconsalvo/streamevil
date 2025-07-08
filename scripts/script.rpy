@@ -105,6 +105,7 @@ default macHope = 0
 default macPessimism = 0
 default macViolence = 0
 default macPeace = 0
+default macHonesty = 0
 
 #Approval of micro-game characters
 default engineerApproval = 3

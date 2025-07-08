@@ -958,7 +958,6 @@ label vig2_blueit_allistarthread():
     show screen blueitThread
     #show launch thread at top:
     #    zoom 1.0
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -969,7 +968,6 @@ label vig2_blueit_matticusthread():
     show screen blueitThread
     #show major choice thread at top:
     #    zoom 1.5
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -980,7 +978,6 @@ label vig2_blueit_copoutthread():
     show screen blueitThread
     #show romance thread at top:
     #    zoom 1.5
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
@@ -991,7 +988,6 @@ label vig2_blueit_stealththread():
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 

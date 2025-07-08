@@ -374,7 +374,6 @@ label vig1_blueit_firstchoice():
     ###The clause below this will check to see if we should consider the scene as finished.
     ###Since we're just checking if they've looked at one blueit thread, we just need it here.
     ###If we want to make players spend more time on this page, we can add an increment like for Flinch
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 

@@ -234,13 +234,13 @@ label streetShootout:
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
         "Good initiave, MAC.":
-            $ macHonesty += 1
+            #$ macHonesty += 1
             $ kcEngagement += 1
             mS "I'm glad you're trying to help, MAC."
             "A bolt collides in the dirt. I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             mS "But we need something more than probabilities right now."
         "Not helping!":
-            $ macHonesty -= 1
+            #$ macHonesty -= 1
             mS "Not helping, MAC!"
             "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             $ AddChatter(vig1_sc2_comment8_kc)
@@ -420,13 +420,13 @@ label saveMAC():
             menu:
                 macS "But my sensors indicate you are in great pain."
                 "I'm {i}fine{/i}.":
-                    $ macHonesty -= 1
+                    #$ macHonesty -= 1
                     "I grimace."
                     mS "MAC, I said I'm {i}fine{/i}."
                     play audio "macSad.wav" volume 1.5
                     "MAC whirs lowly and tilts his head downward."
                 "I am in pain.":
-                    $ macHonesty += 1
+                    #$ macHonesty += 1
                     "I grimace."
                     mS "I am in pain, MAC."
                     mS "But we have to go."
@@ -705,7 +705,7 @@ label escapePodConfrontation:
     show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
     "He slumps to the ground."
-    hide allistar with dissolve(0.2)
+    hide allistar with Dissolve(0.2)
     hide mac with Dissolve(0.5)
     $ AddChatter(vig1_sc3_shot_comment1)
     pause 0.3
@@ -1102,6 +1102,12 @@ label blueitVignette1():
 
 label blueitVignette1_2():
     scene blueit_v1screen at truecenter
+    if blueitChoiceCheck == True:
+        $ screenComplete = True #the screenComplete variable is what gates whether the webNavigation screen will be visible. Previously, we checked whenever players would select the right blueIt thread.
+        #This led to an issue where players could leave the blueitthread to go to flinch, and the thread would be visible for the rest of the game.
+        #So we need to check for the screenComplete variable here instead.
+    else:
+        pass
     call screen blueit
     return
 
