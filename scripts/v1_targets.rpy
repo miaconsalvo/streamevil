@@ -354,17 +354,8 @@ label vig1_analytics_audience():
     return
 
 #Blueit Threads
-label vig1_blueit_launchthread():
-    $ blueitImage = "socials/launch thread.png"
-    $ yb = 1080
-    $ blueitLaunchCheck = True
-    show screen blueitThread
-    #show launch thread at top:
-    #    zoom 1.0
-    call screen blueitButtonCheck
-    return
-
 label vig1_blueit_firstchoice():
+    $ screenComplete = False
     $ blueitImage = "socials/major choice thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
@@ -378,6 +369,7 @@ label vig1_blueit_firstchoice():
     return
 
 label vig1_blueit_romance():
+    $ screenComplete = False
     $ blueitImage = "socials/romance thread.png"
     $ yb = 1080
     show screen blueitThread
@@ -387,6 +379,7 @@ label vig1_blueit_romance():
     return
 
 label vig1_blueit_firstgame():
+    $ screenComplete = False
     #show first game thread at top:
     #    zoom 1.5
     $ blueitImage = "socials/first game thread.png"
@@ -398,6 +391,7 @@ label vig1_blueit_firstgame():
 label vig1_blueit_glitch():
     #show glitch thread at top:
     #    zoom 1.5
+    $ screenComplete = False
     $ blueitImage = "socials/glitch thread.png"
     $ yb = 1080
     show screen blueitThread

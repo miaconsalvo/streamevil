@@ -952,6 +952,7 @@ label vig2_sc9_mar_end():
 
 ######Below this is code for Blueit and Flinch in Vignette 2##############
 label vig2_blueit_allistarthread():
+    $ screenComplete = False
     $ blueitImage = "socials/v2_allistar thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
@@ -962,6 +963,7 @@ label vig2_blueit_allistarthread():
     return
 
 label vig2_blueit_matticusthread():
+    $ screenComplete = False
     $ blueitImage = "socials/v2_matticus thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
@@ -972,6 +974,7 @@ label vig2_blueit_matticusthread():
     return
 
 label vig2_blueit_copoutthread():
+    $ screenComplete = False
     $ blueitImage = "socials/v2_copout thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
@@ -982,6 +985,7 @@ label vig2_blueit_copoutthread():
     return
 
 label vig2_blueit_stealththread():
+    $ screenComplete = False
     #show first game thread at top:
     #    zoom 1.5
     $ blueitImage = "socials/v2_stealth thread.png"
