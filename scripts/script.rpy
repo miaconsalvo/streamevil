@@ -159,6 +159,7 @@ default promisedPDOutlaw = False #if you told pickleddragons that you want to do
 
 ####Variables for Vignette 3####
 default firstfightprediction = False
+default shipbetprediction = False
 default vig3_brika = 0
 
 ###Variables for Vignette 4###
