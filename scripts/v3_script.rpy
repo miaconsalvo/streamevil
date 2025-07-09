@@ -1709,8 +1709,6 @@ label vig3_sc11():
             mS "Money must be good."
             amaS "Even know you're still that arrogant little girl."
             amaS "How has playing the hero been? Finally found that purpose you've been missing?"
-    $ reactTarget = "vig3_sc11_amabacksass"
-    show screen streamerCommentary
     "Her tone is playful but there's no mistaking that her rifle is folded behind her long jacket."
     "Big Corps presentation continues and I hope that the crew has taken this as a moment to leave."
     "It's up to Resa and Jenn, now."
@@ -1723,7 +1721,6 @@ label vig3_sc11():
     "That smart little devil."
     mS "I don't know what you mean Ama, left something behind have you?"
     amaS "Oh we're playing dumb are we? The droid Mozely, give me the droid."
-    hide screen streamerCommentary
     menu: 
         "Ama doesn't have MAC, we can use this."
         "Why don't you just enjoy the party?": #Flirt
@@ -1732,6 +1729,7 @@ label vig3_sc11():
             "A smile forms on her face, anger mixed with something else."
             amaS "You little shit..."
             mS "Now, now, don't make a scene. You're better than that."
+            $ reactTarget = "vig3_sc11_amabacksass"
         "I don't have the droid you're looking for.":
             mS "I don't have it."
             amaS "Are you playing dumb with me?"
@@ -1739,12 +1737,15 @@ label vig3_sc11():
             "Ama furrows her brow."
             amaS "This isn't the time to yank my chain."
             mS "Isn't that BigCorp's job?"
+            $ reactTarget = "vig3_sc11_amabacksass"
         "But he's right there on the platform, no?":
             mS "Why are you asking me?"
             mS "It's right there isn't it?"
             "Ama turns to the platform then back at me, unimpressed."
             amaS "Don't quit your day job Moze."
             amaS "I want that droid and I want it now."
+            $ reactTarget = "vig3_sc11_amabacksass"
+    show screen streamerCommentary
     "Ama stalks towards me and I know what's coming."
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry Resa."
@@ -1757,6 +1758,7 @@ label vig3_sc11():
     "I relax my shoulders."
     mS "Reynar, thank you for having us this evening."
     reynar "If only you were invited..."
+    hide screen streamerCommentary
     "A pause."
     "A waiter passes by with a full tray, Reynar grabs a bubbling drink without even looking."
     reynar "I sincerely hope, the two of your aren't about to do what I think you are."
