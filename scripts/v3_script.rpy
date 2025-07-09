@@ -2216,6 +2216,10 @@ label vig3_sc14():
     pS "We'll drag your body out of here if necessary."
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
+    hide jennica with dissolve
+    hide teresa with dissolve
+    show ama stream neutral at stream_right with move
+    show rec stream surprised at stream_left with move
     recS "Deadeye..."
     "Ama's eye move to Rec."
     amaS "Well well, if it isn't Reccrin."
