@@ -380,6 +380,7 @@ label vig3_sc4():
     "We can't help our silence in this moment."
     show jennica stream neutral at stream_left
     show teresa stream happy at stream_right
+    show rec stream happy
     pS "REC!"
     "Jennica runs up to hug Rec, they embrace and Jenn lifts them off the ground."
     pS "It's wonderful to see you kid."
@@ -400,19 +401,22 @@ label vig3_sc4():
     pS "I was really lookin' forward to sharin' that brandy."
     recS "Well you're in luck."
     pS "Hell yeah!"
-    show rec stream neutral at stream_right5 with move
+    show rec stream happy at stream_right5 with move
     show mac stream neutral at stream_left5mac with dissolve
     macS "Vira Brandy is first invention using edible chimaeron fruit. Which is quite odd."
     pS "And delicious!"
     "As Rec turns to get the brandy they pause to look down at MAC."
+    show rec stream surprised
     hide jennica stream neutral with dissolve 
     hide teresa stream happy with dissolve
     recS "And who's this little guy?"
     macS "I'm MAC!"
+    show rec stream happy
     recS "I bet you are!"
     "Rec's eyes grow wide, it's the same look Allistar gave him when they first met."
     recS "And where did they pick you up?"
     macS "From a top secret research facility in BigCorp headquarters."
+    show rec stream surprised
     "If I could die right now I would."
     "Reccrin just stares at MAC blinking rapidly."
     recS "... What?"
@@ -428,12 +432,14 @@ label vig3_sc4():
             mS "If by top secret you mean off a random shelf, then sure, keep it hush hush though."
             "No one responds."
             recS "Good thing you became an Outlaw instead of a comedian."
+            show rec stream happy
         "Teresa did you program that?":
             mS "That's the last time I let you touch our gear Teresa."
             enS "Excuse me?"
             "I give her a look."
             enS "Oh haha yeah... of course Cap."
     #^All of these feel mean....could use a rewrite#
+    show rec stream thinking
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
     recS "Mind if I take a closer look?"
     "MAC looks up at me. I guess we're in it now...."
@@ -445,6 +451,7 @@ label vig3_sc4():
     "The room goes still I don't know what to say to them."
     mS "Had to be a rushed job, we've been on the move."
     mS "But look not to interrupt your analysis, we're here to fix our Comms."
+    show rec stream neutral
     recS "Sorry yeah got carried away. What do you need? New parts?"
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
@@ -480,18 +487,19 @@ label vig3_sc4():
             macS "Yes Captain."
     "Reccrin comes out after a brief moment with a long antennae and some internal parts for our Comms."
     show mac stream neutral at stream_left5mac with move
-    show rec stream neutral at stream_right5 with dissolve
+    show rec stream happy at stream_right5 with dissolve
     recS "Definitely an older model but she should work better than what you got. Need an install?"
     enS "I could use the hand."
     pS "Thanks Rec."
     mS "It's very appreciated."
+    show rec stream thinking
     recS "No worries! Hey since y'all have been on the move, you wouldn't have happened by Al at all?" 
     recS "I haven't heard from him in while."
     "There's too long of a pause that I can't think of something fast enough."
     "Then the shop door swings open."
     hide mac with dissolve
     hide jennica with dissolve
-    show rec stream neutral at stream_center with move
+    show rec stream surprised at stream_center with move
     show houndleader at stream_left with dissolve
     "A group of five enter the shop, dark uniforms with a dog patched on their right shoulder." 
     "These guys, they're ones from before." ##The Hound Leader##
@@ -512,6 +520,7 @@ label vig3_sc4():
     houndgoon "I suggest you get yourself and your crew in order and stay out of the way."
     hide screen streamerCommentary
     "Rec looks at me with a forced smile."
+    show rec stream neutral
     recS "Please Moze..."
     recS "Hounds! We don't want any trouble."
     recS "Just do what you need to do."
@@ -661,7 +670,7 @@ label vig3_sc5():
     "Music and reverie pour out like sections of a cacophonous orchestra."
     "At the center is a park area that sits a large statue of a man sitting at a tree, staring at an apple in his hand." 
     "The statue has a massive hole blown out of it."
-    show rec stream neutral at stream_right5 with dissolve
+    show rec stream happy at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
     show mac stream neutral at stream_left5mac with dissolve
@@ -715,6 +724,7 @@ label vig3_sc5():
     "When I come to I realize I've scared the young showgirl behind me near to death."
     show showgirl stream at stream_left with dissolve 
     mS "What?"
+    show teresa stream shock
     "She stares wide eyed and is taken her off script."
     showgirl "Uh um, name's Daisy, do you bet?"
     mS "Do I bet if your name is Daisy?"
@@ -726,18 +736,19 @@ label vig3_sc5():
     hide streamerCommentary
     "Daisy hurriedly leaves and heads to another group to perform the same spiel. I see her carefully get their attention this time."
     hide showgirl with dissolve
-    show teresa stream shock
     show jennica stream shock at stream_left with dissolve
     show mac stream shock at stream_left5mac with dissolve
-    show rec stream neutral at stream_right5 with dissolve
+    show rec stream surprised at stream_right5 with dissolve
     pS "Alright alright, what's this about?"
     enS "You've been anxious all day Captain."
     mS "I'm fine."
     recS "You just yelled at girl wearing feathers, I beg to differ."
     macS "We are concerned."
     mS "I'm tired is all."
-    show teresa stream neutral at stream_right
-    show jennica stream neutral at stream_left
+    show teresa stream neutral
+    show jennica stream neutral
+    show rec stream neutral
+    show mac stream neutral
     recS "You know most of the shops are closing for the day. Let's set you up somewhere for the night."
     recS "I think the Broken Bulb has a deal on pints."
     "We begin to move out. Jennica begins a story involving a lamp, three chickens, and a guitar. MAC is confused but enthralled."
@@ -760,7 +771,7 @@ label vig3_sc6():
     "The Burnt Bulb Pub feels like it's been stuck in time. 
     It's wooden paneling, the carnivorous plants that line its ceilings."
     "There's a warmth to this place, I feel like that young Outlaw scared out of my mind, clinging to Ama and hoping I won't get bulldozed at my first brawl."
-    show rec stream neutral at stream_right5 with dissolve
+    show rec stream happy at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show mac stream neutral at stream_left5mac with dissolve
@@ -803,7 +814,7 @@ label vig3_sc6():
     "And then another."
     "And another."
     show mac stream neutral at stream_left5mac with move
-    show rec stream neutral at stream_right5 with dissolve
+    show rec stream drunk at stream_right5 with dissolve
     recS " So I said, \"You should've been more specific about the screw!\""
     show teresa stream happy at stream_right
     show jennica stream neutral at stream_left 
@@ -823,9 +834,11 @@ label vig3_sc6():
     show teresa stream upset at stream_right
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b-"
+    show rec stream surprised
     $ reactTarget = "vig3_sc6_crewspat"
     show screen streamerCommentary
     recS "WOAH! How about I go and get us another round."
+    show rec stream happy
     recS "C'mon buddy, I'll get you a treat."
     hide rec with dissolve
     hide mac with dissolve
@@ -949,7 +962,7 @@ label vig3_sc6():
         "Check in on MAC and Rec":
             "I can't follow paranoid hunches, I gotta stick to my crew."
             "Rec and MAC are chatting at the bar, I get the tail end of their conversation."
-            show rec stream neutral at stream_right with dissolve
+            show rec stream drunk at stream_right with dissolve
             show mac stream neutral at stream_left with dissolve
             recS "You know when you've lived here for so long you get used to it truly."
             $ reactTarget = "vig3_sc6_recbonding"
@@ -962,13 +975,16 @@ label vig3_sc6():
                     mS "They're right, just because something is difficult doesn't mean you meed to worry all the time."
                     mS "How you work through that is more important."
                     macS "I think I understand."
+                    show rec stream happy
                     recS "Thanks Moze. You know I do admire what you do, it's a tough life but it's yours."
                     "I smile."
                     mS "It has it's good moments."
                     macS "Like candy!" 
                     mS "Exactly. That's why we go through the worry."
+                    show rec stream neutral
                 "Rec should really consider moving":
                     mS "Rec every thought moving would be the right call?"
+                    show rec stream happy
                     recS "Oh that's rich coming from you."
                     mS "I'm just saying there's better places than this one."
                     mS "With less Hounds."
@@ -977,6 +993,7 @@ label vig3_sc6():
                     "A pit forms in my stomach."
                     mS "You found a place that is yours."
                     recS "I'll be sure to fight for it."
+                    show rec stream neutral
                 "Akar is beautiful if you look in the right places":
                     mS "It may not look it but Akar is beautiful."
                     mS "Didn't you see all the colour and community here?"
@@ -984,9 +1001,11 @@ label vig3_sc6():
                     mS "Sure, but that's not all the time and doesn't mean you can't surround yourself with good people."
                     macS "Like what we have?"
                     mS "Yeah kid."
+                    show rec stream happy
                     recS "So cute..."
                     "I feel my face get warm."
                     mS "You always look for the beautiful parts it's the whole point."
+                    show rec stream neutral
             "A part of the bar goes silent as a bald burly man stands to address the crowd."
             hide mac with dissolve
             hide rec with dissolve
@@ -996,14 +1015,14 @@ label vig3_sc6():
             "Oh god not this game. What kind of idiot would even take that challenge-"
             pS "Right here!"
             "Jennica marches to the man who laughs."
-            show jennica neutral stream at stream_left with dissolve
+            show jennica stream neutral at stream_left with dissolve
             zan "So small, already tipping over, I fear you may not survive haha!"
             "A small group of patrons at a table behind him laugh."
             pS "Then you have nothin' to worry about."
             zan "Apologies but I will not pick you up from the floor when you lose."
             pS "Please."
             "Teresa saddles up next to Jennica."
-            show teresa happy stream at stream_right with dissolve
+            show teresa stream happy at stream_right with dissolve
             enS "The lady said she'd like to ride the karousel."
             zan "Two of you! I'll need a bigger mop!"
             "A woman from the table flanks him, she rivals him in size."
@@ -1021,20 +1040,23 @@ label vig3_sc6():
     hide teresa with dissolve
     hide zan with dissolve
     show mac neutral stream at stream_left_mac with dissolve
-    show rec neutral stream at stream_right with dissolve 
+    show rec stream drunk at stream_right with dissolve 
     macS "Are they playing Brikarousel?"
     recS "Aren't you too young to know that game?"
     macS "I have a full database that allows me to know a myriad of games."
+    show rec stream thinking
     recS "A full database..."
     "Rec's eyes move back on the gambling table, Jennica and Teresa are deep in conversation."
     recS "You know I never understood this game."
     macS "Well Brikarousel was invented by Brika Alphonse approximately 30 years ago when..."
+    show rec stream drunk
     recS "I meant why people are so eager to play."
     macS "Oh."
     macS "Alcohol?"
     mS "You catch on quick."
     "I look over at the table as a pit in my stomach forms."
     mS "Bet? What did they bet?"
+    show rec stream thinking
     recS "I didn't hear but I read lips a bit, a “sh” something?"
     mS "\"Sh\" something???"
     macS "Shirt, shoes, shilling..."
@@ -1046,8 +1068,8 @@ label vig3_sc6():
     "No that's stupid."
     "Then I remember who's playing the game." 
     "Shit."
-    show jennica neutral stream at stream_left with dissolve
-    show teresa neutral stream at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
     show zan stream at stream_center with dissolve
     "Though I would assume Zan (as he keeps reminding everyone) would pick the tough looking women as his partner, instead it's a small man with dark hair and modified gray skin."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
@@ -1068,11 +1090,13 @@ label vig3_sc6():
     hide teresa with dissolve
     hide zan with dissolve
     show mac neutral stream at stream_center_mac with dissolve
-    show rec neutral stream at stream_right with dissolve
+    show rec stream drunk at stream_right with dissolve
     macS "They're cheating."
+    show rec stream surprised
     recS "How did you-"
     mS "Of course! We've been out of the game too long."
     macS "We must tell someone, this is improper."
+    show rec stream drunk
     mS "MAC I'm going to lay this out for you. No one cares if something is improper here."
     macS "Then we should do something."
     mS "I'm already on it."
@@ -1093,8 +1117,8 @@ label vig3_sc6():
     "When Jennica calls for a short recess I know that's my time to head over."
     hide rec with dissolve
     hide mac with dissolve
-    show jennica neutral stream at stream_left with dissolve
-    show teresa neutral stream at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
     mS "I don't know if you've noticed..."
     pS "We're losing-"
     enS "They're cheating."
@@ -1337,10 +1361,11 @@ label vig3_sc6():
                 hide zan with dissolve        
     hide screen streamerCommentary            
     "I head back to Rec and MAC."
-    show rec stream neutral at stream_right with dissolve
+    show rec stream drunk at stream_right with dissolve
     show mac stream neutral at stream_left_mac with dissolve
     mS "I'm taking the kid, we'll check in with you tomorrow at the shop, alright?"
     recS "Sure thing Cap."
+    show rec stream thinking
     recS "Actually Moze wait."
     "They look serious."
     mS "What's going on?"
@@ -1354,6 +1379,7 @@ label vig3_sc6():
     "MAC looks away." 
     mS "So then you can imagine why we can't let them have him."
     "Rec looks down at MAC."
+    show rec stream happy
     recS "He's a special kid."
     "Something flashes behind their eyes. I remember Allistar."
     recS "We'll keep looking for that part tomorrow."
@@ -1462,13 +1488,14 @@ label vig3_sc8():
     $ reactTarget = "vig3_sc8_teresabluff"
     show screen streamerCommentary
     pS "You're a bit scary when you're proper."
-    show rec stream neutral at stream_center with move
+    show rec stream thinking at stream_center with move
     recS "Can you kill someone by being too nice?"
     enS "I'm sure someone has."
     mS "Your sister isn't going to be mad with you using her name?"
     enS "Please. My family hasn't come to these since I was exiled. Doubtful they'll even know I was here."
     mS "I appreciate you going through this so we can get in."
     enS "Couldn't have done it without Rec getting us ready."
+    show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
     recS "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
     "Reynar and his Vineyard have spared no expense. His finely dressed guests being served by his android wait staff." 
@@ -1490,6 +1517,7 @@ label vig3_sc8():
     pS "So now what?"
     enS "Schmooze, flirt, impress, find any way for someone to give you information but more importantly access."
     pS "I ain't much of a talker..."
+    show rec stream happy
     recS "How about we do this together? I'd like to see the work maybe even chat up some of the researchers here."
     pS "I'd like that."
     enS "Perfect! Cap let's fan out and figure this out."
@@ -1583,6 +1611,7 @@ label vig3_sc9():
     enS "Oh I assume chained to a factory for the rest of our natural lives."
     pS "I'd rather a bullet to the eyes."
     mS "We need to find MAC and get the hell out of here."
+    show rec stream thinking
     recS "If we can trust your friend Daisy we might find whatever storeroom they put him in, hell maybe even your range extender on the way."
     mS "Makers willing. Okay, once the presentation starts then we'll head out."
     hide jennica with dissolve
@@ -2025,12 +2054,15 @@ label vig3_sc13():
     "Two blasters meet me as the door swings open."
     mS "Well don't be too happy to see me!"
     show mac stream neutral at stream5_leftmac with move
-    show teresa stream neutral at stream_right with dissolve
-    show jennica stream neutral at stream_left with dissolve
-    show rec stream neutral at stream5_right with dissolve
+    show teresa stream shock at stream_right with dissolve
+    show jennica stream shock at stream_left with dissolve
+    show rec stream surprised at stream5_right with dissolve
     enS "Captain!"
     pS "Thought ya dead, I won't lie."
     "MAC rushed past me to grab Teresa's legs. The door closes behind me as I walk in."
+    show teresa stream happy
+    show jennica stream neutral
+    show rec stream happy
     enS "Good to see you buddy."
     pS "Where's Deadeye?"
     mS "Left her on the east balcony might be on our tail but didn't see where we went."
@@ -2043,10 +2075,14 @@ label vig3_sc13():
     mS "At the Fair? For what?"
     recS "He's one of the featured designers! A big name is biomechanical engineering."
     pS "He's some good-lookin' work."
+    show rec stream drunk
     recS "And some good-lookin' muscles."
     mS "..."
     recS "Forget I said that."
+    show rec stream happy
     mS "Okay let's focus up. What's going on here."
+    show teresa stream neutral
+    show jennica stream neutral
     enS "Rec found a private comms room. We were hoping to at least catch our breath before we head out."
     pS "Can't go back through the party."
     recS "But there's still a shuttle system that can get us to Akar. Usually used by the workers and it should be a quick run here."
@@ -2063,20 +2099,27 @@ label vig3_sc13():
         "Mad dash to the shuttles.":
             "No time to lose lets make a break for it!"
             "..."
+            show mac stream shock
             macS "APOLOGIES!"
             "This was the third security guard MAC had run over with reckless abandon."
             "Like a little purple battering ram MAC was clearing a path through just as Reynar's security came to intercept us."
             "When we set off we didn't imagine it would be this close to the fair."
             "Dodging through the side garden to the entrance shuttles I pray that Reynar isn't too upset with our escape plan."
+            show jennica stream shock
             pS "Jeez this kid's goin' fast and furious."
+            show teresa stream happy
             enS "He gets it from you!"
+            show rec stream thinking
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
             mS "REC LOOK FORWARD!"
+            show rec stream surprised
             "In their distracted state they mindless slam into a couple going hot and heavy."
-            "No doubt using the garden to avoid any possible scandal,"
+            "No doubt using the garden to avoid any possible scandal..."
+            show jennica stream neutral
             pS "Keep up y'all I'm the only one in heels and I'm leagues ahead!"
             enS "Stop showing off!"
             pS "How 'bout ya start showing up!"
+            show rec stream happy
             recS "How about that terrarium!"
             mS "REC!"
             "With only minor casualties, we make it to the shuttles."
@@ -2151,11 +2194,13 @@ label vig3marshalcomms():
 label vig3_sc14():
     "Just beyond the entrance the shuttles are empty."
     "Reynar hasn't toasted to the crowd and people wouldn't dare to leave before his address."
+    show rec stream thinking
     recS "This one, it'll take us right to the plaza!"
     "With quick work MAC undoes the security protocol and gets us loaded in."
     hide mac with dissolve
     show ama stream neutral at stream_left5 with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
+    show rec stream surprised
     show teresa stream fight
     show jennica stream fight
     "Teresa and Jen are quick to act."
@@ -2167,17 +2212,20 @@ label vig3_sc14():
     "Ama's eye move to Rec."
     amaS "Well well, if it isn't Reccrin."
     amaS "Right where we left him."
+    show rec stream angry
     recS "Screw you, you took Allistar away to go galavanting in the Outposts."
     recS "I have nothing to say to you."
     "Ama looks around expectantly."
     "A realization creeps on her face."
     amaS "Mozely, where is Allistar? Last I checked I left him with you."
+    show rec stream surprised
     "Rec's eyes fix to me, finally catching me in my lie."
     recS "What?"
     amaS "Oh you didn't know?"
     "Guilt stains all of our faces."
     recS "Is this true?"
     mS "It is..."
+    show rec stream angry
     recS "Well!? Where is he!?"
     "I can't lie anymore."
     mS "He's dead Rec, I shot him."
