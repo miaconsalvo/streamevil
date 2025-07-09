@@ -1814,9 +1814,9 @@ label vig3_sc12():
     "Clearly this space is meant for more quiet buisness."
     "In the distance I see Akar, lights gleaming like little stars."
     "It's so far away..."
-    show ama stream neutral at stream_right with dissolve
+    show ama stream neutral at stream_left with dissolve
     show bcrep stream neutral at stream_center with dissolve
-    show mac stream neutral at stream_left_mac with dissolve
+    show mac stream neutral at stream_right_mac with dissolve
     bcrep "Absolute garbage!"
     "I hear the sound of metal on the ground, a small pained whine."
     "I press down my white hot anger."
@@ -1887,7 +1887,7 @@ label vig3_sc12():
             "This is crazy."
             "All of this, we are so over our heads."
             "I can't will my body to move"
-            rep "STUPID JUNK!"
+            bcrep "STUPID JUNK!"
             "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle."
             amaS "Hold it!"
             "The rep backs away."
@@ -2035,7 +2035,7 @@ label vig3_sc12():
     "We break into a sprint down the hall."
     hide ama with dissolve
     hide bcrep with dissolve
-    show mac stream neutal at stream_center_mac with move
+    show mac stream neutral at stream_center_mac with move
     jump vig3_sc13
 
 label vig3_sc13():
@@ -2054,11 +2054,11 @@ label vig3_sc13():
     macS "Let me!"
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and brings his hand to it as the door swings open."
     "Two blasters meet me as the door swings open."
+    show mac stream neutral at stream_right5mac with move
+    show rec stream surprised at stream_left5 with dissolve
+    show teresa stream fight at stream_right with dissolve
+    show jennica stream fight at stream_left with dissolve
     mS "Well don't be too happy to see me!"
-    show mac stream neutral at stream5_leftmac with move
-    show teresa stream shock at stream_right with dissolve
-    show jennica stream shock at stream_left with dissolve
-    show rec stream surprised at stream5_right with dissolve
     enS "Captain!"
     pS "Thought ya dead, I won't lie."
     "MAC rushed past me to grab Teresa's legs. The door closes behind me as I walk in."
@@ -2128,13 +2128,15 @@ label vig3_sc13():
             jump vig3_sc14
 
 label vig3outlawcomms():
-    show matticus phone neutral at stream_center with dissolve
+    show matticus phone neutral at stream_center_mac with dissolve
+    show jennica stream angry
     smatt "Well hello ladies! Need a hand from little ole me?"
     "Matticus smiles in that shit-eating grin that he loves."
     pS "This is a terrible idea"
     "I'm starting to agree."
     mS "We're not here for pleasantries"
     recS "I almost forgot what he was like."
+    show rec stream neutral
     smatt "Is that little Reccrin?"
     smatt "Been a while kid."
     recS "You know I'm the older one right?"
@@ -2159,15 +2161,18 @@ label vig3outlawcomms():
     recS "The biggest."
     mS "Let's get out of here."
     "With relative ease we make it to the shuttles."
+    show jennica stream neutral
     jump vig3_sc14
 
 label vig3marshalcomms():
-    show matticus phone neutral at stream_center with dissolve
+    show matticus phone neutral at stream_center_mac with dissolve
+    show jennica stream angry
     smatt "Well hello ladies! To what do I owe the pleasure?"
     "Matticus smiles in that shit-eating grin that he loves."
     pS "Disrespectfully, we didn't call you."
     "This is bad."
     smatt "Oh no? Were you perchance hoping I was some young redheaded datacenter intern?"
+    show rec stream neutral
     recS "Sounds like a nicer face to look at."
     smatt "Oh is that little Reccrin? The SnakeHawk dropout?"
     smatt "Still hiding in that little hovel in Akar?"
@@ -2191,6 +2196,7 @@ label vig3marshalcomms():
     recS "The biggest."
     mS "Let's get out of here."
     "Carefully we make it to the shuttles. Not sure what awaits us on the other side."
+    show jennica stream neutral
     jump vig3_sc14
 
 label vig3_sc14():
@@ -2200,7 +2206,7 @@ label vig3_sc14():
     recS "This one, it'll take us right to the plaza!"
     "With quick work MAC undoes the security protocol and gets us loaded in."
     hide mac with dissolve
-    show ama stream neutral at stream_left5 with vpunch
+    show ama stream neutral at stream_right5 with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
     show rec stream surprised
     show teresa stream fight
@@ -2352,7 +2358,7 @@ label vig3_epilogue():
     "Then the transmission comes through."
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
-    show mac stream neutral at stream5_leftmac with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
     dflycontact "I hear you are in possession of Dr. Vanas' work."
     dflycontact "We are contacting you regarding the drop off point."

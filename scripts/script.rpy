@@ -255,8 +255,8 @@ init:
     $ screen_left = Position (xpos = 0.2, ypos = 0.6) #non-stream view
     $ screen_right = Position (xpos = 0.7, ypos = 0.6)
     $ screen_center = Position(xpos = 0.4, ypos = 0.6)
-    $ stream_left5 = Position (xpos=0.27, ypos=0.82) #for five models on screen
-    $ stream_right5 = Position (xpos=0.54, ypos=0.82)
+    $ stream_left5 = Position (xpos=0.3, ypos=0.82) #for five models on screen
+    $ stream_right5 = Position (xpos=0.5, ypos=0.82)
     $ stream_left5mac = Position (xpos=0.27, ypos=0.70)
     $ stream_right5mac = Position (xpos=0.54, ypos=0.70)
     $ renpy.music.register_channel("backAudio")
