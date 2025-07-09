@@ -1859,7 +1859,7 @@ label vig3_sc12():
     bcrep "Who's this? One of Reynar's goons?"
     amaS "You academics are so up your own asses."
     "Their eyes widen as they stand to look at me."
-    "They laugh in dsibelief."
+    "They laugh in disbelief."
     bcrep "Incredible! Absolutely incredible!"
     bcrep "Do you have any idea how terrible this has been?"
     "He walks up to MAC."
