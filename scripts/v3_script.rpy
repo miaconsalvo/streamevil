@@ -1814,7 +1814,7 @@ label vig3_sc12():
     "Clearly this space is meant for more quiet buisness."
     "In the distance I see Akar, lights gleaming like little stars."
     "It's so far away..."
-    show ama stream neutral at streamer_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     show bcrep stream neutral at stream_center with dissolve
     show mac stream neutral at stream_left_mac with dissolve
     bcrep "Absolute garbage!"
