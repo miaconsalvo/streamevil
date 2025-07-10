@@ -2151,7 +2151,6 @@ label vig4_sc3_5():
     macS "Moze! Isn't this wonderful!"
     mS "MAC, we should talk."
     macS "Of course, that would be lovely. Shall we take a walk around the plaza?"
-    mS "Yeah, that sounds good."
     "The two of us head to the outskirts of the plaza."
     "Every step feels heavy. As if my boots are filled with lead."
     menu:
@@ -2165,32 +2164,33 @@ label vig4_sc3_5():
             "There's a brief hum from MAC, as if considering his response."
             macS "It is an interesting place."
     macS "It does not appear like any other planet we have visited."
-    mS "How so?"
     macS "No one has tried to kill our crew or steal from us."
-    macS "There appear to be no skeeves in sight."
     macS "The people here seem...what's the right word? Is it \"happy?\""
     "I look over my shoulder. Even from a distance, the smiles on everyone's faces at the festival are apparent."
-    mS "Yes, MAC. That's the right word for it."
     #macS "They were all so interested in our adventures. I think I impressed them with our stories."
     #mS "I'm sure you impressed them yourself"
     macS "What do you think of this place, Captain?"
     menu:
         macS "What do you think of this place, Captain?"
         "It's an illusion.":
+            $ macPessimism += 1
             mS "I think it's fake, MAC."
             mS "A bunch of people acting like they have a higher purpose, but they've forgotten what the galaxy is really like."
         "It's a haven.":
+            $ macHope += 1
             mS "I think it's a haven, MAC."
             mS "Somewhere people can be genuinely happy, where they have a purpose."
     "MAC doesn't respond immediately."
     macS "Moze, do you know what our purpose is?"
-    mS "It was to keep you safe. To get you here."
-    macS "Yes. But now what?"
-    macS "That mission is accomplished."
+    mS "To keep you safe. To get you here."
+    macS "Yes, but that mission is accomplished."
     macS "What do we do now?"
     menu:
         macS "What do we do now?"
         "We help others.":
+            $ csEngagement += 2
+            $ macPeace += 3
+            $ macHope += 2
             mS "I suppose our purpose is to leave the galaxy a better place than when we found it."
             macS "To help people?"
             mS "Yeah. That feels right."
@@ -2199,18 +2199,19 @@ label vig4_sc3_5():
                 macS "Did we help people?"
                 "I don't know.":
                     mS "I don't know MAC. Things are rarely that cut and dry."
-                    mS "Surely you've seen that over the past month."
                     macS "Yes, I have noticed a distinct lack of clarity in answers to my questions."
                     mS "But getting you here could change a lot of things in the galaxy."
                 "Yes.":
                     mS "I think so."
                     mS "Getting you here especially can change a lot of things in the galaxy."
                 "No.":
-                    mS "I don't think we did much."
+                    mS "I don't think so."
                     mS "But being here now, maybe you can start to change that."
         "We look out for ourselves.":
+            $ padEngagement += 2
+            $ macViolence += 3
+            $ macPessimism += 2
             mS "We take care of our own, make sure we can thrive."
-            mS "Survival is the only purpose of a species, or individual."
             macS "I see, survival, replication..."
             macS "But we have all survived. What is next?"
             menu:
@@ -2224,12 +2225,13 @@ label vig4_sc3_5():
                     mS "Whatever gives you pleasure, that's what."
                     mS "Find what you enjoy and hold tight to that, don't let anyone take it away."
                     macS "I see. It's what's known as \"hedonism,\" correct?"
-                    mS "Yeah, something like that."
+                    mS "Something like that."
                 "Make sure your family stays safe.":
                     mS "It never ends in this galaxy."
                     mS "You always have to be on your toes, protecting your family."
                     macS "I see. The fight is never over?"
-                    mS "No, it's not."
+                    mS "Never."
+    play audio "macSad.wav"
     "MAC whirs to himself."
     jump vig4_sc3_6
 
@@ -2240,8 +2242,10 @@ label vig4_sc3_6():
     menu:
         macS "We'll help build new communities for people running from BigCorp and the Alliance."
         "Sounds noble.":
+            $ macHope += 1
             mS "It sounds like a noble cause."
         "Sounds boring.":
+            $ macPessimism += 1
             mS "Sounds like it could get a bit boring."
     macS "Yes."
     "MAC freezes absolutely still."
@@ -2250,8 +2254,11 @@ label vig4_sc3_6():
     menu:
         macS "I want to stay a part of this family."
         "I can't leave him here.":
+            $ kcEngagement += 2
+            $ csEngagement -= 2
+            $ pdEngagement += 1
             "I can't leave him."
-            mS "I want that too MAC. I don't want to leave here without you."
+            mS "I don't want to leave here without you either, MAC."
             macS "Then let's leave! Right now!"
             macS "We can fight! You, me, Jennica, Teresa, we can take on anyone!"
             "My heart pounds fast."
@@ -2337,6 +2344,9 @@ label vig4_sc3_6():
             hide mac with Dissolve(2.0)
             jump vig4_sc4_1
         "It can't happen.":
+            $ kcEngagement -= 2
+            $ pdEngagement -= 1
+            $ csEngagement += 1
             "He has to stay here. It hurts, but everything would be for nothing if he stays with me."
             mS "I would like that too. But it's not in the cards."
             macS "But, why?"
@@ -2430,6 +2440,9 @@ label vig4_sc3_6():
             hide mac with Dissolve(2.0)
             jump vig4_sc4_1
         "This was just a mission.":
+            $ kcEngagement -= 3 #is it possible kitcat really likes this for the drama?
+            $ csEngagement += 1
+            $ pdEngagement += 1
             $ rudeMACGoodbye = True
             "He has to stay here. I can't tell him the truth."
             mS "MAC, this was just a mission."
