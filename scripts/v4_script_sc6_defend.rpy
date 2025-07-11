@@ -167,7 +167,7 @@ label vig4_sc6_defend_1():
     "That voice! It's coming from the disc!"
     "I open my palm and hold it out in front of me."
     "A blue hologram projects up from the disc."
-    show mac call neutral at stream_center_mac with dissolve
+    show mac phone neutral at stream_center_mac with dissolve
     "It's MAC."
     mS "MAC!"
     "Jennica and Teresa leap down from the tank and crowd around me."
@@ -630,9 +630,9 @@ label vig4_sc6_defend_5():
                 enS "Go do what you do best, Moze."                
             else:
                 pass
-        mS "I want a clean escape route when I come down with MAC."
-        pS "You betcha."
-        enS "Affirmative."
+            mS "I want a clean escape route when I come down with MAC."
+            pS "You betcha."
+            enS "Affirmative."
         "Thank you.":
             mS "Jenn, Resa, I--"
             if jennicaRomance == True:
