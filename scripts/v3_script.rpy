@@ -528,9 +528,9 @@ label vig3_sc4():
     "We stand back as the group rummages through the store, knocking over shelves and taking random items." 
     "They're armed to the teeth and now I understand why Rec is so quick to comply."
     ###Describe the wreck this group is leaving and give the players two opportunities to intervene or continue to comply silently.###
+    "Like restless children they stick their hands in every possible shelf and knock over part after part."
+    "It's a big show they snicker to each other, incoherently mumble protocols and giggle."
     menu:
-        "Like restless children they stick their hands in every possible shelf and knock over part after part."
-        "It's a big show they snicker to each other, incoherently mumble protocols and giggle."
         "Reccrin is looking down at their desk."
         "That's enough!":
             mS "Alright that's enough!"
@@ -626,6 +626,7 @@ label vig3_sc4():
             show mac stream neutral at stream_left5 with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
+            macS "Captain are you hurt?" 
             mS "Just my pride, and my wallet."
             "Teresa goes to pull me up."
             enS "I want to burn that man up from the inside."

@@ -51,7 +51,7 @@ screen streamerCommentary(): #This screen appears when the player can interact w
         ysize 1080
         background Solid("#00000000")
         imagebutton: #just the overlay that you click on
-            action [Return(), Call(reactTarget)]
+            action [Return(), Call(reactTarget, from_current = True)]
             idle Solid("#00000000")
             hover Image("stream ui/reactHighlight.png") 
             #hover Solid("#dad60563") "#bd0505",
