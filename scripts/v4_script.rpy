@@ -98,6 +98,7 @@ label vig4_sc1_1():
     $ narrator = alt_narrator
     $ macroChoice = False
     show ship_hallway_stream at topleft onlayer background with dissolve
+    play music "soundtrack/space.wav" volume 1.2
     "There is a harmonious hum to the Oakley's engines."    
     "No alarms going off."
     "No rattling in the hull."
@@ -335,6 +336,7 @@ label vig4_sc1_2():
 label vig4_sc2_1():
     show vig1_town_stream at topleft onlayer background with dissolve
     hide shiphub_stream
+    play music "soundtrack/polaris.wav" volume 1.2
     "The activity in town is frenetic."
     "Dozens of people mill about the roads, carrying large boxes and sacks down the roads."
     "They don't stop as Teresa and I enter the outskirts."
@@ -807,6 +809,7 @@ label vig4_sc2_4():
 label vig4_sc2_5():
     show warehouse_stream at topleft onlayer background with dissolve
     show vega stream neutral at stream_left5 with dissolve
+    play music "soundtrack/space.wav" volume 1.2
     "Things are still tense for a little while."
     "Coil hangs up the guns and goes to fetch some tea while Vega brings out some chairs for us."
     show teresa stream neutral at stream_right
