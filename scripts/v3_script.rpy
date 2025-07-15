@@ -624,7 +624,7 @@ label vig3_sc4():
     hide mac with dissolve
     show rec stream neutral at stream_center with dissolve  
     recS "They're the Hounds. Reynar's new security detail."
-    recS "Usually they're more of nuisance than anything. Shaking down shops and bars."
+    recS "Usually they're more of nuisance than anything. Shaking down shops and the like."
     recS "But with the Inventor's Fair they've gotten more excitable. Not surprised they'd come by here just terrible timing is all."
     pS "Sorry what's the Inventor's Fair? I forgot to ask."
     enS "Big conference. Lots of tech companies, scholars, and start-ups from all over. Schmoozing and rubbing shoulders, the like."
@@ -656,14 +656,15 @@ label vig3_sc5():
     hide reccshop_stream
     show akarplaza_stream at topleft onlayer background with dissolve 
     "When Rec leads us to the plaza I'm almost startstruck with how it looks." ###REC takes the Oakley Crew to the Plaza. In front is Rec and MOZE with JENNICA and TERESA taking up the rear with MAC in between them.##
-    "The space is abundant with life. The shops and bars on the outer ring of the roundabout shine with bright flashing lights and are bursting with patrons." 
+    "The space is abundant with life."
+    "The shops and bars on the outer ring of the roundabout shine, bursting with patrons." 
     "Music and reverie pour out like sections of a cacophonous orchestra."
-    "At the center is a park area that sits a large statue of a man sitting at a tree, staring at an apple in his hand." 
-    "The statue has a massive hole blown out of it."
+    "At the center is a park area that sits a large statue of a man sitting with an apple in his hand." 
+    "It has a massive hole blown out of it."
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
     macS "Wow...."
     pS "Surprised it's still standing."
@@ -679,24 +680,27 @@ label vig3_sc5():
     hide teresa with dissolve
     hide mac with dissolve
     "I'm taken back to the plaza several years back, rowdy and riotous."
-    "BigCorp officers scattered attempting to suppress the riot."
-    "With small fires everywhere Teresa hangs from the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
+    "BigCorp officers are scattered around attempting to suppress the riot."
+    "With small fires everywhere Teresa ont the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
     enS "We're gonna be *HICK* glorkin *HICK* LEGENDS HAHA!!!"
     pS "Pffffft! Glorkin?"
     mS "Resa hey hey Resa, ya gotta, gotta down from there."
     enS "Not until you say it."
-    pS "A wild one for sure."
-    mS "She's really set huh."
+    pS "She's really set huh."
+    mS "A wild one, that's for sure."
     pS "Please do the honors Captain."
     "An enforcer in the distance fires a shot at the statue and misses."
+    "Jennica returns fire and takes him down."
     mS "Okay okay, you're in!"
     enS "No, no, do the call, it's not real without it."
     mS "The call isn't real, get down from there."
     enS "I KNOW IT'S REAL!"
     "Another bullet narrowly misses Teresa"
+    "She pulls out her blaster and hits her mark."
     pS "Better do the call Cap."
     enS "SEE!!! THERE IS ONE!!"
-    "These two are gonna be a problem."
+    "These two together are gonna be a problem."
+    "I take a deep breath."
     mS "CAW CAW HISS HISS"
     "We all laugh"
     enS "LEGENDS!! LONG LIVE THE OAKLEY!!!"
@@ -706,26 +710,31 @@ label vig3_sc5():
     mS "I got ya!"
     "I carry Teresa in my arms, Jennica trailing quickly behind just as the bomb detonates and blows the statue sky high."
     show teresa stream happy at stream_right with dissolve
+    enS "Some of my finest work for sure."
     mS "I'd bet money this place hasn't seen a bigger stunt than that."
     amaS "...You bet?"
     "I jump and turn to the direction of the voice, this time I make it to my gun."
+    "When I come to I realize I've scared the young showgirl behind me near to death."
+    hide teresa with dissolve
+    show showgirl stream at stream_center with dissolve
+    mS "What?"
     $ reactTarget = "vig3_sc5_amahallu"
     show screen streamerCommentary
-    "When I come to I realize I've scared the young showgirl behind me near to death."
-    show showgirl stream at stream_left with dissolve 
-    mS "What?"
     "She stares wide eyed and is taken her off script."
     showgirl "Uh um, name's Daisy, do you bet?"
     mS "Do I bet if your name is Daisy?"
-    showgirl "Well if you did you'd be a winner, and you can win bigger at NOVA CASINO!"
+    showgirl "Well if you did you'd be a winner..."
+    "She pauses, recalling the words back to her."
+    showgirl "and you can win bigger at NOVA CASINO!"
     showgirl "First 50 Credits are on us!"
     "She attempts to hand me a casino card, it's holographic with an animation of a supernova and 50 credits in big lettering."
     mS "Thanks but no thanks."
-    showgirl "Well, have a nice day!"
+    showgirl "Well.."
+    showgirl "Have a nice day!"
     hide streamerCommentary
     "Daisy hurriedly leaves and heads to another group to perform the same spiel. I see her carefully get their attention this time."
     hide showgirl with dissolve
-    show teresa stream shock
+    show teresa stream shock at stream_right with dissolve
     show jennica stream shock at stream_left with dissolve
     show mac stream shock at stream_left with dissolve
     show rec stream neutral at stream_center with dissolve
@@ -735,18 +744,20 @@ label vig3_sc5():
     recS "You just yelled at girl wearing feathers, I beg to differ."
     macS "We are concerned."
     mS "I'm tired is all."
-    show teresa stream neutral at stream_left
-    show jennica stream neutral at stream_right
     recS "You know most of the shops are closing for the day. Let's set you up somewhere for the night."
-    recS "I think the Broken Bulb has a deal on pints."
+    recS "I think the Burnt Bulb has a deal on pints."
     "We begin to move out. Jennica begins a story involving a lamp, three chickens, and a guitar. MAC is confused but enthralled."
-    "I can't help but look back at Daisy with the small rough-looking crew. Her eyes fixate on the only person whose back is turned to me."
-    "They're tall and well built with a wide brimmed hat, in all dark leather, and long black familiar hair."
-    macS "Are you coming Captain?"
-    mS "Sure thing kid."
     hide jennica with dissolve
     hide teresa with dissolve
     hide rec with dissolve
+    hide mac with dissolve
+    "I can't help but look back at Daisy with the small rough-looking crew."
+    "Her eyes fixated on the only person whose back is turned to me."
+    "They're tall and well built with a wide brimmed hat, in dark leather, and long familiar black hair."
+    show mac stream happy at stream_left with dissolve
+    macS "Are you coming Captain?"
+    "I stare at the crew as they walk away."
+    mS "Sure thing kid."
     hide mac with dissolve
     jump vig3_sc6
 
@@ -762,9 +773,10 @@ label vig3_sc6():
     show rec stream neutral at stream_center with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at stram_left with dissolve
+    show mac stream neutral at stream_left with dissolve
     macS "Cozy."
-    "MAC's face drops as a someone yells and is then quickly tossed through a window. He clings to my leg."
+    "In the back, someone yells and is then quickly tossed through a window."
+    "MAC's face drops and he clings to my leg."
     macS "Aren't their children around outside?"
     pS "That's why he was tossed out the back window."
     enS "This is a respectable place after all."
@@ -772,8 +784,9 @@ label vig3_sc6():
     recS "Hopefully they're not booked up 'cause of the Fair."
     enS "Let's find out."
     hide rec with dissolve
-    mS "Thanks guys, we'll get a spot."
-    show mac stream neutral at stream_center_mac with move
+    hide teresa with dissolve
+    show jennica stream neutral at stream_center with move
+    show mac stream neutral at stream_center with move
     "As we walk through the bar, I notice how may regulars have been lost to time.
     Akar is different now."
     menu:
@@ -781,35 +794,57 @@ label vig3_sc6():
         "Being invisible is what we need.":
             "There's a small comfort in not being immediately recognized."
             "It's better for MAC."
+            pS "Y'alright Cap?"
+            mS "Yeah let's just get through and find a spot."
+            "The new crews are quite the sight."
+            "The gear is impressive."
+            "A little intimidating..."
             "We hug a wall and find any available table."
-            "When we find it, I gently push off a passed out patron and buy us a round."
+            macS "Woah..."
+            "I move MAC away from staring too long  at a particularily burly Outlaw and smile nicely."
+            "When we find the table, I gently push off a passed out patron."
+            "Teresa and Rec come back to us with our first round." 
+            "I buy us the next one."
         "Surely not everyone forgot us.":
             "I'm sure some more people remember who we are."
-            "May need to be careful from here on out."
-            "We move through the bar, I scan for any familiar faces."
-            "Apart from a waitress who waved as a part of her job, no one."
-            "When we find our table, I gently push off a passed out patron and buy us a round."
+            ms "See anyone familiar?"
+            "Jenn takes a moment to survey the space."
+            pS "Think we might've missed the reunion."
+            ms "Ha, looks like it."
+            "We move through the bar and I scan for any familiar faces."
+            "Or any face that seems friendly."
+            "Apart from a waitress who waved at us or of courtesy, no one."
+            "When we find our table, I gently push off a passed out patron lying on it."
+            "Teresa and Rec come back to us with our first round." 
+            "I buy us the next one."
         "Let's make sure they don't forget us.":
             "I don't care how long its been the Oakley is still legendary."
             "Maybe we should remind them who we are..."
             "We barrel through the crowd to find a table."
             mS "Make way for the Oakley everyone!"
-            mS "C'mon let's move let's move!"
-            "I bump into a patron who decides to take a swung and me ends up meeting the floor."
+            mS "C'mon let's move, let's move!"
+            pS "Oh we're doin' this?"
+            "I give Jenn a wink and she smiles."
+            pS "You heard the Captain, move it or lose it!"
+            "I bump into a particularily scary guy who decides to take a swing at me for my indescretion."
+            "I make sure he meets the floor quickly." 
             mS "Pardon us."
-            "When we find our table, I gently push off a passed out patron at it and buy us a round."
-    "I make sure we get our table, gently pushing off a passed out patron by themselves. I buy us a round."
+            "I step over his curled up body."
+            "When we find our table, I gently push off a passed out patron lying on it."
+            "Teresa and Rec come back to us with our first round." 
+            "I buy us the next one."
     "And then another."
     "And another."
+    show jennica stream neutral at stream_left with move
     show mac stream neutral at stream_left with move
     show rec stream neutral at stream_center with dissolve
-    recS " So I said, \"You should've been more specific about the screw!\""
-    show teresa stream happy at stream_right
-    show jennica stream neutral at stream_left 
+    recS "So I said, \"You should've been more specific about the screw!\""
+    show teresa stream happy at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve 
     "Raucous laughter pours out of us, barely audible in this crowded bar."
     enS "Makers, that's dumb."
     macS "Now I found that funny but can someone clarify the part about the screw?"
-    enS "Well you see \"screw\"-"
+    enS "Well you see \"screw-\""
     show jennica stream shock at stream_left
     "Jennica covers what she thinks are MAC's ears."
     pS "Too young, too impressionable."
@@ -822,6 +857,7 @@ label vig3_sc6():
     show teresa stream angry at stream_right
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b-"
+    show mac stream shock at stream_center with move 
     recS "WOAH! How about I go and get us another round."
     recS "C'mon buddy, I'll get you a treat."
     hide rec with dissolve
@@ -846,7 +882,7 @@ label vig3_sc6():
     enS "Not as good as the one on Firma 12. How did that one go?" 
     enS "\"We're family, a crazy, wild, dysfunctional family-\""
     pS "\"But that's what makes us special!\" I'm tearing up thinking 'bout it."
-    mS "Okay okay, that's enough"
+    mS "Okay, okay, that's enough"
     "Jennica raises her glass."
     pS "We got your back Moze."
     "Teresa raises her glass."
@@ -856,9 +892,9 @@ label vig3_sc6():
     # maybe fade in and out, show the passage of time
     hide teresa with dissolve
     hide jennica with dissolve
-    "As the night continues on, the Broken Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks as a barkeep cleans them."
+    "As the night continues on, the Burnt Bulb becomes more and more packed, the empty glasses on our table sit in tall stacks threatening to fall before a barkeep cleans them."
     "Teresa is in a corner watching in unwavering curiosity at the plants that line the ceiling, tossing bits of food up for them to catch."
-    "Jennica is at a pool table, chatting away with some couple who stare at her in amazement."
+    "Jennica is at a pool table, chatting away with some couple who are very clearly flirting with her."
     "Rec is telling MAC a story that has him fully engaged. But he keeps looking around the room nervously."
 
     #This would normally be a menu with multiple choices but for simplicity and time we'll only have MAC and Rec and the stranger
@@ -873,24 +909,27 @@ label vig3_sc6():
             "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
             hide bbpub_stream with dissolve
             show akarplaza_stream at topleft onlayer background with dissolve 
-            "I struggle to navigate the dark winding streets the stranger tucks away behind an alley and I move to close in on them."
-            "As I turn the corner I'm met with a knife to my throat. So clearly not Ama's style."
+            "I struggle to navigate the dark winding streets of Akar." 
+            "The chaos is picking up as the night continues." 
+            "I almost lose the stranger as they tuck away behind an alley and I move to close in on them."
+            "As I turn the corner I'm met with a knife to my throat."
+            "So clearly not Ama's style."
             show stranger 1 stream at stream_center with dissolve
-            "The stranger eyes bright and blue with a heart-shaped face and a mole under her left eye."
+            "The stranger eyes are bright and blue. They're face pretty and heart-shaped face with a mole under her left eye."
             strngr1 "Why are you following me?"
-            mS "I'm sorry I just-"
+            mS "I just-"
             "She presses the knife into my neck."
             strngr1 "You what? Thought I was some easy mark."
-            "She's young in her voice and her confidence."
+            "She's young in her voice and in her confidence."
             mS "No, I just thought you were someone else."
             "She doesn't let go of the knife."
             strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
-            "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
+            "I do something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
             menu:
                 "How do I get out of this?"
                 "Flirt.":
                     mS "Oh, I'm far from disappointed." #flirt
-                    "A small smile comes on her face."
+                    "A small smile rises on her face."
                     strngr1 "Oh yeah?"
                     mS "You're a much more pleasant sight if I say so myself."
                     "She doesn't let go of the knife but moves in closer."
@@ -899,7 +938,7 @@ label vig3_sc6():
                     strngr1 "Not yet, but the night's young."
                     "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
                     hide stranger 1 stream with dissolve 
-                    "I return to the Broken Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
+                    "I return to the Burnt Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
                     "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
@@ -909,10 +948,10 @@ label vig3_sc6():
                     strngr1 "Ha, what can't follow through?"
                     mS "Nothing to follow through on."
                     hide stranger 1 stream with dissolve 
-                    strngr1 "Pathetic"
+                    strngr1 "Pathetic."
                     "Her knife doesn't move but she nods her head to tell me to get lost."
                     "I don't take my eyes off her when I back away"
-                    "I return to the Broken Bulb disappointed."
+                    "I return to the Burnt Bulb disappointed."
                     "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
@@ -925,17 +964,19 @@ label vig3_sc6():
                             "She yells as something snaps."
                             strngr1 "Po dunk!"
                             "Sweat is pouring down her face."
-                            "Knee to the chest."
+                            "I slam a knee to her chest."
                         "No. I've made my point.": 
                             "I shove her against the wall and she falls over."
                             "The knife clatters away."
                     "It's over before it even starts."
-                    mS "Need me to call someone for you."
+                    mS "Need me to call someone for you?"
                     strngr1 "Go to hell."
                     mS "Trust me they know I'm coming."
                     hide stranger 1 stream with dissolve 
-                    "I return to the Broken Bulb and wipe a bit of dust off my jacket before heading in."
-                    "I go to see Mac and Rec"
+                    "On my way back to the Burnt Bulb I can feel eyes on me."
+                    "I take careful steps."
+                    "When I get to my destination I and wipe a bit of dust off my jacket before heading in."
+                    "I go to see Mac and Rec."
                     hide akarplaza_stream
                     show bbpub_stream at topleft onlayer background with dissolve
 
@@ -948,34 +989,41 @@ label vig3_sc6():
             menu: 
                 "Say something."
                 "They're right you know.":
-                    mS "They're right, just because something is difficult doesn't mean you meed to worry all the time."
+                    mS "They're right, just because something is difficult doesn't mean you need to worry all the time."
                     mS "How you work through that is more important."
                     macS "I think I understand."
-                    recS "Thanks Moze. You know I do admire what you do, it's a tough life but it's yours."
+                    recS "You know Moze I do admire what you do, it's a tough life but it's yours."
                     "I smile."
                     mS "It has it's good moments."
                     macS "Like candy!" 
                     mS "Exactly. That's why we go through the worry."
-                "Rec should really consider moving":
-                    mS "Rec every thought moving would be the right call?"
+                    recS "I was so scared when Allistar decided to join the Snakehawks."
+                    recS "But I'm happy he had you with him."
+                    mS "Rec I should tell you-"
+                "Rec should really consider moving.":
+                    mS "Rec ever thought that moving would be the right call?"
                     recS "Oh that's rich coming from you."
                     mS "I'm just saying there's better places than this one."
                     mS "With less Hounds."
                     recS "I like my shop and my community, I don't regret planting roots here."
-                    recS "I'm happy I didn't become a Snakehawk."
+                    recS "Plus when Allistar was with the Snakehawks I always knew you'd be here after your missions."
+                    recS "I'm happy I got to see him as much as I did."
                     "A pit forms in my stomach."
+                    mS "I didn't mean to offend"
                     mS "You found a place that is yours."
                     recS "I'll be sure to fight for it."
-                "Akar is beautiful if you look in the right places":
+                    mS "Rec I should tell you-"
+                "Akar is beautiful if you look in the right places.":
                     mS "It may not look it but Akar is beautiful."
                     mS "Didn't you see all the colour and community here?"
                     mac "People were getting hurt."
-                    mS "Sure, but that's not all the time and doesn't mean you can't surround yourself with good people."
+                    mS "Sure, but that's not all the time and people et hurt everywhere."
+                    recS "That doesn't mean you can't surround yourself with good people."
                     macS "Like what we have?"
                     mS "Yeah kid."
                     recS "So cute..."
-                    "I feel my face get warm."
-                    mS "You always look for the beautiful parts it's the whole point."
+                    "I feel my face get warm. Then an undeniable pit forming."
+                    
             "A part of the bar goes silent as a bald burly man stands to address the crowd."
             show zan stream at stream_center with dissolve
             zan "Patrons! Who is brave enough to ride Karousel!"
