@@ -122,6 +122,11 @@ default csEngagement = 5
 default pdEngagement = 3
 default kcEngagement = 4
 
+#variable to check status of viewer
+default viewershipHigh = False
+default viewershipMed = False
+default viewershipLow = False
+
 #variables to track interest of player - tracked for macro game purposes
 default reluctance = 0
 default enthusiasm = 0
