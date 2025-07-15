@@ -725,7 +725,7 @@ label meetingMatticus():
     menu: #minorchoice5
         smatt "Who's this?"
         "What we stole from BigCorp.": 
-            $ macHonesty += 1
+            #$ macHonesty += 1
             $ pilotApproval -= 1
             $ engineerApproval -= 1
             hide mac with dissolve
@@ -735,7 +735,7 @@ label meetingMatticus():
             smatt "Neat. So how much you figure it's worth?"
             smatt "BigCorps's burning money to get it back, must be something important."
         "Mind your own business.":
-            $ macHonesty -= 1
+            #$ macHonesty -= 1
             hide mac with dissolve
             mS "None of your business."
             show matticus stream at stream_center with move
@@ -959,7 +959,7 @@ label approachingBase():
             mS "Good. Let's move."
             hide mac with dissolve
         "Maybe.":
-            $ macHonesty += 1
+            #$ macHonesty += 1
             mS "I don't know. But they will try to hurt us."
             $ AddChatter(vig2_sc5_comment2)
             macS "Why do we need to work with bad people?"
@@ -1225,7 +1225,7 @@ label commsBase_OUT1():
             mS "Don't worry MAC, everything's gonna be ok."
             mS "Just stay close to me."
         "It's gonna be chaotic":
-            $ macHonesty += 1
+            #$ macHonesty += 1
             mS "Things are going to get hectic in there, MAC."
             mS "Just stay close to me."
     play audio "macAffirmative.wav"
@@ -1345,7 +1345,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment3)
             goon "Come on. We're almost done."
             $ AddChatter(vig2_sc6_out_spare_comment4)
-            show jennica stream shock at stream_left with dissolve(0.2)
+            show jennica stream shock at stream_left with Dissolve(0.2)
             pS "What the hell!?"
             show jennica stream angry at stream_left
             mS "He didn't need to die!"
@@ -2445,6 +2445,10 @@ label blueitVignette2_1:
 label blueitVignette2_2():
     scene blueit_v2screen at truecenter
     show screen webNavigation_vig2
+    if blueitChoiceCheck == True:
+        $ screenComplete = True
+    else:
+        pass
     call screen blueit
     return
     jump vig2_macro_viewerChat_1

@@ -65,6 +65,7 @@ label vig1_sc2_thankCS():
     $ vig1_sc2_comment2_csAma.click = False
     $ narrator = reg_narrator
     menu:
+        "Coriolis helped me explain."
         "Thanks, Coriolis!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
@@ -138,6 +139,7 @@ label vig1_sc2_houseExplosion():
     $ vig1_sc2_comment16.click = False
     $ narrator = reg_narrator
     menu:
+        "Coriolis thought I was going to destroy the house."
         "I did consider it":
             $ reactImage = "stream ui/reactconfident.png"
             player "I thought about it for a second."
@@ -195,6 +197,7 @@ label vig1_sc3_banditConvo():
             $ AddChatter(vig1_sc3_comment3_bandit2)
             pause 1.0
     menu:
+        "How do I normally play?"
         "Marshal.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I would always tell myself I was gonna replay Oakley 1 as Outlaw Moze."
@@ -203,6 +206,7 @@ label vig1_sc3_banditConvo():
             pause 1.0
             $ reactImage = "stream ui/reactneutral.png"
     menu:
+        "I should ask how Bandit plays."
         "Ask Bandit's favorite Oakley character.":
             $ reactImage = "stream ui/reactconfident.png"
             player "So, Bandit, time to ask the tough question."
@@ -350,17 +354,8 @@ label vig1_analytics_audience():
     return
 
 #Blueit Threads
-label vig1_blueit_launchthread():
-    $ blueitImage = "socials/launch thread.png"
-    $ yb = 1080
-    $ blueitLaunchCheck = True
-    show screen blueitThread
-    #show launch thread at top:
-    #    zoom 1.0
-    call screen blueitButtonCheck
-    return
-
 label vig1_blueit_firstchoice():
+    $ screenComplete = False
     $ blueitImage = "socials/major choice thread.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
@@ -370,11 +365,11 @@ label vig1_blueit_firstchoice():
     ###The clause below this will check to see if we should consider the scene as finished.
     ###Since we're just checking if they've looked at one blueit thread, we just need it here.
     ###If we want to make players spend more time on this page, we can add an increment like for Flinch
-    $ screenComplete = True
     call screen blueitButtonCheck
     return
 
 label vig1_blueit_romance():
+    $ screenComplete = False
     $ blueitImage = "socials/romance thread.png"
     $ yb = 1080
     show screen blueitThread
@@ -384,6 +379,7 @@ label vig1_blueit_romance():
     return
 
 label vig1_blueit_firstgame():
+    $ screenComplete = False
     #show first game thread at top:
     #    zoom 1.5
     $ blueitImage = "socials/first game thread.png"
@@ -395,6 +391,7 @@ label vig1_blueit_firstgame():
 label vig1_blueit_glitch():
     #show glitch thread at top:
     #    zoom 1.5
+    $ screenComplete = False
     $ blueitImage = "socials/glitch thread.png"
     $ yb = 1080
     show screen blueitThread

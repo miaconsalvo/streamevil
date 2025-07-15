@@ -49,6 +49,11 @@ define amaS = Character("Deadeye", what_font="Play-Regular.ttf", window_style = 
 
 define enforcer = Character("Enforcer", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "enforcer neutral", window_background="images/textbox/stream textbox npc.png")
 
+define unknown = Character("Unknown", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "enforcer neutral", window_background="images/textbox/stream textbox npc.png")
+
+define jenter = Character ("Jennica & Teresa", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#a333ff", what_color = "#000000", image = "captain_stream", window_background="images/textbox/stream textbox Moze.png")
+
+
 #vig2 characters
 define shipcom = Character("Ship Intercom", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define agent1 = Character("Customs Agent", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
@@ -105,6 +110,7 @@ default macHope = 0
 default macPessimism = 0
 default macViolence = 0
 default macPeace = 0
+default macHonesty = 0
 
 #Approval of micro-game characters
 default engineerApproval = 3
@@ -158,6 +164,7 @@ default promisedPDOutlaw = False #if you told pickleddragons that you want to do
 
 ####Variables for Vignette 3####
 default firstfightprediction = False
+default shipbetprediction = False
 default vig3_brika = 0
 
 ###Variables for Vignette 4###
@@ -178,6 +185,7 @@ default amaRomance = False
 default jennicaDate = False
 default teresaDate = False
 default vegaDate = False
+default vig4_amaCrew = False
 
 #Variables to track viewers for Analytics screen in MacroGame
 default viewCheck1 = 0
@@ -253,6 +261,10 @@ init:
     $ screen_left = Position (xpos = 0.2, ypos = 0.6) #non-stream view
     $ screen_right = Position (xpos = 0.7, ypos = 0.6)
     $ screen_center = Position(xpos = 0.4, ypos = 0.6)
+    $ stream_left5 = Position (xpos=0.3, ypos=0.82) #for five models on screen
+    $ stream_right5 = Position (xpos=0.5, ypos=0.82)
+    $ stream_left5mac = Position (xpos=0.27, ypos=0.70)
+    $ stream_right5mac = Position (xpos=0.54, ypos=0.70)
     $ renpy.music.register_channel("backAudio")
     $ renpy.add_layer("background", below = "master") #created a layer called "background" for displaying micro-game scenes
     #this layer is below the master so we can define the streamview as a "scene", which means that the streamview won't

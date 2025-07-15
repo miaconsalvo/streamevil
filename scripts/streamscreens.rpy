@@ -46,15 +46,29 @@ screen streamChat():
                         #You can change color with c.colour (an attribute that was added to ChatEntry class in Lists script). The Textbutton is a bit more complicated
 
 screen streamerCommentary(): #This screen appears when the player can interact with the stream of their own volition
+    frame:
+        xsize 1920
+        ysize 1080
+        background Solid("#00000000")
+        imagebutton: #just the overlay that you click on
+            action [Return(), Call(reactTarget, from_current = True)]
+            idle Solid("#00000000")
+            hover Image("stream ui/reactHighlight.png") 
+            #hover Solid("#dad60563") "#bd0505",
+            #hover Solid("#44444463")
+            xsize 192
+            ysize 120
+            align (0.001, 0.113)
     image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
-    
-    imagebutton: #just the overlay that you click on
-        action Call(reactTarget, from_current = True)
-        idle Solid("#00000000")
-        hover Solid("#44444463")
-        xsize 192
-        ysize 120
-        align (0.005, 0.12)
+
+###I commented out the imagebutton below this because I created an outline for the react image instead of a filled in shape
+#    imagebutton: #just the overlay that you click on
+#        action Call(reactTarget, from_current = True)
+#        idle Solid("#00000000")
+#        hover Solid("#dad60563")
+#        xsize 192
+#        ysize 120
+#        align (0.005, 0.12)
         #vbox:
         #    spacing 10
         #    align (0.5, 0.5)
@@ -163,14 +177,16 @@ screen streamFreeze():
         xsize 1920
         ysize 1080
         background Solid("#00000000")
-        image ["stream ui/reactalert.png"] align (0.09, 0.095) size (30, 30) #the red exclaim image itself
         imagebutton: #just the overlay that you click on
             action [Return(), Call(reactTarget)]
             idle Solid("#00000000")
-            hover Solid("#44444463")
+            hover Image("stream ui/reactHighlight.png") 
+            #hover Solid("#dad60563") "#bd0505",
+            #hover Solid("#44444463")
             xsize 192
             ysize 120
-            align (0.002, 0.115)
+            align (0.001, 0.113)
+        image ["stream ui/reactalert.png"] align (0.09, 0.095) size (30, 30) #the red exclaim image itself
 
 screen raidFreeze():
     frame:

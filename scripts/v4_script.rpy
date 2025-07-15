@@ -98,6 +98,7 @@ label vig4_sc1_1():
     $ narrator = alt_narrator
     $ macroChoice = False
     show ship_hallway_stream at topleft onlayer background with dissolve
+    play music "soundtrack/space.wav" volume 1.2
     "There is a harmonious hum to the Oakley's engines."    
     "No alarms going off."
     "No rattling in the hull."
@@ -191,7 +192,6 @@ label vig4_sc1_2():
             mS "And you're not holing up in this chair for days on end anymore?"
             pS "Nope. That's all in the rearview now."
             mS "Happy to hear it."
-            "Jennica smiles."
             pS "Happy to feel it."
             mS "You wanted to see me?"
         "It's much cleaner in here.":
@@ -201,14 +201,13 @@ label vig4_sc1_2():
             pS "It was almost like I caught her with her pants down haha."
             mS "You two back to normal then?"
             pS "After these past weeks, I don't know if I remember what \"normal\" is anymore ."
-            "Jennica smiles."
             pS "But we're good."
             mS "Glad to hear it."
             pS "Glad to feel it."
             mS "You wanted to see me?"
     pS "Yeah, I'm about to bring us out of hyperspace."
-    pS "Figured you'd want to be here when we see where we've been trying to get to all this time."
-    "The waves of light surrounding the ship begin to slow down as we emerge from hyperlight travel into the vastness of space."
+    pS "Figured you'd want to be here when we finally arrived."
+    "The waves of light surrounding the ship slow down as we emerge from hyperlight travel into the vastness of space."
     "A giant orb of swirling red and orange hangs in front of us."
     menu:
         "A giant orb of swirling red and orange hangs in front of us."
@@ -217,19 +216,17 @@ label vig4_sc1_2():
         "The Dragonflies can't be human.":
             mS "Apparently the Dragonflies can breathe corrosive air?"
     pS "The coordinates aren't pointing to the planet. It's one of the moons."
-    "Jennica punches in some keys on a terminal at her side."
     "The screen in front of us zooms in on a small speck just to the left of the planet."
     "A read out prints onto the screen."
     "Moon: Polaris.\nAtmosphere: Artificial - Breathable.\nKey Resources: None."
     "Affiliation: N/A.\nKey Industries: None.\nPopulation: Unknown."
     mS "Not a lot of info."
-    pS "Makes a lot of sense. I doubt whatever's there is even in BC's database."
+    pS "Makes sense. I doubt whatever's there is even in BC's database."
     show teresa stream neutral at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     enS "I felt us come out of hyperspace. We there?"
     pS "Seems like it."
-    "Jennica gestures at the screen."
-    enS "\"No affiliation.\" So we are fully in neutral territory."
+    enS "\"No affiliation.\" So we are in fully neutral territory."
     pS "Yep. Right on the border of BC and Alliance space."
     enS "And this colony is so small that neither group cares."
     macS "Po-dunk?"
@@ -248,15 +245,13 @@ label vig4_sc1_2():
                     mS "Maybe the Dragonflies have more tech than we expected."
                     enS "It's possible."
                     enS "I wouldn't rule out a trap though. We should be careful."
-                    pS "I'll run a scan for BigCorp signatures."
                 "You thinking it could be a trap?":
                     mS "You thinking it could be a trap?"
                     enS "I wouldn't rule it out. We should be careful."
-                    pS "I'll run a scan for BigCorp signatures."
         "I'm more concerned about the \"unknown\" population.":
             mS "I'm more concerned about the \"unknown\" population."
             mS "What if there are people down there we don't want to meet?"
-            pS "I'll run a scan for BigCorp signatures."
+    pS "I'll run a scan for BigCorp signatures."
     "A green line appears on screen and sweeps over the moon's landscape."
     if macViolence > macPeace:
         macS "If BC is there, we can just smash 'em."
@@ -265,12 +260,11 @@ label vig4_sc1_2():
             show teresa stream happy
             "Out of the corner of my eye, I think I see Teresa grin."
             show teresa stream neutral
-        pS "Hopefully that won't be necessary."
     else:
         macS "If BC is there, we can just sneak past 'em."
         if gunsBlazing == False:
             macS "Gibian V-style."
-        pS "Hopefully that won't be necessary."
+    pS "Hopefully that won't be necessary."
     "The scan finishes."
     pS "Welp, no BC signatures. Not even a spaceport of any kind."
     pS "It's quieter than a Glorak's nest during mating season."
@@ -281,17 +275,6 @@ label vig4_sc1_2():
     "Jennica points at a red light flashing in the center of one of the town's buildings."
     ##could cut from here to "I want to scout out the town" - saves 10 lines
     pS "A town that those coordinates we downloaded just so happens to be directing us to."
-    enS "Easy pickings if it is a trap."
-    menu:
-        enS "Easy pickings if it is a trap."
-        "We have to trust this.":
-            mS "I get the concern, Resa. But we don't have any options at this point."
-            mS "This is where they're directing us. We have to trust it."
-            mS "But we'll be careful about it."
-        "Relax, Teresa.":
-            mS "We can trust the intel. We have to."
-            enS "I hope you're right."
-            mS "We'll be careful about it, Resa."
     mS "I want to scout out the town before we bring MAC in."
     menu:
         mS "I want to scout out the town before we bring MAC in."
@@ -300,8 +283,7 @@ label vig4_sc1_2():
             mS "Teresa, you're with me."
             mS "We'll go in, get a lay of the land, and make contact once we're sure it's safe."
             enS "Affirmative."
-            mS "Jennica, you and MAC stay with the ship."
-            mS "If we radio in that the situation's bad, you take off immediately."
+            mS "Jennica, you and MAC stay with the ship. If we radio in that the situation's bad, you take off immediately."
             pS "Aye aye, Cap."
     macS "Stay on the ship!?"
     if macPessimism > macHope:
@@ -312,10 +294,11 @@ label vig4_sc1_2():
     menu:
         macS "Captain, I can help!"
         "We can't take any chances.":
-            mS "We came all this way to keep you safe MAC."
+            mS "We came all this way to keep you safe, MAC."
             mS "We can't leave anything to chance now."
             enS "Don't worry MAC, I'll have the captain's back."
         "This time you'll follow my orders, MAC.":
+            $ kcEngagement -= 1
             mS "MAC, this time you'll follow my orders."
             mS "No wandering off like you did on Akar."
             macS "But that was--"
@@ -353,6 +336,7 @@ label vig4_sc1_2():
 label vig4_sc2_1():
     show vig1_town_stream at topleft onlayer background with dissolve
     hide shiphub_stream
+    play music "soundtrack/polaris.wav" volume 1.2
     "The activity in town is frenetic."
     "Dozens of people mill about the roads, carrying large boxes and sacks down the roads."
     "They don't stop as Teresa and I enter the outskirts."
@@ -366,14 +350,14 @@ label vig4_sc2_1():
         "Stay calm, Teresa.":
             mS "Stay calm, Teresa. We don't want to draw attention to ourselves."
             enS "Roger."
-        "Keep your head on a swivel":
+        "Keep your head on a swivel.":
             mS "Keep your eyes up for anything suspicious."
             enS "Roger."
     "We step off the side of the road into a small alley."
     "I pull out the tracker. The coordinates we need to get to are in the direction everyone is moving."
     mS "We gotta follow these crowds."
-    enS "Gotcha, let's stick to the sides of the road."
-    townguy "Well, hello strangers, you must be here for the Star Shower!"
+    enS "Let's stick to the sides of the road."
+    townguy "Well, hello, strangers, you must be here for the star shower!"
     show customs agent at stream_left with dissolve
     "A man with a sack of grain hanging over his left shoulder approaches Teresa and I from the alley."
     townguy "We get visitors so rarely, it's lovely to have you!"
@@ -389,17 +373,23 @@ label vig4_sc2_1():
             "Teresa has shifted just into the man's blindspot. Her hand grips a small stun rod in her belt."
             menu:
                 "Teresa has shifted just into the man's blindspot. Her hand grips a small stun rod in her belt."
-                "Signal Teresa":
+                "Signal Teresa to stun him.":
                     $ stunGuy = True
+                    $ outlaw += 1
+                    $ pdEngagement += 1
+                    $ engineerApproval += 1
                     mS "Oh, right the \"Star Shower,\" I completely forgot about that."
                     "As I speak, Teresa snaps the stun rod out and jabs it into the man's neck."
                     "The sack of grain slumps to the ground, followed by his body."
                     hide customs agent with dissolve
-                    enS "Figured we didn't want someone hanging on to us."
+                    enS "Figured we didn't want someone hanging around us."
                     mS "Slick move."
                     enS "Thank you, Captain."
                     jump vig4_sc2_2_solo
-                "Just passing through":
+                "We're just passing through.":
+                    $ marshal += 1
+                    $ csEngagement += 1
+                    $ engineerApproval -= 1
                     mS "We're just passing through."
                     mS "Our ship was having a bit of trouble so we decided to make a quick landing and see about some repairs."
                     townguy "Oh I'm sorry. Ship trouble is always scary."
@@ -414,7 +404,7 @@ label vig4_sc2_1():
             townguy "Oh I'm sorry. Ship trouble is always scary."
             enS "You've had experience?"
             townguy "Well, not really. But it sounds scary!"
-            townguy "You should stay for the Star Shower though, it's really dramatic."
+            townguy "You should stay for the star shower though, it's really dramatic."
             townguy "Once every ten years a hail of meteors passes by Polaris close enough to watch through the atmosphere."
             "He gestures to all the activity."
             townguy "As you can see, the whole town's gettin' ready for a festival."
@@ -425,6 +415,9 @@ label vig4_sc2_1():
                 "Her hand is on a stun rod in her belt."
                 "Signal Teresa to stun him":
                     $ stunGuy = True
+                    $ pdEngagement += 1
+                    $ outlaw += 1
+                    $ engineerApproval += 1
                     "She snaps the stun rod out and jabs it into the man's neck."
                     "The sack of grain slumps to the ground, followed by his body."
                     hide customs agent with dissolve
@@ -432,7 +425,10 @@ label vig4_sc2_1():
                     mS "Slick move."
                     enS "Thank you, Captain."
                     jump vig4_sc2_2_solo
-                "Signal Teresa to stand down":
+                "Signal Teresa to stand down.":
+                    $ marshal += 1
+                    $ csEngagement += 1
+                    $ engineerApproval -= 1
                     "I give Teresa the signal to stand down."
                     "She backs away from the man."
                     townguy "Of course, repairs should be your priority."
@@ -446,25 +442,24 @@ label vig4_sc2_2_solo():
     "Without breaking step, the townsfolk we pass by look up to smile at us and tip their caps."
     "I try to smile back. But my face feels tight."
     "Everything feels tight."
-    "But we keep moving, eventually passing a wide plaza where the crowds of people are setting up tables, chairs, and stalls."
+    "Eventually, we pass a wide plaza where the crowds of people are setting up tables, chairs, and stalls."
     "At the north end of the plaza, an immense tower stretches up into the sky. It almost feels like a church."
     enS "Seems like it's going to be some party."
     menu:
         enS "Seems like it's going to be some party."
         "Jenn's going to hate to miss this.":
             mS "Jenn's gonna be disappointed we can't take part."
-            enS "Hey, maybe we'll come back one day."
+            enS "Maybe we'll come back one day."
             mS "Maybe."
         "I've had my fill of parties.":
             mS "After Akar, I think I've had my fill of parties."
             enS "Couldn't agree more."
-    "I check the tracker. We're on the right path. Just a bit deeper."
+    "I check the tracker. We're on the right path."
     "I glance up as we step out of the plaza."
     "A camera tilts to the side, following us. Then pans back in the other direction."
     enS "I saw it."
     enS "Think it could be BC?"
-    mS "Maybe, but it doesn't matter."
-    mS "No turning back now."
+    mS "Maybe, but it doesn't matter. No turning back now."
     "The crowds start to thin once we're past the plaza."
     jump vig2_sc2_3
 
@@ -475,19 +470,19 @@ label vig4_sc2_2_accompanied():
         "Follow the man.":
             "I step out of the alley."
             mS "Lead on."
-            "Beaming, the man turns and starts walking down the road."
+            "Beaming, the man turns and walks down the road."
         "We really shouldn't.":
             mS "Oh, we don't want to distract you from your responsibilities."
             townguy "Nonsense! It's on the way for me anyway."
             "He's out in the open, too obvious to stun him."
             mS "Well, in that case, lead on."
-            "Beaming, the man turns and starts walking down the road."
-    "Teresa quickly steps up to my side and whispers."
+            "Beaming, the man turns and walks down the road."
+    "Teresa steps up to my side and whispers."
     enS "What the hell? We don't want some mook around us right now."
     mS "At least it'll help us blend in."
     enS "And if he's a BC spy."
     "I check the scanner quckly. We're on the right path to the coordinates."
-    mS "We're going in the right way for now. Let's keep things calm."
+    mS "We're going the right way for now. Let's keep things calm."
     "We make our way through the crowd, following our guide."
     "Without breaking step, the townsfolk we pass by look up to smile at us and tip their caps."
     "I try to smile back. But my face feels tight."
@@ -510,13 +505,9 @@ label vig4_sc2_2_accompanied():
     jump vig2_sc2_3
 
 label vig2_sc2_3():
-    "Eyes continue to linger on us from folks sitting on their porches."
-    "Just a little more to go."
     ### Could cut this exchange about MAC -- but I like it ###
-    enS "Say, Cap."
-    "Teresa steps a bit closer to me, speaking just above a whisper."
+    enS "Say, Captain."
     enS "There's something I've been meaning to ask you about. Just haven't found the time."
-    mS "What is it?"
     enS "Have you noticed anything changing about MAC's personality?"
     menu:
         enS "Have you noticed anything changing about MAC's personality?"
@@ -539,6 +530,7 @@ label vig2_sc2_3():
                     menu:
                         enS "It's a little...disconcerting."
                         "We just have to get him to the Dragonflies.":
+                            $ kcEngagement -= 1
                             mS "We're almost there. All we have to do is get him to the Dragonflies."
                             mS "They can worry about his personality after that."
                             enS "I suppose that's true."
@@ -555,6 +547,7 @@ label vig2_sc2_3():
             menu:
                 enS "It's a little...disconcerting."
                 "We just have to get him to the Dragonflies.":
+                    $ kcEngagement -= 1
                     mS "We're almost there. All we have to do is get him to the Dragonflies."
                     mS "They can worry about his personality after that."
                     enS "I suppose that's true."
@@ -571,6 +564,7 @@ label vig2_sc2_3():
             menu:
                 enS "It's a little...disconcerting."
                 "We just have to get him to the Dragonflies.":
+                    $ kcEngagement -= 1
                     mS "We're almost there. All we have to do is get him to the Dragonflies."
                     mS "They can worry about his personality after that."
                     enS "I suppose that's true."
@@ -597,11 +591,13 @@ label vig2_sc2_3():
     enS "I know what you mean."
     enS "How do you want to play this?"
     menu:
-        enS "I've got your back. How do you want to play this?"
+        enS "How do you want to play this?"
         "Carefully.":
+            $ engineerApproval += 1
             mS "Carefully. We have to confirm they're Dragonflies before we reveal anything about ourselves."
             enS "Sounds good. I'll follow your lead."
         "Let's be direct.":
+            $ engineerApproval -= 1
             mS "We can't keep hiding. Let's be direct, establish what we're here for."
             enS "Are you sure that's the right call?"
             mS "I've had enough skulking around. And we've dealt with more dangerous situations before."
@@ -616,7 +612,7 @@ label vig4_sc2_4():
     show teresa stream neutral at stream_right with dissolve
     "The shop is musty and hot."
     "There's a smell of singed metal and the whir of something like an engine coming from the back."
-    show coil at stream_center with dissolve
+    show coil stream neutral at stream_center with dissolve
     "An old man stands at a counter, fully occupied by applying some small piece of metal to a circuit board in his hands."
     "He doesn't seem to notice us."
     menu:
@@ -625,8 +621,8 @@ label vig4_sc2_4():
             mS "Hi there, nice shop you have here."
             mS "Mind if I ask you a few questions?"
         "Step up and ring a bell.":
-            "Stepping up to the counter, I ring the bell on the counter."
-            play audio "ding.wav" volume 8.0
+            "I step up and ring the bell on the counter."
+            play audio "ding.wav" volume 5.0
             mS "Excuse me."
     "The old man doesn't move. Except for his eyes."
     "They glance sidelong, looking me up and down while his hands stay perfectly still."
@@ -634,7 +630,7 @@ label vig4_sc2_4():
     cS "Outsiders. What are you doing in Polaris?"
     menu:
         cS "Outsiders. What are you doing in Polaris?"
-        "We're looking for someone":
+        "We're looking for someone.":
             mS "We're looking for someone."
             cS "And \"someone\" you have found."
             cS "Probably dozens of someones."
@@ -651,7 +647,7 @@ label vig4_sc2_4():
             if stunGuy == True:
                 cS "Travelers who stun amicable locals?"
             else:
-                cS "Travelers who abandon kind guides who offer to help them?"
+                cS "Travelers who abandon kind guides offering to help them?"
             "I feel Teresa tense up."
             enS "How do you know about that?"
             cS "Intelligence of all kinds is my business."            
@@ -674,6 +670,8 @@ label vig4_sc2_4():
     menu:
         cS "It's a fact."
         "I think we got off on the wrong foot.":
+            $ csEngagement += 1
+            $ marshal += 1
             mS "I think we got off on the wrong foot here."
             mS "We've come a long way to deliver something important."
             mS "That means something to you, doesn't it?"
@@ -690,7 +688,7 @@ label vig4_sc2_4():
             enS "No, Captain, respectfully." 
             enS "I'm not going to stand here and take a cryptic lecture from some out of touch relic."
             "The whirring from the back stops as footsteps approach."
-            show vega at stream_left with dissolve
+            show vega stream neutral at stream_left with dissolve
             vS "Pops, is everything okay. I thought I heard--Oh!"
             "A young woman steps out from the back."
             "She's holding a rifle and aims it directly at Teresa."
@@ -708,6 +706,10 @@ label vig4_sc2_4():
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
             cS "You should treat \"relics\" with more respect."         
         "Don't threaten my crew (draw weapon).":
+            $ pdEngagement += 1
+            $ kcEngagement += 1
+            $ outlaw += 1
+            $ engineerApproval += 1
             "I give Teresa a signal under the counter."
             mS "Sounds like a threat."
             mS "And nobody threatens my crew."
@@ -722,26 +724,28 @@ label vig4_sc2_4():
             menu:
                 "The old man starts to lift a blaster into the air."
                 "Shoot.":
+                    $ outlaw += 1
                     "I pull the trigger on my blaster."
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     cS "And now that your blaster has failed you, will you stoop to beating an old man?"
                 "Tell Teresa to stand down.":
+                    $ marshal += 1
                     mS "Teresa, stand d--"
                     "A bolt fires from Teresa's blaster."
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     cS "Your discipline is wanting."
             "The whirring from the back stops as footsteps approach."
-            show vega at stream_left with dissolve
+            show vega stream neutral at stream_left with dissolve
             vS "Pops, is everything okay. I thought I heard--Oh!"
             "A young woman steps out from the back."
             "She's holding a rifle and aims it directly at Teresa as I pull my blaster on her."
             vS "I see we have...guests?"
             cS "Nothing to worry about, Vega."
             cS "We are just having a conversation."
-            cS "Now, where were we."
-    hide coil with Dissolve (0.5)
+            cS "Now, where were we?"
+    #hide coil with Dissolve (0.5)
     macS "Captain!"
-    show mac stream shock at stream_grab_mac
+    show mac stream shock at stream_right5mac
     "Suddenly the door behind us bursts open as MAC rolls into the shop."
     if macViolence > macPeace:
         "His hand snaps up as a pulse of energy shoots from an exposed hole in his arm."
@@ -756,7 +760,7 @@ label vig4_sc2_4():
         "The young woman drops the rifle."
         show mac stream neutral
         macS "Situation deescalated."
-    show jennica stream neutral at stream_center with Dissolve(0.5)
+    show jennica stream neutral at stream_left5 with Dissolve(0.5)
     pS "Cap, I'm so sorry he ran off while I was checking the engine lines and I--"
     "Jennica freezes as she recognizes the situation."
     pS "Oh."
@@ -767,20 +771,20 @@ label vig4_sc2_4():
     hide vega with dissolve
     hide teresa with dissolve
     show mac at stream_right_mac with move
-    show coil at stream_center with dissolve
+    #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
-    "He steps out from around the counter."
     cS "At last..."
-    "The young woman is also frozen, staring at the robot."
     "The old man gestures to MAC."
     cS "May I?"
     menu:
         cS "May I?"
         "First, tell us who you are.":
+            $ csEngagement += 1
             mS "First tell us who you are."
             cS "I'm your contact, the one who has been transmitting the coordinates to lead you here."
             cS "I never believed you would actually arrive."
         "If he says it's ok.":
+            $ kcEngagement += 1
             "I take my aim off of the old man and signal Teresa to let him pass."
             mS "If he says it's ok."
     "He turns to MAC."
@@ -804,15 +808,16 @@ label vig4_sc2_4():
 
 label vig4_sc2_5():
     show warehouse_stream at topleft onlayer background with dissolve
-    show vega at stream_left with dissolve
+    show vega stream neutral at stream_left5 with dissolve
+    play music "soundtrack/space.wav" volume 1.2
     "Things are still tense for a little while."
     "Coil hangs up the guns and goes to fetch some tea while Vega brings out some chairs for us."
     show teresa stream neutral at stream_right
-    hide vega with dissolve
+    #hide vega with dissolve
     "Teresa doesn't start to relax her shoulders until she gets the tea in her hands."
     show jennica stream neutral at stream_left
     pS "I don't understand, why didn't you just tell them who we were."
-    show coil at stream_center with dissolve
+    show coil stream neutral at stream_center with dissolve
     cS "I'm afraid I didn't give them much of a chance."
     cS "I was afraid that you were agents of BigCorp, that they'd finally caught up with us."
     enS "You didn't seem particularly scared."
@@ -820,25 +825,37 @@ label vig4_sc2_5():
     cS "I would like to express profuse apologies for my actions. I will try to make it up to you."
     menu:
         cS "I would like to express profuse apologies for my actions. I will try to make it up to you."
-        "No big deal.":
-            mS "No worries."
-            mS "In my line of work it's a standard form of \"hello.\""
+        #"No big deal.":
+        #    mS "No worries."
+        #    mS "In my line of work it's a standard form of \"hello.\""
         "Thanks for the apology.":
+            $ macHope += 1
+            $ csEngagement += 1
             mS "Things were a bit tense. It happens." 
             mS "Thanks for the apology."
+            cS "I appreciate you taking it so well."
+            cS "You must have questions."
         "I would have done the same thing.":
+            $ macHope += 1
+            $ kcEngagement += 1
             mS "I would have done the same thing in your position."
             mS "Being careful keeps you alive."
-    cS "I appreciate you taking it so well."
-    cS "You must have questions."
+            cS "I appreciate you taking it so well."
+            cS "You must have questions."
+        "I still don't trust you.":
+            $ macPessimism -= 1
+            $ pdEngagement += 1
+            mS "It certainly didn't lay the best foundation for trust."
+            mS "You can start making it up to us by answering my questions."
+            cS "I understand. You must have several."
     enS "Plenty."
     pS "A whole heap."
     cS "Ask away."
     "Jennica and Teresa turn to me."
-    hide jennica with dissolve
-    hide teresa with dissolve
-    show mac stream neutral at stream_right_mac with dissolve
-    show vega at stream_left with dissolve
+    #hide jennica with dissolve
+    #hide teresa with dissolve
+    show mac stream neutral at stream_right5mac with dissolve
+    #show vega at stream_left with dissolve
     "What do I want to know?"
     jump vig4_sc2_6
 
@@ -957,21 +974,32 @@ label vig4_sc2_6():
             menu:
                 macS "Captain?"
                 "Like hell you are!":
+                    $ outlaw += 1
+                    $ pdEngagement += 1
+                    $ kcEngagement += 2
+                    $ csEngagement += 1
+                    $ engineerApproval += 1
+                    $ pilotApproval += 1
                     mS "Like hell you're taking him without us!"
-                    vS "This was always the mission, all of you knew that when you accepted it."
-                    enS "This family doesn't break up."
-                    pS "Seconded."
+                    pS "This family doesn't break up."
+                    enS "Seconded."
                     macS "Thirded!"
-                "I guess this was part of the plan.":
+                    vS "This was always the mission, all of you knew that when you accepted it."
+                "This was always part of the plan.":
+                    $ marshal += 1
+                    $ csEngagement += 1
+                    $ kcEngagement -= 2
+                    $ pdEngagement -= 1
+                    $ engineerApproval += 1
+                    $ pilotApproval -= 1
                     "I take a long breath."
                     "The stale atmosphere sticks in my throat. But I hold steady."
                     mS "Teresa, Jennica, this was always part of the plan, remember?" 
-                    mS "When we first took the mission, we knew this was how it would end."
                     pS "Yeah, but..."
                     enS "I guess I wanted to forget that part."
             cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
-            cS "After all you have been through, everything that has gone wrong, they might listen."
+            cS "After all you have been through, they might listen."
             vS "Pops can be very persuasive. Trust him."
             cS "It will take some time to reach the Dragonflies and the festival will begin shortly."
             cS "This is a true achievement. You should go and celebrate."
@@ -980,10 +1008,14 @@ label vig4_sc2_6():
             menu:
                 "Coil stands and reaches out a hand."
                 "Shake his hand.":
+                    $ csEngagement += 1
+                    $ kcEngagement -= 1
                     "I stand and shake his hand."
                     "Coil nods at me."
                     cS "I'll do my best, I promise."
                 "Turn away.":
+                    $ kcEngagement += 1
+                    $ csEngagement -= 1
                     "I stand and turn to look at my crew."
                     mS "Come on, let's see what this festival is like."
                     "Coil lets his hand fall and sighs." 
@@ -1007,7 +1039,7 @@ label vig4_sc3_1():
     "I stand on the periphery, silently watching as MAC roves from group to group, introducing himself to new people."
     "Maybe, making new friends."
     vS "Hey, Moze."
-    show vega at stream_center with dissolve
+    show vega stream neutral at stream_center with dissolve
     vS "Having a good time?"
     menu:
         vS "Having a good time?"
@@ -1025,7 +1057,7 @@ label vig4_sc3_1():
             mS "About a lot of things."
     vS "I know you're worried about what's next for MAC. You have every right to be."
     vS "But it's a festival! When was the last time you celebrated something?"
-    mS "I can't remember."
+    mS "I don't know."
     vS "Then we should change that."
     vS "Come on, have some fun with the people who matter most!"
     "Maybe Vega's right. Even on Akar, we weren't really able to let our guard down."
@@ -1037,7 +1069,7 @@ label vig4_sc3_1():
     show teresa stream neutral at stream_right with dissolve
     "Teresa is sitting at a table where people are talking animatedly. Knowing her, it's some sort of gambling racket."
     show jennica stream neutral at stream_left with dissolve
-    "Jennica is inside a store on the outskirts of the plaza. It looks like she's watching some screen intently."
+    "Jennica is inside a building on the outskirts of the plaza. It looks like she's watching a screen intently."
     "Who should I go to?"
     menu:
         "Who should I go to?"
@@ -1047,22 +1079,26 @@ label vig4_sc3_1():
             jump vig4_sc3_2_teresa
         "Vega.":
             jump vig4_sc3_2_vega
+    #Could have someone in chat bring up how there's no Allistar romance option cause he's dead
 
 label vig4_sc3_2_vega():
     hide jennica with dissolve
     hide teresa with dissolve
     $ vegaDate = True
+    $ kcEngagement += 2 #Vega is effectively the "neutral" romance option with no viewer characters disliking it
+    $ pdEngagement += 1
+    $ csEngagement += 1
     mS "Actually, I'd like to get to know you better. How about you show me around?"
     vS "Oh! I would love to!"
     vS "I know just the thing!"
-    "Vega turns around and gestures to the other side of the plaza, taking off into the crowd."
+    "Vega turns  and takes off into the crowd."
     "I follow close behind, weaving around groups of people and trying not to step on kids as they careen through the plaza."
-    vS "Here. Hope it's not too on the nose."
-    "The stall in front of us has four zap rifles laying on a counter."
+    vS "Here! Hope it's not too on the nose."
+    "The stall in front of us has four toy rifles laying on a counter."
     "A group of four teens in front of us pick them up, aiming down range."
     "A wood display of Polaris stands about ten feet back."
     "The operator pushes a button and a series of cardboard cutouts begin cycling between the houses and hills."
-    "Images in the likeness of BigCorp enforcers, dropships, and tanks."
+    "Cardboard cutouts in the likeness of BigCorp enforcers, dropships, and tanks."
     "The four teens shout as they fire short sparks off in rapid succession at the targets."
     vS "What do you think? Up for a round, just you and me?"
     menu:
@@ -1075,7 +1111,7 @@ label vig4_sc3_2_vega():
             vS "And you think we can't hold our own just cause we're a small town?"
             vS "I think you'll be in for a surprise."
     "The teens in front of us finish up and wander off."
-    vS "Come on, grab a rifle. I want to see what the Captain of the Oakley is made of."
+    vS "Come on, grab a rifle. I want to see what you're made of."
     "Vega grabs one of the guns and aims it down range."
     "The rifle is light in my hands. Almost too light for comfort."
     menu:
@@ -1083,11 +1119,11 @@ label vig4_sc3_2_vega():
         "Inspect the sights.":
             $ vig4_checkSights = True
             "I check the sights quickly."
-            "They're not perfect. I'll have to aim up and to the left for accuracy."
+            "They're not perfect. I'll have to aim up and to the left for accurate shots."
         "Inspect the trigger.":
             $ vig4_checkTrigger = False
             "I lightly tap the trigger."
-            "It's quick. There's no recoil. I can fire this very quickly."
+            "It has almost no resistance. There's no recoil. I can fire this very quickly."
     "Before I can do anything else, the operator pulls a lever and the targets start their cycle."
     "Vega gets the first shot off, knocking an enforcer down, but I quickly seat the rifle into my shoulder and go to work."
     "I knock down the next two targets, but then Vega hits one of the ships that appear above the town."
@@ -1098,16 +1134,21 @@ label vig4_sc3_2_vega():
     else:
         "But she's not faster than me, especially with this light trigger."
         "The sound of our rifles overlap each other as wooden targets slam down in rapid succession."
-    "The cycle of targets is winding down. I can tell I'm in the lead."
+    "The cycle of targets is winding down. I'm in the lead."
     "I risk a glance to my side."
     "Vega is alert and focused. Sweat drips from her forehead. She really wants to win this."
     menu:
         "Vega is alert and focused. Sweat drips from her forehead. She really wants to win this."
         "Let Vega win.":
+            $ csEngagement += 1
+            $ kcEngagement += 1
+            $ pdEngagement -= 1
             $ vig4_vegaVictory = True
             "As the final targets pop into position, I shift my aim just to the side."
             "My shots go wide as Vega's find their home."
         "Hit the final targets.":
+            $ pdEngagement += 1
+            $ cSEngagement -= 1
             $ vig4_vegaVictory = False
             "As the final targets pop into position, I aim true."
             "My shots hit the targets just before Vega's."
@@ -1120,21 +1161,22 @@ label vig4_sc3_2_vega():
         vS "Ahhh damn, if I just got those last ones I would have beat you."
     mS "Well done, it was an impressive showing!"
     vS "Thanks! That means a lot coming from you."
-    "We put the zap rifles back on the counter and step aside to let new players take their position."
+    "We put the toy rifles back on the counter and step aside as new players take their positions."
     jump vig4_sc3_2_vega_2
 
 label vig4_sc3_2_vega_2():
-    "We step back toward the center of the plaza."
-    "Vega stops at the periphery, looking over the crowd."
-    "She isn't scanning for anything or anyone in particular."
-    "She's just...looking. Taking it all in."
-    "Then I picture the ready warrior I just competed against in the carnival game."
-    "Vega hasn't spent her whole life on Polaris. She has experience with the rest of the galaxy."
+    "We walk back toward the center of the plaza, but Vega stops at the periphery, looking over the crowd."
+    "She isn't scanning for anything or anyone in particular. She's just taking it all in."
+    "I picture the ready warrior I competed against in the carnival game."
+    "Vega hasn't spent her whole life on Polaris." 
+    "She clearly has experience with the rest of the galaxy. And with the violence that goes with it."
     "Should I say something?"
     menu:    
         "Should I say something?"
         "Do you like living here?":
-            mS "Hey, Vega, do you like living on Polaris?"
+            $ csEngagement += 1
+            $ kcEngagement += 1
+            mS "Vega, do you like living on Polaris?"
             "She smiles, still keeping her gaze on the festival."
             vS "It has its charm."
             vS "Getting to work with Coil in peace and quiet has been a dream come true."
@@ -1163,19 +1205,21 @@ label vig4_sc3_2_vega_2():
                             mS "I'd rather have tough nights' sleep and excitement than monotonous stability."
                             vS "I don't know that those are mutually exclusive, but I'm glad you've found the life that's right for you."
                 "At least there's some kind of stability.":
-                    mS "Hopping from planet to planet all the time...it gets tough. Draining."
+                    mS "Hopping from planet to planet all the time...it gets tough."
                     mS "You've been able to build something here. That's harder to do up there."
                     vS "I'm grateful you can recognize that."
                     vS "Coil did most of the work to start. I try to help where I can."
                     "Vega looks up at the night sky. It's flooded with twinkling starlight."
                     vS "But I can't help it. I want to be doing more."
         "Have you killed anyone before?":
+            $ kcEngagement += 1
+            $ pdEngagement += 1
             mS "This question might be out of the ordinary, but I'm curious about something."
             vS "Please, fire away."
             mS "Have you ever killed anyone before."
-            "Vega looks at me and pauses for a moment. Then she breaks into laughter."
-            vS "So direct! An outlaw's priority I see."
-            "She steadies herself and shrugs slightly."
+            "Vega looks at me, her eyebrows raised in shock. Then she breaks into laughter."
+            vS "So direct! An outlaw's priority I take it."
+            "She steadies herself and shrugs."
             vS "I have, yeah. I'm not proud of it."
             mS "With the Dragonflies?"
             vS "No. It was before we got in contact with them."
@@ -1192,19 +1236,23 @@ label vig4_sc3_2_vega_2():
                     vS "The adventure? Less so."
                     "Vega points a finger at me like it's a gun."
                     vS "But don't worry, as you witnessed, I've kept my aim sharp these past years."
-                    "She moves her hand as if firing her finger gun."
+                    "She moves her hand as if firing a gun."
                     menu:
-                        "She moves her hand as if firing her finger gun."
+                        "She moves her hand as if firing a gun."
                         "Don't react.":
+                            $ pdEngagement += 1
+                            $ kcEngagement -= 1
                             mS "You missed."
                             "Vega shrugs."
                             vS "How do you know? Maybe it's a boomerang bullet."
                             vS "It could be coming back around for you any second."
                         "Act like you get hit.":
+                            $ kcEngagement += 1
                             "I place a hand to my chest and lean my head back."
                             mS "Ughhhh, right in the heart."
                             vS "Like I told you. Sharp."
                 "Finding peace is hard.":
+                    $ csEngagement += 1
                     mS "It's hard to find a place where you can leave that behind."
                     vS "True, it's why I'm grateful we're here. Even if it can get boring."
         "Don't say anything.":
@@ -1218,8 +1266,10 @@ label vig4_sc3_2_vega_2():
         "I enjoyed it too.":
             mS "I appreciate that. And I enjoyed fighting alongside a Dragonfly."
             "Vega smiles and blushes."
-            vS "You should probably go check in with your crew, Coil might have news."
         "Think about joining us?":
+            $ kcEngagement += 1
+            $ pdEngagement += 1
+            $ csEngagement += 1
             mS "What do you think about joining us? The Oakley always has room for a sharp new recruit."
             "Vega's eyes go wide for an instant."
             vS "Bahahaha!"
@@ -1241,13 +1291,14 @@ label vig4_sc3_2_vega_2():
 
 label vig4_sc3_2_jennica():
     $ jennicaDate = True
+    $ csEngagement += 2
+    $ pdEngagement -= 1
+    $ kcEngagement -= 1
     hide vega with dissolve
     hide teresa stream neutral with dissolve
     show jennica stream neutral at stream_center with move
     "Crossing the plaza, I step up next to Jennica."
-    "She doesn't even notice me."
-    "Her eyes are glued to watching a screen in front of her."
-    "I look past her and inspect the screen a bit closer."
+    "She doesn't even notice me. Her eyes are glued to watching a screen in front of her."
     "It's an arcade game where two spaceships dogfight with one another."
     "There are two controllers connected to the game."
     "She's completely absorbed by the game, even though she isn't playing it."
@@ -1260,25 +1311,23 @@ label vig4_sc3_2_jennica():
         "Clear throat.":
             mS "Uhem."
             "As I clear my throat, Jennica snaps to attention."
-            pS "Oh, sir! I mean, Cap! You're lool--How is your night faring, Moz--Cap?"
-    mS "You ok, Brown? You're looking a bit like a zombie with that screen."
+            pS "Oh, sir! I mean, Cap! You're look--How is your night faring, Moz--Cap?"
+    mS "You ok, Jenn? You're looking a bit obsessed with that screen."
     pS "Yeah, I'm fine, Cap. It's just--"
     pS "You wouldn't happen to recognize this game, would you?"
     menu:
         pS "You wouldn't happen to recognize this game, would you?"
         "I've never played a video game before.":
+            $ pdEngagement += 1
             mS "Jenn, you know I've never touched one of these things before."
             pS "Right. But this one's special."
             pS "This is {i}Star Battler IV: Destructostar{i}."
         "Of course!":
+            $ kcEngagement += 1
             mS "Of course I recognize it. It's {i}Star Battler IV: Destructostar{i}."
             pS "Exactly! Wow, I'm a little surprised you knew that, Cap."
     pS "It's an old school arcade classic. There was one in my hometown when I was a kid."
     pS "No joke, this game taught me how to be a pilot."
-    pS "You remember that maneuver I pulled during the job on Cortilan Alpha?"
-    mS "The spinning loop de loop corkscrew?"
-    mS "I think the cockpit is still stained from mine and Teresa's reaction to that one."
-    pS "Yeah, well I learned it playing this game!"
     pS "Never thought I'd see it again."
     menu:
         pS "Never thought I'd see it again."
@@ -1300,7 +1349,7 @@ label vig4_sc3_2_jennica():
     mS "Bring it, Brown."
     pS "It's already brought, Cap."
     show jennica stream neutral at stream_left with move
-    "We both press the start button on our respective controllers."
+    "We press the start button on our respective controllers."
     "The screen fades into a field of stars."
     "Narration describes the \"Destructostar\" tournament, a battle across the galaxy to discover the number one starship pilot."
     "Then the game begins."
@@ -1312,8 +1361,7 @@ label vig4_sc3_2_jennica():
     menu:
         "The radar on the side of the screen shows a blip barreling down at me. Jennica is playing this aggressively."
         "Dodge the incoming attack.":
-            "It's a bad spot, I have to pull away and find a better position to return fire from."
-            "Jennica lands a couple shots on me before I squirrel away."
+            "It's a bad spot, I have to pull away and find a better position to return fire."
             pS "On your ass, Cap."
             "Jennica is still putting pressure on me."
             menu:
@@ -1322,33 +1370,38 @@ label vig4_sc3_2_jennica():
                     mS "Don't get too close."
                     "I drop a blast wave charge, detonating it behind my ship."
                     pS "Shit!"
-                    "Jennica has to peel away from the pursuit."
+                    "Jennica has to peel off from the pursuit."
                     "I pull up and see Jennica moving away."
                     menu:
                         "I pull up and see Jennica moving away."
                         "Make an aggressive attack.":
+                            $ kcEngagement -= 1 #could have KitCat "backseat gaming" cause she played the Jennica romance route
+                            $ csEngagement -= 1
                             "Pressing my advantage, I drive my ship onto her tail as she drops into a barrel roll."
                             pS "Damn, Cap, looks like you got me."
                             mS "Only a matter of time."
                             pS "Too bad looks can be deceiving."
                             "As the words escape her mouth, I see it out of the corner of my eye."
-                            "Delayed blast charges. And they're all around my ship."
+                            "Delayed blast charges. They're all around my ship."
                             mS "Oh god damn it."
                             "Jennica pushes a button on the side of her controller."
                             "The charges around me detonate and my screen goes completely white."
                             "\"Player One Wins\" flashes across both game screens."
                             pS "Ooooh yeah! Just how I drew it up!"
-                            pS "I mean, you made me sweat there a bit. But I felt locked in that whole time."
+                            pS "You made me sweat there a bit. But I felt locked in that whole time."
                             mS "You're one hell of a pilot, Jenn."
                             "I extend my hand toward her."
                             "She shakes it firmly."
                             pS "Thanks, Cap. It was a good game."
                             mS "It was. Well played."
                         "Get ahead and set a trap.":
+                            $ kcEngagement += 1
+                            $ csEngagement += 2
+                            $ pilotApproval += 1
                             "I push my ship forward, trying to get ahead of Jennica."
                             pS "Oh no, I see what you're going for."
                             "She starts performing various maneuvers, but every time she tries to make a move, she just makes it easier for me to overtake her."
-                            "Finally, I see my chance."
+                            "I see my chance."
                             "I activate the extra boost on my ship, and thrust ahead of her ship, letting a blast charge slip just as I do so."
                             pS "Shit!"
                             "The charge falls alongside Jennica's ship, then detonates."
@@ -1372,6 +1425,10 @@ label vig4_sc3_2_jennica():
                     menu:
                         "Peeling up out of the corkscrew, Jennica and I are heading directly toward each other."
                         "Head on attack.":
+                            $ csEngagement += 2
+                            $ pdEngagement += 1
+                            $ kcEngagement -= 2
+                            $ pilotApproval += 1
                             "Pushing my thrusters full throttle, I lay on the guns."
                             pS "Oh so we're doing it this way?"
                             mS "You know it!"
@@ -1385,6 +1442,8 @@ label vig4_sc3_2_jennica():
                             mS "Good game."
                             pS "Yeah, well played."
                         "Bait her in.":
+                            $ kcEngagement -= 1
+                            $ csEngagement -= 1
                             "I turn my ship around and try to bait her in."
                             pS "Running scared, Cap?"
                             mS "Just waiting for my moment."
@@ -1396,10 +1455,10 @@ label vig4_sc3_2_jennica():
                             "The charge detonates, and my screen goes completely white."
                             "\"Player One Wins\" flashes across both game screens."
                             pS "Ooooh yeah! Just how I drew it up!"
-                            mS "Like I say back on the Oakley: you're one hell of a pilot, Jenn."
+                            mS "Damn! You're one hell of a pilot, Jenn."
                             "I extend my hand toward her."
                             "She shakes it firmly."
-                            pS "Maybe you should take the helm next time we're in a tight spot."
+                            pS "You're not so bad yourself. Maybe you should take the helm next time we're in a tight spot."
                             mS "Think I'll stick to the games for now."
                             pS "Hahaha alright. It was a good game."
                             mS "It was. Well played."
@@ -1411,6 +1470,10 @@ label vig4_sc3_2_jennica():
             menu:
                 "My shields are low, but she's taken some hits too. I'm at a disadvantageous position."
                 "Head on attack.":
+                    $ csEngagement += 2
+                    $ pdEngagement += 1
+                    $ kcEngagement -= 2
+                    $ pilotApproval += 1
                     "Pushing my thrusters full throttle, I lay on the guns."
                     pS "Oh so we're doing it this way?"
                     mS "You know it!"
@@ -1424,6 +1487,8 @@ label vig4_sc3_2_jennica():
                     mS "Good game."
                     pS "Yeah, well played."
                 "Bait her in.":
+                    $ kcEngagement -= 1
+                    $ csEngagement -= 1
                     "I turn my ship around and try to bait her in."
                     pS "Running scared, Cap?"
                     mS "Just waiting for my moment."
@@ -1438,6 +1503,7 @@ label vig4_sc3_2_jennica():
                     mS "Like I say back on the Oakley: you're one hell of a pilot, Jenn."
                     "I extend my hand toward her."
                     "She shakes it firmly."
+                    pS "You're not so bad yourself. Maybe you should take the helm next time we're in a tight spot."
                     pS "Maybe you should take the helm next time we're in a tight spot."
                     mS "Think I'll stick to the games for now."
                     pS "Hahaha alright. It was a good game."
@@ -1445,7 +1511,7 @@ label vig4_sc3_2_jennica():
     jump vig4_sc3_2_jennica_2
 
 label vig4_sc3_2_jennica_2():
-    "The screen goes back to its repetitive trailer montage as we step back out into the plaza."
+    "The screen goes back to its repetitive trailer montage as we step back into the plaza."
     pS "Wow, that was a trip down memory lane. I need a second to catch my breath."
     "Jennica steps to the side of the store and leans back against the wall."
     "We're both quiet for sometime."
@@ -1469,7 +1535,7 @@ label vig4_sc3_2_jennica_2():
     "Jennica clenches her fist."
     pS "I made it. It wasn't handed to me, it didn't just happen. I worked my ass off."
     pS "And I'm a damn good pilot now. His words shouldn't matter."
-    pS "But whenever I think of them, all I want to do is go back in time and kick that guy's ass."
+    pS "But whenever I remember what he said, all I want to do is go back in time and kick that guy's ass."
     "Jennica's whole body relaxes."
     "She looks to me and our eyes lock."
     menu:
@@ -1489,15 +1555,18 @@ label vig4_sc3_2_jennica_2():
                     pS "Realize what, Cap?"
                     mS "I love you."
                     if pilotApproval > 5:
+                        $ kcEngagement -= 2
+                        $ csEngagement += 3
+                        $ pdEngagement -= 1
                         $ jennicaRomance = True
                         pS "Oh!"
                         "Jennica's face goes entirely red."
                         pS "Wow, I, uh, wasn't expecting that."
                         mS "In a bad way?"
                         pS "Nononono, in a good way. Honestly, in the best possible way."
-                        pS "I uh, I think that--god why is this so hard!?"
+                        pS "I uh, I think that--why is this so hard!?"
                         menu:
-                            pS "I uh, I think that--god why is this so hard!?"
+                            pS "I uh, I think that--why is this so hard!?"
                             "Kiss her":
                                 "I put a finger to her lips."
                                 mS "Shhhh"
@@ -1538,6 +1607,9 @@ label vig4_sc3_2_jennica_2():
                                 "I smile to myself as I return to the festival."
                                 hide jennica with dissolve
                     else:
+                        $ kcEngagement += 1
+                        $ csEngagement -= 1
+                        $ pdEngagement += 1
                         pS "Oh, that's not what I was expecting."
                         "My heart drops."
                         mS "What do you mean?"
@@ -1545,7 +1617,7 @@ label vig4_sc3_2_jennica_2():
                         pS "I just...I didn't think that thought ever crossed your mind."
                         pS "I don't really know how to respond."
                         mS "So, you don't feel the same?"
-                        pS "Jennica takes a long moment. She looks deeply into my eyes."
+                        "Jennica takes a long moment. She looks deeply into my eyes."
                         pS "I'm sorry. But I don't."
                         mS "Okay..."
                         pS "..."
@@ -1563,6 +1635,8 @@ label vig4_sc3_2_jennica_2():
                         "The two of us hug, awkwardly, then I step away back to the center of the plaza."
                         hide jennica with dissolve
                 "Let's get back to the party":
+                    $ csEngagement -= 2
+                    $ pdEngagement -= 1 #PickledDragons probably doesn't respect starting to go for the romance and then backing out
                     mS "I should check on the party. Maybe Coil has some updates."
                     "Jennica freezes for a moment."
                     "Then she stands up from the wall."
@@ -1573,6 +1647,8 @@ label vig4_sc3_2_jennica_2():
                     "The two of us hug, then I step away back to the center of the plaza."
                     hide jennica with dissolve
         "Screw that guy.":
+            $ csEngagement -= 2
+            $ kcEngagement += 1
             mS "Screw that guy. He's probably dead now anyway."
             pS "Bahahaha"
             pS "Yeah, probably blew up in an asteroid belt crash or something."
@@ -1585,44 +1661,30 @@ label vig4_sc3_2_jennica_2():
 
 label vig4_sc3_2_teresa():
     $ teresaDate = True
+    $ kcEngagement += 2
+    $ pdEngagement += 1
+    $ csEngagement -= 1
     hide vega with dissolve
     hide jennica with dissolve
     show teresa stream neutral at stream_center with move
     "I wind my way through the crowd to stand next to Teresa."
     "She and three other people are watching each other intently, holding cups upside down on the table."
-    "The one sitting on Teresa's left lifts an edge of the cup barely off the table and peeks underneath."
-    townguy "Nine 3's."
-    "There's a loud sigh from the table."
-    "Teresa takes a look under her cup."
-    "I say nothing, observing over Teresa's shoulder."
-    "Teresa looks back to everyone."
-    show teresa stream happy
-    enS "No chance. Call!"
-    "Each person at the table lifts their cup at the same time, revealing five dice each."
-    "They begin taking some of the dice out of their sets, the ones showing 3's."
-    "Teresa doesn't have any 3's in her set."
-    "The group tallies them togther."
-    "There are seven 3's total."
+    "The one sitting on Teresa's left throws a scrunched up bill on the table and stands up."
     townguy "Damn it!"
-    "The townsperson throws a scrunched up bill on the table."
+    show teresa stream happy
     "Teresa shrugs."
     enS "You should've called."
-    townguy "Guess so. Alright, I'm out. Getting too rich for my blood."
-    "The man stands and leaves."
-    "Teresa glances up at me."
-    enS "Oh Captain, didn't see you there. Want to join for a game?"
+    townguy "Apparently. Alright, I'm out. Getting too rich for my blood."
+    "As the man leaves, Teresa glances up at me."
+    enS "Oh Captain, perfect timing! Want to join for a game?"
     mS "Sure."
     "I take a seat."
     mS "But I don't really know what's going on here."
-    enS "It's a game these lovely patricians have just explained to me."
     enS "It's called Liar's Dice."
-    enS "You see, we all have five dice that we roll underneath our cups."
+    enS "We all have five dice that we roll underneath our cups. We can look at our own cups at any time."
     enS "Then, one person identifies how many of one number they think are under all the cups."
-    enS "So you could say one 2, or four 5's."
-    enS "You can always look at your own dice, and then you have to gamble with the probabilities of what the other players have."
-    enS "then the next person can increase the number, or \"call.\" to make everyone reveal their dice."
-    enS "If there are fewer than the number previously said, the person who said that number loses."
-    enS "If there are the same number or more, than the person who \"called\" loses."        
+    enS "The next person can increase the number, or \"call\" to make everyone reveal their dice."
+    enS "We tally up all the dice of that one number, and if there are fewer than the amount that was called, then the person who called wins."
     enS "You'll pick it up as you go."
     enS "First, take all those dice, jumble them up in a cup, and then slam it back on the table."
     "The wooden cup makes a deep \"thunk\" as the dice rattle around underneath."
@@ -1630,7 +1692,7 @@ label vig4_sc3_2_teresa():
     "The person opposite me starts."
     diceP1 "three 4's."
     diceP2 "Only three, come on Alex, that's not even a real bet!"
-    diceP1 "She's been running the table with us, Adam, what do want me to do?"
+    diceP1 "She's running the table with us, Adam, what do want me to do?"
     diceP2 "Not let her get in your head man."
     "Teresa glances at me and grins."
     diceP2 "You know what, let's make this interesting, six 4's."
@@ -1667,17 +1729,15 @@ label vig4_sc3_2_teresa():
     "We sit at the table for several more rounds."
     "The back and forth continues as I start to get a handle on the game."
     "I win some, I lose some."
-    "We even get Teresa a couple of times. But rarely."
-    "Then she goes to pick up her cup."
+    "Then Teresa picks up her cup with a bit more of a flourish."
     enS "Alright gang, I think this is my last round."
     diceP1 "Me too."
     diceP2 "Same."
-    mS "Winner take all then."
+    mS "Winner take all then?"
     "I make eye contact with Teresa."
     mS "At least in terms of pride."
     enS "Why don't we switch up the direction. Give Captain the chance to call on me before the end."
     "We all nod in agreement, and throw our dice."
-    "Shake, rattle, thunk."
     "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
     "Teresa starts."
     enS "Four 2's."
@@ -1685,6 +1745,8 @@ label vig4_sc3_2_teresa():
     menu:
         "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
         "Call.":
+            $ kcEngagement -= 1
+            $ csEngagement -= 1
             mS "Why not, let's call it."
             "We all lift our cups."
             "Teresa has five 2's."
@@ -1705,13 +1767,15 @@ label vig4_sc3_2_teresa():
             menu:
                 "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
                 "Call.":
+                    $ kcEngagement += 2
+                    $ pdEngagement += 1
                     mS "Bullshit, I call."
                     "We all lift our cups."
                     "Teresa has five 2's."
                     show teresa stream shock
                     "No one else has any."
                     "Teresa loses."
-                    enS "No one has any other 2's!"
+                    enS "No one has any other 2's!?"
                     diceP2 "Yes!"
                     diceP1 "Ooooh wow, so she could've called me."
                     mS "Tough luck."
@@ -1728,13 +1792,14 @@ label vig4_sc3_2_teresa():
                             mS "Losses happen Teresa."
                             mS "You can't win everything."
                             show teresa stream neutral
-                            enS "I thought I had more control over that situation than I did."
+                            enS "I know, I just thought I had more control over that situation than I did."
                             mS "So what?"
                             mS "We've been in those kinds of situations before. Hell, I can think of ten in the last two weeks."
                             mS "It doesn't help to dwell on things that are out of our control."
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
                         "Probability isn't certainty.":
+                            $ engineerApproval += 1
                             mS "Probabilities are certainties."
                             mS "Anything can happen."
                             mS "And sometimes, a lot of times, luck is more important than skill."
@@ -1743,6 +1808,8 @@ label vig4_sc3_2_teresa():
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
                 "Raise.":
+                    $ kcEngagement -=1
+                    $ pdEngagement -=1
                     mS "Why not? Ten 2's."
                     diceP2 "Nope, gotta call that."
                     "We all lift our cups."
@@ -1771,6 +1838,7 @@ label vig4_sc3_2_teresa():
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
                         "Probability isn't certainty.":
+                            $ engineerApproval += 1
                             mS "Probabilities are certainties."
                             mS "Anything can happen."
                             mS "Sometimes, a lot of times, luck is more important than skill."
@@ -1816,6 +1884,9 @@ label vig4_sc3_2_teresa_2():
                     enS "What?"
                     mS "I love you, Teresa."
                     if engineerApproval > 5:
+                        $ csEngagement -= 2
+                        $ kcEngagement += 3
+                        $ pdEngagement -= 1
                         $ teresaRomance = True
                         "Teresa face is immediately bright red."
                         enS "What?"
@@ -1861,6 +1932,9 @@ label vig4_sc3_2_teresa_2():
                                 "She's still looking at the exposed dice, but now with a massive smile on her face."
                                 "I smile to myself as I return to the festival."
                     else:
+                        $ kcEngagement -= 1
+                        $ csEngagement += 1
+                        $ pdEngagement += 1
                         enS "Oh! That's...not what I was expecting."
                         "My heart drops a little."
                         mS "What do you mean?"
@@ -1881,6 +1955,8 @@ label vig4_sc3_2_teresa_2():
                         mS "Yeah."
                         "I turn away from Teresa and back to the festival."            
                 "I don't know":
+                    $ kcEngagement -= 2
+                    $ pdEngagement -= 1
                     mS "I don't think it's for me to say, Resa."
                     mS "That's something you have to figure out for yourself."
                     "Teresa sighs and hangs her head slightly."
@@ -1893,6 +1969,8 @@ label vig4_sc3_2_teresa_2():
                     enS "And thanks for the conversation, Captain. I really needed it."
                     "I turn away from Teresa and back to the festival."
         "Who cares about probabilities.":
+            $ kcEngagement -= 2
+            $ csEngagement += 1
             mS "All those alternate timelines you're imagining: screw 'em."
             mS "What matters is what you've decided."
             mS "You're an incredible outlaw, crew member, and friend."
@@ -1937,8 +2015,8 @@ label vig4_sc3_3():
     hide mac with dissolve
     "I chuckle a bit to myself."
     cS "He has many more stories like that one."
-    show coil at stream_center with dissolve
-    "Coil steps up next to me. His eyes on MAC."
+    show coil stream neutral at stream_center with dissolve
+    "Coil steps up next to me. His eyes remain on MAC."
     cS "I got a chance to speak with him a little earlier."
     if marshal > outlaw:
         cS "All he seems to talk about his how heroic you and your crew are."
@@ -1949,8 +2027,12 @@ label vig4_sc3_3():
     cS "Your influence on him has been immense."
     menu:
         cS "Your influence on him has been immense."
-        "I wish I didn't.":
+        "I wish it wasn't.":
             mS "I wish I didn't. He deserves better than the life of an outlaw."
+            if outlaw > marshal:
+                $ outlaw -= 1
+            else:
+                $ marshal += 1
             if marshal > outlaw:
                 cS "I understand."
                 cS "I wish that Vega could use her mind to make things other than tools for war."
@@ -1978,6 +2060,10 @@ label vig4_sc3_3():
                         cS "And {i}that{/i} is what worries me."
                         "Coil sighs."
         "That's a good thing.":
+            if outlaw > marshal:
+                $ outlaw += 1
+            else:
+                $ marshal += 1
             mS "He was alone when we found him. Someone had to show him how to survive."
             cS "He has to know how to live as well."
             menu:
@@ -2013,6 +2099,9 @@ label vig4_sc3_3():
     menu:
         cS "I'm sorry."
         "Like hell this is happening!":
+            $ kcEngagement += 1
+            $ csEngagement -= 1
+            $ pdEngagement += 1
             mS "Like hell, Coil!"
             mS "You think I'm going to let you rip my family apart like this!"
             cS "He's not \"your\" family."
@@ -2025,6 +2114,9 @@ label vig4_sc3_3():
             else:
                 cS "You are dangerous. And you have to leave."
         "I understand.":
+            $ csEngagement += 1
+            $ kcEngagement -= 1
+            $ pdEngagement -= 1
             "I take a deep breath and exhale slowly."
             "In my mind's eye I see MAC, hiding behind the console where his creator's dead body slumps."
             "Lost, confused, scared."
@@ -2054,16 +2146,14 @@ label vig4_sc3_3():
             hide coil with dissolve
             "With a heavy sigh, I turn to look at MAC."
     "The crowd around him is dissipating."
-    "I step toward the small droid."
     jump vig4_sc3_5
 
 label vig4_sc3_5():
     show mac stream neutral at stream_center_mac with dissolve
-    "MAC notices me almost as soon as I take a step."
+    "MAC notices me almost as soon as I turn toward him."
     macS "Moze! Isn't this wonderful!"
     mS "MAC, we should talk."
     macS "Of course, that would be lovely. Shall we take a walk around the plaza?"
-    mS "Yeah, that sounds good."
     "The two of us head to the outskirts of the plaza."
     "Every step feels heavy. As if my boots are filled with lead."
     menu:
@@ -2077,32 +2167,33 @@ label vig4_sc3_5():
             "There's a brief hum from MAC, as if considering his response."
             macS "It is an interesting place."
     macS "It does not appear like any other planet we have visited."
-    mS "How so?"
     macS "No one has tried to kill our crew or steal from us."
-    macS "There appear to be no skeeves in sight."
     macS "The people here seem...what's the right word? Is it \"happy?\""
     "I look over my shoulder. Even from a distance, the smiles on everyone's faces at the festival are apparent."
-    mS "Yes, MAC. That's the right word for it."
     #macS "They were all so interested in our adventures. I think I impressed them with our stories."
     #mS "I'm sure you impressed them yourself"
     macS "What do you think of this place, Captain?"
     menu:
         macS "What do you think of this place, Captain?"
         "It's an illusion.":
+            $ macPessimism += 1
             mS "I think it's fake, MAC."
             mS "A bunch of people acting like they have a higher purpose, but they've forgotten what the galaxy is really like."
         "It's a haven.":
+            $ macHope += 1
             mS "I think it's a haven, MAC."
             mS "Somewhere people can be genuinely happy, where they have a purpose."
     "MAC doesn't respond immediately."
     macS "Moze, do you know what our purpose is?"
-    mS "It was to keep you safe. To get you here."
-    macS "Yes. But now what?"
-    macS "That mission is accomplished."
+    mS "To keep you safe. To get you here."
+    macS "Yes, but that mission is accomplished."
     macS "What do we do now?"
     menu:
         macS "What do we do now?"
         "We help others.":
+            $ csEngagement += 2
+            $ macPeace += 3
+            $ macHope += 2
             mS "I suppose our purpose is to leave the galaxy a better place than when we found it."
             macS "To help people?"
             mS "Yeah. That feels right."
@@ -2111,18 +2202,19 @@ label vig4_sc3_5():
                 macS "Did we help people?"
                 "I don't know.":
                     mS "I don't know MAC. Things are rarely that cut and dry."
-                    mS "Surely you've seen that over the past month."
                     macS "Yes, I have noticed a distinct lack of clarity in answers to my questions."
                     mS "But getting you here could change a lot of things in the galaxy."
                 "Yes.":
                     mS "I think so."
                     mS "Getting you here especially can change a lot of things in the galaxy."
                 "No.":
-                    mS "I don't think we did much."
+                    mS "I don't think so."
                     mS "But being here now, maybe you can start to change that."
         "We look out for ourselves.":
+            $ padEngagement += 2
+            $ macViolence += 3
+            $ macPessimism += 2
             mS "We take care of our own, make sure we can thrive."
-            mS "Survival is the only purpose of a species, or individual."
             macS "I see, survival, replication..."
             macS "But we have all survived. What is next?"
             menu:
@@ -2136,12 +2228,13 @@ label vig4_sc3_5():
                     mS "Whatever gives you pleasure, that's what."
                     mS "Find what you enjoy and hold tight to that, don't let anyone take it away."
                     macS "I see. It's what's known as \"hedonism,\" correct?"
-                    mS "Yeah, something like that."
+                    mS "Something like that."
                 "Make sure your family stays safe.":
                     mS "It never ends in this galaxy."
                     mS "You always have to be on your toes, protecting your family."
                     macS "I see. The fight is never over?"
-                    mS "No, it's not."
+                    mS "Never."
+    play audio "macSad.wav"
     "MAC whirs to himself."
     jump vig4_sc3_6
 
@@ -2152,8 +2245,10 @@ label vig4_sc3_6():
     menu:
         macS "We'll help build new communities for people running from BigCorp and the Alliance."
         "Sounds noble.":
+            $ macHope += 1
             mS "It sounds like a noble cause."
         "Sounds boring.":
+            $ macPessimism += 1
             mS "Sounds like it could get a bit boring."
     macS "Yes."
     "MAC freezes absolutely still."
@@ -2162,21 +2257,28 @@ label vig4_sc3_6():
     menu:
         macS "I want to stay a part of this family."
         "I can't leave him here.":
+            $ kcEngagement += 2
+            $ csEngagement -= 2
+            $ pdEngagement += 1
             "I can't leave him."
-            mS "I want that too MAC. I don't want to leave here without you."
+            mS "I don't want to leave here without you either, MAC."
             macS "Then let's leave! Right now!"
             macS "We can fight! You, me, Jennica, Teresa, we can take on anyone!"
             "My heart pounds fast."
-            mS "You're right, MAC! We need a plan."
+            mS "You're right, we need a plan!"
             cS "You do not."
-            show coil at stream_left with dissolve
+            show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
+            show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
-            show teresa stream neutral at stream_right with dissolve
+            show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
+            show dflyGuard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
+            hide dflyGuard with dissolve
+            hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is hiding behind my legs, arms wrapped around me."
@@ -2186,7 +2288,7 @@ label vig4_sc3_6():
             else:
                 macS "You have an escape plan drawn up, just in case, don't you?"
             "I shake my head."
-            mS "MAC."
+            mS "MAC..."
             macS "No!"
             if macViolence >= macPeace:
                 "MAC rolls forward, readying the pulse fire from his arm."
@@ -2200,12 +2302,14 @@ label vig4_sc3_6():
             menu:
                 macS "None of you even know what \"good\" is!"
                 "MAC, it's over.":
+                    $ kcEngagement -= 1
                     mS "MAC."
                     "I take a knee and reach a hand out to him."
                     mS "Our journey together is over."
                     "Tears, unbidden, flood my eyelids."
                     mS "It's time to say goodbye."
                 "MAC, you have to decide that now.":
+                    $ kcEngagement += 1
                     mS "MAC."
                     "I take a knee and reach a hand out to him."
                     mS "You're right. None of us know anything. We're all messed up, we're all broken."
@@ -2214,6 +2318,8 @@ label vig4_sc3_6():
                     "Tears, unbidden, flood my eyelids."
                     mS "It's time to say goodbye."
             "MAC shakes his head."
+            hide coil with dissolve
+            hide vega with dissolve
             "Coil nods at Vega, and she lets go of him."
             macS "But I don't want to."
             mS "I don't either."
@@ -2228,6 +2334,8 @@ label vig4_sc3_6():
             macS "You taught me how."
             "I don't know how long we stay there for."
             "But eventually, my arms leave his side, and he rolls back."
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
                 "Jenn puts her hand on my shoulder."
@@ -2244,12 +2352,15 @@ label vig4_sc3_6():
                 "Goodbye.":
                     mS "Goodbye, MAC."
             macS "Goodbye, Moze."
-            hide coil with dissolve
+            hide jennica with dissolve
             hide teresa with dissolve
             hide mac with Dissolve(2.0)
             jump vig4_sc4_1
         "It can't happen.":
-            "He has to stay here. It hurts, but everything would be for nothing if he stays with me."
+            $ kcEngagement -= 2
+            $ pdEngagement -= 1
+            $ csEngagement += 1
+            "He has to stay here. It hurts, but everything would be for nothing if he leaves with me."
             mS "I would like that too. But it's not in the cards."
             macS "But, why?"
             mS "They just want you. The rest of us--we're a liability."
@@ -2262,14 +2373,18 @@ label vig4_sc3_6():
             "MAC recoils a bit."
             mS "Because everything I touch is poisoned, and I can't risk that happening to you."
             cS "It's a bold admission, Moze."
-            show coil at stream_left with dissolve
+            show coil at stream_left5 with dissolve
             "Coil steps up from an alleyway."
+            show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
-            show teresa stream neutral at stream_right with dissolve
+            show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
+            show dflyGuard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
+            hide dflyGuard with dissolve
+            hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is hiding behind my legs, his arms wrapped around me."
@@ -2279,7 +2394,7 @@ label vig4_sc3_6():
             else:
                 macS "You have an escape plan drawn up, just in case, don't you?"
             "I look down and shake my head."
-            mS "MAC."
+            mS "MAC..."
             macS "No!"
             if macViolence >= macPeace:
                 "MAC rolls forward, readying the pulse fire from his arm."
@@ -2293,12 +2408,14 @@ label vig4_sc3_6():
             menu:
                 macS "None of you even know what \"good\" is!"
                 "MAC, it's over.":
+                    $ kcEngagement -= 1
                     mS "MAC."
                     "I take a knee and reach a hand out to him."
                     mS "Our journey together is over."
                     "Tears, unbidden, flood my eyelids."
                     mS "It's time to say goodbye."
                 "MAC, you have to decide that now.":
+                    $ kcEngagement += 1
                     mS "MAC."
                     "I take a knee and reach a hand out to him."
                     mS "You're right. None of us know anything. We're all messed up, we're all broken."
@@ -2308,6 +2425,8 @@ label vig4_sc3_6():
                     mS "But now, it's time to say goodbye."
             "MAC shakes his head."
             "Coil nods at Vega, and she lets go of him."
+            hide coil with dissolve
+            hide vega with dissolve
             macS "But I don't want to."
             mS "I don't either."
             "MAC rolls toward me. Slowly. Tentatively."
@@ -2321,6 +2440,8 @@ label vig4_sc3_6():
             macS "You taught me how."
             "I don't know how long we stay there for."
             "But eventually, my arms leave his side, and he rolls back."
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
                 "Jenn puts her hand on my shoulder."
@@ -2337,11 +2458,14 @@ label vig4_sc3_6():
                 "Goodbye.":
                     mS "Goodbye, MAC."
             macS "Goodbye, Moze."
-            hide coil with dissolve
+            hide jennica with dissolve
             hide teresa with dissolve
             hide mac with Dissolve(2.0)
             jump vig4_sc4_1
         "This was just a mission.":
+            $ kcEngagement -= 3 #is it possible kitcat really likes this for the drama?
+            $ csEngagement += 1
+            $ pdEngagement += 1
             $ rudeMACGoodbye = True
             "He has to stay here. I can't tell him the truth."
             mS "MAC, this was just a mission."
@@ -2358,12 +2482,16 @@ label vig4_sc3_6():
             show coil at stream_left with dissolve
             "Coil steps up from an alleyway."
             cS "But there's no need to be mean to the kid."
+            show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
-            show teresa stream neutral at stream_right with dissolve
+            show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
+            show dflyGuard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
+            hide dflyGuard with dissolve
+            hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
             "MAC is frozen still."
@@ -2390,13 +2518,20 @@ label vig4_sc3_6():
             menu:
                 cS "I'm sorry."
                 "Don't touch me.":
+                    $ pdEngagement += 1
+                    $ kcEngagement += 1
                     mS "Don't touch me."
                     mS "And stop apologizing for getting what you want."
                 "Thanks.":
+                    $ csEngagement += 1
                     mS "Thanks."
                     "The word is like a boot in my mouth."
-            "Coil stands and shakes his head."
+            "Coil shakes his head."
             cS "Let them go."
+            hide coil with dissolve
+            hide vega with dissolve
+            show jennica stream neutral at stream_left with dissolve
+            show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
                 "Jenn puts her hand on my shoulder."
@@ -2415,8 +2550,8 @@ label vig4_sc3_6():
             "He doesn't say anything."
             "MAC turns around and leaves."
             hide mac with Dissolve(2.0)
-            hide coil with dissolve
             hide teresa with dissolve
+            hide jennica with dissolve
             jump vig4_sc4_1
 
 label vig4_sc4_1():
@@ -2451,13 +2586,14 @@ label vig4_sc4_1():
     play audio "callRing.wav" volume 1.2
     "What the hell?"
     "I go over to the escape pods."
-    "There, by the one that Allistar tried to escape in a month ago, is a lone communicator, stuck under the pod."
+    "There, by the pod that Allistar tried to escape in a month ago, is a lone communicator, stuck under the pod."
     play audio "callRing.wav" volume 1.5
     "I pick it up."
     "It's Allistar's. And it's receiving a call."
     mS "Hello?"
     amaS "Still sentimental I see, Mozely."
     mS "Ama?"
+    #show ama phone neutral
     amaS "Yes, kid, I have some business to discuss with you."
     amaS "So, let's get down to--"
     menu:
@@ -2470,7 +2606,7 @@ label vig4_sc4_1():
             mS "Do you hear me? Ama \"Deadeye\" Reyes, BC's biggest lapdog and company stooge failed."
             mS "So why don't you hang up and leave me and my crew alone!?"
     "Silence on the other end."
-    amaS "Did you say that you \"handed over\" the robot to the Dragonflies?"
+    amaS "Did you say that you handed over the robot to the Dragonflies?"
     mS "Yeah, you heard me. He's safe. You and BC can cry about it together."
     amaS "Mozely, I need you to listen to me very closely."
     mS "Why? What could you possibly have to say that I would want to hear?"
@@ -2478,31 +2614,32 @@ label vig4_sc4_1():
     "I freeze."
     amaS "You want to talk now?"
     mS "What do you mean?"
-    amaS "BC knows where the Dragonflies are. They're launching an assault."
+    amaS "BC knows where the Dragonflies are. They're launching an assault on them."
     mS "Bullshit."
     amaS "Polaris."
     "I can't respond."
     amaS "They just figured it out, found some communications coming from a moon that, according to their databases, is uninhabited."
     amaS "But when they scanned for lifeforms, they found a tiny settlement with an artificial atmosphere."
-    amaS "A settlement that is about to get a visit from a BC cruiser and an army of shock troopers." 
     mS "Why are you telling me this? To gloat?"
     amaS "No. BC cut my contract. I'm dead in the water."
     amaS "This is an offer, Mozely. A second chance."
     amaS "I want that robot. I know you do too."
     mS "What do you want with him? You don't even know what he's designed to do."
     amaS "I know he has access to BC databases. And I mean {i}full{/i} access."
-    amaS "Do you know what that means?"
-    mS "Enlighten me."
-    amaS "It means we could rebuild the SnakeHawks."
+    amaS "With him, we could rebuild the SnakeHawks."
     amaS "All we have to do is teach that kid to hack into their system and we can do whatever we want."
     amaS "Rewire their banks to deposit all their funds into our accounts."
     amaS "Delete information about people and places we don't want them to know about."
-    amaS "We could have everything we ever dreamed of, Mozely. Everything we used to talk about."
+    amaS "We could have everything we ever dreamed of, Mozely. Everything we used to talk about!"
     amaS "You just have to help me make sure the Dragonflies and BigCorp don't get away with him."
     amaS "What do you say?"
     menu:
         amaS "What do you say?"
         "Reject Ama's offer.":
+            $ marshal += 2
+            $ csEngagement += 2
+            $ kcEngagement -= 2
+            $ pdEngagement -= 3
             $ vig4_amaOffer = False
             mS "You're living in the past, Ama."
             mS "The SnakeHawks are dead."
@@ -2513,12 +2650,17 @@ label vig4_sc4_1():
             amaS "Be seeing you, Mozely."
             play audio "cutCall.wav" volume 1.5
         "Agree to Ama's offer.":
+            $ outlaw += 2
+            $ pdEngagement += 3
+            $ kcEngagement += 2
+            $ csEngagement -= 1
             $ vig4_amaOffer = True
             mS "Alright, Ama. I'm in."
             amaS "Thank you for seeing reason."
             menu:
                 amaS "Thank you for seeing reason."
                 "This is for the SnakeHawks.":
+                    $ deadeyeApproval += 1
                     mS "But this isn't for you. It's for the SnakeHawks."
                     mS "It's our time to get payback."
                     amaS "Couldn't have said it better myself."
@@ -2534,9 +2676,7 @@ label vig4_sc4_1():
                     amaS "I'll make contact once I've reached the moon."
                     amaS "Be seeing you, Mozely."
                     play audio "cutCall.wav" volume 1.5
-    "BigCorp is coming for MAC."
-    "BigCorp is coming for MAC."
-    "The words repeat in my head like a mantra."
+    "BigCorp is coming for MAC. BigCorp is coming for MAC."
     "The engines of the Oakley spin up to speed as the ship begins to lift off the ground."
     mS "BigCorp is coming for MAC!"
     "I sprint out of the engine room and up to the cockpit."
@@ -2547,28 +2687,30 @@ label vig4_sc4_2():
     show jennica stream shock at stream_left with Dissolve(0.5)
     show teresa stream shock at stream_right with Dissolve(0.5)
     hide ship_hallway_stream
-    "I leap into the cockpit to find Jennica and Teresa still there."
+    "I leap into the cockpit."
     mS "BigCorp is coming for MAC!"
     show teresa stream neutral
     show jennica stream neutral
     enS "Impossible, how would they even know Polaris exists?"
     mS "They tracked Coil's communications."
-    pS "How do you know this?"
-    "I take a moment and explain my conversation with Ama to Jennica and Teresa."
+    pS "How do you know that?"
+    "I explain my conversation with Ama to Jennica and Teresa."
     pS "It is plausible that they could have tracked Coil's communications without him knowing."
     enS "Even if it was a bluff to bait confirmation from you, BC probably would be following up on any lead they have."
     pS "And after Akar, Ama is certainly not in the company's good graces."
     if jennicaRomance == True:
         "Jennica turns to me."
-        pS "So how did you respond to Ama's proposal?"
+        pS "So, how did you respond to Ama's proposal?"
         pS "Are we allying with the woman who's been hunting us for the past month?"
     else:
         "Teresa turns to me."
-        enS "So how did you respond to Ama's proposal?"
+        enS "So, how did you respond to Ama's proposal?"
         enS "Are we allying with the woman who's been hunting us for the past month?"
     menu:
         "Are we allying with the woman who's been hunting us for the past month?"
         "I rejected her offer." if vig4_amaOffer == False:
+            $ engineerApproval += 1
+            $ pilotApproval += 2
             mS "No."
             mS "I told her she was living in the past and she was on her own."
             pS "Good. We can't trust her."
@@ -2577,6 +2719,9 @@ label vig4_sc4_2():
                 enS "What does that mean for us? I assume we're not just letting BigCorp take him away?"
                 "We're going to defend Polaris.":
                     $ vig4_defendPolaris = True
+                    $ marshal += 3
+                    $ csEngagement += 3
+                    $ pdEngagement -= 2
                     mS "No, we're not."
                     mS "BigCorp wants to wipe out freedom in the Outposts. We won't let them."
                     mS "Polaris has to stand firm."
@@ -2584,11 +2729,17 @@ label vig4_sc4_2():
                     enS "I don't like how they handled our situation, but they're better than BC, that's for sure."
                 "We'll take MAC back on our own.":
                     $ vig4_attackPolaris = True
+                    $ outlaw += 3
+                    $ csEngagement -= 2
+                    $ pdEngagement += 3
                     mS "No, we're not."
                     mS "The Dragonflies already compromised MAC's safety."
                     mS "We're going in and getting our boy back. On our own terms."
-                    enS "Ooh rah, Cap."
+                    pS "Hell yeah!"
+                    enS "Let's go save our crew!"
         "I accepted her offer." if vig4_amaOffer == True:
+            $ engineerApproval -= 1
+            $ pilotApproval -= 2
             $ vig4_attackPolaris = True
             mS "I accepted her offer."
             mS "We'll need her help if we're going to get MAC back."
@@ -2637,10 +2788,10 @@ label vig4_sc5_0():
     mS "So, what do we call the newest member of our crew?"
     enS "Something strong, stable, and sturdy. What about \"Beck\"?"
     pS "Nahhh, something quick and agile. I say \"June\"."
-    enS "I don't know, it's a bit too quirky."
-    pS "And yours isn't too basic?"
+    enS "I don't know, it's a bit quirky."
+    pS "And yours isn't basic?"
     menu:
-        pS "And yours isn't too basic?"
+        pS "And yours isn't basic?"
         "We should decide together.":
             mS "Come on now. We have to decide together."
             enS "Well, what do you think, Captain?"
@@ -2668,11 +2819,9 @@ label vig4_sc5_0():
     jump vig4_sc5_1
 
 label vig4_sc5_1():
-    "I feel the throbbing first."
-    "Like my head is trying to kill me."
+    "I feel the throbbing first. Like my head is trying to kill me."
     "Sounds start to wash over me, a dull roar punctuated by far off sirens."
     "There's an acrid smell in the air."
-    "Am I dying?"
     mS "*cough* *cough* *cough*"
     "My body lurches forward as I start to cough."
     if jennicaRomance == True:
@@ -2692,16 +2841,15 @@ label vig4_sc5_1():
                 mS "What happened?"
                 pS "Don't worry about that right now, just stay still."
             "My love...":
-                mS "Jenn, my love."
-                mS "Are you okay?"
-                "Are those tears forming in her eyes."
+                mS "Jenn, my love. Are you okay?"
+                "Are those tears forming in her eyes?"
                 pS "Yes, yes I'm okay, Moze."
                 "She wipes her eyes on her sleeve."
                 pS "But I need to take care of you right now. Just, stay still for me."
         enS "Oh thank god!"
         show teresa stream happy at stream_right with dissolve
         "Teresa appears above me."
-        enS "Damn, Captain, you had me worried there for a sec."
+        enS "Damn, Captain, you had me worried there for a second."
         enS "Jennica, is she okay?"
         menu:
             enS "Jennica, is she okay?"
@@ -2721,7 +2869,7 @@ label vig4_sc5_1():
                 enS "Better?"
                 mS "Yeah, much."
                 mS "Now help me up and tell me what happened."
-    elif teresaRomance == True:
+    else:
         enS "Jenn! She's starting to wake up!"
         "My eyes stutter open."
         show vig2_orbit_stream onlayer background with dissolve
@@ -2737,10 +2885,9 @@ label vig4_sc5_1():
                 mS "Resa?"
                 mS "What happened?"
                 enS "Don't worry about that right now, just stay still."
-            "My love...":
-                mS "Resa, my love."
-                mS "Are you okay?"
-                "Are those tears forming in her eyes."
+            "My love..." if teresaRomance == True:
+                mS "Resa, my love. Are you okay?"
+                "Are those tears forming in her eyes?"
                 enS "Yes, yes I'm okay, Moze."
                 "She wipes her eyes on her sleeve."
                 enS "But I need to take care of you right now. Just, stay still for me."
@@ -2767,46 +2914,6 @@ label vig4_sc5_1():
                 enS "Better?"
                 mS "Yeah, much."
                 mS "Now help me up and tell me what happened."
-    else:
-        enS "Jenn! She's starting to wake up!"
-        "My eyes stutter open."
-        show vig2_orbit_stream onlayer background with dissolve
-        show teresa stream happy at stream_right with dissolve
-        "Teresa's smiling face is the first thing I see."
-        menu:
-            "Teresa's smiling face is the first thing I see."
-            "Try to sit up.":
-                mS "Teresa?"
-                "I go to sit up."
-                enS "Hey, hey, don't move. You need to rest."
-            "What happened?":
-                mS "Teresa?"
-                mS "What happened?"
-                enS "Don't worry about that right now, just stay still."
-        pS "Oh thank god!"
-        show jennica stream neutral at stream_left with dissolve
-        "Jennica appears above me."
-        pS "Jeez Cap, you had me worried there for a sec."
-        pS "Teresa, is she okay?"
-        menu:
-            pS "Teresa, is she okay?"
-            "I'm fine.":
-                mS "I'm okay, both of you."
-                show teresa stream neutral
-                mS "Just help me up and tell me what happened."
-                "The two look at each other."
-                mS "That's an order."
-                enS "Alright, Captain, just take it easy."
-            "My head is killing me":
-                mS "My head is killing me, but I'll live."
-                show teresa stream neutral
-                enS "I've got something for that. Brace yourself."
-                "Teresa stabs a thin needle into my neck."
-                "Almost immediately, the throbbing in my head dissipates."
-                enS "Better?"
-                mS "Yeah, much."
-                mS "Now help me up and tell me what happened."
-                pS "Okay just, take it easy."
     "They each grab one of my sides, and gingerly help me into a standing position."
     "Then I see it."
     "Ruin."
@@ -2817,20 +2924,13 @@ label vig4_sc5_1():
     "Its frame, torn and rent, bends to the heat."
     "The smell of ship fuel coats the air."
     "An abyss opens in my heart."
-    menu:
-        "An abyss opens in my heart."
-        "No.":
-            mS "No."
     enS "I'm sorry, Moze. We got you out right before the whole thing went up."
-    enS "Lucky."
     "Teresa's the only one who can talk."
     "I can feel Jennica shaking next to me."
-    "I don't know if it's rage or grief. Or both."
     pS "Every time I turn around, I hope it's not real."
     "She turns her back on the shell."
-    pS "But it is."
     "Teresa puts a hand on both of our shoulders."
-    "We stand there, motionless, together. Slowly, imperceptibly getting closer and closer."
+    "We stand there. Motionless. Together. Slowly, imperceptibly getting closer and closer."
     "Until Teresa pulls us all into a hug."
     enS "She was a good girl."
     pS "The best."
@@ -2840,7 +2940,7 @@ label vig4_sc5_1():
             mS "We'll never forget her."
             enS "Never."
             pS "No way."
-            "Jennica and Teresa both take a deep breath as we let go of each other."
+            "We all take a deep breath as we let go of each other."
         "We have to get to MAC.":
             "Memories flood back to me. We're here for a reason."
             mS "She brought us all the way here. Now we have to finish this."
@@ -2858,8 +2958,8 @@ label vig4_sc5_1():
     hide oakley_ruin
     "Polaris is under siege."
     "Smoke billows amongst the buildings."
-    "A handful of drop ships careen over the town."
-    "One of them catches fire and crashes into the buildings below."
+    "A handful of BigCorp drop ships careen over the town."
+    "One of them catches fire and crashes into the buildings below, exploding as it collides with the ground."
     "Jennica hands me a set of binoculars."
     "The outskirts are almost entirely ablaze."
     "A handful of blockades have been set up throughout the town."
@@ -2873,36 +2973,40 @@ label vig4_sc5_1():
     mS "MAC!"
     enS "What!?"
     pS "Where!?"
-    mS "He's in the plaza."
+    mS "He's in the plaza!"
     if macPeace > macViolence:
+        $ csEngagement += 1
+        $ kcEngagement += 1
         "Wounded townsfolk are laid out in rows on the ground."
         mS "MAC is going along with someone else, helping to administer first aid to the wounded."
         menu:
             mS "MAC is going along with someone else, helping to administer first aid to the wounded."
             "Helping others, good job MAC.":
                 mS "Always wanting to help others."
-                mS "Proud of you MAC."
+                mS "Proud of you, MAC."
             "Why is he there?":
                 mS "Why the hell is he there?"
                 mS "He shouldn't be anywhere near the frontline."
     else:
+        $ pdEngagement += 1
+        $ kcEngagement += 1
         mS "MAC is sitting in the seat of a turret aimed up at the sky."
-        "He's firing at will, taking out some of the dropships before they can even hit the town."
+        "He's firing at will, taking out some of the dropships before they can even reach the town."
         menu:
-            "He's firing at will, taking out some of the dropships before they can even hit the town."
+            "He's firing at will, taking out some of the dropships before they can even reach the town."
             "Not backing down from a fight.":
                 mS "Not backing down from a fight, I see."
                 mS "Proud of you MAC."
             "Why is he there?":
                 mS "Why the hell is he there?"
                 mS "He shouldn't be anywhere near the frontline."
-    "Then I see Coil, he stands in front of the town's central tower."
-    "Making eye contact with Vega, he shouts something and then enters the doors to the tower."
+    "Then I see Coil, he stands in front of the plaza northern tower."
+    "Making eye contact with Vega, he shouts something and then enters the tower."
     pS "Cap, what's going on?"
     "I remove the binoculars."
     mS "It looks like the Dragonflies have set up a command center in the plaza at the center of town."
-    mS "Coil went into the central tower, but Vega is staying at the blockades and fighting off BC troops."
-    mS "They're putting up a good fight, but I don't think they're gonna last much longer."
+    mS "Coil went into the tower, but Vega is staying at the blockades and fighting off BC troops."
+    mS "I don't think they're gonna last much longer."
     if vig4_defendPolaris == True:
         pS "Well then, we better get down there!"
         enS "Knowing Coil, he's probably working on a plan."
@@ -2912,9 +3016,11 @@ label vig4_sc5_1():
         menu:
             mS "It's time."
             "For MAC.":
+                $ kcEngagement += 1
                 mS "This is for MAC."
                 mS "No one messes with our family."
             "For the Galaxy.":
+                $ csEngagement += 1
                 mS "This is for the Galaxy."
                 mS "BigCorp doesn't own us and they never will."
             "For the Oakley.":
@@ -2926,8 +3032,6 @@ label vig4_sc5_1():
         hide jennica with dissolve
         "The three of us jog down the ridge, weapons drawn, heading directly for the heart of the fire."
         jump vig4_sc6_defend_1
-    elif vig4_attackPolaris == True and vig4_amaOffer == True:
-        jump vig4_sc5_3
     elif vig4_attackPolaris == True and vig4_amaOffer == False:
         pS "Alright, Cap, what's the play?"
         mS "We use the chaos to our advantage."
@@ -2938,9 +3042,11 @@ label vig4_sc5_1():
         menu:
             mS "It's time."
             "For MAC.":
+                $ kcEngagement += 1
                 mS "This is for MAC."
                 mS "No one messes with our family."
             "For the Galaxy.":
+                $ csEngagement += 1
                 mS "This is for the Galaxy."
                 mS "BigCorp doesn't own us and they never will."
             "For the Oakley.":
@@ -2950,12 +3056,13 @@ label vig4_sc5_1():
         mS "Let's move."
         hide jennica with dissolve
         hide teresa with dissolve
-        hide ama with dissolve
         jump vig4_sc6_attack_1
+    elif vig4_attackPolaris == True and vig4_amaOffer == True:
+        jump vig4_sc5_3
 
 label vig4_sc5_3():
     amaS "Sounds like we have to make our move now."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve #kitcat will start freaking out here most likely
     "Perched on a rock higher up the ridge, rifle relaxed into her shoulder, is Ama."
     amaS "Hello ladies. Good to see you all again."
     show jennica stream angry
@@ -2967,7 +3074,7 @@ label vig4_sc5_3():
     amaS "Judging by the lack of firearms pointed at my head, Mozely has told you about our deal."
     enS "She mentioned it."
     pS "Doesn't mean we're happy about it."
-    amaS "But she's the Captain, right?"
+    amaS "But she's the captain, right?"
     "Jennica and Teresa don't say anything."
     amaS "You've built a good crew, Mozely." 
     "Ama puts a hand on my shoulder."
@@ -2975,6 +3082,7 @@ label vig4_sc5_3():
     menu:
         amaS "I'm proud of you."
         "Get your hand off me.":
+            $ deadeyeApproval -= 1
             mS "Get your hand off me, Ama."
             "She calmly retracts her arm."
             mS "We're working together for this mission. But we're not friends."
@@ -2984,7 +3092,7 @@ label vig4_sc5_3():
             mS "I learned from the best."
             "Ama pats my shoulder twice."
             amaS "Flatterer."
-    amaS "Let's move. Can't be wasting good night."
+    amaS "Let's move. Can't be wasting time."
     enS "Hold it."
     pS "We're not following you."
     pS "It's Cap's call."
@@ -3001,11 +3109,14 @@ label vig4_sc5_3():
     menu:
         mS "It's time."
         "For MAC.":
+            $ kcEngagement += 1
             mS "This is for MAC."
             mS "No one messes with our family."
         "For the SnakeHawks.":
+            $ pdEngagement += 1
             mS "This is for the SnakeHawks and a new dawn."
         "For the Galaxy.":
+            $ csEngagement += 1
             mS "This is for the Galaxy."
             mS "BigCorp doesn't own us and they never will."
         "For the Oakley.":
@@ -3032,30 +3143,32 @@ label vig4_sc5_3():
 label vig4_sc7_2():
     cS "The time has come."
     macS "Moze!"
-    show mac stream neutral at stream_center_mac with Dissolve (0.3)
+    show mac stream neutral at stream_right5mac with Dissolve (0.3)
     "I whip around to see MAC careening toward the open door."
     "{i}whoosh{/i}"
     "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
-    hide mac with dissolve
     "An energy shield."
-    show vega at stream_center with dissolve
+    show vega at stream_left5 with dissolve
     vS "Pops!"
     "Vega rushes up the stairs and kneels down to MAC's side."
     hide vega with dissolve
+    hide mac with dissolve
     cS "Captain Moze."
     "The walls surrounding us glimmer and dissipate, becoming transparent windows."
-    cS "This is your moment. You still have a chance to atone."
+    cS "This is your moment."
     "Outside, dropships explode in the air."
+    # show tower_glass windows
     cS "Within you is a war, between the forces of good and those of evil."
     amaS "Don't listen to this guy, kid."
     "Fire dances in the streets below."
-    cS "You have a choice, put an end to this madness."
+    cS "You have a choice. You can put an end to this madness."
     amaS "You can't trust him."
     "The cruiser looms high above."
     cS "Or fall to your baser instincts and doom us all."
     amaS "After all we've been through, Mozely..."
     "Battle rages."
     "Then I see it."
+    #show star shower tower
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
@@ -3067,6 +3180,9 @@ label vig4_sc7_2():
     menu:
         cS "What will it be, Moze?"
         "Side with Coil; Kill Ama.":
+            $ csEngagement += 3
+            $ kcEngagement -= 2
+            $ pdEngagement -= 3
             mS "You're right, Coil. This has gone too far."
             "I turn to Ama."
             menu:
@@ -3079,6 +3195,9 @@ label vig4_sc7_2():
             "I can feel the hate like a heatwave."
             jump vig4_sc7_3_coil
         "Side with Ama; Kill Coil.":
+            $ csEngagement -= 2
+            $ kcEngagement += 2
+            $ pdEngagement += 3
             mS "You're right, Ama. I can't trust him."
             "I turn to Coil."
             menu:
@@ -3111,22 +3230,6 @@ label vig4_sc7_3_ama():
     "Devices like shield generators are strapped to his palms."
     hide ama with dissolve
     "A burst of energy suddenly blasts from his palms, striking Ama in the chest and sending her and her knife flying."
-    "Coil stands, facing me."
-    menu:
-        "Coil stands, facing me."
-        "Shift toward Ama's dropped knife.":
-            "I shift to the right, trying to position myself closer to the knife."
-            cS "Go on. Pick it up."
-            "Without turning from him, I step over the knife, then reach down and pick it up."
-            "He nods in my direction."
-            "Then crouches into the same stance from earlier as the devices in his palms charge up."
-            "I roll out of the way just as an energy pulse blasts by me, colliding with the energy shield."
-        "Continue a close-range attack.":
-            "I step toward him, throwing my fists directly at his chest."
-            "He continues to dodge, crouching back into the same stance from earlier."
-            "But one punch just barely lands on his shoulder, throwing him off balance and sending the energy pulse wide."
-            "I try to grab him, but he hops backwards."
-            "I follow suit and step back from him, reaching down to pick up the knife."
     "Sweat drips from my forehead."
     "Coil's posture straightens. He starts to circle around me."
     "I parallel his movements, keeping us at a distance."
@@ -3134,13 +3237,13 @@ label vig4_sc7_3_ama():
     cS "But you're mistaken if you think I've been cooped up in a lab all these years."
     menu:
         cS "But you're mistaken if you think I've been cooped up in a lab all these years."
-        "Why don't you tell us about it?":
-            mS "Oh yeah, sounds interesting. Why don't you monologue about it."
+        "Why don't you tell me about it?":
+            mS "Oh yeah? Sounds interesting. Why don't you monologue about it."
             cS "Just waiting for your friend."
         "Don't think you're invincible.":
             mS "You have a weakness, and we're going to exploit it."
             cS "I'm sure you will."
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     "Ama puts a hand on my shoulder."
     "Her other hand is holding her side."
     amaS "Sorry, kid, took a bad knock there. But I'm back in the hunt."
@@ -3180,6 +3283,7 @@ label vig4_sc7_3_ama():
             cS "I also grew up in this galaxy."
             "Ama lunges at him with the knife."
             "He opens one palm and hits her with an energy blast, knocking her to the floor."
+            hide ama with dissolve
             cS "I also know what it means to lose the ones you love."
             "Coil opens a palm in my direction."
             "I dive out of the way as a pulse of energy rushes by me."
@@ -3187,14 +3291,14 @@ label vig4_sc7_3_ama():
             "I'm on the floor facing Coil. He opens a palm in my direction."
             "I don't have time to stand."
     amaS "Moze!"
-    show ama at stream_left with Dissolve(0.2)
+    show ama stream neutral at stream_left with Dissolve(0.2)
     "Ama leaps in front of Coil, and thrusts her hand forward."
     "A blast of energy slams her back to the floor."
     hide ama with dissolve
     mS "Ama!"
     cS "{i}aahhhhh{/i}"
     "Then I notice it, a knife impaled through one of Coil's hands."
-    "Blood streaks down his arm. The device in his palm short circuiting."
+    "Blood streaks down his arm. The device in his palm short circuits."
     "The thin veil of blue light around him sparks inconsistently."
     "Ama is motionless on the floor."
     show coil at stream_center with move
@@ -3204,11 +3308,15 @@ label vig4_sc7_3_ama():
     menu:
         cS "Will you do what you have to do?"
         "I will do what I want.":
+            $ pdEngagement += 2
+            $ kcEngagement += 1
             mS "No."
             mS "I want this."
             "Coil nods."
             cS "Of course."
         "You gave me no choice.":
+            $ pdEngagement -= 1
+            $ kcEngagement -= 1
             mS "You didn't give me a choice."
             "Coil chuckles."
             cS "We always have a choice, Moze."
@@ -3223,7 +3331,6 @@ label vig4_sc7_3_ama():
     "He tumbles and slams into the side of the wall."
     vS "Pops! Get up!"
     "I cross the room and stand over Coil."
-    "Gasping for air, he leans onto his back."
     vS "Get up! Please!"
     "Coil reaches out his good hand."
     "I step back as the energy pulse sails harmlessly into the ceiling."
@@ -3232,11 +3339,13 @@ label vig4_sc7_3_ama():
     menu:
         cS "Please. Just let her go."
         "Your sins are hers.":
+            $ outlaw += 1
+            $ macViolence += 1
             mS "Your sins are hers."
             cS "My sins?"
             "Coil chuckles."
             cS "You don't know the half of them."
-        "Would you, if you were me.":
+        "Would you, if you were me?":
             mS "Would you, if you were me?"
             cS "I am not you."
     "Coil lunges forward, ripping the knife out of his hand and slashing it toward my head."
@@ -3260,7 +3369,7 @@ label vig4_sc7_3_ama():
     vS "No. Don't go. Don't go. Don't leave me."
     "Ama."
     hide vega with dissolve
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     "I rush over to Ama's body and turn her onto her side."
     amaS "Ahhh, shit."
     "She opens her eyes and looks right into mine."
@@ -3268,6 +3377,7 @@ label vig4_sc7_3_ama():
     menu:
         amaS "Did we get him?"
         "I did.":
+            $ deadeyeApproval += 1
             mS "Well, I did the hard work."
             amaS "Bullshit, you would've been toast if I didn't stab the old man."
         "Yes, we got him.":
@@ -3283,24 +3393,19 @@ label vig4_sc7_3_ama():
     menu:
         amaS "Right now, you have to rebuild the Oakley. I don't know if I fit that picture."
         "You belong.":
+            $ vig4_amaCrew = True
             mS "If you want a place in the crew, it's not too late."
             amaS "Heh, after all I've done? Jenn and Teresa will probably have something to say about that."
             amaS "But I'll give it time. Not in any rush anymore."
             "An unbearable groaning sound suddenly reverberates across Polaris."
-            "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
-            amaS "Not bad, Moze. Not bad at all."
-            "She tilts her head at MAC."
-            amaS "Now go. He needs you."
         "You're right.":
+            $ vig4_amaCrew = False
             mS "You're right. But we're grateful for your help."
             amaS "Aah, you'll find some way to repay me I'm sure."
             amaS "I know you never let a score go unsettled."
             "An unbearable groaning sound suddenly reverberates across Polaris."
-            "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
-            amaS "Not bad, Moze. Not bad at all."
-            "She tilts her head at MAC."
-            amaS "Now go. He needs you."
         "I don't want to live without you." if deadeyeApproval >= 4 and jennicaRomance == False and teresaRomance == False:
+            $ vig4_amaCrew = True
             mS "Ama, I don't want to live without you."
             "She looks at me, almost confused."
             amaS "Mozely, I don't know what you're saying."
@@ -3316,19 +3421,15 @@ label vig4_sc7_3_ama():
                     "But I can't turn away."
                     "I'm enmeshed in this moment, this feeling, this heat."
                     "Finally, we separate."
-                    "Through the window, we watch as the hulk of the BC cruister crumbles into flames."
-                    amaS "Not bad, Moze. Not bad at all."
-                    "She tilts her head at MAC."
-                    amaS "Now go. He needs you."
                 "Neither do I.":
                     mS "I don't either."
                     mS "But stick around, and we'll figure it out."
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
-                    "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
-                    amaS "Not bad, Moze. Not bad at all."
-                    "She tilts her head at MAC."
-                    amaS "Now go. He needs you."
+    "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
+    amaS "Not bad, Moze. Not bad at all."
+    "She tilts her head at MAC."
+    amaS "Now go. He needs you."
     hide ama with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "I stand and take a step toward MAC."
@@ -3352,7 +3453,7 @@ label vig4_sc7_3_ama():
     "MAC looks down for a moment, then back up to my face."
     macS "Am I a SnakeHawk now?"
     "I smile."
-    mS "Better, you're Oakley family."
+    mS "Better, you're family"
     "MAC's face turns into a smile."
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
@@ -3360,7 +3461,7 @@ label vig4_sc7_3_ama():
     mS "I missed you."
     macS "I missed you too, Moze."
     "We step back and I stand up."
-    show ama at stream_right with dissolve
+    show ama stream neutral at stream_right with dissolve
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
     "Ama is standing now, and she points across the room."
     show vega at stream_left with dissolve
@@ -3380,18 +3481,24 @@ label vig4_sc7_3_ama():
     vS "You know that, right?"
     macS "I know."
     if macViolence > macPeace:
-        "MAC lifts his arm toward Vega and fires a bolt of energy."
+        $ pdEngagement += 2
+        $ kcEngagement += 1
+        $ csEngagement -= 2
+        "MAC lifts his arm and fires a bolt of energy."
         "It lands square between Vega's eyes."
         "She slumps to the ground, her body falling on top of Coil's."
         hide vega with Dissolve(2.0)
         macS "Threat. Neutralized."
     else:
+        $ pdEngagement += 1
+        $ kcEngagement += 3
+        $ csEngagement += 1
         macS "You have as much right to vengeance as they did."
         macS "But not today."
         macS "And maybe, in time. You will find peace."
         vS "There is no peace left. You took it all away."
         macS "Maybe. But we can't know for certain."
-        macS "Bury your friend, Vega. And take care."
+        macS "Bury your family, Vega. And take care."
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
     "MAC rolls up to me and Ama."
     macS "We should go."
@@ -3412,7 +3519,7 @@ label vig4_sc7_3_coil():
             "I lunge forward and grab the rifle, aiming it to the side."
             "A round fires off, sailing into the ceiling above."
             "I reach for my pistol and pull it from the holster, but Ama quickly grabs me by the side and throws me to the ground."
-            "My pistol skis across the floor as I roll to a stop and look up."
+            "My pistol skids across the floor as I roll to a stop and look up."
         "Draw pistol.":
             "I draw my pistol."
             "Before I can fire a shot though, a bullet from Ama strikes the pistol clean through, breaking the weapon."
@@ -3430,7 +3537,7 @@ label vig4_sc7_3_coil():
     "Before Coil can move, Ama has closed the distance and swings."
     "It's a haymaker, and Coil wasn't ready."
     hide coil with Dissolve(0.3)
-    "The blow is slowed by his shield, but the collision still sends Coil to the ground, sliding almost to a wall."
+    "The blow is slowed by his shield, but the collision still sends Coil to the ground, sliding to a wall."
     vS "Pops!"
     "Ama draws a knife from her boot."
     amaS "Now then, Mozely. Where were we?"
@@ -3443,42 +3550,21 @@ label vig4_sc7_3_coil():
     amaS "Hah! Isn't that rich?"
     "Flicking the knife back and forth, Ama steps close to me and crouches into a fighting stance."
     macS "Moze, be careful!"
-    amaS "Come on then. Show me what you're made of, kid."
-    menu:
-        amaS "Come on then. Show me what you're made of, kid."
-        "Feint an attack.":
-            "Ama slowly closes in and, mid-step, I reach my hand forward just barely."
-            "Out of instinct, Ama lunges for a stab."
-            "But I lean out of the way and draw another knife from her belt."
-            "I slash at her exposed ribs, but she's able to recover and spin away just in time."
-        "Defend her advances.":
-            "I have no room for error."
-            "As she gets close, Ama slashes the blade in my direction."
-            "I block at her wrist, forcing her to strike again."
-            "It's a savage combination of quick twists and turns, but each time I'm able to parry her strikes just in time."
-            "Then she makes a mistake, trying to disrupt me by flipping the knife from on hand to the other."
-            "I catch the move and strike at her exposed hands."
-            "The knife clatters to the floor as I land a kick in her exposed stomach."
-            "Ama staggers back."
-            "I pick up the knife, and crouch into a fighting stance of my own."
-            "Ama sighs and draws another knife from her belt."
     amaS "All this chaos, this mess of your own making."
     amaS "Is this what you wanted, Mozely?"
     menu:
         amaS "Is this what you wanted, Mozely?"
         "I just wanted a family.":
-            mS "I just wanted a family. That's all I ever wanted."
+            mS "I just wanted a family! That's all I ever wanted."
             amaS "Good. Now you're going to watch me take it from you."
         "I just want you to shut up.":
-            mS "I just want you to shut up."
+            mS "I just want you to shut up!"
             amaS "Gladly."
-    "Ama lunges again with the knife."
+    "Ama lunges with the knife."
     "I block and retaliate."
     "Lightning blows as we trade strikes."
-    "No room for thought."
-    "It's like how we trained."
-    "All those years ago on her ship."
-    "Suddenly, I see her now as I did then."
+    "It's like how we trained together years ago on her ship."
+    "I see her now as I did then."
     "Fierce. Powerful. Dominant."
     "Overconfident."
     menu:
@@ -3496,7 +3582,7 @@ label vig4_sc7_3_coil():
             "I swing my knife up toward her chest."
     "Ama's knee slams into my jaw before I realize what happened."
     "She baited me."
-    "I go skidding along the floor."
+    "I go tumbling across the floor."
     macS "Captain!"
     "I'm stunned, flat on my back on the ground."
     "Ama steps up to me."
@@ -3506,20 +3592,20 @@ label vig4_sc7_3_coil():
     amaS "Why couldn't you just listen to me!?"    
     "Ama crouches just above me, tilting her head sideways."
     "Movement slowly starts to come back to my fingers."
-    amaS "Everything would have been fine."
+    amaS "Everything would have been fine. Would have been {i}good{/i}!"
     "She exhales deeply."
     amaS "Remember, Mozely: you chose this."
     "She reaches her hand into the air, knife pointed straight at my chest."
     cS "No!"
     "There's a bright streak across my vision as an energy pulse collides with Ama's chest."
     hide ama with dissolve
-    amaS "God--you're going to regret that old man."
+    amaS "Maker--you're going to regret that old man."
     "I can't turn my head but I hear the sounds of battle to my right."
     "The charge of Coil's energy pulses, the sound of Ama's fists hitting flesh."
     vS "Pops!"
     macS "Moze! Get up! Get up!"
     "Finally, I push myself into a sitting position."
-    show ama at stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     show coil at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
@@ -3532,11 +3618,15 @@ label vig4_sc7_3_coil():
     menu:
         amaS "Mozely. Will you do what you have to do?"
         "I will do what I want.":
+            $ pdEngagement += 2
+            $ kcEngagement += 1
             mS "No."
             mS "I want this."
             "Ama nods."
             amaS "Good."
         "You gave me no choice.":
+            $ pdEngagement -= 1
+            $ kcEngagement -= 1
             mS "You didn't give me a choice."
             "Ama chuckles."
             amaS "Classic Mozely."
@@ -3563,6 +3653,7 @@ label vig4_sc7_3_coil():
             "Ama nods."
             amaS "Fair."
         "You mean my ship.":
+            $ deadeyeApproval
             mS "You mean {i}my{/i} ship."
             "Ama nods."
             amaS "At least you learned something."
@@ -3571,14 +3662,12 @@ label vig4_sc7_3_coil():
     "I catch her wrist in my hands, pointing the blaster to the side."
     "She fires."
     "The bolt goes wide."
-    "Again."
-    "It goes wide."
     "I hold her wrist, and grip. Tight."
     "I can hear her bones cracking."
     "She drops to her knees."
     "I turn her wrist until the gun is pointed directly at her head."
     "I place my finger over the trigger."
-    "She looks me dead in the eyes."
+    "She looks me straight in the eyes."
     amaS "Be seeing you, Mozely."
     "I pull the trigger."
     "Ama's body slumps to the floor."
@@ -3612,7 +3701,7 @@ label vig4_sc7_3_coil():
     show mac stream neutral at stream_right_mac with dissolve
     "MAC still hasn't crossed into the room yet."
     "Coil nods in his direction."
-    cS "Go on. He needs to hear from you."
+    cS "Go on. He needs you."
     hide vega with dissolve
     hide coil with dissolve
     show mac at stream_center_mac with move
@@ -3637,7 +3726,7 @@ label vig4_sc7_3_coil():
     "MAC looks down for a moment, then back up to my face."
     macS "Am I a SnakeHawk now?"
     "I smile."
-    mS "Better, you're Oakley family."
+    mS "Better, you're family."
     "MAC's face turns into a smile."
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
@@ -3653,7 +3742,7 @@ label vig4_sc7_3_coil():
         cS "I would say it looks all but certain."
         cS "Captain Moze, Polaris may be in ruins, but its people will endure. In no small part thanks to your actions today."
         cS "I am sorry for the trouble I caused you earlier. I did not realize the power of the bond you share with MAC."
-        cS "We all owe our gratitude to you, Captain Moze."
+        cS "We all owe our gratitude to you"
         cS "You and your crew have earned your spot."
         menu:
             cS "You and your crew have earned your spot."
@@ -3662,32 +3751,25 @@ label vig4_sc7_3_coil():
                 cS "Of course. We can find an arragenment that is amenable to your...\"distinct\" approach."
             "Thank you.":
                 mS "Thank you for the offer. After all this, my crew and I will need some sanctuary."
-                cS "And of course, you shall have it."
+                cS "You shall have it."
     elif vig4_defendPolaris == False and vig4_killDflies == False:
-        cS "I would say it looks all but certain."
-        cS "Apologies for all the trouble, Captain Moze. I did not realize the power of the bond you share with MAC."
-        cS "You and your crew have earned your spot."
-        menu:
-            cS "You and your crew have earned your spot."
-            "Organization isn't my style.":
-                mS "I don't know. Working for organizations isn't really my style."
-                cS "Of course. We can find an arragenment that is amenable to your...\"distinct\" approach."
-            "Thank you.":
-                mS "Thank you for the offer. After all this, my crew and I will need some sanctuary."
-                cS "And of course, you shall have it."
+        cS "The chances are certainly much higher now."
+        cS "Although your methods are...messy, Captain Moze, without your presence, Vega and I would likely be dead."
+        cS "We can offer you and your crew sanctuary while you rest and recover."
+        cS "You and your crew have earned that, at least."
     else:
         cS "The carnage from this battle won't go over well with the higher-ups."
-        cS "But considering we'd be dead without her, I'd say we might have to take her on board."
-        cS "At least for the time being while we catch our breath."
+        cS "But considering we'd be dead without her, I'd say we'll have to take her on board."
+        cS "At least for the time being while we all catch our breath."
     mS "And MAC?"
     "We all turn to look at him."
     macS "I do not wish to leave my family again."
     cS "You heard him."
-    vS "Come on, I believe there's an old mercenary's empty ship somewhere in the ridge that we can commandeer."
+    vS "Come on, there should be an old mercenary's empty ship somewhere in the ridge that we can commandeer."
     if macHope > macPessimism:
         macS "Wait, what about Ama?"
         mS "What about her?"
-        macS "Well, we shouldn't leave her here."
+        macS "We shouldn't leave her here."
         macS "She was a Snakehawk. She deserves a proper burial."
         menu:
             macS "She was a Snakehawk. She deserves a proper burial."
@@ -3737,10 +3819,12 @@ label vig4_epilogue_coil():
             "The pair relax."
     "They move over and sit on the couch with me."
     if jennicaRomance == True:
+        $ csEngagement += 1
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
         pS "How are you feeling, Cap?"
     elif teresaRomance == True:
+        $ kcEngagement += 1
         "Teresa sits down next to me and folds her legs over my lap."
         "I take her hand in mine."
         enS "How are you feeling, Captain?"
@@ -3761,7 +3845,7 @@ label vig4_epilogue_coil():
             pS "Good."
             enS "You've earned it."
         "Sad.":
-            mS "Honestly, I'm a bid sad."
+            mS "Honestly, I'm sad."
             enS "About Ama?"
             mS "Yeah."
             mS "I wish it didn't have to go that way."
@@ -3784,6 +3868,7 @@ label vig4_epilogue_coil():
     menu:
         "MAC rolls up next to us."
         "Come on up, MAC.":
+            $ kcEngagement += 2
             mS "Come on, MAC, join the pile."
             macS "Are you sure, Captain?"
             macS "Will my treads not stain the couch?"
@@ -3801,6 +3886,7 @@ label vig4_epilogue_coil():
             mS "Actually, give me one second."
             "I slide out from the cuddle puddle and open a nearby closet."
         "Rub his head.":
+            $ kcEngagement += 1
             mS "Come here, MAC."
             "I put my hand on his head and feel the vibrations thrumming through his body."
             "I feel his attention on me. It's like we're making eye contact."
@@ -3818,7 +3904,7 @@ label vig4_epilogue_coil():
     "It's red paint."
     mS "Figure we can commemorate the successful mission with MAC's first tattoo."
     macS "Really!?"
-    mS "Sure. Turn around there, bud, let me find a good spot on you."
+    mS "Sure. Turn around there, let me find a good spot on you."
     pS "Oh no, come on Teresa, she's gonna need some help."
     enS "I'll say. Remember when I asked her to do a tattoo for me."
     pS "The sketches were so atrocious you completely backed out hahaha."
@@ -3829,6 +3915,7 @@ label vig4_epilogue_coil():
     menu:
         "I stare at the clear space of MAC's back panel. What image would go perfectly there?"
         "A Snakehawk.":
+            $ pdEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
@@ -3838,6 +3925,7 @@ label vig4_epilogue_coil():
             mS "MAC, you're now the proud owner of a \"SnakeHawk\" tattoo!"
             macS "SnakeHawk!? Really!?"
         "A Dragonfly.":
+            $ csEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
@@ -3847,10 +3935,11 @@ label vig4_epilogue_coil():
             mS "MAC, you're now the proud owner of a \"Dragonfly\" tattoo!"
             macS "Dragonfly!? I hope they're as friendly as you all!"
         "The Oakley.":
+            $ kcEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
-            pS "It's a good rendition, Cap. You're really capturing her essence."
+            pS "It's abstract but good, Cap. You're really capturing her essence."
             "I put the brush down."
             mS "There, all done."
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
@@ -3863,7 +3952,7 @@ label vig4_epilogue_coil():
     "I lean into the hug from MAC."
     menu:
         "I lean into the hug from MAC."
-        "I love you.":
+        "I love you too.":
             mS "I love you too, MAC."
     "Jennica and Teresa bend down and wrap their arms around us as well."
     "Then the ship's alert system activates."
@@ -3874,13 +3963,14 @@ label vig4_epilogue_coil():
     hide teresa with dissolve
     hide shiphub_stream with dissolve
     show shiphub_stream onlayer background with dissolve
+    show jennica stream neutral at stream_left5 with dissolve
+    show teresa stream neutral at stream_right5 with dissolve
     show coil at stream_right with dissolve
     show vega at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "The four of us move up to the cockpit."
-    vS "We're just about there."
     "We're not in hyperspace anymore, just floating in the vast expanse of stars."
-    enS "Just about where? I don't see anything."
+    enS "I don't see anything."
     pS "I'll say, looks like a whole lotta nothing."
     cS "Patience. We are exactly where we need to be."
     "A minute goes by as we scan the vastness of space."
@@ -3889,7 +3979,7 @@ label vig4_epilogue_coil():
     macS "There! It was a little flicker in front of one of the stars!"
     cS "He has sharp eyes."
     mS "What do you mean?"
-    cS "Just watch."
+    vS "Just watch."
     "As I gaze into the vastness of space, I start to notice it too."
     "Some of the stars are flickering."
     "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
@@ -3897,11 +3987,13 @@ label vig4_epilogue_coil():
     enS "What the--?"
     "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
     "It fades into view slowly but surely, as the ripples dissipate further and further away."
-    "A massive space station, four times the size of the Polaris moon, resolves into view."
+    "A massive space station, twice times the size of the Polaris moon, resolves into view."
     "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
     pS "Wow."
+    hide jennica with dissolve
     "A small jolt of turbulence hits our ship."
     enS "Tractor beam."
+    hide teresa with dissolve
     "Coil turns around."
     cS "Welcome to the Dragonflies."
     hide coil with dissolve
@@ -3975,7 +4067,7 @@ label vig4_epilogue_ama():
             pS "Good."
             enS "You've earned it."
         "Sad.":
-            mS "Honestly, I'm a bid sad."
+            mS "Honestly, I'm sad."
             enS "About Coil?"
             mS "Yeah."
             mS "I wish it didn't have to go that way."
@@ -3986,6 +4078,13 @@ label vig4_epilogue_ama():
             mS "Thanks you two. I mean it."
             enS "Anytime."
             pS "We've got your back."
+    if amaRomance == False:
+        enS "You think Deadeye will be alright without her ship?"
+        pS "She's resourceful. I'm sure she'll figure something out."
+        mS "I was surprised she was okay with us taking it."
+        pS "You gotta love personal growth."
+        enS "Even if it comes a little late."
+        "Jennica scans the ship's hub room."
     pS "I will say, despite the luxury, still doesn't hold a candle to the Oakley."
     enS "No way."
     macS "I am in agreement."
@@ -3998,6 +4097,7 @@ label vig4_epilogue_ama():
     menu:
         "MAC rolls up next to us."
         "Come on up, MAC.":
+            $ kcEngagement += 2
             mS "Come on, MAC, join the pile."
             macS "Are you sure, Captain?"
             macS "Will my treads not stain the couch?"
@@ -4015,6 +4115,7 @@ label vig4_epilogue_ama():
             mS "Actually, give me one second."
             "I slide out from the cuddle puddle and open a nearby closet."
         "Rub his head.":
+            $ kcEngagement += 1
             mS "Come here, MAC."
             "I put my hand on his head and feel the vibrations thrumming through his body."
             "I feel his attention on me. It's like we're making eye contact."
@@ -4043,6 +4144,7 @@ label vig4_epilogue_ama():
     menu:
         "I stare at the clear space of MAC's back panel. What image would go perfectly there?"
         "A Snakehawk.":
+            $ pdEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
@@ -4051,20 +4153,13 @@ label vig4_epilogue_ama():
             mS "There, all done."
             mS "MAC, you're now the proud owner of a \"SnakeHawk\" tattoo!"
             macS "SnakeHawk!? Really!?"
-        "A Dragonfly.":
-            mS "I've got the perfect thing."
-            "Slowly, but surely I begin tracing the outline."
-            enS "I see what you're going for."
-            pS "Come on, Cap, you don't want the lines to be perfectly straight."
-            "I put the brush down."
-            mS "There, all done."
-            mS "MAC, you're now the proud owner of a \"Dragonfly\" tattoo!"
-            macS "Dragonfly!? I hope they're as friendly as you all!"
+        #third tattoo?
         "The Oakley.":
+            $ kcEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
-            pS "It's a good rendition, Cap. You're really capturing her essence."
+            pS "It's abstract but good, Cap. You're really capturing her essence."
             "I put the brush down."
             mS "There, all done."
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
@@ -4081,82 +4176,132 @@ label vig4_epilogue_ama():
             mS "I love you too, MAC."
     "Jennica and Teresa bend down and wrap their arms around us as well."
     "Then the ship's alert system activates."
-    amaS "You all should come up here, there's something I could use some help with."
-    mS "That sounds odd. Come on, let's go."
+    if amaRomance == True:
+        amaS "You all should come up here, there's something I could use some help with."
+        mS "That sounds odd. Come on, let's go."
+    else:
+        pS "That's the contact alarm. Auto-pilot must have triggered cause a ship got in our range."
+        mS "Let's go check it out."
     hide mac with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
     hide shiphub_stream with dissolve
     show shiphub_stream onlayer background with dissolve
-    show ama at stream_right with dissolve
-    show mac stream neutral at stream_center_mac with dissolve
-    "The four of us move up to the cockpit."
     if amaRomance == True:
-        "I step up behind Ama's chair and reach for her hand."
-        "Almost automatically, as if we've been doing it for years, she takes it."
-    else:
-        pass
-    mS "What seems to be the trouble, Ama?"
-    amaS "Does anyone else see anything funny out there?"
-    "The visual in the cockpit just shows empty space."
-    pS "Looks like normal space stuff to me."
-    enS "Nothing out of the ordinary I can see."
-    amaS "Keep looking."
-    "A minute goes by as we scan the vastness of space."
-    amaS "There! Did anyone see that!"
-    macS "Oh! I see it!"
-    mS "See what?"
-    macS "It was a little flicker in front of one of the stars!"
-    amaS "So I'm not going crazy."
-    "As I gaze into the vastness of space, I start to notice it too."
-    "Some of the stars are flickering."
-    "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
-    "Then it starts."
-    enS "What the--?"
-    "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
-    "It fades into view slowly but surely, as the ripples dissipate further and further away."
-    "A massive space station, four times the size of the Polaris moon, resolves into view."
-    "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
-    "Smaller ships depart the hangars."
-    "They're heading in our direction."
-    mS "What the hell is that!"
-    amaS "Dragonfly space station. Shit!"
-    "Ama jams thrusters back and frenetically starts snapping switches on control consoles."
-    "We immediately turn around and start flying away from the station."
-    amaS "We've got to reverse fast before they hit us with a tractor beam."
-    amaS "Transferring control to co-pilot. Brown you take over flight control."
-    "Jennica leaps into the co-pilot chair."
-    pS "On it."
-    mS "Teresa, head down to engines, make sure power is routed where we need it to go."
-    enS "Aye aye, captain."
-    "A tug at my sleeve."
-    macS "What about me?"
-    menu:
+        show jennica stream neutral at stream_left with dissolve
+        show teresa stream neutral at stream_right with dissolve
+        show ama stream neutral at stream_left5 with dissolve
+        show mac stream neutral at stream__right5mac with dissolve
+        "The four of us move up to the cockpit."
+        if amaRomance == True:
+            "I step up behind Ama's chair and reach for her hand."
+            "Almost automatically, as if we've been doing it for years, she takes it."
+        else:
+            pass
+        mS "What seems to be the trouble, Ama?"
+        amaS "Does anyone else see anything funny out there?"
+        "The visual in the cockpit just shows empty space."
+        pS "Looks like normal space stuff to me."
+        enS "Nothing out of the ordinary I can see."
+        amaS "Keep looking."
+        "A minute goes by as we scan the vastness of space."
+        amaS "There! Did anyone see that!"
+        macS "Oh! I see it!"
+        mS "See what?"
+        macS "It was a little flicker in front of one of the stars!"
+        amaS "So I'm not going crazy."
+        "As I gaze into the vastness of space, I start to notice it too."
+        "Some of the stars are flickering."
+        "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
+        "Then it starts."
+        enS "What the--?"
+        "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
+        "It fades into view slowly but surely, as the ripples dissipate further and further away."
+        "A massive space station, four times the size of the Polaris moon, resolves into view."
+        "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
+        "Smaller ships depart the hangars."
+        "They're heading in our direction."
+        mS "What the hell is that!"
+        amaS "Dragonfly space station. Shit!"
+        "Ama jams thrusters back and frenetically starts snapping switches on control consoles."
+        "We immediately turn around and start flying away from the station."
+        amaS "We've got to reverse fast before they hit us with a tractor beam."
+        amaS "Transferring control to co-pilot. Brown you take over flight control."
+        "Jennica leaps into the co-pilot chair."
+        pS "On it."
+        mS "Teresa, head down to engines, make sure power is routed where we need it to go."
+        enS "Aye aye, captain."
+        "A tug at my sleeve."
         macS "What about me?"
-        "Guns.":
-            mS "MAC, you and I are going to handle the guns."
-            if macViolence >= macPeace:
-                "I swear, his eyes light up."
-                macS "Guns! Oh boy!"
-            else:
-                macS "Understood."
-    "MAC turns and rolls off toward the turret controls to the side of the cockpit."
-    if amaRomance == True:
-        "I move to follow, but a hand on my shoulder stops me."
-        amaS "Hey."
-        "We kiss. Briefly. But passionately."
-        amaS "Knock 'em dead, Moze."
+        menu:
+            macS "What about me?"
+            "Guns.":
+                mS "MAC, you and I are going to handle the guns."
+                if macViolence >= macPeace:
+                    "I swear, his eyes light up."
+                    macS "Guns! Oh boy!"
+                else:
+                    macS "Understood."
+        "MAC turns and rolls off toward the turret controls to the side of the cockpit."
+        if amaRomance == True:
+            "I move to follow, but a hand on my shoulder stops me."
+            amaS "Hey."
+            "We kiss. Briefly. But passionately."
+            amaS "Knock 'em dead, Moze."
+        else:
+            pass
+        hide ama with dissolve
     else:
-        pass
-    hide ama with dissolve
+        show jennica stream neutral at stream_left with dissolve
+        show teresa stream neutral at stream_right with dissolve
+        show mac stream neutral at stream__center_mac with dissolve
+        "Jennica takes over control from the auto-pilot as we move up to the cockpit."
+        "The visual in the cockpit just shows empty space."
+        pS "Looks like normal space stuff to me."
+        enS "Nothing out of the ordinary I can see."
+        mS "Could it be a faulty alarm system?"
+        macS "Let us wait, and observe before we jump to conclusions."
+        "A minute goes by as we scan the vastness of space."
+        macS "Oh! I see it!"
+        mS "See what?"
+        macS "It was a little flicker in front of one of the stars!"
+        "As I gaze into the vastness of space, I start to notice it too."
+        "Some of the stars are flickering."
+        "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
+        "Then it starts."
+        enS "What the--?"
+        "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
+        "It fades into view slowly but surely, as the ripples dissipate further and further away."
+        "A massive space station, four times the size of the Polaris moon, resolves into view."
+        "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
+        "Smaller ships depart the hangars."
+        "They're heading in our direction."
+        mS "Shit! It's the Dragonflies!"
+        "Jennica jams thrusters back and frenetically starts snapping switches on control consoles."
+        "We immediately turn around and start flying away from the station."
+        pS "We've got to reverse fast before they hit us with a tractor beam."
+        mS "Teresa, head down to engines, make sure power is routed where we need it to go."
+        enS "Aye aye, captain."
+        "A tug at my sleeve."
+        macS "What about me?"
+        menu:
+            macS "What about me?"
+            "Guns.":
+                mS "MAC, you and I are going to handle the guns."
+                if macViolence >= macPeace:
+                    "I swear, his eyes light up."
+                    macS "Guns! Oh boy!"
+                else:
+                    macS "Understood."
+    "MAC turns and rolls off toward the turret controls to the side of the cockpit."
     "I follow MAC as he hops into one of the turret seats."
     "I take the position next to him."
-    "We face each other."
+    "We turn to each other."
     menu:
-        "We face each other."
+        "We turn to each other."
         "We'll face our future, together.":
             "I put a hand on his head."
-            mS "Whatever's in store for us, we'll face it together. Right MAC?"
+            mS "Whatever's in store for us, we'll face it together. Right, MAC?"
             macS "Right, Captain Moze!"
         "Are you ready for an adventure?":
             "I put a hand on his head."
