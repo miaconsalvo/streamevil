@@ -1020,14 +1020,16 @@ label vig3_sc6():
                     mS "They're right, just because something is difficult doesn't mean you need to worry all the time."
                     mS "How you work through that is more important."
                     macS "I think I understand."
-                    show rec stream happy
+                    show rec stream happy at stream_center with dissolve
                     recS "You know Moze I do admire what you do, it's a tough life but it's yours."
                     "I smile."
                     mS "It has it's good moments."
                     macS "Like candy!" 
                     mS "Exactly. That's why we go through the worry."
+                    recS "You know..."
                     recS "I was so scared when Allistar decided to join the Snakehawks."
                     recS "But I'm happy he had you with him."
+                    recS "It made me worry less."
                     mS "Rec I should tell you-"
                 "Rec should really consider moving.":
                     mS "Rec ever thought that moving would be the right call?"
@@ -1038,11 +1040,11 @@ label vig3_sc6():
                     recS "Plus when Allistar was with the Snakehawks I always knew you'd be here after your missions."
                     recS "I'm happy I got to see him as much as I did."
                     "A pit forms in my stomach."
-                    mS "I didn't mean to offend"
+                    mS "I didn't mean to offend."
                     mS "You found a place that is yours."
                     recS "I'll be sure to fight for it."
                     mS "Rec I should tell you-"
-                    show rec stream neutral
+                    hide rec stream happy with dissolve
                 "Akar is beautiful if you look in the right places.":
                     mS "It may not look it but Akar is beautiful."
                     mS "Didn't you see all the colour and community here?"
@@ -1073,7 +1075,7 @@ label vig3_sc6():
             pS "Please."
             "Teresa saddles up next to Jennica."
             show teresa stream happy at stream_right with dissolve
-            enS "The lady said she'd like to ride the karousel."
+            enS "The lady said she'd like to ride the Karousel."
             zan "Two of you! I'll need a bigger mop!"
             "A woman from the table flanks him, she rivals him in size."
             enS "So does that mean you're ready to play?"
@@ -1121,14 +1123,15 @@ label vig3_sc6():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show zan stream at stream_center with dissolve
-    "Though I would assume Zan (as he keeps reminding everyone) would pick the tough looking women as his partner, instead it's a small man with dark hair and modified gray skin."
+    "A small man with dark hair and modified gray skin steps to the table."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
     zan "Ovid is strong of heart, muscles on the inside."
     enS "That tends to be where they go yes."
     ovid "Zan must we always play this game whenever we go out?"
-    zan "OF COURSE! HAHA!"
+    ZAN "..."
+    zan "YES!"
     "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
-    "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the karousel."
+    "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the Karousel."
     "The first team that withdraws or has a member drop loses."
     "...By round ten, it's not looking good."
     hide screen streamerCommentary
@@ -1160,8 +1163,8 @@ label vig3_sc6():
         "It's better if I just do it.":
             mS "This is better as a solo mission."
             macS "But I-"
-            mS "I know you want to help some things work better with less people."               
-    macS "But I'm part of this crew too *Ama*!"
+            mS "I know you want to help but some things work better with less people."               
+    macS "But I'm part of this crew too!"
     "That was my voice. Upset, scared of being left behind."
     mS "You are, and you'll have other chances to prove it. Just not right now."
     "When Jennica calls for a short recess I know that's my time to head over."
@@ -1176,17 +1179,29 @@ label vig3_sc6():
     mS "Better think of something fast after what you just bet."
     pS "Ya Resa, I don't think hand signals are going to cut it here."
     "I swallow the knowledge that hand signals were the only thing they thought of after betting our ship."
-    "There has to be signs for how they're doing this."
-    "Ovid stares blankly across the room poking at something metal in his mouth."
-    pS "Ovid's not drinking."
-    enS "An evaporator..."
-    pS "Was wondering how that little guy is still standing."
-    "I look around the room for more signs."
-    pS "The deck isn't right. I know a standard set when I see one."
-    mS "That makes sense, especially if they're regulars."
-    "What else. Teresa's eyes are fixed on the Karousel."
-    enS "The Karousel. There's a delay before it settles. And one of their friends has been staring at his communicator all night."
-    "Ovid's tube, the deck, the karousel. We have to deal with them."
+    menu: 
+        "There has to be signs for how they're doing this."
+        "Check Ovid":
+            "Ovid stares blankly across the room poking at something metal in his mouth."
+            pS "Ovid's not drinking."
+            enS "An evaporator..."
+            pS "Was wondering how that little guy is still standing."
+            "I look around the room for more signs."
+    menu: 
+        "There has to be more signs for how they're doing this."
+        "Check the deck":
+            pS "The deck isn't right. I know a standard set when I see one."
+            mS "That makes sense, especially if they're regulars."
+            enS "Truly? All for a stupid game?"
+            "What else?"
+    menu: 
+        "There has to be more signs for how they're doing this."
+        "Check the Karousel":
+            "Teresa's eyes are fixed on the Karousel."
+            mS "The Karousel?"
+            enS "There's a delay before it settles. And one of their friends has been staring at his communicator all night."
+            "I think that's all."
+    "Ovid's tube, the deck, the Karousel. We have to deal with them."
     pS "We need to tip the table."
     enS "Can't do that while we play."
     pS "I got it covered, just stay standing until I do."
@@ -1194,7 +1209,8 @@ label vig3_sc6():
     show zan stream at stream_center with dissolve
     zan "Now! Moxie!"
     "I scan my options."
-    "If I start a fight I'm sure I can get someone slammed into the table. That should take care of some of the issues."
+    "If I start a fight I'm sure I can get someone slammed into the table." 
+    "That should take care of some of the issues."
     "I look at the ceiling where the carnivorous plants lie waiting and salivating."
     "One of the ropes for their netting looks frayed and worn if I undo it then it's open season on that table. Maybe quits for the Karousel."
     "As I scan my options I can feel MAC's eyes on me."
@@ -1206,19 +1222,29 @@ label vig3_sc6():
         "How do I help Jennica and Teresa?"
         "Start a bar fight.":
             "I see a young couple pinning each other on a pillar near the table." 
+            "They're really in it."
+            "Ah young love, so easy to break."
             "When they separate I go up to the young man and shove him."
-            mS "How dare you! We spent five glorious nights together, you tell me you love me and after months of not hearing from you I find you here with a random woman!"
+            mS "How dare you! We spent five glorious nights together, you tell me you love me..." 
+            mS "And after MONTHS of not hearing from you I find you here with a random woman!"
+            "His jaw is on the floor."
             wifenpc "Random! I'm his wife!"
             husbnpc "What? huh? I don't-"
             mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
-            wifenpc "PROPOSE! So that's what you've been doing on your business trips huh?"
+            wifenpc "PROPOSE!!!!"
+            wifenpc "So that's what you've been doing on your business trips huh?"
             husbnpc "No-what?!? I don't even know her!"
-            "Before I can even add fuel to the fire. With a one-two combo that almost lands the young woman a spot on the Oakley, the man fumbles onto Ovid and the table."
+            "Before I can even add fuel to the fire."
+            "The youg woman hits him with a one-two combo that almost lands her a spot on the Oakley." 
+            "He fumbles onto Ovid and the table."
             "Cards fly everywhere and before I can process what happens Zan has the man in a chokehold."
             show zan stream at stream_center with dissolve
-            zan "Fool! You interrupt the Karousel!"
-            "It's hand fifteen, and half the bar is up in arms, friends of the man square up with Zan's crew. It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
-            "Ovid coughs loudly before putting something in his pocket, with cards scattered all over the floor the deck is replaced."
+            zan "You interrupt the Karousel!"
+            "It's hand fifteen, and half the bar is up in arms."
+            "Friends of the man square up with Zan's crew."
+            "It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
+            "Ovid coughs loudly before putting something in his pocket."
+            "with cards scattered all over the floor the deck is replaced."
             "The Karousel is untouched, the rounds continues."
             hide zan with dissolve
         "Cut the rope holding the carnivorous plants":
@@ -1266,8 +1292,12 @@ label vig3_sc6():
     zan "Hehehe, I say I am impressed. And having the best of times!"
     show jennica stream neutral at stream_left with dissolve
     pS "Not after this you aren't."
-    "When Zan and Ovid lose the round an opportunity presents itself. Zan will tip his chair back, one clean shot to the leg and he's on the ground. But that's risky."
-    "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs. But if they actually bet the ship then I don't know how we're gonna get it back."
+    "When Zan and Ovid lose the round an opportunity presents itself." 
+    "Zan will tip his chair back to take his drink."
+    "One clean shot to the leg and he's on the ground."
+    "But that's risky."
+    "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs."
+    "But if they actually bet the ship then I don't know how we're gonna get it back."
     ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
     menu:
         "How do I finish this?"
@@ -1279,26 +1309,33 @@ label vig3_sc6():
             "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully."
             "I take my position."
             "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
-            "Then I see them, a small group near the door, half watching the game. Is that? No. My vision is still betraying me and I don't have time to get a better look."
+            "Then I see them, a small group near the door, half watching the game."
+            "Is that?"
+            "No."
+            "My vision is still betraying me and I don't have time to get a better look."
             zan "FOR MY LOYAL FANS!"
             "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
-            "As I pull the trigger Zan's eyes meet mine. Damn."
+            "As I pull the trigger... Zan's eyes meet mine."
+            "Damn."
             $ reactTarget = "vig3_sc6_shootingzan"
             play audio "lazer.wav" volume 5.0
             hide zan with Dissolve (0.1)
             "Zan falls hard, the pub is silent."
             show screen streamerCommentary
+            pS "HELL YEAH!!!"
             show jennica stream neutral at stream_left
             show teresa stream happy at stream_right
-            pS "HELL YEAH!!!"
             "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
             show zan stream at stream_center with dissolve
             "Zan gets up to accept defeat, Ovid has fully crawled under the table."
             "I look over again to the crew, but that table is empty."
             "The door swings closed."
             ovid "Thank the Makers it's over."
-            zan "Good, good! NOW! I must go and throw up. HAHA!"
+            zan "Good, good! NOW!" 
+            zan "I must go and throw up. HAHA!"
             "The three exchange handshakes as Zan passes by me and stops."
+            hide jennica stream 
+            hide teresa stream
             zan "You are Captain, no?" 
             menu: 
                 "Respond to Zan."
@@ -1310,20 +1347,24 @@ label vig3_sc6():
                     mS "The one and only!"
                     zan "You have a good crew, good moxie."
                     mS "We like to show out."   
-            "Good shot, but messy. Have more faith next time."
+            "Good shot, but messy."
+            "Have more faith next time."
             "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
             hide screen streamerCommentary
             hide zan with dissolve
             "I move to greet my victors."
-            mS "I can't believe you pulled that off. That was some risky business."
+            mS "I can't believe we pulled that off. That was some risky business."
             pS "C'mon Cap, just harmless fun."
+            "... what?"
             mS "Betting the ship is harmless to you?"
-            enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+            enS "The ship? What do you take us for?"
+            enS "Zan asked us to perform a show for the bar if we lost."
             mS "A show?"
-            pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
+            pS "Mighty embarassin' that've been."
+            pS "Everyone knows Resa sounds likes a torn up gear when she sings."
             enS "Agreed."
             pS "But alls well, big guy told us he'd comp our room for the night."
-            "I'm truly losing it."
+            "...I'm truly losing it."
             mS "Alright, well congrats then. I'm turning in."
             hide teresa with dissolve
             hide jennica with dissolve
@@ -1335,8 +1376,9 @@ label vig3_sc6():
             $ reactTarget = "vig3_sc6_trustcrew"
             show screen streamerCommentary
             "There's a part of me that know I'll regret this but I don't go for my pistol."
-            "These two are idiots but they're my idiots and I have to trust they'll pull through."
-            "The hands keep going."
+            "These two are idiots but they're my idiots."
+            "And I have to trust they'll pull through."
+            "The game keep going."
             "So do the drinks."
             "26, 27, 28..."
             "...29..."
@@ -1357,14 +1399,15 @@ label vig3_sc6():
                 mS "I can't believe you pulled that off. That was some risky business."
                 pS "C'mon Cap, just harmless fun."
                 mS "Betting the ship is harmless to you?"
-                enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+                enS "The ship? What do you take us for?" 
+                enS "Zan asked us to perform a show for the bar if we lost."
                 $ reactTarget = "vig3_sc6_shipbet2"
                 show screen streamerCommentary
                 mS "A show?"
                 pS "Mighty embarassin' that've been, Everyone knows Resa sounds likes a torn up gear when she sings."
                 enS "Agreed."
                 pS "But alls well-"
-                "I'm truly losing it."
+                "...I'm truly losing it."
                 "Just then Zan comes over to us and kneels."
                 show zan at stream_center with dissolve
                 zan "I must make good on promise."
@@ -1383,24 +1426,25 @@ label vig3_sc6():
                 "The whole bar is roaring!"
                 "Zan pushes the table away and goes to hug Ovid who looks like his eyes are about to pop out."
                 hide zan with dissolve
-                "I move to help Jennica"
+                "I move to help Jennica."
                 enS "C'mon Jenn, you're good, you're alright."
                 pS "Did... Did we win?"
                 enS "Sorry sweerheart we didn't."
                 mS "Makers, why did you bet the ship?"
-                enS "The ship? What do you take us for? Zan asked us to perform a show for the bar if we lost."
+                enS "The ship? What do you take us for?" 
+                enS "Zan asked us to perform a show for the bar if we lost."
                 $ reactTarget = "vig3_sc6_shipbet2"
                 show screen streamerCommentary
                 mS "A show?"
                 pS "A show! Oh scrap, you sound horrible when you sing Resa."
                 enS "Still better than you."
                 pS "But we must press on! *hick*"
-                "I'm truly losing it."
+                "...I'm truly losing it."
                 "Just then Zan comes over to us."
                 show zan at stream_center with dissolve
                 zan "You must make good on promise."
                 "Teresa helps Jennica get up and they stand on the Karousel table."
-                "Zan begins to clap on beat." #The melody is "C'est a ton tour"
+                "Zan yells for music." #The melody is "C'est a ton tour"
                 "Teresa and Jennica begin to sing"
                 pS "Zan is the man! Zan has a plan! Zan's got the muscles to beat any man." 
                 enS "Ovid's the best! Above all the rest! With muscles inside to pass any test."
@@ -1433,7 +1477,9 @@ label vig3_sc6():
     recS "He's a special kid."
     "Something flashes behind their eyes. I remember Allistar."
     recS "We'll keep looking for that part tomorrow."
-    "MAC waves to Rec as they leave. We turn in."
+    "MAC waves to Rec as they leave."
+    recS "See ya buddy."
+    "We turn in."
     hide rec with dissolve
     hide mac with dissolve
     jump vig3_sc7
@@ -1481,6 +1527,8 @@ label vig3_sc7():
     $ reactTarget = "vig3_sc7_lostmac"
     show screen streamerCommentary
     mS "MAC!"
+    hide teresa stream 
+    hide jennica stream
     "I know Teresa and Jennica are screaming for him but I can't hear them, I can't hear anything but my heart pounding in my chest."
     "Where is he?"
     "WHERE IS HE?"
@@ -1488,9 +1536,10 @@ label vig3_sc7():
     "To a group of Hounds."
     "My feet move before my brain can register what is happening."
     "It happens so fast, MAC runs into the leader, his arms frantic."
-    "They swarm him, my feet aren't moving fast enough. I can't think of anything but how fast my legs should be moving." 
+    "They swarm him, my feet aren't moving fast enough."
+    "I can't think of anything but how fast my legs should be moving." 
     "MOVE FASTER."
-    "When they take him and drive away, I don't register how a cruiser almost hit me, I don't feel the pain of my knees when they hit the ground in defeat."
+    "When they take him and drive away, I don't register how a cruiser almost hit me, I don't feel the pain of my knees when they hit the ground."
     "All I can hear is Ama's voice in my head, \"You'll have the chance to prove it, just not right now.\"" ##Consider changing this line##
     hide screen streamerCommentary
     hide jennica with dissolve
@@ -1513,42 +1562,54 @@ label vig3_sc8():
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
-    enS "Can you give it a rest there are people around."
+    enS "Can you give it a rest, there are people around."
     pS "I thought you'd want me to look presentable?"
     mS "You need to be serious about this."
     pS "Oh I'm very serious, just my face don't look it. Y'all should consider fixin' yours."
     "I relax my shoulders as an attendant walks over to us."
-    show rec stream neutral at stream_right5 with move
-    show vineyardattendnpc stream at stream_left5 with dissolve
+    show rec stream neutral at stream_right with move
+    show reynar stream at stream_left with dissolve
     vyattend "Good afternoon, my name Ryo and it is my pleasure to welcome you to the Vineyard." 
     vyattend "Are you perhaps here for the Inventor's Fair?"
     enS "Pleased to make your acquaintance Ryo. Please check the list for Vira Prismari and retinue."
     "They raise an eyebrow before checking a screen."
-    vyattend "Prismari? How wonderful, we were certain to receive another refusal gift this year."
+    vyattend "Prismari?"
+    ens "That is correct." 
+    "There's a long pause."
+    reynar "Well well, Ryo I'll take it from here."
+    "Our jaws nearly drop at the finely dressed man who approached us. Reynar..."
+    reynar "How wonderful, we were certain to receive another refusal gift this year."
     enS "Well we so desperately missed the inspiration of the Inventor's Fair. I hope you are well to accommodate us?"
-    vyattend "I must say your posse is such a surprise it's so... pleasantly unexpected."
+    reynar "I must say your posse is such a surprise it's so... pleasantly unexpected."
     "It's like watching a tennis match with a bomb for a ball."
     enS "You know we are so thankful to Reynar for his consideration every year, and so lovely to see our donations put to such good use."
     enS "You've truly spared no expense."
-    vyattend "Of course, we want to celebrate all those who contribute to research and development of the Outposts."
+    reynar "Of course, we want to celebrate all those who contribute to research and development of the Outposts."
     enS "The Prismari family is always proud to support this iconic hub of innovation."
-    vyattend "We are pleased to have you Miss Prismari, right this way."
-    "The attendant makes a gesture to the main ballroom and leaves us to check in other guests."
-    hide vineyardattendnpc with dissolve
+    reynar "We are pleased to have you back Miss Prismari, right this way."
+    "Reynar walks away cooly leaving us to welcome in other guests."
+    hide reynar stream with dissolve
     $ reactTarget = "vig3_sc8_teresabluff"
     show screen streamerCommentary
     pS "You're a bit scary when you're proper."
     show rec stream thinking at stream_center with move
     recS "Can you kill someone by being too nice?"
     enS "I'm sure someone has."
-    mS "Your sister isn't going to be mad with you using her name?"
+    mS "You sure using her name was a good idea?"
+    enS "If Reynar really wanted us out he would've done so already."
+    pS "So why didn't he..."
+    mS "Does he think your family will take care of it."
     enS "Please. My family hasn't come to these since I was exiled. Doubtful they'll even know I was here."
-    mS "I appreciate you going through this so we can get in."
-    enS "Couldn't have done it without Rec getting us ready."
+    enS "We're in, that's what matters."
+    mS "You got it."
+    enS "And thank you Reccrin couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
-    recS "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
-    "Reynar and his Vineyard have spared no expense. His finely dressed guests being served by his android wait staff." 
+
+    show inventorfairgallery_stream at topleft onlayer background
+    "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
+    "Brimming with shine and luster. Inventors setting up sections with their project."
+    "Fnely dressed guests being served by his android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
