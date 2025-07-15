@@ -759,7 +759,7 @@ label vig4_sc7_1_attack_ama():
     "The stairs flatten out."
     "Ama and I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
-    show coil at stream_left with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     cS "Well, you made it."
     if vig4_killDflies == True:
@@ -1567,7 +1567,7 @@ label vig4_sc7_1_attack():
     "There's a wide room in front of me, and two voices shouting within."
     "I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
-    show coil at stream_left with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     cS "Well, you made it."
     if vig4_killDflies == True:

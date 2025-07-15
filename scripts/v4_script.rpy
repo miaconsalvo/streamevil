@@ -3145,7 +3145,7 @@ label vig4_sc7_2():
     "{i}whoosh{/i}"
     "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
     "An energy shield."
-    show vega at stream_left5 with dissolve
+    show vega stream neutral at stream_left5 with dissolve
     vS "Pops!"
     "Vega rushes up the stairs and kneels down to MAC's side."
     hide vega with dissolve
@@ -3298,7 +3298,7 @@ label vig4_sc7_3_ama():
     "Blood streaks down his arm. The device in his palm short circuits."
     "The thin veil of blue light around him sparks inconsistently."
     "Ama is motionless on the floor."
-    show coil at stream_center with move
+    show coil stream neutral at stream_center with move
     "Coil and I lock eye contact."
     "Behind him, I see the ruin of the BC cruister listing toward the ground of Polaris as the star shower pummels its hull."
     cS "Will you do what you have to do?"
@@ -3359,7 +3359,7 @@ label vig4_sc7_3_ama():
     "Blood pools around his throat."
     "His eyes go cold. But there's an odd light to them. As if he was smiling."
     hide coil with Dissolve(2.0)
-    show vega at stream_left with dissolve
+    show vega stream neutral at stream_left with dissolve
     vS "No!"
     "The energy shield at the doorway dissipates. Vega rushes to Coil's side."
     "She pulls his head into her lap."
@@ -3461,7 +3461,7 @@ label vig4_sc7_3_ama():
     show ama stream neutral at stream_right with dissolve
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
     "Ama is standing now, and she points across the room."
-    show vega at stream_left with dissolve
+    show vega stream neutral at stream_left with dissolve
     "Vega sits, still cradling Coil's head in her hands."
     "The tears that were streaking down her face have stopped."
     "She is completely silent, staring into Coil's eyes."
@@ -3603,7 +3603,7 @@ label vig4_sc7_3_coil():
     macS "Moze! Get up! Get up!"
     "Finally, I push myself into a sitting position."
     show ama stream neutral at stream_center with dissolve
-    show coil at stream_left with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
     "Coil slumps to the ground, his back leaning against the wall."
@@ -3671,7 +3671,7 @@ label vig4_sc7_3_coil():
     "Her eyes are cold. Lifeless."
     "Dead."
     hide ama with Dissolve(2.0)
-    show vega at stream_center with dissolve
+    show vega stream neutral at stream_center with dissolve
     vS "Pops!"
     "The energy shield dissipates. Vega rushes to Coil's side."
     vS "No. Don't go. Don't go. Don't leave me."
@@ -3962,8 +3962,8 @@ label vig4_epilogue_coil():
     show shiphub_stream onlayer background with dissolve
     show jennica stream neutral at stream_left5 with dissolve
     show teresa stream neutral at stream_right5 with dissolve
-    show coil at stream_right with dissolve
-    show vega at stream_left with dissolve
+    show coil stream neutral at stream_right with dissolve
+    show vega stream neutral at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "The four of us move up to the cockpit."
     "We're not in hyperspace anymore, just floating in the vast expanse of stars."
