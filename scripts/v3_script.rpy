@@ -2601,7 +2601,139 @@ label vig3_macro_modStart():
     "Since we don't have that yet, the game will now jump to vignette 4."
     jump vignette4Start
 
+label vig3_macro_brother_1():
+    nvl clear
+    $ menu = nvl_menu
+    scene bg black with dissolve
+    "It's reassuring that Jessie feels good about the stream."
+    "And he's right, there's just one more episode to go."
+    "One way or another, this thing will come to an end."
+    "You start absentmindedly scrolling through Loop'D and you see that Elliot is online."
+    "It's been a while since you had a proper chat."
+    scene discordview with dissolve
+    player_nvl "Hey El, you got some time to chat?"
+    $ playerNVLNarration = "You sit in front of your computer for a couple of minutes."
+    show screen NVLnarration with dissolve
+    pause
+    $ playerNVLNarration = "You remember Elliot had a test later this week. Maybe he's busy studying."
+    pause
+    $ playerNVLNarration = "Then you see that he's typing."
+    pause
+    pause 1.0
+    hide screen playerNVLNarration with dissolve
+    bro_nvl "Of course [player]! Any time?"
+    bro_nvl "I was actually just gonna shoot you a message asking the same thing lol"
+    menu:
+        "•What did Elliot want to check-in about?":
+            jump vig3_macro_brother_cedric
+        "•Tell Elliot about the stream.":
+            jump vig3_macro_brother_stream
 
+label vig3_macro_brother_cedric():
+    $ vig3_brotherChat += 1
+    player_nvl "Oh? Got life updates?"
+    bro_nvl "Actually, yeah, I got an A on Mrs. Weber's mid-term!"
+    menu:
+        "•That's great!":
+            player_nvl "That's great, El! Should take some of the pressure off the final."
+            bro_nvl "Yeah, it's a relief for sure :)"
+            player_nvl "...anything else to report on?"
+            bro_nvl "Nothing too important really."
+            player_nvl "suuuuure"
+            bro_nvl ">:)"
+        "•Who cares, I want boy news!":
+            player_nvl "Grades shmades! What about the Brit Boy!"
+            bro_nvl "Who?"
+            player_nvl "YOU KNOW WHO, EL!"
+            bro_nvl "lmao >:)"
+    player_nvl "Spill it."
+    bro_nvl "I asked Cedric out on a date."
+    menu:
+        "•What did he say?":
+            player_nvl "El! That's amazing!"
+            player_nvl "I'm so proud of you!"
+            player_nvl "What did he say?"
+        "•YESSSS!":
+            player_nvl "YESSS!"
+            player_nvl "WHOOOO!"
+            player_nvl "So proud of you, El!"
+            player_nvl "How did you do it? Was it like a big production like a prom thing? Were you like wearing a suit or something?"
+            player_nvl "Wait, what did he say?"
+    bro_nvl "lmao"
+    bro_nvl "He said yes!"
+    player_nvl "WHOOOOO!"
+    menu:
+        "•Best. Day. Ever.":
+            player_nvl "Best. Day. Ever."
+        "•I'm gonna cry.":
+            player_nvl "Omg, I'm legit gonna cry."
+    bro_nvl "It's not your crush haha"
+    player_nvl "No, but like."
+    bro_nvl "But thank you."
+    player_nvl "You made the move"
+    bro_nvl "I know."
+    player_nvl "You put yourself out there"
+    bro_nvl "Yeah."
+    player_nvl "That's huge."
+    bro_nvl "I know! I'm like giddy all over!"
+    player_nvl "So how did it happen?"
+    bro_nvl "Well, it wasn't a big production."
+    bro_nvl "I took your advice from a couple weeks back and just kept making the effort to chat with him these past couple weeks."
+    player_nvl "Uh huh."
+    bro_nvl "It was tough, but I kept thinking about what you said."
+    if vig1_overthink == True:
+        bro_nvl "\"Don't overthink it.\""
+    else:
+        bro_nvl "Talking to someone you like is \"never not weird.\""
+    bro_nvl "So I just tried to be myself and we started walking home from school together like almost every day."
+    player_nvl "Cuuuuute"
+    bro_nvl "And when we got to my block today...I don't know."
+    bro_nvl "I just asked if he'd like to go on a date with me."
+    bro_nvl "I didn't even realize I was doing it until I heard myself say the word \"date.\""
+    player_nvl "And then?"
+    bro_nvl "He said yes and kissed me on the cheek :)"
+    player_nvl "I'm dying"
+    bro_nvl "lol"
+    player_nvl "No, legit, I couldn't write a better story for you two."
+    player_nvl "You got plans for the date??"
+    bro_nvl "Yeah, he's gonna take me to see a movie next Friday!"
+    $ playerNVLNarration = "That's the same day as the release of the Oakley's final episode."
+    show screen NVLnarration with dissolve
+    pause
+    menu:
+        "•That's the same day as the last Oakley stream.":
+            hide screen NVLNarration
+            player_nvl "Funny, that's the same day as my last Oakley stream."
+            bro_nvl "I know, I'm sorry I won't be able to make it!"
+            bro_nvl "It's the only night Cedric's free!"
+            player_nvl "nononono your date is way more important."
+            player_nvl "We'll catch up on Oakley 2 when I get back for Thanksgiving!"
+            bro_nvl "Yes!"
+            player_nvl "And I'll be sending you the best vibes for a good date from a distant galaxy!"
+            bro_nvl "I promise they will be received haha"
+        "•You? In a movie theater?":
+            hide screen NVLNarration
+            player_nvl "Since when do you go see movies in theathers Mr. \"Classical Music is the Only Real Theatre.\""
+            bro_nvl "Since my crush started giving me shit about my lack of pop culture knowledge."
+            player_nvl "You know what, fair."
+            player_nvl "I did try to get into MOBAs just to impress a girl a couple years back so I guess I can't talk."
+            bro_nvl "Yeah, I remember that. Fun streams!"
+            player_nvl "My kda was like 0.3."
+            bro_nvl "I didn't say they were fun for you."
+            player_nvl "Shut up."
+            bro_nvl "Love you too <3"
+    if vig3_brotherChat == 1:
+        bro_nvl "Soooo yeah, that's my big news."
+        bro_nvl "What's up with you? How's the stream going'?"
+        jump vig3_macro_brother_stream
+    else:
+        jump vig3_macro_brother_end
+
+label vig3_macro_brother_stream():
+    $ vig3_brotherChat += 1
+    menu:
+
+label vig3_macro_brother_end():
 
 
 

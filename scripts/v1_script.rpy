@@ -1179,9 +1179,11 @@ label vig1_brother_1():
     bro_nvl "How do you like, talk to people that you like without it feeling...weird?"
     menu:
         "•It's always weird":
+            $ vig1_overthink = False
             player_nvl "I mean, it's never not weird really"
             player_nvl "That's the thing"
         "•Don't overthink it":
+            $ vig1_overthink = True
             player_nvl "The main thing is not to overthink it"
     player_nvl "You just have to be yourself"
     bro_nvl "I know"
