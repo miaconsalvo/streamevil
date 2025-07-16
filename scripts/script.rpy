@@ -151,6 +151,7 @@ default killAllistar = False #if you tried to kill allistar = true
 default omegaDead = False
 default misclick = False
 default askBandit = False
+default vig1_overthink = False
 
 ####Variables for Vignette 2#####
 default customsStampede = False
@@ -171,6 +172,9 @@ default promisedPDOutlaw = False #if you told pickleddragons that you want to do
 default firstfightprediction = False
 default shipbetprediction = False
 default vig3_brika = 0
+
+####Variables to track the macro game stuff in vignette 3####
+default vig3_brotherChat = 0
 
 ###Variables for Vignette 4###
 default stunGuy = False
