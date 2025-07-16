@@ -58,10 +58,10 @@ default vig4_sc2_1_comment10 = ChatEntry (False, "{b}turb0g00se - 6:18{/b}\nRUBY
 default vig4_sc2_1_comment11 = ChatEntry (False, "{b}llamabama22 - 6:18{/b}\nRUBIO!", 4, "#ffffff")
 default vig4_sc2_1_comment12 = ChatEntry (False, "{b}AFKAngel - 6:18{/b}\nthis man never set foot on a spaceship in his life", 4, "#ffffff")
 default vig4_sc2_1_comment13 = ChatEntry (False, "{b}Coriolis - 6:18{/b}\ndefo not BC tho", 4, "#ffffff")
-default vig4_sc2_1_comment13 = ChatEntry (False, "{b}jerrybean784 - 6:18{/b}\nhey evil corporations need their incompetent bureaucrats too", 4, "#ffffff")
-default vig4_sc2_1_comment14 = ChatEntry (False, "{b}kitcat - 6:18{/b}\nawww I wanted to see Teresa get in the mix", 4, "#ffffff")
-default vig4_sc2_1_comment15 = ChatEntry (False, "{b}_lostinmetr0 - 6:18{/b}\nProbably the right call though, no?", 4, "#ffffff")
-default vig4_sc2_1_comment16 = ChatEntry (False, "{b}pickledDragons - 6:18{/b}\nThey are flying blind so it's definitely safer...bit less fun tho lol", 4, "#ffffff")
+default vig4_sc2_1_comment14 = ChatEntry (False, "{b}jerrybean784 - 6:18{/b}\nhey evil corporations need their incompetent bureaucrats too", 4, "#ffffff")
+default vig4_sc2_1_comment15 = ChatEntry (False, "{b}kitcat - 6:18{/b}\nawww I wanted to see Teresa get in the mix", 4, "#ffffff")
+default vig4_sc2_1_comment16 = ChatEntry (False, "{b}_lostinmetr0 - 6:18{/b}\nProbably the right call though, no?", 4, "#ffffff")
+default vig4_sc2_1_comment17 = ChatEntry (False, "{b}pickledDragons - 6:18{/b}\nThey are flying blind so it's definitely safer...bit less fun tho lol", 4, "#ffffff")
 
 ###Comments for vig4_sc2_2 general - Dealing with the Townsperson
 default vig4_sc2_2_comment1 = ChatEntry(False, "{b}pickledDragons - 6:21{/b}\nnow {i}that{/i} is sus", 4, "#ffffff")
