@@ -2457,7 +2457,7 @@ label FlinchAnalytics_vig2():
     $ menu = adv_menu
     $ screenComplete = False
     $ flinchView = True
-    "You should probably check out Flinch too."
+    "You should probably check out Flinch's analytics page."
     $ flinchCheck = 0
     show screen webNavigation_vig2
     scene flinch_v2screen with dissolve

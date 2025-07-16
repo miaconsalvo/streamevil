@@ -2495,7 +2495,108 @@ label vig3_epilogue():
     "I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
-    "The Oakley presses forward to Akar."
+    "The Oakley presses forward, and away from Akar."
+    jump vig3_macro_start
+
+label vig3_macro_start():
+    play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
+    $ narrator = reg_narrator
+    #$ macroNarration = True
+    $ macroChoice = True
+    "You lean back in your chair and let your body relax now that you're no longer on camera."
+    $ renpy.sound.play("audio/ReceiveText.ogg")
+    "Then you get a Loop'd notification."
+    scene streamview with dissolve
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        "It's from Coriolis."
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        "It's from KitCat."
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        "It's from PickledDragons."
+    else:
+        "It's from Coriolis."
+    "You should see what they have to say, and check on Flinch and Blueit."
+    $ screenComplete = True
+    call screen webNavigation_vig3
+    jump vig3_macro_viewerChat_1
+
+label vig3_macro_viewerChat_1():
+    scene discordview with dissolve
+    $ screenComplete = False
+    $ loopdView = True
+    $ menu = nvl_menu
+
+    $ screenComplete = True
+    call screen webNavigation_vig3
+    scene bg black with dissolve
+
+label FlinchAnalytics_vig3():
+    $ menu = adv_menu
+    $ screenComplete = False
+    $ flinchView = True
+    "You should probably check out Flinch's analytics page."
+    $ flinchCheck = 0
+    show screen webNavigation_vig3
+    scene flinch_v2screen with dissolve
+    #The six lines below this allow us to change who the topfan is
+    #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
+    #    $ topfan = "Coriolis"
+    #elif kcEngagement > csEngagement and kcEngagement > pdEngagement:
+    #    $ topfan = "kitcat"
+    #else:
+    #    $ topfan = "pickledDragons"
+    #For this particular vignette though, we want it to be Coriolis
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "KitCat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "PickledDragons"
+    else:
+        $ topfan = "Coriolis"
+    $ followerGoal = 0
+    show screen streamAnalytics_Details
+    "Time to explore the Flinch analytics page."
+    show screen viewership with dissolve
+    $ vbar1 += viewCheck1
+    $ vbar2 += viewCheck2
+    $ vbar3 += viewCheck3
+    $ vbar4 += viewCheck4
+    $ vbar5 += viewCheck5
+    $ vbar6 += viewCheck6
+    $ vbar7 += viewCheck7
+    $ vbar8 += viewCheck8
+    $ vbar9 += viewCheck9
+    $ vbar10 += viewCheck10
+    show screen viewershipButton_vig2
+    call screen streamAnalytics_vig2
+    hide screen streamAnalytics_vig2 with dissolve
+
+label blueitVignette3_1():
+    $ menu = adv_menu
+    scene blueit_v2screen at truecenter with dissolve
+    $ screenComplete = False
+    $ blueitView = True
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
+    #$ blueitPages.append(vig3_bThread1)
+    #$ blueitPages.append(vig3_bThread2)
+    #$ blueitPages.append(vig3_bThread3)
+    #$ blueitPages.append(vig3_bThread4)
+    "You go to check out the subblueit to see how people are reacting to Episode 3."
+    jump blueitVignette3_2
+
+label blueitVignette3_2():
+    scene blueit_v2screen at truecenter
+    show screen webNavigation_vig3
+    if blueitChoiceCheck == True:
+        $ screenComplete = True
+    else:
+        pass
+    call screen blueit
+    return
+
+label vig3_macro_modStart():
+
     "This is where the post-stream macro game for vignette 3 would start."
     "Since we don't have that yet, the game will now jump to vignette 4."
     jump vignette4Start

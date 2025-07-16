@@ -862,6 +862,8 @@ label vig3_sc14_recfindsout_noremorse():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+######MACRO GAME TARGETS FOR FLINCH AND BLUEIT########
+
 
 
         
