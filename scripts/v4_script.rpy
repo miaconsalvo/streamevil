@@ -1000,6 +1000,7 @@ label vig4_sc2_6():
             $ polarisQuestion = True
             mS "What is this place?"
             cS "Like I said, Polaris is a peaceful town."
+            $ AddChatter(vig4_sc2_6_comment1)
             cS "It is also an outpost for the Dragonflies network."
             menu:
                 cS "It is also an outpost for the Dragonflies network."
@@ -1008,9 +1009,13 @@ label vig4_sc2_6():
                     cS "Not everyone. Some of us are just people."
                     cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing or the Alliance's bureaucracy."
                     vS "People who want to be free."
+                    $ AddChatter(vig4_sc2_6_comment2)
                     cS "I'm sure you are all well aware how difficult it can be to get here."
                     ##* reaction from streamer about this
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
+                    $ AddChatter(vig4_sc2_6_comment3)
+                    pause 0.5
+                    $ AddChatter(vig4_sc2_6_comment4)
                     menu:
                         cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                         "How did you build this?":
@@ -1018,9 +1023,12 @@ label vig4_sc2_6():
                             enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                             cS "You'll have to ask a man named Reynar about that."
                             pS "Reynar's a Dragonfly!?"
+                            $ AddChatter(vig4_sc2_6_comment5)
                             cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
                             vS "We helped him with some trouble on Akar. He gave us the technology we needed."
+                            $ AddChatter(vig4_sc2_6_comment6)
                             vS "That deal allowed us make this place a reality."
+                            $ AddChatter(vig4_sc2_6_comment7)
                             jump vig4_sc2_6
                         "I have other questions":
                             mS "I have other questions."
@@ -1031,9 +1039,12 @@ label vig4_sc2_6():
                     enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                     cS "You'll have to ask a man named Reynar about that."
                     pS "Reynar's a Dragonfly!?"
+                    $ AddChatter(vig4_sc2_6_comment5)
                     cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
                     vS "We helped him with some trouble on Akar. He gave us the technology we needed."
+                    $ AddChatter(vig4_sc2_6_comment6)
                     vS "That deal finally let us make this place a reality."
+                    $ AddChatter(vig4_sc2_6_comment7)
                     menu:
                         vS "That deal finally let us make this place a reality."
                         "So everyone in this town is a Dragonfly?":
@@ -1041,8 +1052,13 @@ label vig4_sc2_6():
                             cS "Not everyone. Some of us are just people."
                             cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing or the Alliance's bureaucracy."
                             vS "People who want to be free."
+                            $ AddChatter(vig4_sc2_6_comment2)
                             cS "I'm sure you are all well aware how difficult it can be to get here."
+                            ##* reaction from streamer about this
                             cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
+                            $ AddChatter(vig4_sc2_6_comment3)
+                            pause 0.5
+                            $ AddChatter(vig4_sc2_6_comment4)
                             jump vig4_sc2_6
                         "I have other questions":
                             mS "I have other questions."
@@ -1060,49 +1076,74 @@ label vig4_sc2_6():
             macS "Elijah Vanas."
             cS "Yes, MAC. Your father."
             cS "We became...close, and started collaborating."
+            $ AddChatter(vig4_sc2_6_comment8)
             cS "When we graduated, BigCorp offered us an exorbitant grant to conduct our research."
+            $ AddChatter(vig4_sc2_6_comment9)
             cS "Under the provision that they would own our work in its entirety."
             cS "I had reservations about the deal, but Elijah convinced me." 
             cS "He said we could do more good with their resources than they could do bad with our work."
             cS "Shortsighted fool."
-            cS "But a shortsighted fool who I could not say \"no\" to." 
+            cS "But a shortsighted fool who I could not say \"no\" to."
+            ##* streamer reaction
             mS "What were the two of you working on?"
             cS "Our little friend here."
+            $ AddChatter(vig4_sc2_6_comment10)
             cS "At least, I was around for the first prototypes."
+            $ AddChatter(vig4_sc2_6_comment11)
             cS "It didn't take long for my conscience to get the better of me."
             cS "Complicity is how they hold us hostage. So I left."
+            $ AddChatter(vig4_sc2_6_comment14)
             cS "I endeavored to convince Vanas to join me. He refused."
             "Coil suddenly gets a distant look in his eye. Like he's gazing past me."
+            $ AddChatter(vig4_sc2_6_comment12)
             cS "I said some things I have regretted ever since."
+            $ AddChatter(vig4_sc2_6_comment13)
             cS "You can probably guess what happened next. I wandered the stars, lost myself in the bottle."
             "Coil turns to look at Vega."
             cS "Until I met Vega."
             cS "A young scrapper with the biggest heart and the sharpest mind I ever met."
             vS "Oh come on, Pops, you say it the same way every time."
             cS "It only gets more true the more I say it."
+            $ AddChatter(vig4_sc2_6_comment15)
             vS "I didn't really have anyone before Pops. Never knew my parents, didn't want to."
             vS "I just wanted to make things. Whatever it was, speeders, ship parts, rifles, shields, anything."
+            $ AddChatter(vig4_sc6_comment16)
             vS "This old lugnut found me while I was trying to lift a nice piece of circuitry off him."
             vS "Guess he was impressed I even knew it was valuable."
             cS "I got sober that day."
+            $ AddChatter(vig4_sc6_comment17)
+            ## BRING swayy0scar back for the climax!
             vS "And we set off to make a difference."
             "She looks to Coil."
+            $ AddChatter(vig4_sc2_6_comment18)
             vS "Together."
             cS "Together."
             jump vig4_sc2_6
         "So, what's the plan?" if polarisQuestion == True and vegacoilQuestion == True:
             mS "Ok, so we've made it. What's next?"
             "Coil and Vega look at one another."
+            $ AddChatter(vig4_sc2_6_comment19)
             vS "I'm afraid we can't tell you in detail."
             cS "We appreciate everything that you've done."
+            $ AddChatter(vig4_sc2_6_comment20)
             vS "Truly, it means the galaxy to us."
             cS "What I can tell you, is that you arrived just in the nick of time."
             cS "Tomorrow, we will take MAC to rendezvous with the core of the Dragonflies."
             mS "Okay, great. We'll get our ship outfitted and ready to go at dawn."
             "Coil pauses and leans forward, locking eyes with me."
+            $ AddChatter(vig4_sc2_6_comment21)
             cS "No, Captain Mozely, you don't understand."
             cS "We will be taking MAC. Just MAC." 
             cS "Not you and your crew."
+            $ AddChatter(vig4_sc2_6_comment22)
+            pause 0.5
+            $ AddChatter(vig4_sc2_6_comment23)
+            pause 0.3
+            $ AddChatter(vig4_sc2_6_comment24)
+            $ AddChatter(vig4_sc2_6_comment25)
+            pause 0.2
+            $ AddChatter(vig4_sc2_6_comment26)
+            ##* streamer reaction
             enS "What!?"
             pS "You're joking right?"
             macS "Captain?"
@@ -1116,9 +1157,13 @@ label vig4_sc2_6():
                     $ engineerApproval += 1
                     $ pilotApproval += 1
                     mS "Like hell you're taking him without us!"
+                    $ AddChatter(vig4_sc2_6_comment27)
                     pS "This family doesn't break up."
+                    $ AddChatter(vig4_sc2_6_comment28)
                     enS "Seconded."
                     macS "Thirded!"
+                    $ AddChatter(vig4_sc2_6_comment29)
+                    $ AddChatter(vig4_sc2_6_comment30)
                     vS "This was always the mission, all of you knew that when you accepted it."
                 "This was always part of the plan.":
                     $ marshal += 1
@@ -1129,17 +1174,25 @@ label vig4_sc2_6():
                     $ pilotApproval -= 1
                     "I take a long breath."
                     "The stale atmosphere sticks in my throat. But I hold steady."
-                    mS "Teresa, Jennica, this was always part of the plan, remember?" 
+                    mS "Teresa, Jennica, this was always part of the plan, remember?"
+                    $ AddChatter(vig4_sc2_6_comment31) 
                     pS "Yeah, but..."
+                    $ AddChatter(vig4_sc2_6_comment32)
                     enS "I guess I wanted to forget that part."
+                    $ AddChatter(vig4_sc2_6_comment33) 
             cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
+            $ AddChatter(vig4_sc2_6_comment34) 
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
+            $ AddChatter(vig4_sc2_6_comment35) 
             cS "After all you have been through, they might listen."
             vS "Pops can be very persuasive. Trust him."
+            $ AddChatter(vig4_sc2_6_comment36) 
             cS "It will take some time to reach the Dragonflies and the festival will begin shortly."
             cS "This is a true achievement. You should go and celebrate."
+            $ AddChatter(vig4_sc2_6_comment37) 
             cS "These days we have precious few excuses to simply enjoy life."
             "Coil stands and reaches out a hand."
+            $ AddChatter(vig4_sc2_6_comment38) 
             menu:
                 "Coil stands and reaches out a hand."
                 "Shake his hand.":
@@ -1147,12 +1200,15 @@ label vig4_sc2_6():
                     $ kcEngagement -= 1
                     "I stand and shake his hand."
                     "Coil nods at me."
+                    $ AddChatter(vig4_sc2_6_comment39)
                     cS "I'll do my best, I promise."
+                    $ AddChatter(vig4_sc2_6_comment40)
                 "Turn away.":
                     $ kcEngagement += 1
                     $ csEngagement -= 1
                     "I stand and turn to look at my crew."
                     mS "Come on, let's see what this festival is like."
+                    $ AddChatter(vig4_sc2_6_comment41)
                     "Coil lets his hand fall and sighs." 
             cS "Vega, you go to the festival. I'll join you after making contact."
             vS "Okay, Pops."
@@ -1160,6 +1216,13 @@ label vig4_sc2_6():
             "The sounds from outside are suddenly loud and lively."
             play music "soundtrack/festival.wav" volume 0.3
             "Music drifts in through the windows and the cries of laughter and joy hang in the air."
+            $ AddChatter(vig4_sc2_6_comment42)
+            $ narrator = reg_narrator
+            "What? That's Elliot's username."
+            "But he's supposed to be on a date with Cedric."
+            $ AddChatter(vig4_sc2_6_comment43)
+            ##Will handle all the fallout that comes from Elliot entering chat in the targets script
+            $ narrator = alt_narrator
             "We step outside into the cool night."
             hide vega with dissolve
             hide coil with dissolve
