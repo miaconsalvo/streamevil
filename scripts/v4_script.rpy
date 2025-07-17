@@ -39,59 +39,7 @@ label vignette4Start():
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
-    "You're about to stream the final episode of Oakley 2."
-    "I'm going to ask questions about how you have played the game so far."
-    "Have you played as an \"Outlaw\" or \"Marshal\"?"
-    menu:
-        "Have you played as an \"Outlaw\" or \"Marshal\"?"
-        "Marshal.":
-            $ marshal = 10
-            $ outlaw = 5
-        "Outlaw.":
-            $ marshal = 5
-            $ outlaw = 10
-    "Which crew member do you have more approval with?"
-    menu:
-        "Which crew member do you have more approval with?"
-        "Jennica.":
-            $ pilotApproval = 7
-            $ engineerApproval = 4
-        "Teresa.":
-            $ engineerApproval = 7
-            $ pilotApproval = 4
-    "Have you chosen mostly violent options or looked for stealthy solutions?"
-    menu:
-        "Have you chosen mostly violent options or looked for stealthy solutions?"
-        "Violence.":
-            $ macViolence = 9
-            $ macPeace = 4
-        "Stealth.":
-            $ macViolence = 4
-            $ macPeace = 9
-    "Has MAC learned to be hopeful or cynical from you?"
-    menu:
-        "Has MAC learned to be hopeful or cynical from you?"
-        "Hopeful.":
-            $ macHope = 9
-            $ macPessimism = 4
-        "Cynical.":
-            $ macHope = 4
-            $ macPessimism = 9
-    "Did you ally with Matticus on Gibian V?"
-    menu:
-        "Did you ally with Matticus on Gibian V?"
-        "Yes.":
-            $ vig2_outlawEpilogue = True
-        "No.":
-            $ vig2_outlawEpilogue = False
-    "Have you earned or will you earn Ama's approval?"
-    menu:
-        "Have you earned or will you earn Ama's approval?"
-        "Yes.":
-            $ deadeyeApproval = 6
-        "No.":
-            $ deadeyeApproval = 0
-
+    "You're about to stream the final episode of Oakley 2: Settle the Score."
     "Get ready."
     scene streamview with dissolve
     show screen streamDetails

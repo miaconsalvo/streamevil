@@ -343,6 +343,7 @@ label playerName:
         "Vignette 3":
             jump testing_jumpahead_vig3
         "Vignette 4":
+            jump testing_jumpahead_vig4
             jump vignette4Start
     
 label testing_jumpahead_vig2():
@@ -440,6 +441,138 @@ label testing_jumpahead_vig3():
                     $ technicianChoice = True
     "Excellent. You will now jump to the start of Vignette 3."
     jump vignette3Start
+
+label testing_jumpahead_vig4():
+    "First, you must choose the decisions you want to have made in Vignette 1"
+    menu:
+        "How did you describe your stream during the raid?"
+        "All about Vibes":
+            $ vibes = True
+        "Humour focused":
+            $ humour = True
+        "Story focused":
+            $ story = True
+    "Next, what did you pick when given the choice to stun or kill Allistar?"
+    menu:
+        "Allistar choice?"
+        "Stunned Allistar":
+            $ killAllistar = False
+        "Killed Allistar":
+            $ killAllistar = True
+    "Lastly, when you shot Allistar, did you say it was a misclick?"
+    menu:
+        "Did you say killing Allistar was a misclick?"
+        "Yes":
+            $ misclick = True
+        "No":
+            $ misclick = False
+    "Now you will decide what choices you made in Vignette 2."
+    menu:
+        "How did you get through the customs depot?"
+        "Bribed an agent.":
+            $ customsStampede = False
+        "Caused a stampede.":
+            $ customsStampede = True
+    "Next, how did you get into the communications base?"
+    menu:
+        "How did you get into the commsbase?"
+        "Stealthily, sneaking in":
+            $ gunsBlazing = False
+        "Guns blazing":
+            $ gunsBlazing = True
+            "Did you kill the guard who wanted to surrender?"
+            menu:
+                "Did you kill the surrendering guard?"
+                "Yes":
+                    $ baseGuardKilled = True
+                "No":
+                    $ baseGuardKilled = False
+    "Lastly, did you choose to follow through with Matticus's plan and blow up the aid ship?"
+    menu:
+        "Did you blow up the aid ship?"
+        "No":
+            $ vig2_marshalEpilogue = True
+            "How did you deal with Reginald?"
+            menu:
+                "What did you do with Reginald?"
+                "Stunned him":
+                    $ reginaldChoice = True
+                "Bribed him":
+                    $ reginaldChoice = False
+        "Yes":
+            $ vig2_outlawEpilogue = True
+            "How did you deal with the technician?"
+            menu:
+                "What did you do with the technician?"
+                "Threatened him":
+                    $ technicianChoice = False
+                "Killed him":
+                    $ technicianChoice = True
+    "For Vignette 4, I also need to ask questions about how you've been playing generally."
+    "Have you played as an \"Outlaw\" or \"Marshal\"?"
+    menu:
+        "Have you played as an \"Outlaw\" or \"Marshal\"?"
+        "Marshal.":
+            $ marshal = 10
+            $ outlaw = 5
+        "Outlaw.":
+            $ marshal = 5
+            $ outlaw = 10
+        "Evenly.":
+            $ marshal = 10
+            $ outlaw = 10
+    "Which crew member do you have more approval with?"
+    menu:
+        "Which crew member do you have more approval with?"
+        "Jennica.":
+            $ pilotApproval = 7
+            $ engineerApproval = 4
+        "Teresa.":
+            $ engineerApproval = 7
+            $ pilotApproval = 4
+        "The same with both.":
+            $ pilotApproval = 4
+            $ engineerApproval = 4
+    "Have you chosen mostly violent options or looked for stealthy solutions?"
+    menu:
+        "Have you chosen mostly violent options or looked for stealthy solutions?"
+        "Violence.":
+            $ macViolence = 9
+            $ macPeace = 4
+        "Stealth.":
+            $ macViolence = 4
+            $ macPeace = 9
+        "Evenly between the two.":
+            $ macViolence = 5
+            $ macPeace = 5
+    "Has MAC learned to be hopeful or cynical from you?"
+    menu:
+        "Has MAC learned to be hopeful or cynical from you?"
+        "Hopeful.":
+            $ macHope = 9
+            $ macPessimism = 4
+        "Cynical.":
+            $ macHope = 4
+            $ macPessimism = 9
+        "Even.":
+            $ macHope = 5
+            $ macPessimism = 5
+    "Did you ally with Matticus on Gibian V?"
+    menu:
+        "Did you ally with Matticus on Gibian V?"
+        "Yes.":
+            $ vig2_outlawEpilogue = True
+        "No.":
+            $ vig2_outlawEpilogue = False
+    "Have you earned or will you earn Ama's approval?"
+    menu:
+        "Have you earned or will you earn Ama's approval?"
+        "Yes.":
+            $ deadeyeApproval = 6
+        "No.":
+            $ deadeyeApproval = 0
+    jump vignette4Start
+
 
 
 
