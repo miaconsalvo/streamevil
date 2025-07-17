@@ -274,6 +274,8 @@ screen webNavigation_vig1():
             text_size 20
             align (0.8, 0.007)
 
+
+#### WEBNAV SCREEN FOR VIG2####
 screen webNavigation_vig2():
     if loopdView == False and screenComplete == True:
         imagebutton:
@@ -319,10 +321,11 @@ screen webNavigation_vig2():
             text_size 20
             align (0.98, 0.007)      
 
+#### WEBNAV SCREEN FOR VIG3#####
 screen webNavigation_vig3():
     if loopdView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig3_macro_viewerChat_1")]
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_viewerChat_1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -331,7 +334,7 @@ screen webNavigation_vig3():
 
     if flinchView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig3")]
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig3")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -340,7 +343,7 @@ screen webNavigation_vig3():
 
     if blueitView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("blueitVignette3_1")]
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("blueitVignette3_1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -349,13 +352,52 @@ screen webNavigation_vig3():
 
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         textbutton "Close Computer":
-            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig3_macro_modStart")]
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_brother_1")]
             background Solid("#a03f2eff")
             text_color "#ffffffff"
             text_hover_color "#ffffffce" 
             text_selected_color "#ffffffff"
             text_size 20
-            align (0.98, 0.007)    
+            align (0.98, 0.007)
+
+#### WEBNAV SCREEN FOR VIG4 ###### 
+screen webNavigation_vig4():
+    if loopdView == False and screenComplete == True:
+        imagebutton:
+            action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("vig4_macro_viewerChat_1")]
+            idle Solid("#eff3176b")
+            hover Solid("#eff317b9")
+            xsize 128
+            ysize 40
+            align (0.334, 0.007)           
+
+    if flinchView == False and screenComplete == True:
+        imagebutton:
+            action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig4")]
+            idle Solid("#eff3176b")
+            hover Solid("#eff317b9")
+            xsize 128
+            ysize 40
+            align (0.4095, 0.007)  
+
+    if blueitView == False and screenComplete == True:
+        imagebutton:
+            action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("blueitVignette4_1")]
+            idle Solid("#eff3176b")
+            hover Solid("#eff317b9")
+            xsize 128
+            ysize 40
+            align (0.4845, 0.007)
+
+    if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
+        textbutton "Close Computer":
+            action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("vig4_macro_brother_1")]
+            background Solid("#a03f2eff")
+            text_color "#ffffffff"
+            text_hover_color "#ffffffce" 
+            text_selected_color "#ffffffff"
+            text_size 20
+            align (0.98, 0.007)        
 
 ###PLAYTESTING RECORD SCREEN###
 screen playtestRecord():

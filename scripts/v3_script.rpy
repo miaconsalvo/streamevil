@@ -27,6 +27,12 @@ label vignette3Start():
     $ blueitPages = []
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
+    $ flinch_viewcountCheck = False
+    $ flinch_topfanCheck = False
+    $ flinch_audienceCheck = False
+    $ blueitView = False
+    $ loopdView = False
+    $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
     #narrator needs to be set to alt_narrator in the next label as well
@@ -2503,6 +2509,7 @@ label vig3_epilogue():
     jump vig3_macro_start
 
 label vig3_macro_start():
+    $ vignette3 = True
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
@@ -2515,6 +2522,7 @@ label vig3_macro_start():
     jump vig3_macro_mod_1
 
 label vig3_macro_mod_1():
+    $ menu = nvl_menu
     mod_nvl "Yoyoyo!"
     mod_nvl "Another great stream!"
     if viewershipHigh == True:
@@ -2567,6 +2575,7 @@ label vig3_macro_mod_1():
 
 label vig3_macro_webNav():
     nvl clear
+    $ menu = adv_menu
     "You're about to sign off Loop'D when you get another notification."
     scene streamview with dissolve
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
@@ -2582,11 +2591,12 @@ label vig3_macro_webNav():
     call screen webNavigation_vig3
 
 label vig3_macro_viewerChat_1():
+    $ menu = nvl_menu
     scene discordview with dissolve
     $ screenComplete = False
     $ loopdView = True
     $ menu = nvl_menu
-
+    "This is a test for the viewerchat section."
     $ screenComplete = True
     call screen webNavigation_vig3
     scene bg black with dissolve
@@ -2599,14 +2609,6 @@ label FlinchAnalytics_vig3():
     $ flinchCheck = 0
     show screen webNavigation_vig3
     scene flinch_v2screen with dissolve
-    #The six lines below this allow us to change who the topfan is
-    #if csEngagement >= kcEngagement and csEngagement >= pdEngagement:
-    #    $ topfan = "Coriolis"
-    #elif kcEngagement > csEngagement and kcEngagement > pdEngagement:
-    #    $ topfan = "kitcat"
-    #else:
-    #    $ topfan = "pickledDragons"
-    #For this particular vignette though, we want it to be Coriolis
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         $ topfan = "Coriolis"
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
@@ -2629,9 +2631,9 @@ label FlinchAnalytics_vig3():
     $ vbar8 += viewCheck8
     $ vbar9 += viewCheck9
     $ vbar10 += viewCheck10
-    show screen viewershipButton_vig2
-    call screen streamAnalytics_vig2
-    hide screen streamAnalytics_vig2 with dissolve
+    show screen viewershipButton_vig3
+    call screen streamAnalytics_vig3
+    hide screen streamAnalytics_vig3 with dissolve
 
 label blueitVignette3_1():
     $ menu = adv_menu
@@ -2639,7 +2641,7 @@ label blueitVignette3_1():
     $ screenComplete = False
     $ blueitView = True
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
-    #$ blueitPages.append(vig3_bThread1)
+    $ blueitPages.append(vig3_bThread1)
     #$ blueitPages.append(vig3_bThread2)
     #$ blueitPages.append(vig3_bThread3)
     #$ blueitPages.append(vig3_bThread4)
@@ -2675,7 +2677,7 @@ label vig3_macro_brother_1():
     $ playerNVLNarration = "Then you see that he's typing."
     pause
     pause 1.0
-    hide screen playerNVLNarration with dissolve
+    hide screen NVLnarration with dissolve
     bro_nvl "Of course [player]! Any time?"
     bro_nvl "I was actually just gonna shoot you a message asking the same thing lol"
     menu:
@@ -2760,7 +2762,7 @@ label vig3_macro_brother_cedric():
     pause
     menu:
         "•That's the same day as the last Oakley stream.":
-            hide screen NVLNarration
+            hide screen NVLnarration
             player_nvl "Funny, that's the same day as my last Oakley stream."
             bro_nvl "I know, I'm sorry I won't be able to make it!"
             bro_nvl "It's the only night Cedric's free!"
@@ -2770,11 +2772,11 @@ label vig3_macro_brother_cedric():
             player_nvl "And I'll be sending you the best vibes for a good date from a distant galaxy!"
             bro_nvl "I promise they will be received haha"
         "•You? In a movie theater?":
-            hide screen NVLNarration
+            hide screen NVLnarration
             player_nvl "Since when do you go see movies in theathers Mr. \"Classical Music is the Only Real Theatre.\""
             bro_nvl "Since my crush started giving me shit about my lack of pop culture knowledge."
             player_nvl "You know what, fair."
-            player_nvl "I did try to get into MOBAs just to impress a girl a couple years back so I guess I can't talk."
+            player_nvl "I did try to get into MOBAs just to impress my crush a couple years back so I guess I can't talk."
             bro_nvl "Yeah, I remember that. Fun streams!"
             player_nvl "My kda was like 0.3."
             bro_nvl "I didn't say they were fun for you."
@@ -3133,7 +3135,7 @@ label vig3_macro_brother_end():
     bro_nvl "Guess we have each other's backs."
     player_nvl "Always."
     bro_nvl "Love you, [player], have a good night!"
-    player_nvl "Love you too, El! Take Care!"
+    player_nvl "Love you too, El! Take care!"
     hide discordview with dissolve
     scene bg black with dissolve
     "You close Loop'D and turn off your computer for the night."
@@ -3142,6 +3144,7 @@ label vig3_macro_brother_end():
     "And good to feel encouragement."
     "He's really growing up and into his own."
     "You spend the rest of your waking night thinking about how much your brother has grown until, eventually, you drift off to sleep."
+    nvl clear
     pause 3.0
     jump vignette4Start
 

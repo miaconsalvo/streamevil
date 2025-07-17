@@ -28,10 +28,12 @@ label vignette2Start():
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
     $ flinchView = False
+    $ flinch_viewcountCheck = False
+    $ flinch_topfanCheck = False
+    $ flinch_audienceCheck = False
     $ blueitView = False
     $ loopdView = False
     $ screenComplete = False
-    $ loopdView = False
     $ macroChoice = False
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels

@@ -999,7 +999,7 @@ label vig2_blueit_stealththread():
 ###Targets for Flinch#####
 label vig2_analytics_viewcount():
     $ flinchCheck += 1
-    $ viewcountCheck_vig2 = True
+    $ flinch_viewcountCheck = True
     hide screen viewershipButton_vig2
     "The view counts are much more stable than the last Oakley stream."
     "No crazy spikes like the raid, but much more consistent viewership overall."
@@ -1059,7 +1059,7 @@ label vig2_analytics_viewcount2():
 label vig2_analytics_topfan():
     hide screen viewershipButton_vig2
     $ flinchCheck += 1
-    $ topfanCheck_vig2 = True
+    $ flinch_topfanCheck = True
     if topfan == "Coriolis":
         "Even though you've got so many new people in chat, Coriolis is still holding down the fort."
         if vig2_outlawEpilogue == True:
@@ -1090,7 +1090,7 @@ label vig2_analytics_topfan():
 label vig2_analytics_audience():
     hide screen viewershipButton_vig2
     $ flinchCheck += 1
-    $ audienceCheck_vig2 = True
+    $ flinch_audienceCheck = True
     "The past couple streams have been a little light, but it seems like people are turning up for the Oakley sessions."
     "Now you're just a few followers away from crossing one of the thresholds for Affiliate."
     "How do you feel?"

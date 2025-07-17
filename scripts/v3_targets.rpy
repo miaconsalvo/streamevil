@@ -862,10 +862,65 @@ label vig3_sc14_recfindsout_noremorse():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-######MACRO GAME TARGETS FOR FLINCH AND BLUEIT########
+
+#####MACRO GAME TARGETS FOR FLINCH #######
+
+label vig3_analytics_audience():
+    hide screen viewershipButton_vig3
+    "This is a test for the Flinch screen of Vignette 3."
+    $ flinchCheck += 1
+    $ flinch_audienceCheck = True
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig3
+    return
+
+label vig3_analytics_topfan():
+    hide screen viewershipButton_vig3
+    $ flinchCheck += 1
+    $ flinch_topfanCheck = True
+    if topfan == "Coriolis":
+        "Coriolis."
+    elif topfan == "KitCat":
+        "KitCat."
+    elif topfan == "PickledDragons":
+        "PickledDragons."
+    else:
+        "Coriolis by default."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig3
+    return
+
+label vig3_analytics_viewcount():
+    $ flinchCheck += 1
+    $ flinch_viewcountCheck = True
+    hide screen viewershipButton_vig3
+    "This is a test for the Flinch screen of Vignette 3."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig3
+    return
+
+######MACRO GAME TARGETS FOR BLUEIT ########
 
 
-
+label vig3_blueit_amathread():
+    $ screenComplete = False
+    $ blueitImage = "socials/bThread_v3_amaRomance.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
         
 
 

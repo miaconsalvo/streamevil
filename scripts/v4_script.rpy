@@ -1,9 +1,10 @@
 label vignette4Start():
     #We want to reset these before the start of the vignette
+    $ menu = adv_menu
     $ vignette1 = False
-    $ vignette2 = True
+    $ vignette2 = False
     $ vignette3 = False
-    $ vignette4 = False
+    $ vignette4 = True
     $ viewCheck1 = 0
     $ viewCheck2 = 0
     $ viewCheck3 = 0
@@ -28,6 +29,12 @@ label vignette4Start():
     $ chatter_list = []
     $ blueitChoiceCheck = False
     $ flinchCheck = 0
+    $ flinch_viewcountCheck = False
+    $ flinch_topfanCheck = False
+    $ flinch_audienceCheck = False
+    $ blueitView = False
+    $ loopdView = False
+    $ screenComplete = False
     $ macroChoice = True
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
@@ -4506,6 +4513,116 @@ label vig4_epilogue_ama():
     "The ship lurches forward as we accelerate into space."
     hide mac with Dissolve (2.0)
     hide shiphub_stream with dissolve
+    jump vig4_macro_start
+
+label vig4_macro_start():
+    $ vignette4 = True
+    play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
+    $ narrator = reg_narrator
+    #$ macroNarration = True
+    $ macroChoice = True
+    "You lean back in your chair and let your body relax now that you're no longer on camera."
+    $ renpy.sound.play("audio/ReceiveText.ogg")
+    "Then you get a Loop'd notification."
+    scene discordview with dissolve
+    "It's from Jessie. You should see what's up."
+    jump vig4_macro_mod_1
+
+label vig4_macro_mod_1():
+    $ menu = nvl_menu
+    mod_nvl "Yoyoyo!"
+    mod_nvl "Another great stream!"
+    jump vig4_macro_webNav
+
+label vig4_macro_webNav():
+    nvl clear
+    $ menu = adv_menu
+    "You're about to sign off Loop'D when you get another notification."
+    scene streamview with dissolve
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        "It's from Coriolis."
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        "It's from KitCat."
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        "It's from PickledDragons."
+    else:
+        "It's from Coriolis."
+    "You should see what they have to say, and check on Flinch and Blueit."
+    $ screenComplete = True
+    call screen webNavigation_vig4
+
+label vig4_macro_viewerChat_1():
+    $ menu = nvl_menu
+    scene discordview with dissolve
+    $ screenComplete = False
+    $ loopdView = True
+    $ menu = nvl_menu
+    "This is a test for the vig4 viewerchat section."
+    $ screenComplete = True
+    call screen webNavigation_vig4
+    scene bg black with dissolve
+
+label FlinchAnalytics_vig4():
+    $ menu = adv_menu
+    $ screenComplete = False
+    $ flinchView = True
+    "You should probably check out Flinch's analytics page."
+    $ flinchCheck = 0
+    show screen webNavigation_vig4
+    scene flinch_v2screen with dissolve
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "KitCat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "PickledDragons"
+    else:
+        $ topfan = "Coriolis"
+    $ followerGoal = 0
+    show screen streamAnalytics_Details
+    "Time to explore the Flinch analytics page."
+    show screen viewership with dissolve
+    $ vbar1 += viewCheck1
+    $ vbar2 += viewCheck2
+    $ vbar3 += viewCheck3
+    $ vbar4 += viewCheck4
+    $ vbar5 += viewCheck5
+    $ vbar6 += viewCheck6
+    $ vbar7 += viewCheck7
+    $ vbar8 += viewCheck8
+    $ vbar9 += viewCheck9
+    $ vbar10 += viewCheck10
+    show screen viewershipButton_vig4
+    call screen streamAnalytics_vig4
+    hide screen streamAnalytics_vig4 with dissolve
+
+label blueitVignette4_1():
+    $ menu = adv_menu
+    scene blueit_v2screen at truecenter with dissolve
+    $ screenComplete = False
+    $ blueitView = True
+    $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
+    $ blueitPages.append(vig4_bThread1)
+    #$ blueitPages.append(vig3_bThread2)
+    #$ blueitPages.append(vig3_bThread3)
+    #$ blueitPages.append(vig3_bThread4)
+    "You go to check out the subblueit to see how people are reacting to Episode 3."
+    jump blueitVignette4_2
+
+label blueitVignette4_2():
+    scene blueit_v2screen at truecenter
+    show screen webNavigation_vig4
+    if blueitChoiceCheck == True:
+        $ screenComplete = True
+    else:
+        pass
+    call screen blueit
+    return
+
+label vig4_macro_brother_1():
+    nvl clear
+    $ menu = nvl_menu
+    "Final test."
     jump endgame
 
 label endgame():

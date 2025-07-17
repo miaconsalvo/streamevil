@@ -91,6 +91,24 @@ screen blueitButtonCheck():
             text_selected_color "#ffffffff"
             text_size 25
             align (0.74, 0.39)
+    elif vignette3 == True:
+        textbutton "Back to Main Page":
+            action [Hide("blueitThread"), Jump("blueitVignette3_2")]
+            background Solid("#000000ff")
+            text_color "#039fddd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#039fdd91" 
+            text_selected_color "#ffffffff"
+            text_size 25
+            align (0.74, 0.39)
+    elif vignette4 == True:
+        textbutton "Back to Main Page":
+            action [Hide("blueitThread"), Jump("blueitVignette4_2")]
+            background Solid("#000000ff")
+            text_color "#039fddd3" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#039fdd91" 
+            text_selected_color "#ffffffff"
+            text_size 25
+            align (0.74, 0.39)
 
 screen blueitThread():
     viewport:

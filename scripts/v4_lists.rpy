@@ -24,25 +24,25 @@ default vig4_sc1_2_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 6:08{/b}\nhonest
 default vig4_sc1_2_comment5 = ChatEntry(False, "{b}marxky8 - 6:08{/b}\nfr Jeresa hive stand up!", 4, "#ffffff")
 default vig4_sc1_2_comment6 = ChatEntry(False, "{b}AFKAngel - 6:08{/b}\ndon't worry, they got the thermal paste replacements", 4, "#ffffff")
 default vig4_sc1_2_comment7 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\nTiny rock in the middle of nowhere? Perfect spot for some crimes!", 4, "#ffffff")
-default vig4_sc2_2_comment8 = ChatEntry(False, "{b}R4dioRobbie - 6:09{/b}\nagainst humanity?", 4, "#ffffff")
-default vig4_sc2_2_comment9 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\nWe'll see when we get there won't we ;)", 4, "#ffffff")
-default vig4_sc2_2_comment10 = ChatEntry(False, "{b}pickledDragons - 6:10{/b}\nWe've heard very little about the Alliance this game. Think they'll come up here at the end?", 4, "#ffffff")
-default vig4_sc2_2_comment11 = ChatEntry(False, "{b}llamabama22 - 6:10{/b}\nsus", 4, "#ffffff")
-default vig4_sc2_2_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:10{/b}\nsus", 4, "#ffffff")
-default vig4_sc2_2_comment13 = ChatEntry(False, "{b}AFKAngel - 6:10{/b}\n very sus", 4, "#ffffff")
-default vig4_sc2_2_comment14 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nsus", 4, "#ffffff")
-default vig4_sc2_2_comment15 = ChatEntry(False, "{b}pickledDragons - 6:11{/b}\nhell yeah, MAC's down with the revolution!", 4, "#ffffff")
-default vig4_sc2_2_comment16 = ChatEntry(False, "{b}kitcat - 6:11{/b}\nAll grown up and sticking it to the establishment", 4, "#ffffff")
-default vig4_sc2_2_comment17 = ChatEntry(False, "{b}Coriolis - 6:11{/b}\nLove to see the ensign learning from the Cap!", 4, "#ffffff")
-default vig4_sc2_2_comment18 = ChatEntry(False, "{b}R4dioRobbie - 6:12{/b}\nthis Jeresa ship seems miighty appealing", 4, "#ffffff")
-default vig4_sc2_2_comment19 = ChatEntry(False, "{b}kitcat - 6:12{/b}\nnah team Moresa is the best", 4, "#ffffff")
-default vig4_sc2_2_comment20 = ChatEntry(True, "{b}Coriolis - 6:12{/b}\nIt's all about Jennoze, right, Cap?", 4, "#ffffff")
-default vig4_sc2_2_comment21 = ChatEntry(False, "{b}bacon8r_6 - 6:13{/b}\ncause that went great the last time he tried it", 4, "#ffffff")
-default vig4_sc2_2_comment22 = ChatEntry(False, "{b}pickledDragons - 6:13{/b}\nHey he actually managed to hold his own. That scene with the gun on the balcony?", 4, "#ffffff")
-default vig4_sc2_2_comment23 = ChatEntry(False, "{b}kitcat - 6:14{/b}\noof brutal. Like it makes sense, but why you gotta say it like that", 4, "#ffffff")
-default vig4_sc2_2_comment24 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nno way MAC stays on the ship. Calling it rn", 4, "#ffffff")
-default vig4_sc2_2_comment25 = ChatEntry(False, "{b}turb0g00se - 6:15{/b}Yoooo POTATO! Thought you had class, was worried you weren't gonna make it", 4, "#ffffff")
-default vig4_sc2_2_comment26 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nI am in class lmao streaming in on my phone XD", 4, "#ffffff")
+default vig4_sc1_2_comment8 = ChatEntry(False, "{b}R4dioRobbie - 6:09{/b}\nagainst humanity?", 4, "#ffffff")
+default vig4_sc1_2_comment9 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\nWe'll see when we get there won't we ;)", 4, "#ffffff")
+default vig4_sc1_2_comment10 = ChatEntry(False, "{b}pickledDragons - 6:10{/b}\nWe've heard very little about the Alliance this game. Think they'll come up here at the end?", 4, "#ffffff")
+default vig4_sc1_2_comment11 = ChatEntry(False, "{b}llamabama22 - 6:10{/b}\nsus", 4, "#ffffff")
+default vig4_sc1_2_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:10{/b}\nsus", 4, "#ffffff")
+default vig4_sc1_2_comment13 = ChatEntry(False, "{b}AFKAngel - 6:10{/b}\n very sus", 4, "#ffffff")
+default vig4_sc1_2_comment14 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nsus", 4, "#ffffff")
+default vig4_sc1_2_comment15 = ChatEntry(False, "{b}pickledDragons - 6:11{/b}\nhell yeah, MAC's down with the revolution!", 4, "#ffffff")
+default vig4_sc1_2_comment16 = ChatEntry(False, "{b}kitcat - 6:11{/b}\nAll grown up and sticking it to the establishment", 4, "#ffffff")
+default vig4_sc1_2_comment17 = ChatEntry(False, "{b}Coriolis - 6:11{/b}\nLove to see the ensign learning from the Cap!", 4, "#ffffff")
+default vig4_sc1_2_comment18 = ChatEntry(False, "{b}R4dioRobbie - 6:12{/b}\nthis Jeresa ship seems miighty appealing", 4, "#ffffff")
+default vig4_sc1_2_comment19 = ChatEntry(False, "{b}kitcat - 6:12{/b}\nnah team Moresa is the best", 4, "#ffffff")
+default vig4_sc1_2_comment20 = ChatEntry(True, "{b}Coriolis - 6:12{/b}\nIt's all about Jennoze, right, Cap?", 4, "#ffffff")
+default vig4_sc1_2_comment21 = ChatEntry(False, "{b}bacon8r_6 - 6:13{/b}\ncause that went great the last time he tried it", 4, "#ffffff")
+default vig4_sc1_2_comment22 = ChatEntry(False, "{b}pickledDragons - 6:13{/b}\nHey he actually managed to hold his own. That scene with the gun on the balcony?", 4, "#ffffff")
+default vig4_sc1_2_comment23 = ChatEntry(False, "{b}kitcat - 6:14{/b}\noof brutal. Like it makes sense, but why you gotta say it like that", 4, "#ffffff")
+default vig4_sc1_2_comment24 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nno way MAC stays on the ship. Calling it rn", 4, "#ffffff")
+default vig4_sc1_2_comment25 = ChatEntry(False, "{b}turb0g00se - 6:15{/b}Yoooo POTATO! Thought you had class, was worried you weren't gonna make it", 4, "#ffffff")
+default vig4_sc1_2_comment26 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nI am in class lmao streaming in on my phone XD", 4, "#ffffff")
 
 ###Comments Vig4_sc2_1 - Entering Polaris
 default vig4_sc2_1_comment1 = ChatEntry (True, "{b}kitcat - 6:16{/b}\nSo any predictions on where the story's gonna go [userName]?", 4, "#ffffff", "vig4_sc1_kcPrediction")
@@ -238,3 +238,8 @@ default vig4_sc2_5_comment10 = ChatEntry(False, "{b}jerrybean784 - 6:37{/b}\nI f
 
 ###Comments vig4_epilogue_coil Epilogue (Coil allied)
 
+
+
+
+#### BLUEIT THREADS #####
+default vig4_bThread1 = bThread( 3, "vig4_blueit_endgamethread", "images/socials/bThread_v4_endgame.png") #tag, target, image

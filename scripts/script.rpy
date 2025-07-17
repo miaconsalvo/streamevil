@@ -234,15 +234,16 @@ default topfanCheck = False
 default alignmentCheck = False
 default audienceCheck = False
 
-###Variabels for tracking Flinch Analytics Vignette 2
-default viewcountCheck_vig2 = False
-default topfanCheck_vig2 = False
-default audienceCheck_vig2 = False
+###Variabels for tracking Flinch Analytics
+default flinch_viewcountCheck = False
+default flinch_topfanCheck = False
+default flinch_audienceCheck = False
 default viewershipThoughtCheck = False
 default flinchViewershipShnzi = False
 default flinchViewershipOutlaw = False
 default flinchViewershipMarshal = False
 default flinchViewershipAssault = False
+
 
 #blueit variables
 default blueitCheck = 0
@@ -331,7 +332,7 @@ label playerName:
     #$ AddChatter(vig1_sc1_comment7)
     #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
-    
+    jump vig4_macro_start    
     "For testing purposes, you can jump ahead to other vignettes."
     menu:
         "Which Vignette would you like to begin with?"

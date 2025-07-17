@@ -58,3 +58,69 @@ label vig4_sc2_rube():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     return
+
+
+
+
+
+
+
+
+####TARGETS FOR BLUEIT ######
+
+label vig4_blueit_endgamethread():
+    $ screenComplete = False
+    $ blueitImage = "socials/bThread_v4_endgame.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+####TARGETS FOR FLINCH ######
+
+label vig4_analytics_audience():
+    hide screen viewershipButton_vig4
+    "This is a test for the Flinch screen of Vignette 4."
+    $ flinchCheck += 1
+    $ flinch_audienceCheck = True
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
+    return
+
+label vig4_analytics_topfan():
+    hide screen viewershipButton_vig4
+    $ flinchCheck += 1
+    $ flinch_topfanCheck = True
+    if topfan == "Coriolis":
+        "Coriolis."
+    elif topfan == "KitCat":
+        "KitCat."
+    elif topfan == "PickledDragons":
+        "PickledDragons."
+    else:
+        "Coriolis by default."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
+    return
+
+label vig4_analytics_viewcount():
+    $ flinchCheck += 1
+    $ flinch_viewcountCheck = True
+    hide screen viewershipButton_vig4
+    "This is a test for the Flinch screen of Vignette 4."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
+    return
+
