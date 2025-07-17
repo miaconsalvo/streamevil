@@ -403,7 +403,7 @@ label vig3_sc4():
     pS "Hell yeah!"
     show rec stream happy at stream_right5 with move
     show mac stream neutral at stream_left5mac with dissolve
-    macS "Vira Brandy is first invention using edible chimaeron fruit. Which is quite odd."
+    macS "Vira Brandy is the first alcohol product that uses edible chimaeron fruit. Which is quite odd."
     pS "And delicious!"
     "As Rec turns to get the brandy they pause to look down at MAC."
     show rec stream surprised
@@ -605,7 +605,7 @@ label vig3_sc4():
             macS "Captain are you hurt?" 
             mS "Just my pride."
             "Teresa goes to pull me up."
-            "Sorry I didn't want to put you all in more danger."
+            mS "Sorry I didn't want to put you all in more danger."
             enS "You're good Captain."
             enS "Makers I'd like to burn that man up from the inside."
             pS "Maybe we can use him as our antennae instead."
@@ -636,7 +636,7 @@ label vig3_sc4():
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in giving it to MAC."
     show mac stream happy 
     macS "Thank you!"
-    show mac stream neutral
+    show mac stream neutral at stream_left with move
     recS "They're the Hounds. Reynar's new security detail."
     recS "Usually they're more of nuisance than anything. Shaking down shops and the like."
     recS "But with the Inventor's Fair they've gotten more excitable. Not surprised they'd come by here just terrible timing is all."
@@ -673,12 +673,12 @@ label vig3_sc5():
     "At the center is a park area that sits a large statue of a man sitting with an apple in his hand." 
     "It has a massive hole blown out of it."
     show rec stream happy at stream_right5 with dissolve
-    show jennica stream neutral at stream_left with dissolve
-    show teresa stream happy at stream_right with dissolve
-    show mac stream neutral at streeam_left5mac with dissolve
     recS "Alright Oakley it's been a while but welcome to the Plaza!"
+    show mac stream neutral at stream_left5mac with dissolve
     macS "Wow...."
+    show jennica stream neutral at stream_left with dissolve
     pS "Surprised it's still standing."
+    show teresa stream happy at stream_right with dissolve
     enS "Did they change the statue?"
     recS "Oh yeah they did, because *someone* blew up the last one."
     enS "Fabulous."
@@ -729,7 +729,6 @@ label vig3_sc5():
     hide teresa with dissolve
     show showgirl stream at stream_center with dissolve
     mS "What?"
-    show teresa stream shock
     $ reactTarget = "vig3_sc5_amahallu"
     show screen streamerCommentary
     "She stares wide eyed and is taken her off script."
@@ -770,7 +769,7 @@ label vig3_sc5():
     "I can't help but look back at Daisy with the small rough-looking crew."
     "Her eyes fixated on the only person whose back is turned to me."
     "They're tall and well built with a wide brimmed hat, in dark leather, and long familiar black hair."
-    show mac stream happy at stream_left with dissolve
+    show mac stream happy at stream_left_mac with dissolve
     macS "Are you coming Captain?"
     "I stare at the crew as they walk away."
     mS "Sure thing kid."
@@ -780,19 +779,20 @@ label vig3_sc5():
 label vig3_sc6():
     hide akarplaza_stream
     show bbpub_stream at topleft onlayer background with dissolve
+    "The days are shorter this time of year and when night falls we make it to the Burnt Bulb."
     "It took some time to get through Akar, MAC wanted to see everything he could."
     "As if it would disappear if he took his eyes off it."
-    "The days are shorter this time of year and when night falls we make it to the Burnt Bulb."
     "The Burnt Bulb Pub feels like it's been stuck in time. 
     It's wooden paneling, the carnivorous plants that line its ceilings."
     "There's a warmth to this place, I feel like that young Outlaw scared out of my mind, clinging to Ama and hoping I won't get bulldozed at my first brawl."
     show rec stream happy at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at streeam_left5mac with dissolve
+    show mac stream neutral at stream_left5mac with dissolve
     macS "Cozy."
     "In the back, someone yells and is then quickly tossed through a window."
     "MAC's face drops and he clings to my leg."
+    show mac stream shock at stream_left5mac
     macS "Aren't their children around outside?"
     pS "That's why he was tossed out the back window."
     enS "This is a respectable place after all."
@@ -801,8 +801,8 @@ label vig3_sc6():
     enS "Let's find out."
     hide rec with dissolve
     hide teresa with dissolve
-    show jennica stream neutral at stream_center with move
     show mac stream neutral at stream_center with move
+    show jennica stream neutral at stream_center with move
     "As we walk through the bar, I notice how may regulars have been lost to time.
     Akar is different now."
     menu:
@@ -1112,13 +1112,18 @@ label vig3_sc6():
     recS "I didn't hear but I read lips a bit, a “sh” something?"
     mS "\"Sh\" something???"
     macS "Shirt, shoes, shilling..."
-    "Ship? They wouldn't-"
+    "Ship?"
+    "They wouldn't-"
     $ reactTarget = "vig3_sc6_shipbet1"
     show screen streamerCommentary
     hide rec with dissolve
     hide mac with dissolve
     "No that's stupid."
-    "Then I remember who's playing the game." 
+    recS "Shorts? Shawls..."
+    macS "Squash!"
+    "..."
+    "Okay now that's stupid."
+    "Teresa and Jennica bet the Ship."
     "Shit."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
@@ -1128,7 +1133,7 @@ label vig3_sc6():
     zan "Ovid is strong of heart, muscles on the inside."
     enS "That tends to be where they go yes."
     ovid "Zan must we always play this game whenever we go out?"
-    ZAN "..."
+    zan "..."
     zan "YES!"
     "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
     "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the Karousel."
@@ -1165,7 +1170,8 @@ label vig3_sc6():
             macS "But I-"
             mS "I know you want to help but some things work better with less people."               
     macS "But I'm part of this crew too!"
-    "That was my voice. Upset, scared of being left behind."
+    "That was my voice."
+    "Upset, scared of being left behind."
     mS "You are, and you'll have other chances to prove it. Just not right now."
     "When Jennica calls for a short recess I know that's my time to head over."
     hide rec with dissolve
@@ -1204,7 +1210,7 @@ label vig3_sc6():
     "Ovid's tube, the deck, the Karousel. We have to deal with them."
     pS "We need to tip the table."
     enS "Can't do that while we play."
-    pS "I got it covered, just stay standing until I do."
+    mS "I got it covered, just stay standing until I do."
     "The game resumes and I step away."
     show zan stream at stream_center with dissolve
     zan "Now! Moxie!"
@@ -1527,8 +1533,8 @@ label vig3_sc7():
     $ reactTarget = "vig3_sc7_lostmac"
     show screen streamerCommentary
     mS "MAC!"
-    hide teresa stream 
-    hide jennica stream
+    hide teresa stream with move
+    hide jennica stream with move
     "I know Teresa and Jennica are screaming for him but I can't hear them, I can't hear anything but my heart pounding in my chest."
     "Where is he?"
     "WHERE IS HE?"
@@ -1549,67 +1555,67 @@ label vig3_sc7():
 label vig3_sc8():
     hide akarplaza_stream with dissolve
     show bg black at topleft onlayer background
+    "I don't remember much after."
     "We knew we couldn't chase down the Hounds. There was nothing that could be done once MAC was out of sight."
     "It was Rec who gave us the suggestion to intercept them where they were. That meant in the belly of the beast, Reynar's Vineyard."
     "It was nothing short of the worst case scenario."
-    hide bg black
+    hide bg black with dissolve
     show exteriorvineyard_stream at topleft onlayer background
-    show jennica stream neutral at stream_left with dissolve
-    show teresa stream neutral at stream_right with dissolve
-    show rec stream neutral at stream_center with dissolve
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
+    show jennica stream neutral at stream_left with dissolve
     "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
+    show teresa stream neutral at stream_right with dissolve
     enS "Can you give it a rest, there are people around."
     pS "I thought you'd want me to look presentable?"
     mS "You need to be serious about this."
     pS "Oh I'm very serious, just my face don't look it. Y'all should consider fixin' yours."
+    "Rec moves thier jaw as if trying to manually relax it."
     "I relax my shoulders as an attendant walks over to us."
-    show rec stream neutral at stream_right with move
-    show reynar stream at stream_left with dissolve
     vyattend "Good afternoon, my name Ryo and it is my pleasure to welcome you to the Vineyard." 
     vyattend "Are you perhaps here for the Inventor's Fair?"
     enS "Pleased to make your acquaintance Ryo. Please check the list for Vira Prismari and retinue."
     "They raise an eyebrow before checking a screen."
     vyattend "Prismari?"
-    ens "That is correct." 
+    enS "That is correct." 
     "There's a long pause."
-    reynar "Well well, Ryo I'll take it from here."
+    reynar "Ryo I'll take it from here."
     "Our jaws nearly drop at the finely dressed man who approached us. Reynar..."
+    show reynar stream neutral at stream_center with dissolve
     reynar "How wonderful, we were certain to receive another refusal gift this year."
-    enS "Well we so desperately missed the inspiration of the Inventor's Fair. I hope you are well to accommodate us?"
+    enS "Well we so desperately missed the inspiration of the Inventor's Fair."
+    enS "I hope you are well to accommodate us?"
     reynar "I must say your posse is such a surprise it's so... pleasantly unexpected."
     "It's like watching a tennis match with a bomb for a ball."
-    enS "You know we are so thankful to Reynar for his consideration every year, and so lovely to see our donations put to such good use."
+    enS "You know we are so thankful your consideration every year, and so lovely to see our donations put to such good use."
     enS "You've truly spared no expense."
-    reynar "Of course, we want to celebrate all those who contribute to research and development of the Outposts."
+    reynar "Of course, we want to celebrate all those who contribute to the research and development of the Outposts."
     enS "The Prismari family is always proud to support this iconic hub of innovation."
-    reynar "We are pleased to have you back Miss Prismari, right this way."
-    "Reynar walks away cooly leaving us to welcome in other guests."
+    reynar "You've offered much more than support."
+    reynar "We are pleased to have you back Miss Prismari."
+    "Reynar nods to us and walks away cooly. Leaving to welcome in other guests."
     hide reynar stream with dissolve
     $ reactTarget = "vig3_sc8_teresabluff"
     show screen streamerCommentary
     pS "You're a bit scary when you're proper."
-    show rec stream thinking at stream_center with move
-    recS "Can you kill someone by being too nice?"
-    enS "I'm sure someone has."
-    mS "You sure using her name was a good idea?"
+    show rec stream thinking at stream_center with dissolve
+    mS "You sure what just happened back there was alright?"
     enS "If Reynar really wanted us out he would've done so already."
     pS "So why didn't he..."
-    mS "Does he think your family will take care of it."
+    mS "Does he think your family will take care of it?"
     enS "Please. My family hasn't come to these since I was exiled. Doubtful they'll even know I was here."
     enS "We're in, that's what matters."
-    mS "You got it."
-    enS "And thank you Reccrin couldn't have done it without you getting us ready."
+    mS "Got it."
+    enS "And thank you Reccrin. Couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
 
-    show inventorfairgallery_stream at topleft onlayer background
+    show inventorfairgallery_stream at topleft onlayer background with dissolve 
     "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
     "Brimming with shine and luster. Inventors setting up sections with their project."
-    "Fnely dressed guests being served by his android wait staff." 
+    "Finely dressed guests being served by his android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
