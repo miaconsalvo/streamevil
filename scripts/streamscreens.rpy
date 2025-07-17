@@ -60,7 +60,7 @@ screen streamerCommentary(): #This screen appears when the player can interact w
             xsize 192
             ysize 120
             align (0.001, 0.113)
-        image ["stream ui/reactHighlightAlert.png"] align (0.001, 0.113) xsize 192 ysize 120
+        image ["stream ui/reactHighlight.png"] align (0.001, 0.113) xsize 192 ysize 120
         image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
 
 ###I commented out the imagebutton below this because I created an outline for the react image instead of a filled in shape
@@ -189,7 +189,7 @@ screen streamFreeze():
             xsize 192
             ysize 120
             align (0.001, 0.113)
-        image ["stream ui/reactHighlightAlert.png"] align (0.001, 0.113) xsize 192 ysize 120
+        image ["stream ui/reactHighlight.png"] align (0.001, 0.113) xsize 192 ysize 120
         image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
 
 screen raidFreeze():
