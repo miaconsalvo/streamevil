@@ -244,6 +244,7 @@ label vig4_sc1_2():
         "I'm more concerned about the \"unknown\" population.":
             mS "I'm more concerned about the \"unknown\" population."
             mS "What if there are people down there we don't want to meet?"
+            $ AddChatter(vig4_sc1_2_comment11)
     pS "I'll run a scan for BigCorp signatures."
     "A green line appears on screen and sweeps over the moon's landscape."
     if macViolence > macPeace:
@@ -1008,6 +1009,7 @@ label vig4_sc2_6():
                     cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing or the Alliance's bureaucracy."
                     vS "People who want to be free."
                     cS "I'm sure you are all well aware how difficult it can be to get here."
+                    ##* reaction from streamer about this
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                     menu:
                         cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."

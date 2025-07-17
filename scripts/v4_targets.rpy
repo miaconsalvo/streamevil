@@ -42,7 +42,7 @@ label vig4_sc1_kcPrediction():
 
 label vig4_sc2_rube():
     $ macroChoice = True
-    $ vig4_sc2_1_comment8.click = False
+    $ vig4_sc2_8_comment8.click = False
     $ narrator = reg_narrator
     #menu:
     #    "Fill the menu with something."

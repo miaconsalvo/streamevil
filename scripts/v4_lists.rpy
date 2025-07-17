@@ -41,18 +41,18 @@ default vig4_sc1_2_comment21 = ChatEntry(False, "{b}bacon8r_6 - 6:13{/b}\ncause 
 default vig4_sc1_2_comment22 = ChatEntry(False, "{b}pickledDragons - 6:13{/b}\nHey he actually managed to hold his own. That scene with the gun on the balcony?", 4, "#ffffff")
 default vig4_sc1_2_comment23 = ChatEntry(False, "{b}kitcat - 6:14{/b}\noof brutal. Like it makes sense, but why you gotta say it like that", 4, "#ffffff")
 default vig4_sc1_2_comment24 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nno way MAC stays on the ship. Calling it rn", 4, "#ffffff")
-default vig4_sc1_2_comment25 = ChatEntry(False, "{b}turb0g00se - 6:15{/b}Yoooo POTATO! Thought you had class, was worried you weren't gonna make it", 4, "#ffffff")
+default vig4_sc1_2_comment25 = ChatEntry(False, "{b}turb0g00se - 6:15{/b}\nYoooo POTATO! Thought you had class, was worried you weren't gonna make it", 4, "#ffffff")
 default vig4_sc1_2_comment26 = ChatEntry(False, "{b}xxxP0tat0Pr0phetxxx - 6:15{/b}\nI am in class lmao streaming in on my phone XD", 4, "#ffffff")
 
 ###Comments Vig4_sc2_1 - Entering Polaris
-default vig4_sc2_1_comment1 = ChatEntry (True, "{b}kitcat - 6:16{/b}\nSo any predictions on where the story's gonna go [userName]?", 4, "#ffffff", "vig4_sc1_kcPrediction")
+default vig4_sc2_1_comment1 = ChatEntry (True, "{b}kitcat - 6:16{/b}\nSo any predictions on where the story's gonna go [username]?", 4, "#ffffff", "vig4_sc1_kcPrediction")
 default vig4_sc2_1_comment2 = ChatEntry (False, "{b}Coriolis - 6:17{/b}\nTeresa always calm", 4, "#ffffff")
 default vig4_sc2_1_comment3 = ChatEntry (False, "{b}bacon8r_6 - 6:17{/b}\nwho the hell is this rube?", 4, "#ffffff")
 default vig4_sc2_1_comment4 = ChatEntry (False, "{b}xXpearlXx - 6:18{/b}\nBC scum FOR SURE", 4, "#ffffff")
 default vig4_sc2_1_comment5 = ChatEntry (False, "{b}_lostinmetr0 - 6:18{/b}\nmaybe he's just a friendly guy?", 4, "#ffffff")
 default vig4_sc2_1_comment6 = ChatEntry (False, "{b}R4dioRobbie - 6:18{/b}\nif I had a nickel for every time someone wanted me to see their 'star shower'", 4, "#ffffff")
 default vig4_sc2_1_comment7 = ChatEntry (False, "{b}bacon8r_6 - 6:18{/b}\nZAP", 4, "#ffffff")
-default vig4_sc2_1_comment8 = ChatEntry (True, "{b}R4dioRobbie - 6:18{/b}\nRUBE", 4, "#ffffff")
+default vig4_sc2_1_comment8 = ChatEntry (True, "{b}R4dioRobbie - 6:18{/b}\nRUBE", 4, "#ffffff", "vig4_sc2_rube")
 default vig4_sc2_1_comment9 = ChatEntry (False, "{b}J4MIR0QU4I - 6:18{/b}\RUBES", 4, "#ffffff")
 default vig4_sc2_1_comment10 = ChatEntry (False, "{b}turb0g00se - 6:18{/b}\nRUBY!", 4, "#ffffff")
 default vig4_sc2_1_comment11 = ChatEntry (False, "{b}llamabama22 - 6:18{/b}\nRUBIO!", 4, "#ffffff")
@@ -145,14 +145,14 @@ default vig4_sc2_5_comment2 = ChatEntry(False, "{b}pickledDragons - 6:35{/b}\nId
 default vig4_sc2_5_comment3 = ChatEntry(False, "{b}kitcat - 6:35{/b}\nI'm just glad MAC's back in our sights. Didn't like him being gone after what happened with the Hounds", 4, "#ffffff")
 default vig4_sc2_5_comment4 = ChatEntry(False, "{b}Coriolis - 6:36{/b}\nIt's not the worst greeting we've had in the last couple weeks haha", 4, "#ffffff")
 default vig4_sc2_5_comment5 = ChatEntry(False, "{b}_lostinmetr0 - 6:36{/b}\nTrue", 4, "#ffffff")
-default vig4_sc2_5_comment6 = ChatEntry(False, "{b}kitcat - 6:36{/b}\nI mean, we've hit friends with worse greetings tbf", 4, "#ffffff")
+default vig4_sc2_5_comment6 = ChatEntry(False, "{b}kitcat - 6:36{/b}\nWe've hit friends with worse greetings tbf", 4, "#ffffff")
 default vig4_sc2_5_comment7 = ChatEntry(False, "{b}turb0g00se - 6:36{/b}\nI mean, you're not wrong...", 4, "#ffffff")
 default vig4_sc2_5_comment8 = ChatEntry(False, "{b}pickledDragons - 6:36{/b}\nApologies don't let you off the hook", 4, "#ffffff")
 default vig4_sc2_5_comment9 = ChatEntry(False, "{b}bacon8r_6 - 6:36{/b}\nfr", 4, "#ffffff")
 default vig4_sc2_5_comment10 = ChatEntry(False, "{b}jerrybean784 - 6:37{/b}\nI feel some exposition coming on", 4, "#ffffff")
 
 ###Comments vig4_sc2_6 - Exposition with Coil and Vega
-
+#default vig4_sc2_6_comment1 = ChatEntry(False, "{b}")
 
 ###Comments vig4_sc3_1 - Festival start
 

@@ -53,13 +53,15 @@ screen streamerCommentary(): #This screen appears when the player can interact w
         imagebutton: #just the overlay that you click on
             action [Return(), Call(reactTarget, from_current = True)]
             idle Solid("#00000000")
-            hover Image("stream ui/reactHighlight.png") 
+            hover Solid("#bd050556")
+            #hover Image("stream ui/reactHighlight.png") 
             #hover Solid("#dad60563") "#bd0505",
             #hover Solid("#44444463")
             xsize 192
             ysize 120
             align (0.001, 0.113)
-    image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
+        image ["stream ui/reactHighlightAlert.png"] align (0.001, 0.113) xsize 192 ysize 120
+        image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
 
 ###I commented out the imagebutton below this because I created an outline for the react image instead of a filled in shape
 #    imagebutton: #just the overlay that you click on
@@ -178,15 +180,17 @@ screen streamFreeze():
         ysize 1080
         background Solid("#00000000")
         imagebutton: #just the overlay that you click on
-            action [Return(), Call(reactTarget)]
+            action [Return(), Call(reactTarget, from_current = True)]
             idle Solid("#00000000")
-            hover Image("stream ui/reactHighlight.png") 
+            hover Solid("#bd050556")
+            #hover Image("stream ui/reactHighlight.png") 
             #hover Solid("#dad60563") "#bd0505",
             #hover Solid("#44444463")
             xsize 192
             ysize 120
             align (0.001, 0.113)
-        image ["stream ui/reactalert.png"] align (0.09, 0.095) size (30, 30) #the red exclaim image itself
+        image ["stream ui/reactHighlightAlert.png"] align (0.001, 0.113) xsize 192 ysize 120
+        image ["stream ui/reactalert.png"] align (0.095, 0.1) size (30, 30) #the red exclaim image itself
 
 screen raidFreeze():
     frame:
@@ -214,7 +218,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.2, 0.5)
+        align (0.3, 0.5)
     imagebutton:
         action [SetVariable("profilePic", "socials/profilepics/profile2.png"), Return()]
         background Image("socials/profilepics/profile2.png")
@@ -222,7 +226,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.4, 0.5)
+        align (0.5, 0.5)
     imagebutton:
         action [SetVariable("profilePic", "socials/profilepics/profile5.png"), Return()]
         background Image("socials/profilepics/profile5.png")
@@ -230,7 +234,7 @@ screen selectProfilePic():
         hover Solid("#5e5e5e4b")
         xsize 100
         ysize 100
-        align (0.6, 0.5)
+        align (0.7, 0.5)
     #imagebutton: #turned off for time being so the mod has their own profile pic
     #    action [SetVariable("profilePic", "socials/profilepics/profile4.png"), Return()]
     #    background Image("socials/profilepics/profile4.png")
