@@ -329,6 +329,19 @@ label vig4_sc3_festivalRomance():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc3_elMemory():
+    $ macroChoice = True
+    $ vig4_sc3_2_jenn_comment12.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
 
 

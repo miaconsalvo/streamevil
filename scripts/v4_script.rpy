@@ -1107,11 +1107,11 @@ label vig4_sc2_6():
             $ AddChatter(vig4_sc2_6_comment15)
             vS "I didn't really have anyone before Pops. Never knew my parents, didn't want to."
             vS "I just wanted to make things. Whatever it was, speeders, ship parts, rifles, shields, anything."
-            $ AddChatter(vig4_sc6_comment16)
+            $ AddChatter(vig4_sc2_6_comment16)
             vS "This old lugnut found me while I was trying to lift a nice piece of circuitry off him."
             vS "Guess he was impressed I even knew it was valuable."
             cS "I got sober that day."
-            $ AddChatter(vig4_sc6_comment17)
+            $ AddChatter(vig4_sc2_6_comment17)
             ## BRING swayy0scar back for the climax!
             vS "And we set off to make a difference."
             "She looks to Coil."
@@ -1374,7 +1374,7 @@ label vig4_sc3_2_vega():
             "My shots go wide as Vega's find their home."
         "Hit the final targets.":
             $ pdEngagement += 1
-            $ cSEngagement -= 1
+            $ csEngagement -= 1
             $ vig4_vegaVictory = False
             "As the final targets pop into position, I aim true."
             "My shots hit the targets just before Vega's."
@@ -1567,20 +1567,25 @@ label vig4_sc3_2_jennica():
     mS "You ok, Jenn? You're looking a bit obsessed with that screen."
     pS "Yeah, I'm fine, Cap. It's just--"
     pS "You wouldn't happen to recognize this game, would you?"
+    $ AddChatter(vig4_sc3_2_jenn_comment4)
     menu:
         pS "You wouldn't happen to recognize this game, would you?"
         "I've never played a video game before.":
             $ pdEngagement += 1
+            $ AddChatter(vig4_sc3_2_jenn_comment5)
             mS "Jenn, you know I've never touched one of these things before."
             pS "Right. But this one's special."
             pS "This is {i}Star Battler IV: Destructostar{i}."
         "Of course!":
             $ kcEngagement += 1
             mS "Of course I recognize it. It's {i}Star Battler IV: Destructostar{i}."
+            $ AddChatter(vig4_sc3_2_jenn_comment5)
             pS "Exactly! Wow, I'm a little surprised you knew that, Cap."
     pS "It's an old school arcade classic. There was one in my hometown when I was a kid."
     pS "No joke, this game taught me how to be a pilot."
+    $ AddChatter(vig4_sc3_2_jenn_comment6)
     pS "Never thought I'd see it again."
+    $ AddChatter(vig4_sc3_2_jenn_comment7)
     menu:
         pS "Never thought I'd see it again."
         "Alright, let's do this.":
@@ -1593,11 +1598,13 @@ label vig4_sc3_2_jennica():
         "Sounds like an excuse.":
             mS "Is that the excuse you're gonna tell yourself after I beat you at this game."
             pS "Oh that's it."
+            $ AddChatter(vig4_sc3_2_jenn_comment8)
             pS "I was gonna go easy on you, but you asked for some tough love."
         "You're forgetting I used to be a pilot too.":
             mS "Sure, but you're forgetting that I was a pilot before I was a captain."
             mS "Grab your flight stick and let's make this happen."
             pS "Alright, your funeral."
+            $ AddChatter(vig4_sc3_2_jenn_comment8)
     mS "Bring it, Brown."
     pS "It's already brought, Cap."
     show jennica stream neutral at stream_left with move
@@ -1610,11 +1617,14 @@ label vig4_sc3_2_jennica():
     "Should be simple enough."
     pS "You're taking too long to remember the controls, Cap."
     "The radar on the side of the screen shows a blip barreling down at me. Jennica is playing this aggressively."
+    $ AddChatter(vig4_sc3_2_jenn_comment9)
     menu:
         "The radar on the side of the screen shows a blip barreling down at me. Jennica is playing this aggressively."
         "Dodge the incoming attack.":
+            $ AddChatter(vig4_sc3_2_jenn_comment10)
             "It's a bad spot, I have to pull away and find a better position to return fire."
             pS "On your ass, Cap."
+            $ AddChatter(vig4_sc3_2_jenn_comment11)
             "Jennica is still putting pressure on me."
             menu:
                 "Jennica is still putting pressure on me."
@@ -1622,12 +1632,15 @@ label vig4_sc3_2_jennica():
                     mS "Don't get too close."
                     "I drop a blast wave charge, detonating it behind my ship."
                     pS "Shit!"
+                    $ AddChatter(vig4_sc3_2_jenn_comment12)
                     "Jennica has to peel off from the pursuit."
                     "I pull up and see Jennica moving away."
+                    $ AddChatter(vig4_sc3_2_jenn_comment13)
+                    $ AddChatter(vig4_sc3_2_jenn_comment14)
                     menu:
                         "I pull up and see Jennica moving away."
                         "Make an aggressive attack.":
-                            $ kcEngagement -= 1 #could have KitCat "backseat gaming" cause she played the Jennica romance route
+                            $ kcEngagement -= 1
                             $ csEngagement -= 1
                             "Pressing my advantage, I drive my ship onto her tail as she drops into a barrel roll."
                             pS "Damn, Cap, looks like you got me."
@@ -1635,16 +1648,22 @@ label vig4_sc3_2_jennica():
                             pS "Too bad looks can be deceiving."
                             "As the words escape her mouth, I see it out of the corner of my eye."
                             "Delayed blast charges. They're all around my ship."
+                            $ AddChatter(vig4_sc3_2_jenn_comment15)
                             mS "Oh god damn it."
                             "Jennica pushes a button on the side of her controller."
                             "The charges around me detonate and my screen goes completely white."
+                            $ AddChatter(vig4_sc3_2_jenn_comment16)
                             "\"Player One Wins\" flashes across both game screens."
+                            ##* streamer reaction to winning or losing
                             pS "Ooooh yeah! Just how I drew it up!"
                             pS "You made me sweat there a bit. But I felt locked in that whole time."
+                            $ AddChatter(vig4_sc3_2_jenn_comment17)
                             mS "You're one hell of a pilot, Jenn."
                             "I extend my hand toward her."
+                            $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She shakes it firmly."
                             pS "Thanks, Cap. It was a good game."
+                            $ AddChatter(vig4_sc3_2_jenn_comment19)
                             mS "It was. Well played."
                         "Get ahead and set a trap.":
                             $ kcEngagement += 1
@@ -1653,27 +1672,36 @@ label vig4_sc3_2_jennica():
                             "I push my ship forward, trying to get ahead of Jennica."
                             pS "Oh no, I see what you're going for."
                             "She starts performing various maneuvers, but every time she tries to make a move, she just makes it easier for me to overtake her."
+                            $ AddChatter(vig4_sc3_2_jenn_comment20)
                             "I see my chance."
                             "I activate the extra boost on my ship, and thrust ahead of her ship, letting a blast charge slip just as I do so."
+                            $ AddChatter(vig4_sc3_2_jenn_comment21)
                             pS "Shit!"
                             "The charge falls alongside Jennica's ship, then detonates."
                             "Her screen goes completely white."
                             "\"Player Two Wins\" flashes across both game screens."
+                            $ AddChatter(vig4_sc3_2_jenn_comment22)
+                            ##* streamer reaction to winning or losing
                             pS "Ahhh no way!"
                             pS "I had the time delay blast charges too."
                             pS "I just needed you to get a bit more greedy."
                             mS "And I just needed you to wear yourself out."
                             "Jennica lets out a sigh."
                             pS "Yeah, I guess I got a little too cute at the end there."
+                            $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She extends a hand toward me."
                             pS "Well played."
+                            $ AddChatter(vig4_sc3_2_jenn_comment19)
                             "I shake it firmly."
                             mS "Good game."
                 "Evasive maneuvers.":
                     "I corkscrew around a handful of asteroids."
                     pS "Pretty good moves, Cap."
                     mS "I learned from the best."
+                    $ AddChatter(vig4_sc3_2_jenn_comment12)
                     "Peeling up out of the corkscrew, Jennica and I are heading directly toward each other."
+                    $ AddChatter(vig4_sc3_2_jenn_comment13)
+                    $ AddChatter(vig4_sc3_2_jenn_comment14)
                     menu:
                         "Peeling up out of the corkscrew, Jennica and I are heading directly toward each other."
                         "Head on attack.":
@@ -1683,42 +1711,59 @@ label vig4_sc3_2_jennica():
                             $ pilotApproval += 1
                             "Pushing my thrusters full throttle, I lay on the guns."
                             pS "Oh so we're doing it this way?"
+                            $ AddChatter(vig4_sc3_2_jenn_comment23)
                             mS "You know it!"
                             "Jennica lays on her throttle too."
                             "Our shields are ripped to shreds. It's just our hulls, hurtling toward one another."
                             "The ships collide. The screen goes white."
                             "\"Tie Game\" flashes across both game screens."
+                            $ AddChatter(vig4_sc3_2_jenn_comment24)
+                            ##* streamer reaction to outcome
                             pS "Hahaha, I guess that's an appropriate way for it to go."
+                            $ AddChatter(vig4_sc3_2_jenn_comment25)
                             "Jennica reaches out a hand to me."
                             "I take it and shake it firmly."
+                            $ AddChatter(vig4_sc3_2_jenn_comment26)
                             mS "Good game."
+                            $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Yeah, well played."
                         "Bait her in.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
                             "I turn my ship around and try to bait her in."
                             pS "Running scared, Cap?"
+                            $ AddChatter(vig4_sc3_2_jenn_comment27)
                             mS "Just waiting for my moment."
                             pS "Spoken like someone who's scared."
                             "She executes the maneuver before I realize what's happening."
                             "Jennica drops a blast wave charge, and then jams her ship's steering hard so that the ship spins in a perfect circle."
                             "All I can do is watch as her ship's back end slams into the charge, sending it flying through the void of space."
+                            $ AddChatter(vig4_sc3_2_jenn_comment28)
                             "Directly at me."
                             "The charge detonates, and my screen goes completely white."
                             "\"Player One Wins\" flashes across both game screens."
+                            $ AddChatter(vig4_sc3_2_jenn_comment29)
+                            ##* streamer reaction to outcome
                             pS "Ooooh yeah! Just how I drew it up!"
                             mS "Damn! You're one hell of a pilot, Jenn."
+                            $ AddChatter(vig4_sc3_2_jenn_comment30)
                             "I extend my hand toward her."
                             "She shakes it firmly."
+                            $ AddChatter(vig4_sc3_2_jenn_comment18)
                             pS "You're not so bad yourself. Maybe you should take the helm next time we're in a tight spot."
                             mS "Think I'll stick to the games for now."
+                            $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Hahaha alright. It was a good game."
                             mS "It was. Well played."
         "Return fire.":
             "It's a bad spot, but I pull up and face her directly."
+            $ AddChatter(vig4_sc3_2_jenn_comment10)
             "Her shots shred my shields, but I manage to land some hits on her too."
+            $ AddChatter(vig4_sc3_2_jenn_comment11)
             pS "Bold move, not afraid to take some hits, I see."
             "My shields are low, but she's taken some hits too. I'm at a disadvantageous position."
+            $ AddChatter(vig4_sc3_2_jenn_comment13)
+            $ AddChatter(vig4_sc3_2_jenn_comment14)
             menu:
                 "My shields are low, but she's taken some hits too. I'm at a disadvantageous position."
                 "Head on attack.":
@@ -1729,34 +1774,47 @@ label vig4_sc3_2_jennica():
                     "Pushing my thrusters full throttle, I lay on the guns."
                     pS "Oh so we're doing it this way?"
                     mS "You know it!"
+                    $ AddChatter(vig4_sc3_2_jenn_comment23)
                     "Jennica lays on her throttle too."
                     "Our shields are ripped to shreds. It's just our hulls, hurtling toward one another."
                     "The ships collide. The screen goes white."
                     "\"Tie Game\" flashes across both game screens."
+                    $ AddChatter(vig4_sc3_2_jenn_comment24)
+                    ##* streamer reaction to outcome
                     pS "Hahaha, I guess that's an appropriate way for it to go."
+                    $ AddChatter(vig4_sc3_2_jenn_comment25)
                     "Jennica reaches out a hand to me."
                     "I take it and shake it firmly."
+                    $ AddChatter(vig4_sc3_2_jenn_comment18)
                     mS "Good game."
+                    $ AddChatter(vig4_sc3_2_jenn_comment19)
                     pS "Yeah, well played."
                 "Bait her in.":
                     $ kcEngagement -= 1
                     $ csEngagement -= 1
                     "I turn my ship around and try to bait her in."
                     pS "Running scared, Cap?"
+                    $ AddChatter(vig4_sc3_2_jenn_comment27)
                     mS "Just waiting for my moment."
                     pS "Spoken like someone who's scared."
                     "She executes the maneuver before I realize what's happening."
                     "Jennica drops a blast wave charge, and then jams her ship's steering hard so that the ship spins in a perfect circle."
                     "All I can do is watch as her ship's back end slams into the charge, sending it flying through the void of space."
+                    $ AddChatter(vig4_sc3_2_jenn_comment28)
                     "Directly at me."
                     "The charge detonates, and my screen goes completely white."
                     "\"Player One Wins\" flashes across both game screens."
+                    $ AddChatter(vig4_sc3_2_jenn_comment29)
+                    ##* streamer reaction to outcome
                     pS "Ooooh yeah! Just how I drew it up!"
                     mS "Like I say back on the Oakley: you're one hell of a pilot, Jenn."
+                    $ AddChatter(vig4_sc3_2_jenn_comment30)
                     "I extend my hand toward her."
                     "She shakes it firmly."
+                    $ AddChatter(vig4_sc3_2_jenn_comment18)
                     pS "You're not so bad yourself. Maybe you should take the helm next time we're in a tight spot."
                     pS "Maybe you should take the helm next time we're in a tight spot."
+                    $ AddChatter(vig4_sc3_2_jenn_comment19)
                     mS "Think I'll stick to the games for now."
                     pS "Hahaha alright. It was a good game."
                     mS "It was. Well played."
@@ -1779,33 +1837,40 @@ label vig4_sc3_2_jennica_2():
             pS "But I meant like, the specific {i}thing{/i} that inspired me."
     pS "The thing that really sealed it was this guy who came to my school when I was a young teen."
     pS "He was some pilot for BigCorp, doing a mentorship program type thing. I think he was a cop."
+    $ AddChatter(vig4_sc3_2_jenn_comment31)
     pS "He came into my class and asked who wanted to be a pilot. So I raised my hand."
     "Jennica looks up toward the plaza. It's like she's looking at something much further away."
     pS "He took one look at me and laughed."
     pS "I didn't have the implants in at the time. So he just saw this scrawny kid with degenerative eyesight."
     pS "I'll never forget what he said. \"Not one in a billion chance you could ever be a pilot.\""
+    $ AddChatter(vig4_sc3_2_jenn_comment32)
     "Jennica clenches her fist."
+    $ AddChatter(vig4_sc3_2_jenn_comment33)
     pS "I made it. It wasn't handed to me, it didn't just happen. I worked my ass off."
     pS "And I'm a damn good pilot now. His words shouldn't matter."
     pS "But whenever I remember what he said, all I want to do is go back in time and kick that guy's ass."
     "Jennica's whole body relaxes."
     "She looks to me and our eyes lock."
+    $ AddChatter(vig4_sc3_2_jenn_comment34)
     menu:
         "She looks to me and our eyes lock."
         "You're so incredible, Jenn.":
             mS "Jenn, you're so incredible."
             "She blushes and looks away briefly before turning back to me."
+            $ AddChatter(vig4_sc3_2_jenn_comment39)
             pS "Thanks, Cap."
             mS "No I really mean it. You've achieved amazing things. There's no one I could possibly trust more at the helm of the Oakley."
             if pilotApproval > 5:
                 "Jennica slides a bit closer to me."
             pS "Good, cause there's no one I would want watching my back more than you."
+            $ AddChatter(vig4_sc3_2_jenn_comment40)
             menu:
                 pS "Good, cause there's no one I would want watching my back more than you."
                 "Jenn, I love you." if teresaRomance == False:
                     mS "Jenn, it's taken me a long time to realize this. Probably too long."
                     pS "Realize what, Cap?"
                     mS "I love you."
+                    $ AddChatter(vig4_sc3_2_jenn_comment41)
                     if pilotApproval > 5:
                         $ kcEngagement -= 2
                         $ csEngagement += 3
@@ -1825,17 +1890,23 @@ label vig4_sc3_2_jennica_2():
                                 mS "You don't have to say it."
                                 "She freezes completely still, her eyes locked on mine."
                                 "I move forward and kiss Jennica."
+                                $ AddChatter(vig4_sc3_2_jenn_comment42)
+                                ##* streamer reaction
                                 "Our arms wrap around each other, holding one another tightly."
                                 "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                                $ AddChatter(vig4_sc3_2_jenn_comment43)
                                 "Finally, our lips part. We stare into each other's eyes."
+                                $ AddChatter(vig4_sc3_2_jenn_comment44)
                                 pS "Now the problem is I don't want to let go."
                                 mS "Me neither."
+                                $ AddChatter(vig4_sc3_2_jenn_comment45)
                                 mS "But I should go check and see if Coil has any news."
                                 mS "We'll have more time."
                                 pS "Yes, lots of time."
                                 "It's hard to let go, but somewhow we manage."
                                 "I take a step toward the plaza and sneak a glance back at Jennica."
                                 "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
+                                $ AddChatter(vig4_sc3_2_jenn_comment46)
                                 "I smile to myself as I return to the festival."
                                 hide jennica with dissolve
                             "Wait for her":
@@ -1845,17 +1916,23 @@ label vig4_sc3_2_jennica_2():
                                 pS "I love you too, Moze."
                                 "I feel myself smiling before I even consciously do it myself."
                                 "I move forward and kiss Jennica."
+                                $ AddChatter(vig4_sc3_2_jenn_comment42)
+                                ##* streamer reaction
                                 "Our arms wrap around each other, holding one another tightly."
                                 "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                                $ AddChatter(vig4_sc3_2_jenn_comment43)
                                 "Finally, our lips part. We stare into each other's eyes."
+                                $ AddChatter(vig4_sc3_2_jenn_comment44)
                                 pS "Now the problem is I don't want to let go."
                                 mS "Me neither."
+                                $ AddChatter(vig4_sc3_2_jenn_comment45)
                                 mS "But I should go check and see if Coil has any news."
                                 mS "We'll have more time."
                                 pS "Yes, lots of time."
                                 "It's hard to let go, but somewhow we manage."
                                 "I take a step toward the plaza and sneak a glance back at Jennica."
                                 "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
+                                $ AddChatter(vig4_sc3_2_jenn_comment46)
                                 "I smile to myself as I return to the festival."
                                 hide jennica with dissolve
                     else:
@@ -1866,47 +1943,68 @@ label vig4_sc3_2_jennica_2():
                         "My heart drops."
                         mS "What do you mean?"
                         "Jennica looks at the ground, then back up to me."
+                        $ AddChatter(vig4_sc3_2_jenn_comment47)
                         pS "I don't really know how to respond."
+                        $ AddChatter(vig4_sc3_2_jenn_comment48)
                         mS "So, you don't feel the same?"
+                        $ AddChatter(vig4_sc3_2_jenn_comment49)
                         "Jennica takes a long moment. She looks deeply into my eyes."
                         pS "I'm sorry. But I don't."
+                        $ AddChatter(vig4_sc3_2_jenn_comment50)
                         pS "For me, you've always felt like a big sister."
+                        $ AddChatter(vig4_sc3_2_jenn_comment51)
+                        ##* streamer reaction
                         mS "Okay..."
                         pS "..."
                         mS "..."
                         pS "..."
                         mS "Well this is awkward."
+                        $ AddChatter(vig4_sc3_2_jenn_comment52)
                         pS "Yeah."
+                        $ AddChatter(vig4_sc3_2_jenn_comment53)
                         pS "Look I really care about you, Cap."
                         pS "But it doesn't feel right to me."
+                        $ AddChatter(vig4_sc3_2_jenn_comment54)
                         mS "No, I get it. I'm glad you were honest with me."
                         pS "Always."
                         mS "I should check on the party. Maybe Coil has some updates."
+                        $ AddChatter(vig4_sc3_2_jenn_comment55)
                         pS "Of course. Let me know as soon as you hear anything from him."
                         mS "Will do."
+                        $ AddChatter(vig4_sc3_2_jenn_comment56)
+                        pause 0.5
+                        $ AddChatter(vig4_sc3_2_jenn_comment57)
                         "The two of us hug, awkwardly, then I step away back to the center of the plaza."
                         hide jennica with dissolve
                 "Let's get back to the party":
                     $ csEngagement -= 2
                     $ pdEngagement -= 1 #PickledDragons probably doesn't respect starting to go for the romance and then backing out
                     mS "I should check on the party. Maybe Coil has some updates."
+                    $ AddChatter(vig4_sc3_2_jenn_comment35)
                     "Jennica freezes for a moment."
+                    $ AddChatter(vig4_sc3_2_jenn_comment36)
                     "Then she stands up from the wall."
                     pS "Yeah, of course, that makes sense."
-                    "I step back toward the plaza when Jennica calls me back."
+                    $ AddChatter(vig4_sc3_2_jenn_comment37)
+                    "I step back toward the plaza when Jennica calls out."
                     pS "Hey, Cap, thanks for the game. I think I really needed it."
                     mS "No problem, Jenn."
+                    $ AddChatter(vig4_sc3_2_jenn_comment38)
                     "The two of us hug, then I step away back to the center of the plaza."
                     hide jennica with dissolve
         "Screw that guy.":
             $ csEngagement -= 2
             $ kcEngagement += 1
             mS "Screw that guy. He's probably dead now anyway."
+            $ AddChatter(vig4_sc3_2_jenn_comment35)
             pS "Bahahaha"
+            $ AddChatter(vig4_sc3_2_jenn_comment36)
             pS "Yeah, probably blew up in an asteroid belt crash or something."
             pS "Asshole."
+            $ AddChatter(vig4_sc3_2_jenn_comment37)
             pS "Thanks, Cap. I needed this."
             mS "No problem, Jenn."
+            $ AddChatter(vig4_sc3_2_jenn_comment38)
             "The two of us hug, then I step away back to the center of the plaza."
             hide jennica with dissolve
     jump vig4_sc3_3
@@ -1932,28 +2030,36 @@ label vig4_sc3_2_teresa():
     "Teresa shrugs."
     enS "You should've called."
     townguy "Apparently. Alright, I'm out. Getting too rich for my blood."
+    $ AddChatter(vig4_sc3_2_resa_comment4)
     "As the man leaves, Teresa glances up at me."
     enS "Oh Captain, perfect timing! Want to join for a game?"
     mS "Sure."
     "I take a seat."
     mS "But I don't really know what's going on here."
     enS "It's called Liar's Dice."
+    $ AddChatter(vig4_sc3_2_resa_comment5)
     enS "We all have five dice that we roll underneath our cups. We can look at our own cups at any time."
     enS "Then, one person identifies how many of one number they think are under all the cups."
     enS "The next person can increase the number, or \"call\" to make everyone reveal their dice."
     enS "We tally up all the dice of that one number, and if there are fewer than the amount that was called, then the person who called wins."
+    $ AddChatter(vig4_sc3_2_resa_comment6)
     enS "You'll pick it up as you go."
     enS "First, take all those dice, jumble them up in a cup, and then slam it back on the table."
+    $ AddChatter(vig4_sc3_2_resa_comment7)
     "The wooden cup makes a deep \"thunk\" as the dice rattle around underneath."
     "I look under my cup: There are two 2's, two 4's, and one 6."
     "The person opposite me starts."
     diceP1 "three 4's."
     diceP2 "Only three, come on Alex, that's not even a real bet!"
     diceP1 "She's running the table with us, Adam, what do want me to do?"
+    $ AddChatter(vig4_sc3_2_resa_comment8)
     diceP2 "Not let her get in your head man."
     "Teresa glances at me and grins."
+    $ AddChatter(vig4_sc3_2_resa_comment9)
     diceP2 "You know what, let's make this interesting, six 4's."
+    $ AddChatter(vig4_sc3_2_resa_comment10)
     enS "You're turn, Captain. What'll it be? Call or Raise?"
+    $ AddChatter(vig4_sc3_2_resa_comment11)
     menu:
         "I look under my cup: There are two 2's, two 4's, and one 6."
         "Call.":
@@ -1961,9 +2067,11 @@ label vig4_sc3_2_teresa():
             "Each player at the table raises their cup."
             "I have two 4's. The first player also has two. The one next to me has one."
             "But Teresa, has four."
+            $ AddChatter(vig4_sc3_2_resa_comment12)
             enS "Nine 4's. Tough, Captain. We could've gone a bit longer."
             "I toss a small stack of credits onto the table. The man next to me picks them up."
             mS "I'm just warming up."
+            $ AddChatter(vig4_sc3_2_resa_comment13)
             diceP1 "Of course."
             diceP2 "That's what we said when your friend first sat down here."
             "Teresa winks at me."
@@ -1971,13 +2079,17 @@ label vig4_sc3_2_teresa():
         "Raise.":
             mS "Seven 4's."
             enS "Eight 4's."
+            $ AddChatter(vig4_sc3_2_resa_comment14)
             "Teresa didn't even check under her cup."
+            $ AddChatter(vig4_sc3_2_resa_comment15)
             "The man who started the bidding looks under his cup."
             "It seems like sweat is starting to form on his brow."
+            $ AddChatter(vig4_sc3_2_resa_comment16)
             diceP1 "Call!"
             "We all lift our cups."
             "I have two 4's. The first player also has two. The one next to me has one."
             "But Teresa has four."
+            $ AddChatter(vig4_sc3_2_resa_comment17)
             enS "Nine 4's. Tough position, reasonable call."
             diceP1 "Yeah yeah."
             "The losing player takes out a small stack of credits and puts them on the table."
@@ -1988,17 +2100,23 @@ label vig4_sc3_2_teresa():
     "I win some, I lose some."
     "Then Teresa picks up her cup with a bit more of a flourish."
     enS "Alright gang, I think this is my last round."
+    $ AddChatter(vig4_sc3_2_resa_comment18)
     diceP1 "Me too."
     diceP2 "Same."
     mS "Winner take all then?"
+    $ AddChatter(vig4_sc3_2_resa_comment19)
     "I make eye contact with Teresa."
     mS "At least in terms of pride."
     enS "Why don't we switch up the direction. Give Captain the chance to call on me before the end."
     "We all nod in agreement, and throw our dice."
+    $ AddChatter(vig4_sc3_2_resa_comment20)
     "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
     "Teresa starts."
     enS "Four 2's."
     enS "Captain?"
+    $ AddChatter(vig4_sc3_2_resa_comment21)
+    pause 0.5
+    $ AddChatter(vig4_sc3_2_resa_comment22)
     menu:
         "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
         "Call.":
@@ -2010,9 +2128,40 @@ label vig4_sc3_2_teresa():
             show teresa stream shock
             "No one else has any."
             "But she has enough to just make it."
+            $ AddChatter(vig4_sc3_2_resa_comment23)
             mS "You're kidding!?"
-            enS "Wow! That was closer than I thought it'd be."
-            show teresa stream neutral
+            diceP1 "Damn it!"
+            diceP2 "So close!"
+            enS "No one has any other 2's!?"
+            "I take a small stack of credits out of my pocket and place them in front of Teresa."
+            $ AddChatter(vig4_sc3_2_resa_comment24)
+            mS "Well-played."
+            diceP2 "Thank you kindly."
+            "The two players get up from the table and wander off into the plaza."
+            "Teresa doesn't move to take the credits. She continues to stare at the uncovered dice on the table."
+            $ AddChatter(vig4_sc3_2_resa_comment25)
+            enS "But that's mathematically improbable."
+            menu:
+                enS "But that's mathematically improbable."
+                "You lost, get over it.":
+                    mS "Losses happen Teresa."
+                    mS "You can't win everything."
+                    show teresa stream neutral
+                    enS "I know, I just thought I had more control over that situation than I did."
+                    mS "So what?"
+                    mS "We've been in those kinds of situations before. Hell, I can think of ten in the last two weeks."
+                    mS "It doesn't help to dwell on things that are out of our control."
+                    enS "Yeah, you're right."
+                    enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
+                "Probability isn't certainty.":
+                    $ engineerApproval += 1
+                    mS "Probabilities are certainties."
+                    mS "Anything can happen."
+                    mS "And sometimes, a lot of times, luck is more important than skill."
+                    mS "You should know that in our line of work."
+                    show teresa stream neutral
+                    enS "Yeah, you're right."
+                    enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
         "Raise.":
             "Teresa wouldn't make that number if she didn't have a good hand for it."
             mS "Five 2's."
