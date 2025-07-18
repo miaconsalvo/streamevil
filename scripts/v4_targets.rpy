@@ -149,6 +149,33 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
                 "Let's catch Elliot up to speed.":
+                    player "Alright El, so basically, we landed on this moon called Polaris and found the Dragonflies."
+                    player "Their leader is this old engineer guy named Coil who helped create MAC with Dr. Vanas back in the day."
+                    $ AddChatter(vig4_bro_comment15)
+                    pause 0.5
+                    player "Yeah, her name's Vega, she's cool."
+                    $ AddChatter(vig4_bro_comment16)
+                    player "Right, so turns out they want us to leave MAC behind."
+                    $ AddChatter(vig4_bro_comment17)
+                    pause 0.5
+                    $ AddChatter(vig4_bro_comment18)
+                    pause 1.0
+                    $ AddChatter(vig4_bro_comment19)
+                    player "Yeah, and while we're waiting to hear back, we're gonna hit up a festival that's happening in the town."
+                    $ AddChatter(vig4_bro_comment20)
+                    pause 1.0
+                    $ AddChatter(vig4_bro_comment21)
+                    pause 0.5
+                    player "Pretty much. Let's keep it rolling!"
+                    $ AddChatter(vig4_bro_comment22)
+                    pause 1.0
+                    $ AddChatter(vig4_bro_comment23)
+                    pause 0.5
+                    $ AddChatter(vig4_bro_comment24)
+                    pause 0.5
+                    $ AddChatter(vig4_bro_comment25)
+                    "Alright, alright, let's get back to it."
+                    $ AddChatter(vig4_bro_comment26)
         "So good to see you!":
             player "Oh my god, El! It's so good to have you in chat!"
             $ AddChatter(vig4_bro_comment1)
