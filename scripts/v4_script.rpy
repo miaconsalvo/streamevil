@@ -1240,7 +1240,9 @@ label vig4_sc3_1():
     "Maybe, making new friends."
     vS "Hey, Moze."
     show vega stream neutral at stream_center with dissolve
+    $ AddChatter(vig4_sc3_1_comment1)
     vS "Having a good time?"
+    $ AddChatter(vig4_sc3_1_comment2)
     menu:
         vS "Having a good time?"
         "It's beautiful.":
@@ -1257,10 +1259,13 @@ label vig4_sc3_1():
             mS "About a lot of things."
     vS "I know you're worried about what's next for MAC. You have every right to be."
     vS "But it's a festival! When was the last time you celebrated something?"
+    $ AddChatter(vig4_sc3_1_comment3)
     mS "I don't know."
     vS "Then we should change that."
     vS "Come on, have some fun with the people who matter most!"
+    $ AddChatter(vig4_sc3_1_comment4)
     "Maybe Vega's right. Even on Akar, we weren't really able to let our guard down."
+    $ AddChatter(vig4_sc3_1_comment5)
     "I scan the festival for my crew."
     show mac stream neutral at stream_left_mac with dissolve
     "MAC is occupied with a group of children. It looks like they're playing tag."
@@ -1268,9 +1273,17 @@ label vig4_sc3_1():
     hide mac with dissolve
     show teresa stream neutral at stream_right with dissolve
     "Teresa is sitting at a table where people are talking animatedly. Knowing her, it's some sort of gambling racket."
+    $ AddChatter(vig4_sc3_1_comment7)
     show jennica stream neutral at stream_left with dissolve
     "Jennica is inside a building on the outskirts of the plaza. It looks like she's watching a screen intently."
+    $ AddChatter(vig4_sc3_1_comment6)
+    pause 0.5
+    $ AddChatter(vig4_sc3_1_comment10)
     "Who should I go to?"
+    if romanceAma == True:
+        $ AddChatter(vig4_sc3_1_comment9)
+    else:
+        $ AddChatter(vig4_sc3_1_comment8)
     menu:
         "Who should I go to?"
         "Jennica.":
@@ -1288,12 +1301,18 @@ label vig4_sc3_2_vega():
     $ kcEngagement += 2 #Vega is effectively the "neutral" romance option with no viewer characters disliking it
     $ pdEngagement += 1
     $ csEngagement += 1
+    $ AddChatter(vig4_sc3_2_vega_comment1)
     mS "Actually, I'd like to get to know you better. How about you show me around?"
+    $ AddChatter(vig4_sc3_2_vega_comment2)
+    pause 0.5
+    $ AddChatter(vig4_sc3_2_vega_comment3)
     vS "Oh! I would love to!"
+    $ AddChatter(vig4_sc3_2_vega_comment4)
     vS "I know just the thing!"
     "Vega turns  and takes off into the crowd."
     "I follow close behind, weaving around groups of people and trying not to step on kids as they careen through the plaza."
     vS "Here! Hope it's not too on the nose."
+    $ AddChatter(vig4_sc3_1_comment11)
     "The stall in front of us has four toy rifles laying on a counter."
     "A group of four teens in front of us pick them up, aiming down range."
     "A wood display of Polaris stands about ten feet back."
@@ -1301,6 +1320,7 @@ label vig4_sc3_2_vega():
     "Cardboard cutouts in the likeness of BigCorp enforcers, dropships, and tanks."
     "The four teens shout as they fire short sparks off in rapid succession at the targets."
     vS "What do you think? Up for a round, just you and me?"
+    $ AddChatter(vig4_sc3_2_vega_comment5)
     menu:
         vS "What do you think? Up for a round, just you and me?"
         "You're on!":
@@ -1312,6 +1332,7 @@ label vig4_sc3_2_vega():
             vS "I think you'll be in for a surprise."
     "The teens in front of us finish up and wander off."
     vS "Come on, grab a rifle. I want to see what you're made of."
+    $ AddChatter(vig4_sc3_2_vega_comment6)
     "Vega grabs one of the guns and aims it down range."
     "The rifle is light in my hands. Almost too light for comfort."
     menu:
@@ -1327,6 +1348,7 @@ label vig4_sc3_2_vega():
     "Before I can do anything else, the operator pulls a lever and the targets start their cycle."
     "Vega gets the first shot off, knocking an enforcer down, but I quickly seat the rifle into my shoulder and go to work."
     "I knock down the next two targets, but then Vega hits one of the ships that appear above the town."
+    $ AddChatter(vig4_sc3_2_vega_comment7)
     "She fires quickly, almost with reckless abandon and without thought for precision."
     if vig4_checkSights == True:
         "It means she makes mistakes. Mistakes that I can capitalize on."
@@ -1334,9 +1356,13 @@ label vig4_sc3_2_vega():
     else:
         "But she's not faster than me, especially with this light trigger."
         "The sound of our rifles overlap each other as wooden targets slam down in rapid succession."
+    $ AddChatter(vig4_sc3_2_vega_comment8)
     "The cycle of targets is winding down. I'm in the lead."
     "I risk a glance to my side."
+    $ AddChatter(vig4_sc3_2_vega_comment9)
     "Vega is alert and focused. Sweat drips from her forehead. She really wants to win this."
+    $ AddChatter(vig4_sc3_2_vega_comment10)
+    $ AddChatter(vig4_sc3_2_vega_comment11)
     menu:
         "Vega is alert and focused. Sweat drips from her forehead. She really wants to win this."
         "Let Vega win.":
@@ -1352,12 +1378,15 @@ label vig4_sc3_2_vega():
             $ vig4_vegaVictory = False
             "As the final targets pop into position, I aim true."
             "My shots hit the targets just before Vega's."
+            $ AddChatter(vig4_sc3_2_vega_comment13)
     "The cycle stops as the game ends."
     if vig4_vegaVictory == True:
         "Vega wins by just one target."
         vS "Yes! Wow that was a close one."
+        $ AddChatter(vig4_sc3_2_vega_comment12)
     else:
         "I win by five targets."
+        $ AddChatter(vig4_sc3_2_vega_comment12)
         vS "Ahhh damn, if I just got those last ones I would have beat you."
     mS "Well done, it was an impressive showing!"
     vS "Thanks! That means a lot coming from you."
@@ -1369,6 +1398,7 @@ label vig4_sc3_2_vega_2():
     "She isn't scanning for anything or anyone in particular. She's just taking it all in."
     "I picture the ready warrior I competed against in the carnival game."
     "Vega hasn't spent her whole life on Polaris." 
+    $ AddChatter(vig4_sc3_2_vega_comment14)
     "She clearly has experience with the rest of the galaxy. And with the violence that goes with it."
     "Should I say something?"
     menu:    
@@ -1380,6 +1410,7 @@ label vig4_sc3_2_vega_2():
             "She smiles, still keeping her gaze on the festival."
             vS "It has its charm."
             vS "Getting to work with Coil in peace and quiet has been a dream come true."
+            $ AddChatter(vig4_sc3_2_vega_comment15)
             vS "Still, the nature of our job means I've been here, and only here, for fifteen years."
             vS "It's a long time to be in any one place."
             menu:
@@ -1387,8 +1418,10 @@ label vig4_sc3_2_vega_2():
                 "I wouldn't know what that's like.":
                     mS "Sounds boring."
                     mS "I've been hopping from planet to planet since..."
+                    $ AddChatter(vig4_sc3_2_vega_comment16)
                     "I try to remember the last time I spent longer than four months on any piece of land."
                     vS "Since?"
+                    $ AddChatter(vig4_sc3_2_vega_comment17)
                     mS "I honestly can't remember."
                     vS "Sounds hard."
                     menu:
@@ -1406,8 +1439,10 @@ label vig4_sc3_2_vega_2():
                             vS "I don't know that those are mutually exclusive, but I'm glad you've found the life that's right for you."
                 "At least there's some kind of stability.":
                     mS "Hopping from planet to planet all the time...it gets tough."
+                    $ AddChatter(vig4_sc3_2_vega_comment16)
                     mS "You've been able to build something here. That's harder to do up there."
                     vS "I'm grateful you can recognize that."
+                    $ AddChatter(vig4_sc3_2_vega_comment17)
                     vS "Coil did most of the work to start. I try to help where I can."
                     "Vega looks up at the night sky. It's flooded with twinkling starlight."
                     vS "But I can't help it. I want to be doing more."
@@ -1418,22 +1453,29 @@ label vig4_sc3_2_vega_2():
             vS "Please, fire away."
             mS "Have you ever killed anyone before."
             "Vega looks at me, her eyebrows raised in shock. Then she breaks into laughter."
+            $ AddChatter(vig4_sc3_2_vega_comment18)
             vS "So direct! An outlaw's priority I take it."
             "She steadies herself and shrugs."
+            $ AddChatter(vig4_sc3_2_vega_comment19)
             vS "I have, yeah. I'm not proud of it."
             mS "With the Dragonflies?"
+            $ AddChatter(vig4_sc3_2_vega_comment20)
             vS "No. It was before we got in contact with them."
             vS "The first time was on a BC-controlled world." 
             vS "Coil got ID'd by some mercs who thought turning him in would get them some favors."
             vS "Turns out they put all their attention on the old man and not the little girl who was with him."
             "Vega looks up at the night sky. It's flooded with twinkling starlight."
+            $ AddChatter(vig4_sc3_2_vega_comment21)
             vS "I think it's why the old man wanted to get us here so bad. So he could protect me from that life."
             menu:
                 vS "I think it's why the old man wanted to get us here so bad. So he could protect me from that life."
                 "Is it something you want to leave behind?":
+                    $ AddChatter(vig4_sc3_2_vega_comment22)
                     mS "Is it something you want to leave behind?"
+                    $ AddChatter(vig4_sc3_2_vega_comment23)
                     vS "The killing? Yes, I'm glad that's in the past."
                     vS "The adventure? Less so."
+                    $ AddChatter(vig4_sc3_2_vega_comment24)
                     "Vega points a finger at me like it's a gun."
                     vS "But don't worry, as you witnessed, I've kept my aim sharp these past years."
                     "She moves her hand as if firing a gun."
@@ -1461,6 +1503,8 @@ label vig4_sc3_2_vega_2():
             "It all feels so...peaceful."
     vS "Thanks for playing the game with me, Moze."
     vS "It meant a lot to fight alongside the captain of the Oakley, even if it was just pretend."
+    $ AddChatter(vig4_sc3_2_vega_comment25)
+    ##* Streamer reaction to muse about what Moze's nickname would be
     menu:
         vS "It meant a lot to fight alongside the captain of the Oakley, even if it was just pretend."
         "I enjoyed it too.":
@@ -1471,6 +1515,7 @@ label vig4_sc3_2_vega_2():
             $ pdEngagement += 1
             $ csEngagement += 1
             mS "What do you think about joining us? The Oakley always has room for a sharp new recruit."
+            $ AddChatter(vig4_sc3_2_vega_comment26)
             "Vega's eyes go wide for an instant."
             vS "Bahahaha!"
             "Then she doubles over, laughing."
@@ -1478,8 +1523,10 @@ label vig4_sc3_2_vega_2():
             "She glances back at the heart of the festival."
             vS "You know, if I was younger, I would have said 'yes' in a heartbeat."
             vS "I'm flattered. Deeply. But I'm going to have to politely decline."
+            $ AddChatter(vig4_sc3_2_vega_comment27)
             vS "My place is with Coil and the Dragonflies. I'm sure you understand."
             mS "Of course. Figured I'd extend the invite."
+            $ AddChatter(vig4_sc3_2_vega_comment28)
             vS "And it is very much appreciated."
     vS "You should probably go check in with your crew, Coil might have news."
     mS "I was just thinking the same thing."
@@ -1497,10 +1544,15 @@ label vig4_sc3_2_jennica():
     hide vega with dissolve
     hide teresa stream neutral with dissolve
     show jennica stream neutral at stream_center with move
+    $ AddChatter(vig4_sc3_2_jenn_comment1)
     "Crossing the plaza, I step up next to Jennica."
+    $ AddChatter(vig4_sc3_2_jenn_comment2)
+    pause 0.5
+    $ AddChatter(vig4_sc3_2_jenn_comment3)
     "She doesn't even notice me. Her eyes are glued to watching a screen in front of her."
     "It's an arcade game where two spaceships dogfight with one another."
     "There are two controllers connected to the game."
+    $ AddChatter(vig4_sc3_1_comment11)
     "She's completely absorbed by the game, even though she isn't playing it."
     menu:
         "She's completely absorbed by the game, even though she isn't playing it."
@@ -1867,9 +1919,14 @@ label vig4_sc3_2_teresa():
     hide vega with dissolve
     hide jennica with dissolve
     show teresa stream neutral at stream_center with move
+    $ AddChatter(vig4_sc3_2_resa_comment1)
     "I wind my way through the crowd to stand next to Teresa."
+    $ AddChatter(vig4_sc3_2_resa_comment2)
+    pause 0.5
+    $ AddChatter(vig4_sc3_2_resa_comment3)
     "She and three other people are watching each other intently, holding cups upside down on the table."
     "The one sitting on Teresa's left throws a scrunched up bill on the table and stands up."
+    $ AddChatter(vig4_sc3_1_comment11)
     townguy "Damn it!"
     show teresa stream happy
     "Teresa shrugs."
