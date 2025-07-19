@@ -2143,22 +2143,26 @@ label vig4_sc3_2_teresa():
             enS "But that's mathematically improbable."
             menu:
                 enS "But that's mathematically improbable."
-                "You lost, get over it.":
-                    mS "Losses happen Teresa."
-                    mS "You can't win everything."
+                "Teresa, you won.":
+                    mS "Teresa, you won. Why do you care?"
+                    $ AddChatter(vig4_sc3_2_resa_comment27)
                     show teresa stream neutral
-                    enS "I know, I just thought I had more control over that situation than I did."
-                    mS "So what?"
-                    mS "We've been in those kinds of situations before. Hell, I can think of ten in the last two weeks."
-                    mS "It doesn't help to dwell on things that are out of our control."
+                    enS "My calculations were off. You should have got me."
+                    mS "I didn't."
+                    enS "But you should have."
+                    $ AddChatter(vig4_sc3_2_resa_comment28)
+                    mS "Sometimes luck is more important than skill."
+                    mS "You should know that in our line of work."
                     enS "Yeah, you're right."
                     enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
                 "Probability isn't certainty.":
                     $ engineerApproval += 1
-                    mS "Probabilities are certainties."
+                    mS "Probabilities aren't certainties."
+                    $ AddChatter(vig4_sc3_2_resa_comment27)
                     mS "Anything can happen."
                     mS "And sometimes, a lot of times, luck is more important than skill."
                     mS "You should know that in our line of work."
+                    $ AddChatter(vig4_sc3_2_resa_comment28)
                     show teresa stream neutral
                     enS "Yeah, you're right."
                     enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
@@ -2169,6 +2173,7 @@ label vig4_sc3_2_teresa():
             diceP1 "Ahhhhh, seven 2's."
             "Teresa's smile is broad."
             enS "Fun. Eight 2's."
+            $ AddChatter(vig4_sc3_2_resa_comment29)
             enS "Captain?"
             menu:
                 "I check under my cup: one 1, one 3, one 4, one 5, and one 6."
@@ -2180,17 +2185,20 @@ label vig4_sc3_2_teresa():
                     "Teresa has five 2's."
                     show teresa stream shock
                     "No one else has any."
+                    $ AddChatter(vig4_sc3_2_resa_comment30)
                     "Teresa loses."
                     enS "No one has any other 2's!?"
                     diceP2 "Yes!"
                     diceP1 "Ooooh wow, so she could've called me."
                     mS "Tough luck."
+                    $ AddChatter(vig4_sc3_2_resa_comment31)
                     "I extend a hand toward Teresa."
                     "Without taking her eyes off the exposed dice, she places a handful of credits in my palm."
                     mS "Well-played."
                     diceP2 "Thank you kindly."
                     "The two players get up from the table and wander off into the plaza."
                     "Teresa continues to stare at the uncovered dice on the table."
+                    $ AddChatter(vig4_sc3_2_resa_comment25)
                     enS "But that's mathematically improbable."
                     menu:
                         enS "But that's mathematically improbable."
@@ -2198,18 +2206,22 @@ label vig4_sc3_2_teresa():
                             mS "Losses happen Teresa."
                             mS "You can't win everything."
                             show teresa stream neutral
+                            $ AddChatter(vig4_sc3_2_resa_comment26)
                             enS "I know, I just thought I had more control over that situation than I did."
                             mS "So what?"
                             mS "We've been in those kinds of situations before. Hell, I can think of ten in the last two weeks."
                             mS "It doesn't help to dwell on things that are out of our control."
+                            $ AddChatter(vig4_sc3_2_resa_comment28)
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
                         "Probability isn't certainty.":
                             $ engineerApproval += 1
                             mS "Probabilities are certainties."
                             mS "Anything can happen."
+                            $ AddChatter(vig4_sc3_2_resa_comment26)
                             mS "And sometimes, a lot of times, luck is more important than skill."
                             mS "You should know that in our line of work."
+                            $ AddChatter(vig4_sc3_2_resa_comment28)
                             show teresa stream neutral
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
@@ -2217,6 +2229,7 @@ label vig4_sc3_2_teresa():
                     $ kcEngagement -=1
                     $ pdEngagement -=1
                     mS "Why not? Ten 2's."
+                    $ AddChatter(vig4_sc3_2_resa_comment33)
                     diceP2 "Nope, gotta call that."
                     "We all lift our cups."
                     "Teresa has five 2's."
@@ -2224,21 +2237,25 @@ label vig4_sc3_2_teresa():
                     "No one else has any."
                     "I lose."
                     enS "No one has any other 2's!"
+                    $ AddChatter(vig4_sc3_2_resa_comment34)
                     mS "Damn."
                     "I toss some credits to the player on my right."
                     mS "Well-played."
                     diceP2 "Thank you kindly."
                     "The two players get up from the table and wander off into the plaza."
                     "Teresa stares at the uncovered dice on the table."
+                    $ AddChatter(vig4_sc3_2_resa_comment25)
                     enS "But that's mathematically improbable."
                     menu:
                         enS "But that's mathematically improbable."
                         "Teresa, you won.":
                             mS "Teresa, you won. Why do you care?"
                             show teresa stream neutral
+                            $ AddChatter(vig4_sc3_2_resa_comment27)
                             enS "My calculations were off. You should have got me."
                             mS "I didn't."
                             enS "But you should have."
+                            $ AddChatter(vig4_sc3_2_resa_comment28)
                             mS "Sometimes luck is more important than skill."
                             mS "You should know that in our line of work."
                             enS "Yeah, you're right."
@@ -2246,9 +2263,11 @@ label vig4_sc3_2_teresa():
                         "Probability isn't certainty.":
                             $ engineerApproval += 1
                             mS "Probabilities are certainties."
+                            $ AddChatter(vig4_sc3_2_resa_comment27)
                             mS "Anything can happen."
                             mS "Sometimes, a lot of times, luck is more important than skill."
                             mS "You should know that in our line of work."
+                            $ AddChatter(vig4_sc3_2_resa_comment28)
                             show teresa stream neutral
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
@@ -2258,6 +2277,7 @@ label vig4_sc3_2_teresa_2():
     "Teresa continues to stare at the table."
     "She picks up a die and starts rotating it in her fingers."
     enS "Hey, Captain. Do you think I'm a good outlaw?"
+    $ AddChatter(vig4_sc3_2_resa_comment35)
     menu:
         enS "Hey, Captain. Do you think I'm a good outlaw?"
         "Of course!":
@@ -2267,21 +2287,26 @@ label vig4_sc3_2_teresa_2():
             mS "Where is this coming from?"
     enS "Every now and then I look at you and Jennica, and it fits you so easily. This life I mean."
     enS "You've been living it for so long. You're {i}SnakeHawks{/i}."
+    $ AddChatter(vig4_sc3_2_resa_comment36)
     enS "I'm so grateful I met the two of you. You both changed my life, so much for the better."
     enS "But sometimes I wonder what could have been."
     enS "If I didn't go to grad school. If I didn't disobey my parents. If I went to Alliance space instead of The Outposts."
+    $ AddChatter(vig4_sc3_2_resa_comment37)
     enS "All these moments where I made decisions that could have legitimately gone another way."
     enS "But this is the reality that I ended up in, whether I'm happy about it or not."
     enS "Does that mean anything?"
     "Teresa looks up and locks eyes with me."
+    $ AddChatter(vig4_sc3_2_resa_comment38)
     menu:
         "Teresa looks up and locks eyes with me."
         "Don't be afraid to call this fate.":
             mS "Teresa, you can use the word fate. You don't have to be scared of it."
             enS "But if it is fate, then what does it mean?"
+            $ AddChatter(vig4_sc3_2_resa_comment43)
             if engineerApproval > 5:
                 "Teresa gets closer to the edge of her seat. Closer to me."
             enS "Why did this moment have to happen?"
+            $ AddChatter(vig4_sc3_2_resa_comment44)
             "Her eyes do not leave mine."
             menu:
                 "Her eyes do not leave mine."
@@ -2289,6 +2314,7 @@ label vig4_sc3_2_teresa_2():
                     mS "What else could it be, Resa: love."
                     enS "What?"
                     mS "I love you, Teresa."
+                    $ AddChatter(vig4_sc3_2_resa_comment45)
                     if engineerApproval > 5:
                         $ csEngagement -= 2
                         $ kcEngagement += 3
@@ -2306,17 +2332,23 @@ label vig4_sc3_2_teresa_2():
                                 mS "You don't have to explain this."
                                 "She freezes completely still, her eyes locked on mine."
                                 "I move forward and kiss Teresa."
+                                $ AddChatter(vig4_sc3_2_resa_comment46)
+                                ##* streamer reaction
                                 "Our arms wrap around each other, holding one another tightly."
                                 "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                                $ AddChatter(vig4_sc3_2_resa_comment47)
                                 "Finally, our lips part. We stare into each other's eyes."
+                                $ AddChatter(vig4_sc3_2_resa_comment48)
                                 enS "Now the problem is I don't want to let go."
                                 mS "Me neither."
+                                $ AddChatter(vig4_sc3_2_resa_comment49)
                                 mS "But I should go check and see if Coil has any news."
                                 mS "We'll have more time."
                                 enS "Yes, lots of time."
                                 "It's hard to let go, but somewhow we manage."
                                 "As I stand and take a step away from the table, I sneak a glance back at Teresa."
                                 "She's still looking at the exposed dice, but now with a massive smile on her face."
+                                $ AddChatter(vig4_sc3_2_resa_comment50)
                                 "I smile to myself as I return to the festival."
                             "Wait for her":
                                 "I wait, patiently."
@@ -2325,17 +2357,23 @@ label vig4_sc3_2_teresa_2():
                                 enS "I love you too, Moze."
                                 "I feel myself smiling before I even register to do it myself."
                                 "I move forward and kiss Teresa."
+                                $ AddChatter(vig4_sc3_2_resa_comment46)
+                                ##* streamer reaction
                                 "Our arms wrap around each other, holding one another tightly."
                                 "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                                $ AddChatter(vig4_sc3_2_resa_comment47)
                                 "Finally, our lips part. We stare into each other's eyes."
+                                $ AddChatter(vig4_sc3_2_resa_comment48)
                                 enS "Now the problem is I don't want to let go."
                                 mS "Me neither."
+                                $ AddChatter(vig4_sc3_2_resa_comment49)
                                 mS "But I should go check and see if Coil has any news."
                                 mS "We'll have more time."
                                 enS "Yes, lots of time."
                                 "It's hard to let go, but somewhow we manage."
                                 "As I stand and take a step away from the table, I sneak a glance back at Teresa."
                                 "She's still looking at the exposed dice, but now with a massive smile on her face."
+                                $ AddChatter(vig4_sc3_2_resa_comment50)
                                 "I smile to myself as I return to the festival."
                     else:
                         $ kcEngagement -= 1
@@ -2345,32 +2383,48 @@ label vig4_sc3_2_teresa_2():
                         "My heart drops a little."
                         mS "What do you mean?"
                         "Teresa looks to the dice, then back to me."
+                        $ AddChatter(vig4_sc3_2_resa_comment51)
                         "She sighs."
+                        $ AddChatter(vig4_sc3_2_resa_comment52)
+                        $ AddChatter(vig4_sc3_2_resa_comment53)
                         enS "I care a lot about you, Captain. And I deeply respect you as a leader."
+                        $ AddChatter(vig4_sc3_2_resa_comment55)
                         enS "But I don't feel the same way."
+                        $ AddChatter(vig4_sc3_2_resa_comment56)
+                        ##* streamer reaction
                         enS "I'm sorry."
                         "She's still making eye contact with me. Unflinching. Fierce."
                         "Honest."
+                        $ AddChatter(vig4_sc3_2_resa_comment57)
                         "I sigh."
                         mS "Of course. I'm glad you were honest with me."
                         enS "Always."
+                        $ AddChatter(vig4_sc3_2_resa_comment58)
+                        pause 0.5
+                        $ AddChatter(vig4_sc3_2_resa_comment59)
                         mS "I should--I should go find Coil, see if he's got any updates for us."
                         enS "Yeah, I hope it's good news."
                         mS "I'll let you and Jenn know as soon as I can."
+                        $ AddChatter(vig4_sc3_2_resa_comment60)
                         enS "Sounds good. Take care."
+                        $ AddChatter(vig4_sc3_2_resa_comment61)
                         mS "Yeah."
                         "I turn away from Teresa and back to the festival."            
                 "I don't know":
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
                     mS "I don't think it's for me to say, Resa."
+                    $ AddChatter(vig4_sc3_2_resa_comment39)
                     mS "That's something you have to figure out for yourself."
                     "Teresa sighs and hangs her head slightly."
+                    $ AddChatter(vig4_sc3_2_resa_comment40)
                     enS "Yeah, that makes sense."
                     enS "It's irritating, but you're right."
                     mS "Alright, I need to go find Coil, see if he's got any updates for us."
+                    $ AddChatter(vig4_sc3_2_resa_comment41)
                     enS "Yeah, I hope it's good news."
                     mS "I'll let you and Jenn know as soon as I can."
+                    $ AddChatter(vig4_sc3_2_resa_comment42)
                     enS "Good."
                     enS "And thanks for the conversation, Captain. I really needed it."
                     "I turn away from Teresa and back to the festival."
@@ -2378,14 +2432,18 @@ label vig4_sc3_2_teresa_2():
             $ kcEngagement -= 2
             $ csEngagement += 1
             mS "All those alternate timelines you're imagining: screw 'em."
+            $ AddChatter(vig4_sc3_2_resa_comment39)
             mS "What matters is what you've decided."
             mS "You're an incredible outlaw, crew member, and friend."
+            $ AddChatter(vig4_sc3_2_resa_comment40)
             mS "I'm so grateful to have you on the Oakley. And I know Jenn feels the same way."
             show teresa stream happy
             "Teresa smiles and nods."
+            $ AddChatter(vig4_sc3_2_resa_comment41)
             enS "Yeah, you're right."
             enS "Thanks, Captain. I really needed to hear that."
             mS "Any time."
+            $ AddChatter(vig4_sc3_2_resa_comment42)
             mS "Alright, I need to go find Coil, see if he's got any updates for us."
             enS "Yeah, I hope it's good news."
             mS "I'll let you and Jenn know as soon as I can."
@@ -2401,22 +2459,36 @@ label vig4_sc3_3():
     "They're all looking at MAC, as he waves his hands in the air."
     if macViolence >= macPeace and customsStampede == True:
         macS "So then Dr. Prismari begins the {i}conflagrant{/i} phase and the booth explodes!"
+        $ AddChatter(vi4_sc3_3_comment1)
         macS "Everyone starts running wildly, and we sneak under security's nose!"
         "There are gasps throughout the crowd."
+        if gunsBlazing == True:
+            $ AddChatter(vi4_sc3_3_comment2)
+        else:
+            $ AddChatter(vi4_sc3_3_comment2)
         townguy "My word, I hope everyone was ok."
+        $ AddChatter(vi4_sc3_3_comment4)
         macS "We did not have time to check on people. We had to go meet a \"skeeve\" named Matticus."
     elif macPeace > macViolence and vig2_marshalEpilogue == True:
         macS "So then I said, \"take that skeeve\" and we took care of Reggie."
+        $ AddChatter(vi4_sc3_3_comment1)
         macS "Captain Moze saved the aid ship and Sallent was saved!"
         "There are gasps throughout the crowd."
+        if gunsBlazing == True:
+            $ AddChatter(vi4_sc3_3_comment2)
+        else:
+            $ AddChatter(vi4_sc3_3_comment3)
         townguy "My word, I heard that Sallent had survived Gray Fever, but I didn't know they were in such danger."
+        $ AddChatter(vi4_sc3_3_comment4)
         macS "Indeed, Captain Moze is a hero."
     else:
         macS "So then I chased after the Hounds and got captured."
         macS "But not without a fight!"
+        $ AddChatter(vi4_sc3_3_comment1)
         macS "Captain Moze found me, and together we fought our way out of BC's evil clutches!"
         "There are gasps throughout the crowd."
         townguy "My word, the Hounds sound dreadful!"
+        $ AddChatter(vi4_sc3_3_comment5)
         macS "They were, but they're no match for the SnakeHawks!"
     hide mac with dissolve
     "I chuckle a bit to myself."
@@ -2424,45 +2496,58 @@ label vig4_sc3_3():
     $ renpy.music.set_volume(0.4, 1.0)
     show coil stream neutral at stream_center with dissolve
     "Coil steps up next to me. His eyes remain on MAC."
+    $ AddChatter(vi4_sc3_3_comment6)
     cS "I got a chance to speak with him a little earlier."
+    $ AddChatter(vi4_sc3_3_comment7)
     if marshal > outlaw:
         cS "All he seems to talk about his how heroic you and your crew are."
         cS "How he wants to be as selfless as you."
+        $ AddChatter(vi4_sc3_3_comment8)
     else:
         cS "He seems fascinated by how protective of your crew you are."
         cS "How you'll go to any lengths to ensure their safety."
+        $ AddChatter(vi4_sc3_3_comment9)
     cS "Your influence on him has been immense."
     menu:
         cS "Your influence on him has been immense."
         "I wish it wasn't.":
             mS "I wish I didn't. He deserves better than the life of an outlaw."
             if outlaw > marshal:
-                $ outlaw -= 1
+                $ outlaw -= 2
             else:
-                $ marshal += 1
+                $ marshal += 2
             if marshal > outlaw:
                 cS "I understand."
                 cS "I wish that Vega could use her mind to make things other than tools for war."
                 cS "But we do not get to determine the course of our children's lives."
+                $ AddChatter(vi4_sc3_3_comment10)
                 "Coil sighs."
             else:
                 cS "To speak candidly, I wish that too."
                 "I feel my body tense up instinctually."
+                $ AddChatter(vi4_sc3_3_comment11)
                 mS "What's that supposed to mean?"
+                $ AddChatter(vi4_sc3_3_comment12)
                 cS "Like I said, I'm enormously grateful to you for getting MAC to us."
                 cS "But to hear how you went about it."
+                $ AddChatter(vi4_sc3_3_comment13)
                 cS "I wonder if it's worth the cost."
+                $ AddChatter(vi4_sc3_3_comment14)
                 menu:
                     cS "I wonder if it's worth the cost."
                     "I wonder the same thing.":
                         mS "Sometimes I wonder the same thing."
+                        $ AddChatter(vi4_sc3_3_comment15)
                         mS "But I don't have the luxury to second-guess my decisions."
                         cS "True. Perhaps I've forgotten how difficult life on the run can be."
+                        $ AddChatter(vi4_sc3_3_comment16)
                         "Coil sighs."
                     "You don't get to judge me.":
                         mS "You don't get to judge me while you sit in your hidden safehouse."
+                        $ AddChatter(vi4_sc3_3_comment17)
                         cS "Then who does, Moze?"
                         "Coil's eyes fall on me."
+                        $ AddChatter(vi4_sc3_3_comment18)
                         mS "I do what is necessary."
                         cS "And {i}that{/i} is what worries me."
                         "Coil sighs."
@@ -2485,7 +2570,9 @@ label vig4_sc3_3():
                     else:
                         cS "He seems to be obsessed with just his family."
                         cS "What does that say about you?"
+                        $ AddChatter(vi4_sc3_3_comment11)
                         "Coil sighs."
+                        $ AddChatter(vi4_sc3_3_comment12)
                 "That's not my responsibility.":
                     mS "That wasn't my responsibility."
                     mS "I had to make sure he was safe."
