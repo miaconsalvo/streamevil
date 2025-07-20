@@ -94,7 +94,7 @@ default vig4_sc2_3_comment12 = ChatEntry(False, "{b}bacon8r_6 - 6:25{/b}\nI got 
 default vig4_sc2_3_comment13 = ChatEntry(False, "{b}turb0g00se - 6:25{/b}\nI'm gonna go with no, actually", 4, "#ffffff")
 default vig4_sc2_3_comment14 = ChatEntry(False, "{b}marxky8 - 6:25{/b}\ndefo trap", 4, "#ffffff")
 default vig4_sc2_3_comment15 = ChatEntry(False, "{b}pickledDragons - 6:25{/b}\nidk about that. How can you trust these people?", 4, "#ffffff")
-default vig4_sc3_3_comment16 = ChatEntry(False, "{b}Coriolis - 6:25{/b}\nSounds like an Outlaw's perspective", 4, "#ffffff")
+default vig4_sc2_3_comment16 = ChatEntry(False, "{b}Coriolis - 6:25{/b}\nSounds like an Outlaw's perspective", 4, "#ffffff")
 default vig4_sc2_3_comment17 = ChatEntry(False, "{b}Coriolis - 6:25{/b}\nSeriously? I mean this is {i}the mission{/i}. Just be straight with the people", 4, "#ffffff")
 default vig4_sc2_3_comment18 = ChatEntry(False, "{b}pickledDragons - 6:26{/b}\nIf ya wanna be Marshal", 4, "#ffffff")
 
