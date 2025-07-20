@@ -344,7 +344,61 @@ label vig4_sc3_elMemory():
     return
 
 
+label vig4_sc3_pdCoilCommentary():
+    $ macroChoice = True
+    $ vig4_sc3_3_comment36.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
+label vig4_sc3_csCoilCommentary():
+    $ macroChoice = True
+    $ vig4_sc3_3_comment39.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc4_kcNoOffer():
+    $ macroChoice = True
+    $ vig4_sc4_1_comment31.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig_sc5_csClimax():
+    $ macroChoice = True
+    $ vig4_sc5_1_comment27.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
 
 ####TARGETS FOR BLUEIT ######
