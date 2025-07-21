@@ -5,15 +5,21 @@ label vig4_sc6_attack_1_ama():
     show vig1_town_stream onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
+    $ viewership += 1
+    $ AddChatter(vig4_sc6_attack_1_amma_comment1)
     "The dull roar of battle echoes in the distance."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment2)
     "No enemies on the street. No danger on the roofs."
     "We make our way quickly down the clear street, hopping between pieces of cover as we do so."
     show teresa stream shock at stream_right with dissolve
     enS "Shit, patrol, get down!"
+    $ AddChatter(vig4_sc6_attack_1_amma_comment3)
     hide teresa with dissolve
     "The four of us dive over the rubble of a nearby building and crouch behind the ruined stones."
     "A low rumble gets closer, muddying the sound of several voices."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment4)
     "One breaks through, shouting."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment5)
     enforcer "Halt! Halt I said!"
     show bc_enforcer at stream_center with dissolve
     "I peek over the ruins."
@@ -26,6 +32,7 @@ label vig4_sc6_attack_1_ama():
     enforcer "And our new friends here are going to help us \"convince\" them they should surrender."
     enforcer "Remember: if you see a droid, don't shoot it. BigCorp wants it in safe custody {i}undamaged{/i}."
     enforcer "Kill everyone else."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment6)
     hide bc_enforcer with dissolve
     show jennica stream angry at stream_left with dissolve
     pS "Bastard."
@@ -33,8 +40,10 @@ label vig4_sc6_attack_1_ama():
     enS "Position looks bad. We can't leave here without exposing ourselves."
     show ama stream neutral at stream_left5 with dissolve
     amaS "You're thinking too small."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment7)
     "Ama points at the hover tank."
     amaS "We take that, we don't have to worry about hiding and cover anymore."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment8)
     menu:
         amaS "We take that, we don't have to worry about hiding and cover anymore."
         "You can't be serious.":
@@ -42,22 +51,29 @@ label vig4_sc6_attack_1_ama():
             amaS "Think about it, we get more firepower, safety from enemy fire."
             amaS "Who's going to be able to stop us?"
             amaS "I think it's genius."
+            $ AddChatter(vig4_sc6_attack_1_amma_comment9)
         "Genius.":
             mS "Genius idea."
+            $ AddChatter(vig4_sc6_attack_1_amma_comment9)
     enS "I don't know if I'd go that far."
     pS "We still have to steal the damn thing."
     amaS "Simple, wait for that group to wander off, then take out the crew. Easy maneuver."
     hide ama with dissolve
+    $ AddChatter(vig4_sc6_attack_1_amma_comment10)
     pS "No way, if we're doing this then we should help those people."
     enS "Wait a minute, look at that guy!"
     show dflyGuard at stream_right5 with dissolve
     "Teresa points at one of the captive Dragonflies."
     enS "Isn't that?"
     pS "Oh yeah! That's the guy who roughed us up at the festival."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment11)
     enS "Guess he and his squad were more talk than bite after all."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment12)
     pS "They're still hostages. We should help them."
+    $ AddChatter(vig4_sc6_attack_1_amma_comment13)
     hide dflyGuard with dissolve
     amaS "Well, Mozely, what's the call?"
+    $ AddChatter(vig4_sc6_attack_1_amma_comment14)
     menu:
         amaS "Well, Mozely, what's the call?"
         "We're saving the hostages.":
@@ -77,13 +93,18 @@ label vig4_sc6_attack_1_ama():
 
 label vig4_sc6_attack_1_assault_ama():
     mS "Jennica's right. We can't let BC hold those hostages."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment1)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment2)
     mS "We take the tank, but we're also not letting this battalion get away."
     pS "Thanks, Cap."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment3)
     mS "Jennica and Teresa, take care of the tank. Ama, we'll take the battalion."
     "Ama sighs and hoists her rifle into her shoulder."
     amaS "You're lucky I'll be well paid after this mess."
     enS "You'll be lucky to get anything out of this, Reyes."
     mS "Enough, get in position."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment4)
     hide jennica with dissolve
     hide teresa with dissolve
     "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
@@ -100,10 +121,15 @@ label vig4_sc6_attack_1_assault_ama():
     mS "Now!"
     play audio "lazer.wav"
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
+    if vig4_nickName_bool == True:
+        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment5)
+    else:
+        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment6)
     play audio "lazer.wav"
     "Ama does the same, taking out the lead enforcer, while Jennica and Teresa stay in cover and shift along the side of the rubble."
     "There's a moment of pause before the rain of blaster fire hits mine and Ama's position."
     amaS "Hope this isn't suicide, Mozely."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment7)
     "I hear the tank rumble as it shifts its position. The sound of a shot charging resonates from its chamber."
     mS "Just follow my lead."
     "I rush out of cover, leaping over the rubble as the tank's blast erupts."
@@ -111,16 +137,20 @@ label vig4_sc6_attack_1_assault_ama():
     "Landing in the dirt, I roll quickly as blaster bolts thud into the ground around me."
     "I slam my back into another piece of ruined building as Ama strafes to my side."
     "Rifle poised in hand, she fires at a constant, controlled rate, tagging a handful of enforcers before she too has to duck behind cover."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment8)
     "She tilts her head in the direction of the tank."
     amaS "Got a pretty good crew, Mozely."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment9)
     "I peek just over the rubble as a shot whizzes past my head."
     "The tank is charging its cannon again and turning to aim at our position."
     "But Teresa and Jennica have already climbed on top of it."
     "Teresa stabs something into its top hatch while Jennica grabs the cannon and drags it to aim at a group of nearby enforcers."
     "The shot fires, sending the enforcers flying into the air as the top hatch of the tank pops open."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment10)
     "Amdist the chaos, the captive Dragonflies have dispersed."
     "Some run into the shelter of buildings while others start brawling with BC goons."
     "Teresa and Jennica have dragged some goons out of the tank hatch and are busy pummeling them on the ground."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment11)
     "Seven BC enforcers are closing in on mine and Ama's position."
     "Ama winks at me."
     amaS "Shall we."
@@ -133,8 +163,10 @@ label vig4_sc6_attack_1_assault_ama():
             $ deadeyeApproval += 2
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment12)
     "I whip around the cover, firing shots immediately down the street."
     "One of the enforcers goes down as a grenade lands behind my cover."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment13)
     "I roll to the side, away from the explosion and fire back."
     "Ama has appeared around the corner and is advancing toward the enforcers."
     "No fear. Just the constant repeating of her rifle."
@@ -142,8 +174,10 @@ label vig4_sc6_attack_1_assault_ama():
     "Two drop before I get in close to the final one."
     "Tackling him to the ground, I pull up and look him in the eyes."
     "He puts his hands up in front of his face."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment14)
     "I fire two quick shots into his chest."
     "His body goes cold."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment15)
     hide bc_enforcer with dissolve
     "The world around me has gone quiet again."
     "Standing up, I see the Dragonflies gathering around one another."
@@ -158,6 +192,7 @@ label vig4_sc6_attack_1_assault_ama():
             mS "Who cares."
             mS "By my count, I got four and you got three."
             amaS "Oh ho, still got that fierceness in you, I see."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment16)
             "She grins at me."
             amaS "Just like old times."
         "Yours is slipping.":
@@ -166,28 +201,40 @@ label vig4_sc6_attack_1_assault_ama():
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment16)
             amaS "Ahahaha."
             amaS "Careful Mozely, age begets wisdom."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment17)
     dflyGuard "Captain Moze?"
     show dflyGuard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment18)
     dflyGuard "We thought we were dead."
     "He glances at the bodies in the street."
     dflyGuard "We didn't all make it, but you gave us a chance to fight back."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment19)
     dflyGuard "I know we didn't leave on the best of terms. But, thank you for saving us."
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment20)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment21)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_1_assault_amma_comment22)
     menu:
         dflyGuard "I know we didn't leave on the best of terms. But, thank you for saving us."
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
             mS "You were just doing your job. I understand what that's like."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment23)
             dflyGuard "I appreciate your understanding."
             dflyGuard "Will you join us to defend the plaza?"
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment25)
             amaS "We have business elsewhere."
             "The Dragonfly looks Ama up and down."
             "He's about to say something, then thinks better of it."
             dflyGuard "Of course."
             dflyGuard "Good luck, Captain."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide customs agent with dissolve
         "It wasn't about you.":
@@ -195,14 +242,17 @@ label vig4_sc6_attack_1_assault_ama():
             $ csEngagement -= 1
             mS "You're welcome, but it wasn't about you."
             mS "I deprived BC of strategic leverage."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment24)
             "He looks taken aback."
             dflyGuard "Ah, I see."
             dflyGuard "Will you join us to defend the plaza?"
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment25)
             amaS "We have business elsewhere."
             "The Dragonfly guard looks Ama up and down."
             "He's about to say something, then thinks better of it."
             dflyGuard "Of course."
             dflyGuard "Good luck, Captain."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide customs agent with dissolve
         "I wanted to kill you myself.":
@@ -211,12 +261,17 @@ label vig4_sc6_attack_1_assault_ama():
             $ pdEngagement += 2
             $ vig4_killDflies = True
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment27)
             play audio "lazer.wav"
             hide dflyGuard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment28)
+            pause 0.5
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment29)
             "The rest of the Dragonflies look up, confusion rampant on their faces as Ama and I draw our weapons."
             "Our blasters echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
+            $ AddChatter(vig4_sc6_attack_1_assault_amma_comment30)
     "Ama claps me on the back."
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
@@ -225,9 +280,12 @@ label vig4_sc6_attack_1_assault_ama():
 
 label vig4_sc6_attack_1_split_ama():
     mS "Ama's right, if we're going to do this we have to do it smart."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment1)
     mS "We'll wait for the battalion to split off, then take the tank when it's just a skeleton crew."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment2)
     mS "Jennica and Teresa, take care of the tank. Ama, we'll take the leftover squad."
     amaS "Strike from a place of advantage. Good."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment3)
     enS "Behind you."
     pS "Of all the hostages we've met, I won't regret letting BC keep these ones."
     mS "Get in position."
@@ -253,22 +311,32 @@ label vig4_sc6_attack_1_split_ama():
             $ deadeyeApproval += 2
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment12)
     play audio "lazer.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
+    if vig4_nickName_bool == True:
+        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment4)
+    else:
+        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment5)
     play audio "lazer.wav"
     "Ama follows that with a blast from her rifle."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment6)
     "Two BC enforcers drop dead as the rest scramble for cover."
     "Ama and I advance confidently. My pistol firing rapidly alongside the steady cadence of her rifle."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment8)
     "Out of the corner of my eye, I see Jennica and Teresa leap onto the tank."
     "The sound of charging resonates in its central cannon as it turns to aim at Ama and me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pulling the metal barrel to point it up and away."
     "Teresa stabs something into the tank's top hatch and smoke spurts out from the metal."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment10)
     "Ama and I keep advancing on the enforcers who cower behind cover."
     "But there's nowhere to hide."
     "The second one of them peeks around a corner, a bolt lands between their eyes."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment14)
     "There's nowhere to run. No help coming for them. They can't escape."
     "We rip them to shreds, leaving none standing."
     hide bc_enforcer with dissolve
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment15)
     "Jennica and Teresa are busy pummeling the tank crew on the ground."
     "A simple maneuver."
     "The sounds of battle in the distance are start to quiet."
@@ -280,6 +348,7 @@ label vig4_sc6_attack_1_split_ama():
             mS "Who cares."
             mS "By my count, I got four and you got three."
             amaS "Oh ho, still got that fierceness in you, I see."
+            $ AddChatter(vig4_sc6_attack_1_split_amma_comment16)
             "She grins at me."
             amaS "Just like old times."
         "Yours is slipping.":
@@ -288,8 +357,10 @@ label vig4_sc6_attack_1_split_ama():
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
+            $ AddChatter(vig4_sc6_attack_1_split_amma_comment16)
             amaS "Ahahaha."
             amaS "Careful Mozely, age begets wisdom."
+    $ AddChatter(vig4_sc6_attack_1_split_amma_comment17)
     show teresa stream neutral at stream_center with dissolve
     enS "You two want to keep chattering or do you want to see our prize."
     "Ama claps me on the back."

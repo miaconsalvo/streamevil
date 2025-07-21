@@ -442,64 +442,6 @@ label vig4_sc6_reggieReaction():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-####TARGETS FOR BLUEIT ######
-
-label vig4_blueit_endgamethread():
-    $ screenComplete = False
-    $ blueitImage = "socials/bThread_v4_endgame.png"
-    $ yb = 1080
-    $ blueitChoiceCheck = True
-    show screen blueitThread
-    #show launch thread at top:
-    #    zoom 1.0
-    call screen blueitButtonCheck
-    return
-
-####TARGETS FOR FLINCH ######
-
-label vig4_analytics_audience():
-    hide screen viewershipButton_vig4
-    "This is a test for the Flinch screen of Vignette 4."
-    $ flinchCheck += 1
-    $ flinch_audienceCheck = True
-    if flinchCheck >= 3:
-        $ screenComplete = True
-    else:
-        pass
-    show screen viewershipButton_vig4
-    return
-
-label vig4_analytics_topfan():
-    hide screen viewershipButton_vig4
-    $ flinchCheck += 1
-    $ flinch_topfanCheck = True
-    if topfan == "Coriolis":
-        "Coriolis."
-    elif topfan == "KitCat":
-        "KitCat."
-    elif topfan == "PickledDragons":
-        "PickledDragons."
-    else:
-        "Coriolis by default."
-    if flinchCheck >= 3:
-        $ screenComplete = True
-    else:
-        pass
-    show screen viewershipButton_vig4
-    return
-
-label vig4_analytics_viewcount():
-    $ flinchCheck += 1
-    $ flinch_viewcountCheck = True
-    hide screen viewershipButton_vig4
-    "This is a test for the Flinch screen of Vignette 4."
-    if flinchCheck >= 3:
-        $ screenComplete = True
-    else:
-        pass
-    show screen viewershipButton_vig4
-    return
-
 ### Streamer Reacts
 
 label vig4_sc1_macjokes():
@@ -575,14 +517,14 @@ label vig4_sc2_macischanging():
             #add chatter
             pause 0.5
         "What have we been teaching him?":
-            if marshal > outlaw
-            $ reactImage = "stream ui/reactunsure.png"
-            player "Oh damn! MAC's been learning from us!"
-            player "Super cool!"
-            else 
-            $ reactImage = "stream ui/reactshocked.png"
-            player "Oh no! MAC's been learning from us!"
-            player "He's been picking up all the wrong things!"
+            if marshal > outlaw:
+                $ reactImage = "stream ui/reactunsure.png"
+                player "Oh damn! MAC's been learning from us!"
+                player "Super cool!"
+            else: 
+                $ reactImage = "stream ui/reactshocked.png"
+                player "Oh no! MAC's been learning from us!"
+                player "He's been picking up all the wrong things!"
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -722,10 +664,10 @@ label vig4_sc2_macstays():
         "Makes sense.":
             $ reactImage = "stream ui/reactconfident.png"
             player "I mean, I get it."
-            if marshal > outlaw
-            player "Like even if we've been good, it's tough to trust ex Snakehawks."
-            else 
-            player "Like we've been pretty violent and chaotic hahaha!"
+            if marshal > outlaw:
+                player "Like even if we've been good, it's tough to trust ex Snakehawks."
+            else: 
+                player "Like we've been pretty violent and chaotic hahaha!"
             #add chatter
             pause 0.5
         "Not fair!":
@@ -756,10 +698,10 @@ label vig4_sc2_macstays():
         "Makes sense.":
             $ reactImage = "stream ui/reactconfident.png"
             player "I mean, I get it."
-            if marshal > outlaw
-            player "Like even if we've been good, it's tough to trust ex Snakehawks."
-            else 
-            player "Like we've been pretty violent and chaotic hahaha!"
+            if marshal > outlaw:
+                player "Like even if we've been good, it's tough to trust ex Snakehawks."
+            else: 
+                player "Like we've been pretty violent and chaotic hahaha!"
             #add chatter
             pause 0.5
         "Not fair!":
@@ -1000,10 +942,10 @@ label vig4_sc3_coil1():
             $ reactImage = "stream ui/reactconfident.png"
             player "Yeah I mean it makes sense."
             player "Given our reputation..."
-            if marshal > outlaw
-            player "We can't expect them to trust us."
-            else 
-            player "Why the heck would they trust us?"
+            if marshal > outlaw:
+                player "We can't expect them to trust us."
+            else: 
+                player "Why the heck would they trust us?"
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1035,10 +977,10 @@ label vig4_sc3_coil2():
         "Understandable.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Yeah I didn't think they'd let us try anything."
-            if marshal > outlaw
-            player "Even if we've been good."
-            else 
-            player "Like why would they?"
+            if marshal > outlaw:
+                player "Even if we've been good."
+            else: 
+                player "Like why would they?"
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1338,4 +1280,62 @@ label vig4_sc5_amashowsup():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    return
+
+####TARGETS FOR BLUEIT ######
+
+label vig4_blueit_endgamethread():
+    $ screenComplete = False
+    $ blueitImage = "socials/bThread_v4_endgame.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+####TARGETS FOR FLINCH ######
+
+label vig4_analytics_audience():
+    hide screen viewershipButton_vig4
+    "This is a test for the Flinch screen of Vignette 4."
+    $ flinchCheck += 1
+    $ flinch_audienceCheck = True
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
+    return
+
+label vig4_analytics_topfan():
+    hide screen viewershipButton_vig4
+    $ flinchCheck += 1
+    $ flinch_topfanCheck = True
+    if topfan == "Coriolis":
+        "Coriolis."
+    elif topfan == "KitCat":
+        "KitCat."
+    elif topfan == "PickledDragons":
+        "PickledDragons."
+    else:
+        "Coriolis by default."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
+    return
+
+label vig4_analytics_viewcount():
+    $ flinchCheck += 1
+    $ flinch_viewcountCheck = True
+    hide screen viewershipButton_vig4
+    "This is a test for the Flinch screen of Vignette 4."
+    if flinchCheck >= 3:
+        $ screenComplete = True
+    else:
+        pass
+    show screen viewershipButton_vig4
     return
