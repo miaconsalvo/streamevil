@@ -196,6 +196,9 @@ default teresaDate = False
 default vegaDate = False
 default vig4_amaCrew = False
 
+default vig4_nickName_bool = False
+default vig4_nickName = "Oak"
+
 #Variables to track viewers for Analytics screen in MacroGame
 default viewCheck1 = 0
 default viewCheck2 = 0

@@ -386,7 +386,7 @@ label vig4_sc4_kcNoOffer():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig_sc5_csClimax():
+label vig4_sc5_csClimax():
     $ macroChoice = True
     $ vig4_sc5_1_comment27.click = False
     $ narrator = reg_narrator
@@ -400,6 +400,47 @@ label vig_sc5_csClimax():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc5_oscarReturn():
+    $ macroChoice = True
+    $ vig4_sc6_defend_1_comment1.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_ripTank():
+    $ macroChoice = True
+    $ vig4_sc6_defend_4_comment5.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_reggieReaction():
+    $ macroChoice = True
+    $ vig4_sc6_defend_5_comment19.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
 ####TARGETS FOR BLUEIT ######
 
