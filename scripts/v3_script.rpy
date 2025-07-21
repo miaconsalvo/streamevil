@@ -1620,12 +1620,13 @@ label vig3_sc8():
 
     show inventorfairgallery_stream at topleft onlayer background with dissolve 
     "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
-    "Brimming with shine and luster. Inventors setting up sections with their project."
-    "Finely dressed guests being served by his android wait staff." 
+    "Brimming with shine and luster. Inventors have lined up pedestals with tech I can't even begin to understand."
+    "Finely dressed guests being served by Reynar's android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
     pS "That why some of these statues don't have arms?"
+    enS "I think they're being loose with the theme."
     "It's excess at its highest degree, it's so much that I can't imagine us finding MAC in all of this."
     recS "Reynar likes to personally assess what the Hounds find so they're probably holding MAC somewhere close by."
     pS "Let's rough up some suits and find out where they've got him."
@@ -1634,6 +1635,17 @@ label vig3_sc8():
     pS "Resa-"
     enS "Listen Jenn, I appreciate how ready you are to fight for MAC. But you don't understand the situation we're in." 
     pS "I ain't scared of the Hounds."
+    menu:
+        "Who do you side with?"
+        "Side with Jennica.":
+            $ engineerApproval +- 1
+            mS "Listen Resa, Mac's too important, we'll get into a fight if we have too."
+            pS "Exactly, I never knew you for being timid."
+            enS "You two are not understanding..."
+        "Side with Teresa":
+            ms "I understand the passion but we should stick with Teresa's plan for now."
+            pS "But MAC's as good as gone if we don't do anything."
+            en "Jenn you must understand."
     enS "The reason Reynar is using the Hounds in the first place is because all of his actual security is here. Look around." 
     "I'm almost embarrassed by how long it took me to realize. I can feel dozens of eyes on us."
     "The androids here aren't just waiting, they're scanning, searching. A step too far out of line and that's it for us."
@@ -1644,7 +1656,7 @@ label vig3_sc8():
     recS "How about we do this together? I'd like to see the work maybe even chat up some of the researchers here."
     pS "I'd like that."
     enS "Perfect! Cap let's fan out and figure this out."
-    mS "Got it, let's play up the part and be perfect guests for the Fair. More importantly stay in eyesight."
+    mS "Got it, let's be perfect guests for the Fair and do recon. More importantly stay in eyesight."
     enS "And Jenn..."
     pS "Hmm?"
     enS "Mind your manners please."
@@ -1654,7 +1666,7 @@ label vig3_sc8():
     hide rec with dissolve
     show teresa stream upset
     enS "We're doomed."
-    mS "Yeah..."
+    mS "Just might be."
     hide teresa with dissolve
     jump vig3_sc9
 
@@ -1672,7 +1684,7 @@ label vig3_sc9():
     invfairnpc2 "I swear they let anyone in the Fair nowadays."
     mS "Truly..."
     menu:
-        "This guy's an snob"
+        "This guy's an snob. Maybe we should do something about it?"
         "Let it be.":
             "I can feel the anger boiling up to my throat."
             "It's so tempting just to trip these snobs into the drink table."
@@ -1683,33 +1695,61 @@ label vig3_sc9():
             invfairnpc2 "And now the former leader is their personal dog."
             "I can't take this."
             mS "Excuse me for a moment."
-        "Take him down a peg.":
-            "Now I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gentle on the fabric of their flared pants."
+            "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
+            showgirl "Weren't they a piece of work."
+            show showgirl stream at stream_center with dissolve
+            $ reactTarget = "vig3_sc9_daisyreturns"
+            show screen streamerCommentary
+            "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory with a bit more refinement."
+            mS "Is everyone here like that."
+            showgirl "Thankfully not everyone."
+            mS "Daisy was it?"
+            showgirl "You bet?"
+            mS "50 Credits at Nova Casino."
+            showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
+            mS "I guess the only big win anyone is getting is at the bar."
+            "We both laugh, a genuine laugh."
+            mS "I'm sorry for earlier, I've been on edge."
+            showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
+            mS "Costume is great though."
+            showgirl "Why you flatter me. It is one of my favorite parts."
+            "Daisy sways in front of me to show me the movement of her feathers."
+            mS "Fabulous. Truly."
+            "She has such a sweet smile."
+
+        "Trip them.":
+            "Now I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gently on the fabric of their flared pants."
             "They tumble over knocking several drinks around and onto them."
             mS "Oh dear are you alright!"
             invfairnpc2 "MY SUIT! I knew I should've had these pants hemmed. Damn stylist!"
-            "Mills walks away dripping on a few guests with them."
+            "Mills walks away dripping, a few guests follow them    ."
             mS "I guess some folks can't hold their drink."
             invfairnpc1 "There's one every year." #using invfairnpc1 because it's just labeled as "Inventor's fair guest." works for offscreen npc.
-    "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
-    showgirl "It's you!"
-    show showgirl stream at stream_center with dissolve
-    $ reactTarget = "vig3_sc9_daisyreturns"
-    show screen streamerCommentary
-    "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory with a bit more refinement."
-    mS "Oh, Daisy was it?"
-    showgirl "You bet?"
-    mS "50 Credits at Nova Casino."
-    showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
-    mS "I guess the only big win anyone is getting is at the bar."
-    "We both laugh, a genuine laugh."
-    mS "I'm sorry for earlier, I've been on edge."
-    showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
-    mS "Costume is great though."
-    showgirl "Why you flatter me. It is one of my favorite parts."
-    "Daisy sways in front of me to show me the movement of her feathers."
-    mS "Fabulous. Truly."
-    "She has such a sweet smile."
+            "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
+            showgirl "I saw that you know..."
+            show showgirl stream at stream_center with dissolve
+            $ reactTarget = "vig3_sc9_daisyreturns"
+            show screen streamerCommentary
+            "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory. With a bit more refinement."
+            mS "Oh, Daisy was it?"
+            showgirl "You bet?"
+            mS "50 Credits at Nova Casino."
+            showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
+            mS "I guess the only big win anyone is getting is at the bar."
+            "We both laugh, a genuine laugh."
+            showgirl "Also don't worry. I'm not going to tell. Honestly they deserved worse."
+            "I feel myself get nervous."
+            mS "Much appreciated."
+            mS "And sorry for earlier, in Akar, I've been on edge."
+            showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
+            mS "Costume is great though."
+            showgirl "Why you flatter me. It is one of my favorite parts."
+            "Daisy sways in front of me to show me the movement of her feathers."
+            mS "Fabulous. Truly."
+            "She has such a sweet smile."
+    
+    #Have an extra scene with Daisy, change it to fit which you decided.
+            
     showgirl "Well I should be off then."
     mS "Actually wait! Daisy. I have a question for you."
     showgirl "Oh?"
@@ -1720,7 +1760,8 @@ label vig3_sc9():
     showgirl "The Big Corp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
     "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it. I'm still trying to process what she just said."
     mS "Big Corp is here?"
-    showgirl "Oh yeah, big reveal! Heard Reynar is hedging new investments and maybe some property in the Outposts, hard to expand without greasing some palms."
+    showgirl "Oh yeah, big reveal!"
+    showgirl "Heard Reynar is hedging new investments and property in the Outposts, hard to expand without greasing some palms."
     mS "Noted. I'll make sure to check out that view."
     "Daisy nods and heads over to navigate the large crowd of guests. I rush to find the rest of my crew."
     hide showgirl with dissolve
@@ -1873,11 +1914,11 @@ label vig3_sc11():
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry Resa."
     show ama stream neutral at stream_right with move
-    show reynar at stream_left with dissolve
+    show reynar stream neutral at stream_left with dissolve
     reynar "Ladies, I hope your evening is going well."
     amaS "Reynar."
     reynar "Hello Ama, a pleasure as always."
-    reynar "And this must be young Moze. All grown up."
+    reynar "And Moze good to see you again. All grown up I see?"
     "I relax my shoulders."
     mS "Reynar, thank you for having us this evening."
     reynar "If only you were invited..."
@@ -1886,7 +1927,7 @@ label vig3_sc11():
     "A waiter passes by with a full tray, Reynar grabs a bubbling drink without even looking."
     reynar "I sincerely hope, the two of your aren't about to do what I think you are."
     amaS "Respectfully this is Big Corp buisness."
-    reynar "Is it now? Funny I didn't know that I ever gave them jurisdiction to conduct buisness in MY Vineyard."
+    reynar "Is it now? Funny I didn't I gave them jurisdiction to conduct buisness in MY Vineyard."
     amaS "Consider it a favor, we're removing a known fugitive from the premises."
     reynar "Oh what a shame that you'll be leaving so soon."
     amaS "Such an incessant queen."
@@ -1900,8 +1941,11 @@ label vig3_sc11():
             reynar "And with a considerable bite."
             mS "You don't know the half of it."
             "There is hunger in Ama's eyes."
-        "Placeholder 2":
-            "Placeholder text."
+        "We're not here to cause trouble.":
+            mS "We're not here to cause trouble."
+            mS "Just a rocky reunion"
+            amaS "Don't speak for me. Ever."
+            reynar "With how this is going you should count yourself lucky."
         "Placeholder 3":
             "Placeholder text."
     "I am thankful for Reynar's intervention but even he isn't known for hand outs."
@@ -1916,7 +1960,7 @@ label vig3_sc11():
     reynar "Ryo please take our guests to the east balcony, they could use the privacy."
     "A nasty smile creeps on Ama's face."
     "I can feel the eyes around me."
-    "The presentation is over and some attends are ushering the BigCrop rep away from the crowd."
+    "The presentation is over and some attends are ushering the Big Corp rep away from the crowd."
     reynar "It was wonderful to see you both."
     "Reynar gives a forced hug and double cheek kiss to Ama. Then moves to me."
     "He offers the same gesture then whispers quietly."
@@ -1932,7 +1976,7 @@ label vig3_sc12():
     #Ext. Vineyard Balcony
     show exteriorvineyard_stream at topleft onlayer background with dissolve
     hide inventorfairgallery_stream
-    "Overlooking the lush chimaeron trees, the east balcony was as ornate as it was private."
+    "Overlooking the lush chimaeron trees, the east balcony is as ornate as it is private."
     "The noise of the Fair cuts as the large doors close on the balcony."
     "Clearly this space is meant for more quiet buisness."
     "In the distance I see Akar, lights gleaming like little stars."
@@ -1944,7 +1988,7 @@ label vig3_sc12():
     "I hear the sound of metal on the ground, a small pained whine."
     "I press down my white hot anger."
     bcrep "What did you say to him? What did you do?"
-    "He's talking to Ama, who arrogantly has he back to me."
+    "He's talking to Ama, who arrogantly has her back to me."
     bcrep "I swear to the Makers if you screwed up again!"
     "The representative hasn't noticed me yet."
     "And soon had more pressing matters as he strained and struggled against Ama's grip on his throat."
@@ -1955,101 +1999,106 @@ label vig3_sc12():
     bcrep "My...boss'...sign...your checks."
     amaS "Yes THEY do."
     "Her grip tightens."
-    "I see MAC on the ground just passed them, still."
-    "Then his eyes lock on mine, he perks up."
-    "I put my finger to my lips."
-    bcrep "P-l-ease..."
-    "When Ama lets him go, he spills to the ground, tears in their eyes."
-    hide screen streamerCommentary
+    "I see MAC on the ground just passed them, he's still."
     menu: 
-        "Say something?"
-        "Being a little rough are we?": #This is a choice. 
-            mS "Being a bit too rough maybe?"
-            amaS "Just handling business."
-            mS "I can see that."
-            amaS "Don't worry I'll get to you later..."
-        "That was unnecessary":
-            mS "A tad unnecessary."
-            amaS "I'd suggest you let me handle business."
-            amaS "But don't worry."
-            amaS "I'll get to you soon."
-        "Say nothing.":
-            "I let the scene unfold."
-            "The rep is desperately catching their breath."
-            amaS "Enjoying the show?"
-            "The words are trapped in my throat."
-            amaS "Don't worry I haven't forgotten about you."
-    bcrep "Who's this? One of Reynar's goons?"
-    amaS "You academics are so up your own asses."
-    "Their eyes widen as they stand to look at me."
-    "They laugh in disbelief."
-    bcrep "Incredible! Absolutely incredible!"
-    bcrep "Do you have any idea how terrible this has been?"
-    "He walks up to MAC."
-    bcrep "But now that we have you, no more of this STUPID PIECE OF JUNK."
-    "They're moving to kick MAC off the balcony."
-    menu: 
-        "How do you stop him?"
-        "Fire your blaster.":
-            "Absolutely not!"
-            "I raise my blaster on instinct."
-            mS "Hands off him!"
-            "A shot rings out and my blaster flies out of my hand."
-            amaS "Not likely Moze."
-            "Ama stands with rifle in hand aimed at me."
-            "The commotion is enough to stop the rep in his tracks."
-        "Rush them down.":
-            mS "No!"
-            "I rush the rep ready to tackle him to the ground."
-            "A shot rings out and the ground in front of kicks up with stone and dust."
-            "I fall to the ground, my blaster flies out of my holster."
-            amaS "Not likely Moze"
-            "Ama stands with rifle in hand aimed at me."
-            "The commotion is enough to stop the rep in his tracks."
-        "You can't react fast enough.":
-            "This is crazy."
-            "All of this, we are so over our heads."
-            "I can't will my body to move"
-            bcrep "STUPID JUNK!"
-            "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle."
-            amaS "Hold it!"
-            "The rep backs away."
-            "The rifle turns to me."
-            amaS "Blaster on the ground Mozely."
-            "I wasn't even reaching for it. But I grab it from the holster in my suit jacket."
-            "And toss it away from me."
-    amaS "You always did play with your heart out Moze."
-    "She looks to MAC."
-    $ reactTarget = "vig3_sc12_amafindsout"
-    show screen streamerCommentary
-    amaS "That's it, isn't it."
-    amaS "All that struggle. All that runnin'"
-    amaS "Was it worth it?"
-    "I looked at MAC and then Ama."
-    "Before I even realize it, I start walking towards her."
-    amaS "Woah now, stay right there."
-    "I take another step."
-    amaS "I'm warnin' ya Mozely."
-    "She's hesitating."
-    "Another step."
-    hide screen streamerCommentary
-    amaS "You're gonna make me shoot you?"
-    "Until I'm close enough."
-    "I pause."
-    mS "Yeah."
-    "I grab the gun as it fires inches from my face in the air."
-    "I try to pry it from her hands but she's as strong as I remember."
-    amaS "You little shit!"
-    "I struggle against her strength as we pull the rifle back and forth."
-    "BANG!"
-    "Dust kicks up around us."
-    "BANG!"
-    "A chunk of the rail explodes out into the open air."
-    macS "STOP IT!"
-    "Ama and I hit a stalemate as we turn to MAC."
-    "The rep is white as a ghost, back to the rails as if he'll throw himself off."
-    "And there's MAC with my blaster in his hand."
-    "Gripping the handle like it's his own."
+        "How do you intervene?"
+        "Help the representative.":
+            "When MAC's eyes lock on mine, he perks up."
+            "I put my finger to my lips."
+            bcrep "P-l-ease..."
+            "I raise my blaster to her head."
+            mS "That's enough Ama."
+            amaS "You're really all over the place Mozely."
+            "When Ama lets him go, he spills to the ground, tears in their eyes."
+            hide screen streamerCommentary
+            menu: 
+                "Say something."
+                "Being a little rough are we?": #This is a choice. 
+                    mS "Being a bit too rough?"
+                    amaS "Just handling business."
+                    mS "I can see that."
+                    amaS "Don't worry I'll get to you later..."
+                "That was unnecessary":
+                    mS "A tad unnecessary."
+                    amaS "You should just let me handle business."
+                    amaS "But don't worry."
+                    amaS "I'll get to you soon."
+            bcrep "Who's this? One of Reynar's goons?"
+            amaS "You academics are so up your own asses."
+            "Their eyes widen as they stand to look at me."
+            "They laugh in disbelief."
+            bcrep "Incredible! Absolutely incredible!"
+            bcrep "Do you have any idea how terrible this has been?"
+            "He walks up to MAC."
+            bcrep "But now that we have you, I have no use for this STUPID PIECE OF JUNK."
+            "They're moving to kick MAC off the balcony."
+            menu: 
+                "How do you stop him?"
+                "Fire your blaster.":
+                    "Absolutely not!"
+                    "I raise my blaster on instinct."
+                    mS "Hands off him!"
+                    "Then I hear Ama's rifle cock and I freeze on reflex."
+                    amaS "Not likely Moze."
+                    "Ama stands with rifle in hand aimed at me."
+                    "The commotion is enough to stop the rep in his tracks."
+                "Rush them down.":
+                    mS "No!"
+                    "I rush the rep ready to tackle him to the ground."
+                    "Then I hear Ama's rifle cock and I stop dead on reflex."
+                    amaS "Not likely Mozely"
+                    amaS "Toss it"
+                    "I toss my blaster away and turn to her slowly."
+                    "Ama stands with her rifle in hand aimed at me."
+                    "The commotion is enough to stop the rep in his tracks."
+                "You can't react fast enough.":
+                    "This is crazy."
+                    "All of this, we are so over our heads."
+                    "I can't will my body to move"
+                    bcrep "STUPID JUNK!"
+                    "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle cocking."
+                    amaS "Hold it!"
+                    "Then I hear Ama's rifle cock and I freeze on reflex."
+                    "The rep backs away."
+                    "The rifle turns to me."
+                    amaS "Blaster on the ground Mozely."
+                    "I wasn't even reaching for it. But I grab it from the holster in my suit jacket."
+                    "And toss it away from me."
+                    amaS "I thought you'd gotten over that by now."
+
+            $ reactTarget = "vig3_sc12_amafindsout"
+            show screen streamerCommentary
+            amaS "That's it, isn't it."
+            amaS "All that struggle. All that runnin'"
+            amaS "Was it worth it?"
+            "I looked at MAC and then Ama."
+            "Before I even realize it, I start walking towards her."
+            amaS "Woah now, stay right there."
+            "I take another step."
+            amaS "I'm warnin' ya Mozely."
+            "She's hesitating."
+            "Another step."
+            hide screen streamerCommentary
+            amaS "You're gonna make me shoot you?"
+            "Until I'm close enough."
+            "I pause."
+            mS "Yeah."
+            "I grab the gun as it fires inches from my face."
+            "I try to pry it from her hands but she's as strong as I remember."
+            amaS "You little shit!"
+            "I struggle against her strength as we pull the rifle back and forth."
+            "BANG!"
+            "A chunk of the rail explodes out into the open air."
+            macS "STOP IT!"
+            "Ama and I hit a stalemate as we turn to MAC."
+            "The rep is white as a ghost, back to the rails as if he'll throw himself off."
+            "And there's MAC with my blaster in his hand."
+            "Gripping the handle like it's his own."
+             
+        "Go to MAC.":
+            "Placeholder"
+    
+    
     #Choices happen based on MAC's alignment.
     if macViolence >= macPeace and macPessimism >= macHope:
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
@@ -2096,7 +2145,7 @@ label vig3_sc12():
         macS "Captain says you're one of the best."
         macS "My records show a long list of... accomplishments perpetrated by you."
         amaS "And what about it?"
-        macS "... You're better than this."
+        macS "I thought you'd be better than this."
         $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
         show screen streamerCommentary
         "Ama is speechless"
@@ -2165,6 +2214,7 @@ label vig3_sc13():
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
     "Tucked away tight to my side I'm resolute in making sure MAC doesn't touch it."
     "There's no time to talk about what happened."
+    "I wouldn't even know where to begin."
     "Not that MAC looks too inclined to talk about it anyways." 
     macS "They should be right down here."
     "This whole area has been cleared. Why is there no one here?"
@@ -2174,9 +2224,8 @@ label vig3_sc13():
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
     "It's locked and needs a card to open."
-    macS "Let me!"
-    "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and brings his hand to it as the door swings open."
-    "Two blasters meet me as the door swings open."
+    "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and the door swings open."
+    "Two blasters are pointed at my face as the door swings open."
     show mac stream neutral at stream_right5mac with move
     show rec stream surprised at stream_left5 with dissolve
     show teresa stream fight at stream_right with dissolve
@@ -2199,7 +2248,7 @@ label vig3_sc13():
     pS "Long story truly, did you know Zan is here?"
     mS "At the Fair? For what?"
     recS "He's one of the featured designers! A big name is biomechanical engineering."
-    pS "He's some good-lookin' work."
+    pS "He's got some good-lookin' work."
     show rec stream drunk
     recS "And some good-lookin' muscles."
     mS "..."
@@ -2210,7 +2259,7 @@ label vig3_sc13():
     show jennica stream neutral
     enS "Rec found a private comms room. We were hoping to at least catch our breath before we head out."
     pS "Can't go back through the party."
-    recS "But there's still a shuttle system that can get us to Akar. Usually used by the workers and it should be a quick run here."
+    recS "But there's still a shuttle system that can get us to Akar. It should be a quick run from here."
     enS "Ama will probably head there too."
     mS "If she's not already getting her ship off the ground to scan for us."
     "We need to act now."
@@ -2299,10 +2348,11 @@ label vig3marshalcomms():
     recS "Sounds like a nicer face to look at."
     smatt "Oh is that little Reccrin? The SnakeHawk dropout?"
     smatt "Still hiding in that little hovel in Akar?"
-    smatt "Oh... Oh Moze you do love to live dangerously do you."
+    smatt "Oh-"
+    smatt "Oh Moze you do love to live dangerously don't you."
     mS "What kind of bullshit is this?"
     enS "Where's the kid?"
-    smatt "Ever since your hack job with Sallent ship. I had to restablish the pecking order around here."
+    smatt "Ever since your hack job with the Sallent ship. I had to restablish the pecking order around here."
     smatt "So I had to make an example."
     "This rat bastard."
     mS "That's low even for you."
@@ -2318,6 +2368,7 @@ label vig3marshalcomms():
     macS "Skeeve."
     recS "The biggest."
     mS "Let's get out of here."
+    #This should be a different ending, make it unique.
     "Carefully we make it to the shuttles. Not sure what awaits us on the other side."
     show jennica stream neutral
     jump vig3_sc14
@@ -2374,7 +2425,7 @@ label vig3_sc14():
             mS "He was trying to take MAC."
             mS "I was scared. Scared of this."
             mS "And I think he was too."
-            "Tears are forming in Rec's eyes." 
+            "Tears are streaming down Rec;s face." 
             recS "So why?"
             mS "I just happened. Before I realized what I've done he was on the ground."
             mS "I'm so sorry Rec, it's my greatest failure."
@@ -2466,6 +2517,8 @@ label vig3_sc14():
             hide jennica with dissolve
             hide teresa with dissolve
             jump vig3_epilogue
+    
+    #Have an ending with the security detail
 
 label vig3_epilogue():
     "As the shuttle zooms to Akar, the Vineyard is alight with fireworks."
@@ -2479,7 +2532,7 @@ label vig3_epilogue():
     "Which gives us time."
     "At least..."
     "But the Oakley is silent."
-    "For days it is buisness as usual, no one knowing how to tallk about the dark cloud over us."
+    "For days it is buisness as usual, no one knowing how to talk about the dark cloud over us."
     "Rec refuses to answer Jenn or Teresa's transmissions."
     "MAC has be silent, spending time alone."
     "Then the transmission comes through."
@@ -2500,6 +2553,7 @@ label vig3_epilogue():
     hide teresa with dissolve
     hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
+    #Make this longer#
     "As I walk down the hall, I'm once again intercepted."
     show mac stream neutral at stream_center_mac with dissolve
     "It's MAC."
