@@ -2970,6 +2970,7 @@ label vig4_sc3_5():
             "Coil steps up from an alleyway."
             show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
+            ##* streamer react
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -3039,6 +3040,7 @@ label vig4_sc3_5():
             "I grip it tight."
             "He rolls into my chest, just like the first time I met him."
             "Only this time, I wrap my arms around his warm shell."
+            ##* streamer react
             mS "I'll miss you so much."
             macS "I'll miss you too."
             mS "Take care of yourself."
@@ -3096,6 +3098,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment36)
             macS "What are you saying?"
             mS "We're not a family. And you have to stay."
+            ##* streamer-react
             $ AddChatter(vig4_sc3_5_comment37)
             macS "But--"
             $ AddChatter(vig4_sc3_5_comment38)
@@ -3111,6 +3114,7 @@ label vig4_sc3_5():
             cS "But there's no need to be mean to the kid."
             show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
+            ##* streamer react
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -3298,7 +3302,6 @@ label vig4_sc4_1():
     amaS "All we have to do is teach that kid to hack into their system and we can do whatever we want."
     amaS "Rewire their banks to deposit all their funds into our accounts."
     amaS "Delete information about people and places we don't want them to know about."
-
     $ AddChatter(vig4_sc4_1_comment17)
     amaS "We could have everything we ever dreamed of, Mozely. Everything we used to talk about!"
     $ AddChatter(vig4_sc4_1_comment18)
@@ -3436,6 +3439,7 @@ label vig4_sc4_2():
                     pS "That's the captain I know!"
                     enS "I don't like how they handled our situation, but they're better than BC, that's for sure."
                 "We'll take MAC back on our own.":
+                    ##* streamer reaction
                     play music "soundtrack/theme.wav"
                     $ vig4_attackPolaris = True
                     $ outlaw += 3
@@ -3547,7 +3551,7 @@ label vig4_sc5_0():
     enS "Posing is, fundamentally, not natural."
     enS "I've already told you Jenn, I don't li--AAAAHHH"
     "Screen shows a picture of the crew smiling in front of their brand new ship: The Oakley."
-    ##*streamer reaction
+    ##*streamer reaction 
     jump vig4_sc5_1
 
 label vig4_sc5_1():
