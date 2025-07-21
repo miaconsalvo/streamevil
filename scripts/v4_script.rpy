@@ -738,7 +738,7 @@ label vig4_sc2_4():
             mS "We're just looking for repairs, and maybe a soft bed to spend the night."
             cS "Polaris can be that. But we don't have much else."
             cS "Just dirt and stars."
-            $ AddChatter(vig4_sc2_4_comment9) ##*Make one of these interactable??
+            $ AddChatter(vig4_sc2_4_comment9) #Make one of these interactable??
             cS "And the beds aren't too soft either."
             $ AddChatter(vig4_sc2_4_comment10)
     "The old man removes his fingers from the circuit board and places it down on the counter."
@@ -1216,6 +1216,7 @@ label vig4_sc2_6():
             "The sounds from outside are suddenly loud and lively."
             play music "soundtrack/festival.wav" volume 0.3
             "Music drifts in through the windows and the cries of laughter and joy hang in the air."
+            $ viewership += 1
             $ AddChatter(vig4_sc2_6_comment42)
             $ narrator = reg_narrator
             "What? That's Elliot's username."
@@ -1891,23 +1892,6 @@ label vig4_sc3_2_jennica_2():
                                 "She freezes completely still, her eyes locked on mine."
                                 "I move forward and kiss Jennica."
                                 $ AddChatter(vig4_sc3_2_jenn_comment42)
-                                ##* streamer reaction
-                                "Our arms wrap around each other, holding one another tightly."
-                                "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
-                                $ AddChatter(vig4_sc3_2_jenn_comment43)
-                                "Finally, our lips part. We stare into each other's eyes."
-                                $ AddChatter(vig4_sc3_2_jenn_comment44)
-                                pS "Now the problem is I don't want to let go."
-                                mS "Me neither."
-                                $ AddChatter(vig4_sc3_2_jenn_comment45)
-                                mS "But I should go check and see if Coil has any news."
-                                mS "We'll have more time."
-                                pS "Yes, lots of time."
-                                "It's hard to let go, but somewhow we manage."
-                                "I take a step toward the plaza and sneak a glance back at Jennica."
-                                "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
-                                $ AddChatter(vig4_sc3_2_jenn_comment46)
-                                "I smile to myself as I return to the festival."
                                 hide jennica with dissolve
                             "Wait for her":
                                 "I wait, patiently."
@@ -1916,25 +1900,25 @@ label vig4_sc3_2_jennica_2():
                                 pS "I love you too, Moze."
                                 "I feel myself smiling before I even consciously do it myself."
                                 "I move forward and kiss Jennica."
-                                $ AddChatter(vig4_sc3_2_jenn_comment42)
-                                ##* streamer reaction
-                                "Our arms wrap around each other, holding one another tightly."
-                                "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
-                                $ AddChatter(vig4_sc3_2_jenn_comment43)
-                                "Finally, our lips part. We stare into each other's eyes."
-                                $ AddChatter(vig4_sc3_2_jenn_comment44)
-                                pS "Now the problem is I don't want to let go."
-                                mS "Me neither."
-                                $ AddChatter(vig4_sc3_2_jenn_comment45)
-                                mS "But I should go check and see if Coil has any news."
-                                mS "We'll have more time."
-                                pS "Yes, lots of time."
-                                "It's hard to let go, but somewhow we manage."
-                                "I take a step toward the plaza and sneak a glance back at Jennica."
-                                "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
-                                $ AddChatter(vig4_sc3_2_jenn_comment46)
-                                "I smile to myself as I return to the festival."
-                                hide jennica with dissolve
+                        $ AddChatter(vig4_sc3_2_jenn_comment42)
+                        ##* streamer reaction
+                        "Our arms wrap around each other, holding one another tightly."
+                        "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                        $ AddChatter(vig4_sc3_2_jenn_comment43)
+                        "Finally, our lips part. We stare into each other's eyes."
+                        $ AddChatter(vig4_sc3_2_jenn_comment44)
+                        pS "Now the problem is I don't want to let go."
+                        mS "Me neither."
+                        $ AddChatter(vig4_sc3_2_jenn_comment45)
+                        mS "But I should go check and see if Coil has any news."
+                        mS "We'll have more time."
+                        pS "Yes, lots of time."
+                        "It's hard to let go, but somewhow we manage."
+                        "I take a step toward the plaza and sneak a glance back at Jennica."
+                        "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
+                        $ AddChatter(vig4_sc3_2_jenn_comment46)
+                        "I smile to myself as I return to the festival."
+                        hide jennica with dissolve
                     else:
                         $ kcEngagement += 1
                         $ csEngagement -= 1
@@ -2130,6 +2114,7 @@ label vig4_sc3_2_teresa():
             "But she has enough to just make it."
             $ AddChatter(vig4_sc3_2_resa_comment23)
             mS "You're kidding!?"
+            ##* reaction to winning/losing
             diceP1 "Damn it!"
             diceP2 "So close!"
             enS "No one has any other 2's!?"
@@ -2187,6 +2172,7 @@ label vig4_sc3_2_teresa():
                     "No one else has any."
                     $ AddChatter(vig4_sc3_2_resa_comment30)
                     "Teresa loses."
+                    ##* reaction to winning/losing
                     enS "No one has any other 2's!?"
                     diceP2 "Yes!"
                     diceP1 "Ooooh wow, so she could've called me."
@@ -2236,6 +2222,7 @@ label vig4_sc3_2_teresa():
                     show teresa stream shock
                     "No one else has any."
                     "I lose."
+                    ##* reaction to winning/losing
                     enS "No one has any other 2's!"
                     $ AddChatter(vig4_sc3_2_resa_comment34)
                     mS "Damn."
@@ -2333,23 +2320,6 @@ label vig4_sc3_2_teresa_2():
                                 "She freezes completely still, her eyes locked on mine."
                                 "I move forward and kiss Teresa."
                                 $ AddChatter(vig4_sc3_2_resa_comment46)
-                                ##* streamer reaction
-                                "Our arms wrap around each other, holding one another tightly."
-                                "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
-                                $ AddChatter(vig4_sc3_2_resa_comment47)
-                                "Finally, our lips part. We stare into each other's eyes."
-                                $ AddChatter(vig4_sc3_2_resa_comment48)
-                                enS "Now the problem is I don't want to let go."
-                                mS "Me neither."
-                                $ AddChatter(vig4_sc3_2_resa_comment49)
-                                mS "But I should go check and see if Coil has any news."
-                                mS "We'll have more time."
-                                enS "Yes, lots of time."
-                                "It's hard to let go, but somewhow we manage."
-                                "As I stand and take a step away from the table, I sneak a glance back at Teresa."
-                                "She's still looking at the exposed dice, but now with a massive smile on her face."
-                                $ AddChatter(vig4_sc3_2_resa_comment50)
-                                "I smile to myself as I return to the festival."
                             "Wait for her":
                                 "I wait, patiently."
                                 "Teresa suddenly stops moving and meets my eyes."
@@ -2358,23 +2328,23 @@ label vig4_sc3_2_teresa_2():
                                 "I feel myself smiling before I even register to do it myself."
                                 "I move forward and kiss Teresa."
                                 $ AddChatter(vig4_sc3_2_resa_comment46)
-                                ##* streamer reaction
-                                "Our arms wrap around each other, holding one another tightly."
-                                "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
-                                $ AddChatter(vig4_sc3_2_resa_comment47)
-                                "Finally, our lips part. We stare into each other's eyes."
-                                $ AddChatter(vig4_sc3_2_resa_comment48)
-                                enS "Now the problem is I don't want to let go."
-                                mS "Me neither."
-                                $ AddChatter(vig4_sc3_2_resa_comment49)
-                                mS "But I should go check and see if Coil has any news."
-                                mS "We'll have more time."
-                                enS "Yes, lots of time."
-                                "It's hard to let go, but somewhow we manage."
-                                "As I stand and take a step away from the table, I sneak a glance back at Teresa."
-                                "She's still looking at the exposed dice, but now with a massive smile on her face."
-                                $ AddChatter(vig4_sc3_2_resa_comment50)
-                                "I smile to myself as I return to the festival."
+                        ##* streamer reaction
+                        "Our arms wrap around each other, holding one another tightly."
+                        "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
+                        $ AddChatter(vig4_sc3_2_resa_comment47)
+                        "Finally, our lips part. We stare into each other's eyes."
+                        $ AddChatter(vig4_sc3_2_resa_comment48)
+                        enS "Now the problem is I don't want to let go."
+                        mS "Me neither."
+                        $ AddChatter(vig4_sc3_2_resa_comment49)
+                        mS "But I should go check and see if Coil has any news."
+                        mS "We'll have more time."
+                        enS "Yes, lots of time."
+                        "It's hard to let go, but somewhow we manage."
+                        "As I stand and take a step away from the table, I sneak a glance back at Teresa."
+                        "She's still looking at the exposed dice, but now with a massive smile on her face."
+                        $ AddChatter(vig4_sc3_2_resa_comment50)
+                        "I smile to myself as I return to the festival."
                     else:
                         $ kcEngagement -= 1
                         $ csEngagement += 1
@@ -2970,6 +2940,7 @@ label vig4_sc3_5():
             "Coil steps up from an alleyway."
             show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
+            ##* streamer react
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -3039,6 +3010,7 @@ label vig4_sc3_5():
             "I grip it tight."
             "He rolls into my chest, just like the first time I met him."
             "Only this time, I wrap my arms around his warm shell."
+            ##* streamer react
             mS "I'll miss you so much."
             macS "I'll miss you too."
             mS "Take care of yourself."
@@ -3096,6 +3068,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment36)
             macS "What are you saying?"
             mS "We're not a family. And you have to stay."
+            ##* streamer-react
             $ AddChatter(vig4_sc3_5_comment37)
             macS "But--"
             $ AddChatter(vig4_sc3_5_comment38)
@@ -3111,6 +3084,7 @@ label vig4_sc3_5():
             cS "But there's no need to be mean to the kid."
             show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
+            ##* streamer react
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -3298,7 +3272,6 @@ label vig4_sc4_1():
     amaS "All we have to do is teach that kid to hack into their system and we can do whatever we want."
     amaS "Rewire their banks to deposit all their funds into our accounts."
     amaS "Delete information about people and places we don't want them to know about."
-
     $ AddChatter(vig4_sc4_1_comment17)
     amaS "We could have everything we ever dreamed of, Mozely. Everything we used to talk about!"
     $ AddChatter(vig4_sc4_1_comment18)
@@ -3436,6 +3409,7 @@ label vig4_sc4_2():
                     pS "That's the captain I know!"
                     enS "I don't like how they handled our situation, but they're better than BC, that's for sure."
                 "We'll take MAC back on our own.":
+                    ##* streamer reaction
                     play music "soundtrack/theme.wav"
                     $ vig4_attackPolaris = True
                     $ outlaw += 3
@@ -3547,7 +3521,7 @@ label vig4_sc5_0():
     enS "Posing is, fundamentally, not natural."
     enS "I've already told you Jenn, I don't li--AAAAHHH"
     "Screen shows a picture of the crew smiling in front of their brand new ship: The Oakley."
-    ##*streamer reaction
+    ##*streamer reaction 
     jump vig4_sc5_1
 
 label vig4_sc5_1():
@@ -3843,7 +3817,7 @@ label vig4_sc5_2():
     play music "soundtrack/deadeye.wav"
     amaS "Sounds like we have to make our move now."
     $ AddChatter(vig4_sc5_2_comment1)
-    show ama stream neutral at stream_center with dissolve #kitcat will start freaking out here most likely
+    show ama stream neutral at stream_center with dissolve
     ##* streamer reaction
     "Perched on a rock higher up the ridge, rifle relaxed into her shoulder, is Ama."
     $ AddChatter(vig4_sc5_2_comment2)
