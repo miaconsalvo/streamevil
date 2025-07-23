@@ -120,7 +120,8 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment16)
     "I whip around to see Vega standing just a few meters away, smoke spilling out from a rifle in her hands."
     mS "Vega!"
-    ##* streamer reaction
+    $ reactTarget = "vig4_sc6_defend_findingvega"
+    show screen streamerCommentary
     vS "Hello, Captain Moze."
     "Her weapon is still drawn, aiming at me."
     $ AddChatter(vig4_sc6_defend_1_comment17)
@@ -143,6 +144,7 @@ label vig4_sc6_defend_1():
             $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "We have to show BigCorp that they can't take our freedom without a fight."
     "Vega holds for a moment."
+    hide screen streamerCommentary
     $ AddChatter(vig4_sc6_defend_1_comment21)
     "The sounds of battle in the distance start to quiet down."
     $ AddChatter(vig4_sc6_defend_1_comment22)
@@ -212,7 +214,8 @@ label vig4_sc6_defend_1():
     "A blue hologram projects up from the disc."
     show mac phone neutral at stream_center_mac with dissolve
     play music "soundtrack/theme.wav"
-    ##* streamer reaction
+    $ reactTarget = "vig4_sc6_both_maccall"
+    show screen streamerCommentary
     "It's MAC."
     mS "MAC!"
     $ AddChatter(vig4_sc6_defend_1_comment34)
@@ -261,6 +264,7 @@ label vig4_sc6_defend_1():
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
     macS "I am okay."
+    hide screen streamerCommentary
     macS "But Coil has brought me away from the fighting."
     if macViolence >= macPeace:
         macS "And I was doing such a good job with the turret!"
@@ -874,7 +878,8 @@ label vig4_sc7_1_defend():
     "Coil turns around and faces me."
     cS "Well, Moze, I'm glad you made it."
     "His face looks haggard, his eyes bloodshot."
-    ##* streamer reaction to Coil's situation and what they're expecting
+    $ reactTarget = "vig4_sc6_defend_finding_coil"
+    show screen streamerCommentary
     $ AddChatter(vig4_sc7_1_defend_comment11)
     "Ama whips around, aiming her rifle at me."
     $ AddChatter(vig4_sc7_1_defend_comment12)
@@ -895,6 +900,7 @@ label vig4_sc7_1_defend():
     cS "So you think."
     "Ama trains her gaze back on Coil as he steps away from the device and in front of the two of us."  
     cS "Tell me truthfully, Moze. What was your plan in coming here?"
+    hide screen streamerCommentary
     menu:
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
         "I came for MAC.":

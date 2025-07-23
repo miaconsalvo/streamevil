@@ -1690,6 +1690,423 @@ label vig4_sc5_amashowsup():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc6_attack_killdflies():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to killing the Dragonfly hostages."
+        "Serves them right.":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Thats what you get for betraying us!"
+            player "Score settled."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Was that too far?":
+            $ reactImage = "stream ui/reactunsure.png"
+            player "Damn that might have been too much."
+            player "They were just following orders a the end of the day."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_attack_sparedflies():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to resucing the Dragonfly hostages."
+        "Pay it forward.":
+            $ reactImage = "stream ui/reactconversational.png"
+            player "Definitely the right thing to do."
+            player "They were just following orders after all."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Maybe we shoulda gotten our revenge":
+            $ reactImage = "stream ui/reactthumbsdown.png"
+            player "Definitely the good guy thing to do."
+            player "I don't know though. They did betray us after all."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_both_maccall():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on MAC's reappearance."
+        "MAC's ok!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Thank god MAC's ok chat."
+            player "If he was hurt it might've broken me hahaha."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Coil has MAC still.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Ok. So we know where to find MAC."
+            player "Good to know for sure."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_attack_barricadesurprise():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Justify pretending to be BigCorp and attacking the Dragonflies."
+        "Gotta look out for our own.":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "The crew is what's important to us."
+            player "We can't risk ourselves for some Dragonflies!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "No mercy for Dragonflies!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Time to squash some bugs!"
+            player "These Dragonflies had it coming when they betrayed us!"
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Was that too far?":
+            $ reactImage = "stream ui/reactunsure.png"
+            player "Damn that might have been too much."
+            player "I feel kinda bad. Not sure they deserve this."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_attack_barricadeassault():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Justify blowing your cover and attacking BigCorp."
+        "BC scum!":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "BigCorp's the real enemy!"
+            player "Gotta keep our priorities straight!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Our first objective is MAC.":
+            $ reactImage = "stream ui/reactconversational.png"
+            player "We're doing this to get MAC back."
+            player "We don't need to make this a bloodbath if we don't have to."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_attack_barricadechaos():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Justify blowing your cover and attacking both sides."
+        "Blast em all!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Kill em all!"
+            player "Let the maker sort em out!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Chaos time!":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "Time for some good ol' fashioned chaos!"
+            player "Let's blow em all up!"
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_attack_finding_coil():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on Coil's haggard appearance."
+        "He looks terrible.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Wow Coil looks like he's been through it."
+            player "Wonder if this'll be easy."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Time to get even!":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "Get ready to meet your end Coil!"
+            player "Vengeance is a dish best served... Coiled."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_defend_findingvega():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Vega."
+        "Hero time.":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Look's like we got here just in the nick of time..."
+            player "Guess that makes us big damn heroes!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Glad she's ok!":
+            $ reactImage = "stream ui/reactthumbsup.png"
+            player "I'm happy Vega made it!"
+            player "Now let's get to saving Polaris!"
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc6_defend_finding_coil():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Comment on rescuing Coil."
+        "He looks terrible.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Wow Coil looks like he's been through it."
+            player "Good thing we got here in time."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Ama's here!":
+            $ reactImage = "stream ui/reactshocked.png"
+            player "Oh no!"
+            player "Deadeye got here first!"
+            player "I knew this was too easy."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc7_starshower():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to your climactic choice."
+        "What a climax!":
+            $ reactImage = "stream ui/reactthumbsup.png"
+            player "Wow what crazy visuals!"
+            player "This climax is epic chat!"
+            player "Great way to end the game."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Tough choice.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Damn this is a real hard decision!"
+            player "Ama's kinda evil..."
+            player "But Coil betrayed us!"
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Ask the chat.":
+            player "This is a tough one..."
+            player "I don't know chat."
+            player "What do y'all think?"
+            #add chatters
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc7_killama():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Ama's death."
+        "That's payback.":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Score settled."
+            player "That'll teach her to mess with the Oakley!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "End of the Snakehawks.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Wow this is kinda sad chat."
+            player "This is the real end of the Snakehawks."
+            player "Rip."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc7_killcoil():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to Coil's death."
+        "That's payback!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "That'll teach him to betray us!"
+            player "Score settled."
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Is this the end of Polaris?":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Damn chat this is kinda sad."
+            player "Did we doom Polaris with this decision?"
+            player "Rip."
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_epilogue_maclove():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to MAC's admission of love."
+        "Cute!":
+            $ reactImage = "stream ui/reactthumbsup.png"
+            player "Awwwwww!"
+            player "MAC is so cute chat."
+            player "I love you too!"
+            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            pause 0.5
+        "Interesting.":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Wow chat."
+            player "He's really learning fast."
+            player "Super curious where they'll go with this in the next game!"
+            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
 ####TARGETS FOR BLUEIT ######
 
 label vig4_blueit_endgamethread():

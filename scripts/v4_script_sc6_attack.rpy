@@ -225,6 +225,8 @@ label vig4_sc6_attack_1_assault_ama():
             $ csEngagement += 1
             $ pdEngagement -= 1
             mS "You were just doing your job. I understand what that's like."
+            $ reactTarget = "vig4_sc6_attack_sparedflies"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment23)
             dflyGuard "I appreciate your understanding."
             dflyGuard "Will you join us to defend the plaza?"
@@ -236,6 +238,7 @@ label vig4_sc6_attack_1_assault_ama():
             dflyGuard "Good luck, Captain."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
+            hide screen streamerCommentary
             hide customs agent with dissolve
         "It wasn't about you.":
             $ pdEngagement += 1
@@ -260,6 +263,8 @@ label vig4_sc6_attack_1_assault_ama():
             $ csEngagement -= 2
             $ pdEngagement += 2
             $ vig4_killDflies = True
+            $ reactTarget = "vig4_sc6_attack_killdflies"
+            show screen streamerCommentary
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
@@ -272,7 +277,7 @@ label vig4_sc6_attack_1_assault_ama():
             "Our blasters echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
-    ##* streamer reaction to their decision about the DFlies
+            hide screen streamerCommentary
     "Ama claps me on the back."
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
@@ -399,7 +404,8 @@ label vig4_sc6_attack_2_ama():
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac stream neutral at stream_right5mac with dissolve
     "It's MAC."
-    ##* streamer reaction to MAC
+    $ reactTarget = "vig4_sc6_both_maccall"
+    show screen streamerCommentary
     $ AddChatter(vig4_sc6_attack_2_ama_comment5)
     mS "MAC!"
     pS "Hey, little guy!"
@@ -413,6 +419,7 @@ label vig4_sc6_attack_2_ama():
         "We came to keep you safe!":
             mS "Yes, MAC! We came back to ensure you're safety."
     mS "Are you okay? Are you hurt?"
+    hide screen streamerCommentary
     if rudeMACGoodbye == True:
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_attack_2_ama_comment7)
@@ -539,7 +546,8 @@ label vig4_sc6_attack_3_ama():
             $ deadeyeApproval += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
-            ##* streamer reaction - justify choice
+            $ reactTarget = "vig4_sc6_attack_barricadesurprise"
+            show screen streamerCommentary
             mS "Ama's right. Keep our weapons aimed at the Dragonfly position."
             $ AddChatter(vig4_sc6_attack_3_ama_comment9)
             pause 0.5
@@ -560,6 +568,7 @@ label vig4_sc6_attack_3_ama():
             enS "Tough hit but shields are still at 85\% and holding."
             "I grip the cannon controls and point at a squad of Dragonflies huddled behind nearby cover."
             "The whole tank thrums with energy as the cannon charges."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment13)
             "A beam of blue light bursts from the cannon, striking through the rubble."
             "A pillar of flame erupts into the air where the cannon impacts the ground."
@@ -617,7 +626,8 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
-            ##* streamer reaction - justify choice
+            $ reactTarget = "vig4_sc6_attack_barricadeassault"
+            show screen streamerCommentary
             mS "No. BigCorp is still the enemy."
             $ AddChatter(vig4_sc6_attack_3_ama_comment24)
             mS "Jenn, get us to that barricade as fast as you can."
@@ -643,6 +653,7 @@ label vig4_sc6_attack_3_ama():
             "The whole tank thrums with energy as it charges."
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment27)
             pause 0.5
             $ AddChatter(vig4_sc6_attack_3_ama_comment29)
@@ -691,7 +702,8 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
-            ##* streamer reaction - justify choice
+            $ reactTarget = "vig4_sc6_attack_barricadechaos"
+            show screen streamerCommentary
             mS "Screw it."
             $ AddChatter(vig4_sc6_attack_3_ama_comment34)
             mS "Jenn, get us to that barricade as fast as you can."
@@ -713,6 +725,7 @@ label vig4_sc6_attack_3_ama():
             "Confusion spreads through both sides as blaster fire pings off the tank's shell."
             enS "Shields are at 85\%, Captain."
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
+            hide screen streamerCommentary
             show vig1_town_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
@@ -967,7 +980,8 @@ label vig4_sc7_1_attack_ama():
         pass
     "Coil turns to face us. His face looks haggard, his eyes bloodshot."
     $ AddChatter(vig4_sc7_1_defend_comment11)
-    ##* streamer reaction to Coil's situation and what they're expecting
+    $ reactTarget = "vig4_sc6_attack_finding_coil"
+    show screen streamerCommentary
     menu:
         "Coil turns to face us. His face looks haggard, his eyes bloodshot."
         "Where is MAC?":
@@ -1048,6 +1062,7 @@ label vig4_sc7_1_attack_ama():
                 amaS "Guess that has been a phase recently."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment9)
     "Coil steps away from the devices and directly in front of me and Ama."
+    hide screen streamerCommentary
     cS "Tell me truthfully, Moze. What was your plan in coming here?"
     menu:
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
@@ -1249,6 +1264,8 @@ label vig4_sc6_attack_1_assault():
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
+            $ reactTarget = "vig4_sc6_attack_sparedflies"
+            show screen streamerCommentary
             mS "You were just doing your job. I understand what that's like."
             dflyGuard "I appreciate your understanding."
             dflyGuard "Will you join us to defend the plaza?"
@@ -1258,6 +1275,7 @@ label vig4_sc6_attack_1_assault():
             dflyGuard "Of course."
             dflyGuard "Good luck, Captain."
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
+            hide screen streamerCommentary
             hide customs agent with dissolve
         "It wasn't about you.":
             $ pdEngagement += 1
@@ -1277,6 +1295,8 @@ label vig4_sc6_attack_1_assault():
         "I wanted to kill you myself.":
             $ csEngagement -= 2
             $ pdEngagement += 2
+            $ reactTarget = "vig4_sc6_attack_killdflies"
+            show screen streamerCommentary
             $ vig4_killDflies = True
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             play audio "lazer.wav"
@@ -1286,6 +1306,7 @@ label vig4_sc6_attack_1_assault():
             play audio "lazer.wav"
             "Six blaster shots echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
+            hide screen streamerCommentary
     "I turn my back on the quiet street, and stride toward the tank."
     jump vig4_sc6_attack_2
 
@@ -1402,6 +1423,8 @@ label vig4_sc6_attack_2():
     mS "MAC!"
     pS "Hey, little guy!"
     enS "Good to see you, MAC."
+    $ reactTarget = "vig4_sc6_both_maccall"
+    show screen streamerCommentary
     macS "Captain? Moze? I expected it was you. Stealing a tank is very much your style."
     menu:
         macS "Captain? Moze? I expected it was you. Stealing a tank is very much your style."
@@ -1439,6 +1462,7 @@ label vig4_sc6_attack_2():
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
     macS "I am okay."
+    hide screen streamerCommentary
     macS "But Coil has brought me into the plaza tower and away from the fighting."
     if macViolence >= macPeace:
         macS "And I was doing such a good job with the turret!"
@@ -1509,6 +1533,8 @@ label vig4_sc6_attack_3():
             $ vig4_killDflies = True
             $ pdEngagement += 2
             $ csEngagement -= 2
+            $ reactTarget = "vig4_sc6_attack_barricadesurprise"
+            show screen streamerCommentary
             mS "Keep our weapons aimed at the Dragonfly position."
             mS "Jennica, get us there as quick as you can without being suspcious."
             pS "Roger, Cap."
@@ -1519,6 +1545,7 @@ label vig4_sc6_attack_3():
             enS "Roger!"
             "Teresa grabs the machine gun controls and aims for the Dragonfly squads positioned on nearby rooftops."
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
+            hide screen streamerCommentary
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
             enS "Tough hit but shields are still at 85\% and holding."
@@ -1567,6 +1594,8 @@ label vig4_sc6_attack_3():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            $ reactTarget = "vig4_sc6_attack_barricadeassault"
+            show screen streamerCommentary
             mS "No. BigCorp is still the enemy."
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
@@ -1576,6 +1605,7 @@ label vig4_sc6_attack_3():
             "Teresa grabs the machine gun controls and aims for the enforcers at the frontline."
             "As the tank accelerates forward, confusion spreads throughout the BC army, throwing them into disarray."
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
+            hide screen streamerCommentary
             show vig1_town_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
             enS "Shields are at 80\%. We're taking a lot of hits."
@@ -1620,6 +1650,8 @@ label vig4_sc6_attack_3():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
+            $ reactTarget = "vig4_sc6_attack_barricadechaos"
+            show screen streamerCommentary
             mS "Screw it." 
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
@@ -1632,6 +1664,7 @@ label vig4_sc6_attack_3():
             "Confusion spreads through both sides as blaster fire pings off the tank's sides."
             enS "Shields are at 90\%, Captain."
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
+            hide screen streamerCommentary
             show vig1_town_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
@@ -1808,6 +1841,8 @@ label vig4_sc7_1_attack():
     else:
         pass
     "Coil turns to face us. His face looks haggard, his eyes bloodshot."
+    $ reactTarget = "vig4_sc6_attack_finding_coil"
+    show screen streamerCommentary
     menu:
         "Coil turns to face us. His face looks haggard, his eyes bloodshot."
         "Where is MAC?":
@@ -1823,6 +1858,7 @@ label vig4_sc7_1_attack():
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
+                hide screen streamerCommentary
                 amaS "Mozely can be quite stubborn."
                 show ama stream neutral at stream_right with dissolve
                 "I whip around."
@@ -1837,6 +1873,7 @@ label vig4_sc7_1_attack():
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
+                hide screen streamerCommentary
                 amaS "Mozely can be quite stubborn."
                 show ama stream neutral at stream_right with dissolve
                 "I whip around."

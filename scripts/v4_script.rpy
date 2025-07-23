@@ -2624,7 +2624,6 @@ label vig4_sc3_3():
     $ AddChatter(vi4_sc3_3_comment26)
     pause 0.5
     $ AddChatter(vi4_sc3_3_comment27)
-    ##* streamer reaction
     if marshal > outlaw:
         cS "I tried my best to convince them otherwise, but they don't trust you."
         $ AddChatter(vig4_sc3_3_comment28)
@@ -4045,18 +4044,20 @@ label vig4_sc7_2():
     $ AddChatter(vig4_sc7_2_comment12)
     "Battle rages."
     $ AddChatter(vig4_sc7_2_comment13)
-    "Then I see it."
+    "Then I see it."    
+    $ reactTarget = "vig4_sc7_starshower"
+    show screen streamerCommentary
     #show star shower tower
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
     "Dozens. Hundreds. Thousands of glimmering lights streaking across the sky."
-    ##* streamer reaction to both the choice they're facing and the star shower
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
     "The star shower has come, the world illuminated in turquoise light."
     $ AddChatter(vig4_sc7_2_comment14)
     cS "What will it be, Moze?"
+    hide screen streamerCommentary
     menu:
         cS "What will it be, Moze?"
         "Side with Coil; Kill Ama.":
@@ -4313,7 +4314,8 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment41)
     pause 0.5
     $ AddChatter(vig4_sc7_3_ama_comment42)
-    ##*Streamer reaction
+    $ reactTarget = "vig4_sc7_attack_killcoil"
+    show screen streamerCommentary
     "His eyes go cold. But there's an odd light to them. As if he was smiling."
     hide coil with Dissolve(2.0)
     show vega stream neutral at stream_left with dissolve
@@ -4329,6 +4331,7 @@ label vig4_sc7_3_ama():
     show ama stream neutral at stream_right with dissolve
     "I rush over to Ama's body and turn her onto her side."
     amaS "Ahhh, shit."
+    hide screen streamerCommentary
     $ AddChatter(vig4_sc7_3_ama_comment46)
     "She opens her eyes and looks right into mine."
     amaS "Did we get him?"
@@ -4717,7 +4720,8 @@ label vig4_sc7_3_coil():
     pause 0.5
     $ AddChatter(vig4_sc7_3_coil_comment40)
     "Dead."
-    ##* streamer reaction
+    $ reactTarget = "vig4_sc7_attack_killama"
+    show screen streamerCommentary
     hide ama with Dissolve(2.0)
     show vega stream neutral at stream_center with dissolve
     vS "Pops!"
@@ -4735,6 +4739,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment44)
     "He looks to me."
     cS "Thank you for taking care of the rest."
+    hide screen streamerCommentary
     menu:
         cS "Thank you for taking care of the rest."
         "I didn't do it for you.":
@@ -5059,7 +5064,8 @@ label vig4_epilogue_coil():
     pause 0.5
     $ AddChatter(vig4_sc7_epilogue_comment27)
     $ AddChatter(vig4_sc7_epilogue_comment28)
-    ##* streamer reaction
+    $ reactTarget = "vig4_epilogue_maclove"
+    show screen streamerCommentary
     pS "Oh."
     enS "Did that just happen?"
     "I lean into the hug from MAC."
@@ -5075,6 +5081,7 @@ label vig4_epilogue_coil():
     $ AddChatter(vig4_sc7_epilogue_comment32)
     vS "Hello, crew, we'll be coming up on the coordinates soon. Y'all should come up here."
     mS "Come on, time to see the next adventure that awaits us."
+    hide screen streamerCommentary
     hide mac with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
@@ -5342,7 +5349,8 @@ label vig4_epilogue_ama():
     pause 0.5
     $ AddChatter(vig4_sc7_epilogue_comment27)
     $ AddChatter(vig4_sc7_epilogue_comment28)
-    ##* streamer reaction
+    $ reactTarget = "vig4_epilogue_maclove"
+    show screen streamerCommentary
     pS "Oh."
     enS "Did that just happen?"
     "I lean into the hug from MAC."
@@ -5362,6 +5370,7 @@ label vig4_epilogue_ama():
     else:
         pS "That's the contact alarm. Auto-pilot must have triggered cause a ship got in our range."
         mS "Let's go check it out."
+    hide screen streamerCommentary
     hide mac with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
