@@ -1793,16 +1793,16 @@ label vig3_sc9():
     mS "So if someone would want to maybe go around and check out some of the off the floor pieces."
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected, turns out they've been keeping all the legit stuff on this side of the Vineyard."
-    "Daisy's face is a lot redder than it should."
+    "Daisy's face has adopted an adorable red hue."
     showgirl "Not without attracting some serious attention."
     "She takes a sip from her glass."
     showgirl "What's so important anyway?"
     mS "A range extender..."
     showgirl "You're joking-"
-    mS "Wish I was, the fate of the world depends on it!"
-    "I let out a heavy sigh."
-    showgirl "Well you got energy that's for sure."
-    showgirl "Guests aren't ab;e to explore off-floor pieces."
+    mS "Wish I was, but the fate of the world depends on it!"
+    showgirl "Sounds like a big extender."
+    "I let out a heavy sigh. Letting the joke fly over my head."
+    showgirl "Guests aren't able to explore off-floor pieces."
     showgirl "Unless they waited for a big presentation and had someone to help them through."
     mS "When's the next one scheduled?"
     showgirl "The Big Corp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
@@ -1824,12 +1824,12 @@ label vig3_sc9():
     invfairnpc2 "How about you give some other people your attention."
     "I can already tell how this is gonna go."
     "Mills is moving closer to Daisy."
-    showgirl "I'll get to everyone, promise, just not right now."
+    showgirl "No need to be hasty, I'll get to everyone."
     "Mills puts himself in between us. Their back turned to me."
     "Intervening here is risky, but I can't just leave Daisy out to dry."
     menu: 
         "Do you intervene?"
-        "Stand up and get in Mill's face.":
+        "Stand up and get in his face.":
             "I rise to my full height."
             mS "She said she'll get back to you later."
             "They turn to me."
@@ -1843,12 +1843,16 @@ label vig3_sc9():
             vyattend "Is there a problem?"
             "Shit."
             showgirl "No Ryo of course not. I was just about to make my rounds."
-            "Ryo seperates myself and Mills, Daisy moves to great the rest of the guests."
+            "Ryo seperates me from Mills who he ushers away. Daisy moves to great the rest of the guests."
+            "She turns to me."
             showgirl "I'll see you around Moze."
             showgirl "Be sure to check out that view."
+            hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
-            "I see Reynar up on his balcony, he does not look happy."
-        "Threaten him with your blaster.":
+            "I see Reynar up on his balcony"
+            show reynar stream angry at stream_center with dissolve
+            "He does not look happy."
+        "Put your blaster to his side.":
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
@@ -1861,65 +1865,80 @@ label vig3_sc9():
             mS "And if you so much as look at her the wrong way."
             mS "Remember that I'm around."
             mS "Clear?"
-            invfairnpc2 "Crystal"
+            invfairnpc2 "Crystal."
             "Mills orders a drink as calmly as possible before leaving us."
             showgirl "Why thank you Captain."
-            showgirl "I should be going but do check out that view."
+            mS "Anytime."
+            showgirl "I should be going but do check out the view."
             showgirl "And the service door while you're at it."
-            "Daisy slowly leaves the bar to great the rest of the guests."
+            "Daisy give me a wink and slowly leaves the bar to great the rest of the guests."
+            "So many feathers."
+            hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
-            "I see Reynar up on his balcony, he a sly smile on his face."
+            "I see Reynar up on his balcony."
+            show reynar stream gatsby at stream_center with dissolve
+            "He has a sly smile on his face."
         "Try to catch someone else's attention.":
             "I can't do anything right now."
             "There's too much on the line."
-            infairnpc2 "So Daisy, shall I steal you away."
+            infairnpc2 "So Daisy, shall I steal you away?"
+            "He leans closer."
             showgirl "I'm with a guest at the moment."
             infairnpc2 "There are better people for your time."
             "I look around the room to catch anyone's eye."
             "Even the droids aren't giving me the slightest glance."
-            mS "Excuse m-"
+            mS "Look-"
             infairnpc2 "Let's stop playing these games shall we?"
-            "In a quick motion Daisy grabs a blade from her corset and stabs it betweeen Mills' fingers."
+            showgirl "A fabulous idea."
+            "In a quick motion Daisy grabs a blade from her corset and stabs it betweeen Mills'fingers."
             infairnpc2 "I-"
             showgirl "Shall I see you later then."
             "Mills swallows hard."
             infairnpc2 "Of course."
-            "When Mills leaves, Daisy looks particualrly shaken."
+            "When Mills leaves, Daisy composes herself with a deep breath."
             showgirl "Thank you for the drink. Excuse me please."
             "Daisy slowly leaves the bar to great the rest of the guests."
+            hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
-            "I see Reynar up on his balcony, looking disappointed."
-    hide showgirl with dissolve
+            "I see Reynar up on his balcony."
+            show reynar stream neutral 2 at stream_center with dissolve
+            "Looking disappointed."
+    hide reynar with dissolve
     hide screen streamerCommentary
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show rec stream neutral at stream_center with dissolve
-    pS "Oh so we're really in it now."
-    enS "Guess we didn't get much distance after all."
+    pS "We're real in it now."
+    enS "I fear we didn't get much distance after all."
     recS "What happens if they catch you?"
     enS "Oh I assume chained to a factory for the rest of our natural lives."
     pS "I'd rather a bullet to the eyes."
     mS "We need to find MAC and get the hell out of here."
     show rec stream thinking
     recS "If we can trust your friend Daisy we might find whatever storeroom they put him in, hell maybe even your range extender on the way."
-    mS "Makers willing. Okay, once the presentation starts then we'll head out."
+    mS "Makers willing."
+    mS "Okay, once the presentation starts then we'll head out."
     hide jennica with dissolve
     hide teresa with dissolve
     hide rec with dissolve
-    "We go back to the floor. How many enforcers, are they all guests, maybe some waiting in the wings?"
+    "We go back to the floor. And I try to figure out how many enforcers there are?"
+    "Are they all guests, maybe some waiting in the wings?"
     "Do they already have MAC and are just waiting for this presentation before heading off?"
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
     "The music dies down an a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
-    "A finely dressed man walks up to the platform an attendant wheels in something covered by a blanket."
+    "A finely dressed man walks up to the platform and wheels in something covered by a blanket."
     bcrep "Ladies and Gentlemen, honorable guests of the Vineyard." 
-    bcrep "We at BigCorp would like to thank Reynar for this opportunity to present a prototype for a new and exciting venture."
+    bcrep "We at BigCorp would like to thank Reynar for this opportunity to present our new and exciting venture."
+    bcrep "Now this is just a protoype but it has immense potential."
     "The crowd murmurs at the word prototype, I move closer to the corner of the room. Ready to make an escape."
     "Until the representative pulls off the sheet revealing their newest invention, a small purple robot with an unmistakable leaf over his head."
     show mac stream neutral at stream_center_mac with dissolve
-    bcrep "Machine Automated Couriers or M.A.C is our revolutionary new bot that we are outfitting with fully adaptable AI technology."
+    bcrep "M.A.C is our revolutionary new bot that we are outfitting with fully adaptable AI technology."
+    bcrep "Programming so advanced it's nothing short of human-like."
     "His little eyes lock on mine."
     bcrep "As I said is just our prototype as we continue to look for new ways to truly develop our AI databases. But our scientists are hard at work to..."
-    "This is a nightmare. A true honest to Maker nightmare."
+    "Will this nightmare ever end?"
+    "They have him."
     bcrep "Now a demonstration. Say hi M.A.C!"
     "There's a small pause."
     macS "Hi MAC..."
@@ -1936,21 +1955,23 @@ label vig3_sc9():
     amaS "Hello Mozely."
     hide ama with dissolve
     jump vig3_sc10 
+    #move to mid vig break - if we have time to make it...
 
 label vig3_sc10():
     show bg black at topleft onlayer background with dissolve
     hide inventorfairgallery_stream
     "I flinch as a shot rings outs, echoing in my ears."
-    "My body is buzzing, heart pounding."
+    "My heart pounds hard in my chest."
     "Ama takes the blaster away from me."
     # Ext. Akar - A Decade Ago 
     show ama stream neutral at stream_center with dissolve
     amaS "Kid, if you're gonna jump everytime someone shoots at you, they'll be playing target practice with your head."
-    mS "I can't help it. I'm trying."
+    mS "I'm trying."
     amaS "You're scared."
     mS "I'm not scared. I'm a SnakeHawk!"
-    amaS "Not after this you aren't."
-    "What does she know? I am a SnakeHawk. A better one than that stupid Matticus at least."
+    amaS "Barely."
+    "What does she know? I am a SnakeHawk."
+    "A better one than that stupid Matticus at least."
     mS "Let me go again!"
     amaS "Please..."
     mS "Let me prove myself."
@@ -1958,15 +1979,16 @@ label vig3_sc10():
     mS "Oh yeah like Jenn is any better."
     amaS "She can fire a blaster without flinching."
     "I feel tears swell up in my eyes."
-    mS "Screw you! You don't know anything about me."
+    mS "You don't know anything about me!"
     amaS "We're done here."
-    "Ama raises the blaster and points it at me. My body starts to freeze."
-    "NO!"
+    "Ama raises the blaster and points it at me. My body freezes."
+    "BANG"
     "I move out of the way just as the impact hits my shoulder, a hair's breadth away from my heart."
-    "My arm is limp but there's no blood, she set it to stun."
+    "My arm is limp but there's no blood"
+    "She set it to stun."
     "Ama walks up to me, and turns the blaster, handle pointed at me."
-    "The insignia of the Snakehawks branded on the handle."
-    amaS "Again."
+    "The insignia of the Snakehawks branded on it."
+    amaS "Ready to try again?"
     "I get up and take the blaster. I grip the handle it like it's mine. Because it is." 
     "I point it at the target."
     "And fire."
@@ -1980,7 +2002,7 @@ label vig3_sc11():
     #Int. Inventor's Fair. 
     show ama stream neutral at stream_center with dissolve
     menu:
-        "Ama stand in front of me steely gaze."
+        "Ama stand in front of me with a steely gaze."
         "Of course you found us...": #Flirt
             mS "Of course you found us..."
             mS "I shouldn't have expected less from the great Deadeye."
@@ -1996,9 +2018,9 @@ label vig3_sc11():
         "I see we're still playing the lapdog?":
             mS "Still playing the obedient lapdog I see?"
             mS "Money must be good."
-            amaS "Even know you're still that arrogant little girl."
+            amaS "Even now you're still that arrogant little girl."
             amaS "How has playing the hero been? Finally found that purpose you've been missing?"
-    "Her tone is playful but there's no mistaking that her rifle is folded behind her long jacket."
+    "Her tone is playful but there's no mistaking that her rifle is folded behind her."
     "Big Corps presentation continues and I hope that the crew has taken this as a moment to leave."
     "It's up to Resa and Jenn, now."
     amaS "So tell me how is that little crew of yours, the Willow?"
@@ -2055,7 +2077,7 @@ label vig3_sc11():
     reynar "Is it now? Funny I didn't I gave them jurisdiction to conduct buisness in MY Vineyard."
     amaS "Consider it a favor, we're removing a known fugitive from the premises."
     reynar "Oh what a shame that you'll be leaving so soon."
-    "It stifle a laugh."
+    "I stifle a laugh."
     amaS "Such an incessant queen."
     menu: 
         "Get in the mix."
