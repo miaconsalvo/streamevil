@@ -428,6 +428,20 @@ label vig4_sc6_ripTank():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc6_pdGoodPerson():
+    $ macroChoice = True
+    $ vig4_sc6_attack_3_ama_comment19.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
 label vig4_sc6_reggieReaction():
     $ macroChoice = True
     $ vig4_sc6_defend_5_comment19.click = False
@@ -468,12 +482,14 @@ label vig4_sc1_macjokes():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Chat did make just tell a joke!?"
             player "That's crazy! He's really learning."
+            $ AddChatter (vig4_sc1_react_comment1)
+            $ AddChatter (vig4_sc1_react_comment2)
             pause 0.5
         "That's so cute!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Holy crap MAC's a lil joker!"
             player "ADORABLE!!!"
-            #add chatter
+            $ AddChatter (vig4_sc1_react_comment3)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -493,17 +509,20 @@ label vig4_sc2_trustvillager():
             $ reactImage = "stream ui/reactthinking.png"
             player "Not sure we can trust him."
             player "Kinda sus that he's so friendly."
+            $ AddChatter(vig4_sc2_react_comment1)
             pause 0.5
         "They seem to mean well enough.":
             $ reactImage = "stream ui/reactconfident.png"
             player "He seems to be friendly!"
             player "I say we trust him!"
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment2)
             pause 0.5
         "This is going to go poorly.":
             $ reactImage = "stream ui/reactunsure.png"
             player "This is going to go so bad."
             player "This might've been the wrong call."
+            $ AddChatter(vig4_sc2_react_comment3)
+            $ AddChatter(vig4_sc2_react_comment4)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -523,22 +542,25 @@ label vig4_sc2_macischanging():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Yeah he's been changing since the start right?"
             player "Really cool how the game's been changing as we go!"
+            $ AddChatter(vig4_sc2_react_comment5)
             pause 0.5
         "Obviously.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Yeah duh."
             player "Isn't that what the game's been doing all along?"
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment6)
             pause 0.5
         "What have we been teaching him?":
             if marshal > outlaw:
                 $ reactImage = "stream ui/reactunsure.png"
                 player "Oh damn! MAC's been learning from us!"
                 player "Super cool!"
+                $ AddChatter(vig4_sc2_react_comment7)
             else: 
                 $ reactImage = "stream ui/reactshocked.png"
                 player "Oh no! MAC's been learning from us!"
                 player "He's been picking up all the wrong things!"
+                $ AddChatter(vig4_sc2_react_comment8)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -558,17 +580,20 @@ label vig4_sc2_coilshield():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Woah!"
             player "This old man's got some moves!"
+            $ AddChatter(vig4_sc2_react_comment9)
             pause 0.5
         "Of course he's got tricks.":
             $ reactImage = "stream ui/reactconfident.png"
             player "I knew it wouldn't go over well."
             player "There's obviously more to this old guy than meets the eye."
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment10)
             pause 0.5
         "Shoot him again!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Fire again Teresa!"
             player "That shield ain't limitless!"
+            $ AddChatter(vig4_sc2_react_comment11)
+            $ AddChatter(vig4_sc2_react_comment12)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -589,13 +614,19 @@ label vig4_sc2_macchant():
             #set variable for mac chant
             player "MAC coming in clutch!"
             player "MAC! MAC! MAC!"
-            #chat messages of people chanting MAC
+            $ AddChatter(vig4_sc2_react_comment13)
+            $ AddChatter(vig4_sc2_react_comment14)
+            $ AddChatter(vig4_sc2_react_comment15)
+            $ AddChatter(vig4_sc2_react_comment16)
+            $ AddChatter(vig4_sc2_react_comment17)
+            $ AddChatter(vig4_sc2_react_comment18)
             pause 0.5
         "MAC's got some upgrades!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Badass!"
             player "MAC's a bonafide outlaw!"
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment19)
+            $ AddChatter(vig4_sc2_react_comment20)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -618,13 +649,13 @@ label vig4_sc2_longjourney():
             $ reactImage = "stream ui/reactconversational.png"
             player "Yeah it has been awful."
             player "Its been ages!"
-            #chat messages of people chanting MAC
+            $ AddChatter(vig4_sc2_react_comment21)
             pause 0.5
         "You call that hard?":
             $ reactImage = "stream ui/reactconfident.png"
             player "Nope! Didn't notice at all."
             player "Pretty easy actually hahaha!"
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment22)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -644,17 +675,21 @@ label vig4_sc2_coilbackstory():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Wow. You can tell he regrets this."
             player "Coil's got hangups about his old partner."
+            $ AddChatter(vig4_sc2_react_comment23)
             pause 0.5
         "Can't side with BigCorp!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Damnit Coil!"
             player "You should've known better than to trust BigCorp!"
+            $ AddChatter(vig4_sc2_react_comment24)
+            $ AddChatter(vig4_sc2_react_comment25)
             #add chatter
             pause 0.5
         "Boring!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Ugh this is taking forever."
             player "Enough backstory already!"
+            $ AddChatter(vig4_sc2_react_comment26)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -674,6 +709,8 @@ label vig4_sc2_macstays():
             $ reactImage = "stream ui/reactshocked.png"
             player "What!? No!!"
             player "No chance we're letting that happen chat!"
+            $ AddChatter(vig4_sc2_react_comment27)
+            $ AddChatter(vig4_sc2_react_comment28)
             pause 0.5
         "Makes sense.":
             $ reactImage = "stream ui/reactconfident.png"
@@ -682,12 +719,15 @@ label vig4_sc2_macstays():
                 player "Like even if we've been good, it's tough to trust ex Snakehawks."
             else: 
                 player "Like we've been pretty violent and chaotic hahaha!"
-            #add chatter
+            $ AddChatter(vig4_sc2_react_comment29)
+            $ AddChatter(vig4_sc2_react_comment30)
             pause 0.5
         "Not fair!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "This is bogus chat!"
             player "We took all this risk and got him this far!"
+            $ AddChatter(vig4_sc2_react_comment31)
+            $ AddChatter(vig4_sc2_react_comment32)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -741,17 +781,19 @@ label vig4_sc3_jenndatewin():
             $ reactImage = "stream ui/reactconfident.png"
             player "Shoulda known."
             player "She's the best pilot in the verse after all!"
+            $ AddChatter(vig4_sc3jenn_react_comment1)
             pause 0.5
         "Damn that was close!":
             $ reactImage = "stream ui/reactunsure.png"
             player "Ahh damn!"
             player "Thought we woulda had her."
-            #add chatter
+            $ AddChatter(vig4_sc3jenn_react_comment2)
             pause 0.5
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Jennica's so cute!"
             player "I don't even care that we lost chat!"
+            $ AddChatter(vig4_sc3jenn_react_comment3)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -771,17 +813,19 @@ label vig4_sc3_jenndatelose():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Move over Jenn!"
             player "Moze is taking over pilot duties!"
+            $ AddChatter(vig4_sc3jenn_react_comment4)
             pause 0.5
         "That was close!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Whew!"
             player "I'm surprised we beat her! That was super close!"
-            #add chatter
+            $ AddChatter(vig4_sc3jenn_react_comment5)
             pause 0.5
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Awww Jennica's so cute!"
             player "Best girl!"
+            $ AddChatter(vig4_sc3jenn_react_comment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -801,17 +845,19 @@ label vig4_sc3_jenndatetie():
             $ reactImage = "stream ui/reactconfident.png"
             player "Getting her to a tie is pretty good in my books."
             player "Wonder if she took it easy on us!"
+            $ AddChatter(vig4_sc3jenn_react_comment7)
             pause 0.5
         "Fair enough.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Makes sense."
             player "She's a way better pilot, it's a win that we tied at all!"
-            #add chatter
+            $ AddChatter(vig4_sc3jenn_react_comment8)
             pause 0.5
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Jennica's so cute!"
             player "I love how competitive she is!"
+            $ AddChatter(vig4_sc3jenn_react_comment9)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -831,12 +877,15 @@ label vig4_sc3_jenndatekiss():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Finally!!"
             player "Best ship finally is canon chat!!"
+            $ AddChatter(vig4_sc3jenn_react_comment10)
+            $ AddChatter(vig4_sc3jenn_react_comment12)
             pause 0.5
         "Awwwww.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Awwwwww."
             player "They're perfect for each other chat!!"
-            #add chatter
+            $ AddChatter(vig4_sc3jenn_react_comment11)
+            $ AddChatter(vig4_sc3jenn_react_comment12)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -859,11 +908,76 @@ label vig4_sc3_jenndaterejection():
             $ reactImage = "stream ui/reactshocked.png"
             player "No!"
             player "That's brutal chat. Ooof."
+            $ AddChatter(vig4_sc3jenn_react_comment13)
             pause 0.5
         "Poor Moze.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Ooooof."
             player "F's in the chat for Moze."
+            $ AddChatter(vig4_sc3jenn_react_comment14)
+            $ AddChatter(vig4_sc3jenn_react_comment15)
+            $ AddChatter(vig4_sc3jenn_react_comment16)
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc3_teresadatewin():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to beating Teresa at dice."
+        "Got her!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Hell yeah!"
+            player "Prismari's got nothing on our girl!"
+            $ AddChatter(vig4_sc3tere_react_comment1)
+            $ AddChatter(vig4_sc3tere_react_comment2)
+            pause 0.5
+        "Game of chance after all":
+            $ reactImage = "stream ui/reactconversational.png"
+            player "I mean it's a game of luck right?"
+            $ AddChatter(vig4_sc3tere_react_comment3)
+            $ AddChatter(vig4_sc3tere_react_comment4)
+            #add chatter
+            pause 0.5
+        "Say nothing.":
+            player "..."
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc3_teresadatelose():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "React to losing to Teresa."
+        "She got us!":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "Damn!"
+            player "Prismari's got a heck of a poker face!"
+            $ AddChatter(vig4_sc3tere_react_comment5)
+            $ AddChatter(vig4_sc3tere_react_comment6)
+            pause 0.5
+        "Game of chance after all":
+            $ reactImage = "stream ui/reactconversational.png"
+            player "I mean it's a game of luck right?"
+            $ AddChatter(vig4_sc3tere_react_comment4)
+            $ AddChatter(vig4_sc3tere_react_comment3)
             #add chatter
             pause 0.5
         "Say nothing.":
@@ -887,11 +1001,15 @@ label vig4_sc3_teresadatekiss():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Finally!!"
             player "Best ship is finally canon!"
+            $ AddChatter(vig4_sc3tere_react_comment8)
+            $ AddChatter(vig4_sc3tere_react_comment10)
             pause 0.5
         "Awwwww.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Awwwww."
             player "I love them for each other!"
+            $ AddChatter(vig4_sc3tere_react_comment9)
+            $ AddChatter(vig4_sc3tere_react_comment10)
             #add chatter
             pause 0.5
         "Say nothing.":
@@ -915,12 +1033,15 @@ label vig4_sc3_teresadaterejection():
             $ reactImage = "stream ui/reactshocked.png"
             player "No!"
             player "That's brutal chat. Ooof."
+            $ AddChatter(vig4_sc3jenn_react_comment13)
             pause 0.5
         "Poor Moze.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Ooooof."
             player "F's in the chat for Moze."
-            #add chatter
+            $ AddChatter(vig4_sc3jenn_react_comment14)
+            $ AddChatter(vig4_sc3jenn_react_comment15)
+            $ AddChatter(vig4_sc3jenn_react_comment16)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -944,13 +1065,17 @@ label vig4_sc3_coil1():
             player "Wow that really sucks chat."
             player "All this work to get MAC here and just like that."
             player "Pushed aside."
+            $ AddChatter(vig4_sc3coil1_react_comment1)
+            $ AddChatter(vig4_sc3coil1_react_comment2)
             pause 0.5
         "Bullshit!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "This is bullshit chat!"
             player "All this work to get MAC here!"
             player "No way we're letting this happen!"
-            #add chatter
+            $ AddChatter(vig4_sc3coil1_react_comment3)
+            $ AddChatter(vig4_sc3coil1_react_comment4)
+            $ AddChatter(vig4_sc3coil1_react_comment5)
             pause 0.5
         "Understandable.":
             $ reactImage = "stream ui/reactconfident.png"
@@ -960,7 +1085,8 @@ label vig4_sc3_coil1():
                 player "We can't expect them to trust us."
             else: 
                 player "Why the heck would they trust us?"
-            #add chatter
+            $ AddChatter(vig4_sc3coil1_react_comment6)
+            $ AddChatter(vig4_sc3coil1_react_comment7)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -981,12 +1107,15 @@ label vig4_sc3_coil2():
             player "Yeah no chance they were going to leave us alone."
             player "No trust with these guys chat."
             player "Brutal."
+            $ AddChatter(vig4_sc3coil2_react_comment1)
+            $ AddChatter(vig4_sc3coil2_react_comment2)
             pause 0.5
         "Dammit!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Crap! They got us."
             player "Shoulda known they wouldn't trust us."
-            #add chatter
+            $ AddChatter(vig4_sc3coil2_react_comment3)
+            $ AddChatter(vig4_sc3coil2_react_comment4)
             pause 0.5
         "Understandable.":
             $ reactImage = "stream ui/reactconfident.png"
@@ -995,7 +1124,8 @@ label vig4_sc3_coil2():
                 player "Even if we've been good."
             else: 
                 player "Like why would they?"
-            #add chatter
+            $ AddChatter(vig4_sc3coil2_react_comment5)
+            $ AddChatter(vig4_sc3coil2_react_comment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -1015,11 +1145,15 @@ label vig4_sc3_macgoodbyekind():
             $ reactImage = "stream ui/reactshocked.png"
             player "Chat this is tragic."
             player "I'm getting choked up."
+            $ AddChatter(vig4_sc3macgoodbye_react_comment1)
+            $ AddChatter(vig4_sc3macgoodbye_react_comment2)
             pause 0.5
         "You're on your own now MAC.":
             $ reactImage = "stream ui/reactconversational.png"
             player "I think this is the right decision."
             player "He needs to go with them, even if its sad."
+            $ AddChatter(vig4_sc3macgoodbye_react_comment3)
+            $ AddChatter(vig4_sc3macgoodbye_react_comment4)
             #add chatter
             pause 0.5
         "Say nothing.":
@@ -1045,12 +1179,16 @@ label vig4_sc3_macgoodbyerude():
             player "Nooo!!"
             player "How could you say that Moze!?"
             player "After all we've been through!?"
+            $ AddChatter(vig4_sc3macgoodbye_react_comment9)
+            $ AddChatter(vig4_sc3macgoodbye_react_comment10)
             pause 0.5
         "She's not wrong.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I mean she's not wrong."
             player "All this work was to get MAC this far."
             player "No point in getting attached."
+            $ AddChatter(vig4_sc3macgoodbye_react_comment11)
+            $ AddChatter(vig4_sc3macgoodbye_react_comment12)
             #add chatter
             pause 0.5
         "Say nothing.":
@@ -1065,7 +1203,7 @@ label vig4_sc3_macgoodbyerude():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig4_sc3_machug():
+label vig4_sc3_machug(): # dont know if were using this one 
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
@@ -1105,11 +1243,15 @@ label vig4_sc4_amadealoffer():
             player "Holy shit chat."
             player "This is interesting."
             player "The Dragonflies suck but should we side with Ama?"
+            $ AddChatter(vig4_sc4_react_comment1)
+            $ AddChatter(vig4_sc4_react_comment2)
             pause 0.5
         "No way!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Side with the person who's been hunting us!?"
             player "Not a chance!"
+            $ AddChatter(vig4_sc4_react_comment3)
+            $ AddChatter(vig4_sc4_react_comment4)
             #add chatter
             pause 0.5
         "Hell yeah.":
@@ -1117,6 +1259,9 @@ label vig4_sc4_amadealoffer():
             player "Woah a chance to get even with the Dragonflies..."
             player "{i}Plus{/i} a redemption arc for Ama?"
             player "Sounds awesome!"
+            $ AddChatter(vig4_sc4_react_comment5)
+            $ AddChatter(vig4_sc4_react_comment6)
+            $ AddChatter(vig4_sc4_react_comment7)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1138,11 +1283,15 @@ label vig4_sc4_amaofferaccept():
             player "Hell yeah!"
             player "Let's reunite the Snakehawks."
             player "And squash some Dragonflies!"
+            $ AddChatter(vig4_sc4_react_comment8)
+            $ AddChatter(vig4_sc4_react_comment9)
             pause 0.5
         "Maybe this was too far.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I don't know about this chat."
             player "Maybe trusting Ama was the wrong move?"
+            $ AddChatter(vig4_sc4_react_comment10)
+            $ AddChatter(vig4_sc4_react_comment11)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1163,11 +1312,15 @@ label vig4_sc4_amaofferrejectdefend():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Let's save the galaxy chat!"
             player "Polaris needs our help!"
+            $ AddChatter(vig4_sc4_react_comment12)
+            $ AddChatter(vig4_sc4_react_comment13)
             pause 0.5
         "Was this the right call?":
             $ reactImage = "stream ui/reactunsure.png"
             player "Are we rewarding the Dragonflies for betraying us?"
             player "I don't know about this chat."
+            $ AddChatter(vig4_sc4_react_comment16)
+            $ AddChatter(vig4_sc4_react_comment17)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1189,11 +1342,15 @@ label vig4_sc4_amaofferrejectattack():
             player "Time to rescue MAC!"
             player "We're only loyal to our own here!"
             player "Screw the Dragonflies and screw Ama!"
+            $ AddChatter(vig4_sc4_react_comment12)
+            $ AddChatter(vig4_sc4_react_comment13)
             pause 0.5
         "Was this too far?":
             $ reactImage = "stream ui/reactunsure.png"
             player "I'm not sure about this chat..."
             player "We're making a {i}lot{/i} of enemies here."
+            $ AddChatter(vig4_sc4_react_comment14)
+            $ AddChatter(vig4_sc4_react_comment15)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1247,12 +1404,15 @@ label vig4_sc5_oakleydestroyed():
             $ reactImage = "stream ui/reactshocked.png"
             player "Noooo!."
             player "Chat our ship is destroyed!"
+            $ AddChatter(vig4_sc5_react_comment1)
+            $ AddChatter(vig4_sc5_react_comment2)
             pause 0.5
         "Fitting.":
             $ reactImage = "stream ui/reactconversational.png"
             player "There's no going back now."
             player "Time to press on!"
-            #add chatter
+            $ AddChatter(vig4_sc5_react_comment3)
+            $ AddChatter(vig4_sc5_react_comment4)
             pause 0.5
         "Say nothing":
             player "..."
@@ -1277,12 +1437,16 @@ label vig4_sc5_amashowsup():
             player "Wooooooo!"
             player "Ama's on the scene!"
             player "Snakehawks reunion!"
+            $ AddChatter(vig4_sc5_react_comment5)
+            $ AddChatter(vig4_sc5_react_comment6)
+            $ AddChatter(vig4_sc5_react_comment7)
             pause 0.5
         "Not sure about this still.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I'm still not so sure about this."
             player "I wonder if we can change our mind later."
-            #add chatter
+            $ AddChatter(vig4_sc5_react_comment8)
+            $ AddChatter(vig4_sc5_react_comment9)
             pause 0.5
         "Say nothing.":
             player "..."

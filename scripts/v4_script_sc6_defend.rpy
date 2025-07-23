@@ -119,7 +119,7 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment16)
     "I whip around to see Vega standing just a few meters away, smoke spilling out from a rifle in her hands."
     mS "Vega!"
-    ##* streamer 
+    ##* streamer reaction
     vS "Hello, Captain Moze."
     "Her weapon is still drawn, aiming at me."
     $ AddChatter(vig4_sc6_defend_1_comment17)
@@ -744,7 +744,7 @@ label vig4_sc6_defend_5():
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, destroying them."
         $ AddChatter(vig4_sc6_defend_5_comment21)
-        goon "So take care of whatever you got to do down there. We'll handle this."
+        goon "So take care of whatever you got to do down there. We'll handle the air shit."
         $ AddChatter(vig4_sc6_defend_5_comment22)
         menu:
             goon "So take care of whatever you got to do on the ground. We'll handle the air shit."
@@ -867,6 +867,7 @@ label vig4_sc7_1_defend():
     "Coil turns around and faces me."
     cS "Well, Moze, I'm glad you made it."
     "His face looks haggard, his eyes bloodshot."
+    ##* streamer reaction to Coil's situation and what they're expecting
     $ AddChatter(vig4_sc7_1_defend_comment11)
     "Ama whips around, aiming her rifle at me."
     $ AddChatter(vig4_sc7_1_defend_comment12)
