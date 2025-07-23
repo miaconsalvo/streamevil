@@ -1151,6 +1151,7 @@ default vig4_sc7_3_coil_comment61 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nexac
 
 ####EPILOGUE#####
 ###Epilogue General###
+<<<<<<< HEAD
 default vig4_sc7_epilogue_comment1 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell that was exhausting", 4, "#ffffff")
 default vig4_sc7_epilogue_comment2 = ChatEntry(False, "{b}marxky8 - 8:13{/b}\nI know right", 4, "#ffffff")
 default vig4_sc7_epilogue_comment3 = ChatEntry(False, "{b}kitcat - 8:13{/b}\nI feel like I just ran an emotional marathon", 4, "#ffffff")
@@ -1188,6 +1189,10 @@ default vig4_sc7_epilogue_comment34 = ChatEntry(False, "{b}kitcat - 8:18{/b}\nAh
 default vig4_sc7_epilogue_comment35 = ChatEntry(False, "{b}pickledDragons - 8:18{/b}\nSatisfying end", 4, "#ffffff")
 default vig4_sc7_epilogue_comment36 = ChatEntry(False, "{b}_lostinmetr0 - 8:18{/b}\nWow I can't believe it's actually over", 4, "#ffffff")
 default vig4_sc7_epilogue_comment37 = ChatEntry(False, "{b}treb.ell - 8:18{/b}\nAmazing streams [streamer]! Loved watching your journey every step of the way!", 4, "#ffffff")
+=======
+default vig4_sc7_epilogue_comment1 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
+
+>>>>>>> f987574f0f5741e39e097d43f66b36dd85535dfd
 
 ###Comments vig4_epilogue_ama - Epilogue (Ama allied)
 default vig4_sc7_epilogue_ama_comment1 = ChatEntry(False, "{b}Coriolis - 8:14{/b}\nYeah...that was rough", 4, "#ffffff")
@@ -1216,6 +1221,7 @@ default vig4_sc7_epilogue_ama_comment23 = ChatEntry(False, "{b}llamabama22 - 8:1
 
 
 ###Comments vig4_epilogue_coil Epilogue (Coil allied)
+<<<<<<< HEAD
 default vig4_sc7_epilogue_coil_comment1 = ChatEntry(False, "{b}pickledDragons - 8:14{/b}\nI'm sad too", 4, "#ffffff")
 default vig4_sc7_epilogue_coil_comment2 = ChatEntry(False, "{b}Coriolis - 8:14{/b}\nShe deserved redemption, but not at the expense of Coil", 4, "#ffffff")
 default vig4_sc7_epilogue_coil_comment3 = ChatEntry(False, "{b}kitcat - 8:14{/b}\nIt's tough", 4, "#ffffff")
@@ -1277,6 +1283,9 @@ default vig4_sc7_epilogue_comment70 = ChatEntry(False, "{b}kitcat - 8:20{/b}\nGo
 default vig4_sc7_epilogue_comment71 = ChatEntry(False, "{b}pickledDragons - 8:20{/b}\nBet, see ya 'round Coriolis!", 4, "#ffffff")
 
 
+=======
+default vig4_epilogue_coil_comment1 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
+>>>>>>> f987574f0f5741e39e097d43f66b36dd85535dfd
 
 ####Streamer React Replies
 
