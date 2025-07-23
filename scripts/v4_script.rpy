@@ -135,6 +135,8 @@ label vig4_sc1_1():
                     show teresa stream shock
                     enS "WHAT!?"
                     macS "Joking. I can see fine."
+                    $ reactTarget = "vig4_sc1_macjokes"
+                    show screen streamerCommentary
                     ##*streamer react moment here instead?
                     $ AddChatter(vig4_sc1_comment14)
                     show teresa stream upset
@@ -149,9 +151,10 @@ label vig4_sc1_2():
     #hide shiphub_stream
     show shiphub_stream at topleft onlayer background with dissolve
     "The cockpit is significantly more clean than it was a couple weeks ago."
-    $ AddChatter(vig4_sc1_2_comment1)
+    hide screen streamerCommentary
     show jennica stream neutral at stream_left with dissolve
     "Jennica, relaxed but attentive, sits at the helm."
+    $ AddChatter(vig4_sc1_2_comment1)
     mS "Hiya, Jennica."
     $ AddChatter(vig4_sc1_2_comment2)
     pS "Howdy, Cap."
@@ -413,7 +416,8 @@ label vig4_sc2_1():
                     townguy "Well, not really. But it sounds scary!"
                     $ AddChatter(vig4_sc2_1_comment12)
                     townguy "Oh, I know, you should go to North Star! They'll help you out real quick."
-                    ##*Insert streamer reaction asking chat if we can trust him
+                    $ reactTarget = "vig4_sc2_trustvillager"
+                    show screen streamerCommentary
                     townguy "Come on, I'll show you!"
                     jump vig4_sc2_2_accompanied
         "We're just passing through.":
@@ -503,12 +507,14 @@ label vig4_sc2_2_accompanied():
             "I step out of the alley."
             mS "Lead on."
             "Beaming, the man turns and walks down the road."
+            hide screen streamerCommentary
         "We really shouldn't.":
             mS "Oh, we don't want to distract you from your responsibilities."
             townguy "Nonsense! It's on the way for me anyway."
             "He's out in the open, too obvious to stun him."
             mS "Well, in that case, lead on."
             "Beaming, the man turns and walks down the road."
+            hide screen streamerCommentary
     $ AddChatter(vig4_sc2_accompanied_comment1)
     "Teresa steps up to my side and whispers."
     enS "What the hell? We don't want some rube around us right now."
@@ -549,7 +555,8 @@ label vig2_sc2_3():
     enS "Say, Captain."
     enS "There's something I've been meaning to ask you about. Just haven't found the time."
     enS "Have you noticed anything changing about MAC's personality?"
-    ##*Add a streamer reaction here
+    $ reactTarget = "vig4_sc2_macischanging"
+    show screen streamerCommentary
     menu:
         enS "Have you noticed anything changing about MAC's personality?"
         "What do you mean?":
@@ -562,6 +569,7 @@ label vig2_sc2_3():
                 enS "Wanted to see what you think of it?"
                 "I hadn't noticed":
                     mS "I didn't notice."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_3_comment4)
                     enS "It's like he's starting to talk like us."
                     $ AddChatter(vig4_sc2_3_comment5)
@@ -570,6 +578,7 @@ label vig2_sc2_3():
                     $ AddChatter(vig4_sc2_3_comment6)
                 "Now that you mention it...":
                     mS "Now that you mention it, yeah he is talking differently."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_3_comment2)
                     enS "It's like he's starting to talk like us."
                     enS "It's a little...disconcerting."
@@ -595,6 +604,7 @@ label vig2_sc2_3():
             enS "Exactly!"
             enS "Jennica noticed it after we left Akar."
             enS "It's like he's starting to talk like us."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc2_3_comment6)
             enS "It's a little...disconcerting."
             menu:
@@ -802,7 +812,8 @@ label vig4_sc2_4():
             mS "Teresa, stand d--"
             "A bolt fires from Teresa's blaster."
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
-            ##* streamer react to the shield?
+            $ reactTarget = "vig4_sc2_coilshield"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc2_4_comment23)
             cS "You should treat \"relics\" with more respect."
             $ AddChatter(vig4_sc2_4_comment24)         
@@ -860,6 +871,7 @@ label vig4_sc2_4():
     if macViolence > macPeace:
         "His hand snaps up as a pulse of energy shoots from an exposed hole in his arm."
         "The pulse hits the rifle in the woman's hands, knocking it to the floor."
+        hide screen streamerCommentary
         $ AddChatter(vig4_sc2_4_comment30)
         show mac stream neutral
         macS "Threat neutralized."
@@ -869,17 +881,20 @@ label vig4_sc2_4():
         enS "Shit!"
         "Teresa drops her blaster."
         vS "Ow, it's hot!"
+        hide screen streamerCommentary
         $ AddChatter(vig4_sc2_4_comment30)
         "The young woman drops the rifle."
         show mac stream neutral
         macS "Situation deescalated."
         $ AddChatter(vig4_sc2_4_comment31)
     ##* streamer reaction to start a MAC chant - if you do this, then later in the game we'll trigger a chant from the chat automatically. Probably on the return to Polaris alongside Moze's "speech"
+    $ reactTarget = "vig4_sc2_macchant"
+    show screen streamerCommentary
     show jennica stream neutral at stream_left5 with Dissolve(0.5)
     pS "Cap, I'm so sorry he ran off while I was checking the engine lines and I--"
-    $ AddChatter(vig4_sc2_4_comment32)
     "Jennica freezes as she recognizes the situation."
     pS "Oh."
+    $ AddChatter(vig4_sc2_4_comment32)
     $ AddChatter(vig4_sc2_4_comment33)
     enS "Jenn, now's not the tim--"
     #play audio of gundrop
@@ -893,6 +908,7 @@ label vig4_sc2_4():
     cS "At last..."
     play music "soundtrack/theme.wav" volume 0.5 fadein 4.0
     "The old man gestures to MAC."
+    hide screen streamerCommentary
     cS "May I?"
     menu:
         cS "May I?"
@@ -1011,7 +1027,8 @@ label vig4_sc2_6():
                     vS "People who want to be free."
                     $ AddChatter(vig4_sc2_6_comment2)
                     cS "I'm sure you are all well aware how difficult it can be to get here."
-                    ##* reaction from streamer about this
+                    $ reactTarget = "vig4_sc2_longjourney"
+                    show screen streamerCommentary
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                     $ AddChatter(vig4_sc2_6_comment3)
                     pause 0.5
@@ -1023,6 +1040,7 @@ label vig4_sc2_6():
                             enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                             cS "You'll have to ask a man named Reynar about that."
                             pS "Reynar's a Dragonfly!?"
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc2_6_comment5)
                             cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
                             vS "We helped him with some trouble on Akar. He gave us the technology we needed."
@@ -1039,6 +1057,7 @@ label vig4_sc2_6():
                     enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                     cS "You'll have to ask a man named Reynar about that."
                     pS "Reynar's a Dragonfly!?"
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_6_comment5)
                     cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
                     vS "We helped him with some trouble on Akar. He gave us the technology we needed."
@@ -1054,7 +1073,8 @@ label vig4_sc2_6():
                             vS "People who want to be free."
                             $ AddChatter(vig4_sc2_6_comment2)
                             cS "I'm sure you are all well aware how difficult it can be to get here."
-                            ##* reaction from streamer about this
+                            $ reactTarget = "vig4_sc2_longjourney"
+                            show screen streamerCommentary
                             cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                             $ AddChatter(vig4_sc2_6_comment3)
                             pause 0.5
@@ -1070,6 +1090,7 @@ label vig4_sc2_6():
                     jump vig4_sc2_6
         "Who are you two?" if vegacoilQuestion == False:
             $ vegacoilQuestion = True
+            hide screen streamerCommentary
             mS "So who are you two exactly? How'd you end up here?"
             cS "Many years ago, I was a doctoral researcher studying cogitive circuitry."
             cS "During my studies, I met a colleague. Someone whose work far outstripped my own." 
@@ -1084,7 +1105,8 @@ label vig4_sc2_6():
             cS "He said we could do more good with their resources than they could do bad with our work."
             cS "Shortsighted fool."
             cS "But a shortsighted fool who I could not say \"no\" to."
-            ##* streamer reaction
+            $ reactTarget = "vig4_sc2_coilbackstory"
+            show screen streamerCommentary
             mS "What were the two of you working on?"
             cS "Our little friend here."
             $ AddChatter(vig4_sc2_6_comment10)
@@ -1098,6 +1120,7 @@ label vig4_sc2_6():
             $ AddChatter(vig4_sc2_6_comment12)
             cS "I said some things I have regretted ever since."
             $ AddChatter(vig4_sc2_6_comment13)
+            hide screen streamerCommentary
             cS "You can probably guess what happened next. I wandered the stars, lost myself in the bottle."
             "Coil turns to look at Vega."
             cS "Until I met Vega."
@@ -1143,7 +1166,8 @@ label vig4_sc2_6():
             $ AddChatter(vig4_sc2_6_comment25)
             pause 0.2
             $ AddChatter(vig4_sc2_6_comment26)
-            ##* streamer reaction
+            $ reactTarget = "vig4_sc2_macstays"
+            show screen streamerCommentary
             enS "What!?"
             pS "You're joking right?"
             macS "Captain?"
@@ -1165,6 +1189,7 @@ label vig4_sc2_6():
                     $ AddChatter(vig4_sc2_6_comment29)
                     $ AddChatter(vig4_sc2_6_comment30)
                     vS "This was always the mission, all of you knew that when you accepted it."
+                    hide screen streamerCommentary
                 "This was always part of the plan.":
                     $ marshal += 1
                     $ csEngagement += 1
@@ -1179,7 +1204,8 @@ label vig4_sc2_6():
                     pS "Yeah, but..."
                     $ AddChatter(vig4_sc2_6_comment32)
                     enS "I guess I wanted to forget that part."
-                    $ AddChatter(vig4_sc2_6_comment33) 
+                    $ AddChatter(vig4_sc2_6_comment33)
+                    hide screen streamerCommentary 
             cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
             $ AddChatter(vig4_sc2_6_comment34) 
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
@@ -1655,7 +1681,8 @@ label vig4_sc3_2_jennica():
                             "The charges around me detonate and my screen goes completely white."
                             $ AddChatter(vig4_sc3_2_jenn_comment16)
                             "\"Player One Wins\" flashes across both game screens."
-                            ##* streamer reaction to winning or losing
+                            $ reactTarget = "vig4_sc3_jenndatewin"
+                            show screem streamerCommentary
                             pS "Ooooh yeah! Just how I drew it up!"
                             pS "You made me sweat there a bit. But I felt locked in that whole time."
                             $ AddChatter(vig4_sc3_2_jenn_comment17)
@@ -1666,6 +1693,7 @@ label vig4_sc3_2_jennica():
                             pS "Thanks, Cap. It was a good game."
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             mS "It was. Well played."
+                            hide screen streamerCommentary
                         "Get ahead and set a trap.":
                             $ kcEngagement += 1
                             $ csEngagement += 2
@@ -1682,7 +1710,8 @@ label vig4_sc3_2_jennica():
                             "Her screen goes completely white."
                             "\"Player Two Wins\" flashes across both game screens."
                             $ AddChatter(vig4_sc3_2_jenn_comment22)
-                            ##* streamer reaction to winning or losing
+                            $ reactTarget = "vig4_sc3_jenndatelose"
+                            show screem streamerCommentary
                             pS "Ahhh no way!"
                             pS "I had the time delay blast charges too."
                             pS "I just needed you to get a bit more greedy."
@@ -1695,6 +1724,7 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             "I shake it firmly."
                             mS "Good game."
+                            hide screen streamerCommentary
                 "Evasive maneuvers.":
                     "I corkscrew around a handful of asteroids."
                     pS "Pretty good moves, Cap."
@@ -1719,7 +1749,8 @@ label vig4_sc3_2_jennica():
                             "The ships collide. The screen goes white."
                             "\"Tie Game\" flashes across both game screens."
                             $ AddChatter(vig4_sc3_2_jenn_comment24)
-                            ##* streamer reaction to outcome
+                            $ reactTarget = "vig4_sc3_jenndatetie"
+                            show screem streamerCommentary
                             pS "Hahaha, I guess that's an appropriate way for it to go."
                             $ AddChatter(vig4_sc3_2_jenn_comment25)
                             "Jennica reaches out a hand to me."
@@ -1728,6 +1759,7 @@ label vig4_sc3_2_jennica():
                             mS "Good game."
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Yeah, well played."
+                            hide screen streamerCommentary
                         "Bait her in.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
@@ -1744,7 +1776,8 @@ label vig4_sc3_2_jennica():
                             "The charge detonates, and my screen goes completely white."
                             "\"Player One Wins\" flashes across both game screens."
                             $ AddChatter(vig4_sc3_2_jenn_comment29)
-                            ##* streamer reaction to outcome
+                            $ reactTarget = "vig4_sc3_jenndatewin"
+                            show screem streamerCommentary
                             pS "Ooooh yeah! Just how I drew it up!"
                             mS "Damn! You're one hell of a pilot, Jenn."
                             $ AddChatter(vig4_sc3_2_jenn_comment30)
@@ -1756,6 +1789,7 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Hahaha alright. It was a good game."
                             mS "It was. Well played."
+                            hide screen streamerCommentary
         "Return fire.":
             "It's a bad spot, but I pull up and face her directly."
             $ AddChatter(vig4_sc3_2_jenn_comment10)
@@ -1781,7 +1815,8 @@ label vig4_sc3_2_jennica():
                     "The ships collide. The screen goes white."
                     "\"Tie Game\" flashes across both game screens."
                     $ AddChatter(vig4_sc3_2_jenn_comment24)
-                    ##* streamer reaction to outcome
+                    $ reactTarget = "vig4_sc3_jenndatetie"
+                    show screem streamerCommentary
                     pS "Hahaha, I guess that's an appropriate way for it to go."
                     $ AddChatter(vig4_sc3_2_jenn_comment25)
                     "Jennica reaches out a hand to me."
@@ -1790,6 +1825,7 @@ label vig4_sc3_2_jennica():
                     mS "Good game."
                     $ AddChatter(vig4_sc3_2_jenn_comment19)
                     pS "Yeah, well played."
+                    hide screen streamerCommentary
                 "Bait her in.":
                     $ kcEngagement -= 1
                     $ csEngagement -= 1
@@ -1806,7 +1842,8 @@ label vig4_sc3_2_jennica():
                     "The charge detonates, and my screen goes completely white."
                     "\"Player One Wins\" flashes across both game screens."
                     $ AddChatter(vig4_sc3_2_jenn_comment29)
-                    ##* streamer reaction to outcome
+                    $ reactTarget = "vig4_sc3_jenndatetie"
+                    show screem streamerCommentary
                     pS "Ooooh yeah! Just how I drew it up!"
                     mS "Like I say back on the Oakley: you're one hell of a pilot, Jenn."
                     $ AddChatter(vig4_sc3_2_jenn_comment30)
@@ -1819,6 +1856,7 @@ label vig4_sc3_2_jennica():
                     mS "Think I'll stick to the games for now."
                     pS "Hahaha alright. It was a good game."
                     mS "It was. Well played."
+                    hide screen streamerCommentary
     jump vig4_sc3_2_jennica_2
 
 label vig4_sc3_2_jennica_2():
@@ -1901,7 +1939,8 @@ label vig4_sc3_2_jennica_2():
                                 "I feel myself smiling before I even consciously do it myself."
                                 "I move forward and kiss Jennica."
                         $ AddChatter(vig4_sc3_2_jenn_comment42)
-                        ##* streamer reaction
+                        $ reactTarget = "vig4_sc3_jenndatekiss"
+                        show screen streamerCommentary
                         "Our arms wrap around each other, holding one another tightly."
                         "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
                         $ AddChatter(vig4_sc3_2_jenn_comment43)
@@ -1918,6 +1957,7 @@ label vig4_sc3_2_jennica_2():
                         "She's leaning against the wall, looking up at the stars, with a massive smile on her face."
                         $ AddChatter(vig4_sc3_2_jenn_comment46)
                         "I smile to myself as I return to the festival."
+                        hide screen streamerCommentary
                         hide jennica with dissolve
                     else:
                         $ kcEngagement += 1
@@ -1937,7 +1977,8 @@ label vig4_sc3_2_jennica_2():
                         $ AddChatter(vig4_sc3_2_jenn_comment50)
                         pS "For me, you've always felt like a big sister."
                         $ AddChatter(vig4_sc3_2_jenn_comment51)
-                        ##* streamer reaction
+                        $ reactTarget = "vig4_sc3_jenndaterejection"
+                        show screen streamerCommentary
                         mS "Okay..."
                         pS "..."
                         mS "..."
@@ -1959,6 +2000,7 @@ label vig4_sc3_2_jennica_2():
                         pause 0.5
                         $ AddChatter(vig4_sc3_2_jenn_comment57)
                         "The two of us hug, awkwardly, then I step away back to the center of the plaza."
+                        hide screen streamerCommentary
                         hide jennica with dissolve
                 "Let's get back to the party":
                     $ csEngagement -= 2
@@ -2114,7 +2156,8 @@ label vig4_sc3_2_teresa():
             "But she has enough to just make it."
             $ AddChatter(vig4_sc3_2_resa_comment23)
             mS "You're kidding!?"
-            ##* reaction to winning/losing
+            $ reactTarget = "vig4_sc3_teresadatelose"
+            show screen streamerCommentary
             diceP1 "Damn it!"
             diceP2 "So close!"
             enS "No one has any other 2's!?"
@@ -2151,6 +2194,7 @@ label vig4_sc3_2_teresa():
                     show teresa stream neutral
                     enS "Yeah, you're right."
                     enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
+                    hide screen streamerCommentary
         "Raise.":
             "Teresa wouldn't make that number if she didn't have a good hand for it."
             mS "Five 2's."
@@ -2172,7 +2216,8 @@ label vig4_sc3_2_teresa():
                     "No one else has any."
                     $ AddChatter(vig4_sc3_2_resa_comment30)
                     "Teresa loses."
-                    ##* reaction to winning/losing
+                    $ reactTarget = "vig4_sc3_teresadatewin"
+                    show screen streamerCommentary
                     enS "No one has any other 2's!?"
                     diceP2 "Yes!"
                     diceP1 "Ooooh wow, so she could've called me."
@@ -2211,6 +2256,7 @@ label vig4_sc3_2_teresa():
                             show teresa stream neutral
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
+                            hide screen streamerCommentary
                 "Raise.":
                     $ kcEngagement -=1
                     $ pdEngagement -=1
@@ -2222,7 +2268,8 @@ label vig4_sc3_2_teresa():
                     show teresa stream shock
                     "No one else has any."
                     "I lose."
-                    ##* reaction to winning/losing
+                    $ reactTarget = "vig4_sc3_teresadatelose"
+                    show screen streamerCommentary
                     enS "No one has any other 2's!"
                     $ AddChatter(vig4_sc3_2_resa_comment34)
                     mS "Damn."
@@ -2258,6 +2305,7 @@ label vig4_sc3_2_teresa():
                             show teresa stream neutral
                             enS "Yeah, you're right."
                             enS "Guess I went back to being \"Dr.\" Prismari there for a little bit."
+                            hide screen streamerCommentary
     jump vig4_sc3_2_teresa_2
 
 label vig4_sc3_2_teresa_2():
@@ -2328,7 +2376,8 @@ label vig4_sc3_2_teresa_2():
                                 "I feel myself smiling before I even register to do it myself."
                                 "I move forward and kiss Teresa."
                                 $ AddChatter(vig4_sc3_2_resa_comment46)
-                        ##* streamer reaction
+                        $ reactTarget = "vig4_sc3_teresadatekiss"
+                        show screen streamerCommentary
                         "Our arms wrap around each other, holding one another tightly."
                         "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
                         $ AddChatter(vig4_sc3_2_resa_comment47)
@@ -2345,6 +2394,7 @@ label vig4_sc3_2_teresa_2():
                         "She's still looking at the exposed dice, but now with a massive smile on her face."
                         $ AddChatter(vig4_sc3_2_resa_comment50)
                         "I smile to myself as I return to the festival."
+                        hide screen streamerCommentary
                     else:
                         $ kcEngagement -= 1
                         $ csEngagement += 1
@@ -2361,7 +2411,8 @@ label vig4_sc3_2_teresa_2():
                         $ AddChatter(vig4_sc3_2_resa_comment55)
                         enS "But I don't feel the same way."
                         $ AddChatter(vig4_sc3_2_resa_comment56)
-                        ##* streamer reaction
+                        $ reactTarget = "vig4_sc3_teresadaterejection"
+                        show screen streamerCommentary
                         enS "I'm sorry."
                         "She's still making eye contact with me. Unflinching. Fierce."
                         "Honest."
@@ -2379,7 +2430,8 @@ label vig4_sc3_2_teresa_2():
                         enS "Sounds good. Take care."
                         $ AddChatter(vig4_sc3_2_resa_comment61)
                         mS "Yeah."
-                        "I turn away from Teresa and back to the festival."            
+                        "I turn away from Teresa and back to the festival." 
+                        hide screen streamerCommentary           
                 "I don't know":
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
@@ -2577,6 +2629,8 @@ label vig4_sc3_3():
         $ AddChatter(vig4_sc3_3_comment30)
         cS "Worse still, the people you love do not realize it either."
     cS "I'm sorry."
+    $ reactTarget = "vig4_sc3_coil1"
+    show screen streamerCommentary
     $ AddChatter(vig4_sc3_3_comment31)
     menu:
         cS "I'm sorry."
@@ -2621,6 +2675,7 @@ label vig4_sc3_3():
     cS "I can give you some time to say goodbye."
     cS "I will alert your crew. You have fifteen minutes."
     "Coil turns and leaves."
+    hide screen streamerCommentary
     menu:
         "Coil turns and leaves."
         "Reach for your gun.":
@@ -2793,7 +2848,8 @@ label vig4_sc3_5():
             "My heart pounds fast."
             mS "You're right, we need a plan!"
             cS "You do not."
-            ##* streamer reaction
+            $ reactTarget = "vig4_sc3_coil2"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment8)
             show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
@@ -2821,6 +2877,7 @@ label vig4_sc3_5():
             else:
                 macS "You have an escape plan drawn up, just in case, don't you?"
             "I shake my head."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment14)
             mS "MAC..."
             macS "No!"
@@ -2870,7 +2927,8 @@ label vig4_sc3_5():
             "I grip it tight."
             "He rolls into my chest, just like the first time I met him."
             "Only this time, I wrap my arms around his warm shell."
-            ##*streamer reaction
+            $ reactTarget = "vig4_sc3_macgoodbyekind"
+            show screen streamerCommentary
             mS "I'll miss you so much."
             macS "I'll miss you too."
             mS "Take care of yourself."
@@ -2940,7 +2998,8 @@ label vig4_sc3_5():
             "Coil steps up from an alleyway."
             show vega stream neutral at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
-            ##* streamer react
+            $ reactTarget = "vig4_sc3_coil2"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -2955,6 +3014,7 @@ label vig4_sc3_5():
             "I look down and--"
             "MAC is hiding behind my legs, his arms wrapped around me."
             macS "Do something, Moze!"
+            hide screen streamercommentary
             $ AddChatter(vig4_sc3_5_comment13)
             if macViolence >= macPeace:
                 macS "You have another blaster, right? We can take them, can't we?"
@@ -3010,7 +3070,8 @@ label vig4_sc3_5():
             "I grip it tight."
             "He rolls into my chest, just like the first time I met him."
             "Only this time, I wrap my arms around his warm shell."
-            ##* streamer react
+            $ reactTarget = "vig4_sc3_macgoodbyekind"
+            show screen streamerCommentary
             mS "I'll miss you so much."
             macS "I'll miss you too."
             mS "Take care of yourself."
@@ -3039,6 +3100,7 @@ label vig4_sc3_5():
                 "Goodbye.":
                     mS "Goodbye, MAC."
             macS "Goodbye, Moze."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment24)
             pause 0.5
             $ AddChatter(vig4_sc3_5_comment25)
@@ -3068,7 +3130,8 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment36)
             macS "What are you saying?"
             mS "We're not a family. And you have to stay."
-            ##* streamer-react
+            $ reactTarget = "vig4_sc3_macgoodbyerude"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment37)
             macS "But--"
             $ AddChatter(vig4_sc3_5_comment38)
@@ -3083,8 +3146,10 @@ label vig4_sc3_5():
             "Coil steps up from an alleyway."
             cS "But there's no need to be mean to the kid."
             show vega stream neutral at stream_left with dissolve
+            hide screen streamerCommentary
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
-            ##* streamer react
+            $ reactTarget = "vig4_sc3_coil2"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
@@ -3109,6 +3174,7 @@ label vig4_sc3_5():
                 macS "You were probably going to look for some tunnels to sneak through, weren't you?"
                 pS "It was just in--"
                 macS "It's what we always do!"
+            hide screen streamerCommentary
             "MAC looks up to me."
             macS "It's what {i}you{/i} always do."
             "MAC turns around and rolls up to Vega."
@@ -3278,7 +3344,8 @@ label vig4_sc4_1():
     amaS "You just have to help me make sure the Dragonflies and BigCorp don't get away with him."
     $ AddChatter(vig4_sc4_1_comment19)
     amaS "What do you say?"
-    ##* streamer reaction (could remove comments below this to facilitate it)
+    $ reactTarget = "vig4_sc4_amaoffer"
+    show screen streamerCommentary
     $ AddChatter(vig4_sc4_1_comment20)
     pause 0.5
     $ AddChatter(vig4_sc4_1_comment21)
@@ -3286,6 +3353,8 @@ label vig4_sc4_1():
     $ AddChatter(vig4_sc4_1_comment22)
     pause 0.5
     $ AddChatter(vig4_sc4_1_comment23)
+    "..." #we probably need some way to pause or just give a brief stop at this section to give people time to hit the react button
+    hide screen streamerCommentary
     menu:
         amaS "What do you say?"
         "Reject Ama's offer.":
@@ -3395,7 +3464,8 @@ label vig4_sc4_2():
             menu:
                 enS "What does that mean for us? I assume we're not just letting BigCorp take him away?"
                 "We're going to defend Polaris.":
-                    ##*streamer reaction
+                    $ reactTarget = "vig4_sc4_amaofferrejectdefend"
+                    show screen streamerCommentary
                     play music "soundtrack/polaris.wav"
                     $ vig4_defendPolaris = True
                     $ marshal += 3
@@ -3408,8 +3478,10 @@ label vig4_sc4_2():
                     $ AddChatter(vig4_sc4_2_comment12)
                     pS "That's the captain I know!"
                     enS "I don't like how they handled our situation, but they're better than BC, that's for sure."
+                    hide screen streamerCommentary
                 "We'll take MAC back on our own.":
-                    ##* streamer reaction
+                    $ reactTarget = "vig4_sc4_amaofferrejectattack"
+                    show screen streamerCommentary
                     play music "soundtrack/theme.wav"
                     $ vig4_attackPolaris = True
                     $ outlaw += 3
@@ -3422,8 +3494,10 @@ label vig4_sc4_2():
                     $ AddChatter(vig4_sc4_2_comment14)
                     pS "Hell yeah!"
                     enS "Let's go save our crew!"
+                    hide screen streamerCommentary
         "I accepted her offer." if vig4_amaOffer == True:
-            ##* streamer reaction
+            $ reactTarget = "vig4_sc4_amaofferaccept"
+            show screen streamerCommentary
             play music "soundtrack/theme.wav"
             $ engineerApproval -= 1
             $ pilotApproval -= 2
@@ -3436,6 +3510,7 @@ label vig4_sc4_2():
             $ AddChatter(vig4_sc4_2_comment5)
             enS "She'll be more focused on this mission than revenge. At least for the time being."
             pS "True. Still, we'll have to keep an eye on her."
+            hide screen streamerCommentary
     jump vig4_sc4_3
 
 label vig4_sc4_3():
@@ -3643,7 +3718,8 @@ label vig4_sc5_1():
     $ AddChatter(vig4_sc5_1_comment10)
     pause 0.5
     $ AddChatter(vig4_sc5_1_comment11)
-    ##* streamer reaction
+    $ reactTarget = "vig4_sc5_oakleydestroyed"
+    show screen streamerCommentary 
     "The flames envelope its hulking shell, licking at the metal."
     "Its frame, torn and rent, bends to the heat."
     "The smell of ship fuel coats the air."
@@ -3675,6 +3751,7 @@ label vig4_sc5_1():
             pS "Right."
             $ AddChatter(vig4_sc5_1_comment12)
     "An immense sound, like a thunderclap suddenly comes from over the ridge."
+    hide screen streamerCommentary
     $ AddChatter(vig4_sc5_1_comment13)
     mS "What was that?"
     enS "BC must have started the attack."
@@ -3818,7 +3895,8 @@ label vig4_sc5_2():
     amaS "Sounds like we have to make our move now."
     $ AddChatter(vig4_sc5_2_comment1)
     show ama stream neutral at stream_center with dissolve
-    ##* streamer reaction
+    $ reactTarget = "vig4_sc5_amashowsup"
+    show screen streamerCommentary
     "Perched on a rock higher up the ridge, rifle relaxed into her shoulder, is Ama."
     $ AddChatter(vig4_sc5_2_comment2)
     amaS "Hello ladies. Good to see you all again."
@@ -3835,6 +3913,7 @@ label vig4_sc5_2():
     $ AddChatter(vig4_sc5_2_comment5)
     pS "Doesn't mean we're happy about it."
     amaS "But she's the captain, right?"
+    hide screen streamerCommentary
     "Jennica and Teresa don't say anything."
     amaS "You've built a good crew, Mozely." 
     "Ama puts a hand on my shoulder."
