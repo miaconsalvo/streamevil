@@ -2096,13 +2096,16 @@ label vig3_sc11():
             amaS "Don't speak for me. Ever."
             reynar "With how this is going you should count yourself lucky."
     "I am thankful for Reynar's intervention but even he isn't known for hand outs."
+    "I also need to keep my eye on the prize."
     mS "Reynar, pardon my intrusion but I am here because your Hounds stole a piece of merchandise of mine."
     reynar "Did they now?"
+    "Ama is visibly upset that I've moved the attention."
     mS "A range extender, a small repair for my ship. I'd like it back."
     reynar "Well you can leave your information with Ryo and we'd be happy to oblige you after the festivities."
     "Ama chuckles under her breath."
     mS "I'd like to have this matter resolved as soon as possible."
     reynar "So urgent!"
+    reynar "I understand."
     reynar "But first things first."
     "Which a snap of his fingers Ryo reemerges."
     reynar "Please take our guests to the east balcony, they could use the privacy."
@@ -2115,7 +2118,7 @@ label vig3_sc11():
     reynar "I do hope to see you later for the toast."
     "He slips something into my back pocket."
     "Ryo ushers us both in the direction of the east balcony."
-    "Ama walks in front of me and I watch as her jacket hits something solid on her back."
+    "Ama walks in front of me and I watch as the slit in her dress reveals something cold and metallic."
     hide ama with dissolve
     hide reynar with dissolve
     jump vig3_sc12
@@ -2139,21 +2142,21 @@ label vig3_sc12():
     "He's talking to Ama, who arrogantly has her back to me."
     bcrep "I swear to the Makers if you screwed up again!"
     "The representative hasn't noticed me yet."
-    "And soon had more pressing matters as he strained and struggled against Ama's grip on his throat."
+    "And soon had more pressing matters as he strains against Ama's grip on his throat."
     $ reactTarget = "vig3_sc12_amachoke"
     show screen streamerCommentary
     "I forgot how fast Ama was. How deadly."
     amaS "I suggest you watch that mouth of yours."
-    bcrep "My...boss'...sign...your checks."
+    bcrep "My...bosses...sign...your checks."
     amaS "Yes THEY do."
     "Her grip tightens."
     "I see MAC on the ground just passed them, he's still."
     menu: 
-        "How do you intervene?"
+        "I have to do something."
         "Help the representative.":
             "When MAC's eyes lock on mine, he perks up."
             "I put my finger to my lips."
-            bcrep "P-l-ease..."
+            bcrep "P-lease..."
             "I raise my blaster to her head."
             mS "That's enough Ama."
             amaS "You're really all over the place Mozely."
@@ -2161,10 +2164,10 @@ label vig3_sc12():
             hide screen streamerCommentary
             menu: 
                 "Say something."
-                "Being a little rough are we?": #This is a choice. 
-                    mS "Being a bit too rough?"
+                "You're rough as always": 
+                    mS "Being a bit too rough again?"
                     amaS "Just handling business."
-                    mS "I can see that."
+                    mS "Clearly haven't lost your charm."
                     amaS "Don't worry I'll get to you later..."
                 "That was unnecessary":
                     mS "A tad unnecessary."
@@ -2172,13 +2175,15 @@ label vig3_sc12():
                     amaS "But don't worry."
                     amaS "I'll get to you soon."
             bcrep "Who's this? One of Reynar's goons?"
-            amaS "You academics are so up your own asses."
+            amaS "You academics are so far up your own asses."
             "Their eyes widen as they stand to look at me."
             "They laugh in disbelief."
-            bcrep "Incredible! Absolutely incredible!"
+            bcrep "Incredible!"
+            bcrep "Absolutely incredible!"
             bcrep "Do you have any idea how terrible this has been?"
+            bcrep "The shit storm YOU caused!"
             "He walks up to MAC."
-            bcrep "But now that we have you, I have no use for this STUPID PIECE OF JUNK."
+            bcrep "But now that we have you, I have no use for this STUPID PIECE OF JUNK!!!"
             "They're moving to kick MAC off the balcony."
             menu: 
                 "How do you stop him?"
