@@ -518,6 +518,7 @@ label vig4_sc5_oscarReturn():
             pause 0.5
             $ AddChatter(vig4_sc5_interact_comment4)
         "Say nothing.":
+            pass
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
