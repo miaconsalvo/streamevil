@@ -1580,7 +1580,7 @@ label vig3_sc8():
     pS "Oh I'm very serious, just my face don't look it. Y'all should consider fixin' yours."
     "Rec moves thier jaw as if trying to manually relax it."
     "I relax my shoulders as an attendant walks over to us."
-    vyattend "Good afternoon, my name Ryo and it is my pleasure to welcome you to the Vineyard." 
+    vyattend "Good afternoon, my nam's' Ryo and it is my pleasure to welcome you to the Vineyard." 
     vyattend "Are you perhaps here for the Inventor's Fair?"
     enS "Pleased to make your acquaintance Ryo. Please check the list for Vira Prismari and retinue."
     "They raise an eyebrow before checking a screen."
@@ -1588,7 +1588,7 @@ label vig3_sc8():
     enS "That is correct." 
     "There's a long pause."
     reynar "Ryo I'll take it from here."
-    "Our jaws nearly drop at the finely dressed man who approached us. Reynar..."
+    "Our jaws nearly drop at the finely dressed man who approaches us. Reynar..."
     show reynar stream neutral at stream_center with dissolve
     reynar "How wonderful, we were certain to receive another refusal gift this year."
     enS "Well we so desperately missed the inspiration of the Inventor's Fair."
@@ -1638,14 +1638,14 @@ label vig3_sc8():
     menu:
         "Who do you side with?"
         "Side with Jennica.":
-            $ engineerApproval +- 1
+            $ engineerApproval -= 1
             mS "Listen Resa, Mac's too important, we'll get into a fight if we have too."
             pS "Never knew ya to be timid Resa."
             enS "You two are not understanding..."
         "Side with Teresa":
             mS "I understand the passion but we should stick with Teresa's plan for now."
             pS "But MAC's as good as gone if we don't do anything."
-            enS "Jenn you must understand."
+            enS "Jenn, you must understand."
     enS "The reason Reynar is using the Hounds in the first place is because all of his actual security is here. Look around." 
     "I'm almost embarrassed by how long it took me to realize."
     "I can feel dozens of eyes on us."
@@ -1752,29 +1752,29 @@ label vig3_sc9():
     #Have an extra scene with Daisy, change it to fit which you decided.
             
     showgirl "Well I should be off then."
-    mS "Actually wait! Daisy."
+    mS "Actually, wait! Daisy."
     showgirl "Oh? What is it?"
     menu: 
         "Maybe Daisy can help us?"
         "Ask her about the missing parts.":
-            mS "You seen like you know your way around here."
+            mS "You seem like you know your way around here."
             showgirl "A girl has her ways."
             mS "I'm looking for something that was taken, wouldn't happen to know where I could find it?"
             showgirl "Ah. The Hounds I take it?"
             mS "Unfortunately."
             showgirl "How about we get a drink and chat."
             mS "I really don't-"
-            "She siddles next to me and holds my arm."
+            "She sidles next to me and holds my arm."
             showgirl "Shall we?"
             "I nod and head over."
         "Invite her to the bar.":
             mS "I'm sure you're busy. But care to have a drink with me?"
             showgirl "You mean pilfer Reynar's open bar?"
             mS "Couldn't have said it better myself."
-            "She goes for my arm the pauses."
+            "She goes for my arm then pauses."
             showgirl "Just a drink don't expect anything."
             mS "I wouldn't dare."
-            "She siddles next to me and holds my arm."
+            "She sidles next to me and holds my arm."
             mS "Shall we?"
             "She nods and we head over."
         "Mumble incoherently.":
@@ -1783,13 +1783,13 @@ label vig3_sc9():
             "She luckily giggles."
             showgirl "Is the great Captain of the Oakley getting flustered?"
             mS "Happens from time to time."
-            "She siddles next to me and holds my arm."
+            "She sidles next to me and holds my arm."
             showgirl "Come with me Captain. Let's get you a drink."
             mS "Um yeah, haha, sure."
 
     "We make our way to Reynar's open bar."
     "With most of the action happening on the floor we have a lot of room to talk."
-    "We talk for a lot longer than we should've."
+    "We talk for a lot longer than we should."
     mS "So if someone would want to maybe go around and check out some of the off the floor pieces."
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected, turns out they've been keeping all the legit stuff on this side of the Vineyard."
@@ -1799,16 +1799,16 @@ label vig3_sc9():
     showgirl "What's so important anyway?"
     mS "A range extender..."
     showgirl "You're joking-"
-    mS "Wish I was, but the fate of the world depends on it!"
+    mS "Wish I was, but the fate of the galaxy depends on it!"
     showgirl "Sounds like a big extender."
     "I let out a heavy sigh. Letting the joke fly over my head."
     showgirl "Guests aren't able to explore off-floor pieces."
     showgirl "Unless they waited for a big presentation and had someone to help them through."
     mS "When's the next one scheduled?"
-    showgirl "The Big Corp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
+    showgirl "The BigCorp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
     "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it." 
     "I'm still trying to process what she just said."
-    mS "Big Corp is here?"
+    mS "BigCorp is here?"
     showgirl "Oh yeah, big reveal!"
     showgirl "Heard Reynar is hedging new investments and property in the Outposts, hard to expand without greasing some palms."
     "Just then I hear an annoyingly recognizeable voice."
@@ -1843,13 +1843,13 @@ label vig3_sc9():
             vyattend "Is there a problem?"
             "Shit."
             showgirl "No Ryo of course not. I was just about to make my rounds."
-            "Ryo seperates me from Mills who he ushers away. Daisy moves to great the rest of the guests."
+            "Ryo seperates me from Mills who he ushers away. Daisy moves to greet the rest of the guests."
             "She turns to me."
-            showgirl "I'll see you around Moze."
+            showgirl "I'll see you around, Moze."
             showgirl "Be sure to check out that view."
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
-            "I see Reynar up on his balcony"
+            "I see Reynar up on his balcony."
             show reynar stream angry at stream_center with dissolve
             "He does not look happy."
         "Put your blaster to his side.":
@@ -1871,7 +1871,7 @@ label vig3_sc9():
             mS "Anytime."
             showgirl "I should be going but do check out the view."
             showgirl "And the service door while you're at it."
-            "Daisy give me a wink and slowly leaves the bar to great the rest of the guests."
+            "Daisy give me a wink and slowly leaves the bar to greet the rest of the guests."
             "So many feathers."
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
@@ -1897,7 +1897,7 @@ label vig3_sc9():
             infairnpc2 "Of course."
             "When Mills leaves, Daisy composes herself with a deep breath."
             showgirl "Thank you for the drink. Excuse me please."
-            "Daisy slowly leaves the bar to great the rest of the guests."
+            "Daisy slowly leaves the bar to greet the rest of the guests."
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
@@ -2040,7 +2040,6 @@ label vig3_sc11():
             "A smile forms on her face, anger mixed with something else."
             amaS "You little shit..."
             mS "Now, now, don't make a scene. You're better than that."
-            $ reactTarget = "vig3_sc11_amabacksass"
         "I don't have the droid you're looking for.":
             mS "I don't have it."
             amaS "Are you playing dumb with me?"
@@ -2048,14 +2047,13 @@ label vig3_sc11():
             "Ama furrows her brow."
             amaS "This isn't the time to yank my chain."
             mS "Isn't that BigCorp's job?"
-            $ reactTarget = "vig3_sc11_amabacksass"
         "But he's right there on the platform, no?":
             mS "Why are you asking me?"
             mS "It's right there isn't it?"
             "Ama turns to the platform then back at me, unimpressed."
             amaS "Don't quit your day job Moze."
             amaS "I want that droid and I want it now."
-            $ reactTarget = "vig3_sc11_amabacksass"
+    $ reactTarget = "vig3_sc11_amabacksass"
     show screen streamerCommentary
     "Ama stalks towards me and I know what's coming."
     "I move to my blaster hidden in my clothes."#choice here?
@@ -2072,9 +2070,9 @@ label vig3_sc11():
     hide screen streamerCommentary
     "A pause."
     "A waiter passes by with a full tray, Reynar grabs a bubbling drink without even looking."
-    reynar "I sincerely hope, the two of your aren't about to do what I think you are."
-    amaS "Respectfully this is Big Corp buisness."
-    reynar "Is it now? Funny I didn't I gave them jurisdiction to conduct buisness in MY Vineyard."
+    reynar "I sincerely hope, the two of you aren't about to do what I think you are."
+    amaS "Respectfully this is BigCorp buisness."
+    reynar "Is it now? Funny I don't remember giving them jurisdiction to conduct buisness in MY Vineyard."
     amaS "Consider it a favor, we're removing a known fugitive from the premises."
     reynar "Oh what a shame that you'll be leaving so soon."
     "I stifle a laugh."
@@ -2082,7 +2080,7 @@ label vig3_sc11():
     menu: 
         "Get in the mix."
         "Bold coming from you.": 
-            $ deadeyeApproval =+ 0
+            $ deadeyeApproval += 0
             mS "Bold coming from you."
             amaS "Oh? You're speaking now?"
             mS "Hard to get a word in when you love hearing yourself talk."
@@ -2095,7 +2093,7 @@ label vig3_sc11():
             mS "Just a rocky reunion."
             amaS "Don't speak for me. Ever."
             reynar "With how this is going you should count yourself lucky."
-    "I am thankful for Reynar's intervention but even he isn't known for hand outs."
+    "I am thankful for Reynar's intervention but even he isn't known for handouts."
     "I also need to keep my eye on the prize."
     mS "Reynar, pardon my intrusion but I am here because your Hounds stole a piece of merchandise of mine."
     reynar "Did they now?"
@@ -2111,7 +2109,7 @@ label vig3_sc11():
     reynar "Please take our guests to the east balcony, they could use the privacy."
     "A nasty smile creeps on Ama's face."
     "I can feel the eyes around me."
-    "The presentation is over and some attendents are ushering the Big Corp rep away from the crowd."
+    "The presentation is over and some attendents are ushering the BigCorp rep away from the crowd."
     reynar "It was wonderful to see you both."
     "Reynar gives a forced hug and double cheek kiss to Ama. Then moves to me."
     "He offers the same gesture then whispers quietly."
@@ -2142,7 +2140,7 @@ label vig3_sc12():
     "He's talking to Ama, who arrogantly has her back to me."
     bcrep "I swear to the Makers if you screwed up again!"
     "The representative hasn't noticed me yet."
-    "And soon had more pressing matters as he strains against Ama's grip on his throat."
+    "And soon has more pressing matters as he strains against Ama's grip on his throat."
     $ reactTarget = "vig3_sc12_amachoke"
     show screen streamerCommentary
     "I forgot how fast Ama was. How deadly."
@@ -2159,8 +2157,8 @@ label vig3_sc12():
             bcrep "P-lease..."
             "I raise my blaster to her head."
             mS "That's enough Ama."
-            amaS "You're really all over the place Mozely."
-            "When Ama lets him go, he spills to the ground, tears in their eyes."
+            amaS "You're really all over the place, Mozely."
+            "When Ama lets him go, he spills to the ground, tears in his eyes."
             hide screen streamerCommentary
             menu: 
                 "Say something."
@@ -2169,7 +2167,7 @@ label vig3_sc12():
                     amaS "Just handling business."
                     mS "Clearly haven't lost your charm."
                     amaS "Don't worry I'll get to you later..."
-                "That was unnecessary":
+                "That was unnecessary.":
                     mS "A tad unnecessary."
                     amaS "You should just let me handle business."
                     amaS "But don't worry."
@@ -2221,10 +2219,10 @@ label vig3_sc12():
 
             $ reactTarget = "vig3_sc12_amafindsout"
             show screen streamerCommentary
-            amaS "That's it, isn't it."
+            amaS "That's it, isn't it?"
             amaS "All that struggle. All that runnin'"
             amaS "Was it worth it?"
-            "I looked at MAC and then Ama."
+            "I look at MAC and then Ama."
             "Before I even realize it, I start walking towards her."
             amaS "Woah now, stay right there."
             "I take another step."
@@ -2248,8 +2246,86 @@ label vig3_sc12():
             "And there's MAC with my blaster in his hand."
             "Gripping the handle like it's his own."
              
-        "Go to MAC.":
-            "Placeholder"
+        "Do nothing.":
+            "When MAC's eyes lock on mine, he perks up."
+            "I put a finger to my lips as I slowly shift around Ama toward him."
+            bcrep "P-please..."
+            "I'm just to Ama's side, but she doesn't even see me."
+            "Her eyes are pointed dead ahead, focused on the man as the color drains from his skin."
+            amaS "You. Don't. Own. Me."
+            "The man's eyes fall on me."
+            bcrep "H-h-help..."
+            "Ama's fist snaps closed accompanied by a dull crunching sound."
+            "She lets go of her grip. The body slumps to the ground, limp."
+            "She stares at the body, her shoulders rising and falling as she takes deep breaths."
+            "Then she turns her attention on me."
+            "I freeze, just between her and MAC."
+            amaS "Well, Mozely, where were your heroics for him?"
+            menu:
+                amaS "Well, Mozely, where were your heroics for him?"
+                "Helping BigCorp isn't in my bag.":
+                    mS "I don't really see helping BigCorp goons as being \"heroic.\""
+                    amaS "Convenient to have such flexible definitions."
+                "I know better than to get between you and your prey.":
+                    mS "I know better than to get between you and your prey."
+                    amaS "A good lesson, but it sounds like you've forgotten that you {i}are{/i} my prey."
+            amaS "Now then, I'm only going to ask one more time."        
+            amaS "Where is the droid?"
+            "A low whir escapes from MAC."
+            "My heart feels like it falls out of my stomach."
+            "Ama's eyes snap from me to MAC, then back to me."
+            "In the blink of an eye her rifle is drawn and pointed at my chest."
+            amaS "Blaster on the ground Mozely."
+            "I wasn't even reaching for it. But I grab it from the holster in my suit jacket."
+            "And toss it away from me."
+            amaS "That's it, isn't it?"
+            $ reactTarget = "vig3_sc12_amafindsout"
+            show screen streamerCommentary   
+            "A thin smile creeps across her face."
+            amaS "You almost had it too."
+            amaS "But you're not quick enough. Never have been." 
+            mS "Ama, listen to me we ha--"       
+            amaS "All that struggle. All that runnin'."
+            amaS "Was it worth it?"
+            hide screen streamerCommentary
+            "I look at MAC and then Ama."
+            menu:
+                "I look at MAC and then Ama."
+                "You would never understand.":
+                    mS "Yes. A million times yes."
+                    mS "But I guess you wouldn't understand."
+                    mS "You've only ever really cared about yourself."
+                "Yes, fighting back is all we can do.":
+                    mS "Yes. A million times yes."
+                    mS "Fighting back against them is all we can do, Ama."
+                    mS "I thought you knew that."
+                "No, but it was worth a shot.":
+                    mS "If I knew it would come up short like this?"
+                    mS "No. But it was worth a shot."
+                    mS "I figured you of all people would understand that."
+            "What happens next unfolds in a split second."
+            "A shadow flickers across Ama's gaze."
+            "Her eyes, alert, focused, dead to all the world except her prey, falter."
+            "For the briefest of moments, she's somewhere else."
+            "The barrel of her rifle shifts just a bit, and, before I can think to act, my body lunges forward."
+            "I grab the gun's barrel and heave it to the side."
+            "The bolt sails past my head, just barely grazing my cheek."
+            ###The commented out lines are an alternative where Ama doesn't fire her rifle - they can be cut###
+            #"I throw my shoulder into Ama's chest before she can fire.""
+            #"It's like tackling a mountain, but I manage to force her to the ground, sending her rifle skidding to the edge of the balcony.""
+            #"Ama kicks me off her chest."
+            #amaS "You little shit!"
+            #"We both lunge for each other, grappling at one another's shoulders, trying to get the advantage on the other."
+            #"I'm holding my own, but then the tide starts to turn. She's just too strong."
+            amaS "You little shit!"
+            "I try to pry it from her hands but she's as strong as I remember."
+            "I struggle against her strength as we yank the rifle back and forth."
+            "BANG!"
+            "A chunk of the rail explodes out into the open air."
+            macS "STOP IT!"
+            "Ama and I hit a stalemate as we turn to MAC."
+            "And there's MAC with my blaster in his hand."
+            "Gripping the handle like it's his own."
     
     
     #Choices happen based on MAC's alignment.
