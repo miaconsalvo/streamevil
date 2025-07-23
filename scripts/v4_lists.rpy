@@ -1151,13 +1151,13 @@ default vig4_sc7_3_coil_comment61 = ChatEntry(False, "{b}kitcat - 8:11{/b}\nexac
 
 ####EPILOGUE#####
 ###Epilogue General###
-default vig4_sc7_epilogue_comment1 = = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
+default vig4_sc7_epilogue_comment1 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
 
 
 ###Comments vig4_epilogue_ama - Epilogue (Ama allied)
 
 ###Comments vig4_epilogue_coil Epilogue (Coil allied)
-default vig4_epilogue_coil_comment1 = = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
+default vig4_epilogue_coil_comment1 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nWell now that was exhausting", 4, "#ffffff")
 
 ####Streamer React Replies
 
