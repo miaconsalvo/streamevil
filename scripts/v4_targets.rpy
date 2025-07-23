@@ -442,6 +442,20 @@ label vig4_sc6_reggieReaction():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc7_kcWhyNoRomance():
+    $ macroChoice = True
+    $ vig4_sc7_3_ama_comment56.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
 ### Streamer Reacts
 
 label vig4_sc1_macjokes():

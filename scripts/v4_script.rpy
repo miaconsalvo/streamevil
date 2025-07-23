@@ -3916,40 +3916,57 @@ label vig4_sc5_2():
 
 label vig4_sc7_2():
     cS "The time has come."
+    $ AddChatter(vig4_sc7_2_comment1)
+    pause 0.5
+    $ AddChatter(vig4_sc7_2_comment2)
     macS "Moze!"
     show mac stream neutral at stream_right5mac with Dissolve (0.3)
     "I whip around to see MAC careening toward the open door."
     "{i}whoosh{/i}"
     "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
     "An energy shield."
+    $ AddChatter(vig4_sc7_2_comment3)
     show vega stream neutral at stream_left5 with dissolve
     vS "Pops!"
     "Vega rushes up the stairs and kneels down to MAC's side."
+    $ AddChatter(vig4_sc7_2_comment4)
     hide vega with dissolve
     hide mac with dissolve
     cS "Captain Moze."
-    "The walls surrounding us glimmer and dissipate, becoming transparent windows."
+    show streamview with hpunch
+    "A sudden shudder from the windows overlooking Polaris."
+    $ AddChatter(vig4_sc7_2_comment5)
     cS "This is your moment."
     "Outside, dropships explode in the air."
+    $ AddChatter(vig4_sc7_2_comment6)
     # show tower_glass windows
     cS "Within you is a war, between the forces of good and those of evil."
     amaS "Don't listen to this guy, kid."
+    $ AddChatter(vig4_sc7_2_comment7)
     "Fire dances in the streets below."
     cS "You have a choice. You can put an end to this madness."
+    $ AddChatter(vig4_sc7_2_comment8)
     amaS "You can't trust him."
+    $ AddChatter(vig4_sc7_2_comment9)
     "The cruiser looms high above."
+    $ AddChatter(vig4_sc7_2_comment10)
     cS "Or fall to your baser instincts and doom us all."
+    $ AddChatter(vig4_sc7_2_comment11)
     amaS "After all we've been through, Mozely..."
+    $ AddChatter(vig4_sc7_2_comment12)
     "Battle rages."
+    $ AddChatter(vig4_sc7_2_comment13)
     "Then I see it."
     #show star shower tower
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
     "Dozens. Hundreds. Thousands of glimmering lights streaking across the sky."
+    ##* streamer reaction to both the choice they're facing and the star shower
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
     "The star shower has come, the world illuminated in turquoise light."
+    $ AddChatter(vig4_sc7_2_comment14)
     cS "What will it be, Moze?"
     menu:
         cS "What will it be, Moze?"
@@ -3958,14 +3975,25 @@ label vig4_sc7_2():
             $ kcEngagement -= 2
             $ pdEngagement -= 3
             mS "You're right, Coil. This has gone too far."
+            $ AddChatter(vig4_sc7_2_comment23)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment24)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment25)
+            $ AddChatter(vig4_sc7_2_comment26)
             "I turn to Ama."
+            $ AddChatter(vig4_sc7_2_comment27)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment28)
             menu:
                 "I turn to Ama."
                 "It's over.":
                     mS "Ama, it's over."
                 "I'm sorry.":
                     mS "Ama, I'm sorry."
+            $ AddChatter(vig4_sc7_2_comment29)
             "Ama glares at me, then Coil. Then her gaze falls back to me."
+            $ AddChatter(vig4_sc7_2_comment30)
             "I can feel the hate like a heatwave."
             jump vig4_sc7_3_coil
         "Side with Ama; Kill Coil.":
@@ -3973,14 +4001,25 @@ label vig4_sc7_2():
             $ kcEngagement += 2
             $ pdEngagement += 3
             mS "You're right, Ama. I can't trust him."
+            $ AddChatter(vig4_sc7_2_comment15)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment16)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment17)
+            $ AddChatter(vig4_sc7_2_comment18)
             "I turn to Coil."
+            $ AddChatter(vig4_sc7_2_comment19)
+            pause 0.5
+            $ AddChatter(vig4_sc7_2_comment20)
             menu:
                 "I turn to Coil."
                 "It's over.":
                     mS "Coil, it's over."
                 "I'm sorry.":
                     mS "Coil, I'm sorry."
+            $ AddChatter(vig4_sc7_2_comment21)
             "Coil sighs."
+            $ AddChatter(vig4_sc7_2_comment22)
             cS "So be it."
             jump vig4_sc7_3_ama
 
@@ -3989,92 +4028,127 @@ label vig4_sc7_3_ama():
     "Everyone is still."
     "Ama makes the first move, dropping her rifle and lunging at Coil."
     "He leans to the side, faster than I would expect his elderly physique to move."
+    $ AddChatter(vig4_sc7_3_ama_comment1)
     menu:
         "He leans to the side, faster than I would expect his elderly physique to move."
         "Jump Coil.":
             "I leap at Coil, throwing a kick at his exposed side."
+            $ AddChatter(vig4_sc7_3_ama_comment2)
             "It slows slightly at his shield, but doesn't stop completely."
             "He quickly spins away."
+            $ AddChatter(vig4_sc7_3_ama_comment3)
         "Shoot Coil.":
             "I raise my pistol and fire two quick shots, but they dissipate into his shields."
+            $ AddChatter(vig4_sc7_3_ama_comment2)
             cS "You should know that won't work, dear."
+            $ AddChatter(vig4_sc7_3_ama_comment3)
     amaS "Over here!"
     "Ama continues her barrage, drawing a knife and stabbing at Coil's head."
+    $ AddChatter(vig4_sc7_3_ama_comment4)
     "He dodges and leans away from the blade, then crouches into a stance with his palms open outward toward Ama."
     "Devices like shield generators are strapped to his palms."
+    $ AddChatter(vig4_sc7_3_ama_comment5)
     hide ama with dissolve
     "A burst of energy suddenly blasts from his palms, striking Ama in the chest and sending her and her knife flying."
+    $ AddChatter(vig4_sc7_3_ama_comment6)
     "Sweat drips from my forehead."
+    $ AddChatter(vig4_sc7_3_ama_comment7)
     "Coil's posture straightens. He starts to circle around me."
     "I parallel his movements, keeping us at a distance."
+    $ AddChatter(vig4_sc7_3_ama_comment8)
     cS "I don't know what kind of life you think I've led."
     cS "But you're mistaken if you think I've been cooped up in a lab all these years."
+    $ AddChatter(vig4_sc7_3_ama_comment9)
     menu:
         cS "But you're mistaken if you think I've been cooped up in a lab all these years."
         "Why don't you tell me about it?":
             mS "Oh yeah? Sounds interesting. Why don't you monologue about it."
+            $ AddChatter(vig4_sc7_3_ama_comment10)
             cS "Just waiting for your friend."
         "Don't think you're invincible.":
             mS "You have a weakness, and we're going to exploit it."
+            $ AddChatter(vig4_sc7_3_ama_comment10)
             cS "I'm sure you will."
     show ama stream neutral at stream_right with dissolve
     "Ama puts a hand on my shoulder."
     "Her other hand is holding her side."
+    $ AddChatter(vig4_sc7_3_ama_comment11)
     amaS "Sorry, kid, took a bad knock there. But I'm back in the hunt."
     amaS "Seems like guns won't work here. We'll have to do this the old-fashioned way."
+    $ AddChatter(vig4_sc7_3_ama_comment12)
     macS "Captain!"
     show mac stream neutral at stream_center_mac with Dissolve(0.3)
     "MAC is just behind the energy shield, watching intently."
     "Vega is behind him, her hands covering her mouth."
+    $ AddChatter(vig4_sc7_3_ama_comment13)
     macS "Be careful! Coil's shield generators are offensive and defensive weapons!"
+    $ AddChatter(vig4_sc7_3_ama_comment14)
     amaS "Yeah, we got that!"
     hide mac with dissolve
     "Coil takes a step towards us."
     cS "Do you even know what it means to sacrifice?"
+    $ AddChatter(vig4_sc7_3_ama_comment15)
     "Another step."
     cS "All you do is take for yourself."
+    $ AddChatter(vig4_sc7_3_ama_comment16)
     "Ama and I crouch into a ready stance."
     cS "You have no conviction."
+    $ AddChatter(vig4_sc7_3_ama_comment17)
     menu:
         cS "You have no conviction."
         "Feint and let Ama take the lead.":
             cS "I also grew up in this galaxy."
             "I feint toward, Coil, catching his attention while Ama rushes him head on."
             "She pushes him back, not giving him room to fire his energy pulses."
+            $ AddChatter(vig4_sc7_3_ama_comment18)
             "I rush past the two of them, trying to hit Coil from the back."
             "As I approach, he opens one palm in either of our directions."
             cS "I also know what it means to lose the ones you love."
             "I dive to the side, but Ama's already committed to an attack."
             "The energy pulse rushes by me. But another one hits Ama directly in the chest, knocking her to the floor."
             hide ama with dissolve
+            $ AddChatter(vig4_sc7_3_ama_comment19)
             cS "And I know what it means to continue on in their stead."
+            $ AddChatter(vig4_sc7_3_ama_comment20)
             "I'm on the floor facing Coil. He opens a palm in my direction."
+            $ AddChatter(vig4_sc7_3_ama_comment21)
             "I don't have time to stand."
         "Charge and let Ama be back up.":
             "I charge in at Coil's side with a fist, while Ama pulls another knife from her boot and crosses behind me."
             "It's a classic move."
             "Coil steps into my attack, slowing my movement just enough to mess up my timing, then spins away."
+            $ AddChatter(vig4_sc7_3_ama_comment18)
             cS "I also grew up in this galaxy."
             "Ama lunges at him with the knife."
             "He opens one palm and hits her with an energy blast, knocking her to the floor."
             hide ama with dissolve
+            $ AddChatter(vig4_sc7_3_ama_comment19)
             cS "I also know what it means to lose the ones you love."
-            "Coil opens a palm in my direction."
+            "Coil takes aim at me."
             "I dive out of the way as a pulse of energy rushes by me."
             cS "And I know what it means to continue on in their stead."
+            $ AddChatter(vig4_sc7_3_ama_comment20)
             "I'm on the floor facing Coil. He opens a palm in my direction."
+            $ AddChatter(vig4_sc7_3_ama_comment21)
             "I don't have time to stand."
     amaS "Moze!"
     show ama stream neutral at stream_left with Dissolve(0.2)
     "Ama leaps in front of Coil, and thrusts her hand forward."
     "A blast of energy slams her back to the floor."
     hide ama with dissolve
+    $ AddChatter(vig4_sc7_3_ama_comment22)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_ama_comment23)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_ama_comment24)
     mS "Ama!"
     cS "{i}aahhhhh{/i}"
     "Then I notice it, a knife impaled through one of Coil's hands."
+    $ AddChatter(vig4_sc7_3_ama_comment25)
     "Blood streaks down his arm. The device in his palm short circuits."
     "The thin veil of blue light around him sparks inconsistently."
     "Ama is motionless on the floor."
+    $ AddChatter(vig4_sc7_3_ama_comment26)
     show coil stream neutral at stream_center with move
     "Coil and I lock eye contact."
     "Behind him, I see the ruin of the BC cruister listing toward the ground of Polaris as the star shower pummels its hull."
@@ -4086,6 +4160,7 @@ label vig4_sc7_3_ama():
             $ kcEngagement += 1
             mS "No."
             mS "I want this."
+            $ AddChatter(vig4_sc7_3_ama_comment27)
             "Coil nods."
             cS "Of course."
         "You gave me no choice.":
@@ -4094,19 +4169,20 @@ label vig4_sc7_3_ama():
             mS "You didn't give me a choice."
             "Coil chuckles."
             cS "We always have a choice, Moze."
+            $ AddChatter(vig4_sc7_3_ama_comment28)
     "I step forward."
     "He raises his good hand toward me and fires a pulse."
-    "But it's taking longer for the energy blast to charge."
-    "I easily dodge it and close the distance."
+    "But it's taking longer for the energy blast to charge. I easily dodge it."
     "My fist slams into his chest with barely any resistance."
-    "He leans forward, then swings his free hand at my head."
-    "I catch it on my forearm."
     "Slamming my knee into his groin, I grab his coat by the back and throw him across the floor."
     "He tumbles and slams into the side of the wall."
+    $ AddChatter(vig4_sc7_3_ama_comment29)
     vS "Pops! Get up!"
+    $ AddChatter(vig4_sc7_3_ama_comment30)
     "I cross the room and stand over Coil."
     vS "Get up! Please!"
     "Coil reaches out his good hand."
+    $ AddChatter(vig4_sc7_3_ama_comment31)
     "I step back as the energy pulse sails harmlessly into the ceiling."
     "Coil staggers to his feet."
     cS "Please. Just let her go."
@@ -4116,36 +4192,55 @@ label vig4_sc7_3_ama():
             $ outlaw += 1
             $ macViolence += 1
             mS "Your sins are hers."
+            $ AddChatter(vig4_sc7_3_ama_comment32)
             cS "My sins?"
             "Coil chuckles."
+            $ AddChatter(vig4_sc7_3_ama_comment33)
             cS "You don't know the half of them."
         "Would you, if you were me?":
             mS "Would you, if you were me?"
+            $ AddChatter(vig4_sc7_3_ama_comment34)
             cS "I am not you."
+            $ AddChatter(vig4_sc7_3_ama_comment35)
     "Coil lunges forward, ripping the knife out of his hand and slashing it toward my head."
+    $ AddChatter(vig4_sc7_3_ama_comment36)
     "Blood spatters across my face."
     "But I don't blink."
     "I catch his wrists in my hands. And grip. Tight."
     "I can hear his bones cracking."
     "He drops to his knees."
+    $ AddChatter(vig4_sc7_3_ama_comment37)
     "I turn his wrists. The knife points directly at his throat."
+    $ AddChatter(vig4_sc7_3_ama_comment38)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_ama_comment39)
     "He closes his eyes."
     cS "Elijah. Is that you?"
     "I thrust the blade forward."
     "Coil's body slumps to the floor."
     "Blood pools around his throat."
+    $ AddChatter(vig4_sc7_3_ama_comment40)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_ama_comment41)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_ama_comment42)
+    ##*Streamer reaction
     "His eyes go cold. But there's an odd light to them. As if he was smiling."
     hide coil with Dissolve(2.0)
     show vega stream neutral at stream_left with dissolve
     vS "No!"
     "The energy shield at the doorway dissipates. Vega rushes to Coil's side."
+    $ AddChatter(vig4_sc7_3_ama_comment43)
     "She pulls his head into her lap."
+    $ AddChatter(vig4_sc7_3_ama_comment44)
     vS "No. Don't go. Don't go. Don't leave me."
+    $ AddChatter(vig4_sc7_3_ama_comment45)
     "Ama."
     hide vega with dissolve
     show ama stream neutral at stream_right with dissolve
     "I rush over to Ama's body and turn her onto her side."
     amaS "Ahhh, shit."
+    $ AddChatter(vig4_sc7_3_ama_comment46)
     "She opens her eyes and looks right into mine."
     amaS "Did we get him?"
     menu:
@@ -4160,23 +4255,32 @@ label vig4_sc7_3_ama():
     "Gingerly, I help Ama into a sitting position. She glances to the side."
     "MAC hasn't entered the room yet."
     amaS "Time to rebuild your family."
+    $ AddChatter(vig4_sc7_3_ama_comment47)
     mS "Don't you mean our family?"
     "Ama shakes her head."
+    $ AddChatter(vig4_sc7_3_ama_comment48)
     amaS "You were right. SnakeHawks are dead."
     amaS "Right now, you have to rebuild the Oakley. I don't know if I fit that picture."
+    $ AddChatter(vig4_sc7_3_ama_comment49)
     menu:
         amaS "Right now, you have to rebuild the Oakley. I don't know if I fit that picture."
         "You belong.":
             $ vig4_amaCrew = True
             mS "If you want a place in the crew, it's not too late."
+            $ AddChatter(vig4_sc7_3_ama_comment53)
             amaS "Heh, after all I've done? Jenn and Teresa will probably have something to say about that."
+            $ AddChatter(vig4_sc7_3_ama_comment54)
             amaS "But I'll give it time. Not in any rush anymore."
+            $ AddChatter(vig4_sc7_3_ama_comment55)
             "An unbearable groaning sound suddenly reverberates across Polaris."
         "You're right.":
             $ vig4_amaCrew = False
             mS "You're right. But we're grateful for your help."
+            $ AddChatter(vig4_sc7_3_ama_comment53)
             amaS "Aah, you'll find some way to repay me I'm sure."
+            $ AddChatter(vig4_sc7_3_ama_comment54)
             amaS "I know you never let a score go unsettled."
+            $ AddChatter(vig4_sc7_3_ama_comment55)
             "An unbearable groaning sound suddenly reverberates across Polaris."
         "I don't want to live without you." if deadeyeApproval >= 4 and jennicaRomance == False and teresaRomance == False:
             $ vig4_amaCrew = True
@@ -4186,24 +4290,37 @@ label vig4_sc7_3_ama():
             menu:
                 amaS "Mozely, I don't know what you're saying."
                 "I love you, Ama.":
+                    $ kcEngagement += 3
+                    $ pdEngagement += 2
+                    $ csEngagement += 1
                     $ amaRomance = True
                     mS "Ama, I love you."
                     mS "I know it doesn't make sense, bu--"
                     "She grabs my face with her two hands and pulls me into a kiss."
+                    $ AddChatter(vig4_sc7_3_ama_comment57)
                     "I wrap my arms around her."
+                    $ AddChatter(vig4_sc7_3_ama_comment58)
                     "In the distance, I hear an immense groaning sound that reverberates across Polaris."
+                    $ AddChatter(vig4_sc7_3_ama_comment59)
+                    pause 0.5
+                    $ AddChatter(vig4_sc7_3_ama_comment60)
                     "But I can't turn away."
                     "I'm enmeshed in this moment, this feeling, this heat."
                     "Finally, we separate."
                 "Neither do I.":
+                    $ kcEngagement -= 2
+                    $ pdEngagement -= 1
                     mS "I don't either."
+                    $ AddChatter(vig4_sc7_3_ama_comment56)
                     mS "But stick around, and we'll figure it out."
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
+    $ AddChatter(vig4_sc7_3_ama_comment61)
     amaS "Not bad, Moze. Not bad at all."
     "She tilts her head at MAC."
     amaS "Now go. He needs you."
+    $ AddChatter(vig4_sc7_3_ama_comment62)
     hide ama with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "I stand and take a step toward MAC."
@@ -4221,26 +4338,32 @@ label vig4_sc7_3_ama():
         "I never thought I'd see you again.":
             mS "MAC, I never thought I'd see you again."
             macS "I didn't think I would see you again either."
-            mS "Are you glad to see me."
+            mS "Are you glad to see me?"
             macS "I think so. But I am still processing the events I have witnessed."
             mS "MAC, can you ever forgive me?"
     "MAC looks down for a moment, then back up to my face."
     macS "Am I a SnakeHawk now?"
     "I smile."
-    mS "Better, you're family"
+    mS "Better, you're family."
     "MAC's face turns into a smile."
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
     "I hold him tight and drop my face against his body."
+    $ AddChatter(vig4_sc7_3_ama_comment63)
     mS "I missed you."
+    $ AddChatter(vig4_sc7_3_ama_comment64)
     macS "I missed you too, Moze."
+    $ AddChatter(vig4_sc7_3_ama_comment65)
     "We step back and I stand up."
     show ama stream neutral at stream_right with dissolve
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
+    $ AddChatter(vig4_sc7_3_ama_comment66)
     "Ama is standing now, and she points across the room."
     show vega stream neutral at stream_left with dissolve
     "Vega sits, still cradling Coil's head in her hands."
+    $ AddChatter(vig4_sc7_3_ama_comment67)
     "The tears that were streaking down her face have stopped."
+    $ AddChatter(vig4_sc7_3_ama_comment68)
     "She is completely silent, staring into Coil's eyes."
     macS "Captain."
     macS "As a member of the Oakley family, may I request to handle this situation."
@@ -4248,12 +4371,16 @@ label vig4_sc7_3_ama():
         macS "As a member of the Oakley family, may I request to handle this situation."
         "Go ahead.":
             mS "Go on, MAC. Whatever you think is best."
+    $ AddChatter(vig4_sc7_3_ama_comment69)
     "MAC turns and rolls toward Vega."
+    $ AddChatter(vig4_sc7_3_ama_comment70)
     "As he approaches, she turns her attention toward him."
     vS "I won't let you get away with this."
+    $ AddChatter(vig4_sc7_3_ama_comment71)
     "Her words are stiff."
     vS "You know that, right?"
     macS "I know."
+    $ AddChatter(vig4_sc7_3_ama_comment72)
     if macViolence > macPeace:
         $ pdEngagement += 2
         $ kcEngagement += 1
@@ -4261,18 +4388,28 @@ label vig4_sc7_3_ama():
         "MAC lifts his arm and fires a bolt of energy."
         "It lands square between Vega's eyes."
         "She slumps to the ground, her body falling on top of Coil's."
+        $ AddChatter(vig4_sc7_3_ama_comment73)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment74)
+        $ AddChatter(vig4_sc7_3_ama_comment75)
         hide vega with Dissolve(2.0)
         macS "Threat. Neutralized."
+        $ AddChatter(vig4_sc7_3_ama_comment77)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment78)
     else:
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 1
         macS "You have as much right to vengeance as they did."
         macS "But not today."
+        $ AddChatter(vig4_sc7_3_ama_comment79)
         macS "And maybe, in time. You will find peace."
         vS "There is no peace left. You took it all away."
         macS "Maybe. But we can't know for certain."
+        $ AddChatter(vig4_sc7_3_ama_comment80)
         macS "Bury your family, Vega. And take care."
+        $ AddChatter(vig4_sc7_3_ama_comment81)
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
     "MAC rolls up to me and Ama."
     macS "We should go."
@@ -4286,35 +4423,43 @@ label vig4_sc7_3_coil():
     #play badass climax music
     "Everyone is still."
     "Ama makes the first move, raising her rifle in my direction."
-    "In an instant, I react."
+    $ AddChatter(vig4_sc7_3_coil_comment1)
     menu:
-        "In an instant, I react."
+        "Ama makes the first move, raising her rifle in my direction."
         "Rush her.":
             "I lunge forward and grab the rifle, aiming it to the side."
             "A round fires off, sailing into the ceiling above."
             "I reach for my pistol and pull it from the holster, but Ama quickly grabs me by the side and throws me to the ground."
+            $ AddChatter(vig4_sc7_3_coil_comment2)
             "My pistol skids across the floor as I roll to a stop and look up."
         "Draw pistol.":
             "I draw my pistol."
             "Before I can fire a shot though, a bullet from Ama strikes the pistol clean through, breaking the weapon."
+            $ AddChatter(vig4_sc7_3_coil_comment2)
             amaS "Ah ah ah, can't end things too quickly, Mozely." 
     "Ama lifts the rifle to aim at me again."
     "Coil reaches his hands forward. Devices like shield generators are strapped to his palms."
     "A burst of energy suddenly blasts from them, striking Ama's rifle and rending it to pieces."
+    $ AddChatter(vig4_sc7_3_coil_comment3)
     "She takes a moment to look at the destroyed gun, then tosses it to the side."
+    $ AddChatter(vig4_sc7_3_coil_comment4)
     amaS "Well aren't you just full of surprises?"
     cS "Don't assume that I've spent my entire life cooped up in a lab."
     "Ama straightens her back and cracks her knuckles."
+    $ AddChatter(vig4_sc7_3_coil_comment5)
     "Ama charges in my direction as Coil's blasters charge."
     "But it's a feint."
     "As the energy releases, Ama doubles back, heading toward Coil, while the energy blasts sail wide of her."
+    $ AddChatter(vig4_sc7_3_coil_comment6)
     "Before Coil can move, Ama has closed the distance and swings."
     "It's a haymaker, and Coil wasn't ready."
     hide coil with Dissolve(0.3)
     "The blow is slowed by his shield, but the collision still sends Coil to the ground, sliding to a wall."
+    $ AddChatter(vig4_sc7_3_coil_comment7)
     vS "Pops!"
     "Ama draws a knife from her boot."
     amaS "Now then, Mozely. Where were we?"
+    $ AddChatter(vig4_sc7_3_coil_comment8)
     menu:
         amaS "Now then, Mozely. Where were we?"
         "I was busy killing you.":
@@ -4323,21 +4468,28 @@ label vig4_sc7_3_coil():
             mS "I think you were about to surrender."
     amaS "Hah! Isn't that rich?"
     "Flicking the knife back and forth, Ama steps close to me and crouches into a fighting stance."
+    $ AddChatter(vig4_sc7_3_coil_comment9)
     macS "Moze, be careful!"
+    $ AddChatter(vig4_sc7_3_coil_comment10)
     amaS "All this chaos, this mess of your own making."
     amaS "Is this what you wanted, Mozely?"
     menu:
         amaS "Is this what you wanted, Mozely?"
         "I just wanted a family.":
             mS "I just wanted a family! That's all I ever wanted."
+            $ AddChatter(vig4_sc7_3_coil_comment11)
             amaS "Good. Now you're going to watch me take it from you."
+            $ AddChatter(vig4_sc7_3_coil_comment13)
         "I just want you to shut up.":
             mS "I just want you to shut up!"
+            $ AddChatter(vig4_sc7_3_coil_comment12)
             amaS "Gladly."
     "Ama lunges with the knife."
     "I block and retaliate."
     "Lightning blows as we trade strikes."
+    $ AddChatter(vig4_sc7_3_coil_comment14)
     "It's like how we trained together years ago on her ship."
+    $ AddChatter(vig4_sc7_3_coil_comment15)
     "I see her now as I did then."
     "Fierce. Powerful. Dominant."
     "Overconfident."
@@ -4345,47 +4497,58 @@ label vig4_sc7_3_coil():
         "Overconfident."
         "Bait her into an attack.":
             "Time for a trick."
-            "As she approaches  for another strike, I let my left foot slip just a tad."
+            "As she approaches for another strike, I let my left foot slip just a tad."
+            $ AddChatter(vig4_sc7_3_coil_comment16)
             "She sees weakness, and pounces for the kill."
             "But it's a feint. I shift my weight to the side and swing my knife up toward her chest."
         "Go for an old reliable.":
             "There's an old reliable move."
             "As she approaches for another strike, I shift my weight to the side. Just slightly."
+            $ AddChatter(vig4_sc7_3_coil_comment16)
             "The blade arcs throug the air, scratching my face."
             "But now there's an opening."
             "I swing my knife up toward her chest."
     "Ama's knee slams into my jaw before I realize what happened."
+    $ AddChatter(vig4_sc7_3_coil_comment17)
     "She baited me."
     "I go tumbling across the floor."
     macS "Captain!"
     "I'm stunned, flat on my back on the ground."
+    $ AddChatter(vig4_sc7_3_coil_comment18)
     "Ama steps up to me."
     amaS "What an ungrateful child!"
     amaS "After everything I did for you, all that I taught you."
     amaS "And you just throw it away."
     amaS "Why couldn't you just listen to me!?"    
     "Ama crouches just above me, tilting her head sideways."
+    $ AddChatter(vig4_sc7_3_coil_comment19)
     "Movement slowly starts to come back to my fingers."
+    $ AddChatter(vig4_sc7_3_coil_comment20)
     amaS "Everything would have been fine. Would have been {i}good{/i}!"
+    $ AddChatter(vig4_sc7_3_coil_comment21)
     "She exhales deeply."
     amaS "Remember, Mozely: you chose this."
     "She reaches her hand into the air, knife pointed straight at my chest."
     cS "No!"
     "There's a bright streak across my vision as an energy pulse collides with Ama's chest."
     hide ama with dissolve
+    $ AddChatter(vig4_sc7_3_coil_comment22)
     amaS "Maker--you're going to regret that old man."
     "I can't turn my head but I hear the sounds of battle to my right."
     "The charge of Coil's energy pulses, the sound of Ama's fists hitting flesh."
     vS "Pops!"
     macS "Moze! Get up! Get up!"
+    $ AddChatter(vig4_sc7_3_coil_comment23)
     "Finally, I push myself into a sitting position."
     show ama stream neutral at stream_center with dissolve
     show coil stream neutral at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
     "Coil slumps to the ground, his back leaning against the wall."
+    $ AddChatter(vig4_sc7_3_coil_comment24)
     hide coil with Dissolve(0.6)
     "Ama holds her side. One of her arms is almost limp."
+    $ AddChatter(vig4_sc7_3_coil_comment25)
     "I stagger to my feet."
     "Behind her, I see the ruin of the BC cruiser listing toward the ground of Polaris as the star shower pummels its hull."
     amaS "Mozely. Will you do what you have to do?"
@@ -4396,12 +4559,14 @@ label vig4_sc7_3_coil():
             $ kcEngagement += 1
             mS "No."
             mS "I want this."
+            $ AddChatter(vig4_sc7_3_coil_comment26)
             "Ama nods."
             amaS "Good."
         "You gave me no choice.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             mS "You didn't give me a choice."
+            $ AddChatter(vig4_sc7_3_coil_comment27)
             "Ama chuckles."
             amaS "Classic Mozely."
     amaS "Let's finish it."
@@ -4410,28 +4575,33 @@ label vig4_sc7_3_coil():
     "Ama swings her good arm at me."
     "But she's slow now."
     "I easily dodge it and slam my fist into her chest."
-    "She leans forward, then swings another fist at my head."
-    "I catch it on my forearm."
     "Slamming my knee into her groin, I grab her by the back and throw her across the floor."
     "She tumbles and slams into the side of the wall."
+    $ AddChatter(vig4_sc7_3_coil_comment28)
     "I cross the room and stand over Ama."
     "Gasping for air, she leans onto her back."
+    $ AddChatter(vig4_sc7_3_coil_comment29)
     mS "Get up."
     "Ama exhales, then turns onto her stomach and pushes herself to a standing position."
     amaS "Well, kid. Looks like our time's up."
     amaS "Will you take care of my ship?"
+    $ AddChatter(vig4_sc7_3_coil_comment30)
     menu:
         amaS "Will you take care of my ship?"
         "No.":
             mS "No. I want nothing to do with you."
+            $ AddChatter(vig4_sc7_3_coil_comment31)
             "Ama nods."
             amaS "Fair."
         "You mean my ship.":
             $ deadeyeApproval
             mS "You mean {i}my{/i} ship."
+            $ AddChatter(vig4_sc7_3_coil_comment32)
             "Ama nods."
             amaS "At least you learned something."
+            $ AddChatter(vig4_sc7_3_coil_comment33)
     "Ama reaches down and pulls a blaster from her boot."
+    $ AddChatter(vig4_sc7_3_coil_comment34)
     "But I don't blink."
     "I catch her wrist in my hands, pointing the blaster to the side."
     "She fires."
@@ -4439,25 +4609,39 @@ label vig4_sc7_3_coil():
     "I hold her wrist, and grip. Tight."
     "I can hear her bones cracking."
     "She drops to her knees."
+    $ AddChatter(vig4_sc7_3_coil_comment35)
     "I turn her wrist until the gun is pointed directly at her head."
+    $ AddChatter(vig4_sc7_3_coil_comment36)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_coil_comment37)
     "I place my finger over the trigger."
     "She looks me straight in the eyes."
     amaS "Be seeing you, Mozely."
     "I pull the trigger."
     "Ama's body slumps to the floor."
     "Her eyes are cold. Lifeless."
+    $ AddChatter(vig4_sc7_3_coil_comment38)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_coil_comment39)
+    pause 0.5
+    $ AddChatter(vig4_sc7_3_coil_comment40)
     "Dead."
+    ##* streamer reaction
     hide ama with Dissolve(2.0)
     show vega stream neutral at stream_center with dissolve
     vS "Pops!"
+    $ AddChatter(vig4_sc7_3_coil_comment41)
     "The energy shield dissipates. Vega rushes to Coil's side."
     vS "No. Don't go. Don't go. Don't leave me."
     show coil at stream_left with dissolve
     "Coil opens his eyes."
+    $ AddChatter(vig4_sc7_3_coil_comment42)
     cS "It is okay, Vega."
+    $ AddChatter(vig4_sc7_3_coil_comment43)
     "Coil grips the blade with his hands and pulls it out."
     "A small spurt of blood pools in his shirt."
     cS "The blade did not cut too deep."
+    $ AddChatter(vig4_sc7_3_coil_comment44)
     "He looks to me."
     cS "Thank you for taking care of the rest."
     menu:
@@ -4471,11 +4655,14 @@ label vig4_sc7_3_coil():
             cS "Hah. You know, I think I could have done better."
     "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
+    $ AddChatter(vig4_sc7_3_coil_comment45)
     "Coil glances to the side."
     show mac stream neutral at stream_right_mac with dissolve
     "MAC still hasn't crossed into the room yet."
     "Coil nods in his direction."
+    $ AddChatter(vig4_sc7_3_coil_comment46)
     cS "Go on. He needs you."
+    $ AddChatter(vig4_sc7_3_coil_comment47)
     hide vega with dissolve
     hide coil with dissolve
     show mac at stream_center_mac with move
@@ -4505,39 +4692,51 @@ label vig4_sc7_3_coil():
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
     "I hold him tight and drop my face against his body."
+    $ AddChatter(vig4_sc7_3_ama_comment48)
     mS "I missed you."
+    $ AddChatter(vig4_sc7_3_ama_comment49)
     macS "I missed you too, Moze."
+    $ AddChatter(vig4_sc7_3_ama_comment50)
     "We step back and I stand up."
     show coil at stream_right with dissolve
     show vega at stream_left with dissolve
     "Coil leans against Vega as the two approach."
     vS "So, Pops, how's Moze's case for joining the Dragonflies look now?"
+    $ AddChatter(vig4_sc7_3_ama_comment51)
     if vig4_defendPolaris == True:
         cS "I would say it looks all but certain."
         cS "Captain Moze, Polaris may be in ruins, but its people will endure. In no small part thanks to your actions today."
+        $ AddChatter(vig4_sc7_3_ama_comment52)
         cS "I am sorry for the trouble I caused you earlier. I did not realize the power of the bond you share with MAC."
+        $ AddChatter(vig4_sc7_3_ama_comment53)
         cS "We all owe our gratitude to you"
+        $ AddChatter(vig4_sc7_3_ama_comment54)
         cS "You and your crew have earned your spot."
         menu:
             cS "You and your crew have earned your spot."
             "Organization isn't my style.":
                 mS "I don't know. Working for organizations isn't really my style."
+                $ AddChatter(vig4_sc7_3_ama_comment55)
                 cS "Of course. We can find an arragenment that is amenable to your...\"distinct\" approach."
             "Thank you.":
                 mS "Thank you for the offer. After all this, my crew and I will need some sanctuary."
+                $ AddChatter(vig4_sc7_3_ama_comment56)
                 cS "You shall have it."
     elif vig4_defendPolaris == False and vig4_killDflies == False:
         cS "The chances are certainly much higher now."
         cS "Although your methods are...messy, Captain Moze, without your presence, Vega and I would likely be dead."
         cS "We can offer you and your crew sanctuary while you rest and recover."
+        $ AddChatter(vig4_sc7_3_ama_comment56)
         cS "You and your crew have earned that, at least."
     else:
         cS "The carnage from this battle won't go over well with the higher-ups."
         cS "But considering we'd be dead without her, I'd say we'll have to take her on board."
         cS "At least for the time being while we all catch our breath."
+        $ AddChatter(vig4_sc7_3_ama_comment56)
     mS "And MAC?"
     "We all turn to look at him."
     macS "I do not wish to leave my family again."
+    $ AddChatter(vig4_sc7_3_ama_comment57)
     cS "You heard him."
     vS "Come on, there should be an old mercenary's empty ship somewhere in the ridge that we can commandeer."
     if macHope > macPessimism:
@@ -4545,13 +4744,17 @@ label vig4_sc7_3_coil():
         mS "What about her?"
         macS "We shouldn't leave her here."
         macS "She was a Snakehawk. She deserves a proper burial."
+        $ AddChatter(vig4_sc7_3_ama_comment58)
         menu:
             macS "She was a Snakehawk. She deserves a proper burial."
             "You're right, MAC.":
                 "I look back at Ama's body."
+                $ AddChatter(vig4_sc7_3_ama_comment59)
                 "A chill runs down my spine."
+                $ AddChatter(vig4_sc7_3_ama_comment69)
                 "But she shouldn't be left here. It's not right."
                 mS "You're right, MAC."
+                $ AddChatter(vig4_sc7_3_ama_comment61)
                 "I go over and lift Ama's body in my arms."
                 "She's heavy. But I'm accustomed to the weight."
                 "It's as if I've been carrying it for years."
@@ -4567,6 +4770,7 @@ label vig4_epilogue_coil():
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream    
     "The perpetual purr of space travel thrums through the ship."
+    $ AddChatter(vig4_sc7_epilogue_comment1)
     "I let my head fall back against the cushy seats behind me."
     "Finally. At long last. My muscles relax."
     pS "And to think, Ama was rolling around the galaxy in such luxury!"
@@ -4791,6 +4995,7 @@ label vig4_epilogue_ama():
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream
     "The perpetual purr of space travel thrums through the ship."
+    $ AddChatter(vig4_sc7_epilogue_comment1)
     "I let my head fall back against the cushy seats behind me."
     "Finally. At long last. My muscles relax."
     pS "And to think, Ama was rolling around the galaxy in such luxury!"
