@@ -428,6 +428,20 @@ label vig4_sc6_ripTank():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
+label vig4_sc6_pdGoodPerson():
+    $ macroChoice = True
+    $ vig4_sc6_attack_3_ama_comment19.click = False
+    $ narrator = reg_narrator
+    #menu:
+    #    "Fill the menu with something."
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
 label vig4_sc6_reggieReaction():
     $ macroChoice = True
     $ vig4_sc6_defend_5_comment19.click = False
@@ -441,6 +455,8 @@ label vig4_sc6_reggieReaction():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     return
+
+
 
 ### Streamer Reacts
 

@@ -272,6 +272,7 @@ label vig4_sc6_attack_1_assault_ama():
             "Our blasters echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
             $ AddChatter(vig4_sc6_attack_1_assault_amma_comment30)
+    ##* streamer reaction to their decision about the DFlies
     "Ama claps me on the back."
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
@@ -315,9 +316,9 @@ label vig4_sc6_attack_1_split_ama():
     play audio "lazer.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
     if vig4_nickName_bool == True:
-        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment4)
+        $ AddChatter(vig4_sc6_attack_1_split_amma_comment4)
     else:
-        $ AddChatter(vig4_sc6_attack_1_assault_amma_comment5)
+        $ AddChatter(vig4_sc6_attack_1_split_amma_comment5)
     play audio "lazer.wav"
     "Ama follows that with a blast from her rifle."
     $ AddChatter(vig4_sc6_attack_1_split_amma_comment6)
@@ -373,14 +374,17 @@ label vig4_sc6_attack_2_ama():
     show jennica stream neutral at stream_left with dissolve
     "As I climb in through the tank's hatch, Jennica is already sitting in a chair near the front."
     "She's examining a string of buttons and sticks in front of her."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment1)
     mS "Any idea how to drive this thing, Jenn?"
     pS "Sure, Cap, doesn't look too complex. We'll just have to work as a team."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment2)
     pS "I'll take maneuvering. Teresa, take care of our shields and engine power."
     show teresa stream neutral at stream_right with dissolve
     enS "Makes sense."
     pS "Ama, take control of the machine guns."
     show ama stream neutral at stream_left5 with dissolve
     amaS "Music to my ears."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment3)
     pS "Cap, you stay in the center, be our spotter and take the main cannon."
     mS "Roger, let's roll out."
     pS "Aye aye."
@@ -389,15 +393,19 @@ label vig4_sc6_attack_2_ama():
     enS "Someone is hailing us."
     pS "On a BigCorp frequency?"
     enS "No. It's not BigCorp, but it has access to their comms?"
+    $ AddChatter(vig4_sc6_attack_2_ama_comment4)
     amaS "It's the robot! Answer it!"
     "Teresa inputs something into a screen on her side."
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac stream neutral at stream_right5mac with dissolve
     "It's MAC."
+    ##* streamer reaction to MAC
+    $ AddChatter(vig4_sc6_attack_2_ama_comment5)
     mS "MAC!"
     pS "Hey, little guy!"
     enS "Good to see you, MAC!"
     macS "Captain? Moze? I expected it was you. Stealing a tank is very much your style."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment6)
     menu:
         macS "Captain? Moze? I expected it was you. Stealing a tank is very much your style."
         "We came back for you!":
@@ -407,10 +415,12 @@ label vig4_sc6_attack_2_ama():
     mS "Are you okay? Are you hurt?"
     if rudeMACGoodbye == True:
         macS "Why do you care? Wasn't this just your mission?"
+        $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
         enS "That's not fair, MAC."
         pS "We're a family."
         macS "It's what {i}she{/i} said."
+        $ AddChatter(vig4_sc6_attack_2_ama_comment8)
         menu:
             macS "It's what {i}she{/i} said."
             "I'm sorry, MAC.":
@@ -423,6 +433,7 @@ label vig4_sc6_attack_2_ama():
                 mS "I regretted saying it the second the words left my mouth."
                 mS "We're here for you now, whatever you need. However we can help."
                 mS "Just tell us where you are, and we'll be there for you. Always."
+                $ AddChatter(vig4_sc6_attack_2_ama_comment9)
                 "MAC pauses for a moment. As if pondering what I've said."
             "The job's not finished.":
                 $ kcEngagement -= 1
@@ -431,12 +442,14 @@ label vig4_sc6_attack_2_ama():
                 mS "But the job's not done."
                 mS "BC is here for you, and we're not going to let them take you away."
                 mS "I finish what I start. And making sure you're safe, isn't finished yet."
+                $ AddChatter(vig4_sc6_attack_2_ama_comment10)
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
     macS "I am okay."
     macS "But Coil has brought me into the plaza tower and away from the fighting."
     if macViolence >= macPeace:
         macS "And I was doing such a good job with the turret!"
+        $ AddChatter(vig4_sc6_attack_2_ama_comment11)
         menu:
             macS "And I was doing such a good job with the turret!"
             "I know, I saw!":
@@ -448,6 +461,7 @@ label vig4_sc6_attack_2_ama():
                 mS "But I'm proud of you for fighting so hard."
     else:
         macS "And I was helping so many people with the first aid!"
+        $ AddChatter(vig4_sc6_attack_2_ama_comment12)
         menu:
             macS "And I was helping so many people with the first aid!"
             "I know, I saw!":
@@ -460,26 +474,34 @@ label vig4_sc6_attack_2_ama():
     macS "Thank you, Captain!"
     mS "MAC, I'm--"
     cS "That's enough, MAC."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment13)
     play audio "cutCall.wav"
     hide mac with dissolve
     "The signal is cut short."
     enS "That was Coil's voice."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment14)
     pS "No doubt. So he has MAC at the top of the tower."
     amaS "The barricades they set up around the plaza will be a bit of trouble, but we can handle them."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment15)
     mS "We won't have to on our own."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment16)
     pS "Cap?"
     mS "That enforcer said BC was preparing a second assault. This first one must have just been to soften up Polaris's defenses."
     mS "When BC launches their next attack, we can use the chaos to break through and get into the tower."
     amaS "Oh, I {i}like{/i} this plan, Mozely."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment17)
     enS "Efficient and clever."
     pS "A lot of people are going to die. But I guess that's unavoidable at this point."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment18)
     mS "As long as we get MAC. That's what matters."
     "As I finish speaking, a siren rings out from Polaris's plaza."
     "I peer through the tank's scope at the Cruiser hovering in the night sky, like a hammer poised above an anvil."
     "A line of dropships careen through the air to Polaris."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment19)
     mS "The second attack is starting."
     amaS "Just in time."
     mS "Agreed. Jenn, take us to the plaza."
+    $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     "The tank accelerates and we glide smoothly over the ground. On our way to battle."
     hide ama with dissolve
     hide jennica with dissolve
@@ -492,16 +514,24 @@ label vig4_sc6_attack_3_ama():
     "Even in the tank, we can feel the heat from outside."
     "The sounds of battle have struck up again. And they get louder with each second we advance."
     mS "Everyone, get ready."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment1)
     "We turn onto the main street."
     "Instant chaos."
     "A BC dropship screeches by overhead, turrets strafing positions defended by Dragonflies."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment2)
     "The Dragonflies have consolidated their defenses behind an enormous barricade blocking the main street into the plaza."
     "A swarm of BC enforcers march down the street."
     "Blaster fire streaks in both directions."
     "As we emerge onto the street, the BC army suddenly cheers."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment3)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_3_ama_comment4)
     pS "They think we're on their side."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment5)
     enS "We are in their tech."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment6)
     amaS "Use it to our advantage, right, Mozely?"
+    $ AddChatter(vig4_sc6_attack_3_ama_comment7)
     menu:
         amaS "Use it to our advantage, right, Mozely?"
         "Pretend to be with BigCorp, attack the Dragonflies.":
@@ -509,182 +539,242 @@ label vig4_sc6_attack_3_ama():
             $ deadeyeApproval += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
+            ##* streamer reaction - justify choice
             mS "Ama's right. Keep our weapons aimed at the Dragonfly position."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment9)
+            pause 0.5
+            $ AddChatter(vig4_sc6_attack_3_ama_comment8)
             mS "Jennica, get us there as quick as you can without being suspcious."
             pS "Roger, Cap."
             "The tank advances on the barricade."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment10)
             "Shots from the Dragonflies start to rattle against our hull."
             enS "Shields are at 95\%."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             amaS "Oh I've been waiting for this!"
             "Ama grabs the machine gun controls and whips it around, aiming for the squads positioned on nearby rooftops."
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, engulfing sending BC enforcers flying and shaking our hull."
             enS "Tough hit but shields are still at 85\% and holding."
             "I grip the cannon controls and point at a squad of Dragonflies huddled behind nearby cover."
             "The whole tank thrums with energy as the cannon charges."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment13)
             "A beam of blue light bursts from the cannon, striking through the rubble."
             "A pillar of flame erupts into the air where the cannon impacts the ground."
             "There's no evidence of the Dragonflies who were hiding behind cover."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment14)
             mS "Jenn, keep us moving."
-            "We slowly advance toward the head of the BC army."
+            "We slowly advance at the head of the BC army."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment15)
             "Ama hasn't let go of the machine gun trigger. Almost all of the Dragonflies duck behind cover."
             "A group tries to take shots at us from a rooftop."
             "I aim the cannon at the base of the building."
             "The thrum of energy."
             "The blue light."
             "Another pillar of flame and the memory of human presence."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment16)
             "We keep advancing."
             enS "Contact on the rooftops!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment17)
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment18)
             "It's a group of Dragonflies armed with rocket launchers a couple of buildings away from us."
             "They're reloading the launchers and preparing another volley."
             mS "Teresa, direct shields against those launchers. Ama--"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "I know, I see them too!"
             "Ama aims the machine gun at the direction of the squad and begins firing, but it's too late."
             show vig1_town_stream with hpunch
             "Another rocket streaks through the air and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
-            enS "Bad hits. We're at 40\% shields, but holding. We just don't want to take two more of those."
+            enS "Bad hits. We're at 45\% shields, but holding. We just don't want to take two more of those."
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment20)
             "Jenn's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
             enS "Are you sure that's--"
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
             "The barricade shatters as the cannon's blast collides with it."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment23)
         "Attack BigCorp, rush the barricade.":
             $ deadeyeApproval -= 1
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            ##* streamer reaction - justify choice
             mS "No. BigCorp is still the enemy."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment24)
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment10)
             mS "Resa, keep those shields up."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             enS "Roger, we're at 95\% currently!"
             mS "Ama, open fire on any BC goons you see."
             amaS "I don't like losing the element of surprise, but I do like killing some BC goons."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             "Ama grabs the machine gun controls and whips it around, aiming for the enforcers at the frontline."
             "As the tank accelerates forward, confusion spreads throughout the BC army, throwing them into disarray."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment25)
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
             show vig1_town_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
-            enS "Shields are at 80\%. We're taking a lot of hits."
-            "A dropship begins to aim down toward us."
+            enS "Shields are at 70\%. We're taking a lot of hits."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment26)
+            "A dropship angles toward us."
             mS "We can dish them out too."
             "I grip the controls for the main cannon."
             "The whole tank thrums with energy as it charges."
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment27)
+            pause 0.5
+            $ AddChatter(vig4_sc6_attack_3_ama_comment29)
             mS "Jenn, how are we doing?"
             pS "We're close, just a bit further!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment28)
             enS "Captain, we're starting to take less fire from the Dragonflies."
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
             "It's a group of BC enforcers armed with rocket launchers." 
+            $ AddChatter(vig4_sc6_attack_3_ama_comment30)
             "They're on a rooftop near the back of the attack force."
             "They're reloading the launchers and preparing for another volley."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment31)
             "I whip the main cannon controls around, aiming them at the base of the building."
             "The cannon charges."
             "The rocket streaks through the air."
             "The beam of blue light strikes the building as a pillar of flame erupts into the night."
             show vig1_town_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
-            enS "Shields are at 60\%."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment32)
+            enS "Shields are at 30\%! Another hit and we're toast!"
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
             "She's right, we're closing in."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment33)
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
             enS "Are you sure that's--"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
             "The barricade shatters as the cannon's blast collides with it."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment23)
         "Attack both Dragonflies and BigCorp.":
             $ vig4_killDflies = True
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
-            mS "Screw it." 
+            ##* streamer reaction - justify choice
+            mS "Screw it."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment34)
             mS "Jenn, get us to that barricade as fast as you can."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment35)
             pS "Aye aye."
-            mS "Resa, keep our shields up."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment10)
+            mS "Resa, keep those shields up."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             enS "Roger, we're at 95\% currently!"
             mS "Ama, fire at will."
             amaS "Oh I've been waiting for this!"    
+            $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             "Ama grabs the machine gun controls and whips it around."
             "The bolts of machine gun rounds tear into soliders: BC enforcers and Dragonflies alike."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment36)
             "Ama fires in quick, succinct burst. Striking Dragonflies on the rooftops, then BC enforcers on the ground."
             "It's a methodical madness. One I'm familiar with."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment37)
             "Confusion spreads through both sides as blaster fire pings off the tank's shell."
-            enS "Shields are at 90\%, Captain."
+            enS "Shields are at 85\%, Captain."
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
             show vig1_town_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment38)
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             mS "Jenn, how are we doing?"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment39)
             pS "We're close, just a bit further!"
             show vig1_town_stream with hpunch
             "An explosion suddenly detonates against our side."
             mS "Teresa, report!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment30)
             "I whip the monitor around, looking for the assailants."
             enS "Shields are down to 60\%. We're taking fire from both sides and losing energy rapidlly!"
             "I locate the smoke streaking through the air."
             "Dragonflies on a nearby building are loading rocket launchers."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment40)
             "I drop the cannon to aim at the base of the building, charging up another blast."
             "But I'm too late."
             "A bright flashing rocket streaks toward us just as I fire the cannon."
             show vig1_town_stream with hpunch
             "The rocket impacts on our side, but at the same time, the tank's blast detonates on the building."
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment41)
             amaS "They're throwing grenades!"
             "Ama lays on the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
             show vig1_town_stream with hpunch
             "They detonate, jostling the vehicle."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment42)
             enS "Shields are down to 30\%! We can't take much more of this!"
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             "She's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
             enS "Are you sure that's--"
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
+            $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
             "Fire erupts from the cannon at the same time as we rush forward."
             "The barricade shatters as the cannon's blast collides with it."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment23)
     "The tank isn't supposed to go this fast. And it's not supposed to turn this hard."
     "But Jennica wrangles it under control as we careen to a stop at the base of the tower."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment43)
     "I open the top hatch and scramble out."
     "The barricade at the entrance to the plaza begins to crumble as the Dragonflies disperse."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment44)
     "BC closes in on the plaza."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment45)
     "More dropships stream down from the cruiser."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment46)
     "We don't have much time."
     "War has come."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment48)
     menu:
         "War has come."
         "This is it.":
@@ -692,15 +782,22 @@ label vig4_sc6_attack_3_ama():
         "We're not making it out of this.":
             mS "I don't know if I see a way out of this."
     mS "This is where our score gets settled."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment49)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_3_ama_comment50)
+    pause 0.5
+    $ AddChatter(vig4_sc6_attack_3_ama_comment51)
     show ama stream neutral at stream_right with dissolve
     amaS "Then let's make sure it's settled in our favor."
     "Ama hops out of the tank, standing opposite me."
     "Suddenly, I feel something. Standing here. At war. With her."
     "It's comfort. Like we've been here before."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment52)
     menu:
         "It's comfort. Like we've been here before."
         "Reject the feeling.":
             "No. This is different. And I refuse to let her into my life again."
+            $ AddChatter(vig4_sc6_attack_3_ama_comment53)
         "Embrace the feeling.":
             $ deadeyeApproval += 1
             mS "Ama."
@@ -708,6 +805,7 @@ label vig4_sc6_attack_3_ama():
             mS "It's good to have you here."
             "She winks."
             amaS "Good to be here, kid."
+    $ AddChatter(vig4_sc6_attack_3_ama_comment54)
     "We both turn to look at the burning horizon as Polaris crumbles."
     if vig2_outlawEpilogue == True:
         $ pdEngagement += 3
@@ -715,22 +813,30 @@ label vig4_sc6_attack_3_ama():
         $ csEngagement += 1
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice...but from where?"
+        $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't--"
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
+        $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
         "Three more fighers fly by immediately after. Then another. Then another."
+        $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"
         show reginald stream bigmad at stream_center with dissolve
+        $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
         show jennica stream shock at stream_left with dissolve
         pS "Reginald!?"
+        $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
         goon "Said he had a debt that needed paying off."
+        $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, delaying their advance."
+        $ AddChatter(vig4_sc6_defend_5_comment21)
         goon "So take care of whatever you got to do on the ground. We'll handle the air shit."
+        $ AddChatter(vig4_sc6_defend_5_comment22)
         menu:
             goon "So take care of whatever you got to do on the ground. We'll handle the air shit."
             "Thank you.":
@@ -738,6 +844,7 @@ label vig4_sc6_attack_3_ama():
                 goon "Now don't go getting soft on me."
                 goon "You just do your job and I'll do mine."
                 goon "Even though it's a massive pain."
+                $ AddChatter(vig4_sc6_defend_5_comment23)
                 mS "Copy that."
             "Affirmative.":
                 mS "Copy that."
@@ -752,8 +859,11 @@ label vig4_sc6_attack_3_ama():
     show teresa stream neutral at stream_right with dissolve
     enS "Negative, Captain."
     mS "What!?"
+    $ AddChatter(vig4_sc6_defend_5_comment24)
     enS "If BC takes the plaza it won't matter what you do up there, we'll all be toast."
+    $ AddChatter(vig4_sc6_defend_5_comment25)
     pS "You go get the kid. We'll keep a path clear down here."
+    $ AddChatter(vig4_sc6_defend_5_comment26)
     menu:
         pS "You go get the kid. We'll keep a path clear down here."
         "I'm not leaving you.":
@@ -766,12 +876,14 @@ label vig4_sc6_attack_3_ama():
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
+                $ AddChatter(vig4_sc6_defend_5_comment28)
                 pS "Go do what you do best, Moze."
             elif teresaRomance == True:
                 $ kcEngagement += 2
                 "Teresa suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
+                $ AddChatter(vig4_sc6_defend_5_comment27)
                 show teresa stream happy
                 enS "Go do what you do best, Moze."                
             else:
@@ -785,11 +897,13 @@ label vig4_sc6_attack_3_ama():
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
+                $ AddChatter(vig4_sc6_defend_5_comment28)
                 pS "Go do what you do best, Moze."
             elif teresaRomance == True:
                 "Teresa suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
+                $ AddChatter(vig4_sc6_defend_5_comment27)
                 show teresa stream happy
                 enS "Go do what you do best, Moze."                
             else:
@@ -813,74 +927,100 @@ label vig4_sc7_1_attack_ama():
     hide vig1_town_stream with dissolve
     "As soon as the doors close behind us, the sounds of battle become muffled."
     "The tower is utterly silent."
+    $ AddChatter(vig4_sc7_1_defend_comment1)
     "A distant voice calls from above."
     cS "Up here. Come along."
+    $ AddChatter(vig4_sc7_1_defend_comment2)
     "Ama and I follow a series of stairs that winds up to the top of the tower."
     "Each step feels like an eternity."
     "A chance to think about the steps that brought me here."
     "Allistar."
+    $ AddChatter(vig4_sc7_1_defend_comment3)
     "Matticus."
+    if vig2_marshalEpilogue == True:
+        $ AddChatter(vig4_sc7_1_defend_comment5)
+    else:
+        $ AddChatter(vig4_sc7_1_defend_comment4)
     "Rec."
-    "Ama."
+    $ AddChatter(vig4_sc7_1_defend_comment6)
     "Jennica."
     "Teresa."
     "MAC."
     "Every person. Every choice."
     "Here I am."
+    $ AddChatter(vig4_sc7_1_defend_comment7)
     "The stairs flatten out."
     "Ama and I step across the threshold into a wide room."
+    $ AddChatter(vig4_sc7_1_defend_comment9)
     show vig2_datacenter_stream onlayer background with dissolve
     show coil stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
+    $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
     if vig4_killDflies == True:
         cS "You had to murder some good people to do it. But you arrived."
+        $ AddChatter(vig4_sc7_1_attack_ama_comment1)
     else:
         pass
     "Coil turns to face us. His face looks haggard, his eyes bloodshot."
+    $ AddChatter(vig4_sc7_1_defend_comment11)
+    ##* streamer reaction to Coil's situation and what they're expecting
     menu:
         "Coil turns to face us. His face looks haggard, his eyes bloodshot."
         "Where is MAC?":
             mS "Where is MAC?"
+            $ AddChatter(vig4_sc7_1_attack_ama_comment2)
             cS "Always so direct."
             cS "MAC is no longer any of your concern, Moze."
             cS "You delivered him, he is our responsibility."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             cS "And he is safe."
             if macViolence > macPeace:
                 cS "You know he insisted on operating a turret when BigCorp arrived."
                 cS "Said he would \"make those BC scum pay.\""
+                $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 cS "I meant the bloodlust."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "That too."
             else:
                 cS "You know he insisted on providing first aid to the people who were first injured by BigCorp's assault."
                 cS "Said he had to \"take care of the people around him.\""
+                $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 cS "I meant the altruistic urge to help other people."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "Guess that has been a phase recently."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment9)
         "Got a plan for getting out of this?":
             mS "So, do you have a plan for getting out of this."
             cS "I do."
             cS "The top of this tower can be converted into a makeshift rocket."
             cS "We will be able to finish the mission, where you failed."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment7)
             mS "And you're okay with all of Polaris dying while you escape?"
             cS "It breaks my heart."
             cS "But we have done what we could. What we were supposed to do."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment8)
             cS "MAC is no longer any of your concern, Moze."
             cS "You delivered him, he is our responsibility."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             if macViolence > macPeace:
                 cS "You know he insisted on operating a turret when BigCorp arrived."
                 cS "Said he would \"make those BC scum pay.\""
+                $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
@@ -892,14 +1032,18 @@ label vig4_sc7_1_attack_ama():
             else:
                 cS "You know he insisted on providing first aid to the people who were first injured by BigCorp's assault."
                 cS "Said he had to \"take care of the people around him.\""
+                $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 cS "I meant the altruistic urge to help other people."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "Guess that has been a phase recently."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment9)
     "Coil steps away from the devices and directly in front of me and Ama."
     cS "Tell me truthfully, Moze. What was your plan in coming here?"
     menu:
@@ -908,20 +1052,30 @@ label vig4_sc7_1_attack_ama():
             $ kcEngagement += 1
             mS "I came for MAC."
             mS "I'm not leaving without him."
+            $ AddChatter(vig4_sc7_1_defend_comment14)
             "Coil sighs."
             cS "I assumed that was the case."
             cS "I'm disappointed. After everything that happened, you couldn't just walk away."
+            $ AddChatter(vig4_sc7_1_defend_comment15)
             cS "MAC is gone."
             amaS "Bullshit."
             amaS "If that were true you wouldn't still be here."
+            cS "How perceptive. And yet you still have no idea what you're doing."
+            $ AddChatter(vig4_sc7_1_defend_comment16)
+            cS "Flailing around in the darkness with no purpose."
+            $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
             mS "I came to help, to fight off BigCorp."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment10)
             "Coil tilts his head, as if inspecting me."
             cS "Help?"
+            $ AddChatter(vig4_sc7_1_attack_ama_comment11)
             cS "I think we've had enough of your \"help.\""
             cS "You had to come back and visit more destruction upon us."
+            $ AddChatter(vig4_sc7_1_attack_ama_comment12)
             if vig4_killDflies == True:
                 cS "You killed my men because you wanted to, didn't you?"
+                $ AddChatter(vig4_sc7_1_attack_ama_comment13)
                 cS "You never even thought about helping us."
             else:
                 cS "And is this why you've brought this hunter?"
@@ -929,10 +1083,13 @@ label vig4_sc7_1_attack_ama():
                 cS "This \"Deadeye.\""
                 amaS "Good to know the name means something all the way out here."
                 cS "It means a half-life. A ghost who has no place in this galaxy anymore."
+                $ AddChatter(vig4_sc7_1_defend_comment16)
                 amaS "I'll show you what this ghost is capable of."
+                $ AddChatter(vig4_sc7_1_defend_comment17)
                 cS "I'm sure you will."
             cS "Is this what your help means, Moze?"
     "Ama suddenly draws her rifle and aims at Coil."
+    $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
         "Ama suddenly draws her rifle and aims at Coil."
         "Ama, no!":
@@ -946,8 +1103,10 @@ label vig4_sc7_1_attack_ama():
             "Ama fires."
             play audio "lazer.wav"
             "The bolt diffuses harmlessly into his shield."
+    $ AddChatter(vig4_sc7_1_defend_comment19)
     "Eyes wide, Ama fires again. And again."
-    "The bolts continue to be absored."
+    "Every shot is absorbed by the shield."
+    $ AddChatter(vig4_sc7_1_defend_comment20)
     jump vig4_sc7_2
 
 
