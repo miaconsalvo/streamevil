@@ -811,6 +811,7 @@ label vig4_sc6_attack_3_ama():
         $ pdEngagement += 3
         $ kcEngagement += 2
         $ csEngagement += 1
+        $ vig4_reggieReturn = True
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)

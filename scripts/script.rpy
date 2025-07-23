@@ -195,6 +195,8 @@ default jennicaDate = False
 default teresaDate = False
 default vegaDate = False
 default vig4_amaCrew = False
+default vig4_MACKill = False
+default vig4_reggieReturn = False
 
 default vig4_nickName_bool = False
 default vig4_nickName = "Oak"

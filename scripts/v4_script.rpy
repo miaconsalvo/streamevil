@@ -4464,6 +4464,7 @@ label vig4_sc7_3_ama():
         $ pdEngagement += 2
         $ kcEngagement += 1
         $ csEngagement -= 2
+        $ vig4_MACKill = True
         "MAC lifts his arm and fires a bolt of energy."
         "It lands square between Vega's eyes."
         "She slumps to the ground, her body falling on top of Coil's."
@@ -4848,19 +4849,26 @@ label vig4_sc7_3_coil():
 label vig4_epilogue_coil():
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream    
-    "The perpetual purr of space travel thrums through the ship."
     $ AddChatter(vig4_sc7_epilogue_comment1)
+    "The perpetual purr of space travel thrums through the ship."
+    $ AddChatter(vig4_sc7_epilogue_comment2)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment3)
     "I let my head fall back against the cushy seats behind me."
+    $ AddChatter(vig4_sc7_epilogue_comment4)
     "Finally. At long last. My muscles relax."
     pS "And to think, Ama was rolling around the galaxy in such luxury!"
     enS "I know, I always assumed her ship would be a bit more spartan."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
+    $ AddChatter(vig4_sc7_epilogue_comment5)
     "Jennica and Teresa enter the ship's bridge."
     "They both have fresh scars, bandages, and stitches from the battle."
+    $ AddChatter(vig4_sc7_epilogue_comment6)
     pS "Hey there, Cap!"
     enS "Salutations, Captain!"
     "They make a mock salute pose."
+    $ AddChatter(vig4_sc7_epilogue_comment7)
     menu:
         "They make a mock salute pose."
         "At ease.":
@@ -4871,6 +4879,7 @@ label vig4_epilogue_coil():
             "Just stare at them for almost a minute."
             pS "Do you think she'll ever let us go?"
             enS "I don't know, but I'm starting to think this joke wasn't worth it."
+            $ AddChatter(vig4_sc7_epilogue_comment8)
             "A short chuckle escapes from me."
             mS "At ease crew."
             "The pair relax."
@@ -4879,11 +4888,13 @@ label vig4_epilogue_coil():
         $ csEngagement += 1
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
+        $ AddChatter(vig4_sc7_epilogue_comment9)
         pS "How are you feeling, Cap?"
     elif teresaRomance == True:
         $ kcEngagement += 1
         "Teresa sits down next to me and folds her legs over my lap."
         "I take her hand in mine."
+        $ AddChatter(vig4_sc7_epilogue_comment10)
         enS "How are you feeling, Captain?"
     else:
         "They both relax into the cushions on either side of me."
@@ -4894,33 +4905,43 @@ label vig4_epilogue_coil():
         "Exhausted.":
             mS "I'm exhausted."
             mS "I think I could sleep for a month straight."
+            $ AddChatter(vig4_sc7_epilogue_comment11)
             pS "I heard that."
             enS "I think I could go for a year in all honesty."
         "Relaxed.":
             mS "You know, I think I feel relaxed for the first time since..."
             mS "I can't remember."
+            $ AddChatter(vig4_sc7_epilogue_comment12)
             pS "Good."
+            $ AddChatter(vig4_sc7_epilogue_comment13)
             enS "You've earned it."
         "Sad.":
             mS "Honestly, I'm sad."
             enS "About Ama?"
             mS "Yeah."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment1)
             mS "I wish it didn't have to go that way."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment2)
             pS "It's a real shame, Cap."
             pS "But Ama made her choice a looong time ago."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment3)
             enS "I won't tell you not to feel sad, but a lot of people are alive now because of you."
             enS "Just, don't forget that too."
             mS "Thanks you two. I mean it."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment4)
             enS "Anytime."
             pS "We've got your back."
     pS "I will say, despite the luxury, still doesn't hold a candle to the Oakley."
     enS "No way."
     macS "I am in agreement."
+    $ AddChatter(vig4_sc7_epilogue_comment14)
     show mac stream neutral at stream_center_mac with dissolve
     macS "This ship is significantly less well stocked in terms of supplies."
+    $ AddChatter(vig4_sc7_epilogue_comment15)
     macS "And there is a distinct lack of escape pods."
     enS "Considering our previous adventures, maybe that's a good thing."
     pS "Yeah, and at least the communications array is internal. Way less likely to get screwed up."
+    $ AddChatter(vig4_sc7_epilogue_comment16)
     "MAC rolls up next to us."
     menu:
         "MAC rolls up next to us."
@@ -4929,30 +4950,37 @@ label vig4_epilogue_coil():
             mS "Come on, MAC, join the pile."
             macS "Are you sure, Captain?"
             macS "Will my treads not stain the couch?"
+            $ AddChatter(vig4_sc7_epilogue_comment17)
             pS "C'mon, kid, it's not even our couch!"
             enS "Yeah, join the family!"
             macS "Okay!"
             "Teresa, Jennica, and I bend down to lift MAC up."
             "We all roll back onto the couch in a pile, with MAC in the center."
+            $ AddChatter(vig4_sc7_epilogue_comment18)
             show mac stream happy
             macS "Wheeee!"
+            $ AddChatter(vig4_sc7_epilogue_comment19)
             macS "Being on the couch is fun."
             mS "It really is."
+            $ AddChatter(vig4_sc7_epilogue_comment20)
             show mac stream neutral
             "We stay in the pile for several minutes until an idea strikes me."
             mS "Actually, give me one second."
-            "I slide out from the cuddle puddle and open a nearby closet."
+            "I slide out and open a nearby closet."
         "Rub his head.":
             $ kcEngagement += 1
             mS "Come here, MAC."
+            $ AddChatter(vig4_sc7_epilogue_comment19)
             "I put my hand on his head and feel the vibrations thrumming through his body."
             "I feel his attention on me. It's like we're making eye contact."
             mS "You did good, MAC."
             mS "Really, really good."
             mS "I'm proud of you."
+            $ AddChatter(vig4_sc7_epilogue_comment21)
             macS "Aww, Captain. Thank you."
             pS "Yeah, kid, you kept your cool really well."
             enS "I'm impressed."
+            $ AddChatter(vig4_sc7_epilogue_comment20)
             mS "Actually, that gives me an idea."
             "I stand up from the couch and open a nearby closet."
     macS "What are you looking for, Captain."
@@ -4960,8 +4988,10 @@ label vig4_epilogue_coil():
     "I pull down a silver bucket, set it down on the floor, and pop open the top."
     "It's red paint."
     mS "Figure we can commemorate the successful mission with MAC's first tattoo."
+    $ AddChatter(vig4_sc7_epilogue_comment22)
     macS "Really!?"
     mS "Sure. Turn around there, let me find a good spot on you."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment5)
     pS "Oh no, come on Teresa, she's gonna need some help."
     enS "I'll say. Remember when I asked her to do a tattoo for me."
     pS "The sketches were so atrocious you completely backed out hahaha."
@@ -4974,10 +5004,13 @@ label vig4_epilogue_coil():
         "A Snakehawk.":
             $ pdEngagement += 2
             mS "I've got the perfect thing."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment9)
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
             pS "Oh no, not like that. You have to make the curve wider."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment10)
             "I put the brush down."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment11)
             mS "There, all done."
             mS "MAC, you're now the proud owner of a \"SnakeHawk\" tattoo!"
             macS "SnakeHawk!? Really!?"
@@ -4985,34 +5018,49 @@ label vig4_epilogue_coil():
             $ csEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment6)
             enS "I see what you're going for."
             pS "Come on, Cap, you don't want the lines to be perfectly straight."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment7)
             "I put the brush down."
             mS "There, all done."
+            $ AddChatter(vig4_sc7_epilogue_coil_comment8)
             mS "MAC, you're now the proud owner of a \"Dragonfly\" tattoo!"
             macS "Dragonfly!? I hope they're as friendly as you all!"
         "The Oakley.":
             $ kcEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
+            $ AddChatter(vig4_sc7_epilogue_comment23)
             enS "I see what you're going for."
             pS "It's abstract but good, Cap. You're really capturing her essence."
+            $ AddChatter(vig4_sc7_epilogue_comment24)
             "I put the brush down."
             mS "There, all done."
+            $ AddChatter(vig4_sc7_epilogue_comment25)
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
             macS "Oakley!? That's amazing!"
     "Without hesitation, MAC swerves around and wraps his arms around me."
     macS "Thank you, Captain."
     macS "I love you."
+    $ AddChatter(vig4_sc7_epilogue_comment26)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment27)
+    $ AddChatter(vig4_sc7_epilogue_comment28)
+    ##* streamer reaction
     pS "Oh."
     enS "Did that just happen?"
     "I lean into the hug from MAC."
+    $ AddChatter(vig4_sc7_epilogue_comment29)
     menu:
         "I lean into the hug from MAC."
         "I love you too.":
             mS "I love you too, MAC."
+            $ AddChatter(vig4_sc7_epilogue_comment30)
     "Jennica and Teresa bend down and wrap their arms around us as well."
+    $ AddChatter(vig4_sc7_epilogue_comment31)
     "Then the ship's alert system activates."
+    $ AddChatter(vig4_sc7_epilogue_comment32)
     vS "Hello, crew, we'll be coming up on the coordinates soon. Y'all should come up here."
     mS "Come on, time to see the next adventure that awaits us."
     hide mac with dissolve
@@ -5027,14 +5075,18 @@ label vig4_epilogue_coil():
     show mac stream neutral at stream_center_mac with dissolve
     "The four of us move up to the cockpit."
     "We're not in hyperspace anymore, just floating in the vast expanse of stars."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment12)
     enS "I don't see anything."
     pS "I'll say, looks like a whole lotta nothing."
     cS "Patience. We are exactly where we need to be."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment13)
     "A minute goes by as we scan the vastness of space."
     macS "Oh! I see it!"
+    $ AddChatter(vig4_sc7_epilogue_coil_comment14)
     mS "See what?"
     macS "There! It was a little flicker in front of one of the stars!"
     cS "He has sharp eyes."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment15)
     mS "What do you mean?"
     vS "Just watch."
     "As I gaze into the vastness of space, I start to notice it too."
@@ -5043,8 +5095,14 @@ label vig4_epilogue_coil():
     "Then it starts."
     enS "What the--?"
     "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment16)
     "It fades into view slowly but surely, as the ripples dissipate further and further away."
     "A massive space station, twice times the size of the Polaris moon, resolves into view."
+    $ AddChatter(vig4_sc7_epilogue_coil_comment17)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_coil_comment18)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_coil_comment19)
     "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
     pS "Wow."
     hide jennica with dissolve
@@ -5068,24 +5126,31 @@ label vig4_epilogue_coil():
             macS "Ready, Captain Moze!"
     hide mac with Dissolve (2.0)
     hide shiphub_stream with dissolve
-    jump endgame
+    jump vig4_signoff
 
 label vig4_epilogue_ama():
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream
-    "The perpetual purr of space travel thrums through the ship."
     $ AddChatter(vig4_sc7_epilogue_comment1)
+    "The perpetual purr of space travel thrums through the ship."
+    $ AddChatter(vig4_sc7_epilogue_comment2)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment3)
     "I let my head fall back against the cushy seats behind me."
+    $ AddChatter(vig4_sc7_epilogue_comment4)
     "Finally. At long last. My muscles relax."
     pS "And to think, Ama was rolling around the galaxy in such luxury!"
     enS "I know, I always assumed her ship would be a bit more spartan."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
+    $ AddChatter(vig4_sc7_epilogue_comment5)
     "Jennica and Teresa enter the ship's bridge."
     "They both have fresh scars, bandages, and stitches from the battle."
+    $ AddChatter(vig4_sc7_epilogue_comment6)
     pS "Hey there, Cap!"
     enS "Salutations, Captain!"
     "They make a mock salute pose."
+    $ AddChatter(vig4_sc7_epilogue_comment7)
     menu:
         "They make a mock salute pose."
         "At ease.":
@@ -5096,6 +5161,7 @@ label vig4_epilogue_ama():
             "Just stare at them for almost a minute."
             pS "Do you think she'll ever let us go?"
             enS "I don't know, but I'm starting to think this joke wasn't worth it."
+            $ AddChatter(vig4_sc7_epilogue_comment8)
             "A short chuckle escapes from me."
             mS "At ease crew."
             "The pair relax."
@@ -5103,10 +5169,12 @@ label vig4_epilogue_ama():
     if jennicaRomance == True:
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
+        $ AddChatter(vig4_sc7_epilogue_comment9)
         pS "How are you feeling, Cap?"
     elif teresaRomance == True:
         "Teresa sits down next to me and folds her legs over my lap."
         "I take her hand in mine."
+        $ AddChatter(vig4_sc7_epilogue_comment10)
         enS "How are you feeling, Captain?"
     else:
         "They both relax into the cushions on either side of me."
@@ -5117,26 +5185,33 @@ label vig4_epilogue_ama():
         "Exhausted.":
             mS "I'm exhausted."
             mS "I think I could sleep for a month straight."
+            $ AddChatter(vig4_sc7_epilogue_comment11)
             pS "I heard that."
             enS "I think I could go for a year in all honesty."
         "Relaxed.":
             mS "You know, I think I feel relaxed for the first time since..."
             mS "I can't remember."
+            $ AddChatter(vig4_sc7_epilogue_comment12)
             pS "Good."
+            $ AddChatter(vig4_sc7_epilogue_comment13)
             enS "You've earned it."
         "Sad.":
             mS "Honestly, I'm sad."
             enS "About Coil?"
             mS "Yeah."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment1)
             mS "I wish it didn't have to go that way."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment2)
             pS "It's a real shame, Cap."
             pS "But he made his choice a looong time ago."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment3)
             enS "There were a lot of moments when he could have done things differently."
             enS "His path led him to this."
             mS "Thanks you two. I mean it."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment4)
             enS "Anytime."
             pS "We've got your back."
-    if amaRomance == False:
+    if vig4_amaCrew == False:
         enS "You think Deadeye will be alright without her ship?"
         pS "She's resourceful. I'm sure she'll figure something out."
         mS "I was surprised she was okay with us taking it."
@@ -5146,11 +5221,14 @@ label vig4_epilogue_ama():
     pS "I will say, despite the luxury, still doesn't hold a candle to the Oakley."
     enS "No way."
     macS "I am in agreement."
+    $ AddChatter(vig4_sc7_epilogue_comment14)
     show mac stream neutral at stream_center_mac with dissolve
     macS "This ship is significantly less well stocked in terms of supplies."
+    $ AddChatter(vig4_sc7_epilogue_comment15)
     macS "And there is a distinct lack of escape pods."
     enS "Considering our previous adventures, maybe that's a good thing."
     pS "Yeah, and at least the communications array is internal. Way less likely to get screwed up."
+    $ AddChatter(vig4_sc7_epilogue_comment16)
     "MAC rolls up next to us."
     menu:
         "MAC rolls up next to us."
@@ -5159,14 +5237,23 @@ label vig4_epilogue_ama():
             mS "Come on, MAC, join the pile."
             macS "Are you sure, Captain?"
             macS "Will my treads not stain the couch?"
+            $ AddChatter(vig4_sc7_epilogue_comment17)
             pS "C'mon, kid, it's not even our couch!"
             enS "Yeah, join the family!"
             macS "Okay!"
             "Teresa, Jennica, and I bend down to lift MAC up."
             "We all roll back onto the couch in a pile, with MAC in the center."
+            $ AddChatter(vig4_sc7_epilogue_comment18)
             show mac stream happy
             macS "Wheeee!"
+            $ AddChatter(vig4_sc7_epilogue_comment20)
             macS "Being on the couch is fun."
+            if vig4_MACKill == True:
+                $ AddChatter(vig4_sc7_epilogue_ama_comment5)
+                pause 0.5
+                $ AddChatter(vig4_sc7_epilogue_ama_comment6)
+            else:
+                pass
             mS "It really is."
             show mac stream neutral
             "We stay in the pile for several minutes until an idea strikes me."
@@ -5175,14 +5262,17 @@ label vig4_epilogue_ama():
         "Rub his head.":
             $ kcEngagement += 1
             mS "Come here, MAC."
+            $ AddChatter(vig4_sc7_epilogue_comment19)
             "I put my hand on his head and feel the vibrations thrumming through his body."
             "I feel his attention on me. It's like we're making eye contact."
             mS "You did good, MAC."
             mS "Really, really good."
             mS "I'm proud of you."
+            $ AddChatter(vig4_sc7_epilogue_comment21)
             macS "Aww, Captain. Thank you."
             pS "Yeah, kid, you kept your cool really well."
             enS "I'm impressed."
+            $ AddChatter(vig4_sc7_epilogue_comment20)
             mS "Actually, that gives me an idea."
             "I stand up from the couch and open a nearby closet."
     macS "What are you looking for, Captain."
@@ -5190,8 +5280,13 @@ label vig4_epilogue_ama():
     "I pull down a silver bucket, set it down on the floor, and pop open the top."
     "It's red paint."
     mS "Figure we can commemorate the successful mission with MAC's first tattoo."
+    $ AddChatter(vig4_sc7_epilogue_comment22)
     macS "Really!?"
     mS "Sure. Turn around there, bud, let me find a good spot on you."
+    if vig4_MACKill == True:
+        $ AddChatter(vig4_sc7_epilogue_ama_comment7)
+    else:
+        $ AddChatter(vig4_sc7_epilogue_ama_comment8)
     pS "Oh no, come on Teresa, she's gonna need some help."
     enS "I'll say. Remember when I asked her to do a tattoo for me."
     pS "The sketches were so atrocious you completely backed out hahaha."
@@ -5204,10 +5299,13 @@ label vig4_epilogue_ama():
         "A Snakehawk.":
             $ pdEngagement += 2
             mS "I've got the perfect thing."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment9)
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
             pS "Oh no, not like that. You have to make the curve wider."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment10)
             "I put the brush down."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment11)
             mS "There, all done."
             mS "MAC, you're now the proud owner of a \"SnakeHawk\" tattoo!"
             macS "SnakeHawk!? Really!?"
@@ -5216,24 +5314,36 @@ label vig4_epilogue_ama():
             $ kcEngagement += 2
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
+            $ AddChatter(vig4_sc7_epilogue_comment23)
             enS "I see what you're going for."
             pS "It's abstract but good, Cap. You're really capturing her essence."
+            $ AddChatter(vig4_sc7_epilogue_comment24)
             "I put the brush down."
             mS "There, all done."
+            $ AddChatter(vig4_sc7_epilogue_comment25)
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
             macS "Oakley!? That's amazing!"
     "Without hesitation, MAC swerves around and wraps his arms around me."
     macS "Thank you, Captain."
     macS "I love you."
+    $ AddChatter(vig4_sc7_epilogue_comment26)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment27)
+    $ AddChatter(vig4_sc7_epilogue_comment28)
+    ##* streamer reaction
     pS "Oh."
     enS "Did that just happen?"
     "I lean into the hug from MAC."
+    $ AddChatter(vig4_sc7_epilogue_comment29)
     menu:
         "I lean into the hug from MAC."
         "I love you.":
             mS "I love you too, MAC."
+            $ AddChatter(vig4_sc7_epilogue_comment30)
     "Jennica and Teresa bend down and wrap their arms around us as well."
+    $ AddChatter(vig4_sc7_epilogue_comment31)
     "Then the ship's alert system activates."
+    $ AddChatter(vig4_sc7_epilogue_comment32)
     if amaRomance == True:
         amaS "You all should come up here, there's something I could use some help with."
         mS "That sounds odd. Come on, let's go."
@@ -5245,15 +5355,17 @@ label vig4_epilogue_ama():
     hide teresa with dissolve
     hide shiphub_stream with dissolve
     show shiphub_stream onlayer background with dissolve
-    if amaRomance == True:
+    if vig4_amaCrew == True:
         show jennica stream neutral at stream_left with dissolve
         show teresa stream neutral at stream_right with dissolve
         show ama stream neutral at stream_left5 with dissolve
         show mac stream neutral at stream__right5mac with dissolve
         "The four of us move up to the cockpit."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment12)
         if amaRomance == True:
             "I step up behind Ama's chair and reach for her hand."
             "Almost automatically, as if we've been doing it for years, she takes it."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment14)
         else:
             pass
         mS "What seems to be the trouble, Ama?"
@@ -5265,6 +5377,7 @@ label vig4_epilogue_ama():
         "A minute goes by as we scan the vastness of space."
         amaS "There! Did anyone see that!"
         macS "Oh! I see it!"
+        $ AddChatter(vig4_sc7_epilogue_ama_comment15)
         mS "See what?"
         macS "It was a little flicker in front of one of the stars!"
         amaS "So I'm not going crazy."
@@ -5274,16 +5387,24 @@ label vig4_epilogue_ama():
         "Then it starts."
         enS "What the--?"
         "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment16)
         "It fades into view slowly but surely, as the ripples dissipate further and further away."
         "A massive space station, four times the size of the Polaris moon, resolves into view."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment17)
+        pause 0.5
+        $ AddChatter(vig4_sc7_epilogue_ama_comment18)
+        pause 0.5
+        $ AddChatter(vig4_sc7_epilogue_ama_comment19)
         "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
         "Smaller ships depart the hangars."
         "They're heading in our direction."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment20)
         mS "What the hell is that!"
         amaS "Dragonfly space station. Shit!"
         "Ama jams thrusters back and frenetically starts snapping switches on control consoles."
         "We immediately turn around and start flying away from the station."
         amaS "We've got to reverse fast before they hit us with a tractor beam."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment21)
         amaS "Transferring control to co-pilot. Brown you take over flight control."
         "Jennica leaps into the co-pilot chair."
         pS "On it."
@@ -5297,15 +5418,18 @@ label vig4_epilogue_ama():
                 mS "MAC, you and I are going to handle the guns."
                 if macViolence >= macPeace:
                     "I swear, his eyes light up."
+                    $ AddChatter(vig4_sc7_epilogue_ama_comment22)
                     macS "Guns! Oh boy!"
                 else:
                     macS "Understood."
+                    $ AddChatter(vig4_sc7_epilogue_ama_comment22)
         "MAC turns and rolls off toward the turret controls to the side of the cockpit."
         if amaRomance == True:
             "I move to follow, but a hand on my shoulder stops me."
             amaS "Hey."
             "We kiss. Briefly. But passionately."
             amaS "Knock 'em dead, Moze."
+            $ AddChatter(vig4_sc7_epilogue_ama_comment23)
         else:
             pass
         hide ama with dissolve
@@ -5314,6 +5438,7 @@ label vig4_epilogue_ama():
         show teresa stream neutral at stream_right with dissolve
         show mac stream neutral at stream__center_mac with dissolve
         "Jennica takes over control from the auto-pilot as we move up to the cockpit."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment13)
         "The visual in the cockpit just shows empty space."
         pS "Looks like normal space stuff to me."
         enS "Nothing out of the ordinary I can see."
@@ -5321,6 +5446,7 @@ label vig4_epilogue_ama():
         macS "Let us wait, and observe before we jump to conclusions."
         "A minute goes by as we scan the vastness of space."
         macS "Oh! I see it!"
+        $ AddChatter(vig4_sc7_epilogue_ama_comment15)
         mS "See what?"
         macS "It was a little flicker in front of one of the stars!"
         "As I gaze into the vastness of space, I start to notice it too."
@@ -5329,13 +5455,21 @@ label vig4_epilogue_ama():
         "Then it starts."
         enS "What the--?"
         "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment16)
         "It fades into view slowly but surely, as the ripples dissipate further and further away."
         "A massive space station, four times the size of the Polaris moon, resolves into view."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment17)
+        pause 0.5
+        $ AddChatter(vig4_sc7_epilogue_ama_comment18)
+        pause 0.5
+        $ AddChatter(vig4_sc7_epilogue_ama_comment19)
         "Ships the size of the BC cruiser drift into open hangar bays on the side of the station."
         "Smaller ships depart the hangars."
         "They're heading in our direction."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment20)
         mS "Shit! It's the Dragonflies!"
         "Jennica jams thrusters back and frenetically starts snapping switches on control consoles."
+        $ AddChatter(vig4_sc7_epilogue_ama_comment21)
         "We immediately turn around and start flying away from the station."
         pS "We've got to reverse fast before they hit us with a tractor beam."
         mS "Teresa, head down to engines, make sure power is routed where we need it to go."
@@ -5348,9 +5482,11 @@ label vig4_epilogue_ama():
                 mS "MAC, you and I are going to handle the guns."
                 if macViolence >= macPeace:
                     "I swear, his eyes light up."
+                    $ AddChatter(vig4_sc7_epilogue_ama_comment22)
                     macS "Guns! Oh boy!"
                 else:
                     macS "Understood."
+                    $ AddChatter(vig4_sc7_epilogue_ama_comment22)
     "MAC turns and rolls off toward the turret controls to the side of the cockpit."
     "I follow MAC as he hops into one of the turret seats."
     "I take the position next to him."
@@ -5368,6 +5504,126 @@ label vig4_epilogue_ama():
     "The ship lurches forward as we accelerate into space."
     hide mac with Dissolve (2.0)
     hide shiphub_stream with dissolve
+    jump vig4_signoff
+
+label vig4_signoff():
+    $ narrator = reg_narrator
+    "The screen fades as the game's credits begin to roll."
+    $ AddChatter(vig4_sc7_epilogue_comment33)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment34)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment35)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment36)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment37)
+    "The game is over. What do you want to say to your viewers?"
+    menu:
+        "The game is over. What do you want to say to your viewers?"
+        "We did it together!":
+            player "Oh my god, Chat, we did it!"
+            player "This has been such a journey, from the start on Cromuu all the way through Akar and now here."
+            player "I couldn't have done it without all of you."
+            player "Genuinely, I feel like we made this experience something special together."
+            player "So thank you for joining me on this journey, it's been a blast!"
+            $ AddChatter(vig4_sc7_epilogue_comment50)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment51)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment52)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment53)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment54)
+        "Thank you, chat!":
+            player "Thank you, Chat, for sticking around till the end!"
+            player "It's been such a crazy experience playing this game on stream and you all made it so worthwhile."
+            player "Genuinely, a huge motivation for me this whole time was just logging on to hang with you all."
+            player "It's been a real pleasure, and, yeah, just thanks again for making this so much fun!"
+            $ AddChatter(vig4_sc7_epilogue_comment55)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment56)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment57)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment58)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment59)
+        "This game was so good!":
+            player "Wow this game is so good!"
+            player "Was a crazy experience streaming this for everyone but it was a ton of fun!"
+            player "We got to meet some awesome characters, see some cool planets, and feel some intense emotions together."
+            player "Honestly, this might even top Oakley 1."
+            player "Thanks everyone for joining me on this journey, it's been a blast!"
+            $ AddChatter(vig4_sc7_epilogue_comment44)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment45)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment46)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment47)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment48)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment49)
+        "I'm a little underwhelmed!":
+            player "Wow, so that's the end."
+            player "Honestly, I'm a little underwhelmed."
+            player "Like the characters, the music, the art and everything were really good."
+            player "And I liked the story too."
+            player "But idk, I don't think this quite topped Oakley 1 for me."
+            player "Still had a great time! Especially hanging out with y'all. You really made this a special experience."
+            player "So thank you everyone for joining me on this journey, it's been a blast!"
+            $ AddChatter(vig4_sc7_epilogue_comment38)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment39)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment40)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment41)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment42)
+            pause 0.5
+            $ AddChatter(vig4_sc7_epilogue_comment43)
+    player "Chat, thank you so much for all the kind words."
+    player "It's been an pleasure."
+    player "You all take care!"
+    if marshal > outlaw:
+        $ AddChatter(vig4_sc7_epilogue_comment60)
+    else:
+        pass
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment61)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment62)
+    pause 0.5
+    if marshal > outlaw:
+        $ AddChatter(vig4_sc7_epilogue_comment71)
+    else:
+        pass
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment63)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment64)
+    $ AddChatter(vig4_sc7_epilogue_comment65)
+    $ AddChatter(vig4_sc7_epilogue_comment66)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment67)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment68)
+    pause 1.0
+    $ AddChatter(vig4_sc7_epilogue_comment69)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment70)
+    pause 0.5
+    $ AddChatter(vig4_sc7_epilogue_comment71)
+    stop music fadeout 6.0
+    "Slowly but surely the chat in the stream winds down."
+    "For the last time while streaming Oakley 2: Settle the Score, you take off your headset, and sign off of Flinch."
+    hide screen streamChat
+    hide screen streamDetails
+    scene black with dissolve
     jump vig4_macro_start
 
 label vig4_macro_start():
