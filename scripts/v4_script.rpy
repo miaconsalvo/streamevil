@@ -76,6 +76,7 @@ label vig4_sc1_1():
     $ AddChatter(vig4_sc1_comment7)
     "Teresa's shoulders loosen."
     show teresa stream happy
+    $ vig4_sc1_comment5.click = False
     enS "Yeah, this one's good."
     #######if viewershipHigh == True or viewershipMed == True:##### THIS GATE STRUCTURE WORKS
     $ AddChatter(vig4_sc1_comment8)
@@ -294,6 +295,7 @@ label vig4_sc1_2():
         macS "But if it's a trap, you'll need reinforcements."
     else:
         macS "But I can prove to the Dragonflies that you're friendly." 
+    $ vig4_sc2_2_comment20.click = False
     macS "Captain, I can help!"
     $ AddChatter(vig4_sc1_2_comment21)
     menu:
@@ -368,6 +370,7 @@ label vig4_sc2_1():
             enS "Roger."
     "We step off the side of the road into a small alley."
     "I pull out the tracker. The coordinates we need to get to are in the direction everyone is moving."
+    $ vig4_sc2_1_comment1.click = False
     mS "We gotta follow these crowds."
     enS "Let's stick to the sides of the road."
     townguy "Well, hello, strangers, you must be here for the star shower!"
@@ -1030,6 +1033,7 @@ label vig4_sc2_6():
                     $ reactTarget = "vig4_sc2_longjourney"
                     show screen streamerCommentary
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
+                    $ vig4_sc2_6_comment1.click = False
                     $ AddChatter(vig4_sc2_6_comment3)
                     pause 0.5
                     $ AddChatter(vig4_sc2_6_comment4)
@@ -1063,6 +1067,7 @@ label vig4_sc2_6():
                     vS "We helped him with some trouble on Akar. He gave us the technology we needed."
                     $ AddChatter(vig4_sc2_6_comment6)
                     vS "That deal finally let us make this place a reality."
+                    $ vig4_sc2_6_comment1.click = False
                     $ AddChatter(vig4_sc2_6_comment7)
                     menu:
                         vS "That deal finally let us make this place a reality."
@@ -1099,7 +1104,7 @@ label vig4_sc2_6():
             cS "We became...close, and started collaborating."
             $ AddChatter(vig4_sc2_6_comment8)
             cS "When we graduated, BigCorp offered us an exorbitant grant to conduct our research."
-            $ AddChatter(vig4_sc2_6_comment9)
+            #$ AddChatter(vig4_sc2_6_comment9)
             cS "Under the provision that they would own our work in its entirety."
             cS "I had reservations about the deal, but Elijah convinced me." 
             cS "He said we could do more good with their resources than they could do bad with our work."
@@ -1248,6 +1253,7 @@ label vig4_sc2_6():
             "What? That's Elliot's username."
             "But he's supposed to be on a date with Cedric."
             $ AddChatter(vig4_sc2_6_comment43)
+            call screen vig4_streamFreeze
             ##Will handle all the fallout that comes from Elliot entering chat in the targets script
             $ narrator = alt_narrator
             "We step outside into the cool night."
@@ -1339,6 +1345,7 @@ label vig4_sc3_2_vega():
     "Vega turns  and takes off into the crowd."
     "I follow close behind, weaving around groups of people and trying not to step on kids as they careen through the plaza."
     vS "Here! Hope it's not too on the nose."
+    $ vig4_sc3_2_vega_comment2.click = False
     $ AddChatter(vig4_sc3_1_comment11)
     "The stall in front of us has four toy rifles laying on a counter."
     "A group of four teens in front of us pick them up, aiming down range."
@@ -2675,6 +2682,8 @@ label vig4_sc3_3():
     cS "I can give you some time to say goodbye."
     cS "I will alert your crew. You have fifteen minutes."
     "Coil turns and leaves."
+    $ vig4_sc3_3_comment36.click = False
+    $ vig4_sc3_3_comment39.click = False
     hide screen streamerCommentary
     menu:
         "Coil turns and leaves."
@@ -3252,17 +3261,17 @@ label vig4_sc4_1():
     "We don't speak a word to each other on the way back to the ship."
     "The Oakley is quiet and cold as I step onto the bridge."
     mS "I don't know what to do."
-    $ AddChatter(vig4_sc1_comment1)
+    $ AddChatter(vig4_sc4_1_comment1)
     "Silence."
     enS "I'll go down to the engine room and get them started." 
     enS "We gotta takeoff soon to avoid the star shower."
-    $ AddChatter(vig4_sc1_comment2)
+    $ AddChatter(vig4_sc4_1_comment2)
     pS "I'll go make us some tea."
     hide teresa with dissolve
     hide jennica with dissolve
     "I fall back into one of the chairs."
     "A low whir kicks up as the engines come on line."
-    $ AddChatter(vig4_sc1_comment3)
+    $ AddChatter(vig4_sc4_1_comment3)
     "Jennica comes by with the tea."
     "I don't touch it."
     "Teresa and Jennica talk about flight paths in the cockpit, but I can't find the strength to join them."
@@ -3275,25 +3284,25 @@ label vig4_sc4_1():
     "Nothing."
     play audio "callRing.wav" volume 0.7
     "There it is again."
-    $ AddChatter(vig4_sc1_comment4)
+    $ AddChatter(vig4_sc4_1_comment4)
     "It's like the sound of a communicator ringing."
     play audio "callRing.wav" volume 1.2
     "What the hell?"
     "I go over to the escape pods."
     "There, by the pod that Allistar tried to escape in a month ago, is a lone communicator, stuck under the pod."
     play audio "callRing.wav" volume 1.5
-    $ AddChatter(vig4_sc1_comment5)
+    $ AddChatter(vig4_sc4_1_comment5)
     "I pick it up."
     "It's Allistar's. And it's receiving a call."
     mS "Hello?"
     amaS "Still sentimental I see, Mozely."
-    $ AddChatter(vig4_sc1_comment6)
+    $ AddChatter(vig4_sc4_1_comment6)
     mS "Ama?"
     #show ama phone neutral
     amaS "Yes, kid, I have some business to discuss with you."
-    $ AddChatter(vig4_sc1_comment7)
+    $ AddChatter(vig4_sc4_1_comment7)
     pause 0.5
-    $ AddChatter(vig4_sc1_comment8)
+    $ AddChatter(vig4_sc4_1_comment8)
     amaS "So, let's get down to--"
     menu:
         amaS "So, let's get down to--"
@@ -3302,9 +3311,9 @@ label vig4_sc4_1():
             "My voice tears out of my mouth as if I have no control over it."
             mS "It's over, do you understand me!?"
             mS "MAC is with the Dragonflies now. You lost!"
-            $ AddChatter(vig4_sc1_comment9)
+            $ AddChatter(vig4_sc4_1_comment9)
             mS "Do you hear me? Ama \"Deadeye\" Reyes, BC's biggest lapdog and company stooge failed."
-            $ AddChatter(vig4_sc1_comment10)
+            $ AddChatter(vig4_sc4_1_comment10)
             mS "So why don't you hang up and leave me and my crew alone!?"
     "Silence on the other end."
     amaS "Did you say that you handed over the robot to the Dragonflies?"
@@ -3373,6 +3382,7 @@ label vig4_sc4_1():
             $ AddChatter(vig4_sc4_1_comment33)
             amaS "Guess I'll have to do it myself."
             amaS "Be seeing you, Mozely."
+            $ vig4_sc4_1_comment31.click = False
             $ AddChatter(vig4_sc4_1_comment34)
             play audio "cutCall.wav" volume 1.5
         "Agree to Ama's offer.":
@@ -4399,6 +4409,7 @@ label vig4_sc7_3_ama():
     amaS "Not bad, Moze. Not bad at all."
     "She tilts her head at MAC."
     amaS "Now go. He needs you."
+    $ vig4_sc7_3_ama_comment56.click = False
     $ AddChatter(vig4_sc7_3_ama_comment62)
     hide ama with dissolve
     show mac stream neutral at stream_center_mac with dissolve
@@ -4868,6 +4879,7 @@ label vig4_epilogue_coil():
     pS "Hey there, Cap!"
     enS "Salutations, Captain!"
     "They make a mock salute pose."
+    $ vig4_sc7_epilogue_comment4.click = False
     $ AddChatter(vig4_sc7_epilogue_comment7)
     menu:
         "They make a mock salute pose."

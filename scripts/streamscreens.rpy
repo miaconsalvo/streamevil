@@ -206,6 +206,19 @@ screen raidFreeze():
             hover "#eeff0060"
             action [Return(), Call("vig1_sc3_banditConvo")] #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
 
+screen vig4_streamFreeze():
+    frame:
+        xsize 1920
+        ysize 1080
+        background Solid("#00000000")
+        imagebutton:
+            xsize 298
+            ysize 135
+            xalign 0.965
+            yalign .753
+            idle "#eeff0081"
+            hover "#eeff0060"
+            action [Return(), Call("vig4_sc2_elliotEntrance")]
 
 #screen for selecting profile picture
 screen selectProfilePic():

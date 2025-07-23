@@ -15,6 +15,7 @@ label vig4_sc6_defend_1():
     show jennica stream neutral at stream_left with dissolve
     pS "Think they can hold the plaza?"
     mS "We won't know till we get there."
+    $ vig4_sc6_defend_1_comment1.click = False
     $ AddChatter(vig4_sc6_defend_1_comment3)
     show teresa stream shock at stream_right with dissolve
     enS "Shit, patrol! Get down!"
@@ -629,6 +630,7 @@ label vig4_sc6_defend_4():
     $ AddChatter(vig4_sc6_defend_4_comment6)
     hide vega with dissolve
     "Taking a couple steps back from the barricade, I drop to one knee, glancing around me."
+    $ vig4_sc6_defend_4_comment5.click = False
     "The town is engulfed in glame."
     "Ash and embers fall all around me."
     "Heat radiates on my skin."
@@ -750,6 +752,7 @@ label vig4_sc6_defend_5():
         $ AddChatter(vig4_sc6_defend_5_comment21)
         goon "So take care of whatever you got to do down there. We'll handle the air shit."
         $ AddChatter(vig4_sc6_defend_5_comment22)
+        $ vig4_sc6_defend_5_comment19.click = False
         menu:
             goon "So take care of whatever you got to do on the ground. We'll handle the air shit."
             "Thank you.":

@@ -2,8 +2,17 @@ label vig4_sc1_pdParanoia():
     $ macroChoice = True
     $ vig4_sc1_comment5.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Is Moze over her paranoia?"
+        "For sure.":
+            player "Oh yeah, I think she was able to work through a lot of that in the last episode."
+            player "Especially if the crew isn't at each other's throats anymore."
+        "No way.":
+            player "No way. You don't just magically get over that stuff."
+            player "I'd expect we're in for some hallucinations or maybe a trippy dream sequence."            
+        "I don't know.":
+            player "Hmm interesting idea. Honestly, idk."
+            player "They're not in as stressful a position anymore, but that's not something you just like get over."
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -16,8 +25,40 @@ label vig4_sc1_csRomance():
     $ macroChoice = True
     $ vig4_sc2_2_comment20.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "The Chat is asking who I want to romance again."
+        "I'm team Jennica.":
+            $ csEngagement += 1
+            $ kcEngagement -=1
+            player "Oh, I'm team Jennica for sure."
+            player "Friendly, sensitive, and a crack pilot. What's not to love?"
+            $ AddChatter(vig4_sc1_interact_comment1)
+        "I'm team Teresa.":
+            $ csEngagement -=1
+            $ kcEngagement += 1
+            player "Oh I'm team Teresa for sure."
+            player "Smart, loyal, and a clever engineer in the clutch. What's not to love?"
+            $ AddChatter(vig4_sc1_interact_comment2)
+        "I'm still hoping for Ama." if deadeyeApproval >= 2:
+            $ pdEngagement += 2
+            $ csEngagement += 1
+            $ kcEngagement += 1
+            player "I'm still holding out hope for an Ama path."
+            player "We can fix her, Chat!"
+            $ AddChatter(vig4_sc1_interact_comment3)
+            pause 0.5
+            $ AddChatter(vig4_sc1_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_sc1_interact_comment5)
+        "I'm not feeling a romance.":
+            $ csEngagement -= 1
+            $ kcEngagement -= 1
+            $ pdEngagement += 1
+            player "I'm actually not feeling much of a romance in this game."
+            player "The characters are great, but I don't see the chemsitry."
+            $ AddChatter(vig4_sc1_interact_comment6)
+            pause 0.5
+            $ AddChatter(vig4_sc1_interact_comment7)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -30,8 +71,23 @@ label vig4_sc1_kcPrediction():
     $ macroChoice = True
     $ vig4_sc2_1_comment1.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "How do I think the story's going to play out?"
+        "I have no idea.":
+            $ pdEngagement -= 1
+            $ kcEngagement -= 1
+            player "I have no clue to be honest."
+            player "I've learned that you can't predict where things are going to go with this story."
+        "The Alliance is gonna be the real big bad.":
+            $ csEngagement += 1
+            player "I agree with pickledDragons, I think the Alliance is gonna be a factor at the end here."
+            player "Feels like they could be the real big bad and then set up Oakley 3 nicely."
+            $ AddChatter(vig4_sc2_interact_comment1)
+        "Ama's going to come back for sure.":
+            $ kcEngagement += 1
+            player "I think Ama's going to kidnap MAC and we're gonna have to fight her and BigCorp to get him back."
+            player "We didn't get a proper resolution to her story in Episode 3 so I'd be shocked if she doesn't come back in some capacity."
+            $ AddChatter(vig4_sc2_interact_comment2)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -44,13 +100,17 @@ label vig4_sc2_rube():
     $ macroChoice = True
     $ vig4_sc2_8_comment8.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
-    $ AddChatter(vig4_sc2_1_comment9)
-    pause 0.5
-    $ AddChatter(vig4_sc2_1_comment10)
-    pause 0.5
-    $ AddChatter(vig4_sc2_1_comment11)
+    menu:
+        "Should I play into this?"
+        "Say nothing.":
+            pass
+        "Rube!":
+            player "Rube!"
+            $ AddChatter(vig4_sc2_1_comment9)
+            pause 0.5
+            $ AddChatter(vig4_sc2_1_comment10)
+            pause 0.5
+            $ AddChatter(vig4_sc2_1_comment11)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -63,8 +123,12 @@ label vig4_sc2_peacefulTown():
     $ macroChoice = True
     $ vig4_sc2_6_comment1.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Do I believe Polaris is a peaceful town."
+        "No way.":
+            player "No way. There's something going on here that he's not telling us."
+        "I buy it.":
+            player "It seemed pretty chill while we were walking in. They're at least not actively hostile, that's for sure."
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -73,19 +137,19 @@ label vig4_sc2_peacefulTown():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig4_sc2_AFKDream():
-    $ macroChoice = True
-    $ vig4_sc2_6_comment8.click = False
-    $ narrator = reg_narrator
+#label vig4_sc2_AFKDream(): #I commented out the chat that would lead to this label
+#    $ macroChoice = True
+#    $ vig4_sc2_6_comment8.click = False
+#    $ narrator = reg_narrator
     #menu:
     #    "Fill the menu with something."
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
+#    $ macroChoice = False
+#    if macroChoice == False:
+#        $ narrator = alt_narrator
+#    else:
+#        $ narrator = reg_narrator
+#    $ reactImage = "stream ui/reactneutral.png"
+#    return
 
 label vig4_sc2_elliotEntrance():
     $ macroChoice = True
@@ -319,8 +383,20 @@ label vig4_sc3_festivalRomance():
     $ macroChoice = True
     $ vig4_sc3_2_vega_comment2.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "kitcat's asking why I'm not romancing Jennica or Teresa."
+        "We can't if we want to romance Ama.":
+            player "I saw a thread on BlueIt that said we can't romance Jenn or Teresa if we want to romance Ama."
+            player "And I'm still holding out hope for the Ama drama!"
+            $ AddChatter(vig4_sc3_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_sc3_interact_comment2)
+        "I want to get to know Vega more.":
+            player "I know, I know, but I want to get to know Vega better."
+            player "Maybe we can learn more about Coil from her too."
+            $ AddChatter(vig4_sc3_interact_comment3)
+        "Say nothing.":
+            pass
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -328,28 +404,22 @@ label vig4_sc3_festivalRomance():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     return
-
-label vig4_sc3_elMemory():
-    $ macroChoice = True
-    $ vig4_sc3_2_jenn_comment12.click = False
-    $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
-
 
 label vig4_sc3_pdCoilCommentary():
     $ macroChoice = True
     $ vig4_sc3_3_comment36.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "How do I feel about Coil's actions?"
+        "I don't like him.":
+            player "I don't like him. I feel like he didn't even try to make a case for us."
+            $ AddChatter(vig4_sc3_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_sc3_interact_comment5)
+        "I think he's right.":
+            player "The thing is, what he's saying isn't necessarily wrong."
+            player "Maybe we haven't been the best parental figure for MAC."
+            $ AddChatter(vig4_sc3_interact_comment6)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -362,8 +432,21 @@ label vig4_sc3_csCoilCommentary():
     $ macroChoice = True
     $ vig4_sc3_3_comment39.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "How do I feel about Coil's actions?"
+        "I don't like him.":
+            $ pdEngagement += 1
+            $ csEngagement -= 1
+            player "I don't like him. I feel like he didn't even try to make a case for us."
+            $ AddChatter(vig4_sc3_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_sc3_interact_comment5)
+        "I think he's right.":
+            $ pdEngagement -= 1
+            $ csEngagement += 1
+            player "The thing is, what he's saying isn't necessarily wrong."
+            player "Maybe we haven't been the best parental figure for MAC."
+            $ AddChatter(vig4_sc3_interact_comment7)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -376,8 +459,25 @@ label vig4_sc4_kcNoOffer():
     $ macroChoice = True
     $ vig4_sc4_1_comment31.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Why didn't I choose to ally with Ama?"
+        "Cause she's been trying to kill us.":
+            player "Ama's been trying to kill us for months, and now she just decides to swap sides?"
+            player "We can't just forgive her that fast. She has to earn it."
+            $ AddChatter(vig4_sc4_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_sc4_interact_comment2)
+        "We don't need her.":
+            player "We don't need her. Our crew is tough enough to handle what's coming up on our own."
+            $ AddChatter(vig4_sc4_interact_comment3)
+            pause 0.5
+            $ AddChatter(vig4_sc4_interact_comment4)
+        "We can't trust her.":
+            player "I mean, we just can't trust her."
+            player "Especially after Episode 3, I wouldn't want her watching my back."
+            $ AddChatter(vig4_sc4_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_sc4_interact_comment5)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -386,26 +486,38 @@ label vig4_sc4_kcNoOffer():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig4_sc5_csClimax():
-    $ macroChoice = True
-    $ vig4_sc5_1_comment27.click = False
-    $ narrator = reg_narrator
+#label vig4_sc5_csClimax(): #Made this noninteractable to make managing the vignette a bit easier
+#    $ macroChoice = True
+#    $ vig4_sc5_1_comment27.click = False
+#    $ narrator = reg_narrator
     #menu:
     #    "Fill the menu with something."
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
+#    $ macroChoice = False
+#    if macroChoice == False:
+#        $ narrator = alt_narrator
+#    else:
+#        $ narrator = reg_narrator
+#    $ reactImage = "stream ui/reactneutral.png"
+#    return
 
 label vig4_sc5_oscarReturn():
     $ macroChoice = True
     $ vig4_sc6_defend_1_comment1.click = False
+    $ vig4_sc6_attack_1_ama_comment1.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "swayy0scar! They were in chat for the first stream but haven't been around since."
+        "Welcome back!":
+            player "Hey Oscar! Welcome back!"
+            player "It's been a while, what's going on with you?"
+            $ AddChatter(vig4_sc5_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_sc5_interact_comment2)
+            pause 0.5
+            $ AddChatter(vig4_sc5_interact_comment3)
+            pause 0.5
+            $ AddChatter(vig4_sc5_interact_comment4)
+        "Say nothing.":
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -418,8 +530,21 @@ label vig4_sc6_ripTank():
     $ macroChoice = True
     $ vig4_sc6_defend_4_comment5.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Chat seems sad about the tank being destroyed."
+        "RIP.":
+            player "Another fallen soldier. Get those RIPs in chat."
+            $ AddChatter(vig4_sc6_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment2)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment3)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment5)
+        "Say nothing.":
+            pass
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -432,8 +557,36 @@ label vig4_sc6_pdGoodPerson():
     $ macroChoice = True
     $ vig4_sc6_attack_3_ama_comment19.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Chat is talking about Moze's morality."
+        "Moze's flexibility is what makes her a good character.":
+            $ pdEngagement += 2
+            $ kcEngagement += 1
+            $ csEngagement += 1
+            player "I always thought the great thing about Moze was how flexible she could be."
+            player "Like, considering the galaxy that she lies in, it's believable for her to lean into the violence or try to more peaceful in opposition to it."
+            player "And the beauty of that, is you don't have to play her as strictly one or the other. She can be both simultaneously."
+            $ AddChatter(vig4_sc6_interact_comment6)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment7)
+        "Who cares about Moze's morality, this is fun!":
+            $ pdEngagement += 1
+            $ csEngagement == 1
+            player "Who cares about her character arc. This is just a good time!"
+            $ AddChatter(vig4_sc6_interact_comment8)
+        "Moze getting \"worse\" is also a good story.":
+            $ pdEngagement += 1
+            player "Moze failing at \"doing better\" and actually \"doing worse\" is an interesting story."
+            player "I think it reflects the complexity of the galaxy and how hard it is for her to change. Especially considering her mentor."
+            $ AddChatter(vig4_sc6_interact_comment9)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment10)
+        "It does feel inconsistent with the game's themes.":
+            $ pdEngagement -= 1
+            player "Yeah, I'll admit, a lot of Outlaw Moze's decisions do feel kind of inconsistent with the game's themes."
+            $ AddChatter(vig4_sc6_interact_comment11)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment12)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -446,8 +599,24 @@ label vig4_sc6_reggieReaction():
     $ macroChoice = True
     $ vig4_sc6_defend_5_comment19.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "Chat is reacting to Reginald's return."
+        "REGGIE!":
+            player "REGGIE!"
+            player "HE'S BACK!"
+            $ AddChatter(vig4_sc6_interact_comment14)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment15)
+            $ AddChatter(vig4_sc6_interact_comment16)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment17)
+            pause 0.5
+            $ AddChatter(vig4_sc6_interact_comment18)
+        "Is Matticus going to want something?":
+            player "Oh god, is Matticus going to want something for this?"
+            $ AddChatter(vig4_sc6_interact_comment13)
+        "Say nothing.":
+            pass
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -460,8 +629,18 @@ label vig4_sc7_kcWhyNoRomance():
     $ macroChoice = True
     $ vig4_sc7_3_ama_comment56.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "kitcat wants to know why I backed out of romancing Ama."
+        "They're not right for each other.":
+            player "I don't think they're right for each other."
+            player "Plus Ama's kind of a mother figure to Moze."
+            player "It didn't end up feeling good in the end. Sorry chat."
+            $ AddChatter(vig4_sc7_interact_comment2)
+        "Too soon.":
+            player "I think there's something between them, but saying \"I love you\" right now feels a bit rushed."
+            $ AddChatter(vig4_sc7_interact_comment1)
+        "Say nothing.":
+            pass
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -474,8 +653,44 @@ label vig4_pdEndFeeling():
     $ macroChoice = True
     $ vig4_sc7_epilogue_comment4.click = False
     $ narrator = reg_narrator
-    #menu:
-    #    "Fill the menu with something."
+    menu:
+        "How am I feeling now that I'm at the end of the game?"
+        "Tired.":
+            player "I'll be honest Chat, I'm beat haha"
+            player "This has been a long time coming. It's been super fun, but I am tired."
+            player "A bit relieved to be bringing this to a closed."
+            $ AddChatter(vig4_epilogue_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment2)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment3)
+        "Ecstatic.":
+            player "Oh I feel amazing, ecstatic even!"
+            player "That climax was so cool and all the drama between the characters was amazing!"
+            player "I think I'm gonna be riding this high for a while haha"
+            $ AddChatter(vig4_epilogue_interact_comment4)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment5)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment3)
+        "Kind of sad.":
+            player "In all honesty, I'm a bit sad that it's over."
+            player "This has been so much fun and it's ending really well."
+            player "I just wish there was more!"
+            $ AddChatter(vig4_epilogue_interact_comment6)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment7)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment3)
+        "Not sure.":
+            player "Honestly, I don't know what to feel."
+            player "I'm like sad, but also happy."
+            player "It just feels surreal for this gaming to actually be coming to an end."
+            $ AddChatter(vig4_epilogue_interact_comment1)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment2)
+            pause 0.5
+            $ AddChatter(vig4_epilogue_interact_comment3)
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
