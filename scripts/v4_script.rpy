@@ -295,7 +295,7 @@ label vig4_sc1_2():
         macS "But if it's a trap, you'll need reinforcements."
     else:
         macS "But I can prove to the Dragonflies that you're friendly." 
-    $ vig4_sc2_2_comment20.click = False
+    $ vig4_sc1_2_comment20.click = False
     macS "Captain, I can help!"
     $ AddChatter(vig4_sc1_2_comment21)
     menu:
@@ -838,13 +838,15 @@ label vig4_sc2_4():
             $ AddChatter(vig4_sc2_4_comment27)
             enS "You think we won't?"
             cS "I asked you to."
-            "The old man starts to pull a blaster into the air."
+            "The old man starts to lift a blaster into the air."
             menu:
                 "The old man starts to lift a blaster into the air."
                 "Shoot.":
                     $ outlaw += 1
                     "I pull the trigger on my blaster."
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
+                    $ reactTarget = "vig4_sc2_coilshield"
+                    show screen streamerCommentary
                     cS "And now that your blaster has failed you, will you stoop to beating an old man?"
                     $ AddChatter(vig4_sc2_4_comment23)
                 "Tell Teresa to stand down.":
@@ -852,6 +854,8 @@ label vig4_sc2_4():
                     mS "Teresa, stand d--"
                     "A bolt fires from Teresa's blaster."
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
+                    $ reactTarget = "vig4_sc2_coilshield"
+                    show screen streamerCommentary
                     cS "Your discipline is wanting."
                     $ AddChatter(vig4_sc2_4_comment23)
             "The whirring from the back stops as footsteps approach."

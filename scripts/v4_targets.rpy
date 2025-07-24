@@ -23,7 +23,7 @@ label vig4_sc1_pdParanoia():
 
 label vig4_sc1_csRomance():
     $ macroChoice = True
-    $ vig4_sc2_2_comment20.click = False
+    $ vig4_sc1_2_comment20.click = False
     $ narrator = reg_narrator
     menu:
         "The Chat is asking who I want to romance again."
@@ -36,7 +36,7 @@ label vig4_sc1_csRomance():
         "I'm team Teresa.":
             $ csEngagement -=1
             $ kcEngagement += 1
-            player "Oh I'm team Teresa for sure."
+            player "Oh, I'm team Teresa for sure."
             player "Smart, loyal, and a clever engineer in the clutch. What's not to love?"
             $ AddChatter(vig4_sc1_interact_comment2)
         "I'm still hoping for Ama." if deadeyeApproval >= 2:
@@ -98,7 +98,7 @@ label vig4_sc1_kcPrediction():
 
 label vig4_sc2_rube():
     $ macroChoice = True
-    $ vig4_sc2_8_comment8.click = False
+    $ vig4_sc2_1_comment8.click = False
     $ narrator = reg_narrator
     menu:
         "Should I play into this?"
@@ -710,14 +710,14 @@ label vig4_sc1_macjokes():
         "MAC just made a joke."
         "MAC can joke!?":
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Chat did make just tell a joke!?"
+            player "Chat did MAC just tell a joke!?"
             player "That's crazy! He's really learning."
             $ AddChatter (vig4_sc1_react_comment1)
             $ AddChatter (vig4_sc1_react_comment2)
             pause 0.5
         "That's so cute!":
             $ reactImage = "stream ui/reactshocked.png"
-            player "Holy crap MAC's a lil joker!"
+            player "Holy crap, MAC's a lil joker!"
             player "ADORABLE!!!"
             $ AddChatter (vig4_sc1_react_comment3)
             pause 0.5
