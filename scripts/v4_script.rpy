@@ -4737,14 +4737,14 @@ label vig4_sc7_3_coil():
     "Coil opens his eyes."
     $ AddChatter(vig4_sc7_3_coil_comment42)
     cS "It is okay, Vega."
-    $ AddChatter(vig4_sc7_3_coil_comment43)
     "Coil grips the blade with his hands and pulls it out."
     "A small spurt of blood pools in his shirt."
     cS "The blade did not cut too deep."
+    hide screen streamerCommentary
+    $ AddChatter(vig4_sc7_3_coil_comment43)
     $ AddChatter(vig4_sc7_3_coil_comment44)
     "He looks to me."
     cS "Thank you for taking care of the rest."
-    hide screen streamerCommentary
     menu:
         cS "Thank you for taking care of the rest."
         "I didn't do it for you.":

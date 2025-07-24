@@ -558,6 +558,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment10)
             "Shots from the Dragonflies start to rattle against our hull."
             enS "Shields are at 95\%."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             amaS "Oh I've been waiting for this!"
             "Ama grabs the machine gun controls and whips it around, aiming for the squads positioned on nearby rooftops."
@@ -568,7 +569,6 @@ label vig4_sc6_attack_3_ama():
             enS "Tough hit but shields are still at 85\% and holding."
             "I grip the cannon controls and point at a squad of Dragonflies huddled behind nearby cover."
             "The whole tank thrums with energy as the cannon charges."
-            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment13)
             "A beam of blue light bursts from the cannon, striking through the rubble."
             "A pillar of flame erupts into the air where the cannon impacts the ground."
@@ -1005,6 +1005,7 @@ label vig4_sc7_1_attack_ama():
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment6)
+                hide screen streamerCommentary
                 amaS "That too."
             else:
                 cS "You know he insisted on providing first aid to the people who were first injured by BigCorp's assault."
@@ -1020,6 +1021,7 @@ label vig4_sc7_1_attack_ama():
                 "Ama tilts her head."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "Guess that has been a phase recently."
+                hide screen streamerCommentary
                 $ AddChatter(vig4_sc7_1_attack_ama_comment9)
         "Got a plan for getting out of this?":
             mS "So, do you have a plan for getting out of this."
@@ -1047,6 +1049,7 @@ label vig4_sc7_1_attack_ama():
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment6)
+                hide screen streamerCommentary
                 amaS "That too."
             else:
                 cS "You know he insisted on providing first aid to the people who were first injured by BigCorp's assault."
@@ -1062,9 +1065,9 @@ label vig4_sc7_1_attack_ama():
                 "Ama tilts her head."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "Guess that has been a phase recently."
+                hide screen streamerCommentary
                 $ AddChatter(vig4_sc7_1_attack_ama_comment9)
     "Coil steps away from the devices and directly in front of me and Ama."
-    hide screen streamerCommentary
     cS "Tell me truthfully, Moze. What was your plan in coming here?"
     menu:
         cS "Tell me truthfully, Moze. What was your plan in coming here?"

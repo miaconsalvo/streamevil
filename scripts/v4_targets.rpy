@@ -1700,15 +1700,16 @@ label vig4_sc6_attack_killdflies():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Thats what you get for betraying us!"
             player "Score settled."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_attack_react_comment1)
+            $ AddChatter(vig4_sc6_attack_react_comment2)
+            $ AddChatter(vig4_sc6_attack_react_comment3)
             pause 0.5
         "Was that too far?":
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn that might have been too much."
             player "They were just following orders a the end of the day."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_react_comment4)
+            $ AddChatter(vig4_sc6_attack_react_comment5)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1731,15 +1732,16 @@ label vig4_sc6_attack_sparedflies():
             $ reactImage = "stream ui/reactconversational.png"
             player "Definitely the right thing to do."
             player "They were just following orders after all."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_attack_react_comment6)
+            $ AddChatter(vig4_sc6_attack_react_comment7)
+            $ AddChatter(vig4_sc6_attack_react_comment8)
             pause 0.5
         "Maybe we shoulda gotten our revenge":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Definitely the good guy thing to do."
             player "I don't know though. They did betray us after all."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_react_comment9)
+            $ AddChatter(vig4_sc6_attack_react_comment10)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1762,15 +1764,17 @@ label vig4_sc6_both_maccall():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Thank god MAC's ok chat."
             player "If he was hurt it might've broken me hahaha."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_maccall_react_comment1)
+            $ AddChatter(vig4_sc6_maccall_react_comment2)
+            $ AddChatter(vig4_sc6_maccall_react_comment3)
             pause 0.5
         "Coil has MAC still.":
             $ reactImage = "stream ui/reactthinking.png"
             player "Ok. So we know where to find MAC."
             player "Good to know for sure."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_maccall_react_comment1)
+            $ AddChatter(vig4_sc6_maccall_react_comment4)
+            $ AddChatter(vig4_sc6_maccall_react_comment5)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1793,22 +1797,23 @@ label vig4_sc6_attack_barricadesurprise():
             $ reactImage = "stream ui/reactconfident.png"
             player "The crew is what's important to us."
             player "We can't risk ourselves for some Dragonflies!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment1)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment2)
             pause 0.5
         "No mercy for Dragonflies!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Time to squash some bugs!"
             player "These Dragonflies had it coming when they betrayed us!"
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment3)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment4)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment5)
             #$ AddChatter(vig4_sc3coil2_react_comment4)
             pause 0.5
         "Was that too far?":
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn that might have been too much."
             player "I feel kinda bad. Not sure they deserve this."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment6)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -1828,15 +1833,15 @@ label vig4_sc6_attack_barricadeassault():
             $ reactImage = "stream ui/reactconfident.png"
             player "BigCorp's the real enemy!"
             player "Gotta keep our priorities straight!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment7)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment8)
             pause 0.5
         "Our first objective is MAC.":
             $ reactImage = "stream ui/reactconversational.png"
             player "We're doing this to get MAC back."
             player "We don't need to make this a bloodbath if we don't have to."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment9)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment10)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1859,15 +1864,16 @@ label vig4_sc6_attack_barricadechaos():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Kill em all!"
             player "Let the maker sort em out!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment11)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment12)
             pause 0.5
         "Chaos time!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Time for some good ol' fashioned chaos!"
             player "Let's blow em all up!"
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment13)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment14)
+            $ AddChatter(vig4_sc6_attack_barricade_react_comment15)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1890,15 +1896,17 @@ label vig4_sc6_attack_finding_coil():
             $ reactImage = "stream ui/reactthinking.png"
             player "Wow Coil looks like he's been through it."
             player "Wonder if this'll be easy."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
+            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment1)
+            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment2)
             #$ AddChatter(vig4_sc3coil2_react_comment2)
             pause 0.5
         "Time to get even!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Get ready to meet your end Coil!"
             player "Vengeance is a dish best served... Coiled."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment3)
+            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment4)
+            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment5)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1921,15 +1929,17 @@ label vig4_sc6_defend_findingvega():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Look's like we got here just in the nick of time..."
             player "Guess that makes us big damn heroes!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_defend_react_comment1)
+            $ AddChatter(vig4_sc6_defend_react_comment2)
+            $ AddChatter(vig4_sc6_defend_react_comment3)
+
             pause 0.5
         "Glad she's ok!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "I'm happy Vega made it!"
             player "Now let's get to saving Polaris!"
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc6_defend_react_comment4)
+            $ AddChatter(vig4_sc6_defend_react_comment5)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1952,15 +1962,17 @@ label vig4_sc6_defend_finding_coil():
             $ reactImage = "stream ui/reactthinking.png"
             player "Wow Coil looks like he's been through it."
             player "Good thing we got here in time."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc6_defend_react_comment6)
+            $ AddChatter(vig4_sc6_defend_react_comment7)
+            $ AddChatter(vig4_sc6_defend_react_comment8)
             pause 0.5
         "Ama's here!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Oh no!"
             player "Deadeye got here first!"
             player "I knew this was too easy."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
+            $ AddChatter(vig4_sc6_defend_react_comment9)
+            $ AddChatter(vig4_sc6_defend_react_comment10)
             #$ AddChatter(vig4_sc3coil2_react_comment4)
             pause 0.5
         "Say nothing.":
@@ -1985,22 +1997,30 @@ label vig4_sc7_starshower():
             player "Wow what crazy visuals!"
             player "This climax is epic chat!"
             player "Great way to end the game."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc7_react_comment1)
+            $ AddChatter(vig4_sc7_react_comment2)
+            $ AddChatter(vig4_sc7_react_comment3)
             pause 0.5
         "Tough choice.":
             $ reactImage = "stream ui/reactthinking.png"
             player "Damn this is a real hard decision!"
             player "Ama's kinda evil..."
             player "But Coil betrayed us!"
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc7_react_comment4)
+            $ AddChatter(vig4_sc7_react_comment5)
+            $ AddChatter(vig4_sc7_react_comment6)
             pause 0.5
         "Ask the chat.":
             player "This is a tough one..."
             player "I don't know chat."
             player "What do y'all think?"
-            #add chatters
+            $ AddChatter(vig4_sc7_react_comment7)
+            $ AddChatter(vig4_sc7_react_comment4)
+            $ AddChatter(vig4_sc7_react_comment8)
+            $ AddChatter(vig4_sc7_react_comment5)
+            $ AddChatter(vig4_sc7_react_comment6)
+            $ AddChatter(vig4_sc7_react_comment9)
+            $ AddChatter(vig4_sc7_react_comment10)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -2020,16 +2040,18 @@ label vig4_sc7_killama():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Score settled."
             player "That'll teach her to mess with the Oakley!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc7_killama_react_comment1)
+            $ AddChatter(vig4_sc7_killama_react_comment2)
+            $ AddChatter(vig4_sc7_killama_react_comment3)
             pause 0.5
         "End of the Snakehawks.":
             $ reactImage = "stream ui/reactthinking.png"
             player "Wow this is kinda sad chat."
             player "This is the real end of the Snakehawks."
             player "Rip."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc7_killama_react_comment4)
+            $ AddChatter(vig4_sc7_killama_react_comment5)
+            $ AddChatter(vig4_sc7_killama_react_comment6)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -2052,16 +2074,18 @@ label vig4_sc7_killcoil():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "That'll teach him to betray us!"
             player "Score settled."
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_sc7_killcoil_react_comment1)
+            $ AddChatter(vig4_sc7_killcoil_react_comment2)
+            $ AddChatter(vig4_sc7_killcoil_react_comment3)
             pause 0.5
         "Is this the end of Polaris?":
             $ reactImage = "stream ui/reactthinking.png"
             player "Damn chat this is kinda sad."
             player "Did we doom Polaris with this decision?"
             player "Rip."
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_sc7_killcoil_react_comment4)
+            $ AddChatter(vig4_sc7_killcoil_react_comment5)
+            $ AddChatter(vig4_sc7_killcoil_react_comment6)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -2085,19 +2109,24 @@ label vig4_epilogue_maclove():
             player "Awwwwww!"
             player "MAC is so cute chat."
             player "I love you too!"
-            #$ AddChatter(vig4_sc3coil2_react_comment1)
-            #$ AddChatter(vig4_sc3coil2_react_comment2)
+            $ AddChatter(vig4_epilogue_react_comment1)
+            $ AddChatter(vig4_epilogue_react_comment2)
+            $ AddChatter(vig4_epilogue_react_comment3)
+            $ AddChatter(vig4_epilogue_react_comment4)
             pause 0.5
         "Interesting.":
             $ reactImage = "stream ui/reactthinking.png"
             player "Wow chat."
             player "He's really learning fast."
             player "Super curious where they'll go with this in the next game!"
-            #$ AddChatter(vig4_sc3coil2_react_comment3)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
+            $ AddChatter(vig4_epilogue_react_comment5)
+            $ AddChatter(vig4_epilogue_react_comment6)
+            $ AddChatter(vig4_epilogue_react_comment7)
+            $ AddChatter(vig4_epilogue_react_comment8)
             pause 0.5
         "Say nothing.":
             player "..."
+            $ AddChatter(vig4_epilogue_react_comment9)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
