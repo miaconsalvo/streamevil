@@ -216,8 +216,8 @@ screen vig4_streamFreeze():
             ysize 135
             xalign 0.965
             yalign .753
-            idle "#eeff0081"
-            hover "#eeff0060"
+            idle "#eeff0065"
+            hover "#eeff0044"
             action [Return(), Call("vig4_sc2_elliotEntrance")]
 
 #screen for selecting profile picture

@@ -6,7 +6,7 @@ label vig4_sc6_defend_1():
     "The dull roar of battle echoes in the distance."
     "No danger on the roofs."
     "No enemies on the street."
-    $ viewership += 1
+    $ viewCount += 1
     $ AddChatter(vig4_sc6_defend_1_comment1)
     mS "All clear."
     $ AddChatter(vig4_sc6_defend_1_comment2)
@@ -738,7 +738,7 @@ label vig4_sc6_defend_5():
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
-        "Three more fighers fly by immediately after. Then another. Then another."
+        "Three more fighters fly by immediately after. Then another. Then another."
         $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"

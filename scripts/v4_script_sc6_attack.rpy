@@ -5,9 +5,9 @@ label vig4_sc6_attack_1_ama():
     show vig1_town_stream onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
-    $ viewership += 1
+    $ viewCount += 1
     $ AddChatter(vig4_sc6_attack_1_ama_comment1)
-    "The dull roar of battle echoes in the distance."
+    "The dull roar of battle echoes in the distance as we navigate the town's outskirts."
     $ AddChatter(vig4_sc6_attack_1_ama_comment2)
     "No enemies on the street. No danger on the roofs."
     "We make our way quickly down the clear street, hopping between pieces of cover as we do so."
@@ -59,7 +59,6 @@ label vig4_sc6_attack_1_ama():
     enS "I don't know if I'd go that far."
     pS "We still have to steal the damn thing."
     amaS "Simple, wait for that group to wander off, then take out the crew. Easy maneuver."
-    hide ama with dissolve
     $ AddChatter(vig4_sc6_attack_1_ama_comment10)
     pS "No way, if we're doing this then we should help those people."
     enS "Wait a minute, look at that guy!"
@@ -283,7 +282,7 @@ label vig4_sc6_attack_1_assault_ama():
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
     hide ama with dissolve
-    jump vig4_sc6_attack_2
+    jump vig4_sc6_attack_2_ama
 
 label vig4_sc6_attack_1_split_ama():
     mS "Ama's right, if we're going to do this we have to do it smart."
@@ -403,7 +402,7 @@ label vig4_sc6_attack_2_ama():
     amaS "It's the robot! Answer it!"
     "Teresa inputs something into a screen on her side."
     "At the front of the tank, a blue hologram slowly starts to take shape."
-    show mac stream neutral at stream_right5mac with dissolve
+    show mac phone neutral at stream_right5mac with dissolve
     "It's MAC."
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -835,7 +834,7 @@ label vig4_sc6_attack_3_ama():
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
-        "Three more fighers fly by immediately after. Then another. Then another."
+        "Three more fighters fly by immediately after. Then another. Then another."
         $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"
@@ -931,7 +930,7 @@ label vig4_sc6_attack_3_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     "I hop down to the ground."
-    show ama at stream_right with move
+    show ama at stream_left with move
     "Ama steps up to my side."
     amaS "Ready?"
     mS "Ready."
@@ -970,7 +969,7 @@ label vig4_sc7_1_attack_ama():
     "Ama and I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
     show vig2_datacenter_stream onlayer background with dissolve
-    show coil stream neutral at stream_left with dissolve
+    show coil stream neutral at stream_right with dissolve
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
@@ -1045,7 +1044,9 @@ label vig4_sc7_1_attack_ama():
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 cS "I meant the bloodlust."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
+                $ AddChatter(vig4_sc7_1_attack_ama_comment6)
                 amaS "That too."
             else:
                 cS "You know he insisted on providing first aid to the people who were first injured by BigCorp's assault."
@@ -1141,9 +1142,9 @@ label vig4_sc6_attack_1():
     show vig1_town_stream onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
-    $ viewership += 1
+    $ viewCount += 1
     $ AddChatter(vig4_sc6_attack_1_ama_comment1)
-    "The dull roar of battle echoes in the distance."
+    "The dull roar of battle echoes in the distance as we navigate the town's outskirts."
     $ AddChatter(vig4_sc6_attack_1_ama_comment2)
     "No enemies on the street."
     "No danger on the roofs."
@@ -1884,7 +1885,7 @@ label vig4_sc6_attack_3():
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
-        "Three more fighers fly by immediately after. Then another. Then another."
+        "Three more fighters fly by immediately after. Then another. Then another."
         $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"

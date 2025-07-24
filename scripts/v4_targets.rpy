@@ -565,8 +565,8 @@ label vig4_sc6_pdGoodPerson():
             $ kcEngagement += 1
             $ csEngagement += 1
             player "I always thought the great thing about Moze was how flexible she could be."
-            player "Like, considering the galaxy that she lies in, it's believable for her to lean into the violence or try to more peaceful in opposition to it."
-            player "And the beauty of that, is you don't have to play her as strictly one or the other. She can be both simultaneously."
+            player "Like, considering the galaxy that she lives in, it's believable for her to lean into the violence or try to more peaceful in opposition to it."
+            player "And the beauty of that, is you don't have to play her as strictly one or the other. She can be both in equal measure."
             $ AddChatter(vig4_sc6_interact_comment6)
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment7)
@@ -1462,7 +1462,7 @@ label vig4_sc3_machug(): # dont know if were using this one
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig4_sc4_amadealoffer():
+label vig4_sc4_amaoffer():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
