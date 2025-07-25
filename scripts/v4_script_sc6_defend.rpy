@@ -135,16 +135,17 @@ label vig4_sc6_defend_1():
         "We're here to protect MAC.":
             $ kcEngagement += 1
             mS "We're here to protect MAC."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "BigCorp can't get away with him."
             mS "So we want to make sure whatever your \"Pops\" is planning happens."
         "We're here to save Polaris.":
             $ csEngagement += 1
             mS "We're here to save Polaris."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "We have to show BigCorp that they can't take our freedom without a fight."
     "Vega holds for a moment."
-    hide screen streamerCommentary
     $ AddChatter(vig4_sc6_defend_1_comment21)
     "The sounds of battle in the distance start to quiet down."
     $ AddChatter(vig4_sc6_defend_1_comment22)
@@ -231,6 +232,7 @@ label vig4_sc6_defend_1():
         "We came to keep you safe!":
             mS "Yes, MAC! We came back to ensure you're safety."
     mS "Are you okay? Are you hurt?"
+    hide screen streamerCommentary
     if rudeMACGoodbye == True:
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_defend_1_comment36)
@@ -264,7 +266,6 @@ label vig4_sc6_defend_1():
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
     macS "I am okay."
-    hide screen streamerCommentary
     macS "But Coil has brought me away from the fighting."
     if macViolence >= macPeace:
         macS "And I was doing such a good job with the turret!"
