@@ -167,7 +167,7 @@ label vig4_sc1_2():
         "How are things at the helm?":
             mS "How are things up here?"
             $ AddChatter(vig4_sc1_2_comment3)
-            pS "Steady as she goes. No excitement since we left Akar."
+            pS "Steady as she goes. No excitement since we left Solara."
             mS "Good."
             mS "And you're not holing up in this chair for days on end anymore?"
             pS "Nope. That's all in the rearview now."
@@ -308,7 +308,7 @@ label vig4_sc1_2():
         "This time you'll follow my orders, MAC.":
             $ kcEngagement -= 1
             mS "MAC, this time you'll follow my orders."
-            mS "No wandering off like you did on Akar."
+            mS "No wandering off like you did in Akar."
             $ AddChatter(vig4_sc1_2_comment22)
             macS "But that was--"
             mS "Stay. On. The. Ship."
@@ -486,7 +486,7 @@ label vig4_sc2_2_solo():
             enS "Maybe we'll come back one day."
             mS "Maybe."
         "I've had my fill of parties.":
-            mS "After Akar, I think I've had my fill of parties."
+            mS "After the Vineyard, I think I've had my fill of parties."
             $ AddChatter(vig4_sc2_solo_comment2)
             enS "Couldn't agree more."
     "I check the tracker. We're on the right path."
@@ -565,7 +565,7 @@ label vig2_sc2_3():
         "What do you mean?":
             mS "Changing how?"
             enS "His vocabulary and grammar."
-            enS "Jennica first pointed it out to me after we left Akar."
+            enS "Jennica first pointed it out to me after we left Solara."
             $ AddChatter(vig4_sc2_3_comment1)
             enS "Wanted to see what you think of it?"
             menu:
@@ -605,7 +605,7 @@ label vig2_sc2_3():
             mS "You mean his speech patterns?"
             mS "They're becoming less robotic."
             enS "Exactly!"
-            enS "Jennica noticed it after we left Akar."
+            enS "Jennica noticed it after we left Solara."
             enS "It's like he's starting to talk like us."
             hide screen streamerCommentary
             $ AddChatter(vig4_sc2_3_comment6)
@@ -630,7 +630,7 @@ label vig2_sc2_3():
             enS "That too, but I meant more subtly."
             $ AddChatter(vig4_sc2_3_comment11)
             enS "It's his speech patterns. They're becoming less robotic."
-            enS "Jennica noticed it after we left Akar."
+            enS "Jennica noticed it after we left Solara."
             enS "It's like he's starting to talk like us."
             $ AddChatter(vig4_sc2_3_comment6)
             enS "It's a little...disconcerting."
@@ -1051,7 +1051,7 @@ label vig4_sc2_6():
                             hide screen streamerCommentary
                             $ AddChatter(vig4_sc2_6_comment5)
                             cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
-                            vS "We helped him with some trouble on Akar. He gave us the technology we needed."
+                            vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                             $ AddChatter(vig4_sc2_6_comment6)
                             vS "That deal allowed us make this place a reality."
                             $ AddChatter(vig4_sc2_6_comment7)
@@ -1068,7 +1068,7 @@ label vig4_sc2_6():
                     hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_6_comment5)
                     cS "No, but he was amenable to a deal when we caught up with him fifeen years ago."
-                    vS "We helped him with some trouble on Akar. He gave us the technology we needed."
+                    vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                     $ AddChatter(vig4_sc2_6_comment6)
                     vS "That deal finally let us make this place a reality."
                     $ vig4_sc2_6_comment1.click = False
@@ -1303,7 +1303,7 @@ label vig4_sc3_1():
     vS "Then we should change that."
     vS "Come on, have some fun with the people who matter most!"
     $ AddChatter(vig4_sc3_1_comment4)
-    "Maybe Vega's right. Even on Akar, we weren't really able to let our guard down."
+    "Maybe Vega's right. Even on Solara, we weren't really able to let our guard down."
     $ AddChatter(vig4_sc3_1_comment5)
     "I scan the festival for my crew."
     show mac stream neutral at stream_left_mac with dissolve
@@ -3450,7 +3450,7 @@ label vig4_sc4_2():
     "I explain my conversation with Ama to Jennica and Teresa."
     pS "It is plausible that they could have tracked Coil's communications without him knowing."
     enS "Even if it was a bluff to bait confirmation from you, BC probably would be following up on any lead they have."
-    pS "And after Akar, Ama is certainly not in the company's good graces."
+    pS "And after Solara, Ama is certainly not in the company's good graces."
     $ AddChatter(vig4_sc4_2_comment3)
     if jennicaRomance == True:
         "Jennica turns to me."

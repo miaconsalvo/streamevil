@@ -19,7 +19,7 @@ default vig4_sc1_comment14 = ChatEntry(False, "{b}Coriolis - 6:06{/b}\naahh the 
 ###Comments vig4_sc1_2 - Crew debriefing mission
 default vig4_sc1_2_comment1 = ChatEntry(False, "{b}pickledDragons - 6:07{/b}\nIt's so much more chill than the start of the last episode", 4, "#ffffff")
 default vig4_sc1_2_comment2 = ChatEntry(False, "{b}llamabama22 - 6:07{/b}\nclassic calm before the storm", 4, "#ffffff")
-default vig4_sc1_2_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 6:07{/b}\nsteam: fully blown off. Thanks Akar", 4, "#ffffff")
+default vig4_sc1_2_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 6:07{/b}\nsteam: fully blown off. Thanks Solara!", 4, "#ffffff")
 default vig4_sc1_2_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 6:08{/b}\nhonestly, I ship these two more than with the cap", 4, "#ffffff")
 default vig4_sc1_2_comment5 = ChatEntry(False, "{b}marxky8 - 6:08{/b}\nfr Jeresa hive stand up!", 4, "#ffffff")
 default vig4_sc1_2_comment6 = ChatEntry(False, "{b}AFKAngel - 6:08{/b}\ndon't worry, they got the thermal paste replacements", 4, "#ffffff")
