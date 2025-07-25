@@ -2632,18 +2632,18 @@ label vig3marshalcomms():
     macS "Skeeve."
     recS "The biggest."
     mS "Let's get out of here."
-    "Just then an annoucement comes on in the hall."
+    "Just then an annoucement echoes from the hall."
     "Unauthorized personnel in comms room 45B"
     "I look at the placard next to the door."
     "Shit."
-    "Before we can even leave boots swarm the hall outside."
+    "Before we can even leave, boots swarm the hall outside."
     "And we're met with an unfortunately familiar face."
     houndleader "Well hello there sweetcheeks."
     houndleader "We've got orders for you all to come with us."
     enS "Shit."
     "The hounds along with majority of their detail take us down the hall."
     houndleader "Ma'am I'd suggest you head back to the gallery, this is restricted area."
-    "I turn and there's Ama, fuming, watching her prey get snatched up before he very eyes."
+    "I turn and there's Ama, fuming, watching her prey get snatched up before her very eyes."
     #This should be a different ending, make it unique.
     show jennica stream neutral
     jump vig3_sc14
@@ -2685,7 +2685,11 @@ label vig3_sc14():
     houndleader "Then let's get the hell out of here."
     houndleader "I need a drink after this."
     "I'm unsurprised as Ama walks in and takes her spot near the door."
-
+    "She holds out some credits and the Hound Leader takes it."
+    houndleader "Job's done, let's move."
+    "The hounds leave just as quickly as they came."
+    "The shuttle doors close behind her."
+    "We stay there in dangerous slience."
 
     hide mac with dissolve
     show ama stream neutral at stream_right5 with vpunch
@@ -2695,70 +2699,100 @@ label vig3_sc14():
     show jennica stream fight
     "Teresa and Jen are quick to act."
     enS "Let her go Ama!"
-    pS "We'll drag your body out of here if necessary."
+    "Teresa attempts to grab Ama who kicks her into Jenn with deadly ease."
+    pS "Agh!"
+    "From the ground Jenn pulls out her gun at Ama."
+    pS "Don't make us send you back in a body bag."
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
+    amaS "Now how about we all stay still and quiet and do as I-"
+    "Her eyes meet Rec's"
     hide jennica with dissolve
     hide teresa with dissolve
     show ama stream neutral at stream_right with move
     show rec stream surprised at stream_left with move
     recS "Deadeye..."
-    "Ama's eye move to Rec."
-    amaS "Well well, if it isn't Reccrin."
+    amaS "Well well..."
+    amaS "If it isn't Reccrin."
     amaS "Right where we left him."
     show rec stream angry
-    recS "Screw you, you took Allistar away to go galavanting in the Outposts."
+    "The shuttle hums as it takes off down to Akar."
+    recS "Screw you..."
+    amaS "Oh? They speak?"
+    recS "Screw you Ama! you took Allistar away to go galavanting in the Outposts."
     recS "I have nothing to say to you."
     "Ama looks around expectantly."
+    amaS "Please I'm not the one who wanted to be selfish and keep him down."
+    amaS "That kid had so much talent and potential and you just wanted him to ROT in a shop!"
+    recS "I only stayed in Akar because I knew I could see him."
     "A realization creeps on her face."
-    amaS "Mozely, where is Allistar? Last I checked I left him with you."
+    amaS "Mozely..."
+    amaS "Where is Allistar? Last I checked I left him with you."
     show rec stream surprised
     "Rec's eyes fix to me, finally catching me in my lie."
     recS "What?"
     amaS "Oh you didn't know?"
     "Guilt stains all of our faces."
+    "The walls of the shuttle feel like they're choking the air out of us."
     recS "Is this true?"
+    "I don't answer."
+    recS "Moze..."
+    "Mac catches my eyes from the back of the shuttle."
+    recS "MOZE!"
     mS "It is..."
     show rec stream angry
-    recS "Well!? Where is he!?"
-    "I can't lie anymore."
-    mS "He's dead Rec, I shot him."
+    recS "Well!?"
+    recS "Where is he!?"
+    "Blood starts to pool from the blade as I try to form the words."
+    mS "He's dead Rec, I killed him."
     "Rec's eys widen, as they step back, horrified."
-    recS "Why?"
+    recS "No."
+    recS "That's not right."
+    "They look around at all of us, Jenn and Teresa can't look them in the eyes."
+    recS "Why..."
     menu: 
-        "Why did you shoot Allistar?"
+        "Explain to Rec why you shot Allistar?"
         "I didn't want to it just happened.":
             $ reactTarget = "vig3_sc14_recfindsout_regret"
             mS "After he fixed MAC, we brought him to the ship."
             mS "He was trying to take MAC."
             mS "I was scared. Scared of this."
             mS "And I think he was too."
-            "Tears are streaming down Rec;s face." 
+            "Tears are streaming down Rec's face." 
             recS "So why?"
             mS "I just happened. Before I realized what I've done he was on the ground."
-            mS "I'm so sorry Rec, it's my greatest failure."
+            mS "I'm so sorry Rec."
+            mS "I know it doesn't mean anything right now but I'm sorry."
             "There's a long moment where Rec just looks at us."
-            "But they say nothing and turn to walk away."
+            "But they say nothing."
+            "We stand there in stasis as the shuttle reaches Akar."
             show screen streamerCommentary
             hide rec with dissolve
             "Teresa and Jennica don't turn to them, still fixed on Ama."
+            "Her grip in unwavering."
             "MAC clings to Teresa."
+            "Then an announcement."
+            "Final stop, Akar station."
+            "The doors open and Reccrin walks out."
             amaS "How disappointing, he was a talented kid."
             "Ama looks to Teresa and Jennica."
-            "I see Reynar's security detail bounding for us in the distance."
-            "Ama takes the knife off my neck. And puts her hands in the air."
+            "Ama takes the knife off my neck. And shoves me into the group."
+            "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
-            "We don't move as she backs away from us."
-            "Then out of sight."
+            "We don't move as the doors shut in front of us."
+            "Then out of sight and the shuttle returns to the Vineyard."
             hide ama with dissolve
-            "We don't have time to process before we head for the shuttle."
+            "For a moment we stand on the empty platform."
+            "Unsure how to continue."
             show mac stream neutral at stream_center_mac with dissolve
-            macS "Moze?"
+            macS "Captain?"
             mS "Yes MAC."
             macS "Will Rec be okay?"
             mS "I don't know."
+            macS "Should we go after them?"
+            mS "No kid. Let's just go."
             macS "Are you okay?"
-            mS "I don't know."
+            mS "I-"
             hide mac with dissolve
             hide jennica with dissolve
             hide teresa with dissolve
@@ -2825,13 +2859,24 @@ label vig3_sc14():
             hide jennica with dissolve
             hide teresa with dissolve
             jump vig3_epilogue
-    
-    #Have an ending with the security detail
 
 label vig3_epilogue():
-    "As the shuttle zooms to Akar, the Vineyard is alight with fireworks."
-    "The screens in the shuttle spring to life."
-    "Reynar is there, glass in hand toasting it to the camera."
+    "As the shuttle zooms back to the Vineyard it is alight with fireworks in the distance."
+    "The screens on the platform end their ads and a live feed begins."
+    "Reynar is there, on his balcony addressing the crowd of patrons."
+    reynar "Good evening everyone!"
+    reynar "Thank you once again for offering your time, your knowledge, and your passion to our Fair."
+    reyanr "Your presence here is a testiment to our ongoing commitment to make the Outposts a better and brighter place."
+    reynar "I applaud each and every one of you."
+    reynar "Your choices..."
+    reynar "Shape our future."
+    reynar "Don't ever lose sight of what we're working towards."
+    reynar "So let's raise a glass in celebration."
+    reynar "To the Outposts!"
+    "Reynar looks dead at the camera, at us."
+    "Cheering explodes in the background."
+    "He raises his glass."
+    "The fireworks dance in the night sky."
     "And I remember what he left in my pocket."
     hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
@@ -2840,9 +2885,9 @@ label vig3_epilogue():
     "Which gives us time."
     "At least..."
     "But the Oakley is silent."
-    "For days it is buisness as usual, no one knowing how to talk about the dark cloud over us."
+    "For days it's buisness as usual, no one knowing how to talk about the dark cloud over us."
     "Rec refuses to answer Jenn or Teresa's transmissions."
-    "MAC has be silent, spending time alone."
+    "MAC has be silent, spending most of his time alone."
     "Then the transmission comes through."
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
@@ -2850,7 +2895,7 @@ label vig3_epilogue():
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
     dflycontact "I hear you are in possession of Dr. Vanas' work."
     dflycontact "We are contacting you regarding the drop off point."
-    dflycontact "We are stationed at a plant known as Polaris."
+    dflycontact "We are stationed at a planet known as Polaris."
     dflycontact "Brevifolia sector coordinates 11 03 7"
     dflycontact "This is the last attempt, should this message be lost, then so is our hope."
     "The transmission ends."
@@ -2862,14 +2907,15 @@ label vig3_epilogue():
     hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     #Make this longer#
-    "As I walk down the hall, I'm once again intercepted."
+    "As I walk down the hall, I'm intercepted by Mac."
     show mac stream neutral at stream_center_mac with dissolve
-    "It's MAC."
     "We stare at each other in silence."
-    "I lower myself to his eye level."
+    "I don't know what to say."
+    "We just look at each other."
+    "So I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
-    "The Oakley presses forward, and away from Akar."
+    "The Oakley presses forward, as it always does."
     hide mac stream neutral with dissolve
     hide screen streamChat
     hide screen streamDetails
