@@ -2063,7 +2063,7 @@ label vig3_sc11():
     reynar "Ladies, I hope your evening is going well."
     amaS "Reynar."
     reynar "Hello Ama, a pleasure as always."
-    reynar "And Moze good to see you again. All grown up I see?"
+    reynar "And Moze. I knew you were familiar when I saw you. All grown up I see?"
     "I relax my shoulders."
     mS "Reynar, thank you for having us this evening."
     reynar "If only you were invited..."
@@ -2254,6 +2254,116 @@ label vig3_sc12():
                     "The rep is white as a ghost, back to the rails as if he'll throw himself off."
                     "And there's MAC with my blaster in his hand."
                     "Gripping the handle like it's his own."
+
+            if macViolence >= macPeace and macPessimism >= macHope:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                bcrep "Makers!" 
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy. Shall I demonstrate?" 
+                bcrep "Programming..."
+                amaS "Well then, let's-"
+                "The blaster rings out and before I can react Ama is on the ground clutching her side."
+                amaS "Bastard!" 
+                macS "I have been provoked and damaged, I will defend myself."
+                macS "I will defend my Captain."
+                "The rep is shaking and I almost forget the rifle in my hand."
+                "MAC slowly rolls towards me passing Ama without even looking at her."
+                amaS "You won't get out here you know."
+                macS "Will you stop us. I can remove you if necessary."
+                amaS "I-"
+                macS "We should leave, yes?"
+                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"
+                show screen streamerCommentary
+                mS "You got it."
+                "Without losing my sights on her we head inside."
+            elif macViolence >= macPeace and macPessimism < macHope:
+                "He fires the blaster in between us, it hits the wall with a definitive smack."
+                bcrep "Makers!" 
+                "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy when required." 
+                bcrep "Programming..." 
+                amaS "Well then, let's see it."
+                macS "I know you don't want BigCorp to succeed anymore than we do."
+                amaS "I don't know I'm being paid quite well."
+                "Another fire from the blaster, right in front of Ama's face."
+                macS "Then I'll shoot you if I must."
+                amaS "You little bastard."
+                "This is my chance."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                mS "MAC let's go!" 
+                macS "Yes Captain!"
+                "MAC wheels towards me and stops at Ama."
+                macS "Captain says you're one of the best."
+                macS "My records show a long list of... accomplishments perpetrated by you."
+                amaS "And what about it?"
+                macS "I thought you'd be better than this."
+                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
+                show screen streamerCommentary
+                "Ama is speechless"
+                "Without losing my sights on her we head inside."
+            elif macViolence < macPeace and macPessimism >= macHope:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                bcrep "Makers!" 
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming... ensures perfect accuracy."
+                bcrep "Programming..."
+                "Ama flashes him her famous condescending smile."
+                amaS "But did they program any nerve in you?"
+                "MAC is struggling to keep the blaster straight" 
+                "He's trying to do what he thinks is best..."
+                macS "I can't..."
+                "He begins to lower the gun."
+                "I didn't think droids could feel defeat."
+                amaS "Takes alot more than a good shot to be an outlaw." 
+                "I can feel Ama loosen her grip."
+                "This is my chance."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                mS "Enough nerve for ya?"
+                "MAC quickly rolls to me."
+                mS "We're walking out of her."
+                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"
+                show screen streamerCommentary
+                "Without losing my sights on her we head inside."
+            else:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                bcrep "Makers!" 
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy. But I won't need this."
+                bcrep "Programming..."
+                amaS "Mighty confident are we? Gonna take me on with hands?"
+                macS "I will not do that."
+                macS "You're going to let us go."
+                amaS "Sorry but I'm not feeling very charitable at the moment."
+                "There's a moment as the two stare at each other."
+                macS "I know you still have love for Moze." 
+                amaS "..."
+                amaS "What did you say?"
+                "MAC also takes me aback but I regain composure first."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                macS "Moze, don't hurt her."
+                macS "Let's just go."
+                "MAC slowly rolls towards me."
+                "As he passes Ama he looks at her and smiles."
+                macS "Take care Ama."
+                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"
+                show screen streamerCommentary
+                "Without losing my sights on her we head inside." 
+            #elif macViolence < macPeace and macPessimism < macHope:
+            # "MAC is a peaceful optimist."            
+            "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
+            "We break into a sprint down the hall."
+            hide ama with dissolve
+            hide bcrep with dissolve
+            show mac stream neutral at stream_center_mac with move
+            jump vig3_sc13
              
         "Do nothing.":
             "When MAC's eyes lock on mine, he perks up."
@@ -2335,118 +2445,110 @@ label vig3_sc12():
             "Ama and I hit a stalemate as we turn to MAC."
             "And there's MAC with my blaster in his hand."
             "Gripping the handle like it's his own."
+            if macViolence >= macPeace and macPessimism >= macHope:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy. Shall I demonstrate?" 
+                amaS "Well then, let's-"
+                "The blaster rings out and before I can react Ama is on the ground clutching her side."
+                amaS "Bastard!" 
+                macS "I have been provoked and damaged, I will defend myself."
+                macS "I will defend my Captain."
+                "MAC slowly rolls towards me passing Ama without even looking at her."
+                amaS "You won't get out here you know."
+                macS "Will you stop us. I can remove you if necessary."
+                amaS "I-"
+                macS "We should leave, yes?"
+                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"
+                show screen streamerCommentary
+                mS "You got it."
+                "Without losing my sights on her we head inside."
+            elif macViolence >= macPeace and macPessimism < macHope:
+                "He fires the blaster in between us, it hits the wall with a definitive smack." 
+                "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy when required." 
+                amaS "Well then, let's see it."
+                macS "I know you don't want BigCorp to succeed anymore than we do."
+                amaS "I don't know I'm being paid quite well."
+                "Another fire from the blaster, right in front of Ama's face."
+                macS "Then I'll shoot you if I must."
+                amaS "You little bastard."
+                "This is my chance."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                mS "MAC let's go!" 
+                macS "Yes Captain!"
+                "MAC wheels towards me and stops at Ama."
+                macS "Captain says you're one of the best."
+                macS "My records show a long list of... accomplishments perpetrated by you."
+                amaS "And what about it?"
+                macS "I thought you'd be better than this."
+                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
+                show screen streamerCommentary
+                "Ama is speechless"
+                "Without losing my sights on her we head inside."
+            elif macViolence < macPeace and macPessimism >= macHope:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming... ensures perfect accuracy."
+                "Ama flashes him her famous condescending smile."
+                amaS "But did they program any nerve in you?"
+                "MAC is struggling to keep the blaster straight" 
+                "He's trying to do what he thinks is best..."
+                macS "I can't..."
+                "He begins to lower the gun."
+                "I didn't think droids could feel defeat."
+                amaS "Takes alot more than a good shot to be an outlaw." 
+                "I can feel Ama loosen her grip."
+                "This is my chance."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                mS "Enough nerve for ya?"
+                "MAC quickly rolls to me."
+                mS "We're walking out of her."
+                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"
+                show screen streamerCommentary
+                "Without losing my sights on her we head inside."
+            else:
+                "He fires the blaster in-between us, it hits the wall with a definitive smack."
+                "Ama just stares at MAC who is resolute in his stance."
+                amaS "You gonna do something with that baby blaster?"
+                amaS "If you're gonna shoot, you better shoot straight."
+                macS "My programming ensures perfect accuracy. But I won't need this."
+                amaS "Mighty confident are we? Gonna take me on with hands?"
+                macS "I will not do that."
+                macS "You're going to let us go."
+                amaS "Sorry but I'm not feeling very charitable at the moment."
+                "There's a moment as the two stare at each other."
+                macS "I know you still have love for Moze." 
+                amaS "..."
+                amaS "What did you say?"
+                "MAC also takes me aback but I regain composure first."
+                "With a proper shove I get Ama off balance and aim her rifle at her."
+                macS "Moze, don't hurt her."
+                macS "Let's just go."
+                "MAC slowly rolls towards me."
+                "As he passes Ama he looks at her and smiles."
+                macS "Take care Ama."
+                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"
+                show screen streamerCommentary
+                "Without losing my sights on her we head inside." 
+            #elif macViolence < macPeace and macPessimism < macHope:
+            # "MAC is a peaceful optimist."            
+            "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
+            "We break into a sprint down the hall."
+            hide ama with dissolve
+            hide bcrep with dissolve
+            show mac stream neutral at stream_center_mac with move
+            jump vig3_sc13
     
     
     #Choices happen based on MAC's alignment.
-    if macViolence >= macPeace and macPessimism >= macHope:
-        "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        bcrep "Makers!" 
-        "Ama just stares at MAC who is resolute in his stance."
-        amaS "You gonna do something with that baby blaster?"
-        amaS "If you're gonna shoot, you better shoot straight."
-        macS "My programming ensures perfect accuracy. Shall I demonstrate?" 
-        bcrep "Programming..."
-        amaS "Well then, let's-"
-        "The blaster rings out and before I can react Ama is on the ground clutching her side."
-        amaS "Bastard!" 
-        macS "I have been provoked and damaged, I will defend myself."
-        macS "I will defend my Captain."
-        "The rep is shaking and I almost forget the rifle in my hand."
-        "MAC slowly rolls towards me passing Ama without even looking at her."
-        amaS "You won't get out here you know."
-        macS "Will you stop us. I can remove you if necessary."
-        amaS "I-"
-        macS "We should leave, yes?"
-        $ reactTarget = "vig3_sc12_macalignment_violencepessimism"
-        show screen streamerCommentary
-        mS "You got it."
-        "Without losing my sights on her we head inside."
-    elif macViolence >= macPeace and macPessimism < macHope:
-        "He fires the blaster in between us, it hits the wall with a definitive smack."
-        bcrep "Makers!" 
-        "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
-        amaS "You gonna do something with that baby blaster?"
-        amaS "If you're gonna shoot, you better shoot straight."
-        macS "My programming ensures perfect accuracy when required." 
-        bcrep "Programming..." 
-        amaS "Well then, let's see it."
-        macS "I know you don't want BigCorp to succeed anymore than we do."
-        amaS "I don't know I'm being paid quite well."
-        "Another fire from the blaster, right in front of Ama's face."
-        macS "Then I'll shoot you if I must."
-        amaS "You little bastard."
-        "This is my chance."
-        "With a proper shove I get Ama off balance and aim her rifle at her."
-        mS "MAC let's go!" 
-        macS "Yes Captain!"
-        "MAC wheels towards me and stops at Ama."
-        macS "Captain says you're one of the best."
-        macS "My records show a long list of... accomplishments perpetrated by you."
-        amaS "And what about it?"
-        macS "I thought you'd be better than this."
-        $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
-        show screen streamerCommentary
-        "Ama is speechless"
-        "Without losing my sights on her we head inside."
-    elif macViolence < macPeace and macPessimism >= macHope:
-        "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        bcrep "Makers!" 
-        "Ama just stares at MAC who is resolute in his stance."
-        amaS "You gonna do something with that baby blaster?"
-        amaS "If you're gonna shoot, you better shoot straight."
-        macS "My programming... ensures perfect accuracy."
-        bcrep "Programming..."
-        "Ama flashes him her famous condescending smile."
-        amaS "But did they program any nerve in you?"
-        "MAC is struggling to keep the blaster straight" 
-        "He's trying to do what he thinks is best..."
-        macS "I can't..."
-        "He begins to lower the gun."
-        "I didn't think droids could feel defeat."
-        amaS "Takes alot more than a good shot to be an outlaw." 
-        "I can feel Ama loosen her grip."
-        "This is my chance."
-        "With a proper shove I get Ama off balance and aim her rifle at her."
-        mS "Enough nerve for ya?"
-        "MAC quickly rolls to me."
-        mS "We're walking out of her."
-        $ reactTarget = "vig3_sc12_macalignment_peacepessimism"
-        show screen streamerCommentary
-        "Without losing my sights on her we head inside."
-    else:
-        "He fires the blaster in-between us, it hits the wall with a definitive smack."
-        bcrep "Makers!" 
-        "Ama just stares at MAC who is resolute in his stance."
-        amaS "You gonna do something with that baby blaster?"
-        amaS "If you're gonna shoot, you better shoot straight."
-        macS "My programming ensures perfect accuracy. But I won't need this."
-        bcrep "Programming..."
-        amaS "Mighty confident are we? Gonna take me on with hands?"
-        macS "I will not do that."
-        macS "You're going to let us go."
-        amaS "Sorry but I'm not feeling very charitable at the moment."
-        "There's a moment as the two stare at each other."
-        macS "I know you still have love for Moze." 
-        amaS "..."
-        amaS "What did you say?"
-        "MAC also takes me aback but I regain composure first."
-        "With a proper shove I get Ama off balance and aim her rifle at her."
-        macS "Moze, don't hurt her."
-        macS "Let's just go."
-        "MAC slowly rolls towards me."
-        "As he passes Ama he looks at her and smiles."
-        macS "Take care Ama."
-        $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"
-        show screen streamerCommentary
-        "Without losing my sights on her we head inside." 
-    #elif macViolence < macPeace and macPessimism < macHope:
-    # "MAC is a peaceful optimist."            
-    "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
-    "We break into a sprint down the hall."
-    hide ama with dissolve
-    hide bcrep with dissolve
-    show mac stream neutral at stream_center_mac with move
-    jump vig3_sc13
+    
 
 label vig3_sc13():
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
@@ -2457,11 +2559,9 @@ label vig3_sc13():
     macS "They should be right down here."
     "This whole area has been cleared. Why is there no one here?"
     "Loud bangs ring out in the distance. Fireworks? Maybe?"
-    "Maybe mine wasn't the only secret meeting tonight."
     hide screen streamerCommentary
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
-    "It's locked and needs a card to open."
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and the door swings open."
     "Two blasters are pointed at my face as the door swings open."
     show mac stream neutral at stream_right5mac with move
@@ -2511,25 +2611,29 @@ label vig3_sc13():
                 jump vig3marshalcomms 
         "Mad dash to the shuttles.":
             "No time to lose lets make a break for it!"
+            hide mac with dissolve
+            hide teresa with dissolve
+            hide rec with dissolve
+            hide jennica with dissolve
             "..."
-            show mac stream shock
+            show mac stream shock at stream_right5mac with vpunch
             macS "APOLOGIES!"
             "This was the third security guard MAC had run over with reckless abandon."
             "Like a little purple battering ram MAC was clearing a path through just as Reynar's security came to intercept us."
             "When we set off we didn't imagine it would be this close to the fair."
             "Dodging through the side garden to the entrance shuttles I pray that Reynar isn't too upset with our escape plan."
-            show jennica stream shock
+            show jennica stream shock at stream_left with dissolve
             pS "Jeez this kid's goin' fast and furious."
-            show teresa stream happy
+            show teresa stream happy at stream_right with dissolve
             enS "He gets it from you!"
-            show rec stream thinking
+            show rec stream thinking at stream_left5
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
             mS "REC LOOK FORWARD!"
-            show rec stream surprised
-            "In their distracted state they mindless slam into a couple going hot and heavy."
+            show rec stream surprised at stream_left5
+            "In their distracted state they mindlessly slam into a couple going hot and heavy."
             "No doubt using the garden to avoid any possible scandal..."
             invfairnpc2 "Watch yourself!"
-            "The narrowly dodge MAC only to get slammed by Jennica."
+            "The two narrowly dodge MAC only to get slammed by Jennica."
             show jennica stream neutral
             pS "Keep up y'all I'm the only one in heels and I'm leagues ahead!"
             enS "Stop showing off!"
@@ -2538,8 +2642,14 @@ label vig3_sc13():
             recS "How about that terrarium!"
             mS "REC!"
             "I can see the exit to the shuttles just in reach."
-            reynar "Having fun Mozely!"
-            "We stop dead in our tracks as reynar appears with the hounds flanking him."
+            reynar "Having fun Mozely?"
+            hide rec with dissolve
+            hide jennica with dissolve
+            hide mac with dissolve
+            hide teresa with dissolve
+            show reynar stream angry at stream_center
+            "We stop dead in our tracks as reynar appears."
+            "Flanked by the hounds."
             reynar "*sigh* You've been making quite the mess of things. Haven't you."
             mS "You don't know the half of it."
             reynar "Don't flatter yourself."
@@ -2548,8 +2658,9 @@ label vig3_sc13():
             "Just then I see the glass windows of the gallery to my right lined with prying eyes."
             reynar "Now I have to make a show of this."
             "We struggle against the Hounds as we're overwhelmed by Reynar's forces."
-            "I can hear the faint sounds of clapping as we're escorted out."
+            "I can hear the faint sounds of clapping as we're pulled out of the garden."
             "Reynar turns his back to us as he renters the gallery."
+            hide reynar with dissolve
             jump vig3_sc14
 
 label vig3outlawcomms():
@@ -2621,7 +2732,7 @@ label vig3marshalcomms():
     enS "How do you sleep at night?"
     smatt "Oh don't look at me like that."
     smatt "The kid's alive."
-    smatt "Which is more than I can say about you."
+    smatt "Which is better than what'll happen to you."
     "Jenn spits on the ground."
     mS "I think we're done here."
     smatt "Oh Mozely, from the bottom of my heart."
@@ -2638,14 +2749,17 @@ label vig3marshalcomms():
     "Shit."
     "Before we can even leave, boots swarm the hall outside."
     "And we're met with an unfortunately familiar face."
+    hide jennica with dissolve
+    hide mac with dissolve
+    hide rec with dissolve
+    show houndleader at stream_center with dissolve
     houndleader "Well hello there sweetcheeks."
     houndleader "We've got orders for you all to come with us."
     enS "Shit."
-    "The hounds along with majority of their detail take us down the hall."
+    "The Hounds along with majority of their detail take us down the hall."
     houndleader "Ma'am I'd suggest you head back to the gallery, this is restricted area."
     "I turn and there's Ama, fuming, watching her prey get snatched up before her very eyes."
     #This should be a different ending, make it unique.
-    show jennica stream neutral
     jump vig3_sc14
 
 label vig3_sc14():
@@ -2680,7 +2794,7 @@ label vig3_sc14():
             houndleader "Don't stay too long in Akar."
             houndleader "We'll be looking."
     "We all walk into the shuttle and take a seat."
-    "Captain we got another one! I hear another Hound say."
+    houndgoon "Captain we got another one!"
     houndleader "Put em in this one!"
     houndleader "Then let's get the hell out of here."
     houndleader "I need a drink after this."
@@ -2688,19 +2802,20 @@ label vig3_sc14():
     "She holds out some credits and the Hound Leader takes it."
     houndleader "Job's done, let's move."
     "The hounds leave just as quickly as they came."
+    hide houndleader with dissolve
     "The shuttle doors close behind her."
     "We stay there in dangerous slience."
 
     hide mac with dissolve
     show ama stream neutral at stream_right5 with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
-    show rec stream surprised
-    show teresa stream fight
-    show jennica stream fight
+    show teresa stream fight at stream_right
+    show jennica stream fight at stream_left
     "Teresa and Jen are quick to act."
     enS "Let her go Ama!"
     "Teresa attempts to grab Ama who kicks her into Jenn with deadly ease."
-    pS "Agh!"
+    hide teresa with vpunch
+    enS "Agh!"
     "From the ground Jenn pulls out her gun at Ama."
     pS "Don't make us send you back in a body bag."
     amaS "Then you'll need to make room for two."
@@ -2710,7 +2825,7 @@ label vig3_sc14():
     hide jennica with dissolve
     hide teresa with dissolve
     show ama stream neutral at stream_right with move
-    show rec stream surprised at stream_left with move
+    show rec stream surprised at stream_left with dissolve
     recS "Deadeye..."
     amaS "Well well..."
     amaS "If it isn't Reccrin."
@@ -2719,21 +2834,23 @@ label vig3_sc14():
     "The shuttle hums as it takes off down to Akar."
     recS "Screw you..."
     amaS "Oh? They speak?"
-    recS "Screw you Ama! you took Allistar away to go galavanting in the Outposts."
+    recS "Screw you Ama! You took Allistar away to go galavanting in the Outposts."
     recS "I have nothing to say to you."
-    "Ama looks around expectantly."
     amaS "Please I'm not the one who wanted to be selfish and keep him down."
     amaS "That kid had so much talent and potential and you just wanted him to ROT in a shop!"
-    recS "I only stayed in Akar because I knew I could see him."
+    recS "We had a good life!"
+    recS "And I stayed in Akar because I knew that's the only way I could see him."
+    "Ama looks around expectantly."
     "A realization creeps on her face."
     amaS "Mozely..."
-    amaS "Where is Allistar? Last I checked I left him with you."
+    amaS "Where is Allistar?"
+    amS "Last I checked I left him with you."
     show rec stream surprised
     "Rec's eyes fix to me, finally catching me in my lie."
     recS "What?"
     amaS "Oh you didn't know?"
     "Guilt stains all of our faces."
-    "The walls of the shuttle feel like they're choking the air out of us."
+    "The walls of the shuttle feel like they're choking the air out of me."
     recS "Is this true?"
     "I don't answer."
     recS "Moze..."
@@ -2773,7 +2890,7 @@ label vig3_sc14():
             "MAC clings to Teresa."
             "Then an announcement."
             "Final stop, Akar station."
-            "The doors open and Reccrin walks out."
+            "The doors open and Reccrin walks out and out of sight."
             amaS "How disappointing, he was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
@@ -2790,7 +2907,7 @@ label vig3_sc14():
             macS "Will Rec be okay?"
             mS "I don't know."
             macS "Should we go after them?"
-            mS "No kid. Let's just go."
+            mS "No kid. There's nothing we can do."
             macS "Are you okay?"
             mS "I-"
             hide mac with dissolve
@@ -2811,18 +2928,32 @@ label vig3_sc14():
             "I see MAC clutch Jennica's leg"
             recS "You didn't have to do anything."
             recS "You screwed up and needed an easy way to be bailed out."
-            "I see Reynar's security detail bounding for us in the distance."
-            recS "Well I'm not going to stick around to bail you out of this."
+            "Rec lunges for me and it caught by Teresa"
+            show rec stream angry at stream_left5 with move
+            show teresa stream neutral at stream_center with vpunch
+            enS "Calm down!"
+            recS "I won't calm down! You killed him!"
+            recS "You all killed him!"
+            "Rec attempts to fight their way to me but is thankfully subdued."
+            "Then an announcement."
+            "Final stop, Akar station."
+            "When the doors open, Teresa pushes Rec out onto the platform."
+            show rec stream angry at stream_left with vpunch
+            recS "Fine! I'm not going to stick around for this."
+            recS "I hope it was all worth it!"
             "They turn to walk away."
             show screen streamerCommentary
             hide rec with dissolve
             amaS "How disappointing, Allistar was a talented kid."
             "Ama looks to Teresa and Jennica."
+            "Ama takes the knife off my neck. And shoves me into the group."
+            "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
-            "We don't move as she backs away from us."
-            "Then out of sight."
+            "We don't move as the doors shut in front of us."
+            "Then out of sight and the shuttle returns to the Vineyard."
             hide ama with dissolve
-            "We don't have time to process before we head for the shuttle."
+            "For a moment we stand on the empty platform."
+            "Unsure how to continue."
             hide mac with dissolve
             hide jennica with dissolve
             hide teresa with dissolve
@@ -2834,7 +2965,7 @@ label vig3_sc14():
             mS "He was trying to take MAC."
             mS "We trusted him."
             mS "I saw him with MAC at the escape pods and I realized what he was trying to do."
-            "The blade cuts into my neck as I turn to look Rec in the eyes."
+            "The blade cuts into my neck as I make sure to look Rec in the eyes."
             "I can hear Ama chuckle under her breath."
             mS "I killed Allistar, and that spineless traitor got exactly what he deserved!"
             "Teresa and Jennica almost lose their sights on Ama."
@@ -2842,31 +2973,48 @@ label vig3_sc14():
             "Behind him is Rec. Face like they took a bullet to the gut."
             recS "You..."
             "Tears pouring down his face."
+            enS "Moze..."
+            pS "You're not serious."
+            mS "What you think being in position is easy?"
+            mS "You think I like making the hard calls?"
+            mS "Allistar knew the risk, and got what was coming."
+            mS "I'd do it all again if I had to."
             "They look at me and Ama."
             recS "You two deserve each other."
-            "Rec turns around and walks away from us."
+            "Grabs the blaster off of Teresa and fires a shot."
+            show jennica stream fight at stream_center with vpunch
+            "With a quick move from Jennica the bullet hits the shuttle ceiling."
+            "She tackles them to the ground."
             show screen streamerCommentary
-            hide rec with dissolve
+            hide rec with vpunch
+            hide jennica with vpunch
+            "Then an announcement."
+            "Final stop, Akar station."
+            "When the doors open, Jennica lets go and Rec runs to the platform."
             "Ama leans in close."
             amaS "That was cold Mozely, even for me."
-            "Ama takes the knife off my neck. And puts her hands in the air."
+            "Ama takes the knife off my neck. And shoves me into the group."
+            "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
-            "We don't move as she backs away from us."
-            "Then out of sight."
+            "We don't move as the doors shut in front of us."
+            "Then out of sight and the shuttle returns to the Vineyard."
+            "We're left on the platform."
+            "My crew can barely look at me."
+            mS "Everyone I-"
             hide ama with dissolve
-            "We don't have time to process before we head for the shuttle."
             hide mac with dissolve
             hide jennica with dissolve
             hide teresa with dissolve
             jump vig3_epilogue
 
 label vig3_epilogue():
-    "As the shuttle zooms back to the Vineyard it is alight with fireworks in the distance."
+    "The Vineyard is alight with fireworks in the distance."
     "The screens on the platform end their ads and a live feed begins."
     "Reynar is there, on his balcony addressing the crowd of patrons."
+    show reynar stream neutral at stream_center with dissolve
     reynar "Good evening everyone!"
     reynar "Thank you once again for offering your time, your knowledge, and your passion to our Fair."
-    reyanr "Your presence here is a testiment to our ongoing commitment to make the Outposts a better and brighter place."
+    reynar "Your presence here is a testiment to our ongoing commitment to make the Outposts a better and brighter place."
     reynar "I applaud each and every one of you."
     reynar "Your choices..."
     reynar "Shape our future."
@@ -2876,8 +3024,10 @@ label vig3_epilogue():
     "Reynar looks dead at the camera, at us."
     "Cheering explodes in the background."
     "He raises his glass."
+    show reynar stream gatsby at stream_center
     "The fireworks dance in the night sky."
     "And I remember what he left in my pocket."
+    hide reynar with dissolve
     hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
     "Teresa outfits the Oakley best she can."
@@ -2887,8 +3037,8 @@ label vig3_epilogue():
     "But the Oakley is silent."
     "For days it's buisness as usual, no one knowing how to talk about the dark cloud over us."
     "Rec refuses to answer Jenn or Teresa's transmissions."
-    "MAC has be silent, spending most of his time alone."
-    "Then the transmission comes through."
+    "MAC has been silent, spending most of his time alone."
+    "Then the Dragonfly transmission comes through."
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
@@ -2907,7 +3057,23 @@ label vig3_epilogue():
     hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     #Make this longer#
-    "As I walk down the hall, I'm intercepted by Mac."
+    "As I walk down the hall I try to take stock of everything."
+    menu:
+        "How do you feel?"
+        "Happy to have survived":
+            "This was supposed to be a simple pick up."
+            "Maybe even a break."
+            "Now I'm just happy to have made it in one piece."
+        "Guilty":
+            "I can't imagine what Rec is feeling."
+            "I meant what I said."
+            "I just feel like we could've done more for them."
+        "Tired":
+            "Everyday has been such a weight."
+            "It's almost over."
+            "One final push." 
+
+    "I'm intercepted by Mac."
     show mac stream neutral at stream_center_mac with dissolve
     "We stare at each other in silence."
     "I don't know what to say."
@@ -2915,7 +3081,9 @@ label vig3_epilogue():
     "So I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
-    "The Oakley presses forward, as it always does."
+    "And we stay there for sometime."
+    "The ship hums as it picks up speed."
+    "And the Oakley presses forward, as it always does."
     hide mac stream neutral with dissolve
     hide screen streamChat
     hide screen streamDetails
