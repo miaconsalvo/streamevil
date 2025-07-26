@@ -937,13 +937,13 @@ label vig3_sc6():
             show screen streamerCommentary
             "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
             hide bbpub_stream with dissolve
-            show akarplaza_stream at topleft onlayer background with dissolve 
+            show akarplazanight_stream at topleft onlayer background with dissolve 
             "I struggle to navigate the dark winding streets of Akar." 
             "The chaos is picking up as the night continues." 
             "I almost lose the stranger as they tuck away behind an alley and I move to close in on them."
             "As I turn the corner I'm met with a knife to my throat."
             "So clearly not Ama's style."
-            show stranger 1 stream at stream_center with dissolve
+            show stranger stream neutral at stream_center with dissolve
             "The stranger eyes are bright and blue. They're face pretty and heart-shaped face with a mole under her left eye."
             strngr1 "Why are you following me?"
             mS "I just-"
@@ -960,6 +960,7 @@ label vig3_sc6():
                 "Flirt.":
                     mS "Oh, I'm far from disappointed." #flirt
                     "A small smile rises on her face."
+                    show stranger stream smile
                     strngr1 "Oh yeah?"
                     mS "You're a much more pleasant sight if I say so myself."
                     "She doesn't let go of the knife but moves in closer."
@@ -967,27 +968,28 @@ label vig3_sc6():
                     mS "Ouch I'm hurt."
                     strngr1 "Not yet, but the night's young."
                     "When the knife falls we close the distance and tuck ourselves deeper in the alley, far away from eyesight."
-                    hide stranger 1 stream with dissolve 
+                    hide stranger with dissolve 
                     "I return to the Burnt Bulb a bit disheveled hoping that the small nick on my neck has started to scar over."
                     "I go to see Mac and Rec."
-                    hide akarplaza_stream
+                    hide akarplazanight_stream
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Hands up, walk away.":
                     mS "Look this got out of hand."
                     "I hold my hands up and start at her trying to relax the situation."
                     strngr1 "Ha, what can't follow through?"
                     mS "Nothing to follow through on."
-                    hide stranger 1 stream with dissolve 
+                    hide stranger with dissolve 
                     strngr1 "Pathetic."
                     "Her knife doesn't move but she nods her head to tell me to get lost."
                     "I don't take my eyes off her when I back away"
                     "I return to the Burnt Bulb disappointed."
                     "I go to see Mac and Rec."
-                    hide akarplaza_stream
+                    hide akarplazanight_stream
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Wrestle the knife away":
                     mS "I don't have time for this."
                     "I grab her wrist before she can cut me open and twist her arm down and away."
+                    show stranger stream stabbed
                     menu:
                         "Make it hurt?"
                         "Yes. Just like Ama taught me.": 
@@ -1002,12 +1004,12 @@ label vig3_sc6():
                     mS "Need me to call someone for you?"
                     strngr1 "Go to hell."
                     mS "Trust me they know I'm coming."
-                    hide stranger 1 stream with dissolve 
+                    hide stranger with dissolve 
                     "On my way back to the Burnt Bulb I can feel eyes on me."
                     "I take careful steps."
                     "When I get to my destination I and wipe a bit of dust off my jacket before heading in."
                     "I go to see Mac and Rec."
-                    hide akarplaza_stream
+                    hide akarplazanight_stream
                     show bbpub_stream at topleft onlayer background with dissolve
 
         "Check in on MAC and Rec":
@@ -2123,7 +2125,7 @@ label vig3_sc11():
 
 label vig3_sc12():
     #Ext. Vineyard Balcony
-    show exteriorvineyard_stream at topleft onlayer background with dissolve
+    show vybalcony_stream at topleft onlayer background with dissolve
     hide inventorfairgallery_stream
     "Overlooking the lush chimaeron trees, the east balcony is as ornate as it is private."
     "The noise of the Fair cuts as the large doors close on the balcony."
@@ -2551,6 +2553,8 @@ label vig3_sc12():
     
 
 label vig3_sc13():
+    show inventorfairgallery_stream at topleft onlayer background with dissolve
+    hide vybalcony_stream
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
     "Tucked away tight to my side I'm resolute in making sure MAC doesn't touch it."
     "There's no time to talk about what happened."
@@ -2767,6 +2771,8 @@ label vig3_sc14():
     hide mac with dissolve
     hide teresa with dissolve
     hide rec with dissolve
+    show exteriorvineyard_stream at topleft onlayer background with dissolve
+    hide inventorfairgallery_stream
     "Just beyond the entrance the shuttles are empty."
     "Reynar hasn't toasted to the crowd and people wouldn't dare to leave before his address."
     "The hounds flank us as they escort us."
@@ -3030,6 +3036,7 @@ label vig3_epilogue():
     hide reynar with dissolve
     hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
+    hide exteriorvineyard_stream
     "Teresa outfits the Oakley best she can."
     "And with Reynar's gift we got access to fly the Oakley out through restricted sky."
     "Which gives us time."
