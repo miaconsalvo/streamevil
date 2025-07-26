@@ -195,6 +195,7 @@ label setBlasterVig1():
     menu:
         "What should I set my blaster to?"
         "Set blaster to stun":
+            $ marshal += 1
             mS "Ready."
         "Set blaster to lethal":
             $ narrator = reg_narrator
@@ -396,6 +397,7 @@ label saveMAC():
         "Dive in front of the shot.":
             $ kcEngagement += 1
             $ macViolence -= 1
+            $ marshal += 2
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
@@ -676,6 +678,7 @@ label escapePodConfrontation:
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
+            $ outlaw += 3
             $ narrator = reg_narrator
             "Hmm, I don't know if I want to kill Allistar."
             "I go to select the stun option."
@@ -691,6 +694,7 @@ label escapePodConfrontation:
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
+            $ outlaw += 3
             $ narrator = reg_narrator
             "I go to select the stun option."
             show streamview with vpunch

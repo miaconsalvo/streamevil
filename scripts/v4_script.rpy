@@ -1883,6 +1883,7 @@ label vig4_sc3_2_jennica_2():
         "I don't think so.":
             mS "I don't think it ever came up, actually."
         "To get off of your home world, right?":
+            $ pilotApproval += 1
             mS "I think so."
             mS "It was to get off your home world, right?"
             pS "That was part of it."
@@ -2329,6 +2330,7 @@ label vig4_sc3_2_teresa_2():
     menu:
         enS "Hey, Captain. Do you think I'm a good outlaw?"
         "Of course!":
+            $ engineerApproval += 1
             mS "Of course! I'd trust you with my life."
             enS "I know that. But..."
         "Where is this coming from?":

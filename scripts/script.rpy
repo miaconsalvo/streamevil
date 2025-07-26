@@ -102,8 +102,8 @@ default profilePic = "images/socials/profilepics/profile2.png"
 default reactImage = "stream ui/reactneutral.png"
 
 #variables to track morality
-default marshal = 4
-default outlaw = 3
+default marshal = 0 #could start this at 5 and outlaw at 0 if we want to simulate marshal choices for the early part of vig1
+default outlaw = 0
 
 #variables to track MAC's morality
 default macHope = 0
