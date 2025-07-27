@@ -504,7 +504,8 @@ label vig4_sc6_attack_2_ama():
     mS "We won't have to on our own."
     $ AddChatter(vig4_sc6_attack_2_ama_comment16)
     pS "Cap?"
-    mS "That enforcer said BC was preparing a second assault. This first one must have just been to soften up Polaris's defenses."
+    mS "That enforcer said BC was preparing a second assault." 
+    mS "This first one must have just been to soften up Polaris's defenses."
     mS "When BC launches their next attack, we can use the chaos to break through and get into the tower."
     amaS "Oh, I {i}like{/i} this plan, Mozely."
     $ AddChatter(vig4_sc6_attack_2_ama_comment17)
@@ -817,7 +818,8 @@ label vig4_sc6_attack_3_ama():
     "Ama hops out of the tank, standing opposite me."
     "Suddenly, I feel something. Standing here. At war. With her."
     "It's comfort. Like we've been here before."
-    $ AddChatter(vig4_sc6_attack_3_ama_comment52)
+    if jennicaRomance == False and teresaRomacne == False:
+        $ AddChatter(vig4_sc6_attack_3_ama_comment52)
     menu:
         "It's comfort. Like we've been here before."
         "Reject the feeling.":
@@ -881,7 +883,7 @@ label vig4_sc6_attack_3_ama():
     else:
         show ama at stream_center with move
         show jennica stream neutral at stream_left with dissolve
-    pS "Uh, gang, you're gonna want to move." 
+    pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
     enS "Negative, Captain."
@@ -985,7 +987,8 @@ label vig4_sc7_1_attack_ama():
     $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
     if vig4_killDflies == True:
-        cS "You had to murder some good people to do it. But you arrived."
+        cS "You had to murder some good people to do it." 
+        cS "But you arrived."
         $ AddChatter(vig4_sc7_1_attack_ama_comment1)
     else:
         pass

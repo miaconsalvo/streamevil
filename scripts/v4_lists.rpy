@@ -870,7 +870,7 @@ default vig4_sc6_attack_2_ama_comment12 = ChatEntry(False, "{b}jerrybean784 - 7:
 default vig4_sc6_attack_2_ama_comment13 = ChatEntry(False, "{b}pickledDragons - 7:36{/b}\nUgh, what an ass", 4, "#ffffff")
 default vig4_sc6_attack_2_ama_comment14 = ChatEntry(False, "{b}xXpearlXx - 7:36{/b}\nHolding MAC as a hostage??", 4, "#ffffff")
 default vig4_sc6_attack_2_ama_comment15 = ChatEntry(False, "{b}treb.ell - 7:36{/b}\nNo, I think it's genuinely for MAC's protection", 4, "#ffffff")
-default vig4_sc6_attack_2_ama_comment16 = ChatEntry(False, "{b}AFKAngel - 7:36{/b}\nJust conveniently that happens to be right by Coil's side", 4, "#ffffff")
+default vig4_sc6_attack_2_ama_comment16 = ChatEntry(False, "{b}RdioRobbie - 7:36{/b}\nJust conveniently that happens to be right by Coil's side", 4, "#ffffff")
 default vig4_sc6_attack_2_ama_comment17 = ChatEntry(False, "{b}_lostinmetr0 - 7:36{/b}\nWow that's an intense call", 4, "#ffffff")
 default vig4_sc6_attack_2_ama_comment18 = ChatEntry(False, "{b}Coriolis - 7:36{/b}\nWe're committed at this point, it makes sense", 4, "#ffffff")
 default vig4_sc6_attack_2_ama_comment19 = ChatEntry(False, "{b}turb0g00se - 7:36{/b}\nTime to deal with an evil corporation and some annoying guerrillas", 4, "#ffffff")
@@ -951,7 +951,7 @@ default vig4_sc7_1_attack_ama_comment9 = ChatEntry(False, "{b}R4dioRobbie - 7:56
 default vig4_sc7_1_attack_ama_comment10 = ChatEntry(False, "{b}kitcat - 7:56{/b}\nRoll that deception check [streamer]!", 4, "#ffffff")
 default vig4_sc7_1_attack_ama_comment11 = ChatEntry(False, "{b}turb0g00se - 7:56{/b}\nNo way this works, but I respect the hustle", 4, "#ffffff")
 default vig4_sc7_1_attack_ama_comment12 = ChatEntry(False, "{b}Coriolis - 7:56{/b}\nHe's right, we've done a lot of messed up stuff today", 4, "#ffffff")
-default vig4_sc7_1_attack_ama_comment13 = ChatEntry(False, "{b}AFKAngel - 7:56{/b}\nngl, it felt kinda good", 4, "#ffffff")
+default vig4_sc7_1_attack_ama_comment13 = ChatEntry(False, "{b}xXpearlXx - 7:56{/b}\nngl, it felt kinda good", 4, "#ffffff")
 default vig4_sc7_1_attack_ama_comment14 = ChatEntry(False, "{b}bacon8r_6 - 7:56{/b}\nAma is ready for the smoke", 4, "#ffffff")
 
 #########ATTACK POLARIS ROUTE###########
@@ -1009,6 +1009,9 @@ default vig4_sc7_2_comment27 = ChatEntry(False, "{b}kitcat - 8:01{/b}\nNo Ama ro
 default vig4_sc7_2_comment28 = ChatEntry(False, "{b}pickledDragons - 8:01{/b}\nBut why tho, we like barely know him", 4, "#ffffff")
 default vig4_sc7_2_comment29 = ChatEntry(False, "{b}turb0g00se - 8:01{/b}\nC'mon Deadeye!", 4, "#ffffff")
 default vig4_sc7_2_comment30 = ChatEntry(False, "{b}llamabama22 - 8:01{/b}\nBC's lapdog is going down", 4, "#ffffff")
+default vig4_sc7_2_comment31 = ChatEntry(False, "{b}J4MIR0QU4I - 8:01{/b}\nAma's whole thing is being selfish. At least Coil's trying to build something for other people", 4, "#ffffff")
+default vig4_sc7_2_comment32 = ChatEntry(False, "{b}J4MIR0QU4I - 8:01{/b}\nDon't agree. Coil may not be a great dude, but the galaxy will be worse off without him imo", 4, "#ffffff")
+
 
 ###Comments vig4_sc7_3_ama - Final boss VS Coil
 default vig4_sc7_3_ama_comment1 = ChatEntry(False, "{b}xXpearlXx - 8:02{/b}\nOh gramps has some moves", 4, "#ffffff")
@@ -1185,7 +1188,7 @@ default vig4_sc7_epilogue_comment24 = ChatEntry(False, "{b}jerrybean784 - 8:16{/
 default vig4_sc7_epilogue_comment25 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:16{/b}\nFor the family!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment26 = ChatEntry(False, "{b}xXpearlXx - 8:16{/b}\nExcuse me!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment27 = ChatEntry(False, "{b}treb.ell - 8:16{/b}\nLOVE!", 4, "#ffffff")
-default vig4_sc7_epilogue_comment28 = ChatEntry(False, "{b}kitcat - 8:16{/b}\nas;ldfkjasld;kjfAAAAAHHHHHHHH!", 4, "#ffffff")
+default vig4_sc7_epilogue_comment28 = ChatEntry(False, "{b}kitcat - 8:16{/b}\nas;ldfkjasld;kjfAAAHHHH!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment29 = ChatEntry(False, "{b}kitcat - 8:16{/b}\nI'm dying", 4, "#ffffff")
 default vig4_sc7_epilogue_comment30 = ChatEntry(False, "{b}pickledDragons - 8:16{/b}\nThis feels nice", 4, "#ffffff")
 default vig4_sc7_epilogue_comment31 = ChatEntry(False, "{b}Coriolis - 8:16{/b}\nYeah, everything's how it should be :)", 4, "#ffffff")
@@ -1411,11 +1414,11 @@ default vig4_sc4_react_comment9 = ChatEntry(False, "{b}R4dioRobbie - 7:15{/b}\ns
 default vig4_sc4_react_comment10 = ChatEntry(False, "{b}J4MIR0QU4I - 7:15{/b}\ntoo late now lol", 4, "#ffffff")
 default vig4_sc4_react_comment11 = ChatEntry(False, "{b}xXpearlXx - 7:15{/b}\nprobably. but it'll be fun", 4, "#ffffff")
 
-default vig4_sc4_react_comment12 = ChatEntry(False, "{b}Coriolis - 7:16{/b}\nTime for some thrillin heroics!!", 4, "#ffffff")
-default vig4_sc4_react_comment13 = ChatEntry(False, "{b}R4dioRobbie - 7:16{/b}\nlooks like this makes us big damn heroes!", 4, "#ffffff")
+default vig4_sc4_react_comment12 = ChatEntry(False, "{b}llamabama22 - 7:16{/b}\nTime for some thrillin heroics!!", 4, "#ffffff")
+default vig4_sc4_react_comment13 = ChatEntry(False, "{b}J4MIR0QU4I - 7:16{/b}\nlooks like this makes us big damn heroes!", 4, "#ffffff")
 
-default vig4_sc4_react_comment17 = ChatEntry(False, "{b}llamabama22 - 7:16{/b}\neven if coil's a dick, doesnt mean the rest of polaris is", 4, "#ffffff")
-default vig4_sc4_react_comment16 = ChatEntry(False, "{b}R4dioRobbie - 7:16{/b}\ncant punish all the dragonflies for coil right", 4, "#ffffff")
+default vig4_sc4_react_comment17 = ChatEntry(False, "{b}J4MIR0QU4I - 7:16{/b}\neven if coil's a dick, doesnt mean the rest of polaris is", 4, "#ffffff")
+default vig4_sc4_react_comment16 = ChatEntry(False, "{b}AFKAngel - 7:16{/b}\ncant punish all the dragonflies for coil right", 4, "#ffffff")
 
 default vig4_sc4_react_comment14 = ChatEntry(False, "{b}J4MIR0QU4I - 7:16{/b}\nyeah were kinda aggroing everyone haha", 4, "#ffffff")
 default vig4_sc4_react_comment15 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:16{/b}\n gotta save mac!!", 4, "#ffffff")
@@ -1452,36 +1455,37 @@ default vig4_sc6_maccall_react_comment2 = ChatEntry(False, "{b}xXpearlXx - 7:34{
 default vig4_sc6_maccall_react_comment3 = ChatEntry(False, "{b}jerrybean784 - 7:34{/b}\nme too lol", 4, "#ffffff")
 
 default vig4_sc6_maccall_react_comment4 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:34{/b}\nnothings gonna stop us now!", 4, "#ffffff")
-default vig4_sc6_maccall_react_comment5 = ChatEntry(False, "{b}J4MIR0QU4I - 7:34{/b}\nwere on our way mac!!", 4, "#ffffff")
+default vig4_sc6_maccall_react_comment5 = ChatEntry(False, "{b}pickledDragons - 7:34{/b}\nWe're on our way mac!!", 4, "#ffffff")
 
-default vig4_sc6_attack_barricade_react_comment1 = ChatEntry(False, "{b}xXpearlXx - 7:39{/b}\nThe crew are the only ones we care about!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment1 = ChatEntry(False, "{b}turb0g00se - 7:39{/b}\nThe crew are the only ones we care about!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:39{/b}\nyeah and the dragonflies suck haha", 4, "#ffffff")
 
 default vig4_sc6_attack_barricade_react_comment3 = ChatEntry(False, "{b}jerrybean784 - 7:39{/b}\nsquash em!!!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 7:39{/b}\npayback time!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment5 = ChatEntry(False, "{b}R4dioRobbie - 7:39{/b}\nget em girls!", 4, "#ffffff")
 
-default vig4_sc6_attack_barricade_react_comment6 = ChatEntry(False, "{b}Coriolis - 7:39{/b}\nYeah a lil bit too far lol.", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment6 = ChatEntry(False, "{b}Coriolis - 7:39{/b}\nYeah...a bit", 4, "#ffffff")
 
-default vig4_sc6_attack_barricade_react_comment7 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:39{/b}\nyah time to blast some BC goons!", 4, "#ffffff")
-default vig4_sc6_attack_barricade_react_comment8 = ChatEntry(False, "{b}R4dioRobbie - 7:39{/b}\ncorporate stooges!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 7:39{/b}\nyah time to blast some BC goons!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment8 = ChatEntry(False, "{b}_lostinmetr0 - 7:39{/b}\ncorporate stooges!", 4, "#ffffff")
 
 default vig4_sc6_attack_barricade_react_comment9 = ChatEntry(False, "{b}xXpearlXx - 7:39{/b}\nMAC is priority 1!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment10 = ChatEntry(False, "{b}J4MIR0QU4I - 7:39{/b}\nyeah no need to kill unecessarily.", 4, "#ffffff")
 
 default vig4_sc6_attack_barricade_react_comment11 = ChatEntry(False, "{b}pickleDragons - 7:39{/b}\nAdd em to the pile!!!", 4, "#ffffff")
-default vig4_sc6_attack_barricade_react_comment12 = ChatEntry(False, "{b}xXpearlXx - 7:39{/b}\nthey can all die!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment12 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:39{/b}\nthey can all die!", 4, "#ffffff")
 
-default vig4_sc6_attack_barricade_react_comment13 = ChatEntry(False, "{b}pickleDragons - 7:39{/b}\nWoooo TEAM CHAOS!!!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment13 = ChatEntry(False, "{b}turb0g00se - 7:39{/b}\nWoooo TEAM CHAOS!!!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment14 = ChatEntry(False, "{b}bacon8r_6 - 7:39{/b}\nblast em all!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment15 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:39{/b}\nbug n corporates, no distinction!", 4, "#ffffff")
 
-default vig4_sc6_attack_findingcoil_react_comment1 = ChatEntry(False, "{b}llamabama22 - 7:55{/b}\nWouldn't count on it", 4, "#ffffff")
-default vig4_sc6_attack_findingcoil_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 7:55{/b}\nmaybe. hes a tough old man tho.", 4, "#ffffff")
+default vig4_sc6_attack_findingcoil_react_comment1 = ChatEntry(False, "{b}AFKAngel - 7:55{/b}\nWouldn't count on it", 4, "#ffffff")
+default vig4_sc6_attack_findingcoil_react_comment2 = ChatEntry(False, "{b}bacon8r_6 - 7:55{/b}\nmaybe. hes a tough old man tho.", 4, "#ffffff")
+default vig4_sc6_attack_findingcoil_react_comment6 = ChatEntry(False, "{b}llamabama22 - 7:55{/b}\nDo we have to kill him??", 4, "#ffffff")
 
 default vig4_sc6_attack_findingcoil_react_comment3 = ChatEntry(False, "{b}pickleDragons - 7:55{/b}\nCOILED!", 4, "#ffffff")
-default vig4_sc6_attack_findingcoil_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 7:55{/b}\noooff punny!", 4, "#ffffff")
-default vig4_sc6_attack_findingcoil_react_comment5 = ChatEntry(False, "{b}_lostinmetr0 - 7:55{/b}\npayback time coil!", 4, "#ffffff")
+default vig4_sc6_attack_findingcoil_react_comment4 = ChatEntry(False, "{b}AFKAngel - 7:55{/b}\noooff punny!", 4, "#ffffff")
+default vig4_sc6_attack_findingcoil_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:55{/b}\npayback time coil!", 4, "#ffffff")
 
 default vig4_sc6_defend_react_comment1 = ChatEntry(False, "{b}Coriolis - 7:31{/b}\nAint we just!!", 4, "#ffffff")
 default vig4_sc6_defend_react_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:31{/b}\nTime to save the galaxy!", 4, "#ffffff")
@@ -1501,13 +1505,13 @@ default vig4_sc7_react_comment1 = ChatEntry(False, "{b}xXpearlXx - 8:00{/b}\nYah
 default vig4_sc7_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 8:00{/b}\nexciting!", 4, "#ffffff")
 default vig4_sc7_react_comment3 = ChatEntry(False, "{b}R4dioRobbie - 8:00{/b}\nfinally.", 4, "#ffffff")
 
-default vig4_sc7_react_comment4 = ChatEntry(False, "{b}_lostinmetr0 - 8:00{/b}\nidk seems like Ama's at least honest.", 4, "#ffffff")
-default vig4_sc7_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:00{/b}\nAma's evil. cmon now.", 4, "#ffffff")
-default vig4_sc7_react_comment6 = ChatEntry(False, "{b}AFKangel - 8:00{/b}\nboth aren't great haha", 4, "#ffffff")
+default vig4_sc7_react_comment4 = ChatEntry(False, "{b}bacon8r_6 - 8:00{/b}\nidk seems like Ama's at least honest.", 4, "#ffffff")
+default vig4_sc7_react_comment5 = ChatEntry(False, "{b}J4MIR0QU4I - 8:00{/b}\nAma's evil. cmon now.", 4, "#ffffff")
+default vig4_sc7_react_comment6 = ChatEntry(False, "{b}AFKAngel - 8:00{/b}\nboth aren't great haha", 4, "#ffffff")
 
 default vig4_sc7_react_comment7 = ChatEntry(False, "{b}Coriolis - 8:00{/b}\nPick Coil! The Dragonflies are the only resistence against BC, they have to be distrustful!", 4, "#ffffff")
 default vig4_sc7_react_comment8 = ChatEntry(False, "{b}pickleDragons - 8:00{/b}\nPick Ama! Coil betrayed us, let the Snakehawks rise again!", 4, "#ffffff")
-default vig4_sc7_react_comment9 = ChatEntry(False, "{b}turb0g00se - 8:00{/b}\nYeah both kinda suck.", 4, "#ffffff")
+default vig4_sc7_react_comment9 = ChatEntry(False, "{b}jerrybean784 - 8:00{/b}\nYeah both kinda suck.", 4, "#ffffff")
 default vig4_sc7_react_comment10 = ChatEntry(False, "{b}kitcat - 8:00{/b}\nAma for the romance route!", 4, "#ffffff")
 
 default vig4_sc7_killama_react_comment1 = ChatEntry(False, "{b}Coriolis - 8:09{/b}\nSaving the galaxy!", 4, "#ffffff")
@@ -1519,10 +1523,10 @@ default vig4_sc7_killama_react_comment5 = ChatEntry(False, "{b}xXpearlXx - 8:09{
 default vig4_sc7_killama_react_comment6 = ChatEntry(False, "{b}R4dioRobbie - 8:09{/b}\nRip indeed.", 4, "#ffffff")
 
 default vig4_sc7_killcoil_react_comment1 = ChatEntry(False, "{b}pickleDragons - 8:09{/b}\nGottem!", 4, "#ffffff")
-default vig4_sc7_killcoil_react_comment2 = ChatEntry(False, "{b}xXpearlXx - 8:09{/b}\nbug SQUASHED.", 4, "#ffffff")
+default vig4_sc7_killcoil_react_comment2 = ChatEntry(False, "{b}turb0g00se - 8:09{/b}\nbug SQUASHED.", 4, "#ffffff")
 default vig4_sc7_killcoil_react_comment3 = ChatEntry(False, "{b}R4dioRobbie - 8:09{/b}\nTough old geezer.", 4, "#ffffff")
 
-default vig4_sc7_killcoil_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 8:09{/b}\nKinda yeah.", 4, "#ffffff")
+default vig4_sc7_killcoil_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 8:09{/b}\nKinda yeah...", 4, "#ffffff")
 default vig4_sc7_killcoil_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:09{/b}\nRip indeed.", 4, "#ffffff")
 default vig4_sc7_killcoil_react_comment6 = ChatEntry(False, "{b}bacon8r_6 - 8:09{/b}\nRip Polaris.", 4, "#ffffff")
 

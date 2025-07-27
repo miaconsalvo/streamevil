@@ -4073,10 +4073,10 @@ label vig4_sc7_2():
     "Then I see it."    
     $ reactTarget = "vig4_sc7_starshower"
     show screen streamerCommentary
-    #show star shower tower
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
+    show screen streamerCommentary
     "Dozens. Hundreds. Thousands of glimmering lights streaking across the sky."
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
@@ -4098,14 +4098,17 @@ label vig4_sc7_2():
             $ AddChatter(vig4_sc7_2_comment25)
             $ AddChatter(vig4_sc7_2_comment26)
             "I turn to Ama."
-            $ AddChatter(vig4_sc7_2_comment27)
-            pause 0.5
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc7_2_comment27)
+                pause 0.5
             $ AddChatter(vig4_sc7_2_comment28)
             menu:
                 "I turn to Ama."
                 "It's over.":
+                    $ AddChatter(vig4_sc7_2_comment31)
                     mS "Ama, it's over."
                 "I'm sorry.":
+                    $ AddChatter(vig4_sc7_2_comment31)
                     mS "Ama, I'm sorry."
             $ AddChatter(vig4_sc7_2_comment29)
             "Ama glares at me, then Coil. Then her gaze falls back to me."
@@ -4124,14 +4127,17 @@ label vig4_sc7_2():
             $ AddChatter(vig4_sc7_2_comment17)
             $ AddChatter(vig4_sc7_2_comment18)
             "I turn to Coil."
-            $ AddChatter(vig4_sc7_2_comment19)
-            pause 0.5
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc7_2_comment19)
+                pause 0.5
             $ AddChatter(vig4_sc7_2_comment20)
             menu:
                 "I turn to Coil."
                 "It's over.":
+                    $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, it's over."
                 "I'm sorry.":
+                    $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, I'm sorry."
             $ AddChatter(vig4_sc7_2_comment21)
             "Coil sighs."
@@ -4197,7 +4203,7 @@ label vig4_sc7_3_ama():
     "MAC is just behind the energy shield, watching intently."
     "Vega is behind him, her hands covering her mouth."
     $ AddChatter(vig4_sc7_3_ama_comment13)
-    macS "Be careful! Coil's shield generators are offensive and defensive weapons!"
+    macS "Be careful! Coil's shield generators are both defense {i}and{/i} offensive weapons!"
     $ AddChatter(vig4_sc7_3_ama_comment14)
     amaS "Yeah, we got that!"
     hide mac with dissolve
@@ -4249,9 +4255,11 @@ label vig4_sc7_3_ama():
             "I don't have time to stand."
     amaS "Moze!"
     show ama stream neutral at stream_left with Dissolve(0.2)
+    show ama stream neutral at stream_right with move
+    show ama stream neutral with hpunch
     "Ama leaps in front of Coil, and thrusts her hand forward."
     "A blast of energy slams her back to the floor."
-    hide ama with dissolve
+    hide ama with Dissolve(0.5)
     $ AddChatter(vig4_sc7_3_ama_comment22)
     pause 0.5
     $ AddChatter(vig4_sc7_3_ama_comment23)
@@ -4267,7 +4275,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment26)
     show coil stream neutral at stream_center with move
     "Coil and I lock eye contact."
-    "Behind him, I see the ruin of the BC cruister listing toward the ground of Polaris as the star shower pummels its hull."
+    "Behind him, the ruin of the BC cruiser lists toward the ground of Polaris as the star shower pummels its hull."
     cS "Will you do what you have to do?"
     menu:
         cS "Will you do what you have to do?"
@@ -4340,7 +4348,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment41)
     pause 0.5
     $ AddChatter(vig4_sc7_3_ama_comment42)
-    $ reactTarget = "vig4_sc7_attack_killcoil"
+    $ reactTarget = "vig4_sc7_killcoil"
     show screen streamerCommentary
     "His eyes go cold. But there's an odd light to them. As if he was smiling."
     hide coil with Dissolve(2.0)
@@ -4389,7 +4397,8 @@ label vig4_sc7_3_ama():
             amaS "Heh, after all I've done? Jenn and Teresa will probably have something to say about that."
             $ AddChatter(vig4_sc7_3_ama_comment54)
             amaS "But I'll give it time. Not in any rush anymore."
-            $ AddChatter(vig4_sc7_3_ama_comment55)
+            if deadeyeApproval < 4:
+                $ AddChatter(vig4_sc7_3_ama_comment55)
             "An unbearable groaning sound suddenly reverberates across Polaris."
         "You're right.":
             $ vig4_amaCrew = False
@@ -4398,7 +4407,8 @@ label vig4_sc7_3_ama():
             amaS "Aah, you'll find some way to repay me I'm sure."
             $ AddChatter(vig4_sc7_3_ama_comment54)
             amaS "I know you never let a score go unsettled."
-            $ AddChatter(vig4_sc7_3_ama_comment55)
+            if deadeyeApproval < 4:
+                $ AddChatter(vig4_sc7_3_ama_comment55)
             "An unbearable groaning sound suddenly reverberates across Polaris."
         "I don't want to live without you." if deadeyeApproval >= 4 and jennicaRomance == False and teresaRomance == False:
             $ vig4_amaCrew = True
@@ -4506,6 +4516,7 @@ label vig4_sc7_3_ama():
         $ csEngagement -= 2
         $ vig4_MACKill = True
         "MAC lifts his arm and fires a bolt of energy."
+        ##* streamer reaction?
         "It lands square between Vega's eyes."
         "She slumps to the ground, her body falling on top of Coil's."
         $ AddChatter(vig4_sc7_3_ama_comment73)
@@ -4527,6 +4538,7 @@ label vig4_sc7_3_ama():
         macS "And maybe, in time. You will find peace."
         vS "There is no peace left. You took it all away."
         macS "Maybe. But we can't know for certain."
+        ##* streamer reaction?
         $ AddChatter(vig4_sc7_3_ama_comment80)
         macS "Bury your family, Vega. And take care."
         $ AddChatter(vig4_sc7_3_ama_comment81)
@@ -4746,7 +4758,7 @@ label vig4_sc7_3_coil():
     pause 0.5
     $ AddChatter(vig4_sc7_3_coil_comment40)
     "Dead."
-    $ reactTarget = "vig4_sc7_attack_killama"
+    $ reactTarget = "vig4_sc7_killama"
     show screen streamerCommentary
     hide ama with Dissolve(2.0)
     show vega stream neutral at stream_center with dissolve
@@ -4754,7 +4766,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment41)
     "The energy shield dissipates. Vega rushes to Coil's side."
     vS "No. Don't go. Don't go. Don't leave me."
-    show coil at stream_left with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Coil opens his eyes."
     $ AddChatter(vig4_sc7_3_coil_comment42)
     cS "It is okay, Vega."
@@ -4820,8 +4832,8 @@ label vig4_sc7_3_coil():
     macS "I missed you too, Moze."
     $ AddChatter(vig4_sc7_3_ama_comment50)
     "We step back and I stand up."
-    show coil at stream_right with dissolve
-    show vega at stream_left with dissolve
+    show coil stream neutral at stream_right with dissolve
+    show vega stream neutral at stream_left with dissolve
     "Coil leans against Vega as the two approach."
     vS "So, Pops, how's Moze's case for joining the Dragonflies look now?"
     $ AddChatter(vig4_sc7_3_ama_comment51)
@@ -4920,7 +4932,7 @@ label vig4_epilogue_coil():
         "Make them hold it.":
             "I don't say anything."
             "Just stare at them for almost a minute."
-            pS "Do you think she'll ever let us go?"
+            pS "Ya think she'll ever let us go?"
             enS "I don't know, but I'm starting to think this joke wasn't worth it."
             $ AddChatter(vig4_sc7_epilogue_comment8)
             "A short chuckle escapes from me."
@@ -4932,7 +4944,7 @@ label vig4_epilogue_coil():
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
         $ AddChatter(vig4_sc7_epilogue_comment9)
-        pS "How are you feeling, Cap?"
+        pS "How ya feeling, Cap?"
     elif teresaRomance == True:
         $ kcEngagement += 1
         "Teresa sits down next to me and folds her legs over my lap."
@@ -4941,7 +4953,7 @@ label vig4_epilogue_coil():
         enS "How are you feeling, Captain?"
     else:
         "They both relax into the cushions on either side of me."
-        pS "So, how are you feeling, Cap?"
+        pS "How ya feeling, Cap?"
     "How am I feeling?"
     menu:
         "How am I feeling?"
@@ -4949,7 +4961,7 @@ label vig4_epilogue_coil():
             mS "I'm exhausted."
             mS "I think I could sleep for a month straight."
             $ AddChatter(vig4_sc7_epilogue_comment11)
-            pS "I heard that."
+            pS "I hear that."
             enS "I think I could go for a year in all honesty."
         "Relaxed.":
             mS "You know, I think I feel relaxed for the first time since..."
@@ -4966,7 +4978,7 @@ label vig4_epilogue_coil():
             mS "I wish it didn't have to go that way."
             $ AddChatter(vig4_sc7_epilogue_coil_comment2)
             pS "It's a real shame, Cap."
-            pS "But Ama made her choice a looong time ago."
+            pS "But Ama made her choice a long time ago."
             $ AddChatter(vig4_sc7_epilogue_coil_comment3)
             enS "I won't tell you not to feel sad, but a lot of people are alive now because of you."
             enS "Just, don't forget that too."
@@ -4983,7 +4995,7 @@ label vig4_epilogue_coil():
     $ AddChatter(vig4_sc7_epilogue_comment15)
     macS "And there is a distinct lack of escape pods."
     enS "Considering our previous adventures, maybe that's a good thing."
-    pS "Yeah, and at least the communications array is internal. Way less likely to get screwed up."
+    pS "Yeah, and at least the communications array is internal. Way less likely to get mucked up."
     $ AddChatter(vig4_sc7_epilogue_comment16)
     "MAC rolls up next to us."
     menu:
@@ -5021,7 +5033,7 @@ label vig4_epilogue_coil():
             mS "I'm proud of you."
             $ AddChatter(vig4_sc7_epilogue_comment21)
             macS "Aww, Captain. Thank you."
-            pS "Yeah, kid, you kept your cool really well."
+            pS "Yeah, kid, you kept your cool."
             enS "I'm impressed."
             $ AddChatter(vig4_sc7_epilogue_comment20)
             mS "Actually, that gives me an idea."
@@ -5037,7 +5049,7 @@ label vig4_epilogue_coil():
     $ AddChatter(vig4_sc7_epilogue_coil_comment5)
     pS "Oh no, come on Teresa, she's gonna need some help."
     enS "I'll say. Remember when I asked her to do a tattoo for me."
-    pS "The sketches were so atrocious you completely backed out hahaha."
+    pS "The sketches were so bad you completely backed out hahaha."
     mS "Hey, knock it off you two, that's an order!"
     enS "Alright, alright."
     pS "So, what's it gonna be, Cap?"
@@ -5092,7 +5104,7 @@ label vig4_epilogue_coil():
     $ AddChatter(vig4_sc7_epilogue_comment28)
     $ reactTarget = "vig4_epilogue_maclove"
     show screen streamerCommentary
-    pS "Oh."
+    pS "Oh!"
     enS "Did that just happen?"
     "I lean into the hug from MAC."
     $ AddChatter(vig4_sc7_epilogue_comment29)
@@ -5184,7 +5196,7 @@ label vig4_epilogue_ama():
     "I let my head fall back against the cushy seats behind me."
     $ AddChatter(vig4_sc7_epilogue_comment4)
     "Finally. At long last. My muscles relax."
-    pS "And to think, Ama was rolling around the galaxy in such luxury!"
+    pS "To think, Ama was rollin' 'round the galaxy in such luxury!"
     enS "I know, I always assumed her ship would be a bit more spartan."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream happy at stream_right with dissolve
@@ -5195,6 +5207,7 @@ label vig4_epilogue_ama():
     pS "Hey there, Cap!"
     enS "Salutations, Captain!"
     "They make a mock salute pose."
+    $ vig4_sc7_epilogue_comment4.click = False
     $ AddChatter(vig4_sc7_epilogue_comment7)
     menu:
         "They make a mock salute pose."
@@ -5204,7 +5217,7 @@ label vig4_epilogue_ama():
         "Make them hold it.":
             "I don't say anything."
             "Just stare at them for almost a minute."
-            pS "Do you think she'll ever let us go?"
+            pS "Do ya think she'll ever let us go?"
             enS "I don't know, but I'm starting to think this joke wasn't worth it."
             $ AddChatter(vig4_sc7_epilogue_comment8)
             "A short chuckle escapes from me."
@@ -5215,7 +5228,7 @@ label vig4_epilogue_ama():
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
         $ AddChatter(vig4_sc7_epilogue_comment9)
-        pS "How are you feeling, Cap?"
+        pS "How ya feelin', Cap?"
     elif teresaRomance == True:
         "Teresa sits down next to me and folds her legs over my lap."
         "I take her hand in mine."
@@ -5223,7 +5236,7 @@ label vig4_epilogue_ama():
         enS "How are you feeling, Captain?"
     else:
         "They both relax into the cushions on either side of me."
-        pS "So, how are you feeling, Cap?"
+        pS "How ya feelin', Cap?"
     "How am I feeling?"
     menu:
         "How am I feeling?"
@@ -5231,7 +5244,7 @@ label vig4_epilogue_ama():
             mS "I'm exhausted."
             mS "I think I could sleep for a month straight."
             $ AddChatter(vig4_sc7_epilogue_comment11)
-            pS "I heard that."
+            pS "I hear that."
             enS "I think I could go for a year in all honesty."
         "Relaxed.":
             mS "You know, I think I feel relaxed for the first time since..."
@@ -5248,7 +5261,7 @@ label vig4_epilogue_ama():
             mS "I wish it didn't have to go that way."
             $ AddChatter(vig4_sc7_epilogue_ama_comment2)
             pS "It's a real shame, Cap."
-            pS "But he made his choice a looong time ago."
+            pS "But he made his choice a long time ago."
             $ AddChatter(vig4_sc7_epilogue_ama_comment3)
             enS "There were a lot of moments when he could have done things differently."
             enS "His path led him to this."
@@ -5258,12 +5271,12 @@ label vig4_epilogue_ama():
             pS "We've got your back."
     if vig4_amaCrew == False:
         enS "You think Deadeye will be alright without her ship?"
-        pS "She's resourceful. I'm sure she'll figure something out."
+        pS "She's resourceful. I'm sure she'll figure somethin' out."
         mS "I was surprised she was okay with us taking it."
-        pS "You gotta love personal growth."
+        pS "Ya gotta love personal growth."
         enS "Even if it comes a little late."
         "Jennica scans the ship's hub room."
-    pS "I will say, despite the luxury, still doesn't hold a candle to the Oakley."
+    pS "I will say, despite the luxury, doesn't hold a candle to the Oakley."
     enS "No way."
     macS "I am in agreement."
     $ AddChatter(vig4_sc7_epilogue_comment14)
@@ -5272,7 +5285,7 @@ label vig4_epilogue_ama():
     $ AddChatter(vig4_sc7_epilogue_comment15)
     macS "And there is a distinct lack of escape pods."
     enS "Considering our previous adventures, maybe that's a good thing."
-    pS "Yeah, and at least the communications array is internal. Way less likely to get screwed up."
+    pS "Yeah, and at least the communications array is internal. Way less likely to get mucked up."
     $ AddChatter(vig4_sc7_epilogue_comment16)
     "MAC rolls up next to us."
     menu:
@@ -5315,7 +5328,7 @@ label vig4_epilogue_ama():
             mS "I'm proud of you."
             $ AddChatter(vig4_sc7_epilogue_comment21)
             macS "Aww, Captain. Thank you."
-            pS "Yeah, kid, you kept your cool really well."
+            pS "Yeah, kid, you kept your cool."
             enS "I'm impressed."
             $ AddChatter(vig4_sc7_epilogue_comment20)
             mS "Actually, that gives me an idea."
@@ -5334,7 +5347,7 @@ label vig4_epilogue_ama():
         $ AddChatter(vig4_sc7_epilogue_ama_comment8)
     pS "Oh no, come on Teresa, she's gonna need some help."
     enS "I'll say. Remember when I asked her to do a tattoo for me."
-    pS "The sketches were so atrocious you completely backed out hahaha."
+    pS "Sketches were so bad you completely backed out hahaha."
     mS "Hey, knock it off you two, that's an order!"
     enS "Alright, alright."
     pS "So, what's it gonna be, Cap?"
@@ -5377,7 +5390,7 @@ label vig4_epilogue_ama():
     $ AddChatter(vig4_sc7_epilogue_comment28)
     $ reactTarget = "vig4_epilogue_maclove"
     show screen streamerCommentary
-    pS "Oh."
+    pS "Oh!"
     enS "Did that just happen?"
     "I lean into the hug from MAC."
     $ AddChatter(vig4_sc7_epilogue_comment29)
@@ -5394,7 +5407,7 @@ label vig4_epilogue_ama():
         amaS "You all should come up here, there's something I could use some help with."
         mS "That sounds odd. Come on, let's go."
     else:
-        pS "That's the contact alarm. Auto-pilot must have triggered cause a ship got in our range."
+        pS "That's the contact alarm. Auto-pilot must've triggered cause a ship got in our range."
         mS "Let's go check it out."
     hide screen streamerCommentary
     hide mac with dissolve
