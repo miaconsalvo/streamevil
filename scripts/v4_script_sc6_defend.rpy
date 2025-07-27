@@ -115,7 +115,7 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment15)
     "The enforcer goes silent as his body falls to the ground."
     vS "Never thought I'd be the one to save you, Captain."
-    show vega at stream_center with dissolve
+    show vega stream neutral at stream_center with dissolve
     play music "soundtrack/polaris.wav"
     $ AddChatter(vig4_sc6_defend_1_comment16)
     "I whip around to see Vega standing just a few meters away, smoke spilling out from a rifle in her hands."
@@ -346,7 +346,7 @@ label vig4_sc6_defend_1():
     jump vig4_sc6_defend_2
 
 label vig4_sc6_defend_2():
-    show vega at stream_right5 with dissolve
+    show vega stream neutral at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     "I climb into the tank last."
@@ -356,9 +356,9 @@ label vig4_sc6_defend_2():
     mS "How're we looking, Jenn?"
     pS "Fine, Cap, doesn't look too complex. We'll just have to work as a team."
     $ AddChatter(vig4_sc6_defend_2_comment1)
-    pS "I'll take maneuvering. Teresa, take care of our shields and engine power."
+    pS "I'll take maneuverin'. Teresa, take care of our shields and engine power."
     enS "Makes sense."
-    pS "Vega, if you're on navigation, take that scope and give me directions."
+    pS "Vega, if you're on navigation, use that scope and give me directions."
     vS "Gotcha."
     pS "Cap, you stay in the center, be our spotter and operate the main cannon."
     mS "Roger, let's roll out."
@@ -391,7 +391,7 @@ label vig4_sc6_defend_2():
     $ AddChatter(vig4_sc6_defend_2_comment6)
     "They bring the fight to the approaching army, firing at the advancing BC army."
     "The true battle for Polaris begins."
-    play music "saveTheGalaxy.wav"
+    play music "soundtrack/saveTheGalaxy.wav"
     "A dropship careens down toward the central street, as if to fly directly overhead."
     mS "Vega, use the machine guns and hit the enforcers with suppressing fire."
     $ AddChatter(vig4_sc6_defend_2_comment7)
@@ -462,6 +462,8 @@ label vig4_sc6_defend_2():
             $ csEngagement += 2
             $ marshal += 1
             jump vig4_sc6_defend_3_frontline
+
+##*Should we have some reactions here in these sections?
 
 label vig4_sc6_defend_3_barricade():
     hide dflyGuard with dissolve
@@ -629,7 +631,7 @@ label vig4_sc6_defend_4():
     $ AddChatter(vig4_sc6_defend_4_comment5)
     "The BC army marches up from the distance."
     vS "Come on!"
-    show vega at stream_center with dissolve
+    show vega stream neutral at stream_center with dissolve
     "Vega grabs me by the hand and pulls me up as we sprint the final few feet to the barricade."
     "We clamber over and slide down the other end as people climb to shoot back at the approaching enemies."
     $ AddChatter(vig4_sc6_defend_4_comment6)
@@ -643,7 +645,7 @@ label vig4_sc6_defend_4():
 
 label vig4_sc6_defend_5():
     vS "Moze!"
-    show vega at stream_left with dissolve
+    show vega stream neutral at stream_left with dissolve
     vS "What do we do?"
     $ AddChatter(vig4_sc6_defend_5_comment1)
     pause 0.5
@@ -671,7 +673,7 @@ label vig4_sc6_defend_5():
     show vig1_town_stream with Dissolve(0.5)
     "Then I fall to the floor as something thuds next to me."
     "Staggering to my knees, I see that the enforcer has a smoking hole in the back of his head."
-    show vega at stream_left with Dissolve(0.5)
+    show vega stream neutral at stream_left with Dissolve(0.5)
     show bc_enforcer at stream_center with Dissolve(0.5)
     "Behind him, Vega grapples with the other enforcer."
     "I draw the pistol from the dead body's belt and fire."
@@ -735,6 +737,7 @@ label vig4_sc6_defend_5():
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't--"
+        hide vega with dissolve
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
@@ -772,6 +775,7 @@ label vig4_sc6_defend_5():
         "A handful of attack ships break formation, streaking fire along Polaris's ground and ripping into the BC troops."
         "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
         hide reginald with dissolve
+        show vega stream neutral at stream_center with dissolve
     #if vig3_marshalChoice == True:
     ###Need to write lists for this as well
     else:
@@ -866,8 +870,8 @@ label vig4_sc7_1_defend():
     $ AddChatter(vig4_sc7_1_defend_comment8)
     "I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
-    show coil at stream_left with dissolve
-    show ama stream neutral at stream_right with dissolve
+    show coil stream neutral at stream_right with dissolve
+    show ama stream neutral at stream_left with dissolve
     hide vig1_town_stream
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment9)

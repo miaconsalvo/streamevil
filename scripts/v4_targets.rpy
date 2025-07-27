@@ -1526,6 +1526,7 @@ label vig4_sc4_amaoffer():
             $ AddChatter(vig4_sc4_react_comment2)
             pause 0.5
         "No way!":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Side with the person who's been hunting us!?"
             player "Not a chance!"
@@ -1535,6 +1536,7 @@ label vig4_sc4_amaoffer():
             #add chatter
             pause 0.5
         "Hell yeah.":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Woah a chance to get even with the Dragonflies..."
             player "{i}Plus{/i} a redemption arc for Ama?"
@@ -1721,6 +1723,8 @@ label vig4_sc5_amashowsup():
     menu:
         "Talk about Ama's entrance."
         "Badass!":
+            $ pdEngagement += 1
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Wooooooo!"
             player "Ama's on the scene!"
@@ -1732,6 +1736,7 @@ label vig4_sc5_amashowsup():
             $ AddChatter(vig4_sc5_react_comment7)
             pause 0.5
         "Not sure about this still.":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
             player "I'm still not so sure about this."
             player "I wonder if we can change our mind later."
@@ -2023,15 +2028,17 @@ label vig4_sc6_defend_findingvega():
             player "Look's like we got here just in the nick of time..."
             player "Guess that makes us big damn heroes!"
             $ AddChatter(vig4_sc6_defend_react_comment1)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment2)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment3)
-
             pause 0.5
         "Glad she's ok!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "I'm happy Vega made it!"
             player "Now let's get to saving Polaris!"
             $ AddChatter(vig4_sc6_defend_react_comment4)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment5)
             pause 0.5
         "Say nothing.":
@@ -2056,7 +2063,9 @@ label vig4_sc6_defend_finding_coil():
             player "Wow Coil looks like he's been through it."
             player "Good thing we got here in time."
             $ AddChatter(vig4_sc6_defend_react_comment6)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment7)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment8)
             pause 0.5
         "Ama's here!":
@@ -2065,6 +2074,7 @@ label vig4_sc6_defend_finding_coil():
             player "Deadeye got here first!"
             player "I knew this was too easy."
             $ AddChatter(vig4_sc6_defend_react_comment9)
+            pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment10)
             #$ AddChatter(vig4_sc3coil2_react_comment4)
             pause 0.5

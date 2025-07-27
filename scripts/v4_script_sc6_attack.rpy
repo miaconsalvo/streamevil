@@ -67,7 +67,7 @@ label vig4_sc6_attack_1_ama():
     enS "Isn't that?"
     pS "Oh yeah! That's the guy who roughed us up at the festival."
     $ AddChatter(vig4_sc6_attack_1_ama_comment11)
-    enS "Guess he and his squad were more talk than bite after all."
+    enS "Guess he and his squad were more bark than bite after all."
     $ AddChatter(vig4_sc6_attack_1_ama_comment12)
     pS "They're still hostages. We should help them."
     $ AddChatter(vig4_sc6_attack_1_ama_comment13)
@@ -1166,6 +1166,7 @@ label vig4_sc6_attack_1():
     "No enemies on the street."
     "No danger on the roofs."
     "We make our way quickly down the clear street, hopping between pieces of cover as we do so."
+    $ vig4_sc6_attack_1_ama_comment1.click = False
     show teresa stream shock at stream_right with dissolve
     enS "Shit, patrol, get down!"
     $ AddChatter(vig4_sc6_attack_1_ama_comment3)
@@ -1212,11 +1213,11 @@ label vig4_sc6_attack_1():
     enS "Isn't that?"
     pS "Oh yeah! That's the guy who roughed us up at the festival."
     $ AddChatter(vig4_sc6_attack_1_ama_comment11)
-    enS "Guess he and his squad were more talk than bite after all."
+    enS "Guess he and his squad were more bark than bite after all."
     $ AddChatter(vig4_sc6_attack_1_ama_comment12)
     pS "They're still hostages. We should help them."
     $ AddChatter(vig4_sc6_attack_1_ama_comment13)
-    hide customs agent with dissolve
+    hide dfly guard with dissolve
     enS "What's the call, Captain?"
     $ AddChatter(vig4_sc6_attack_1_ama_comment14)
     menu:
@@ -1302,7 +1303,7 @@ label vig4_sc6_attack_1_assault():
     "And vanishes."
     $ AddChatter(vig4_sc6_attack_1_assault_comment3)
     dflyGuard "Captain Moze?"
-    show customs agent at stream_center with dissolve
+    show dflyguard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment18)
     dflyGuard "We thought we were dead."
@@ -1335,7 +1336,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_comment4)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide screen streamerCommentary
-            hide customs agent with dissolve
+            hide dflyguard with dissolve
         "It wasn't about you.":
             $ pdEngagement += 1
             $ csEngagement -= 1
@@ -1352,7 +1353,7 @@ label vig4_sc6_attack_1_assault():
             dflyGuard "Of course."
             dflyGuard "Good luck, Captain."
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
-            hide customs agent with dissolve
+            hide dflyguard with dissolve
         "I wanted to kill you myself.":
             $ csEngagement -= 2
             $ pdEngagement += 2
@@ -1362,7 +1363,7 @@ label vig4_sc6_attack_1_assault():
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
-            hide customs agent with Dissolve(0.5)
+            hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
             pause 0.5
@@ -1486,9 +1487,9 @@ label vig4_sc6_attack_2():
     mS "Any idea how to drive this thing, Jenn?"
     pS "Sure, Cap, doesn't look too complex. We'll just have to work as a team."
     $ AddChatter(vig4_sc6_attack_2_ama_comment2)
-    pS "I'll take maneuvering. Teresa, take care of our shields and engine power."
+    pS "I'll take drivin'. Teresa, take care of our shields and engine power."
     show teresa stream neutral at stream_right with dissolve
-    pS "You can also reach over and use those machine guns if we need them."
+    pS "Resa, you can also use those machine guns if we need 'em."
     enS "Makes sense."
     pS "Cap, you stay in the center, be our spotter and control the main cannon."
     mS "Roger, let's roll out."
@@ -1598,7 +1599,7 @@ label vig4_sc6_attack_2():
     mS "When BC launches their next attack, we can use the chaos to break through and get into the tower."
     $ AddChatter(vig4_sc6_attack_2_ama_comment17)
     enS "Efficient and clever."
-    pS "A lot of people are going to die. But I guess that's unavoidable at this point."
+    pS "A lot of people are gonna die. But I guess that's unavoidable at this point."
     $ AddChatter(vig4_sc6_attack_2_ama_comment18)
     mS "As long as we get MAC. That's what matters."
     "As I finish speaking, a siren rings out from Polaris's plaza."
@@ -1936,7 +1937,7 @@ label vig4_sc6_attack_3():
     #if vig3_marshalChoice == True:
     else:
         show jennica stream neutral at stream_left with dissolve
-    pS "Cap, you're gonna want to move." 
+    pS "Cap, you're gonna want to get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
     enS "Negative, Captain."

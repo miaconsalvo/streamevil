@@ -778,7 +778,7 @@ default vig4_sc7_1_defend_comment9 = ChatEntry(False, "{b}swayy0scar - 7:55{/b}\
 default vig4_sc7_1_defend_comment10 = ChatEntry(False, "{b}kitcat - 7:55{/b}\nNo spoilers!", 4, "#ffffff")
 default vig4_sc7_1_defend_comment11 = ChatEntry(False, "{b}J4MIR0QU4I - 7:55{/b}\nOof, shield papa is going through it", 4, "#ffffff")
 default vig4_sc7_1_defend_comment12 = ChatEntry(False, "{b}pickledDragons - 7:55{/b}\nWell, looks like we'll be able to tie up all the loose threads right here", 4, "#ffffff")
-default vig4_sc7_1_defend_comment13 = ChatEntry(False, "{b}bacon8r_6 - 7:55{/b}\nGet her ass!", 4, "#ffffff")
+default vig4_sc7_1_defend_comment13 = ChatEntry(False, "{b}llamabama22 - 7:55{/b}\nGet her ass!", 4, "#ffffff")
 default vig4_sc7_1_defend_comment14 = ChatEntry(False, "{b}kitcat - 7:56{/b}\nYeah! Hand him over!", 4, "#ffffff")
 default vig4_sc7_1_defend_comment15 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:56{/b}\nThe Oakley doesn't leave crew behind", 4, "#ffffff")
 default vig4_sc7_1_defend_comment16 = ChatEntry(False, "{b}xXpearlXx - 7:56{/b}\nOk, honestly, when Coil's judginess is pointed at someone else, it's kinda cool", 4, "#ffffff")
@@ -1488,11 +1488,11 @@ default vig4_sc6_attack_findingcoil_react_comment4 = ChatEntry(False, "{b}AFKAng
 default vig4_sc6_attack_findingcoil_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:55{/b}\npayback time coil!", 4, "#ffffff")
 
 default vig4_sc6_defend_react_comment1 = ChatEntry(False, "{b}Coriolis - 7:31{/b}\nAint we just!!", 4, "#ffffff")
-default vig4_sc6_defend_react_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:31{/b}\nTime to save the galaxy!", 4, "#ffffff")
+default vig4_sc6_defend_react_comment2 = ChatEntry(False, "{b}llamabama22 - 7:31{/b}\nTime to save the galaxy!", 4, "#ffffff")
 default vig4_sc6_defend_react_comment3 = ChatEntry(False, "{b}J4MIR0QU4I - 7:31{/b}\nthe biggest!", 4, "#ffffff")
 
-default vig4_sc6_defend_react_comment4 = ChatEntry(False, "{b}jerrybean784 - 7:31{/b}\nShe can at least be grateful", 4, "#ffffff")
-default vig4_sc6_defend_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 7:31{/b}\nsame!", 4, "#ffffff")
+default vig4_sc6_defend_react_comment4 = ChatEntry(False, "{b}xXpearlXx - 7:31{/b}\nShe can at least be grateful", 4, "#ffffff")
+default vig4_sc6_defend_react_comment5 = ChatEntry(False, "{b}kitcat - 7:31{/b}\nsame!", 4, "#ffffff")
 
 default vig4_sc6_defend_react_comment6 = ChatEntry(False, "{b}Coriolis - 7:55{/b}\nJust in time!", 4, "#ffffff")
 default vig4_sc6_defend_react_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 7:55{/b}\nOld man looks ROUGH", 4, "#ffffff")
