@@ -2919,34 +2919,6 @@ label vig3_sc13():
             "Reynar turns his back to us as he renters the gallery."
             hide reynar with dissolve
             jump vig3_sc14
-
-label vig3_sc13_dash():
-    "..."
-    show mac stream shock
-    macS "APOLOGIES!"
-    "This was the third security guard MAC had run over with reckless abandon."
-    "Like a little purple battering ram MAC was clearing a path through just as Reynar's security came to intercept us."
-    "When we set off we didn't imagine it would be this close to the fair."
-    "Dodging through the side garden to the entrance shuttles I pray that Reynar isn't too upset with our escape plan."
-    show jennica stream shock
-    pS "Jeez this kid's goin' fast and furious."
-    show teresa stream happy
-    enS "He gets it from you!"
-    show rec stream thinking
-    recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
-    mS "REC LOOK FORWARD!"
-    show rec stream surprised
-    "In their distracted state they mindless slam into a couple going hot and heavy."
-    "No doubt using the garden to avoid any possible scandal..."
-    show jennica stream neutral
-    pS "Keep up y'all I'm the only one in heels and I'm leagues ahead!"
-    enS "Stop showing off!"
-    pS "How 'bout ya start showing up!"
-    show rec stream happy
-    recS "How about that terrarium!"
-    mS "REC!"
-    "With only minor casualties, we make it to the shuttles."
-    jump vig3_sc14
         
 label vig3outlawcomms():
     show matticus phone neutral at stream_center_mac with dissolve
@@ -3031,16 +3003,14 @@ label vig3marshalcomms():
     "The comms go dead."
     macS "Skeeve."
     recS "The biggest."
-<<<<<<< HEAD
-    mS "Only one way out now. We have to make a break for the shuttles." #I made this ending loop back to the mad dash that could happen if you don't call for help.
-    enS "Aye."
-    show jennica stream neutral
-    pS "Way ahead of you!"
-    "We all make a break for it, rushing out of the room as fast as we can."
+    #mS "Only one way out now. We have to make a break for the shuttles." #I made this ending loop back to the mad dash that could happen if you don't call for help.
+    #enS "Aye."
+    #show jennica stream neutral
+    #pS "Way ahead of you!"
+    #"We all make a break for it, rushing out of the room as fast as we can."
     #This should be a different ending, make it unique.
     #"Carefully we make it to the shuttles. Not sure what awaits us on the other side."
-    jump vig3_sc13_dash
-=======
+    #jump vig3_sc13_dash
     mS "Let's get out of here."
     "Just then an annoucement echoes from the hall."
     "Unauthorized personnel in comms room 45B"
@@ -3060,7 +3030,6 @@ label vig3marshalcomms():
     "I turn and there's Ama, fuming, watching her prey get snatched up before her very eyes."
     #This should be a different ending, make it unique.
     jump vig3_sc14
->>>>>>> 54e0dfaf92ea64d47a0692542ea2cf21eee00903
 
 label vig3_sc14():
     hide jennica with dissolve
