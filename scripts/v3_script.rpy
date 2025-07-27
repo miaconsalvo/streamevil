@@ -3326,13 +3326,14 @@ label vig3_epilogue():
     "Rec refuses to answer Jenn or Teresa's transmissions."
     "MAC has been silent, spending most of his time alone."
     "Then the Dragonfly transmission comes through."
+    "The line is filled with static that distorts the voice, but we're able to make out the information." #Setting up that Coil's voice is distorted so they wouldn't recognize him immediately
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
     dflycontact "I hear you are in possession of Dr. Vanas' work."
     dflycontact "We are contacting you regarding the drop off point."
-    dflycontact "We are stationed at a planet known as Polaris."
+    #dflycontact "We are stationed at a planet known as Polaris." #They don't know about Polaris when they first show up to it in Vignette 4. But they have the coordinates, so I just commented this out.
     dflycontact "Brevifolia sector coordinates 11 03 7"
     dflycontact "This is the last attempt, should this message be lost, then so is our hope."
     "The transmission ends."
