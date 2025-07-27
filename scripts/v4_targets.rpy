@@ -1875,6 +1875,7 @@ label vig4_sc6_attack_barricadesurprise():
     menu:
         "Justify pretending to be BigCorp and attacking the Dragonflies."
         "Gotta look out for our own.":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
             player "The crew is what's important to us."
             player "We can't risk ourselves for some Dragonflies!"
@@ -1894,6 +1895,8 @@ label vig4_sc6_attack_barricadesurprise():
             #$ AddChatter(vig4_sc3coil2_react_comment4)
             pause 0.5
         "Was that too far?":
+            $ kcEngagement += 1
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn that might have been too much."
             player "I feel kinda bad. Not sure they deserve this."
