@@ -558,6 +558,7 @@ label vig4_sc6_attack_3_ama():
             $ deadeyeApproval += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
+            $ kcEngagement -= 1
             $ reactTarget = "vig4_sc6_attack_barricadesurprise"
             show screen streamerCommentary
             mS "Ama's right. Keep our weapons aimed at the Dragonfly position."
