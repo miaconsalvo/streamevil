@@ -35,6 +35,9 @@ label vignette3Start():
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
+    $ csEngagement = 0
+    $ kcEngagement = 0
+    $ pdEngagement = 0
     #narrator needs to be set to alt_narrator in the next label as well
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
@@ -2306,13 +2309,10 @@ label vig3_sc12():
             menu: 
                 "How do you stop him?"
                 "Fire your blaster.":
-<<<<<<< HEAD
                     $ pdEngagement += 2 #Logic: you get pd back a bit for this
                     $ kcEngagement += 3 #Logic: kitcat would say you have to defend MAC
                     $ csEngagement -= 1 #Logic: coriolis would prefer you rush them instead of try to shoot
                     "Absolutely not!"
-=======
->>>>>>> 54e0dfaf92ea64d47a0692542ea2cf21eee00903
                     "I raise my blaster on instinct."
                     mS "Hands off him!"
                     "Then I hear Ama's rifle cock and I freeze on reflex."
@@ -2679,7 +2679,6 @@ label vig3_sc12():
     
     
     #Choices happen based on MAC's alignment.
-<<<<<<< HEAD
     if macViolence >= macPeace and macPessimism >= macHope:
         $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
         $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
@@ -2801,9 +2800,7 @@ label vig3_sc12():
     hide bcrep with dissolve
     show mac stream neutral at stream_center_mac with move
     jump vig3_sc13
-=======
     
->>>>>>> 54e0dfaf92ea64d47a0692542ea2cf21eee00903
 
 label vig3_sc13():
     show inventorfairgallery_stream at topleft onlayer background with dissolve
