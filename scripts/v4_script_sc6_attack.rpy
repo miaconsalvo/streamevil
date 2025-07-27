@@ -78,7 +78,7 @@ label vig4_sc6_attack_1_ama():
         amaS "Well, Mozely, what's the call?"
         "We're saving the hostages.":
             #$ deadeyeApproval -= 1 ##Do we want to make it hard to romance Ama?
-            $ csEngagement += 1
+            $ csEngagement += 2
             $ kcEngagement += 1
             $ pdEngagement -= 1
             $ marshal += 1
@@ -87,7 +87,7 @@ label vig4_sc6_attack_1_ama():
             $ deadeyeApproval += 1
             $ csEngagement -= 1
             $ kcEngagement -= 1
-            $ pdEngagement += 1
+            $ pdEngagement += 2
             $ outlaw += 1
             jump vig4_sc6_attack_1_split_ama
 
@@ -163,7 +163,8 @@ label vig4_sc6_attack_1_assault_ama():
             $ deadeyeApproval += 2
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
-    $ AddChatter(vig4_sc6_attack_1_assault_ama_comment12)
+    if jennicaRomance == False and teresaRomance == False:
+        $ AddChatter(vig4_sc6_attack_1_assault_ama_comment12)
     "I whip around the cover, firing shots immediately down the street."
     "One of the enforcers goes down as a grenade lands behind my cover."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment13)
@@ -192,7 +193,8 @@ label vig4_sc6_attack_1_assault_ama():
             mS "Who cares."
             mS "By my count, I got four and you got three."
             amaS "Oh ho, still got that fierceness in you, I see."
-            $ AddChatter(vig4_sc6_attack_1_assault_ama_comment16)
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc6_attack_1_assault_ama_comment16)
             "She grins at me."
             amaS "Just like old times."
         "Yours is slipping.":
@@ -201,10 +203,12 @@ label vig4_sc6_attack_1_assault_ama():
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
-            $ AddChatter(vig4_sc6_attack_1_assault_ama_comment16)
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc6_attack_1_assault_ama_comment16)
             amaS "Ahahaha."
             amaS "Careful Mozely, age begets wisdom."
-    $ AddChatter(vig4_sc6_attack_1_assault_ama_comment17)
+    if jennicaRomance == False and teresaRomance == False:
+        $ AddChatter(vig4_sc6_attack_1_assault_ama_comment17)
     dflyGuard "Captain Moze?"
     show dflyGuard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
@@ -244,6 +248,8 @@ label vig4_sc6_attack_1_assault_ama():
             $ pdEngagement += 1
             $ csEngagement -= 1
             mS "You're welcome, but it wasn't about you."
+            $ reactTarget = "vig4_sc6_attack_sparedflies"
+            show screen streamerCommentary
             mS "I deprived BC of strategic leverage."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment24)
             "He looks taken aback."
@@ -255,6 +261,7 @@ label vig4_sc6_attack_1_assault_ama():
             "He's about to say something, then thinks better of it."
             dflyGuard "Of course."
             dflyGuard "Good luck, Captain."
+            hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide customs agent with dissolve
@@ -263,13 +270,13 @@ label vig4_sc6_attack_1_assault_ama():
             $ csEngagement -= 2
             $ pdEngagement += 2
             $ vig4_killDflies = True
-            $ reactTarget = "vig4_sc6_attack_killdflies"
-            show screen streamerCommentary
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             hide dflyGuard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
+            $ reactTarget = "vig4_sc6_attack_killdflies"
+            show screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
             pause 0.5
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment29)
@@ -317,7 +324,8 @@ label vig4_sc6_attack_1_split_ama():
             $ deadeyeApproval += 2
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
-    $ AddChatter(vig4_sc6_attack_1_split_ama_comment12)
+    if jennicaRomance == False and teresaRomance == False:
+        $ AddChatter(vig4_sc6_attack_1_split_ama_comment12)
     play audio "lazer.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
     if vig4_nickName_bool == True:
@@ -354,7 +362,8 @@ label vig4_sc6_attack_1_split_ama():
             mS "Who cares."
             mS "By my count, I got four and you got three."
             amaS "Oh ho, still got that fierceness in you, I see."
-            $ AddChatter(vig4_sc6_attack_1_split_ama_comment16)
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc6_attack_1_split_ama_comment16)
             "She grins at me."
             amaS "Just like old times."
         "Yours is slipping.":
@@ -363,10 +372,12 @@ label vig4_sc6_attack_1_split_ama():
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
-            $ AddChatter(vig4_sc6_attack_1_split_ama_comment16)
+            if jennicaRomance == False and teresaRomance == False:
+                $ AddChatter(vig4_sc6_attack_1_split_ama_comment16)
             amaS "Ahahaha."
             amaS "Careful Mozely, age begets wisdom."
-    $ AddChatter(vig4_sc6_attack_1_split_ama_comment17)
+    if jennicaRomance == False and teresaRomance == False:    
+        $ AddChatter(vig4_sc6_attack_1_split_ama_comment17)
     show teresa stream neutral at stream_center with dissolve
     enS "You two want to keep chattering or do you want to see our prize."
     "Ama claps me on the back."
@@ -383,14 +394,14 @@ label vig4_sc6_attack_2_ama():
     mS "Any idea how to drive this thing, Jenn?"
     pS "Sure, Cap, doesn't look too complex. We'll just have to work as a team."
     $ AddChatter(vig4_sc6_attack_2_ama_comment2)
-    pS "I'll take maneuvering. Teresa, take care of our shields and engine power."
+    pS "I'll take drivin'. Teresa, take care of our shields and engine power."
     show teresa stream neutral at stream_right with dissolve
     enS "Makes sense."
-    pS "Ama, take control of the machine guns."
+    pS "Ama, you get the machine guns."
     show ama stream neutral at stream_left5 with dissolve
     amaS "Music to my ears."
     $ AddChatter(vig4_sc6_attack_2_ama_comment3)
-    pS "Cap, you stay in the center, be our spotter and take the main cannon."
+    pS "Cap, you stay in the center, be our spotter and control the main cannon."
     mS "Roger, let's roll out."
     pS "Aye aye."
     play audio "callRing.wav"
