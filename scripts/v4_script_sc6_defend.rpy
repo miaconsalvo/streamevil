@@ -811,6 +811,7 @@ label vig4_sc6_defend_5():
             $ AddChatter(vig4_sc6_zan_comment5)
             houndleader "Guess he figured you could use some help."
             mS "The Hounds? But I thought--"
+            #$ AddChatter(vig4_sc6_zan_comment11)
             houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
         show teresa stream neutral
         zan "Fantastic! Show them the muscles of Akar!"
