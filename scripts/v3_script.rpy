@@ -3585,9 +3585,11 @@ label blueitVignette3_1():
     $ blueitView = True
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
     $ blueitPages.append(vig3_bThread1)
-    #$ blueitPages.append(vig3_bThread2)
-    #$ blueitPages.append(vig3_bThread3)
-    #$ blueitPages.append(vig3_bThread4)
+    $ blueitPages.append(vig3_bThread2)
+    $ blueitPages.append(vig3_bThread3)
+    $ blueitPages.append(vig3_bThread4)
+    $ blueitPages.append(vig3_bThread5)
+    $ blueitPages.append(vig3_bThread6)
     "You go to check out the subblueit to see how people are reacting to Episode 3."
     jump blueitVignette3_2
 

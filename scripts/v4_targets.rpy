@@ -2358,9 +2358,75 @@ label vig4_epilogue_maclove():
 
 ####TARGETS FOR BLUEIT ######
 
-label vig4_blueit_endgamethread():
+label vig4_blueit_endHypeThread():
     $ screenComplete = False
-    $ blueitImage = "socials/bThread_v4_endgame.png"
+    $ blueitImage = "socials/v4_endingHype.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_devThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_devThanks.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_amaRomanceThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_amaRomance.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_endChoicethread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_endingChoice.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_romanceRouteThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_romanceRoute.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_polarisThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_polaris.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig4_blueit_oakley3Thread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v4_oakley3.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread

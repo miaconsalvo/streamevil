@@ -1623,4 +1623,10 @@ default vig4_epilogue_interact_comment7 = ChatEntry(False, "{b}xXpearlXx - 8:13{
 
 
 #### BLUEIT THREADS #####
-default vig4_bThread1 = bThread( 3, "vig4_blueit_endgamethread", "images/socials/bThread_v4_endgame.png") #tag, target, image
+default vig4_bThread1 = bThread( 1, "vig4_blueit_endHypeThread", "images/socials/bThread_v4_endingHype.png") #tag, target, image
+default vig4_bThread2 = bThread( 1, "vig4_blueit_devThread", "images/socials/bThread_v4_devThanks.png")
+default vig4_bThread3 = bThread( 1, "vig4_blueit_amaRomanceThread", "images/socials/bThread_v4_amaRomance.png")
+default vig4_bThread4 = bThread( 1, "vig4_blueit_endChoicethread", "images/socials/bThread_v4_endingChoice.png")
+default vig4_bThread5 = bThread( 1, "vig4_blueit_romanceRouteThread", "images/socials/bThread_v4_romanceRoute.png")
+default vig4_bThread6 = bThread( 1, "vig4_blueit_polarisThread", "images/socials/bThread_v4_polaris.png")
+default vig4_bThread7 = bThread( 1, "vig4_blueit_oakley3Thread", "images/socials/bThread_v4_oakley3.png")

@@ -949,9 +949,64 @@ label vig3_analytics_viewcount():
 ######MACRO GAME TARGETS FOR BLUEIT ########
 
 
-label vig3_blueit_amathread():
+label vig3_blueit_amaThread():
     $ screenComplete = False
-    $ blueitImage = "socials/bThread_v3_amaRomance.png"
+    $ blueitImage = "socials/v3_amaRomance.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig3_blueit_fairThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v3_inventorsFair.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig3_blueit_recThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v3_reccrin.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig3_blueit_favStreamThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v3_favoriteStreamers.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig3_blueit_formalThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v3_formalWear.png"
+    $ yb = 1080
+    $ blueitChoiceCheck = True
+    show screen blueitThread
+    #show launch thread at top:
+    #    zoom 1.0
+    call screen blueitButtonCheck
+    return
+
+label vig3_blueit_dflyThread():
+    $ screenComplete = False
+    $ blueitImage = "socials/v3_dragonflies.png"
     $ yb = 1080
     $ blueitChoiceCheck = True
     show screen blueitThread
