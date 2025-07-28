@@ -164,7 +164,7 @@ label vig4_sc6_defend_1():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     vS "Big gun. You and your crew know how to use it?"
-    pS "Please, I can drive anything!"
+    pS "Please, I can drive anythin'"
     enS "It's a cannon, not rocket science."
     enS "And I understand rocket science too."
     vS "Good."
@@ -354,7 +354,7 @@ label vig4_sc6_defend_2():
     "Teresa situates herself off to one side, monitoring several screens."
     "I settle into a chair in the center."
     mS "How're we looking, Jenn?"
-    pS "Fine, Cap, doesn't look too complex. We'll just have to work as a team."
+    pS "Fine, Cap, doesn't look too complex. We just gotta work as a team."
     $ AddChatter(vig4_sc6_defend_2_comment1)
     pS "I'll take maneuverin'. Teresa, take care of our shields and engine power."
     enS "Makes sense."
@@ -793,7 +793,7 @@ label vig4_sc6_defend_5():
         "I'm not leaving you.":
             mS "No way, you two are coming with me! I'm not leaving you!"
             enS "You're not leaving anything."
-            pS "We're just splitting up to make the mission succeed."
+            pS "We're just splittin' up to make the mission succeed."
             jenter "We've got this."
             if jennicaRomance == True:
                 "Jennica steps up close to me. She faces me dead on."

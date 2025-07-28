@@ -392,7 +392,7 @@ label vig4_sc6_attack_2_ama():
     "She's examining a string of buttons and sticks in front of her."
     $ AddChatter(vig4_sc6_attack_2_ama_comment1)
     mS "Any idea how to drive this thing, Jenn?"
-    pS "Sure, Cap, doesn't look too complex. We'll just have to work as a team."
+    pS "Sure, Cap, doesn't look too complex. We just gotta work as a team."
     $ AddChatter(vig4_sc6_attack_2_ama_comment2)
     pS "I'll take drivin'. Teresa, take care of our shields and engine power."
     show teresa stream neutral at stream_right with dissolve
@@ -899,7 +899,7 @@ label vig4_sc6_attack_3_ama():
         "I'm not leaving you.":
             mS "No way, I'm not leaving you two!"
             enS "You're not leaving anything."
-            pS "We're just splitting up to make the mission succeed."
+            pS "We're just splittin' up to make the mission succeeds."
             "Jennica and Teresa" "We've got this."
             if jennicaRomance == True:
                 $ csEngagement += 1
@@ -1486,7 +1486,7 @@ label vig4_sc6_attack_2():
     "She's examining a string of buttons and sticks in front of her."
     $ AddChatter(vig4_sc6_attack_2_ama_comment1)
     mS "Any idea how to drive this thing, Jenn?"
-    pS "Sure, Cap, doesn't look too complex. We'll just have to work as a team."
+    pS "Sure, Cap, doesn't look too complex. We just gotta work as a team."
     $ AddChatter(vig4_sc6_attack_2_ama_comment2)
     pS "I'll take drivin'. Teresa, take care of our shields and engine power."
     show teresa stream neutral at stream_right with dissolve
@@ -1953,7 +1953,7 @@ label vig4_sc6_attack_3():
         "I'm not leaving you.":
             mS "No way, I'm not leaving you two!"
             enS "You're not leaving anything."
-            pS "We're just splitting up to make the mission succeed."
+            pS "We're just splittin' up to make the mission succeed."
             "Jennica and Teresa" "We've got this."
             if jennicaRomance == True:
                 $ csEngagement += 1

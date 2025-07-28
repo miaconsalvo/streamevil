@@ -184,7 +184,7 @@ label vig4_sc1_2():
             pS "Felt like I caught her with her pants down haha."
             $ AddChatter(vig4_sc1_2_comment4)
             mS "You two back to normal then?"
-            pS "Don't know I can recall what \"normal\" is after we've been through."
+            pS "Don't reckon I can recall what \"normal\" is after we've been through."
             $ AddChatter(vig4_sc1_2_comment5)
             pS "But we're good."
             mS "Glad to hear it."
@@ -902,7 +902,7 @@ label vig4_sc2_4():
     show jennica stream neutral at stream_left5 with Dissolve(0.5)
     pS "Cap, I'm so sorry! I was checkin' the engine lines an' he just ran off--"
     "Jennica freezes as she recognizes the situation."
-    pS "Butter my biscuits..."
+    pS "Butter my biscuit..."
     $ AddChatter(vig4_sc2_4_comment32)
     $ AddChatter(vig4_sc2_4_comment33)
     enS "Jenn, now's not the tim--"
@@ -3473,7 +3473,7 @@ label vig4_sc4_2():
     if jennicaRomance == True:
         "Jennica turns to me."
         pS "So, how'd ya respond to Ama's proposal?"
-        pS "Are we allyin' with the woman who's been huntin' us for the past month?"
+        pS "Are we sidin' with the woman who's been huntin' us for the past month?"
     else:
         "Teresa turns to me."
         enS "So, how did you respond to Ama's proposal?"
@@ -3718,7 +3718,7 @@ label vig4_sc5_1():
         show jennica stream neutral at stream_left with dissolve
         "Jennica appears above me."
         pS "Jeez, Cap, ya had me worried there for a sec."
-        pS "Teresa,she okay?"
+        pS "Teresa, she okay?"
         menu:
             pS "Teresa, she okay?"
             "I'm fine.":
@@ -3759,7 +3759,7 @@ label vig4_sc5_1():
     enS "I'm sorry, Moze. We got you out right before the whole thing went up."
     "Teresa's the only one who can talk."
     "I can feel Jennica shaking next to me."
-    pS "Every time I turn around, I hope it's not real."
+    pS "Every time I turn around, I wish it weren't real."
     "She turns her back on the shell."
     "Teresa puts a hand on both of our shoulders."
     "We stand there. Motionless. Together. Slowly, imperceptibly getting closer and closer."
@@ -3771,7 +3771,7 @@ label vig4_sc5_1():
         "We'll never forget her.":
             mS "We'll never forget her."
             enS "Never."
-            pS "No way."
+            pS "Ain't no way."
             $ AddChatter(vig4_sc5_1_comment12)
             "We all take a deep breath as we let go of each other."
         "We have to get to MAC.":
@@ -3946,7 +3946,7 @@ label vig4_sc5_2():
     amaS "Judging by the lack of firearms pointed at my head, Mozely has told you about our deal."
     enS "She mentioned it."
     $ AddChatter(vig4_sc5_2_comment5)
-    pS "Doesn't mean we're happy about it."
+    pS "Don't mean we're happy about it."
     amaS "But she's the captain, right?"
     hide screen streamerCommentary
     "Jennica and Teresa don't say anything."
@@ -5062,7 +5062,7 @@ label vig4_epilogue_coil():
             $ AddChatter(vig4_sc7_epilogue_coil_comment9)
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
-            pS "Oh no, not like that. You have to make the curve wider."
+            pS "Oh no, not like that. You gotta make the curve wider."
             $ AddChatter(vig4_sc7_epilogue_coil_comment10)
             "I put the brush down."
             $ AddChatter(vig4_sc7_epilogue_coil_comment11)
@@ -5360,7 +5360,7 @@ label vig4_epilogue_ama():
             $ AddChatter(vig4_sc7_epilogue_ama_comment9)
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
-            pS "Oh no, not like that. You have to make the curve wider."
+            pS "Oh no, not like that. You gotta make the curve wider."
             $ AddChatter(vig4_sc7_epilogue_ama_comment10)
             "I put the brush down."
             $ AddChatter(vig4_sc7_epilogue_ama_comment11)
