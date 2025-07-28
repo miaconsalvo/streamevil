@@ -88,7 +88,8 @@ define vS = Character ("Vega", what_font="Play-Regular.ttf", window_style = "ig_
 define townguy = Character("Townsperson", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define diceP1 = Character("Dice Player 1", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define diceP2 = Character("Dice Player 2", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
-define dflyGuard = Character("Dragonfly Guard", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define dflyGuard = Character("Dragonfly Leader", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
+define unknown = Character("Unknown", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #General system variables
 default viewCount = 4 #viewCount changes how many viewers are displayed in the streamdetails screen
@@ -172,6 +173,9 @@ default promisedPDOutlaw = False #if you told pickleddragons that you want to do
 default firstfightprediction = False
 default shipbetprediction = False
 default vig3_brika = 0
+default vig3_daisyApproval = False
+default vig3_zanApproval = False
+default vig3_reynarApproval = False
 
 ####Variables to track the macro game stuff in vignette 3####
 default vig3_brotherChat = 0

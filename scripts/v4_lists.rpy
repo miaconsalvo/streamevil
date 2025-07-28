@@ -757,6 +757,17 @@ default vig4_sc6_defend_5_comment21 = ChatEntry(False, "{b}swayy0scar - 7:51{/b}
 default vig4_sc6_defend_5_comment22 = ChatEntry(False, "{b}swayy0scar - 7:51{/b}\nCan't say I'm a fan, but help is help", 4, "#ffffff")
 default vig4_sc6_defend_5_comment23 = ChatEntry(False, "{b}bacon8r_6 - 7:51{/b}\nBro so relatable", 4, "#ffffff")
 ##ZAN'S RETURN COMMENTS###
+default vig4_sc6_zan_comment1 = ChatEntry(False, "{b}marxky8 - 7:50{/b}\nomg", 4, "#ffffff")
+default vig4_sc6_zan_comment2 = ChatEntry(False, "{b}bacon8r_6 - 7:50{/b}\nMoxie!", 4, "#ffffff")
+default vig4_sc6_zan_comment3 = ChatEntry(False, "{b}xXpearlXx - 7:50{/b}\nThe cavalry's here!", 4, "#ffffff")
+default vig4_sc6_zan_comment4 = ChatEntry(False, "{b}swayy0scar - 7:50{/b}\nOh, I got the Hounds, not Daisy!", 4, "#ffffff")
+default vig4_sc6_zan_comment5 = ChatEntry(False, "{b}swayy0scar - 7:50{/b}\nI got Zan and the Hounds too!", 4, "#ffffff")
+default vig4_sc6_zan_comment6 = ChatEntry(False, "{b}turb0g00se - 7:51{/b}\nOh BC is SO SCREWED now hahaha", 4, "#ffffff")
+default vig4_sc6_zan_comment7 = ChatEntry(False, "{b}R4dioRobbie - 7:51{/b}\nZan is the man! Zan has a plan! Zan's got the muscles to beat any man!", 4, "#ffffff")
+default vig4_sc6_zan_comment8 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:51{/b}\nMoxie!", 4, "#ffffff")
+default vig4_sc6_zan_comment9 = ChatEntry(False, "{b}treb.ell - 7:51{/b}\nMoxie!", 4, "#ffffff")
+default vig4_sc6_zan_comment10 = ChatEntry(False, "{b}AFKAngel - 7:51{/b}\nMoxie!", 4, "#ffffff")
+
 
 ##END OF SCENE
 default vig4_sc6_defend_5_comment24 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:53{/b}\nTearful goodbye time?", 4, "#ffffff")
@@ -973,6 +984,7 @@ default vig4_sc6_attack_1_assault_comment5 = ChatEntry(False, "{b}llamabama22 - 
 default vig4_sc6_attack_3_comment39 = ChatEntry(False, "{b}llamabama22 - 7:42{/b}\nIt's cool to see the Oakely crew working so seamlessly!", 4, "#ffffff")
 
 ###Comments vig4_sc7_1_attack - Ama and Moze meet Coil
+
 
 #######SCENE 7#########
 

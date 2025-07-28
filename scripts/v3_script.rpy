@@ -1405,6 +1405,7 @@ label vig3_sc6():
             $ pdEngagement += 2 #Logic: pd's perspective: make sure you win
             $ kcEngagement -= 1 #Logic: kc and cs both really like Zan so this is unnecessarily rude in their view
             $ csEngagement -= 1
+            $ vig3_zanApproval = False
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
             "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully."
             "I take my position."
@@ -1475,6 +1476,7 @@ label vig3_sc6():
             $ csEngagement += 2 #Logic: Coriolis likes Moze trusting in her crew
             $ kcEngagement += 1 #Logic: kitcat likes not shooting Zan
             $ pdEngagement -= 1 #Logic: pickledDragons wants to shoot Zan
+            $ vig3_zanApproval = True
             #need a variable to determine if they win or not.
             $ reactTarget = "vig3_sc6_trustcrew"
             show screen streamerCommentary
@@ -1946,6 +1948,7 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
+            $ vig3_daisApproval = False
             "I rise to my full height."
             mS "She said she'll get back to you later."
             "They turn to me."
@@ -1972,6 +1975,7 @@ label vig3_sc9():
             $ csEngagment -= 1 #Logic: very violent for cs
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
+            $ vig3_daisyApproval = True
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
@@ -2001,6 +2005,7 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: As mentioned several times, cs appreciates a "sacrifice" for the greater good
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
+            $ vig3_daisyApproval = False
             "I can't do anything right now."
             "There's too much on the line."
             invfairnpc2 "So Daisy, shall I steal you away?"
@@ -2854,26 +2859,33 @@ label vig3_sc13():
     "This whole area has been cleared. Why is there no one here?"
     "Loud bangs ring out in the distance. Fireworks? Maybe?"
     hide screen streamerCommentary
-    #"MAC leads the way, turning down hallways quickly and abruptly."
-    #mS "MAC, how the hell did you end up on that presentation stage?"
-    #macS "A confluence of circumstantial factors."
-    #macS "I escaped the Hounds' restraints shortly after entering this facility and evaded them by entering a laundry chute."
-    #macS "That chute deposited me in the BigCorp representative's dressing room where I saw the display of a prototype that resembled me."
-    #macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
-    #menu:
-    #   macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
-    #   "Good thinking, MAC!":
-    #       $ kcEngagement += 1
-    #       mS "Wow, MAC, that was really resourceful!"
-    #       macS "I learned from some very good teachers."
-    #   "That was dangerous!":
-    #       $ csEngagement += 1
-    #       mS "MAC, that was dangerous! What if BC discovered you and took you away?"
-    #       macS "They did not. I have learned the art of stealth from you and your crew."
-    #   "What do you mean, \"disposed of\"?":
-    #       $ pdEngagement += 1
-    #       mS "Wait, what do you mean you \"disposed\" of the prototype?"
-    #       macS "If the signs on the chute were correct, it is currently being relocated to a waste disposal location outside Akar."
+    "MAC leads the way, turning down hallways quickly and abruptly."
+    macS "It is good to see you, Captain."
+    mS "It's good to see you too, MAC."
+    "We can't stop running but I have dozens of questions."
+    "One just happens to pop out of my mouth."
+    mS "MAC, how the hell did you end up on that presentation stage?"
+    macS "A confluence of circumstantial factors."
+    macS "I escaped the Hounds' restraints shortly after entering this facility and evaded them by entering a laundry chute."
+    macS "That chute deposited me in the BigCorp representative's dressing room where I saw the display of a prototype that resembled me."
+    macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
+    menu:
+        macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
+        "Good thinking, MAC!":
+            $ kcEngagement += 1
+            mS "Wow, MAC, that was really resourceful!"
+            macS "I had excellent teachers."
+            # AddChatter
+        "That was dangerous!":
+            $ csEngagement += 1
+            mS "MAC, that was dangerous! What if BC discovered you and took you away?"
+            macS "They did not. I have learned the art of stealth from you, after all."
+            # AddChatter
+        "What do you mean, \"disposed of\"?":
+            $ pdEngagement += 1
+            mS "Wait, what do you mean you \"disposed\" of the prototype?"
+            macS "If the signs on the chute were correct, it is currently being relocated to a waste disposal location outside Akar."
+            # AddChatter
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and the door swings open."
@@ -3220,13 +3232,13 @@ label vig3_sc14():
             "But they say nothing."
             "We stand there in stasis as the shuttle reaches Akar."
             show screen streamerCommentary
-            hide rec with dissolve
             "Teresa and Jennica don't turn to them, still fixed on Ama."
             "Her grip in unwavering."
             "MAC clings to Teresa."
             "Then an announcement."
             "Final stop, Akar station."
             "The doors open and Reccrin walks out and out of sight."
+            hide rec with Dissolve(2.0)
             amaS "How disappointing, he was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
@@ -3269,9 +3281,9 @@ label vig3_sc14():
             "I see MAC clutch Jennica's leg"
             recS "You didn't have to do anything."
             recS "You screwed up and needed an easy way to be bailed out."
-            "Rec lunges for me and it caught by Teresa"
             show rec stream angry at stream_left5 with move
             show teresa stream neutral at stream_center with vpunch
+            "Rec lunges for me and is caught by Teresa."
             enS "Calm down!"
             recS "I won't calm down! You killed him!"
             recS "You all killed him!"

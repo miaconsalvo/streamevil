@@ -749,7 +749,7 @@ label vig4_sc6_defend_5():
         show reginald at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
-        show jennica stream shock at stream_left with dissolve
+        show jennica stream shock at stream_left
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
@@ -774,15 +774,87 @@ label vig4_sc6_defend_5():
                 mS "Copy that."
         "A handful of attack ships break formation, streaking fire along Polaris's ground and ripping into the BC troops."
         "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
+        "But the Cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
+        "The battle has just begun."
         hide reginald with dissolve
-        show vega stream neutral at stream_center with dissolve
-    #if vig3_marshalChoice == True:
-    ###Need to write lists for this as well
-    else:
-        "Vega pauses for a moment."
-        vS "Go, Moze."
-        vS "We'll do what we have to do out here."
-        enS "We will too."
+    else: #could also be an elif for Reynar's Approval. Could also pass this "else" so that Zan always triggers. But that feels like too much.
+        $ pdEngagement += 1
+        $ kcEngagement += 3
+        $ csEngagement += 2 
+        unknown "MOXIE!"
+        pS "Cap, we're pickin' up a new signal!"
+        hide vega with dissolve
+        #if vig2_outlawEpilogue == True:
+        #    pS "Cap, we're pickin' up another signal!"
+        show teresa stream shock
+        $ AddChatter(vig4_sc6_zan_comment1)
+        enS "Wait, that has to be--"
+        show zan stream at stream_right5 with dissolve
+        zan "Have no fear! The great Dr. Zan is here!"
+        $ AddChatter(vig4_sc6_zan_comment2)
+        "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
+        zan "For my loyal fans!"
+        $ AddChatter(vig4_sc6_zan_comment3)
+        "Immense guns emerge from the ships, opening fire on BC's forces."
+        enS "Zan!? What are you doing here?"
+        if vig3_daisyApproval == True:
+            showgirl "This beats the hell out of working the Nova Casino beat!"
+            show showgirl stream at stream_left5 with dissolve
+            showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
+            $ AddChatter(vig4_sc6_zan_comment4)
+            showgirl "Thought y'all could use some help!"
+            mS "Daisy? But I thought--"
+            showgirl "One second, dear. Zan, the photon pulse is primed!"
+        else:
+            show houndleader at stream_left5 with dissolve
+            houndleader "Reynar heard some trouble was brewing in this area."
+            $ AddChatter(vig4_sc6_zan_comment5)
+            houndleader "Guess he figured you could use some help."
+            mS "The Hounds? But I thought--"
+            houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
+        show teresa stream neutral
+        zan "Fantastic! Show them the muscles of Akar!"
+        $ AddChatter(vig4_sc6_zan_comment6)
+        "The cannon on the lead ship in the formation starts to glow."
+        "Then a wave of green light ripples away from the ship like a shockwave."
+        "Every BC ship touched by the pulse drops out of the sky."
+        $ AddChatter(vig4_sc6_zan_comment7)
+        hide houndleader with dissolve
+        hide showgirl with dissolve
+        "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
+        "But the Cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
+        "The battle has just begun."
+        #if vig2_outlawEpilogue == True:
+        #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
+        zan "You go, do what you must."
+        zan "We will handle corporate stooges."
+        menu:
+            zan "We will handle corporate stooges."
+            "Thank you.":
+                mS "Thank you, Zan."
+                zan "It is no problem."
+                zan "Now, show them your mama's back!"
+                mS "My wha--."
+                pS "Our Moxie."
+                zan "Moxie!"
+                $ AddChatter(vig4_sc6_zan_comment8)
+                pause 0.5
+                $ AddChatter(vig4_sc6_zan_comment9)
+                mS "Ah, right. Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+            "Affirmative.":
+                mS "Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+        hide zan with dissolve
+    show vega stream neutral at stream_center with dissolve
+    #else:
+    #    "Vega pauses for a moment."
+    #    vS "Go, Moze."
+    #    vS "We'll do what we have to do out here."
+    #    enS "We will too."
+    vS "Captain, you should get a move on."
+    vS "The Dragonflies will hold the ground, make sure you don't have anymore suprises."
+    enS "We will too."
     $ AddChatter(vig4_sc6_defend_5_comment24)
     enS "If BC takes the plaza it won't matter what you do up there, we'll all be toast."
     $ AddChatter(vig4_sc6_defend_5_comment25)

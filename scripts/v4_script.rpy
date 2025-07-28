@@ -3780,7 +3780,7 @@ label vig4_sc5_1():
             enS "Affirmative."
             pS "Right."
             $ AddChatter(vig4_sc5_1_comment12)
-    "An immense sound, like a thunderclap suddenly comes from over the ridge."
+    "The immense sound of an explosion suddenly comes from over the ridge."
     hide screen streamerCommentary
     $ AddChatter(vig4_sc5_1_comment13)
     mS "What was that?"

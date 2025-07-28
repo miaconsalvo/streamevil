@@ -814,12 +814,12 @@ label vig4_sc6_attack_3_ama():
     $ AddChatter(vig4_sc6_attack_3_ama_comment50)
     pause 0.5
     $ AddChatter(vig4_sc6_attack_3_ama_comment51)
-    show ama stream neutral at stream_right with dissolve
+    show ama stream neutral at stream_left5 with dissolve
     amaS "Then let's make sure it's settled in our favor."
     "Ama hops out of the tank, standing opposite me."
     "Suddenly, I feel something. Standing here. At war. With her."
     "It's comfort. Like we've been here before."
-    if jennicaRomance == False and teresaRomacne == False:
+    if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_3_ama_comment52)
     menu:
         "It's comfort. Like we've been here before."
@@ -841,6 +841,7 @@ label vig4_sc6_attack_3_ama():
         $ csEngagement += 1
         $ vig4_reggieReturn = True
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
+        hide ama with dissolve
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't--"
@@ -879,11 +880,77 @@ label vig4_sc6_attack_3_ama():
             "Affirmative.":
                 mS "Copy that."
         hide reginald with dissolve
-        show ama at stream_center with move
+        show teresa stream neutral at stream_right with dissolve
     #if vig3_marshalChoice == True:
     else:
-        show ama at stream_center with move
+        $ pdEngagement += 1
+        $ kcEngagement += 3
+        $ csEngagement += 2 
+        unknown "MOXIE!"
+        hide ama with dissolve
         show jennica stream neutral at stream_left with dissolve
+        pS "Cap, we're pickin' up a new signal!"
+        #if vig2_outlawEpilogue == True:
+        #    pS "Cap, we're pickin' up another signal!"
+        show teresa stream shock at stream_right with dissolve
+        $ AddChatter(vig4_sc6_zan_comment1)
+        enS "Wait, that has to be--"
+        show zan stream at stream_right5 with dissolve
+        zan "Have no fear! The great Dr. Zan is here!"
+        $ AddChatter(vig4_sc6_zan_comment2)
+        "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
+        zan "For my loyal fans!"
+        $ AddChatter(vig4_sc6_zan_comment3)
+        "Immense guns emerge from the ships, opening fire on BC's forces."
+        enS "Zan!? What are you doing here?"
+        if vig3_daisyApproval == True:
+            showgirl "This beats the hell out of working the Nova Casino beat!"
+            show showgirl stream at stream_left5 with dissolve
+            showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
+            $ AddChatter(vig4_sc6_zan_comment4)
+            showgirl "Thought y'all could use some help!"
+            mS "Daisy? But I thought--"
+            showgirl "One second, dear. Zan, the photon pulse is primed!"
+        else:
+            show houndleader at stream_left5 with dissolve
+            houndleader "Reynar heard some trouble was brewing in this area."
+            $ AddChatter(vig4_sc6_zan_comment5)
+            houndleader "Guess he figured you could use some help."
+            mS "The Hounds? But I thought--"
+            houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
+        show teresa stream neutral
+        zan "Fantastic! Show them the muscles of Akar!"
+        $ AddChatter(vig4_sc6_zan_comment6)
+        "The cannon on the lead ship in the formation starts to glow."
+        "Then a wave of green light ripples away from the ship like a shockwave."
+        "Every BC ship touched by the pulse drops out of the sky."
+        $ AddChatter(vig4_sc6_zan_comment7)
+        hide houndleader with dissolve
+        hide showgirl with dissolve
+        #if vig2_outlawEpilogue == True:
+        #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
+        zan "You go, do what you must."
+        zan "We will handle corporate stooges."
+        menu:
+            zan "We will handle corporate stooges."
+            "Thank you.":
+                mS "Thank you, Zan."
+                zan "It is no problem."
+                zan "Now, show them your mama's back!"
+                mS "My wha--."
+                pS "Our Moxie."
+                zan "Moxie!"
+                $ AddChatter(vig4_sc6_zan_comment8)
+                pause 0.5
+                $ AddChatter(vig4_sc6_zan_comment9)
+                mS "Ah, right. Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+            "Affirmative.":
+                mS "Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+        hide zan with dissolve
+        show jennica stream neutral at stream_left with dissolve
+    show ama at stream_center with dissolve
     pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
@@ -1885,6 +1952,8 @@ label vig4_sc6_attack_3():
             mS "This is it. The end of the road."
         "We're not making it out of this.":
             mS "I don't know if I see a way out of this."
+    show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
     mS "This is where our score gets settled."
     $ AddChatter(vig4_sc6_attack_3_ama_comment49)
     pause 0.5
@@ -1911,7 +1980,7 @@ label vig4_sc6_attack_3():
         show reginald stream bigmad at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
-        show jennica stream shock at stream_left with dissolve
+        show jennica stream shock at stream_left
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
@@ -1935,9 +2004,71 @@ label vig4_sc6_attack_3():
             "Affirmative.":
                 mS "Copy that."
         hide reginald with dissolve
-    #if vig3_marshalChoice == True:
     else:
-        show jennica stream neutral at stream_left with dissolve
+        $ pdEngagement += 1
+        $ kcEngagement += 3
+        $ csEngagement += 2 
+        unknown "MOXIE!"
+        pS "Cap, we're pickin' up a new signal!"
+        #if vig2_outlawEpilogue == True:
+        #    pS "Cap, we're pickin' up another signal!"
+        show teresa stream shock
+        $ AddChatter(vig4_sc6_zan_comment1)
+        enS "Wait, that has to be--"
+        show zan stream at stream_right5 with dissolve
+        zan "Have no fear! The great Dr. Zan is here!"
+        $ AddChatter(vig4_sc6_zan_comment2)
+        "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
+        zan "For my loyal fans!"
+        $ AddChatter(vig4_sc6_zan_comment3)
+        "Immense guns emerge from the ships, opening fire on BC's forces."
+        enS "Zan!? What are you doing here?"
+        if vig3_daisyApproval == True:
+            showgirl "This beats the hell out of working the Nova Casino beat!"
+            show showgirl stream at stream_left5 with dissolve
+            showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
+            $ AddChatter(vig4_sc6_zan_comment4)
+            showgirl "Thought y'all could use some help!"
+            mS "Daisy? But I thought--"
+            showgirl "One second, dear. Zan, the photon pulse is primed!"
+        else:
+            show houndleader at stream_left5 with dissolve
+            houndleader "Reynar heard some trouble was brewing in this area."
+            $ AddChatter(vig4_sc6_zan_comment5)
+            houndleader "Guess he figured you could use some help."
+            mS "The Hounds? But I thought--"
+            houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
+        show teresa stream neutral
+        zan "Fantastic! Show them the muscles of Akar!"
+        $ AddChatter(vig4_sc6_zan_comment6)
+        "The cannon on the lead ship in the formation starts to glow."
+        "Then a wave of green light ripples away from the ship like a shockwave."
+        "Every BC ship touched by the pulse drops out of the sky."
+        $ AddChatter(vig4_sc6_zan_comment7)
+        hide houndleader with dissolve
+        hide showgirl with dissolve
+        #if vig2_outlawEpilogue == True:
+        #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
+        zan "You go, do what you must."
+        zan "We will handle corporate stooges."
+        menu:
+            zan "We will handle corporate stooges."
+            "Thank you.":
+                mS "Thank you, Zan."
+                zan "It is no problem."
+                zan "Now, show them your mama's back!"
+                mS "My wha--."
+                pS "Our Moxie."
+                zan "Moxie!"
+                $ AddChatter(vig4_sc6_zan_comment8)
+                pause 0.5
+                $ AddChatter(vig4_sc6_zan_comment9)
+                mS "Ah, right. Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+            "Affirmative.":
+                mS "Copy that!"
+                $ AddChatter(vig4_sc6_zan_comment10)
+        hide zan with dissolve
     pS "Cap, you're gonna want to get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
