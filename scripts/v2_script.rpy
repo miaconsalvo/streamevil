@@ -2131,6 +2131,7 @@ label vig2epilogue_OUT():
 
 #### MACRO GAME #######
 label vig2_macro_start():
+    $ vignette2 = True
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
