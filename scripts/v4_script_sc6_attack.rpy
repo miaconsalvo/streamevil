@@ -966,7 +966,7 @@ label vig4_sc6_attack_3_ama():
         "I'm not leaving you.":
             mS "No way, I'm not leaving you two!"
             enS "You're not leaving anything."
-            pS "We're just splittin' up to make the mission succeeds"
+            pS "We're just splittin' up to make the mission succeed."
             "Jennica and Teresa" "We've got this."
             if jennicaRomance == True:
                 $ csEngagement += 1
