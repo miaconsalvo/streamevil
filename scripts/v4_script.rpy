@@ -36,9 +36,9 @@ label vignette4Start():
     $ loopdView = False
     $ screenComplete = False
     $ macroChoice = True
-    $ csEngagement = 0
-    $ kcEngagement = 0
-    $ pdEngagement = 0
+    #$ csEngagement = 0
+    #$ kcEngagement = 0
+    #$ pdEngagement = 0
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview

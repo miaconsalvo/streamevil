@@ -35,9 +35,9 @@ label vignette3Start():
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
-    $ csEngagement = 0
-    $ kcEngagement = 0
-    $ pdEngagement = 0
+    #$ csEngagement = 0
+    #$ kcEngagement = 0
+    #$ pdEngagement = 0
     #narrator needs to be set to alt_narrator in the next label as well
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
@@ -3481,13 +3481,13 @@ label vig3_macro_mod_1():
                 player_nvl "Maybe in terms of analytics, but I have to stream at least one more time next week to officially make it."
                 mod_nvl "True. But even then, at least you know it's pretty much a formality."
     else:
-        mod_nvl "Viewership wasn't the same as the previous stream. Maybe cause you went a little too Marshal in Episode 2."
+        mod_nvl "Viewership wasn't the same as the previous stream." #Maybe cause you went a little too Marshal in Episode 2."
         mod_nvl "But it was still good numbers. With a solid final stream, you should be all set for Affiliate!"
         menu:
             "•You think we'll make it?":
                 player_nvl "Do you really think we'll make it to where we need to go?"
                 mod_nvl "Oh yeah."
-                mod_nvl "I mean, I've believed in you since I start modding for your stream."
+                mod_nvl "I mean, I've believed in you since I started modding for your stream."
                 mod_nvl "Why stop now?"
                 player_nvl "Thanks, Jessie."
                 mod_nvl "Of course."
@@ -3623,10 +3623,9 @@ label vig3_macro_brother_1():
     pause
     pause 1.0
     hide screen NVLnarration with dissolve
-    bro_nvl "Of course [player]! Any time?"
     bro_nvl "I was actually just gonna shoot you a message asking the same thing lol"
     menu:
-        "•What did Elliot want to check-in about?":
+        "•Ask Elliot what's up.":
             jump vig3_macro_brother_cedric
         "•Tell Elliot about the stream.":
             jump vig3_macro_brother_stream
@@ -3646,7 +3645,7 @@ label vig3_macro_brother_cedric():
             bro_nvl "Nothing too important really."
             player_nvl "suuuuure"
             bro_nvl ">:)"
-        "•Who cares, I want boy news!":
+        "•Who cares? I want boy news!":
             player_nvl "Grades shmades! What about the Brit Boy!"
             bro_nvl "Who?"
             player_nvl "YOU KNOW WHO, EL!"
@@ -3671,6 +3670,7 @@ label vig3_macro_brother_cedric():
         "•Best. Day. Ever.":
             player_nvl "Best. Day. Ever."
         "•I'm gonna cry.":
+            #player_nvl "They grow up so fast!"
             player_nvl "Omg, I'm legit gonna cry."
     bro_nvl "It's not your crush haha"
     player_nvl "No, but like."
@@ -3691,31 +3691,34 @@ label vig3_macro_brother_cedric():
     else:
         bro_nvl "Talking to someone you like is \"never not weird.\""
     bro_nvl "So I just tried to be myself and we started walking home from school together like almost every day."
-    player_nvl "Cuuuuute"
-    bro_nvl "And when we got to my block today...I don't know."
+    player_nvl "Cuuuuute."
+    bro_nvl "And when we got to our block today...I don't know."
     bro_nvl "I just asked if he'd like to go on a date with me."
     bro_nvl "I didn't even realize I was doing it until I heard myself say the word \"date.\""
     player_nvl "And then?"
-    bro_nvl "He said yes and kissed me on the cheek :)"
-    player_nvl "I'm dying"
+    bro_nvl "He said yes..."
+    bro_nvl "And kissed me on the cheek :)"
+    player_nvl "I'm dying."
     bro_nvl "lol"
-    player_nvl "No, legit, I couldn't write a better story for you two."
+    player_nvl "No, for real, I couldn't write a better story for you two."
     player_nvl "You got plans for the date??"
     bro_nvl "Yeah, he's gonna take me to see a movie next Friday!"
-    $ playerNVLNarration = "That's the same day as the release of the Oakley's final episode."
+    $ playerNVLNarration = "Next Friday? You've got something next Friday too..."
     show screen NVLnarration with dissolve
+    pause
+    $ playerNVLNarration = "Oh! That's the day of your last Oakley 2 stream!"
     pause
     menu:
         "•That's the same day as the last Oakley stream.":
             hide screen NVLnarration
             player_nvl "Funny, that's the same day as my last Oakley stream."
-            bro_nvl "I know, I'm sorry I won't be able to make it!"
+            bro_nvl "I know! I'm sorry I won't be able to make it!"
             bro_nvl "It's the only night Cedric's free!"
-            player_nvl "nononono your date is way more important."
+            player_nvl "Nononono your date is way more important."
             player_nvl "We'll catch up on Oakley 2 when I get back for Thanksgiving!"
             bro_nvl "Yes!"
             player_nvl "And I'll be sending you the best vibes for a good date from a distant galaxy!"
-            bro_nvl "I promise they will be received haha"
+            bro_nvl "I promise they will be received haha."
         "•You? In a movie theater?":
             hide screen NVLnarration
             player_nvl "Since when do you go see movies in theathers Mr. \"Classical Music is the Only Real Theatre.\""
@@ -3727,6 +3730,10 @@ label vig3_macro_brother_cedric():
             bro_nvl "I didn't say they were fun for you."
             player_nvl "Shut up."
             bro_nvl "Love you too <3"
+            bro_nvl "I know this means I won't make it to the final Oakley 2 stream, but I figured you would understand."
+            player_nvl "Oh, of course. This is way more important!"
+            player_nvl "You have fun and don't even think about worrying about it!"
+            bro_nvl "Thanks [player] :)"
     if vig3_brotherChat == 1:
         bro_nvl "Soooo yeah, that's my big news."
         bro_nvl "What's up with you? How's the stream going'?"
@@ -3767,11 +3774,13 @@ label vig3_macro_brother_stream():
             bro_nvl "For sure, so what are you enjoying the most?"
             menu:
                 "•The game.":
+                    $ energy += 1
                     player_nvl "The game, for sure!"
                     bro_nvl "Yeaaah, Oakley 2 does look sick."
                     bro_nvl "Bummed I'll have to wait till the holidays to get it for myself."
                     player_nvl "It's cool. I mean the art is so good."
-                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3. Very nice."
+                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3."
+                    bro_nvl "There's already a sick lofi remix on utube I'm using to help me study."
                     if vibes == True:
                         player_nvl "Yeah and game has a great vibe in general. Very easy to stream, but still really engaging."
                     elif humour == True:
@@ -3783,29 +3792,51 @@ label vig3_macro_brother_stream():
                         player_nvl "And the story builds on the themes from the first game so well."
                         player_nvl "The characters especially are really well done."
                     bro_nvl "Yep, I was already bummed I couldn't play it at launch and keeping up with your playthrough is just increasing the fomo"
-                    player_nvl "Lol, sorry"
-                    bro_nvl "Ahh it's fine. This way I get to see you make all the mistakes and then do the better choices for me!"
+                    player_nvl "Lol, sorry."
+                    bro_nvl "Ahh it's fine. This way I get to see you make all the mistakes and then do the better choices for me >:)"
                     player_nvl "Always so selfless"
-                    bro_nvl "You know me :)"
+                    bro_nvl "You know me."
                 "•The chat.":
+                    $ enthusiasm += 1
                     player_nvl "I'm having a lot of fun interacting with the chat."
                     if viewershipHigh == True:
-                        player_nvl "Like I said, there are way more people around there now and it's really cool to be hanging out with everyone."
+                        player_nvl "Like I said, there are way more people around now and it's really cool to be hanging out with everyone."
                         player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes."
                     else:
                         player_nvl "It's not that many more people than I'm used to, but even so, there's a lot more going on there now."
                         player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes."
-                    player_nvl "Plus it feels like the people in chat are really starting to vibe and be like friends."
-                    player_nvl "It's cute!"
+                    player_nvl "Plus it feels like everyone in chat is really starting to vibe and be like friends."
                     bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
                     bro_nvl "And I'm really glad it's been a positive experience for you!"
                 "•Being on camera.":
+                    $ energy += 1
                     player_nvl "I think it's just being on camera."
                     player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly."
                     player_nvl "It's nice to just be in the habit of performing for people."
                     player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter."
                     bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while."
                     bro_nvl "Definitely good to keep up the habit!"
+                "•Playing Outlaw." if outlaw >= marshal - 2:
+                    $ enthusiasm += 2
+                    player_nvl "I'm really enjoying playing the more Outlaw side of things."
+                    player_nvl "It's a totally different perspective of the characters than I normally have."
+                    menu:
+                        "•It's been a fun experiment.":
+                            player_nvl "It's been a really fun experiment to just see how the game changes."
+                            player_nvl "And people in the chat respond to it really well."
+                            player_nvl "Feels kinda like we're playing along all together!"
+                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                            bro_nvl "And I'm really glad it's been a positive experience for you!"
+                        "•I feel kind of guilty about it, actually.":
+                            player_nvl "It's weird, I actually feel kinda guilty about that."
+                            player_nvl "Like, should I be enjoying playing this problematic protagonist?"
+                            bro_nvl "I don't think you need to feel guilty about that."
+                            bro_nvl "They designed the game to be played in multiple ways."
+                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work."
+                            player_nvl "That's a good point."
+                            bro_nvl "Y'know, as long as you're not going around blowing up aid ships in your free time lol"
+                            player_nvl "Hahaha haven't gotten there yet."
+                            bro_nvl "Good, but now I gotta keep an eye on you ;)"
         "•It's going well.":
             player_nvl "Yeah, it's going well."
             bro_nvl "Ooh, not the period."
@@ -3819,6 +3850,7 @@ label vig3_macro_brother_stream():
                             player_nvl "Yeah, things are good."
                             player_nvl "They're just not great."
                             player_nvl "They're not shit. But they're not great."
+                            #Could cut the following three conditional statements
                             if enthusiasm >= reluctance:
                                 player_nvl "Trying to get Affiliate is a bit of a slog, but playing the game and hanging with chat has been really fulfilling."
                             if energy < 5:
@@ -3828,10 +3860,66 @@ label vig3_macro_brother_stream():
                                 player_nvl "But the episodies can get long too."
                             bro_nvl "Sounds like the life of someone who turned their passion into work."
                             player_nvl "Yeah, but that work isn't even paying me anything."
-                            bro_nvl "But it's still rewarding to you. That's why you even bother to do it."
-                            bro_nvl "I know you love games, and I know that all the streaming stuff makes playing them more complicated." 
-                            bro_nvl "But you still love them and the community that comes from the stream."
-                            bro_nvl "I just hope the good of that stuff always outweighs the bad. And if it starts to flip, then you can stop. No one is making you do this, y'know."
+                            bro_nvl "It can't be all boring and tough though?"
+                            bro_nvl "What's something you're enjoying about it?"
+                            menu:
+                                "•The game.":
+                                    $ energy += 1
+                                    player_nvl "I still really like the game."
+                                    bro_nvl "Yeaaah, Oakley 2 does look sick."
+                                    bro_nvl "Bummed I'll have to wait till the holidays to get it for myself."
+                                    player_nvl "It's cool. I mean the characters, story, and art are so good."
+                                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3."
+                                    bro_nvl "There's a sick lofi remix on vibefy that I'm using to help me study."
+                                    bro_nvl "I was already bummed I couldn't play it at launch and keeping up with your playthrough is just increasing the fomo"
+                                    player_nvl "Lol, sorry."
+                                    bro_nvl "Ahh it's fine. This way I get to see you make all the mistakes and then do the better choices for me >:)"
+                                    player_nvl "Always so selfless"
+                                    bro_nvl "You know me."
+                                "•The chat.":
+                                    $ enthusiasm += 1
+                                    player_nvl "I'm enjoying interacting with the chat."
+                                    if viewershipHigh == True:
+                                        player_nvl "Like I said, there are way more people around there now and it's cool to be hanging out with everyone."
+                                        player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes."
+                                    else:
+                                        player_nvl "It's not that many more people than I'm used to, but even so, there's more going on there than I'm used to."
+                                        player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes."
+                                    player_nvl "Plus it feels like the people in chat are really starting to vibe and be like friends."
+                                    bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                                    bro_nvl "And I'm really glad it's been a positive experience for you!"
+                                "•Being on camera.":
+                                    $ energy += 1
+                                    player_nvl "I think it's just being on camera."
+                                    player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly."
+                                    player_nvl "It's nice to be in the habit of performing for people."
+                                    player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter."
+                                    bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while."
+                                    bro_nvl "Definitely good to keep up the habit!"
+                                "•Playing Outlaw." if outlaw >= marshal - 2:
+                                    $ enthusiasm += 2
+                                    player_nvl "I'm really enjoying playing the more Outlaw side of things."
+                                    player_nvl "It's a totally different perspective of the characters than I normally have."
+                                    menu:
+                                        "•It's been a fun experiment.":
+                                            player_nvl "It's been a fun experiment to just see how the game changes."
+                                            player_nvl "And people in the chat respond to it really well."
+                                            player_nvl "Feels kinda like we're playing along all together!"
+                                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                                            bro_nvl "And I'm really glad it's been a positive experience for you!"
+                                        "•I feel kind of guilty about it, actually.":
+                                            player_nvl "It's weird, I actually feel kinda guilty about that."
+                                            player_nvl "Like, should I be enjoying playing this problematic protagonist?"
+                                            bro_nvl "I don't think you need to feel guilty about that."
+                                            bro_nvl "They designed the game to be played in multiple ways."
+                                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work."
+                                            player_nvl "That's a good point."
+                                            bro_nvl "Y'know, as long as you're not going around blowing up aid ships in your free time lol"
+                                            player_nvl "Hahaha haven't gotten there yet."
+                                            bro_nvl "Good, but now I gotta keep an eye on you ;)"
+                            bro_nvl "Hey, I know streaming is kind of like work, but I also know you."
+                            bro_nvl "I know you love games and the community that comes from the stream."
+                            bro_nvl "I just hope the good of that stuff always outweighs the bad. And if it starts to flip, then you can stop. No one is making you do this, y'know?"
                             player_nvl "You're right. Thanks, El."
                             bro_nvl "Anytime."
                         "•Actually...":
@@ -3839,6 +3927,7 @@ label vig3_macro_brother_stream():
                             bro_nvl "I knew it. Like what?"
                             menu:
                                 "•The grind for Affiliate sucks.":
+                                    $ energy -= 1
                                     player_nvl "The grind for Affiliate just sucks."
                                     player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
                                     player_nvl "But jamming out smaller streams is just exhausting."
@@ -3847,7 +3936,7 @@ label vig3_macro_brother_stream():
                                         player_nvl "Well that's kinda embarrassing lol"
                                         bro_nvl "I mean, I don't think anyone else would notice."
                                         bro_nvl "But like, I can tell when you're running on low energy."
-                                        bro_nvl "Sibling shit, y'know."                            
+                                        bro_nvl "Sibling shit, y'know?"                            
                                     else:
                                         bro_nvl "Really? On the VODs you look energized."
                                         player_nvl "That's good to hear."
@@ -3855,10 +3944,11 @@ label vig3_macro_brother_stream():
                                     bro_nvl "Mom always says life has its ups and downs."
                                     bro_nvl "But I know you. And I know that you stream because it has way more highs than lows."
                                     bro_nvl "Otherwise you wouldn't bother."
-                                    bro_nvl "Like just think about the people you've met from it that you wouldn't have otherwise."
+                                    bro_nvl "Like, just think about the people you've met from it that you wouldn't have otherwise."
                                     player_nvl "You're right. Thanks, El."
                                     bro_nvl "Anytime."
                                 "•I feel pressure from the viewers.":
+                                    $ reluctance += 1
                                     player_nvl "Honestly, I feel pressure from the viewers."
                                     player_nvl "Especially since the raid."
                                     if viewershipHigh == True:
@@ -3866,7 +3956,7 @@ label vig3_macro_brother_stream():
                                     else:
                                         player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more."
                                     player_nvl "Idk, it feels a bit weird now."
-                                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are."
+                                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are.\""
                                     player_nvl "I think you're paraphrasing there."
                                     bro_nvl "A bit, yeah, but the point still stands."
                                     bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented."
@@ -3885,21 +3975,17 @@ label vig3_macro_brother_stream():
                                     bro_nvl "Was it something someone said in chat?"
                                     menu:
                                         "•I don't think so.":
-                                            player_nvl "I don't think so. People have been really friendly, actually."
+                                            player_nvl "I don't think so. People have been really friendly for the most part."
                                         "•No.":
                                             player_nvl "No, the people in chat have been really good."
-                                    bro_nvl "Is it Kalena?"
-                                    menu:
-                                        "•Definitely not.":
-                                            player_nvl "Definitely not, I haven't thought about her in months."
-                                            bro_nvl "Ok, ok, just checking my bases."
                                     bro_nvl "Damn, I'm sorry. Wish there was something I could do to help."
-                                    player_nvl "No I don't think this thing is like \"solvable.\""
+                                    player_nvl "No, I don't think this thing is like \"solvable.\""
                                     player_nvl "I'm just feeling a type of way right now."
                                     player_nvl "But you are helping, just talking like this."
                                     player_nvl "Thanks, El."
                                     bro_nvl "Anytime!"
                 "•The grind for Affiliate sucks.":
+                    $ energy -= 1
                     player_nvl "The grind for Affiliate just sucks."
                     player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
                     player_nvl "But jamming out smaller streams is just exhausting."
@@ -3908,7 +3994,7 @@ label vig3_macro_brother_stream():
                         player_nvl "Well that's kinda embarrassing lol"
                         bro_nvl "I mean, I don't think anyone else would notice."
                         bro_nvl "But like, I can tell when you're running on low energy."
-                        bro_nvl "Sibling shit, y'know."                            
+                        bro_nvl "Sibling shit, y'know.?"                            
                     else:
                         bro_nvl "Really? On the VODs you look energized."
                         player_nvl "That's good to hear."
@@ -3921,7 +4007,7 @@ label vig3_macro_brother_stream():
                     bro_nvl "Anytime."
                 "•Genuinely, things are just fine.":
                     player_nvl "No, genuinely, things are just good."
-                    player_nvl "School is hectic, especially with the grind for Affiliate, but it's manageable."
+                    player_nvl "School is hectic, especially with the grind for Affiliate, but my studies are still manageable."
                     player_nvl "I'm excited to come back home for Thanksgiving."
                     player_nvl "And the stream feels good."
                     player_nvl "Not like, incredible. But I like where I'm at."
@@ -3937,6 +4023,7 @@ label vig3_macro_brother_stream():
             bro_nvl "What's up?"
             menu:
                 "•The grind for Affiliate sucks.":
+                    $ energy -= 1
                     player_nvl "The grind for Affiliate just sucks."
                     player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
                     player_nvl "But jamming out smaller streams is just exhausting."
@@ -3945,7 +4032,7 @@ label vig3_macro_brother_stream():
                         player_nvl "Well that's kinda embarrassing lol"
                         bro_nvl "I mean, I don't think anyone else would notice."
                         bro_nvl "But like, I can tell when you're running on low energy."
-                        bro_nvl "Sibling shit, y'know."                            
+                        bro_nvl "Sibling shit, y'know?"                            
                     else:
                         bro_nvl "Really? On the VODs you look energized."
                         player_nvl "That's good to hear."
@@ -3957,6 +4044,7 @@ label vig3_macro_brother_stream():
                     player_nvl "You're right. Thanks, El."
                     bro_nvl "Anytime."
                 "•I feel pressure from the viewers.":
+                    $ reluctance += 1
                     player_nvl "Honestly, I feel pressure from the viewers."
                     player_nvl "Especially since the raid."
                     if viewershipHigh == True:
@@ -3964,7 +4052,7 @@ label vig3_macro_brother_stream():
                     else:
                         player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more."
                     player_nvl "Idk, it feels a bit weird now."
-                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are."
+                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are.\""
                     player_nvl "I think you're paraphrasing there."
                     bro_nvl "A bit, yeah, but the point still stands."
                     bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented."
@@ -3986,17 +4074,12 @@ label vig3_macro_brother_stream():
                             player_nvl "I don't think so. People have been really friendly, actually."
                         "•No.":
                             player_nvl "No, the people in chat have been really good."
-                    bro_nvl "Is it Kalena?"
-                    menu:
-                        "•Definitely not.":
-                            player_nvl "Definitely not, I haven't thought about her in months."
-                            bro_nvl "Ok, ok, just checking my bases."
                     bro_nvl "Damn, I'm sorry. Wish there was something I could do to help."
                     player_nvl "No I don't think this thing is like \"solvable.\""
                     player_nvl "You're helping right now, just talking like this."
                     player_nvl "Thanks, El."
                     bro_nvl "Anytime!"
-    player_nvl "Oh and playing Oakley on stream is so different."
+    player_nvl "Playing Oakley on stream is so different."
     player_nvl "Definitely not like back when it was just you and me."
     bro_nvl "Aahh good times."
     bro_nvl "Remember when I ripped the controller from you cause you threatened to insult Allistar?"
@@ -4038,10 +4121,10 @@ label vig3_macro_brother_stream():
                 bro_nvl "I will say, I am glad you didn't side with Matticus."
                 bro_nvl "What a skeeve."
             else:
-                bro_nvl "That Matticus alignment at the end of Episode 2 shocked me even more than the Allistar thing tbh"
-            bro_nvl "I'm excited to check out Episode 3 when it goes up!"
+                bro_nvl "That Matticus alignment at the end of Episode 2 shocked me even more than the Allistar thing tbh."
+            #bro_nvl "I'm excited to check out Episode 3 when it goes up!"
         "•Outlaw life is good!":
-            player_nvl "Like I said, Outlaw life is good!"
+            player_nvl "Outlaw life is good!"
             if marshal > outlaw + 5: #testing if I can check how much more one variable is greater than another
                 bro_nvl "Srsly? I was just talking about you offing Allistar"
                 bro_nvl "I caught up on the VODs, I know you're back to goody two-shoes Moze haha"
@@ -4071,10 +4154,10 @@ label vig3_macro_brother_end():
     player_nvl "Orchestra stuff?"
     bro_nvl "Nope, I gotta panic and figure out what I'm gonna wear on my date!"
     player_nvl "Lmao you have so much time."
-    bro_nvl "I know. But I'm still nervous."
-    player_nvl "It's gonna be a great time."
+    bro_nvl "Not when I'm trying to fit in outfit planning between all the 'OMG I CAN'T BELIEVE I'M GOING OUT WITH HIM' mini panic attacks I'll be having all week!"
+    player_nvl "hahahaha you're gonna figure it out and it's gonna be a great time."
     player_nvl "Seriously, I'm so excited for you! Cedric's one lucky guy."
-    bro_nvl "Thanks, [player]. I {i}really{/i} appreciate all your advice and just you listening to me when I freak out."
+    bro_nvl "Thanks, [player]! I {i}really{/i} appreciate all your advice and just you listening to me when I freak out."
     player_nvl "Hey, I appreciate you listening when I need to talk about stream stuff."
     bro_nvl "Fair, haha"
     bro_nvl "Guess we have each other's backs."
