@@ -2825,6 +2825,26 @@ label vig3_sc13():
     "This whole area has been cleared. Why is there no one here?"
     "Loud bangs ring out in the distance. Fireworks? Maybe?"
     hide screen streamerCommentary
+    #"MAC leads the way, turning down hallways quickly and abruptly."
+    #mS "MAC, how the hell did you end up on that presentation stage?"
+    #macS "A confluence of circumstantial factors."
+    #macS "I escaped the Hounds' restraints shortly after entering this facility and evaded them by entering a laundry chute."
+    #macS "That chute deposited me in the BigCorp representative's dressing room where I saw the display of a prototype that resembled me."
+    #macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
+    #menu:
+    #   macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
+    #   "Good thinking, MAC!":
+    #       $ kcEngagement += 1
+    #       mS "Wow, MAC, that was really resourceful!"
+    #       macS "I learned from some very good teachers."
+    #   "That was dangerous!":
+    #       $ csEngagement += 1
+    #       mS "MAC, that was dangerous! What if BC discovered you and took you away?"
+    #       macS "They did not. I have learned the art of stealth from you and your crew."
+    #   "What do you mean, \"disposed of\"?":
+    #       $ pdEngagement += 1
+    #       mS "Wait, what do you mean you \"disposed\" of the prototype?"
+    #       macS "If the signs on the chute were correct, it is currently being relocated to a waste disposal location outside Akar."
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and the door swings open."
