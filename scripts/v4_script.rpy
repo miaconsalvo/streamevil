@@ -1206,8 +1206,6 @@ label vig4_sc2_6():
                     $ csEngagement += 1
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
-                    $ engineerApproval += 1
-                    $ pilotApproval -= 1
                     "I take a long breath."
                     "The stale atmosphere sticks in my throat. But I hold steady."
                     mS "Teresa, Jennica, this was always part of the plan, remember?"
@@ -1918,7 +1916,7 @@ label vig4_sc3_2_jennica_2():
             pS "Thanks, Cap."
             mS "No I really mean it. You've achieved amazing things." 
             mS "There's no one I could possibly trust more at the helm of the Oakley."
-            if pilotApproval > 5:
+            if pilotApproval > 4:
                 "Jennica slides a bit closer to me."
             pS "Good, cause there's no one I would want watchin' my back more than you."
             $ AddChatter(vig4_sc3_2_jenn_comment40)
@@ -1929,7 +1927,7 @@ label vig4_sc3_2_jennica_2():
                     pS "Realize what, Cap?"
                     mS "I love you."
                     $ AddChatter(vig4_sc3_2_jenn_comment41)
-                    if pilotApproval > 5:
+                    if pilotApproval > 4:
                         $ kcEngagement -= 2
                         $ csEngagement += 3
                         $ pdEngagement -= 1
@@ -2360,7 +2358,7 @@ label vig4_sc3_2_teresa_2():
             mS "Teresa, you can use the word fate. You don't have to be scared of it."
             enS "But if it is fate, then what does it mean?"
             $ AddChatter(vig4_sc3_2_resa_comment43)
-            if engineerApproval > 5:
+            if engineerApproval > 4:
                 "Teresa gets closer to the edge of her seat. Closer to me."
             enS "Why did this moment have to happen?"
             $ AddChatter(vig4_sc3_2_resa_comment44)
@@ -2372,7 +2370,7 @@ label vig4_sc3_2_teresa_2():
                     enS "What!?"
                     mS "I love you, Teresa."
                     $ AddChatter(vig4_sc3_2_resa_comment45)
-                    if engineerApproval > 5:
+                    if engineerApproval > 4:
                         $ csEngagement -= 2
                         $ kcEngagement += 3
                         $ pdEngagement -= 1
@@ -4726,7 +4724,6 @@ label vig4_sc7_3_coil():
             "Ama nods."
             amaS "Fair."
         "You mean my ship.":
-            $ deadeyeApproval
             mS "You mean {i}my{/i} ship."
             $ AddChatter(vig4_sc7_3_coil_comment32)
             "Ama nods."

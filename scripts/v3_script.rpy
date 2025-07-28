@@ -116,6 +116,7 @@ label vig3outlawstart():
     menu:
         "Be calm":
             $ kcEngagement += 1 #Logic: kitcat likes Teresa and prefers the gentler comment
+            $ engineerApproval += 1
             mS "Take ten seconds. I'll see you there."
             #no approval change
         "Be firm":
@@ -187,6 +188,7 @@ label vig3marshalstart():
     menu:
         "Be calm":
             $ csEngagement += 1 #Logic: Coriolis likes Jennica so prefers the gentler comment
+            $ pilotApproval += 1
             mS "Take ten seconds. I'll see you there."
         "Be firm":
             $ csEngagement -= 1
@@ -341,11 +343,13 @@ label vig3_sc3():
     "I can hear footsteps rushing to us. He's not alone."
     menu:
         "Pull out your gun.":
+            $ engineerApproval += 1 #Logic: Teresa likes the show of force
             $ macViolence += 1
             $ pdEngagement += 1 #Logic: pickledDragons likes the direct intervention
             "I pull out my gun in the direction of the sound." 
             mS "Not likely boys."
         "Show them you're a Snakehawk":
+            $ pilotApproval += 1 #Logic: Jennica likes the deescalation and that the tatoo still means something here
             $ macPeace += 1
             $ csEngagement += 1 #Logic: kitcat and Coriolis both like the use of "lore" for intervention
             $ kcEngagement += 1
@@ -492,6 +496,7 @@ label vig3_sc4():
     menu:
         "Mac thinks Rec has a right to know about their brother."
         "I'm not being fair.":
+            #$ pilotApproval += 1 #Logic: Jennica would want to tell Rec and appreciates Moze being honest that it's not fair
             $ macHope += 1
             $ csEngagement += 1 #Logic: Coriolis likes your honesty, pickledDragons wants you to stand by your previous choice.
             $ pdEngagement -= 1
@@ -499,6 +504,7 @@ label vig3_sc4():
             mS "Okay?"
             macS "Yes Captain."
         "We'll tell them after we get the part":
+            #$ engineerApproval += 1 #Logic: Teresa is pragmatic - get the job done, then worry about emotions
             $ macPessimism += 1
             $ kcEngagement += 1 #kitcat likes the desire to be honest, but views waiting to do so as keeping MAC safe
             mS "Range extender first, hard talk later. We can't leave here without it."
@@ -944,6 +950,8 @@ label vig3_sc6():
     show jennica stream neutral at stream_left
     show teresa stream happy at stream_right
     "When the two of them begin to smile at each other I know that something I said stuck."
+    $ engineerApproval += 1
+    $ pilotApproval += 1
     enS "You know I was wondering when we'd get an inspiring heart to heart from you."
     pS "I'm thinkin' that cracks the top five."
     enS "Not as good as the one on Firma 12. How did that one go?" 
@@ -1426,8 +1434,8 @@ label vig3_sc6():
             zan "Good, good! NOW!" 
             zan "I must go and throw up. HAHA!"
             "The three exchange handshakes as Zan passes by me and stops."
-            hide jennica stream 
-            hide teresa stream
+            hide jennica
+            hide teresa
             zan "You are Captain, no?" 
             menu: 
                 "Respond to Zan."
@@ -1611,11 +1619,15 @@ label vig3_sc7():
     menu:
         "How do we want to approach getting the antenna?"
         "Whatever it takes.":
+            $ engineerApproval += 1
+            $ pilotApproval -= 1
             $ pdEngagement += 1
             $ csEngagement -= 1
             mS "Do whatever it takes, we need that part and we'll take it if necessary."
             pS "All in then. Got it."
         "Don't cause any unnecessary drama.":
+            $ pilotApproval += 1 #Logic: As established in vignette 2, Jenn is more marshal, Teresa is more outlaw
+            $ engineerApproval -= 1
             $ pdEngagement -= 1 #Logic: cs is marshal, pd is outlaw. Pretty straightforward imo
             $ csEngagement += 1
             ms "We need to do everything we can to get that part but we can't cause problems."
@@ -1726,11 +1738,14 @@ label vig3_sc8():
         "Who do you side with?"
         "Side with Jennica.":
             $ engineerApproval -= 1
+            $ pilotApproval += 1
             $ csEngagement += 1 #Logic: Coriolis is team Jennica, kitcat is team Teresa
             mS "Listen Resa, Mac's too important, we'll get into a fight if we have too."
             pS "Never knew ya to be timid Resa."
             enS "You two are not understanding..."
         "Side with Teresa":
+            $ engineerApproval += 1
+            $ pilotApproval -= 1
             $ kcEngagement += 1
             mS "I understand the passion but we should stick with Teresa's plan for now."
             pS "But MAC's as good as gone if we don't do anything."
@@ -2193,7 +2208,7 @@ label vig3_sc11():
     menu: 
         "Get in the mix."
         "Bold coming from you.": 
-            $ deadeyeApproval += 0
+            $ deadeyeApproval += 0 #Is this supposed to be a 0? or a 1?
             mS "Bold coming from you."
             amaS "Oh? You're speaking now?"
             mS "Hard to get a word in when you love hearing yourself talk."
@@ -2341,46 +2356,49 @@ label vig3_sc12():
                     "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle cocking."
                     amaS "Hold it!"
                     "Then I hear Ama's rifle cock and I freeze on reflex."
-                    "The rep backs away."
-                    "The rifle turns to me."
-                    amaS "Save the tantrum kid."
-                    amaS "Now Mozely, we're gonna be nice an cooperative."
-                    amaS "So first thing, blaster on the ground."
-                    "I wasn't even reaching for it. But I grab it from the holster in my suit jacket."
-                    "And toss it away from me."
-                    amaS "I thought you'd gotten over freezing up like that by now."
-                    macS "Captain..."
-                    "The three of us stop in our tracks and turn to mac."
-                    $ reactTarget = "vig3_sc12_amafindsout"
-                    show screen streamerCommentary
-                    amaS "That's it, isn't it?"
-                    amaS "All that struggle. All that runnin'"
-                    amaS "Was it worth it?"
-                    "I look at MAC and then Ama."
-                    "Before I even realize it, I start walking towards her."
-                    amaS "Woah now, stay right there."
-                    "I take another step."
-                    amaS "I'm warnin' ya Mozely."
-                    "She's hesitating."
-                    "Another step."
-                    hide screen streamerCommentary
-                    amaS "You're gonna make me shoot you?"
-                    "Until I'm close enough."
-                    "I pause."
-                    mS "Yeah."
-                    "I grab the gun as it fires inches from my face."
-                    "I try to pry it from her hands but she's as strong as I remember."
-                    amaS "You little shit!"
-                    "I struggle against her strength as we pull the rifle back and forth."
-                    "BANG!"
-                    "A chunk of the rail explodes out into the open air."
-                    macS "STOP IT!"
-                    "Ama and I hit a stalemate as we turn to MAC."
-                    "The rep is white as a ghost, back to the rails as if he'll throw himself off."
-                    "And there's MAC with my blaster in his hand."
-                    "Gripping the handle like it's his own."
+            "The rep backs away."
+            "The rifle turns to me."
+            amaS "Save the tantrum kid."
+            amaS "Now Mozely, we're gonna be nice an cooperative."
+            amaS "So first thing, blaster on the ground."
+            "I wasn't even reaching for it. But I grab it from the holster in my suit jacket."
+            "And toss it away from me."
+            amaS "I thought you'd gotten over freezing up like that by now."
+            macS "Captain..."
+            "The three of us stop in our tracks and turn to mac."
+            $ reactTarget = "vig3_sc12_amafindsout"
+            show screen streamerCommentary
+            amaS "That's it, isn't it?"
+            amaS "All that struggle. All that runnin'"
+            amaS "Was it worth it?"
+            "I look at MAC and then Ama."
+            "Before I even realize it, I start walking towards her."
+            amaS "Woah now, stay right there."
+            "I take another step."
+            amaS "I'm warnin' ya Mozely."
+            "She's hesitating."
+            "Another step."
+            hide screen streamerCommentary
+            amaS "You're gonna make me shoot you?"
+            "Until I'm close enough."
+            "I pause."
+            mS "Yeah."
+            "I grab the gun as it fires inches from my face."
+            "I try to pry it from her hands but she's as strong as I remember."
+            amaS "You little shit!"
+            "I struggle against her strength as we pull the rifle back and forth."
+            "BANG!"
+            "A chunk of the rail explodes out into the open air."
+            macS "STOP IT!"
+            "Ama and I hit a stalemate as we turn to MAC."
+            "The rep is white as a ghost, back to the rails as if he'll throw himself off."
+            "And there's MAC with my blaster in his hand."
+            "Gripping the handle like it's his own."
 
             if macViolence >= macPeace and macPessimism >= macHope:
+                $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
+                $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
+                $ kcEngagement += 1
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
@@ -2404,6 +2422,9 @@ label vig3_sc12():
                 mS "You got it."
                 "Without losing my sights on her we head inside."
             elif macViolence >= macPeace and macPessimism < macHope:
+                $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
+                $ csEngagement -= 1
+                $ kcEngagement += 2
                 "He fires the blaster in between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
@@ -2431,6 +2452,9 @@ label vig3_sc12():
                 "Ama is speechless"
                 "Without losing my sights on her we head inside."
             elif macViolence < macPeace and macPessimism >= macHope:
+                $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
+                $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
+                $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
@@ -2456,6 +2480,9 @@ label vig3_sc12():
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside."
             else:
+                $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
+                $ pdEngagement -= 2
+                $ csEngagement += 2
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
@@ -2502,8 +2529,8 @@ label vig3_sc12():
             "The man's eyes fall on me."
             bcrep "H-h-help..."
             "Ama's fist snaps closed accompanied by a dull crunching sound."
-            "She lets go of her grip. The body slumps to the ground, limp."
-            "She stares at the body, her shoulders rising and falling as she takes deep breaths."
+            "She lets go of her grip. The body falls to the ground, limp."
+            "Ama's shoulders rise and fall as she takes deep breaths."
             "Then she turns her attention on me."
             "I freeze, just between her and MAC."
             amaS "Well, Mozely, where were your heroics for him?"
@@ -2534,9 +2561,9 @@ label vig3_sc12():
             amaS "All that struggle. All that runnin'."
             amaS "Was it worth it?"
             hide screen streamerCommentary
-            "I look at MAC and then Ama."
+            "I look at MAC, and then Ama."
             menu:
-                "I look at MAC and then Ama."
+                "I look at MAC, and then Ama."
                 "You would never understand.":
                     $ kcEngagement += 1 #Logic: the implication that MAC is the most important thing
                     mS "Yes. A million times yes."
@@ -2556,8 +2583,9 @@ label vig3_sc12():
             "A shadow flickers across Ama's gaze."
             "Her eyes, alert, focused, dead to all the world except her prey, falter."
             "For the briefest of moments, she's somewhere else."
-            "The barrel of her rifle shifts just a bit, and, before I can think to act, my body lunges forward."
+            "The barrel of her rifle shifts just a bit, and, before I even think to act, my body lunges forward."
             "I grab the gun's barrel and heave it to the side."
+            play audio "lazer.wav"
             "The bolt sails past my head, just barely grazing my cheek."
             ###The commented out lines are an alternative where Ama doesn't fire her rifle - they can be cut###
             #"I throw my shoulder into Ama's chest before she can fire.""
@@ -2569,6 +2597,7 @@ label vig3_sc12():
             amaS "You little shit!"
             "I try to pry it from her hands but she's as strong as I remember."
             "I struggle against her strength as we yank the rifle back and forth."
+            play audio "lazer.wav"
             "BANG!"
             "A chunk of the rail explodes out into the open air."
             macS "STOP IT!"
@@ -2688,7 +2717,7 @@ label vig3_sc12():
             show mac stream neutral at stream_center_mac with move
             jump vig3_sc13
     
-    
+    ##I think we can delete this now??
     #Choices happen based on MAC's alignment.
     if macViolence >= macPeace and macPessimism >= macHope:
         $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
@@ -3169,6 +3198,7 @@ label vig3_sc14():
     menu: 
         "Explain to Rec why you shot Allistar?"
         "I didn't want to it just happened.":
+            $ pilotApproval += 2 #Logic: I think Jenn, as Moze's oldest friend, probably has sympathy for her mixed up emotions.
             $ pdEngagement -= 3
             if misclick == True:
                 $ csEngagement += 3 #Logic: if you identified that you misclicked, then Coriolis likes that this kind of parallels your personal experience.
@@ -3222,6 +3252,7 @@ label vig3_sc14():
             jump vig3_epilogue
 
         "I did what I had to do.":
+            $ engineerApproval += 2 #Logic: I think Teresa agrees with this line. Utilitarianism and all that
             $ pdEngagement -= 2 #Logic: pd doesn't like this excuse
             $ csEngagement += 1
             $ kcEngagement += 3 #Logic: kitcat might legit feel like you didn't have a choice: MAC was threatened after all
@@ -3270,6 +3301,8 @@ label vig3_sc14():
             jump vig3_epilogue
 
         "I did it because he deserved it.":
+            $ pilotApproval -= 1 #Logic: I think both crew members would be stunned by this. They'll stand by their captain, but I don't think they believe Allistar deserved it.
+            $ engineerApproval -= 1
             $ pdEngagement += 3 #Logic: pd loves this attitude; the other two liked Allistar
             $ csEngagement -= 2
             $ kcEngagement -= 1
@@ -3289,7 +3322,7 @@ label vig3_sc14():
             "Tears pouring down his face."
             enS "Moze..."
             pS "You're not serious."
-            mS "What you think being in position is easy?"
+            mS "What? You think being in this position is easy?"
             mS "You think I like making the hard calls?"
             mS "Allistar knew the risk, and got what was coming."
             mS "I'd do it all again if I had to."
