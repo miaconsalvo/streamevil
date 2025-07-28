@@ -224,8 +224,8 @@ label vig3_sc2():
     "We take a moment to think."
     show mac stream shock at stream_center_mac with dissolve
     macS "Dad..."
-    $ reactTarget = "vig3_sc2_macdad"
-    show screen streamerCommentary
+    #$ reactTarget = "vig3_sc2_macdad"
+    #show screen streamerCommentary
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
     show jennica stream neutral at stream_left
     show mac stream neutral at stream_center_mac
@@ -237,7 +237,7 @@ label vig3_sc2():
     enS "That's remarkable." #(multiple=2) #might break the dialogue box positions
     "The two exchange a quick look before turning away, remembering that they're still fighting. I turn the focus away from MAC."
     mS "Let's consider our options, come up with a plan to get our Comms back in working order. Meet at the Bridge in an hour to debrief."
-    hide screen streamerCommentary
+    #hide screen streamerCommentary
     pS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     enS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     hide jennica with dissolve
@@ -541,7 +541,7 @@ label vig3_sc4():
     hide teresa with dissolve
     mS "Didn't know Akar hired rent-a-cops."
     show houndgoon at stream_right with dissolve
-    "A smaller Hound moves up next to him" 
+    "A smaller goon moves up next to him" 
     "She's tough and with something to prove."
     houndgoon "I suggest you get yourself and your crew in order and stay out of the way."
     hide screen streamerCommentary
@@ -585,7 +585,7 @@ label vig3_sc4():
     mS "Someone has to."
     houndgoon "Contraband is whatever we say it is."
     houndleader "We'll also be taking this."
-    "The Hound's leader goes to pick up the antennae for the Comms that's sitting on Rec's store counter." 
+    "The leader goes to pick up the antennae for the Comms that's sitting on Rec's store counter." 
     ###Streamer reaction: Of course he does###
     recS "This item is being sold to customers at the moment. I can assure you it's perfectly legitimate."
     houndleader "Are you admitting to selling contraband Reccrin?" 
@@ -609,7 +609,7 @@ label vig3_sc4():
             houndleader "You should've died with the rest of the Snakehawks."
             "He takes the antennae as I struggle to get up from the floor."
             houndleader "Pleasure doing business with you."
-            "The Hounds leave us to pick ourselves up and walk out of the shop. MAC who has thankfully been hiding rolls forward."
+            "The gang leaves us to pick ourselves up and walk out of the shop. MAC who has thankfully been hiding rolls forward."
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
@@ -629,7 +629,7 @@ label vig3_sc4():
             $ csEngagement -= 1
             "I take a step back, we can't afford a fight right now, it's too risky."
             houndleader "Pleasure doing business with you."
-            "The Hounds turn to leave knocking some stuff around."
+            "The gang turns to leave knocking some stuff around."
             "On the way out with the parts, the Leader hits me with a good punch while I'm off guard."
             hide houndgoon with dissolve
             hide houndleader with dissolve
@@ -655,9 +655,9 @@ label vig3_sc4():
             houndleader "Finally a sensible idea." #it doesnt work right? they need to take the antenna to force the crew to keep looking
             "We do the transfer."
             "And I'm hit wiht a pucnh without warning."
-            "He grabs the part and the Hounds move out."
+            "He grabs the part and the gang moves out."
             houndleader "Pleasure doing business with you."
-            "The Hounds commit some extra carnage on the way out."
+            "The gang commits some extra carnage on the way out."
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
@@ -1001,7 +1001,7 @@ label vig3_sc6():
             menu:
                 "How do I get out of this?"
                 "Flirt.":
-                    $ kcEngagement += 2 #Logic: Crowd pleaser moment. Everyone likes a good flirt and romance, right?
+                    $ kcEngagement += 1 #Logic: Crowd pleaser moment. Everyone likes a good flirt and romance, right?
                     $ pdEngagement += 1
                     $ csEngagement += 1 #Logic: I could see Coriolis losing engagement here, viewing it as being irresponsible
                     mS "Oh, I'm far from disappointed." #flirt
@@ -1036,7 +1036,7 @@ label vig3_sc6():
                     hide akarplazanight_stream
                     show bbpub_stream at topleft onlayer background with dissolve
                 "Wrestle the knife away":
-                    $ pdEngagement += 2 #Logic: pickledDragons likes Moze asserting herself; kitcat doesn't have strong feelings about this interaction
+                    $ pdEngagement += 1 #Logic: pickledDragons likes Moze asserting herself; kitcat doesn't have strong feelings about this interaction
                     $ csEngagement -= 1 #Logic: Coriolis dislikes the use of force
                     mS "I don't have time for this."
                     "I grab her wrist before she can cut me open and twist her arm down and away."
@@ -1236,7 +1236,7 @@ label vig3_sc6():
     menu: 
         "Say something."
         "Abosultely not!":
-            $ kcEngagement -= 2 #Logic: mean to MAC, kc doesn't like
+            $ kcEngagement -= 1 #Logic: mean to MAC, kc doesn't like
             $ csEngagement -= 1 #Logic: It's mean for Coriolis too
             mS "You will sit down and say nothing and let me handle it."
             macS "But I-"
@@ -1334,7 +1334,7 @@ label vig3_sc6():
             "The Karousel is untouched, the rounds continues."
             hide zan with dissolve
         "Cut the rope holding the carnivorous plants":
-            $ pdEngagement += 2 #Logic: this option is just fun. Everyone likes it, but pickledDragons REALLY likes it
+            $ pdEngagement += 1 #Logic: this option is just fun. Everyone likes it
             $ kcEngagement += 1
             $ csEngagement += 1
             "I take a look at the frayed rope and the netting that is so carefully holding back the plants."
@@ -1596,7 +1596,6 @@ label vig3_sc7():
     menu:
         "Respond to MAC."
         "Cheer up bud!":
-            $ kcEngagement += 1 #Logic: kitcat likes that you're treating MAC like a person
             mS "Cheer up kid, we'll find it!"
             "MAC looks unconvinced. And tired?"
         "We'll find it I promise.":
@@ -2309,8 +2308,8 @@ label vig3_sc12():
             menu: 
                 "How do you stop him?"
                 "Fire your blaster.":
-                    $ pdEngagement += 2 #Logic: you get pd back a bit for this
-                    $ kcEngagement += 3 #Logic: kitcat would say you have to defend MAC
+                    $ pdEngagement += 1 #Logic: you get pd back a bit for this
+                    $ kcEngagement += 2 #Logic: kitcat would say you have to defend MAC
                     $ csEngagement -= 1 #Logic: coriolis would prefer you rush them instead of try to shoot
                     "Absolutely not!"
                     "I raise my blaster on instinct."
@@ -2333,7 +2332,7 @@ label vig3_sc12():
                     "Ama stands with her rifle in hand aimed at me."
                     "The commotion is enough to stop the rep in his tracks."
                 "You can't react fast enough.":
-                    $ csEngagement += 2 #Logic: Coriolis likes you not going aggressive
+                    $ csEngagement += 1 #Logic: Coriolis likes you not going aggressive
                     $ kcEngagement -= 2 #Logic: kitcat is appalled you didn't do anything; pickledDragons is mixed - it's inaction but also a moment of choosing failure which they find interesting
                     "This is crazy."
                     "All of this, we are so over our heads."
@@ -2492,7 +2491,7 @@ label vig3_sc12():
             jump vig3_sc13
              
         "Do nothing.":
-            $ pdEngagement += 3 #Logic: pickledDragons thinks the rep should die
+            $ pdEngagement += 2 #Logic: pickledDragons thinks the rep should die
             $ csEngagement -= 2 #Logic: Coriolis is appalled; kitcat is somewhat mixed. Would prefer to not let the rep die, but is also not disengaged by this choice
             "When MAC's eyes lock on mine, he perks up."
             "I put a finger to my lips as I slowly shift around Ama toward him."
@@ -2577,6 +2576,9 @@ label vig3_sc12():
             "And there's MAC with my blaster in his hand."
             "Gripping the handle like it's his own."
             if macViolence >= macPeace and macPessimism >= macHope:
+                $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
+                $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
+                $ kcEngagement += 1
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -2597,6 +2599,9 @@ label vig3_sc12():
                 mS "You got it."
                 "Without losing my sights on her we head inside."
             elif macViolence >= macPeace and macPessimism < macHope:
+                $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
+                $ csEngagement -= 1
+                $ kcEngagement += 2
                 "He fires the blaster in between us, it hits the wall with a definitive smack." 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
                 amaS "You gonna do something with that baby blaster?"
@@ -2622,6 +2627,9 @@ label vig3_sc12():
                 "Ama is speechless"
                 "Without losing my sights on her we head inside."
             elif macViolence < macPeace and macPessimism >= macHope:
+                $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
+                $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
+                $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -2645,6 +2653,9 @@ label vig3_sc12():
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside."
             else:
+                $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
+                $ pdEngagement -= 2
+                $ csEngagement += 2
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -2707,8 +2718,8 @@ label vig3_sc12():
         "Without losing my sights on her we head inside."
     elif macViolence >= macPeace and macPessimism < macHope:
         $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
-        $ csEngagement -= 1 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
-        $ kcEngagement += 3
+        $ csEngagement -= 1
+        $ kcEngagement += 2
         "He fires the blaster in between us, it hits the wall with a definitive smack."
         bcrep "Makers!" 
         "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
@@ -2736,7 +2747,7 @@ label vig3_sc12():
         "Ama is speechless"
         "Without losing my sights on her we head inside."
     elif macViolence < macPeace and macPessimism >= macHope:
-        $ csEngagement += 2  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
+        $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
         $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
         $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
@@ -2764,7 +2775,7 @@ label vig3_sc12():
         show screen streamerCommentary
         "Without losing my sights on her we head inside."
     else:
-        $ kcEngagement += 3
+        $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
         $ pdEngagement -= 2
         $ csEngagement += 2
         "He fires the blaster in-between us, it hits the wall with a definitive smack."
@@ -2920,9 +2931,9 @@ label vig3_sc13():
 label vig3outlawcomms():
     show matticus phone neutral at stream_center_mac with dissolve
     show jennica stream angry
-    $ pdEngagement += 2  #Logic: pickledDragons like that you are continuing to have a relationship with Matticus
+    $ pdEngagement += 1  #Logic: pickledDragons like that you are continuing to have a relationship with Matticus
     $ kcEngagement -= 1 #Logic: kitcat and coriolis don't like Matticus
-    $ csEngagement -= 2
+    $ csEngagement -= 1
     smatt "Well hello ladies! Need a hand from little ole me?"
     "Matticus smiles in that shit-eating grin that he loves."
     pS "This is a terrible idea"
@@ -3193,7 +3204,7 @@ label vig3_sc14():
         "I did what I had to do.":
             $ pdEngagement -= 2 #Logic: pd doesn't like this excuse
             $ csEngagement += 1
-            $ kcEngagement += 2 #Logic: kitcat might legit feel like you didn't have a choice: MAC was threatened after all
+            $ kcEngagement += 3 #Logic: kitcat might legit feel like you didn't have a choice: MAC was threatened after all
             #I feel like Ama would be neutral on this front
             $ reactTarget = "vig3_sc14_recfindsout_ihadto"
             mS "After he fixed MAC, we brought him to the ship."

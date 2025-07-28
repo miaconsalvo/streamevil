@@ -200,6 +200,7 @@ default vig4_reggieReturn = False
 
 default vig4_nickName_bool = False
 default vig4_nickName = "Oak"
+default vig4_scoresettled = False
 
 #Variables to track viewers for Analytics screen in MacroGame
 default viewCheck1 = 0

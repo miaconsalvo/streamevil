@@ -12,12 +12,12 @@ label vig3_sc1_out():
         "Teresa's upset."
         "Wow it's weighing heavily on her.":
             $ reactImage = "stream ui/reactshocked.png"
-            player "Wow it's crazy to see it weighing so heavily on Teresa!"
+            player "Wow, crazy to see it weighing so heavily on Teresa!"
             player "She's usually so stoic!"
             pause 0.5
         "Brutal!":
             $ reactImage = "stream ui/reactconfident.png"
-            player "The girls are fighting!!" 
+            player "Hate to see the crew fighting." 
             #$ AddChatter(vig2_sc1_reactcomment1)
             pause 0.5
         "This is what she wanted.":
@@ -47,7 +47,7 @@ label vig3_sc1_mar():
             pause 0.5
         "They're fighting!":
             $ reactImage = "stream ui/reactconfident.png"
-            player "Oh damn the girls are fighting!"
+            player "Hate to see the crew fighting." 
             #add chatter
             pause 0.5
         "This is what she wanted.":
@@ -63,7 +63,7 @@ label vig3_sc1_mar():
     $ reactImage = "stream ui/reactneutral.png"
     return
 
-label vig3_sc2_macdad():
+label vig3_sc2_macdad(): #I commented this out of the main game script. MAC references Vanas as his father in episode 1, this wouldn't be a surprise.
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
@@ -99,22 +99,22 @@ label vig3_sc3_maccandy():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Talk about MAC's naivete."
+        "MAC's like a kid who just wants candy."
+        #"Talk about MAC's naivete."
         "MAC is so innocent!":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
-            player "Wow MAC is too innocent."
-            player "Too pure for this world!"
+            player "Wow MAC is too innocent for this world!"
             pause 0.5
         "Watch out MAC!":
             $ reactImage = "stream ui/reactthinking.png"
-            player "Oh god MAC's gonna get in trouble!"
+            player "Oh god, MAC's gonna get in trouble!"
             player "He's so out of his element!"
             #add chatter
             pause 0.5
         "This will end badly hahaha!":
             $ reactImage = "stream ui/reactconfident.png"
-            player "Oh God"
-            player "MAC's gonna be a problem here."
+            player "Oh god, MAC's gonna be a problem here."
             player "We're about to get scammed!"
             pause 0.5
     $ macroChoice = False
@@ -130,19 +130,23 @@ label vig3_sc3_firstfight():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to the fight."
+        #"React to the fight."
+        "The crew is stirring up a bit of trouble."
         "Wow badass!":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Holy smokes look at them go!"
             player "Jenn and Resa kicking butt!"
             pause 0.5
         "Bit of an overreaction.":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
             player "Well that seemed uneccesary!"
-            player "Not saying that he wasn't gross but still!"
+            player "Not saying that he wasn't gross, but still!"
             #add chatter
             pause 0.5
         "This will come back around.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactconversational.png"
             player "We really shouldn't be antagonizing people."
             player "This is going to come back to bite us!"
@@ -161,8 +165,10 @@ label vig3_sc4_houndraid():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to the raid."
+        #"React to the raid."
+        "These troublemakers are shaking down Rec's shop."
         "Told you!" if firstfightprediction == True:
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
             player "I knew it!"
             player "See chat! I knew they would be back!"
@@ -170,12 +176,12 @@ label vig3_sc4_houndraid():
         "They better not take the antenna.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Oh no! They're going to take the part we need!"
-            player "Things bout to get complicated!"
+            #player "Things bout to get complicated!" #Think this is better with just the one line
             #add chatter
             pause 0.5
-        "Let's fight em!":
+        "Let's fight 'em!":
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "We can take em!"
+            #player "We can take 'em!" #similar as above, I think one line is stronger here.
             player "Let's rumble. They ain't so tough!"
             pause 0.5
     $ macroChoice = False
@@ -191,22 +197,22 @@ label vig3_sc5_amahallu():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Talk about Moze's paranoia."
+        "Moze's paranoia is getting pretty intense."
         "Damn Moze is flipping out.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Moze is pulling guns on showgirls!"
             player "She's seeing ghosts!"
             pause 0.5
-        "Damn that's the second time now!":
+        "That's the second time now!":
             $ reactImage = "stream ui/reactunsure.png"
             player "This is the second time!"
-            player "Chat Moze is shook!"
+            player "Chat, Moze is shook!"
             player "Talk about paranoia."
             #add chatter
             pause 0.5
         "Spooky!":
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Damn it's hard to know if we're actually being tailed!"
+            player "Damn, it's hard to know if we're actually being tailed!"
             player "Chat I'm spooked!"
             pause 0.5
     $ macroChoice = False
@@ -225,19 +231,22 @@ label vig3_sc6_crewspat():
         "The crew's mad at each other."
         "They're at each other's throats.":
             $ reactImage = "stream ui/reactconfident.png"
-            player "Oh damn! The girls are angry!"
-            player "Some serious shade getting thrown!"
+            #player "Oh damn! The girls are angry!"
+            player "Oh damn, this isn't like normal banter."
+            player "They're throwing some serious shade!"
             pause 0.5
         "Jennica's so protective of MAC.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
-            player "Awww. Jennica doesn't want MAC to hear the bad words!"
+            player "Awww, Jennica doesn't want MAC to hear the bad words!"
             player "Cute!"
             #add chatter
             pause 0.5
         "Relax Jennica, he's a bot.":
+            $ kcEngagement -= 1 
             $ reactImage = "stream ui/reactconversational.png"
             player "I mean he's just a robot."
-            player "C'mon now, his database def has worse no?"
+            player "C'mon now, his database definitely has worse, no?"
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -252,7 +261,7 @@ label vig3_sc6_stranger():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Moze is following someone."
+        "Moze is following a stranger."
         "Moze is super paranoid.":
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn Moze is following strangers now!"
@@ -279,20 +288,25 @@ label vig3_sc6_recbonding():
     menu:
         "Rec is opening up."
         "Rec is cool!":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Rec is so cool!"
             player "Really love their character!"
             pause 0.5
         "Rec is cute!":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Rec is so cute!"
             player "Really love their design!"
             #add chatter
             pause 0.5
         "Damn I'm guilty.":
+            $ kcEngagement += 1
+            $ csEngagement += 1
+            $ pdEngagement -= 1
             $ reactImage = "stream ui/reactshocked.png"
-            player "Oh god we kill their brother."
-            player "This is going to come back to bite us!"
+            player "Rec is so cool! But every time I think that I remember we killed their brother."
+            player "So much guilt!"
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -307,7 +321,7 @@ label vig3_sc6_shipbet1():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "They bet the ship on this game?"
+        "Did they actually bet the ship on thsi game?"
         "Classic Jenn and Resa.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Oh damn! Bit of an overbet!"
@@ -316,12 +330,12 @@ label vig3_sc6_shipbet1():
         "What the hell!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Holy smokes!"
-            player "That's crazy! Now we gotta win!"
+            player "Now we gotta win!"
             #add chatter
             pause 0.5
         "I don't buy it.":
             $ reactImage = "stream ui/reactunsure.png"
-            player "Naw chat. I'm calling cap."
+            player "Naw chat. I'm calling cap on this."
             player "They're reckless but not like that."
             $ shipbetprediction == True
             pause 0.5
@@ -338,19 +352,23 @@ label vig3_sc6_trustcrew():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Comment on Moze trusting her crew and not cheating."
+        #"Comment on Moze trusting her crew and not cheating."
+        "You chose to trust your crew and not cheat anymore."
         "Got to have integrity.":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "They got themselves into this mess."
             player "They'll have to get themselves out of it!"
             pause 0.5
         "I trust Jennica and Teresa.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
             player "Trust the crew!"
             player "Jenn and Resa got this!"
             #add chatter
             pause 0.5
         "Oh no I hope they win!":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
             player "Crap this there's a lot riding on this!"
             player "Was this a mistake?"
@@ -368,8 +386,9 @@ label vig3_sc6_shootingzan():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Comment on Moze shooting Zan."
+        "You chose to cheat by shooting Zan in the leg."
         "Blast em!":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Get blasted Zan!"
             pause 0.5
@@ -380,6 +399,7 @@ label vig3_sc6_shootingzan():
             #add chatter
             pause 0.5
         "That was cheating!":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Damn, feels weird that we had to cheat to win."
             pause 0.5
@@ -396,13 +416,14 @@ label vig3_sc6_shipbet2():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "The crew didn't actually bet the ship."
+        "Turns out, the crew didn't actually bet the ship."
         "What a relief.":
             $ reactImage = "stream ui/reactunsure.png"
             player "Phew. That's a relief"
-            player "That coulda been bad!"
+            player "That could've been bad!"
             pause 0.5
         "I knew it!" if shipbetprediction == True:
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "I called it chat!"
             player "No way they'd bet the ship!"
@@ -427,7 +448,8 @@ label vig3_sc7_lostmac():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to losing MAC."
+        #"React to losing MAC."
+        "MAC got taken by the Hounds!"
         "Oh no!":
             $ reactImage = "stream ui/reactshocked.png"
             player "MAC!"
@@ -435,8 +457,8 @@ label vig3_sc7_lostmac():
             pause 0.5
         "The plot thickens.":
             $ reactImage = "stream ui/reactconfident.png"
-            player "Oh damn! Things are getting interesting!"
-            player "Cool!"
+            player "Oh damn, did not expect that to happen."
+            player "Things are getting complicated on Solara!"
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -452,19 +474,22 @@ label vig3_sc8_teresabluff():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Comment on Teresa's bluff."
+        #"Comment on Teresa's bluff."
+        "Teresa just bluffed our way into the Inventor's Fair."
         "Teresa's in her element.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "Wow! Teresa knows her high society."
-            player "That's so cool!"
+            player "Wow, Teresa knows her way around high society."
+            #player "That's so cool!"
             pause 0.5
         "How lucky.":
             $ reactImage = "stream ui/reactconversational.png"
-            player "Wow."
-            player "Lucky Teresa was here."
+            #player "Wow."
+            player "We're lucky Teresa was here."
             #add chatter
             pause 0.5
         "This is boring.": #maybe have this only if you stealthed into the commsbase in vig2 or maybe different based on vig2
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Jeez. More stealth?"
             player "Really seems like that's always an option."
@@ -483,13 +508,14 @@ label vig3_sc9_daisyreturns():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Say something about Daisy."
+        #"Say something about Daisy."
+        "We met up with Daisy at the Inventor's Fair."
         "She's back!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Daisy returns!"
             player "Love it! She's the realest person in this room."
             pause 0.5
-        "Maybe she is following us?":
+        "Maybe she's following us?":
             $ reactImage = "stream ui/reactthinking.png"
             player "Oh damn! Maybe she was following us?"
             player "Pretty sus chat."
@@ -513,19 +539,22 @@ label vig3_sc9_amasurprise():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to Ama."
+        #"React to Ama."
+        "Ama found Moze!"
         "Oh no!":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
             player "This is bad!"
             player "This is really bad!"
             pause 0.5
         "Not so paranoid after all!":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
-            player "Oh wow!"
-            player "Guess Moze wasn't being paranoid after all!"
+            player "Oh wow, guess Moze wasn't being paranoid after all!"
             #add chatter
             pause 0.5
         "It's go time.":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Oh it's time to rumble."
             player "Let's get loud!"
@@ -543,19 +572,23 @@ label vig3_sc11_amabacksass():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Comment on Moze and Ama's insults."
+        #"Comment on Moze and Ama's insults."
+        "The back and forth between Moze and Ama is tense."
         "Burn Ama!":
+            $ csEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Damn Ama!"
-            player "Get roasted!"
+            #player "Damn Ama!"
+            player "Get roasted, Ama!"
             pause 0.5
         "Love this sass.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Feel like they haven't missed a step!"
             player "Just like old times hahaha!"
             #add chatter
             pause 0.5
         "Let them fight!":
+            $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Boo. Let me fight."
             player "She's got a whole lot coming to her."
@@ -573,11 +606,12 @@ label vig3_sc12_amachoke():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Comment on Ama's workplace relations."
+        #"Comment on Ama's workplace relations."
+        "Ama's choking the BigCorp representative."
         "Don't mess with Ama.":
             $ reactImage = "stream ui/reactshocked.png"
-            player "Damn!"
-            player "Watch out, don't piss off Ama!"
+            #player "Damn!"
+            player "Good to have a reminder not to piss off Ama."
             pause 0.5
         "Better call HR!":
             $ reactImage = "stream ui/reactconfident.png"
@@ -587,7 +621,7 @@ label vig3_sc12_amachoke():
             pause 0.5
         "Buddy got off easy.":
             $ reactImage = "stream ui/reactthinking.png"
-            player "Yeah I'd have done worse."
+            player "Could have been worse."
             player "This guy was asking for trouble!"
             pause 0.5
     $ macroChoice = False
@@ -603,7 +637,8 @@ label vig3_sc12_amafindsout():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "Ama knows that it's the real MAC!"
+        #"Ama knows that it's the real MAC!"
+        "Ama realized that's the real MAC!"
         "The jig is up!":
             $ reactImage = "stream ui/reactshocked.png"
             player "This is really bad!"
@@ -612,7 +647,7 @@ label vig3_sc12_amafindsout():
         "Time to fight!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Finally time for some battle!"
-            player "Don't get between Mozely and her MAC!"
+            player "Don't get between Mozely and our MAC!"
             #add chatter
             pause 0.5
         "Say nothing.":
@@ -638,7 +673,7 @@ label vig3_sc12_macalignment_violencepessimism():
             player "Zero hesitation! Ice cold!"
             player "MAC for the win! Crack shot!"
             pause 0.5
-        "MAC no!":
+        "MAC, no!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Noooo!"
             player "MAC you're supposed to be better than us!"
@@ -743,7 +778,7 @@ label vig3_sc12_macalignment_peaceoptimism():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Did MAC just grow up!?"
             player "Like he just saw right through Ama!"
-            player "What is going on!?"
+            #player "What is going on!?"
             #add chatter
             pause 0.5
         "Is this because of our choices?":
@@ -767,13 +802,14 @@ label vig3_sc14_recfindsout_regret():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to Moze's confession."
+        #"React to Moze's confession."
+        "Moze confessed to Rec that she killed Allistar."
         "Finally coming clean.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Wow. Brutal."
-            player "But at least she's taking accountability for once."
+            player "But at least she's finally telling Rec."
             pause 0.5
-        "Sorry Rec.":
+        "Sorry, Rec.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Noooo!"
             player "This is so sad chat."
@@ -799,11 +835,12 @@ label vig3_sc14_recfindsout_ihadto():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to Moze's confession."
+        #"React to Moze's confession."
+        "Moze confessed to Rec that she killed Allistar."
         "Damn right.":
             $ reactImage = "stream ui/reactunsure.png"
             player "I mean she's right. Allistar betrayed them."
-            player "What did he expect?"
+            player "What do you expect?"
             #add chatter
             pause 0.5
         "Moze with the cop out!":
@@ -814,7 +851,7 @@ label vig3_sc14_recfindsout_ihadto():
             pause 0.5
         "Sorry, not sorry.":
             $ reactImage = "stream ui/reactconversational.png"
-            player "Yeah I guess that was the right thing to do."
+            player "Yeah, I guess that was the right thing to do."
             player "They shouldn't expect an apology though. Allistar crossed us!"
         "Say nothing.":
             player "..."
@@ -832,13 +869,14 @@ label vig3_sc14_recfindsout_noremorse():
     $ macroChoice = True
     $ narrator = reg_narrator
     menu:
-        "React to Moze's admission."
+        #"React to Moze's admission."
+        "Moze confessed to Rec that she killed Allistar."
         "No remorse!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Hell yeah!"
             player "Allistar deserved it! No regrets."
             pause 0.5
-        "Damn that was cold.":
+        "That was cold.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Wow maybe that was too far?"
             player "Even if Allistar deserved it..."
