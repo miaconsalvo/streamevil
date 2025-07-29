@@ -2475,9 +2475,9 @@ label FlinchAnalytics_vig2():
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         $ topfan = "Coriolis"
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        $ topfan = "KitCat"
+        $ topfan = "kitcat"
     elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
-        $ topfan = "PickledDragons"
+        $ topfan = "pickledDragons"
     else:
         $ topfan = "Coriolis"
     $ followerGoal = 2
@@ -2570,7 +2570,7 @@ label vig2_macro_viewerChat_1():
 
 
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        "It's KitCat?"
+        "It's kitcat?"
         kc_nvl "[username], hi! How's it goin!"
         kc_nvl "Sry to message randomly, hope it's not weird."
         kc_nvl "But I have to ask about your romance path."
@@ -2580,7 +2580,7 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ama. Great pick! Honestly, I didn't even think about that."
             kc_nvl "Do you think it's an actual path the devs made?"
             kc_nvl "Or are you just fanshipping this vibe hard?"
-            $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
+            $ playerNVLNarration = "Woah, kitcat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
                 "•I think it'll be a choice.":
@@ -2606,7 +2606,7 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ok, so Teresa, I'm into this."
             kc_nvl "I feel like Jennica's the dev-intended romance."
             kc_nvl "And I just think the tension with Teresa is more interesting, no?"
-            $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
+            $ playerNVLNarration = "Woah, kitcat's a little intense. Should I respond?"
             show screen NVLnarration           
             menu:
                 '•Totally agree.':
@@ -2632,7 +2632,7 @@ label vig2_macro_viewerChat_1():
             kc_nvl "Ok, so, Jennica. What's the deal with that?"
             kc_nvl "Like, I see people fawning over her online and..."
             kc_nvl "idk, she just feels like the dev canon romance to me, which just seems kinda uninteresting."
-            $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
+            $ playerNVLNarration = "Woah, kitcat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
                 '•Yes, but that\'s what makes it good.':
@@ -2657,7 +2657,7 @@ label vig2_macro_viewerChat_1():
         else:
             kc_nvl "Who are you thinking of romancing? You didn't say during stream."
             kc_nvl "I feel like Jennica is canon, but Teresa's compelling too."
-            $ playerNVLNarration = "Woah, KitCat's a little intense. Should I respond?"
+            $ playerNVLNarration = "Woah, kitcat's a little intense. Should I respond?"
             show screen NVLnarration
             menu:
                 "•I'm thinking Jennica.":

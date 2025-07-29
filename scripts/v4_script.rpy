@@ -5744,7 +5744,7 @@ label FlinchAnalytics_vig4():
     "You should probably check out Flinch's analytics page."
     $ flinchCheck = 0
     show screen webNavigation_vig4
-    scene flinch_v2screen with dissolve
+    scene flinch_v4screen with dissolve
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         $ topfan = "Coriolis"
     elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
@@ -5773,7 +5773,7 @@ label FlinchAnalytics_vig4():
 
 label blueitVignette4_1():
     $ menu = adv_menu
-    scene blueit_v2screen at truecenter with dissolve
+    scene blueit_v4screen at truecenter with dissolve
     $ screenComplete = False
     $ blueitView = True
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
@@ -5789,7 +5789,7 @@ label blueitVignette4_1():
     jump blueitVignette4_2
 
 label blueitVignette4_2():
-    scene blueit_v2screen at truecenter
+    scene blueit_v4screen at truecenter
     show screen webNavigation_vig4
     if blueitChoiceCheck == True:
         $ screenComplete = True

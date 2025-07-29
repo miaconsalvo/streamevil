@@ -2613,6 +2613,7 @@ label vig3_sc12():
                 $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
+                $ vig3_macAlign = "ViolentPessimism"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -2636,6 +2637,7 @@ label vig3_sc12():
                 $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
                 $ csEngagement -= 1
                 $ kcEngagement += 2
+                $ vig3_macAlign = "ViolentHope"
                 "He fires the blaster in between us, it hits the wall with a definitive smack." 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
                 amaS "You gonna do something with that baby blaster?"
@@ -2664,6 +2666,7 @@ label vig3_sc12():
                 $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
                 $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
                 $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
+                $ vig3_macAlign = "PeacePessimism"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -2690,6 +2693,7 @@ label vig3_sc12():
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ vig3_macAlign = "PeaceHope"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
@@ -3453,6 +3457,14 @@ label vig3_epilogue():
 
 label vig3_macro_start():
     $ vignette3 = True
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "kitcat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "pickledDragons"
+    else:
+        $ topfan = "Coriolis"
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
@@ -3521,12 +3533,12 @@ label vig3_macro_webNav():
     $ menu = adv_menu
     "You're about to sign off Loop'D when you get another notification."
     scene streamview with dissolve
-    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+    if topfan = "Coriolis":
         "It's from Coriolis."
-    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        "It's from KitCat."
-    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
-        "It's from PickledDragons."
+    elif topfan = "kitcat":
+        "It's from kitcat."
+    elif topfan = "pickledDragons":
+        "It's from pickledDragons."
     else:
         "It's from Coriolis."
     "You should see what they have to say, and check on Flinch and Blueit."
@@ -3534,11 +3546,22 @@ label vig3_macro_webNav():
     call screen webNavigation_vig3
 
 label vig3_macro_viewerChat_1():
-    $ menu = nvl_menu
     scene discordview with dissolve
     $ screenComplete = False
     $ loopdView = True
     $ menu = nvl_menu
+    if topfan = "Coriolis":
+        #Coriolis convo about Rec
+        "Test"
+    elif topfan = "kitcat":
+        #kitcat convo - about MAC's actions
+        "test"
+    elif topfan = "pickledDragons":
+        #pickledDragons convo
+        "test"
+    else:
+        #Coriolis convo
+        "test"
     "This is a test for the viewerchat section."
     $ screenComplete = True
     call screen webNavigation_vig3
@@ -3551,16 +3574,19 @@ label FlinchAnalytics_vig3():
     "You should probably check out Flinch's analytics page."
     $ flinchCheck = 0
     show screen webNavigation_vig3
-    scene flinch_v2screen with dissolve
-    if csEngagement > pdEngagement and csEngagement > kcEngagement:
-        $ topfan = "Coriolis"
-    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        $ topfan = "KitCat"
-    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
-        $ topfan = "PickledDragons"
+    scene flinch_v3screen with dissolve
+    #if csEngagement > pdEngagement and csEngagement > kcEngagement:
+    #    $ topfan = "Coriolis"
+    #elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+    #    $ topfan = "kitcat"
+    #elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+    #    $ topfan = "pickledDragons"
+    #else:
+    #    $ topfan = "Coriolis"
+    if viewershipHigh == True:
+        $ followerGoal = 0
     else:
-        $ topfan = "Coriolis"
-    $ followerGoal = 0
+        $ followerGoal = 1
     show screen streamAnalytics_Details
     "Time to explore the Flinch analytics page."
     show screen viewership with dissolve
@@ -3580,7 +3606,7 @@ label FlinchAnalytics_vig3():
 
 label blueitVignette3_1():
     $ menu = adv_menu
-    scene blueit_v2screen at truecenter with dissolve
+    scene blueit_v3screen at truecenter with dissolve
     $ screenComplete = False
     $ blueitView = True
     $ blueitPages = [] #this line can be deleted eventually. It's here temporarily to make testing a bit easier.
@@ -3594,7 +3620,7 @@ label blueitVignette3_1():
     jump blueitVignette3_2
 
 label blueitVignette3_2():
-    scene blueit_v2screen at truecenter
+    scene blueit_v3screen at truecenter
     show screen webNavigation_vig3
     if blueitChoiceCheck == True:
         $ screenComplete = True
