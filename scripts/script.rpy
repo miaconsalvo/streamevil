@@ -176,6 +176,7 @@ default vig3_brika = 0
 default vig3_daisyApproval = False
 default vig3_zanApproval = False
 default vig3_reynarApproval = False
+default vig3_macAlign = "PeaceHope"
 
 ####Variables to track the macro game stuff in vignette 3####
 default vig3_brotherChat = 0
