@@ -413,7 +413,7 @@ label vig4_sc6_attack_2_ama():
     amaS "It's the robot! Answer it!"
     "Teresa inputs something into a screen on her side."
     "At the front of the tank, a blue hologram slowly starts to take shape."
-    show mac phone neutral at stream_right5mac with dissolve
+    show maccall neutral at stream_right5mac with dissolve
     "It's MAC."
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -494,7 +494,7 @@ label vig4_sc6_attack_2_ama():
     cS "That's enough, MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment13)
     play audio "cutCall.wav"
-    hide mac with dissolve
+    hide maccall with dissolve
     "The signal is cut short."
     enS "That was Coil's voice."
     $ AddChatter(vig4_sc6_attack_2_ama_comment14)

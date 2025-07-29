@@ -3451,13 +3451,13 @@ label vig4_sc4_1():
 
 label vig4_sc4_2():
     show shiphub_stream at topleft onlayer background with dissolve
-    show jennica stream shock at stream_left with Dissolve(0.5)
-    show teresa stream shock at stream_right with Dissolve(0.5)
+    show jennica stream neutral at stream_left with Dissolve(0.5)
+    show teresa stream neutral at stream_right with Dissolve(0.5)
     hide ship_hallway_stream
     "I leap into the cockpit."
     mS "BigCorp is coming for MAC!"
-    show teresa stream neutral
-    show jennica stream neutral
+    show teresa stream shock
+    show jennica stream shock
     $ AddChatter(vig4_sc4_2_comment1)
     enS "Impossible, how would they even know Polaris exists?"
     mS "They tracked Coil's communications."
@@ -3467,6 +3467,8 @@ label vig4_sc4_2():
     pS "It's possible BC tracked Coil's communications without him knowin'."
     enS "Even if it was a bluff to bait confirmation from you, BC would probably follow up on any lead they have."
     pS "And after Solara, Ama definitely ain't in the company's good graces anymore."
+    show jennica stream neutral
+    show teresa stream neutral
     $ AddChatter(vig4_sc4_2_comment3)
     if jennicaRomance == True:
         "Jennica turns to me."
