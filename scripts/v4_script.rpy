@@ -4076,7 +4076,6 @@ label vig4_sc7_2():
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
-    show screen streamerCommentary
     "Dozens. Hundreds. Thousands of glimmering lights streaking across the sky."
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
