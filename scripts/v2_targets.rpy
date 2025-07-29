@@ -1065,13 +1065,13 @@ label vig2_analytics_topfan():
         if vig2_outlawEpilogue == True:
             "It's a bit surprising considering some of the turns your stream has taken."
         "They're support feels really genuine."
-    elif topfan == "KitCat":
-        "KitCat is a real hoot."
+    elif topfan == "kitcat":
+        "kitcat is a real hoot."
         "They're obsession with MAC is truly next level."
         "Crazy that they just lucked into your stream."
         "It's already kind of hard to imagine playing the game without them."
-    elif topfan == "PickledDragons":
-        "PickledDragons really likes to push the envelope."
+    elif topfan == "pickledDragons":
+        "pickledDragons really likes to push the envelope."
         "You wonder if they play \"Outlaw\" when they play games."
         "It seems like they really draw a line between the game and their personal life."
         "Maybe that's an attitude worth exploring."

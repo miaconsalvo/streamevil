@@ -34,6 +34,7 @@ label vignette4Start():
     $ flinch_audienceCheck = False
     $ blueitView = False
     $ loopdView = False
+    $ flinchView = False
     $ screenComplete = False
     $ macroChoice = True
     #$ csEngagement = 0
@@ -477,6 +478,7 @@ label vig4_sc2_2_solo():
     "Without breaking step, the townsfolk we pass by look up to smile at us and tip their caps."
     "I try to smile back. But my face feels tight."
     "Everything feels tight."
+    $ vig4_sc2_1_comment8.click = False
     $ AddChatter(vig4_sc2_2_comment4)
     "Eventually, we pass a wide plaza where the crowds of people are setting up tables, chairs, and stalls."
     "At the north end of the plaza, an immense tower stretches up into the sky. It almost feels like a church."
@@ -533,6 +535,7 @@ label vig4_sc2_2_accompanied():
     "Without breaking step, the townsfolk we pass by look up to smile at us and tip their caps."
     "I try to smile back. But my face feels tight."
     "Everything feels tight."
+    $ vig4_sc2_1_comment8.click = False
     $ AddChatter(vig4_sc2_2_comment4)
     "Then we move out of the road, emerging into a wide plaza where the crowds of poeple are setting up tables, chairs, and stalls."
     "At the north end of the plaza, an immense tower stretches up into the sky. It almost feels like a church."
@@ -5696,18 +5699,24 @@ label vig4_macro_start():
     $ narrator = reg_narrator
     #$ macroNarration = True
     $ macroChoice = True
-    "You lean back in your chair and let your body relax now that you're no longer on camera."
-    $ renpy.sound.play("audio/ReceiveText.ogg")
-    "Then you get a Loop'd notification."
-    scene discordview with dissolve
-    "It's from Jessie. You should see what's up."
-    jump vig4_macro_mod_1
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "kitcat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "pickledDragons"
+    else:
+        $ topfan = "Coriolis"
+    "That was the last stream."
+    "It's the moment of truth." 
+    "Time to check Flinch."
+    jump FlinchAnalytics_vig4
 
 label vig4_macro_mod_1():
     $ menu = nvl_menu
     mod_nvl "Yoyoyo!"
     mod_nvl "Another great stream!"
-    jump vig4_macro_webNav
+    jump FlinchAnalytics_vig4
 
 label vig4_macro_webNav():
     nvl clear
@@ -5727,13 +5736,69 @@ label vig4_macro_webNav():
     call screen webNavigation_vig4
 
 label vig4_macro_viewerChat_1():
+    nvl clear
     $ menu = nvl_menu
     scene discordview with dissolve
     $ screenComplete = False
     $ loopdView = True
     $ menu = nvl_menu
-    "This is a test for the vig4 viewerchat section."
+    if topfan == "Coriolis":
+        "It's from Coriolis."
+        cs_nvl "Hey [username]! Wanted to let you know how much I appreciate all your streams."
+        cs_nvl "I know it's been a journey, and I just want you to know how fun it's been to go on this ride with you."
+        cs_nvl "Truly, it's been a pleasure."
+        cs_nvl "I'll see you at the next stream!"
+        menu:
+            "•Thank you!":
+                player_nvl "Thank you so much, Coriolis!"
+                player_nvl "See you at the next stream!"
+            "•Say nothing.":
+                "You decide not to reply."
+                "Their comments speak for themselves."
+    elif topfan == "kitcat":
+        "It's from kitcat."
+        kc_nvl "Hey [username], don't have much to say here, just wanted to say thanks again for all the streams!."
+        kc_nvl "Can't believe I had never been to one of your streams before the first one for Oakley 2, and I'm so glad I stumbled into it."
+        kc_nvl "It's been a really fun ride!"
+        kc_nvl "Hope to see you around!"
+        menu:
+            "•Thank you!":
+                player_nvl "Thank you so much, kitcat!"
+                player_nvl "I'm sure we'll see each other around!"
+            "•Say nothing.":
+                "You decide not to reply."
+                "Their comments speak for themselves."
+    elif topfan == "pickledDragons":
+        "It's from pickledDragons."
+        pd_nvl "Hey [username], just wanted to say thank you for all these streams."
+        pd_nvl "It's been a lot of fun to watch you play the game and do things I wouldn't normally do."
+        pd_nvl "Seriously, I don't know if I could've gone Outlaw as much as you did this playthrough."
+        pd_nvl "So, on behalf of the whole chat, thank you for giving that a go!"
+        pd_nvl "Hope to see you around!"
+        menu:
+            "•Thank you!":
+                player_nvl "Thank you so much, pickledDragons!"
+                player_nvl "I'm sure we'll see each other around!"
+            "•Say nothing.":
+                "You decide not to reply."
+                "Their comments speak for themselves."
+    else:
+        "It's from Coriolis."
+        cs_nvl "Hey [username]! Wanted to let you know how much I appreciate all your streams."
+        cs_nvl "I know it's been a journey, and I just want you to know how fun it's been to go on this ride with you."
+        cs_nvl "Truly, it's been a pleasure."
+        cs_nvl "I'll see you at the next stream!"
+        menu:
+            "•Thank you!":
+                player_nvl "Thank you so much, Coriolis!"
+                player_nvl "See you at the next stream!"
+            "•Say nothing.":
+                "You decide not to reply."
+                "Their comments speak for themselves."
+    "Wow, that was really sweet."
+    "You should check out blueit now. See what the rest of the community is saying about the finale."
     $ screenComplete = True
+    #jump blueitVignette4_1
     call screen webNavigation_vig4
     scene bg black with dissolve
 
@@ -5741,21 +5806,10 @@ label FlinchAnalytics_vig4():
     $ menu = adv_menu
     $ screenComplete = False
     $ flinchView = True
-    "You should probably check out Flinch's analytics page."
     $ flinchCheck = 0
-    show screen webNavigation_vig4
     scene flinch_v4screen with dissolve
-    if csEngagement > pdEngagement and csEngagement > kcEngagement:
-        $ topfan = "Coriolis"
-    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        $ topfan = "KitCat"
-    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
-        $ topfan = "PickledDragons"
-    else:
-        $ topfan = "Coriolis"
     $ followerGoal = 0
     show screen streamAnalytics_Details
-    "Time to explore the Flinch analytics page."
     show screen viewership with dissolve
     $ vbar1 += viewCheck1
     $ vbar2 += viewCheck2
@@ -5767,8 +5821,119 @@ label FlinchAnalytics_vig4():
     $ vbar8 += viewCheck8
     $ vbar9 += viewCheck9
     $ vbar10 += viewCheck10
-    show screen viewershipButton_vig4
-    call screen streamAnalytics_vig4
+    "You navigate to the Flinch analytics page."
+    "And there it is."
+    if viewershipLow == True:
+        $ Affiliate = False
+        "You missed Affiliate..."
+        "9.4 average viewers."
+        "You missed by less than one average viewer."
+        "..."
+        "How do you feel?"
+        menu:
+            "How do you feel?"
+            "I feel horrible.":
+                "Screw you, you stupid game. How do you think I feel?"
+                "Like crap."
+                "I put in all this work, all this time, and I didn't get what I wanted."
+                "Does that mean it wasn't worth it?"
+                menu:
+                    "Does that mean it wasn't worth it?"
+                    "It wasn't.":
+                        "I see what you're trying to go for."
+                        "That whole \"it's about the journey, not the destination\" cliche."
+                        "And I get it."
+                        "But I wanted this."
+                        "{i}Real bad.{/i}"
+                        "I'm sorry. I didn't mean to be that harsh."
+                        "And I know it doesn't really matter in the long run."
+                        "It's just..."
+                        "I really wanted to make it this time."
+                        "It sucks."
+                    "No it was.":
+                        "No, you're right. It was worth it."
+                        "I got to make some interesting connections and explore the game in a way I normally wouldn't have."
+                        "So it was still a worthwhile experience."
+                        "But I didn't get the outcome I wanted."
+                        "And that sucks."
+                        "I know it doesn't really matter in the long run."
+                        "I just really wanted to make it this time."
+            "It doesn't matter.":
+                "Strangely, it doesn't feel like it matters that much to you."
+                "After all this time and all that work, maybe getting to Affiliate wasn't the goal."
+                "Then what was the goal?"
+                menu:
+                    "Then what was the goal?"
+                    "Community.":
+                        "My goal was to build a sense of community with my stream."
+                        "Whether Flinch's metrics reward that or not, I think I achieved that."
+                        "And that's more important to me."
+                    "Integrity.":
+                        "I wanted to do this my way, not change just to get Flinch's recognition."
+                        "I'm proud of myself for sticking to my guns."
+                        "Even though I didn't get what I thought I wanted, I feel good about my choices."
+                    "Having fun.":
+                        "I just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy I had during this experience."
+                        "Whether it was the community I built, or the choices I made, I had fun doing it all."
+            "I'm glad I didn't make it.":
+                "It's strange, for some reason, you feel...happy to not make Affiliate."
+                "Why is that?"
+                menu:
+                    "Why is that?"
+                    "Flinch doesn't dictate my happiness.":
+                        "I just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy I had during this experience."
+                        "Whether it was the community I built, or the choices I made, I had fun doing it all."
+                        "I'm happy because Flinch doesn't get to dictate my happiness."
+                    "My community is what matters.":
+                        "My goal was to build a sense of community with my stream."
+                        "Whether Flinch's metrics reward that or not, I think I achieved that."
+                        "And that's more important to me."
+                    "My integrity is what matters.":
+                        "I wanted to do this my way, not change just to get Flinch's recognition."
+                        "I'm proud of myself for sticking to my guns."
+                        "Even though I didn't get what I thought I wanted, I feel good about my choices."
+    else:
+        $ Affiliate = True
+        "You did it!"
+        if viewershipHigh == True:
+            "Not only did you do it, you smashed the average viewership requirement!"
+            "You probably didn't even have to do that last stream and you would have made it!"
+        else:
+            "It's not by that much, but you cleared the average viewership requirement!"
+            "Good thing you had all those viewers for that last stream!"
+        "Congratulations, Affiliate!"
+        "How does it feel?"
+        menu:
+            "How does it feel?"
+            "It feels good.":
+                "It feels so good!"
+                "I've been trying to get here for years!"
+                "I know it's not much in the grand scheme of things, but just to be here after starting from nothing means a lot."
+                "I'm proud of myself for persevering. And it just feels really good!"
+            "It's a relief.":
+                "It's more of a relief than anything."
+                "This has been a weight on my back for a long time."
+                "But now to finally be at the end of this journey, it feels like I can let go and just enjoy the ride again."
+            "I'm so tired.":
+                "I'm so tired."
+                "This whole process has been such a grind."
+                "I'm sure I'll be happy in a little bit."
+                "But right now, I just want to sleep."
+            "It's a bit disappointing.":
+                "I don't know why exactly, but I feel a bit...disappointed?"
+                "Maybe this wasn't as important to me as I thought it was."
+                "Maybe something changed over these past few weeks."
+                "Maybe I'll feel differently in a couple days."
+                "But right now it feels a bit...hollow."
+    "You could probably stare at this page for hours."
+    $ renpy.sound.play("audio/ReceiveText.ogg")
+    "But a message on Loop'd gets your attention."
+    $ screenComplete = True
+    call screen webNavigation_vig4
+    #show screen viewershipButton_vig4
+    #call screen streamAnalytics_vig4
     hide screen streamAnalytics_vig4 with dissolve
 
 label blueitVignette4_1():
@@ -5785,18 +5950,202 @@ label blueitVignette4_1():
     $ blueitPages.append(vig4_bThread5)
     $ blueitPages.append(vig4_bThread6)
     $ blueitPages.append(vig4_bThread7)
-    "You go to check out the subblueit to see how people are reacting to Episode 3."
+    "The Oakley 2 subblueit is buzzing with activity now that the final episode is released."
+    "Time to see what people are saying!"
     jump blueitVignette4_2
 
 label blueitVignette4_2():
     scene blueit_v4screen at truecenter
     show screen webNavigation_vig4
-    if blueitChoiceCheck == True:
+    if blueitCheck == 3:
+        $ screenComplete = True
+        "Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
+    elif blueitCheck == 4:
+        $ screenComplete = True
+    elif blueitCheck == 5:
+        $ screenComplete = True
+        "Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
+    elif blueitCheck == 6:
+        $ screenComplete = True
+    elif blueitCheck == 7:
+        $ screenComplete = True
+        "You should write a post about your experience streaming the game."
+    elif blueitCheck >= 7:
         $ screenComplete = True
     else:
         pass
     call screen blueit
     return
+
+label vig4_macro_writeUp():
+    show screen finalWriteUp
+    "I should post something...It's kind of cheesy, but I think it might be a good way to sum up my experience."
+    "Let me start with a small introduction."
+    pause 1.0
+    $ summaryIntroduction = "Hey everyone! My name is [username] and I just finished streaming Oakley2! I wanted to share my thoughts on the end game for our lovely community of galactic cowboys."
+    "It's a good start."
+    jump vig4_macro_writeUp_2
+    
+label vig4_macro_writeUp_2():
+    $ mozeReflection = ""
+    "For the first part, I want to reflect on what it was like to play as Moze."
+    menu:
+        #"For the first part, I want to reflect on what it was like to play as Moze."
+        "I lost myself in the character...":
+            pause 1.0
+            $ mozeReflection = "Playing as Moze… tbh it was weird how easily I slipped into Moze’s mindset. Like, the choices weren’t just in character – they were my choices. Moze’s inner turmoil really spoke to me and I found myself acting in unexpected ways because of it."
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_2
+        "I always felt a bit outside of Moze...":
+            $ mozeReflection = "The PC design was interesting. Moze is like the kind of friend I love telling stories about and am decently worried for but I only reach out like 3 times a year max because I know she’d do more harm than good to my life. It felt more like I was putting on a costume when I played as her, or like I was trying to help my problematic friend figure out her life."
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_2
+        "Moze and I are nothing alike...":
+            $ mozeReflection = "I came in I think with this idea of who the character would be, but the more I played the more Moze shifted. Her story isn’t one I relate to, or can even fathom for myself like in the slightest – but it was still a really fun ride. She and I may have nothing in common but I’ll always be rooting for my problematic captain!"
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_2
+    jump vig4_macro_writeUp_3
+
+label vig4_macro_writeUp_3():
+    $ choiceReflection = ""
+    "Okay, that was good. Now I should say something about the kinds of choices I was making in the game..."
+    menu:
+        #"Okay, that was good. Now I should say something about the kinds of choices I was making in the game..."
+        "I just followed the momentum...":
+            $ choiceReflection = "The game led me where I think we needed to go. I streamed the whole thing, and I think the chat hive mind plus what made sense with the story hit this nice synthesis where I felt less like a driver and more like a passenger of this well-crafted roller coaster."
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_3
+        "Making the hard choices was a breeze...":
+            $ choiceReflection = "I steered the crew of the Oakley every step of the way. I streamed the whole thing and though not everyone agreed with my choices I stand by them; that’s what it means to be the captain I guess!"
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_3
+        "I froze a bit...":
+            $ choiceReflection = "Man there were some tough moments in the sequel. I never knew what the ‘right’ move was. I streamed the whole game and sometimes chat would be a chorus of a million different opinions, and I wouldn’t be able to even tell you up from down let alone right choice vs wrong choice. We got through it though! Even if we did it mostly in panic mode."
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_3
+    jump vig4_macro_writeUp_4
+
+label vig4_macro_writeUp_4():
+    $ streamReflection = ""
+    "Oh, I should add something on the experience of streaming Oakley 2."
+    menu:
+        #"Oh, I should add something on the experience of streaming Oakley 2."
+        "The chat shaped everything...":
+            $ streamReflection = "I kept thinking I was making my own decisions but looking back now the chat definitely had a bigger pull than I thought. Their reactions, jokes, even silence… it shaped my entire playthrough. Upon reflection, it’s a bit scary how much power an audience has!"
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_4                
+        "Streaming kept me grounded...":
+            $ streamReflection = "Honestly? Chat helped me a ton. When things got too intense or felt like they were becoming almost personal, I looked over and saw my audience reacting with me. It felt less like a one-player game and more like a shared experience – not just playing for people but with a great group of friends!"
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_4
+        "I didn't even notice chat half the time...":
+            $ streamReflection = "The game was so fast-paced and immersive that I ended up being so locked in that I barely glanced at the chat. I know they were there and reacting/talking to each other but in the game moments I was too concentrated to notice. Not sure if that makes me a bad streamer or it shows how good Oakley 2 was…"
+            "Is that what I want to say?"
+            menu:
+                #"Is that what I want to say?"
+                "Yes.":
+                    pass
+                "No.":
+                    jump vig4_macro_writeUp_4
+    jump vig4_macro_writeUp_5
+
+label vig4_macro_writeUp_5():
+    $ affiliateReflection = ""
+    if Affiliate == True:
+        "I guess I'll finish it with my thoughts on making affiliate."
+        menu:
+            #"I guess I'll finish it with my thoughts on making affiliate."
+            "I feel positive about achieving Affiliate...":
+                $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I went full dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
+                "Is that what I want to say?"
+                menu:
+                    #"Is that what I want to say?"
+                    "Yes.":
+                        pass
+                    "No.":
+                        jump vig4_macro_writeUp_5
+            "I feel kind of negative about achieving Affiliate...":
+                $ affiliateReflection = "So, I made affiliate… and if I’m being real, though it feels weird admitting it, I’m not too thrilled. I don’t really feel good about the way I played the game… I wasn’t me: I played it up, leaned into some stuff I don’t normally do. It’s what got me to my goal, but now I’m feeling guilty instead of excited."
+                "Is that what I want to say?"
+                menu:
+                    #"Is that what I want to say?"
+                    "Yes.":
+                        pass
+                    "No.":
+                        jump vig4_macro_writeUp_5
+    else:
+        "I guess I'll finish it with my thoughts on not making affiliate."
+        menu:
+            "I guess I'll finish it with my thoughts on not making affiliate."
+            "I'm feeling positive about not achieving affiliate...":
+                $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. I played how I wanted to play. I made the choices that felt honest and good, even if they didn’t blow the streaming world up. And honestly? I’d rather be me than gain an audience being something I’m not. I’m glad the game ended the way it did for my first stream of it!"
+                "Is that what I want to say?"
+                menu:
+                    #"Is that what I want to say?"
+                    "Yes.":
+                        pass
+                    "No.":
+                        jump vig4_macro_writeUp_5
+            "I'm feeling negative about not achieving affiliate...":
+                $ affiliateReflection = "Still not affiliate… I said this was going to be my last go at it. I checked the numbers hoping they would tick but they didn’t and ngl it does suck. I wanted this to be the stream that changed that… maybe I did play it too safe. Or maybe the way I play is just not something people want to watch."
+                "Is that what I want to say?"
+                menu:
+                    #"Is that what I want to say?"
+                    "Yes.":
+                        pass
+                    "No.":
+                        jump vig4_macro_writeUp_5
+    jump vig4_macro_writeUp_6
+
+label vig4_macro_writeUp_6():
+    "That feels right."
+    "Now I should come up with a title for the post."
+    "Something catchy, but also something that reflects my journey."
+    $ blueitPostTitle = renpy.input("What should I call the post?: ", length = 40)
+    "There. All done."
+    "That feels like it sums up my experience appropriately."
+    call screen closeComputer
+
 
 label vig4_macro_brother_1():
     nvl clear
@@ -5805,7 +6154,18 @@ label vig4_macro_brother_1():
     jump endgame
 
 label endgame():
-    "Congratulations, you have finished Oakley 2: Settle the Score!"
-    "Thank you for playing our game!"
+    hide screen finalWriteUp with Dissolve(2.0)
+    scene bg black with dissolve
+    stop music fadeout 10.0
+    "I should go."
+    "Been on this screen for a bit too long today."
+    "Maybe I can hit up Jessie to grab some ramen."
+    "And next week I take a flight back home for Thanksgiving."
+    "Can't wait to catch up with El in person."
+    pause 2.0
+    scene game_main_menu with dissolve
+    "Congratulations, you have finished {i}Stream Evil{/i}!"
     "On behalf of the entire team at mLab productions, we would like to say:"
     "THANK YOU!"
+    "We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
+    $ renpy.full_restart()

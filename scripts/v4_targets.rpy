@@ -2362,6 +2362,7 @@ label vig4_blueit_endHypeThread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_endingHype.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2373,6 +2374,7 @@ label vig4_blueit_devThread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_devThanks.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2384,6 +2386,7 @@ label vig4_blueit_amaRomanceThread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_amaRomance.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2395,6 +2398,7 @@ label vig4_blueit_endChoicethread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_endingChoice.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2406,6 +2410,7 @@ label vig4_blueit_romanceRouteThread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_romanceRoute.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2417,6 +2422,7 @@ label vig4_blueit_polarisThread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_polaris.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2428,6 +2434,7 @@ label vig4_blueit_oakley3Thread():
     $ screenComplete = False
     $ blueitImage = "socials/v4_oakley3.png"
     $ yb = 1080
+    $ blueitCheck += 1
     $ blueitChoiceCheck = True
     show screen blueitThread
     #show launch thread at top:
@@ -2439,7 +2446,6 @@ label vig4_blueit_oakley3Thread():
 
 label vig4_analytics_audience():
     hide screen viewershipButton_vig4
-    "This is a test for the Flinch screen of Vignette 4."
     $ flinchCheck += 1
     $ flinch_audienceCheck = True
     if flinchCheck >= 3:
@@ -2455,10 +2461,10 @@ label vig4_analytics_topfan():
     $ flinch_topfanCheck = True
     if topfan == "Coriolis":
         "Coriolis."
-    elif topfan == "KitCat":
-        "KitCat."
-    elif topfan == "PickledDragons":
-        "PickledDragons."
+    elif topfan == "kitcat":
+        "kitCat."
+    elif topfan == "pickledDragons":
+        "pickledDragons."
     else:
         "Coriolis by default."
     if flinchCheck >= 3:

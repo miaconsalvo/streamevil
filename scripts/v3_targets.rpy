@@ -902,12 +902,26 @@ label vig3_sc14_recfindsout_noremorse():
 
 
 #####MACRO GAME TARGETS FOR FLINCH #######
-
-label vig3_analytics_audience():
+label vig3_analytics_topfan():
     hide screen viewershipButton_vig3
-    "This is a test for the Flinch screen of Vignette 3."
     $ flinchCheck += 1
-    $ flinch_audienceCheck = True
+    $ flinch_topfanCheck = True
+    if topfan == "Coriolis":
+        "Coriolis's steady presence in the chat has been a consistent reassurance."
+        "They're never going to say the most outrageous thing or get the chat rolling with laughter."
+        "But they'll always be a welcoming voice. Every chat needs that."
+    elif topfan == "kitcat":
+        "kitcat has really gotten comfortable in the chat."
+        "It's nice to have someone who's less didactic about \"Marshal\" this or \"Outlaw\" that."
+        "For them, it's all about MAC. And maybe that's more reflective of Moze's view than anyone else's."
+    elif topfan == "pickledDragons":
+        "pickledDragons brings so much energy to the chat it's remarkable."
+        "It feels like whenever chat pops off, they're there inciting more activity."
+        "Every chat needs someone who's making sure that people are having fun."        
+    else:
+        "Coriolis's steady presence in the chat has been a consistent reassurance."
+        "They're never going to say the most outrageous thing or get the chat rolling with laughter."
+        "But they'll always be a welcoming voice. Every chat needs that."
     if flinchCheck >= 3:
         $ screenComplete = True
     else:
@@ -915,18 +929,24 @@ label vig3_analytics_audience():
     show screen viewershipButton_vig3
     return
 
-label vig3_analytics_topfan():
+label vig3_analytics_audience():
     hide screen viewershipButton_vig3
     $ flinchCheck += 1
-    $ flinch_topfanCheck = True
-    if topfan == "Coriolis":
-        "Coriolis."
-    elif topfan == "KitCat":
-        "KitCat."
-    elif topfan == "PickledDragons":
-        "PickledDragons."
+    $ flinch_audienceCheck = True
+    if viewershipHigh == True:
+        "We made it! 50 Followers!"
+        "That means you won't have to collect any new follows for the last stream."
+        "But you'll still have to keep the average viewership number above ten."
+        "After all the people watching this week though, that shouldn't be an issue."
+        "Cross your fingers."
     else:
-        "Coriolis by default."
+        "49 followers? You're one away!?"
+        "Damn."
+        "It shouldn't be too much of an issue. You just need to grab one extra follow by the end of the next stream."
+        "That should be doable."
+        "You'll also have to keep the average viewership over 10."
+        "This week was a little close for comfort. Hopefully next week will be stable."
+        "Cross your fingers."
     if flinchCheck >= 3:
         $ screenComplete = True
     else:
@@ -938,12 +958,66 @@ label vig3_analytics_viewcount():
     $ flinchCheck += 1
     $ flinch_viewcountCheck = True
     hide screen viewershipButton_vig3
-    "This is a test for the Flinch screen of Vignette 3."
-    if flinchCheck >= 3:
-        $ screenComplete = True
+    if viewershipHigh == True:
+        "The viewership numbers for this week are up compared to last week."
+        "That's a good sign!"
     else:
-        pass
-    show screen viewershipButton_vig3
+        "The viewership numbers for this week are similar to last week."
+        "That's not bad, but it's a bit disappointing that they didn't grow at all."
+    "Hopefully next week will keep up the average viewership."
+    jump vig3_analytics_viewcount2
+
+label vig3_analytics_viewcount2():
+    menu:
+        "Hopefully next week will keep up the average viewership."
+        "The crash didn't hurt viewership too much." if flinchViewershipCrash == False:
+            $ flinchViewershipCrash = True
+            "It's kind of crazy that the crash didn't have a bigger impact on viewership numbers."
+            "Some people did leave, but the chat was still very active after you got back on track."
+            "Maybe Jessie was right and you did handle it pretty well."
+            jump vig3_analytics_viewcount2
+        "It's barely enough to make Affiliate." if viewershipLow == True and flinchViewershipAffiliate == False:
+            $ flinchViewershipAffiliate = True
+            "The viewership is stable, but it's barely enough to make Affiliate."
+            "There's basically no margin for losing anyone."
+            "If the numbers drop for the last episode..."
+            "You don't really want to think about it."
+            jump vig3_analytics_viewcount2
+        "It looks like Affiliate's in the bag!" if viewershipHigh == True and flinchViewershipAffiliate == False:
+            $ flinchViewershipAffiliate = True
+            "The viewership is stable and looks comfortably above the Affiliate requirement."
+            "You won't know for certain until after the last stream, but the calculations are looking good."
+            "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, it looks like you're good."
+            "Cross your fingers."
+            jump vig3_analytics_viewcount2
+        "Playing with chat is interesting." if flinchViewershipChat == False:
+            $ flinchViewershipChat = True
+            "Playing this game along with the chat is interesting."
+            "I'm hearing about so many people's perspectives on the choices before I even make them."
+            "How does it feel?"
+            menu:
+                "How does it feel?"
+                "It's fun!":
+                    "It's a lot of fun!"
+                    "Chat is so interactive. It really feels like you're playing this game together."
+                "It's a lot of pressure.":
+                    "It's a lot of pressure."
+                    "Not bad, necessarily. But you feel like you have to represent other people's interests as well as your own."
+                "I don't really like it.":
+                    "You don't really like it."
+                    "It is interesting, but you don't see yourself streaming this kind of game again."
+                "Interesting.":
+                    "It's just interesting."
+                    "It doesn't feel bad, but it's also not as fun as you might've expected."
+                    "It just feels like a different way to play games."
+            jump vig3_analytics_viewcount2
+        "Go back to the main Flinch page" if flinchViewershipAffiliate == True:
+            if flinchCheck >= 3:
+                $ screenComplete = True
+            else:
+                pass
+            show screen viewershipButton_vig3
+            return
     return
 
 ######MACRO GAME TARGETS FOR BLUEIT ########

@@ -30,11 +30,18 @@ label vignette3Start():
     $ flinch_viewcountCheck = False
     $ flinch_topfanCheck = False
     $ flinch_audienceCheck = False
+    $ flinchView = False
     $ blueitView = False
     $ loopdView = False
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
+    if vi2_marshalEpilogue == True:
+        $ viewershipHigh = False
+        $ ViewershipLow = True
+    else:
+        $ viewershipHigh = True
+        $ viewershipLow = False
     #$ csEngagement = 0
     #$ kcEngagement = 0
     #$ pdEngagement = 0
@@ -2290,6 +2297,7 @@ label vig3_sc12():
             $ kcEngagement += 1 #Logic: kitcat likes intervening in the murder, Coriolis really likes it 
             $ csEngagement += 3
             $ pdEngagement -= 2 #Logic: pickledDragons thinks he should die
+            $ vig3_bcRepSaved = True
             "When MAC's eyes lock on mine, he perks up."
             "I put my finger to my lips."
             bcrep "P-lease..."
@@ -2527,6 +2535,7 @@ label vig3_sc12():
         "Do nothing.":
             $ pdEngagement += 2 #Logic: pickledDragons thinks the rep should die
             $ csEngagement -= 2 #Logic: Coriolis is appalled; kitcat is somewhat mixed. Would prefer to not let the rep die, but is also not disengaged by this choice
+            $ vig3_bcRepSaved = False
             "When MAC's eyes lock on mine, he perks up."
             "I put a finger to my lips as I slowly shift around Ama toward him."
             bcrep "P-please..."
@@ -3540,11 +3549,11 @@ label vig3_macro_webNav():
     $ menu = adv_menu
     "You're about to sign off Loop'D when you get another notification."
     scene streamview with dissolve
-    if topfan = "Coriolis":
+    if topfan == "Coriolis":
         "It's from Coriolis."
-    elif topfan = "kitcat":
+    elif topfan == "kitcat":
         "It's from kitcat."
-    elif topfan = "pickledDragons":
+    elif topfan == "pickledDragons":
         "It's from pickledDragons."
     else:
         "It's from Coriolis."
@@ -3558,7 +3567,7 @@ label vig3_macro_viewerChat_1():
     $ screenComplete = False
     $ loopdView = True
     $ menu = nvl_menu
-    if topfan = "Coriolis":
+    if topfan == "Coriolis": #Coriolis Convo
         #Coriolis convo about Rec
         "Coriolis sent me a message on Loop'd."
         cs_nvl "Hey, [username], wanted to say thanks for a great stream!"
@@ -3566,7 +3575,7 @@ label vig3_macro_viewerChat_1():
         cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
         if vig3_recResponse == "Confused":
             cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It reflected how I felt as a player.":
@@ -3638,7 +3647,7 @@ label vig3_macro_viewerChat_1():
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
             cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It's a story Moze has to believe in.":
@@ -3704,7 +3713,7 @@ label vig3_macro_viewerChat_1():
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It was harsh but true.":
@@ -3773,11 +3782,10 @@ label vig3_macro_viewerChat_1():
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
 
-
-    elif topfan = "kitcat":
+    elif topfan == "kitcat": #kitcat Convo
         "kitcat sent me a message on Loop'd."
         kc_nvl "Heya, [username]! Wanted to say thanks for the awesome stream!"
-        kc_nvl "It was really cool getting to see the SnakeHawks on their home turf."
+        kc_nvl "It was really cool getting to see the Oakley on their home turf."
         kc_nvl "But omg, we have to talk about MAC picking up that gun!"
         if vig3_macAlign == "ViolentPessimism":
             kc_nvl "I can't BELIEVE MAC shot Ama!"
@@ -4013,12 +4021,430 @@ label vig3_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ kcEngagement -=3
                     "Nah, don't really want to encourage a parasocial relationship."
-    elif topfan = "pickledDragons":
-        #pickledDragons convo
-        "test"
-    else:
-        #Coriolis convo
-        "test"
+    elif topfan == "pickledDragons": #pickledDragons Convo
+        #pickledDragons convo - Ama! and flashbacks
+        "pickledDragons sent me a message on Loop'd."
+        pd_nvl "Hey [username], thanks for the stream!"
+        pd_nvl "It was cool to see the Oakley in truly lawless environment. Felt like we got to know the characters a lot better."
+        pd_nvl "Especially the whole relationship between Ama and Moze. Those flashbacks really set a tone for their connection."
+        pd_nvl "Wondering what you think of Ama, now that we got to spend more time around her?"
+        $ playerNVLNarration = "pickledDragons asked about Ama and Moze's relationship. Should I respond?"
+        show screen NVLnarration
+        menu:
+            "•I think she did the best she could.":
+                $ pdEngagement += 1
+                player_nvl "Honestly, I think she did the best she could."
+                player_nvl "I mean, we saw that one flashback with the gun, where she basically threatened to kill Moze. And that's not cool."
+                player_nvl "But she was trying to do her best to teach Moze so she could survive on her own."
+                player_nvl "It's kinda what we're doing with MAC, and I really like that parallel."
+                pd_nvl "I see what you mean. There's clearly still some kind of connection between Ama and Moze. Hard to just throw that away."
+                pd_nvl "Yes! I like that you pointed out that parallel!"
+                if vig3_bcRepSaved == True:
+                    pd_nvl "Is that why you decided to save the BigCorp rep?"
+                    menu:
+                        "•Yeah, I don't want MAC to turn out like Moze.":
+                            player_nvl "Yeah, especially with MAC watching me in that moment."
+                            player_nvl "Felt like Moze should model some sort of morality for him."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                        "•No, I just thought it was right to save him.":
+                            player_nvl "I actually wasn't thinking about MAC in that moment."
+                            player_nvl "I just didn't think it was right for Moze to standby and let someone die."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                        "•I don't know.":
+                            player_nvl "I don't really know what motivated that decision."
+                            player_nvl "I guess it just felt right in the moment to me."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                    pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
+                    pd_nvl "I heard you can get Ama to fight on your side!"
+                    menu:
+                        "•That sounds exciting!":
+                            player_nvl "Really!? That's so exciting!"
+                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "As long as Ama plays nice with the Oakley crew haha"
+                            pd_nvl "I know right! Could be so cool to fight alongside her!"
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                        "•Ooh I don't know about that.":
+                            player_nvl "Ooh I don't know about that."
+                            player_nvl "She's so antagonistic in episode 3."
+                            player_nvl "If they don't handle it well, that could feel kinda cheap."
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                else:
+                    pd_nvl "Is that why you let Ama kill the BigCorp rep?"
+                    menu:
+                        "•Yes, I think MAC needs to learn the hard lessons.":
+                            player_nvl "Yeah. I don't think Moze should teach MAC by like pointing a gun at him (obviously)."
+                            player_nvl "But being a life or death situation like that and learning that sometimes you have to put your own safety above others..."
+                            player_nvl "I think that's a lesson he has to learn in this galaxy."
+                            pd_nvl "Yeah, I think that makes a lot of sense."
+                            pd_nvl "Tough to learn that at a young age, whether you're a kid or a robot."
+                        "•No, I was concerned for MAC's safety.":
+                            player_nvl "It wasn't about teaching MAC anything actually."
+                            player_nvl "It just seemed like a bad idea to get in Ama's way."
+                            player_nvl "I thought maybe that would...I dunno, help her blow off some steam hahaha"
+                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down."
+                        "•I don't know.":
+                            player_nvl "I don't really know what motivated that decision."
+                            player_nvl "I guess it just felt right in the moment to me."
+                    pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
+                    pd_nvl "I heard you can get Ama to fight on your side!"
+                    menu:
+                        "•That sounds exciting!":
+                            player_nvl "Really!? That's so exciting!"
+                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "As long as Ama plays nice with the Oakley crew haha"
+                            pd_nvl "I know right! Could be so cool to fight alongside her!"
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                        "•Ooh I don't know about that.":
+                            player_nvl "Ooh I don't know about that."
+                            player_nvl "She's so antagonistic in episode 3."
+                            player_nvl "If they don't handle it well, that could feel kinda cheap."
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+            "•I think she was a bad influence on Moze.":
+                $ pdEngagement += 1
+                player_nvl "Honestly, I think she was a bad influence on Moze."
+                player_nvl "Like, you saw that one flashback with the gun, where she basically threatened to kill Moze. Not cool."
+                player_nvl "And that connection is clearly weighing on Moze in a way that isn't healthy."
+                player_nvl "It's also interesting how they're drawing parallels between that relationship and Moze and MAC."
+                pd_nvl "I get that, but there's clearly still some kind of connection between Ama and Moze. Hard to just throw that away."
+                pd_nvl "Yes! I like that you pointed out that parallel with MAC!"
+                if vig3_bcRepSaved == True:
+                    pd_nvl "Is that why you decided to save the BigCorp rep?"
+                    menu:
+                        "•Yeah, I don't want MAC to turn out like Moze.":
+                            player_nvl "Yeah, especially with MAC watching me in that moment."
+                            player_nvl "Felt like Moze should model some sort of morality for him."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                            pd_nvl "Idk, I think Moze "
+                        "•No, I just thought it was right to save him.":
+                            player_nvl "I actually wasn't thinking about MAC in that moment."
+                            player_nvl "I just didn't think it was right for Moze to standby and let someone die."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                        "•I don't know.":
+                            player_nvl "I don't really know what motivated that decision."
+                            player_nvl "I guess it just felt right in the moment to me."
+                            pd_nvl "Even though the guy turned around and threatened MAC immediately?"
+                            menu:
+                                "•If I'd known that I would've acted differently.":
+                                    player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
+                                    player_nvl "But we make the choices we make with the information we have, y'know?"
+                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                "•Yeah, even knowing that I would've done the same thing.":
+                                    player_nvl "Yeah, even knowing that I would've saved him."
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    pd_nvl "I guess not."
+                    pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
+                    pd_nvl "I heard you can get Ama to fight on your side!"
+                    menu:
+                        "•That sounds exciting!":
+                            player_nvl "Really!? That's so exciting!"
+                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "As long as Ama plays nice with the Oakley crew haha"
+                            pd_nvl "I know right! Could be so cool to fight alongside her!"
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                        "•Ooh I don't know about that.":
+                            player_nvl "Ooh I don't know about that."
+                            player_nvl "She's so antagonistic in episode 3."
+                            player_nvl "If they don't handle it well, that could feel kinda cheap."
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                else:
+                    pd_nvl "So then why did you let Ama kill the BigCorp rep?"
+                    menu:
+                        "•It felt like what Moze would do.":
+                            player_nvl "It just felt like what Moze would do in that situation."
+                            player_nvl "Cause she's not perfect. She's trying to do better, but she still doesn't do the right thing all the time."
+                            pd_nvl "Hmm, I like that. Characters who are trying to change and have trouble."
+                            pd_nvl "Feels very true to life."
+                        "•I was concerned for MAC's safety.":
+                            player_nvl "It wasn't about teaching MAC anything."
+                            player_nvl "It just seemed like a bad idea to get in Ama's way."
+                            player_nvl "I thought maybe that would...I dunno, help her blow off some steam hahaha"
+                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down."
+                        "•I don't know.":
+                            player_nvl "I don't really know what motivated that decision."
+                            player_nvl "I guess it just felt right in the moment to me."
+                    pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
+                    pd_nvl "I heard you can get Ama to fight on your side!"
+                    menu:
+                        "•That sounds exciting!":
+                            player_nvl "Really!? That's so exciting!"
+                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "As long as Ama plays nice with the Oakley crew haha"
+                            pd_nvl "I know right! Could be so cool to fight alongside her!"
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+                        "•Ooh I don't know about that.":
+                            player_nvl "Ooh I don't know about that."
+                            player_nvl "She's so antagonistic in episode 3."
+                            player_nvl "If they don't handle it well, that could feel kinda cheap."
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            pd_nvl "Can't wait for the next episode. See ya next week [username]!"
+
+            "•Don't respond.":
+                hide screen NVLnarration
+                $ pdEngagement -=1
+                "Nah, don't really want to encourage a parasocial relationship."
+
+    else: #Coriolis Convo
+        #Coriolis convo about Rec
+        "Coriolis sent me a message on Loop'd."
+        cs_nvl "Hey, [username], wanted to say thanks for a great stream!"
+        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite."
+        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
+        if vig3_recResponse == "Confused":
+            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•It reflected how I felt as a player.":
+                    hide screen NVLnarration
+                    $ csEngagement += 1
+                    player_nvl "I made that choice cause it was what I felt the most in that moment."
+                    player_nvl "I wasn't expecting it and it was so tense."
+                    if misclick == True:
+                        cs_nvl "Right, I remember you said you didn't even mean to do it, right? Like it was a misclick?"
+                        player_nvl "Yeah. So that choice just felt like what my actual response was."
+                    else:
+                        pass
+                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player."
+                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•It felt the most honest from Moze.":
+                    hide screen NVLnarration
+                    $ csEngagement += 1
+                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze."
+                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar."
+                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore."
+                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too."
+                    cs_nvl "Ooh interesting. I really like that take!"
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif vig3_recResponse == "Classic":
+            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•It's a story Moze has to believe in.":
+                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
+                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
+                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
+                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality."
+                    cs_nvl "I don't like what Moze did, but I do feel for her."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•I don't think Moze had choice.":
+                    player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that."
+                    player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
+                    player_nvl "But could Moze really have taken that risk?"
+                    player_nvl "I don't know that she would have. And I think it's interesting to explore this character who has such a black and white outlook on that kind of thing."
+                    cs_nvl "Hmmm I see what you're saying."
+                    cs_nvl "I think I still agree with Rec (and Allistar), but it's a good point. Moze is put in a LOT of tough situations."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•It was harsh but true.":
+                    $ csEngagement -= 1
+                    player_nvl "It was harsh, but it was true."
+                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
+                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences."
+                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma."
+                    cs_nvl "No I get that...I guess I just didn't read that in Moze's character."
+                    if misclick == True:
+                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally."
+                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character."
+                    cs_nvl "It's not what I would have done, but I see your perspective."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•It surprised me too.":
+                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
+                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
+                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
+                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again."
+                    player_nvl "No chance."
+                    cs_nvl "I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
     $ screenComplete = True
     call screen webNavigation_vig3
     scene bg black with dissolve

@@ -119,7 +119,21 @@ screen blueitThread():
         image(blueitImage)
 
 
-
+screen finalWriteUp():
+    text "[blueitPostTitle]" align (0.64, 0.4)
+    viewport:
+        draggable True
+        mousewheel True
+        scrollbars "vertical"
+        yinitial 1.0
+        area (430, 460, 1050, 580)
+        vbox:
+            spacing 10
+            text "[summaryIntroduction]" size 25
+            text "[mozeReflection]" size 25
+            text "[choiceReflection]" size 25
+            text "[streamReflection]" size 25
+            text "[affiliateReflection]" size 25
 
 
 

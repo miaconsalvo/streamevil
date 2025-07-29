@@ -126,7 +126,8 @@ default kcEngagement = 4
 #variable to check status of viewer
 default viewershipHigh = False
 default viewershipMed = False
-default viewershipLow = False
+default viewershipLow = True
+default Affiliate = False
 
 #variables to track interest of player - tracked for macro game purposes
 default reluctance = 0
@@ -178,6 +179,7 @@ default vig3_zanApproval = False
 default vig3_reynarApproval = False
 default vig3_macAlign = "PeaceHope"
 default vig3_recResponse = "Confused"
+default vig3_bcRepSaved = False
 
 ####Variables to track the macro game stuff in vignette 3####
 default vig3_brotherChat = 0
@@ -251,11 +253,17 @@ default flinch_viewcountCheck = False
 default flinch_topfanCheck = False
 default flinch_audienceCheck = False
 default viewershipThoughtCheck = False
+
+##vignette 2 flinch variables
 default flinchViewershipShnzi = False
 default flinchViewershipOutlaw = False
 default flinchViewershipMarshal = False
 default flinchViewershipAssault = False
 
+##vigentte 3 flinch variables
+default flinchViewershipCrash = False
+default flinchViewershipAffiliate = False
+default flinchViewershipChat = False
 
 #blueit variables
 default blueitCheck = 0
@@ -264,6 +272,13 @@ default yb = 0 #this sets how long the viewport of the blueit threads will scrol
 default blueitChoiceCheck = False
 default blueitLaunchCheck = False
 
+###Final Write Up Variables###
+default blueitPostTitle = ""
+default summaryIntroduction = ""
+default mozeReflection = ""
+default choiceReflection = ""
+default streamReflection = ""
+default affiliateReflection = ""
 
 #default yadj = ui.adjustment()
 
@@ -344,7 +359,7 @@ label playerName:
     #$ AddChatter(vig1_sc1_comment7)
     #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
-    #jump vig2_macro_start
+    jump vig4_macro_start
 
     "For testing purposes, you can jump ahead to other vignettes."
     menu:

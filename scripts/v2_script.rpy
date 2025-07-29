@@ -2132,6 +2132,14 @@ label vig2epilogue_OUT():
 #### MACRO GAME #######
 label vig2_macro_start():
     $ vignette2 = True
+    if csEngagement > pdEngagement and csEngagement > kcEngagement:
+        $ topfan = "Coriolis"
+    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
+        $ topfan = "kitcat"
+    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
+        $ topfan = "pickledDragons"
+    else:
+        $ topfan = "Coriolis"
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
@@ -2472,14 +2480,6 @@ label FlinchAnalytics_vig2():
     #else:
     #    $ topfan = "pickledDragons"
     #For this particular vignette though, we want it to be Coriolis
-    if csEngagement > pdEngagement and csEngagement > kcEngagement:
-        $ topfan = "Coriolis"
-    elif kcEngagement > pdEngagement and kcEngagement >= csEngagement:
-        $ topfan = "kitcat"
-    elif pdEngagement >= kcEngagement and pdEngagement >= csEngagement:
-        $ topfan = "pickledDragons"
-    else:
-        $ topfan = "Coriolis"
     $ followerGoal = 2
     show screen streamAnalytics_Details
     "Time to explore the Flinch analytics page."
