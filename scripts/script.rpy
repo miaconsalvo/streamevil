@@ -342,7 +342,7 @@ label playerName:
     #$ AddChatter(vig1_sc1_comment7)
     #$ AddChatter(vig1_sc1_comment8)
     "And now we begin."
-    jump vig2_macro_start
+    #jump vig2_macro_start
 
     "For testing purposes, you can jump ahead to other vignettes."
     menu:
