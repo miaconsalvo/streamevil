@@ -1707,9 +1707,9 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She shakes it firmly."
                             pS "Thanks, Cap. It was a good game."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             mS "It was. Well played."
-                            hide screen streamerCommentary
                         "Get ahead and set a trap.":
                             $ kcEngagement += 1
                             $ csEngagement += 2
@@ -1737,10 +1737,10 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She extends a hand toward me."
                             pS "Well played."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             "I shake it firmly."
                             mS "Good game."
-                            hide screen streamerCommentary
                 "Evasive maneuvers.":
                     "I corkscrew around a handful of asteroids."
                     pS "Pretty good moves, Cap."
@@ -1773,9 +1773,9 @@ label vig4_sc3_2_jennica():
                             "I take it and shake it firmly."
                             $ AddChatter(vig4_sc3_2_jenn_comment26)
                             mS "Good game."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Yeah, well played."
-                            hide screen streamerCommentary
                         "Bait her in.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
@@ -1802,10 +1802,10 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             pS "Ya ain't so bad yourself. Maybe ya should take the helm next time we're in a tight spot."
                             mS "Think I'll stick to the games for now."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Hahaha alright. It was a good game."
                             mS "It was. Well played."
-                            hide screen streamerCommentary
         "Return fire.":
             "It's a bad spot, but I pull up and face her directly."
             $ AddChatter(vig4_sc3_2_jenn_comment10)
@@ -1839,9 +1839,9 @@ label vig4_sc3_2_jennica():
                     "I take it and shake it firmly."
                     $ AddChatter(vig4_sc3_2_jenn_comment18)
                     mS "Good game."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc3_2_jenn_comment19)
                     pS "Yeah, well played."
-                    hide screen streamerCommentary
                 "Bait her in.":
                     $ kcEngagement -= 1
                     $ csEngagement -= 1
@@ -1867,11 +1867,11 @@ label vig4_sc3_2_jennica():
                     "She shakes it firmly."
                     $ AddChatter(vig4_sc3_2_jenn_comment18)
                     pS "Ya ain't so bad yourself. Maybe ya should take the helm next time we're in a tight spot."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc3_2_jenn_comment19)
                     mS "Think I'll stick to the games for now."
                     pS "Hahaha alright. It was a good game."
                     mS "It was. Well played."
-                    hide screen streamerCommentary
     jump vig4_sc3_2_jennica_2
 
 label vig4_sc3_2_jennica_2():
