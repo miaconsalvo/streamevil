@@ -3214,6 +3214,7 @@ label vig3_sc14():
     menu: 
         "Explain to Rec why you shot Allistar?"
         "I didn't want to it just happened.":
+            $ vig3_recResponse = "Confused"
             $ pilotApproval += 2 #Logic: I think Jenn, as Moze's oldest friend, probably has sympathy for her mixed up emotions.
             $ pdEngagement -= 3
             if misclick == True:
@@ -3268,6 +3269,7 @@ label vig3_sc14():
             jump vig3_epilogue
 
         "I did what I had to do.":
+            $ vig3_recResponse = "Classic"
             $ engineerApproval += 2 #Logic: I think Teresa agrees with this line. Utilitarianism and all that
             $ pdEngagement -= 2 #Logic: pd doesn't like this excuse
             $ csEngagement += 1
@@ -3317,6 +3319,7 @@ label vig3_sc14():
             jump vig3_epilogue
 
         "I did it because he deserved it.":
+            $ vig3_recResponse = "Justified"
             $ pilotApproval -= 1 #Logic: I think both crew members would be stunned by this. They'll stand by their captain, but I don't think they believe Allistar deserved it.
             $ engineerApproval -= 1
             $ pdEngagement += 3 #Logic: pd loves this attitude; the other two liked Allistar
@@ -3546,23 +3549,295 @@ label vig3_macro_webNav():
     call screen webNavigation_vig3
 
 label vig3_macro_viewerChat_1():
+    nvl clear
     scene discordview with dissolve
     $ screenComplete = False
     $ loopdView = True
     $ menu = nvl_menu
     if topfan = "Coriolis":
         #Coriolis convo about Rec
-        "Test"
+        "Coriolis sent me a message on Loop'd."
+        cs_nvl "Hey, [username], wanted to say thanks for a great stream!"
+        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite."
+        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
+        if vig3_recResponse == "Confused":
+            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            show screen NVLnarration
+            menu:
+                "•It reflected how I felt.":
+                    $ csEngagement += 1
+                    player_nvl "I made that choice cause it was what I felt the most in that moment."
+                    player_nvl "I wasn't expecting it and it was so tense."
+                    if misclick == True:
+                        cs_nvl "Right, I remember you said you didn't even mean to do it, right?"
+                        player_nvl "Yeah. So that response felt like what my actual response was."
+                    else:
+                        pass
+                    player_nvl "It may not have been the most fun or even sincere from Moze's perspective, but it was what I felt as a player."
+                    cs_nvl "That makes a lot of sense."
+                "•It felt the most honest.":
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif vig3_recResponse == "Classic":
+            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            show screen NVLnarration
+            menu:
+        else:
+            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            show screen NVLnarration
+            menu:
+
+
     elif topfan = "kitcat":
-        #kitcat convo - about MAC's actions
-        "test"
+        "kitcat sent me a message on Loop'd."
+        kc_nvl "Heya, [username]! Wanted to say thanks for the awesome stream!"
+        kc_nvl "It was really cool getting to see the SnakeHawks on their home turf."
+        kc_nvl "But omg, we have to talk about MAC picking up that gun!"
+        if vig3_macAlign == "ViolentPessimism":
+            kc_nvl "I can't BELIEVE MAC shot Ama!"
+            kc_nvl "I mean, I heard people say that your choices affect him and his behavior, but I never thought he'd actually hurt someone."
+            kc_nvl "If I'm being honest, I don't know how I feel about it..."
+            $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•I thought it was great!":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "That scene was so crazy!"
+                    player_nvl "I get what you're saying, but I think it makes a lot of sense for his character and this universe."
+                    player_nvl "We've had to do a lot of not great things just to survive."
+                    player_nvl "And Moze might not be around him forever. If he's gonna make it in this galaxy, he has to learn to survive on his own as well."
+                    player_nvl "I thought it was a great scene for him!"
+                    kc_nvl "No, you're right."
+                    kc_nvl "Idk, I guess I was just hoping he could find a way above all the dirt and grime."
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•I'm also conflicted.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 2
+                    player_nvl "I see where you're coming from. I'm also feeling a bit conflicted about it."
+                    player_nvl "Like, the galaxy is a tough place, and he has to know how to survive."
+                    player_nvl "But is him becoming just like Moze really the best thing?"
+                    player_nvl "Idk, it's a tough line to walk."
+                    kc_nvl "Definitely. And I'll be honest, I'm glad I don't have to worry about walking that line haha"
+                    kc_nvl "Appreciate you making the tough calls for us, Cap!"
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ kcEngagement -=3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif vig3_macAlign == "ViolentHope":
+            kc_nvl "What a great move by him! Taking a shot to distract Ama so you could get the upperhand!"
+            kc_nvl "Tbh, I was kinda nervous he was actually gonna shoot her there and I really don't know how I would have felt about that."
+            kc_nvl "He's our lil guy, glad to know he's not turning into a murder bot, y'know?"
+            $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•I was nervous about that too.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 2
+                    player_nvl "I totally agree, thought that move by him was super fun!"
+                    player_nvl "I was also holding my breath in that moment. Seriously didn't know which way it was gonna go."
+                    player_nvl "Glad he didn't shoot her. I know MAC has to learn how to survive in this galaxy, but him knowing the difference between survival and cruelty feels pretty important."
+                    kc_nvl "Exactly! Yeah I feel the same way. Great way of putting it!"
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•I kind of wish he'd hit Ama.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "I actually kind of wish he'd taken a shot at her."
+                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option."
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ kcEngagement -=3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        elif vig3_macAlign == "PeacePessimism":
+            kc_nvl "It was so heartbreaking seeing him falter!"
+            kc_nvl "Like, I'm kinda glad he didn't actually shoot her and he was a good distraction."
+            kc_nvl "But seeing him with a genuine expression of disappointment...it got to me, y'know?"
+            $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•It paralleled Moze's flashback so well too.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "Yeah, that moment really got me as well. Plus it parallels Moze's flashback with Ama really nicely."
+                    player_nvl "The whole episode did a really good job at drawing those connections."
+                    player_nvl "I feel for MAC. Just trying to do his best."
+                    kc_nvl "For real. And he's doing so well!"
+                    kc_nvl "Like, I absolutely loved seeing him take a more active role in this episode!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•I kind of wish he'd taken the shot.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "I actually kind of wish he'd taken a shot at her."
+                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option."
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ kcEngagement -=3
+                    "Nah, don't really want to encourage a parasocial relationship."
+        else:
+            kc_nvl "And he didn't even use it!"
+            kc_nvl "Lil guy to saved the day by reading Ama to absolute filth instead of using brute force."
+            kc_nvl "I heard people say that your choices affect him and his behavior, and it was really cool to see that happen."
+            kc_nvl "Nice to know he's growing up right, y'know?"
+            $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
+            show screen NVLnarration
+            menu:
+                "•He's gotten so clever!":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "I know, I thought that was a great move from him as well!"
+                    player_nvl "Really cool to see how Moze's influence is affecting him, makes the whole \"doing better\" thing feel rewarding imo."
+                    player_nvl "Gotta love him learning to be clever and not just \"tough.\""
+                    kc_nvl "Yeah! And I think that change is apparent too when you think about how reckless he was going after the Hounds the first time."
+                    kc_nvl "Absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•I kind of wish he'd taken the shot.":
+                    hide screen NVLnarration
+                    $ kcEngagement += 1
+                    player_nvl "I actually kind of wish he'd taken a shot at her."
+                    player_nvl "I mean, I do like how this reflects Moze's actions. But talking your way out of situations may not always be an option."
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
+                    kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
+                    menu:
+                        "•That part got me too!":
+                            player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•I thought it was going to be a lot worse.":
+                            player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
+                            kc_nvl "Omg, can you imagine?"
+                            kc_nvl "Little guy growing up so fast."
+                            player_nvl "He really is."
+                            kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ kcEngagement -=3
+                    "Nah, don't really want to encourage a parasocial relationship."
     elif topfan = "pickledDragons":
         #pickledDragons convo
         "test"
     else:
         #Coriolis convo
         "test"
-    "This is a test for the viewerchat section."
     $ screenComplete = True
     call screen webNavigation_vig3
     scene bg black with dissolve

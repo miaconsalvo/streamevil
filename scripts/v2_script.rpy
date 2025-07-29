@@ -2529,7 +2529,7 @@ label vig2_macro_viewerChat_1():
                     cs_nvl "Aww, thanks [username]!"
                 "•Don't respond.":
                     hide screen NVLnarration
-                    $ csEngagement -= 3
+                    $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             cs_nvl "I liked that stealth run on the base."
@@ -2564,7 +2564,7 @@ label vig2_macro_viewerChat_1():
                     cs_nvl "Aww, thanks [player]!"
                 "•Don't respond.":
                     hide screen NVLnarration
-                    $ csEngagement -= 3
+                    $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         jump vig2_macro_bro1
 
@@ -2600,7 +2600,7 @@ label vig2_macro_viewerChat_1():
                     kc_nvl "It's a great idea though, they should hire you to write on the next one!"
                 "•Don't respond.":
                     hide screen NVLnarration
-                    $ kcEngagement -=5
+                    $ kcEngagement -=3
                     "Nah, don't really want to encourage a parasocial relationship."
         elif romanceTeresa == True:
             kc_nvl "Ok, so Teresa, I'm into this."
