@@ -1710,9 +1710,9 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She shakes it firmly."
                             pS "Thanks, Cap. It was a good game."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             mS "It was. Well played."
-                            hide screen streamerCommentary
                         "Get ahead and set a trap.":
                             $ kcEngagement += 1
                             $ csEngagement += 2
@@ -1740,10 +1740,10 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             "She extends a hand toward me."
                             pS "Well played."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             "I shake it firmly."
                             mS "Good game."
-                            hide screen streamerCommentary
                 "Evasive maneuvers.":
                     "I corkscrew around a handful of asteroids."
                     pS "Pretty good moves, Cap."
@@ -1776,9 +1776,9 @@ label vig4_sc3_2_jennica():
                             "I take it and shake it firmly."
                             $ AddChatter(vig4_sc3_2_jenn_comment26)
                             mS "Good game."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Yeah, well played."
-                            hide screen streamerCommentary
                         "Bait her in.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
@@ -1805,10 +1805,10 @@ label vig4_sc3_2_jennica():
                             $ AddChatter(vig4_sc3_2_jenn_comment18)
                             pS "Ya ain't so bad yourself. Maybe ya should take the helm next time we're in a tight spot."
                             mS "Think I'll stick to the games for now."
+                            hide screen streamerCommentary
                             $ AddChatter(vig4_sc3_2_jenn_comment19)
                             pS "Hahaha alright. It was a good game."
                             mS "It was. Well played."
-                            hide screen streamerCommentary
         "Return fire.":
             "It's a bad spot, but I pull up and face her directly."
             $ AddChatter(vig4_sc3_2_jenn_comment10)
@@ -1842,9 +1842,9 @@ label vig4_sc3_2_jennica():
                     "I take it and shake it firmly."
                     $ AddChatter(vig4_sc3_2_jenn_comment18)
                     mS "Good game."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc3_2_jenn_comment19)
                     pS "Yeah, well played."
-                    hide screen streamerCommentary
                 "Bait her in.":
                     $ kcEngagement -= 1
                     $ csEngagement -= 1
@@ -1870,11 +1870,11 @@ label vig4_sc3_2_jennica():
                     "She shakes it firmly."
                     $ AddChatter(vig4_sc3_2_jenn_comment18)
                     pS "Ya ain't so bad yourself. Maybe ya should take the helm next time we're in a tight spot."
+                    hide screen streamerCommentary
                     $ AddChatter(vig4_sc3_2_jenn_comment19)
                     mS "Think I'll stick to the games for now."
                     pS "Hahaha alright. It was a good game."
                     mS "It was. Well played."
-                    hide screen streamerCommentary
     jump vig4_sc3_2_jennica_2
 
 label vig4_sc3_2_jennica_2():
@@ -3454,13 +3454,13 @@ label vig4_sc4_1():
 
 label vig4_sc4_2():
     show shiphub_stream at topleft onlayer background with dissolve
-    show jennica stream shock at stream_left with Dissolve(0.5)
-    show teresa stream shock at stream_right with Dissolve(0.5)
+    show jennica stream neutral at stream_left with Dissolve(0.5)
+    show teresa stream neutral at stream_right with Dissolve(0.5)
     hide ship_hallway_stream
     "I leap into the cockpit."
     mS "BigCorp is coming for MAC!"
-    show teresa stream neutral
-    show jennica stream neutral
+    show teresa stream shock
+    show jennica stream shock
     $ AddChatter(vig4_sc4_2_comment1)
     enS "Impossible, how would they even know Polaris exists?"
     mS "They tracked Coil's communications."
@@ -3470,6 +3470,8 @@ label vig4_sc4_2():
     pS "It's possible BC tracked Coil's communications without him knowin'."
     enS "Even if it was a bluff to bait confirmation from you, BC would probably follow up on any lead they have."
     pS "And after Solara, Ama definitely ain't in the company's good graces anymore."
+    show jennica stream neutral
+    show teresa stream neutral
     $ AddChatter(vig4_sc4_2_comment3)
     if jennicaRomance == True:
         "Jennica turns to me."
@@ -4077,7 +4079,6 @@ label vig4_sc7_2():
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
-    show screen streamerCommentary
     "Dozens. Hundreds. Thousands of glimmering lights streaking across the sky."
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
