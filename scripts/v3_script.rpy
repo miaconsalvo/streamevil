@@ -3566,35 +3566,212 @@ label vig3_macro_viewerChat_1():
         cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
         if vig3_recResponse == "Confused":
             cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
             show screen NVLnarration
             menu:
-                "•It reflected how I felt.":
+                "•It reflected how I felt as a player.":
+                    hide screen NVLnarration
                     $ csEngagement += 1
                     player_nvl "I made that choice cause it was what I felt the most in that moment."
                     player_nvl "I wasn't expecting it and it was so tense."
                     if misclick == True:
-                        cs_nvl "Right, I remember you said you didn't even mean to do it, right?"
-                        player_nvl "Yeah. So that response felt like what my actual response was."
+                        cs_nvl "Right, I remember you said you didn't even mean to do it, right? Like it was a misclick?"
+                        player_nvl "Yeah. So that choice just felt like what my actual response was."
                     else:
                         pass
-                    player_nvl "It may not have been the most fun or even sincere from Moze's perspective, but it was what I felt as a player."
-                    cs_nvl "That makes a lot of sense."
-                "•It felt the most honest.":
+                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player."
+                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•It felt the most honest from Moze.":
+                    hide screen NVLnarration
+                    $ csEngagement += 1
+                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze."
+                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar."
+                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore."
+                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too."
+                    cs_nvl "Ooh interesting. I really like that take!"
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
             cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
             show screen NVLnarration
             menu:
+                "•It's a story Moze has to believe in.":
+                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
+                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
+                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
+                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality."
+                    cs_nvl "I don't like what Moze did, but I do feel for her."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•I don't think Moze had choice.":
+                    player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that."
+                    player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
+                    player_nvl "But could Moze really have taken that risk?"
+                    player_nvl "I don't know that she would have. And I think it's interesting to explore this character who has such a black and white outlook on that kind of thing."
+                    cs_nvl "Hmmm I see what you're saying."
+                    cs_nvl "I think I still agree with Rec (and Allistar), but it's a good point. Moze is put in a LOT of tough situations."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
         else:
             cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death."
+            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
             show screen NVLnarration
             menu:
+                "•It was harsh but true.":
+                    $ csEngagement -= 1
+                    player_nvl "It was harsh, but it was true."
+                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
+                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences."
+                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma."
+                    cs_nvl "No I get that...I guess I just didn't read that in Moze's character."
+                    if misclick == True:
+                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally."
+                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character."
+                    cs_nvl "It's not what I would have done, but I see your perspective."
+                    cs_nvl "And I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•It surprised me too.":
+                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
+                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
+                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
+                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again."
+                    player_nvl "No chance."
+                    cs_nvl "I appreciate how much thought you put into these choices."
+                    cs_nvl "So many of them seem really tough."
+                    menu:
+                        "•Yeah, they're hard to make.":
+                            player_nvl "Yeah, I don't think it ever gets easier tbh."
+                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
+                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•It's actually getting easier.":
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            cs_nvl "That's a really cool perspective!"
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
+                            player_nvl "Hahaha I'm glad you think so!"
+                            cs_nvl "Thanks for the chat [username]! See you next week!"
+                        "•Don't respond.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
+                "•Don't respond.":
+                    hide screen NVLnarration
+                    $ csEngagement -= 2
+                    "Nah, don't really want to encourage a parasocial relationship."
 
 
     elif topfan = "kitcat":
