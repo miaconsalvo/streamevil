@@ -2326,118 +2326,83 @@ label vig4_sc7_killcoil():
     return
 
 #label vig4_sc7_mackillsvega():
-    hide screen streamerCommentary
-    $ macroChoice = True
-    $ narrator = reg_narrator
-    menu:
-        "MAC just killed Vega."
-        "That's payback!":
-            $ reactImage = "stream ui/reactcelebrate.png"
-            #player "That'll teach him to betray us!" #I think better with just the one line here
-            player "Score settled."
-            $ AddChatter(vig4_sc7_killcoil_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment2)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment3)
-            pause 0.5
-        "Is this the end of Polaris?":
-            $ reactImage = "stream ui/reactthinking.png"
-            player "Damn chat this is kinda sad."
-            player "Did we doom Polaris with this decision?"
-            player "RIP."
-            $ AddChatter(vig4_sc7_killcoil_react_comment4)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment5)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment6)
-            pause 0.5
-        "Say nothing.":
-            player "..."
-            pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
+#    hide screen streamerCommentary
+#    $ macroChoice = True
+#    $ narrator = reg_narrator
+#    menu:
+#        "MAC just killed Vega."
+#        "That's payback!":
+#            $ reactImage = "stream ui/reactcelebrate.png"
+#            #player "That'll teach him to betray us!" #I think better with just the one line here
+#            player "Score settled."
+#            $ AddChatter(vig4_sc7_killcoil_react_comment1)
+#            pause 0.5
+#        "Is this the end of Polaris?":
+#            $ reactImage = "stream ui/reactthinking.png"
+#            player "Damn chat this is kinda sad."
+#            $ AddChatter(vig4_sc7_killcoil_react_comment4)
+#            pause 0.5
+#        "Say nothing.":
+#            player "..."
+#            pause 0.5
+#    $ macroChoice = False
+#    if macroChoice == False:
+#        $ narrator = alt_narrator
+#    else:
+#        $ narrator = reg_narrator
+#    $ reactImage = "stream ui/reactneutral.png"
+#    return
 
 #label vig4_sc7_macsparesvega():
-    hide screen streamerCommentary
-    $ macroChoice = True
-    $ narrator = reg_narrator
-    menu:
-        "MAC just decided not to kill Vega."
-        "That's payback!":
-            $ reactImage = "stream ui/reactcelebrate.png"
-            #player "That'll teach him to betray us!" #I think better with just the one line here
-            player "Score settled."
-            $ AddChatter(vig4_sc7_killcoil_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment2)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment3)
-            pause 0.5
-        "Is this the end of Polaris?":
-            $ reactImage = "stream ui/reactthinking.png"
-            player "Damn chat this is kinda sad."
-            player "Did we doom Polaris with this decision?"
-            player "RIP."
-            $ AddChatter(vig4_sc7_killcoil_react_comment4)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment5)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment6)
-            pause 0.5
-        "Say nothing.":
-            player "..."
-            pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
+#    hide screen streamerCommentary
+#    $ macroChoice = True
+#    $ narrator = reg_narrator
+#    menu:
+#        "MAC just decided not to kill Vega."
+#        "That's payback!":
+#            $ reactImage = "stream ui/reactcelebrate.png"
+#            #player "That'll teach him to betray us!" #I think better with just the one line here
+#            player "Score settled."
+#            $ AddChatter(vig4_sc7_killcoil_react_comment1)
+#            pause 0.5
+#        "Is this the end of Polaris?":
+#            $ reactImage = "stream ui/reactthinking.png"
+#            player "Damn chat this is kinda sad."
+#        "Say nothing.":
+#            player "..."
+#            pause 0.5
+#    $ macroChoice = False
+#    if macroChoice == False:
+#        $ narrator = alt_narrator
+#    else:
+#        $ narrator = reg_narrator
+#    $ reactImage = "stream ui/reactneutral.png"
+#    return
 
 #label vig4_sc7_macamasbody():
-    hide screen streamerCommentary
-    $ macroChoice = True
-    $ narrator = reg_narrator
-    menu:
-        "MAC is suggesting we bury Ama's body."
-        "That's payback!":
-            $ reactImage = "stream ui/reactcelebrate.png"
-            #player "That'll teach him to betray us!" #I think better with just the one line here
-            player "Score settled."
-            $ AddChatter(vig4_sc7_killcoil_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment2)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment3)
-            pause 0.5
-        "Is this the end of Polaris?":
-            $ reactImage = "stream ui/reactthinking.png"
-            player "Damn chat this is kinda sad."
-            player "Did we doom Polaris with this decision?"
-            player "RIP."
-            $ AddChatter(vig4_sc7_killcoil_react_comment4)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment5)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment6)
-            pause 0.5
-        "Say nothing.":
-            player "..."
-            pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
-        $ narrator = reg_narrator
-    $ reactImage = "stream ui/reactneutral.png"
-    return
+#    hide screen streamerCommentary
+#    $ macroChoice = True
+#    $ narrator = reg_narrator
+#    menu:
+#        "MAC is suggesting we bury Ama's body."
+#        "That's payback!":
+#            $ reactImage = "stream ui/reactcelebrate.png"
+#            #player "That'll teach him to betray us!" #I think better with just the one line here
+#            player "Score settled."
+#            $ AddChatter(vig4_sc7_killcoil_react_comment1)
+#        "Is this the end of Polaris?":
+#            $ reactImage = "stream ui/reactthinking.png"
+
+#        "Say nothing.":
+#            player "..."
+#            pause 0.5
+#    $ macroChoice = False
+#    if macroChoice == False:
+#        $ narrator = alt_narrator
+#    else:
+#        $ narrator = reg_narrator
+#    $ reactImage = "stream ui/reactneutral.png"
+#    return
 
 label vig4_epilogue_maclove():
     hide screen streamerCommentary

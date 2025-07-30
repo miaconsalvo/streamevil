@@ -50,6 +50,10 @@ label vignette4Start():
         $ viewershipHigh = False
         $ viewershipMed = True
         $ viewershipLow = False
+    elif vig3_outlaw < 2 and vig2_outlawEpilogue == True:
+        $ viewershipHigh = False
+        $ viewershipMed = True
+        $ viewershipLow = False
     else:
         $ viewershipHigh = False
         $ viewershipMed = False
@@ -4296,6 +4300,7 @@ label vig4_sc5_2():
 
 
 label vig4_sc7_2():
+    $ viewCheck9 = viewCount
     cS "The time has come."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_2_comment1)
@@ -5233,6 +5238,7 @@ label vig4_sc7_3_coil():
     jump vig4_epilogue_coil
 
 label vig4_epilogue_coil():
+    $ viewCheck10 = viewCount
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream    
     $ AddChatter(vig4_sc7_epilogue_comment1)
@@ -5531,6 +5537,7 @@ label vig4_epilogue_coil():
     jump vig4_signoff
 
 label vig4_epilogue_ama():
+    $ viewCheck10 = viewCount
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream
     $ AddChatter(vig4_sc7_epilogue_comment1)

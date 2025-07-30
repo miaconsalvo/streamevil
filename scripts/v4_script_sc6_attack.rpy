@@ -529,6 +529,7 @@ label vig4_sc6_attack_2_ama():
     jump vig4_sc6_attack_3_ama
 
 label vig4_sc6_attack_3_ama():
+    $ viewCheck8 = viewCount
     "Smoke billows all around us as we navigate Polaris's ruined roads."
     "Flames lick at the sides of buildings."
     "Even in the tank, we can feel the heat from outside."
@@ -1713,6 +1714,7 @@ label vig4_sc6_attack_2():
     jump vig4_sc6_attack_3
 
 label vig4_sc6_attack_3():
+    $ viewCheck8 = viewCount
     "Smoke billows all around us as we navigate Polaris's ruined roads."
     "Flames lick at the sides of buildings."
     "Even in the tank, we can feel the heat from outside."
