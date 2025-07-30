@@ -213,7 +213,7 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment33)
     "I open my palm and hold it out in front of me."
     "A blue hologram projects up from the disc."
-    show maccall neutral at stream_center_mac with dissolve
+    show mac phone neutral at stream_center_mac with dissolve
     play music "soundtrack/theme.wav"
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -327,7 +327,7 @@ label vig4_sc6_defend_1():
     mS "We'll talk soon."
     pS "Be good, kid!"
     enS "Take care of yourself!"
-    hide maccall with dissolve
+    hide mac with dissolve
     "The hologram shivers, then fades."
     "I look up to the sky and the approaching dropships. The cruiser poised over Polaris like a hammer above an anvil."
     mS "Then I turn to my crew."

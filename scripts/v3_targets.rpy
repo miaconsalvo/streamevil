@@ -1009,7 +1009,7 @@ label vig3_analytics_viewcount2():
                 "Interesting.":
                     "It's just interesting."
                     "It doesn't feel bad, but it's also not as fun as you might've expected."
-                    "It just feels like a different way to play games."
+                    "It feels like a different way to play games."
             jump vig3_analytics_viewcount2
         "Go back to the main Flinch page" if flinchViewershipAffiliate == True:
             if flinchCheck >= 3:
