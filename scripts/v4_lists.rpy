@@ -28,6 +28,7 @@ default vig4_sc1_2_comment8 = ChatEntry(False, "{b}R4dioRobbie - 6:09{/b}\nagain
 default vig4_sc1_2_comment9 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\nWe'll see when we get there won't we ;)", 4, "#ffffff")
 default vig4_sc1_2_comment10 = ChatEntry(False, "{b}pickledDragons - 6:10{/b}\nWe've heard very little about the Alliance this game. Think they'll come up here at the end?", 4, "#ffffff")
 default vig4_sc1_2_comment11 = ChatEntry(False, "{b}llamabama22 - 6:10{/b}\nsus", 4, "#ffffff")
+default vig4_sc1_2_comment11alt = ChatEntry(False, "{b}R4dioRobbie - 6:10{/b}\nsus", 4, "#ffffff")
 default vig4_sc1_2_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:10{/b}\nsus", 4, "#ffffff")
 default vig4_sc1_2_comment13 = ChatEntry(False, "{b}AFKAngel - 6:10{/b}\nvery sus", 4, "#ffffff")
 default vig4_sc1_2_comment14 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nsus", 4, "#ffffff")
@@ -112,7 +113,7 @@ default vig4_sc2_4_comment10 = ChatEntry(False, "{b}marxky8 - 6:28{/b}\npristine
 default vig4_sc2_4_comment11 = ChatEntry(False, "{b}turb0g00se - 6:28{/b}\nOooh that sounded like a threat to me!", 4, "#ffffff")
 default vig4_sc2_4_comment12 = ChatEntry(False, "{b}bacon8r_6 - 6:28{/b}\nTiem to beat up an old man?", 4, "#ffffff")
 default vig4_sc2_4_comment13 = ChatEntry(False, "{b}llamabama22 - 6:28{/b}\nBut he's padre!", 4, "#ffffff")
-default vig4_sc2_4_comment14 = ChatEntry(False, "{b}llamabama22 - 6:29{/b}\nOk nope, never mind. Waste grandpa's ass", 4, "#ffffff")
+default vig4_sc2_4_comment14 = ChatEntry(False, "{b}turb0g00se - 6:29{/b}\nOk, waste grandpa's ass", 4, "#ffffff")
 default vig4_sc2_4_comment15 = ChatEntry(False, "{b}kitcat - 6:29{/b}\nYeah Teresa, you tell him!", 4, "#ffffff")
 default vig4_sc2_4_comment16 = ChatEntry(False, "{b}pickledDragons - 6:29{/b}\nRead her to filth!", 4, "#ffffff")
 default vig4_sc2_4_comment17 = ChatEntry(False, "{b}AFKAngel - 6:30{/b}\nWho's this!?", 4, "#ffffff")
@@ -137,8 +138,10 @@ default vig4_sc2_4_comment35 = ChatEntry(False, "{b}bacon8r_6 - 6:32{/b}\nDamn, 
 default vig4_sc2_4_comment36 = ChatEntry(False, "{b}Coriolis - 6:33{/b}\nAwww, shield papa has a heart", 4, "#ffffff")
 default vig4_sc2_4_comment37 = ChatEntry(False, "{b}R4dioRobbie - 6:33{/b}\nShield papa!", 4, "#ffffff")
 default vig4_sc2_4_comment38 = ChatEntry(False, "{b}llamabama22 - 6:33{/b}\nI'll let him pop my shields any day", 4, "#ffffff")
-default vig4_sc2_4_comment39 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nSeriously tho, like, I think there are some things you should process with a professional", 4, "#ffffff")
+#default vig4_sc2_4_comment39 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nSeriously tho, like, I think there are some things you should process with a professional", 4, "#ffffff")
 default vig4_sc2_4_comment40 = ChatEntry(False, "{b}turb0g00se - 6:31{/b}\nNahhh bad idea he's got something planned", 4, "#ffffff")
+default vig4_sc2_4_comment41 = ChatEntry(False, "{b}_lostinmetr0 - 6:33{/b}\nPG!", 4, "#ffffff")
+
 
 ###Comments vig4_sc2_5 - Start of Coil and Vega chat
 default vig4_sc2_5_comment1 = ChatEntry(False, "{b}Coriolis - 6:35{/b}\nWe did it! Mission accomplished y'all!", 4, "#ffffff")
@@ -165,8 +168,8 @@ default vig4_sc2_6_comment9 = ChatEntry(True, "{b}AFKAngel - 6:38{/b}\nUgh, fund
 default vig4_sc2_6_comment10 = ChatEntry(False, "{b}kitcat - 6:38{/b}\nThat makes Coil MAC's uncle!", 4, "#ffffff")
 default vig4_sc2_6_comment11 = ChatEntry(False, "{b}Coriolis - 6:38{/b}\nAwww family reunion", 4, "#ffffff")
 default vig4_sc2_6_comment12 = ChatEntry(False, "{b}bacon8r_6 - 6:38{/b}\nCan robots have uncles?", 4, "#ffffff")
-default vig4_sc2_6_comment13 = ChatEntry(False, "{b}marxky8 - 6:38{/b}\nThis one does!", 4, "#ffffff")
-default vig4_sc2_6_comment14 = ChatEntry(False, "{b}llamabama22 - 6:38{/b}\nAmen papa", 4, "#ffffff")
+default vig4_sc2_6_comment13 = ChatEntry(False, "{b}llamabama22 - 6:38{/b}\nThis one does!", 4, "#ffffff")
+default vig4_sc2_6_comment14 = ChatEntry(False, "{b}marxky8 - 6:38{/b}\nAmen papa", 4, "#ffffff")
 default vig4_sc2_6_comment15 = ChatEntry(False, "{b}Coriolis - 6:38{/b}\nThey're cute. I like them! (now that they're not aiming guns at us lol)", 4, "#ffffff")
 default vig4_sc2_6_comment16 = ChatEntry(False, "{b}turb0g00se - 6:38{/b}\nIDk, I'm still holding off on judgment", 4, "#ffffff")
 default vig4_sc2_6_comment17 = ChatEntry( False, "{b}_lostinmetr0 - 6:38{/b}\nSounds an awful lot like a certain Captain we know...", 4, "#ffffff")
@@ -180,11 +183,11 @@ default vig4_sc2_6_comment24 = ChatEntry(False, "{b}llamabama22 - 6:41{/b}\nShie
 default vig4_sc2_6_comment25 = ChatEntry(False, "{b}Coriolis - 6:41{/b}\noh shit are they really gonna make us say goodbye to MAC??", 4, "#ffffff")
 default vig4_sc2_6_comment26 = ChatEntry(False, "{b}bacon8r_6 - 6:41{/b}\nOver our dead bodies", 4, "#ffffff")
 default vig4_sc2_6_comment27 = ChatEntry(False, "{b}bacon8r_6 - 6:42{/b}\nhell yeah", 4, "#ffffff")
-default vig4_sc2_6_comment28 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:42{/b}\nOver our dead bodies", 4, "#ffffff")
+default vig4_sc2_6_comment28 = ChatEntry(False, "{b}turb0g00se - 6:42{/b}\nOver our dead bodies", 4, "#ffffff")
 default vig4_sc2_6_comment29 = ChatEntry(False, "{b}Coriolis - 6:42{/b}\nThis was the plan since Oakley 1 tho", 4, "#ffffff")
 default vig4_sc2_6_comment30 = ChatEntry(False, "{b}kitcat - 6:42{/b}\nPlans change when you have a baby!", 4, "#ffffff")
 default vig4_sc2_6_comment31 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:42{/b}\nWoahwoahwoah we're just rolling over now?", 4, "#ffffff")
-default vig4_sc2_6_comment32 = ChatEntry(False, "{b}Coriolis - 6:42{/b}\nNo, we're making the hard choice", 4, "#ffffff")
+default vig4_sc2_6_comment32 = ChatEntry(False, "{b}Coriolis - 6:42{/b}\nWe're making the hard choice", 4, "#ffffff")
 default vig4_sc2_6_comment33 = ChatEntry(False, "{b}kitcat - 6:42{/b}\nScrew the hard choice, I want my son!", 4, "#ffffff")
 default vig4_sc2_6_comment34 = ChatEntry(False, "{b}_lostinmetr0 - 6:42{/b}\nHoly shit I'm so conflicted", 4, "#ffffff")
 default vig4_sc2_6_comment35 = ChatEntry(False, "{b}_turb0g00se - 6:43{/b}\ny tho, they can't just take our kid", 4, "#ffffff")
@@ -196,6 +199,8 @@ default vig4_sc2_6_comment40 = ChatEntry(False, "{b}R4dioRobbie - 6:44{/b}\nIf y
 default vig4_sc2_6_comment41 = ChatEntry(False, "{b}llamabama22 - 6:44{/b}\nI mean, the man deserves a {i}bit{/i} of respect at least, no?", 4, "#ffffff")
 default vig4_sc2_6_comment42 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nHey [player]! So glad I could make it!", 4, "#ffffff")
 default vig4_sc2_6_comment43 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nWow there are a lot of peeps in chat. What'd I miss so far?", 4, "#ffffff", "vig4_sc2_elliotEntrance")
+default vig4_sc2_6_comment44 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nWhat'd I miss so far?", 4, "#ffffff", "vig4_sc2_elliotEntrance")
+
 
 ###Comments vig4_bro - For the interaction when your brother enters chat
 default vig4_bro_comment1 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nI was! But we rescheduled to tomorrow! They rearranged some plans so I could be here for this :)", 4, "#ffffff")
@@ -227,7 +232,7 @@ default vig4_bro_comment26 = ChatEntry(False, "{b}bacon8r_6 - 6:47{/b}\nWow we r
 default vig4_bro_comment27 = ChatEntry(False, "{b}treb.ell - 6:47{/b}\nSounds good, Cap!", 4, "#ffffff")
 
 ###Comments vig4_sc3_1 - Festival start
-default vig4_sc3_1_comment1 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:48{/b}\nThat's the kid of the old guy we're not crazy about", 4, "#ffffff")
+default vig4_sc3_1_comment1 = ChatEntry(False, "{b}R4dioRobbie - 6:48{/b}\nThat's the kid of the old guy we're not crazy about", 4, "#ffffff")
 default vig4_sc3_1_comment2 = ChatEntry(False, "{b}llamabama22 - 6:48{/b}\nSpeak for yourself, I like Shield Papa Coil", 4, "#ffffff")
 default vig4_sc3_1_comment3 = ChatEntry(False, "{b}AFKAngel - 6:48{/b}\nWell usually our celebrations involve betting our ship on a drinking game lol", 4, "#ffffff")
 default vig4_sc3_1_comment4 = ChatEntry(False, "{b}_lostinmetr0 - 6:49{/b}\nOh do we get to pick our date??", 4, "#ffffff")
@@ -271,7 +276,7 @@ default vig4_sc3_2_vega_comment28 = ChatEntry(False, "{b}_lostinmetr0 - 6:57{/b}
 
 ###Comments vig4_sc3_2_jennica - Date scene with Jennica
 default vig4_sc3_2_jenn_comment1 = ChatEntry(False, "{b}Coriolis - 6:50{/b}\nYes! Jenn best girl!", 4, "#ffffff")
-default vig4_sc3_2_jenn_comment2 = ChatEntry(False, "{b}marxky8 - 6:50{/b}\nButter my biscuits!", 4, "#ffffff")
+default vig4_sc3_2_jenn_comment2 = ChatEntry(False, "{b}marxky8 - 6:50{/b}\nButter my biscuit!", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment3 = ChatEntry(False, "{b}kitcat - 6:50{/b}\nDon't mind me, I'll just cope in my corner real quick", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment4 = ChatEntry(False, "{b}AFKAngel - 6:51{/b}\nNo way, Jenn's a gamer!?", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment5 = ChatEntry(False, "{b}bacon8r_6 - 6:51{/b}\nOne of us. One of us.", 4, "#ffffff")
@@ -320,7 +325,7 @@ default vig4_sc3_2_jenn_comment47 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\n
 default vig4_sc3_2_jenn_comment48 = ChatEntry(False, "{b}_lostinmetr0 - 6:57{/b}\nno way", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment49 = ChatEntry(False, "{b}kitcat - 6:57{/b}\nis this really happening", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment50 = ChatEntry(False, "{b}marxky8 - 6:57{/b}\nomfg", 4, "#ffffff")
-default vig4_sc3_2_jenn_comment51 = ChatEntry(False, "{b}llamabama22 - 6:57{/b}\nThat's {i}BRUTAL{/i}", 4, "#ffffff")
+default vig4_sc3_2_jenn_comment51 = ChatEntry(False, "{b}pickledDragons - 6:57{/b}\nThat's {i}BRUTAL{/i}", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment52 = ChatEntry(False, "{b}treb.ell - 6:57{/b}\nIf this happened to me I think I would legitimately die on the spot", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment53 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\n@Coriolis, you doing okay", 4, "#ffffff")
 default vig4_sc3_2_jenn_comment54 = ChatEntry(False, "{b}Coriolis - 6:57{/b}\n...", 4, "#ffffff")
@@ -358,7 +363,7 @@ default vig4_sc3_2_resa_comment26 = ChatEntry(False, "{b}R4dioRobbie - 6:53{/b}\
 default vig4_sc3_2_resa_comment27 = ChatEntry(False, "{b}R4dioRobbie - 6:53{/b}\nsore winner?", 4, "#ffffff")
 default vig4_sc3_2_resa_comment28 = ChatEntry(False, "{b}kitcat - 6:53{/b}\nNo there's something else going on here", 4, "#ffffff")
 default vig4_sc3_2_resa_comment29 = ChatEntry(False, "{b}bacon8r_6 - 6:53{/b}\ncan't stop won't stop", 4, "#ffffff")
-default vig4_sc3_2_resa_comment30 = ChatEntry(False, "{b}jerrybean784 - 6:53{/b}\nWe got her!", 4, "#ffffff")
+default vig4_sc3_2_resa_comment30 = ChatEntry(False, "{b}Coriolis - 6:53{/b}\nWe got her!", 4, "#ffffff")
 default vig4_sc3_2_resa_comment31 = ChatEntry(False, "{b}bacon8r_6 - 6:53{/b}\nTeresa can't run the table on us!", 4, "#ffffff")
 default vig4_sc3_2_resa_comment32 = ChatEntry(False, "{b}bacon8r_6 - 6:53{/b}\ncan't stop won't stop", 4, "#ffffff")
 default vig4_sc3_2_resa_comment33 = ChatEntry(False, "{b}_lostinmetr0 - 6:53{/b}\nI think that's too far", 4, "#ffffff")
@@ -371,8 +376,8 @@ default vig4_sc3_2_resa_comment39 = ChatEntry(False, "{b}kitcat - 6:55{/b}\nWoah
 default vig4_sc3_2_resa_comment40 = ChatEntry(False, "{b}Coriolis - 6:55{/b}\nI mean, I was fully on the Jennica bandwagon, but are we just skipping any romance altogether?", 4, "#ffffff")
 default vig4_sc3_2_resa_comment41 = ChatEntry(False, "{b}pickledDragons - 6:55{/b}\nEyes on the prize, Ama's still out there", 4, "#ffffff")
 default vig4_sc3_2_resa_comment42 = ChatEntry(False, "{b}_lostinmetr0 - 6:56{/b}\n{i}If{/i} they coded that in", 4, "#ffffff")
-default vig4_sc3_2_resa_comment43 = ChatEntry(False, "{b}kitcat - 6:54{/b}\nKISS HER ALREADY", 4, "#ffffff")
-default vig4_sc3_2_resa_comment44 = ChatEntry(False, "{b}xXpearlXx - 6:56{/b}\nit had to happen cause you're fine", 4, "#ffffff")
+default vig4_sc3_2_resa_comment43 = ChatEntry(False, "{b}kitcat - 6:56{/b}\nKISS HER ALREADY", 4, "#ffffff")
+default vig4_sc3_2_resa_comment44 = ChatEntry(False, "{b}AFKAngel - 6:56{/b}\nit had to happen cause you're fine", 4, "#ffffff")
 default vig4_sc3_2_resa_comment45 = ChatEntry(False, "{b}kitcat - 6:56{/b}\nomg", 4, "#ffffff")
 default vig4_sc3_2_resa_comment46 = ChatEntry(False, "{b}kitcat - 6:56{/b}\nYESSSS!!!", 4, "#ffffff")
 default vig4_sc3_2_resa_comment47 = ChatEntry(False, "{b}treb.ell - 6:57{/b}\nWay to go Moze!", 4, "#ffffff")
@@ -383,7 +388,7 @@ default vig4_sc3_2_resa_comment51 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\n
 default vig4_sc3_2_resa_comment52 = ChatEntry(False, "{b}marxky8 - 6:57{/b}\nno way", 4, "#ffffff")
 default vig4_sc3_2_resa_comment53 = ChatEntry(False, "{b}Coriolis - 6:57{/b}\nis this really happening", 4, "#ffffff")
 default vig4_sc3_2_resa_comment54 = ChatEntry(False, "{b}_lostinmetr0 - 6:57{/b}\nomg", 4, "#ffffff")
-default vig4_sc3_2_resa_comment55 = ChatEntry(False, "{b}llamabama22 - 6:57{/b}\nThat's {i}BRUTAL{/i}", 4, "#ffffff")
+default vig4_sc3_2_resa_comment55 = ChatEntry(False, "{b}pickledDragons - 6:57{/b}\nThat's {i}BRUTAL{/i}", 4, "#ffffff")
 default vig4_sc3_2_resa_comment56 = ChatEntry(False, "{b}treb.ell - 6:57{/b}\nIf this happened to me I think I would legit die on the spot", 4, "#ffffff")
 default vig4_sc3_2_resa_comment57 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\n@kitcat, you doing okay", 4, "#ffffff")
 default vig4_sc3_2_resa_comment58 = ChatEntry(False, "{b}kitcat - 6:57{/b}\n...", 4, "#ffffff")
@@ -392,7 +397,7 @@ default vig4_sc3_2_resa_comment60 = ChatEntry(False, "{b}Coriolis - 6:57{/b}\n@k
 default vig4_sc3_2_resa_comment61 = ChatEntry(False, "{b}pickledDragons - 6:57{/b}\n@kitcat: <3", 4, "#ffffff")
 
 ###Comments vig4_sc3_3 - One-on-One with Coil
-default vig4_sc3_3_comment1 = ChatEntry(False, "{b}xXpearlXx - 6:58{/b}\nThat's so cute, it's MAC's own story time!", 4, "#ffffff")
+default vig4_sc3_3_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 6:58{/b}\nThat's so cute, it's MAC's own story time!", 4, "#ffffff")
 default vig4_sc3_3_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:58{/b}\nDo you think he mentioned the part where we attacked an aid station?", 4, "#ffffff")
 default vig4_sc3_3_comment3 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:58{/b}\nDo you think he mentioned the part where infiltrated an aid station?", 4, "#ffffff")
 default vig4_sc3_3_comment4 = ChatEntry(False, "{b}bacon8r_6 - 6:58{/b}\nNooo MAC's not a snitch", 4, "#ffffff")
@@ -423,14 +428,14 @@ default vig4_sc3_3_comment28 = ChatEntry(False, "{b}AFKAngel - 7:02{/b}\nAfter a
 default vig4_sc3_3_comment29 = ChatEntry(False, "{b}R4dioRobbie - 7:02{/b}\nHow dare you, sir", 4, "#ffffff")
 default vig4_sc3_3_comment30 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:02{/b}\nThis old guy doesn't know what it's like outside his little perfect commune", 4, "#ffffff")
 default vig4_sc3_3_comment31 = ChatEntry(False, "{b}marxky8 - 7:03{/b}\nI bet he is", 4, "#ffffff")
-default vig4_sc3_3_comment33 = ChatEntry(False, "{b}trub0g00se - 7:03{/b}\nConflagration time!", 4, "#ffffff")
+default vig4_sc3_3_comment33 = ChatEntry(False, "{b}turb0g00se - 7:03{/b}\nConflagration time!", 4, "#ffffff")
 default vig4_sc3_3_comment34 = ChatEntry(False, "{b}treb.ell - 7:03{/b}\nEven if it's true, that's a low blow", 4, "#ffffff")
 default vig4_sc3_3_comment35 = ChatEntry(False, "{b}bacon8r_6 - 7:03{/b}\nGet his ass, Captain", 4, "#ffffff")
 default vig4_sc3_3_comment36 = ChatEntry(True, "{b}pickledDragons - 7:03{/b}\nEven if he's trying to do the right thing, this is the wrong way to do it", 4, "#ffffff", "vig4_sc3_pdCoilCommentary")
 default vig4_sc3_3_comment37 = ChatEntry(False, "{b}kitcat - 7:03{/b}\nNot the flashback montage!", 4, "#ffffff")
 default vig4_sc3_3_comment38 = ChatEntry(False, "{b}xXpearlXx - 7:03{/b}\nNooo we have to fight this!", 4, "#ffffff")
 default vig4_sc3_3_comment39 = ChatEntry(True, "{b}Coriolis - 7:03{/b}\nCoil's an ass, but he's not a bad guy. We can't be selfish at a time like this", 4, "#ffffff", "vig4_sc3_csCoilCommentary")
-default vig4_sc3_3_comment40 = ChatEntry(False, "{b}xXpearlXx - 7:03{/b}\nRaze it to the ground!", 4, "#ffffff")
+default vig4_sc3_3_comment40 = ChatEntry(False, "{b}turb0g00se - 7:03{/b}\nRaze it to the ground!", 4, "#ffffff")
 default vig4_sc3_3_comment41 = ChatEntry(False, "{b}jerrybean784 - 7:04{/b}\nOh, that's pretty dastardly", 4, "#ffffff")
 
 ###Comments vig4_sc3_4 - Start of conversation with MAC
@@ -470,7 +475,7 @@ default vig4_sc3_5_comment13 = ChatEntry(False, "{b}kitcat - 7:07{/b}\nI can't w
 default vig4_sc3_5_comment14 = ChatEntry(False, "{b}treb.ell - 7:07{/b}\nI can't look away!", 4, "#ffffff")
 default vig4_sc3_5_comment15 = ChatEntry(False, "{b}pickledDragons - 7:08{/b}\nTell 'em, MAC!", 4, "#ffffff")
 default vig4_sc3_5_comment16 = ChatEntry(False, "{b}Coriolis - 7:08{/b}\nAaah this hurts!", 4, "#ffffff")
-default vig4_sc3_5_comment17 = ChatEntry(False, "{b}bacon8r_6 - 7:08{/b}\nI thought you were team Dragonflies?", 4, "#ffffff")
+default vig4_sc3_5_comment17 = ChatEntry(False, "{b}R4dioRobbie - 7:08{/b}\nI thought you were team Dragonflies?", 4, "#ffffff")
 default vig4_sc3_5_comment18 = ChatEntry(False, "{b}Coriolis - 7:08{/b}\nI think letting go of MAC is the right thing to do. Doesn't mean I like it lol", 4, "#ffffff")
 default vig4_sc3_5_comment19 = ChatEntry(False, "{b}AFKAngel - 7:08{/b}\noof my heart", 4, "#ffffff")
 default vig4_sc3_5_comment20 = ChatEntry(False, "{b}marxky8 - 7:08{/b}\nI know, I can't take much more of this", 4, "#ffffff")
@@ -497,7 +502,7 @@ default vig4_sc3_5_comment38 = ChatEntry(False, "{b}Coriolis - 7:07{/b}\nI agree
 default vig4_sc3_5_comment39 = ChatEntry(False, "{b}R4dioRobbie - 7:07{/b}\noh. my. god.", 4, "#ffffff")
 default vig4_sc3_5_comment40 = ChatEntry(False, "{b}J4MIR0QU4I - 7:07{/b}\nbruuuutal", 4, "#ffffff")
 default vig4_sc3_5_comment41 = ChatEntry(False, "{b}xXpearlXx - 7:08{/b}\nshit", 4, "#ffffff")
-default vig4_sc3_5_comment42 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:08{/b}\nouch", 4, "#ffffff")
+default vig4_sc3_5_comment42 = ChatEntry(False, "{b}J4MIR0QU4I - 7:08{/b}\nOUCH", 4, "#ffffff")
 default vig4_sc3_5_comment43 = ChatEntry(False, "{b}marxky8 - 7:08{/b}\nI can't take much more of this", 4, "#ffffff")
 default vig4_sc3_5_comment44 = ChatEntry(False, "{b}pickledDragons - 7:08{/b}\nOh for--shut it gramps!", 4, "#ffffff")
 default vig4_sc3_5_comment45 = ChatEntry(False, "{b}kitcat - 7:09{/b}\nMAC no", 4, "#ffffff")
@@ -518,10 +523,10 @@ default vig4_sc4_1_comment9 = ChatEntry(False, "{b}llamabama22 - 7:12{/b}\nOk so
 default vig4_sc4_1_comment10 = ChatEntry(False, "{b}_lostinmetr0 - 7:12{/b}\nDamn, let her know how you really feel", 4, "#ffffff")
 default vig4_sc4_1_comment11 = ChatEntry(False, "{b}turb0g00se - 7:12{/b}\nI say again - Deadeye to the rescue???", 4, "#ffffff")
 default vig4_sc4_1_comment12 = ChatEntry(False, "{b}R4dioRobbie - 7:12{/b}\nooooh shield papa done messed up", 4, "#ffffff")
-default vig4_sc4_1_comment13 = ChatEntry(False, "{b}jerrybean784 - 7:12{/b}\nomg this is so different from the \"normal\" path", 4, "#ffffff")
+default vig4_sc4_1_comment13 = ChatEntry(False, "{b}R4dioRobbie - 7:12{/b}\nomg this is so different from the \"normal\" path", 4, "#ffffff")
 default vig4_sc4_1_comment14 = ChatEntry(False, "{b}treb.ell - 7:12{/b}\nwdym", 4, "#ffffff")
-default vig4_sc4_1_comment15 = ChatEntry(False, "{b}jerrybean784 - 7:12{/b}\nIf Allistar surives in the beginning, he breaks his communicator in Episode 3", 4, "#ffffff")
-default vig4_sc4_1_comment16 = ChatEntry(False, "{b}jerrybean784 - 7:12{/b}\nThis call with Ama never happens", 4, "#ffffff")
+default vig4_sc4_1_comment15 = ChatEntry(False, "{b}R4dioRobbie - 7:12{/b}\nSo apparently, if Allistar surives in the beginning, he breaks his communicator in Episode 3", 4, "#ffffff")
+default vig4_sc4_1_comment16 = ChatEntry(False, "{b}R4dioRobbie - 7:12{/b}\nThis call with Ama never happens", 4, "#ffffff")
 default vig4_sc4_1_comment17 = ChatEntry(False, "{b}Coriolis - 7:13{/b}\nSo because we killed Allistar back in Episode 1...", 4, "#ffffff")
 default vig4_sc4_1_comment18 = ChatEntry(False, "{b}kitcat - 7:13{/b}\nThat means we can ally with Ama in Episode 4?!?!", 4, "#ffffff")
 default vig4_sc4_1_comment19 = ChatEntry(False, "{b}pickledDragons - 7:13{/b}\n[streamer] with the long con!", 4, "#ffffff")
@@ -588,7 +593,7 @@ default vig4_sc5_1_comment11 = ChatEntry(False, "{b}kitcat - 7:21{/b}\nRIGHT AFT
 default vig4_sc5_1_comment12 = ChatEntry(False, "{b}bacon8r_6 - 7:21{/b}\nwell there's only one way to go now", 4, "#ffffff")
 default vig4_sc5_1_comment13 = ChatEntry(False, "{b}R4dioRobbie - 7:21{/b}\nYeah, through Coil's face", 4, "#ffffff")
 default vig4_sc5_1_comment14 = ChatEntry(False, "{b}llamabama22 - 7:21{/b}\nWe don't have to kill Shield Papa", 4, "#ffffff")
-default vig4_sc5_1_comment15 = ChatEntry(False, "{b}J4MIR0QU4I - 7:21{/b}\nNah this is on the company. I'd rather smash up BigCorp", 4, "#ffffff")
+default vig4_sc5_1_comment15 = ChatEntry(False, "{b}J4MIR0QU4I - 7:21{/b}\nThis is on the company. I'd rather smash up BigCorp", 4, "#ffffff")
 default vig4_sc5_1_comment16 = ChatEntry(False, "{b}turb0g00se - 7:22{/b}\nPolaris is screwed", 4, "#ffffff")
 default vig4_sc5_1_comment17 = ChatEntry(False, "{b}marxky8 - 7:22{/b}\nWe're looking pretty screwed atm", 4, "#ffffff")
 default vig4_sc5_1_comment18 = ChatEntry(False, "{b}xXpearlXx - 7:22{/b}\nIt does remind you who the real villains are", 4, "#ffffff")
@@ -596,9 +601,9 @@ default vig4_sc5_1_comment19 = ChatEntry(False, "{b}pickledDragons - 7:22{/b}\nI
 default vig4_sc5_1_comment20 = ChatEntry(False, "{b}kitcat - 7:23{/b}\nYeah go MAC! Blow 'em outta the sky!", 4, "#ffffff")
 default vig4_sc5_1_comment21 = ChatEntry(False, "{b}kitcat - 7:23{/b}\nYeah go nurse MAC!", 4, "#ffffff")
 default vig4_sc5_1_comment22 = ChatEntry(False, "{b}_lostinmetr0 - 7:23{/b}\nDon't get obsessed", 4, "#ffffff")
-default vig4_sc5_1_comment23 = ChatEntry(False, "{b}jerrybean784 - 7:23{/b}\nSetting the stakes before the final battle, nice.", 4, "#ffffff")
+default vig4_sc5_1_comment23 = ChatEntry(False, "{b}jerrybean784 - 7:23{/b}\nSetting the stage before the final battle, nice.", 4, "#ffffff")
 default vig4_sc5_1_comment24 = ChatEntry(False, "{b}R4dioRobbie - 7:24{/b}\nThis is it", 4, "#ffffff")
-default vig4_sc5_1_comment25 = ChatEntry(False, "{b}bacon84_6 - 7:24{/b}\nThe final countdown", 4, "#ffffff")
+default vig4_sc5_1_comment25 = ChatEntry(False, "{b}bacon8r_6 - 7:24{/b}\nThe final countdown", 4, "#ffffff")
 default vig4_sc5_1_comment26 = ChatEntry(False, "{b}pickledDragons - 7:24{/b}\nHell yeah Cap, get me hype!", 4, "#ffffff")
 default vig4_sc5_1_comment27 = ChatEntry(False, "{b}J4MIR0QU4I - 7:24{/b}\nI'm getting goosebumps", 4, "#ffffff")
 default vig4_sc5_1_comment28 = ChatEntry(False, "{b}Coriolis - 7:24{/b}\nLet's bring this to a close Cap!", 4, "#ffffff", "vig4_sc5_csClimax")
@@ -609,11 +614,24 @@ default vig4_sc5_2_comment2 = ChatEntry(False, "{b}xXpearlXx - 7:25{/b}\nWeren't
 default vig4_sc5_2_comment3 = ChatEntry(False, "{b}kitcat - 7:25{/b}\nBefore I knew this was an option, ya. Now I'm team Amoze!", 4, "#ffffff")
 default vig4_sc5_2_comment4 = ChatEntry(False, "{b}Coriolis - 7:25{/b}\nI always forget cause of the whole \"trying to kill us\" thing - but she's so cool", 4, "#ffffff")
 default vig4_sc5_2_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:25{/b}\nCome on ladies, same team, focus up!", 4, "#ffffff")
-default vig4_sc5_2_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 7:25{/b}\nKeep her at a distance, smart", 4, "#ffffff")
-default vig4_sc5_2_comment7 = ChatEntry(False, "{b}kitcat - 7:25{/b}\nI love their back and forth", 4, "#ffffff")
+default vig4_sc5_2_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 7:26{/b}\nKeep her at a distance, smart", 4, "#ffffff")
+default vig4_sc5_2_comment7 = ChatEntry(False, "{b}kitcat - 7:26{/b}\nI love their back and forth", 4, "#ffffff")
 default vig4_sc5_2_comment8 = ChatEntry(False, "{b}AFKAngel - 7:26{/b}\nNow that's a crew right there", 4, "#ffffff")
-default vig4_sc5_2_comment9 = ChatEntry(False, "{b}llamabama22 - 7:26{/b}\nCome on, Ama, get on board", 4, "#ffffff")
+default vig4_sc5_2_comment9 = ChatEntry(False, "{b}pickledDragons - 7:26{/b}\nCome on, Ama, get on board", 4, "#ffffff")
 default vig4_sc5_2_comment10 = ChatEntry(False, "{b}turb0g00se - 7:26{/b}\nRiding to war with the Deadeye!", 4, "#ffffff")
+
+###Comments for if you go Ama with low viewership
+default vig4_sc5_2_comment11 = ChatEntry(False, "{b}bacon8r_6 - 7:25{/b}\nPut 'em up! This is a Deadeye raid!", 4, "#ffffff")
+default vig4_sc5_2_comment12 = ChatEntry(False, "{b}llamabama22 - 7:25{/b}\nYoooo so glad I could catch the stream before the end!", 4, "#ffffff")
+default vig4_sc5_2_comment13 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:25{/b}\nomg I heard y'all are doing the secret Ama route?? Hype!", 4, "#ffffff")
+default vig4_sc5_2_comment14 = ChatEntry(False, "{b}jerrybean784 - 7:25{/b}\nAma route here??", 4, "#ffffff")
+default vig4_sc5_2_comment15 = ChatEntry(False, "{b}marxky8 - 7:25{/b}\nWhat's up, Cap!", 4, "#ffffff")
+default vig4_sc5_2_comment16 = ChatEntry(False, "{b}xXpearlXx - 7:25{/b}\nI got a bone to pick with the Dragonflies, want to see how this ends!", 4, "#ffffff")
+default vig4_sc5_2_comment17 = ChatEntry(False, "{b}turb0g00se - 7:25{/b}\nPotato! I thought you had class?", 4, "#ffffff")
+default vig4_sc5_2_comment18 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:25{/b}\nI do! I'm in lecture rn haha streaming in on my phone", 4, "#ffffff")
+default vig4_sc5_2_comment19 = ChatEntry(False, "{b}Coriolis - 7:25{/b}\nWelcome!", 4, "#ffffff")
+default vig4_sc5_2_comment20 = ChatEntry(False, "{b}treb.ell - 7:25{/b}\nWow that's a lot of people!", 4, "#ffffff")
+default vig4_sc5_2_comment21 = ChatEntry(False, "{b}_lostinmetr0 - 7:25{/b}\nHowdy y'all! You're just in time for the super secret Ama ending to Oakley 2!", 4, "#ffffff")
 
 #######DEFEND POLARIS ROUTE#########
 
@@ -684,7 +702,7 @@ default vig4_sc6_defend_2_comment13 = ChatEntry(False, "{b}pickledDragons - 7:40
 default vig4_sc6_defend_2_comment14 = ChatEntry(False, "{b}Coriolis - 7:40{/b}\nWe need to hold for the town though!", 4, "#ffffff")
 default vig4_sc6_defend_2_comment15 = ChatEntry(False, "{b}J4MIR0QU4I - 7:40{/b}\nSomeone's gotta be the help!", 4, "#ffffff")
 default vig4_sc6_defend_2_comment16 = ChatEntry(False, "{b}bacon8r_6 - 7:40{/b}\nI mean...we don't {i}have{/i} too, right?", 4, "#ffffff")
-default vig4_sc6_defend_2_comment17 = ChatEntry(False, "{b}bacon8r_6 - 7:41{/b}\nOh no we really don't to", 4, "#ffffff")
+default vig4_sc6_defend_2_comment17 = ChatEntry(False, "{b}bacon8r_6 - 7:41{/b}\nOh no we really don't have to", 4, "#ffffff")
 default vig4_sc6_defend_2_comment18 = ChatEntry(False, "{b}xXpearlXx - 7:41{/b}\nGrudge holding firm", 4, "#ffffff")
 default vig4_sc6_defend_2_comment19 = ChatEntry(False, "{b}Coriolis - 7:41{/b}\nWe can't just abandon them", 4, "#ffffff")
 default vig4_sc6_defend_2_comment20 = ChatEntry(False, "{b}pickledDragons - 7:41{/b}\nThey put themselves in this situation", 4, "#ffffff")
@@ -733,7 +751,7 @@ default vig4_sc6_defend_4_comment6 = ChatEntry(False, "{b}marxky8 - 7:46{/b}\nVi
 
 ###Comments vig4_sc6_defend_5 - Moze enters tower
 default vig4_sc6_defend_5_comment1 = ChatEntry(False, "{b}R4dioRobbie - 7:47{/b}\nShit vega, it was your plan", 4, "#ffffff")
-default vig4_sc6_defend_5_comment2 = ChatEntry(False, "{b}xXpearlXx - 7:47{/b}\nSurvive??", 4, "#ffffff")
+default vig4_sc6_defend_5_comment2 = ChatEntry(False, "{b}xXpearlXx - 7:47{/b}\nNot die??", 4, "#ffffff")
 default vig4_sc6_defend_5_comment3 = ChatEntry(False, "{b}AFKAngel - 7:47{/b}\nSo many goons", 4, "#ffffff")
 default vig4_sc6_defend_5_comment4 = ChatEntry(False, "{b}Coriolis - 7:47{/b}\nLiterally an endless wave", 4, "#ffffff")
 default vig4_sc6_defend_5_comment5 = ChatEntry(False, "{b}turb0g00se - 7:47{/b}\nNo way we die here, right?", 4, "#ffffff")
@@ -890,9 +908,9 @@ default vig4_sc6_attack_2_ama_comment20 = ChatEntry(False, "{b}marxky8 - 7:36{/b
 ###Comments vig4_sc6_attack_3_ama - Tank assaults plaza
 default vig4_sc6_attack_3_ama_comment1 = ChatEntry(False, "{b}bacon8r_6 - 7:37{/b}\nI done been ready!", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment2 = ChatEntry(False, "{b}xXpearlXx - 7:37{/b}\nIs this our first big, like proper battle?", 4, "#ffffff")
-default vig4_sc6_attack_3_ama_comment3 = ChatEntry(False, "{b}llamabama22 - 7:38{/b}\nWell this is awkward", 4, "#ffffff")
+default vig4_sc6_attack_3_ama_comment3 = ChatEntry(False, "{b}R4dioRobbie - 7:38{/b}\nWell this is awkward", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment4 = ChatEntry(False, "{b}Coriolis - 7:38{/b}\nThey're gonna be shocked when we fire at them", 4, "#ffffff")
-default vig4_sc6_attack_3_ama_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:38{/b}\nScrew it, just hit both sides", 4, "#ffffff")
+default vig4_sc6_attack_3_ama_comment5 = ChatEntry(False, "{b}turb0g00se - 7:38{/b}\nScrew it, just hit both sides", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment6 = ChatEntry(False, "{b}pickledDragons - 7:38{/b}\nTactically that feels like a bad call, then we lose the element of surprise", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment7 = ChatEntry(False, "{b}treb.ell - 7:38{/b}\nTrue, but going to steal MAC is one thing. Wholesale slaughter of these people? That step is...a lot lol", 4, "#ffffff")
 ##COMMENTS FOR PRETENDING TO BE WITH BIGCORP###
@@ -937,7 +955,7 @@ default vig4_sc6_attack_3_ama_comment42 = ChatEntry(False, "{b}Coriolis - 7:43{/
 ##this sequence uses a number of comments from the defense route as well
 default vig4_sc6_attack_3_ama_comment43 = ChatEntry(False, "{b}Coriolis - 7:45{/b}\nJenn best girl, idc what anyone else says", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment44 = ChatEntry(False, "{b}swayy0scar - 7:45{/b}\nWelp...guess Polaris is screwed", 4, "#ffffff")
-default vig4_sc6_attack_3_ama_comment45 = ChatEntry(False, "{b}jerrybean - 7:45{/b}\nDoes it go this way in the \"defense\" route?", 4, "#ffffff")
+default vig4_sc6_attack_3_ama_comment45 = ChatEntry(False, "{b}J4MIR0QU4I - 7:45{/b}\nDoes it go this way in the \"defense\" route?", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment46 = ChatEntry(False, "{b}swayy0scar - 7:46{/b}\nKinda, but it feels very different. Hard to explain", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment47 = ChatEntry(False, "{b}_lostinmetr0 - 7:46{/b}\nMan we've come so far!", 4, "#ffffff")
 default vig4_sc6_attack_3_ama_comment48 = ChatEntry(False, "{b}treb.ell - 7:46{/b}\nikr this really feels like we're at the end", 4, "#ffffff")
@@ -972,7 +990,7 @@ default vig4_sc7_1_attack_ama_comment14 = ChatEntry(False, "{b}bacon8r_6 - 7:56{
 ###Comments vig4_sc6_attack_1_assault - steal tank and save hostages
 default vig4_sc6_attack_1_assault_comment1 = ChatEntry(False, "{b}xXpearlXx - 7:32{/b}\nAfter all that to miss one guy?", 4, "#ffffff")
 default vig4_sc6_attack_1_assault_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 7:32{/b}\nDeadeye right?", 4, "#ffffff")
-default vig4_sc6_attack_1_assault_comment3 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:32{/b}\nOh that's for sure Ama", 4, "#ffffff")
+default vig4_sc6_attack_1_assault_comment3 = ChatEntry(False, "{b}kitcat - 7:32{/b}\nOh that's for sure Ama", 4, "#ffffff")
 default vig4_sc6_attack_1_assault_comment4 = ChatEntry(False, "{b}R4dioRobbie - 7:34{/b}\nYeah buddy it's our tank now. You don't want to push things too far", 4, "#ffffff")
 default vig4_sc6_attack_1_assault_comment5 = ChatEntry(False, "{b}llamabama22 - 7:34{/b}\nEh, they'll figure it out eventually", 4, "#ffffff")
 
@@ -997,7 +1015,7 @@ default vig4_sc7_2_comment5 = ChatEntry(False, "{b}llamabama22 - 7:58{/b}\nI've 
 default vig4_sc7_2_comment6 = ChatEntry(False, "{b}pickledDragons - 7:59{/b}\nOh yeah, this is feeling climactic", 4, "#ffffff")
 default vig4_sc7_2_comment7 = ChatEntry(False, "{b}xXpearlXx - 7:59{/b}\nOh are we gonna have to choose?", 4, "#ffffff")
 default vig4_sc7_2_comment8 = ChatEntry(False, "{b}bacon8r_6 - 7:59{/b}\nOmg Ama all the way", 4, "#ffffff")
-default vig4_sc7_2_comment9 = ChatEntry(False, "{b}Coriolis - 7:59{/b}\nShe's tried to kill us so many times. Coil's not perfect but he isn't evil", 4, "#ffffff")
+default vig4_sc7_2_comment9 = ChatEntry(False, "{b}Coriolis - 7:59{/b}\nAma's tried to kill us so many times. Coil's not perfect but he isn't evil", 4, "#ffffff")
 default vig4_sc7_2_comment10 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:00{/b}\nHe's monologuing like he's evil", 4, "#ffffff")
 default vig4_sc7_2_comment11 = ChatEntry(False, "{b}J4MIR0QU4I - 8:00{/b}\nBeing a drama queen doesn't make him a bad guy", 4, "#ffffff")
 default vig4_sc7_2_comment12 = ChatEntry(False, "{b}turb0g00se - 8:00{/b}\nNo but taking MAC is pretty mean", 4, "#ffffff")
@@ -1167,7 +1185,7 @@ default vig4_sc7_3_coil_comment55 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\n
 default vig4_sc7_3_coil_comment56 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\nFinally we can take a break!", 4, "#ffffff")
 default vig4_sc7_3_coil_comment57 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nDon't worry MAC, we're not going anywhere!", 4, "#ffffff")
 default vig4_sc7_3_coil_comment58 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nWait that's so heartwarming", 4, "#ffffff")
-default vig4_sc7_3_coil_comment59 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:12{/b}\nWhat makes you say that?", 4, "#ffffff")
+default vig4_sc7_3_coil_comment59 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nWhat makes you say that?", 4, "#ffffff")
 default vig4_sc7_3_coil_comment60 = ChatEntry(False, "{b}treb.ell - 8:21{/b}\nCause he knows this will be good for Moze. He's taking care of HER now", 4, "#ffffff")
 default vig4_sc7_3_coil_comment61 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nexactly!", 4, "#ffffff")
 
@@ -1185,7 +1203,7 @@ default vig4_sc7_epilogue_comment9 = ChatEntry(False, "{b}Coriolis - 8:13{/b}\nT
 default vig4_sc7_epilogue_comment10 = ChatEntry(False, "{b}kitcat - 8:13{/b}\nThey make me happy <3", 4, "#ffffff")
 default vig4_sc7_epilogue_comment11 = ChatEntry(False, "{b}turb0g00se - 8:14{/b}\nEven I'm tired lol", 4, "#ffffff")
 default vig4_sc7_epilogue_comment12 = ChatEntry(False, "{b}xXpearlXx - 8:14{/b}\nMoze has been THROUGH it", 4, "#ffffff")
-default vig4_sc7_epilogue_comment13 = ChatEntry(False, "{b}bacon8r_6 - 8:14{/b}\nNo more PTSD maybe??", 4, "#ffffff")
+default vig4_sc7_epilogue_comment13 = ChatEntry(False, "{b}J4MIR0QU4I - 8:14{/b}\nNo more PTSD maybe??", 4, "#ffffff")
 default vig4_sc7_epilogue_comment14 = ChatEntry(False, "{b}swayy0scar - 8:14{/b}\nOh it's not even close lol", 4, "#ffffff")
 default vig4_sc7_epilogue_comment15 = ChatEntry(False, "{b}llamabama22 - 8:14{/b}\nMAC's here!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment16 = ChatEntry(False, "{b}_lostinmetr0 - 8:14{/b}\nShe was a hunk of scrap, but she was OUR hunk of scrap", 4, "#ffffff")
@@ -1196,8 +1214,8 @@ default vig4_sc7_epilogue_comment20 = ChatEntry(False, "{b}turb0g00se - 8:15{/b}
 default vig4_sc7_epilogue_comment21 = ChatEntry(False, "{b}marxky8 - 8:15{/b}\nHe's a good kid", 4, "#ffffff")
 default vig4_sc7_epilogue_comment22 = ChatEntry(False, "{b}kitcat - 8:15{/b}\nYou can't tattoo a baby!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment23 = ChatEntry(False, "{b}Coriolis - 8:16{/b}\nI'd do the same", 4, "#ffffff")
-default vig4_sc7_epilogue_comment24 = ChatEntry(False, "{b}jerrybean784 - 8:16{/b}\nMemorial for the crew's MVP", 4, "#ffffff")
-default vig4_sc7_epilogue_comment25 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:16{/b}\nFor the family!", 4, "#ffffff")
+default vig4_sc7_epilogue_comment24 = ChatEntry(False, "{b}AFKAngel - 8:16{/b}\nMemorial for the crew's MVP", 4, "#ffffff")
+default vig4_sc7_epilogue_comment25 = ChatEntry(False, "{b}jerrybean784 - 8:16{/b}\nFor the family!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment26 = ChatEntry(False, "{b}xXpearlXx - 8:16{/b}\nExcuse me!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment27 = ChatEntry(False, "{b}treb.ell - 8:16{/b}\nLOVE!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment28 = ChatEntry(False, "{b}kitcat - 8:16{/b}\nas;ldfkjasld;kjfAAAHHHH!", 4, "#ffffff")
@@ -1214,14 +1232,14 @@ default vig4_sc7_epilogue_comment37 = ChatEntry(False, "{b}treb.ell - 8:18{/b}\n
 ###Comments vig4_epilogue_ama - Epilogue (Ama allied)
 default vig4_sc7_epilogue_ama_comment1 = ChatEntry(False, "{b}Coriolis - 8:14{/b}\nYeah...that was rough", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment2 = ChatEntry(False, "{b}pickledDragons - 8:14{/b}\nIt's a hard way for that character arc to go, I'll admit it", 4, "#ffffff")
-default vig4_sc7_epilogue_ama_comment3 = ChatEntry(False, "{b}Coriolis - 8:14{/b}\nShield Papa was cool...just a bit too cold", 4, "#ffffff")
+default vig4_sc7_epilogue_ama_comment3 = ChatEntry(False, "{b}kitcat - 8:14{/b}\nShield Papa was cool. Just a bit too cold", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment4 = ChatEntry(False, "{b}treb.ell - 8:14{/b}\nIf I've learned anything about these games, it's that the devs are very good at making you regret any decision you make lol", 4, "#ffffff")
-default vig4_sc7_epilogue_ama_comment5 = ChatEntry(False, "{b}xXpearlXx - 8:14{/b}\nIs this weird for anyone else considering MAC just murdered Vega in cold blood??", 4, "#ffffff")
+default vig4_sc7_epilogue_ama_comment5 = ChatEntry(False, "{b}J4MIR0QU4I - 8:14{/b}\nIs this weird for anyone else considering MAC just murdered Vega in cold blood??", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment6 = ChatEntry(False, "{b}AFKAngel - 8:14{/b}\nYeah, maybe just a bit haha", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment7 = ChatEntry(False, "{b}R4dioRobbie - 8:15{/b}\nAfter what he did to Vega, I don't think he's baby anymore", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment8 = ChatEntry(False, "{b}R4dioRobbie - 8:15{/b}\nAfter that conversation with Vega, I don't think he's baby anymore", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment9 = ChatEntry(False, "{b}xXpearlXx - 8:16{/b}\nFeeling a bit nostalgic, Cap?", 4, "#ffffff")
-default vig4_sc7_epilogue_ama_comment10 = ChatEntry(False, "{b}jerrybean784 - 8:16{/b}\nHe has been asking for it for a while now", 4, "#ffffff")
+default vig4_sc7_epilogue_ama_comment10 = ChatEntry(False, "{b}turb0g00se - 8:16{/b}\nHe has been asking for it for a while now", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment11 = ChatEntry(False, "{b}R4dioRobbie - 8:16{/b}\nIt's important to remember where you come from", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment12 = ChatEntry(False, "{b}llamabama22 - 8:17{/b}\nLooks like Ama decided to stick around", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment13 = ChatEntry(False, "{b}llamabama22 - 8:17{/b}\nWe were just autopiloting??", 4, "#ffffff")
@@ -1230,11 +1248,11 @@ default vig4_sc7_epilogue_ama_comment15 = ChatEntry(False, "{b}turb0g00se - 8:17
 default vig4_sc7_epilogue_ama_comment16 = ChatEntry(False, "{b}bacon8r_6 - 8:17{/b}\nSomething's out there", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment17 = ChatEntry(False, "{b}marxky8 - 8:17{/b}\nWhat the...", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment18 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:17{/b}\nHoly", 4, "#ffffff")
-default vig4_sc7_epilogue_ama_comment19 = ChatEntry(False, "{b}xXpearlXx - 8:17{/b}\nDamn that's biiiig!", 4, "#ffffff")
+default vig4_sc7_epilogue_ama_comment19 = ChatEntry(False, "{b}kitcat - 8:17{/b}\nthat's biiiig!", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment20 = ChatEntry(False, "{b}turb0g00se - 8:17{/b}\nNope, time to get outta dodge!?", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment21 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:17{/b}\nWait is the game not over?", 4, "#ffffff")
 default vig4_sc7_epilogue_ama_comment22 = ChatEntry(False, "{b}R4dioRobbie - 8:17{/b}\nTo the guns!", 4, "#ffffff")
-default vig4_sc7_epilogue_ama_comment23 = ChatEntry(False, "{b}llamabama22 - 8:17{/b}\nI'll say it: hot", 4, "#ffffff")
+default vig4_sc7_epilogue_ama_comment23 = ChatEntry(False, "{b}AFKAngel - 8:17{/b}\nI'll say it: hot", 4, "#ffffff")
 
 ###Comments vig4_epilogue_coil Epilogue (Coil allied)
 default vig4_sc7_epilogue_coil_comment1 = ChatEntry(False, "{b}pickledDragons - 8:14{/b}\nI'm sad too", 4, "#ffffff")
@@ -1254,7 +1272,7 @@ default vig4_sc7_epilogue_coil_comment14 = ChatEntry(False, "{b}turb0g00se - 8:1
 default vig4_sc7_epilogue_coil_comment15 = ChatEntry(False, "{b}bacon8r_6 - 8:17{/b}\nSomething's out there", 4, "#ffffff")
 default vig4_sc7_epilogue_coil_comment16 = ChatEntry(False, "{b}marxky8 - 8:17{/b}\nWhat the...", 4, "#ffffff")
 default vig4_sc7_epilogue_coil_comment17 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:17{/b}\nHoly", 4, "#ffffff")
-default vig4_sc7_epilogue_coil_comment18 = ChatEntry(False, "{b}xXpearlXx - 8:17{/b}\nDamn that's biiiig!", 4, "#ffffff")
+default vig4_sc7_epilogue_coil_comment18 = ChatEntry(False, "{b}R4dioRobbie - 8:17{/b}\nDamn that's biiiig!", 4, "#ffffff")
 default vig4_sc7_epilogue_coil_comment19 = ChatEntry(False, "{b}turb0g00se - 8:17{/b}\nAnd these are the \"good\" guys??", 4, "#ffffff")
 
 ###Concluding Remarks - underwhelmed###
@@ -1269,7 +1287,7 @@ default vig4_sc7_epilogue_comment44 = ChatEntry(False, "{b}marxky8 - 8:19{/b}\nI
 default vig4_sc7_epilogue_comment45 = ChatEntry(False, "{b}llamabama22 - 8:19{/b}\nYeah, just putting your moral ethics out there for everyone to judge haha", 4, "#ffffff")
 default vig4_sc7_epilogue_comment46 = ChatEntry(False, "{b}AFKAngel - 8:19{/b}\nWe loved this game but we also loved you!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment47 = ChatEntry(False, "{b}R4dioRobbie - 8:19{/b}\nCouldn't agree more. Oakley 1 seemed really cool but this felt like the whole package to me", 4, "#ffffff")
-default vig4_sc7_epilogue_comment48 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:19{/b}\nThese games aren't usually that appealing to me, but this was super fun to watch!", 4, "#ffffff")
+default vig4_sc7_epilogue_comment48 = ChatEntry(False, "{b}turb0g00se - 8:19{/b}\nThese games aren't usually that appealing to me, but this was super fun to watch!", 4, "#ffffff")
 default vig4_sc7_epilogue_comment49 = ChatEntry(False, "{b}jerrybean784 - 8:19{/b}\nHaven't played the first game so can't really comment too much on that front", 4, "#ffffff")
 ###Concluding Remarks - we did it together###
 default vig4_sc7_epilogue_comment50 = ChatEntry(False, "{b}AFKAngel - 8:19{/b}\nomg stop we were just a long for the ride!", 4, "#ffffff")
@@ -1309,8 +1327,8 @@ default vig4_sc2_react_comment2 = ChatEntry(False, "{b}llamabama22 - 6:18{/b}\nt
 default vig4_sc2_react_comment3 = ChatEntry(False, "{b}turb0g00se - 6:18{/b}\nwooo team chaos!", 4, "#ffffff")
 default vig4_sc2_react_comment4 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:18{/b}\ndef the wrong call.", 4, "#ffffff")
 
-default vig4_sc2_react_comment5 = ChatEntry(False, "{b}marxky8 - 6:22{/b}\nyeah! super cool.", 4, "#ffffff")
-default vig4_sc2_react_comment6 = ChatEntry(False, "{b}marxky8 - 6:22{/b}\nyeah i mean its like the main feature.", 4, "#ffffff")
+default vig4_sc2_react_comment5 = ChatEntry(False, "{b}AFKAngel - 6:22{/b}\nyeah! super cool.", 4, "#ffffff")
+default vig4_sc2_react_comment6 = ChatEntry(False, "{b}AFKAngel - 6:22{/b}\nyeah i mean its like the main feature.", 4, "#ffffff")
 default vig4_sc2_react_comment7 = ChatEntry(False, "{b}Coriolis - 6:22{/b}\nAwesome!", 4, "#ffffff")
 default vig4_sc2_react_comment8 = ChatEntry(False, "{b}Coriolis - 6:22{/b}\nOh no!", 4, "#ffffff")
 
@@ -1324,12 +1342,12 @@ default vig4_sc2_react_comment14 = ChatEntry(False, "{b}pickledDragons - 6:32{/b
 default vig4_sc2_react_comment15 = ChatEntry(False, "{b}jerrybean784 - 6:32{/b}\nMAAAAC", 4, "#ffffff")
 default vig4_sc2_react_comment16 = ChatEntry(False, "{b}kitcat - 6:32{/b}\nMAC! MAC! MAC!", 4, "#ffffff")
 default vig4_sc2_react_comment17 = ChatEntry(False, "{b}bacon8r_6 - 6:32{/b}\nMAC!", 4, "#ffffff")
-default vig4_sc2_react_comment18 = ChatEntry(False, "{b}xXpearlXx - 6:32{/b}\nMAC WITH THE SAVE!", 4, "#ffffff")
+default vig4_sc2_react_comment18 = ChatEntry(False, "{b}AFKAngel - 6:32{/b}\nMAC WITH THE SAVE!", 4, "#ffffff")
 default vig4_sc2_react_comment19 = ChatEntry(False, "{b}llamabama22 - 6:32{/b}\nMAC Crushin it!", 4, "#ffffff")
 default vig4_sc2_react_comment20 = ChatEntry(False, "{b}bacon8r_6 - 6:32{/b}\nbaby outlaw!", 4, "#ffffff")
 
 default vig4_sc2_react_comment21 = ChatEntry(False, "{b}jerrybean784 - 6:38{/b}\none month never felt so long", 4, "#ffffff")
-default vig4_sc2_react_comment22 = ChatEntry(False, "{b}jerrybean784 - 6:38{/b}\nez journey lol", 4, "#ffffff")
+default vig4_sc2_react_comment22 = ChatEntry(False, "{b}R4dioRobbie - 6:38{/b}\nez journey lol", 4, "#ffffff")
 
 default vig4_sc2_react_comment23 = ChatEntry(False, "{b}Coriolis - 6:38{/b}\nLove this worldbuilding!", 4, "#ffffff")
 default vig4_sc2_react_comment24 = ChatEntry(False, "{b}xXpearlXx - 6:38{/b}\ncant side with the baddies!", 4, "#ffffff")
@@ -1347,7 +1365,7 @@ default vig4_sc3jenn_react_comment1 = ChatEntry(False, "{b}llamabama22 - 6:54{/b
 default vig4_sc3jenn_react_comment2 = ChatEntry(False, "{b}turb0g00se - 6:54{/b}\nclose but no cigar", 4, "#ffffff")
 default vig4_sc3jenn_react_comment3 = ChatEntry(False, "{b}xXpearlXx - 6:54{/b}\nbest ship!!", 4, "#ffffff")
 
-default vig4_sc3jenn_react_comment4 = ChatEntry(False, "{b}jerrybean784 - 6:54{/b}\nMoze is takin over!", 4, "#ffffff")
+default vig4_sc3jenn_react_comment4 = ChatEntry(False, "{b}jerrybean784 - 6:54{/b}\nMoze is taking over!", 4, "#ffffff")
 default vig4_sc3jenn_react_comment5 = ChatEntry(False, "{b}J4MIR0QU4I - 6:54{/b}\nclose but no cigar!", 4, "#ffffff")
 default vig4_sc3jenn_react_comment6 = ChatEntry(False, "{b}llamabama22 - 6:54{/b}\nbest ship!!", 4, "#ffffff")
 
@@ -1407,7 +1425,7 @@ default vig4_sc3macgoodbye_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 7:
 default vig4_sc3macgoodbye_react_comment9 = ChatEntry(False, "{b}J4MIR0QU4I - 7:07{/b}\nmoze is cold yo", 4, "#ffffff")
 default vig4_sc3macgoodbye_react_comment10 = ChatEntry(False, "{b}bacon8r_6 - 7:07{/b}\nyeah that seemed cruel", 4, "#ffffff")
 
-default vig4_sc3macgoodbye_react_comment11 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:07{/b}\neven if she is right this seems awful", 4, "#ffffff")
+default vig4_sc3macgoodbye_react_comment11 = ChatEntry(False, "{b}AFKAngel - 7:07{/b}\neven if she is right this seems awful", 4, "#ffffff")
 default vig4_sc3macgoodbye_react_comment12 = ChatEntry(False, "{b}xXpearlXx - 7:07{/b}\nhow could you not get attached!?", 4, "#ffffff")
 
 default vig4_sc4_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 7:13{/b}\nidk ama is kinda evil no?", 4, "#ffffff")
@@ -1448,6 +1466,15 @@ default vig4_sc5_react_comment7 = ChatEntry(False, "{b}R4dioRobbie - 7:25{/b}\nd
 default vig4_sc5_react_comment8 = ChatEntry(False, "{b}J4MIR0QU4I - 7:25{/b}\nyeah not so sure either", 4, "#ffffff")
 default vig4_sc5_react_comment9 = ChatEntry(False, "{b}jerrybean784 - 7:25{/b}\nmaybe we can betray her later", 4, "#ffffff")
 
+##Comments for viewershipBump
+default vig4_sc5_react_comment11 = ChatEntry(False, "{b}bacon8r_6 - 7:25{/b}\nI'm so excited!", 4, "#ffffff")
+default vig4_sc5_react_comment12 = ChatEntry(False, "{b}jerrybean784 - 7:25{/b}\nI can't believe this is a thing, so glad you're streaming it!", 4, "#ffffff")
+default vig4_sc5_react_comment13 = ChatEntry(False, "{b}xXpearlXx - 7:25{/b}\nHype!", 4, "#ffffff")
+default vig4_sc5_react_comment14 = ChatEntry(False, "{b}bacon8r_6 - 7:25{/b}\nTake 'em down!", 4, "#ffffff")
+default vig4_sc5_react_comment15 = ChatEntry(False, "{b}llamabama22 - 7:25{/b}\nI'm here for the Ama stuff, but honestly, I'm kinda team Coil. Let's go Shield Papa!", 4, "#ffffff")
+default vig4_sc5_react_comment16 = ChatEntry(False, "{b}llamabama22 - 7:25{/b}\nWe're here for you [streamer]!", 4, "#ffffff")
+
+
 default vig4_sc6_attack_react_comment1 = ChatEntry(False, "{b}xXpearlXx - 7:34{/b}\nSETTLED", 4, "#ffffff")
 default vig4_sc6_attack_react_comment2 = ChatEntry(False, "{b}turb0g00se - 7:34{/b}\nGet SQUASHED bug!", 4, "#ffffff")
 default vig4_sc6_attack_react_comment3 = ChatEntry(False, "{b}bacon8r_6 - 7:34{/b}\nNo one gets to hold the girls hostage and get away with it!", 4, "#ffffff")
@@ -1472,7 +1499,7 @@ default vig4_sc6_maccall_react_comment5 = ChatEntry(False, "{b}pickledDragons - 
 default vig4_sc6_attack_barricade_react_comment1 = ChatEntry(False, "{b}turb0g00se - 7:39{/b}\nThe crew are the only ones we care about!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:39{/b}\nyeah and the dragonflies suck haha", 4, "#ffffff")
 
-default vig4_sc6_attack_barricade_react_comment3 = ChatEntry(False, "{b}jerrybean784 - 7:39{/b}\nsquash em!!!", 4, "#ffffff")
+default vig4_sc6_attack_barricade_react_comment3 = ChatEntry(False, "{b}bacon8r_6 - 7:39{/b}\nsquash em!!!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 7:39{/b}\npayback time!", 4, "#ffffff")
 default vig4_sc6_attack_barricade_react_comment5 = ChatEntry(False, "{b}R4dioRobbie - 7:39{/b}\nget em girls!", 4, "#ffffff")
 
@@ -1552,7 +1579,7 @@ default vig4_epilogue_react_comment6 = ChatEntry(False, "{b}R4dioRobbie - 8:16{/
 default vig4_epilogue_react_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 8:16{/b}\nin like 2 years lol", 4, "#ffffff")
 default vig4_epilogue_react_comment8 = ChatEntry(False, "{b}_lostinmetr0 - 8:16{/b}\nHe's learnt so much.", 4, "#ffffff")
 
-default vig4_epilogue_react_comment9 = ChatEntry(False, "{b}AFKangel - 8:16{/b}\nHow can you not react to this adorable moment lol.", 4, "#ffffff")
+default vig4_epilogue_react_comment9 = ChatEntry(False, "{b}AFKangel - 8:16{/b}\nHow can you not react to this adorable moment lol", 4, "#ffffff")
 
 
 ###INTERACTABLE CHAT COMMENTS###
@@ -1578,7 +1605,7 @@ default vig4_sc3_interact_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:03{/
 default vig4_sc3_interact_comment6 = ChatEntry(False, "{b}Coriolis - 7:03{/b}\nIt's a complex situation. That's the point", 4, "#ffffff")
 default vig4_sc3_interact_comment7 = ChatEntry(False, "{b}pickledDragons - 7:03{/b}\nRespectfully, I don't think Coil knows what he's talking about", 4, "#ffffff")
 
-default vig4_sc4_interact_comment1 = ChatEntry(False, "{b}xXpearlXx - 7:14{/b}\nWell that for sure deletes the Ama romance option I would imagine", 4, "#ffffff")
+default vig4_sc4_interact_comment1 = ChatEntry(False, "{b}AFKAngel - 7:14{/b}\nWell that for sure deletes the Ama romance option I would imagine", 4, "#ffffff")
 default vig4_sc4_interact_comment2 = ChatEntry(False, "{b}bacon8r_6 - 7:14{/b}\nWhen you put it like that yeah, but like...fun!", 4, "#ffffff")
 default vig4_sc4_interact_comment3 = ChatEntry(False, "{b}marxky8 - 7:14{/b}\nNo one's saying the crew isn't tough", 4, "#ffffff")
 default vig4_sc4_interact_comment4 = ChatEntry(False, "{b}kitcat - 7:14{/b}\nI get it. Just feels like a missed opportunity is all", 4, "#ffffff")
@@ -1598,7 +1625,7 @@ default vig4_sc6_interact_comment5 = ChatEntry(False, "{b}treb.ell - 7:46{/b}\nY
 default vig4_sc6_interact_comment6 = ChatEntry(False, "{b}pickledDragons- 7:43{/b}\nExactly! You said it perfectly!", 4, "#ffffff")
 default vig4_sc6_interact_comment7 = ChatEntry(False, "{b}Coriolis- 7:43{/b}\nI see what you're saying. It's just hard for me to really root for a character if their moral stances keep changing", 4, "#ffffff")
 default vig4_sc6_interact_comment8 = ChatEntry(False, "{b}turb0g00se- 7:43{/b}\nYa chaos!", 4, "#ffffff")
-default vig4_sc6_interact_comment9 = ChatEntry(False, "{b}llamabama22- 7:43{/b}\nI really like this interpretation. I think you could apply it to Coil too", 4, "#ffffff")
+default vig4_sc6_interact_comment9 = ChatEntry(False, "{b}J4MIR0QU4I- 7:43{/b}\nI really like this interpretation. I think you could apply it to Coil too", 4, "#ffffff")
 default vig4_sc6_interact_comment10 = ChatEntry(False, "{b}marxky8- 7:43{/b}\nExactly! They're both the heroes of their own stories, and that blinds them to the pain they can cause others", 4, "#ffffff")
 default vig4_sc6_interact_comment11 = ChatEntry(False, "{b}Coriolis- 7:43{/b}\nYa, it's fun to explore these alterantives, but it doesn't feel like the intended experience", 4, "#ffffff")
 default vig4_sc6_interact_comment12 = ChatEntry(False, "{b}pickledDragons- 7:43{/b}\nidk that's what makes it interesting to me tho", 4, "#ffffff")

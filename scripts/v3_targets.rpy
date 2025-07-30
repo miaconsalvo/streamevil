@@ -978,6 +978,7 @@ label vig3_analytics_viewcount2():
             jump vig3_analytics_viewcount2
         "It's barely enough to make Affiliate." if viewershipLow == True and flinchViewershipAffiliate == False:
             $ flinchViewershipAffiliate = True
+            $ vig3_viewership = "Low"
             "The viewership is stable, but it's barely enough to make Affiliate."
             "There's basically no margin for losing anyone."
             "If the numbers drop for the last episode..."
@@ -985,6 +986,7 @@ label vig3_analytics_viewcount2():
             jump vig3_analytics_viewcount2
         "It looks like Affiliate's in the bag!" if viewershipHigh == True and flinchViewershipAffiliate == False:
             $ flinchViewershipAffiliate = True
+            $ vig3_viewership = "High"
             "The viewership is stable and looks comfortably above the Affiliate requirement."
             "You won't know for certain until after the last stream, but the calculations are looking good."
             "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, it looks like you're good."

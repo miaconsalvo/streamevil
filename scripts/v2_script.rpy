@@ -38,7 +38,7 @@ label vignette2Start():
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
-    "It's been four weeks since you last streamed Oakley 2."
+    "It's been one week since you last streamed Oakley 2."
     "Episode 2 just dropped so it's time to get back into it."
     scene streamview with dissolve
     show screen streamDetails

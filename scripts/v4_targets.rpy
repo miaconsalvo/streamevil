@@ -415,8 +415,9 @@ label vig4_sc3_pdCoilCommentary():
         "I don't like him.":
             player "I don't like him. I feel like he didn't even try to make a case for us."
             $ AddChatter(vig4_sc3_interact_comment4)
-            pause 0.5
-            $ AddChatter(vig4_sc3_interact_comment5)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc3_interact_comment5)
         "I think he's right.":
             player "The thing is, what he's saying isn't necessarily wrong."
             player "Maybe we haven't been the best parental figure for MAC."
@@ -467,11 +468,13 @@ label vig4_sc4_kcNoOffer():
             player "We can't just forgive her that fast. She has to earn it."
             $ AddChatter(vig4_sc4_interact_comment1)
             pause 0.5
-            $ AddChatter(vig4_sc4_interact_comment2)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc4_interact_comment2)
         "We don't need her.":
             player "We don't need her. Our crew is tough enough to handle what's coming up on our own."
-            $ AddChatter(vig4_sc4_interact_comment3)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc4_interact_comment3)
+                pause 0.5
             $ AddChatter(vig4_sc4_interact_comment4)
         "We can't trust her.":
             player "I mean, we just can't trust her."
@@ -540,8 +543,9 @@ label vig4_sc6_ripTank():
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment2)
             pause 0.5
-            $ AddChatter(vig4_sc6_interact_comment3)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_interact_comment3)
+                pause 0.5
             $ AddChatter(vig4_sc6_interact_comment4)
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment5)
@@ -582,7 +586,8 @@ label vig4_sc6_pdGoodPerson():
             player "I think it reflects the complexity of the galaxy and how hard it is for her to change. Especially considering her mentor."
             $ AddChatter(vig4_sc6_interact_comment9)
             pause 0.5
-            $ AddChatter(vig4_sc6_interact_comment10)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_interact_comment10)
         "It does feel inconsistent with the game's themes.":
             $ pdEngagement -= 1
             player "Yeah, I'll admit, a lot of Outlaw Moze's decisions do feel kind of inconsistent with the game's themes."
@@ -609,9 +614,10 @@ label vig4_sc6_reggieReaction():
             $ AddChatter(vig4_sc6_interact_comment14)
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment15)
-            $ AddChatter(vig4_sc6_interact_comment16)
-            pause 0.5
-            $ AddChatter(vig4_sc6_interact_comment17)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_interact_comment16)
+                pause 0.5
+                $ AddChatter(vig4_sc6_interact_comment17)
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment18)
         "Is Matticus going to want something?":
@@ -663,8 +669,9 @@ label vig4_pdEndFeeling():
             player "A bit relieved to be bringing this to a closed."
             $ AddChatter(vig4_epilogue_interact_comment1)
             pause 0.5
-            $ AddChatter(vig4_epilogue_interact_comment2)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_epilogue_interact_comment2)
+                pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Ecstatic.":
             player "Oh I feel amazing, ecstatic even!"
@@ -672,8 +679,9 @@ label vig4_pdEndFeeling():
             player "I think I'm gonna be riding this high for a while haha"
             $ AddChatter(vig4_epilogue_interact_comment4)
             pause 0.5
-            $ AddChatter(vig4_epilogue_interact_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_epilogue_interact_comment5)
+                pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Kind of sad.":
             player "In all honesty, I'm a bit sad that it's over."
@@ -681,8 +689,9 @@ label vig4_pdEndFeeling():
             player "I just wish there was more!"
             $ AddChatter(vig4_epilogue_interact_comment6)
             pause 0.5
-            $ AddChatter(vig4_epilogue_interact_comment7)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_epilogue_interact_comment7)
+                pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Not sure.":
             player "Honestly, I don't know what to feel."
@@ -690,8 +699,9 @@ label vig4_pdEndFeeling():
             player "It just feels surreal for this gaming to actually be coming to an end."
             $ AddChatter(vig4_epilogue_interact_comment1)
             pause 0.5
-            $ AddChatter(vig4_epilogue_interact_comment2)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_epilogue_interact_comment2)
+                pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
     $ macroChoice = False
     if macroChoice == False:
@@ -748,8 +758,9 @@ label vig4_sc2_trustvillager():
             $ reactImage = "stream ui/reactconfident.png"
             player "He seems to be friendly!"
             player "I say we trust him!"
-            $ AddChatter(vig4_sc2_react_comment2)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment2)
+                pause 0.5
         "This is going to go poorly.":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
@@ -757,8 +768,9 @@ label vig4_sc2_trustvillager():
             player "This might've been the wrong call."
             $ AddChatter(vig4_sc2_react_comment3)
             pause 0.5
-            $ AddChatter(vig4_sc2_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment4)
+                pause 0.5
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -819,22 +831,25 @@ label vig4_sc2_coilshield():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Woah!"
             player "This old man's got some cool tech!"
-            $ AddChatter(vig4_sc2_react_comment9)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment9)
+                pause 0.5
         "Of course he's got tricks.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
             player "I knew it wouldn't go over well."
             player "There's obviously more to this old guy than meets the eye."
-            $ AddChatter(vig4_sc2_react_comment10)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment10)
+                pause 0.5
         "Shoot him again!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Fire again Teresa!"
             player "That shield ain't limitless!"
-            $ AddChatter(vig4_sc2_react_comment11)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment11)
+                pause 0.5
             $ AddChatter(vig4_sc2_react_comment12)
             pause 0.5
     $ macroChoice = False
@@ -863,9 +878,11 @@ label vig4_sc2_macchant():
             pause 0.5
             $ AddChatter(vig4_sc2_react_comment14)
             pause 0.5
-            $ AddChatter(vig4_sc2_react_comment15)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment15)
             $ AddChatter(vig4_sc2_react_comment16)
-            $ AddChatter(vig4_sc2_react_comment17)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment17)
             pause 0.5
             $ AddChatter(vig4_sc2_react_comment18)
             pause 0.5
@@ -873,10 +890,12 @@ label vig4_sc2_macchant():
             $ reactImage = "stream ui/reactconfident.png"
             player "Badass!"
             player "MAC's a bonafide outlaw!"
-            $ AddChatter(vig4_sc2_react_comment19)
-            pause 0.5
-            $ AddChatter(vig4_sc2_react_comment20)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment19)
+                pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment20)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -898,8 +917,9 @@ label vig4_sc2_longjourney():
             $ reactImage = "stream ui/reactconversational.png"
             player "Yeah it took forever."
             player "And it was awful!"
-            $ AddChatter(vig4_sc2_react_comment21)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment21)
+                pause 0.5
         "You call that hard?":
             $ reactImage = "stream ui/reactconfident.png"
             player "Nope! Didn't notice at all."
@@ -932,8 +952,9 @@ label vig4_sc2_coilbackstory():
             $ reactImage = "stream ui/reactconfident.png"
             player "Damnit, Coil!"
             player "You should've known better than to trust BigCorp!"
-            $ AddChatter(vig4_sc2_react_comment24)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment24)
+                pause 0.5
             $ AddChatter(vig4_sc2_react_comment25)
             #add chatter
             pause 0.5
@@ -965,8 +986,9 @@ label vig4_sc2_macstays():
             player "No chance we're letting that happen chat!"
             $ AddChatter(vig4_sc2_react_comment27)
             pause 0.5
-            $ AddChatter(vig4_sc2_react_comment28)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment28)
+                pause 0.5
         "Makes sense.":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
@@ -984,10 +1006,12 @@ label vig4_sc2_macstays():
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "This is bogus chat!"
             player "We took all this risk and got him this far!"
-            $ AddChatter(vig4_sc2_react_comment31)
-            pause 0.5
-            $ AddChatter(vig4_sc2_react_comment32)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc2_react_comment31)
+                pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc2_react_comment32)
+                pause 0.5
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -1006,8 +1030,9 @@ label vig4_sc3_jenndatelose():
             $ reactImage = "stream ui/reactconfident.png"
             player "Should've known."
             player "She's the best pilot in the galaxy after all!"
-            $ AddChatter(vig4_sc3jenn_react_comment1)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3jenn_react_comment1)
+                pause 0.5
         "Damn that was close!":
             $ reactImage = "stream ui/reactunsure.png"
             player "Ahh, damn!"
@@ -1018,8 +1043,9 @@ label vig4_sc3_jenndatelose():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Jennica's so cute!"
             player "I don't even care that we lost, chat!"
-            $ AddChatter(vig4_sc3jenn_react_comment3)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3jenn_react_comment3)
+                pause 0.5
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -1038,8 +1064,9 @@ label vig4_sc3_jenndatewin():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Move over Jenn!"
             player "We're taking over pilot duties now!"
-            $ AddChatter(vig4_sc3jenn_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3jenn_react_comment4)
+                pause 0.5
         "That was close!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Whew!"
@@ -1051,8 +1078,9 @@ label vig4_sc3_jenndatewin():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Awww Jennica's so cute!"
             player "Best girl!"
-            $ AddChatter(vig4_sc3jenn_react_comment6)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3jenn_react_comment6)
+                pause 0.5
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -1071,8 +1099,9 @@ label vig4_sc3_jenndatetie():
             $ reactImage = "stream ui/reactconfident.png"
             player "Getting her to a tie is pretty good in my book."
             player "Wonder if she took it easy on us!"
-            $ AddChatter(vig4_sc3jenn_react_comment7)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3jenn_react_comment7)
+                pause 0.5
         "Fair enough.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Makes sense."
@@ -1083,8 +1112,9 @@ label vig4_sc3_jenndatetie():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Jennica's so cute!"
             player "I love how competitive she is!"
-            $ AddChatter(vig4_sc3jenn_react_comment9)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3jenn_react_comment9)
+                pause 0.5
     $ macroChoice = False
     if macroChoice == False:
         $ narrator = alt_narrator
@@ -1106,8 +1136,9 @@ label vig4_sc3_jenndatekiss():
             player "Best ship is finally canon, chat!!"
             $ AddChatter(vig4_sc3jenn_react_comment10)
             pause 0.5
-            $ AddChatter(vig4_sc3jenn_react_comment12)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3jenn_react_comment12)
+                pause 0.5
         "Awwwww.":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
@@ -1115,8 +1146,9 @@ label vig4_sc3_jenndatekiss():
             player "They're perfect for each other, chat!!"
             $ AddChatter(vig4_sc3jenn_react_comment11)
             pause 0.5
-            $ AddChatter(vig4_sc3jenn_react_comment12)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3jenn_react_comment12)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1147,8 +1179,9 @@ label vig4_sc3_jenndaterejection():
             $ AddChatter(vig4_sc3jenn_react_comment14)
             pause 0.5
             $ AddChatter(vig4_sc3jenn_react_comment15)
-            $ AddChatter(vig4_sc3jenn_react_comment16)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3jenn_react_comment16)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1170,8 +1203,9 @@ label vig4_sc3_teresadatewin():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Hell yeah!"
             player "Prismari's got nothing on our girl!"
-            $ AddChatter(vig4_sc3tere_react_comment1)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3tere_react_comment1)
+                pause 0.5
             $ AddChatter(vig4_sc3tere_react_comment2)
             pause 0.5
         "Game of chance after all.":
@@ -1203,8 +1237,9 @@ label vig4_sc3_teresadatelose():
             $ reactImage = "stream ui/reactconfident.png"
             player "Damn!"
             player "Prismari's got a heck of a poker face!"
-            $ AddChatter(vig4_sc3tere_react_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3tere_react_comment5)
+                pause 0.5
             $ AddChatter(vig4_sc3tere_react_comment6)
             pause 0.5
         "Game of chance after all.":
@@ -1278,7 +1313,8 @@ label vig4_sc3_teresadaterejection():
             player "F's in the chat for Moze."
             $ AddChatter(vig4_sc3jenn_react_comment14)
             $ AddChatter(vig4_sc3jenn_react_comment15)
-            $ AddChatter(vig4_sc3jenn_react_comment16)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3jenn_react_comment16)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1313,8 +1349,9 @@ label vig4_sc3_coil1():
             player "This is bullshit chat!"
             player "All this work to get MAC here!"
             player "No way we're letting this happen!"
-            $ AddChatter(vig4_sc3coil1_react_comment3)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3coil1_react_comment3)
+                pause 0.5
             $ AddChatter(vig4_sc3coil1_react_comment4)
             pause 0.5
             $ AddChatter(vig4_sc3coil1_react_comment5)
@@ -1351,18 +1388,21 @@ label vig4_sc3_coil2():
             player "Yeah no chance they were going to leave us alone."
             player "No trust with these guys chat."
             player "Brutal."
-            $ AddChatter(vig4_sc3coil2_react_comment1)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3coil2_react_comment1)
+                pause 0.5
             $ AddChatter(vig4_sc3coil2_react_comment2)
             pause 0.5
         "Dammit!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Crap! They got us."
             player "Should've known they wouldn't trust us."
-            $ AddChatter(vig4_sc3coil2_react_comment3)
-            pause 0.5
-            $ AddChatter(vig4_sc3coil2_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3coil2_react_comment3)
+                pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3coil2_react_comment4)
+                pause 0.5
         "Understandable.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Yeah I didn't think they'd let us try anything."
@@ -1370,8 +1410,9 @@ label vig4_sc3_coil2():
                 player "Even if we've been good."
             else: 
                 player "Like why would they?"
-            $ AddChatter(vig4_sc3coil2_react_comment5)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3coil2_react_comment5)
+                pause 0.5
             $ AddChatter(vig4_sc3coil2_react_comment6)
             pause 0.5
     $ macroChoice = False
@@ -1392,16 +1433,18 @@ label vig4_sc3_macgoodbyekind():
             $ reactImage = "stream ui/reactshocked.png"
             player "Chat, this is tragic."
             player "I'm getting choked up."
-            $ AddChatter(vig4_sc3macgoodbye_react_comment1)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3macgoodbye_react_comment1)
+                pause 0.5
             $ AddChatter(vig4_sc3macgoodbye_react_comment2)
             pause 0.5
         "You're on your own now MAC.":
             $ reactImage = "stream ui/reactconversational.png"
             player "I think this is the right decision."
             player "It's better for the galaxy, even if it's sad."
-            $ AddChatter(vig4_sc3macgoodbye_react_comment3)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3macgoodbye_react_comment3)
+                pause 0.5
             $ AddChatter(vig4_sc3macgoodbye_react_comment4)
             #add chatter
             pause 0.5
@@ -1431,8 +1474,9 @@ label vig4_sc3_macgoodbyerude():
             #player "After all we've been through!?"
             $ AddChatter(vig4_sc3macgoodbye_react_comment9)
             pause 0.5
-            $ AddChatter(vig4_sc3macgoodbye_react_comment10)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc3macgoodbye_react_comment10)
+                pause 0.5
         "She's not wrong.":
             $ kcEngagement -= 1
             $ reactImage = "stream ui/reactunsure.png"
@@ -1441,9 +1485,10 @@ label vig4_sc3_macgoodbyerude():
             player "No point in getting attached."
             $ AddChatter(vig4_sc3macgoodbye_react_comment11)
             pause 0.5
-            $ AddChatter(vig4_sc3macgoodbye_react_comment12)
-            #add chatter
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc3macgoodbye_react_comment12)
+                #add chatter
+                pause 0.5
         "Say nothing.":
             player "..."
             #add chatter
@@ -1543,6 +1588,7 @@ label vig4_sc4_amaofferaccept():
             player "Let's reunite the Snakehawks."
             player "And squash some Dragonflies!"
             $ AddChatter(vig4_sc4_react_comment8)
+            pause 0.5
             $ AddChatter(vig4_sc4_react_comment9)
             pause 0.5
         "Maybe this was too far.":
@@ -1550,7 +1596,9 @@ label vig4_sc4_amaofferaccept():
             player "I don't know about this chat."
             player "Maybe trusting Ama was the wrong move?"
             $ AddChatter(vig4_sc4_react_comment10)
-            $ AddChatter(vig4_sc4_react_comment11)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc4_react_comment11)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1571,8 +1619,9 @@ label vig4_sc4_amaofferrejectdefend():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Let's save the galaxy chat!"
             player "Polaris needs our help!"
-            $ AddChatter(vig4_sc4_react_comment12)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc4_react_comment12)
+                pause 0.5
             $ AddChatter(vig4_sc4_react_comment13)
             pause 0.5
         "Was this the right call?":
@@ -1603,8 +1652,9 @@ label vig4_sc4_amaofferrejectattack():
             player "Time to rescue MAC!"
             player "We're only loyal to our own here!"
             player "Screw the Dragonflies and screw Ama!"
-            $ AddChatter(vig4_sc4_react_comment12)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc4_react_comment12)
+                pause 0.5
             $ AddChatter(vig4_sc4_react_comment13)
             pause 0.5
         "Was this too far?":
@@ -1612,8 +1662,9 @@ label vig4_sc4_amaofferrejectattack():
             player "I'm not sure about this chat..."
             player "We're making a {i}lot{/i} of enemies here."
             $ AddChatter(vig4_sc4_react_comment14)
-            pause 0.5
-            $ AddChatter(vig4_sc4_react_comment15)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc4_react_comment15)
             #add chatter
             pause 0.5
     $ macroChoice = False
@@ -1668,8 +1719,9 @@ label vig4_sc5_oakleydestroyed():
             player "Noooo!"
             player "Chat our ship is destroyed!"
             $ AddChatter(vig4_sc5_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc5_react_comment2)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc5_react_comment2)
             pause 0.5
         "Fitting.":
             $ reactImage = "stream ui/reactconversational.png"
@@ -1706,8 +1758,9 @@ label vig4_sc5_amashowsup():
             player "Snakehawks reunion!"
             $ AddChatter(vig4_sc5_react_comment5)
             pause 0.5
-            $ AddChatter(vig4_sc5_react_comment6)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc5_react_comment6)
+                pause 0.5
             $ AddChatter(vig4_sc5_react_comment7)
             pause 0.5
         "Not sure about this still.":
@@ -1717,11 +1770,58 @@ label vig4_sc5_amashowsup():
             player "I wonder if we can change our mind later."
             $ AddChatter(vig4_sc5_react_comment8)
             pause 0.5
-            $ AddChatter(vig4_sc5_react_comment9)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc5_react_comment9)
+                pause 0.5
         "Say nothing.":
             player "..."
             #add chatter
+            pause 0.5
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig4_sc5_viewershipBump():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    menu:
+        "Wow, a bunch of people just joined the stream cause I chose to ally with Ama!"
+        "Welcome everyone!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Welcome everyone!"
+            player "Great to have y'all join for the end of this journey!"
+            player "Stoked to see what this Ama alliance has in store!"
+            if viewershipLow == True:
+                $ AddChatter(vig4_sc5_react_comment11)
+                pause 0.5
+            $ AddChatter(vig4_sc5_react_comment12)
+            pause 0.5
+            $ AddChatter(vig4_sc5_react_comment13)
+            pause 0.5
+        "Let's take these Dragonflies down!":
+            $ reactImage = "stream ui/reactconfident.png"
+            player "Hello new folks! And I see some familiar faces comibg back too!"
+            player "Y'all ready to take on these Dragonflies!?"
+            if viewershipLow == True:
+                $ AddChatter(vig4_sc5_react_comment14)
+                pause 0.5
+                $ AddChatter(vig4_sc5_react_comment15)
+                pause 0.5
+            $ AddChatter(vig4_sc5_react_comment13)
+            pause 0.5
+        "Wow...(fumble for words)":
+            $ reactImage = "stream ui/reactunsure.png"
+            player "Oh my go--, I mean wow that's--"
+            player "Holy crap y'all, that's a lot of viewers!"
+            player "Uhh, thanks for joining the stream! We're doing this secret Ama route which, honestly I don't even think I got on purpose haha"
+            if viewershipLow == True:
+                $ AddChatter(vig4_sc5_react_comment16)
+            $ AddChatter(vig4_sc5_react_comment13)
             pause 0.5
     $ macroChoice = False
     if macroChoice == False:
@@ -1744,20 +1844,24 @@ label vig4_sc6_attack_killdflies():
             player "Thats what you get for betraying us!"
             #player "Score settled."
             #$ vig4_scoresettled = True
-            $ AddChatter(vig4_sc6_attack_react_comment1)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_react_comment1)
+                pause 0.5
             $ AddChatter(vig4_sc6_attack_react_comment2)
-            $ AddChatter(vig4_sc6_attack_react_comment3)
+            if viewershipHigh == True or viewershipMed == True:
+                pause 0.5
+                $ AddChatter(vig4_sc6_attack_react_comment3)
             pause 0.5
         "Was that too far?":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn that might have been too much."
             player "They were just following orders a the end of the day."
-            $ AddChatter(vig4_sc6_attack_react_comment4)
-            pause 0.5
-            $ AddChatter(vig4_sc6_attack_react_comment5)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_attack_react_comment4)
+                pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_react_comment5)
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1781,10 +1885,12 @@ label vig4_sc6_attack_sparedflies():
             $ reactImage = "stream ui/reactconversational.png"
             player "Definitely the right thing to do."
             player "They were just following orders after all."
-            $ AddChatter(vig4_sc6_attack_react_comment6)
-            pause 0.5
-            $ AddChatter(vig4_sc6_attack_react_comment7)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_attack_react_comment6)
+                pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_attack_react_comment7)
+                pause 0.5
             $ AddChatter(vig4_sc6_attack_react_comment8)
             pause 0.5
         "Maybe we should've gotten our revenge":
@@ -1794,8 +1900,9 @@ label vig4_sc6_attack_sparedflies():
             player "I don't know though. They did betray us..."
             $ AddChatter(vig4_sc6_attack_react_comment9)
             pause 0.5
-            $ AddChatter(vig4_sc6_attack_react_comment10)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_react_comment10)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1818,10 +1925,11 @@ label vig4_sc6_both_maccall():
             player "Thank god MAC's ok chat!"
             player "If he was hurt it might've broken me hahaha."
             $ AddChatter(vig4_sc6_maccall_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc6_maccall_react_comment2)
-            pause 0.5
-            $ AddChatter(vig4_sc6_maccall_react_comment3)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc6_maccall_react_comment2)
+                pause 0.5
+                $ AddChatter(vig4_sc6_maccall_react_comment3)
             pause 0.5
         "Coil has MAC still.":
             $ reactImage = "stream ui/reactthinking.png"
@@ -1829,8 +1937,9 @@ label vig4_sc6_both_maccall():
             player "Good to know for sure."
             $ AddChatter(vig4_sc6_maccall_react_comment1)
             pause 0.5
-            $ AddChatter(vig4_sc6_maccall_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_maccall_react_comment4)
+                pause 0.5
             $ AddChatter(vig4_sc6_maccall_react_comment5)
             pause 0.5
         "Say nothing.":
@@ -1857,14 +1966,16 @@ label vig4_sc6_attack_barricadesurprise():
             player "We can't risk ourselves for some Dragonflies!"
             $ AddChatter(vig4_sc6_attack_barricade_react_comment1)
             pause 0.5
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment2)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment2)
+                pause 0.5
         "No mercy for Dragonflies!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Time to squash some bugs!"
             player "These Dragonflies had it coming!"
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment3)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment3)
+                pause 0.5
             $ AddChatter(vig4_sc6_attack_barricade_react_comment4)
             pause 0.5
             $ AddChatter(vig4_sc6_attack_barricade_react_comment5)
@@ -1907,8 +2018,9 @@ label vig4_sc6_attack_barricadeassault():
             $ reactImage = "stream ui/reactconversational.png"
             player "We're doing this to get MAC back."
             player "We don't need to make this a bloodbath if we don't have to."
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment9)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment9)
+                pause 0.5
             $ AddChatter(vig4_sc6_attack_barricade_react_comment10)
             pause 0.5
         "Say nothing.":
@@ -1936,8 +2048,9 @@ label vig4_sc6_attack_barricadechaos():
             player "Let the makers sort 'em out!"
             $ AddChatter(vig4_sc6_attack_barricade_react_comment11)
             pause 0.5
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment12)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment12)
+                pause 0.5
         "Chaos time!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
@@ -1945,10 +2058,12 @@ label vig4_sc6_attack_barricadechaos():
             player "Let's blow 'em all up!"
             $ AddChatter(vig4_sc6_attack_barricade_react_comment13)
             pause 0.5
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment14)
-            pause 0.5
-            $ AddChatter(vig4_sc6_attack_barricade_react_comment15)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment14)
+                pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_barricade_react_comment15)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1971,8 +2086,9 @@ label vig4_sc6_attack_finding_coil():
             player "Wow, Coil looks like he's been through it."
             player "Wonder if this'll be easy."
             $ AddChatter(vig4_sc6_attack_findingcoil_react_comment1)
-            pause 0.5
-            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment2)
+            if viewershipHigh == True or viewershipMed == True:
+                pause 0.5
+                $ AddChatter(vig4_sc6_attack_findingcoil_react_comment2)
             #$ AddChatter(vig4_sc3coil2_react_comment2)
             pause 0.5
         "Time to get even!":
@@ -1983,8 +2099,9 @@ label vig4_sc6_attack_finding_coil():
             pause 0.5
             $ AddChatter(vig4_sc6_attack_findingcoil_react_comment4)
             pause 0.5
-            $ AddChatter(vig4_sc6_attack_findingcoil_react_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_attack_findingcoil_react_comment5)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -2008,16 +2125,18 @@ label vig4_sc6_defend_findingvega():
             player "Guess that makes us big damn heroes!"
             $ AddChatter(vig4_sc6_defend_react_comment1)
             pause 0.5
-            $ AddChatter(vig4_sc6_defend_react_comment2)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_defend_react_comment2)
+                pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment3)
             pause 0.5
         "Glad she's ok!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "I'm happy Vega made it!"
             player "Now let's get to saving Polaris!"
-            $ AddChatter(vig4_sc6_defend_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_react_comment4)
+                pause 0.5
             $ AddChatter(vig4_sc6_defend_react_comment5)
             pause 0.5
         "Say nothing.":
@@ -2052,11 +2171,13 @@ label vig4_sc6_defend_finding_coil():
             player "Oh no!"
             player "Deadeye got here first!"
             #player "I knew this was too easy."
-            $ AddChatter(vig4_sc6_defend_react_comment9)
-            pause 0.5
-            $ AddChatter(vig4_sc6_defend_react_comment10)
-            #$ AddChatter(vig4_sc3coil2_react_comment4)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_react_comment9)
+                pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_defend_react_comment10)
+                #$ AddChatter(vig4_sc3coil2_react_comment4)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -2079,8 +2200,9 @@ label vig4_sc7_starshower():
             player "Wow, what crazy visuals!"
             player "This climax is epic chat!"
             #player "Great way to end the game."
-            $ AddChatter(vig4_sc7_react_comment1)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc7_react_comment1)
+                pause 0.5
             $ AddChatter(vig4_sc7_react_comment2)
             pause 0.5
             $ AddChatter(vig4_sc7_react_comment3)
@@ -2090,8 +2212,9 @@ label vig4_sc7_starshower():
             player "Damn this is a real hard decision!"
             player "Ama's kinda evil..."
             player "But Coil tried to take MAC from us!"
-            $ AddChatter(vig4_sc7_react_comment4)
-            pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc7_react_comment4)
+                pause 0.5
             $ AddChatter(vig4_sc7_react_comment5)
             pause 0.5
             $ AddChatter(vig4_sc7_react_comment6)
@@ -2109,8 +2232,9 @@ label vig4_sc7_starshower():
             $ AddChatter(vig4_sc7_react_comment5)
             pause 0.5
             $ AddChatter(vig4_sc7_react_comment6)
-            pause 0.5
-            $ AddChatter(vig4_sc7_react_comment9)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig4_sc7_react_comment9)
             if jennicaRomance == False and teresaRomance == False:
                 pause 0.5
                 $ AddChatter(vig4_sc7_react_comment10)
@@ -2145,8 +2269,9 @@ label vig4_sc7_killama():
             player "Rip."
             $ AddChatter(vig4_sc7_killama_react_comment4)
             pause 0.5
-            $ AddChatter(vig4_sc7_killama_react_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc7_killama_react_comment5)
+                pause 0.5
             $ AddChatter(vig4_sc7_killama_react_comment6)
             pause 0.5
         "Say nothing.":
@@ -2183,10 +2308,12 @@ label vig4_sc7_killcoil():
             player "RIP."
             $ AddChatter(vig4_sc7_killcoil_react_comment4)
             pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment5)
-            pause 0.5
-            $ AddChatter(vig4_sc7_killcoil_react_comment6)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc7_killcoil_react_comment5)
+                pause 0.5
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc7_killcoil_react_comment6)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -2336,8 +2463,9 @@ label vig4_epilogue_maclove():
             player "MAC's programmed for love!?"
             player "The implications of this are like mind boggling!"
             player "Super curious where they'll go with this in the next game!"
-            $ AddChatter(vig4_epilogue_react_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig4_epilogue_react_comment5)
+                pause 0.5
             $ AddChatter(vig4_epilogue_react_comment6)
             pause 0.5
             $ AddChatter(vig4_epilogue_react_comment7)

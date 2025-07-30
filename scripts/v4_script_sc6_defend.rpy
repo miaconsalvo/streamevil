@@ -7,6 +7,7 @@ label vig4_sc6_defend_1():
     "No danger on the roofs."
     "No enemies on the street."
     $ viewCount += 1
+    $ viewCheck7 = viewCount
     $ AddChatter(vig4_sc6_defend_1_comment1)
     mS "All clear."
     $ AddChatter(vig4_sc6_defend_1_comment2)
@@ -25,7 +26,8 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment4)
     "A low rumble gets closer, muddying the sound of several voices."
     "One breaks through, shouting."
-    $ AddChatter(vig4_sc6_defend_1_comment5)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_1_comment5)
     enforcer "Halt! Halt I said!"
     show bc_enforcer at stream_center with dissolve
     "I peek over the ruins."
@@ -45,7 +47,8 @@ label vig4_sc6_defend_1():
     pS "And with that tank--"
     enS "It might be checkmate."
     "We need to stop that tank. Or..."
-    $ AddChatter(vig4_sc6_defend_1_comment7)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_1_comment7)
     menu:
         "We need to stop that tank. Or..."
         "Steal the tank.":
@@ -90,7 +93,8 @@ label vig4_sc6_defend_1():
     "I exchange fire with the enforcers."
     "They have the numbers, but not the skill."
     "In a few seconds, I waste the three enforcers in front of me while Jennica and Terea pummel the tank crew into submission."
-    $ AddChatter(vig4_sc6_defend_1_comment13)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_1_comment13)
     #"I take out two of them easily, leaving the last one diving for cover."
     #"Jennica and Teresa are busy pummeling the tank crew on the ground."
     #"There's nowhere to run. No help coming for him. He can't escape."
@@ -106,7 +110,8 @@ label vig4_sc6_defend_1():
     enforcer "Freeze!"
     show bc_enforcer at stream_center with dissolve
     "An enforcer taps my back with his gun."
-    $ AddChatter(vig4_sc6_defend_1_comment14)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_1_comment14)
     enforcer "Tell your crew to stand down!"
     mS "Easy."
     enforcer "I'm giving the orders here!"
@@ -127,35 +132,41 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment17)
     show dflyGuard at stream_right with dissolve
     "Additional Dragonflies emerge from behind her, they aim rifles at Jennica and Teresa who stand on the tank with their arms raised in the air."
-    $ AddChatter(vig4_sc6_defend_1_comment18)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_1_comment18)
     vS "What are you doing back here?"
-    $ AddChatter(vig4_sc6_defend_1_comment19)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_1_comment19)
     menu:
         vS "What are you doing back here?"
         "We're here to protect MAC.":
             $ kcEngagement += 1
             mS "We're here to protect MAC."
             hide screen streamerCommentary
-            $ AddChatter(vig4_sc6_defend_1_comment20)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "BigCorp can't get away with him."
             mS "So we want to make sure whatever your \"Pops\" is planning happens."
         "We're here to save Polaris.":
             $ csEngagement += 1
             mS "We're here to save Polaris."
             hide screen streamerCommentary
-            $ AddChatter(vig4_sc6_defend_1_comment20)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "We have to show BigCorp that they can't take our freedom without a fight."
     "Vega holds for a moment."
     $ AddChatter(vig4_sc6_defend_1_comment21)
     "The sounds of battle in the distance start to quiet down."
     $ AddChatter(vig4_sc6_defend_1_comment22)
     "The first attack is coming to an end."
-    $ AddChatter(vig4_sc6_defend_1_comment23)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_1_comment23)
     "Vega lowers her weapon, and the other Dragonflies do the same."
     vS "I didn't expect you to come back."
     if outlaw > marshal:
         vS "And to be honest, I don't know if I'm glad that you did."
-        $ AddChatter(vig4_sc6_defend_1_comment24)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_1_comment24)
     else:
         pass
     vS "But we need you."
@@ -177,9 +188,10 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment25)
     vS "We'll defend it long enough to make sure preparations are ready for launch."
     vS "Then everyone who can make it will enter the tower and take off."
-    $ AddChatter(vig4_sc6_defend_1_comment26)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_1_comment27)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_1_comment26)
+        pause 0.5
+        $ AddChatter(vig4_sc6_defend_1_comment27)
     enS "And where's MAC in all this?"
     vS "For safety, he's been taken into the tower already."
     vS "BC won't use artillery. Don't want to risk hitting MAC."
@@ -210,7 +222,8 @@ label vig4_sc6_defend_1():
     enS "\"Use them wisely?\""
     macS "Hello--Vega, did you call me?"
     "That voice! It's coming from the disc!"
-    $ AddChatter(vig4_sc6_defend_1_comment33)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_1_comment33)
     "I open my palm and hold it out in front of me."
     "A blue hologram projects up from the disc."
     show mac phone neutral at stream_center_mac with dissolve
@@ -235,12 +248,14 @@ label vig4_sc6_defend_1():
     hide screen streamerCommentary
     if rudeMACGoodbye == True:
         macS "Why do you care? Wasn't this just your mission?"
-        $ AddChatter(vig4_sc6_defend_1_comment36)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_1_comment36)
         "The world goes cold."
         enS "That's not fair, MAC."
         pS "We're a family."
         macS "It's what {i}she{/i} said."
-        $ AddChatter(vig4_sc6_defend_1_comment37)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_1_comment37)
         menu:
             macS "It's what {i}she{/i} said."
             "I'm sorry, MAC.":
@@ -269,7 +284,8 @@ label vig4_sc6_defend_1():
     macS "But Coil has brought me away from the fighting."
     if macViolence >= macPeace:
         macS "And I was doing such a good job with the turret!"
-        $ AddChatter(vig4_sc6_defend_1_comment40)
+        if viewershipHigh == True:
+            $ AddChatter(vig4_sc6_defend_1_comment40)
         menu:
             macS "And I was doing such a good job with the turret!"
             "I know, I saw!":
@@ -281,7 +297,8 @@ label vig4_sc6_defend_1():
                 mS "But I'm proud of you for fighting so hard."
     else:
         macS "And I was helping so many people with the first aid!"
-        $ AddChatter(vig4_sc6_defend_1_comment41)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_1_comment41)
         menu:
             macS "And I was helping so many people with the first aid!"
             "I know, I saw!":
@@ -302,7 +319,8 @@ label vig4_sc6_defend_1():
         "We're going to make it through this.":
             mS "We're going to make it through this MAC."
             mS "I don't know how. But we will."
-            $ AddChatter(vig4_sc6_defend_1_comment43)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_defend_1_comment43)
             if macHope >= macPessimism:
                 macS "I believe you, Moze."
                 macS "I know you'll figure it out."
@@ -314,7 +332,8 @@ label vig4_sc6_defend_1():
         "These scumbags are going to regret this.":
             mS "These BC scumbags are going to regret picking this fight."
             mS "We're going to rip them to shreds."
-            $ AddChatter(vig4_sc6_defend_1_comment43)
+            if viewershipHigh == True or viewershipMed == True:
+                $ AddChatter(vig4_sc6_defend_1_comment43)
             if macViolence >= macPeace:
                 macS "Shreds!"
                 $ AddChatter(vig4_sc6_defend_1_comment44)
@@ -369,10 +388,12 @@ label vig4_sc6_defend_2():
     mS "Welcome to the Oakley, Vega."
     if outlaw > marshal:
         vS "Don't worry, it's just temporary."
-        $ AddChatter(vig4_sc6_defend_2_comment3)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_2_comment3)
     else:
         vS "It's a pleasure!"
-        $ AddChatter(vig4_sc6_defend_2_comment4)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_2_comment4)
     "As Vega directs us toward the plaza, we pass by ruined, burning buildings."
     "Even as its people defend it, Polaris lies in ruins."
     #show plaza onlayer background with dissolve
@@ -383,12 +404,14 @@ label vig4_sc6_defend_2():
     mS "Might."
     pS "Eyes up, we've got dropships!"
     "A clatter of blaster fire rattles against the tank's shell as a BC dropship flies over head."
-    $ AddChatter(vig4_sc6_defend_2_comment5)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_2_comment5)
     enS "Shields holding firm."
     vS "Guess they figured out we aren't friendly."
     "Looking through a monitor, I see dropships landing at the outskirts of Polaris and dropping off battalions of BC enforcers."
     "Dragonflies move across the ruined rooftops, and rush past the tank on the ground to take cover in the ruins of the street."
-    $ AddChatter(vig4_sc6_defend_2_comment6)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_2_comment6)
     "They bring the fight to the approaching army, firing at the advancing BC army."
     "The true battle for Polaris begins."
     play music "soundtrack/saveTheGalaxy.wav"
@@ -403,15 +426,18 @@ label vig4_sc6_defend_2():
     "It collides with the dropship, creating a fireball in the sky."
     $ AddChatter(vig4_sc6_defend_2_comment8)
     "As the pieces crash into Polaris, additional flames catch fire on the buildings."
-    $ AddChatter(vig4_sc6_defend_2_comment9)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_2_comment10)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_2_comment9)
+        pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_2_comment10)
     show bc_enforcer at stream_left5 with dissolve
     "A horde of BC enforcers stream down the road toward us, a hail of blaster bolts clatter on our hull."
     enS "Shields slowly dropping but we're still at 90\%."
     vS "BC scum!"
     "Vega turns the machine gun on the battalions and lets loose, bolts of blue light ripping into the frontlines."
-    $ AddChatter(vig4_sc6_defend_2_comment11)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_2_comment11)
     "I charge the cannon again and unleash its blast at another dropship." 
     "Its shell also slams into the ground, this time close to us."
     show vig1_town_stream with hpunch
@@ -430,16 +456,19 @@ label vig4_sc6_defend_2():
     $ AddChatter(vig4_sc6_defend_2_comment15)
     dflyGuard "Vega, come in! We're pinned down, need assista--"
     play audio "cutCall.wav"
-    $ AddChatter(vig4_sc6_defend_2_comment16)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_2_comment16)
     "The audio gets cut as an explosion throws dirt over the frontline."
     vS "Shit! Moze, we need to cover their retreat!"
     "The dirt and smoke clears over the frontline squad."
     "Suddenly, I recognize them." 
     show dflyGuard at stream_left5 with dissolve
     "They're the squad that held Teresa and Jennica captive during the festival."
-    $ AddChatter(vig4_sc6_defend_2_comment17)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_2_comment18)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_2_comment17)
+        pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_2_comment18)
     vS "Moze! We have to help them!"
     $ AddChatter(vig4_sc6_defend_2_comment19)
     pause 0.5
@@ -448,6 +477,7 @@ label vig4_sc6_defend_2():
     $ AddChatter(vig4_sc6_defend_2_comment21)
     pause 0.5
     $ AddChatter(vig4_sc6_defend_2_comment22)
+    $ viewCheck8 = viewCount
     menu:
         vS "Moze! We have to help them!"
         "Abandon the frontline. Pull back to the barricade.":
@@ -473,22 +503,25 @@ label vig4_sc6_defend_3_barricade():
     $ AddChatter(vig4_sc6_defend_3_barricade_comment2)
     enS "Shields are at 75\%. We move forward, we risk putting ourselves in critical danger."            
     vS "But they're my friends!"
-    $ AddChatter(vig4_sc6_defend_3_barricade_comment3)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_barricade_comment3)
     mS "I'm sorry, Vega. We can't risk it. Order all your forces to retreat."
     "Vega holds for one moment, staring out the tank windows at the onslaught of the BC army."
     "Then picks up a communicator. Her voice projects out from the tank."
     $ AddChatter(vig4_sc6_defend_3_barricade_comment4)
     vS "All forces, retreat! Back to the barricade!"
     mS "Jenn, hold us here to cover the retreat."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment4)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment4)
     pS "Roger!"
     "Vega and I keep firing into the swarm of BC soldiers."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment5)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment5)
     "The Dragonflies surrounding the tank turn and rush back toward the barricade."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment6)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment6)
     "The forces on the rooftops do the same, but many of them are cut down as soon as they retreat."
     "Some of them make it back."
-    $ AddChatter(vig4_sc6_defend_3_barricade_comment5)
     show dflyGuard at stream_left5 with dissolve
     "The squads at the frontline have no such luxury."
     "Anyone who turns to run is immediately shot in the back."
@@ -512,7 +545,8 @@ label vig4_sc6_defend_3_barricade():
         "Got what they deserved.":
             $ pdEngagement += 1
             "They got what they deserved."
-            $ AddChatter(vig4_sc6_defend_3_barricade_comment5)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_3_barricade_comment5)
         "I couldn't risk the barricade.":
             $ kcEngagement += 1
             "The barricade is too important. I couldn't risk it on them."
@@ -539,23 +573,29 @@ label vig4_sc6_defend_3_frontline():
     $ AddChatter(vig4_sc6_defend_3_frontline_comment1)
     pS "Roger!"
     "Jenn pushes the throttle ahead and we careen forward, rushing past Dragonflies as they dive out of the way."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment2)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment3)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment2)
+        pause 0.5
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment3)
     vS "Thank you, Moze."
     enS "Shields at 75\%. We don't have a lot of room for error here!"
     vS "Hit them harder than they can hit us!"
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment4)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment4)
     "Vega lays on the machine guns as I fire another blast from the cannon."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment5)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment5)
     "Jennica pulls the tank into a stop just at the front edge of the Dragonfly forces."
     "The hail of fire is more intense here. The rattle of bolts is constant."
     enS "Shields at 65\% and dropping quickly!"
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment6)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment6)
     mS "Vega, if they don't move now, we're all dead!"
     vS "I know!"
     "Vega lifts a communicator from her side."
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment7)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment7)
     vS "Get out of there, now! We'll cover you!"
     "The Dragonfly squad turns their back on the BC army and starts rushing back toward the barricade."
     "One of them, their leader, glances at us. Even though he can't see me, it's as if we're making eye contact."
@@ -588,7 +628,8 @@ label vig4_sc6_defend_3_frontline():
     vS "Crap, they're overheated!"
     pS "So we only have the cannon?"
     enS "Shields at 25\%!"
-    $ AddChatter(vig4_sc6_defend_3_frontline_comment13)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_3_frontline_comment13)
     mS "It'll have to do, Jenn, pull us back to the barricade!"
     "I fire one last blast from the cannon." 
     $ AddChatter(vig4_sc6_defend_3_frontline_comment14)
@@ -603,7 +644,8 @@ label vig4_sc6_defend_4():
     vS "Shit, contact on the rooftop!"
     show bc_enforcer at stream_left5
     "I glance through a monitor just in time to see it: a BC enforcer with a rocket launcher."
-    $ AddChatter(vig4_sc6_defend_4_comment1)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_4_comment1)
     "I reach for the cannon, but it's too late."
     "Smoke streaks through the air."
     $ AddChatter(vig4_sc6_defend_4_comment2)
@@ -620,7 +662,8 @@ label vig4_sc6_defend_4():
     hide teresa with dissolve
     "Jennica and Teresa follow quickly."
     "The enforcer finishes loading."
-    $ AddChatter(vig4_sc6_defend_4_comment4)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_4_comment4)
     "I quickly lift myself out of the hatch and glance to my side."
     "The launcher is aimed directly at the tank."
     "I leap to the ground and rush toward the barricade."
@@ -628,13 +671,15 @@ label vig4_sc6_defend_4():
     "Behind me, I feel the heat against my back as the rocket detonates against the tank."
     "A shockwave ripples out, sending me flying through the air and rolling into the dirt."
     "Picking myself up, I turn around to see the hull of the tank engulfed in flames."
-    $ AddChatter(vig4_sc6_defend_4_comment5)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_4_comment5)
     "The BC army marches up from the distance."
     vS "Come on!"
     show vega stream neutral at stream_center with dissolve
     "Vega grabs me by the hand and pulls me up as we sprint the final few feet to the barricade."
     "We clamber over and slide down the other end as people climb to shoot back at the approaching enemies."
-    $ AddChatter(vig4_sc6_defend_4_comment6)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_4_comment6)
     hide vega with dissolve
     "Taking a couple steps back from the barricade, I drop to one knee, glancing around me."
     $ vig4_sc6_defend_4_comment5.click = False
@@ -648,8 +693,9 @@ label vig4_sc6_defend_5():
     show vega stream neutral at stream_left with dissolve
     vS "What do we do?"
     $ AddChatter(vig4_sc6_defend_5_comment1)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_5_comment2)
+    if viewershipHigh == True:
+        pause 0.5
+        $ AddChatter(vig4_sc6_defend_5_comment2)
     "Just then, the thrum of a ship screeches over head."
     "I look up in time to see a dropship pull into a hover above us."
     show bc_enforcer at stream_center with Dissolve (0.5)
@@ -685,7 +731,8 @@ label vig4_sc6_defend_5():
     $ AddChatter(vig4_sc6_defend_5_comment7)
     "Who shot my assailant?"
     "Then I see it."
-    $ AddChatter(vig4_sc6_defend_5_comment8)
+    if viewershipHigh == True or viewershipMed == True:
+        $ AddChatter(vig4_sc6_defend_5_comment8)
     "A shadow drops from a building in the plaza and enters the tower."
     $ AddChatter(vig4_sc6_defend_5_comment9)
     "I stagger to my feet."
@@ -708,21 +755,25 @@ label vig4_sc6_defend_5():
             mS "It's my business. Mine alone."
             "Jennica and Teresa look at each other."
             pS "Sorry, Vega. But this is personal."
-            $ AddChatter(vig4_sc6_defend_5_comment10)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_5_comment10)
         "A hunter.":
             mS "A hunter."
             "Jennica and Teresa look at each other."
             pS "Sorry, Vega. But this is personal."
-            $ AddChatter(vig4_sc6_defend_5_comment10)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_5_comment10)
         "Ama Deadeye Reyes.":
             mS "Ama Deadeye Reyes."
-            $ AddChatter(vig4_sc6_defend_5_comment10)
+            if viewershipHigh == True:
+                $ AddChatter(vig4_sc6_defend_5_comment10)
             "Vega's eyes go wide."
             vS "No! But Coil's in the tower!"
     mS "I'll go. I can handle this."
-    $ AddChatter(vig4_sc6_defend_5_comment11)
-    pause 0.5
-    $ AddChatter(vig4_sc6_defend_5_comment12)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_5_comment11)
+        pause 0.5
+        $ AddChatter(vig4_sc6_defend_5_comment12)
     mS "You have to stay here. You have to stop them."
     $ AddChatter(vig4_sc6_defend_5_comment13)
     "We turn to look at the flames that lick at Polaris."
@@ -740,10 +791,12 @@ label vig4_sc6_defend_5():
         hide vega with dissolve
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
-        $ AddChatter(vig4_sc6_defend_5_comment16)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
         "Three more fighters fly by immediately after. Then another. Then another."
-        $ AddChatter(vig4_sc6_defend_5_comment17)
+        if viewershipHigh == True:
+            $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the--that's one hell of a pilot?"
         show reginald at stream_center with dissolve
@@ -768,7 +821,8 @@ label vig4_sc6_defend_5():
                 goon "Now don't go getting soft on me."
                 goon "You just do your job and I'll do mine."
                 goon "Even though it's a massive pain."
-                $ AddChatter(vig4_sc6_defend_5_comment23)
+                if viewershipHigh == True or viewershipMed == True:
+                    $ AddChatter(vig4_sc6_defend_5_comment23)
                 mS "Copy that."
             "Affirmative.":
                 mS "Copy that."
@@ -787,11 +841,13 @@ label vig4_sc6_defend_5():
         #if vig2_outlawEpilogue == True:
         #    pS "Cap, we're pickin' up another signal!"
         show teresa stream shock
-        $ AddChatter(vig4_sc6_zan_comment1)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be--"
         show zan stream at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
-        $ AddChatter(vig4_sc6_zan_comment2)
+        if viewershipHigh == True or viewershipMed == True:
+            $ AddChatter(vig4_sc6_zan_comment2)
         "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
         zan "For my loyal fans!"
         $ AddChatter(vig4_sc6_zan_comment3)
@@ -838,8 +894,9 @@ label vig4_sc6_defend_5():
                 mS "My wha--."
                 pS "Our Moxie."
                 zan "Moxie!"
-                $ AddChatter(vig4_sc6_zan_comment8)
-                pause 0.5
+                if viewershipHigh == True:
+                    $ AddChatter(vig4_sc6_zan_comment8)
+                    pause 0.5
                 $ AddChatter(vig4_sc6_zan_comment9)
                 mS "Ah, right. Copy that!"
                 $ AddChatter(vig4_sc6_zan_comment10)
@@ -856,7 +913,8 @@ label vig4_sc6_defend_5():
     vS "Captain, you should get a move on."
     vS "The Dragonflies will hold the ground, make sure you don't have anymore suprises."
     enS "We will too."
-    $ AddChatter(vig4_sc6_defend_5_comment24)
+    if viewershipHigh == True:
+        $ AddChatter(vig4_sc6_defend_5_comment24)
     enS "If BC takes the plaza it won't matter what you do up there, we'll all be toast."
     $ AddChatter(vig4_sc6_defend_5_comment25)
     pS "You go get the kid. We'll keep a path clear down here."
@@ -916,7 +974,8 @@ label vig4_sc7_1_defend():
     hide vig1_town_stream with dissolve
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."
-    $ AddChatter(vig4_sc7_1_defend_comment1)
+    if viewershipHigh == True or viewershipMed == True: 
+        $ AddChatter(vig4_sc7_1_defend_comment1)
     "A series of stairs winds up toward the high ceiling."
     $ AddChatter(vig4_sc7_1_defend_comment2)
     "Each step feels like an eternity."
@@ -927,7 +986,8 @@ label vig4_sc7_1_defend():
     if vig2_marshalEpilogue == True:
         $ AddChatter(vig4_sc7_1_defend_comment5)
     else:
-        $ AddChatter(vig4_sc7_1_defend_comment4)
+        if viewershipHigh == True or viewershipMed == True: 
+            $ AddChatter(vig4_sc7_1_defend_comment4)
     "Rec."
     $ AddChatter(vig4_sc7_1_defend_comment6)
     "Ama."
@@ -940,7 +1000,8 @@ label vig4_sc7_1_defend():
     "The stairs flatten out."
     "There's a wide room in front of me, and two voices shouting within."
     amaS "Just tell me where the robot is, or I'll kill you like I did your friends outside."
-    $ AddChatter(vig4_sc7_1_defend_comment8)
+    if viewershipHigh == True: 
+        $ AddChatter(vig4_sc7_1_defend_comment8)
     "I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
@@ -972,7 +1033,8 @@ label vig4_sc7_1_defend():
         "Being a decent person takes time.":
             mS "Being a decent person can take a bit of time."
             mS "Not that you'd know anything about that."
-    $ AddChatter(vig4_sc7_1_defend_comment13)
+    if viewershipHigh == True or viewershipMed == True: 
+        $ AddChatter(vig4_sc7_1_defend_comment13)
     amaS "Watch your tongue, kid."   
     amaS "I'm calling the shots here." 
     cS "So you think."
@@ -989,16 +1051,19 @@ label vig4_sc7_1_defend():
             "Coil sighs."
             cS "I assumed that was the case."
             cS "I must say I am disappointed."
-            $ AddChatter(vig4_sc7_1_defend_comment15)
+            if viewershipHigh == True: 
+                $ AddChatter(vig4_sc7_1_defend_comment15)
             if vig4_defendPolaris == True:
                 cS "Although, without you, we probably would already be overrun."
             cS "MAC is gone."
             amaS "Bullshit."
             amaS "If that were true you wouldn't still be here."
             cS "How perceptive. And yet you still have no idea what you're doing."
-            $ AddChatter(vig4_sc7_1_defend_comment16)
+            if viewershipHigh == True: 
+                $ AddChatter(vig4_sc7_1_defend_comment16)
             cS "Flailing around in the darkness with no purpose."
-            $ AddChatter(vig4_sc7_1_defend_comment17)
+            if viewershipHigh == True: 
+                $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
             $ csEngagement += 1
             mS "I came to help fight off BigCorp."
@@ -1023,5 +1088,6 @@ label vig4_sc7_1_defend():
     $ AddChatter(vig4_sc7_1_defend_comment19)
     "Eyes wide, Ama fires again. And again."
     "The bolts continue to be absored."
-    $ AddChatter(vig4_sc7_1_defend_comment20)
+    if viewershipHigh == True or viewershipMed == True: 
+        $ AddChatter(vig4_sc7_1_defend_comment20)
     jump vig4_sc7_2

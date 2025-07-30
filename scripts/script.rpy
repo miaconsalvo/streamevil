@@ -180,9 +180,13 @@ default vig3_reynarApproval = False
 default vig3_macAlign = "PeaceHope"
 default vig3_recResponse = "Confused"
 default vig3_bcRepSaved = False
+default vig3_macReadAma = False
+default vig3_macShootAma = False
 
 ####Variables to track the macro game stuff in vignette 3####
 default vig3_brotherChat = 0
+default vig3_viewership = "Low"
+default vig3_outlaw = 0
 
 ###Variables for Vignette 4###
 default stunGuy = False
