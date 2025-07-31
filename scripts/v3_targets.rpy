@@ -469,14 +469,18 @@ label vig3_sc6_shipbet1():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Holy smokes!"
             player "Now we gotta win!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment20)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment23)
             pause 0.5
         "I don't buy it.":
             $ reactImage = "stream ui/reactunsure.png"
             player "Naw chat. I'm calling cap on this."
             player "They're reckless but not like that."
             $ shipbetprediction == True
+            $ AddChatter(vig3_sc6_react_comment24)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment25)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -503,19 +507,31 @@ label vig3_sc6_trustcrew():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "They got themselves into this mess."
             player "They'll have to get themselves out of it!"
+            $ AddChatter(vig3_sc6_react_comment26)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment27)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment28)
             pause 0.5
         "I trust Jennica and Teresa.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
             player "Trust the crew!"
             player "Jenn and Resa got this!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment29)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment30)
             pause 0.5
         "Oh no I hope they win!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
             player "Crap this there's a lot riding on this!"
             player "Was this a mistake?"
+            $ AddChatter(vig3_sc6_react_comment27)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment29)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment30)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -541,17 +557,27 @@ label vig3_sc6_shootingzan():
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Get blasted Zan!"
+            $ AddChatter(vig3_sc6_react_comment31)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment32)
             pause 0.5
         "Wow crazy!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Woah that was awesome!"
             player "Crazy!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment33)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment34)
             pause 0.5
         "That was cheating!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Damn, feels weird that we had to cheat to win."
+            $ AddChatter(vig3_sc6_react_comment35)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment36)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment37)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
