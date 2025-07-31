@@ -464,6 +464,7 @@ label vig3_sc6_shipbet1():
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment20)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment22)
         "What the hell!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Holy smokes!"

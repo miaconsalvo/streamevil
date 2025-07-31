@@ -1201,6 +1201,7 @@ default vig3_sc6_react_comment19 = ChatEntry(False, "{b}pickledDragons - 6:31{/b
 #Sc6 - ShipBet1
 default vig3_sc6_react_comment20 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nNaah they got this", 3, "#ffffff")
 default vig3_sc6_react_comment21 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nJust a bit haha", 3, "#ffffff")
+default vig3_sc6_react_comment22 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nI believe in Teresa!", 3, "#ffffff")
 
 
 ##
