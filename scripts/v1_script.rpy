@@ -20,7 +20,7 @@ label returnToWorkshop():
     show screen chatTutorial2
     $ reactTarget = "vig1_sc1_startStream"
     call screen streamFreeze
-    play music "soundtrack/allistar.wav" volume 1.0 loop fadein 1.0
+    play music "soundtrack/theme.wav" volume 1.0 loop fadein 1.0
     "Thermal paste in hand I return to Allistar's workshop."
     show vig1_allistar_workshop at topleft onlayer background with dissolve
     hide vig1_town_stream
@@ -194,10 +194,10 @@ label setBlasterVig1():
     #$ macroChoice = False
     menu:
         "What should I set my blaster to?"
-        "Set blaster to stun":
+        "Set blaster to stun.":
             $ marshal += 1
             mS "Ready."
-        "Set blaster to lethal":
+        "Set blaster to lethal.":
             $ narrator = reg_narrator
             "Hm, that feels a bit unnecessary. They're just regular goons after all."
             #$ narrator = alt_narrator
@@ -263,7 +263,7 @@ label streetShootout:
     $ viewCheck7 = viewCount
     menu:
         "They're advancing fast."
-        "Fire on rooftop (protect Allistar)":
+        "Fire on rooftop (protect Allistar).":
             $ csEngagement += 1
             "I turn my attention to the rooftop threat."
             "Mine and Annatar's fire forces them into cover, but not before one of them takes a hit and falls off the back of the building."
@@ -302,7 +302,7 @@ label streetShootout:
             "I nod and we rush off toward MAC."
             hide screen streamerCommentary
             hide screen chatTutorial2
-        "Fire at speeder (protect MAC)":
+        "Fire at speeder (protect MAC).":
             $ kcEngagement += 1
             "I fire at the speeder, sending bolts directly into the metal."
             $ AddChatter(vig1_sc2_comment11)
@@ -340,7 +340,7 @@ label streetShootout:
             "I nod and we rush off toward MAC."
             hide screen streamerCommentary
             hide screen chatTutorial2
-        "Fire at ground enforcer (protect Moze)":
+        "Fire at ground enforcer (protect yourself).":
             "I pop back around the corner to fire at the enforcer on the ground."
             "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
             "I hit it with a direct shot, taking them out of the battle."
@@ -672,7 +672,7 @@ label escapePodConfrontation:
     pause 1.0
     menu:
         mS "I've heard enough."
-        "Kill Allistar":
+        "Kill Allistar.":
             $ killAllistar = True 
             $ macViolence += 1
             $ pdEngagement += 3
@@ -689,7 +689,7 @@ label escapePodConfrontation:
             "My cursor slips."
             "The words \"Kill Allistar\" glow red in the game's UI."
             $ narrator = alt_narrator
-        "Stun Allistar":
+        "Stun Allistar.":
             $ killAllistar = False
             $ pdEngagement += 3
             $ csEngagement -= 1
@@ -735,14 +735,14 @@ label escapePodConfrontation:
             $ AddChatter(vig1_sc3_shot_mistake_comment3)
             pause 0.5
             "I'm on stream, I can't go back now."
-        "Play it off":
+        "Play it off.":
             player "Consider this score settled."
             $ AddChatter(vig1_sc3_shot_cool_comment1)
             pause 0.5
             $ AddChatter(vig1_sc3_shot_cool_comment2)
             pause 0.5
             "I'm on stream, I can't go back now."
-        "Shout":
+        "Shout.":
             player "Woooooah!"
             player "Chat! Chat is he dead!?"
             $ AddChatter(vig1_sc3_shot_shout_comment1)
@@ -946,12 +946,12 @@ label modConvo_Day1_Bandit():
     else:
         mod_nvl "Blew my mind, didn't see that coming at all"
     menu:
-        "•I thought about reloading":
+        "•I thought about reloading.":
             streamer_nvl "My first instinct was to reload a save"
             streamer_nvl "But I didn't think that would feel right"
             mod_nvl "For sure, plus the chat was eating it up"
             mod_nvl "They {i}feasted{/i} on that"
-        "•I just had to roll with it":
+        "•I just had to roll with it.":
             streamer_nvl "I didn't meant to do that!"
             streamer_nvl "I just had to roll with it"
             if misclick == True:
@@ -966,7 +966,7 @@ label modConvo_Day1_Bandit():
     mod_nvl "I guess 8bitBANDIT went the Marshal route there"
     mod_nvl "There's a blueit thread and apparently like 95\% of people stunned Allistar"
     menu:
-        "•That makes sense":
+        "•That makes sense.":
             streamer_nvl "Makes a lot of sense"
             streamer_nvl "He is a fan favorite"
             mod_nvl "People love their hunky mechanics"
@@ -975,7 +975,7 @@ label modConvo_Day1_Bandit():
             streamer_nvl "But like threatening to take MAC"
             streamer_nvl "I would've guessed more people would go lethal there"
     menu:
-        "•I just had an idea":
+        "•I just had an idea.":
             streamer_nvl "Actually, that might give me an idea"
     mod_nvl "Oh?"
     streamer_nvl "How many viewers do I need to average per week to get to Affiliate?"
@@ -1021,14 +1021,14 @@ label modConvo_Day1_Bandit():
     streamer_nvl "Ya a lil bit of research"
     mod_nvl "Write it off as \"work\" while you're procrastinating on studying for next week's comp sci test"
     menu:
-        "•I forgot about that":
+        "•I forgot about that.":
             streamer_nvl "shiiiiiit"
             streamer_nvl "I forgot about that"
             mod_nvl "That's why I'm here! To keep your ass in line"
             mod_nvl "In game and in life apparently lol"
             streamer_nvl "Shut up"
             mod_nvl "Love you too b"
-        "•I'm not stressed about that":
+        "•I'm not stressed about that.":
             streamer_nvl "Ah, I'm not worried about that"
             streamer_nvl "Material's not too complex"
             mod_nvl "Ooooh look at me, my name is [player] and I'm a badass who corrects college profs"
@@ -1169,7 +1169,7 @@ label vig1_brother_1():
             player_nvl "Srysry just joshing haha"
             player_nvl "That's awesome!"
             player_nvl "Tell me about him!"
-        "•That's not embarrassing":
+        "•That's not embarrassing.":
             player_nvl "Lol El, there's nothing embarrassing about that"
             player_nvl "What's his name? What's he like"
     bro_nvl "His name is Cedric. He's a new student, family just moved here from England"
@@ -1182,11 +1182,11 @@ label vig1_brother_1():
     bro_nvl "I wanted to ask some advice"
     bro_nvl "How do you like, talk to people that you like without it feeling...weird?"
     menu:
-        "•It's always weird":
+        "•It's always weird.":
             $ vig1_overthink = False
             player_nvl "I mean, it's never not weird really"
             player_nvl "That's the thing"
-        "•Don't overthink it":
+        "•Don't overthink it.":
             $ vig1_overthink = True
             player_nvl "The main thing is not to overthink it"
     player_nvl "You just have to be yourself"
@@ -1241,7 +1241,7 @@ label vig1_brother_2():
             player_nvl "Before that it was just the regulars, and this new person called \"kitcat\""
             bro_nvl "Ah man, wish I could've been there live"
             bro_nvl "Sounds like a great way to start the race for Affiliate!"
-        "•Stream was ok":
+        "•Stream was ok.":
             $ energy -= 1
             player_nvl "Stream was ok"
             player_nvl "I only had like 4 viewers in chat for most of it"
@@ -1255,12 +1255,12 @@ label vig1_brother_2():
     player_nvl "Yeah, it's definitely picked up my average viewer count"
     bro_nvl "Do you think some people will stay from the raid?"
     menu:
-        "•I think so":
+        "•I think so.":
             player_nvl "Yeah I think so"
             player_nvl "They seemed to be into the stream"
             bro_nvl "Not surprised, you're awesome"
             player_nvl "And they didn't immediately leave when I said something cringey"
-        "•I don't know":
+        "•I don't know.":
             player_nvl "I don't know, I feel like a lot of them will still watch the other streamer play Oakley 2"
             player_nvl "But maybe one or two will stick around?"
             player_nvl "At least they didn't leave immediately when I said something cringey"
@@ -1276,7 +1276,7 @@ label vig1_brother_2():
     player_nvl "Oof, good luck"
     bro_nvl "Thanks, have a good night!"
     menu:
-        "•Love you":
+        "•Love you!":
             player_nvl "Love you, El!"
     bro_nvl "Love you too, [player]!"
     stop music fadeout 4.0

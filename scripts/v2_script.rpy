@@ -70,6 +70,7 @@ label vig2Start():
     "I'd be annoyed if I was actually sleeping."
     "I haven't been able to get any real sleep since Allistar forced my hand."
     "What did he think I was gonna do? Just let him go?"
+    $ vig2_sc1_comment2.click = False
     $ reactTarget = "vig2_sc1_mentionallistar"
     show screen streamerCommentary
     play audio "shipAlarmShort.wav"
@@ -78,7 +79,6 @@ label vig2Start():
     $ viewCheck1 = viewCount
     $ AddChatter(vig2_sc1_comment3)
     hide screen streamerCommentary
-    $ vig2_sc1_comment2.click = False
     "Better get down there."
 
     jump Vig2BridgeScene
@@ -464,7 +464,7 @@ label GibianVCustomsMarshal():
     show teresa stream think at stream_right
     pS "Simple as it gets! Right sweetheart?"
     enS "Yes. Almost too much so..."
-    stop music fadeout 2.0
+    #stop music fadeout 2.0
     $ viewCheck4 += viewCount
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
@@ -561,7 +561,7 @@ label GibianVCustomsOutlaw():
     stop backAudio fadeout 3.0
     "We're out and on our way to Matticus's compound."
     $ viewCheck4 += viewCount
-    stop music fadeout 2.0
+    #Rstop music fadeout 2.0
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     jump matticusDoor
@@ -570,7 +570,7 @@ label GibianVCustomsOutlaw():
 label matticusDoor():
     show vig2_compound_stream at topleft onlayer background with dissolve
     hide vig2_depot_stream
-    play music "soundtrack/allistar.wav" fadein 1.0
+    #play music "soundtrack/theme.wav" fadein 1.0
     $ reactTarget = "vig2_sc3_aftercustoms"
     show screen streamerCommentary
     "It's only a few blocks to Matticus's compound."
@@ -1150,8 +1150,8 @@ label commsBase_MAR2():
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment1)
             "We need to neutralize these guys."
             "I signal to Jennica and Teresa that we're going to stun them."
-            show jennica stream fight at stream_left with dissolve(0.3)
-            show teresa stream fight at stream_right with dissolve(0.3)
+            show jennica stream fight at stream_left with Dissolve(0.3)
+            show teresa stream fight at stream_right with Dissolve(0.3)
             "I'll take the one on the right, Jennica will get the middle one, and Teresa the left."
             "Jennica and Teresa take position behind me."
             "Once everyone's ready, I kick the door open."
@@ -1167,7 +1167,7 @@ label commsBase_MAR2():
             $ reactTarget = "vig2_sc6_mar_reflect"
             show screen streamerCommentary
             enS "I rather like it when things are easy."
-            show reginald stream neutral at stream_center with dissolve(0.3)
+            show reginald stream neutral at stream_center with Dissolve(0.3)
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
             "Reginald opens the door."
@@ -2955,18 +2955,18 @@ label vig2_macro_sleep():
     if reluctance > enthusiasm and marshal >= outlaw:
         "There's still some leftover adrenaline from the stream."
         "Your mind leaps through a series of images, robots, outlaws, and spaceships."
-        "What do you think about as you lay awake in bed?"
+        "What do you think about as you drift to sleep?"
     if enthusiasm > reluctance and outlaw > marshal:
         "There's still some leftover adrenaline from the stream."
         "Your mind leaps through a series of images, robots, outlaws, and spaceships."
-        "What do you think about as you lay awake in bed?"
+        "What do you think about as you drift to sleep?"
     if enthusiasm > reluctance and marshal > outlaw:
         "It's been a long day and the stream took a lot out of you."
         "Your mind is foggy, a cloud of robots, outlaws, and spaceships."
         "What do you think about as you drift to sleep?"
     menu:
         "What do you think about as you drift to sleep?"
-        "Think about your conversations with chat":
+        "Think about your conversations with chat.":
             "So many people watch you play a game."
             "It's fun...right?"
             menu:
@@ -2980,10 +2980,10 @@ label vig2_macro_sleep():
                 "Not always.":
                     $ energy -= 1
                     "A lot of the time it just feels draining."
-        "Think about how tired you are":
+        "Think about how tired you are.":
             "Sleep is going to feel so good"
             $ energy += 1
-        "Think about getting to Affiliate":
+        "Think about getting to Affiliate.":
             "It's not going to be easy, but you know you can do this."
             "In your mind you picture it: a glossier stream set up, clear-sounding microphones, and 100+ viewers in chat."
     
@@ -3041,7 +3041,8 @@ label vig2_macro_end():
     "A Loop'd notification. From Elliot."
     "You don't unlock the phone, because you can read the message from the lock screen."
     bro "Love you too!"
-    stop music fadeout 8.0
+    stop music fadeout 4.0
+    pause 2.0
     jump vignette3Start
 
 #label endPlaytest():

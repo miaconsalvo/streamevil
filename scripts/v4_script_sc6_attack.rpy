@@ -63,7 +63,7 @@ label vig4_sc6_attack_1_ama():
     $ AddChatter(vig4_sc6_attack_1_ama_comment10)
     pS "No way, if we're doing this then we should help those people."
     enS "Wait a minute, look at that guy!"
-    show dflyGuard at stream_right5 with dissolve
+    show dflyguard at stream_right5 with dissolve
     "Teresa points at one of the captive Dragonflies."
     enS "Isn't that?"
     pS "Oh yeah! That's the guy who roughed us up at the festival."
@@ -72,7 +72,7 @@ label vig4_sc6_attack_1_ama():
     $ AddChatter(vig4_sc6_attack_1_ama_comment12)
     pS "They're still hostages. We should help them."
     $ AddChatter(vig4_sc6_attack_1_ama_comment13)
-    hide dflyGuard with dissolve
+    hide dflyguard with dissolve
     amaS "Well, Mozely, what's the call?"
     $ AddChatter(vig4_sc6_attack_1_ama_comment14)
     menu:
@@ -108,7 +108,7 @@ label vig4_sc6_attack_1_assault_ama():
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment4)
     hide jennica with dissolve
     hide teresa with dissolve
-    "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
+    "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
     show ama at stream_left with move
     "Ama and I shift down the ruins, moving away from the tank." 
     "The battalion is about to move on."
@@ -120,6 +120,7 @@ label vig4_sc6_attack_1_assault_ama():
         "Open Fire.":
             pass
     mS "Now!"
+    play music "soundtrack/saveTheGalaxy.wav"
     play audio "lazer.wav"
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
     if vig4_nickName_bool == True:
@@ -210,8 +211,9 @@ label vig4_sc6_attack_1_assault_ama():
             amaS "Careful Mozely, age begets wisdom."
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment17)
+    play music "soundtrack/polaris.wav"
     dflyGuard "Captain Moze?"
-    show dflyGuard at stream_center with dissolve
+    show dflyguard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment18)
     dflyGuard "We thought we were dead."
@@ -244,7 +246,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide screen streamerCommentary
-            hide customs agent with dissolve
+            hide dflyguard with dissolve
         "It wasn't about you.":
             $ pdEngagement += 1
             $ csEngagement -= 1
@@ -265,7 +267,7 @@ label vig4_sc6_attack_1_assault_ama():
             hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
-            hide customs agent with dissolve
+            hide dflyguard with dissolve
         "I wanted to kill you myself.":
             $ deadeyeApproval += 1
             $ csEngagement -= 2
@@ -274,7 +276,7 @@ label vig4_sc6_attack_1_assault_ama():
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
-            hide dflyGuard with Dissolve(0.5)
+            hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ reactTarget = "vig4_sc6_attack_killdflies"
             show screen streamerCommentary
@@ -289,6 +291,7 @@ label vig4_sc6_attack_1_assault_ama():
     "Ama claps me on the back."
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
+    stop music fadeout 2.0
     hide ama with dissolve
     jump vig4_sc6_attack_2_ama
 
@@ -305,7 +308,7 @@ label vig4_sc6_attack_1_split_ama():
     mS "Get in position."
     hide teresa with dissolve
     hide jennica with dissolve
-    "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
+    "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
     show ama stream neutral at stream_left with move
     "Ama and I duck close together."
     enforcer "Alright you maggots, break time's over. Time to get moving."
@@ -328,6 +331,7 @@ label vig4_sc6_attack_1_split_ama():
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment12)
     play audio "lazer.wav"
+    play music "soundtrack/saveTheGalaxy.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
     if vig4_nickName_bool == True:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment4)
@@ -383,6 +387,7 @@ label vig4_sc6_attack_1_split_ama():
     enS "You two want to keep chattering or do you want to see our prize."
     "Ama claps me on the back."
     amaS "Yes, let's see the vessel we have commandeered!"
+    stop music fadeout 2.0
     hide teresa with dissolve
     hide ama with dissolve
     jump vig4_sc6_attack_2_ama
@@ -415,6 +420,7 @@ label vig4_sc6_attack_2_ama():
     "Teresa inputs something into a screen on her side."
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac phone neutral at stream_right5mac with dissolve
+    play music "soundtrack/theme.wav" fadein 2.0
     "It's MAC."
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -523,6 +529,7 @@ label vig4_sc6_attack_2_ama():
     mS "Agreed. Jenn, take us to the plaza."
     $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     "The tank accelerates and we glide smoothly over the ground. On our way to battle."
+    stop music fadeout 2.0
     hide ama with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
@@ -538,6 +545,7 @@ label vig4_sc6_attack_3_ama():
     $ AddChatter(vig4_sc6_attack_3_ama_comment1)
     "We turn onto the main street."
     "Instant chaos."
+    play music "soundtrack/saveTheGalaxy.wav"
     "A BC dropship screeches by overhead, turrets strafing positions defended by Dragonflies."
     $ AddChatter(vig4_sc6_attack_3_ama_comment2)
     "The Dragonflies have consolidated their defenses behind an enormous barricade blocking the main street into the plaza."
@@ -802,6 +810,7 @@ label vig4_sc6_attack_3_ama():
     "More dropships stream down from the cruiser."
     $ AddChatter(vig4_sc6_attack_3_ama_comment46)
     "We don't have much time."
+    stop music fadeout 2.0
     "War has come."
     $ AddChatter(vig4_sc6_attack_3_ama_comment48)
     menu:
@@ -837,6 +846,7 @@ label vig4_sc6_attack_3_ama():
             amaS "Good to be here, kid."
     $ AddChatter(vig4_sc6_attack_3_ama_comment54)
     "We both turn to look at the burning horizon as Polaris crumbles."
+    play music "soundtrack/theme.wav"
     if vig2_outlawEpilogue == True:
         $ pdEngagement += 3
         $ kcEngagement += 2
@@ -1025,6 +1035,7 @@ label vig4_sc6_attack_3_ama():
 
 label vig4_sc7_1_attack_ama():
     hide vig1_town_stream with dissolve
+    stop music fadeout 1.0
     "As soon as the doors close behind us, the sounds of battle become muffled."
     "The tower is utterly silent."
     $ AddChatter(vig4_sc7_1_defend_comment1)
@@ -1282,7 +1293,7 @@ label vig4_sc6_attack_1():
         $ AddChatter(vig4_sc6_attack_1_ama_comment10)
     pS "No way, if we're doing this then we should help those people."
     enS "Wait a minute, look at that guy!"
-    show dflyGuard at stream_center with dissolve
+    show dflyguard at stream_center with dissolve
     "Teresa points at one of the captive Dragonflies."
     enS "Isn't that?"
     pS "Oh yeah! That's the guy who roughed us up at the festival."
@@ -1334,6 +1345,7 @@ label vig4_sc6_attack_1_assault():
         "It's now or never."
         "Open Fire.":
             pass
+    play music "soundtrack/saveTheGalaxy.wav"
     play audio "lazer.wav"
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
     play audio "lazer.wav"
@@ -1369,6 +1381,7 @@ label vig4_sc6_attack_1_assault():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment14)
     "I start to move toward the fighting."
+    stop music fadeout 1.0
     enforcer "Freeze!"
     "An enforcer taps my back with his gun."
     if viewershipHigh == True:
@@ -1384,6 +1397,7 @@ label vig4_sc6_attack_1_assault():
     "Faintly, on a rooftop in the distance and silhouetted by fire, a dark figure drops to the ground."
     "And vanishes."
     $ AddChatter(vig4_sc6_attack_1_assault_comment3)
+    play music "soundtrack/theme.wav"
     dflyGuard "Captain Moze?"
     show dflyguard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
@@ -1462,6 +1476,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
             hide screen streamerCommentary
     "I turn my back on the quiet street, and stride toward the tank."
+    stop music fadeout 1.0
     jump vig4_sc6_attack_2
 
 label vig4_sc6_attack_1_split():
@@ -1477,7 +1492,7 @@ label vig4_sc6_attack_1_split():
     mS "Get in position."
     hide teresa with dissolve
     hide jennica with dissolve
-    "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
+    "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
     "I shift down the cover, moving away from the tank."
     enforcer "Alright you maggots, break time's over. Time to get moving."
     "The sound of dozens of steps as the battalion moves off down the road."
@@ -1490,6 +1505,7 @@ label vig4_sc6_attack_1_split():
         "It's now or never."
         "Fire.":
             pass
+    play music "soundtrack/saveTheGalaxy.wav"
     play audio "lazer.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
     play audio "lazer.wav"
@@ -1522,6 +1538,7 @@ label vig4_sc6_attack_1_split():
     "Holstering my blaster, I watch Jennica and Teresa climb inside the tank and survey the bodies on the ground."
     "One, two, three, four, five..."
     "Where's the sixth?"
+    stop music fadeout 1.0
     enforcer "Freeze!"
     "An enforcer taps my back with his gun."
     $ AddChatter(vig4_sc6_attack_1_assault_comment1)
@@ -1598,6 +1615,7 @@ label vig4_sc6_attack_2():
     "Teresa inputs something into a screen on her side."
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac phone neutral at stream_center_mac with dissolve
+    play music "soundtrack/theme.wav"
     "It's MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment5)
     mS "MAC!"
@@ -1709,6 +1727,7 @@ label vig4_sc6_attack_2():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     "The tank accelerates and we glide smoothly over the ground as a calm before the storm settles over Polaris."
+    stop music fadeout 2.0
     hide jennica with dissolve
     hide teresa with dissolve
     jump vig4_sc6_attack_3
@@ -1723,6 +1742,7 @@ label vig4_sc6_attack_3():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_attack_3_ama_comment1)
     "We turn onto the main street."
+    play music "soundtrack/saveTheGalaxy.wav"
     "Instant chaos."
     "A dropship screeches by overhead, turrets strafing positions defended by Dragonflies."
     if viewershipHigh == True:
@@ -1998,6 +2018,7 @@ label vig4_sc6_attack_3():
     "More dropships stream down from the cruiser."
     $ AddChatter(vig4_sc6_attack_3_ama_comment46)
     "We don't have much time."
+    stop music fadeout 2.0
     "War has come."
     $ AddChatter(vig4_sc6_attack_3_ama_comment48)
     menu:
@@ -2015,6 +2036,7 @@ label vig4_sc6_attack_3():
     pause 0.5
     $ AddChatter(vig4_sc6_attack_3_ama_comment51)
     "I watch the burning horizon as Polaris crumbles."
+    play music "soundtrack/theme.wav"
     if vig2_outlawEpilogue == True:
         $ pdEngagement += 3
         $ kcEngagement += 2
@@ -2194,6 +2216,7 @@ label vig4_sc6_attack_3():
 
 label vig4_sc7_1_attack():
     hide vig1_town_stream with dissolve
+    stop music fadeout 1.0
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."
     if viewershipHigh == True or viewershipMed == True:

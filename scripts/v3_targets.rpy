@@ -272,7 +272,7 @@ label vig3_sc1_mar():
     $ narrator = reg_narrator
     menu:
         "Jennica's upset."
-        "It was always risky":
+        "It was always risky.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Damn it's weighing heavily on her."
             player "Definitely was risky."
@@ -1172,8 +1172,8 @@ label vig3_analytics_audience():
         "After all the people watching this week though, that shouldn't be an issue."
         "Cross your fingers."
     else:
-        "49 followers? You're one away!?"
-        "Damn."
+        "49 followers? You're one away!"
+        "You were hoping to cross that threshold already, but at least you're close."
         "It shouldn't be too much of an issue. You just need to grab one extra follow by the end of the next stream."
         "That should be doable."
         "You'll also have to keep the average viewership over 10."
@@ -1227,7 +1227,7 @@ label vig3_analytics_viewcount2():
         "Playing with chat is interesting." if flinchViewershipChat == False:
             $ flinchViewershipChat = True
             "Playing this game along with the chat is interesting."
-            "I'm hearing about so many people's perspectives on the choices before I even make them."
+            "You're hearing about so many people's perspectives on the choices before you even make them."
             "How does it feel?"
             menu:
                 "How does it feel?"

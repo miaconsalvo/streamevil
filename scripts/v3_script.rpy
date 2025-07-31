@@ -38,18 +38,18 @@ label vignette3Start():
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
-    if vig2_marshalEpilogue == True:
-        $ viewershipHigh = False
-        $ viewershipMed = False
-        $ ViewershipLow = True
-    else:
+    if vig2_outlawEpilogue == True:
         $ viewershipHigh = True
         $ viewershipMed = False
-        $ viewershipLow = False
+        $ ViewershipLow = False
+    else:
+        $ viewershipHigh = False
+        $ viewershipMed = False
+        $ viewershipLow = True
     #$ csEngagement = 0
     #$ kcEngagement = 0
     #$ pdEngagement = 0
-    "It's been one week since you last streamed Oakley 2."
+    "It's been one week since you last streamed {i}Oakley 2: Settle the Score{/i}."
     "Episode 3 released today so you have a stream scheduled and ready to go."
     scene streamview with dissolve
     show screen streamDetails
@@ -158,7 +158,7 @@ label vig3outlawstart():
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
     "Teresa shoots up, I place hand on her shoulder."
     menu:
-        "Be calm":
+        "Be calm.":
             $ kcEngagement += 1 #Logic: kitcat likes Teresa and prefers the gentler comment
             $ engineerApproval += 1
             mS "Take ten seconds. I'll see you there."
@@ -166,7 +166,7 @@ label vig3outlawstart():
             pause 0.5
             $ AddChatter(vig3_outlawstart_calm_comment23)
             #no approval change
-        "Be firm":
+        "Be firm.":
             $ kcEngagement -= 1
             mS "You can't go in like that. Fix yourself, I'll see you there."
             $ AddChatter(vig3_outlawstart_firm_comment24)
@@ -195,7 +195,7 @@ label vig3marshalstart():
     $ AddChatter(vig3_marshalstart_comment4)
     "I find myself staring off into the distance." 
     "With my back to the door I don't see Jennica come in."
-    show jennica stream neutral at stream_right with dissolve
+    show jennica stream neutral at stream_left with dissolve
     "She's wearing her usual clothes but her eyes dark from exhaustion."
     pS "Up early?"
     mS "Surprisingly so are you."
@@ -241,7 +241,7 @@ label vig3marshalstart():
     enS "Captain! There's a transmission for us - I'm certain it's the Dragonflies."
     "Jennica shoots up, I place a hand on her shoulder."
     menu:
-        "Be calm":
+        "Be calm.":
             $ csEngagement += 1 #Logic: Coriolis likes Jennica so prefers the gentler comment
             $ pilotApproval += 1
             mS "Take ten seconds. I'll see you there."
@@ -255,6 +255,7 @@ label vig3marshalstart():
     jump vig3_sc2
 
 label vig3_sc2():
+    play music "soundtrack/vig1scratchtrack.wav" volume 1.2 loop fadein 1.0
     show cockpit_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
@@ -281,13 +282,13 @@ label vig3_sc2():
         "We're used to it.":
             mS "We should be used to a tight schedule by now. "
     "We take a moment to think."
-    show mac stream shock at stream_center_mac with dissolve
+    show mac stream neutral at stream_center_mac with dissolve
     macS "Dad..."
     #$ reactTarget = "vig3_sc2_macdad"
     #show screen streamerCommentary
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
     show jennica stream neutral at stream_left
-    show mac stream neutral at stream_center_mac
+    #show mac stream neutral at stream_center_mac
     "MAC sits innocently in his chair, looking off to the expanse of open space searching for the answer to a question he doesn't know how to ask."
     mS "What's going on bud?"
     macS "I- do not know."
@@ -316,11 +317,12 @@ label vig3_sc2():
     macS "Which is precisely why I have a suggestion, see I was scanning BigCorp databases..."
     "I feel frustration twisting my face." ##Dialogue choice that links to MAC's reaction here.##
     menu:
+        "I feel frustration twisting my face."
         "MAC that's dangerous!":
-            $ kcEngagmenet -= 1 #Logic: This is a rougher tone so kitcat doesn't like it (it's also more concerned with crew than with MAC)
+            $ kcEngagement -= 1 #Logic: This is a rougher tone so kitcat doesn't like it (it's also more concerned with crew than with MAC)
             mS "MAC please tell me after all this work to keep us safe you're not poking in BigCorp's networks!"
             #Pessimism
-        "MAC it's not safe":
+        "MAC it's not safe.":
             $ kcEngagement += 1 #Logic: Kitcat likes the focus on keeping MAC safe and the more gentle omment
             mS "MAC don't go poking into BigCorp networks. After all the work the keep you safe." #more gentle way of chiding MAC about being inconspicuous#
     "MAC's head lowers." ## this reaction can differ based on choices##
@@ -330,6 +332,7 @@ label vig3_sc2():
     macS "An initial search suggests a nearby planet known as Solara, specifically the city of Akar. It may be suitable for our needs." 
     macS "However I should caution you..."
     #Add a black screen function here. 
+    stop music fadeout 2.0
     "For a moment, the Oakley falls away from my view."
     "The low hum of the ship replaced by a crowded bar, the starting lines of song that will bellow out to bustling streets."
     "An old crew of Outlaws, drunk off a job well done."
@@ -344,6 +347,7 @@ label vig3_sc2():
 
 ##START OF ACT 1###
 label vig3_sc3():
+    play music "soundtrack/akar(day).wav" #fadein 1.0
     show akarstreet_stream at topleft onlayer background with dissolve
     hide cockpit_stream
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
@@ -399,6 +403,7 @@ label vig3_sc3():
     enS "How's this, sweetcheeks?"
     "I can hear footsteps rushing to us. He's not alone."
     menu:
+        "I can hear footsteps rushing to us. He's not alone."
         "Pull out your gun.":
             $ engineerApproval += 1 #Logic: Teresa likes the show of force
             $ macViolence += 1
@@ -452,6 +457,7 @@ label vig3_sc4():
     pS "See? Just made it!"
     hide mac with dissolve
     "With MAC trailing us I scan some of the newer gear, even some weirder stuff, weird for Steele."
+    stop music fadeout 3.0
     "Someone comes out from the back room."
     show rec stream neutral at stream_center with dissolve
     ###RECCRIN (Late 20s) enters from the back room. They looks like an older version of their brother Allistar, long hair, tougher build.##
@@ -460,6 +466,7 @@ label vig3_sc4():
     show jennica stream neutral at stream_left
     show teresa stream happy at stream_right
     show rec stream happy
+    play music "soundtrack/theme.wav"
     pS "REC!"
     "Jennica runs up to hug Rec, they embrace and Jenn lifts them off the ground."
     pS "It's wonderful to see you kid."
@@ -560,14 +567,14 @@ label vig3_sc4():
             mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
             mS "Okay?"
             macS "Yes Captain."
-        "We'll tell them after we get the part":
+        "We'll tell them after we get the part.":
             #$ engineerApproval += 1 #Logic: Teresa is pragmatic - get the job done, then worry about emotions
             $ macPessimism += 1
             $ kcEngagement += 1 #kitcat likes the desire to be honest, but views waiting to do so as keeping MAC safe
             mS "Range extender first, hard talk later. We can't leave here without it."
             mS "So it'll be hush hush for right now, okay?"
             macS "Yes Captain."
-        "I have no love for Allistar":
+        "I have no love for Allistar.":
             $ macViolence += 1
             $ pdEngagement += 1 #Logic: pickledDragons likes sticking by the outlaw choice
             $ csEngagement -= 1
@@ -585,11 +592,13 @@ label vig3_sc4():
     recS "No worries! Hey since y'all have been on the move, you wouldn't have happened by Al at all?" 
     recS "I haven't heard from him in while."
     "There's too long of a pause that I can't think of something fast enough."
+    stop music
     "Then the shop door swings open."
     hide mac with dissolve
     hide jennica with dissolve
     show rec stream surprised at stream_center with move
     show houndleader stream neutral at stream_left with dissolve
+    play music "soundtrack/deadeye.wav" fadein 0.5
     "A group of five enter the shop, dark uniforms with a dog patched on their right shoulder." 
     "These guys, they're ones from before." ##The Hound Leader##
     $ reactTarget = "vig3_sc4_houndraid"
@@ -625,7 +634,7 @@ label vig3_sc4():
             mS "Alright that's enough!"
             $ pdEngagement += 1 #Logic: pickledDragons likes the assertion of power from an outlaw perspective
             $ csEngagement += 1 #Logic: Coriolis likes the intervention to help Allistar
-        "Let them continue":
+        "Let them continue.":
             $ kcEngagement += 1 #Logic: kitcat likes that keeping quiet keeps MAC safer
             "They're relentless." #we only trigger these changes for this instance since they'll happen later no matter what
             "Doesn't matter the material or how fragile or how important, they don't stop."
@@ -673,6 +682,7 @@ label vig3_sc4():
             "He takes the antennae as I struggle to get up from the floor."
             houndleader "Pleasure doing business with you."
             "The gang leaves us to pick ourselves up and walk out of the shop. MAC who has thankfully been hiding rolls forward."
+            stop music fadeout 4.0
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
@@ -694,6 +704,7 @@ label vig3_sc4():
             houndleader "Pleasure doing business with you."
             "The gang turns to leave knocking some stuff around."
             "On the way out with the parts, the Leader hits me with a good punch while I'm off guard."
+            stop music fadeout 4.0
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
@@ -721,6 +732,7 @@ label vig3_sc4():
             "He grabs the part and the gang moves out."
             houndleader "Pleasure doing business with you."
             "The gang commits some extra carnage on the way out."
+            stop music fadeout 4.0
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
@@ -765,6 +777,7 @@ label vig3_sc4():
     jump vig3_sc5
 
 label vig3_sc5():
+    play music "soundtrack/akar(night).wav"
     show akarplaza_stream at topleft onlayer background with dissolve
     hide reccshop_stream 
     "When Rec leads us to the plaza I'm almost startstruck with how it looks." ###REC takes the Oakley Crew to the Plaza. In front is Rec and MOZE with JENNICA and TERESA taking up the rear with MAC in between them.##
@@ -1037,7 +1050,7 @@ label vig3_sc6():
     ###Recount choice again###
     menu:
         "Do I investigate this stranger?"
-        "Follow them":
+        "Follow them.":
             $ kcEngagement += 1 #Logic: pd and kc are both intrigued and want to investigate
             $ pdEngagement += 1
             $ csEngagement -= 1 #Logic: cs doesn't like leaving the crew alone
@@ -1132,7 +1145,7 @@ label vig3_sc6():
                     show bbpub_stream at topleft onlayer background with dissolve
                     hide akarplazanight_stream
 
-        "Check in on MAC and Rec":
+        "Check in on MAC and Rec.":
             $ csEngagement += 1 #Logic: cs likes that you're finding out more about Rec, kc likes that you're sticking with MAC
             $ kcEngagement += 1
             $ pdEngagement -= 1 #Logic: pd is just a little disappointed
@@ -1328,7 +1341,7 @@ label vig3_sc6():
     "I swallow the knowledge that hand signals were the only thing they thought of after betting our ship."
     menu: 
         "There has to be signs for how they're doing this."
-        "Check Ovid":
+        "Check Ovid.":
             "Ovid stares blankly across the room poking at something metal in his mouth."
             pS "Ovid's not drinking."
             enS "An evaporator..."
@@ -1336,14 +1349,14 @@ label vig3_sc6():
             "I look around the room for more signs."
     menu: 
         "There has to be more signs for how they're doing this."
-        "Check the deck":
+        "Check the deck.":
             pS "The deck isn't right. I know a standard set when I see one."
             mS "That makes sense, especially if they're regulars."
             enS "Truly? All for a stupid game?"
             "What else?"
     menu: 
         "There has to be more signs for how they're doing this."
-        "Check the Karousel":
+        "Check the Karousel.":
             "Teresa's eyes are fixed on the Karousel."
             mS "The Karousel?"
             enS "There's a delay before it settles. And one of their friends has been staring at his communicator all night."
@@ -1397,7 +1410,7 @@ label vig3_sc6():
             "with cards scattered all over the floor the deck is replaced."
             "The Karousel is untouched, the rounds continues."
             hide zan with dissolve
-        "Cut the rope holding the carnivorous plants":
+        "Cut the rope holding the carnivorous plants.":
             $ pdEngagement += 1 #Logic: this option is just fun. Everyone likes it
             $ kcEngagement += 1
             $ csEngagement += 1
@@ -1454,7 +1467,7 @@ label vig3_sc6():
     ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
     menu:
         "How do I finish this?"
-        "Shoot Zan's Leg":
+        "Shoot Zan's Leg.":
             $ vig3_outlaw += 1
             $ outlaw += 1
             $ macViolence += 1
@@ -1626,6 +1639,7 @@ label vig3_sc6():
     show mac stream neutral at stream_left_mac with dissolve
     mS "I'm taking the kid, we'll check in with you tomorrow at the shop, alright?"
     recS "Sure thing Cap."
+    stop music fadeout 4.0
     show rec stream thinking
     recS "Actually Moze wait."
     "They look serious."
@@ -1652,6 +1666,7 @@ label vig3_sc6():
     jump vig3_sc7
 
 label vig3_sc7():
+    play music "soundtrack/akar(day).wav"
     show akarplaza_stream at topleft onlayer background with dissolve
     hide bbpub_stream 
     "The next day is hot, the hangover in my brain is smashing at my skull like it's the bars of a prison."
@@ -1698,6 +1713,7 @@ label vig3_sc7():
             enS "Go for option A, option B if necessary."
     enS "I'll head to the plaza, Jennica the outskirts, Moze you take MAC and do another sweep of the shops near Rec."
     mS "Perfect Resa, let's get started then. Now MAC-"
+    stop music
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
     $ reactTarget = "vig3_sc7_lostmac"
     show screen streamerCommentary
@@ -1725,11 +1741,11 @@ label vig3_sc8():
     "I don't remember much after."
     "We knew we couldn't chase down the Hounds. There was nothing that could be done once MAC was out of sight."
     "It was Rec who gave us the suggestion to intercept them where they were. That meant in the belly of the beast, Reynar's Vineyard."
-    "It was nothing short of the worst case scenario."
-    hide bg black with dissolve
-    show exteriorvineyard_stream at topleft onlayer background
-    pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
+    "Nothing short of the worst case scenario."
+    show exteriorvineyard_stream at topleft onlayer background with dissolve
+    hide bg black
     show jennica stream neutral at stream_left with dissolve
+    pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
     "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
@@ -1778,20 +1794,29 @@ label vig3_sc8():
     enS "And thank you Reccrin. Couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
+    hide rec with dissolve
+    hide teresa with dissolve
+    hide jennica with dissolve
+    play backAudio "bgcrowd.wav" volume 0.4 loop fadein 0.5
+    play music "soundtrack/akar(fair).wav" fadein 1.0
     show inventorsfairgallery_stream at topleft onlayer background with dissolve 
-    hide exteriorvineyard_stream with dissolve
+    hide exteriorvineyard_stream
     "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
     "Brimming with shine and luster. Inventors have lined up pedestals with tech I can't even begin to understand."
     "Finely dressed guests being served by Reynar's android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
+    show teresa stream happy at stream_right with dissolve
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
+    show jennica stream neutral at stream_left with dissolve
     pS "That why some of these statues don't have arms?"
     enS "I think they're being loose with the theme."
     "It's excess at its highest degree, it's so much that I can't imagine us finding MAC in all of this."
+    show rec stream neutral at stream_center with dissolve
     recS "Reynar likes to personally assess what the Hounds find so they're probably holding MAC somewhere close by."
     pS "Let's rough up some suits and find out where they've got him."
     "Teresa turns around and stops us in our tracks."
+    show teresa stream neutral
     enS "Okay lets make this crystal. We'll not be doing anything of the like."
     pS "Resa-"
     enS "Listen Jenn, I appreciate how ready you are to fight for MAC. But you don't understand the situation we're in." 
@@ -1805,7 +1830,7 @@ label vig3_sc8():
             mS "Listen Resa, Mac's too important, we'll get into a fight if we have too."
             pS "Never knew ya to be timid Resa."
             enS "You two are not understanding..."
-        "Side with Teresa":
+        "Side with Teresa.":
             $ engineerApproval += 1
             $ pilotApproval -= 1
             $ kcEngagement += 1
@@ -2034,7 +2059,7 @@ label vig3_sc9():
             "He does not look happy."
         "Put your blaster to his side.":
             $ vig3_outlaw += 1
-            $ csEngagment -= 1 #Logic: very violent for cs
+            $ csEngagement -= 1 #Logic: very violent for cs
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
@@ -2113,6 +2138,8 @@ label vig3_sc9():
     "We go back to the floor. And I try to figure out how many enforcers there are?"
     "Are they all guests, maybe some waiting in the wings?"
     "Do they already have MAC and are just waiting for this presentation before heading off?"
+    stop music fadeout 4.0
+    stop backAudio fadeout 2.0
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
     "The music dies down an a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
     "A finely dressed man walks up to the platform and wheels in something covered by a blanket."
@@ -2202,7 +2229,7 @@ label vig3_sc11():
             amaS "You flatter me."
             amaS "Gotta say getting into an event like this is impressive."
             amaS "You look...well."
-        "Impossible":
+        "Impossible.":
             $ csEngagement += 1
             mS "Impossible."
             mS "How could you have possibly found us?"
@@ -2321,6 +2348,7 @@ label vig3_sc11():
 
 label vig3_sc12():
     #Ext. Vineyard Balcony
+    play music "soundtrack/decisionTime.wav"
     show vybalcony_stream at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
     "Overlooking the lush chimaeron trees, the east balcony is as ornate as it is private."
@@ -2344,7 +2372,7 @@ label vig3_sc12():
     "I forgot how fast Ama was. How deadly."
     amaS "I suggest you watch that mouth of yours."
     bcrep "My...bosses...sign...your checks."
-    amaS "Yes THEY do."
+    amaS "Yes, THEY do."
     "Her grip tightens."
     "I see MAC on the ground just passed them, he's still."
     menu: 
@@ -2366,13 +2394,13 @@ label vig3_sc12():
             hide screen streamerCommentary
             menu: 
                 "Say something."
-                "You're rough as always": 
+                "You're rough as always.": 
                     mS "Just like you to be a bit too rough."
                     amaS "Just handling business."
                     mS "Clearly haven't lost your charm."
                     amaS "Don't worry I'll get to you later..."
                 "That was unnecessary.":
-                    mS "A tad unnecessary."
+                    mS "That was unnecessary."
                     amaS "You should just let me handle business."
                     amaS "But don't worry."
                     amaS "I'll get to you soon."
@@ -2404,7 +2432,7 @@ label vig3_sc12():
                     amaS "Not likely Moze."
                     "Ama stands with rifle in hand aimed at me."
                     "The commotion is enough to stop the rep in his tracks."
-                "Rush them down.":
+                "Rush him down.":
                     $ pdEngagement += 1 #Logic: similar as the above, but kitcat finds it less impactful of a defense while Coriolis actually does approve somewhat
                     $ kcEngagement += 1
                     $ csEngagement += 1
@@ -2587,6 +2615,7 @@ label vig3_sc12():
             # "MAC is a peaceful optimist."            
             "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
             "We break into a sprint down the hall."
+            stop music fadeout 1.0
             hide ama with dissolve
             hide customs agent with dissolve
             show mac stream neutral at stream_center_mac with move
@@ -2797,6 +2826,7 @@ label vig3_sc12():
             # "MAC is a peaceful optimist."            
             "I remove the core from the rifle, put it in my pocket and toss the shell on the ground."
             "We break into a sprint down the hall."
+            stop music fadeout 1.0
             hide ama with dissolve
             hide customs agent with dissolve
             show mac stream neutral at stream_center_mac with move
@@ -2804,6 +2834,7 @@ label vig3_sc12():
     
 
 label vig3_sc13():
+    play music "soundtrack/akar(fairSlaps).wav"
     show inventorsfairgallery_stream at topleft onlayer background with dissolve
     hide vybalcony_stream
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
@@ -2818,12 +2849,12 @@ label vig3_sc13():
     "MAC leads the way, turning down hallways quickly and abruptly."
     macS "It is good to see you, Captain."
     mS "It's good to see you too, MAC."
-    "We can't stop running but I have dozens of questions."
+    "We can't stop running, but I have dozens of questions."
     "One just happens to pop out of my mouth."
-    mS "MAC, how the hell did you end up on that presentation stage?"
+    mS "How the hell did you end up on that presentation stage?"
     macS "A confluence of circumstantial factors."
     macS "I escaped the Hounds' restraints shortly after entering this facility and evaded them by entering a laundry chute."
-    macS "That chute deposited me in the BigCorp representative's dressing room where I saw the display of a prototype that resembled me."
+    macS "That chute deposited me in BigCorp's dressing room where I saw the display of a prototype that resembled me."
     macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
     menu:
         macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
@@ -2885,6 +2916,7 @@ label vig3_sc13():
     mS "If she's not already getting her ship off the ground to scan for us."
     "We need to act now."
     menu: 
+        "We need to act now."
         "Call in a favour to deal with Ama?":
             "Let's just hope he picks up."
             if vig2_outlawEpilogue == True:
@@ -2987,7 +3019,8 @@ label vig3outlawcomms():
     "Then Ama yelling."
     amaS "Get OFF me!" 
     mS "Now's our shot!"
-    "We run out of the hallway into the opposite direction. And are stoppped but an unfortunate face."
+    "We run out of the hallway into the opposite direction. And are stoppped by an unfortunate face."
+    stop music
     houndleader "And where do y'all think you're going."
     houndleader "We've got orders for you all to come with us."
     "Shit."
@@ -3047,6 +3080,7 @@ label vig3marshalcomms():
     hide mac with dissolve
     hide rec with dissolve
     show houndleader at stream_center with dissolve
+    stop music
     houndleader "Well hello there sweetcheeks."
     houndleader "We've got orders for you all to come with us."
     enS "Shit."
@@ -3122,6 +3156,7 @@ label vig3_sc14():
     hide teresa with dissolve
     show ama stream neutral at stream_right with move
     show rec stream surprised at stream_left with dissolve
+    play music "soundtrack/decisionTime.wav"
     recS "Deadeye..."
     amaS "Well well..."
     amaS "If it isn't Reccrin."
@@ -3327,6 +3362,7 @@ label vig3_sc14():
             jump vig3_epilogue
 
 label vig3_epilogue():
+    stop music fadeout 4.0
     "The Vineyard is alight with fireworks in the distance."
     "The screens on the platform end their ads and a live feed begins."
     "Reynar is there, on his balcony addressing the crowd of patrons."
@@ -3351,10 +3387,11 @@ label vig3_epilogue():
     show shiphub_stream at topleft onlayer background with dissolve
     hide exteriorvineyard_stream
     "Teresa outfits the Oakley best she can."
-    "And with Reynar's gift we got access to fly the Oakley out through restricted sky."
+    "And with Reynar's gift we get access to fly the Oakley out through restricted sky."
     "Which gives us time."
     "At least..."
     "But the Oakley is silent."
+    play music "soundtrack/theme.wav" fadein 1.0
     "For days it's buisness as usual, no one knowing how to talk about the dark cloud over us."
     "Rec refuses to answer Jenn or Teresa's transmissions."
     "MAC has been silent, spending most of his time alone."
@@ -3364,7 +3401,7 @@ label vig3_epilogue():
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
-    dflycontact "I hear you are in possession of Dr. Vanas' work."
+    dflycontact "I hear you are in possession of Dr. Vanas's work."
     dflycontact "We are contacting you regarding the drop off point."
     #dflycontact "We are stationed at a planet known as Polaris." #They don't know about Polaris when they first show up to it in Vignette 4. But they have the coordinates, so I just commented this out.
     dflycontact "Brevifolia sector coordinates 11 03 7"
@@ -3382,15 +3419,15 @@ label vig3_epilogue():
     "As I walk down the hall I try to take stock of everything."
     menu:
         "How do you feel?"
-        "Happy to have survived":
+        "Happy to have survived.":
             "This was supposed to be a simple pick up."
             "Maybe even a break."
             "Now I'm just happy to have made it in one piece."
-        "Guilty":
+        "Guilty.":
             "I can't imagine what Rec is feeling."
             "I meant what I said."
             "I just feel like we could've done more for them."
-        "Tired":
+        "Tired.":
             "Everyday has been such a weight."
             "It's almost over."
             "One final push." 
@@ -3406,14 +3443,17 @@ label vig3_epilogue():
     "And we stay there for sometime."
     "The ship hums as it picks up speed."
     "And the Oakley presses forward, as it always does."
+    stop music fadeout 4.0
     hide mac stream neutral with dissolve
     hide screen streamChat
     hide screen streamDetails
-    show bg black with dissolve
+    show bg black onlayer background with dissolve
     hide ship_hallway_stream
+    pause 2.0
     jump vig3_macro_start
 
 label vig3_macro_start():
+    nvl clear
     $ vignette3 = True
     if csEngagement > pdEngagement and csEngagement > kcEngagement:
         $ topfan = "Coriolis"
@@ -3435,6 +3475,7 @@ label vig3_macro_start():
     jump vig3_macro_mod_1
 
 label vig3_macro_mod_1():
+    nvl clear
     $ menu = nvl_menu
     mod_nvl "Yoyoyo!"
     mod_nvl "Another great stream!" 
@@ -3538,7 +3579,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -3568,7 +3609,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -3605,7 +3646,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -3634,7 +3675,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -3676,7 +3717,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -3704,7 +3745,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -4450,10 +4491,10 @@ label vig3_macro_brother_1():
     $ menu = nvl_menu
     scene bg black with dissolve
     "It's reassuring that Jessie feels good about the stream."
-    "And he's right, there's just one more episode to go."
+    "And there's just one more episode to go."
     "One way or another, this thing will come to an end."
-    "You start absentmindedly scrolling through Loop'D and you see that Elliot is online."
-    "It's been a while since you had a proper chat."
+    "You start absentmindedly scrolling through Loop'D when you notice that Elliot is online."
+    "It's been a while since you had a proper chat so you decide to shoot him a message."
     scene discordview with dissolve
     player_nvl "Hey El, you got some time to chat?"
     $ playerNVLNarration = "You sit in front of your computer for a couple of minutes."
@@ -5008,12 +5049,14 @@ label vig3_macro_brother_end():
     player_nvl "Love you too, El! Take care!"
     hide discordview with dissolve
     scene bg black with dissolve
+    stop music fadeout 8.0
     "You close Loop'D and turn off your computer for the night."
     "The conversation with your brother eased some of the nerves you were feeling about finishing Oakley 2."
     "It was nice to chat with him."
     "And good to feel encouragement."
     "He's really growing up and into his own."
-    "You spend the rest of your waking night thinking about how much your brother has grown until, eventually, you drift off to sleep."
+    "You spend the rest of your waking night thinking about how much your brother has grown."
+    "Then, eventually, you drift off to sleep."
     nvl clear
     pause 3.0
     jump vignette4Start

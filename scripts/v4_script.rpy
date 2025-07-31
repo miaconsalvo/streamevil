@@ -38,19 +38,19 @@ label vignette4Start():
     $ flinchView = False
     $ screenComplete = False
     $ macroChoice = True
-    if vig3_outlaw >= 2 and vig2_outlawEpilogue == True:
+    if vig3_outlaw >= 3 and vig2_outlawEpilogue == True:
         $ viewershipHigh = True
         $ viewershipMed = False
         $ viewershipLow = False
-    elif vig3_outlaw >= 2 and vig2_outlawEpilogue == False:
+    elif vig3_outlaw >= 3 and vig2_outlawEpilogue == False:
         $ viewershipHigh = False
         $ viewershipMed = True
         $ viewershipLow = False
-    elif vig3_outlaw >= 2 and vig2_outlawEpilogue == True:
+    elif vig3_outlaw >= 3 and vig2_outlawEpilogue == True:
         $ viewershipHigh = False
         $ viewershipMed = True
         $ viewershipLow = False
-    elif vig3_outlaw < 2 and vig2_outlawEpilogue == True:
+    elif vig3_outlaw < 3 and vig2_outlawEpilogue == True:
         $ viewershipHigh = False
         $ viewershipMed = True
         $ viewershipLow = False
@@ -62,7 +62,7 @@ label vignette4Start():
     #$ kcEngagement = 0
     #$ pdEngagement = 0
     "It's been one week since your last stream."
-    "You sit in front of your computer, about to stream the final episode of Oakley 2: Settle the Score."
+    "You sit in front of your computer, about to stream the final episode of {i}Oakley 2: Settle the Score{/i}."
     scene streamview with dissolve
     show screen streamDetails
     show screen streamChat
@@ -78,6 +78,7 @@ label vig4_sc1_1():
     $ viewCount += 2
     $ AddChatter(vig4_sc1_comment1)
     "There is a harmonious hum to the Oakley's engines."
+    "[viewershipHigh]"
     $ viewCount += 4
     $ AddChatter(vig4_sc1_comment2)
     pause 0.5
@@ -975,7 +976,7 @@ label vig4_sc2_4():
         "Teresa drops her blaster."
         vS "Ow, it's hot!"
         hide screen streamerCommentary
-        if viewershipHigh == True or viewershipMed == True:
+        if viewershipHigh == True:
             $ AddChatter(vig4_sc2_4_comment30)
         "The young woman drops the rifle."
         show mac stream neutral
@@ -1002,7 +1003,7 @@ label vig4_sc2_4():
     #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
     cS "At last..."
-    play music "soundtrack/theme.wav" volume 0.5 fadein 4.0
+    play music "soundtrack/theme.wav" volume 0.5 fadein 3.0
     "The old man gestures to MAC."
     hide screen streamerCommentary
     cS "May I?"
@@ -1049,8 +1050,8 @@ label vig4_sc2_4():
     jump vig4_sc2_5
 
 label vig4_sc2_5():
+    $ renpy.music.set_volume(1.0, 2.0)
     show warehouse_stream at topleft onlayer background with dissolve
-    play music "soundtrack/theme.wav" volume 1.2
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_right5mac with dissolve
@@ -1357,8 +1358,10 @@ label vig4_sc2_6():
             cS "Vega, you go to the festival. I'll join you after making contact."
             vS "Okay, Pops."
             "Coil turns around and heads to the back of the shop."
+            hide coil with dissolve
+            hide vega with dissolve
             "The sounds from outside are suddenly loud and lively."
-            play music "soundtrack/festival.wav" volume 0.3
+            play music "soundtrack/festival.wav" volume 0.3 fadein 3.0
             "Music drifts in through the windows and the cries of laughter and joy hang in the air."
             pause 0.5
             $ viewCount += 1
@@ -1375,17 +1378,16 @@ label vig4_sc2_6():
             ##Will handle all the fallout that comes from Elliot entering chat in the targets script
             $ narrator = alt_narrator
             "We step outside into the cool night."
-            hide vega with dissolve
-            hide coil with dissolve
             hide teresa with dissolve
             hide jennica with dissolve
             hide mac with dissolve
     jump vig4_sc3_1
 
 label vig4_sc3_1():
+    #$ renpy.music.set_volume(1.0, 2.0)
+    play music "soundtrack/festival.wav" volume 1.0
     show vig1_town_stream at topleft onlayer background with dissolve
     hide warehouse_stream
-    $ renpy.music.set_volume(1.0, 1.0)
     "Polaris's Star Shower festival is in full swing."
     "The plaza glows with lantern light, the sounds of raucous revelry filling the air."   
     "People sit at tables, happily drinking and eating. Some play games. Other sit on rooftops, already staring up at the sky."
@@ -2072,7 +2074,7 @@ label vig4_sc3_2_jennica_2():
                         pS "I uh, I think that--why is this so hard!?"
                         menu:
                             pS "I uh, I think that--why is this so hard!?"
-                            "Kiss her":
+                            "Kiss her.":
                                 "I put a finger to her lips."
                                 mS "Shhhh"
                                 mS "You don't have to say it."
@@ -2080,7 +2082,7 @@ label vig4_sc3_2_jennica_2():
                                 "I move forward and kiss Jennica."
                                 $ AddChatter(vig4_sc3_2_jenn_comment42)
                                 hide jennica with dissolve
-                            "Wait for her":
+                            "Wait for her.":
                                 "I wait, patiently."
                                 "Jennica meets my eyes."
                                 "We hold each other's gaze."
@@ -2891,11 +2893,12 @@ label vig4_sc3_3():
             hide coil with dissolve
             "With a heavy sigh, I turn to look at MAC."
     "The crowd around him is dissipating."
+    stop music fadeout 1.0
     jump vig4_sc3_4
 
 label vig4_sc3_4():
     show mac stream neutral at stream_center_mac with dissolve
-    play music "soundtrack/theme.wav"
+    play music "soundtrack/theme.wav" volume 1.0
     "MAC notices me almost as soon as I turn toward him."
     macS "Moze! Isn't this wonderful!"
     mS "MAC, we should talk."
@@ -3065,13 +3068,13 @@ label vig4_sc3_5():
             "Teresa and Jennica are in between the guards."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc3_5_comment10)
-            show dflyGuard at stream_right with dissolve
+            show dflyguard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment11)
-            hide dflyGuard with dissolve
+            hide dflyguard with dissolve
             hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             $ AddChatter(vig4_sc3_5_comment12)
@@ -3215,13 +3218,13 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
-            show dflyGuard at stream_right with dissolve
+            show dflyguard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment34)
-            hide dflyGuard with dissolve
+            hide dflyguard with dissolve
             hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and--"
@@ -3371,12 +3374,12 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
-            show dflyGuard at stream_right with dissolve
+            show dflyguard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             $ AddChatter(vig4_sc3_5_comment34)
-            hide dflyGuard with dissolve
+            hide dflyguard with dissolve
             hide teresa with dissolve
             hide vega with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
@@ -3541,7 +3544,7 @@ label vig4_sc4_1():
     "I freeze."
     amaS "You want to talk now?"
     mS "What do you mean?"
-    play music "soundtrack/decisionTime.wav"
+    play music "soundtrack/decisionTime.wav" volume 1.2
     amaS "BC knows where the Dragonflies are. They're launching an assault on them."
     mS "Bullshit."
     amaS "Polaris."
@@ -3890,7 +3893,7 @@ label vig4_sc5_1():
                     $ AddChatter(vig4_sc5_1_comment7)
                 mS "That's an order."
                 pS "Alright, Cap, just take it easy."
-            "My head is killing me":
+            "My head is killing me.":
                 mS "My head is killing me, but I'll live."
                 show teresa stream neutral
                 enS "I've got something for that. Brace yourself."
@@ -3942,7 +3945,7 @@ label vig4_sc5_1():
                     $ AddChatter(vig4_sc5_1_comment7)
                 mS "That's an order."
                 enS "Alright, Captain, just take it easy."
-            "My head is killing me":
+            "My head is killing me.":
                 mS "My head is killing me, but I'll live."
                 show teresa stream neutral
                 enS "I've got something for that. Brace yourself."
@@ -4012,7 +4015,7 @@ label vig4_sc5_1():
     "I feel the heat on my back all the way up the hill."
     show targetbase_stream at topleft onlayer background with dissolve
     hide oakley_ruin
-    play music "soundtrack/polaris.wav"
+    play music "soundtrack/theme.wav"
     "Polaris is under siege."
     "Smoke billows amongst the buildings."
     "A handful of BigCorp drop ships careen over the town."
@@ -4106,6 +4109,7 @@ label vig4_sc5_1():
         hide teresa with dissolve
         hide jennica with dissolve
         $ AddChatter(vig4_sc5_1_comment28)
+        stop music fadeout 2.0
         "The three of us jog down the ridge, weapons drawn, heading directly for the heart of the fire."
         jump vig4_sc6_defend_1
     elif vig4_attackPolaris == True and vig4_amaOffer == False:
@@ -4141,12 +4145,13 @@ label vig4_sc5_1():
         hide teresa with dissolve
         $ AddChatter(vig4_sc5_1_comment28)
         "The three of us jog down the ridge, weapons drawn, heading directly for the heart of the fire."
+        stop music fadeout 2.0
         jump vig4_sc6_attack_1
     elif vig4_attackPolaris == True and vig4_amaOffer == True:
         jump vig4_sc5_2
 
 label vig4_sc5_2():
-    play music "soundtrack/deadeye.wav"
+    play music "soundtrack/deadeye.wav" volume 0.6 fadein 1.0
     amaS "Sounds like we have to make our move now."
     if jennicaRomance == False and teresaRomance == False and viewershipHigh == True:
         $ AddChatter(vig4_sc5_2_comment1)
@@ -4280,6 +4285,7 @@ label vig4_sc5_2():
             mS "This is for the Oakley."
             $ AddChatter(vig4_sc5_1_comment26)
     mS "Let's move."
+    stop music fadeout 2.0
     $ AddChatter(vig4_sc5_2_comment10)
     hide jennica with dissolve
     hide teresa with dissolve
@@ -4301,6 +4307,7 @@ label vig4_sc5_2():
 
 label vig4_sc7_2():
     $ viewCheck9 = viewCount
+    play music "soundtrack/decisionTime.wav" volume 1.0
     cS "The time has come."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_2_comment1)
@@ -4380,6 +4387,7 @@ label vig4_sc7_2():
                 $ AddChatter(vig4_sc7_2_comment27)
                 pause 0.5
             $ AddChatter(vig4_sc7_2_comment28)
+            stop music fadeout 1.0
             menu:
                 "I turn to Ama."
                 "It's over.":
@@ -4411,6 +4419,7 @@ label vig4_sc7_2():
                 $ AddChatter(vig4_sc7_2_comment19)
                 pause 0.5
             $ AddChatter(vig4_sc7_2_comment20)
+            stop music fadeout 1.0
             menu:
                 "I turn to Coil."
                 "It's over.":
@@ -4428,6 +4437,7 @@ label vig4_sc7_2():
 
 label vig4_sc7_3_ama():
     # play badass climax music
+    play music "soundtrack/saveTheGalaxy.wav" volume 0.7
     "Everyone is still."
     "Ama makes the first move, dropping her rifle and lunging at Coil."
     "He leans to the side, faster than I would expect his elderly physique to move."
@@ -4605,6 +4615,7 @@ label vig4_sc7_3_ama():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment31)
     "I step back as the energy pulse sails harmlessly into the ceiling."
+    stop music fadeout 4.0
     "Coil staggers to his feet."
     cS "Please. Just let her go."
     menu:
@@ -4865,6 +4876,7 @@ label vig4_sc7_3_ama():
 
 label vig4_sc7_3_coil():
     #play badass climax music
+    play music "soundtrack/saveTheGalaxy.wav" volume 0.7
     "Everyone is still."
     "Ama makes the first move, raising her rifle in my direction."
     $ AddChatter(vig4_sc7_3_coil_comment1)
@@ -5039,6 +5051,7 @@ label vig4_sc7_3_coil():
     "Gasping for air, she leans onto her back."
     $ AddChatter(vig4_sc7_3_coil_comment29)
     mS "Get up."
+    stop music fadeout 4.0
     "Ama exhales, then turns onto her stomach and pushes herself to a standing position."
     amaS "Well, kid. Looks like our time's up."
     amaS "Will you take care of my ship?"
@@ -5160,54 +5173,54 @@ label vig4_sc7_3_coil():
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
     "I hold him tight and drop my face against his body."
-    $ AddChatter(vig4_sc7_3_ama_comment48)
+    $ AddChatter(vig4_sc7_3_coil_comment48)
     mS "I missed you."
-    $ AddChatter(vig4_sc7_3_ama_comment49)
+    $ AddChatter(vig4_sc7_3_coil_comment49)
     macS "I missed you too, Moze."
-    $ AddChatter(vig4_sc7_3_ama_comment50)
+    $ AddChatter(vig4_sc7_3_coil_comment50)
     "We step back and I stand up."
     show coil stream neutral at stream_right with dissolve
     show vega stream neutral at stream_left with dissolve
     "Coil leans against Vega as the two approach."
     vS "So, Pops, how's Moze's case for joining the Dragonflies look now?"
     if viewershipHigh == True or viewershipMed == True:
-        $ AddChatter(vig4_sc7_3_ama_comment51)
+        $ AddChatter(vig4_sc7_3_coil_comment51)
     if vig4_defendPolaris == True:
         cS "I would say it looks all but certain."
         cS "Captain Moze, Polaris may be in ruins, but its people will endure. In no small part thanks to your actions today."
         if viewershipHigh == True or viewershipMed == True:
-            $ AddChatter(vig4_sc7_3_ama_comment52)
+            $ AddChatter(vig4_sc7_3_coil_comment52)
         cS "I am sorry for the trouble I caused you earlier. I did not realize the power of the bond you share with MAC."
         if viewershipHigh == True:
-            $ AddChatter(vig4_sc7_3_ama_comment53)
+            $ AddChatter(vig4_sc7_3_coil_comment53)
         cS "We all owe our gratitude to you"
-        $ AddChatter(vig4_sc7_3_ama_comment54)
+        $ AddChatter(vig4_sc7_3_coil_comment54)
         cS "You and your crew have earned your spot."
         menu:
             cS "You and your crew have earned your spot."
             "Organization isn't my style.":
                 mS "I don't know. Working for organizations isn't really my style."
-                $ AddChatter(vig4_sc7_3_ama_comment55)
+                $ AddChatter(vig4_sc7_3_coil_comment56)
                 cS "Of course. We can find an arragenment that is amenable to your...\"distinct\" approach."
             "Thank you.":
                 mS "Thank you for the offer. After all this, my crew and I will need some sanctuary."
-                $ AddChatter(vig4_sc7_3_ama_comment56)
+                $ AddChatter(vig4_sc7_3_coil_comment56)
                 cS "You shall have it."
     elif vig4_defendPolaris == False and vig4_killDflies == False:
         cS "The chances are certainly much higher now."
         cS "Although your methods are...messy, Captain Moze, without your presence, Vega and I would likely be dead."
         cS "We can offer you and your crew sanctuary while you rest and recover."
-        $ AddChatter(vig4_sc7_3_ama_comment56)
+        $ AddChatter(vig4_sc7_3_coil_comment56)
         cS "You and your crew have earned that, at least."
     else:
         cS "The carnage from this battle won't go over well with the higher-ups."
         cS "But considering we'd be dead without her, I'd say we'll have to take her on board."
         cS "At least for the time being while we all catch our breath."
-        $ AddChatter(vig4_sc7_3_ama_comment56)
+        $ AddChatter(vig4_sc7_3_coil_comment56)
     mS "And MAC?"
     "We all turn to look at him."
     macS "I do not wish to leave my family again."
-    $ AddChatter(vig4_sc7_3_ama_comment57)
+    $ AddChatter(vig4_sc7_3_coil_comment57)
     cS "You heard him."
     vS "Come on, there should be an old mercenary's empty ship somewhere in the ridge that we can commandeer."
     if macHope > macPessimism:
@@ -5215,17 +5228,17 @@ label vig4_sc7_3_coil():
         mS "What about her?"
         macS "We shouldn't leave her here."
         macS "She was a Snakehawk. She deserves a proper burial."
-        $ AddChatter(vig4_sc7_3_ama_comment58)
+        $ AddChatter(vig4_sc7_3_coil_comment58)
         menu:
             macS "She was a Snakehawk. She deserves a proper burial."
             "You're right, MAC.":
                 "I look back at Ama's body."
-                $ AddChatter(vig4_sc7_3_ama_comment59)
+                $ AddChatter(vig4_sc7_3_coil_comment59)
                 "A chill runs down my spine."
-                $ AddChatter(vig4_sc7_3_ama_comment69)
+                $ AddChatter(vig4_sc7_3_coil_comment60)
                 "But she shouldn't be left here. It's not right."
                 mS "You're right, MAC."
-                $ AddChatter(vig4_sc7_3_ama_comment61)
+                $ AddChatter(vig4_sc7_3_coil_comment61)
                 "I go over and lift Ama's body in my arms."
                 "She's heavy. But I'm accustomed to the weight."
                 "It's as if I've been carrying it for years."
@@ -5238,6 +5251,7 @@ label vig4_sc7_3_coil():
     jump vig4_epilogue_coil
 
 label vig4_epilogue_coil():
+    play music "soundtrack/theme.wav"
     $ viewCheck10 = viewCount
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream    
@@ -5471,7 +5485,7 @@ label vig4_epilogue_coil():
     hide jennica with dissolve
     hide teresa with dissolve
     hide shiphub_stream with dissolve
-    show shiphub_stream onlayer background with dissolve
+    show cockpit_stream onlayer background with dissolve
     show jennica stream neutral at stream_left5 with dissolve
     show teresa stream neutral at stream_right5 with dissolve
     show coil stream neutral at stream_right with dissolve
@@ -5537,6 +5551,7 @@ label vig4_epilogue_coil():
     jump vig4_signoff
 
 label vig4_epilogue_ama():
+    play music "soundtrack/theme.wav"
     $ viewCheck10 = viewCount
     show shiphub_stream onlayer background with dissolve
     hide vig2_datacenter_stream
@@ -5774,7 +5789,7 @@ label vig4_epilogue_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     hide shiphub_stream with dissolve
-    show shiphub_stream onlayer background with dissolve
+    show cockpit_stream onlayer background with dissolve
     if vig4_amaCrew == True:
         show jennica stream neutral at stream_left with dissolve
         show teresa stream neutral at stream_right with dissolve
@@ -6076,6 +6091,7 @@ label vig4_signoff():
     jump vig4_macro_start
 
 label vig4_macro_start():
+    hide cockpit_stream
     $ vignette4 = True
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
@@ -6177,7 +6193,7 @@ label vig4_macro_viewerChat_1():
             "•Say nothing.":
                 "You decide not to reply."
                 "Their comments speak for themselves."
-    "Wow, that was really sweet."
+    "It was nice of them to send a message."
     "You should check out blueit now. See what the rest of the community is saying about the finale."
     $ screenComplete = True
     #jump blueitVignette4_1
@@ -6199,9 +6215,9 @@ label FlinchAnalytics_vig4():
         $ Affiliate = False
         $ followerGoal = 0
     #scene flinch_v4screen with dissolve
-    if viewershipHigh == True and vig3_viewership == "High":
+    if Affiliate == True and vig3_viewership == "High":
         scene flinch_v4screen1 with dissolve
-    elif viewershipHigh == True and vig3_viewership == "Low":
+    elif Affiliate == True and vig3_viewership == "Low":
         scene flinch_v4screen2 with dissolve
     else:
         scene flinch_v4screen3 with dissolve
@@ -6353,17 +6369,17 @@ label blueitVignette4_2():
     show screen webNavigation_vig4
     if blueitCheck == 3:
         $ screenComplete = True
-        "Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
+        #"Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
     elif blueitCheck == 4:
         $ screenComplete = True
     elif blueitCheck == 5:
         $ screenComplete = True
-        "Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
+        #"Hm, maybe it would be a good idea to write a post about your experience streaming the game. Once you've finished reading the posts you want to check out, of course."
     elif blueitCheck == 6:
         $ screenComplete = True
     elif blueitCheck == 7:
         $ screenComplete = True
-        "You should write a post about your experience streaming the game."
+        #"You should write a post about your experience streaming the game."
     elif blueitCheck >= 7:
         $ screenComplete = True
     else:
@@ -6372,6 +6388,7 @@ label blueitVignette4_2():
     return
 
 label vig4_macro_writeUp():
+    stop music fadeout 10.0
     show screen finalWriteUp
     "I should post something...It's kind of cheesy, but I think it might be a good way to sum up my experience."
     "Let me start with a small introduction."
@@ -6535,7 +6552,7 @@ label vig4_macro_writeUp_6():
     "That feels right."
     "Now I should come up with a title for the post."
     "Something catchy, but also something that reflects my journey."
-    $ blueitPostTitle = renpy.input("What should I call the post?: ", length = 40)
+    $ blueitPostTitle = renpy.input("What should I call the post? ", length = 40)
     "There. All done."
     "That feels like it sums up my experience appropriately."
     call screen closeComputer
@@ -6550,7 +6567,6 @@ label vig4_macro_brother_1():
 label endgame():
     hide screen finalWriteUp with Dissolve(2.0)
     scene bg black with dissolve
-    stop music fadeout 10.0
     "I should go."
     "Been on this screen for a bit too long today."
     "Maybe I can hit up Jessie to grab some ramen."

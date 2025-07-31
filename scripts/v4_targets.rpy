@@ -243,7 +243,7 @@ label vig4_sc2_elliotEntrance():
                     $ AddChatter(vig4_bro_comment26)
         "So good to see you!":
             player "Oh my god, El! It's so good to have you in chat!"
-            $ AddChatter(vig4_bro_comment1)
+            $ AddChatter(vig4_bro_comment2)
             player "Oh my god that's so sweet! It's great to have you here!"
             $ AddChatter(vig4_bro_comment3)
             menu:
