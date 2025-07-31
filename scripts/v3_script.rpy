@@ -2703,7 +2703,8 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
-            $ vig3_daisApproval = False
+            $ vig3_daisyApproval = False
+            $ vig3_daisyChoice = 1
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I rise to my full height."
@@ -2740,6 +2741,7 @@ label vig3_sc9():
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
+            $ daisyChoice = 2
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I grab my blaster and push it into Mills' side."
@@ -2777,6 +2779,7 @@ label vig3_sc9():
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
             $ vig3_daisyApproval = False
+            $ daisyChoice = 3
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I can't do anything right now."
