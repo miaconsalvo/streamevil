@@ -22,7 +22,7 @@ label vig3_sc1_out():
         "This is what she wanted.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Wasn't Teresa the one saying we needed to do this?"
-            player "C'mon girl this is what you wanted!"
+            player "C'mon girl, this is what you wanted!"
             #$ AddChatter(vig2_sc1_reactcomment2)
             pause 0.5
     if commentVariable == True:
