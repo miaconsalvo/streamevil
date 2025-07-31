@@ -55,13 +55,6 @@ label vignette3Start():
     show screen streamDetails
     show screen streamChat
     "You begin the stream and then boot up the game."
-    #$ reactTarget = "vig2_sc1_openingstream"
-    #show screen streamerCommentary
-    $ AddChatter(vig3_startstream_comment1)
-    pause 0.5
-    $ AddChatter(vig3_startstream_comment3)
-    pause 0.5
-    $ AddChatter(vig3_startstream_comment4)
     "You load the save file you were previously playing, and are ready to go."
     $ narrator = alt_narrator
     if vig2_outlawEpilogue == True:
@@ -70,11 +63,20 @@ label vignette3Start():
         jump vig3marshalstart
 ###SCENE1###
 label vig3outlawstart():
+    if viewershipHigh == True:
+        $ viewCount += 5
+    else:
+        $ viewCount += 3
     show shiphub_stream at topleft onlayer background with dissolve
+    $ AddChatter(vig3_startstream_comment1)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment3)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment4)
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
-    $ AddChatter(vig3_outlawstart_comment1)
     "It's nice always being the first one up, if it's even morning?"
     "I check the clock on the wall."
+    $ AddChatter(vig3_outlawstart_comment1)
     mS "Yep, morning."
     "\"I've got lots more work where that came from.\" Arrogant rat. I should've gone back and blown his fortress to ash."
     $ AddChatter(vig3_outlawstart_comment2)  
@@ -84,6 +86,7 @@ label vig3outlawstart():
     $ AddChatter(vig3_outlawstart_comment4)  
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I can't believe I'm letting this get to me. Hell I've done worse, we've done worse. This probably wouldn't even crack the top five."
+    $ viewCount += 3
     $ AddChatter(vig3_outlawstart_comment5)
     pause 0.5
     $ AddChatter(vig3_outlawstart_comment6)
@@ -157,6 +160,7 @@ label vig3outlawstart():
     hide screen streamerCommentary
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
     "Teresa shoots up, I place hand on her shoulder."
+    $ viewCheck1 = viewCount
     menu:
         "Be calm.":
             $ kcEngagement += 1 #Logic: kitcat likes Teresa and prefers the gentler comment
@@ -177,6 +181,15 @@ label vig3outlawstart():
 
 label vig3marshalstart(): 
     show shiphub_stream at topleft onlayer background with dissolve
+    if viewershipHigh == True:
+        $ viewCount += 5
+    else:
+        $ viewCount += 4
+    $ AddChatter(vig3_startstream_comment1)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment3)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment4)
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
     "It's nice always being the first one up, if it's even morning?"
     "I check the clock on the wall."
@@ -192,6 +205,7 @@ label vig3marshalstart():
     "I'm letting this get to me. When have I ever taken one of Sav's threats seriously?" 
     "I'm sure he wants to see {b}her{/b} even less than me."
     "We're trying to be better, but what's the point if we're all arrested, if they take MAC away."
+    $ viewCount += 1
     $ AddChatter(vig3_marshalstart_comment4)
     "I find myself staring off into the distance." 
     "With my back to the door I don't see Jennica come in."
@@ -240,6 +254,7 @@ label vig3marshalstart():
     hide screen streamerCommentary
     enS "Captain! There's a transmission for us - I'm certain it's the Dragonflies."
     "Jennica shoots up, I place a hand on her shoulder."
+    $ viewCheck1 = viewCount
     menu:
         "Be calm.":
             $ csEngagement += 1 #Logic: Coriolis likes Jennica so prefers the gentler comment
@@ -255,6 +270,10 @@ label vig3marshalstart():
     jump vig3_sc2
 
 label vig3_sc2():
+    if viewershipHigh == True:
+        $ viewCount += 4
+    else:
+        $ viewCount += 3
     play music "soundtrack/vig1scratchtrack.wav" volume 1.2 loop fadein 1.0
     show cockpit_stream at topleft onlayer background with dissolve
     hide shiphub_stream
@@ -333,6 +352,8 @@ label vig3_sc2():
     macS "However I should caution you..."
     #Add a black screen function here. 
     stop music fadeout 2.0
+    if viewershipHigh == True:
+        $ viewCount += 3
     "For a moment, the Oakley falls away from my view."
     "The low hum of the ship replaced by a crowded bar, the starting lines of song that will bellow out to bustling streets."
     "An old crew of Outlaws, drunk off a job well done."
@@ -350,6 +371,7 @@ label vig3_sc3():
     play music "soundtrack/akar(day).wav" #fadein 1.0
     show akarstreet_stream at topleft onlayer background with dissolve
     hide cockpit_stream
+    $ viewCheck2 = viewCount
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     "It's beaming with colour and life, red and orange banners bridge the spaces between the buildings a jubilant feeling in the air."
     "Being attached to the Vineyard, Akar's blend of nature and technology are a sight to be sure." ## Rich and vibrant plant life merging with the surrounding infrastructure brightly adorned by lights and striking signage - think eco-futurist Vegas.##
@@ -367,6 +389,10 @@ label vig3_sc3():
     enS "It's risky even by your standards."
     mS "You both know that this is where we'll get quality upgrades for what we need."
     mS "And I figured it'd be nice to take a break while we're at it."
+    if viewershipLow == True:
+        $ viewCount += 3
+    else:
+        pass
     show jennica stream neutral at stream_left
     pS "I think you're too nostalgic."
     enS "And eager to get arrested."
@@ -670,7 +696,7 @@ label vig3_sc4():
     menu:
         "How do I deal with this?"
         "Fight them.":
-            $ macViolence += 1
+            $ macViolence += 2
             $ pdEngagement += 2 #Logic: pickledDragons wants you to fight
             $ kcEngagement -= 1 #Logic: kitcat doesn't like putting the crew at risk
             $ csEngagement += 1 #Logic: Coriolis wants to stand up for Rec
@@ -696,6 +722,7 @@ label vig3_sc4():
             pS "Maybe we can use him as our antennae instead."
             mS "Now that's a thought. Rec, you know those guys?"
         "Let them take the antenna.":
+            $ macPeace += 1
             $ macPessimism += 1
             $ kcEngagement += 1 #Logic: kitcat prioritizes the safety of MAC.
             $ pdEngagement -= 1 #Logic: pickledDragons and Coriolis both dislike the inaction
@@ -721,6 +748,7 @@ label vig3_sc4():
             mS "Now that's a thought. Rec, you know those guys?"
         "Try and bribe them" if reginaldChoice == False: #This option shoudl still be here but different outcomes based on the variable.
             $ macPeace += 1
+            $ macHope += 1
             $ csEngagement += 2 #Logic: Coriolis likes the attempt to solve problem nonviolently
             $ pdEngagement -= 1 #Logic: pickledDragons does not
             $ kcEngagement += 1 #Logic: kitcat also likes solving problem nonviolently
@@ -777,6 +805,7 @@ label vig3_sc4():
     jump vig3_sc5
 
 label vig3_sc5():
+    $ viewCheck3 = viewCount
     play music "soundtrack/akar(night).wav"
     show akarplaza_stream at topleft onlayer background with dissolve
     hide reccshop_stream 
@@ -1048,6 +1077,7 @@ label vig3_sc6():
     "Just as I get up I notice that wide brimmed hat again, long dark hair, she walks right past me and out the door."
     "There's a chill that runs down my spine."
     ###Recount choice again###
+    $ viewCheck4 = viewCount
     menu:
         "Do I investigate this stranger?"
         "Follow them.":
@@ -1163,6 +1193,7 @@ label vig3_sc6():
                 "They're right you know.":
                     $ csEngagement += 1 #Logic: This is a good lesson for the kid to be learning
                     $ kcEngagement += 1
+                    $ macHope += 1
                     mS "They're right, just because something is difficult doesn't mean you need to worry all the time."
                     mS "How you work through that is more important."
                     macS "I think I understand."
@@ -1178,6 +1209,7 @@ label vig3_sc6():
                     recS "It made me worry less."
                     mS "Rec I should tell you-"
                 "Rec should really consider moving.":
+                    $ macPessimism += 1
                     $ pdEngagement -= 1 #Logic: pickledDragons would wonder why you'd leave just cause it's hard
                     ##Logic: I think the other viewers would not have much of a reaction to this one, specifically because it's focused on Rec, not MAC.
                     mS "Rec ever thought that moving would be the right call?"
@@ -1195,6 +1227,7 @@ label vig3_sc6():
                     mS "Rec I should tell you-"
                     hide rec stream happy with dissolve
                 "Akar is beautiful if you look in the right places.":
+                    $ macHope += 2
                     $ csEngagement -= 1 #Logic: Coriolis would agree with the sentiment, but Akar is a messed up place to them
                     $ kcEngagement += 1 #Logic: kc and pd like this idea
                     $ pdEngagement += 1
@@ -1384,6 +1417,7 @@ label vig3_sc6():
             $ pdEngagement += 1 #Logic: pd likes the intensity, kc likes how Moze lies to get it started
             $ kcEngagement += 1
             $ csEngagement -= 1 #Logic: Coriolis is uninterested in another fight
+            $ macViolence += 1
             "I see a young couple pinning each other on a pillar near the table." 
             "They're really in it."
             "Ah young love, so easy to break."
@@ -1465,12 +1499,13 @@ label vig3_sc6():
     "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs."
     "But if they actually bet the ship then I don't know how we're gonna get it back."
     ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
+    $ viewCheck5 = viewCount
     menu:
         "How do I finish this?"
         "Shoot Zan's Leg.":
             $ vig3_outlaw += 1
             $ outlaw += 1
-            $ macViolence += 1
+            $ macViolence += 2
             $ macPessimism += 1
             $ pdEngagement += 2 #Logic: pd's perspective: make sure you win
             $ kcEngagement -= 1 #Logic: kc and cs both really like Zan so this is unnecessarily rude in their view
@@ -1547,7 +1582,7 @@ label vig3_sc6():
         "Trust the crew to win.":
             $ marshal += 1
             $ macHope += 1
-            $ macPeace += 1
+            $ macPeace += 2
             $ csEngagement += 2 #Logic: Coriolis likes Moze trusting in her crew
             $ kcEngagement += 1 #Logic: kitcat likes not shooting Zan
             $ pdEngagement -= 1 #Logic: pickledDragons wants to shoot Zan
@@ -1698,6 +1733,7 @@ label vig3_sc7():
     menu:
         "How do we want to approach getting the antenna?"
         "Whatever it takes.":
+            $ macPessimism += 1
             $ engineerApproval += 1
             $ pilotApproval -= 1
             $ pdEngagement += 1
@@ -1705,6 +1741,7 @@ label vig3_sc7():
             mS "Do whatever it takes, we need that part and we'll take it if necessary."
             pS "All in then. Got it."
         "Don't cause any unnecessary drama.":
+            $ macHope += 1
             $ pilotApproval += 1 #Logic: As established in vignette 2, Jenn is more marshal, Teresa is more outlaw
             $ engineerApproval -= 1
             $ pdEngagement -= 1 #Logic: cs is marshal, pd is outlaw. Pretty straightforward imo
@@ -1794,6 +1831,7 @@ label vig3_sc8():
     enS "And thank you Reccrin. Couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
+    $ viewCheck6 = viewCount
     hide rec with dissolve
     hide teresa with dissolve
     hide jennica with dissolve
@@ -2173,6 +2211,7 @@ label vig3_sc9():
     amaS "Hello Mozely."
     hide screen streamerCommentary
     hide ama with dissolve
+    $ viewCheck7 = viewCount
     jump vig3_break 
     #move to mid vig break - if we have time to make it...
 
@@ -2348,6 +2387,7 @@ label vig3_sc11():
 
 label vig3_sc12():
     #Ext. Vineyard Balcony
+    $ viewCheck8 = viewCount
     play music "soundtrack/decisionTime.wav"
     show vybalcony_stream at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
@@ -2378,6 +2418,8 @@ label vig3_sc12():
     menu: 
         "I have to do something."
         "Help the representative.":
+            $ macPeace += 2
+            $ macHope += 2
             $ kcEngagement += 1 #Logic: kitcat likes intervening in the murder, Coriolis really likes it 
             $ csEngagement += 3
             $ pdEngagement -= 2 #Logic: pickledDragons thinks he should die
@@ -2425,6 +2467,8 @@ label vig3_sc12():
                     $ pdEngagement += 1 #Logic: you get pd back a bit for this
                     $ kcEngagement += 2 #Logic: kitcat would say you have to defend MAC
                     $ csEngagement -= 1 #Logic: coriolis would prefer you rush them instead of try to shoot
+                    $ macViolence += 1
+                    $ macPessimism += 1
                     "Absolutely not!"
                     "I raise my blaster on instinct."
                     mS "Hands off him!"
@@ -2436,6 +2480,7 @@ label vig3_sc12():
                     $ pdEngagement += 1 #Logic: similar as the above, but kitcat finds it less impactful of a defense while Coriolis actually does approve somewhat
                     $ kcEngagement += 1
                     $ csEngagement += 1
+                    $ macViolence += 1
                     mS "No!"
                     "I rush the rep ready to tackle him to the ground."
                     "Then I hear Ama's rifle cock and I stop dead on reflex."
@@ -2623,6 +2668,8 @@ label vig3_sc12():
              
         "Do nothing.":
             $ vig3_outlaw += 1
+            $ macViolence += 1
+            $ macPessimism += 2
             $ pdEngagement += 2 #Logic: pickledDragons thinks the rep should die
             $ csEngagement -= 2 #Logic: Coriolis is appalled; kitcat is somewhat mixed. Would prefer to not let the rep die, but is also not disengaged by this choice
             $ vig3_bcRepSaved = False
@@ -3091,6 +3138,7 @@ label vig3marshalcomms():
     jump vig3_sc14
 
 label vig3_sc14():
+    $ viewCheck9 = viewCount
     hide jennica with dissolve
     hide mac with dissolve
     hide teresa with dissolve
@@ -3210,6 +3258,8 @@ label vig3_sc14():
                 $ csEngagement += 1  #Logic: if you didn't identify a misclick, they're just sympathetic in general
             $ kcEngagement -= 1 #Logic: even kitcat doesn't really like that response: DEFEND MAC!
             $ deadeyeApproval -= 2
+            $ macPeace += 1 #I feel like MAC would understand this as expressing remorse for actions, teaching him to ask for forgivness and not just stubbornly assert that you are correct.
+            $ macHope += 1
             $ reactTarget = "vig3_sc14_recfindsout_regret"
             mS "After he fixed MAC, we brought him to the ship."
             mS "He was trying to take MAC."
@@ -3262,6 +3312,8 @@ label vig3_sc14():
             $ csEngagement += 1
             $ kcEngagement += 3 #Logic: kitcat might legit feel like you didn't have a choice: MAC was threatened after all
             #I feel like Ama would be neutral on this front
+            $ macViolence += 1
+            $ macPessimism += 2
             $ reactTarget = "vig3_sc14_recfindsout_ihadto"
             mS "After he fixed MAC, we brought him to the ship."
             mS "He was trying to take MAC."
@@ -3314,6 +3366,8 @@ label vig3_sc14():
             $ csEngagement -= 2
             $ kcEngagement -= 1
             $ deadeyeApproval += 2
+            $ macViolence += 3
+            $ macPessimism += 3
             $ reactTarget = "vig3_sc14_recfindsout_noremorse"
             mS "After he fixed MAC, we brought him to the ship."
             mS "He was trying to take MAC."
@@ -3362,6 +3416,7 @@ label vig3_sc14():
             jump vig3_epilogue
 
 label vig3_epilogue():
+    $ viewCheck10 = viewCount
     stop music fadeout 4.0
     "The Vineyard is alight with fireworks in the distance."
     "The screens on the platform end their ads and a live feed begins."

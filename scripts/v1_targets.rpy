@@ -29,6 +29,7 @@ label vig1_sc2_whoQuestion():
     $ vig1_sc2_comment2.click = False
     $ narrator = reg_narrator
     hide screen chatTutorial
+    $ commentVariable = True
     menu:
         "A viewer wants to catch up on some back story."
         "Explain \"Deadeye.\"":
@@ -52,11 +53,17 @@ label vig1_sc2_whoQuestion():
             $ AddChatter(vig1_sc2_comment3)
             pause 0.5
     $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig1_sc2_thankCS():
@@ -64,6 +71,7 @@ label vig1_sc2_thankCS():
     $ vig1_sc2_comment2_csSH.click = False
     $ vig1_sc2_comment2_csAma.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Coriolis helped me explain."
         "Thanks, Coriolis!":
@@ -72,12 +80,17 @@ label vig1_sc2_thankCS():
             "Thanks for filling in, Coriolis!"
         "Say nothing.":
             pass
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig1_sc2_allistarhunk():
@@ -85,6 +98,7 @@ label vig1_sc2_allistarhunk():
     $ vig1_sc2_comment6.click = False
     $ narrator = reg_narrator
     hide screen chatTutorial
+    $ commentVariable = True
     menu:
         "The stream seems to like Allistar."
         "He's great!":
@@ -99,11 +113,17 @@ label vig1_sc2_allistarhunk():
             player "Just not sure what."
             $ allistarSuspicious = True
     $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig1_sc2_combatReact():
@@ -112,6 +132,7 @@ label vig1_sc2_combatReact():
     $ vig1_sc2_streamer1.click = False
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "What do I want to say?"
         "Never didn't have it!":
@@ -127,17 +148,24 @@ label vig1_sc2_combatReact():
             $ AddChatter(vig1_sc2_comment13)
             pause 0.5
     $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig1_sc2_houseExplosion():
     $ macroChoice = True
     $ vig1_sc2_comment16.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Coriolis thought I was going to destroy the house."
         "I did consider it":
@@ -149,17 +177,24 @@ label vig1_sc2_houseExplosion():
             player "Just took a second to read the choices."
             player "No way I was going that violent."
     $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig1_sc3_banditConvo():
     $ macroChoice = True
     $ vig1_sc3_comment3_bandit0.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Bandit asked if I'm a big Oakley fan"
         "Massive!":
@@ -261,6 +296,7 @@ label vig1_sc3_banditConvo():
     $ macroChoice = False
     $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 ######Below are targets for Flinch Analytics and Reddit#####

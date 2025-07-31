@@ -178,7 +178,7 @@ label Vig2BridgeScene():
             "Jennica looks puzzled for a moment."
             pS "Fair 'nough."
         "At least we know him.":
-            $ macHope -= 1
+            $ macPessimism += 1
             mS "He's a skeeve, but he's our skeeve."
             mS "He's just trying to survive."
             pS "Mighty successful surviving he's doing."
@@ -300,10 +300,12 @@ label GibianVCustomsDepot():
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ engineerApproval += 1
+            $ macViolence += 2
             #$ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
             $ customsStampede = False
+            $ macPeace += 2
             $ marshal += 2
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -617,7 +619,7 @@ label matticusDoor():
     menu:
         mattdoorbell "I need a little more proof than that."
         "Bring up an old debt.": #Lore
-            $ macHope -= 1
+            $ macPeace += 1
             $ marshal += 1
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright give me a sec."
@@ -836,7 +838,6 @@ label meetingMatticus():
     menu: #minorchoice7
         "Matticus looks at me impatiently."
         "Deal.":
-            $ macHope += 1
             "Guess we don't have much choice."
             mS "On your honour as a Snakehawk?"
             "Matticus chuckles to himself."
@@ -948,7 +949,7 @@ label approachingBase():
     menu:
         macS "This is a dangerous place? Are these bad people like Matticus?"
         "They're bad people.":
-            $ macHope -= 1
+            $ macPessimism += 1
             $ pdEngagement -= 1
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
@@ -1045,7 +1046,7 @@ label approachingBase():
             $ pdEngagement -= 2
             $ kcEngagement -= 1
             $ pilotApproval += 2
-            $ macViolence -= 1
+            $ macPeace += 2
             $ AddChatter(vig2_sc6_mar_comment1)
             "Quick and quiet would be safer."
             mS "Jennica's right, lets try to avoid attention."
@@ -1117,6 +1118,7 @@ label commsBase_MAR1():
             $ csEngagement += 1
             $ kcEngagement += 1
             $ pilotApproval += 1
+            $ macPeace += 1
             mS "Hey! How's it going?"
             "His hand raises into a wave as he greets us"
             hsguard1 "Hey! Sorry I don't think we've met."
@@ -1146,6 +1148,7 @@ label commsBase_MAR2():
     $ viewCheck7 += viewCount
     menu:
         "Knock them out.":
+            $ macViolence += 1
             "We can't risk them coming back and finding us."
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment1)
             "We need to neutralize these guys."
@@ -1177,6 +1180,7 @@ label commsBase_MAR2():
             hide reginald with Dissolve(0.5)
             jump commsBase_DataCenter
         "Go with a diversion.":
+            $ macPeace += 1
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pdEngagement -= 1
@@ -1222,12 +1226,12 @@ label commsBase_OUT1():
     "I notice MAC looks a little worried."
     menu:
         "I notice MAC looks a little worried."
-        "It's gonna be ok":
+        "It's going to be ok":
             $ macHope += 1
             mS "Don't worry MAC, everything's gonna be ok."
             mS "Just stay close to me."
-        "It's gonna be chaotic":
-            #$ macHonesty += 1
+        "It's going to be chaotic":
+            $ macPessimism += 1
             mS "Things are going to get hectic in there, MAC."
             mS "Just stay close to me."
     play audio "macAffirmative.wav"
@@ -1256,7 +1260,6 @@ label commsBase_OUT1():
     menu:
         "I think I have a good shot on one of them."
         "Shoot to kill.":
-            $ macViolence += 1
             $ pdEngagement += 1
             $ csEngagement -= 1
             "I take a deep breath and fire my blaster."
@@ -1326,7 +1329,7 @@ label commsBase_OUT1():
     menu:
         "He's terrified, as if this is the first time anyone's shot at him."
         "This isn't his fault.":
-            $ macViolence -= 1
+            $ macPeace += 1
             $ macHope += 1
             $ baseGuardKilled = False
             $ marshal += 2
@@ -1365,7 +1368,7 @@ label commsBase_OUT1():
             "Reginald approaches and opens the door to the datacentre."
         "I can't risk survivors.":
             $ macViolence += 1
-            $ macHope -= 1
+            $ macPessimism += 2
             $ baseGuardKilled = True
             $ outlaw += 2
             $ engineerApproval += 1
@@ -1498,12 +1501,14 @@ label commsBase_DataCenter():
             $ pilotApproval += 3
             $ engineerApproval -= 1
             $ macHope += 3
+            $ macPeace += 1
             "This is just plain wrong."
             "We have to be better."
             "Or at least we have to try to be."
             jump commsBase_DataCenter_MAR
         "We don't have a choice.":
             $ macViolence += 3
+            $ macPessimism += 1
             $ outlaw += 5
             $ csEngagement -= 3
             $ pdEngagement +=3
@@ -1577,7 +1582,7 @@ label commsBase_DataCenter_MAR():
         "Bribe Reginald.":
             $ reginaldChoice = False
             $ marshal += 1
-            $ macViolence -= 1
+            $ macPeace += 1
             "I signal to Jennica to wait."
             mS "How much do you really like working for Sav?"
             goon "Like?"
@@ -1785,6 +1790,7 @@ label commsBase_DataCenter_OUT():
         "Kill him.":
             $ technicianChoice = True
             $ macViolence += 2
+            $ macPessimism += 1
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 1
@@ -1938,7 +1944,7 @@ label vig2epilogue_MAR():
     menu:
         macS "I'm confused about our mission? Why do we need to hide if we are good people?"
         "The people in power are bad.":
-            $ macHope += 1
+            $ macHope += 2
             $ marshal += 1
             $ pdEngagement -= 1
             $ csEngagement += 1
@@ -1951,7 +1957,7 @@ label vig2epilogue_MAR():
             macS "I see. The universe is confusing."
             mS "Agreed."
         "The universe is bad and we can't trust anyone.":
-            $ macHope -= 1
+            $ macPessimism += 2
             $ outlaw += 1
             $ pdEngagement += 1
             $ kcEngagement += 1
@@ -2061,7 +2067,7 @@ label vig2epilogue_OUT():
     menu:
         macS "I don't know how to feel about our mission. Why did we need to help the skeeve Matticus?"
         "Doing bad things now can let us do good things later.":
-            $ macHope += 1
+            $ macHope += 2
             $ outlaw += 2
             $ pdEngagement += 2
             $ csEngagement -= 2
@@ -2077,7 +2083,7 @@ label vig2epilogue_OUT():
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
         "The universe is bad and we can't trust anyone.":
-            $ macHope -= 1
+            $ macPessimism += 1
             $ outlaw += 1
             $ pdEngagement += 2
             $ csEngagement += 1

@@ -155,7 +155,7 @@ label shipCall:
     menu:
         aS "Moze, what have you done?"
         "What I had to do.":
-            $ macHope -= 1
+            $ macPessimism += 1
             mS "I did what I had to do."
             mS "BigCorp {i}cannot{/i} get hold of MAC."
             mS "They didn't leave me with a choice."
@@ -264,6 +264,7 @@ label streetShootout:
     menu:
         "They're advancing fast."
         "Fire on rooftop (protect Allistar).":
+            $ macHope += 1
             $ csEngagement += 1
             "I turn my attention to the rooftop threat."
             "Mine and Annatar's fire forces them into cover, but not before one of them takes a hit and falls off the back of the building."
@@ -304,6 +305,7 @@ label streetShootout:
             hide screen chatTutorial2
         "Fire at speeder (protect MAC).":
             $ kcEngagement += 1
+            $ macHope += 1
             "I fire at the speeder, sending bolts directly into the metal."
             $ AddChatter(vig1_sc2_comment11)
             pause 0.5
@@ -341,6 +343,7 @@ label streetShootout:
             hide screen streamerCommentary
             hide screen chatTutorial2
         "Fire at ground enforcer (protect yourself).":
+            $ macPessimism += 1
             "I pop back around the corner to fire at the enforcer on the ground."
             "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
             "I hit it with a direct shot, taking them out of the battle."
@@ -398,6 +401,7 @@ label saveMAC():
             $ kcEngagement += 1
             $ macViolence -= 1
             $ marshal += 2
+            $ macPeace += 2
             #$ renpy.music.set_volume(1.0)
             "The thought doesn't even linger in my mind."
             "I take one more step then dive in front of MAC."
@@ -674,7 +678,7 @@ label escapePodConfrontation:
         mS "I've heard enough."
         "Kill Allistar.":
             $ killAllistar = True 
-            $ macViolence += 1
+            $ macViolence += 3
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
@@ -691,6 +695,7 @@ label escapePodConfrontation:
             $ narrator = alt_narrator
         "Stun Allistar.":
             $ killAllistar = False
+            $ macViolence += 3
             $ pdEngagement += 3
             $ csEngagement -= 1
             $ kcEngagement += 2
@@ -799,7 +804,7 @@ label escapePodConfrontation:
     menu:
         macS "But, did he have to die?"
         "I didn't have a choice.":
-            $ macHope -= 1
+            $ macPessimism += 1
             mS "He didn't give me a choice."
             mS "There are consequences for putting my crew at risk."
         "It's safer this way.":
