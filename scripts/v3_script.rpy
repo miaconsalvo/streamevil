@@ -1922,7 +1922,7 @@ label vig3_sc6():
             $ AddChatter (vig3_sc6_shootzan_comment8)
             "As I pull the trigger... Zan's eyes meet mine."
             "Damn."
-            $ reactTarget = "vig3_sc6_shootingzan"
+            $ reactTarget = "vig3_sc6_shootingzan"#timestamp 6:37
             play audio "lazer.wav" volume 5.0
             hide zan with Dissolve (0.1)
             "Zan falls hard, the pub is silent."
@@ -1932,14 +1932,19 @@ label vig3_sc6():
             show jennica stream neutral at stream_left
             show teresa stream happy at stream_right
             "The crowd erupts, Zan's crew is visibly miffed but the rest of the bar is patting Teresa and Jennica on the back."
+            $ AddChatter (vig3_sc6_shootzan_comment10)
             show zan stream at stream_center with dissolve
             "Zan gets up to accept defeat, Ovid has fully crawled under the table."
+            $ AddChatter (vig3_sc6_shootzan_comment11)
             "I look over again to the crew, but that table is empty."
+            $ AddChatter (vig3_sc6_shootzan_comment12)
             "The door swings closed."
             ovid "Thank the Makers it's over."
-            zan "Good, good! NOW!" 
+            zan "Good, good! NOW!"
+            $ AddChatter (vig3_sc6_shootzan_comment13) 
             zan "I must go and throw up. HAHA!"
             "The three exchange handshakes as Zan passes by me and stops."
+            $ AddChatter (vig3_sc6_shootzan_comment14)
             hide jennica with dissolve
             hide teresa with dissolve
             zan "You are Captain, no?" 
@@ -1953,8 +1958,8 @@ label vig3_sc6():
                     mS "The one and only!"
                     zan "You have a good crew, good moxie."
                     mS "We like to show out."   
-            "Good shot, but messy."
-            "Have more faith next time."
+            zan "Good shot, but messy."
+            zan "Have more faith next time."
             "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
             hide screen streamerCommentary
             hide zan with dissolve
