@@ -2643,8 +2643,12 @@ label vig3_sc9():
             mS "Um yeah, haha, sure."
 
     "We make our way to Reynar's open bar."
+    $ AddChatter (vig3_sc9_inventorsfair_comment39)
     "With most of the action happening on the floor we have a lot of room to talk."
     "We talk for a lot longer than we should."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment40)
+    #*pause 0.5
+    #$$ AddChatter (vig3_sc9_inventorsfair_comment41)
     mS "So if someone would want to maybe go around and check out some of the off the floor pieces."
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected, turns out they've been keeping all the legit stuff on this side of the Vineyard."
@@ -2690,6 +2694,8 @@ label vig3_sc9():
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
             $ vig3_daisApproval = False
+            $ reactTarget = "vig3_sc9_daisybar"
+            show screen streamerCommentary
             "I rise to my full height."
             mS "She said she'll get back to you later."
             "They turn to me."
@@ -2718,6 +2724,8 @@ label vig3_sc9():
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
+            $ reactTarget = "vig3_sc9_daisybar"
+            show screen streamerCommentary
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
@@ -2748,6 +2756,8 @@ label vig3_sc9():
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
             $ vig3_daisyApproval = False
+            $ reactTarget = "vig3_sc9_daisybar"
+            show screen streamerCommentary
             "I can't do anything right now."
             "There's too much on the line."
             invfairnpc2 "So Daisy, shall I steal you away?"
