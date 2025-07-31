@@ -2157,8 +2157,6 @@ label vig3_sc7():
     mS "Perfect Resa, let's get started then. Now MAC-"
     stop music
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
-    $ reactTarget = "vig3_sc7_lostmac"
-    show screen streamerCommentary
     mS "MAC!"
     hide teresa stream with Dissolve(0.2)
     hide jennica stream with Dissolve(0.2)
@@ -2167,6 +2165,8 @@ label vig3_sc7():
     "WHERE IS HE?"
     "Then I see him far in the distance, wheeling himself slowly to a group of people."
     "To a group of Hounds."
+    $ reactTarget = "vig3_sc7_lostmac"
+    show screen streamerCommentary
     "My feet move before my brain can register what is happening."
     "It happens so fast, MAC runs into the leader, his arms frantic."
     "They swarm him, my feet aren't moving fast enough."
@@ -2698,12 +2698,14 @@ label vig3_sc11():
     "That smart little devil."
     mS "I don't know what you mean Ama, left something behind have you?"
     amaS "Oh we're playing dumb are we? The droid Mozely, give me the droid."
+    $ reactTarget = "vig3_sc11_amabacksass"
     menu: 
         "Ama doesn't have MAC, we can use this."
         "Why don't you just enjoy the party?": #Flirt
             $ csEngagement += 1 #Logic: same as previous menu options
             mS "Ama please, it's a celebration, have a drink."
             mS "All this stress will give you wrinkles."
+            show screen streamerCommentary
             "A smile forms on her face, anger mixed with something else."
             amaS "You little shit..."
             mS "Now, now, don't make a scene. You're better than that."
@@ -2712,6 +2714,7 @@ label vig3_sc11():
             mS "I don't have it."
             amaS "Are you playing dumb with me?"
             mS "I lost it, he's not with me."
+            show screen streamerCommentary
             "Ama furrows her brow."
             amaS "This isn't the time to yank my chain."
             mS "Isn't that BigCorp's job?"
@@ -2719,14 +2722,14 @@ label vig3_sc11():
             $ pdEngagement += 1 
             mS "Why are you asking me?"
             mS "It's right there isn't it?"
+            show screen streamerCommentary
             "Ama turns to the platform then back at me, unimpressed."
             amaS "Don't quit your day job Moze."
             amaS "I want that droid and I want it now."
-    $ reactTarget = "vig3_sc11_amabacksass"
-    show screen streamerCommentary
     "Ama stalks towards me and I know what's coming."
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry Resa."
+    hide screen streamerCommentary
     show ama stream neutral at stream_left with move
     show reynar stream neutral at stream_right with dissolve
     reynar "Ladies, I hope your evening is going well."
@@ -2736,7 +2739,6 @@ label vig3_sc11():
     "I relax my shoulders."
     mS "Reynar, thank you for having us this evening."
     reynar "If only you were invited..."
-    hide screen streamerCommentary
     "A pause."
     "A waiter passes by with a full tray, Reynar grabs a bubbling drink without even looking."
     reynar "I sincerely hope, the two of you aren't about to do what I think you are."
@@ -2820,6 +2822,7 @@ label vig3_sc12():
     amaS "Yes, THEY do."
     "Her grip tightens."
     "I see MAC on the ground just passed them, he's still."
+    hide screen streamerCommentary
     menu: 
         "I have to do something."
         "Help the representative.":
@@ -2838,7 +2841,6 @@ label vig3_sc12():
             mS "You know I don't."
             mS "But you're going too far."
             "When Ama lets him go, he spills to the ground, tears in his eyes."
-            hide screen streamerCommentary
             menu: 
                 "Say something."
                 "You're rough as always.": 

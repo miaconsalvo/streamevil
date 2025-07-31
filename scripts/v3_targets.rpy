@@ -603,19 +603,25 @@ label vig3_sc6_shipbet2():
             $ reactImage = "stream ui/reactunsure.png"
             player "Phew. That's a relief"
             player "That could've been bad!"
+            $ AddChatter(vig3_sc6_react_comment38)
             pause 0.5
         "I knew it!" if shipbetprediction == True:
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "I called it chat!"
             player "No way they'd bet the ship!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment39)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment40)
             pause 0.5
         "Wow cop out.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Hahaha"
             player "Of course they didn't bet the ship."
             player "What a cop out."
+            $ AddChatter(vig3_sc6_react_comment41)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment42)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -642,12 +648,15 @@ label vig3_sc7_lostmac():
             $ reactImage = "stream ui/reactshocked.png"
             player "MAC!"
             player "Nooooo!"
+            $ AddChatter(vig3_sc7_react_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc7_react_comment2)
             pause 0.5
         "The plot thickens.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Oh damn, did not expect that to happen."
             player "Things are getting complicated on Solara!"
-            #add chatter
+            $ AddChatter(vig3_sc7_react_comment3)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -674,13 +683,15 @@ label vig3_sc8_teresabluff():
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Wow, Teresa knows her way around high society."
-            #player "That's so cool!"
+            $ AddChatter(vig3_sc8_react_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc8_react_comment2)
             pause 0.5
         "How lucky.":
             $ reactImage = "stream ui/reactconversational.png"
             #player "Wow."
             player "We're lucky Teresa was here."
-            #add chatter
+            $ AddChatter(vig3_sc8_react_comment3)
             pause 0.5
         "This is boring.": #maybe have this only if you stealthed into the commsbase in vig2 or maybe different based on vig2
             $ pdEngagement += 1
@@ -688,7 +699,9 @@ label vig3_sc8_teresabluff():
             player "Jeez. More stealth?"
             player "Really seems like that's always an option."
             player "Wish we could go loud!"
+            $ AddChatter(vig3_sc8_react_comment4)
             pause 0.5
+            $ AddChatter(vig3_sc8_react_comment5)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -714,17 +727,72 @@ label vig3_sc9_daisyreturns():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Daisy returns!"
             player "Love it! She's the realest person in this room."
+            $ AddChatter(vig3_sc9_react_comment1)
             pause 0.5
+            $ AddChatter(vig3_sc9_react_comment2)
         "Maybe she's following us?":
             $ reactImage = "stream ui/reactthinking.png"
             player "Oh damn! Maybe she was following us?"
             player "Pretty sus chat."
-            #add chatter
+            $ bacon8r_6
+            $ AddChatter(vig3_sc9_react_comment3)
             pause 0.5
+            $ AddChatter(vig3_sc9_react_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment5)
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "She's so cute!"
             player "I love her design!"
+            $ AddChatter(vig3_sc9_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment7)
+            pause 0.5
+    if commentVariable == True:
+        "Where was I?"
+        $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
+    return
+
+label vig3_sc9_daisybar():
+    hide screen streamerCommentary
+    $ macroChoice = True
+    $ narrator = reg_narrator
+    $ reactVariable = True
+    menu:
+        #"Say something about Daisy."
+        "We met up with Daisy at the Inventor's Fair."
+        "She's back!":
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Daisy returns!"
+            player "Love it! She's the realest person in this room."
+            $ AddChatter(vig3_sc9_react_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment2)
+        "Maybe she's following us?":
+            $ reactImage = "stream ui/reactthinking.png"
+            player "Oh damn! Maybe she was following us?"
+            player "Pretty sus chat."
+            $ bacon8r_6
+            $ AddChatter(vig3_sc9_react_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment5)
+        "Cute!":
+            $ reactImage = "stream ui/reactthumbsup.png"
+            player "She's so cute!"
+            player "I love her design!"
+            $ AddChatter(vig3_sc9_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment7)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -752,18 +820,24 @@ label vig3_sc9_amasurprise():
             $ reactImage = "stream ui/reactshocked.png"
             player "This is bad!"
             player "This is really bad!"
+            $ AddChatter(vig3_sc9_react_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment9)
             pause 0.5
         "Not so paranoid after all!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
             player "Oh wow, guess Moze wasn't being paranoid after all!"
-            #add chatter
+            $ AddChatter(vig3_sc9_react_comment10)
             pause 0.5
         "It's go time.":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Oh it's time to rumble."
             player "Let's get loud!"
+            $ AddChatter(vig3_sc9_react_comment11)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment12)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -791,20 +865,25 @@ label vig3_sc11_amabacksass():
             $ reactImage = "stream ui/reactcelebrate.png"
             #player "Damn Ama!"
             player "Get roasted, Ama!"
+            $ AddChatter(vig3_sc11_react_comment1)
             pause 0.5
         "Love this sass.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Feel like they haven't missed a step!"
             player "Just like old times hahaha!"
-            #add chatter
+            $ AddChatter(vig3_sc11_react_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc11_react_comment3)
             pause 0.5
         "Let them fight!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Boo. Let me fight."
             player "She's got a whole lot coming to her."
+            $ AddChatter(vig3_sc11_react_comment4)
             pause 0.5
+            $ AddChatter(vig3_sc11_react_comment5)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -829,19 +908,26 @@ label vig3_sc12_amachoke():
         "Don't mess with Ama.":
             $ reactImage = "stream ui/reactshocked.png"
             #player "Damn!"
-            player "Good to have a reminder not to piss off Ama."
+            player "Good reminder: do not piss off Ama."
+            $ AddChatter(vig3_sc12_react_comment1)
             pause 0.5
+            $ AddChatter(vig3_sc12_react_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment5)
         "Better call HR!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Better file an HR report!"
             player "Terrible workplace conduct from Ama!"
-            #add chatter
+            $ AddChatter(vig3_sc12_react_comment2)
             pause 0.5
-        "Buddy got off easy.":
-            $ reactImage = "stream ui/reactthinking.png"
-            player "Could have been worse."
-            player "This guy was asking for trouble!"
-            pause 0.5
+        "Say nothing.":
+            pass
+            #$ reactImage = "stream ui/reactthinking.png"
+            #player "Could have been worse."
+            #player "This guy was asking for trouble!"
+            #pause 0.5
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
