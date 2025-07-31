@@ -1288,6 +1288,7 @@ label vig3_sc6():
             "The chaos is picking up as the night continues." 
             $ AddChatter (vig3_sc6_stranger_comment3)
             "I almost lose the stranger as they tuck away behind an alley and I move to close in on them."
+            hide screen streamerCommentary
             "As I turn the corner I'm met with a knife to my throat."
             "So clearly not Ama's style."
             $ AddChatter (vig3_sc6_stranger_comment4)
@@ -1304,7 +1305,6 @@ label vig3_sc6():
             mS "No, I just thought you were someone else."
             "She doesn't let go of the knife."
             strngr1 "Well sorry to disappoint. But I don't take kindly to being followed."
-            hide screen streamerCommentary
             "I should say something to get out of this." #Options: Hands up and walk away, flirt, wrestle the knife away.
             menu:
                 "How do I get out of this?"
@@ -1615,6 +1615,7 @@ label vig3_sc6():
     $ AddChatter (vig3_sc6_bbpub_comment37)
     pause 0.5
     $ AddChatter (vig3_sc6_bbpub_comment38)
+    hide screen streamerCommentary
     "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
     $ AddChatter (vig3_sc6_bbpub_comment39)
     pause 0.5
@@ -1623,7 +1624,6 @@ label vig3_sc6():
     "The first team that withdraws or has a member drop loses."
     "...By round ten, it's not looking good."
     $ AddChatter (vig3_sc6_bbpub_comment41)
-    hide screen streamerCommentary
     zan "How is moxie?"
     pS "Stronger than my mama's back!"
     enS "I'm starting to feel mine in the back of my throat."
