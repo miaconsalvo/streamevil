@@ -2703,9 +2703,9 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
-            $ vig3_daisApproval = False
-            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
-            show screen streamerCommentary
+            $ vig3_daisyApproval = False
+            $ vig3_daisyChoice = 1
+            $ reactTarget = "vig3_sc9_daisybar"
             "I rise to my full height."
             mS "She said she'll get back to you later."
             $ AddChatter (vig3_sc9_standup_comment1)
@@ -2714,6 +2714,7 @@ label vig3_sc9():
             "They turn to me."
             invfairnpc2 "Oh? and what are you?"
             mS "I'm about to be your next big problem."
+            show screen streamerCommentary
             "I move forward to tower over him and he takes a step back."
             showgirl "Moze..."
             invfairnpc2 "You don't want to do this."
@@ -2728,7 +2729,6 @@ label vig3_sc9():
             "She turns to me."
             showgirl "I'll see you around, Moze."
             showgirl "Be sure to check out that view."
-            $ AddChatter (vig3_sc9_standup_comment5)
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
@@ -2740,13 +2740,14 @@ label vig3_sc9():
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
-            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
+            $ reactTarget = "vig3_sc9_daisybar"
             show screen streamerCommentary
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
             $ AddChatter (vig3_sc9_standup_comment1)
             mS "Now let's not make a scene."
+            show screen streamerCommentary
             mS "The lady said she'll get to you soon. Right?"
             "The initial shock falls from her face and is replaced with a devilish smile."
             $ AddChatter (vig3_sc9_standup_comment6)
@@ -2767,6 +2768,7 @@ label vig3_sc9():
             "Daisy give me a wink and slowly leaves the bar to greet the rest of the guests."
             $ AddChatter (vig3_sc9_standup_comment4)
             "So many feathers."
+            hide screen streamerCommentary
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
@@ -2776,8 +2778,9 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: As mentioned several times, cs appreciates a "sacrifice" for the greater good
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
+            $ vig3_daisyChoice = 3
             $ vig3_daisyApproval = False
-            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
+            $ reactTarget = "vig3_sc9_daisybar"
             show screen streamerCommentary
             "I can't do anything right now."
             "There's too much on the line."
@@ -2787,6 +2790,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_attention_comment2)
             showgirl "I'm with a guest at the moment."
             invfairnpc2 "There are better people for your time."
+            show screen streamerCommentary
             "I look around the room to catch anyone's eye."
             $ AddChatter (vig3_sc9_attention_comment3)
             "Even the droids aren't giving me the slightest glance."
@@ -2806,6 +2810,7 @@ label vig3_sc9():
             showgirl "Thank you for the drink. Excuse me please."
             $ AddChatter (vig3_sc9_attention_comment7)
             "Daisy slowly leaves the bar to greet the rest of the guests."
+            hide screen streamerCommentary
             hide showgirl with dissolve
             $ AddChatter (vig3_sc9_attention_comment8)
             "I finish my drink and find the rest of my crew."
@@ -2813,7 +2818,6 @@ label vig3_sc9():
             show reynar stream neutral at stream_center with dissolve #can put in new model when we have it
             "Looking disappointed."
     hide reynar with dissolve
-    hide screen streamerCommentary
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show rec stream neutral at stream_center with dissolve

@@ -769,31 +769,36 @@ label vig3_sc9_daisybar():
     menu:
         #"Say something about Daisy."
         "We met up with Daisy at the Inventor's Fair."
-        "She's back!":
-            $ reactImage = "stream ui/reactcelebrate.png"
-            player "Daisy returns!"
-            player "Love it! She's the realest person in this room."
-            $ AddChatter(vig3_sc9_react_comment1)
-            pause 0.5
-            $ AddChatter(vig3_sc9_react_comment2)
-        "Maybe she's following us?":
+        "Maybe there was a better way of handling this...":
             $ reactImage = "stream ui/reactthinking.png"
-            player "Oh damn! Maybe she was following us?"
-            player "Pretty sus chat."
-            $ bacon8r_6
-            $ AddChatter(vig3_sc9_react_comment3)
+            player "Idk chat, maybe there was a better way of handling this..."
+            $ AddChatter(vig3_sc9_react_comment18)
             pause 0.5
-            $ AddChatter(vig3_sc9_react_comment4)
+        "Get him!" if vig3_daisyChoice == 1:
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "Yeah, Mills! What are you gonna do about it?"
+            $ AddChatter(vig3_sc9_react_comment13)
             pause 0.5
-            $ AddChatter(vig3_sc9_react_comment5)
-        "Cute!":
-            $ reactImage = "stream ui/reactthumbsup.png"
-            player "She's so cute!"
-            player "I love her design!"
-            $ AddChatter(vig3_sc9_react_comment6)
+            $ AddChatter(vig3_sc9_react_comment14)
             pause 0.5
-            $ AddChatter(vig3_sc9_react_comment7)
+        "Get him!" if vig3_daisyChoice == 2:
+            $ reactImage = "stream ui/reactcelebrate.png"
+            player "And what are you gonna do about it, Mills?"
+            $ AddChatter(vig3_sc9_react_comment13)
             pause 0.5
+            $ AddChatter(vig3_sc9_react_comment16)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment17)
+            pause 0.5
+        "Don't want to attract attention." if vig3_daisyChoice == 3:
+            $ reactImage = "stream ui/reactthinking.png"
+            player "I want to mess with him so bad."
+            player "But we can't take the risk."
+            $ AddChatter(vig3_sc9_react_comment15)
+            pause 0.5
+            $ AddChatter(vig3_sc9_react_comment16)
+        "Say nothing.":
+            pass
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
