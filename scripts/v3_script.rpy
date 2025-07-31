@@ -1865,6 +1865,9 @@ label vig3_sc6():
     "Round 25 is rough. Even with some of the obstacles out of the way Teresa and Jennica are barely holding on." 
     "Ovid is finally looking like he's playing the game and Zan is rocking in his seat like a child."
     ovid "Please, call it quits?"
+    $ AddChatter (vig3_sc6_bbpub_comment67)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment68)
     show teresa stream neutral at stream_right with dissolve 
     enS "Not likely."
     show zan stream at stream_center with dissolve
@@ -1872,11 +1875,19 @@ label vig3_sc6():
     show jennica stream neutral at stream_left with dissolve
     pS "Not after this you aren't."
     "When Zan and Ovid lose the round an opportunity presents itself." 
+    #*$ AddChatter (vig3_sc6_bbpub_comment69)
+    #*pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment70)
     "Zan will tip his chair back to take his drink."
     "One clean shot to the leg and he's on the ground."
     "But that's risky."
+    $ AddChatter (vig3_sc6_bbpub_comment71)
     "I could just leave it to the two of them to take it home, Ovid looks like he's on his last legs."
+    $ AddChatter (vig3_sc6_bbpub_comment72)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment73)
     "But if they actually bet the ship then I don't know how we're gonna get it back."
+    $ AddChatter (vig3_sc6_bbpub_comment74)
     ###Two choices and three endings. If the player doesn't shoot they may or may not win which will have two separate endings. If they do shoot they will automatically win, this is also the Ama choice###
     $ viewCheck5 = viewCount
     menu:
@@ -1891,21 +1902,31 @@ label vig3_sc6():
             $ csEngagement -= 1
             $ vig3_zanApproval = False
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
+            $ AddChatter (vig3_sc6_shootzan_comment1)
             "Zan has a notable plate on his leg, a good shot should send him flying with minimal damage. Hopefully."
+            $ AddChatter (vig3_sc6_shootzan_comment2)
             "I take my position."
+            $ AddChatter (vig3_sc6_shootzan_comment3)
             "As I scan the bar for any eyes on me, I take in just how packed this place is. It's wall to wall."
+            $ AddChatter (vig3_sc6_shootzan_comment4)
             "Then I see them, a small group near the door, half watching the game."
+            $ AddChatter (vig3_sc6_shootzan_comment6)
             "Is that?"
             "No."
             "My vision is still betraying me and I don't have time to get a better look."
             zan "FOR MY LOYAL FANS!"
+            $ AddChatter (vig3_sc6_shootzan_comment5)
             "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
+            $ AddChatter (vig3_sc6_shootzan_comment7)
+            pause 0.5
+            $ AddChatter (vig3_sc6_shootzan_comment8)
             "As I pull the trigger... Zan's eyes meet mine."
             "Damn."
             $ reactTarget = "vig3_sc6_shootingzan"
             play audio "lazer.wav" volume 5.0
             hide zan with Dissolve (0.1)
             "Zan falls hard, the pub is silent."
+            $ AddChatter (vig3_sc6_shootzan_comment9)
             show screen streamerCommentary
             pS "HELL YEAH!!!"
             show jennica stream neutral at stream_left
