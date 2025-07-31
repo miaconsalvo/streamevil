@@ -958,12 +958,21 @@ label vig3_sc12_amafindsout():
             $ reactImage = "stream ui/reactshocked.png"
             player "This is really bad!"
             player "Ama figured it out!"
+            $ AddChatter(vig3_sc12_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment7)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment9)
             pause 0.5
         "Time to fight!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Finally time for some battle!"
             player "Don't get between Mozely and our MAC!"
-            #add chatter
+            $ AddChatter(vig3_sc12_react_commen10)
+            pause 0.5
+            $ AddChatter(vig3_sc12_react_comment11)
             pause 0.5
         "Say nothing.":
             player "..."

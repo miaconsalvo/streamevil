@@ -1286,6 +1286,31 @@ default vig3_sc12_react_comment3 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nIt'
 default vig3_sc12_react_comment4 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nYa she's clearly rattled", 3, "#ffffff")
 default vig3_sc12_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nand desperate", 3, "#ffffff")
 
+##Sc12 - Ama Finds Out
+default vig3_sc12_react_comment6 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nHonestly surprised she didn't figure it out sooner", 3, "#ffffff")
+default vig3_sc12_react_comment7 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nGalaxy's best hunter could use some prescription glasses", 3, "#ffffff")
+default vig3_sc12_react_comment8 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nWell MAC is a master of disguise", 3, "#ffffff")
+default vig3_sc12_react_comment9 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\n\"Hi MAC\" lmao", 3, "#ffffff")
+default vig3_sc12_react_comment10 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nGloves are off", 3, "#ffffff")
+default vig3_sc12_react_comment11 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nDo they have to tho", 3, "#ffffff")
+
+##Sc12 Mac Alignment - VP
+default vig3_sc12_macAlignVP_comment1 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nDo they have to tho", 3, "#ffffff")
+
+##Sc12 Mac Alignment - VH
+
+##Sc12 Mac Alignment - PP
+
+##Sc12 Mac Alignment - PH
+
+##
+
+##
+
+##
+
+##
+
 ##
 
 ##

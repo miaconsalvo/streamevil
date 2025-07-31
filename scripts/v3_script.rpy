@@ -3154,11 +3154,11 @@ label vig3_sc12():
             "I look at MAC and then Ama."
             "Before I even realize it, I start walking towards her."
             amaS "Woah now, stay right there."
+            hide screen streamerCommentary
             "I take another step."
             amaS "I'm warnin' ya Mozely."
             "She's hesitating."
             "Another step."
-            hide screen streamerCommentary
             amaS "You're gonna make me shoot you?"
             "Until I'm close enough."
             "I pause."
