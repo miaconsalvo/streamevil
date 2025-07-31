@@ -4708,7 +4708,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment49)
     menu:
         amaS "Right now, you have to rebuild the Oakley. I don't know if I fit that picture."
-        "You belong.":
+        "You belong." if vig4_amaOffer == True:
             $ vig4_amaCrew = True
             mS "If you want a place in the crew, it's not too late."
             $ AddChatter(vig4_sc7_3_ama_comment53)
@@ -4728,7 +4728,7 @@ label vig4_sc7_3_ama():
             if deadeyeApproval < 4:
                 $ AddChatter(vig4_sc7_3_ama_comment55)
             "An unbearable groaning sound suddenly reverberates across Polaris."
-        "I don't want to live without you." if deadeyeApproval >= 4 and jennicaRomance == False and teresaRomance == False:
+        "I don't want to live without you." if deadeyeApproval >= 4 and vig4_amaOffer == True and jennicaRomance == False and teresaRomance == False:
             $ vig4_amaCrew = True
             mS "Ama, I don't want to live without you."
             "She looks at me, almost confused."
@@ -5890,7 +5890,7 @@ label vig4_epilogue_ama():
         pS "Looks like normal space stuff to me."
         enS "Nothing out of the ordinary I can see."
         mS "Could it be a faulty alarm system?"
-        macS "Let us wait, and observe before we jump to conclusions."
+        macS "Let's wait and observe before we jump to conclusions."
         "A minute goes by as we scan the vastness of space."
         macS "Oh! I see it!"
         $ AddChatter(vig4_sc7_epilogue_ama_comment15)
