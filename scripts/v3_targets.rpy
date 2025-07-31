@@ -363,13 +363,20 @@ label vig3_sc6_stranger():
             $ reactImage = "stream ui/reactunsure.png"
             player "Damn Moze is following strangers now!"
             player "I don't like the looks of this!"
+            $ AddChatter(vig3_sc6_react_comment5)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment7)
         "This seems dangerous.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Oh god, this is going to go badly!"
             player "What you doing Moze!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment8)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment5)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment9)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -395,21 +402,39 @@ label vig3_sc6_recbonding():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Rec is so cool!"
             player "Really love their character!"
+            $ AddChatter(vig3_sc6_react_comment10)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment18)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment19)
         "Rec is cute!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Rec is so cute!"
             player "Really love their design!"
-            #add chatter
+            $ AddChatter(vig3_sc6_react_comment10)
             pause 0.5
+            $ AddChatter(vig3_sc6_react_comment15)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment16)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment17)
         "Damn I'm guilty.":
             $ kcEngagement += 1
             $ csEngagement += 1
             $ pdEngagement -= 1
             $ reactImage = "stream ui/reactshocked.png"
-            player "Rec is so cool! But every time I think that I remember we killed their brother."
+            player "Rec is so cool! But every time I think that, I remember we killed their brother."
             player "So much guilt!"
+            $ AddChatter(vig3_sc6_react_comment10)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment11)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment12)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment13)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment14)
             pause 0.5
     if commentVariable == True:
         "Where was I?"
@@ -430,11 +455,14 @@ label vig3_sc6_shipbet1():
     $ narrator = reg_narrator
     $ reactVariable = True
     menu:
-        "Did they actually bet the ship on thsi game?"
+        "Did they actually bet the ship on this game?"
         "Classic Jenn and Resa.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Oh damn! Bit of an overbet!"
             player "Now we gotta win!"
+            $ AddChatter(vig3_sc6_react_comment21)
+            pause 0.5
+            $ AddChatter(vig3_sc6_react_comment20)
             pause 0.5
         "What the hell!":
             $ reactImage = "stream ui/reactcelebrate.png"

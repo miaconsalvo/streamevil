@@ -1175,8 +1175,51 @@ default vig3_sc6_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:30{/b}\nTe
 default vig3_sc6_react_comment3 = ChatEntry(False, "{b}kitcat - 6:30{/b}\nProtect the innocent child!", 3, "#ffffff")
 default vig3_sc6_react_comment4 = ChatEntry(False, "{b}AFKAngel - 6:30{/b}\nBut it's different if his mom's actually use the language", 3, "#ffffff")
 
+#Sc6 - stranger
+default vig3_sc6_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:31{/b}\nIf it is Ama we can't let her get the drop on us", 3, "#ffffff")
+default vig3_sc6_react_comment6 = ChatEntry(False, "{b}J4MIR0QU4I - 6:31{/b}\nYa, paranoid, but good to be safe", 3, "#ffffff")
+default vig3_sc6_react_comment7 = ChatEntry(False, "{b}llamabama22 - 6:31{/b}\nHer fear's getting in the way of her relationships", 3, "#ffffff")
+default vig3_sc6_react_comment8 = ChatEntry(False, "{b}bacon8r_6 - 6:31{/b}\nTaking care of business!", 3, "#ffffff")
+default vig3_sc6_react_comment9 = ChatEntry(False, "{b}llamabama22 - 6:31{/b}\nSo badly!", 3, "#ffffff")
 
-#Sc5 - Rec and MAC
+#Sc6 - Rec Bonding
+default vig3_sc6_react_comment10 = ChatEntry(False, "{b}R4dioRobbie - 6:31{/b}\nVery distinct, but also clearly related to Allistar", 3, "#ffffff")
+default vig3_sc6_react_comment11 = ChatEntry(False, "{b}AFKAngel - 6:31{/b}\nThey're great, but I'm not looking forward to when they find out about they're brother...", 3, "#ffffff")
+default vig3_sc6_react_comment12 = ChatEntry(False, "{b}R4dioRobbie - 6:31{/b}\nThey don't have to find out", 3, "#ffffff")
+default vig3_sc6_react_comment13 = ChatEntry(False, "{b}kitcat - 6:31{/b}\nIt's a story. They're going to find out", 3, "#ffffff")
+default vig3_sc6_react_comment14 = ChatEntry(False, "{b}kitcat - 6:31{/b}\nAnd guarantee it's gonna absolutely suck", 3, "#ffffff")
+default vig3_sc6_react_comment15 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:31{/b}\nI want to be their friend!", 3, "#ffffff")
+default vig3_sc6_react_comment16 = ChatEntry(False, "{b}llamabama22 - 6:31{/b}\nJust friend?", 3, "#ffffff")
+default vig3_sc6_react_comment17 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:31{/b}\nMaybe more, we'll see ;)", 3, "#ffffff")
+default vig3_sc6_react_comment18 = ChatEntry(False, "{b}bacon8r_6 - 6:31{/b}\nTop 3 engineer for sure", 3, "#ffffff")
+default vig3_sc6_react_comment19 = ChatEntry(False, "{b}pickledDragons - 6:31{/b}\nidk, let's make sure they don't get near any escape pods with MAC...just in case", 3, "#ffffff")
+
+#Sc6 - ShipBet1
+default vig3_sc6_react_comment20 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nNaah they got this", 3, "#ffffff")
+default vig3_sc6_react_comment21 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nJust a bit haha", 3, "#ffffff")
+
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
 
 ####Blueit Thread Configuration####
 default vig3_bThread1 = bThread( 1, "vig3_blueit_amaThread", "images/socials/bThread_v3_amaRomance.png") #tag, target, image
