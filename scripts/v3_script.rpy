@@ -2650,7 +2650,7 @@ label vig3_sc9():
     "We talk for a lot longer than we should."
     #*$ AddChatter (vig3_sc9_inventorsfair_comment40)
     #*pause 0.5
-    #$$ AddChatter (vig3_sc9_inventorsfair_comment41)
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment41)
     mS "So if someone would want to maybe go around and check out some of the off the floor pieces."
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected, turns out they've been keeping all the legit stuff on this side of the Vineyard."
@@ -2664,25 +2664,33 @@ label vig3_sc9():
     showgirl "Sounds like a big extender."
     "I let out a heavy sigh. Letting the joke fly over my head."
     showgirl "Guests aren't able to explore off-floor pieces."
+    $ AddChatter (vig3_sc9_inventorsfair_comment42)
     showgirl "Unless they waited for a big presentation and had someone to help them through."
     mS "When's the next one scheduled?"
+    $ AddChatter (vig3_sc9_inventorsfair_comment43)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment44)
     showgirl "The BigCorp showcase should be happening in fifteen minutes, hear you'll get a killer view from the door near that vase over there."
     "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it." 
     "I'm still trying to process what she just said."
     mS "BigCorp is here?"
     showgirl "Oh yeah, big reveal!"
     showgirl "Heard Reynar is hedging new investments and property in the Outposts, hard to expand without greasing some palms."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment45)
     "Just then I hear an annoyingly recognizeable voice."
     invfairnpc2 "Is that Akar's own Daisy."
     "Daisy's eyes widen. She forces a smile."
+    $ AddChatter (vig3_sc9_inventorsfair_comment46)
     showgirl "Mills! Look at you. You clean up...well."
     "I almost choke on my drink."
     invfairnpc2 "Nice to see you still have your humor."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment47)
     invfairnpc2 "Reynar has you entertaining tonight."
     showgirl "Of course, as you can tell."
     "Mills looks me up and down."
     invfairnpc2 "Right..."
     invfairnpc2 "How about you give some other people your attention."
+    $ AddChatter (vig3_sc9_inventorsfair_comment48)
     "I can already tell how this is gonna go."
     "Mills is moving closer to Daisy."
     showgirl "No need to be hasty, I'll get to everyone."
@@ -2696,25 +2704,31 @@ label vig3_sc9():
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
             $ vig3_daisApproval = False
-            $ reactTarget = "vig3_sc9_daisybar"
+            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I rise to my full height."
             mS "She said she'll get back to you later."
+            $ AddChatter (vig3_sc9_standup_comment1)
+            pause 0.5
+            $ AddChatter (vig3_sc9_standup_comment2)
             "They turn to me."
             invfairnpc2 "Oh? and what are you?"
             mS "I'm about to be your next big problem."
             "I move forward to tower over him and he takes a step back."
             showgirl "Moze..."
             invfairnpc2 "You don't want to do this."
+            $ AddChatter (vig3_sc9_standup_comment3)
             mS "Try me."
             "Before anything can happen Ryo emerges from the ether."
             vyattend "Is there a problem?"
             "Shit."
             showgirl "No Ryo of course not. I was just about to make my rounds."
+            $ AddChatter (vig3_sc9_standup_comment4)
             "Ryo seperates me from Mills who he ushers away. Daisy moves to greet the rest of the guests."
             "She turns to me."
             showgirl "I'll see you around, Moze."
             showgirl "Be sure to check out that view."
+            $ AddChatter (vig3_sc9_standup_comment5)
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
@@ -2726,20 +2740,24 @@ label vig3_sc9():
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
-            $ reactTarget = "vig3_sc9_daisybar"
+            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
+            $ AddChatter (vig3_sc9_standup_comment1)
             mS "Now let's not make a scene."
             mS "The lady said she'll get to you soon. Right?"
             "The initial shock falls from her face and is replaced with a devilish smile."
+            $ AddChatter (vig3_sc9_standup_comment6)
             showgirl "Right..."
             invfairnpc2 "What do you want then."
             mS "I want you to take your drink and walk away."
+            $ AddChatter (vig3_sc9_standup_comment3)
             mS "And if you so much as look at her the wrong way."
             mS "Remember that I'm around."
             mS "Clear?"
+            $ AddChatter (vig3_sc9_standup_comment5)
             invfairnpc2 "Crystal."
             "Mills orders a drink as calmly as possible before leaving us."
             showgirl "Why thank you Captain."
@@ -2747,6 +2765,7 @@ label vig3_sc9():
             showgirl "I should be going but do check out the view."
             showgirl "And the service door while you're at it."
             "Daisy give me a wink and slowly leaves the bar to greet the rest of the guests."
+            $ AddChatter (vig3_sc9_standup_comment4)
             "So many feathers."
             hide showgirl with dissolve
             "I finish my drink and find the rest of my crew."
@@ -2758,28 +2777,37 @@ label vig3_sc9():
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
             $ vig3_daisyApproval = False
-            $ reactTarget = "vig3_sc9_daisybar"
+            $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
             show screen streamerCommentary
             "I can't do anything right now."
             "There's too much on the line."
+            $ AddChatter (vig3_sc9_attention_comment1)
             invfairnpc2 "So Daisy, shall I steal you away?"
             "He leans closer."
+            $ AddChatter (vig3_sc9_attention_comment2)
             showgirl "I'm with a guest at the moment."
             invfairnpc2 "There are better people for your time."
             "I look around the room to catch anyone's eye."
+            $ AddChatter (vig3_sc9_attention_comment3)
             "Even the droids aren't giving me the slightest glance."
             mS "Look-"
             invfairnpc2 "Let's stop playing these games shall we?"
+            $ AddChatter (vig3_sc9_attention_comment4)
+            pause 0.5
+            $ AddChatter (vig3_sc9_attention_comment5)
             showgirl "A fabulous idea."
             "In a quick motion Daisy grabs a blade from her corset and stabs it betweeen Mills'fingers."
             invfairnpc2 "I-"
             showgirl "Shall I see you later then."
+            $ AddChatter (vig3_sc9_attention_comment6)
             "Mills swallows hard."
             invfairnpc2 "Of course."
             "When Mills leaves, Daisy composes herself with a deep breath."
             showgirl "Thank you for the drink. Excuse me please."
+            $ AddChatter (vig3_sc9_attention_comment7)
             "Daisy slowly leaves the bar to greet the rest of the guests."
             hide showgirl with dissolve
+            $ AddChatter (vig3_sc9_attention_comment8)
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
             show reynar stream neutral at stream_center with dissolve #can put in new model when we have it
@@ -2792,12 +2820,14 @@ label vig3_sc9():
     pS "We're real in it now."
     enS "I fear we didn't get much distance after all."
     recS "What happens if they catch you?"
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment49)
     enS "Oh I assume chained to a factory for the rest of our natural lives."
     pS "I'd rather a bullet to the eyes."
     mS "We need to find MAC and get the hell out of here."
     show rec stream thinking
     recS "If we can trust your friend Daisy we might find whatever storeroom they put him in, hell maybe even your range extender on the way."
     mS "Makers willing."
+    $ AddChatter (vig3_sc9_inventorsfair_comment50)
     mS "Okay, once the presentation starts then we'll head out."
     hide jennica with dissolve
     hide teresa with dissolve
@@ -2808,34 +2838,68 @@ label vig3_sc9():
     stop music fadeout 4.0
     stop backAudio fadeout 2.0
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
+    $ AddChatter (vig3_sc9_inventorsfair_comment51)
     "The music dies down an a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
     "A finely dressed man walks up to the platform and wheels in something covered by a blanket."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment52)
     bcrep "Ladies and Gentlemen, honorable guests of the Vineyard." 
     bcrep "We at BigCorp would like to thank Reynar for this opportunity to present our new and exciting venture."
+    $ AddChatter (vig3_sc9_inventorsfair_comment53)
     bcrep "Now this is just a protoype but it has immense potential."
+    $ AddChatter (vig3_sc9_inventorsfair_comment54)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment55)
     "The crowd murmurs at the word prototype, I move closer to the corner of the room. Ready to make an escape."
     "Until the representative pulls off the sheet revealing their newest invention, a small purple robot with an unmistakable leaf over his head."
     show mac stream neutral at stream_center_mac with dissolve
+    $ AddChatter (vig3_sc9_inventorsfair_comment56)
     bcrep "M.A.C is our revolutionary new bot that we are outfitting with fully adaptable AI technology."
+    $ AddChatter (vig3_sc9_inventorsfair_comment57)
     bcrep "Programming so advanced it's nothing short of human-like."
+    $ AddChatter (vig3_sc9_inventorsfair_comment58)
+    pause 0.5 
+    $ AddChatter (vig3_sc9_inventorsfair_comment59)
     "His little eyes lock on mine."
+    $ AddChatter (vig3_sc9_inventorsfair_comment60)
     bcrep "As I said is just our prototype as we continue to look for new ways to truly develop our AI databases. But our scientists are hard at work to..."
     "Will this nightmare ever end?"
+    $ AddChatter (vig3_sc9_inventorsfair_comment61)
     "They have him."
+    $ AddChatter (vig3_sc9_inventorsfair_comment62)
     bcrep "Now a demonstration. Say hi M.A.C!"
     "There's a small pause."
     macS "Hi MAC..."
+    $ AddChatter (vig3_sc9_inventorsfair_comment63)
     "The room chuckles as the representative keeps talking. I look over at the crew who are frozen, unsure of how to proceed." 
+    $ AddChatter (vig3_sc9_inventorsfair_comment64)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment65)
     "Jennica begins to move up to me but stops and turns white as a ghost."
+    $ AddChatter (vig3_sc9_inventorsfair_comment66)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment67)
     amaS "Now ain't this a stroke of bad luck."
+    $ AddChatter (vig3_sc9_inventorsfair_comment68)
     hide mac with dissolve
-    "I turn to the voice and am certain I've fully lost it." 
+    "I turn to the voice and am certain I've fully lost it."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment69)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment70) 
     "Because there she is, full ballgown staring at me with that same condescending look I've always known."
     show ama stream neutral at stream_center with Dissolve(2.0)
-    $ reactTarget = "vig3_sc9_amasurprise"
+    $ reactTarget = "vig3_sc9_amasurprise"#timestamp 6:50
     show screen streamerCommentary
+    $ AddChatter (vig3_sc9_inventorsfair_comment71)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment72)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment73)   
     "But this time, it doesn't go away. Ama smiles."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment74)
+    #*pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment75)  
     "I'm frozen in place"
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment76) 
     "The Vineyard falling away around me."
     amaS "Hello Mozely."
     hide screen streamerCommentary
