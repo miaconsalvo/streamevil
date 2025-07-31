@@ -1220,7 +1220,7 @@ default vig3_sc6_react_comment28 = ChatEntry(False, "{b}turb0g00se - 6:37{/b}\nO
 default vig3_sc6_react_comment29 = ChatEntry(False, "{b}J4MIR0QU4I - 6:37{/b}\nOakley strong!", 3, "#ffffff")
 default vig3_sc6_react_comment30 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:37{/b}\nIt's a lot to put on faith rn...", 3, "#ffffff")
 
-## - shoot zan
+##Sc6 - shoot zan
 default vig3_sc6_react_comment31 = ChatEntry(False, "{b}pickledDragons - 6:37{/b}\nKneecap the competition!", 3, "#ffffff")
 default vig3_sc6_react_comment32 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nLiterally lol", 3, "#ffffff")
 default vig3_sc6_react_comment33 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nCrack shot", 3, "#ffffff")
@@ -1229,17 +1229,55 @@ default vig3_sc6_react_comment35 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nCh
 default vig3_sc6_react_comment36 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nUnder the circumstances, I think warranted", 3, "#ffffff")
 default vig3_sc6_react_comment37 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nI'd have trusted the crew. They still had a chance", 3, "#ffffff")
 
-##
+##Sc6 - shipbet2
+default vig3_sc6_react_comment38 = ChatEntry(False, "{b}_lostinmetr0 - 6:34{/b}\nPhew, I really thought the drinks got the better of them", 3, "#ffffff")
+default vig3_sc6_react_comment39 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nI expected as much!", 3, "#ffffff")
+default vig3_sc6_react_comment40 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nWe are respectable and responsible outlaws after all", 3, "#ffffff")
+default vig3_sc6_react_comment41 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nI mean, it would be crazy if you could actually lose the ship", 3, "#ffffff")
+default vig3_sc6_react_comment42 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nOakley 2: dude, where's my ship?", 3, "#ffffff")
 
-##
+##Sc7 - lostmac
+default vig3_sc7_react_comment1 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nThey took our boy!", 3, "#ffffff")
+default vig3_sc7_react_comment2 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nI'm literally screaming!", 3, "#ffffff")
+default vig3_sc7_react_comment3 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nFetch quest part 2", 3, "#ffffff")
 
-##
+##Sc8 - teresa bluff
+default vig3_sc8_react_comment1 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nVery dangerous, an outlaw who can play the 1\%", 3, "#ffffff")
+default vig3_sc8_react_comment2 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nI love her", 3, "#ffffff")
+default vig3_sc8_react_comment3 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nThat's not luck, that's called building a good crew", 3, "#ffffff")
+default vig3_sc8_react_comment4 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nAt least it's stealth with a fancy sheen??", 3, "#ffffff")
+default vig3_sc8_react_comment5 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nBut I wanna cause some chaos!!", 3, "#ffffff")
 
-##
+##Sc9 - daisy returns
+default vig3_sc9_react_comment1 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nOh finally someone decent to talk to!", 3, "#ffffff")
+default vig3_sc9_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nfr let's just hangout with her", 3, "#ffffff")
+default vig3_sc9_react_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 6:34{/b}\nWatch that paranoia", 3, "#ffffff")
+default vig3_sc9_react_comment4 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nfr don't end up like Moze", 3, "#ffffff")
+default vig3_sc9_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nidk, it's a {i}little{/i} sus", 3, "#ffffff")
+default vig3_sc9_react_comment6 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nSTAN. HER.", 3, "#ffffff")
+default vig3_sc9_react_comment7 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nAnd brave to try her luck with Moze again after what happened last time haha", 3, "#ffffff")
 
-##
+##Sc9 - ama surprise
+default vig3_sc9_react_comment8 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nTurns out Moze was paranoid for a good reason", 3, "#ffffff")
+default vig3_sc9_react_comment9 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nI had a feeling she was gonna show up", 3, "#ffffff")
+default vig3_sc9_react_comment10 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nWell, still paranoid. Just with good reason", 3, "#ffffff")
+default vig3_sc9_react_comment11 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nNo more stealth, clock her!", 3, "#ffffff")
+default vig3_sc9_react_comment12 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nSorry Teresa, it's an emergency!", 3, "#ffffff")
 
-##
+##Sc11 - ama backsass
+default vig3_sc11_react_comment1 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nGonna need some aloe vera for that", 3, "#ffffff")
+default vig3_sc11_react_comment2 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nAh yes, just like when she was traumatizing Moze as a child", 3, "#ffffff")
+default vig3_sc11_react_comment3 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nSome things never change", 3, "#ffffff")
+default vig3_sc11_react_comment4 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nFight! Fight! Fight! Fight!", 3, "#ffffff")
+default vig3_sc11_react_comment5 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nI already didn't like her, but after that flashback she's like horrible", 3, "#ffffff")
+
+##Sc12 - ama Choke
+default vig3_sc12_react_comment1 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nYou needed a reminder??", 3, "#ffffff")
+default vig3_sc12_react_comment2 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nAma getting laid off for sure", 3, "#ffffff")
+default vig3_sc12_react_comment3 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nIt's such reckless behavior from her tho", 3, "#ffffff")
+default vig3_sc12_react_comment4 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nYa she's clearly rattled", 3, "#ffffff")
+default vig3_sc12_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nand desperate", 3, "#ffffff")
+
 
 ##
 
