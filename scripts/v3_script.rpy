@@ -1552,56 +1552,86 @@ label vig3_sc6():
     show mac neutral stream at stream_left_mac with dissolve
     show rec stream drunk at stream_right with dissolve 
     macS "Are they playing Brikarousel?"
+    $ AddChatter (vig3_sc6_bbpub_comment22)
     recS "Aren't you too young to know that game?"
+    $ AddChatter (vig3_sc6_bbpub_comment23)
     macS "I have a full database that allows me to know a myriad of games."
     show rec stream thinking
     recS "A full database..."
+    $ AddChatter (vig3_sc6_bbpub_comment24)
     "Rec's eyes move back on the gambling table, Jennica and Teresa are deep in conversation."
     recS "You know I never understood this game."
+    $ AddChatter (vig3_sc6_bbpub_comment25)
     macS "Well Brikarousel was invented by Brika Alphonse approximately 30 years ago when..."
     show rec stream drunk
     recS "I meant why people are so eager to play."
+    $ AddChatter (vig3_sc6_bbpub_comment26)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment27)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment28)
     macS "Oh."
     macS "Alcohol?"
     mS "You catch on quick."
     "I look over at the table as a pit in my stomach forms."
+    $ AddChatter (vig3_sc6_bbpub_comment29)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment30)
     mS "Bet? What did they bet?"
+    #*$ AddChatter (vig3_sc6_bbpub_comment31)
     show rec stream thinking
     recS "I didn't hear but I read lips a bit, a “sh” something?"
     mS "\"Sh\" something???"
     macS "Shirt, shoes, shilling..."
     "Ship?"
+    $ AddChatter (vig3_sc6_bbpub_comment32)
     "They wouldn't-"
-    $ reactTarget = "vig3_sc6_shipbet1"
+    $ reactTarget = "vig3_sc6_shipbet1" #timestamp 6:34
     show screen streamerCommentary
     hide rec with dissolve
     hide mac with dissolve
     "No that's stupid."
+    $ AddChatter (vig3_sc6_bbpub_comment33)
     recS "Shorts? Shawls..."
     macS "Squash!"
     "..."
     "Okay now that's stupid."
     "Teresa and Jennica bet the Ship."
+    #*$ AddChatter (vig3_sc6_bbpub_comment34)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment35)
     "Shit."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show zan stream at stream_center with dissolve
     "A small man with dark hair and modified gray skin steps to the table."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
+    $ AddChatter (vig3_sc6_bbpub_comment36)
     zan "Ovid is strong of heart, muscles on the inside."
     enS "That tends to be where they go yes."
     ovid "Zan must we always play this game whenever we go out?"
     zan "..."
     zan "YES!"
+    $ AddChatter (vig3_sc6_bbpub_comment37)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment38)
     "The game starts off with a bang, the rules are simple, teams of two play hands to collect played cards from a pool." 
+    $ AddChatter (vig3_sc6_bbpub_comment39)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment40)
     "Some cards are worth points, the pair with the lower amount of points at the end of the round takes a shot from the Karousel."
     "The first team that withdraws or has a member drop loses."
     "...By round ten, it's not looking good."
+    $ AddChatter (vig3_sc6_bbpub_comment41)
     hide screen streamerCommentary
     zan "How is moxie?"
     pS "Stronger than my mama's back!"
     enS "I'm starting to feel mine in the back of my throat."
+    #*$ AddChatter (vig3_sc6_bbpub_comment42)
     "Teresa and Jennica look wrung out but Zan and Ovid are sturdy despite drinking their fill."
+    $ AddChatter (vig3_sc6_bbpub_comment43)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment44)
     hide jennica with dissolve
     hide teresa with dissolve
     hide zan with dissolve
@@ -1611,10 +1641,14 @@ label vig3_sc6():
     show rec stream surprised
     recS "How did you-"
     mS "Of course! We've been out of the game too long."
+    #*$ AddChatter (vig3_sc6_bbpub_comment45)
     macS "We must tell someone, this is improper."
     show rec stream drunk
     mS "MAC I'm going to lay this out for you. No one cares if something is improper here."
     macS "Then we should do something."
+    $ AddChatter (vig3_sc6_bbpub_comment46)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment47)
     mS "I'm already on it."
     macS "And I'll help."
     menu: 
@@ -1623,6 +1657,7 @@ label vig3_sc6():
             $ kcEngagement -= 1 #Logic: mean to MAC, kc doesn't like
             $ csEngagement -= 1 #Logic: It's mean for Coriolis too
             mS "You will sit down and say nothing and let me handle it."
+            $ AddChatter (vig3_sc6_macquestion_comment1)
             macS "But I-"
             mS "But nothing, I don't need a liability right now. Understand?"
         "It's better if I just do it.":
@@ -1632,19 +1667,36 @@ label vig3_sc6():
             mS "I know you want to help but some things work better with less people."               
     macS "But I'm part of this crew too!"
     "That was my voice."
+    $ AddChatter (vig3_sc6_bbpub_comment48)
     "Upset, scared of being left behind."
+    $ AddChatter (vig3_sc6_bbpub_comment49)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment50)
     mS "You are, and you'll have other chances to prove it. Just not right now."
+    #*$ AddChatter (vig3_sc6_bbpub_comment51)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment52)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment53)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment54)
     "When Jennica calls for a short recess I know that's my time to head over."
+    #*$ AddChatter (vig3_sc6_bbpub_comment55)
     hide rec with dissolve
     hide mac with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     mS "I don't know if you've noticed..."
+    $ AddChatter (vig3_sc6_bbpub_comment57)
     pS "We're losing-"
     enS "They're cheating."
+    $ AddChatter (vig3_sc6_bbpub_comment58)
     enS "So are we just not as effectively."
     mS "Better think of something fast after what you just bet."
     pS "Ya Resa, I don't think hand signals are going to cut it here."
+    $ AddChatter (vig3_sc6_bbpub_comment59)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment60)
     "I swallow the knowledge that hand signals were the only thing they thought of after betting our ship."
     menu: 
         "There has to be signs for how they're doing this."
@@ -1653,6 +1705,7 @@ label vig3_sc6():
             pS "Ovid's not drinking."
             enS "An evaporator..."
             pS "Was wondering how that little guy is still standing."
+            $ AddChatter (vig3_sc6_bbpub_comment61)
             "I look around the room for more signs."
     menu: 
         "There has to be more signs for how they're doing this."
@@ -1660,12 +1713,14 @@ label vig3_sc6():
             pS "The deck isn't right. I know a standard set when I see one."
             mS "That makes sense, especially if they're regulars."
             enS "Truly? All for a stupid game?"
+            $ AddChatter (vig3_sc6_bbpub_comment62)
             "What else?"
     menu: 
         "There has to be more signs for how they're doing this."
         "Check the Karousel.":
             "Teresa's eyes are fixed on the Karousel."
             mS "The Karousel?"
+            $ AddChatter (vig3_sc6_bbpub_comment63)
             enS "There's a delay before it settles. And one of their friends has been staring at his communicator all night."
             "I think that's all."
     "Ovid's tube, the deck, the Karousel. We have to deal with them."
@@ -1680,8 +1735,12 @@ label vig3_sc6():
     "That should take care of some of the issues."
     "I look at the ceiling where the carnivorous plants lie waiting and salivating."
     "One of the ropes for their netting looks frayed and worn if I undo it then it's open season on that table. Maybe quits for the Karousel."
+    $ AddChatter (vig3_sc6_bbpub_comment64)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment65)
     "As I scan my options I can feel MAC's eyes on me."
     "He's really not gonna like this at all."
+    $ AddChatter (vig3_sc6_bbpub_comment66)
     hide zan with dissolve
     hide jennica with dissolve
     hide teresa with dissolve
@@ -1695,23 +1754,46 @@ label vig3_sc6():
             "I see a young couple pinning each other on a pillar near the table." 
             "They're really in it."
             "Ah young love, so easy to break."
+            $ AddChatter (vig3_sc6_barfight_comment1)
             "When they separate I go up to the young man and shove him."
-            mS "How dare you! We spent five glorious nights together, you tell me you love me..." 
+            $ AddChatter (vig3_sc6_barfight_comment2)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment3)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment4)
+            mS "How dare you! We spent five glorious nights together, you tell me you love me..."
+            $ AddChatter (vig3_sc6_barfight_comment5) 
             mS "And after MONTHS of not hearing from you I find you here with a random woman!"
+            $ AddChatter (vig3_sc6_barfight_comment6)
             "His jaw is on the floor."
             wifenpc "Random! I'm his wife!"
+            $ AddChatter (vig3_sc6_barfight_comment7)
             husbnpc "What? huh? I don't-"
+            $ AddChatter (vig3_sc6_barfight_comment8)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment9)
             mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
+            $ AddChatter (vig3_sc6_barfight_comment10)
             wifenpc "PROPOSE!!!!"
+            $ AddChatter (vig3_sc6_barfight_comment11)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment12)
             wifenpc "So that's what you've been doing on your business trips huh?"
+            $ AddChatter (vig3_sc6_barfight_comment13)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment14)
             husbnpc "No-what?!? I don't even know her!"
             "Before I can even add fuel to the fire."
+            $ AddChatter (vig3_sc6_barfight_comment15)
             "The youg woman hits him with a one-two combo that almost lands her a spot on the Oakley." 
             "He fumbles onto Ovid and the table."
             "Cards fly everywhere and before I can process what happens Zan has the man in a chokehold."
             show zan stream at stream_center with dissolve
             zan "You interrupt the Karousel!"
             "It's hand fifteen, and half the bar is up in arms."
+            $ AddChatter (vig3_sc6_barfight_comment16)
+            pause 0.5
+            $ AddChatter (vig3_sc6_barfight_comment17)
             "Friends of the man square up with Zan's crew."
             "It's only when tiny Mr. Stein waddles to the table and promises a free round that the room begrudgingly settles."
             "Ovid coughs loudly before putting something in his pocket."
@@ -1724,10 +1806,17 @@ label vig3_sc6():
             $ csEngagement += 1
             "I take a look at the frayed rope and the netting that is so carefully holding back the plants."
             "How has no one changed the rope yet?"
+            $ AddChatter (vig3_sc6_cutrope_comment1)
             "It's too easy and so dangerous."
+            $ AddChatter (vig3_sc6_cutrope_comment2)
             "I move carefully to the hook with the rope."
+            $ AddChatter (vig3_sc6_cutrope_comment4)
             mS "Excuse me sorry just tryna get a decent view."
+            $ AddChatter (vig3_sc6_cutrope_comment3)
             husbnpc "Watch it man, c'mon we all want a good view."
+            $ AddChatter (vig3_sc6_cutrope_comment5)
+            pause 0.5
+            $ AddChatter (vig3_sc6_cutrope_comment6)
             "I push my way to wall and lean just behind it."
             "The rounds continue."
             show zan stream at stream_center with dissolve
@@ -1743,14 +1832,30 @@ label vig3_sc6():
             "A roaring cheer, I cut the rope."
             "The scream that is let out is so high, I couldn't believe it came from Zan."
             zan "YEEEEEEOWWWWWWWW!!"
+            $ AddChatter (vig3_sc6_cutrope_comment7)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc6_cutrope_comment8)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc6_cutrope_comment9)
             zan "They're alive!!!"
             "He swatting at them like whack-a-moles. One plant's head pops like a grape."
             enS "Stein get these out of here."
             zan "Ah ah AHHHHHHHHHHH!!"
+            $ AddChatter (vig3_sc6_cutrope_comment10)
+            pause 0.5
+            $ AddChatter (vig3_sc6_cutrope_comment11)
             "Ten patrons were injured from Zan's wild flailing, the attacking plants destroyed."
+            $ AddChatter (vig3_sc6_cutrope_comment12)
             "Stein with the help of his crew subdued the other plants and have begun to put up new netting."
+            $ AddChatter (vig3_sc6_cutrope_comment13)
+            pause 0.5
+            $ AddChatter (vig3_sc6_cutrope_comment14)
+            pause 0.5
+            $ AddChatter (vig3_sc6_cutrope_comment15)
             "Zan's eyes dart from the game to the ceiling."
+            $ AddChatter (vig3_sc6_cutrope_comment16)
             "Ovid coughs loudly before putting something in his pocket, the Karousel is replaced by an older model."
+            $ AddChatter (vig3_sc6_cutrope_comment17)
             "The round continues."
             hide zan with dissolve
             hide teresa with dissolve
