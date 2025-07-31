@@ -632,14 +632,6 @@ default vig3_sc9_inventorsfair_comment73 = ChatEntry(False, "{b}Coriolis - 6:50{
 default vig3_sc9_inventorsfair_comment75 = ChatEntry(False, "{b}J4MIR0QU4I - 6:50{/b}\naaaaand worst case scenario", 3, "#ffffff")
 #default vig3_sc9_inventorsfair_comment76 = ChatEntry(False, "{b}llamabama22 - 6:50{/b}\nI need a moment to compose myself", 3, "#ffffff")
 
-#default vig3_sc9_inventorsfair_comment4 = ChatEntry(False, "{b}bacon8r_6 - 0:00{/b}\nok lets leave my girl alone", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 0:00{/b}\nNO BRO IM DEAD", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment6 = ChatEntry(False, "{b}llamabama22 - 0:00{/b}\nshe's standing between us and the kid now", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment7 = ChatEntry(False, "{b}R4dioRobbie - 0:00{/b}\nI love that we get to be dicks this time around seeing flashbacks like this reminds me why it makes sense", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment8 = ChatEntry(False, "{b}P0tat0Pr0phet - 0:00{/b}\nyah actually like I know we joke around but...", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment9 = ChatEntry(False, "{b}kitcat - 0:00{/b}\ntraumatized moze just doing what she was taught to do makes for a compelling playthrough", 3, "#ffffff")
-#default vig3_sc9_inventorsfair_comment10 = ChatEntry(False, "{b}llamabama22 - 0:00{/b}\nyeah couldn't have said it better myself", 3, "#ffffff")
-
 
 ###Scene 10
 
@@ -647,6 +639,14 @@ default vig3_sc9_inventorsfair_comment75 = ChatEntry(False, "{b}J4MIR0QU4I - 6:5
 default vig3_sc10_memory_comment1 = ChatEntry(False, "{b}_lostinmetr0 - 0:00{/b}\nofc the flashback to twist the knife", 3, "#ffffff")
 default vig3_sc10_memory_comment2 = ChatEntry(False, "{b}pickledDragons - 0:00{/b}\nwe are real snakehawks", 3, "#ffffff")
 default vig3_sc10_memory_comment3 = ChatEntry(False, "{b}R4dioRobbie - 0:00{/b}\nwe don't join BC when things get tough", 3, "#ffffff")
+#default vig3_sc10_memory_comment4 = ChatEntry(False, "{b}bacon8r_6 - 0:00{/b}\nok lets leave my girl alone", 3, "#ffffff")
+#default vig3_sc10_memory_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 0:00{/b}\nNO BRO IM DEAD", 3, "#ffffff")
+#default vig3_sc10_memory_comment6 = ChatEntry(False, "{b}llamabama22 - 0:00{/b}\nshe's standing between us and the kid now", 3, "#ffffff")
+#default vig3_sc10_memory_comment7 = ChatEntry(False, "{b}R4dioRobbie - 0:00{/b}\nI love that we get to be dicks this time around seeing flashbacks like this reminds me why it makes sense", 3, "#ffffff")
+#default vig3_sc10_memory_comment8 = ChatEntry(False, "{b}P0tat0Pr0phet - 0:00{/b}\nyah actually like I know we joke around but...", 3, "#ffffff")
+#default vig3_sc10_memory_comment9 = ChatEntry(False, "{b}kitcat - 0:00{/b}\ntraumatized moze just doing what she was taught to do makes for a compelling playthrough", 3, "#ffffff")
+#default vig3_sc10_memory_comment10 = ChatEntry(False, "{b}llamabama22 - 0:00{/b}\nyeah couldn't have said it better myself", 3, "#ffffff")
+
 
 ###Scene 11
 
