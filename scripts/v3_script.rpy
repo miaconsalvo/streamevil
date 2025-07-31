@@ -1953,13 +1953,22 @@ label vig3_sc6():
                 "And what's it to you?":
                     mS "And what's it to you?"
                     zan "You have a good crew, good moxie."
+                    $ AddChatter (vig3_sc6_shootzan_comment15)
+                    pause 0.5
+                    $ AddChatter (vig3_sc6_shootzan_comment16)
                     mS "I'm aware."
                 "The one and only!":
                     mS "The one and only!"
                     zan "You have a good crew, good moxie."
+                    $ AddChatter (vig3_sc6_shootzan_comment15)
+                    pause 0.5
+                    $ AddChatter (vig3_sc6_shootzan_comment16)
                     mS "We like to show out."   
             zan "Good shot, but messy."
             zan "Have more faith next time."
+            $ AddChatter (vig3_sc6_shootzan_comment17)
+            pause 0.5
+            $ AddChatter (vig3_sc6_shootzan_comment18)
             "Before I can respond, he pats my shoulder and I almost buckle under the weight of the impact."
             hide screen streamerCommentary
             hide zan with dissolve
@@ -1993,16 +2002,24 @@ label vig3_sc6():
             $ pdEngagement -= 1 #Logic: pickledDragons wants to shoot Zan
             $ vig3_zanApproval = True
             #need a variable to determine if they win or not.
-            $ reactTarget = "vig3_sc6_trustcrew"
+            $ reactTarget = "vig3_sc6_trustcrew" #timestamp 6:37
             show screen streamerCommentary
             "There's a part of me that know I'll regret this but I don't go for my pistol."
+            $ AddChatter (vig3_sc6_trustcrew_comment1)
+            pause 0.5
+            $ AddChatter (vig3_sc6_trustcrew_comment2)
             "These two are idiots but they're my idiots."
+            $ AddChatter (vig3_sc6_trustcrew_comment4)
+            pause 0.5
+            $ AddChatter (vig3_sc6_trustcrew_comment5)
             "And I have to trust they'll pull through."
+            $ AddChatter (vig3_sc6_trustcrew_comment3)
             "The game keep going."
             "So do the drinks."
             "26, 27, 28..."
             "...29..."
             "Then a loud crash."
+            $ AddChatter (vig3_sc6_trustcrew_comment6)
             mS "No way." 
             macS "Oh my..."
             hide screen streamerCommentary 
@@ -2013,10 +2030,15 @@ label vig3_sc6():
                 "Ovid is under the table."
                 mS "WE DID IT!"
                 "The whole bar is roaring!"
+                $ AddChatter (vig3_sc6_trustcrew_comment7)
                 "Zan pushes the table away and goes to make sure Ovid is alright "
                 hide zan with dissolve
                 "I move to greet my victors."
+                $ AddChatter (vig3_sc6_trustcrew_comment8)
                 mS "I can't believe you pulled that off. That was some risky business."
+                $ AddChatter (vig3_sc6_trustcrew_comment9)
+                pause 0.5
+                $ AddChatter (vig3_sc6_trustcrew_comment10)
                 pS "C'mon Cap, just harmless fun."
                 mS "Betting the ship is harmless to you?"
                 enS "The ship? What do you take us for?" 
@@ -2031,9 +2053,14 @@ label vig3_sc6():
                 "Just then Zan comes over to us and kneels."
                 show zan at stream_center with dissolve
                 zan "I must make good on promise."
+                $ AddChatter (vig3_sc6_bbpub_comment78)
                 "Teresa and Jeneca each take a seat on one flexed arm."
                 "Zan hoists them in the are and parades them around the bar."
+                $ AddChatter (vig3_sc6_bbpub_comment79)
                 zan "MOXIE MOXIE MOXIE MOXIE!"
+                $ AddChatter (vig3_sc6_bbpub_comment80)
+                pause 0.5
+                $ AddChatter (vig3_sc6_bbpub_comment81)
                 "When they look back I give them a nod like I'm ready to turn in."
                 hide teresa with dissolve
                 hide jennica with dissolve
@@ -2044,25 +2071,32 @@ label vig3_sc6():
                 "Jennica's under the table"
                 mS "Oh no..."
                 "The whole bar is roaring!"
+                $ AddChatter (vig3_sc6_bbpub_comment75)
                 "Zan pushes the table away and goes to hug Ovid who looks like his eyes are about to pop out."
                 hide zan with dissolve
                 "I move to help Jennica."
+                $ AddChatter (vig3_sc6_bbpub_comment76)
                 enS "C'mon Jenn, you're good, you're alright."
                 pS "Did... Did we win?"
-                enS "Sorry sweerheart we didn't."
+                enS "Sorry sweetheart we didn't."
+                $ AddChatter (vig3_sc6_bbpub_comment77)
                 mS "Makers, why did you bet the ship?"
-                enS "The ship? What do you take us for?" 
+                enS "The ship? What do you take us for?"
+                $ AddChatter (vig3_sc6_bbpub_comment81) 
                 enS "Zan asked us to perform a show for the bar if we lost."
-                $ reactTarget = "vig3_sc6_shipbet2"
+                $ reactTarget = "vig3_sc6_shipbet2"#timestamp 6:38
                 show screen streamerCommentary
                 mS "A show?"
+                $ AddChatter (vig3_sc6_bbpub_comment82)
                 pS "A show! Oh scrap, you sound horrible when you sing Resa."
                 enS "Still better than you."
+                $ AddChatter (vig3_sc6_bbpub_comment83)
                 pS "But we must press on! *hick*"
                 "...I'm truly losing it."
                 "Just then Zan comes over to us."
                 show zan at stream_center with dissolve
                 zan "You must make good on promise."
+                $ AddChatter (vig3_sc6_bbpub_comment84)
                 "Teresa helps Jennica get up and they stand on the Karousel table."
                 "Zan yells for music." #The melody is "C'est a ton tour"
                 "Teresa and Jennica begin to sing"
@@ -2079,6 +2113,7 @@ label vig3_sc6():
     show mac stream neutral at stream_left_mac with dissolve
     mS "I'm taking the kid, we'll check in with you tomorrow at the shop, alright?"
     recS "Sure thing Cap."
+    $ AddChatter (vig3_sc6_bbpub_comment85)
     stop music fadeout 4.0
     show rec stream thinking
     recS "Actually Moze wait."
@@ -2088,17 +2123,39 @@ label vig3_sc6():
     "I take a moment and look down at MAC."
     "It's been long enough."
     mS "No... he's not."
+    #*$ AddChatter (vig3_sc6_bbpub_comment86)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment87)
     recS "BigCorp has been deploying agents everywhere."
     recS "They're looking for something {i}big.{/i}"
     recS "Lots of rumors about what that could be."
+    $ AddChatter (vig3_sc6_bbpub_comment88)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment89)
     "MAC looks away." 
+    $ AddChatter (vig3_sc6_bbpub_comment90)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment91)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc6_bbpub_comment92)
     mS "So then you can imagine why we can't let them have him."
     "Rec looks down at MAC."
+    $ AddChatter (vig3_sc6_bbpub_comment93)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment94)
     show rec stream happy
     recS "He's a special kid."
+    $ AddChatter (vig3_sc6_bbpub_comment95)
     "Something flashes behind their eyes. I remember Allistar."
+    $ AddChatter (vig3_sc6_bbpub_comment96)
+    pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment97)
     recS "We'll keep looking for that part tomorrow."
+    $ AddChatter (vig3_sc6_bbpub_comment98)
     "MAC waves to Rec as they leave."
+    #*$ AddChatter (vig3_sc6_bbpub_comment99)
+    #*pause 0.5
+    $ AddChatter (vig3_sc6_bbpub_comment100)
     recS "See ya buddy."
     "We turn in."
     hide rec with dissolve
@@ -2120,16 +2177,20 @@ label vig3_sc7():
     mS "Alright kid?"
     show mac stream neutral at stream_center_mac with dissolve
     macS "Yes, I hope we can find a lead soon."
+    $ AddChatter (vig3_sc7_akarplaza_comment1)
     menu:
         "Respond to MAC."
         "Cheer up bud!":
             mS "Cheer up kid, we'll find it!"
             "MAC looks unconvinced. And tired?"
+            $ AddChatter (vig3_sc7_akarplaza_comment2)
         "We'll find it I promise.":
             mS "It'll just be a little longer but we'll find it."
             "MAC looks unconvinced. And tired?"
+            $ AddChatter (vig3_sc7_akarplaza_comment2)
     ##Conversation with MAC?##
     hide mac with dissolve
+    $ AddChatter (vig3_sc7_akarplaza_comment3)
     "Rec gave us some good starting points but after searching for hours we've notice most operations aren't running with their usual stock because of the Inventor's fair."
     mS "We might need to split up."
     enS "I agree we'll cover more ground."
@@ -2155,25 +2216,49 @@ label vig3_sc7():
             enS "Go for option A, option B if necessary."
     enS "I'll head to the plaza, Jennica the outskirts, Moze you take MAC and do another sweep of the shops near Rec."
     mS "Perfect Resa, let's get started then. Now MAC-"
+    #*$ AddChatter (vig3_sc7_akarplaza_comment4)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment5)
     stop music
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
+    $ reactTarget = "vig3_sc7_lostmac"#timestamp 6:41
+    show screen streamerCommentary
     mS "MAC!"
+    $ AddChatter (vig3_sc7_akarplaza_comment6)
     hide teresa stream with Dissolve(0.2)
     hide jennica stream with Dissolve(0.2)
     "I know Teresa and Jennica are screaming for him but I can't hear them, I can't hear anything but my heart pounding in my chest."
+    $ AddChatter (vig3_sc7_akarplaza_comment7)
     "Where is he?"
     "WHERE IS HE?"
+    #*$ AddChatter (vig3_sc7_akarplaza_comment8)
     "Then I see him far in the distance, wheeling himself slowly to a group of people."
     "To a group of Hounds."
     $ reactTarget = "vig3_sc7_lostmac"
     show screen streamerCommentary
+    #*$ AddChatter (vig3_sc7_akarplaza_comment12)
     "My feet move before my brain can register what is happening."
     "It happens so fast, MAC runs into the leader, his arms frantic."
     "They swarm him, my feet aren't moving fast enough."
+    $ AddChatter (vig3_sc7_akarplaza_comment15)
+    pause 0.5
+    $ AddChatter (vig3_sc7_akarplaza_comment17)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment16)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment18)
     "I can't think of anything but how fast my legs should be moving." 
+    $ AddChatter (vig3_sc7_akarplaza_comment19)
     "MOVE FASTER."
+    $ AddChatter (vig3_sc7_akarplaza_comment14)
     "When they take him and drive away, I don't register how a cruiser almost hit me, I don't feel the pain of my knees when they hit the ground."
+    $ AddChatter (vig3_sc7_akarplaza_comment20)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment21)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment22)
     "All I can hear is Ama's voice in my head, \"You'll have the chance to prove it, just not right now.\"" ##Consider changing this line##
+    $ AddChatter (vig3_sc7_akarplaza_comment13)
     hide screen streamerCommentary
     jump vig3_sc8
 
@@ -2188,15 +2273,24 @@ label vig3_sc8():
     hide bg black
     show jennica stream neutral at stream_left with dissolve
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
+    $ AddChatter (vig3_sc8_vineyardext_comment1)
     "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
+    #*$ AddChatter (vig3_sc7_akarplaza_comment2)
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
+    #*$ AddChatter (vig3_sc7_akarplaza_comment3)
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
+    $ AddChatter (vig3_sc7_akarplaza_comment4)
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
     show teresa stream neutral at stream_right with dissolve
     enS "Can you give it a rest, there are people around."
+    #*$ AddChatter (vig3_sc7_akarplaza_comment7)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment8)
     pS "I thought you'd want me to look presentable?"
+    $ AddChatter (vig3_sc7_akarplaza_comment5)
     mS "You need to be serious about this."
     pS "Oh I'm very serious, just my face don't look it. Y'all should consider fixin' yours."
+    $ AddChatter (vig3_sc7_akarplaza_comment6)
     "Rec moves thier jaw as if trying to manually relax it."
     "I relax my shoulders as an attendant walks over to us."
     vyattend "Good afternoon, my name's Ryo and it is my pleasure to welcome you to the Vineyard." 
@@ -2206,24 +2300,33 @@ label vig3_sc8():
     vyattend "Prismari?"
     enS "That is correct." 
     "There's a long pause."
+    $ AddChatter (vig3_sc7_akarplaza_comment9)
     reynar "Ryo I'll take it from here."
     "Our jaws nearly drop at the finely dressed man who approaches us. Reynar..."
     show reynar stream neutral at stream_center with dissolve
     reynar "How wonderful, we were certain to receive another refusal gift this year."
     enS "Well we so desperately missed the inspiration of the Inventor's Fair."
+    $ AddChatter (vig3_sc7_akarplaza_comment11)
     enS "I hope you are well to accommodate us?"
     reynar "I must say your posse is such a surprise it's so... pleasantly unexpected."
+    #*$ AddChatter (vig3_sc7_akarplaza_comment12)
     "It's like watching a tennis match with a bomb for a ball."
     enS "You know we are so thankful your consideration every year, and so lovely to see our donations put to such good use."
+    $ AddChatter (vig3_sc7_akarplaza_comment14)
+    pause 0.5
+    $ AddChatter (vig3_sc7_akarplaza_comment15)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc7_akarplaza_comment16)
     enS "You've truly spared no expense."
     reynar "Of course, we want to celebrate all those who contribute to the research and development of the Outposts."
     enS "The Prismari family is always proud to support this iconic hub of innovation."
+    #*$ AddChatter (vig3_sc7_akarplaza_comment13)
     reynar "You've offered much more than support."
     reynar "We are pleased to have you back Miss Prismari."
     "Reynar nods to us and walks away cooly. Leaving to welcome in other guests."
     hide reynar stream with dissolve
     $ reactTarget = "vig3_sc8_teresabluff"
-    show screen streamerCommentary
+    show screen streamerCommentary#timestamp 6:43
     pS "You're a bit scary when you're proper."
     show rec stream thinking at stream_center with dissolve
     mS "You sure what just happened back there was alright?"
@@ -2236,6 +2339,13 @@ label vig3_sc8():
     enS "And thank you Reccrin. Couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
+    $ AddChatter (vig3_sc7_akarplaza_comment17)
+    pause 0.5
+    $ AddChatter (vig3_sc7_akarplaza_comment18)
+    pause 0.5
+    $ AddChatter (vig3_sc7_akarplaza_comment19)
+    pause 0.5
+    $ AddChatter (vig3_sc7_akarplaza_comment20)
     $ viewCheck6 = viewCount
     hide rec with dissolve
     hide teresa with dissolve
@@ -2245,24 +2355,49 @@ label vig3_sc8():
     show inventorsfairgallery_stream at topleft onlayer background with dissolve 
     hide exteriorvineyard_stream
     "The Inventor's Fair is even more insane looking than I could've imagined. The fanfare in Akar is a kid's birthday party by comparison." 
+    $ AddChatter (vig3_sc9_inventorsfair_comment1)
     "Brimming with shine and luster. Inventors have lined up pedestals with tech I can't even begin to understand."
+    $ AddChatter (vig3_sc9_inventorsfair_comment2)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment3)
     "Finely dressed guests being served by Reynar's android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
+    $ AddChatter (vig3_sc9_inventorsfair_comment4)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment5)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment6)
     show teresa stream happy at stream_right with dissolve
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
+    $ AddChatter (vig3_sc9_inventorsfair_comment7)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment8)
     show jennica stream neutral at stream_left with dissolve
     pS "That why some of these statues don't have arms?"
     enS "I think they're being loose with the theme."
+    $ AddChatter (vig3_sc9_inventorsfair_comment9)
     "It's excess at its highest degree, it's so much that I can't imagine us finding MAC in all of this."
+    $ AddChatter (vig3_sc9_inventorsfair_comment10)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment11)
     show rec stream neutral at stream_center with dissolve
     recS "Reynar likes to personally assess what the Hounds find so they're probably holding MAC somewhere close by."
     pS "Let's rough up some suits and find out where they've got him."
+    $ AddChatter (vig3_sc9_inventorsfair_comment12)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment13)
     "Teresa turns around and stops us in our tracks."
     show teresa stream neutral
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment14)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment15)
     enS "Okay lets make this crystal. We'll not be doing anything of the like."
     pS "Resa-"
     enS "Listen Jenn, I appreciate how ready you are to fight for MAC. But you don't understand the situation we're in." 
+    $ AddChatter (vig3_sc9_inventorsfair_comment16)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment17)
     pS "I ain't scared of the Hounds."
     menu:
         "Who do you side with?"
@@ -2271,6 +2406,7 @@ label vig3_sc8():
             $ pilotApproval += 1
             $ csEngagement += 1 #Logic: Coriolis is team Jennica, kitcat is team Teresa
             mS "Listen Resa, Mac's too important, we'll get into a fight if we have too."
+            $ AddChatter (vig3_sc9_jennica_comment1)
             pS "Never knew ya to be timid Resa."
             enS "You two are not understanding..."
         "Side with Teresa.":
@@ -2278,19 +2414,29 @@ label vig3_sc8():
             $ pilotApproval -= 1
             $ kcEngagement += 1
             mS "I understand the passion but we should stick with Teresa's plan for now."
+            $ AddChatter (vig3_sc9_teresa_comment1)
             pS "But MAC's as good as gone if we don't do anything."
             enS "Jenn, you must understand."
     enS "The reason Reynar is using the Hounds in the first place is because all of his actual security is here. Look around." 
+    $ AddChatter (vig3_sc9_jennica_comment2)
     "I'm almost embarrassed by how long it took me to realize."
+    $ AddChatter (vig3_sc9_teresa_comment2)
     "I can feel dozens of eyes on us."
     "The androids here aren't just waiting, they're scanning, searching. A step too far out of line and that's it for us."
+    $ AddChatter (vig3_sc9_inventorsfair_comment18)
     pS "So now what?"
     enS "Schmooze, flirt, impress, find any way for someone to give you information but more importantly access."
+    $ AddChatter (vig3_sc9_inventorsfair_comment19)
     pS "I ain't much of a talker..."
+    $ AddChatter (vig3_sc9_inventorsfair_comment20)
     show rec stream happy
     recS "How about we do this together, Jenn? I'd like to see the work maybe even chat up some of the researchers here."
+    $ AddChatter (vig3_sc9_inventorsfair_comment21)
+    pause 0.5
+    $ AddChatter (vig3_sc9_inventorsfair_comment22)
     pS "I'd like that."
     enS "Perfect! Cap let's fan out and figure this out."
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment23)
     mS "Got it, let's be perfect guests for the Fair and do recon. More importantly stay in eyesight."
     enS "And Jenn..."
     pS "Hmm?"
@@ -2310,8 +2456,13 @@ label vig3_sc9():
     hide exteriorvineyard_stream with dissolve
     invfairnpc1 "I told them raising Silver Badgers was a terrible idea! Now they have a torn up farm and no coats to show for it."
     "My eyes nearly roll out of my head at the forced laughter from the surrounding guests."
+    $ AddChatter (vig3_sc9_inventorsfair_comment24)
     "I hate schmoozing, the evening has droned on and absolutely no leads or sign of MAC anywhere."
+    $ AddChatter (vig3_sc9_inventorsfair_comment25)
     "I see Jenn taking an interested sip of her drink as Rec chats up some presenters near their inventions. One of the other guest follows my sight line." 
+    $ AddChatter (vig3_sc9_inventorsfair_comment26)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc9_inventorsfair_comment27)
     "I think their name was Mills?"
     invfairnpc2 "I know it's such an eyesore, that arm should be scrapped honestly."
     mS "Don't you have modified teeth."
@@ -2326,13 +2477,22 @@ label vig3_sc9():
             $ kcEngagement -= 1 #Logic: kitcat is morally outraged about this guy
             "I can feel the anger boiling up to my throat."
             "It's so tempting just to trip these snobs into the drink table."
+            $ AddChatter (vig3_sc9_letitbe_comment1)
+            pause 0.5
+            $ AddChatter (vig3_sc9_letitbe_comment2)
             invfairnpc2 "And that dress? Off the rack from Akar no doubt."
+            $ AddChatter (vig3_sc9_letitbe_comment3)
             invfairnpc1 "Not Akar! A half-way town for drunks and undesirables."
+            $ AddChatter (vig3_sc9_letitbe_comment5)
             invfairnpc2 "Sometimes makes you wish BigCorp took over."
+            $ AddChatter (vig3_sc9_letitbe_comment4)
             invfairnpc1 "All hail the Snakehawks..."
+            $ AddChatter (vig3_sc9_letitbe_comment6)
             invfairnpc2 "And now their former leader is BC's personal dog."
             "I can't take this."
+            $ AddChatter (vig3_sc9_letitbe_comment7)
             mS "Excuse me for a moment."
+            $ AddChatter (vig3_sc9_letitbe_comment8)
             "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
             showgirl "Weren't they a piece of work."
             show showgirl stream at stream_center with dissolve
@@ -2342,18 +2502,34 @@ label vig3_sc9():
             mS "Is everyone here like that."
             showgirl "Thankfully not everyone."
             mS "Daisy was it?"
+            $ AddChatter (vig3_sc9_inventorsfair_comment28)
             showgirl "You bet?"
+            $ AddChatter (vig3_sc9_inventorsfair_comment29)
             mS "50 Credits at Nova Casino."
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment30)
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
             "We both laugh, a genuine laugh."
+            $ AddChatter (vig3_sc9_inventorsfair_comment31)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment32)
             mS "I'm sorry for earlier, I've been on edge."
             showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
             mS "Costume is great though."
+            $ AddChatter (vig3_sc9_inventorsfair_comment33)
+            pause 0.5
+            $ AddChatter (vig3_sc9_inventorsfair_comment34)
             showgirl "Why you flatter me. It is one of my favorite parts."
             "Daisy sways in front of me to show me the movement of her feathers."
             mS "Fabulous. Truly."
             "She has such a sweet smile."
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment35)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment36)
+            #*pause 0.5
+            $ AddChatter (vig3_sc9_inventorsfair_comment37)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment38)
 
         "Trip them.":
             $ csEngagement -= 1
@@ -2361,39 +2537,65 @@ label vig3_sc9():
             $ kcEngagement += 1
             "Now I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gently on the fabric of their flared pants."
             "They tumble over knocking several drinks around and onto them."
+            $ AddChatter (vig3_sc9_takehimdown_comment1)
             mS "Oh dear are you alright!"
+            $ AddChatter (vig3_sc9_takehimdown_comment2)
+            pause 0.5
+            $ AddChatter (vig3_sc9_takehimdown_comment5)
             invfairnpc2 "MY SUIT! I knew I should've had these pants hemmed. Damn stylist!"
             "Mills walks away dripping, a few guests follow them    ."
             mS "I guess some folks can't hold their drink."
+            $ AddChatter (vig3_sc9_takehimdown_comment6)
+            pause 0.5
+            $ AddChatter (vig3_sc9_takehimdown_comment7)
             invfairnpc1 "There's one every year." #using invfairnpc1 because it's just labeled as "Inventor's fair guest." works for offscreen npc.
+            $ AddChatter (vig3_sc9_takehimdown_comment3)
             "I move on, scanning the gallery, I see Teresa looking in her element gliding through various groups with a natural grace. Never lingering too long."
+            $ AddChatter (vig3_sc9_takehimdown_comment4)
             showgirl "I saw that you know..."
             show showgirl stream at stream_center with dissolve
-            $ reactTarget = "vig3_sc9_daisyreturns"
+            $ reactTarget = "vig3_sc9_daisyreturns"#timestamp 6:46
             show screen streamerCommentary
             "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory. With some added refinement."
             mS "Oh, Daisy was it?"
+            $ AddChatter (vig3_sc9_inventorsfair_comment28)
             showgirl "You bet?"
+            $ AddChatter (vig3_sc9_inventorsfair_comment29)
             mS "50 Credits at Nova Casino."
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment30)
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
             "We both laugh, a genuine laugh."
+            $ AddChatter (vig3_sc9_inventorsfair_comment31)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment32)
             showgirl "Also don't worry. I'm not going to tell. Honestly they deserved worse."
             "I feel myself get nervous."
             mS "Much appreciated."
             mS "And sorry for earlier, in Akar, I've been on edge."
             showgirl "Don't sweat it, if you weren't going to shoot me I was. I hate that script."
             mS "Costume is great though."
+            $ AddChatter (vig3_sc9_inventorsfair_comment33)
+            pause 0.5
+            $ AddChatter (vig3_sc9_inventorsfair_comment34)
             showgirl "Why you flatter me. It is one of my favorite parts."
             "Daisy sways in front of me to show me the movement of her feathers."
             mS "Fabulous. Truly."
             "She has such a sweet smile."
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment35)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment36)
+            #*pause 0.5
+            $ AddChatter (vig3_sc9_inventorsfair_comment37)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc9_inventorsfair_comment38)
     
     #Have an extra scene with Daisy, change it to fit which you decided.
             
     showgirl "Well I should be off then."
     mS "Actually, wait! Daisy."
     showgirl "Oh? What is it?"
+    hide screen streamerCommentary
     menu: 
         "Maybe Daisy can help us?"
         "Ask her about the missing parts.":
@@ -2401,32 +2603,44 @@ label vig3_sc9():
             mS "You seem like you know your way around here."
             showgirl "A girl has her ways."
             mS "I'm looking for something that was taken, wouldn't happen to know where I could find it?"
+            $ AddChatter (vig3_sc9_parts_comment1)
             showgirl "Ah. The Hounds I take it?"
+            $ AddChatter (vig3_sc9_parts_comment2)
             mS "Unfortunately."
             showgirl "How about we get a drink and chat."
+            $ AddChatter (vig3_sc9_parts_comment3)
             mS "I really don't-"
+            $ AddChatter (vig3_sc9_parts_comment4)
             "She sidles next to me and holds my arm."
             showgirl "Shall we?"
             "I nod and head over."
         "Invite her to the bar.":
             $ kcEngagement += 1 #Logic: kitcat is here for the flirting
             mS "I'm sure you're busy. But care to have a drink with me?"
+            $ AddChatter (vig3_sc9_bar_comment1)
             showgirl "You mean pilfer Reynar's open bar?"
+            $ AddChatter (vig3_sc9_bar_comment2)
             mS "Couldn't have said it better myself."
             "She goes for my arm then pauses."
+            $ AddChatter (vig3_sc9_bar_comment3)
             showgirl "Just a drink don't expect anything."
             mS "I wouldn't dare."
+            $ AddChatter (vig3_sc9_bar_comment4)
             "She sidles next to me and holds my arm."
             mS "Shall we?"
             "She nods and we head over."
         "Mumble incoherently.":
             $ pdEngagement += 2 #Logic: pickledDragons finds it outrageous (and fun) that you intentionally choose the "fail" option
             mS "Well...I...you see..."
+            $ AddChatter (vig3_sc9_flustered_comment1)
             "Makers she's so pretty."
+            $ AddChatter (vig3_sc9_flustered_comment2)
             "She luckily giggles."
             showgirl "Is the great Captain of the Oakley getting flustered?"
+            $ AddChatter (vig3_sc9_flustered_comment3)
             mS "Happens from time to time."
             "She sidles next to me and holds my arm."
+            $ AddChatter (vig3_sc9_flustered_comment4)
             showgirl "Come with me Captain. Let's get you a drink."
             mS "Um yeah, haha, sure."
 
