@@ -798,7 +798,7 @@ label vig3_sc9_daisybar():
             pause 0.5
             $ AddChatter(vig3_sc9_react_comment16)
         "Say nothing.":
-            pass
+            player "..."
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -928,7 +928,7 @@ label vig3_sc12_amachoke():
             $ AddChatter(vig3_sc12_react_comment2)
             pause 0.5
         "Say nothing.":
-            pass
+            player "..."
             #$ reactImage = "stream ui/reactthinking.png"
             #player "Could have been worse."
             #player "This guy was asking for trouble!"
@@ -1002,17 +1002,29 @@ label vig3_sc12_macalignment_violencepessimism():
             player "Wow he shot her!"
             player "Zero hesitation! Ice cold!"
             player "MAC for the win! Crack shot!"
+            $ AddChatter(vig3_sc12_macAlignVP_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment2)
             pause 0.5
         "MAC, no!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Noooo!"
             player "MAC you're supposed to be better than us!"
-            #add chatter
+            $ AddChatter(vig3_sc12_macAlignVP_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment5)
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
             player "What!?"
             player "Has MAC been learning this whole time?"
+            $ AddChatter(vig3_sc12_macAlignVP_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment7)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1042,17 +1054,31 @@ label vig3_sc12_macalignment_violenceoptimism():
             player "Damn! MAC's a crack shot!"
             player "Zero hesitation! Warning shot right a hair away from her face!"
             player "So cool!"
+            $ AddChatter(vig3_sc12_macAlignVP_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVO_comment1)
             pause 0.5
         "So much for MAC's innocence.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Did MAC just fire a warning shot a hair away from her face?"
             player "Damn MAC, you're supposed to be better..."
-            #add chatter
+            $ AddChatter(vig3_sc12_macAlignVO_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVO_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVO_comment1)
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
             player "What!?"
             player "Has MAC been learning this whole time?"
+            $ AddChatter(vig3_sc12_macAlignVP_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment7)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1081,17 +1107,32 @@ label vig3_sc12_macalignment_peacepessimism():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "MAC with the distraction!"
             player "Good thing Moze is here to take advantage though!"
+            $ AddChatter(vig3_sc12_macAlignPP_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment4)
             pause 0.5
         "MAC is so innocent!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Oh MAC!"
             player "Too pure for this world!"
-            #add chatter
+            $ AddChatter(vig3_sc12_macAlignPP_comment1)
             pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment5)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPP_comment6)
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
             player "What!?"
             player "Has MAC been learning this whole time?"
+            $ AddChatter(vig3_sc12_macAlignVP_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment7)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1121,18 +1162,29 @@ label vig3_sc12_macalignment_peaceoptimism():
             player "What!?"
             player "Did MAC just hard read Ama!?"
             player "She's a softie underneath it all!"
+            $ AddChatter(vig3_sc12_macAlignPO_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPO_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPO_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPO_comment5)
             pause 0.5
         "Mac for the win!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Did MAC just grow up!?"
             player "Like he just saw right through Ama!"
-            #player "What is going on!?"
-            #add chatter
+            $ AddChatter(vig3_sc12_macAlignPO_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignPO_comment1)
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
             player "What!?"
             player "Has MAC been learning this whole time?"
+            $ AddChatter(vig3_sc12_macAlignVP_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc12_macAlignVP_comment7)
             pause 0.5
         "Say nothing.":
             player "..."
@@ -1162,17 +1214,29 @@ label vig3_sc14_recfindsout_regret():
             $ reactImage = "stream ui/reactconversational.png"
             player "Wow. Brutal."
             player "But at least she's finally telling Rec."
+            $ AddChatter(vig3_sc14_rec_react_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment3)
             pause 0.5
         "Sorry, Rec.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Noooo!"
             player "This is so sad chat."
-            #add chatter
+            $ AddChatter(vig3_sc14_rec_react_comment2)
             pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment5)
         "Sorry, not sorry.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "I guess it was the right thing to do."
             player "Not sure we should be apologizing though."
+            $ AddChatter(vig3_sc14_rec_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment7)
+            pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1201,18 +1265,30 @@ label vig3_sc14_recfindsout_ihadto():
             $ reactImage = "stream ui/reactunsure.png"
             player "I mean she's right. Allistar betrayed them."
             player "What do you expect?"
-            #add chatter
+            $ AddChatter(vig3_sc14_rec_react_comment11)
             pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment9)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment10)
         "Moze with the cop out!":
             $ reactImage = "stream ui/reactconfident.png"
             player "\"I had no choice!\""
             player "Classic Moze!"
             player "We never have any choice hahahaha!"
+            $ AddChatter(vig3_sc14_rec_react_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment9)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment11)
             pause 0.5
         "Sorry, not sorry.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Yeah, I guess that was the right thing to do."
             player "They shouldn't expect an apology though. Allistar crossed us!"
+            $ AddChatter(vig3_sc14_rec_react_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment11)
+            pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5
@@ -1241,20 +1317,42 @@ label vig3_sc14_recfindsout_noremorse():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Hell yeah!"
             player "Allistar deserved it! No regrets."
+            $ AddChatter(vig3_sc14_rec_react_comment12)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment13)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment14)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment15)
             pause 0.5
         "That was cold.":
             $ reactImage = "stream ui/reactshocked.png"
             player "Wow maybe that was too far?"
             player "Even if Allistar deserved it..."
             player "Might've been too cruel."
-            #add chatter
+            $ AddChatter(vig3_sc14_rec_react_comment12)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment16)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment17)
             pause 0.5
         "Hahaha get owned Rec!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Hahahaha!"
             player "f's in the chat for Rec!"
             player "Traitor brother got what he deserved."
-            #add chatter #many f's 
+            $ AddChatter(vig3_sc14_rec_react_comment18)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment19)
+            $ AddChatter(vig3_sc14_rec_react_comment20)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment21)
+            $ AddChatter(vig3_sc14_rec_react_comment22)
+            $ AddChatter(vig3_sc14_rec_react_comment12)
+            pause 0.5
+            $ AddChatter(vig3_sc14_rec_react_comment23)
+            $ AddChatter(vig3_sc14_rec_react_comment24)
+            pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5

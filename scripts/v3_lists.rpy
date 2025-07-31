@@ -1296,27 +1296,64 @@ default vig3_sc12_react_comment10 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b
 default vig3_sc12_react_comment11 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nDo they have to tho", 3, "#ffffff")
 
 ##Sc12 Mac Alignment - VP
-default vig3_sc12_macAlignVP_comment1 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nDo they have to tho", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment1 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nOutlaw MAC op", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment2 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nI can't believe he actually fired the gun...", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment3 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nIn defense of his mom too, so brave!", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment4 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nWell he had to learn from someone", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment5 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nHe is better...at shooting!", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment6 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nI read somewhere that that's how the game works", 3, "#ffffff")
+default vig3_sc12_macAlignVP_comment7 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nKeeping it secret to surprise us?? interesting", 3, "#ffffff")
 
-##Sc12 Mac Alignment - VH
+##Sc12 Mac Alignment - VO
+default vig3_sc12_macAlignVO_comment1 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nI'm glad he didn't actually shoot her tbh. That would feel wrong", 3, "#ffffff")
+default vig3_sc12_macAlignVO_comment2 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nGuess he's not an innocent child anymore", 3, "#ffffff")
+default vig3_sc12_macAlignVO_comment3 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nYeah, welcome to being a teenager, MAC", 3, "#ffffff")
 
 ##Sc12 Mac Alignment - PP
+default vig3_sc12_macAlignPP_comment1 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nI'm kinda glad he didn't shoot", 3, "#ffffff")
+default vig3_sc12_macAlignPP_comment2 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nBut he looked so sad :(", 3, "#ffffff")
+default vig3_sc12_macAlignPP_comment3 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nGood distraction, also nice parallel with Moze's flashback", 3, "#ffffff")
+default vig3_sc12_macAlignPP_comment4 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nLike mother like son", 3, "#ffffff")
+default vig3_sc12_macAlignPP_comment5 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nStill so innocent!", 3, "#ffffff")
+default vig3_sc12_macAlignPP_comment6 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nDon't be disheartened MAC!", 3, "#ffffff")
 
-##Sc12 Mac Alignment - PH
+##Sc12 Mac Alignment - PO
+default vig3_sc12_macAlignPO_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nThe read is more powerful than the gun", 3, "#ffffff")
+default vig3_sc12_macAlignPO_comment2 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nSmart distraction", 3, "#ffffff")
+default vig3_sc12_macAlignPO_comment3 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nClever lil guy", 3, "#ffffff")
+default vig3_sc12_macAlignPO_comment4 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nEntering those rebellious teenage years I see", 3, "#ffffff")
+default vig3_sc12_macAlignPO_comment5 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nCharisma check: passed", 3, "#ffffff")
 
-##
+##Sc14 - Rec: regret
+default vig3_sc14_rec_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nYeah, it was still wrong for her to wait this long though", 3, "#ffffff")
+default vig3_sc14_rec_react_comment2 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nThis was always gonna hurt. At least Moze is remorseful", 3, "#ffffff")
+default vig3_sc14_rec_react_comment3 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nI feel like she shouldn't be apologizing though. They're outlaws, Allistar made his choice", 3, "#ffffff")
+default vig3_sc14_rec_react_comment4 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nRec, you have too much hope for this galaxy!", 3, "#ffffff")
+default vig3_sc14_rec_react_comment5 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nThis is tragic", 3, "#ffffff")
+default vig3_sc14_rec_react_comment6 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nYeah, I mean we're outlaws. Allistar made his choice", 3, "#ffffff")
+default vig3_sc14_rec_react_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nEmpty apologies always suck. But if Moze means it, then I like it", 3, "#ffffff")
 
-##
+##Sc14 - Rec: I had to
+default vig3_sc14_rec_react_comment8 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nOld reliable", 3, "#ffffff")
+default vig3_sc14_rec_react_comment9 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nDidn't the game literally give her a choice?", 3, "#ffffff")
+default vig3_sc14_rec_react_comment10 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nI think it's more of a \"this is what she has to tell herself\" kinda thing", 3, "#ffffff")
+default vig3_sc14_rec_react_comment11 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\ntraitor brother", 3, "#ffffff")
 
-##
+##Sc14 - Rec: no remorse
+default vig3_sc14_rec_react_comment12 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:34{/b}\nNo regrets!", 3, "#ffffff")
+default vig3_sc14_rec_react_comment13 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nDamn Moze, that's HARD", 3, "#ffffff")
+default vig3_sc14_rec_react_comment14 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nI like how Outlaw Moze {i}commits{/i} and doesn't think twice", 3, "#ffffff")
+default vig3_sc14_rec_react_comment15 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nCharacter: strong. Morals: dubious at best", 3, "#ffffff")
+default vig3_sc14_rec_react_comment16 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nRec is devastated", 3, "#ffffff")
+default vig3_sc14_rec_react_comment17 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nIt do be your own family sometimes", 3, "#ffffff")
+default vig3_sc14_rec_react_comment18 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\ntraitor brother", 3, "#ffffff")
+default vig3_sc14_rec_react_comment19 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nF", 3, "#ffffff")
+default vig3_sc14_rec_react_comment20 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nFs", 3, "#ffffff")
+default vig3_sc14_rec_react_comment21 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nF", 3, "#ffffff")
+default vig3_sc14_rec_react_comment22 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nEFFFFFFF", 3, "#ffffff")
+default vig3_sc14_rec_react_comment23 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nFs", 3, "#ffffff")
+default vig3_sc14_rec_react_comment24 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nF", 3, "#ffffff")
 
-##
-
-##
-
-##
-
-##
 
 ####Blueit Thread Configuration####
 default vig3_bThread1 = bThread( 1, "vig3_blueit_amaThread", "images/socials/bThread_v3_amaRomance.png") #tag, target, image

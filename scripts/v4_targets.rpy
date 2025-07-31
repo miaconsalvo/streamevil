@@ -123,6 +123,7 @@ label vig4_sc2_rube():
     menu:
         "Should I play into this?"
         "Say nothing.":
+            player "..."
             pass
         "Rube!":
             player "Rube!"
@@ -434,7 +435,7 @@ label vig4_sc3_festivalRomance():
             player "Maybe we can learn more about Coil from her too."
             $ AddChatter(vig4_sc3_interact_comment3)
         "Say nothing.":
-            pass
+            player "..."
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -583,7 +584,7 @@ label vig4_sc5_oscarReturn():
             pause 0.5
             $ AddChatter(vig4_sc5_interact_comment4)
         "Say nothing.":
-            pass
+            player "..."
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -617,7 +618,7 @@ label vig4_sc6_ripTank():
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment5)
         "Say nothing.":
-            pass
+            player "..."
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -703,7 +704,7 @@ label vig4_sc6_reggieReaction():
             player "Oh god, is Matticus going to want something for this?"
             $ AddChatter(vig4_sc6_interact_comment13)
         "Say nothing.":
-            pass
+            player "..."
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -733,7 +734,7 @@ label vig4_sc7_kcWhyNoRomance():
             player "I think there's something between them, but saying \"I love you\" right now feels a bit rushed."
             $ AddChatter(vig4_sc7_interact_comment1)
         "Say nothing.":
-            pass
+            player "..."
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
