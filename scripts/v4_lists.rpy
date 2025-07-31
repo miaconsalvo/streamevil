@@ -203,7 +203,7 @@ default vig4_sc2_6_comment44 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nWhat'd 
 
 
 ###Comments vig4_bro - For the interaction when your brother enters chat
-default vig4_bro_comment1 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nI was! But we rescheduled to tomorrow! They rearranged some plans so I could be here for this :)", 4, "#ffffff")
+default vig4_bro_comment1 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nI was! But we rescheduled to tomorrow! He rearranged some plans so I could be here for this :)", 4, "#ffffff")
 default vig4_bro_comment2 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nIt's great to be here! Was able to reschedule plans so I could make it. Figured I'd surprise you :)", 4, "#ffffff")
 default vig4_bro_comment3 = ChatEntry(False, "{b}Coriolis - 6:45{/b}\nWelcome to the stream!", 4, "#ffffff")
 default vig4_bro_comment4 = ChatEntry(False, "{b}kitcat - 6:45{/b}\nHi lil' [streamer]!", 4, "#ffffff")

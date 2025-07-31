@@ -101,6 +101,8 @@ default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
 default profilePic = "images/socials/profilepics/profile2.png"
 default reactImage = "stream ui/reactneutral.png"
+default reactVariable = False
+default commentVariable = False
 
 #variables to track morality
 default marshal = 0 #could start this at 5 and outlaw at 0 if we want to simulate marshal choices for the early part of vig1

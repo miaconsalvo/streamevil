@@ -120,7 +120,7 @@ screen blueitThread():
 
 
 screen finalWriteUp():
-    text "[blueitPostTitle]" align (0.64, 0.4)
+    text "[blueitPostTitle]" align (0.64, 0.38)
     viewport:
         draggable True
         mousewheel True

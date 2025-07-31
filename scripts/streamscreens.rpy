@@ -180,7 +180,7 @@ screen streamFreeze():
         ysize 1080
         background Solid("#00000000")
         imagebutton: #just the overlay that you click on
-            action [Return(), Call(reactTarget, from_current = True)]
+            action [Return(), Call(reactTarget)]
             idle Solid("#00000000")
             hover Solid("#bd050556")
             #hover Image("stream ui/reactHighlight.png") 
@@ -260,27 +260,23 @@ screen selectProfilePic():
 ###These screens set up the "Gates" for players to navigate the post-stream session based on their desires.
 screen webNavigation_vig1():
     if flinchView == False and screenComplete == True:
-        textbutton "Open Flinch":
+        imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig1")]
-            #background Solid("#66439eff")
-            background Solid("#a03f2eff")
-            #above is color for SGA build
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.44, 0.007)    
+            idle Solid("#eff3176b")
+            hover Solid("#eff317b9")
+            xsize 128
+            ysize 40
+            align (0.4095, 0.007)          
+
     if blueitView == False and screenComplete == True:
-        textbutton "Open Blueit":
+        imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")]
-            #background Solid("#66439eff")
-            background Solid("#a03f2eff")
-            #above is color for SGA build
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.525, 0.007)  
+            idle Solid("#eff3176b")
+            hover Solid("#eff317b9")
+            xsize 128
+            ysize 40
+            align (0.4845, 0.007)
+
     if flinchView == True and blueitView == True and screenComplete == True:
         textbutton "Close Computer":
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("vig1_brother_1")]
@@ -289,7 +285,7 @@ screen webNavigation_vig1():
             text_hover_color "#ffffffce" 
             text_selected_color "#ffffffff"
             text_size 20
-            align (0.8, 0.007)
+            align (0.98, 0.007)
 
 
 #### WEBNAV SCREEN FOR VIG2####

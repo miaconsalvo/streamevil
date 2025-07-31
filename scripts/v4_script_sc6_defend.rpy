@@ -67,7 +67,7 @@ label vig4_sc6_defend_1():
     enS "Roger."
     hide jennica with dissolve
     hide teresa with dissolve
-    "Staying in cover, Jennica and Teresa cycle around the rubble, getting as close to the tank as possible without revealing themselves."
+    "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
     "I shift down the ruins, moving away from the tank."    
     "There are just six BC enforcers standing next to the tank."
     "It's now or never."
@@ -109,6 +109,7 @@ label vig4_sc6_defend_1():
     "Where's the sixth?"
     enforcer "Freeze!"
     show bc_enforcer at stream_center with dissolve
+    stop music fadeout 1.0
     "An enforcer taps my back with his gun."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_1_comment14)
@@ -130,7 +131,7 @@ label vig4_sc6_defend_1():
     vS "Hello, Captain Moze."
     "Her weapon is still drawn, aiming at me."
     $ AddChatter(vig4_sc6_defend_1_comment17)
-    show dflyGuard at stream_right with dissolve
+    show dflyguard at stream_right with dissolve
     "Additional Dragonflies emerge from behind her, they aim rifles at Jennica and Teresa who stand on the tank with their arms raised in the air."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_1_comment18)
@@ -170,7 +171,7 @@ label vig4_sc6_defend_1():
     else:
         pass
     vS "But we need you."
-    hide dflyGuard with dissolve
+    hide dflyguard with dissolve
     "She walks past me toward the tank and I follow her."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
@@ -227,7 +228,7 @@ label vig4_sc6_defend_1():
     "I open my palm and hold it out in front of me."
     "A blue hologram projects up from the disc."
     show mac phone neutral at stream_center_mac with dissolve
-    play music "soundtrack/theme.wav"
+    play music "soundtrack/theme.wav" volume 0.7 fadein 1.0 
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
     "It's MAC."
@@ -297,7 +298,7 @@ label vig4_sc6_defend_1():
                 mS "But I'm proud of you for fighting so hard."
     else:
         macS "And I was helping so many people with the first aid!"
-        if viewershipHigh == True or viewershipMed == True:
+        if viewershipHigh == True:
             $ AddChatter(vig4_sc6_defend_1_comment41)
         menu:
             macS "And I was helping so many people with the first aid!"
@@ -414,7 +415,7 @@ label vig4_sc6_defend_2():
         $ AddChatter(vig4_sc6_defend_2_comment6)
     "They bring the fight to the approaching army, firing at the advancing BC army."
     "The true battle for Polaris begins."
-    play music "soundtrack/saveTheGalaxy.wav"
+    play music "soundtrack/saveTheGalaxy.wav" volume 1.0 fadein 1.0
     "A dropship careens down toward the central street, as if to fly directly overhead."
     mS "Vega, use the machine guns and hit the enforcers with suppressing fire."
     $ AddChatter(vig4_sc6_defend_2_comment7)
@@ -462,7 +463,7 @@ label vig4_sc6_defend_2():
     vS "Shit! Moze, we need to cover their retreat!"
     "The dirt and smoke clears over the frontline squad."
     "Suddenly, I recognize them." 
-    show dflyGuard at stream_left5 with dissolve
+    show dflyguard at stream_left5 with dissolve
     "They're the squad that held Teresa and Jennica captive during the festival."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_2_comment17)
@@ -496,7 +497,7 @@ label vig4_sc6_defend_2():
 ##*Should we have some reactions here in these sections?
 
 label vig4_sc6_defend_3_barricade():
-    hide dflyGuard with dissolve
+    hide dflyguard with dissolve
     mS "Vega, we can't afford to. If we leave this position, the barricade falls and we lose everything."
     $ AddChatter(vig4_sc6_defend_3_barricade_comment1)
     "The BigCorp assault batters against our defenses."
@@ -522,7 +523,7 @@ label vig4_sc6_defend_3_barricade():
         $ AddChatter(vig4_sc6_defend_3_frontline_comment6)
     "The forces on the rooftops do the same, but many of them are cut down as soon as they retreat."
     "Some of them make it back."
-    show dflyGuard at stream_left5 with dissolve
+    show dflyguard at stream_left5 with dissolve
     "The squads at the frontline have no such luxury."
     "Anyone who turns to run is immediately shot in the back."
     "The remainder stay at the frontline, firing desperately into the opposing army."
@@ -532,7 +533,7 @@ label vig4_sc6_defend_3_barricade():
     "As he starts to turn to try to retreat, something lands at his feet."
     $ AddChatter(vig4_sc6_defend_3_barricade_comment8)
     "He has one brief moment to look up in our direction."
-    hide dflyGuard with Dissolve(0.5)
+    hide dflyguard with Dissolve(0.5)
     #play audio explosion
     "Fire engulfs him. His body flails to the ground, writhing."
     $ AddChatter(vig4_sc6_defend_3_barricade_comment9)
@@ -603,7 +604,7 @@ label vig4_sc6_defend_3_frontline():
     $ AddChatter(vig4_sc6_defend_3_frontline_comment8)
     pause 0.5
     $ AddChatter(vig4_sc6_defend_3_frontline_comment9)
-    hide dflyGuard with dissolve
+    hide dflyguard with dissolve
     menu:
         "How does it feel?"
         "They didn't deserve to die.":
@@ -670,7 +671,7 @@ label vig4_sc6_defend_4():
     hide bc_enforcer with dissolve
     "Behind me, I feel the heat against my back as the rocket detonates against the tank."
     "A shockwave ripples out, sending me flying through the air and rolling into the dirt."
-    "Picking myself up, I turn around to see the hull of the tank engulfed in flames."
+    "Picking myself up, I turn around to see the hull of the tank burning."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_4_comment5)
     "The BC army marches up from the distance."
@@ -681,9 +682,10 @@ label vig4_sc6_defend_4():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_4_comment6)
     hide vega with dissolve
+    stop music fadeout 1.0
     "Taking a couple steps back from the barricade, I drop to one knee, glancing around me."
     $ vig4_sc6_defend_4_comment5.click = False
-    "The town is engulfed in glame."
+    "The town is engulfed in flame."
     "Ash and embers fall all around me."
     "Heat radiates on my skin."
     jump vig4_sc6_defend_5
@@ -779,6 +781,7 @@ label vig4_sc6_defend_5():
     "We turn to look at the flames that lick at Polaris."
     $ AddChatter(vig4_sc6_defend_5_comment14)
     mS "Somehow."
+    play music "soundtrack/theme.wav" volume 0.8 fadein 1.0
     if vig2_outlawEpilogue == True:
         $ pdEngagement += 3
         $ kcEngagement += 2
@@ -972,6 +975,7 @@ label vig4_sc6_defend_5():
 
 label vig4_sc7_1_defend():
     hide vig1_town_stream with dissolve
+    stop music fadeout 1.0
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."
     if viewershipHigh == True or viewershipMed == True: 

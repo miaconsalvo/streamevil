@@ -31,7 +31,7 @@ label vig1_sc2_whoQuestion():
     hide screen chatTutorial
     menu:
         "A viewer wants to catch up on some back story."
-        "Explain \"Deadeye\"":
+        "Explain \"Deadeye.\"":
             $ reactImage = "stream ui/reactconversational.png"
             player "\"Deadeye\" is the nickname for Ama Reyes."
             player "She was Moze's mentor when she was running with the Snakehawks."
@@ -41,7 +41,7 @@ label vig1_sc2_whoQuestion():
             pause 0.5
             $ AddChatter(vig1_sc2_comment3)
             pause 0.5
-        "Explain Snakehawks":
+        "Explain Snakehawks.":
             $ reactImage = "stream ui/reactconfident.png"
             player "The Snakehawks were the gang that Moze and Jennica ran with before they became mercenaries."
             player "Allistar was part of the gang too, that's why he has the same tattoo as Moze."
@@ -70,7 +70,7 @@ label vig1_sc2_thankCS():
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
             "Thanks for filling in, Coriolis!"
-        "Say nothing":
+        "Say nothing.":
             pass
     $ macroChoice = False
     if macroChoice == False:
@@ -92,7 +92,7 @@ label vig1_sc2_allistarhunk():
             $ csEngagement += 1
             player "Hunky mechanic coming up clutch!"
             $ allistarSuspicious = False
-        "I'm a bit suspicious":
+        "I'm a bit suspicious.":
             $ reactImage = "stream ui/reactthinking.png"
             player "Yeah, maybe a bit too much."
             player "Feels like they're building up to something with him."
@@ -222,7 +222,7 @@ label vig1_sc3_banditConvo():
         
     menu:
         "Bandit asked who my favorite Oakley character is."
-        "MAC":
+        "MAC.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ kcEngagement += 1
             player "Honestly, same."
@@ -233,7 +233,7 @@ label vig1_sc3_banditConvo():
             pause 1.0
             player "Ooh that would be interesting. Hope it's true!" 
             player "Well, let's get back to the game!"
-        "Teresa":
+        "Teresa.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ pdEngagement += 1
             player "I'm a big fan of Teresa."
@@ -242,14 +242,14 @@ label vig1_sc3_banditConvo():
             pause 1.0
             player "Maybe just a bit haha" 
             player "Well, let's get back to the game!"
-        "Allistar":
+        "Allistar.":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Also recency bias, but it's been really cool to connect with Allistar."
             player "This hunky mechanic has good vibes."
             $ AddChatter(vig1_sc3_comment3_banditAllistar)
             pause 2.0
             "That's...ominous. Let's get back to the game."
-        "Jennica":
+        "Jennica.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
             player "Jennica all the way."
@@ -288,11 +288,11 @@ label vig1_analytics_alignment():
     "Moze's alignment is almost entirely Marshal."
     "But there's a little bit of red for Outlaw."
     menu:
-        "It's exciting":
+        "It's exciting.":
             $ enthusiasm += 1
             "It's actually kind of exciting!"
             "Kind of like the start of a new adventure."
-        "It looks weird":
+        "It looks weird.":
             $ reluctance += 1
             "Looking at it here, it feels odd."
             "Maybe you'll get used to it?"
@@ -335,10 +335,10 @@ label vig1_analytics_audience():
     "You'll still have to get several more followers and keep an average viewership of ten per stream to get Affiliate."
     "Not everyone from the raid will stick around next time though."
     menu:
-        "Think about your last attempt":
+        "Think about your last attempt.":
             "Last time you tried this you missed by just one viewer."
             "It was brutal."
-        "Think about your conversation with Jessie":
+        "Think about your conversation with Jessie.":
             "Playing the Outlaw route might help with that."
             "But what if you don't like it?"
     "You said this would be your last try to get Affiliate."

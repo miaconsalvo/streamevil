@@ -4,6 +4,7 @@ label vig2_sc1_testquestion():
     $ macroChoice = True
     $ vig2_sc1_comment2.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Coriolis remembered I had a test today, that's so sweet!"
         "It went well!":
@@ -12,81 +13,97 @@ label vig2_sc1_testquestion():
             player "It was really great actually! Can't believe you remembered!"
             $ AddChatter(vig2_sc1_coriolis_comment1)
             pause 0.5
-        "Not so hot":
+        "Not so hot.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             $ csEngagement += 1
             player "It kicked my butt. Honestly I'm just hoping I pass."
             $ AddChatter(vig2_sc1_coriolis_comment2)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc1_matticusopinion():
     $ macroChoice = True
     $ vig2_sc1_comment13.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "What did I think of Matticus in game 1?"
-        "He was the worst":
+        "He was the worst.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Ugh, no this guy has always been the worst"
             $ AddChatter(vig2_sc1_kitcat_comment1)
             pause 0.5
-        "He was fine":
+        "He was fine.":
             $ reactImage = "stream ui/reactconversational.png"
             $ kcEngagement += 1
             player "I didn't mind him as much as some fans, even though I didn't ally with him a ton."
             $ AddChatter(vig2_sc1_kitcat_comment2)
             pause 0.5
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc2_mar_consistency():
     $ macroChoice = True
     $ vig2_sc2_mar_comment3.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Someone's asking if this is consistent with the last episode"
-        "We'll warm up to Outlaw":
+        "We'll warm up to Outlaw.":
             $ reactImage = "stream ui/reactunsure.png"
             $ pdEngagement += 1
             player "Don't worry chat, we're just getting warmed up."
             player "After all, can't be Outlaw all the time or it isn't special."
             $ AddChatter(vig2_sc2_mar_J4MresponseOUT)
             pause 0.5
-        "Let's avoid Outlaw for now":
+        "Let's avoid Outlaw for now.":
             $ reactImage = "stream ui/reactconversational.png"
             $ reluctance += 1
             player "I mean, we don't want MORE people getting hurt."
             player "This keeps us under the radar for the mission too."
             $ AddChatter(vig2_sc2_mar_J4MresponseMAR)
             pause 0.5
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc2_out_romance():
     $ macroChoice = True
     $ vig2_sc2_out_comment5.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
-        "I'm thinking Jennica":
+        "I'm thinking Jennica.":
             $ reactImage = "stream ui/reactconfident.png"
             $ csEngagement += 1
             player "Jennica's sweet, I'm leaning her at the moment!"
@@ -96,7 +113,7 @@ label vig2_sc2_out_romance():
             pause 0.5
             $ AddChatter(vig2_sc2_romance_pilot1)
             pause 1.0
-        "Probably Teresa":
+        "Probably Teresa.":
             $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 1
             player "Teresa for sure. She's got an edge I appreciate."
@@ -106,7 +123,7 @@ label vig2_sc2_out_romance():
             pause 0.5
             $ AddChatter(vig2_sc2_romance_engineer1)
             pause 1.0
-        "Ama all day, for sure":
+        "Ama all day, for sure.":
             $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 2
             $ csEngagement += 1
@@ -120,22 +137,27 @@ label vig2_sc2_out_romance():
             pause 1.0
             $ AddChatter(vig2_sc2_romance_ama2)
             pause 1.0
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc4_gameplan():
     $ macroChoice = True
     $ vig2_sc4_comment1.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How should I approach Matticus?"
-        "Let's lean into it":
+        "Let's lean into it.":
             $ reactImage = "stream ui/reactconfident.png"
             $ enthusiasm += 1
             $ pdEngagement += 1
@@ -149,7 +171,7 @@ label vig2_sc4_gameplan():
             $ AddChatter(vig2_sc4_ally_comment3)
             pause 1.0
             $ AddChatter(vig2_sc4_ally_comment4)
-        "Don't listen to him":
+        "Don't listen to him.":
             $ reactImage = "stream ui/reactconversational.png"
             $ reluctance += 1
             $ csEngagement += 1
@@ -158,49 +180,59 @@ label vig2_sc4_gameplan():
             $ AddChatter(vig2_sc4_against_comment1)
             pause 1.0
             $ AddChatter(vig2_sc4_against_comment2)
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc7_toofar():
     $ macroChoice = True
     $ vig2_sc7_out_comment1.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Is this too far?"
-        "Let's roll with it":
+        "Let's roll with it.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ enthusiasm += 1
             $ pdEngagement += 1
             $ kcEngagement += 1
             player "YOU SAID IT!"
-        "It's feeling off to me":
+        "It's feeling off to me.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             $ csEngagement += 2
             $ pdEngagement -= 2
             $ reluctance -= 1
             player "Kinda wish I could go back tbh..."
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_sc7_rips():
     $ macroChoice = True
     $ vig2_sc7_out_execute_comment4.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Should I encourage this?"
-        "Guys, this is serious":
+        "Guys, this is serious.":
             $ reactImage = "stream ui/reactshocked.png"
             $ reluctance += 2
             $ pdEngagement -= 2
@@ -208,7 +240,7 @@ label vig2_sc7_rips():
             $ csEngagement += 1
             $ encourageRIPS = False
             "This is pretty heavy stuff guys, let's not get too carried away."
-        "Put those rips in chat":
+        "Put those rips in chat.":
             $ reactImage = "stream ui/reactcelebrate.png"
             $ enthusiasm += 2
             $ pdEngagement += 1
@@ -229,19 +261,24 @@ label vig2_sc7_rips():
             $ AddChatter(vig2_epilogue_out_rips6)
             pause 0.5
             $ AddChatter(vig2_epilogue_out_rips7)
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig2_epilogue_outlaw():
     $ macroChoice = True
     $ vig2_epilogue_out_comment6.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "That was pretty different from how things usually go."
         "It was exciting!":
@@ -253,13 +290,17 @@ label vig2_epilogue_outlaw():
             #Just because one choice affects a variable doesn't mean its opposite has to do something
             #We can have a "neutral" choice
             player "I feel like just ran an emotional marathon haha"
-    $ macroChoice = False
-    #if macroNarration == False:
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if reactVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 #################
@@ -270,6 +311,7 @@ label vig2_sc1_openingstream():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Introduce the stream."
         "Welcome back!":
@@ -288,18 +330,24 @@ label vig2_sc1_openingstream():
             player "Hey folks!"
             player "Are you guys ready to get into some trouble?"
             $ AddChatter(vig2_sc1_reactcomment2)
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc1_mentionallistar():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Talk about Allistar?"
         "I still feel bad about that.":
@@ -314,18 +362,24 @@ label vig2_sc1_mentionallistar():
             player "Listen, you mess with MAC, you mess with me!"
             $ AddChatter(vig2_sc1_reactcomment5)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
         $ narrator = reg_narrator
+        "Where was I?"
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc1_matticusjennicaopinion():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Think about the relationships with other characters."
         "What's the relationship system in this game like?":
@@ -340,18 +394,24 @@ label vig2_sc1_matticusjennicaopinion():
             pause 0.5
             $ AddChatter(vig2_sc1_reactcomment8)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc2_landingongibian():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Speculate about what happens next."
         "How bad do you guys think this'll go?":
@@ -373,18 +433,24 @@ label vig2_sc2_landingongibian():
             player "If Ama shows up, I'm gonna FREAK!"
             $ AddChatter(vig2_sc2_reactcomment4)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc2_whywedidntfly():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Hype the chat about MAC."
         "MAC's so cool!":
@@ -401,18 +467,24 @@ label vig2_sc2_whywedidntfly():
             pause 0.5
             $ AddChatter(vig2_sc2_reactcomment8)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc2_firstproblem():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Call back to speculating what will happen."
         "I called it!" if customsSpeculation == True:
@@ -435,18 +507,24 @@ label vig2_sc2_firstproblem():
             pause 0.5
             $ AddChatter(vig2_sc2_reactcomment13)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc2_customsdecision():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Think about if you made the right choice."
         "All good!":
@@ -465,18 +543,24 @@ label vig2_sc2_customsdecision():
             player "We're so boned, but we're boned together!"
             $ AddChatter(vig2_sc2_reactcomment16)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc3_aftercustoms():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect about the choice you just made."
         "We were fine all along!":
@@ -499,18 +583,24 @@ label vig2_sc3_aftercustoms():
             pause 0.5
             $ AddChatter(vig2_sc3_reactcomment5)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc4_meetingmatticus():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Tell the chat how you feel about Matticus."
         "This guy sucks.":
@@ -532,18 +622,24 @@ label vig2_sc4_meetingmatticus():
             pause 0.5
             $ AddChatter(vig2_sc4_reactcomment5)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc4_plancheckin():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Check-in with the chat."
         "Matticus is gonna make this tough.":
@@ -564,18 +660,24 @@ label vig2_sc4_plancheckin():
             player "Back to the ol' Snakehawk playbook!"
             $ AddChatter(vig2_sc4_reactcomment9)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc5_macquestion():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Inquire about MAC's learning."
         "MAC's seems inquisitive.":
@@ -597,18 +699,24 @@ label vig2_sc5_macquestion():
             pause 0.5
             $ AddChatter(vig2_sc5_reactcomment5)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc6_out_reflect():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect on the confrontation."
         "Lotta violence.":
@@ -628,18 +736,24 @@ label vig2_sc6_out_reflect():
             player "Yeah that feels like the way that should've gone."
             $ AddChatter(vig2_sc6_out_reactcomment4)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc6_mar_reflect():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect on the stealth mission."
         "We just had to sneak in?":
@@ -659,18 +773,24 @@ label vig2_sc6_mar_reflect():
             player "Those guards are definitely coming back after us afterwards."
             $ AddChatter(vig2_sc6_mar_reactcomment4)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc7_bigreveal():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Respond to Reginald."
         "True.":
@@ -690,18 +810,24 @@ label vig2_sc7_bigreveal():
         "Say nothing.":
             player "..."
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc8_out_postchoice():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "After your choice."
         "We had no choice.":
@@ -725,18 +851,24 @@ label vig2_sc8_out_postchoice():
         "Say nothing.":
             player "..."
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc8_out_reflect():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect on your choice."
         "Jennica's upset.":
@@ -768,18 +900,24 @@ label vig2_sc8_out_reflect():
             if baseGuardKilled == True:
                 $ AddChatter(vig2_sc8_out_reactcomment16)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc9_out_end():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect on the Outlaw choice."
         "Matticus will get his karma.":
@@ -803,18 +941,24 @@ label vig2_sc9_out_end():
             pause 0.5
             $ AddChatter(vig2_sc9_out_reactcomment6)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc8_mar_reacttoregi():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "React to Reginald."
         "Add him to the pile!" if gunsBlazing == True:
@@ -838,18 +982,24 @@ label vig2_sc8_mar_reacttoregi():
             pause 0.5
             $ AddChatter(vig2_sc8_mar_reactcomment6)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc8_mar_reacttoregistun():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "React to stunning Reginald."
         "Better than he deserved.":
@@ -871,18 +1021,24 @@ label vig2_sc8_mar_reacttoregistun():
             pause 0.5
             $ AddChatter(vig2_sc8_mar_reactcomment11)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc8_mar_reacttoregibribe():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "React to the bribe."
         "Easy.":
@@ -907,17 +1063,24 @@ label vig2_sc8_mar_reacttoregibribe():
             $ AddChatter(vig2_sc8_mar_reactcomment17)
             pause 0.5
     $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 label vig2_sc9_mar_end():
     hide screen streamerCommentary
     $ macroChoice = True
     $ narrator = reg_narrator
+    $ reactVariable = True
     menu:
         "Reflect on the Marshal choice."
         "Too easy tbh.":
@@ -941,12 +1104,17 @@ label vig2_sc9_mar_end():
             pause 0.5
             $ AddChatter(vig2_sc9_mar_reactcomment6)
             pause 0.5
-    $ macroChoice = False
-    if macroChoice == False:
-        $ narrator = alt_narrator
-    else:
+    if commentVariable == True:
+        "Where was I?"
         $ narrator = reg_narrator
+    else:
+        $ macroChoice = False
+        if macroChoice == False:
+            $ narrator = alt_narrator
+        else:
+            $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ reactVariable = False
     return
 
 
@@ -1047,7 +1215,7 @@ label vig2_analytics_viewcount2():
             "You wonder if you maybe missed an opportunity to get more viewers by going Marshal at the end of this episode."
             $ flinchViewershipMarshal = True
             jump vig2_analytics_viewcount2
-        "Go back to the main Flinch page" if viewershipThoughtCheck == True:
+        "Go back to the main Flinch page." if viewershipThoughtCheck == True:
             if flinchCheck >= 3:
                 $ screenComplete = True
             else:
@@ -1107,7 +1275,7 @@ label vig2_analytics_audience():
             "Getting the follower number is good, but the average viewership is what held you back last time."
             "Can't take your eyes of the prize."
             "Still gotta stick to the schedule and go with what's working."
-        "Maybe Affiliate isn't so important": #I think this would be better at the end of vignette 3
+        "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3
             "It's weird, now that you have more viewers in chat consistently, getting Affiliate suddenly feels less important."
             "Is it cliche to say that maybe the people you've met have been the real prize?"
             "Probably."

@@ -68,7 +68,7 @@ default vig2_sc2_romance_engineer1 = ChatEntry(False, "{b}KitKat - 6:05{/b}\nCra
 default vig2_sc3_comment1 = ChatEntry( False, "{b}Coriolis - 6:09{/b}\nyeah classic bad guy gates", 2, "#ffffff")
 default vig2_sc3_comment2 = ChatEntry( False, "{b}shnzi - 6:10{/b}\ncharacter = bad is the same as character = has giant castle made of gold in generally poor area", 2, "#ffffff")
 default vig2_sc3_comment3 = ChatEntry( False, "{b}kitcat - 6:10{/b}\nbrat", 2, "#ffffff")
-default vig2_sc3_comment4 = ChatEntry( False, "{b}AFKangel - 6:11{/b}: :P", 2, "#ffffff")
+default vig2_sc3_comment4 = ChatEntry( False, "{b}AFKangel - 6:11{/b}:\n:P", 2, "#ffffff")
 
 #Comments in Scene 3 - Lore
 default vig2_sc3_lore_comment1 = ChatEntry( False, "{b}turb0g00se - 6:12{/b}\nwhen are we going to find out what happened at tiber iii?", 2, "#ffffff")
