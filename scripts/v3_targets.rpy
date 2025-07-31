@@ -1,6 +1,238 @@
 ###This script contains targets that the comments and reactions can direct to in Vignette 3
 
+### Mid-Stream Break Chat Responses ###
+label vig3break_crash10():
+    $ macroChoice = True
+    $ vig3break_crash_comment10.click = False
+    $ narrator = reg_narrator
+    menu:
+        "So do you think this was intentional?"
+        "I hope not, I hate those games!":
+            player "Oh please no."
+            player "The last thing I need is a survival horror in the last half."
+        "No way.":
+            player "I don't think they're going for that."
+            player "Now if it was Matticus I would believe it a bit more."            
+        "I don't know.":
+            player "Hmm. Honestly, idk."
+            player "But we'll find out soon I'm sure."
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
+label vig3break_brb12():
+    $ macroChoice = True
+    $ vig3break_brb_comment12.click = False
+    $ narrator = reg_narrator
+    menu:
+        "How's your progress?"
+        "It's gonna be a while...":
+            player "It's gonna be a while."
+            player "But that gives us more time to chat!"
+            player "It's great to see all the new faces."
+        "Rough for sure.":
+            player "It's rough out here."
+            player "But it's also been rough for the Oakley."
+            player "Maybe they can also use the break."           
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_take7():
+    $ macroChoice = True
+    $ vig3break_ama_take_comment7.click = False
+    $ narrator = reg_narrator
+    menu:
+        "Do you think you can escape Ama again?"
+        "There's always a way out!":
+            player "We've been in binds before."
+            player "I think we got this one!"
+            player "We're not leaving without MAC."
+        "Not without serious force.":
+            player "Ama is not gonna let us go easily."
+            player "We'll probably need to ifght our way out."
+            player "Gotta do it for MAC."          
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_take10():
+    $ macroChoice = True
+    $ vig3break_ama_take_comment10.click = False
+    $ narrator = reg_narrator
+    menu:
+        "What do you think about the new locations?"
+        "Hot take but I love Gibian V":
+            player "Gibian V has that true western vibe."
+            player "Even Matticus' fortress was amazing."
+            player "It really kicked off the game in the best way."
+        "Akar is the place to be!":
+            player "It's gonna hard to top Akar."
+            player "The rework is incredible!"
+            player "Gotta love the Snakehawks unofficial HQ."  
+            player "Also the best music so far."
+        "The next ones will be even better.": 
+            player "We've seen some great spots."
+            player "But some teasers leaked for the next chapter and HOOOO"
+            player "I can tell that's gonna be my fave."          
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_kiss10():
+    $ macroChoice = True
+    $ vig3break_ama_kiss_comment10.click = False
+    $ narrator = reg_narrator
+    menu:
+        "How do you feel about Outlaw MAC"
+        "MAC's learning from the best":
+            player "The Oakley are the best in the buisness."
+            player "The world's first robot Outlaw!"
+            player "He just needs a little hat."
+        "MAC is for something bigger than Outlaw life":
+            player "We're not supposed to make him an Outlaw."
+            player "We're sending him to the Dragonflies."
+            player "Plus he's just a little guy."          
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+#label vig3break_dead4():
+
+label vig3break_dead11():
+    $ macroChoice = True
+    $ vig3break_ama_dead_comment11.click = False
+    $ narrator = reg_narrator
+    menu:
+        "How'do you feel about the other Snakehawks?"
+        "It feels nostalgic":
+            player "It's nice to see them all again."
+            player "Even if it's under stressful circumstance."
+            player "And you know..."
+            player "We killed one."
+        "I prefer the newer characters":
+            player "Seeing everyone is nice"
+            player "But it's better to meet the newer folks."
+            player "I think they make the sotry more interesting."           
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_tense4():
+    $ macroChoice = True
+    $ vig3break_rec_tense_comment4.click = False
+    $ narrator = reg_narrator
+    menu:
+        "Are you Outlaws?"
+        "We're a different kind of Outlaw":
+            player "I think the Oakley is trying to be a different kind of Outlaw."
+            player "The SnakeHawks had a different code."
+            player "We have an important goal now."
+        "We are!":
+            player "Hundred percent."
+            player "We do what we need to."
+            player "At any cost."           
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_tense10():
+    $ macroChoice = True
+    $ vig3break_rec_tense_comment10.click = False
+    $ narrator = reg_narrator
+    menu:
+        "How do you even respond to that."
+        "I hope you're joking.":
+            player "I'm going to assume that's a joke."
+            player "But I appreciate the energy!."
+        "When it's narratively relevant.":
+            player "Narrative relevant scarring is important."
+            player "Cornerstone to a good story."
+        "Scarring is a consequence.":
+            player "We do what we do."
+            player "Potential scarring may occur."
+            player "That's how it goes."          
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_reunion3():
+    $ macroChoice = True
+    $ vig3break_rec_reunion_comment3.click = False
+    $ narrator = reg_narrator
+    menu:
+        "How do you feel about Rec and Allistar's lost reunion."
+        "That's just what happens.":
+            player "It's a part of life."
+            player "That could've happened even without our intervention."
+            player "It'd be the same thing."
+        "I know the feeling.":
+            player "I know..."
+            player "It's hard being away from a sibling for that long."
+            player "Especially when you can't even talk to them."      
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_reunion9():
+    $ macroChoice = True
+    $ vig3break_rec_reunion_comment9.click = False
+    $ narrator = reg_narrator
+    menu:
+        "What about an Ama romance?"
+        "I'd do anything!":
+            player "I really want that to happen."
+            player "That would be so awesome if we could."
+            player "Probably need to survive first."
+        "I'd rather someone else.":
+            player "I don't know..."
+            player "Doesn't feel like the natural thing for their relationship."
+            player "I'd rather someone else."      
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
+
+label vig3break_end5():
 
 ### streamer react moments###
 

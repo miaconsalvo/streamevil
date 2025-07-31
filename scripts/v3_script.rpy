@@ -57,6 +57,11 @@ label vignette3Start():
     "You begin the stream and then boot up the game."
     #$ reactTarget = "vig2_sc1_openingstream"
     #show screen streamerCommentary
+    $ AddChatter(vig3_startstream_comment1)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment3)
+    pause 0.5
+    $ AddChatter(vig3_startstream_comment4)
     "You load the save file you were previously playing, and are ready to go."
     $ narrator = alt_narrator
     if vig2_outlawEpilogue == True:
@@ -67,12 +72,25 @@ label vignette3Start():
 label vig3outlawstart():
     show shiphub_stream at topleft onlayer background with dissolve
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
+    $ AddChatter(vig3_outlawstart_comment1)
     "It's nice always being the first one up, if it's even morning?"
     "I check the clock on the wall."
     mS "Yep, morning."
     "\"I've got lots more work where that came from.\" Arrogant rat. I should've gone back and blown his fortress to ash."
+    $ AddChatter(vig3_outlawstart_comment2)  
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment3)  
+    pause 0.5 
+    $ AddChatter(vig3_outlawstart_comment4)  
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I can't believe I'm letting this get to me. Hell I've done worse, we've done worse. This probably wouldn't even crack the top five."
+    $ AddChatter(vig3_outlawstart_comment5)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment6)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment7)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment8)
     "But are we doing right if we hurt people in the process?" 
     "What's the point of all of this?"
     "I find myself staring off into the distance." 
@@ -86,7 +104,13 @@ label vig3outlawstart():
     mS "And aren't you just the picture of a good night's sleep."
     enS "Hardly..."
     mS "Fighting with Jennica didn't tire either of you out?"
+    $ AddChatter(vig3_outlawstart_comment9)
     enS "I can't speak for her, she's been camping in the cockpit since yesterday."
+    $ AddChatter(vig3_outlawstart_comment10)
+    pause 1
+    $ AddChatter(vig3_outlawstart_comment11)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment11add)
     mS "Luckily there isn't a bathroom in there."
     show teresa stream happy
     "She lets out a forced chuckle and the room goes quiet and cold for moment."
@@ -95,18 +119,27 @@ label vig3outlawstart():
     "I straighten myself as best as I can."
     enS "You know, that MAC is remarkable, the database access he has, even for a BigCorp bot. I could easily get you a news bulletin from the Central Planets if you wanted."
     mS "A talented little guy for sure."
+    $ AddChatter(vig3_outlawstart_comment12)
     enS "But Sallent. Nothing. Not even a distress signal. Not a single report since we left Gibian V."
     mS "Hard to ask people to risk Gray Fever for a check-in. Hell, who knows if anyone is working Comms there anymore."
     "There's a long pause."
     enS "I don't...this isn't proper to say."
     enS "I wondering if you - if we - made the right choice."
     "She's looking away from me now, its not regret it's just the weight of it all."
+    $ AddChatter(vig3_outlawstart_comment13)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment14)
+    pause 0.5
+    $ AddChatter(vig3_outlawstart_comment15)
     enS "We did what we did to keep safe and what we're doing requires... tough choices. Such is the nature of our mission."
     mS "Resa..."
+    $ AddChatter(vig3_outlawstart_comment16)
     enS "We can't always expect to feel good about what we do. It's a difficult call to make."
+    $ AddChatter(vig3_outlawstart_comment17)
     mS "Please."
     show teresa stream upset
     enS "SHE WON'T EVEN LOOK AT ME MOZE!"
+    $ AddChatter(vig3_outlawstart_comment18)
     $ reactTarget = "vig3_sc1_out"
     show screen streamerCommentary
     "She slams the table and her glass spills on the ground with a clang spilling. Her breath is strained as she calms herself."
@@ -114,8 +147,12 @@ label vig3outlawstart():
     show teresa stream neutral
     enS "We weren't the best people before we started this, and I know you and Jennica have more history than even I know about." 
     enS "But at least we dealt with things together."
+    $ AddChatter(vig3_outlawstart_comment19)
+    pause 0.5 
+    $ AddChatter(vig3_outlawstart_comment20)
     "I don't respond. Teresa needs this." #Consider adding choices
     enS "But ever since we took that- took MAC, it's been one awful choice after another. Barely escaping every time..."
+    $ AddChatter(vig3_outlawstart_comment21)
     "Teresa lets out a defeated sigh. Before I can respond Jennica's voice echoes through the speaker."
     hide screen streamerCommentary
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
@@ -125,10 +162,14 @@ label vig3outlawstart():
             $ kcEngagement += 1 #Logic: kitcat likes Teresa and prefers the gentler comment
             $ engineerApproval += 1
             mS "Take ten seconds. I'll see you there."
+            $ AddChatter(vig3_outlawstart_calm_comment22)
+            pause 0.5
+            $ AddChatter(vig3_outlawstart_calm_comment23)
             #no approval change
         "Be firm":
             $ kcEngagement -= 1
             mS "You can't go in like that. Fix yourself, I'll see you there."
+            $ AddChatter(vig3_outlawstart_firm_comment24)
             #increase approval
     "I wait until I can feel her shoulder relax and walk out and down the hall, alone."
     hide teresa with dissolve
@@ -142,10 +183,16 @@ label vig3marshalstart():
     mS "Yep, morning."
     "\"Don't worry. You'll get yours.\""
     "Annoying rat. He's lucky I didn't turn back and blow his fortress to ash."
+    $ AddChatter(vig3_marshalstart_comment1)
+    pause 0.5 
+    $ AddChatter(vig3_marshalstart_comment2)
+    pause 1
+    $ AddChatter(vig3_marshalstart_comment3)
     "I take an uninterested sip of my drink wrapping both hands around the glass."
     "I'm letting this get to me. When have I ever taken one of Sav's threats seriously?" 
     "I'm sure he wants to see {b}her{/b} even less than me."
     "We're trying to be better, but what's the point if we're all arrested, if they take MAC away."
+    $ AddChatter(vig3_marshalstart_comment4)
     "I find myself staring off into the distance." 
     "With my back to the door I don't see Jennica come in."
     show jennica stream neutral at stream_right with dissolve
@@ -168,6 +215,7 @@ label vig3marshalstart():
     mS "You're not the only who can fly the Oakley."
     pS "No, but I'm the only one that can outrun Ama. We got lucky but - no offense to our saving grace - I don't like not knowing how much distance we may or may not have."
     "There's a long pause."
+    $ AddChatter(vig3_marshalstart_comment5)
     pS "Every little blip on the scanner make me jump, Cap. That's until I find out it's some stoved-up space junk floatin' from a click over."
     "She looks away from me to find the words."
     pS "I wonder...if we made the right choice. As wrong as it sounds."
@@ -197,9 +245,11 @@ label vig3marshalstart():
             $ csEngagement += 1 #Logic: Coriolis likes Jennica so prefers the gentler comment
             $ pilotApproval += 1
             mS "Take ten seconds. I'll see you there."
+            $ AddChatter(vig3_marshalstart_calm_comment6)
         "Be firm":
             $ csEngagement -= 1
             mS "You can't go in like that. Fix yourself, I'll see you there."
+            $ AddChatter(vig3_marshalstart_firm_comment7)
     "When Jennica's shoulder relaxes I walk out and down the hall, alone."
     hide jennica with dissolve
     jump vig3_sc2
@@ -2091,9 +2141,12 @@ label vig3_sc9():
     $ reactTarget = "vig3_sc9_amasurprise"
     show screen streamerCommentary
     "But this time, it doesn't go away. Ama smiles."
+    "I'm frozen in place"
+    "The Vineyard falling away around me."
     amaS "Hello Mozely."
+    hide screen streamerCommentary
     hide ama with dissolve
-    jump vig3_sc10 
+    jump vig3_break 
     #move to mid vig break - if we have time to make it...
 
 label vig3_sc10():
