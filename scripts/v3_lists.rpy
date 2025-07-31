@@ -1202,11 +1202,25 @@ default vig3_sc6_react_comment19 = ChatEntry(False, "{b}pickledDragons - 6:31{/b
 default vig3_sc6_react_comment20 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nNaah they got this", 3, "#ffffff")
 default vig3_sc6_react_comment21 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nJust a bit haha", 3, "#ffffff")
 default vig3_sc6_react_comment22 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nI believe in Teresa!", 3, "#ffffff")
+default vig3_sc6_react_comment23 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nThe two of them are unbeatable!", 3, "#ffffff")
+default vig3_sc6_react_comment24 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nIt does seem out of character for both of them...", 3, "#ffffff")
+default vig3_sc6_react_comment25 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nCan't take any chances though, gotta make sure they win", 3, "#ffffff")
 
+##Sc6 - trust crew
+default vig3_sc6_react_comment26 = ChatEntry(False, "{b}Coriolis - 6:37{/b}\nCap making the crew take responsibility", 3, "#ffffff")
+default vig3_sc6_react_comment27 = ChatEntry(False, "{b}R4dioRobbie - 6:37{/b}\nI like the lesson, but with the ship on the line??", 3, "#ffffff")
+default vig3_sc6_react_comment28 = ChatEntry(False, "{b}turb0g00se - 6:37{/b}\nOh hey, Dragonflies, sorry we missed your call and screwed the galaxy, we were too busy getting LIT", 3, "#ffffff")
+default vig3_sc6_react_comment29 = ChatEntry(False, "{b}J4MIR0QU4I - 6:37{/b}\nOakley strong!", 3, "#ffffff")
+default vig3_sc6_react_comment30 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:37{/b}\nIt's a lot to put on faith rn...", 3, "#ffffff")
 
-##
-
-##
+## - shoot zan
+default vig3_sc6_react_comment31 = ChatEntry(False, "{b}pickledDragons - 6:37{/b}\nKneecap the competition!", 3, "#ffffff")
+default vig3_sc6_react_comment32 = ChatEntry(False, "{b}llamabama22 - 6:34{/b}\nLiterally lol", 3, "#ffffff")
+default vig3_sc6_react_comment33 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nCrack shot", 3, "#ffffff")
+default vig3_sc6_react_comment34 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nWe got the real deadeye right here!", 3, "#ffffff")
+default vig3_sc6_react_comment35 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nCheaters never prosper...but Outlaws do!", 3, "#ffffff")
+default vig3_sc6_react_comment36 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nUnder the circumstances, I think warranted", 3, "#ffffff")
+default vig3_sc6_react_comment37 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nI'd have trusted the crew. They still had a chance", 3, "#ffffff")
 
 ##
 
