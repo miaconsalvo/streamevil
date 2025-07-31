@@ -48,7 +48,7 @@ default vig3_marshalstart_comment4 = ChatEntry( False, "{b}pickledDragons - 6:07
 default vig3_marshalstart_comment5 = ChatEntry( False, "{b}turb0g00se - 6:07{/b}\nI hope we do get to see ama at SOME point...", 4, "#ffffff")
 
 ###Comments vig3_outlawstart - Moze deals with Teresa before the Cockpit
-default vig3_marshalstart_calm_comment6= ChatEntry( False, "{b}Coriolis - 6:11{/b}\nthat's our captain!", 4, "#ffffff")
+default vig3_marshalstart_calm_comment6= ChatEntry( False, "{b}Coriolis - 6:12{/b}\nthat's our captain!", 4, "#ffffff")
 
 default vig3_marshalstart_firm_comment7= ChatEntry( False, "{b}turb0g00se - 6:12{/b}\ntough", 4, "#ffffff")
 
@@ -1121,6 +1121,59 @@ default vig3break_end_comment7 = ChatEntry(False, "{b}AFKAngel - 0:00{/b}\nMoxxi
 default vig3break_end_comment8 = ChatEntry(False, "{b}pickledDragons - 0:00{/b}\nMOXIEEEE!!!", 4, "#ffffff")
 default vig3break_end_comment9 = ChatEntry(False, "{b}kitcat - 0:00{/b}\nLETS GET MAC!!!!", 4, "#ffffff")
 default vig3break_end_comment10 = ChatEntry(False, "{b}_lostinmetr0 - 0:00{/b}\nHELL YEAH!!!", 4, "#ffffff")
+
+###Vig3 React Comments ###
+#Outlaw Start
+default vig3_sc1_out_react_comment1 = ChatEntry(False, "{b}kitcat - 6:10{/b}\nSo hard to see her like this!", 3, "#ffffff")
+default vig3_sc1_out_react_comment2 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nget what you get, don't get upset", 3, "#ffffff")
+default vig3_sc1_out_react_comment3 = ChatEntry(False, "{b}Coriolis - 6:10{/b}\nFriendly bickering is one thing. This is something else", 3, "#ffffff")
+default vig3_sc1_out_react_comment4 = ChatEntry(False, "{b}kitcat - 6:10{/b}\nidk, she's allowed to have regrets imo", 3, "#ffffff")
+default vig3_sc1_out_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nTough to live with 'em in this life tho", 3, "#ffffff")
+
+#Marshal Start
+default vig3_sc1_mar_react_comment1 = ChatEntry(False, "{b}Coriolis - 6:09{/b}\nSo hard to see her like this!", 3, "#ffffff")
+default vig3_sc1_mar_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:09{/b}\nGotta live with risks in this life", 3, "#ffffff")
+default vig3_sc1_mar_react_comment3 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\n^^or you just shoot the risks", 3, "#ffffff")
+default vig3_sc1_mar_react_comment4 = ChatEntry(False, "{b}kitcat - 6:10{/b}\nFriendly bickering is one thing. This is something else", 3, "#ffffff")
+default vig3_sc1_mar_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nget what you get, don't get upset", 3, "#ffffff")
+default vig3_sc1_out_react_comment6 = ChatEntry(False, "{b}Coriolis - 6:10{/b}\nidk, she's allowed to have regrets imo", 3, "#ffffff")
+
+#Sc2 - mac candy
+default vig3_sc2_react_comment1 = ChatEntry(False, "{b}AFKAngel - 6:17{/b}\nTime to spoil our child!", 3, "#ffffff")
+default vig3_sc2_react_comment2 = ChatEntry(False, "{b}kitcat - 6:17{/b}\nHe's adorbs!", 3, "#ffffff")
+default vig3_sc2_react_comment3 = ChatEntry(False, "{b}marxky8 - 6:17{/b}\nIs this the first time he's been able to be like a kid?", 3, "#ffffff")
+default vig3_sc2_react_comment4 = ChatEntry(False, "{b}turb0g00se - 6:17{/b}\nKeep a close eye on him!", 3, "#ffffff")
+default vig3_sc2_react_comment5 = ChatEntry(False, "{b}kitcat - 6:17{/b}\nNo! Don't scam the baby!", 3, "#ffffff")
+
+#Sc3 - first fight
+default vig3_sc3_react_comment1 = ChatEntry(False, "{b}bacon8r_6 - 6:19{/b}\nYeah! You want some of this!", 3, "#ffffff")
+default vig3_sc3_react_comment3 = ChatEntry(False, "{b}AFKAngel - 6:19{/b}\ngo team!", 3, "#ffffff")
+default vig3_sc3_react_comment4 = ChatEntry(False, "{b}bacon8r_6 - 6:19{/b}\nI think it's perfectly warranted", 3, "#ffffff")
+default vig3_sc3_react_comment5 = ChatEntry(False, "{b}Coriolis - 6:19{/b}\nYeah, causing this much trouble...I don't like it", 3, "#ffffff")
+
+#Sc4 - hound raid
+default vig3_sc4_react_comment1 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:23{/b}\nOh no, consequences for our actions!", 3, "#ffffff")
+default vig3_sc4_react_comment2 = ChatEntry(False, "{b}Coriolis - 6:23{/b}\nToo out in the open, we can't be that reckless", 3, "#ffffff")
+default vig3_sc4_react_comment3 = ChatEntry(False, "{b}llamabama22 - 6:23{/b}\nGotta extend the fetch quest?", 3, "#ffffff")
+default vig3_sc4_react_comment4 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:23{/b}\nGo team!", 3, "#ffffff")
+default vig3_sc4_react_comment5 = ChatEntry(False, "{b}AFKAngel - 6:23{/b}\nYeah, hit back!", 3, "#ffffff")
+
+#Sc5 - ama hallucination
+default vig3_sc5_react_comment1 = ChatEntry(False, "{b}pickledDragons - 6:28{/b}\nMoze gotta get it together", 3, "#ffffff")
+default vig3_sc5_react_comment2 = ChatEntry(False, "{b}llamabama22 - 6:28{/b}\nShe is BURNED OUT", 3, "#ffffff")
+default vig3_sc5_react_comment3 = ChatEntry(False, "{b}marxky8 - 6:28{/b}\nIf Ama actually shows up I think Moze would just have a heart attack", 3, "#ffffff")
+default vig3_sc5_react_comment4 = ChatEntry(False, "{b}marxky8 - 6:28{/b}\nIs Ama that scary?", 3, "#ffffff")
+default vig3_sc5_react_comment5 = ChatEntry(False, "{b}Coriolis - 6:28{/b}\nShe's no joke", 3, "#ffffff")
+default vig3_sc5_react_comment6 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:28{/b}\nSurvival horror sequence when?", 3, "#ffffff")
+
+#Sc6 - Crew Spat
+default vig3_sc6_react_comment1 = ChatEntry(False, "{b}R4dioRobbie - 6:30{/b}\nTime for an intervention", 3, "#ffffff")
+default vig3_sc6_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:30{/b}\nTell 'em to get it together, Cap!", 3, "#ffffff")
+default vig3_sc6_react_comment3 = ChatEntry(False, "{b}kitcat - 6:30{/b}\nProtect the innocent child!", 3, "#ffffff")
+default vig3_sc6_react_comment4 = ChatEntry(False, "{b}AFKAngel - 6:30{/b}\nBut it's different if his mom's actually use the language", 3, "#ffffff")
+
+
+#Sc5 - Rec and MAC
 
 ####Blueit Thread Configuration####
 default vig3_bThread1 = bThread( 1, "vig3_blueit_amaThread", "images/socials/bThread_v3_amaRomance.png") #tag, target, image
