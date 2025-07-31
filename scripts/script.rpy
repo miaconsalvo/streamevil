@@ -189,6 +189,7 @@ default vig3_macShootAma = False
 default vig3_brotherChat = 0
 default vig3_viewership = "Low"
 default vig3_outlaw = 0
+default vig3_daisyChoice = 1
 
 ###Variables for Vignette 4###
 default stunGuy = False

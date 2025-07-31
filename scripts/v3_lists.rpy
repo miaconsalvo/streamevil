@@ -1257,6 +1257,14 @@ default vig3_sc9_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}
 default vig3_sc9_react_comment6 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nSTAN. HER.", 3, "#ffffff")
 default vig3_sc9_react_comment7 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nAnd brave to try her luck with Moze again after what happened last time haha", 3, "#ffffff")
 
+##sc9 - Daisy Bar
+default vig3_sc9_react_comment13 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\nEat it mills!", 3, "#ffffff")
+default vig3_sc9_react_comment14 = ChatEntry(False, "{b}_lostinmetr0 - 6:34{/b}\nidk, Daisy doesn't seem too thrilled about this...", 3, "#ffffff")
+default vig3_sc9_react_comment15 = ChatEntry(False, "{b}p0tat0Pr0phet - 6:34{/b}\nWe're outlaws! Who cares!?", 3, "#ffffff")
+default vig3_sc9_react_comment16 = ChatEntry(False, "{b}marxky8 - 6:34{/b}\nCap so slick", 3, "#ffffff")
+default vig3_sc9_react_comment17 = ChatEntry(False, "{b}_lostinmetr0 - 6:34{/b}\nSeems like Daisy appreciates the help!", 3, "#ffffff")
+default vig3_sc9_react_comment18 = ChatEntry(False, "{b}kitcat - 6:34{/b}\nMaybe", 3, "#ffffff")
+
 ##Sc9 - ama surprise
 default vig3_sc9_react_comment8 = ChatEntry(False, "{b}Coriolis - 6:34{/b}\nTurns out Moze was paranoid for a good reason", 3, "#ffffff")
 default vig3_sc9_react_comment9 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nI had a feeling she was gonna show up", 3, "#ffffff")
@@ -1277,7 +1285,6 @@ default vig3_sc12_react_comment2 = ChatEntry(False, "{b}bacon8r_6 - 6:34{/b}\nAm
 default vig3_sc12_react_comment3 = ChatEntry(False, "{b}AFKAngel - 6:34{/b}\nIt's such reckless behavior from her tho", 3, "#ffffff")
 default vig3_sc12_react_comment4 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nYa she's clearly rattled", 3, "#ffffff")
 default vig3_sc12_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:34{/b}\nand desperate", 3, "#ffffff")
-
 
 ##
 
