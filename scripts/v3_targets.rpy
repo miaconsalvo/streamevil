@@ -745,7 +745,6 @@ label vig3_sc9_daisyreturns():
             $ reactImage = "stream ui/reactthinking.png"
             player "Oh damn! Maybe she was following us?"
             player "Pretty sus chat."
-            $ bacon8r_6
             $ AddChatter(vig3_sc9_react_comment3)
             pause 0.5
             $ AddChatter(vig3_sc9_react_comment4)
@@ -983,7 +982,7 @@ label vig3_sc12_amafindsout():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Finally time for some battle!"
             player "Don't get between Mozely and our MAC!"
-            $ AddChatter(vig3_sc12_react_commen10)
+            $ AddChatter(vig3_sc12_react_comment10)
             pause 0.5
             if viewershipHigh == True:
                 $ AddChatter(vig3_sc12_react_comment11)
@@ -1457,7 +1456,7 @@ label vig3break_take10():
     $ narrator = reg_narrator
     menu:
         "What do you think about the new locations?"
-        "Hot take but I love Gibian V":
+        "Hot take but I love Gibian V.":
             player "Gibian V has that true western vibe."
             player "Even Matticus' fortress was amazing."
             player "It really kicked off the game in the best way."
@@ -1484,11 +1483,11 @@ label vig3break_kiss10():
     $ narrator = reg_narrator
     menu:
         "How do you feel about Outlaw MAC"
-        "MAC's learning from the best":
+        "MAC's learning from the best.":
             player "The Oakley are the best in the buisness."
             player "The world's first robot Outlaw!"
             player "He just needs a little hat."
-        "MAC is for something bigger than Outlaw life":
+        "MAC is for something bigger than Outlaw life.":
             player "We're not supposed to make him an Outlaw."
             player "We're sending him to the Dragonflies."
             player "Plus he's just a little guy."          
@@ -1508,12 +1507,12 @@ label vig3break_dead11():
     $ narrator = reg_narrator
     menu:
         "How'do you feel about the other Snakehawks?"
-        "It feels nostalgic":
+        "It feels nostalgic.":
             player "It's nice to see them all again."
             player "Even if it's under stressful circumstance."
             player "And you know..."
             player "We killed one."
-        "I prefer the newer characters":
+        "I prefer the newer characters.":
             player "Seeing everyone is nice"
             player "But it's better to meet the newer folks."
             player "I think they make the sotry more interesting."           
@@ -1531,7 +1530,7 @@ label vig3break_tense4():
     $ narrator = reg_narrator
     menu:
         "Are you Outlaws?"
-        "We're a different kind of Outlaw":
+        "We're a different kind of Outlaw.":
             player "I think the Oakley is trying to be a different kind of Outlaw."
             player "The SnakeHawks had a different code."
             player "We have an important goal now."
@@ -1716,12 +1715,14 @@ label vig3_analytics_viewcount2():
             menu:
                 "How does it feel?"
                 "It's fun!":
+                    $ energy += 1
                     "It's a lot of fun!"
                     "Chat is so interactive. It really feels like you're playing this game together."
                 "It's a lot of pressure.":
                     "It's a lot of pressure."
-                    "Not bad, necessarily. But you feel like you have to represent other people's interests as well as your own."
+                    "Not bad, necessarily. But you feel like you have to take other people's interests into account as well as your own."
                 "I don't really like it.":
+                    $ energy -= 1
                     "You don't really like it."
                     "It is interesting, but you don't see yourself streaming this kind of game again."
                 "Interesting.":

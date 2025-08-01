@@ -1180,7 +1180,7 @@ default vig3_sc1_mar_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:09{/b}
 default vig3_sc1_mar_react_comment3 = ChatEntry(False, "{b}turb0g00se - 6:09{/b}\n^^or you just shoot the risks", 3, "#ffffff")
 default vig3_sc1_mar_react_comment4 = ChatEntry(False, "{b}kitcat - 6:10{/b}\nFriendly bickering is one thing. This is something else", 3, "#ffffff")
 default vig3_sc1_mar_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 6:10{/b}\nget what you get, don't get upset", 3, "#ffffff")
-default vig3_sc1_out_react_comment6 = ChatEntry(False, "{b}Coriolis - 6:10{/b}\nidk, she's allowed to have regrets imo", 3, "#ffffff")
+default vig3_sc1_mar_react_comment6 = ChatEntry(False, "{b}Coriolis - 6:10{/b}\nidk, she's allowed to have regrets imo", 3, "#ffffff")
 
 #Sc2 - mac candy
 default vig3_sc2_react_comment1 = ChatEntry(False, "{b}AFKAngel - 6:17{/b}\nTime to spoil our child!", 3, "#ffffff")

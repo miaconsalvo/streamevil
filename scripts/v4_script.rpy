@@ -6133,7 +6133,7 @@ label vig4_macro_webNav():
     $ screenComplete = True
     call screen webNavigation_vig4
 
-label vig4_macro_viewerChat_1():
+label vig4_macro_viewerChat_1(): #it would be cool for all three viewers to say something to you and vary it based on engagement levels
     nvl clear
     $ menu = nvl_menu
     scene discordview with dissolve
@@ -6149,6 +6149,7 @@ label vig4_macro_viewerChat_1():
         menu:
             "•Thank you!":
                 player_nvl "Thank you so much, Coriolis!"
+                player_nvl "It really means a lot that you've been sticking around since the beginning."
                 player_nvl "See you at the next stream!"
             "•Say nothing.":
                 "You decide not to reply."
@@ -6162,7 +6163,8 @@ label vig4_macro_viewerChat_1():
         menu:
             "•Thank you!":
                 player_nvl "Thank you so much, kitcat!"
-                player_nvl "I'm sure we'll see each other around!"
+                player_nvl "I really appreciated your positivity in the chat!"
+                player_nvl "And I'm sure we'll see each other around!"
             "•Say nothing.":
                 "You decide not to reply."
                 "Their comments speak for themselves."
@@ -6176,6 +6178,7 @@ label vig4_macro_viewerChat_1():
         menu:
             "•Thank you!":
                 player_nvl "Thank you so much, pickledDragons!"
+                player_nvl "I had a lot of fun hearing your perspective on the game!"
                 player_nvl "I'm sure we'll see each other around!"
             "•Say nothing.":
                 "You decide not to reply."
@@ -6189,6 +6192,7 @@ label vig4_macro_viewerChat_1():
         menu:
             "•Thank you!":
                 player_nvl "Thank you so much, Coriolis!"
+                player_nvl "It really means a lot that you've been sticking around since the beginning."
                 player_nvl "See you at the next stream!"
             "•Say nothing.":
                 "You decide not to reply."
