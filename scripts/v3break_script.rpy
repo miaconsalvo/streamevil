@@ -1,6 +1,7 @@
 label vig3_break():
     $ narrator = reg_narrator
     show bg black at topleft onlayer background with pixellate
+    hide inventorsfairgallery_stream
     "What was that?"
     "What just happened?"
     player "Did the game just...crash?"
