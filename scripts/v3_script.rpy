@@ -281,7 +281,7 @@ label vig3_sc2():
     else:
         $ viewCount += 3
     play music "soundtrack/vig1scratchtrack.wav" volume 0.8 loop fadein 1.0
-    show cockpit_mess_mess_stream at topleft onlayer background with dissolve
+    show cockpit_mess_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
@@ -345,7 +345,7 @@ label vig3_sc2():
     hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
-    hide cockpit_mess_mess_stream
+    hide cockpit_mess_stream
     macS "Captain!"
     show mac stream shock at stream_center_mac with vpunch
     "I can't help but jump."
@@ -401,7 +401,7 @@ label vig3_sc3():
     show akarstreet_stream at topleft onlayer background with dissolve
     play music "soundtrack/akar(day).wav" volume 0.8 #fadein 1.0
     hide ship_hallway_stream
-    hide cockpit_mess_mess_stream
+    hide cockpit_mess_stream
     $ viewCheck2 = viewCount
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     $ AddChatter (vig3_sc3_akarstreet_comment1)
@@ -1135,8 +1135,8 @@ label vig3_sc5():
     jump vig3_sc6
 
 label vig3_sc6():
-    hide akarplaza_stream
     show bbpub_stream at topleft onlayer background with dissolve
+    hide akarplaza_stream
     "The days are shorter this time of year and when night falls we make it to the Burnt Bulb."
     "It took some time to get through Akar, MAC wanted to see everything he could."
     "As if it would disappear if he took his eyes off it."

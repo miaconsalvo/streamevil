@@ -3655,7 +3655,7 @@ label vig4_sc4_1():
     jump vig4_sc4_2
 
 label vig4_sc4_2():
-    show shiphub_stream at topleft onlayer background with dissolve
+    show cockpit_stream at topleft onlayer background with dissolve
     show jennica stream neutral at stream_left with Dissolve(0.5)
     show teresa stream neutral at stream_right with Dissolve(0.5)
     hide ship_hallway_stream
@@ -3772,7 +3772,7 @@ label vig4_sc4_3():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc4_3_comment3)
     "I have one second to take it in."
-    show shiphub_stream with hpunch
+    show cockpit_stream with hpunch
     "Then the jet stream hits us."
     "Heavy winds from the cruiser's momentum pelt the Oakley, tossing it around in the air."
     if viewershipHigh == True:
@@ -3790,11 +3790,11 @@ label vig4_sc4_3():
     pS "Brace for impact!"
     hide teresa with Dissolve(0.1)
     hide jennica with Dissolve(0.1)
-    show shiphub_stream with vpunch
+    show cockpit_stream with vpunch
     "The Oakley slams into the dirt."
     ##*streamer reaction here?
     #show bg black at topleft onlayer background with dissolve
-    hide shiphub_stream with dissolve
+    hide cockpit_stream with dissolve
     $ AddChatter(vig4_sc4_3_comment6)
     pause 0.5
     if viewershipHigh == True or viewershipMed == True:
@@ -4837,7 +4837,6 @@ label vig4_sc7_3_ama():
         $ csEngagement -= 2
         $ vig4_MACKill = True
         "MAC lifts his arm and fires a bolt of energy."
-        ##* streamer reaction?
         "It lands square between Vega's eyes."
         "She slumps to the ground, her body falling on top of Coil's."
         $ AddChatter(vig4_sc7_3_ama_comment73)
@@ -5554,7 +5553,7 @@ label vig4_epilogue_coil():
             mS "Are you ready for another adventure, MAC?"
             macS "Ready, Captain Moze!"
     hide mac with Dissolve (2.0)
-    hide shiphub_stream with dissolve
+    hide cockpit_stream with dissolve
     jump vig4_signoff
 
 label vig4_epilogue_ama():
@@ -5962,7 +5961,7 @@ label vig4_epilogue_ama():
             macS "Ready, Captain Moze!"
     "The ship lurches forward as we accelerate into space."
     hide mac with Dissolve (2.0)
-    hide shiphub_stream with dissolve
+    hide cockpit_stream with dissolve
     jump vig4_signoff
 
 label vig4_signoff():
