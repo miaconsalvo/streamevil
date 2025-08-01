@@ -12,7 +12,7 @@ default vig4_sc1_comment10 = ChatEntry(False, "{b}marxky8 - 6:05{/b}\noop, a lil
 default vig4_sc1_comment9alt = ChatEntry(False, "{b}kitcat - 6:05{/b}\nWait no! What are they up to!", 4, "#ffffff" )
 default vig4_sc1_comment10alt = ChatEntry(False, "{b}turb0g00se - 6:05{/b}\nNo time, Moze on a mission", 4, "#ffffff")
 default vig4_sc1_comment11 = ChatEntry(False, "{b}kitcat - 6:06{/b}\ncallback! lil guy remembers what you done", 4, "#ffffff")
-default vig4_sc1_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:06{/b}\ngotta learn 'em yung", 4, "#ffffff")
+default vig4_sc1_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:06{/b}\ngotta learn 'em young", 4, "#ffffff")
 default vig4_sc1_comment13 = ChatEntry(False, "{b}kitcat - 6:06{/b}\nbahaha", 4, "#ffffff")
 default vig4_sc1_comment14 = ChatEntry(False, "{b}Coriolis - 6:06{/b}\naahh the kid's got jokes now", 4, "#ffffff")
 
