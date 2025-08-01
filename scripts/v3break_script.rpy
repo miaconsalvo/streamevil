@@ -50,7 +50,6 @@ label vig3_break():
             $ AddChatter (vig3break_brb_comment5add)
             player "Be right back!"
             $ AddChatter (vig3break_brb_comment8)
-        
         "Fumble a bit.":
             player "Well that happened ..."
             player "..."
