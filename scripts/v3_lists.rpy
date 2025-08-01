@@ -1053,9 +1053,9 @@ default vig3break_crash_comment10 = ChatEntry(True, "{b}pickledDragons - 6:51{/b
 
 ###Call a break###
 default vig3break_brb_comment1 = ChatEntry(False, "{b}Coriolis - 6:51{/b}\nlol You heard 'em, pack it up! ", 4, "#ffffff")
-default vig3break_brb_comment2 = ChatEntry(False, "{b}J4MIR0QU4I  - 6:52{/b}Sounds good I'm too scared of what Ama is gonna do.", 4, "#ffffff")
+default vig3break_brb_comment2 = ChatEntry(False, "{b}J4MIR0QU4I  - 6:52{/b}\nSounds good I'm too scared of what Ama is gonna do.", 4, "#ffffff")
 default vig3break_brb_comment3 = ChatEntry(False, "{b}AFKAngel - 6:52{/b}\nawooga?", 4, "#ffffff")
-default vig3break_brb_comment4 = ChatEntry(False, "{b}AFKAngel - 6:52{/b}\nLet's goooo.", 4, "#ffffff")
+default vig3break_brb_comment4 = ChatEntry(False, "{b}AFKAngel - 6:52{/b}\nLet's goooo", 4, "#ffffff")
 
 default vig3break_brb_comment5 = ChatEntry(False, "{b}kitcat - 6:51{/b}\nWE will never forgive you jk jk", 4, "#ffffff")
 default vig3break_brb_comment5add = ChatEntry(False, "{b}J4MIR0QU4I - 6:52{/b}\nSo caring <3", 4, "#ffffff")

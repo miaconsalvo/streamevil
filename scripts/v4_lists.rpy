@@ -12,7 +12,7 @@ default vig4_sc1_comment10 = ChatEntry(False, "{b}marxky8 - 6:05{/b}\noop, a lil
 default vig4_sc1_comment9alt = ChatEntry(False, "{b}kitcat - 6:05{/b}\nWait no! What are they up to!", 4, "#ffffff" )
 default vig4_sc1_comment10alt = ChatEntry(False, "{b}turb0g00se - 6:05{/b}\nNo time, Moze on a mission", 4, "#ffffff")
 default vig4_sc1_comment11 = ChatEntry(False, "{b}kitcat - 6:06{/b}\ncallback! lil guy remembers what you done", 4, "#ffffff")
-default vig4_sc1_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:06{/b}\ngotta learn 'em yung", 4, "#ffffff")
+default vig4_sc1_comment12 = ChatEntry(False, "{b}jerrybean784 - 6:06{/b}\ngotta learn 'em young", 4, "#ffffff")
 default vig4_sc1_comment13 = ChatEntry(False, "{b}kitcat - 6:06{/b}\nbahaha", 4, "#ffffff")
 default vig4_sc1_comment14 = ChatEntry(False, "{b}Coriolis - 6:06{/b}\naahh the kid's got jokes now", 4, "#ffffff")
 
@@ -1183,7 +1183,7 @@ default vig4_sc7_3_coil_comment53 = ChatEntry(False, "{b}xXpearlXx - 8:11{/b}\nA
 default vig4_sc7_3_coil_comment54 = ChatEntry(False, "{b}pickledDragons - 8:11{/b}\nIt doesn't make up for the trouble, but at least he said it", 4, "#ffffff")
 default vig4_sc7_3_coil_comment55 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nGotta keep our freedom!", 4, "#ffffff")
 default vig4_sc7_3_coil_comment56 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\nFinally we can take a break!", 4, "#ffffff")
-default vig4_sc7_3_coil_comment57 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nDon't worry MAC, we're not going anywhere!", 4, "#ffffff")
+default vig4_sc7_3_coil_comment57 = ChatEntry(False, "{b}J4MIR0QU4I - 8:12{/b}\nDon't worry MAC, we're not going anywhere!", 4, "#ffffff")
 default vig4_sc7_3_coil_comment58 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nWait that's so heartwarming", 4, "#ffffff")
 default vig4_sc7_3_coil_comment59 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nWhat makes you say that?", 4, "#ffffff")
 default vig4_sc7_3_coil_comment60 = ChatEntry(False, "{b}treb.ell - 8:21{/b}\nCause he knows this will be good for Moze. He's taking care of HER now", 4, "#ffffff")
@@ -1569,6 +1569,31 @@ default vig4_sc7_killcoil_react_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 8:0
 default vig4_sc7_killcoil_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:09{/b}\nRip indeed.", 4, "#ffffff")
 default vig4_sc7_killcoil_react_comment6 = ChatEntry(False, "{b}bacon8r_6 - 8:09{/b}\nRip Polaris.", 4, "#ffffff")
 
+default vig4_sc7_killvega_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 8:12{/b}\nYou told him you could do what he wanted!", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment2 = ChatEntry(False, "{b}marxky8 - 8:12{/b}\nDid--did we raise a murder bot?", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\nShe was threatening to kill us, it's not as out of pocket as it seems", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment4 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\n...it is really dark tho", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 8:12{/b}\nYeah...I'll admit though, that was jarring, even for me lol", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment6 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nAlways weird when your child shoots someone for the first time", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment7 = ChatEntry(False, "{b}pickledDragons - 8:12{/b}\nAnd MAC has learned that lesson", 4, "#ffffff")
+
+default vig4_sc7_sparevega_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 8:12{/b}\nHe had a great momma!", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment2 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\nHe's all grown up!", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment3 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nI thought the blaster was coming out for sure", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment4 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nI'm glad he didn't", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment5 = ChatEntry(False, "{b}marxky8 - 8:12{/b}\nYeah, me too!", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment6 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\nI'm with MAC, you have to believe there's a peaceful way forward or it'll just be violence nonstop", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment7 = ChatEntry(False, "{b}pickledDragons - 8:12{/b}\nI mean, she could definitely be a big problem later", 4, "#ffffff")
+default vig4_sc7_sparevega_react_comment8 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nBut hey, we said the kid picks, so what he says goes", 4, "#ffffff")
+
+default vig4_sc7_amaburial_react_comment1 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\nHe had a great momma!", 4, "#ffffff")
+default vig4_sc7_amaburial_react_comment2 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nWe need this closure", 4, "#ffffff")
+default vig4_sc7_amaburial_react_comment3 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nI'd follow him anywhere", 4, "#ffffff")
+default vig4_sc7_amaburial_react_comment4 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nCaptain MAC!", 4, "#ffffff")
+default vig4_sc7_amaburial_react_comment5 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nThe woman who shot children with stun rounds to teach them lessons? Yea go figure", 4, "#ffffff")
+default vig4_sc7_amaburial_react_comment6 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\nI mean, who are we to talk? It's not like we've been perfect", 4, "#ffffff")
+
+
 default vig4_epilogue_react_comment1 = ChatEntry(False, "{b}Coriolis - 8:16{/b}\nIt was all worth it!", 4, "#ffffff")
 default vig4_epilogue_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 8:16{/b}\nI think we all love MAC", 4, "#ffffff")
 default vig4_epilogue_react_comment3 = ChatEntry(False, "{b}AFKangel - 8:16{/b}\nso CUTE!", 4, "#ffffff")
@@ -1580,7 +1605,6 @@ default vig4_epilogue_react_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 8:16{/b
 default vig4_epilogue_react_comment8 = ChatEntry(False, "{b}_lostinmetr0 - 8:16{/b}\nHe's learnt so much.", 4, "#ffffff")
 
 default vig4_epilogue_react_comment9 = ChatEntry(False, "{b}AFKangel - 8:16{/b}\nHow can you not react to this adorable moment lol", 4, "#ffffff")
-
 
 ###INTERACTABLE CHAT COMMENTS###
 

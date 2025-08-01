@@ -50,7 +50,7 @@ label vignette3Start():
     #$ kcEngagement = 0
     #$ pdEngagement = 0
     "It's been one week since you last streamed {i}Oakley 2: Settle the Score{/i}."
-    "Episode 3 released today so you have a stream scheduled and ready to go."
+    "Episode 3 released today so you have a stream scheduled this evening."
     scene streamview with dissolve
     show screen streamDetails
     show screen streamChat
@@ -267,7 +267,7 @@ label vig3marshalstart():
             $ pilotApproval += 1
             mS "Take ten seconds. I'll see you there."
             $ AddChatter(vig3_marshalstart_calm_comment6)
-        "Be firm":
+        "Be firm.":
             $ csEngagement -= 1
             mS "You can't go in like that. Fix yourself, I'll see you there."
             $ AddChatter(vig3_marshalstart_firm_comment7)
@@ -280,8 +280,8 @@ label vig3_sc2():
         $ viewCount += 4
     else:
         $ viewCount += 3
-    play music "soundtrack/vig1scratchtrack.wav" volume 1.2 loop fadein 1.0
-    show cockpit_mess_stream at topleft onlayer background with dissolve
+    play music "soundtrack/vig1scratchtrack.wav" volume 0.8 loop fadein 1.0
+    show cockpit_mess_mess_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
@@ -320,9 +320,9 @@ label vig3_sc2():
     "We take a moment to think."
     show mac stream neutral at stream_center_mac with dissolve
     macS "Dad..."
-    $ AddChatter(vig3_sc2_cockpit_comment8)
-    if viewershipHigh == True:
-        $ AddChatter(vig3_sc2_cockpit_comment9)
+    #$ AddChatter(vig3_sc2_cockpit_comment8)
+    #if viewershipHigh == True:
+    #    $ AddChatter(vig3_sc2_cockpit_comment9)
     #$ reactTarget = "vig3_sc2_macdad" #reply chats at 6:14
     #show screen streamerCommentary
     "All eyes turn to MAC, Jennica's expression softens and I watch Teresa's face rises with curiosity then fall." 
@@ -345,7 +345,7 @@ label vig3_sc2():
     hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
     "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
-    hide cockpit_mess_stream with dissolve
+    hide cockpit_mess_mess_stream
     macS "Captain!"
     show mac stream shock at stream_center_mac with vpunch
     "I can't help but jump."
@@ -394,14 +394,14 @@ label vig3_sc2():
     mS "Good job buddy, rest up. I'll see you in an hour."
     "With every step I can't help but feel my smile grow, knowing this will be the calmest hour that I've had in a very long time."
     hide mac with dissolve
-    hide ship_hallway_stream
     jump vig3_sc3
 
 ##START OF ACT 1###
 label vig3_sc3():
-    play music "soundtrack/akar(day).wav" #fadein 1.0
     show akarstreet_stream at topleft onlayer background with dissolve
-    hide cockpit_mess_stream
+    play music "soundtrack/akar(day).wav" volume 0.8 #fadein 1.0
+    hide ship_hallway_stream
+    hide cockpit_mess_mess_stream
     $ viewCheck2 = viewCount
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     $ AddChatter (vig3_sc3_akarstreet_comment1)
@@ -494,7 +494,7 @@ label vig3_sc3():
             "I pull out my gun in the direction of the sound." 
             mS "Not likely boys."
             $ AddChatter (vig3_sc3_snakehawk_comment1)
-        "Show them you're a Snakehawk":
+        "Show them you're a Snakehawk.":
             $ pilotApproval += 1 #Logic: Jennica likes the deescalation and that the tatoo still means something here
             $ macPeace += 1
             $ csEngagement += 1 #Logic: kitcat and Coriolis both like the use of "lore" for intervention
@@ -740,7 +740,7 @@ label vig3_sc4():
     hide jennica with dissolve
     show rec stream surprised at stream_center with move
     show houndleader stream neutral at stream_left with dissolve
-    play music "soundtrack/deadeye.wav" fadein 0.5
+    play music "soundtrack/deadeye.wav" volume 0.8 fadein 0.5
     $ AddChatter (vig3_sc4_shop_comment27)
     "A group of five enter the shop, dark uniforms with a dog patched on their right shoulder." 
     if viewershipHigh == True:
@@ -982,8 +982,8 @@ label vig3_sc4():
 
 label vig3_sc5():
     $ viewCheck3 = viewCount
-    play music "soundtrack/akar(night).wav"
     show akarplaza_stream at topleft onlayer background with dissolve
+    play music "soundtrack/akar(night).wav" volume 0.8
     hide reccshop_stream 
     "When Rec leads us to the plaza I'm almost startstruck with how it looks." ###REC takes the Oakley Crew to the Plaza. In front is Rec and MOZE with JENNICA and TERESA taking up the rear with MAC in between them.##
     "The space is abundant with life."
@@ -1725,7 +1725,7 @@ label vig3_sc6():
     macS "And I'll help."
     menu: 
         "Say something."
-        "Abosultely not!":
+        "Absolutely not!":
             $ kcEngagement -= 1 #Logic: mean to MAC, kc doesn't like
             $ csEngagement -= 1 #Logic: It's mean for Coriolis too
             mS "You will sit down and say nothing and let me handle it."
@@ -2249,7 +2249,7 @@ label vig3_sc6():
     jump vig3_sc7
 
 label vig3_sc7():
-    play music "soundtrack/akar(day).wav"
+    play music "soundtrack/akar(day).wav" volume 0.8
     show akarplaza_stream at topleft onlayer background with dissolve
     hide bbpub_stream 
     "The next day is hot, the hangover in my brain is smashing at my skull like it's the bars of a prison."
@@ -2308,8 +2308,6 @@ label vig3_sc7():
         $ AddChatter (vig3_sc7_akarplaza_comment5)
     stop music
     "Fear surges through my body as I look between the three of us and MAC is nowhere to be found."
-    $ reactTarget = "vig3_sc7_lostmac"#timestamp 6:41
-    show screen streamerCommentary
     mS "MAC!"
     $ AddChatter (vig3_sc7_akarplaza_comment6)
     hide teresa stream with Dissolve(0.2)
@@ -2830,7 +2828,6 @@ label vig3_sc9():
             $ vig3_daisyApproval = False
             $ vig3_daisyChoice = 1
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
-            show screen streamerCommentary
             "I rise to my full height."
             mS "She said she'll get back to you later."
             $ AddChatter (vig3_sc9_standup_comment1)
@@ -2839,6 +2836,7 @@ label vig3_sc9():
             "They turn to me."
             invfairnpc2 "Oh? and what are you?"
             mS "I'm about to be your next big problem."
+            show screen streamerCommentary
             "I move forward to tower over him and he takes a step back."
             showgirl "Moze..."
             invfairnpc2 "You don't want to do this."
@@ -2865,15 +2863,15 @@ label vig3_sc9():
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
             $ vig3_daisyApproval = True
-            $ daisyChoice = 2
+            $ vig3_daisyChoice = 2
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
-            show screen streamerCommentary
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
             invfairnpc2 "You little-"
             $ AddChatter (vig3_sc9_standup_comment1)
             mS "Now let's not make a scene."
             mS "The lady said she'll get to you soon. Right?"
+            show screen streamerCommentary
             "The initial shock falls from her face and is replaced with a devilish smile."
             $ AddChatter (vig3_sc9_standup_comment6)
             showgirl "Right..."
@@ -2903,13 +2901,13 @@ label vig3_sc9():
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
             $ vig3_daisyApproval = False
-            $ daisyChoice = 3
+            $ vig3_daisyChoice = 3
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
-            show screen streamerCommentary
             "I can't do anything right now."
             "There's too much on the line."
             $ AddChatter (vig3_sc9_attention_comment1)
             invfairnpc2 "So Daisy, shall I steal you away?"
+            show screen streamerCommentary
             "He leans closer."
             $ AddChatter (vig3_sc9_attention_comment2)
             showgirl "I'm with a guest at the moment."
@@ -3098,6 +3096,7 @@ label vig3_sc10():
 
 label vig3_sc11():
     show inventorsfairgallery_stream at topleft onlayer background with dissolve
+    play music "soundtrack/akar(fair).wav" fadein 2.0
     hide bg black
     #Int. Inventor's Fair. 
     show ama stream neutral at stream_center with dissolve
@@ -3289,6 +3288,7 @@ label vig3_sc11():
     $ AddChatter (vig3_sc11_fairint_comment31)
     "Ryo ushers us both in the direction of the east balcony."
     "Ama walks in front of me and I watch as the slit in her dress reveals something cold and metallic."
+    stop music fadeout 2.0
     hide ama with dissolve
     hide reynar with dissolve
     jump vig3_sc12
@@ -3296,9 +3296,9 @@ label vig3_sc11():
 label vig3_sc12():
     #Ext. Vineyard Balcony
     $ viewCheck8 = viewCount
-    play music "soundtrack/decisionTime.wav"
     show vybalcony_stream at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
+    play music "soundtrack/decisionTime.wav" fadein 3.0
     "Overlooking the lush chimaeron trees, the east balcony is as ornate as it is private."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc12_balcony_comment1)
@@ -4024,7 +4024,7 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_balcony_comment24)
             "We break into a sprint down the hall."
             $ AddChatter (vig3_sc12_balcony_comment25)
-            stop music fadeout 1.0
+            stop music fadeout 3.0
             hide ama with dissolve
             hide customs agent with dissolve
             show mac stream neutral at stream_center_mac with move
@@ -4032,8 +4032,8 @@ label vig3_sc12():
     
 
 label vig3_sc13():
-    play music "soundtrack/akar(fairSlaps).wav"
     show inventorsfairgallery_stream at topleft onlayer background with dissolve
+    play music "soundtrack/akar(fairSlaps).wav" fadein 2.0
     hide vybalcony_stream
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
     $ AddChatter (vig3_sc13_fairint_comment1)
@@ -4386,6 +4386,7 @@ label vig3_sc14():
     hide rec with dissolve
     show exteriorvineyard_stream at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
+    stop music fadeout 3.0
     $ AddChatter(vig3_sc14_escape_comment1)
     "Just beyond the entrance the shuttles are empty."
     if viewershipHigh == True:
@@ -4471,7 +4472,7 @@ label vig3_sc14():
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
     amaS "Now how about we all stay still and quiet and do as I-"
-    "Her eyes meet Rec's"
+    "Her eyes meet Rec's."
     $ AddChatter(vig3_sc14_escape_comment12)
     hide jennica with dissolve
     hide teresa with dissolve
@@ -5165,6 +5166,7 @@ label vig3_macro_viewerChat_1():
             show screen NVLnarration
             menu:
                 "•It's a story Moze has to believe in.":
+                    hide screen NVLnarration
                     player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
                     player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
                     player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
@@ -5193,6 +5195,7 @@ label vig3_macro_viewerChat_1():
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•I don't think Moze had choice.":
+                    hide screen NVLnarration
                     player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that."
                     player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
                     player_nvl "But could Moze really have taken that risk?"
@@ -5231,6 +5234,7 @@ label vig3_macro_viewerChat_1():
             show screen NVLnarration
             menu:
                 "•It was harsh but true.":
+                    hide screen NVLnarration
                     $ csEngagement -= 1
                     player_nvl "It was harsh, but it was true."
                     player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
@@ -5264,6 +5268,7 @@ label vig3_macro_viewerChat_1():
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
+                    hide screen NVLnarration
                     player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
                     player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
                     player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
@@ -5546,6 +5551,7 @@ label vig3_macro_viewerChat_1():
         show screen NVLnarration
         menu:
             "•I think she did the best she could.":
+                hide screen NVLnarration
                 $ pdEngagement += 1
                 player_nvl "Honestly, I think she did the best she could."
                 player_nvl "I mean, we saw that one flashback with the gun, where she basically threatened to kill Moze. And that's not cool."
@@ -5643,6 +5649,7 @@ label vig3_macro_viewerChat_1():
                             pd_nvl "Maybe, but I feel like they'll set it up pretty well."
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
             "•I think she was a bad influence on Moze.":
+                hide screen NVLnarration
                 $ pdEngagement += 1
                 player_nvl "Honestly, I think she was a bad influence on Moze."
                 player_nvl "Like, you saw that one flashback with the gun, where she basically threatened to kill Moze. Not cool."
@@ -5739,7 +5746,6 @@ label vig3_macro_viewerChat_1():
                             player_nvl "If they don't handle it well, that could feel kinda cheap."
                             pd_nvl "Maybe, but I feel like they'll set it up pretty well."
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
-
             "•Don't respond.":
                 hide screen NVLnarration
                 $ pdEngagement -=1
@@ -5829,6 +5835,7 @@ label vig3_macro_viewerChat_1():
             show screen NVLnarration
             menu:
                 "•It's a story Moze has to believe in.":
+                    hide screen NVLnarration
                     player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
                     player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
                     player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
@@ -5857,6 +5864,7 @@ label vig3_macro_viewerChat_1():
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•I don't think Moze had choice.":
+                    hide screen NVLnarration
                     player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that."
                     player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
                     player_nvl "But could Moze really have taken that risk?"
@@ -5895,6 +5903,7 @@ label vig3_macro_viewerChat_1():
             show screen NVLnarration
             menu:
                 "•It was harsh but true.":
+                    hide screen NVLnarration
                     $ csEngagement -= 1
                     player_nvl "It was harsh, but it was true."
                     player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
@@ -5928,6 +5937,7 @@ label vig3_macro_viewerChat_1():
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
+                    hide screen NVLnarration
                     player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
                     player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
                     player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
@@ -6559,7 +6569,7 @@ label vig3_macro_brother_stream():
     if vig3_brotherChat == 1:
         player_nvl "That's enough about me though."
         player_nvl "What's up with you? Got any life updates?"
-        jump vig3_macro_brother_stream
+        jump vig3_macro_brother_cedric
     else:
         jump vig3_macro_brother_end
 

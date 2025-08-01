@@ -64,17 +64,19 @@ label vig3_break():
     #show bg black with dissolve
     "Leaving the stream for a bit can always feel really nice."
     "The hallway is much cooler than your room, which has undoubtly been storing your body heat."
-    "The roomate is gone for the night, so at least you know you aren't disturbing them."
+    "Your roomate is gone for the night, so at least you know you aren't disturbing them."
     "You pass through the quiet of your apartment."
     "Grab some water and stand in the kitchen for a moment."
     menu: 
         "Streaming is..."
         "Tiring.":
+            $ energy -= 1
             "Even if it's only for a few hours, streaming can really take a toll."
             "It's hard to be so *on* all the time."
             "The chat's energy can help a bit."
             "But still."
         "Exciting.":
+            $ energy += 1
             "New game, new audience, everything is so exciting."
             "There's something really fun about the way people respond to you and what you do."
             "That energy exchange keeps things fresh for sure."
@@ -191,7 +193,7 @@ label vig3_break():
             pause 0.5
             $ AddChatter (vig3break_ama_dead_comment12)
 
-    player "We gotta talk about Rec"
+    player "We gotta talk about Rec."
     player "It's amazing we get to see them again."
     $ AddChatter (vig3break_rec_comment1)
     pause 0.5 
@@ -286,5 +288,11 @@ label vig3_break():
     "You boot up the game again."
     "Open on your recovered save."
     "And pick up right where you left off."
+    $ vig3break_ama_dead_comment11.click = False
+    $ vig3break_rec_tense_comment4.click = False
+    $ vig3break_rec_tense_comment10.click = False
+    $ vig3break_rec_reunion_comment3.click = False
+    $ vig3break_rec_reunion_comment9.click = False
+    $ vig3break_end_comment5.click = False
     hide screen streamerCommentary
     jump vig3_sc10           
