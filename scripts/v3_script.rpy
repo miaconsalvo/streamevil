@@ -2370,22 +2370,22 @@ label vig3_sc8():
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
     $ AddChatter (vig3_sc8_vineyardext_comment1)
     "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
-    #*$ AddChatter (vig3_sc7_akarplaza_comment2)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment2)
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
-    #*$ AddChatter (vig3_sc7_akarplaza_comment3)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment3)
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
-    $ AddChatter (vig3_sc7_akarplaza_comment4)
+    $ AddChatter (vig3_sc8_vineyardext_comment4)
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
     show teresa stream neutral at stream_right with dissolve
     enS "Can you give it a rest, there are people around."
-    #*$ AddChatter (vig3_sc7_akarplaza_comment7)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment7)
     #*pause 0.5
-    #*$ AddChatter (vig3_sc7_akarplaza_comment8)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment8)
     pS "I thought you'd want me to look presentable?"
-    $ AddChatter (vig3_sc7_akarplaza_comment5)
+    $ AddChatter (vig3_sc8_vineyardext_comment5)
     mS "You need to be serious about this."
     pS "Oh I'm very serious, just my face don't look it. Y'all should consider fixin' yours."
-    $ AddChatter (vig3_sc7_akarplaza_comment6)
+    $ AddChatter (vig3_sc8_vineyardext_comment6)
     "Rec moves thier jaw as if trying to manually relax it."
     "I relax my shoulders as an attendant walks over to us."
     vyattend "Good afternoon, my name's Ryo and it is my pleasure to welcome you to the Vineyard." 
@@ -2395,27 +2395,27 @@ label vig3_sc8():
     vyattend "Prismari?"
     enS "That is correct." 
     "There's a long pause."
-    $ AddChatter (vig3_sc7_akarplaza_comment9)
+    $ AddChatter (vig3_sc8_vineyardext_comment9)
     reynar "Ryo I'll take it from here."
     "Our jaws nearly drop at the finely dressed man who approaches us. Reynar..."
     show reynar stream neutral at stream_center with dissolve
     reynar "How wonderful, we were certain to receive another refusal gift this year."
     enS "Well we so desperately missed the inspiration of the Inventor's Fair."
-    $ AddChatter (vig3_sc7_akarplaza_comment11)
+    $ AddChatter (vig3_sc8_vineyardext_comment11)
     enS "I hope you are well to accommodate us?"
     reynar "I must say your posse is such a surprise it's so... pleasantly unexpected."
-    #*$ AddChatter (vig3_sc7_akarplaza_comment12)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment12)
     "It's like watching a tennis match with a bomb for a ball."
     enS "You know we are so thankful your consideration every year, and so lovely to see our donations put to such good use."
-    $ AddChatter (vig3_sc7_akarplaza_comment14)
+    $ AddChatter (vig3_sc8_vineyardext_comment14)
     pause 0.5
-    $ AddChatter (vig3_sc7_akarplaza_comment15)
+    $ AddChatter (vig3_sc8_vineyardext_comment15)
     #*pause 0.5
-    #*$ AddChatter (vig3_sc7_akarplaza_comment16)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment16)
     enS "You've truly spared no expense."
     reynar "Of course, we want to celebrate all those who contribute to the research and development of the Outposts."
     enS "The Prismari family is always proud to support this iconic hub of innovation."
-    #*$ AddChatter (vig3_sc7_akarplaza_comment13)
+    #*$ AddChatter (vig3_sc8_vineyardext_comment13)
     reynar "You've offered much more than support."
     reynar "We are pleased to have you back Miss Prismari."
     "Reynar nods to us and walks away cooly. Leaving to welcome in other guests."
@@ -2434,13 +2434,13 @@ label vig3_sc8():
     enS "And thank you Reccrin. Couldn't have done it without you getting us ready."
     show rec stream neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
-    $ AddChatter (vig3_sc7_akarplaza_comment17)
+    $ AddChatter (vig3_sc8_vineyardext_comment17)
     pause 0.5
-    $ AddChatter (vig3_sc7_akarplaza_comment18)
+    $ AddChatter (vig3_sc8_vineyardext_comment18)
     pause 0.5
-    $ AddChatter (vig3_sc7_akarplaza_comment19)
+    $ AddChatter (vig3_sc8_vineyardext_comment19)
     pause 0.5
-    $ AddChatter (vig3_sc7_akarplaza_comment20)
+    $ AddChatter (vig3_sc8_vineyardext_comment20)
     $ viewCheck6 = viewCount
     hide rec with dissolve
     hide teresa with dissolve
@@ -4351,6 +4351,7 @@ label vig3marshalcomms():
     "Shit."
     "Before we can even leave, boots swarm the hall outside."
     "And we're met with an unfortunately familiar face."
+    $ AddChatter (vig3_marshalcomms_comment5)
     hide jennica with dissolve
     hide mac with dissolve
     hide rec with dissolve
@@ -4779,6 +4780,7 @@ label vig3_sc14():
 label vig3_epilogue():
     $ viewCheck10 = viewCount
     stop music fadeout 4.0
+    hide screen streamerCommentary
     "The Vineyard is alight with fireworks in the distance."
     $ AddChatter(vig3_epilogue_comment1)
     "The screens on the platform end their ads and a live feed begins."
@@ -4814,7 +4816,6 @@ label vig3_epilogue():
     $ AddChatter(vig3_epilogue_comment13)
     "And I remember what he left in my pocket."
     hide reynar with dissolve
-    hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
     hide exteriorvineyard_stream
     $ AddChatter(vig3_epilogue_comment14)
