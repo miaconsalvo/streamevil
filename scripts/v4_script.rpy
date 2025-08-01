@@ -4829,8 +4829,8 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment71)
     "Her words are stiff."
     vS "You know that, right?"
-    macS "I know."
     $ AddChatter(vig4_sc7_3_ama_comment72)
+    macS "I know."
     if macViolence > macPeace:
         $ pdEngagement += 2
         $ kcEngagement += 1
@@ -4846,6 +4846,8 @@ label vig4_sc7_3_ama():
             $ AddChatter(vig4_sc7_3_ama_comment74)
         $ AddChatter(vig4_sc7_3_ama_comment75)
         hide vega with Dissolve(2.0)
+        $ reactTarget = "vig4_sc7_mackillsvega"
+        show screen streamerCommentary
         macS "Threat. Neutralized."
         $ AddChatter(vig4_sc7_3_ama_comment77)
         pause 0.5
@@ -4861,7 +4863,8 @@ label vig4_sc7_3_ama():
         macS "And maybe, in time. You will find peace."
         vS "There is no peace left. You took it all away."
         macS "Maybe. But we can't know for certain."
-        ##* streamer reaction?
+        $ reactTarget = "vig4_sc7_macsparesvega"
+        show screen streamerCommentary
         $ AddChatter(vig4_sc7_3_ama_comment80)
         macS "Bury your family, Vega. And take care."
         $ AddChatter(vig4_sc7_3_ama_comment81)
@@ -4870,6 +4873,7 @@ label vig4_sc7_3_ama():
     macS "We should go."
     mS "Yeah, we should."
     "Together, MAC, Ama, and I leave the room, and descend the tower."
+    hide screen streamerCommentary
     hide ama with dissolve
     hide mac with dissolve
     jump vig4_epilogue_ama
@@ -5228,6 +5232,8 @@ label vig4_sc7_3_coil():
         mS "What about her?"
         macS "We shouldn't leave her here."
         macS "She was a Snakehawk. She deserves a proper burial."
+        $ reactTarget = "vig4_sc7_macamasburial"
+        show screen streamerCommentary
         $ AddChatter(vig4_sc7_3_coil_comment58)
         menu:
             macS "She was a Snakehawk. She deserves a proper burial."
@@ -5243,6 +5249,7 @@ label vig4_sc7_3_coil():
                 "She's heavy. But I'm accustomed to the weight."
                 "It's as if I've been carrying it for years."
     mS "Let's go."      
+    hide screen streamerCommentary
     "Together, MAC, Coil, Vega, and I leave the room and descend the tower."
     hide vega with dissolve
     hide coil with dissolve
