@@ -3870,10 +3870,22 @@ label vig3_sc13():
     show inventorsfairgallery_stream at topleft onlayer background with dissolve
     hide vybalcony_stream
     "My blaster feels heavier as we run down the winding paths of the Vineyard." 
+    $ AddChatter (vig3_sc13_fairint_comment1)
     "Tucked away tight to my side I'm resolute in making sure MAC doesn't touch it."
+    $ AddChatter (vig3_sc13_fairint_comment2)
+    pause 0.5
+    $ AddChatter (vig3_sc13_fairint_comment3)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment4)
     "There's no time to talk about what happened."
     "I wouldn't even know where to begin."
+    $ AddChatter (vig3_sc13_fairint_comment5)
     "Not that MAC looks too inclined to talk about it anyways." 
+    #*$ AddChatter (vig3_sc13_fairint_comment6)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment7)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment8)
     macS "They should be right down here."
     "This whole area has been cleared. Why is there no one here?"
     "Loud bangs ring out in the distance. Fireworks? Maybe?"
@@ -3884,8 +3896,10 @@ label vig3_sc13():
     "We can't stop running, but I have dozens of questions."
     "One just happens to pop out of my mouth."
     mS "How the hell did you end up on that presentation stage?"
+    $ AddChatter (vig3_sc13_fairint_comment9)
     macS "A confluence of circumstantial factors."
     macS "I escaped the Hounds' restraints shortly after entering this facility and evaded them by entering a laundry chute."
+    $ AddChatter (vig3_sc13_fairint_comment10)
     macS "That chute deposited me in BigCorp's dressing room where I saw the display of a prototype that resembled me."
     macS "I disposed of the prototype and took its place, hoping the disguise would present an opportunity to escape."
     menu:
@@ -3894,20 +3908,26 @@ label vig3_sc13():
             $ kcEngagement += 1
             mS "Wow, MAC, that was really resourceful!"
             macS "I had excellent teachers."
-            # AddChatter
+            $ AddChatter (vig3_sc13_thinking_comment1)
         "That was dangerous!":
             $ csEngagement += 1
             mS "MAC, that was dangerous! What if BC discovered you and took you away?"
             macS "They did not. I have learned the art of stealth from you, after all."
-            # AddChatter
+            $ AddChatter (vig3_sc13_dangerous_comment1)
+            pause 0.5
+            $ AddChatter (vig3_sc13_dangerous_comment2)
         "What do you mean, \"disposed of\"?":
             $ pdEngagement += 1
             mS "Wait, what do you mean you \"disposed\" of the prototype?"
             macS "If the signs on the chute were correct, it is currently being relocated to a waste disposal location outside Akar."
-            # AddChatter
+            $ AddChatter (vig3_sc13_disposed_comment1)
+            pause 0.5
+            $ AddChatter (vig3_sc13_disposed_comment2)
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
+    $ AddChatter (vig3_sc13_fairint_comment11)
     "With an efficiency that I've only ever seen from Teresa. MAC undoes the scanner and the door swings open."
+    $ AddChatter (vig3_sc13_fairint_comment12)
     "Two blasters are pointed at my face as the door swings open."
     show mac stream neutral at stream_right5mac with move
     show rec stream surprised at stream_left5 with dissolve
@@ -3915,12 +3935,17 @@ label vig3_sc13():
     show jennica stream fight at stream_left with dissolve
     mS "Well don't be too happy to see me!"
     enS "Captain!"
+    #*$ AddChatter (vig3_sc13_fairint_comment13)
     pS "Thought ya dead, I won't lie."
+    #*$ AddChatter (vig3_sc13_fairint_comment14)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment15)
     "MAC rushed past me to grab Teresa's legs. The door closes behind me as I walk in."
     show teresa stream happy
     show jennica stream neutral
     show rec stream happy
     enS "Good to see you buddy."
+    $ AddChatter (vig3_sc13_fairint_comment16)
     pS "Where's Deadeye?"
     mS "Left her on the east balcony."
     mS "Might be on our tail but she didn't see where we went."
@@ -3935,15 +3960,28 @@ label vig3_sc13():
     pS "He's got some good-lookin' work."
     show rec stream drunk
     recS "And some good-lookin' muscles."
+    #*$ AddChatter (vig3_sc13_fairint_comment17)
     mS "..."
     recS "Forget I said that."
+    #*$ AddChatter (vig3_sc13_fairint_comment18)
+    #*pause 0.5 
+    #*$ AddChatter (vig3_sc13_fairint_comment19)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment20)
     show rec stream happy
     mS "Okay let's focus up. What's going on here."
+    $ AddChatter (vig3_sc13_fairint_comment21)
     show teresa stream neutral
     show jennica stream neutral
     enS "Rec found a private comms room. We were hoping to at least catch our breath before we head out."
     pS "Can't go back through the party."
+    #*$ AddChatter (vig3_sc13_fairint_comment22)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment23)
+    #*pause 0.5
+    #*$ AddChatter (vig3_sc13_fairint_comment24)
     recS "But there's still a shuttle system that can get us to Akar. It should be a quick run from here."
+    #*$ AddChatter (vig3_sc13_fairint_comment25)
     enS "Ama will probably head there too."
     mS "If she's not already getting her ship off the ground to scan for us."
     "We need to act now."
@@ -3957,6 +3995,7 @@ label vig3_sc13():
                 jump vig3marshalcomms 
         "Mad dash to the shuttles.":
             "No time to lose lets make a break for it!"
+            $ AddChatter (vig3_sc13_dash_comment1)
             hide mac with dissolve
             hide teresa with dissolve
             hide rec with dissolve
@@ -3965,7 +4004,11 @@ label vig3_sc13():
             show mac stream shock at stream_right5mac with vpunch
             macS "APOLOGIES!"
             "This was the third security guard MAC had run over with reckless abandon."
+            $ AddChatter (vig3_sc13_dash_comment2)
             "Like a little purple battering ram MAC was clearing a path through just as Reynar's security came to intercept us."
+            $ AddChatter (vig3_sc13_dash_comment3)
+            pause 0.5
+            $ AddChatter (vig3_sc13_dash_comment4)
             "When we set off we didn't imagine it would be this close to the fair."
             "Dodging through the side garden to the entrance shuttles I pray that Reynar isn't too upset with our escape plan."
             show jennica stream shock at stream_left with dissolve
@@ -3979,16 +4022,27 @@ label vig3_sc13():
             "In their distracted state they mindlessly slam into a couple going hot and heavy."
             "No doubt using the garden to avoid any possible scandal..."
             invfairnpc2 "Watch yourself!"
+            $ AddChatter (vig3_sc13_dash_comment5)
             "The two narrowly dodge MAC only to get slammed by Jennica."
+            $ AddChatter (vig3_sc13_dash_comment6)
+            pause 0.5
+            $ AddChatter (vig3_sc13_dash_comment7)
             show jennica stream neutral
             pS "Keep up y'all I'm the only one in heels and I'm leagues ahead!"
+            $ AddChatter (vig3_sc13_dash_comment8)
+            pause 0.5
+            $ AddChatter (vig3_sc13_dash_comment9)
             enS "Stop showing off!"
+            #*$ AddChatter (vig3_sc13_dash_comment10)
             pS "How 'bout ya start showing up!"
             show rec stream happy
             recS "How about that terrarium!"
             mS "REC!"
             "I can see the exit to the shuttles just in reach."
             reynar "Having fun Mozely?"
+            $ AddChatter (vig3_sc13_dash_comment11)
+            #*pause 0.5
+            #*$ AddChatter (vig3_sc13_dash_comment12)
             hide rec with dissolve
             hide jennica with dissolve
             hide mac with dissolve
@@ -3997,10 +4051,12 @@ label vig3_sc13():
             "We stop dead in our tracks as reynar appears."
             "Flanked by the hounds."
             reynar "*sigh* You've been making quite the mess of things. Haven't you."
+            $ AddChatter (vig3_sc13_dash_comment13)
             mS "You don't know the half of it."
             reynar "Don't flatter yourself."
             mS "We're just leaving."
             reynar "How unfortunate. But did you have to make such a commotion on the way out?"
+            #*$ AddChatter (vig3_sc13_dash_comment14)
             "Just then I see the glass windows of the gallery to my right lined with prying eyes."
             reynar "Now I have to make a show of this."
             "We struggle against the Hounds as we're overwhelmed by Reynar's forces."
@@ -4016,10 +4072,16 @@ label vig3outlawcomms():
     $ kcEngagement -= 1 #Logic: kitcat and coriolis don't like Matticus
     $ csEngagement -= 1
     smatt "Well hello ladies! Need a hand from little ole me?"
+    $ AddChatter (vig3_outlawcomms_comment1)
     "Matticus smiles in that shit-eating grin that he loves."
+    $ AddChatter (vig3_outlawcomms_comment2)
     pS "This is a terrible idea"
     "I'm starting to agree."
+    $ AddChatter (vig3_outlawcomms_comment3)
+    pause 0.5
+    $ AddChatter (vig3_outlawcomms_comment4)
     mS "We're not here for pleasantries"
+    $ AddChatter (vig3_outlawcomms_comment5)
     recS "I almost forgot what he was like."
     show rec stream neutral
     smatt "Is that little Reccrin?"
@@ -4028,20 +4090,31 @@ label vig3outlawcomms():
     smatt "Hard to tell when Allistar was the one with the nerve."
     mS "Matticus!"
     smatt "What is it sweetheart?"
+    $ AddChatter (vig3_outlawcomms_comment6)
     mS "Ama found us in the Vineyard. We need to give her a hard time following us out of here."
     smatt "The Vineyard? It sounds like you did this to yourself lovey!"
     mS "I don't have to explain my reasons to you. Can you do it or not?"
     enS "This is a waste of time, Matt can't take on Reynar."
     smatt "Excuse you, must you think so little of me?"
     pS "Couldn't even hide us well 'nough. I say lets go Cap."
+    $ AddChatter (vig3_outlawcomms_comment7)
+    pause 0.5
+    $ AddChatter (vig3_outlawcomms_comment8)
     recS "Reynar's system is too impressive anyways you wouldn't be much of a challenge."
+    $ AddChatter (vig3_outlawcomms_comment9)
+    pause 0.5
+    $ AddChatter (vig3_outlawcomms_comment10)
     smatt "Okay okay since you did such a good job."
+    $ AddChatter (vig3_outlawcomms_comment11)
     smatt "I'll make sure Reynar's Vineyard will be especially hostile."
+    $ AddChatter (vig3_outlawcomms_comment12)
     mS "Fabulous."
+    $ AddChatter (vig3_outlawcomms_comment13)
     smatt "Aren't I?"
     smatt "Bye bye and try not to die. I'll be looking for you to repay the favour."
     hide matticus with dissolve
     "The comms go dead."
+    $ AddChatter (vig3_outlawcomms_comment14)
     macS "Skeeve."
     recS "The biggest."
     mS "Let's get out of here."
@@ -4065,19 +4138,23 @@ label vig3marshalcomms():
     $ pdEngagement += 1 #Logic: pickledDragons finds this development interesting; the other two are neutral
     smatt "Well hello ladies! To what do I owe the pleasure?"
     "Matticus smiles in that shit-eating grin that he loves."
+    $ AddChatter (vig3_marshalcomms_comment1)
     pS "Disrespectfully, we didn't call you."
     "This is bad."
     smatt "Oh no? Were you perchance hoping I was some young redheaded datacenter intern?"
     show rec stream neutral
+    $ AddChatter (vig3_marshalcomms_comment2)
     recS "Sounds like a nicer face to look at."
     smatt "Oh is that little Reccrin? The Snakehawk dropout?"
     smatt "Still hiding in that little hovel in Akar?"
     smatt "Oh-"
     smatt "Oh Moze you do love to live dangerously don't you."
     mS "What kind of bullshit is this?"
+    $ AddChatter (vig3_marshalcomms_comment3)
     enS "Where's the kid?"
     smatt "Ever since your hack job with the Sallent ship. I had to restablish the pecking order around here."
     smatt "So I had to make an example."
+    $ AddChatter (vig3_marshalcomms_comment4)
     "This rat bastard."
     mS "That's low even for you."
     enS "How do you sleep at night?"
@@ -4091,6 +4168,7 @@ label vig3marshalcomms():
     smatt "Bye bye now!"
     hide matticus with dissolve
     "The comms go dead."
+    $ AddChatter (vig3_marshalcomms_comment5)
     macS "Skeeve."
     recS "The biggest."
     #mS "Only one way out now. We have to make a break for the shuttles." #I made this ending loop back to the mad dash that could happen if you don't call for help.
