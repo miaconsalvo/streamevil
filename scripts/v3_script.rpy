@@ -2952,7 +2952,8 @@ label vig3_sc10():
     "I move out of the way just as the impact hits my shoulder, a hair's breadth away from my heart."
     "My arm is limp but there's no blood"
     "She set it to stun."
-    #*$ AddChatter (vig3_sc10_memory_comment10)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc10_memory_comment10)
     "Ama walks up to me, and turns the blaster, handle pointed at me."
     "The insignia of the Snakehawks branded on it."
     amaS "Ready to try again?"
@@ -3068,7 +3069,7 @@ label vig3_sc11():
     reynar "If only you were invited..."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc11_fairint_comment10)
-         pause 0.5
+        pause 0.5
         $ AddChatter (vig3_sc11_fairint_comment11)
     "A pause."
     if viewershipHigh == True:
