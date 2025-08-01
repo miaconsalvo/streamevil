@@ -4168,7 +4168,6 @@ label vig3marshalcomms():
     smatt "Bye bye now!"
     hide matticus with dissolve
     "The comms go dead."
-    $ AddChatter (vig3_marshalcomms_comment5)
     macS "Skeeve."
     recS "The biggest."
     #mS "Only one way out now. We have to make a break for the shuttles." #I made this ending loop back to the mad dash that could happen if you don't call for help.
@@ -4186,6 +4185,7 @@ label vig3marshalcomms():
     "Shit."
     "Before we can even leave, boots swarm the hall outside."
     "And we're met with an unfortunately familiar face."
+    $ AddChatter (vig3_marshalcomms_comment5)
     hide jennica with dissolve
     hide mac with dissolve
     hide rec with dissolve
@@ -4613,6 +4613,7 @@ label vig3_sc14():
 label vig3_epilogue():
     $ viewCheck10 = viewCount
     stop music fadeout 4.0
+    hide screen streamerCommentary
     "The Vineyard is alight with fireworks in the distance."
     $ AddChatter(vig3_epilogue_comment1)
     "The screens on the platform end their ads and a live feed begins."
@@ -4648,7 +4649,6 @@ label vig3_epilogue():
     $ AddChatter(vig3_epilogue_comment13)
     "And I remember what he left in my pocket."
     hide reynar with dissolve
-    hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
     hide exteriorvineyard_stream
     $ AddChatter(vig3_epilogue_comment14)
