@@ -277,8 +277,9 @@ label vig3_sc5_amahallu():
             player "She's seeing ghosts!"
             $ AddChatter(vig3_sc5_react_comment1)
             pause 0.5
-            $ AddChatter(vig3_sc5_react_comment2)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc5_react_comment2)
+                pause 0.5
             $ AddChatter(vig3_sc5_react_comment3)
         "That's the second time now!":
             $ reactImage = "stream ui/reactunsure.png"
@@ -291,10 +292,11 @@ label vig3_sc5_amahallu():
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Damn, it's hard to know if we're actually being tailed!"
             player "Chat I'm spooked!"
-            $ AddChatter(vig3_sc5_react_comment4)
-            pause 0.5
-            $ AddChatter(vig3_sc5_react_comment5)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc5_react_comment4)
+                pause 0.5
+                $ AddChatter(vig3_sc5_react_comment5)
+                pause 0.5
             $ AddChatter(vig3_sc5_react_comment6)
     if commentVariable == True:
         "Where was I?"
@@ -366,8 +368,9 @@ label vig3_sc6_stranger():
             $ AddChatter(vig3_sc6_react_comment5)
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment6)
-            pause 0.5
-            $ AddChatter(vig3_sc6_react_comment7)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig3_sc6_react_comment7)
         "This seems dangerous.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Oh god, this is going to go badly!"
@@ -375,8 +378,9 @@ label vig3_sc6_stranger():
             $ AddChatter(vig3_sc6_react_comment8)
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment5)
-            pause 0.5
-            $ AddChatter(vig3_sc6_react_comment9)
+            if viewershipHigh == True:
+                pause 0.5
+                $ AddChatter(vig3_sc6_react_comment9)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -404,8 +408,9 @@ label vig3_sc6_recbonding():
             player "Really love their character!"
             $ AddChatter(vig3_sc6_react_comment10)
             pause 0.5
-            $ AddChatter(vig3_sc6_react_comment18)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc6_react_comment18)
+                pause 0.5
             $ AddChatter(vig3_sc6_react_comment19)
         "Rec is cute!":
             $ kcEngagement += 1
@@ -414,12 +419,14 @@ label vig3_sc6_recbonding():
             player "Really love their design!"
             $ AddChatter(vig3_sc6_react_comment10)
             pause 0.5
-            $ AddChatter(vig3_sc6_react_comment15)
-            pause 0.5
-            $ AddChatter(vig3_sc6_react_comment16)
-            pause 0.5
-            $ AddChatter(vig3_sc6_react_comment17)
-        "Damn I'm guilty.":
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc6_react_comment15)
+                pause 0.5
+                $ AddChatter(vig3_sc6_react_comment16)
+                pause 0.5
+                $ AddChatter(vig3_sc6_react_comment17)
+                pause 0.5
+        "Damn, I feel guilty.":
             $ kcEngagement += 1
             $ csEngagement += 1
             $ pdEngagement -= 1
@@ -507,12 +514,14 @@ label vig3_sc6_trustcrew():
             $ reactImage = "stream ui/reactthumbsup.png"
             player "They got themselves into this mess."
             player "They'll have to get themselves out of it!"
-            $ AddChatter(vig3_sc6_react_comment26)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc6_react_comment26)
+                pause 0.5
             $ AddChatter(vig3_sc6_react_comment27)
             pause 0.5
-            $ AddChatter(vig3_sc6_react_comment28)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc6_react_comment28)
+                pause 0.5
         "I trust Jennica and Teresa.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
@@ -520,15 +529,14 @@ label vig3_sc6_trustcrew():
             player "Jenn and Resa got this!"
             $ AddChatter(vig3_sc6_react_comment29)
             pause 0.5
-            $ AddChatter(vig3_sc6_react_comment30)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc6_react_comment30)
+                pause 0.5
         "Oh no I hope they win!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
             player "Crap this there's a lot riding on this!"
             player "Was this a mistake?"
-            $ AddChatter(vig3_sc6_react_comment27)
-            pause 0.5
             $ AddChatter(vig3_sc6_react_comment29)
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment30)
@@ -702,6 +710,7 @@ label vig3_sc8_teresabluff():
             $ AddChatter(vig3_sc8_react_comment4)
             pause 0.5
             $ AddChatter(vig3_sc8_react_comment5)
+            pause 0.5
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -729,7 +738,9 @@ label vig3_sc9_daisyreturns():
             player "Love it! She's the realest person in this room."
             $ AddChatter(vig3_sc9_react_comment1)
             pause 0.5
-            $ AddChatter(vig3_sc9_react_comment2)
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc9_react_comment2)
+                pause 0.5
         "Maybe she's following us?":
             $ reactImage = "stream ui/reactthinking.png"
             player "Oh damn! Maybe she was following us?"
@@ -916,11 +927,12 @@ label vig3_sc12_amachoke():
             player "Good reminder: do not piss off Ama."
             $ AddChatter(vig3_sc12_react_comment1)
             pause 0.5
-            $ AddChatter(vig3_sc12_react_comment3)
-            pause 0.5
-            $ AddChatter(vig3_sc12_react_comment4)
-            pause 0.5
-            $ AddChatter(vig3_sc12_react_comment5)
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc12_react_comment3)
+                pause 0.5
+                $ AddChatter(vig3_sc12_react_comment4)
+                pause 0.5
+                $ AddChatter(vig3_sc12_react_comment5)
         "Better call HR!":
             $ reactImage = "stream ui/reactconfident.png"
             player "Better file an HR report!"
@@ -960,8 +972,9 @@ label vig3_sc12_amafindsout():
             player "Ama figured it out!"
             $ AddChatter(vig3_sc12_react_comment6)
             pause 0.5
-            $ AddChatter(vig3_sc12_react_comment7)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc12_react_comment7)
+                pause 0.5
             $ AddChatter(vig3_sc12_react_comment8)
             pause 0.5
             $ AddChatter(vig3_sc12_react_comment9)
@@ -972,8 +985,9 @@ label vig3_sc12_amafindsout():
             player "Don't get between Mozely and our MAC!"
             $ AddChatter(vig3_sc12_react_commen10)
             pause 0.5
-            $ AddChatter(vig3_sc12_react_comment11)
-            pause 0.5
+            if viewershipHigh == True:
+                $ AddChatter(vig3_sc12_react_comment11)
+                pause 0.5
         "Say nothing.":
             player "..."
             pause 0.5

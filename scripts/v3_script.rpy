@@ -417,7 +417,7 @@ label vig3_sc3():
     pS "Really cleaned up the place."
     macS "I believe I just saw someone steal candy from a child..."
     $ AddChatter (vig3_sc3_akarstreet_comment4)
-    $ reactTarget = "vig3_sc3_maccandy" #* time for this is 6:17
+    $ reactTarget = "vig3_sc3_maccandy" # time for this is 6:17
     show screen streamerCommentary
     mS "Yeah stick close bud, don't go running off around here."
     show jennica stream angry at stream_left
@@ -479,7 +479,7 @@ label vig3_sc3():
     hide houndleader with dissolve
     "I can feel MAC on my leg as he hides behind me."
     $ AddChatter (vig3_sc3_akarstreet_comment16)
-    $ reactTarget = "vig3_sc3_firstfight" #* timestamp 6:19
+    $ reactTarget = "vig3_sc3_firstfight" # timestamp 6:19
     show screen streamerCommentary
     enS "How's this, sweetcheeks?"
     "I can hear footsteps rushing to us. He's not alone."
@@ -2370,17 +2370,20 @@ label vig3_sc8():
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
     $ AddChatter (vig3_sc8_vineyardext_comment1)
     "Jennica has not stopped looking at herself in every reflective surface since arriving here." 
-    #*$ AddChatter (vig3_sc8_vineyardext_comment2)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment2)
     "Not surprised that the first thing she does out of the luxury cruiser is stare at herself in the window."
-    #*$ AddChatter (vig3_sc8_vineyardext_comment3)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment3)
     pS "Sorry Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
     $ AddChatter (vig3_sc8_vineyardext_comment4)
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favor."
     show teresa stream neutral at stream_right with dissolve
     enS "Can you give it a rest, there are people around."
-    #*$ AddChatter (vig3_sc8_vineyardext_comment7)
-    #*pause 0.5
-    #*$ AddChatter (vig3_sc8_vineyardext_comment8)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment7)
+        pause 0.5
+        $ AddChatter (vig3_sc8_vineyardext_comment8)
     pS "I thought you'd want me to look presentable?"
     $ AddChatter (vig3_sc8_vineyardext_comment5)
     mS "You need to be serious about this."
@@ -2399,23 +2402,28 @@ label vig3_sc8():
     reynar "Ryo I'll take it from here."
     "Our jaws nearly drop at the finely dressed man who approaches us. Reynar..."
     show reynar stream neutral at stream_center with dissolve
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment10)
     reynar "How wonderful, we were certain to receive another refusal gift this year."
     enS "Well we so desperately missed the inspiration of the Inventor's Fair."
     $ AddChatter (vig3_sc8_vineyardext_comment11)
     enS "I hope you are well to accommodate us?"
     reynar "I must say your posse is such a surprise it's so... pleasantly unexpected."
-    #*$ AddChatter (vig3_sc8_vineyardext_comment12)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment12)
     "It's like watching a tennis match with a bomb for a ball."
     enS "You know we are so thankful your consideration every year, and so lovely to see our donations put to such good use."
     $ AddChatter (vig3_sc8_vineyardext_comment14)
     pause 0.5
     $ AddChatter (vig3_sc8_vineyardext_comment15)
-    #*pause 0.5
-    #*$ AddChatter (vig3_sc8_vineyardext_comment16)
+    if viewershipHigh == True:
+        pause 0.5
+        $ AddChatter (vig3_sc8_vineyardext_comment16)
     enS "You've truly spared no expense."
     reynar "Of course, we want to celebrate all those who contribute to the research and development of the Outposts."
     enS "The Prismari family is always proud to support this iconic hub of innovation."
-    #*$ AddChatter (vig3_sc8_vineyardext_comment13)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc8_vineyardext_comment13)
     reynar "You've offered much more than support."
     reynar "We are pleased to have you back Miss Prismari."
     "Reynar nods to us and walks away cooly. Leaving to welcome in other guests."
@@ -4205,8 +4213,8 @@ label vig3_sc13():
             "I can see the exit to the shuttles just in reach."
             reynar "Having fun Mozely?"
             $ AddChatter (vig3_sc13_dash_comment11)
-            #*pause 0.5
             if viewershipHigh == True:
+                pause 0.5
                 $ AddChatter (vig3_sc13_dash_comment12)
             hide rec with dissolve
             hide jennica with dissolve
