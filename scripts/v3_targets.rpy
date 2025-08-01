@@ -1441,7 +1441,7 @@ label vig3break_take7():
             player "We're not leaving without MAC."
         "Not without serious force.":
             player "Ama is not gonna let us go easily."
-            player "We'll probably need to ifght our way out."
+            player "We'll probably need to fight our way out."
             player "Gotta do it for MAC."          
     $ macroChoice = True
     if macroChoice == False: 
@@ -1462,7 +1462,7 @@ label vig3break_take10():
             player "Even Matticus' fortress was amazing."
             player "It really kicked off the game in the best way."
         "Akar is the place to be!":
-            player "It's gonna hard to top Akar."
+            player "It's gonna be hard to top Akar."
             player "The rework is incredible!"
             player "Gotta love the Snakehawks unofficial HQ."  
             player "Also the best music so far."
@@ -1616,6 +1616,22 @@ label vig3break_reunion9():
     return
 
 label vig3break_end5():
+    $ macroChoice = True
+    $ vig3break_rec_reunion_comment9.click = False
+    $ narrator = reg_narrator
+    menu:
+        "MOXIE!"
+        "MOXIE! MOXIE! MOXIE!":
+            player "MOXIE! MOXIE! MOXIE!"
+        "LET's GOOOOOOO":
+            player "LET'S GOOOOOOOOOOOOO"      
+    $ macroChoice = True
+    if macroChoice == False: 
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
+    $ reactImage = "stream ui/reactneutral.png"
+    return
 
 #####MACRO GAME TARGETS FOR FLINCH #######
 label vig3_analytics_topfan():

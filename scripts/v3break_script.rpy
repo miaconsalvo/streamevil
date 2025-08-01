@@ -122,7 +122,7 @@ label vig3_break():
             $ AddChatter (vig3break_ama_take_comment7)
             player "Hmmm"
             player "Who knows how much we can do, truly."
-            player "Reynar has the whole vineyard locked down tight."
+            player "Reynar has the whole Vineyard locked down tight."
             $ AddChatter (vig3break_ama_take_comment8)
             pause 0.5
             $ AddChatter (vig3break_ama_take_comment9)
@@ -286,4 +286,5 @@ label vig3_break():
     "You boot up the game again."
     "Open on your recovered save."
     "And pick up right where you left off."
+    hide screen streamerCommentary
     jump vig3_sc10           

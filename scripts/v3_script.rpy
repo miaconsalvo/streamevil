@@ -71,7 +71,7 @@ label vig3outlawstart():
     $ AddChatter(vig3_startstream_comment1)
     pause 0.5
     if viewershipHigh == True:
-        $ AddChatter(vi3_startstream_comment2)
+        $ AddChatter(vig3_startstream_comment2)
         pause 0.5
     $ AddChatter(vig3_startstream_comment3)
     pause 0.5
@@ -281,7 +281,7 @@ label vig3_sc2():
     else:
         $ viewCount += 3
     play music "soundtrack/vig1scratchtrack.wav" volume 1.2 loop fadein 1.0
-    show cockpit_stream at topleft onlayer background with dissolve
+    show cockpit_mess_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
@@ -342,11 +342,12 @@ label vig3_sc2():
     enS "Yes, Captain!" #(multiple=2) #same as before, we could also define a new character as "teresa and jennica"
     hide jennica with dissolve
     hide teresa with dissolve
-    "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
+    hide mac with dissolve
     show ship_hallway_stream at topleft onlayer background with dissolve
-    hide cockpit_stream with dissolve
+    "I turn to the door and go out into the hall. I'm stopped by a tiny purple metal leaf and an excited MAC"
+    hide cockpit_mess_stream with dissolve
     macS "Captain!"
-    show mac stream shock at stream_center_mac
+    show mac stream shock at stream_center_mac with vpunch
     "I can't help but jump."
     mS "Jeez MAC, remind me to let you take point on stealth missions next time."
     show mac stream neutral at stream_center_mac
@@ -400,7 +401,7 @@ label vig3_sc2():
 label vig3_sc3():
     play music "soundtrack/akar(day).wav" #fadein 1.0
     show akarstreet_stream at topleft onlayer background with dissolve
-    hide cockpit_stream
+    hide cockpit_mess_stream
     $ viewCheck2 = viewCount
     "Well off to side of the road, the familiar streets of Akar are alive in front of us."
     $ AddChatter (vig3_sc3_akarstreet_comment1)
@@ -476,8 +477,9 @@ label vig3_sc3():
     show jennica stream fight at stream_left
     "Before anyone can respond, Jennica punches the man in the face. He falls down hard and she puts her boot on his throat, Teresa leans over grinning." 
     $ AddChatter (vig3_sc3_akarstreet_comment15)
-    hide houndleader with dissolve
+    hide houndleader with vpunch
     "I can feel MAC on my leg as he hides behind me."
+    hide mac with dissolve
     $ AddChatter (vig3_sc3_akarstreet_comment16)
     $ reactTarget = "vig3_sc3_firstfight" # timestamp 6:19
     show screen streamerCommentary
@@ -500,10 +502,8 @@ label vig3_sc3():
             "I lift my arm and flash the Snakehawks tattoo on my left hand."
             mS "I really wouldn't do that."
             $ AddChatter (vig3_sc3_snakehawk_comment2)
-    show houndgoon stream neutral at stream_right5 with dissolve 
     "The two men back away and fall back, they're well built but not sharp enough for a fight like this."
     "I give the signal to Jennica as she lets their friend scramble up and run."
-    hide houndgoon with dissolve
     hide screen streamerCommentary
     "The city moves as normal, uninterested in what just happened."
     enS "It's good to be back."
@@ -810,7 +810,6 @@ label vig3_sc4():
                     "They continue to trash the shop. More carnage. They're laughing to each other, tossing equipment like a hackey sac."
                     $ AddChatter (vig3_sc4_continue_comment2)
                     "I see one of them try to head to the back room."
-                    mS "Alright that's enough!"
     mS "Alright that's enough!"
     houndgoon "You'd be best to stay out of official business."
     "Another uniform chimes in."
@@ -847,10 +846,11 @@ label vig3_sc4():
             "I get into his face - let him pry my gear from my cold dead hands." 
             $ AddChatter (vig3_sc4_fight_comment1)
             "He smiles and throws the first punch before I can react." 
-            $ AddChatter (vig3_sc4_fight_comment2)
             "It knocks the wind out of me and I hit the ground."
             "Then impact after impact to my stomach before I can catch my breath. He gets low, right to my ear."
             houndleader "You should've died with the rest of the Snakehawks."
+            $ AddChatter (vig3_sc4_fight_comment2)
+            pause 0.5
             $ AddChatter (vig3_sc4_fight_comment3)
             "He takes the antennae as I struggle to get up from the floor."
             houndleader "Pleasure doing business with you."
@@ -1010,6 +1010,7 @@ label vig3_sc5():
     hide jennica with dissolve
     hide teresa with dissolve
     hide mac with dissolve
+    show akarplaza_flashback_stream at topleft onlayer background with dissolve
     "I'm taken back to the plaza several years back, rowdy and riotous."
     "BigCorp officers are scattered around attempting to suppress the riot."
     "With small fires everywhere Teresa ont the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
@@ -1061,6 +1062,7 @@ label vig3_sc5():
     "I carry Teresa in my arms, Jennica trailing quickly behind just as the bomb detonates and blows the statue sky high."
     show teresa stream happy at stream_right with dissolve
     enS "Some of my finest work for sure."
+    hide akarplaza_flashback_stream with dissolve
     mS "I'd bet money this place hasn't seen a bigger stunt than that."
     amaS "...You bet?"
     "I jump and turn to the direction of the voice, this time I make it to my gun."
@@ -1149,7 +1151,7 @@ label vig3_sc6():
     "In the back, someone yells and is then quickly tossed through a window."
     "MAC's face drops and he clings to my leg."
     show mac stream shock at stream_left5mac
-    macS "Aren't their children around outside?"
+    macS "Aren't there children around outside?"
     pS "That's why he was tossed out the back window."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc6_bbpub_comment1)
@@ -1166,7 +1168,7 @@ label vig3_sc6():
     hide teresa with dissolve
     show mac stream neutral at stream_right_mac with move
     show jennica stream neutral at stream_center with move
-    "As we walk through the bar, I notice how may regulars have been lost to time. Akar is different now."
+    "As we walk through the bar, I notice how many regulars have been lost to time. Akar is different now."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc6_bbpub_comment3)
     menu:
@@ -1209,7 +1211,7 @@ label vig3_sc6():
             $ pdEngagement += 1 #Logic: pickledDragons like this attitude
             $ kcEngagement -= 1 #Logic: kitcat and Coriolis view it as irresponsible
             $ csEngagement -= 1
-            "I don't care how long its been the Oakley is still legendary."
+            "I don't care how long its been, the Oakley is still legendary."
             "Maybe we should remind them who we are..."
             "We barrel through the crowd to find a table."
             mS "Make way for the Oakley everyone!"
@@ -1238,18 +1240,18 @@ label vig3_sc6():
     "Raucous laughter pours out of us, barely audible in this crowded bar."
     enS "Makers, that's dumb."
     macS "Now I found that funny but can someone clarify the part about the screw?"
-    if viewershipHigh == True:
-        $ AddChatter (vig3_sc6_bbpub_comment7)
     enS "Well you see \"screw-\""
     show jennica stream shock at stream_left
     "Jennica covers what she thinks are MAC's ears."
     pS "Too young, too impressionable."
-    $ AddChatter (vig3_sc6_bbpub_comment8)
+    if viewershipHigh == True:
+        $ AddChatter (vig3_sc6_bbpub_comment7)
     show teresa stream neutral at stream_right
     enS "He's a courier bot, it's fine."
     show jennica stream angry at stream_left
     macS "That's not where my ears are."
     pS "C'mon a bot? Get out!"
+    $ AddChatter (vig3_sc6_bbpub_comment8)
     macS "That is not an incorrect statement."
     show teresa stream upset at stream_right
     enS "Why must you be so emotional about everything?"
@@ -2255,7 +2257,7 @@ label vig3_sc7():
     show teresa stream neutral at stream_right with dissolve
     enS "All day searching, and nothing?"
     pS "Well there was that one guy."
-    mS "He tried to sell a walking stick he carved when we asked for a range extender."
+    enS "He tried to sell a walking stick he carved when we asked for a range extender."
     pS "I thought it was quite lovely."
     "MAC is silent."
     mS "Alright kid?"
@@ -2355,6 +2357,7 @@ label vig3_sc7():
     "All I can hear is Ama's voice in my head, \"You'll have the chance to prove it, just not right now.\"" ##Consider changing this line##
     $ AddChatter (vig3_sc7_akarplaza_comment13)
     hide screen streamerCommentary
+    hide cockpit_mess_stream
     jump vig3_sc8
 
 label vig3_sc8():
@@ -2768,8 +2771,6 @@ label vig3_sc9():
     "We talk for a lot longer than we should."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment40)
-        pause 0.5
-        $ AddChatter (vig3_sc9_inventorsfair_comment41)
     mS "So if someone would want to maybe go around and check out some of the off the floor pieces."
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected, turns out they've been keeping all the legit stuff on this side of the Vineyard."
@@ -2780,6 +2781,7 @@ label vig3_sc9():
     mS "A range extender..."
     showgirl "You're joking-"
     mS "Wish I was, but the fate of the galaxy depends on it!"
+    $ AddChatter (vig3_sc9_inventorsfair_comment41)
     showgirl "Sounds like a big extender."
     "I let out a heavy sigh. Letting the joke fly over my head."
     showgirl "Guests aren't able to explore off-floor pieces."
@@ -2958,7 +2960,7 @@ label vig3_sc9():
     hide jennica with dissolve
     hide teresa with dissolve
     hide rec with dissolve
-    "We go back to the floor. And I try to figure out how many enforcers there are?"
+    "We go back to the floor. And I try to figure out how many enforcers there are."
     "Are they all guests, maybe some waiting in the wings?"
     "Do they already have MAC and are just waiting for this presentation before heading off?"
     stop music fadeout 4.0
@@ -3734,6 +3736,7 @@ label vig3_sc12():
             "Ama's fist snaps closed accompanied by a dull crunching sound."
             $ AddChatter (vig3_sc12_nothing_comment5)
             "She lets go of her grip. The body falls to the ground, limp."
+            hide customs agent with dissolve
             $ AddChatter (vig3_sc12_nothing_comment6)
             "Ama's shoulders rise and fall as she takes deep breaths."
             "Then she turns her attention on me."
@@ -4859,7 +4862,7 @@ label vig3_epilogue():
     show mac stream neutral at stream_center_mac with dissolve
     $ AddChatter(vig3_epilogue_comment24)
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
-    dflycontact "I hear you are in possession of Dr. Vanas's work."
+    dflycontact "I hear you are in possession of Dr. Vanas' work."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment25)
     dflycontact "We are contacting you regarding the drop off point."
@@ -4918,7 +4921,9 @@ label vig3_epilogue():
             $ AddChatter(vig3_tired_comment3)
             "One final push." 
 
-    "I'm intercepted by Mac."
+    "The walk to my quarters is long."
+    "Then I'm intercepted."
+    "...by Mac."
     show mac stream neutral at stream_center_mac with dissolve
     $ AddChatter(vig3_epilogue_comment32)
     "We stare at each other in silence."
