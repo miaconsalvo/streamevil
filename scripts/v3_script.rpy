@@ -3366,6 +3366,7 @@ label vig3_sc12():
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
                 $ vig3_macShootAma = True
+                $ vig3_macAlign = "ViolentPessimism"
                 $ vig3_outlaw += 1
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
@@ -3402,7 +3403,8 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment12)
                 amaS "I-"
                 macS "We should leave, yes?"
-                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"#timestamp 7:21
                 show screen streamerCommentary
                 mS "You got it."
                 "Without losing my sights on her we head inside."
@@ -3411,6 +3413,7 @@ label vig3_sc12():
                 $ csEngagement -= 1
                 $ kcEngagement += 2
                 $ vig3_outlaw += 1
+                $ vig3_macAlign = "ViolentHope"
                 "He fires the blaster in between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
@@ -3449,7 +3452,8 @@ label vig3_sc12():
                 macS "My records show a long list of... accomplishments perpetrated by you."
                 amaS "And what about it?"
                 macS "I thought you'd be better than this."
-                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Ama is speechless"
                 "Without losing my sights on her we head inside."
@@ -3457,6 +3461,7 @@ label vig3_sc12():
                 $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
                 $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
                 $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
+                $ vig3_macAlign = "PeacePessimism"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
@@ -3471,7 +3476,11 @@ label vig3_sc12():
                 amaS "If you're gonna shoot, you better shoot straight."
                 $ AddChatter (vig3_sc12_macshoots_comment5)
                 macS "My programming... ensures perfect accuracy."
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment7)
                 bcrep "Programming..."
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 "Ama flashes him her famous condescending smile."
                 amaS "But did they program any nerve in you?"
                 "MAC is struggling to keep the blaster straight" 
@@ -3482,41 +3491,62 @@ label vig3_sc12():
                 amaS "Takes alot more than a good shot to be an outlaw." 
                 "I can feel Ama loosen her grip."
                 "This is my chance."
+                $ AddChatter (vig3_sc12_balcony_comment22)
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 mS "Enough nerve for ya?"
+                $ AddChatter (vig3_sc12_balcony_comment23)
                 "MAC quickly rolls to me."
-                mS "We're walking out of her."
-                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"
+                $ AddChatter (vig3_sc12_balcony_comment24)
+                mS "We're walking out of here."
+                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside."
             else:
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favorite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ vig3_macAlign = "PeaceHope"
                 $ vig3_macReadAma = True
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
+                $ AddChatter (vig3_sc12_macshoots_comment1)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment2)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment3)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment4)
                 amaS "You gonna do something with that baby blaster?"
+                $ AddChatter (vig3_sc12_macshoots_comment5)
                 amaS "If you're gonna shoot, you better shoot straight."
                 macS "My programming ensures perfect accuracy. But I won't need this."
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment7)
                 bcrep "Programming..."
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 amaS "Mighty confident are we? Gonna take me on with hands?"
                 macS "I will not do that."
                 macS "You're going to let us go."
+                $ AddChatter (vig3_sc12_macshoots_comment13)
                 amaS "Sorry but I'm not feeling very charitable at the moment."
                 "There's a moment as the two stare at each other."
                 macS "I know you still have love for Moze." 
                 amaS "..."
+                $ AddChatter (vig3_sc12_macshoots_comment14)
                 amaS "What did you say?"
                 "MAC also takes me aback but I regain composure first."
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 macS "Moze, don't hurt her."
                 macS "Let's just go."
+                $ AddChatter (vig3_sc12_macshoots_comment15)
                 "MAC slowly rolls towards me."
                 "As he passes Ama he looks at her and smiles."
+                $ AddChatter (vig3_sc12_macshoots_comment16)
                 macS "Take care Ama."
-                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside." 
             #elif macViolence < macPeace and macPessimism < macHope:
@@ -3655,19 +3685,37 @@ label vig3_sc12():
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
+                $ AddChatter (vig3_sc12_macshoots_comment1)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment2)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment3)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment4)
                 amaS "If you're gonna shoot, you better shoot straight."
+                $ AddChatter (vig3_sc12_macshoots_comment5)
                 macS "My programming ensures perfect accuracy. Shall I demonstrate?" 
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment7)
                 amaS "Well then, let's-"
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 "The blaster rings out and before I can react Ama is on the ground clutching her side."
                 amaS "Bastard!" 
                 macS "I have been provoked and damaged, I will defend myself."
+                $ AddChatter (vig3_sc12_macshoots_comment9)
                 macS "I will defend my Captain."
+                $ AddChatter (vig3_sc12_macshoots_comment10)
                 "MAC slowly rolls towards me passing Ama without even looking at her."
                 amaS "You won't get out here you know."
                 macS "Will you stop us. I can remove you if necessary."
+                $ AddChatter (vig3_sc12_macshoots_comment11)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment12)
                 amaS "I-"
                 macS "We should leave, yes?"
-                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_violencepessimism"#timestamp 7:21
                 show screen streamerCommentary
                 mS "You got it."
                 "Without losing my sights on her we head inside."
@@ -3680,24 +3728,41 @@ label vig3_sc12():
                 "He fires the blaster in between us, it hits the wall with a definitive smack." 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
                 amaS "You gonna do something with that baby blaster?"
+                $ AddChatter (vig3_sc12_macshoots_comment1)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment2)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment3)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment4)
                 amaS "If you're gonna shoot, you better shoot straight."
+                $ AddChatter (vig3_sc12_macshoots_comment5)
                 macS "My programming ensures perfect accuracy when required." 
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment7)
                 amaS "Well then, let's see it."
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 macS "I know you don't want BigCorp to succeed anymore than we do."
                 amaS "I don't know I'm being paid quite well."
                 "Another fire from the blaster, right in front of Ama's face."
                 macS "Then I'll shoot you if I must."
+                $ AddChatter (vig3_sc12_macshoots_comment9)
                 amaS "You little bastard."
+                $ AddChatter (vig3_sc12_macshoots_comment10)
                 "This is my chance."
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 mS "MAC let's go!" 
                 macS "Yes Captain!"
                 "MAC wheels towards me and stops at Ama."
+                $ AddChatter (vig3_sc12_macshoots_comment11)
                 macS "Captain says you're one of the best."
+                $ AddChatter (vig3_sc12_macshoots_comment12)
                 macS "My records show a long list of... accomplishments perpetrated by you."
                 amaS "And what about it?"
                 macS "I thought you'd be better than this."
-                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_violenceoptimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Ama is speechless"
                 "Without losing my sights on her we head inside."
@@ -3709,8 +3774,20 @@ label vig3_sc12():
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
+                $ AddChatter (vig3_sc12_macshoots_comment1)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment2)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment3)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment4)
                 amaS "If you're gonna shoot, you better shoot straight."
+                $ AddChatter (vig3_sc12_macshoots_comment5)
                 macS "My programming... ensures perfect accuracy."
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                $ AddChatter (vig3_sc12_macshoots_comment7)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 "Ama flashes him her famous condescending smile."
                 amaS "But did they program any nerve in you?"
                 "MAC is struggling to keep the blaster straight" 
@@ -3721,11 +3798,14 @@ label vig3_sc12():
                 amaS "Takes alot more than a good shot to be an outlaw." 
                 "I can feel Ama loosen her grip."
                 "This is my chance."
+                $ AddChatter (vig3_sc12_balcony_comment22)
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 mS "Enough nerve for ya?"
+                $ AddChatter (vig3_sc12_balcony_comment23)
                 "MAC quickly rolls to me."
+                $ AddChatter (vig3_sc12_balcony_comment24)
                 mS "We're walking out of her."
-                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"
+                $ reactTarget = "vig3_sc12_macalignment_peacepessimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside."
             else:
@@ -3736,9 +3816,22 @@ label vig3_sc12():
                 $ vig3_macReadAma = True
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
+                $ AddChatter (vig3_sc12_macshoots_comment1)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment2)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment3)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment4)
                 amaS "You gonna do something with that baby blaster?"
+                $ AddChatter (vig3_sc12_macshoots_comment5)
                 amaS "If you're gonna shoot, you better shoot straight."
                 macS "My programming ensures perfect accuracy. But I won't need this."
+                $ AddChatter (vig3_sc12_macshoots_comment6)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment7)
+                pause 0.5
+                $ AddChatter (vig3_sc12_macshoots_comment8)
                 amaS "Mighty confident are we? Gonna take me on with hands?"
                 macS "I will not do that."
                 macS "You're going to let us go."
@@ -3746,15 +3839,19 @@ label vig3_sc12():
                 "There's a moment as the two stare at each other."
                 macS "I know you still have love for Moze." 
                 amaS "..."
+                $ AddChatter (vig3_sc12_macshoots_comment14)
                 amaS "What did you say?"
                 "MAC also takes me aback but I regain composure first."
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 macS "Moze, don't hurt her."
                 macS "Let's just go."
+                $ AddChatter (vig3_sc12_macshoots_comment15)
                 "MAC slowly rolls towards me."
                 "As he passes Ama he looks at her and smiles."
+                $ AddChatter (vig3_sc12_macshoots_comment16)
                 macS "Take care Ama."
-                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"
+                $ AddChatter (vig3_sc12_balcony_comment22)
+                $ reactTarget = "vig3_sc12_macalignment_peaceoptimism"#timestamp 7:21
                 show screen streamerCommentary
                 "Without losing my sights on her we head inside." 
             #elif macViolence < macPeace and macPessimism < macHope:

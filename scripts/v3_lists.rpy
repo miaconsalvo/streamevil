@@ -783,11 +783,15 @@ default vig3_sc12_macshoots_comment9 = ChatEntry(False, "{b}turb0g00se - 7:20{/b
 default vig3_sc12_macshoots_comment10 = ChatEntry(False, "{b}R4dioRobbie - 7:20{/b}\nno, no we made a loyal member of the crew (maybe murder bot)", 3, "#ffffff")
 default vig3_sc12_macshoots_comment11 = ChatEntry(False, "{b}AFKAngel - 7:20{/b}\nbut we still love him", 3, "#ffffff")
 default vig3_sc12_macshoots_comment12 = ChatEntry(False, "{b}kitcat - 7:20{/b}\nOUR murder bot <3", 3, "#ffffff")
+default vig3_sc12_macshoots_comment13 = ChatEntry(False, "{b}Squeejieboy33 - 7:20{/b}\nWAT", 3, "#ffffff")
+default vig3_sc12_macshoots_comment14 = ChatEntry(False, "{b}Squeejieboy33 - 7:20{/b}\nOMG WHAT!?", 3, "#ffffff")
+default vig3_sc12_macshoots_comment15 = ChatEntry(False, "{b}Squeejieboy33 - 7:20{/b}\nDID MAC JUST DEFEAT AMA WITH THE POWER OF LOVE?!", 3, "#ffffff")
+default vig3_sc12_macshoots_comment16 = ChatEntry(False, "{b}kitcat - 7:20{/b}\nim speechless", 3, "#ffffff")
 
-default vig3_sc12_balcony_comment22 = ChatEntry(False, "{b}AFKAngel - 0:00{/b}\n...time for a daring escape?", 3, "#ffffff")
-#default vig3_sc12_balcony_comment23 = ChatEntry(False, "{b}llamabama22 - 0:00{/b}\noh yeah ", 3, "#ffffff")
-#default vig3_sc12_balcony_comment24 = ChatEntry(False, "{b}bacon8r_6 - 0:00{/b}\ntotally", 3, "#ffffff")
-default vig3_sc12_balcony_comment25 = ChatEntry(False, "{b}J4MIR0QU4I - 0:00{/b}\nyes absolutely lets GO", 3, "#ffffff")
+default vig3_sc12_balcony_comment22 = ChatEntry(False, "{b}AFKAngel - 7:20{/b}\n...time for a daring escape?", 3, "#ffffff")
+#default vig3_sc12_balcony_comment23 = ChatEntry(False, "{b}llamabama22 - 7:20{/b}\noh yeah ", 3, "#ffffff")
+#default vig3_sc12_balcony_comment24 = ChatEntry(False, "{b}bacon8r_6 - 7:20{/b}\ntotally", 3, "#ffffff")
+default vig3_sc12_balcony_comment25 = ChatEntry(False, "{b}J4MIR0QU4I - 7:20{/b}\nyes absolutely lets GO", 3, "#ffffff")
 
 
 ####Scene 13
