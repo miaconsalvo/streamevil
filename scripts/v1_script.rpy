@@ -139,12 +139,14 @@ label shipCall:
     macS "Captain? You appear distressed."
     play audio "callRing.wav" volume 1.5
     "Another ring from the communicator. It's Teresa; her voice is frantic and rushed."
+    show teresa phone neutral at stream_right with Dissolve(0.5)
     enS "Captain! We just identified several BC land cruisers heading toward Grand Junction."
     play backAudio "lazerFireCall.wav" volume 1.0 loop
     "The sound of blaster fire erupts through the coms."
     pS "Light speeders have already dropped a couple squads in the port. They're firing on the ship!"
     enS "We can hold them off for a bit, but you have to get back here before those cruisers or we're done for!"
     pS "Shit, Teresa, guard that ramp! I'll cover you with the turrets!"
+    hide teresa with Dissolve(0.5)
     stop backAudio
     play audio "cutCall.wav" volume 1.5
     "The line cuts."
