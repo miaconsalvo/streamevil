@@ -4033,32 +4033,55 @@ label vig3_sc14():
     hide rec with dissolve
     show exteriorvineyard_stream at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
+    $ AddChatter(vig3_sc14_escape_comment1)
     "Just beyond the entrance the shuttles are empty."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment2)
+        pause 0.5
+    $ AddChatter(vig3_sc14_escape_comment3)
     "Reynar hasn't toasted to the crowd and people wouldn't dare to leave before his address."
+    $ AddChatter(vig3_sc14_escape_comment4)
     "The hounds flank us as they escort us."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment5)
     show houndleader stream neutral at stream_center with dissolve
     houndleader "This one, it'll take you right to the plaza."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment6)
     "The hound leader inputs some commands into the button and the doors swing open."
     menu: 
         "Say something?"
         "That's it?":
             mS "So that's it? Just showing us the door?"
+            $ AddChatter(vig3_sc14_thatsit_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc14_thatsit_comment2)
             houndleader "I'm sorry did you want a red carpet?"
+            $ AddChatter(vig3_sc14_thatsit_comment3)
             mS "We can start with an explanation."
             houndleader "Just be happy you're getting an easy out."
             houndleader "Now get in sweetcheeks."
+            $ AddChatter(vig3_sc14_thatsit_comment4)
         "What's your angle?":
             mS "So what's the angle?"
+            $ AddChatter(vig3_sc14_angle_comment1)
             houndleader "Straight down right to Akar."
+            $ AddChatter(vig3_sc14_angle_comment2)
+            pause 0.5
+            $ AddChatter(vig3_sc14_angle_comment3)
             mS "Don't be so-"
             houndleader "Just be lucky we're under orders."
             houndleader "I'd suggest taking advantage of the easy out."
+            $ AddChatter(vig3_sc14_angle_comment4)
         "Say nothing.":
             "I look at the hounds surrounding us."
+            $ AddChatter(vig3_sc14_nothing_comment1)
             "I don't trust their lack of hostility."
+            $ AddChatter(vig3_sc14_nothing_comment2)
             "But I can't help but feel lucky about the easy out."
             houndleader "Don't stay too long in Akar."
             houndleader "We'll be looking."
+            $ AddChatter(vig3_sc14_nothing_comment3)
     "We all walk into the shuttle and take a seat."
     houndgoon "Captain we got another one!"
     houndleader "Put em in this one!"
@@ -4070,24 +4093,33 @@ label vig3_sc14():
     "The hounds leave just as quickly as they came."
     hide houndleader with dissolve
     "The shuttle doors close behind her."
+    $ AddChatter(vig3_sc14_escape_comment7)
     "We stay there in dangerous slience."
 
     hide mac with dissolve
     show ama stream neutral at stream_right5 with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment8)
     show teresa stream fight at stream_right
     show jennica stream fight at stream_left
     "Teresa and Jen are quick to act."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment9)
     enS "Let her go Ama!"
     "Teresa attempts to grab Ama who kicks her into Jenn with deadly ease."
+    $ AddChatter(vig3_sc14_escape_comment10)
     hide teresa with vpunch
     enS "Agh!"
     "From the ground Jenn pulls out her gun at Ama."
     pS "Don't make us send you back in a body bag."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment11)
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
     amaS "Now how about we all stay still and quiet and do as I-"
     "Her eyes meet Rec's"
+    $ AddChatter(vig3_sc14_escape_comment12)
     hide jennica with dissolve
     hide teresa with dissolve
     show ama stream neutral at stream_right with move
@@ -4095,17 +4127,32 @@ label vig3_sc14():
     play music "soundtrack/decisionTime.wav"
     recS "Deadeye..."
     amaS "Well well..."
+    $ AddChatter(vig3_sc14_escape_comment13)
     amaS "If it isn't Reccrin."
     amaS "Right where we left him."
+    $ AddChatter(vig3_sc14_escape_comment14)
     show rec stream angry
     "The shuttle hums as it takes off down to Akar."
     recS "Screw you..."
+    $ AddChatter(vig3_sc14_escape_comment15)
     amaS "Oh? They speak?"
+    $ AddChatter(vig3_sc14_escape_comment16)
+    pause 0.5
+    $ AddChatter(vig3_sc14_escape_comment17)
     recS "Screw you Ama! You took Allistar away to go galavanting in the Outposts."
+    $ AddChatter(vig3_sc14_escape_comment18)
     recS "I have nothing to say to you."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment19)
     amaS "Please I'm not the one who wanted to be selfish and keep him down."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment20)
     amaS "That kid had so much talent and potential and you just wanted him to ROT in a shop!"
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment21)
     recS "We had a good life!"
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment22)
     recS "And I stayed in Akar because I knew that's the only way I could see him."
     "Ama looks around expectantly."
     "A realization creeps on her face."
@@ -4114,26 +4161,53 @@ label vig3_sc14():
     amaS "Last I checked I left him with you."
     show rec stream surprised
     "Rec's eyes fix to me, finally catching me in my lie."
+    $ AddChatter(vig3_sc14_escape_comment23)
     recS "What?"
     amaS "Oh you didn't know?"
     "Guilt stains all of our faces."
+    $ AddChatter(vig3_sc14_escape_comment24)
     "The walls of the shuttle feel like they're choking the air out of me."
+    $ AddChatter(vig3_sc14_escape_comment25)
     recS "Is this true?"
     "I don't answer."
+    $ AddChatter(vig3_sc14_escape_comment26)
     recS "Moze..."
     "Mac catches my eyes from the back of the shuttle."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment27)
     recS "MOZE!"
     mS "It is..."
     show rec stream angry
     recS "Well!?"
     recS "Where is he!?"
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment28)
     "Blood starts to pool from the blade as I try to form the words."
     mS "He's dead Rec, I killed him."
+    $ AddChatter(vig3_sc14_escape_comment29)
+    pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment30)
+        $ AddChatter(vig3_sc14_escape_comment31)
     "Rec's eys widen, as they step back, horrified."
     recS "No."
     recS "That's not right."
     "They look around at all of us, Jenn and Teresa can't look them in the eyes."
+    $ AddChatter(vig3_sc14_escape_comment32)
+    pause 0.5
+    $ AddChatter(vig3_sc14_escape_comment33)
+    pause 0.5
+    $ AddChatter(vig3_sc14_escape_comment34)
+    pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment35)
+        $ AddChatter(vig3_sc14_escape_comment36)
+        pause 0.5
+        $ AddChatter(vig3_sc14_escape_comment37)
+    $ AddChatter(vig3_sc14_escape_comment38)
     recS "Why..."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_sc14_escape_comment39)
     menu: 
         "Explain to Rec why you shot Allistar?"
         "I didn't want to it just happened.":
@@ -4153,22 +4227,41 @@ label vig3_sc14():
             mS "He was trying to take MAC."
             mS "I was scared. Scared of this."
             mS "And I think he was too."
+            mS "I didn't want to."
+            $ AddChatter(vig3_sc14_justhappened_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc14_justhappened_comment2)
             "Tears are streaming down Rec's face." 
+            $ AddChatter(vig3_sc14_justhappened_comment3)
             recS "So why?"
             mS "I just happened. Before I realized what I've done he was on the ground."
+            $ AddChatter(vig3_sc14_justhappened_comment4)
             mS "I'm so sorry Rec."
+            $ AddChatter(vig3_sc14_justhappened_comment5)
             mS "I know it doesn't mean anything right now but I'm sorry."
             "There's a long moment where Rec just looks at us."
+            $ AddChatter(vig3_sc14_justhappened_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc14_justhappened_comment7)
             "But they say nothing."
+            $ AddChatter(vig3_sc14_justhappened_comment5)
             "We stand there in stasis as the shuttle reaches Akar."
             show screen streamerCommentary
+            $ AddChatter(vig3_sc14_justhappened_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc14_justhappened_comment9)
             "Teresa and Jennica don't turn to them, still fixed on Ama."
+            $ AddChatter(vig3_sc14_justhappened_comment10)
             "Her grip in unwavering."
+            $ AddChatter(vig3_sc14_justhappened_comment11)
+            pause 0.5
+            $ AddChatter(vig3_sc14_justhappened_comment12)
             "MAC clings to Teresa."
             "Then an announcement."
             "Final stop, Akar station."
             "The doors open and Reccrin walks out and out of sight."
             hide rec with Dissolve(2.0)
+            $ AddChatter(vig3_sc14_justhappened_comment13)
             amaS "How disappointing, he was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
@@ -4203,24 +4296,43 @@ label vig3_sc14():
             $ macViolence += 1
             $ macPessimism += 2
             $ reactTarget = "vig3_sc14_recfindsout_ihadto"
+            $ AddChatter(vig3_sc14_hadto_comment1)
             mS "After he fixed MAC, we brought him to the ship."
+            $ AddChatter(vig3_sc14_hadto_comment2)
             mS "He was trying to take MAC."
             mS "I found him trying to take an escape pod."
             mS "MAC is so important, too important."
+            $ AddChatter(vig3_sc14_hadto_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc14_hadto_comment4)
+            pause 0.5
+            $ AddChatter(vig3_sc14_hadto_comment5)
             mS "I couldn't let him leave, I did what-"
             recS "Bullshit!"
             "Tears are pouring from Rec's eyes."
             recS "Know who else is important? MY LITTLE BROTHER!"
+            $ AddChatter(vig3_sc14_hadto_comment6)
+            pause 0.5
+            $ AddChatter(vig3_sc14_hadto_comment7)
             "I see MAC clutch Jennica's leg"
             recS "You didn't have to do anything."
             recS "You screwed up and needed an easy way to be bailed out."
+            $ AddChatter(vig3_sc14_hadto_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc14_hadto_comment9)
             show rec stream angry at stream_left5 with move
             show teresa stream neutral at stream_center with vpunch
+            $ AddChatter(vig3_sc14_hadto_comment10)
             "Rec lunges for me and is caught by Teresa."
+            $ AddChatter(vig3_sc14_hadto_comment11)
             enS "Calm down!"
+            $ AddChatter(vig3_sc14_hadto_comment12)
+            pause 0.5
+            $ AddChatter(vig3_sc14_hadto_comment13)
             recS "I won't calm down! You killed him!"
             recS "You all killed him!"
-            "Rec attempts to fight their way to me but is thankfully subdued."
+            $ AddChatter(vig3_sc14_hadto_comment14)
+            "Rec attempts to fight their way to me but is subdued."
             "Then an announcement."
             "Final stop, Akar station."
             "When the doors open, Teresa pushes Rec out onto the platform."
@@ -4257,27 +4369,47 @@ label vig3_sc14():
             $ macViolence += 3
             $ macPessimism += 3
             $ reactTarget = "vig3_sc14_recfindsout_noremorse"
+            $ AddChatter(vig3_sc14_deservedit_comment1)
+            pause 0.5
+            $ AddChatter(vig3_sc14_deservedit_comment2)
             mS "After he fixed MAC, we brought him to the ship."
             mS "He was trying to take MAC."
             mS "We trusted him."
+            $ AddChatter(vig3_sc14_deservedit_comment3)
+            pause 0.5
+            $ AddChatter(vig3_sc14_deservedit_comment4)
             mS "I saw him with MAC at the escape pods and I realized what he was trying to do."
+            $ AddChatter(vig3_sc14_deservedit_comment5)
             "The blade cuts into my neck as I make sure to look Rec in the eyes."
+            $ AddChatter(vig3_sc14_deservedit_comment6)
             "I can hear Ama chuckle under her breath."
+            $ AddChatter(vig3_sc14_deservedit_comment7)
             mS "I killed Allistar, and that spineless traitor got exactly what he deserved!"
+            $ AddChatter(vig3_sc14_deservedit_comment8)
+            pause 0.5
+            $ AddChatter(vig3_sc14_deservedit_comment9)
+            $ AddChatter(vig3_sc14_deservedit_comment10)
             "Teresa and Jennica almost lose their sights on Ama."
+            $ AddChatter(vig3_sc14_deservedit_comment11)
             "MAC stays there motionless."
+            $ AddChatter(vig3_sc14_deservedit_comment12)
             "Behind him is Rec. Face like they took a bullet to the gut."
             recS "You..."
+            $ AddChatter(vig3_sc14_deservedit_comment13)
             "Tears pouring down his face."
             enS "Moze..."
             pS "You're not serious."
+            $ AddChatter(vig3_sc14_deservedit_comment14)
             mS "What? You think being in this position is easy?"
             mS "You think I like making the hard calls?"
             mS "Allistar knew the risk, and got what was coming."
+            $ AddChatter(vig3_sc14_deservedit_comment15)
             mS "I'd do it all again if I had to."
+            $ AddChatter(vig3_sc14_deservedit_comment16)
             "They look at me and Ama."
             recS "You two deserve each other."
-            "Grabs the blaster off of Teresa and fires a shot."
+            $ AddChatter(vig3_sc14_deservedit_comment17)
+            "Rec grabs the blaster off of Teresa and fires a shot."
             show jennica stream fight at stream_center with vpunch
             "With a quick move from Jennica the bullet hits the shuttle ceiling."
             "She tackles them to the ground."
@@ -4307,12 +4439,23 @@ label vig3_epilogue():
     $ viewCheck10 = viewCount
     stop music fadeout 4.0
     "The Vineyard is alight with fireworks in the distance."
+    $ AddChatter(vig3_epilogue_comment1)
     "The screens on the platform end their ads and a live feed begins."
+    $ AddChatter(vig3_epilogue_comment2)
     "Reynar is there, on his balcony addressing the crowd of patrons."
     show reynar stream neutral at stream_center with dissolve
+    $ AddChatter(vig3_epilogue_comment3)
     reynar "Good evening everyone!"
+    $ AddChatter(vig3_epilogue_comment4)
     reynar "Thank you once again for offering your time, your knowledge, and your passion to our Fair."
+    $ AddChatter(vig3_epilogue_comment5)
+    pause 0.5
+    $ AddChatter(vig3_epilogue_comment6)
     reynar "Your presence here is a testiment to our ongoing commitment to make the Outposts a better and brighter place."
+    $ AddChatter(vig3_epilogue_comment7)
+    $ AddChatter(vig3_epilogue_comment8)
+    pause 0.5
+    $ AddChatter(vig3_epilogue_comment9)
     reynar "I applaud each and every one of you."
     reynar "Your choices..."
     reynar "Shape our future."
@@ -4320,37 +4463,72 @@ label vig3_epilogue():
     reynar "So let's raise a glass in celebration."
     reynar "To the Outposts!"
     "Reynar looks dead at the camera, at us."
+    $ AddChatter(vig3_epilogue_comment10)
     "Cheering explodes in the background."
+    $ AddChatter(vig3_epilogue_comment11)
     "He raises his glass."
+    $ AddChatter(vig3_epilogue_comment12)
     show reynar stream gatsby at stream_center
     "The fireworks dance in the night sky."
+    $ AddChatter(vig3_epilogue_comment13)
     "And I remember what he left in my pocket."
     hide reynar with dissolve
     hide screen streamerCommentary
     show shiphub_stream at topleft onlayer background with dissolve
     hide exteriorvineyard_stream
+    $ AddChatter(vig3_epilogue_comment14)
     "Teresa outfits the Oakley best she can."
     "And with Reynar's gift we get access to fly the Oakley out through restricted sky."
+    $ AddChatter(vig3_epilogue_comment15)
     "Which gives us time."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment16)
     "At least..."
     "But the Oakley is silent."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment17)
     play music "soundtrack/theme.wav" fadein 1.0
     "For days it's buisness as usual, no one knowing how to talk about the dark cloud over us."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment18)
     "Rec refuses to answer Jenn or Teresa's transmissions."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment19)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment20)
     "MAC has been silent, spending most of his time alone."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment21)
     "Then the Dragonfly transmission comes through."
+    $ AddChatter(vig3_epilogue_comment22)
+    pause 0.5
+    $ AddChatter(vig3_epilogue_comment23)
     "The line is filled with static that distorts the voice, but we're able to make out the information." #Setting up that Coil's voice is distorted so they wouldn't recognize him immediately
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_center_mac with dissolve
+    $ AddChatter(vig3_epilogue_comment24)
     dflycontact "Captain Moze of the Oakley this is Dr. Coil of the Dragonflies."
     dflycontact "I hear you are in possession of Dr. Vanas's work."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment25)
     dflycontact "We are contacting you regarding the drop off point."
+    $ AddChatter(vig3_epilogue_comment26)
     #dflycontact "We are stationed at a planet known as Polaris." #They don't know about Polaris when they first show up to it in Vignette 4. But they have the coordinates, so I just commented this out.
     dflycontact "Brevifolia sector coordinates 11 03 7"
     dflycontact "This is the last attempt, should this message be lost, then so is our hope."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment27)
     "The transmission ends."
+    if viewershipHigh == True:    
+        $ AddChatter(vig3_epilogue_comment28)
     mS "Jenn?"
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment29)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment30)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment31)
     pS "On it Cap."
     mS "Thank you, I'll be in my quarters."
     hide jennica with dissolve
@@ -4363,30 +4541,85 @@ label vig3_epilogue():
     menu:
         "How do you feel?"
         "Happy to have survived.":
+            $ AddChatter(vig3_happy_comment1)
+            pause 0.5
+            $ AddChatter(vig3_happy_comment2)
             "This was supposed to be a simple pick up."
+            $ AddChatter(vig3_happy_comment3)
             "Maybe even a break."
+            $ AddChatter(vig3_happy_comment4)
             "Now I'm just happy to have made it in one piece."
         "Guilty.":
+            $ AddChatter(vig3_guilty_comment1)
             "I can't imagine what Rec is feeling."
+            if viewershipHigh == True:
+                $ AddChatter(vig3_guilty_comment2)
             "I meant what I said."
+            if viewershipHigh == True:
+                $ AddChatter(vig3_guilty_comment3)
             "I just feel like we could've done more for them."
+            if viewershipHigh == True:
+                $ AddChatter(vig3_guilty_comment4)
         "Tired.":
+            $ AddChatter(vig3_tired_comment1)
             "Everyday has been such a weight."
+            $ AddChatter(vig3_tired_comment2)
             "It's almost over."
+            $ AddChatter(vig3_tired_comment3)
             "One final push." 
 
     "I'm intercepted by Mac."
     show mac stream neutral at stream_center_mac with dissolve
+    $ AddChatter(vig3_epilogue_comment32)
     "We stare at each other in silence."
     "I don't know what to say."
     "We just look at each other."
     "So I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
+    $ AddChatter(vig3_epilogue_comment33)
     "And we stay there for sometime."
-    "The ship hums as it picks up speed."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment34)
+    pause 0.5
+    $ AddChatter(vig3_epilogue_comment35)
+    if viewershipHigh == True:
+        "The ship hums as it picks up speed."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment36)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment37)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment38)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment39)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment40)
     "And the Oakley presses forward, as it always does."
     stop music fadeout 4.0
+    $ AddChatter(vig3_epilogue_comment41)
+    pause 0.5
+    $ narrator = reg_narrator
+    player "Alright, everyone, looks like that's the end of the episode."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment42)
+    player "Next week we've got the fourth and FINAL episode of {i}Oakley 2{/i}."
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment43)
+    player "So be sure to swing by and join us for a big finale!"
+    $ AddChatter(vig3_epilogue_comment44)
+    pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment45)
+        pause 0.5
+    $ AddChatter(vig3_epilogue_comment46)
+    pause 0.5
+    if viewershipHigh == True:
+        $ AddChatter(vig3_epilogue_comment47)
+        pause 0.5
+        $ AddChatter(vig3_epilogue_comment48)
+        pause 0.5
+    "The chat slowly dies down as you close the stream."
     hide mac stream neutral with dissolve
     hide screen streamChat
     hide screen streamDetails

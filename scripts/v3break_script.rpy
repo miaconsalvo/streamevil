@@ -61,7 +61,7 @@ label vig3_break():
             player "Hopefully it'll be all fixed by then."
             $ AddChatter (vig3break_brb_comment7)
             $ AddChatter (vig3break_brb_comment8)
-
+    #show bg black with dissolve
     "Leaving the stream for a bit can always feel really nice."
     "The hallway is much cooler than your room, which has undoubtly been storing your body heat."
     "The roomate is gone for the night, so at least you know you aren't disturbing them."
@@ -88,6 +88,7 @@ label vig3_break():
     "The chat is waiting."
     "You should probably go back."
     "You sit back in your chair, set your water bottle off the the side."
+    #hide bg black with dissolve
     player "Alright, I'm back." 
     "It doesn't look like a lot of progress has gone by."
     player "How're we doin everyone?"
