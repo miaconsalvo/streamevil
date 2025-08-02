@@ -295,4 +295,9 @@ label vig3_break():
     $ vig3break_rec_reunion_comment9.click = False
     $ vig3break_end_comment5.click = False
     hide screen streamerCommentary
+    $ macroChoice = False
+    if macroChoice == False:
+        $ narrator = alt_narrator
+    else:
+        $ narrator = reg_narrator
     jump vig3_sc10           

@@ -3031,8 +3031,8 @@ label vig3_sc9():
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment76) 
     "The Vineyard falling away around me."
-    amaS "Hello Mozely."
     hide screen streamerCommentary
+    amaS "Hello Mozely."
     hide ama with dissolve
     $ viewCheck7 = viewCount
     jump vig3_break 
