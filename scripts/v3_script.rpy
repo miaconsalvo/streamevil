@@ -3040,6 +3040,7 @@ label vig3_sc9():
 
 label vig3_sc10():
     $ narrator = alt_narrator
+    $ macroChoice = False
     show bg black at topleft onlayer background with dissolve
     hide inventorsfairgallery_stream
     "I flinch as a shot rings outs, echoing in my ears."
