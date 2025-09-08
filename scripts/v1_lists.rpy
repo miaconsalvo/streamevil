@@ -14,7 +14,7 @@ default vig1_sc1_comment8 = ChatEntry( False, "{b}_swayy0scar - 6:30{/b}\nBribin
 default vig1_sc1_comment9 = ChatEntry( False, "{b}Coriolis - 6:31{/b}\n[streamer] tends to go Marshal for moral alignment", 1, "#ffffffff")
 
 #Chats that appear in the workshop scene
-default vig1_sc2_comment1 = ChatEntry( False, "{b}_lostinmetr0 - 6:35{/b}:\nClearly a man of class", 1, "#ffffffff")
+default vig1_sc2_comment1 = ChatEntry( False, "{b}_lostinmetr0 - 6:35{/b}\nClearly a man of class", 1, "#ffffffff")
 default vig1_sc2_comment2 = ChatEntry( True, "{b}_swayy0scar - 6:37{/b}\nWait, who's Deadeye and what's a snakehawk?", 1, "#ffffffff", "vig1_sc2_whoQuestion")
 default vig1_sc2_comment2_csAma = ChatEntry( True, "{b}Coriolis - 6:37{/b}\nDeadeye was also Moze's mentor until a heist against BigCorp went wrong. Most of 'em died in the aftermath.", 1, "#ffffffff", "vig1_sc2_thankCS")
 default vig1_sc2_comment2_csSH = ChatEntry( True, "{b}Coriolis - 6:37:{/b}\nSnakehawks were the gang Allistar, Moze, and Jennica were part of before they became mercenaries. It's why Allistar has the same tattoo as Moze", 1, "#ffffffff", "vig1_sc2_thankCS")

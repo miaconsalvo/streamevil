@@ -6162,7 +6162,7 @@ label vig4_macro_viewerChat_1(): #it would be cool for all three viewers to say 
                 "Their comments speak for themselves."
     elif topfan == "kitcat":
         "It's from kitcat."
-        kc_nvl "Hey [username], don't have much to say here, just wanted to say thanks again for all the streams!."
+        kc_nvl "Hey [username], don't have much to say here, just wanted to say thanks again for all the streams!"
         kc_nvl "Can't believe I had never been to one of your streams before the first one for Oakley 2, and I'm so glad I stumbled into it."
         kc_nvl "It's been a really fun ride!"
         kc_nvl "Hope to see you around!"

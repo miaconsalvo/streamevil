@@ -1295,7 +1295,7 @@ label vig3_sc6():
     pS "\"But that's what makes us special!\" I'm tearing up thinking 'bout it."
     mS "Okay, okay, that's enough."
     "Jennica raises her glass."
-    pS "We got your back Moze."
+    pS "We got your back, Moze."
     "Teresa raises her glass."
     enS "Always."    
     $ AddChatter (vig3_sc6_bbpub_comment13)
