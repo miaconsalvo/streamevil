@@ -11,9 +11,9 @@ label vig1_sc1_startStream():
     player "Alright, gang, sorry for the extended break! Roommate needed help moving some furniture."
     player "Let's catch up to speed."
     player "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities and we are {i}not{/i} giving him back."
-    player "But he's been having some wiring issues that we gotta fix before we get to dropping him off with the humanitarian organization."
+    player "But he's been having some wiring issues that we gotta fix before we drop him off with the humanitarian organization."
     player "So we hit up our old pal Allistar the mechanic to fix up MAC, and had to grab some thermal paste from the local shop." 
-    player "And I'ma be honest, that shopkeep was quite rude."
+    player "And I'll be honest, that shopkeep was quite rude."
     player "But we did a bit of bribing, got the paste, and now we're meeting back up with the boys."
     player "Let's go!"
     $ macroChoice = False
@@ -168,11 +168,11 @@ label vig1_sc2_houseExplosion():
     $ commentVariable = True
     menu:
         "Coriolis thought I was going to destroy the house."
-        "I did consider it":
+        "I did consider it.":
             $ reactImage = "stream ui/reactconfident.png"
             player "I thought about it for a second."
-            player "But I think it was a bit extreme."
-        "No way":
+            player "But ultimately felt a bit too extreme."
+        "No way.":
             $ reactImage = "stream ui/reactconversational.png"
             player "Just took a second to read the choices."
             player "No way I was going that violent."
@@ -241,11 +241,11 @@ label vig1_sc3_banditConvo():
             pause 1.0
             $ reactImage = "stream ui/reactneutral.png"
     menu:
-        "I should ask how Bandit plays."
-        "Ask Bandit's favorite Oakley character.":
+        "I wonder who Bandit's favourite character is."
+        "Ask Bandit's favourite Oakley character.":
             $ reactImage = "stream ui/reactconfident.png"
             player "So, Bandit, time to ask the tough question."
-            player "Who's your favorite Oakley character?"
+            player "Who's your favourite Oakley character?"
             $ AddChatter(vig1_sc3_comment3_bandit5)
             pause 2.0
             $ AddChatter(vig1_sc3_comment3_bandit6)
@@ -307,8 +307,8 @@ label vig1_analytics_topfan():
     $ topfanCheck = True
     hide screen viewershipButton
     "Coriolis has been around since your second year of streaming."
-    "You haven't even talked to them outside of the stream, but they always seem to be so happy to be in the chat."
-    "It's almost like they're a second mod."
+    "You haven't even talked to them outside of the stream, but they're always so happy to be in the chat."
+    "It's almost like they're a second mod in addition to Jessie."
     ###The clause below this will check to see if we should consider the scene as finished
     if flinchCheck >= 3:
         $ screenComplete = True
@@ -342,10 +342,11 @@ label vig1_analytics_viewcount():
     "Wow, look at that spike at the end."
     "It makes the viewership numbers at the start of the stream look so small."
     menu:
+        "It makes the viewership numbers at the start of the stream look so small."
         "It was fun!":
             $ energy += 1
-            "Having so many people in chat at once was awesome."
-            "Kind of felt like we were all playing together."
+            "Having so many people in chat was awesome!"
+            "Kind of felt like everyone was playing together."
             "Past streams felt like that occasionally."
             "But this was a different scale."
         "Did I earn this?":
@@ -371,6 +372,7 @@ label vig1_analytics_audience():
     "You'll still have to get several more followers and keep an average viewership of ten per stream to get Affiliate."
     "Not everyone from the raid will stick around next time though."
     menu:
+        "Not everyone from the raid will stick around next time though."
         "Think about your last attempt.":
             "Last time you tried this you missed by just one viewer."
             "It was brutal."

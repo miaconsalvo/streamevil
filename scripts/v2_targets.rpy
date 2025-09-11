@@ -6,7 +6,7 @@ label vig2_sc1_testquestion():
     $ narrator = reg_narrator
     $ commentVariable = True
     menu:
-        "Coriolis remembered I had a test today, that's so sweet!"
+        "Coriolis remembered I had a test today."
         "It went well!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
@@ -19,6 +19,8 @@ label vig2_sc1_testquestion():
             player "It kicked my butt. Honestly I'm just hoping I pass."
             $ AddChatter(vig2_sc1_coriolis_comment2)
             pause 0.5
+        "Say nothing.":
+            pass
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -103,6 +105,7 @@ label vig2_sc2_out_romance():
     $ narrator = reg_narrator
     $ commentVariable = True
     menu:
+        "Which character am I thinking of romancing?"
         "I'm thinking Jennica.":
             $ reactImage = "stream ui/reactconfident.png"
             $ csEngagement += 1
@@ -123,7 +126,7 @@ label vig2_sc2_out_romance():
             pause 0.5
             $ AddChatter(vig2_sc2_romance_engineer1)
             pause 1.0
-        "Ama all day, for sure.":
+        "Ama all day.":
             $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 2
             $ csEngagement += 1

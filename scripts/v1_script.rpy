@@ -20,7 +20,7 @@ label returnToWorkshop():
     show screen chatTutorial2
     $ reactTarget = "vig1_sc1_startStream"
     call screen streamFreeze
-    play music "soundtrack/theme.wav" volume 1.0 loop fadein 1.0
+    play music "soundtrack/theme.wav" volume 0.8 loop fadein 2.0
     "Thermal paste in hand I return to Allistar's workshop."
     show vig1_allistar_workshop at topleft onlayer background with dissolve
     hide vig1_town_stream
@@ -36,7 +36,7 @@ label returnToWorkshop():
     pause 0.5
     aS "\"Father\"?"
     macS "Yes, Dr. Vanas. He built and educated me. Before he died that is."
-    aS "Vanas. Why do I know that name?"
+    aS "Vanas...Why do I know that name?"
     mS "He was BigCorp's head of research and development. Was working on a top secret project before he ran off with company secrets."
     aS "What project?"
     "Allistar looks up to me, then back to MAC."
@@ -58,13 +58,13 @@ label returnToWorkshop():
             mS "It's simple: Ama took care of us and we took care of each other. We were all we had. A family."
             aS "And now that family's completely disintegrated."
         "We were just a bunch of people getting by.":
-            $ macHope -= 1
-            mS "We were always just a bunch of people who needed somewhere to go. And Ama was a good leader, paid well."
-            aS "Surprising to hear from you considering how close you were with Deadeye. And that Jennica's stuck around with you."
-    aS "I've been thinking a lot about our legacy ever since Deadeye's heist on BigCorp went wrong."
-    aS "The Snakehawks are all dead, except a few of us, and now the great Ama \"Deadeye\" Reyes is a lapdog for BigCorp."
+            $ macPessimism += 1
+            mS "We were just a bunch of people who needed somewhere to go. And Ama was a good leader, paid well."
+            aS "That's surprising, considering how close you were with Deadeye. And that Jennica's stuck around with you."
+    aS "I've been thinking a lot about the crew ever since our heist on BigCorp went wrong."
+    aS "The Snakehawks are all dead, except a few of us, and now the great Ama \"Deadeye\" Reyes does BigCorp's dirty work."
     aS "BC's grip on their planets has tightened, and a lot of people blame us. When they think of \"Snakehawks\" they just think of pain."
-    aS "They {i}hate{/i} us here."
+    aS "They hate us here."
     show screen chatTutorial
     $ AddChatter(vig1_sc2_comment2)
     pause 0.5
@@ -123,7 +123,7 @@ label shipCall:
     pause 0.5
     amaS "So direct, Mozely. I always liked that about you." 
     amaS "Your penchant for sloppy scores, however, has gotten tiresome."
-    amaS "BigCorp authorities have identified your vessel docked in the spaceport of Grand Junction on Cromuu."
+    amaS "BigCorp authorities have identified your vessel docked in the spaceport on Cromuu."
     amaS "Several squads have been dispatched to apprehend you and your crew." 
     mS "Why are you telling me this?"
     amaS "BC hired me to hunt you down and return that little droid you've stolen."
@@ -139,7 +139,7 @@ label shipCall:
     macS "Captain? You appear distressed."
     play audio "callRing.wav" volume 1.5
     "Another ring from the communicator. It's Teresa; her voice is frantic and rushed."
-    show teresa phone neutral at stream_right with Dissolve(0.5)
+    show teresa phone neutral at stream_left_mac with Dissolve(0.5)
     enS "Captain! We just identified several BC land cruisers heading toward Grand Junction."
     play backAudio "lazerFireCall.wav" volume 1.0 loop
     "The sound of blaster fire erupts through the coms."
@@ -160,7 +160,7 @@ label shipCall:
             $ macPessimism += 1
             mS "I did what I had to do."
             mS "BigCorp {i}cannot{/i} get hold of MAC."
-            mS "They didn't leave me with a choice."
+            mS "I didn't have a choice."
         "Saved the galaxy.":
             $ macHope += 1 
             mS "I saved the galaxy."
@@ -180,10 +180,10 @@ label shipCall:
         "The bad people are here.":
             mS "The bad people who want to take you away are here."
             mS "But Allistar and I are not going to let that happen."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
+            mS "We're going to run back to the ship. Just stay close to me and, if I tell you to run, don't stop until you get to the ship."
         "Everything's going to be okay.":
             mS "We've run into a bit of trouble, but it's okay, Allistar and I can handle it."
-            mS "We're going to run back to the ship. Just stay close to me and if I tell you to run, don't stop until you get to the ship."
+            mS "We're going to run back to the ship. Just stay close to me and, if I tell you to run, don't stop until you get to the ship."
     play audio "macAffirmative.wav" volume 1.5
     "MAC hums back an affirmative beep."
     aS "You ready?"
@@ -213,12 +213,12 @@ label streetShootout:
     play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 1.5
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
     hide vig1_allistar_workshop
-    "Allistar, MAC, and I rush into the deserted main street of Grand Junction."
-    "My feet pound against the hardpacked ground. The spaceport is dead ahead of us."
+    "Allistar, MAC, and I rush into the town's deserted main street."
+    "The spaceport is dead ahead of us."
     show bc_enforcer at stream_center with dissolve
     "And so are BigCorp goons, six enforcers wearing telltale blue and grey uniforms."
     play backAudio "lazerFire.wav" volume 1.5 loop
-    "We shoot on instinct, blaster bolts streaking across the desert sand."
+    "We shoot on instinct, blaster bolts streaking back and forth."
     "I dive into cover around the side of a building as they return fire."
     $ AddChatter(vig1_sc2_comment7)
     pause 0.5
@@ -245,9 +245,9 @@ label streetShootout:
         "Not helping!":
             #$ macHonesty -= 1
             mS "Not helping, MAC!"
-            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             $ AddChatter(vig1_sc2_comment8_kc)
             pause 0.5
+            "A bolt collides in the dirt.  I fire a shot back and hit an enforcer right between the eyes, knocking them to the ground."
             mS "Can you locate those other enforcers?"
     macS "Right."
     mS "Thank you."
@@ -347,10 +347,11 @@ label streetShootout:
         "Fire at ground enforcer (protect yourself).":
             $ macPessimism += 1
             "I pop back around the corner to fire at the enforcer on the ground."
-            "They take cover in response and we trade shots back and forth, until they make the mistake of holding their shoulder out in the open."
+            "They take cover in response and we trade shots, until they make the mistake of leaving their shoulder out in the open."
             "I hit it with a direct shot, taking them out of the battle."
             "As they slump to the ground, the enforcers on the building bear down on us."
             mS "MAC, run!"
+            #play audio "macSpin.wav" volume 0.8
             hide mac with Dissolve(0.3)
             "I dive behind cover next to Allistar, hoping to draw their fire."
             "It works and a rain of blaster fire falls upon me and Allistar as MAC rolls toward the spaceport."
@@ -391,7 +392,7 @@ label streetShootout:
     $ AddChatter(vig1_sc2_comment14)
     pause 0.5
     "I glance back down and see a tank of fuel next to the building."
-    "A blaster bolt could send the whole place to Hell."
+    "A blaster bolt could blow up the whole building, including the sniper."
     "Then I see through the window, a couple cowering in the corner."
     "I process the information in less than a second, then react."
     jump saveMAC
@@ -414,7 +415,7 @@ label saveMAC():
             show mac stream shock
             macS "Captain!?"
             play audio "lazer.wav" volume 2.0
-            "The sound of another shot fired and a body hitting the ground from a great height."
+            "The sound of another shot fired and a body hitting the ground from a tall height."
             show mac stream neutral
             show allistar stream neutral at stream_right with dissolve
             $ AddChatter(vig1_sc2_comment15)
@@ -441,7 +442,7 @@ label saveMAC():
                     play audio "macPing.wav" volume 1.0
             "Allistar helps me to my feet."
             aS "Can you run?"
-            mS "I'm going to have to."
+            mS "I have to."
             stop music fadeout 4.0
             hide mac with dissolve
             hide allistar with dissolve
@@ -495,7 +496,7 @@ label spacePortEscape():
     stop backAudio fadeout 4.0
     "And then the attack stops. The turbulence on the ship dissipates. We're floating in space."
     "Jennica breathes a sigh of relief and punches something in on a keypad."
-    "With a flick of a switch, the Oakley lurches forward into hyperspace. Away from Cromuu and Grand Junction."
+    "With a flick of a switch, the Oakley lurches forward into hyperspace."
     hide jennica with dissolve
     hide mac with dissolve
     hide allistar with dissolve
@@ -519,7 +520,7 @@ label councilDebrief():
     "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives or percentage calculations."
     "...no MAC."
     mS "Does anyone know where MAC is?"
-    play backAudio "shipAlarm.wav" volume 1.0
+    play backAudio "shipAlarm.wav" volume 0.8
     shipcom "Attention crew, escape pod procedure activated."
     $ viewCount += 1
     $ AddChatter(vig1_sc3_raid_comment1)
@@ -553,7 +554,7 @@ label councilDebrief():
     $ narrator = reg_narrator
     $ renpy.sound.play("audio/ReceiveText.ogg")
     pause 0.5
-    "A private notification on Loop'd from my mod, Jessie."
+    "A private notification on Loop'd from my mod, Jessie?"
     #insert discord sound effect
     call screen discordNotification
     $ viewCount += 8
@@ -586,7 +587,9 @@ label councilDebrief():
             player "Hi everyone, welcome to chat!"
             player "I'm pumped to have y'all!"
     player "For all the new folks, I'm [streamer]."
+    "I should describe my stream."
     menu:
+        "I should describe my stream."
         "My stream is story-focused.":
             $ reactImage = "stream ui/reactconversational.png"
             $ story = True
@@ -652,7 +655,7 @@ label escapePodConfrontation:
     aS "I'm getting {i}out{/i} of this crazy life, Moze."
     $ AddChatter(vig1_sc3_comment8)
     aS "You saw what happened just now!"
-    aS "Ama said BC was going to hold me as an accomplice. What do you think that means they're going to do to Grand Junction?"
+    aS "Ama said BC was going to hold me as an accomplice. What do you think that means they're going to do to Cromuu?"
     aS "That's beside the ruin we left of the spaceport. Or the people who got hurt in the crossfire."
     if allistarSuspicious == True:
         $ AddChatter(vig1_sc3_suspicion_callback)
@@ -668,7 +671,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment12)
     aS "You just go anywhere you want, do anything you want, and try to justify it by saying, \"I didn't have a choice.\""
     $ AddChatter(vig1_sc3_comment13)
-    aS "Wake up and start taking responsibility for the consequences of your actions."
+    aS "Wake up and start taking responsibility for your decisions."
     mS "I've heard enough."
     $ AddChatter(vig1_sc3_comment14)
     pause 1.0
@@ -933,7 +936,7 @@ label modConvo_Day1_Bandit():
             mod_nvl "I mean...maybe a little XD"
             mod_nvl "But it was like the endearing kind of awkward!"
             streamer_nvl "Lmao thanks"
-            mod_nvl "Gotchu b"
+            mod_nvl "Gotchu"
         "•That was so cool!":
             $ energy += 1
             streamer_nvl "That was so cool!"
@@ -946,7 +949,7 @@ label modConvo_Day1_Bandit():
             mod_nvl "I mean...maybe a little XD"
             mod_nvl "But it was like the endearing kind of awkward!"
             streamer_nvl "Lmao thanks"
-            mod_nvl "Gotchu b"
+            mod_nvl "Gotchu"
     mod_nvl "But omg, that moment when you killed Allistar"
     if misclick == True:
         mod_nvl "Even though you didn't mean to do it, it reallly got the chat going"
@@ -971,7 +974,7 @@ label modConvo_Day1_Bandit():
                 mod_nvl "Then I looked back and just {i}death{/i} lol"
                 mod_nvl "Chat seemed to love it tho"
     mod_nvl "I guess 8bitBANDIT went the Marshal route there"
-    mod_nvl "There's a blueit thread and apparently like 95\% of people stunned Allistar"
+    mod_nvl "There's a blueit thread saying that like 95\% of people stunned Allistar"
     menu:
         "•That makes sense.":
             streamer_nvl "Makes a lot of sense"
@@ -989,7 +992,7 @@ label modConvo_Day1_Bandit():
     mod_nvl "10"
     mod_nvl "I remember cause you wound up at 9 last time and {i}just{/i} missed it"
     streamer_nvl "Right"
-    streamer_nvl "So, what do you think about this"
+    streamer_nvl "So, what do you think about this:"
     menu:
         "•What if I play Outlaw?":
             streamer_nvl "What if I play Outlaw?"
@@ -997,7 +1000,7 @@ label modConvo_Day1_Bandit():
     streamer_nvl "Like, people seemed really surprised by it"
     streamer_nvl "And you said almost everyone took the Marshal route this episode"
     #streamer_nvl "So almost everyone else is going to see the story where Allistar's alive and not the one where he's dead"
-    streamer_nvl "Maybe I can fill that niche"
+    streamer_nvl "Maybe I can fill that niche in the market"
     mod_nvl "Hmmm it's not outrageous"
     mod_nvl "Could be a good way to generate some buzz for Affiliate"
     mod_nvl "And I know you said this kinda felt like your last push for it"
@@ -1061,6 +1064,7 @@ label webPage_vig1():
     $ screenComplete = True
     "Jessie's right, checking out the forums on Blueit would be a good call."
     "You can also check on the analytics from Flinch for the past stream."
+    show screen webNavTutorial
     call screen webNavigation_vig1
 
 
@@ -1108,7 +1112,7 @@ label blueitVignette1():
     $ blueitPages.append(vig1_bThread2)
     $ blueitPages.append(vig1_bThread3)
     $ blueitPages.append(vig1_bThread4)
-    "I should check out what people are saying about the Allistar choice and maybe see what else has the community's attention."
+    "I should check out what people are saying about the Allistar choice and maybe check on some other threads."
     jump blueitVignette1_2
 
 label blueitVignette1_2():
@@ -1162,7 +1166,7 @@ label vig1_brother_1():
             player_nvl "That was a long pause to type two words"
             bro_nvl "Yeah, everything's ok"
         "•What's up?":
-            player_nvl "You can tell me anything El. What's up?"
+            player_nvl "You can tell me anything, El. What's up?"
     bro_nvl "I'm just kinda embarrased"
     player_nvl "Of what?"
     bro_nvl "Well, I sort of have this crush"
@@ -1220,12 +1224,12 @@ label vig1_brother_1():
     $ playerNVLNarration = "Elliot describes how he and Cedric walked home from school today and chatted the whole way."
     show screen NVLnarration with dissolve
     pause
-    $ playerNVLNarration = "Elliot's nervous that he ended the conversation abruptly when they passed his home."
+    $ playerNVLNarration = "Elliot's nervous that he ended the conversation abruptly when they passed home."
     pause
     $ playerNVLNarration = "He's really into this guy. More than you've heard him be before."
     pause
     hide screen NVLnarration with dissolve
-    player_nvl "It's not that big a deal, El."
+    player_nvl "It's not that big a deal, El"
     player_nvl "Next time you see Cedric, just strike up a conversation"
     player_nvl "Ask him about what he likes and be yourself"
     player_nvl "Then he'll see you for the kind, warm, smart, and talented person you are"
@@ -1291,7 +1295,7 @@ label vig1_brother_2():
 
     "You say goodnight to Elliot then brush your teeth and get in bed."
     "After watching a couple more episodes of Iron Goddess on your phone, you start scrolling through social media."
-    "A couple posts are advertising the hot new game \"Oakley 2: Settle the Score.\""
+    "A couple posts are advertising the new game {i}Oakley 2: Settle the Score{/i}."
     "You turn off the phone and close your eyes, ready to fall asleep."
     "Just as your eyes start to get heavy, a memory comes to you, almost like a dream."
     "It's three years ago, you're still living back home, and you and Elliot are sitting in front of a TV."

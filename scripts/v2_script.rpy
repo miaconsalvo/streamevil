@@ -38,7 +38,7 @@ label vignette2Start():
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
-    "It's been one week since you last streamed Oakley 2."
+    "It's been one week since you last streamed {i}Oakley 2{/i}."
     "Episode 2 just dropped so it's time to get back into it."
     scene streamview with dissolve
     show screen streamDetails
@@ -60,7 +60,7 @@ label vig2Start():
     #$ chatter_list.append(vig2_sc1_comment1) - Old way of writing the addition of stream comments (IGNORE)
     $ viewCount += 3
     play audio "shipAlarmShort.wav"
-    "The \"Approaching Planet\" notification alarm jolts me out of bed."
+    "The \"Approaching Planet\" alarm jolts me out of bed."
     hide screen streamerCommentary
     $ AddChatter(vig2_sc1_comment1)
     pause 1.0
@@ -153,7 +153,7 @@ label Vig2BridgeScene():
     $ viewCount += 1
     "The visualization zooms in on the capital of Gibian V, Montserrat."
     "A map of the city appears on the computer, along with images of the spaceport, customs depot, and Matticus's compound."
-    enS "One benefit of Gibian V being such a middle-of-nowhere planet is that finding Matticus will be the easy part."
+    enS "One benefit of Gibian V being such a middle-of-nowhere planet is that finding Matticus will be easy."
     enS "He's became the magistrate and BigCorp security rep for this sector, has been for several years."
     pS "Never really been one for subtle life."
     "The visualization zooms in on images of Matticus's compound."
@@ -161,7 +161,7 @@ label Vig2BridgeScene():
     enS "Case in point."
     pS "Charming."
     macS "Who is this \"Skeeve?\""
-    enS "Savlian Matticus. He was in our old crew, quite proficient in tampering with databases and security protocols."
+    enS "Savlian Matticus. Formerly of the Snakehawks and quite proficient in tampering with databases and security protocols."
     pS "He certainly landed on his feet since we disbanded. I'd thought he'd break a knee on the way down."
     enS "Remarkably successful for a magistrate of a tiny frontier planet."
     macS "He is abusing his authority and stealing from people?"
@@ -201,12 +201,12 @@ label Vig2BridgeScene():
     enS "Precisely."
     pS "All the same, we needa take him along."
     show mac stream neutral at stream_center_mac
-    pS "Can't risk them finding him here in a surprise scan of the ship while we're gone."
+    pS "Can't risk 'em finding him here in a surprise scan of the ship while we're gone."
     $ AddChatter(vig2_sc1_comment14)
-    mS "That'll have to be good enough. Are we all good with this plan?"
+    mS "That'll have to be good enough. Are we all good to go?"
     "Teresa nods. Jennica looks vexed, but eventually nods as well." 
     mS "Let's get moving."
-    pS "Aye Aye."
+    pS "Aye aye."
     "Jennica begins the ship's descent to the spaceport."
     #Now that we've defined the streamview as the background, we have to manually hide characters before we transition between labels
     #If we don't want them to immediately be on screen in the next scene.
@@ -216,14 +216,14 @@ label Vig2BridgeScene():
     hide mac with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
+    hide shiphub_stream with dissolve
 
     jump GibianVCustomsDepot
 
 ###SCENE 2###
 label GibianVCustomsDepot(): 
-    show vig2_depot_stream at topleft onlayer background with dissolve
-    hide shiphub_stream
-    play music "soundtrack/gibianV.wav" volume 1.0 loop fadein 2.0
+    show vig2_depot_stream at topleft onlayer background with Dissolve(2.0)
+    play music "soundtrack/gibianV.wav" volume 0.8 loop fadein 2.0
     play backAudio "bgcrowd.wav" volume 0.4 loop fadein 0.5
     "The tiny barebones customs depot seems like it's on the verge of bursting."
     "There are barely a dozen agents staffing the whole building."
@@ -253,12 +253,12 @@ label GibianVCustomsDepot():
     mS "I knew this was too easy. What is it?"
     $ reactTarget = "vig2_sc2_firstproblem"
     show screen streamerCommentary
-    "Teresa gestures towards a customs official, scanning cargo crates."
+    "Teresa gestures toward a customs official, scanning cargo crates."
     enS "That's a BigCorp scanner. I imagine it'll be able to detect their stolen property."
     show jennica stream crossed
     pS "So APB's do make it out here..."
     show teresa stream neutral
-    enS "Something to say Brown?"
+    enS "Something to say, Brown?"
     mS "We don't have the time!"
     show jennica stream neutral
     mS "We need a plan to get through without them finding MAC."
@@ -270,8 +270,8 @@ label GibianVCustomsDepot():
     $ AddChatter(vig2_sc2_comment3)
     show jennica stream shock at stream_left
     pS "One of {i}your{/i} diversions? Here?"
-    "Jennica appears irritated by this idea."
-    pS "With all these people? It's gonna cause a panic, hell probably a stampede!"
+    #"Jennica appears irritated by this idea." - Cut this, unnecessary
+    pS "With all these people? It's gonna cause a panic!"
     $ AddChatter(vig2_sc2_comment4)
     enS "Care to enlighten us with a better plan?"
     show jennica stream neutral at stream_left
@@ -285,12 +285,12 @@ label GibianVCustomsDepot():
     enS "An employee-of-the-month type will report us to BigCorp in a heartbeat!"
     $ AddChatter(vig2_sc2_comment7)
     pS "As opposed to causing a stampede?"
-    pS "Whole bunch of injured innocent bystanders aint't exactly the most... clandestine."
+    pS "Whole bunch of injured innocent bystanders aint't exactly clandestine."
     "The crew looks to me."
     enS "It's your call captain. What say you?"
     "Jennica has a point. There's a ton of innocent people here, it's very likely someone will get hurt if we cause a panic."
-    "Teresa's point is just as valid, if one of these officials reports us to BigCorp then we might be looking at the inside of the jail cell quick."
-    "MAC has gone quiet, but I can feel him toss delicately around in the crate."
+    "Teresa's point is just as valid, if one of these officials reports us to BigCorp then we might be looking at the inside of a jail cell quick."
+    "MAC is quiet, but I can feel him toss delicately around in the crate."
     $ viewCheck3 += viewCount
     menu: #decision2
         "Should Teresa prepare a distraction or will you look for an official to bribe?"
@@ -491,7 +491,7 @@ label GibianVCustomsOutlaw():
     show jennica stream neutral at stream_left
     "Teresa rolls her eyes at me."
     show teresa stream neutral at stream_right
-    enS "I kid of course. Anyhow..."
+    enS "I kid, of course. Anyhow..."
     "Teresa begins surveying the depot."
     $ AddChatter(vig2_sc2_out_comment3)
     enS "Right. So, Jennica will slip this device into the customs declaration box."
@@ -514,12 +514,12 @@ label GibianVCustomsOutlaw():
     mS "Just keep it under control."
     show teresa stream happy at stream_right
     "Teresa smirks slyly."
-    enS "Of course Captain, I always do."
+    enS "Of course, Captain, I always do."
     "Teresa pulls several parts from her bag and begins plugging them into her device."
     $ vig2_sc2_out_comment5.click = False
     show teresa stream neutral at stream_right
     #$ AddChatter(vig2_sc2_out_comment6)
-    enS "Now, just a liiiiiittle tweak to the capacitors, and that should do the trick!"
+    enS "Now, just a liiiiittle tweak to the capacitors, and that should do the trick!"
     enS "There!"
     $ AddChatter(vig2_sc2_out_comment7)
     show jennica stream shock
@@ -608,7 +608,7 @@ label matticusDoor():
     mattdoorbell "Sure. And my wife loves me more than anything."
     mS "What?"
     mattdoorbell "Oh sorry, I thought we were practicing how to believe our own delusions."
-    mattdoorbell "The boss doesn't see \"friends.\" He doesn't have em."
+    mattdoorbell "The boss doesn't see \"friends.\" He doesn't have 'em."
     $ AddChatter(vig2_sc3_comment4)
     mS "Real old. Before his coronation."
     mattdoorbell "Snakehawks?"

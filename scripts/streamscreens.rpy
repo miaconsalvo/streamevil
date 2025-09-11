@@ -96,7 +96,7 @@ screen streamDetails():
         xsize 1920
         ysize 1080
         text "[streamer]" align (.07, 0.89) color "#d418acff"
-        text "Viewers [viewCount]" align (0.94, 0.05) color "#ffffffff"
+        text "Viewers: [viewCount]" align (0.94, 0.05) color "#ffffffff"
         imagebutton:
             action Call("TurnSound", from_current = True)
             background Image(pingImage)
@@ -144,7 +144,7 @@ screen chatTutorial2():
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            align (1.35, 1.0)
+            align (1.35, 1.0)  
 
 screen discordNotification():
     frame:
@@ -257,11 +257,29 @@ screen selectProfilePic():
     #    ysize 100
     #    align (0.8, 0.5)
 
+screen webNavTutorial():
+    frame:
+        ypos 100
+        xpos 530 
+        #xpos 530
+        #ypos 653
+        xsize 1000
+        ysize 230
+        right_margin 200
+        background Image("images/stream ui/tutorialUI.png")
+        text "Now that you're done streaming, you can open different tabs on your computer to get updates on your progress and the {i}Oakley 2{/i} community. Click on the highlighted tabs to explore!"
+        textbutton "Close Tutorial":
+            action Hide("webNavTutorial")
+            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#ffffffd5" 
+            text_selected_color "#ffffffff"
+            align (1.35, 1.0)  
+
 ###These screens set up the "Gates" for players to navigate the post-stream session based on their desires.
 screen webNavigation_vig1():
     if flinchView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("FlinchAnalytics_vig1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -270,7 +288,7 @@ screen webNavigation_vig1():
 
     if blueitView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("blueitVignette1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -279,7 +297,7 @@ screen webNavigation_vig1():
 
     if flinchView == True and blueitView == True and screenComplete == True:
         textbutton "Close Computer":
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("vig1_brother_1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("vig1_brother_1")]
             background Solid("#a03f2eff")
             text_color "#ffffffff"
             text_hover_color "#ffffffce" 
