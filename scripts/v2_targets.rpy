@@ -6,7 +6,7 @@ label vig2_sc1_testquestion():
     $ narrator = reg_narrator
     $ commentVariable = True
     menu:
-        "Coriolis remembered I had a test today, that's so sweet!"
+        "Coriolis remembered I had a test today."
         "It went well!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
@@ -19,6 +19,8 @@ label vig2_sc1_testquestion():
             player "It kicked my butt. Honestly I'm just hoping I pass."
             $ AddChatter(vig2_sc1_coriolis_comment2)
             pause 0.5
+        "Say nothing.":
+            pass
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -103,6 +105,7 @@ label vig2_sc2_out_romance():
     $ narrator = reg_narrator
     $ commentVariable = True
     menu:
+        "Which character am I thinking of romancing?"
         "I'm thinking Jennica.":
             $ reactImage = "stream ui/reactconfident.png"
             $ csEngagement += 1
@@ -123,7 +126,7 @@ label vig2_sc2_out_romance():
             pause 0.5
             $ AddChatter(vig2_sc2_romance_engineer1)
             pause 1.0
-        "Ama all day, for sure.":
+        "Ama all day.":
             $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 2
             $ csEngagement += 1
@@ -200,7 +203,7 @@ label vig2_sc7_toofar():
     $ commentVariable = True
     menu:
         "Is this too far?"
-        "Let's roll with it.":
+        "Let's roll with it!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ enthusiasm += 1
             $ pdEngagement += 1
@@ -246,7 +249,7 @@ label vig2_sc7_rips():
             $ pdEngagement += 1
             $ kcEngagement += 1
             $ encourageRIPS = True
-            "RIP Otacon guy"
+            "RIP Otacon guy!"
             pause 1.0
             $ AddChatter(vig2_epilogue_out_rips1)
             pause 0.5
@@ -284,12 +287,12 @@ label vig2_epilogue_outlaw():
         "It was exciting!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ enthusiasm += 1
-            player "Nope! But definitely fun haha"
+            player "Nope! But definitely fun hahaha"
         "It was exhausing!":
             $ reactImage = "stream ui/reactthumbsdown.png"
             #Just because one choice affects a variable doesn't mean its opposite has to do something
             #We can have a "neutral" choice
-            player "I feel like just ran an emotional marathon haha"
+            player "I feel like just ran an emotional marathon hahaha"
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator
@@ -615,7 +618,7 @@ label vig2_sc4_meetingmatticus():
             player "Ooooo cool character redesign!"
             $ AddChatter(vig2_sc4_reactcomment3)
             pause 0.5
-        "Oh boy here comes chaos!":
+        "Oh boy, here comes chaos!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "This is gonna be so bad, I'm so excited."
             $ AddChatter(vig2_sc4_reactcomment4)
@@ -795,7 +798,7 @@ label vig2_sc7_bigreveal():
         "Respond to Reginald."
         "True.":
             $ reactImage = "stream ui/reactthinking.png"
-            player "I mean he's not wrong..."
+            player "I mean, he's not wrong..."
             $ AddChatter(vig2_sc7_reactcomment1)
             pause 0.5
             $ AddChatter(vig2_sc7_reactcomment2)
@@ -1191,15 +1194,15 @@ label vig2_analytics_viewcount2():
             $ flinchViewershipShnzi = True
             jump vig2_analytics_viewcount2
         "The assault on the base was crazy!" if gunsBlazing == True and flinchViewershipAssault == False:
-            "The action scene at the datacenter was nuts."
+            "The action scene at the datacentre was nuts."
             "So many people commenting it was hard to pay attention to the game."
             menu:
                 "So many people commenting it was hard to pay attention to the game."
-                "It was easier than the raid":
+                "It was easier than the raid.":
                     "It was a lot less intense than the raid though."
                     "You think you're getting better at managing the chat."
                     "It feels good!"
-                "I'm still getting used to it":
+                "I'm still getting used to it.":
                     "You're not used to hearing so many people's opinions about the game."
                     "Sometimes it's tough to figure out what you think about it."
                     "You think it'll get easier though."
@@ -1273,7 +1276,7 @@ label vig2_analytics_audience():
         "Average viewership is harder to crack.":
             $ energy += 1
             "Getting the follower number is good, but the average viewership is what held you back last time."
-            "Can't take your eyes of the prize."
+            "Can't take your eyes off the prize."
             "Still gotta stick to the schedule and go with what's working."
         "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3
             "It's weird, now that you have more viewers in chat consistently, getting Affiliate suddenly feels less important."

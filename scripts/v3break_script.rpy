@@ -4,7 +4,7 @@ label vig3_break():
     hide inventorsfairgallery_stream
     "What was that?"
     "What just happened?"
-    player "Did the game just...crash?"
+    player "Did the game just... crash?"
     $ AddChatter (vig3break_crash_comment1)
     pause 0.5
     $ AddChatter (vig3break_crash_comment2)
@@ -29,7 +29,7 @@ label vig3_break():
     menu:
         "Let's call a short break for now."
         "Make a joke.":
-            player "Well everyone I guess that's our game!"
+            player "Well, everyone, I guess that's our game!"
             player "Who cares if it's just the most insane cliffhanger."
             player "Been a great run!"
             $ AddChatter (vig3break_brb_comment1)
@@ -43,11 +43,11 @@ label vig3_break():
             player "See ya in a bit!"
             $ AddChatter (vig3break_brb_comment8)
         "Be all professional-like.":
-            player "I'm sorry guys it looks like it'll take some time to fix."
-            player "Especially sorry that it happened after such a wild cliffhanger."
+            player "I'm sorry guys, it looks like it'll take some time to fix."
+            player "Especially sorry that it happened to be such a wild cliffhanger."
             $ AddChatter (vig3break_brb_comment5)
             player "So let's get some water, stretch our legs."
-            player "and then we can chat while we wait!"
+            player "And then we can chat while we wait!"
             $ AddChatter (vig3break_brb_comment5add)
             player "Be right back!"
             $ AddChatter (vig3break_brb_comment8)
@@ -72,7 +72,7 @@ label vig3_break():
         "Tiring.":
             $ energy -= 1
             "Even if it's only for a few hours, streaming can really take a toll."
-            "It's hard to be so *on* all the time."
+            "It's hard to be so {i}on{/i} all the time."
             "The chat's energy can help a bit."
             "But still."
         "Exciting.":
@@ -82,18 +82,18 @@ label vig3_break():
             "That energy exchange keeps things fresh for sure."
         "Surprising.":
             "How did you get here?"
-            "Feels like yesterday no one was watching and know you can feel a community building."
+            "Feels like yesterday no one was watching, and now you can feel a community building."
             "It's surprising."
             "But extremely rewarding."
     "You take a moment"
-    "Breathe"
+    "Breathe."
     "The chat is waiting."
     "You should probably go back."
-    "You sit back in your chair, set your water bottle off the the side."
+    "You sit back in your chair, and set your water bottle off the the side."
     #hide bg black with dissolve
     player "Alright, I'm back." 
     "It doesn't look like a lot of progress has gone by."
-    player "How're we doin everyone?"
+    player "How're we doin, everyone?"
     $ AddChatter (vig3break_brb_comment9)
     pause 0.5
     $ AddChatter (vig3break_brb_comment10)
@@ -107,7 +107,7 @@ label vig3_break():
     player "But can we talk about Ama for a second!"
 
     menu: 
-        "Let's talk about Ama"
+        "Let's talk about Ama."
         "Y'all I think we can take her.":
             $ AddChatter (vig3break_ama_take_comment1)
             pause 0.5
@@ -122,7 +122,7 @@ label vig3_break():
             $ AddChatter (vig3break_ama_take_comment6)
             pause 1
             $ AddChatter (vig3break_ama_take_comment7)
-            player "Hmmm"
+            player "Hmmm..."
             player "Who knows how much we can do, truly."
             player "Reynar has the whole Vineyard locked down tight."
             $ AddChatter (vig3break_ama_take_comment8)
@@ -134,13 +134,14 @@ label vig3_break():
             $ AddChatter (vig3break_ama_take_comment11)
             pause 0.5
             $ AddChatter (vig3break_ama_take_comment12)
-            pause 0.5
-            $ AddChatter (vig3break_ama_take_comment13)
-            "The world is feeling so much bigger!"
-            "With a bigger cast."
-            "Speaking of the cast..."
+            if customsStampede == True:
+                pause 0.5
+                $ AddChatter (vig3break_ama_take_comment13)
+            player "The world is feeling so much bigger!"
+            player "With a bigger cast."
+            player "Speaking of the cast..."
 
-        "She is just *chef's kiss*":
+        "She is just *chef's kiss*.":
             $ AddChatter (vig3break_ama_kiss_comment1)
             pause 0.5
             $ AddChatter (vig3break_ama_kiss_comment2)
@@ -203,7 +204,7 @@ label vig3_break():
     player "There's definitely a lot to unpack."
 
     menu: 
-        "How does meeting Rec feel without Allistar"
+        "How does meeting Rec feel without Allistar."
         "Not having Allistar adds some good tension.":
             player "I really like how tense the story is."
             $ AddChatter (vig3break_rec_tense_comment1)
@@ -219,7 +220,7 @@ label vig3_break():
             $ AddChatter (vig3break_rec_tense_comment6)
             pause 0.5         
             $ AddChatter (vig3break_rec_tense_comment7)
-            player "Hey we did what we had to right?"
+            player "Hey, we did what we had to right?"
             player "It's a hard choice but I think the game is interesting this way."
             $ AddChatter (vig3break_rec_tense_comment8)
             pause 0.5 
@@ -233,7 +234,7 @@ label vig3_break():
             pause 0.5 
             $ AddChatter (vig3break_rec_tense_comment13)
             player "We'll let it play out."
-            player "I'm sure there's plenty more surprises waiting for us."
+            player "I'm sure there are plenty more surprises waiting for us."
         "I wish I could've seen their reunion.":
             player "I wish I saw that reunion."
             $ AddChatter (vig3break_rec_reunion_comment1)

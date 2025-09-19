@@ -96,7 +96,7 @@ screen streamDetails():
         xsize 1920
         ysize 1080
         text "[streamer]" align (.07, 0.89) color "#d418acff"
-        text "Viewers [viewCount]" align (0.94, 0.05) color "#ffffffff"
+        text "Viewers: [viewCount]" align (0.94, 0.05) color "#ffffffff"
         imagebutton:
             action Call("TurnSound", from_current = True)
             background Image(pingImage)
@@ -108,6 +108,35 @@ screen streamDetails():
         image "[profilePic]" align (1, 0.91) size (100, 100) #displays a profile pic for the streamer
         image "[reactImage]" align (-0.02, 0.105) size (263.1, 131.7)
         #image ["stream ui/reactalert.png"] align (0.13, 0.125) size (40, 40)
+
+        #DEBUG MODE
+        textbutton "Debug Mode: [debugText]": 
+            align(0.05, 1.0)
+            action Call("turnDebug", from_current = True)
+            text_color "#11a7d4"
+            text_hover_color "#11a6d4d8"
+        if debugMode == True:
+            text "Marshal: [marshal]" align(0.25, 0.85) size 30 color"#d31c1c"
+            text "Outlaw: [outlaw]" align(0.25, 0.90) size 30 color"#17c9e0"
+            text "Coriolis: [csEngagement]" align(0.35, 0.85) size 30 color"#ee24ee"
+            text "KitCat: [kcEngagement]" align(0.35, 0.9) size 30 color"#11fdaf"
+            text "pickledDragons: [pdEngagement]" align(0.35, 0.95) size 30 color"#ebe717"
+            text "MAC Peace: [macPeace]" align(0.53, 0.85) size 30 color"#ffffff"
+            text "MAC Violence: [macViolence]" align(0.53, 0.89) size 30 color"#ffffff"
+            text "MAC Hope: [macHope]" align(0.53, 0.93) size 30 color"#ffffff"
+            text "MAC Pessimism: [macPessimism]" align(0.53, 0.97) size 30 color"#ffffff"
+            text "Jennica: [pilotApproval]" align(0.66, 0.85) size 30 color"#eea112"
+            text "Teresa: [engineerApproval]" align(0.66, 0.9) size 30 color"#e41a1a"
+            text "Ama: [deadeyeApproval]" align(0.66, 0.95) size 30 color"#14eb75"
+            if viewershipHigh == True:
+                text "Viewership: High" xpos 1550 ypos 0 size 30 color"#ffe926"
+            elif viewershipMed == True:
+                text "Viewership: Med" xpos 1550 ypos 0 size 30 color"#ffe926"
+            else:
+                text "Viewership: Low" xpos 1350 ypos 50 size 30 color"#ffe926"
+            text "Reluctance: [reluctance]" xpos 1000 ypos 5 size 30 color"#00ff0d"
+            text "Enthusiasm: [enthusiasm]" xpos 1250 ypos 5 size 30 color"#00ff0d"
+            text "Energy: [energy]" xpos 1500 ypos 5 size 30 color"#00ff0d"
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():
@@ -144,7 +173,7 @@ screen chatTutorial2():
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            align (1.35, 1.0)
+            align (1.35, 1.0)  
 
 screen discordNotification():
     frame:
@@ -257,11 +286,29 @@ screen selectProfilePic():
     #    ysize 100
     #    align (0.8, 0.5)
 
+screen webNavTutorial():
+    frame:
+        ypos 100
+        xpos 530 
+        #xpos 530
+        #ypos 653
+        xsize 1000
+        ysize 230
+        right_margin 200
+        background Image("images/stream ui/tutorialUI.png")
+        text "Now that you're done streaming, you can open different tabs on your computer to get updates on your progress and the {i}Oakley 2{/i} community. Click on the highlighted tabs to explore!"
+        textbutton "Close Tutorial":
+            action Hide("webNavTutorial")
+            text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            text_hover_color "#ffffffd5" 
+            text_selected_color "#ffffffff"
+            align (1.35, 1.0)  
+
 ###These screens set up the "Gates" for players to navigate the post-stream session based on their desires.
 screen webNavigation_vig1():
     if flinchView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("FlinchAnalytics_vig1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -270,7 +317,7 @@ screen webNavigation_vig1():
 
     if blueitView == False and screenComplete == True:
         imagebutton:
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("blueitVignette1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("blueitVignette1")]
             idle Solid("#eff3176b")
             hover Solid("#eff317b9")
             xsize 128
@@ -279,7 +326,7 @@ screen webNavigation_vig1():
 
     if flinchView == True and blueitView == True and screenComplete == True:
         textbutton "Close Computer":
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Jump("vig1_brother_1")]
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("vig1_brother_1")]
             background Solid("#a03f2eff")
             text_color "#ffffffff"
             text_hover_color "#ffffffce" 

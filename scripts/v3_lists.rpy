@@ -330,10 +330,10 @@ default vig3_sc6_macquestion_comment1 = ChatEntry(False, "{b}kitcat - 6:34{/b}\n
 default vig3_sc6_bbpub_comment48 = ChatEntry(False, "{b}J4MIR0QU4I - 6:34{/b}\nbro the ama war flash backs are starting to get to me", 3, "#ffffff")
 default vig3_sc6_bbpub_comment49 = ChatEntry(False, "{b}R4dioRobbie - 6:34{/b}\nyeah she be haunting this narrative", 3, "#ffffff")
 default vig3_sc6_bbpub_comment50 = ChatEntry(False, "{b}bacon8r_6 - 6:35{/b}\nlowkey we are turning into ama", 3, "#ffffff")
-default vig3_sc6_bbpub_comment51 = ChatEntry(False, "{b}marxky8 - 6:35{/b}\nnah ama is hunting her old crew we don't do that", 3, "#ffffff")
+default vig3_sc6_bbpub_comment51 = ChatEntry(False, "{b}_lostinmetr0 - 6:35{/b}\nnah ama is hunting her old crew we don't do that", 3, "#ffffff")
 default vig3_sc6_bbpub_comment52 = ChatEntry(False, "{b}turb0g00se - 6:35{/b}\njust blow up aid ships, no biggie", 3, "#ffffff")
 default vig3_sc6_bbpub_comment53 = ChatEntry(False, "{b}llamabama22 - 6:35{/b}\njust bullying a little robot like she did to us, no biggie", 3, "#ffffff")
-default vig3_sc6_bbpub_comment54 = ChatEntry(False, "{b}_lostinmetr0 - 6:35{/b}\nwe killed allistar???", 3, "#ffffff")
+default vig3_sc6_bbpub_comment54 = ChatEntry(False, "{b}marxky8 - 6:35{/b}\nwe killed allistar???", 3, "#ffffff")
 default vig3_sc6_bbpub_comment55 = ChatEntry(False, "{b}pickledDragons - 6:35{/b}\nama's disloyal bro, we are just evil", 3, "#ffffff")
 default vig3_sc6_bbpub_comment56 = ChatEntry(False, "{b}bacon8r_6 - 6:35{/b}\nHAHA", 3, "#ffffff")
 default vig3_sc6_bbpub_comment57 = ChatEntry(False, "{b}turb0g00se - 6:35{/b}\nyeah see everyone knows except jenn we're g2g we got this", 3, "#ffffff")
@@ -1272,7 +1272,7 @@ default vig3_sc7_react_comment2 = ChatEntry(False, "{b}kitcat - 6:41{/b}\nI'm li
 default vig3_sc7_react_comment3 = ChatEntry(False, "{b}llamabama22 - 6:41{/b}\nFetch quest part 2", 3, "#ffffff")
 
 ##Sc8 - teresa bluff
-default vig3_sc8_react_comment1 = ChatEntry(False, "{b}marxky8 - 6:43{/b}\nVery dangerous, an outlaw who can play the 1\%", 3, "#ffffff")
+default vig3_sc8_react_comment1 = ChatEntry(False, "{b}marxky8 - 6:43{/b}\nVery dangerous, an outlaw who can play the 1%", 3, "#ffffff")
 default vig3_sc8_react_comment2 = ChatEntry(False, "{b}Coriolis - 6:43{/b}\nI love her", 3, "#ffffff")
 default vig3_sc8_react_comment3 = ChatEntry(False, "{b}J4MIR0QU4I - 6:43{/b}\nThat's not luck, that's called building a good crew", 3, "#ffffff")
 default vig3_sc8_react_comment4 = ChatEntry(False, "{b}R4dioRobbie - 6:43{/b}\nAt least it's stealth with a fancy sheen??", 3, "#ffffff")
@@ -1283,7 +1283,7 @@ default vig3_sc9_react_comment1 = ChatEntry(False, "{b}Coriolis - 6:46{/b}\nOh f
 default vig3_sc9_react_comment2 = ChatEntry(False, "{b}J4MIR0QU4I - 6:46{/b}\nfr let's just hangout with her", 3, "#ffffff")
 default vig3_sc9_react_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 6:46{/b}\nWatch that paranoia", 3, "#ffffff")
 default vig3_sc9_react_comment4 = ChatEntry(False, "{b}AFKAngel - 6:46{/b}\nfr don't end up like Moze", 3, "#ffffff")
-default vig3_sc9_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:46{/b}\nidk, it's a {i}little{/i} sus", 3, "#ffffff")
+default vig3_sc9_react_comment5 = ChatEntry(False, "{b}pickledDragons - 6:46{/b}\nidk, it's a little sus", 3, "#ffffff")
 default vig3_sc9_react_comment6 = ChatEntry(False, "{b}AFKAngel - 6:46{/b}\nSTAN. HER.", 3, "#ffffff")
 default vig3_sc9_react_comment7 = ChatEntry(False, "{b}R4dioRobbie - 6:46{/b}\nAnd brave to try her luck with Moze again after what happened last time haha", 3, "#ffffff")
 
