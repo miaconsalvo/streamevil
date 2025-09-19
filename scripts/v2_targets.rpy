@@ -1277,9 +1277,9 @@ label vig2_analytics_audience():
             "Still gotta stick to the schedule and go with what's working."
         "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3
             "It's weird, now that you have more viewers in chat consistently, getting Affiliate suddenly feels less important."
-            "Is it cliche to say that maybe the people you've met have been the real prize?"
+            "Is it cliché to say that maybe the people you've met have been the real prize?"
             "Probably."
-            "But does that make them less valuable?"
+            "But does that make it less true?"
     if flinchCheck >= 3:
         $ screenComplete = True
     else:
