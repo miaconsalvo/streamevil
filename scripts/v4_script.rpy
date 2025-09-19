@@ -137,7 +137,7 @@ label vig4_sc1_1():
             macS "Teresa is improving my functionality."
             mS "Functionality?"
             $ AddChatter(vig4_sc1_comment9)
-            enS "After our theatrics at the inventor's fair, MAC wanted to get some upgrades."
+            enS "After our theatrics at the Inventor's Fair, MAC wanted to get some upgrades."
             mS "Like?"
             macS "It's a surprise."
             mS "A surprise?"
@@ -220,7 +220,7 @@ label vig4_sc1_2():
             pS "Felt like I caught her with her pants down haha."
             $ AddChatter(vig4_sc1_2_comment4)
             mS "You two back to normal then?"
-            pS "Don't reckon I can recall what \"normal\" is after we've been through."
+            pS "Don't reckon I can recall what \"normal\" is after all we've been through."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc1_2_comment5)
             pS "But we're good."
@@ -234,7 +234,7 @@ label vig4_sc1_2():
     menu:
         "A giant orb of swirling red and orange hangs in front of us."
         "A gas giant?":
-            mS "It's a gas giant. That can't be right."
+            mS "It's a gas giant? That can't be right."
         "The Dragonflies can't be human.":
             $ AddChatter(vig4_sc1_2_comment6)
             mS "Apparently the Dragonflies can breathe corrosive air?"
@@ -261,7 +261,7 @@ label vig4_sc1_2():
     ##Could cut from here to "I'll run a scan for BigCorp signatures" - have Jennica say "maybe" - saves 20 lines
     enS "Maybe. That artificial atmosphere is intriguing though."
     menu:
-        enS "Maybe. But that artificial atmosphere is intriguing."
+        enS "Maybe. That artificial atmosphere is intriguing though."
         "What's so odd about that?":
             mS "What's so odd about an artificial atmosphere?"
             pS "I've been on rocks with 'em before. Tough to breathe at first, but ya adjust."

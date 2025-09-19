@@ -291,7 +291,7 @@ label vig3_sc5_amahallu():
         "Spooky!":
             $ reactImage = "stream ui/reactcelebrate.png"
             player "Damn, it's hard to know if we're actually being tailed!"
-            player "Chat I'm spooked!"
+            player "Chat, I'm spooked!"
             if viewershipHigh == True:
                 $ AddChatter(vig3_sc5_react_comment4)
                 pause 0.5
@@ -561,17 +561,17 @@ label vig3_sc6_shootingzan():
     $ reactVariable = True
     menu:
         "You chose to cheat by shooting Zan in the leg."
-        "Blast em!":
+        "Blast 'em!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Get blasted Zan!"
+            player "Get blasted, Zan!"
             $ AddChatter(vig3_sc6_react_comment31)
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment32)
             pause 0.5
         "Wow crazy!":
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "Woah that was awesome!"
+            player "Woah, that was awesome!"
             player "Crazy!"
             $ AddChatter(vig3_sc6_react_comment33)
             pause 0.5
@@ -622,7 +622,7 @@ label vig3_sc6_shipbet2():
             pause 0.5
             $ AddChatter(vig3_sc6_react_comment40)
             pause 0.5
-        "Wow cop out.":
+        "Wow, cop out.":
             $ reactImage = "stream ui/reactconfident.png"
             player "Hahaha"
             player "Of course they didn't bet the ship."

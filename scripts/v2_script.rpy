@@ -703,7 +703,7 @@ label meetingMatticus():
     "Matticus takes a long drag on his cigar before looking at me expectantly. The fake smile fades from his face."
     hide jennica with dissolve
     show matticus stream at stream_left with move
-    smatt "...So? I assume you didn't come all this way to reminisce about the good ol' days."
+    smatt "... So? I assume you didn't come all this way to reminisce about the good ol' days."
     mS "No. We need a favor."
     smatt "Do you now?"
     mS "BigCorp is looking for us. We want to make that difficult."
