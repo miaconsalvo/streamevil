@@ -120,7 +120,7 @@ screen streamDetails():
             text "Outlaw: [outlaw]" align(0.25, 0.90) size 30 color"#17c9e0"
             text "Coriolis: [csEngagement]" align(0.35, 0.85) size 30 color"#ee24ee"
             text "KitCat: [kcEngagement]" align(0.35, 0.9) size 30 color"#11fdaf"
-            text "pickledDragons: [marshal]" align(0.35, 0.95) size 30 color"#ebe717"
+            text "pickledDragons: [pdEngagement]" align(0.35, 0.95) size 30 color"#ebe717"
             text "MAC Peace: [macPeace]" align(0.53, 0.85) size 30 color"#ffffff"
             text "MAC Violence: [macViolence]" align(0.53, 0.89) size 30 color"#ffffff"
             text "MAC Hope: [macHope]" align(0.53, 0.93) size 30 color"#ffffff"

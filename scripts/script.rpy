@@ -380,7 +380,9 @@ label playerName:
             jump testing_jumpahead_vig3
         "Vignette 4":
             jump testing_jumpahead_vig4
-            jump vignette4Start
+            #jump vignette4Start
+        "Style Guide Test":
+            jump vig3_sc5
     
 label testing_jumpahead_vig2():
     "Choose the decisions you want to have made in Vignette 1"

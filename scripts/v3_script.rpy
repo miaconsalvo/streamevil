@@ -982,6 +982,11 @@ label vig3_sc4():
 
 label vig3_sc5():
     $ viewCheck3 = viewCount
+    #comment out the bottom three lines, they're just here for testing the style guide
+    scene streamview with dissolve
+    show screen streamDetails
+    show screen streamChat
+    ######
     show akarplaza_stream at topleft onlayer background with dissolve
     play music "soundtrack/akar(night).wav" volume 0.8
     hide reccshop_stream 
