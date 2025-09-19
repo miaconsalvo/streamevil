@@ -90,8 +90,8 @@ label vig3outlawstart():
     $ AddChatter(vig3_outlawstart_comment3)  
     pause 0.5 
     $ AddChatter(vig3_outlawstart_comment4)  
-    "I take an uninterested sip of my drink wrapping both hands around the glass."
-    "I can't believe I'm letting this get to me. Hell I've done worse, we've done worse. This probably wouldn't even crack the top five."
+    "I take an uninterested sip of my drink, wrapping both hands around the glass."
+    "I can't believe I'm letting this get to me. Hell, I've done worse, we've done worse. This probably wouldn't even crack the top five."
     $ viewCount += 3
     $ AddChatter(vig3_outlawstart_comment5)
     pause 0.5
@@ -103,11 +103,11 @@ label vig3outlawstart():
     "But are we doing right if we hurt people in the process?" 
     "What's the point of all of this?"
     "I find myself staring off into the distance." 
-    "With my back to the door I don't see Teresa come in."
+    "With my back to the doorl, I don't see Teresa come in."
     show teresa stream neutral at stream_right with dissolve
     "She's in her usual clothes, her shirt is uncharacteristically wrinkled and half tucked, a button undone at the bottom."
-    enS "Early start Captain?"
-    mS "You know me, first one up, last one down." #Maybe cheekier##
+    enS "Early start, Captain?"
+    mS "You know me: first one up, last one down." #Maybe cheekier##
     enS "That's a recipe for sleep deprivation I fear."
     "She pulls up a chair next to me grabs the warm metal pitcher from the table and fills her own cup."
     mS "And aren't you just the picture of a good night's sleep."
@@ -130,7 +130,7 @@ label vig3outlawstart():
     mS "A talented little guy for sure."
     $ AddChatter(vig3_outlawstart_comment12)
     enS "But Sallent. Nothing. Not even a distress signal. Not a single report since we left Gibian V."
-    mS "Hard to ask people to risk Gray Fever for a check-in. Hell, who knows if anyone is working Comms there anymore."
+    mS "Hard to ask people to risk Grey Fever for a check-in. Hell, who knows if anyone is working comms there anymore."
     "There's a long pause."
     enS "I don't...this isn't proper to say."
     enS "I wondering if you - if we - made the right choice."
@@ -162,10 +162,10 @@ label vig3outlawstart():
     "I don't respond. Teresa needs this." #Consider adding choices
     enS "But ever since we took that- took MAC, it's been one awful choice after another. Barely escaping every time..."
     $ AddChatter(vig3_outlawstart_comment21)
-    "Teresa lets out a defeated sigh. Before I can respond Jennica's voice echoes through the speaker."
+    "Teresa lets out a defeated sigh. Before I can respond, Jennica's voice echoes through the speaker."
     hide screen streamerCommentary
     pS "Captain! Comms comin' in, fuzzy but - I reckon it's the Dragonflies."
-    "Teresa shoots up, I place hand on her shoulder."
+    "Teresa shoots up, I place a hand on her shoulder."
     $ viewCheck1 = viewCount
     menu:
         "Be calm.":
@@ -207,7 +207,7 @@ label vig3marshalstart():
     $ AddChatter(vig3_marshalstart_comment2)
     pause 1
     $ AddChatter(vig3_marshalstart_comment3)
-    "I take an uninterested sip of my drink wrapping both hands around the glass."
+    "I take an uninterested sip of my drink, wrapping both hands around the glass."
     "I'm letting this get to me. When have I ever taken one of Sav's threats seriously?" 
     "I'm sure he wants to see {b}her{/b} even less than me."
     "We're trying to be better, but what's the point if we're all arrested, if they take MAC away."
@@ -283,7 +283,7 @@ label vig3_sc2():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.8 loop fadein 1.0
     show cockpit_mess_stream at topleft onlayer background with dissolve
     hide shiphub_stream
-    "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's been sitting patiently in the corner, he's been spending more time in here than usual."
+    "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
     $ AddChatter(vig3_sc2_cockpit_comment1)
     show jennica stream neutral at stream_left with dissolve
@@ -298,16 +298,16 @@ label vig3_sc2():
     $ AddChatter(vig3_sc2_cockpit_comment5)
     dflycontact "Captain Moze of the Oakley. My name is {b}static{/b} of the Dragonflies."
     "The cockpit is silent."
-    dflycontact "I know you {b}static{/b} Dr. Vanas' work. And we are contacting {b}static{/b} drop-off {b}static{/b}"
+    dflycontact "I know you {b}static{/b} Dr. Vanas' work. And we are contacting {b}static{/b} drop-off {b}static{/b}."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc2_cockpit_comment6)
     mS "Teresa can you get this any clearer?!?"
     if viewershipHigh == True:
         $ AddChatter(vig3_sc2_cockpit_comment7)
-    enS "Captain I'm trying but I'm certain there's something wrong on our end."
+    enS "Captain, I'm trying but I'm certain there's something wrong on our end."
     pS "Probably mucked our Comms on the way out of Gib V." 
     pS "Needed an upgrade anyway, but I've been puttin' it off for..."
-    "Jennica looks at MAC"
+    "Jennica looks at MAC."
     pS "A while..."
     dflycontact "...at a planet known as {b}static{/b} sector, coordinates {b}static{/b} message {b}static{/b} lost {b}static{/b} reattempt {b}static{/b} five days. Over and {b}static{/b}."
     enS "I've recorded the message for what its worth but if we want those coordinates in five days we'll need better gear."
@@ -1673,7 +1673,7 @@ label vig3_sc6():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     show zan stream at stream_center with dissolve
-    "A small man with dark hair and modified gray skin steps to the table."
+    "A small man with dark hair and modified grey skin steps to the table."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
     $ AddChatter (vig3_sc6_bbpub_comment36)
     zan "Ovid is strong of heart, muscles on the inside."

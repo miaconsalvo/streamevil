@@ -214,37 +214,45 @@ screen streamAnalytics_vig2():
     #        align (0.4, 0.008)
 
     #The frame below this is for identifying the average audience number
-    imagebutton:
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        xsize 360
-        ysize 260
-        xalign 0.53
-        yalign 0.935
-        if flinch_audienceCheck == False:
-            action Call("vig2_analytics_audience", from_current = True) #Change these to new target labels for vignette 2
-        else:
-            action NullAction()
-    
-    imagebutton:
-        xsize 353
-        ysize 200
-        #background Solid("#0000001c")
-        xalign 0.278
-        yalign 0.47
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        if flinch_topfanCheck == False:
-            action Call("vig2_analytics_topfan", from_current = True)
-        else:
-            action NullAction()
+    if flinch_audienceCheck == False:
+        image ["stream ui/reactalert.png"] align (0.475, 0.735) size (30, 30)
+        imagebutton:
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            xsize 360
+            ysize 260
+            xalign 0.53
+            yalign 0.935
+            if flinch_audienceCheck == False:
+                action Call("vig2_analytics_audience", from_current = True) #Change these to new target labels for vignette 2
+            else:
+                action NullAction()
+
+    if flinch_topfanCheck == False:
+        image ["stream ui/reactalert.png"] align (0.231, 0.455) size (30, 30)
+        imagebutton:
+            xsize 353
+            ysize 200
+            #background Solid("#0000001c")
+            xalign 0.278
+            yalign 0.47
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            if flinch_topfanCheck == False:
+                action Call("vig2_analytics_topfan", from_current = True)
+            else:
+                action NullAction()
 
 screen viewershipButton_vig2:
+    if flinch_viewcountCheck == False:
+        image ["stream ui/reactalert.png"] align (0.44, 0.225) size (30, 30)
         imagebutton:
             xsize 1020
-            ysize 400
-            xalign 0.92
-            yalign .475
+            ysize 494
+            xpos 828
+            ypos 233
+            #xalign 0.92
+            #yalign .475
             idle Solid("#00000036")
             hover Solid("#0000006b")
             if flinch_viewcountCheck == False:
@@ -257,37 +265,45 @@ screen viewershipButton_vig2:
 
 screen streamAnalytics_vig3():
     #The frame below this is for identifying the average audience number
-    imagebutton:
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        xsize 360
-        ysize 260
-        xalign 0.53
-        yalign 0.935
-        if flinch_audienceCheck == False:
-            action Call("vig3_analytics_audience", from_current = True)
-        else:
-            action NullAction()
-    
-    imagebutton:
-        xsize 353
-        ysize 200
-        #background Solid("#0000001c")
-        xalign 0.278
-        yalign 0.47
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        if flinch_topfanCheck == False:
-            action Call("vig3_analytics_topfan", from_current = True)
-        else:
-            action NullAction()
+    if flinch_audienceCheck == False:
+        image ["stream ui/reactalert.png"] align (0.475, 0.735) size (30, 30)
+        imagebutton:
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            xsize 360
+            ysize 260
+            xalign 0.53
+            yalign 0.935
+            if flinch_audienceCheck == False:
+                action Call("vig3_analytics_audience", from_current = True)
+            else:
+                action NullAction()
+
+    if flinch_topfanCheck == False:
+        image ["stream ui/reactalert.png"] align (0.231, 0.455) size (30, 30)
+        imagebutton:
+            xsize 353
+            ysize 200
+            #background Solid("#0000001c")
+            xalign 0.278
+            yalign 0.47
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            if flinch_topfanCheck == False:
+                action Call("vig3_analytics_topfan", from_current = True)
+            else:
+                action NullAction()
 
 screen viewershipButton_vig3:
+    if flinch_viewcountCheck == False:
+        image ["stream ui/reactalert.png"] align (0.44, 0.225) size (30, 30)
         imagebutton:
             xsize 1020
-            ysize 400
-            xalign 0.92
-            yalign .475
+            ysize 494
+            xpos 828
+            ypos 233
+            #xalign 0.92
+            #yalign .475
             idle Solid("#00000036")
             hover Solid("#0000006b")
             if flinch_viewcountCheck == False:
@@ -299,37 +315,45 @@ screen viewershipButton_vig3:
 
 screen streamAnalytics_vig4():
     #The frame below this is for identifying the average audience number
-    imagebutton:
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        xsize 360
-        ysize 260
-        xalign 0.53
-        yalign 0.935
-        if flinch_audienceCheck == False:
-            action Call("vig4_analytics_audience", from_current = True)
-        else:
-            action NullAction()
+    if flinch_audienceCheck == False:
+        image ["stream ui/reactalert.png"] align (0.475, 0.735) size (30, 30)
+        imagebutton:
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            xsize 360
+            ysize 260
+            xalign 0.53
+            yalign 0.935
+            if flinch_audienceCheck == False:
+                action Call("vig4_analytics_audience", from_current = True)
+            else:
+                action NullAction()
     
-    imagebutton:
-        xsize 353
-        ysize 200
-        #background Solid("#0000001c")
-        xalign 0.278
-        yalign 0.47
-        idle Solid("#00000036")
-        hover Solid("#0000006b")
-        if flinch_topfanCheck == False:
-            action Call("vig4_analytics_topfan", from_current = True)
-        else:
-            action NullAction()
+    if flinch_topfanCheck == False:
+        image ["stream ui/reactalert.png"] align (0.231, 0.455) size (30, 30)
+        imagebutton:
+            xsize 353
+            ysize 200
+            #background Solid("#0000001c")
+            xalign 0.278
+            yalign 0.47
+            idle Solid("#00000036")
+            hover Solid("#0000006b")
+            if flinch_topfanCheck == False:
+                action Call("vig4_analytics_topfan", from_current = True)
+            else:
+                action NullAction()
 
 screen viewershipButton_vig4:
+    if flinch_viewcountCheck == False:
+        image ["stream ui/reactalert.png"] align (0.44, 0.225) size (30, 30)
         imagebutton:
             xsize 1020
-            ysize 400
-            xalign 0.92
-            yalign .475
+            ysize 494
+            xpos 828
+            ypos 233
+            #xalign 0.92
+            #yalign .475
             idle Solid("#00000036")
             hover Solid("#0000006b")
             if flinch_viewcountCheck == False:
