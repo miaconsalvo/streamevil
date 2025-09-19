@@ -14,6 +14,9 @@ label vignette1Start():
     $ viewCheck3 = 4
     $ viewCheck4 = 6
     $ viewCheck5 = viewCount
+    $ viewershipHigh = False
+    $ viewershipMed = False
+    $ viewershipLow = True
     jump returnToWorkshop
 
 label returnToWorkshop():

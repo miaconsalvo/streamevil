@@ -103,6 +103,8 @@ default profilePic = "images/socials/profilepics/profile2.png"
 default reactImage = "stream ui/reactneutral.png"
 default reactVariable = False
 default commentVariable = False
+default debugMode = False
+default debugText = "Off"
 
 #variables to track morality
 default marshal = 0 #could start this at 5 and outlaw at 0 if we want to simulate marshal choices for the early part of vig1

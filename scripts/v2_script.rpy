@@ -35,6 +35,9 @@ label vignette2Start():
     $ loopdView = False
     $ screenComplete = False
     $ macroChoice = False
+    $ viewershipHigh = True
+    $ viewershipMed = False
+    $ viewershipLow = False
     #We now use the "scene" function to show the streamview
     #This makes it constantly viewable without being affected by transitions between labels
     #show streamview
@@ -784,7 +787,7 @@ label meetingMatticus():
         "Why are you so cagey?":
             mS "What aren't you telling us?"
             "Matticus smirks at me."
-            smatt "Any number of things really."
+            smatt "Any number of things, really."
             mS "Don't play dumb. Why are you being so sketchy about what's in the shipment?"
             "A twinge of anger passes through Matticus's face for a moment."
             smatt "Since when do you care?"
@@ -795,7 +798,7 @@ label meetingMatticus():
             "I turn to Jennica."
             mS "He's not wrong."
         "Trying to screw us over?":
-            mS "Seems suspicious Sav. What are you trying to pull here?"
+            mS "Seems suspicious, Sav. What are you trying to pull here?"
             "Matticus smirks at me."
             smatt "Moze! After all our time together..."
             mS "After all our time together I know you well enough to know when you're hiding something."

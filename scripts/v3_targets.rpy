@@ -778,7 +778,7 @@ label vig3_sc9_daisybar():
     $ reactVariable = True
     menu:
         #"Say something about Daisy."
-        "We met up with Daisy at the Inventor's Fair."
+        "Mills continues to be a real pain."
         "Maybe there was a better way of handling this...":
             $ reactImage = "stream ui/reactthinking.png"
             player "Idk chat, maybe there was a better way of handling this..."
@@ -848,7 +848,7 @@ label vig3_sc9_amasurprise():
         "It's go time.":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Oh it's time to rumble."
+            player "Oh, it's time to rumble."
             player "Let's get loud!"
             $ AddChatter(vig3_sc9_react_comment11)
             pause 0.5
@@ -875,7 +875,7 @@ label vig3_sc11_amabacksass():
     menu:
         #"Comment on Moze and Ama's insults."
         "The back and forth between Moze and Ama is tense."
-        "Burn Ama!":
+        "Burn, Ama!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
             #player "Damn Ama!"
@@ -885,7 +885,7 @@ label vig3_sc11_amabacksass():
         "Love this sass.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "Feel like they haven't missed a step!"
+            player "Feels like they haven't missed a step!"
             player "Just like old times hahaha!"
             $ AddChatter(vig3_sc11_react_comment2)
             pause 0.5
@@ -1012,7 +1012,7 @@ label vig3_sc12_macalignment_violencepessimism():
         "MAC shot Ama!"
         "MAC's a badass!":
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Wow he shot her!"
+            player "Wow, he shot her!"
             player "Zero hesitation! Ice cold!"
             player "MAC for the win! Crack shot!"
             $ AddChatter(vig3_sc12_macAlignVP_comment1)
@@ -1394,7 +1394,7 @@ label vig3break_crash10():
             player "The last thing I need is a survival horror in the last half."
         "No way.":
             player "I don't think they're going for that."
-            player "Now if it was Matticus I would believe it a bit more."            
+            player "Now if it was Matticus, I would believe it a bit more."            
         "I don't know.":
             player "Hmm. Honestly, idk."
             player "But we'll find out soon I'm sure."
@@ -1456,9 +1456,9 @@ label vig3break_take10():
     $ narrator = reg_narrator
     menu:
         "What do you think about the new locations?"
-        "Hot take but I love Gibian V.":
+        "Hot take, but I love Gibian V.":
             player "Gibian V has that true western vibe."
-            player "Even Matticus' fortress was amazing."
+            player "Even Matticus's fortress was amazing."
             player "It really kicked off the game in the best way."
         "Akar is the place to be!":
             player "It's gonna be hard to top Akar."
@@ -1467,7 +1467,7 @@ label vig3break_take10():
             player "Also the best music so far."
         "The next ones will be even better.": 
             player "We've seen some great spots."
-            player "But some teasers leaked for the next chapter and HOOOO"
+            player "But some teasers leaked for the next chapter and HOOOO!"
             player "I can tell that's gonna be my fave."          
     $ macroChoice = True
     if macroChoice == False: 
@@ -1619,10 +1619,10 @@ label vig3break_end5():
     $ vig3break_rec_reunion_comment9.click = False
     $ narrator = reg_narrator
     menu:
-        "MOXIE!"
+        "MOXIE?"
         "MOXIE! MOXIE! MOXIE!":
             player "MOXIE! MOXIE! MOXIE!"
-        "LET's GOOOOOOO":
+        "LET'S GOOOOOOO!":
             player "LET'S GOOOOOOOOOOOOO"      
     $ macroChoice = True
     if macroChoice == False: 

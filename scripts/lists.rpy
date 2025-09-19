@@ -65,6 +65,15 @@ label TurnSound():
         $ pingImage = "stream ui/soundoff.png"
     return
 
+label turnDebug():
+    if debugMode == False:
+        $ debugMode = True
+        $ debugText = "On"
+    elif debugMode == True:
+        $ debugMode = False
+        $ debugText = "Off"
+    return
+
     
 default chatter_list = [ ] #This is the list that displays on the Stream UI
 default comments_list = [ ] #This list contains the objects that will be shuffled and chosen from to add to "chats"
