@@ -36,7 +36,7 @@ default vig3_outlawstart_comment21= ChatEntry( False, "{b}AFKAngel - 6:11{/b}\ne
 
 ###Comments vig3_outlawstart - Moze deals with Teresa before the Cockpit
 default vig3_outlawstart_calm_comment22= ChatEntry( False, "{b}Coriolis - 6:11{/b}\nthat's our captain!", 4, "#ffffff")
-default vig3_outlawstart_calm_comment23= ChatEntry( False, "{b}pickledDragons - 6:11{/b}\killing civilians, having grace with our crew <3", 4, "#ffffff")
+default vig3_outlawstart_calm_comment23= ChatEntry( False, "{b}pickledDragons - 6:11{/b}\nkilling civilians, having grace with our crew <3", 4, "#ffffff")
 
 default vig3_outlawstart_firm_comment24= ChatEntry( False, "{b}AFKAngel - 6:12{/b}\ntough", 4, "#ffffff")
 

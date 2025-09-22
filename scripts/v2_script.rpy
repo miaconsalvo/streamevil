@@ -1471,7 +1471,7 @@ label commsBase_DataCenter():
     show screen streamerCommentary
     mS "So what happens if the town doesn't get that aid?"
     show data agent scared at stream_left5
-    worker "Sallent? There's an outbreak of grey fever there. They need that medicine!"
+    worker "Sallent? There's an outbreak of Gray fever there. They need that medicine!"
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
     $ AddChatter(vig2_sc7_comment4)

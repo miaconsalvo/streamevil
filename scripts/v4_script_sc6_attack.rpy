@@ -497,7 +497,7 @@ label vig4_sc6_attack_2_ama():
                 mS "We have to keep you safe."
                 mS "But I'm proud of you for protecting people."
     macS "Thank you, Captain!"
-    mS "MAC, I'm--"
+    mS "MAC, I'm—"
     cS "That's enough, MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment13)
     play audio "cutCall.wav"
@@ -616,7 +616,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment18)
             "It's a group of Dragonflies armed with rocket launchers a couple of buildings away from us."
             "They're reloading the launchers and preparing another volley."
-            mS "Teresa, direct shields against those launchers. Ama--"
+            mS "Teresa, direct shields against those launchers. Ama—"
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "I know, I see them too!"
             "Ama aims the machine gun at the direction of the squad and begins firing, but it's too late."
@@ -630,7 +630,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment20)
             "Jenn's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
@@ -705,7 +705,7 @@ label vig4_sc6_attack_3_ama():
             "She's right, we're closing in."
             $ AddChatter(vig4_sc6_attack_3_ama_comment33)
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "Oh, yes!"
             mS "Just do it!"
@@ -785,7 +785,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             "She's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
@@ -856,7 +856,7 @@ label vig4_sc6_attack_3_ama():
         hide ama with dissolve
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
-        enS "Captain, we're being hailed by a new signal, I don't--"
+        enS "Captain, we're being hailed by a new signal, I don't—"
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
@@ -864,7 +864,7 @@ label vig4_sc6_attack_3_ama():
         "Three more fighters fly by immediately after. Then another. Then another."
         $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
-        pS "Who the--that's one hell of a pilot?"
+        pS "Who the—that's one hell of a pilot?"
         show reginald stream bigmad at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
@@ -906,7 +906,7 @@ label vig4_sc6_attack_3_ama():
         #    pS "Cap, we're pickin' up another signal!"
         show teresa stream shock at stream_right with dissolve
         $ AddChatter(vig4_sc6_zan_comment1)
-        enS "Wait, that has to be--"
+        enS "Wait, that has to be—"
         show zan stream at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         $ AddChatter(vig4_sc6_zan_comment2)
@@ -921,14 +921,14 @@ label vig4_sc6_attack_3_ama():
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
-            mS "Daisy? But I thought--"
+            mS "Daisy? But I thought—"
             showgirl "One second, dear. Zan, the photon pulse is primed!"
         else:
             show houndleader at stream_left5 with dissolve
             houndleader "Reynar heard some trouble was brewing in this area."
             $ AddChatter(vig4_sc6_zan_comment5)
             houndleader "Guess he figured you could use some help."
-            mS "The Hounds? But I thought--"
+            mS "The Hounds? But I thought—"
             #$ AddChatter(vig4_sc6_zan_comment11)
             houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
         show teresa stream neutral
@@ -950,7 +950,7 @@ label vig4_sc6_attack_3_ama():
                 mS "Thank you, Zan."
                 zan "It is no problem."
                 zan "Now, show them your mama's back!"
-                mS "My wha--."
+                mS "My wha—."
                 pS "Our Moxie."
                 zan "Moxie!"
                 $ AddChatter(vig4_sc6_zan_comment8)
@@ -1002,7 +1002,7 @@ label vig4_sc6_attack_3_ama():
             pS "You betcha."
             enS "Affirmative."
         "Thank you.":
-            mS "Jenn, Resa, I--"
+            mS "Jenn, Resa, I—"
             if jennicaRomance == True:
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
@@ -1696,7 +1696,7 @@ label vig4_sc6_attack_2():
                 mS "We have to keep you safe."
                 mS "But I'm proud of you for protecting people."
     macS "Thank you, Captain!"
-    mS "MAC, I'm--"
+    mS "MAC, I'm—"
     cS "That's enough, MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment13)
     play audio "cutCall.wav"
@@ -1833,7 +1833,7 @@ label vig4_sc6_attack_3():
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment21)
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             pS "Aye aye, Cap!" 
@@ -1909,7 +1909,7 @@ label vig4_sc6_attack_3():
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             "She's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             if viewershipHigh == True or viewershipMed == True:
@@ -1989,7 +1989,7 @@ label vig4_sc6_attack_3():
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             "She's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
-            enS "Are you sure that's--"
+            enS "Are you sure that's—"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             if viewershipHigh == True or viewershipMed == True:
@@ -2044,7 +2044,7 @@ label vig4_sc6_attack_3():
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
-        enS "Captain, we're being hailed by a new signal, I don't--"
+        enS "Captain, we're being hailed by a new signal, I don't—"
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         if viewershipHigh == True or viewershipMed == True:
@@ -2054,7 +2054,7 @@ label vig4_sc6_attack_3():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
-        pS "Who the--that's one hell of a pilot?"
+        pS "Who the—that's one hell of a pilot?"
         show reginald stream bigmad at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
@@ -2094,7 +2094,7 @@ label vig4_sc6_attack_3():
         show teresa stream shock
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment1)
-        enS "Wait, that has to be--"
+        enS "Wait, that has to be—"
         show zan stream at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
@@ -2110,14 +2110,14 @@ label vig4_sc6_attack_3():
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
-            mS "Daisy? But I thought--"
+            mS "Daisy? But I thought—"
             showgirl "One second, dear. Zan, the photon pulse is primed!"
         else:
             show houndleader at stream_left5 with dissolve
             houndleader "Reynar heard some trouble was brewing in this area."
             $ AddChatter(vig4_sc6_zan_comment5)
             houndleader "Guess he figured you could use some help."
-            mS "The Hounds? But I thought--"
+            mS "The Hounds? But I thought—"
             #$ AddChatter(vig4_sc6_zan_comment11)
             houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
         show teresa stream neutral
@@ -2139,7 +2139,7 @@ label vig4_sc6_attack_3():
                 mS "Thank you, Zan."
                 zan "It is no problem."
                 zan "Now, show them your mama's back!"
-                mS "My wha--."
+                mS "My wha—."
                 pS "Our Moxie."
                 zan "Moxie!"
                 if viewershipHigh == True:
@@ -2188,7 +2188,7 @@ label vig4_sc6_attack_3():
             else:
                 pass
         "Thank you.":
-            mS "Jenn, Resa, I--"
+            mS "Jenn, Resa, I—"
             if jennicaRomance == True:
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
