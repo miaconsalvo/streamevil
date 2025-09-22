@@ -623,6 +623,7 @@ label councilDebrief():
                 player "So we take it easy and just go wherever the games take us!"
                 "Let's go!":
                     player "So welcome aboard, and let's settle some scores!"
+    $ reactImage = "stream ui/reactneutral.png"
     $ AddChatter(vig1_sc3_comment3_bandit0)
     call screen raidFreeze
     "Shit, was that cringey?"
@@ -737,6 +738,7 @@ label escapePodConfrontation:
     menu:
         "I killed Allistar...What do I do?"
         "\"That was a mistake!\"":
+            $ reactImage = "stream ui/reactshocked.png"
             $ misclick = True
             $ pdEngagement -= 1
             player "Wait, no!"
@@ -748,14 +750,18 @@ label escapePodConfrontation:
             $ AddChatter(vig1_sc3_shot_mistake_comment3)
             pause 0.5
             "I'm on stream, I can't go back now."
+            $ reactImage = "stream ui/reactneutral.png"
         "Play it off.":
+            $ reactImage = "stream ui/reactconfident.png"
             player "Consider this score settled."
             $ AddChatter(vig1_sc3_shot_cool_comment1)
             pause 0.5
             $ AddChatter(vig1_sc3_shot_cool_comment2)
             pause 0.5
             "I'm on stream, I can't go back now."
+            $ reactImage = "stream ui/reactneutral.png"
         "Shout.":
+            $ reactImage = "stream ui/reactshocked.png"
             player "Woooooah!"
             player "Chat! Chat is he dead!?"
             $ AddChatter(vig1_sc3_shot_shout_comment1)
@@ -767,6 +773,7 @@ label escapePodConfrontation:
             $ omegaDead = True
             $ AddChatter(vig1_sc3_shot_shout_comment4)
             pause 0.5
+            $ reactImage = "stream ui/reactneutral.png"
     $ narrator = alt_narrator
     $ viewCheck10 = viewCount
     "MAC hits the floor and rolls to the other end of the hall behind a crate."
@@ -1040,7 +1047,7 @@ label modConvo_Day1_Bandit():
             mod_nvl "That's why I'm here! To keep your ass in line"
             mod_nvl "In game and in life apparently lol"
             streamer_nvl "Shut up"
-            mod_nvl "Love you too b"
+            mod_nvl "Love you too friend"
         "•I'm not stressed about that.":
             streamer_nvl "Ah, I'm not worried about that"
             streamer_nvl "Material's not too complex"
@@ -1048,7 +1055,7 @@ label modConvo_Day1_Bandit():
             streamer_nvl "That only happened one time"
             mod_nvl "Ya, thus proving my point"
             streamer_nvl "Shut up"
-            mod_nvl "Love you too b"
+            mod_nvl "Love you too friend"
     mod_nvl "Alright, I gotta go, gonna grab some ramen with the boys"
     menu:
         "•Goodnight!":
@@ -1192,7 +1199,7 @@ label vig1_brother_1():
     bro_nvl "We actually sit next to each other in orchestra"
     player_nvl "Cute!"
     bro_nvl "Shut up"
-    player_nvl "Love you too b"
+    player_nvl "Love you too"
     bro_nvl "I wanted to ask some advice"
     bro_nvl "How do you like, talk to people that you like without it feeling...weird?"
     menu:
@@ -1282,7 +1289,7 @@ label vig1_brother_2():
     bro_nvl "Of course not!"
     bro_nvl "A bit of cringe is part of the [username] stream charm!"
     player_nvl "Shut up"
-    bro_nvl "Love you too b"
+    bro_nvl "Love you too"
     bro_nvl "Alright, I think I gotta hit the hay"
     bro_nvl "Got a test tomorrow in chemistry"
     player_nvl "With Mrs. Webber?"
