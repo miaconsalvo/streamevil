@@ -620,7 +620,7 @@ label vig2_sc4_meetingmatticus():
             pause 0.5
         "Oh boy, here comes chaos!":
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "This is gonna be so bad, I'm so excited."
+            player "This is gonna be so bad, I'm so excited!"
             $ AddChatter(vig2_sc4_reactcomment4)
             pause 0.5
             $ AddChatter(vig2_sc4_reactcomment5)
@@ -683,7 +683,7 @@ label vig2_sc5_macquestion():
     $ reactVariable = True
     menu:
         "Inquire about MAC's learning."
-        "MAC's seems inquisitive.":
+        "MAC seems inquisitive.":
             $ reactImage = "stream ui/reactthinking.png"
             player "MAC is asking a lot of questions, maybe I should be more careful."
             $ AddChatter(vig2_sc5_reactcomment1)
@@ -695,7 +695,7 @@ label vig2_sc5_macquestion():
             player "Do y'all think MAC will develop based on what we do?"
             $ AddChatter(vig2_sc5_reactcomment3)
             pause 0.5
-        "MAC shield your eyes!":
+        "MAC, shield your eyes!":
             $ reactImage = "stream ui/reactconfident.png"
             player "MAC, not gonna lie to you buddy, we might kill so many people."
             $ AddChatter(vig2_sc5_reactcomment4)
