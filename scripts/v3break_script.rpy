@@ -56,7 +56,7 @@ label vig3_break():
             player "..."
             player "Oh wow that's gonna take a while."
             $ AddChatter (vig3break_brb_comment6)
-            player "I'm gonna grab some water and stretch my legs"
+            player "I'm gonna grab some water and stretch my legs."
             player "Be right back!"
             player "Hopefully it'll be all fixed by then."
             $ AddChatter (vig3break_brb_comment7)
@@ -85,7 +85,7 @@ label vig3_break():
             "Feels like yesterday no one was watching, and now you can feel a community building."
             "It's surprising."
             "But extremely rewarding."
-    "You take a moment"
+    "You take a moment."
     "Breathe."
     "The chat is waiting."
     "You should probably go back."

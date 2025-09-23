@@ -44,7 +44,7 @@ label vig4_sc6_defend_1():
     pS "Piece of shit."
     show teresa stream neutral at stream_right with dissolve
     enS "Sounds like BC used a first assault to soften up the defenses. The next wave is the real attack."
-    pS "And with that tank--"
+    pS "And with that tank—"
     enS "It might be checkmate."
     "We need to stop that tank. Or..."
     if viewershipHigh == True:
@@ -176,7 +176,7 @@ label vig4_sc6_defend_1():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     vS "Big gun. You and your crew know how to use it?"
-    pS "Please, I can drive anythin'"
+    pS "Please, I can drive anythin'."
     enS "It's a cannon, not rocket science."
     enS "And I understand rocket science too."
     vS "Good."
@@ -208,9 +208,9 @@ label vig4_sc6_defend_1():
     "Vega climbs up onto the tank."
     vS "I'll be your navigator. But we don't have a lot of time."
     $ AddChatter(vig4_sc6_defend_1_comment31) 
-    vS "BC's sure to--"
+    vS "BC's sure to—"
     "As Vega speaks, a siren goes up from Polaris's plaza."
-    "Drop ships swarm out of the Cruiser, angling toward the town."
+    "Dropships swarm out of the cruiser, angling toward the town."
     $ AddChatter(vig4_sc6_defend_1_comment32)
     vS "Shit, I thought we'd have a bit more time."
     vS "Captain, catch."
@@ -221,7 +221,7 @@ label vig4_sc6_defend_1():
     "Jennica and Teresa turn to me."
     pS "What?"
     enS "\"Use them wisely?\""
-    macS "Hello--Vega, did you call me?"
+    macS "Hello—Vega, did you call me?"
     "That voice! It's coming from the disc!"
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_1_comment33)
@@ -310,7 +310,7 @@ label vig4_sc6_defend_1():
                 mS "We have to keep you safe."
                 mS "But I'm proud of you for protecting people."
     macS "Thank you, Captain!"
-    mS "MAC, I'm--"
+    mS "MAC, I'm—"
     "The sirens get louder."
     "I look up. The dropships are approaching."
     $ AddChatter(vig4_sc6_defend_1_comment42)
@@ -426,7 +426,7 @@ label vig4_sc6_defend_2():
     "A stream of blue light blasts out from the cannon."
     "It collides with the dropship, creating a fireball in the sky."
     $ AddChatter(vig4_sc6_defend_2_comment8)
-    "As the pieces crash into Polaris, additional flames catch fire on the buildings."
+    "As the pieces crash into Polaris, additional flames catch ignite on the buildings."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_2_comment9)
         pause 0.5
@@ -455,7 +455,7 @@ label vig4_sc6_defend_2():
     "A group at the head of the pack on the ground are pinned by blaster fire."
     "A call comes in over Vega's communicator."
     $ AddChatter(vig4_sc6_defend_2_comment15)
-    dflyGuard "Vega, come in! We're pinned down, need assista--"
+    dflyGuard "Vega, come in! We're pinned down, need assista—"
     play audio "cutCall.wav"
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_2_comment16)
@@ -638,7 +638,7 @@ label vig4_sc6_defend_3_frontline():
     pS "Aye!"
     "The tank rumbles as Jennica pulls it in reverse, slamming it back toward the barricade as fast as it can go."
     "We peel into a stop, just a few meters from the barricade."
-    mS "Teresa, find a way to recharge those shields. Jenn I nee--"
+    mS "Teresa, find a way to recharge those shields. Jenn I nee—"
     jump vig4_sc6_defend_4
 
 label vig4_sc6_defend_4():
@@ -790,7 +790,7 @@ label vig4_sc6_defend_5():
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice...but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
-        enS "Captain, we're being hailed by a new signal, I don't--"
+        enS "Captain, we're being hailed by a new signal, I don't—"
         hide vega with dissolve
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
@@ -801,7 +801,7 @@ label vig4_sc6_defend_5():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
-        pS "Who the--that's one hell of a pilot?"
+        pS "Who the—that's one hell of a pilot?"
         show reginald at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
@@ -831,7 +831,7 @@ label vig4_sc6_defend_5():
                 mS "Copy that."
         "A handful of attack ships break formation, streaking fire along Polaris's ground and ripping into the BC troops."
         "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
-        "But the Cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
+        "But the cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
         "The battle has just begun."
         hide reginald with dissolve
     else: #could also be an elif for Reynar's Approval. Could also pass this "else" so that Zan always triggers. But that feels like too much.
@@ -846,7 +846,7 @@ label vig4_sc6_defend_5():
         show teresa stream shock
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment1)
-        enS "Wait, that has to be--"
+        enS "Wait, that has to be—"
         show zan stream at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
@@ -862,14 +862,14 @@ label vig4_sc6_defend_5():
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
-            mS "Daisy? But I thought--"
+            mS "Daisy? But I thought—"
             showgirl "One second, dear. Zan, the photon pulse is primed!"
         else:
             show houndleader at stream_left5 with dissolve
             houndleader "Reynar heard some trouble was brewing in this area."
             $ AddChatter(vig4_sc6_zan_comment5)
             houndleader "Guess he figured you could use some help."
-            mS "The Hounds? But I thought--"
+            mS "The Hounds? But I thought—"
             #$ AddChatter(vig4_sc6_zan_comment11)
             houndleader "One second, sweetcheeks. Zan, the photon pulse is primed."
         show teresa stream neutral
@@ -882,7 +882,7 @@ label vig4_sc6_defend_5():
         hide houndleader with dissolve
         hide showgirl with dissolve
         "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
-        "But the Cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
+        "But the cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
         "The battle has just begun."
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
@@ -894,7 +894,7 @@ label vig4_sc6_defend_5():
                 mS "Thank you, Zan."
                 zan "It is no problem."
                 zan "Now, show them your mama's back!"
-                mS "My wha--."
+                mS "My wha—."
                 pS "Our Moxie."
                 zan "Moxie!"
                 if viewershipHigh == True:
@@ -948,7 +948,7 @@ label vig4_sc6_defend_5():
             pS "You betcha."
             enS "Affirmative."
         "Thank you.":
-            mS "Jenn, Resa, I--"
+            mS "Jenn, Resa, I—"
             if jennicaRomance == True:
                 "Jennica steps up close to me. She faces me dead on."
                 "I can't move."

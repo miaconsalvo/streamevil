@@ -620,7 +620,7 @@ label vig2_sc4_meetingmatticus():
             pause 0.5
         "Oh boy, here comes chaos!":
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "This is gonna be so bad, I'm so excited."
+            player "This is gonna be so bad, I'm so excited!"
             $ AddChatter(vig2_sc4_reactcomment4)
             pause 0.5
             $ AddChatter(vig2_sc4_reactcomment5)
@@ -683,7 +683,7 @@ label vig2_sc5_macquestion():
     $ reactVariable = True
     menu:
         "Inquire about MAC's learning."
-        "MAC's seems inquisitive.":
+        "MAC seems inquisitive.":
             $ reactImage = "stream ui/reactthinking.png"
             player "MAC is asking a lot of questions, maybe I should be more careful."
             $ AddChatter(vig2_sc5_reactcomment1)
@@ -695,7 +695,7 @@ label vig2_sc5_macquestion():
             player "Do y'all think MAC will develop based on what we do?"
             $ AddChatter(vig2_sc5_reactcomment3)
             pause 0.5
-        "MAC shield your eyes!":
+        "MAC, shield your eyes!":
             $ reactImage = "stream ui/reactconfident.png"
             player "MAC, not gonna lie to you buddy, we might kill so many people."
             $ AddChatter(vig2_sc5_reactcomment4)
@@ -1280,9 +1280,9 @@ label vig2_analytics_audience():
             "Still gotta stick to the schedule and go with what's working."
         "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3
             "It's weird, now that you have more viewers in chat consistently, getting Affiliate suddenly feels less important."
-            "Is it cliche to say that maybe the people you've met have been the real prize?"
+            "Is it cliché to say that maybe the people you've met have been the real prize?"
             "Probably."
-            "But does that make them less valuable?"
+            "But does that make it less true?"
     if flinchCheck >= 3:
         $ screenComplete = True
     else:

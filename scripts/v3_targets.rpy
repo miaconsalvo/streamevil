@@ -609,7 +609,7 @@ label vig3_sc6_shipbet2():
         "Turns out, the crew didn't actually bet the ship."
         "What a relief.":
             $ reactImage = "stream ui/reactunsure.png"
-            player "Phew. That's a relief"
+            player "Phew. That's a relief."
             player "That could've been bad!"
             $ AddChatter(vig3_sc6_react_comment38)
             pause 0.5
@@ -1513,7 +1513,7 @@ label vig3break_dead11():
             player "And you know..."
             player "We killed one."
         "I prefer the newer characters.":
-            player "Seeing everyone is nice"
+            player "Seeing everyone is nice."
             player "But it's better to meet the newer folks."
             player "I think they make the sotry more interesting."           
     $ macroChoice = True
@@ -1575,7 +1575,7 @@ label vig3break_reunion3():
     $ vig3break_rec_reunion_comment3.click = False
     $ narrator = reg_narrator
     menu:
-        "How do you feel about Rec and Allistar's lost reunion."
+        "How do you feel about Rec and Allistar's lost reunion?"
         "That's just what happens.":
             player "It's a part of life."
             player "That could've happened even without our intervention."
