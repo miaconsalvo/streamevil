@@ -521,7 +521,7 @@ label councilDebrief():
     pS "Any ideas?"
     mS "Maybe. I need to think."
     "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives or percentage calculations."
-    "...no MAC."
+    "... no MAC."
     mS "Does anyone know where MAC is?"
     play backAudio "shipAlarm.wav" volume 0.8
     shipcom "Attention crew, escape pod procedure activated."
@@ -732,10 +732,10 @@ label escapePodConfrontation:
     pause 0.5
     $ narrator = reg_narrator
     $ macroChoice = True
-    "I killed Allistar...What do I do?"
+    "I killed Allistar... What do I do?"
     $ macroChoice = True
     menu:
-        "I killed Allistar...What do I do?"
+        "I killed Allistar... What do I do?"
         "\"That was a mistake!\"":
             $ misclick = True
             $ pdEngagement -= 1
@@ -787,7 +787,7 @@ label escapePodConfrontation:
     enS "{i}WHAT{/i}!?"
     pS "Allistar's dead!?"
     mS "I had to protect my crew. He was a threat we can't afford."
-    pS "I understand Cap, it's just...I can't believe it."
+    pS "I understand Cap, it's just... I can't believe it."
     enS "Is MAC okay?"
     mS "I don't know. I could use some help with the body."
     enS "Roger, I'll be right down."
@@ -797,7 +797,7 @@ label escapePodConfrontation:
     #play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I gently move toward MAC and crouch down in front of him."
     mS "Hey, I'm sorry about that."
-    macS "Is he...is he dead?"
+    macS "Is he... is he dead?"
     "I glance back at the body."
     mS "Yes."
     if omegaDead == True:
@@ -936,7 +936,7 @@ label modConvo_Day1_Bandit():
             streamer_nvl "I was shaking so much"
             mod_nvl "You played it off well!"
             streamer_nvl "Actually? It wasn't like cringey or awkward?"
-            mod_nvl "I mean...maybe a little XD"
+            mod_nvl "I mean... maybe a little XD"
             mod_nvl "But it was like the endearing kind of awkward!"
             streamer_nvl "Lmao thanks"
             mod_nvl "Gotchu"
@@ -949,7 +949,7 @@ label modConvo_Day1_Bandit():
             mod_nvl "Cool, calm, and collected" 
             mod_nvl "Just like Moze lol"
             streamer_nvl "Actually? It wasn't like cringey or awkward?"
-            mod_nvl "I mean...maybe a little XD"
+            mod_nvl "I mean... maybe a little XD"
             mod_nvl "But it was like the endearing kind of awkward!"
             streamer_nvl "Lmao thanks"
             mod_nvl "Gotchu"
@@ -1194,7 +1194,7 @@ label vig1_brother_1():
     bro_nvl "Shut up"
     player_nvl "Love you too b"
     bro_nvl "I wanted to ask some advice"
-    bro_nvl "How do you like, talk to people that you like without it feeling...weird?"
+    bro_nvl "How do you like, talk to people that you like without it feeling... weird?"
     menu:
         "•It's always weird.":
             $ vig1_overthink = False
@@ -1216,7 +1216,7 @@ label vig1_brother_1():
     menu:
         "•What do you like about him?":
             player_nvl "Well, what do you like about him?"
-            bro_nvl "Well...he's hot"
+            bro_nvl "Well... he's hot"
             player_nvl "Doesn't hurt lol"
             bro_nvl "But he's also funny and really sweet!"
         "•Have you guys talked much?":

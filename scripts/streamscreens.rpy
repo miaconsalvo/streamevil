@@ -129,11 +129,11 @@ screen streamDetails():
             text "Teresa: [engineerApproval]" align(0.66, 0.9) size 30 color"#e41a1a"
             text "Ama: [deadeyeApproval]" align(0.66, 0.95) size 30 color"#14eb75"
             if viewershipHigh == True:
-                text "Viewership: High" xpos 1550 ypos 0 size 30 color"#ffe926"
+                text "Viewership: High" xpos 1250 ypos 50 size 30 color"#ffe926"
             elif viewershipMed == True:
-                text "Viewership: Med" xpos 1550 ypos 0 size 30 color"#ffe926"
+                text "Viewership: Med" xpos 1250 ypos 50 size 30 color"#ffe926"
             else:
-                text "Viewership: Low" xpos 1350 ypos 50 size 30 color"#ffe926"
+                text "Viewership: Low" xpos 1250 ypos 50 size 30 color"#ffe926"
             text "Reluctance: [reluctance]" xpos 1000 ypos 5 size 30 color"#00ff0d"
             text "Enthusiasm: [enthusiasm]" xpos 1250 ypos 5 size 30 color"#00ff0d"
             text "Energy: [energy]" xpos 1500 ypos 5 size 30 color"#00ff0d"
