@@ -99,8 +99,8 @@ label vig4_sc1_kcPrediction():
         "Ama's going to come back for sure.":
             $ kcEngagement += 1
             $ pdEngagement += 1
-            player "I think Ama's going to kidnap MAC and we're gonna have to fight her and BigCorp to get him back."
-            player "We didn't get a proper resolution to her story in Episode 3 so I'd be shocked if she doesn't come back in some capacity."
+            player "I think Ama's going to kidnap MAC, and we're gonna have to fight her and BigCorp to get him back."
+            player "We didn't get a proper resolution to her story in Episode 3, so I'd be shocked if she doesn't come back in some capacity."
             $ AddChatter(vig4_sc2_interact_comment2)
     if reactVariable == True:
         "Where was I?"
@@ -274,12 +274,12 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
         "So good to see you!":
-            player "Oh my god, El! It's so good to have you in chat!"
+            player "El! It's so good to have you in chat!"
             $ AddChatter(vig4_bro_comment2)
-            player "Oh my god that's so sweet! It's great to have you here!"
+            player "Oh wow, that's so sweet! It's great to have you here!"
             $ AddChatter(vig4_bro_comment3)
             menu:
-                player "Oh my god that's so sweet! It's great to have you here!"
+                player "Oh wow, that's so sweet! It's great to have you here!"
                 "Everyone say \"hi\" to my brother!":
                     player "El, meet Chat. Chat, say \"hi\" to my lil bro!"
                     $ AddChatter(vig4_bro_comment4)
@@ -572,7 +572,7 @@ label vig4_sc5_oscarReturn():
     $ narrator = reg_narrator
     $ commentVariable = True
     menu:
-        "swayy0scar! They were in chat for the first stream but haven't been around since."
+        "swayy0scar! They were in chat for the first stream, but haven't been around since."
         "Welcome back!":
             player "Hey, Oscar! Welcome back!"
             player "It's been a while, what's going on with you?"
@@ -727,8 +727,8 @@ label vig4_sc7_kcWhyNoRomance():
         "kitcat wants to know why I backed out of romancing Ama."
         "They're not right for each other.":
             player "I don't think they're right for each other."
-            player "Plus Ama's kind of a mother figure to Moze."
-            player "It didn't end up feeling good in the end. Sorry chat."
+            player "Plus, Ama's kind of a mother figure to Moze."
+            player "It didn't end up feeling good in the end. Sorry, chat."
             $ AddChatter(vig4_sc7_interact_comment2)
         "Too soon.":
             player "I think there's something between them, but saying \"I love you\" right now feels a bit rushed."
@@ -756,7 +756,7 @@ label vig4_pdEndFeeling():
     menu:
         "How am I feeling now that I'm at the end of the game?"
         "Tired.":
-            player "I'll be honest Chat, I'm beat haha"
+            player "I'll be honest Chat, I'm beat haha."
             player "This has been a long time coming. It's been super fun, but I am tired."
             player "A bit relieved to be bringing this to a closed."
             $ AddChatter(vig4_epilogue_interact_comment1)
@@ -768,7 +768,7 @@ label vig4_pdEndFeeling():
         "Ecstatic.":
             player "Oh I feel amazing, ecstatic even!"
             player "That climax was so cool and all the drama between the characters was amazing!"
-            player "I think I'm gonna be riding this high for a while haha"
+            player "I think I'm gonna be riding this high for a while haha."
             $ AddChatter(vig4_epilogue_interact_comment4)
             pause 0.5
             if viewershipHigh == True:
@@ -808,7 +808,7 @@ label vig4_pdEndFeeling():
     $ commentVariable = False
     return
 
-### Streamer Reacts
+### Streamer Reacts ##########################
 
 label vig4_sc1_macjokes():
     hide screen streamerCommentary
@@ -962,7 +962,7 @@ label vig4_sc2_coilshield():
         "Shoot him again!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Fire again Teresa!"
+            player "Fire again, Teresa!"
             player "That shield ain't limitless!"
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_react_comment11)
@@ -1044,7 +1044,7 @@ label vig4_sc2_longjourney():
         "Talk about how hard the journey's been."
         "It's taken forever!":
             $ reactImage = "stream ui/reactconversational.png"
-            player "Yeah it took forever."
+            player "Yeah, it took forever."
             player "And it was awful!"
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc2_react_comment21)
@@ -1085,7 +1085,7 @@ label vig4_sc2_coilbackstory():
         "Can't side with BigCorp!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
-            player "Damnit, Coil!"
+            player "Damn it, Coil!"
             player "You should've known better than to trust BigCorp!"
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc2_react_comment24)
@@ -1547,7 +1547,7 @@ label vig4_sc3_coil1():
         "Bullshit!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
-            player "This is bullshit chat!"
+            player "This is bullshit, chat!"
             player "All this work to get MAC here!"
             player "No way we're letting this happen!"
             if viewershipHigh == True:
@@ -1767,11 +1767,11 @@ label vig4_sc4_amaoffer():
     $ reactVariable = True
     menu:
         "Ama is proposing an alliance with Moze."
-        "Wow quite the offer.":
+        "Wow, quite the offer.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
             player "Holy shit chat. This is interesting."
-            player "The Dragonflies kinda suck but should we side with Ama?"
+            player "The Dragonflies kinda suck, but should we side with Ama?"
             $ AddChatter(vig4_sc4_react_comment1)
             pause 0.5
             $ AddChatter(vig4_sc4_react_comment2)
@@ -2282,7 +2282,7 @@ label vig4_sc6_attack_barricadesurprise():
             $ kcEngagement += 1
             $ csEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
-            player "Damn that might've  been too much."
+            player "Damn, that might've  been too much."
             player "I feel kinda bad. Not sure they deserve this."
             $ AddChatter(vig4_sc6_attack_barricade_react_comment6)
             pause 0.5
@@ -2408,7 +2408,7 @@ label vig4_sc6_attack_finding_coil():
             pause 0.5
         "Time to get even!":
             $ reactImage = "stream ui/reactconfident.png"
-            player "Get ready to meet your end Coil!"
+            player "Get ready to meet your end, Coil!"
             player "Vengeance is a dish best served... Coiled."
             $ AddChatter(vig4_sc6_attack_findingcoil_react_comment3)
             pause 0.5
@@ -2531,7 +2531,7 @@ label vig4_sc7_starshower():
         "What a climax!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Wow, what crazy visuals!"
-            player "This climax is epic chat!"
+            player "This climax is epic, chat!"
             #player "Great way to end the game."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_react_comment1)
@@ -2648,7 +2648,7 @@ label vig4_sc7_killcoil():
             pause 0.5
         "Is this the end of Polaris?":
             $ reactImage = "stream ui/reactthinking.png"
-            player "Damn chat this is kinda sad."
+            player "Damn, chat, this is kinda sad."
             player "Did we doom Polaris with this decision?"
             player "RIP."
             $ AddChatter(vig4_sc7_killcoil_react_comment4)
@@ -2819,7 +2819,7 @@ label vig4_epilogue_maclove():
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Awwwwww!"
-            player "MAC is so cute chat."
+            player "MAC is so cute, chat."
             player "I love you too!"
             $ AddChatter(vig4_epilogue_react_comment1)
             pause 0.5

@@ -22,7 +22,7 @@ define mod_nvl = Character("Jessie", what_font="Mukta-Regular.ttf", kind = nvl, 
 define bro_nvl = Character("El", what_font="Mukta-Regular.ttf", kind = nvl )
 define cs_nvl = Character("Coriolis", what_font="Mukta-Regular.ttf", kind = nvl, )
 define kc_nvl = Character("kitcat", what_font="Mukta-Regular.ttf", kind = nvl, )
-define pd_nvl = Character("PickledDragons", what_font="Mukta-Regular.ttf", kind = nvl, )
+define pd_nvl = Character("pickledDragons", what_font="Mukta-Regular.ttf", kind = nvl, )
 define elliotflashback = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") 
 
 define adv_menu = menu

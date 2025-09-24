@@ -41,7 +41,7 @@ label vignette3Start():
     if vig2_outlawEpilogue == True:
         $ viewershipHigh = True
         $ viewershipMed = False
-        $ ViewershipLow = False
+        $ viewershipLow = False
     else:
         $ viewershipHigh = False
         $ viewershipMed = False
@@ -4148,7 +4148,7 @@ label vig3_sc13():
     recS "Not just MAC."
     "They hold up the range extender laying on the counter near them."
     mS "How?"
-    pS "Long story, truly, did you know Zan is here?"
+    pS "Long story, truly. Did you know Zan is here?"
     mS "At the Fair? For what?"
     recS "He's one of the featured designers! A big name in biomechanical engineering."
     pS "He's got some good-lookin' work."
@@ -4185,7 +4185,7 @@ label vig3_sc13():
     "We need to act now."
     menu: 
         "We need to act now."
-        "Call in a favour to deal with Ama?":
+        "Call in a favour to deal with Ama.":
             "Let's just hope he picks up."
             if vig2_outlawEpilogue == True:
                 jump vig3outlawcomms
@@ -4276,7 +4276,7 @@ label vig3outlawcomms():
     $ AddChatter (vig3_outlawcomms_comment1)
     "Matticus smiles in that shit-eating grin that he loves."
     $ AddChatter (vig3_outlawcomms_comment2)
-    pS "This is a terrible idea"
+    pS "This is a terrible idea."
     "I'm starting to agree."
     $ AddChatter (vig3_outlawcomms_comment3)
     pause 0.5
@@ -4319,16 +4319,16 @@ label vig3outlawcomms():
     macS "Skeeve."
     recS "The biggest."
     mS "Let's get out of here."
-    "Just then an annoucement comes on in the hall."
+    "Just then an announcement comes on in the hall."
     invfairannounce "Unauthorized personnel in east wing hallway."
     "I hear the unmistakable sound of footsteps."
     "Then Ama yelling."
     amaS "Get OFF me!" 
     mS "Now's our shot!"
     "We run out of the hallway in the opposite direction of the commotion. And are stoppped by an unfortunate face."
-    stop music
+    #stop music fadeout 1.0
     show houndleader stream neutral at stream_center with dissolve
-    houndleader "And where do y'all think you're going."
+    houndleader "And where do y'all think you're goin'?."
     houndleader "We've got orders for you all to come with us."
     "Shit."
     show jennica stream neutral
@@ -4392,8 +4392,8 @@ label vig3marshalcomms():
     hide mac with dissolve
     hide rec with dissolve
     show houndleader at stream_center with dissolve
-    stop music
-    houndleader "Well hello there sweetcheeks."
+    #stop music
+    houndleader "Well hello there, sweetcheeks."
     $ AddChatter (vig3_marshalcomms_comment5)
     houndleader "We've got orders for you all to come with us."
     enS "Shit."
@@ -4428,22 +4428,22 @@ label vig3_sc14():
     houndleader "This one, it'll take you right to the plaza."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment6)
-    "The hound leader inputs some commands into the button and the doors swing open."
+    "The hound leader inputs some commands into the keypad and the doors swing open."
     menu: 
         "Say something?"
         "That's it?":
-            mS "So that's it? Just showing us the door?"
+            mS "So, that's it? Just showing us the door?"
             $ AddChatter(vig3_sc14_thatsit_comment1)
             pause 0.5
             $ AddChatter(vig3_sc14_thatsit_comment2)
-            houndleader "I'm sorry did you want a red carpet?"
+            houndleader "I'm sorry, did you want a red carpet?"
             $ AddChatter(vig3_sc14_thatsit_comment3)
             mS "We can start with an explanation."
             houndleader "Just be happy you're getting an easy out."
-            houndleader "Now get in sweetcheeks."
+            houndleader "Now get in, sweetcheeks."
             $ AddChatter(vig3_sc14_thatsit_comment4)
         "What's your angle?":
-            mS "So what's the angle?"
+            mS "So, what's the angle?"
             $ AddChatter(vig3_sc14_angle_comment1)
             houndleader "Straight down right to Akar."
             $ AddChatter(vig3_sc14_angle_comment2)
@@ -4463,8 +4463,8 @@ label vig3_sc14():
             houndleader "We'll be looking."
             $ AddChatter(vig3_sc14_nothing_comment3)
     "We all walk into the shuttle and take a seat."
-    houndgoon "Captain we got another one!"
-    houndleader "Put em in this one!"
+    houndgoon "Captain, we got another one!"
+    houndleader "Put 'em in this one!"
     houndleader "Then let's get the hell out of here."
     houndleader "I need a drink after this."
     "I'm unsurprised as Ama walks in and takes her spot near the door."
@@ -4486,18 +4486,18 @@ label vig3_sc14():
     "Teresa and Jen are quick to act."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment9)
-    enS "Let her go Ama!"
+    enS "Let her go, Ama!"
     "Teresa attempts to grab Ama who kicks her into Jenn with deadly ease."
     $ AddChatter(vig3_sc14_escape_comment10)
     hide teresa with vpunch
     enS "Agh!"
-    "From the ground Jenn pulls out her gun at Ama."
+    "From the ground Jenn pulls out her gun."
     pS "Don't make us send you back in a body bag."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment11)
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
-    amaS "Now how about we all stay still and quiet and do as I—"
+    amaS "Now, how about we all stay still and quiet, and do as I—"
     "Her eyes meet Rec's."
     $ AddChatter(vig3_sc14_escape_comment12)
     hide jennica with dissolve
@@ -4510,8 +4510,8 @@ label vig3_sc14():
     $ AddChatter(vig3_sc14_escape_comment13)
     amaS "If it isn't Reccrin."
     amaS "Right where we left him."
-    $ AddChatter(vig3_sc14_escape_comment14)
     show rec stream angry
+    $ AddChatter(vig3_sc14_escape_comment14)
     "The shuttle hums as it takes off down to Akar."
     recS "Screw you..."
     $ AddChatter(vig3_sc14_escape_comment15)
@@ -4519,15 +4519,15 @@ label vig3_sc14():
     $ AddChatter(vig3_sc14_escape_comment16)
     pause 0.5
     $ AddChatter(vig3_sc14_escape_comment17)
-    recS "Screw you Ama! You took Allistar away to go galavanting in the Outposts."
+    recS "Screw you, Ama! You took Allistar away to go galavanting in the Outposts."
     $ AddChatter(vig3_sc14_escape_comment18)
     recS "I have nothing to say to you."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment19)
-    amaS "Please I'm not the one who wanted to be selfish and keep him down."
+    amaS "Please, I'm not the one who wanted to be selfish and weigh him down."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment20)
-    amaS "That kid had so much talent and potential and you just wanted him to ROT in a shop!"
+    amaS "That kid had so much talent and potential, and you just wanted him to ROT in a shop!"
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment21)
     recS "We had a good life!"
@@ -4535,15 +4535,15 @@ label vig3_sc14():
         $ AddChatter(vig3_sc14_escape_comment22)
     recS "And I stayed in Akar because I knew that's the only way I could see him."
     "Ama looks around expectantly."
-    "A realization creeps on her face."
+    "A realization creeps across her face."
     amaS "Mozely..."
     amaS "Where is Allistar?"
-    amaS "Last I checked I left him with you."
+    amaS "Last I checked, I left him with you."
     show rec stream surprised
     "Rec's eyes fix to me, finally catching me in my lie."
     $ AddChatter(vig3_sc14_escape_comment23)
     recS "What?"
-    amaS "Oh you didn't know?"
+    amaS "Oh, you didn't know?"
     "Guilt stains all of our faces."
     $ AddChatter(vig3_sc14_escape_comment24)
     "The walls of the shuttle feel like they're choking the air out of me."
@@ -4552,7 +4552,7 @@ label vig3_sc14():
     "I don't answer."
     $ AddChatter(vig3_sc14_escape_comment26)
     recS "Moze..."
-    "Mac catches my eyes from the back of the shuttle."
+    "MAC catches my eyes from the back of the shuttle."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment27)
     recS "MOZE!"
@@ -4563,16 +4563,16 @@ label vig3_sc14():
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment28)
     "Blood starts to pool from the blade as I try to form the words."
-    mS "He's dead Rec, I killed him."
+    mS "He's dead, Rec. I killed him."
     $ AddChatter(vig3_sc14_escape_comment29)
     pause 0.5
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment30)
         $ AddChatter(vig3_sc14_escape_comment31)
-    "Rec's eys widen, as they step back, horrified."
+    "Rec's eyes widen, as they step back, horrified."
     recS "No."
     recS "That's not right."
-    "They look around at all of us, Jenn and Teresa can't look them in the eyes."
+    "They look around at all of us. Jenn and Teresa can't look them in the eyes."
     $ AddChatter(vig3_sc14_escape_comment32)
     pause 0.5
     $ AddChatter(vig3_sc14_escape_comment33)
@@ -4585,12 +4585,12 @@ label vig3_sc14():
         pause 0.5
         $ AddChatter(vig3_sc14_escape_comment37)
     $ AddChatter(vig3_sc14_escape_comment38)
-    recS "Why..."
+    recS "Why?"
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment39)
     menu: 
         "Explain to Rec why you shot Allistar?"
-        "I didn't want to it just happened.":
+        "I didn't want to. It just happened.":
             $ vig3_recResponse = "Confused"
             $ pilotApproval += 2 #Logic: I think Jenn, as Moze's oldest friend, probably has sympathy for her mixed up emotions.
             $ pdEngagement -= 3
@@ -4613,12 +4613,12 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_justhappened_comment2)
             "Tears are streaming down Rec's face." 
             $ AddChatter(vig3_sc14_justhappened_comment3)
-            recS "So why?"
-            mS "I just happened. Before I realized what I had done... He was on the ground."
+            recS "So, why?"
+            mS "It just happened. Before I realized what I had done... He was on the ground."
             $ AddChatter(vig3_sc14_justhappened_comment4)
-            mS "I'm so sorry Rec."
+            mS "I'm so sorry, Rec."
             $ AddChatter(vig3_sc14_justhappened_comment5)
-            mS "I know it doesn't mean anything right now but I'm sorry."
+            mS "I know it doesn't mean anything right now, but I'm sorry."
             "There's a long moment where Rec just looks at us."
             $ AddChatter(vig3_sc14_justhappened_comment6)
             pause 0.5
@@ -4638,8 +4638,8 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_justhappened_comment12)
             "MAC clings to Teresa."
             "Then an announcement."
-            "Final stop, Akar station."
-            "The doors open and Reccrin walks out and out of sight."
+            "Final stop: Akar station."
+            "The shuttle doors open. Reccrin walks out and out of sight."
             hide rec with Dissolve(2.0)
             $ AddChatter(vig3_sc14_justhappened_comment13)
             amaS "How disappointing, he was a talented kid."
@@ -4648,7 +4648,7 @@ label vig3_sc14():
             "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
             "We don't move as the doors shut in front of us."
-            "Then out of sight and the shuttle returns to the Vineyard."
+            "Then the shuttle tears out of sight and returns to the Vineyard."
             hide ama with dissolve
             "For a moment we stand on the empty platform."
             "Unsure how to continue."
@@ -4712,23 +4712,23 @@ label vig3_sc14():
             recS "I won't calm down! You killed him!"
             recS "You all killed him!"
             $ AddChatter(vig3_sc14_hadto_comment14)
-            "Rec attempts to fight their way to me but is subdued."
+            "Rec attempts to fight their way to me, but is subdued."
             "Then an announcement."
-            "Final stop, Akar station."
+            "Final stop: Akar station."
             "When the doors open, Teresa pushes Rec out onto the platform."
             show rec stream angry at stream_left with vpunch
             recS "Fine! I'm not going to stick around for this."
             recS "I hope it was all worth it!"
             "They turn to walk away."
+            hide rec with Dissolve(2.0)
             show screen streamerCommentary
-            hide rec with dissolve
             amaS "How disappointing, Allistar was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
             "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
             "We don't move as the doors shut in front of us."
-            "Then out of sight and the shuttle returns to the Vineyard."
+            "Then the shuttle tears out of sight and returns to the Vineyard."
             hide ama with dissolve
             "For a moment we stand on the empty platform."
             "Unsure how to continue."
@@ -4758,7 +4758,7 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_deservedit_comment3)
             pause 0.5
             $ AddChatter(vig3_sc14_deservedit_comment4)
-            mS "I saw him with MAC at the escape pods and I realized what he was trying to do."
+            mS "I saw him with MAC at the escape pods, and I realized what he was trying to do."
             $ AddChatter(vig3_sc14_deservedit_comment5)
             "The blade cuts into my neck as I make sure to look Rec in the eyes."
             $ AddChatter(vig3_sc14_deservedit_comment6)
@@ -4771,14 +4771,14 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_deservedit_comment10)
             "Teresa and Jennica almost lose their sights on Ama."
             $ AddChatter(vig3_sc14_deservedit_comment11)
-            "MAC stays there motionless."
+            "MAC stays there, motionless."
             $ AddChatter(vig3_sc14_deservedit_comment12)
             "Behind him is Rec. Face like they took a bullet to the gut."
             recS "You..."
             $ AddChatter(vig3_sc14_deservedit_comment13)
-            "Tears pouring down his face."
+            "Tears pour down his face."
             enS "Moze..."
-            pS "You're not serious."
+            pS "You're not serious..."
             $ AddChatter(vig3_sc14_deservedit_comment14)
             mS "What? You think being in this position is easy?"
             mS "You think I like making the hard calls?"
@@ -4792,23 +4792,26 @@ label vig3_sc14():
             "Rec grabs the blaster off of Teresa and fires a shot."
             show jennica stream fight at stream_center with vpunch
             "With a quick move from Jennica the bullet hits the shuttle ceiling."
+            show rec with vpunch
+            show jennica with vpunch
             "She tackles them to the ground."
             show screen streamerCommentary
-            hide rec with vpunch
-            hide jennica with vpunch
             "Then an announcement."
-            "Final stop, Akar station."
-            "When the doors open, Jennica lets go and Rec runs to the platform."
+            "Final stop: Akar station."
+            hide jennica with Dissolve(0.5)
+            "When the doors open, Jennica lets go of Rec."
+            "They run out of the shuttle doors onto the platform. And out of sight."
+            hide rec with Dissolve(2.0)
             "Ama leans in close."
             amaS "That was cold Mozely, even for me."
             "Ama takes the knife off my neck. And shoves me into the group."
             "We fall out of the shuttle and onto the platform."
             amaS "Let's finish this later, shall we?"
             "We don't move as the doors shut in front of us."
-            "Then out of sight and the shuttle returns to the Vineyard."
+            "Then the shuttle tears out of sight and returns to the Vineyard."
             "We're left on the platform."
             "My crew can barely look at me."
-            mS "Everyone I—"
+            mS "Everyone, I—"
             hide ama with dissolve
             hide mac with dissolve
             hide jennica with dissolve
@@ -4823,16 +4826,16 @@ label vig3_epilogue():
     $ AddChatter(vig3_epilogue_comment1)
     "The screens on the platform end their ads and a live feed begins."
     $ AddChatter(vig3_epilogue_comment2)
-    "Reynar is there, on his balcony addressing the crowd of patrons."
+    "Reynar is there, on his balcony, addressing the crowd of patrons."
     show reynar stream neutral at stream_center with dissolve
     $ AddChatter(vig3_epilogue_comment3)
-    reynar "Good evening everyone!"
+    reynar "Good evening, everyone!"
     $ AddChatter(vig3_epilogue_comment4)
     reynar "Thank you once again for offering your time, your knowledge, and your passion to our Fair."
     $ AddChatter(vig3_epilogue_comment5)
     pause 0.5
     $ AddChatter(vig3_epilogue_comment6)
-    reynar "Your presence here is a testiment to our ongoing commitment to make the Outposts a better and brighter place."
+    reynar "Your presence here is a testament to our ongoing commitment to make the Outposts a better and brighter place."
     $ AddChatter(vig3_epilogue_comment7)
     $ AddChatter(vig3_epilogue_comment8)
     pause 0.5
@@ -4842,6 +4845,7 @@ label vig3_epilogue():
     reynar "Shape our future."
     reynar "Don't ever lose sight of what we're working towards."
     reynar "So let's raise a glass in celebration."
+    show reynar stream gatsby at stream_center
     reynar "To the Outposts!"
     "Reynar looks dead at the camera, at us."
     $ AddChatter(vig3_epilogue_comment10)
@@ -4849,7 +4853,6 @@ label vig3_epilogue():
     $ AddChatter(vig3_epilogue_comment11)
     "He raises his glass."
     $ AddChatter(vig3_epilogue_comment12)
-    show reynar stream gatsby at stream_center
     "The fireworks dance in the night sky."
     $ AddChatter(vig3_epilogue_comment13)
     "And I remember what he left in my pocket."
@@ -4858,7 +4861,7 @@ label vig3_epilogue():
     hide exteriorvineyard_stream
     $ AddChatter(vig3_epilogue_comment14)
     "Teresa outfits the Oakley best she can."
-    "And with Reynar's gift we get access to fly the Oakley out through restricted sky."
+    "And with Reynar's gift, we get access to fly the Oakley out through restricted sky."
     $ AddChatter(vig3_epilogue_comment15)
     "Which gives us time."
     if viewershipHigh == True:
@@ -4867,7 +4870,7 @@ label vig3_epilogue():
     "But the Oakley is silent."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment17)
-    play music "soundtrack/theme.wav" fadein 1.0
+    play music "soundtrack/theme.wav" fadein 4.0
     "For days it's buisness as usual, no one knowing how to talk about the dark cloud over us."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment18)
@@ -4909,7 +4912,7 @@ label vig3_epilogue():
         $ AddChatter(vig3_epilogue_comment30)
         pause 0.5
         $ AddChatter(vig3_epilogue_comment31)
-    pS "On it Cap."
+    pS "On it, Cap."
     mS "Thank you, I'll be in my quarters."
     hide jennica with dissolve
     hide teresa with dissolve
@@ -4917,7 +4920,7 @@ label vig3_epilogue():
     show ship_hallway_stream at topleft onlayer background with dissolve
     hide shiphub_stream with dissolve
     #Make this longer#
-    "As I walk down the hall I try to take stock of everything."
+    "As I walk down the hall, I try to take stock of everything."
     menu:
         "How do you feel?"
         "Happy to have survived.":
@@ -4928,7 +4931,7 @@ label vig3_epilogue():
             $ AddChatter(vig3_happy_comment3)
             "Maybe even a break."
             $ AddChatter(vig3_happy_comment4)
-            "Now I'm just happy to have made it in one piece."
+            "Now I'm just happy to have made it through in one piece."
         "Guilty.":
             $ AddChatter(vig3_guilty_comment1)
             "I can't imagine what Rec is feeling."
@@ -4950,13 +4953,13 @@ label vig3_epilogue():
 
     "The walk to my quarters is long."
     "Then I'm intercepted."
-    "...by Mac."
     show mac stream neutral at stream_center_mac with dissolve
+    "... by Mac."
     $ AddChatter(vig3_epilogue_comment32)
     "We stare at each other in silence."
     "I don't know what to say."
     "We just look at each other."
-    "So I lower myself to his eye level."
+    "I lower myself to his eye level."
     "He rolls towards me."
     "And hugs me."
     $ AddChatter(vig3_epilogue_comment33)
@@ -4991,7 +4994,7 @@ label vig3_epilogue():
     player "Next week we've got the fourth and FINAL episode of {i}Oakley 2{/i}."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment43)
-    player "So be sure to swing by and join us for a big finale!"
+    player "So be sure to swing by, and join us for a big finale!"
     $ AddChatter(vig3_epilogue_comment44)
     pause 0.5
     if viewershipHigh == True:
@@ -5007,7 +5010,8 @@ label vig3_epilogue():
     "The chat slowly dies down as you close the stream."
     hide screen streamChat
     hide screen streamDetails
-    pause 2.0
+    scene black with dissolve
+    pause 1.0
     jump vig3_macro_start
 
 label vig3_macro_start():
@@ -5038,47 +5042,47 @@ label vig3_macro_mod_1():
     mod_nvl "Yoyoyo!"
     mod_nvl "Another great stream!" 
     if viewershipHigh == True:
-        mod_nvl "The viewership numbers were crazy."
+        mod_nvl "The viewership numbers were crazy"
         mod_nvl "I wouldn't be surprised if we already hit all the marks to make Affiliate!"
         menu:
             "•You think so??":
                 player_nvl "You think I made it already?"
-                mod_nvl "Maybe! It was a lot of people."
-                mod_nvl "Check your analytics on Flinch and let me know."
-                mod_nvl "I guess you still have to do one more stream technically, but that might be a formality at this point."
+                mod_nvl "Maybe! It was a lot of people"
+                mod_nvl "Check your analytics on Flinch and let me know"
+                mod_nvl "I guess you still have to do one more stream technically, but that might be a formality at this point"
             "•I still have to do one more stream.":
-                player_nvl "Maybe in terms of analytics, but I have to stream at least one more time next week to officially make it."
-                mod_nvl "True. But even then, at least you know it's pretty much a formality."
+                player_nvl "Maybe in terms of analytics, but I have to stream at least one more time next week to officially make it"
+                mod_nvl "True. But even then, at least you know it's pretty much a formality"
     else:
-        mod_nvl "Viewership wasn't the same as the previous stream." #Maybe cause you went a little too Marshal in Episode 2."
+        mod_nvl "Viewership wasn't the same as the previous stream" #Maybe cause you went a little too Marshal in Episode 2."
         mod_nvl "But it was still good numbers. With a solid final stream, you should be all set for Affiliate!"
         menu:
             "•You think we'll make it?":
                 player_nvl "Do you really think we'll make it to where we need to go?"
-                mod_nvl "Oh yeah."
-                mod_nvl "I mean, I've believed in you since I started modding for your stream."
+                mod_nvl "Oh yeah"
+                mod_nvl "I mean, I've believed in you since I started modding for your stream"
                 mod_nvl "Why stop now?"
-                player_nvl "Thanks, Jessie."
-                mod_nvl "Of course."
+                player_nvl "Thanks, Jessie"
+                mod_nvl "Of course"
             "•I'm feeling confident.":
-                player_nvl "I feel good about our chances too."
-                player_nvl "I know the numbers dipped from when I streamed Episode 2, but I think the crew that's there is in it for the long haul."
-                mod_nvl "You got a lot of friendly voices in the chat."
-                mod_nvl "Not every streamer can say that."
+                player_nvl "I feel good about our chances too"
+                player_nvl "I know the numbers dipped from when I streamed Episode 2, but I think the crew that's there is in it for the long haul"
+                mod_nvl "You got a lot of friendly voices in the chat"
+                mod_nvl "Not every streamer can say that"
     mod_nvl "Alright, I don't have a ton of time, but I wanted to say you did a great job dealing with the crash!"
     menu:
         "•I was so stressed out!":
             player_nvl "Oh my god that stressed me out so much!"
-            player_nvl "I'm like shocked the chat didn't abandon me."
+            player_nvl "I'm like shocked the chat didn't abandon me"
             mod_nvl "Just goes to show the kind of vibe you cultivated!"
         "•I felt weirdly calm.":
-            player_nvl "It's weird, in the past that kind of stuff really rattled me."
-            player_nvl "But this time I just felt really calm."
+            player_nvl "It's weird, in the past that kind of stuff really rattled me"
+            player_nvl "But this time I just felt really calm"
             mod_nvl "Interesting. Guess you're still getting better at this stuff!"
         "•It happens.":
-            player_nvl "You stream enough times, you get used to technical difficulties. It happens."
+            player_nvl "You stream enough times, you get used to technical difficulties. It happens"
             mod_nvl "I mean, still, you handled it like a pro!"
-    mod_nvl "Ok, gotta run and grab some udon."
+    mod_nvl "Ok, gotta run and grab some udon"
     mod_nvl "Have a good night! So excited for the last episode!"
     menu:
         "•Take care!":
@@ -5088,8 +5092,9 @@ label vig3_macro_mod_1():
 label vig3_macro_webNav():
     nvl clear
     $ menu = adv_menu
+    $ renpy.sound.play("audio/ReceiveText.ogg")
     "You're about to sign off Loop'D when you get another notification."
-    scene streamview with dissolve
+    #scene streamview with dissolve
     if topfan == "Coriolis":
         "It's from Coriolis."
     elif topfan == "kitcat":
@@ -5112,41 +5117,41 @@ label vig3_macro_viewerChat_1():
         #Coriolis convo about Rec
         "Coriolis sent me a message on Loop'd."
         cs_nvl "Hey, [username], wanted to say thanks for a great stream!"
-        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite."
-        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
+        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite"
+        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment"
         if vig3_recResponse == "Confused":
-            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
+            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar"
             $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It reflected how I felt as a player.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "I made that choice cause it was what I felt the most in that moment."
-                    player_nvl "I wasn't expecting it and it was so tense."
+                    player_nvl "I made that choice cause it was what I felt the most in that moment"
+                    player_nvl "I wasn't expecting it and it was so tense"
                     if misclick == True:
                         cs_nvl "Right, I remember you said you didn't even mean to do it, right? Like it was a misclick?"
-                        player_nvl "Yeah. So that choice just felt like what my actual response was."
+                        player_nvl "Yeah. So that choice just felt like what my actual response was"
                     else:
                         pass
-                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player."
-                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player"
+                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5155,28 +5160,28 @@ label vig3_macro_viewerChat_1():
                 "•It felt the most honest from Moze.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze."
-                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar."
-                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore."
-                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too."
+                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze"
+                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar"
+                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore"
+                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too"
                     cs_nvl "Ooh interesting. I really like that take!"
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5187,34 +5192,34 @@ label vig3_macro_viewerChat_1():
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
-            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
+            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that"
             $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It's a story Moze has to believe in.":
                     hide screen NVLnarration
-                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
-                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
-                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
-                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality."
-                    cs_nvl "I don't like what Moze did, but I do feel for her."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself"
+                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality"
+                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode"
+                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality"
+                    cs_nvl "I don't like what Moze did, but I do feel for her"
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5222,29 +5227,29 @@ label vig3_macro_viewerChat_1():
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•I don't think Moze had choice.":
                     hide screen NVLnarration
-                    player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that."
-                    player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
+                    player_nvl "I really don't think Moze had a choice. I mean, technically she did, but it's more complicated than that"
+                    player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point"
                     player_nvl "But could Moze really have taken that risk?"
-                    player_nvl "I don't know that she would have. And I think it's interesting to explore this character who has such a black and white outlook on that kind of thing."
-                    cs_nvl "Hmmm I see what you're saying."
-                    cs_nvl "I think I still agree with Rec (and Allistar), but it's a good point. Moze is put in a LOT of tough situations."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "I don't know that she would have. And I think it's interesting to explore this character who has such a black and white outlook on that kind of thing"
+                    cs_nvl "Hmmm I see what you're saying"
+                    cs_nvl "I think I still agree with Rec (and Allistar), but it's a good point. Moze is put in a LOT of tough situations"
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5255,39 +5260,39 @@ label vig3_macro_viewerChat_1():
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
-            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
+            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it"
             $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It was harsh but true.":
                     hide screen NVLnarration
                     $ csEngagement -= 1
-                    player_nvl "It was harsh, but it was true."
-                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
-                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences."
-                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma."
-                    cs_nvl "No I get that...I guess I just didn't read that in Moze's character."
+                    player_nvl "It was harsh, but it was true"
+                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec"
+                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences"
+                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma"
+                    cs_nvl "No I get that... I guess I just didn't read that in Moze's character"
                     if misclick == True:
-                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally."
-                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character."
-                    cs_nvl "It's not what I would have done, but I see your perspective."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally"
+                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character"
+                    cs_nvl "It's not what I would have done, but I see your perspective"
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5295,28 +5300,28 @@ label vig3_macro_viewerChat_1():
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
                     hide screen NVLnarration
-                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
-                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
-                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
-                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again."
-                    player_nvl "No chance."
-                    cs_nvl "I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh"
+                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it"
+                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar... but damn"
+                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again"
+                    player_nvl "No chance"
+                    cs_nvl "I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5330,11 +5335,11 @@ label vig3_macro_viewerChat_1():
     elif topfan == "kitcat": #kitcat Convo
         "kitcat sent me a message on Loop'd."
         kc_nvl "Heya, [username]! Wanted to say thanks for the awesome stream!"
-        kc_nvl "It was really cool getting to see the Oakley on their home turf."
+        kc_nvl "It was really cool getting to see the Oakley on their home turf"
         kc_nvl "But omg, we have to talk about MAC picking up that gun!"
         if vig3_macAlign == "ViolentPessimism":
             kc_nvl "I can't BELIEVE MAC shot Ama!"
-            kc_nvl "I mean, I heard people say that your choices affect him and his behavior, but I never thought he'd actually hurt someone."
+            kc_nvl "I mean, I heard people say that your choices affect him and his behavior, but I never thought he'd actually hurt someone"
             kc_nvl "If I'm being honest, I don't know how I feel about it..."
             $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
             show screen NVLnarration
@@ -5343,35 +5348,35 @@ label vig3_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "That scene was so crazy!"
-                    player_nvl "I get what you're saying, but I think it makes a lot of sense for his character and this universe."
-                    player_nvl "We've had to do a lot of not great things just to survive."
-                    player_nvl "And Moze might not be around him forever. If he's gonna make it in this galaxy, he has to learn to survive on his own as well."
+                    player_nvl "I get what you're saying, but I think it makes a lot of sense for his character and this universe"
+                    player_nvl "We've had to do a lot of not great things just to survive"
+                    player_nvl "And Moze might not be around him forever. If he's gonna make it in this galaxy, he has to learn to survive on his own as well"
                     player_nvl "I thought it was a great scene for him!"
-                    kc_nvl "No, you're right."
-                    kc_nvl "Idk, I guess I was just hoping he could find a way above all the dirt and grime."
+                    kc_nvl "No, you're right"
+                    kc_nvl "Idk, I guess I was just hoping he could find a way above all the dirt and grime"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
                 "•I'm also conflicted.":
                     hide screen NVLnarration
                     $ kcEngagement += 2
-                    player_nvl "I see where you're coming from. I'm also feeling a bit conflicted about it."
-                    player_nvl "Like, the galaxy is a tough place, and he has to know how to survive."
+                    player_nvl "I see where you're coming from. I'm also feeling a bit conflicted about it"
+                    player_nvl "Like, the galaxy is a tough place, and he has to know how to survive"
                     player_nvl "But is him becoming just like Moze really the best thing?"
-                    player_nvl "Idk, it's a tough line to walk."
+                    player_nvl "Idk, it's a tough line to walk"
                     kc_nvl "Definitely. And I'll be honest, I'm glad I don't have to worry about walking that line haha"
                     kc_nvl "Appreciate you making the tough calls for us, Cap!"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
@@ -5379,14 +5384,14 @@ label vig3_macro_viewerChat_1():
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
@@ -5396,7 +5401,7 @@ label vig3_macro_viewerChat_1():
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_macAlign == "ViolentHope":
             kc_nvl "What a great move by him! Taking a shot to distract Ama so you could get the upperhand!"
-            kc_nvl "Tbh, I was kinda nervous he was actually gonna shoot her there and I really don't know how I would have felt about that."
+            kc_nvl "Tbh, I was kinda nervous he was actually gonna shoot her there and I really don't know how I would have felt about that"
             kc_nvl "He's our lil guy, glad to know he's not turning into a murder bot, y'know?"
             $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
             show screen NVLnarration
@@ -5405,45 +5410,45 @@ label vig3_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ kcEngagement += 2
                     player_nvl "I totally agree, thought that move by him was super fun!"
-                    player_nvl "I was also holding my breath in that moment. Seriously didn't know which way it was gonna go."
-                    player_nvl "Glad he didn't shoot her. I know MAC has to learn how to survive in this galaxy, but him knowing the difference between survival and cruelty feels pretty important."
+                    player_nvl "I was also holding my breath in that moment. Seriously didn't know which way it was gonna go"
+                    player_nvl "Glad he didn't shoot her. I know MAC has to learn how to survive in this galaxy, but him knowing the difference between survival and cruelty feels pretty important"
                     kc_nvl "Exactly! Yeah I feel the same way. Great way of putting it!"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
                 "•I kind of wish he'd hit Ama.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
-                    player_nvl "I actually kind of wish he'd taken a shot at her."
-                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option."
-                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
-                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    player_nvl "I actually kind of wish he'd taken a shot at her"
+                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option"
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
@@ -5453,65 +5458,65 @@ label vig3_macro_viewerChat_1():
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_macAlign == "PeacePessimism":
             kc_nvl "It was so heartbreaking seeing him falter!"
-            kc_nvl "Like, I'm kinda glad he didn't actually shoot her and he was a good distraction."
-            kc_nvl "But seeing him with a genuine expression of disappointment...it got to me, y'know?"
+            kc_nvl "Like, I'm kinda glad he didn't actually shoot her and he was a good distraction"
+            kc_nvl "But seeing him with a genuine expression of disappointment... it got to me, y'know?"
             $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It paralleled Moze's flashback so well too.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
-                    player_nvl "Yeah, that moment really got me as well. Plus it parallels Moze's flashback with Ama really nicely."
-                    player_nvl "The whole episode did a really good job at drawing those connections."
-                    player_nvl "I feel for MAC. Just trying to do his best."
+                    player_nvl "Yeah, that moment really got me as well. Plus it parallels Moze's flashback with Ama really nicely"
+                    player_nvl "The whole episode did a really good job at drawing those connections"
+                    player_nvl "I feel for MAC. Just trying to do his best"
                     kc_nvl "For real. And he's doing so well!"
                     kc_nvl "Like, I absolutely loved seeing him take a more active role in this episode!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
                 "•I kind of wish he'd taken the shot.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
-                    player_nvl "I actually kind of wish he'd taken a shot at her."
-                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option."
-                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
-                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    player_nvl "I actually kind of wish he'd taken a shot at her"
+                    player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option"
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
-                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit"
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=3
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             kc_nvl "And he didn't even use it!"
-            kc_nvl "Lil guy to saved the day by reading Ama to absolute filth instead of using brute force."
-            kc_nvl "I heard people say that your choices affect him and his behavior, and it was really cool to see that happen."
+            kc_nvl "Lil guy to saved the day by reading Ama to absolute filth instead of using brute force"
+            kc_nvl "I heard people say that your choices affect him and his behavior, and it was really cool to see that happen"
             kc_nvl "Nice to know he's growing up right, y'know?"
             $ playerNVLNarration = "kitcat's talking about MAC's growth in the game. Should I respond?"
             show screen NVLnarration
@@ -5520,45 +5525,45 @@ label vig3_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ kcEngagement += 1
                     player_nvl "I know, I thought that was a great move from him as well!"
-                    player_nvl "Really cool to see how Moze's influence is affecting him, makes the whole \"doing better\" thing feel rewarding imo."
-                    player_nvl "Gotta love him learning to be clever and not just \"tough.\""
-                    kc_nvl "Yeah! And I think that change is apparent too when you think about how reckless he was going after the Hounds the first time."
+                    player_nvl "Really cool to see how Moze's influence is affecting him, makes the whole \"doing better\" thing feel rewarding imo"
+                    player_nvl "Gotta love him learning to be clever and not just \"tough\""
+                    kc_nvl "Yeah! And I think that change is apparent too when you think about how reckless he was going after the Hounds the first time"
                     kc_nvl "Absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
-                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
-                "•I kind of wish he'd taken the shot.":
+                            "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit"
+                "•I kind of wish he'd taken the shot":
                     hide screen NVLnarration
                     $ kcEngagement += 1
-                    player_nvl "I actually kind of wish he'd taken a shot at her."
-                    player_nvl "I mean, I do like how this reflects Moze's actions. But talking your way out of situations may not always be an option."
-                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself."
-                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast."
+                    player_nvl "I actually kind of wish he'd taken a shot at her"
+                    player_nvl "I mean, I do like how this reflects Moze's actions. But talking your way out of situations may not always be an option"
+                    player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
+                    kc_nvl "I see that. I guess I just don't want him to have to grow up that fast"
                     kc_nvl "Don't get me wrong though, absolutely loved seeing him take a more active role!"
                     kc_nvl "The bit about him \"disposing\" of the other prototype? So funny haha"
                     menu:
                         "•That part got me too!":
                             player_nvl "I almost lost it there too! MAC learning the subtle art of euphemisms haha"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•I thought it was going to be a lot worse.":
                             player_nvl "I know right? I thought for sure he was gonna mention an incinerator or something haha"
                             kc_nvl "Omg, can you imagine?"
-                            kc_nvl "Little guy growing up so fast."
-                            player_nvl "He really is."
+                            kc_nvl "Little guy growing up so fast"
+                            player_nvl "He really is"
                             kc_nvl "Anyway, thanks for the chat, [username]! See ya next week!"
                         "•Don't respond.":
                             "Don't really want to keep the conversation going, but it was nice to chat with kitcat for a bit."
@@ -5570,207 +5575,207 @@ label vig3_macro_viewerChat_1():
         #pickledDragons convo - Ama! and flashbacks
         "pickledDragons sent me a message on Loop'd."
         pd_nvl "Hey [username], thanks for the stream!"
-        pd_nvl "It was cool to see the Oakley in truly lawless environment. Felt like we got to know the characters a lot better."
-        pd_nvl "Especially the whole relationship between Ama and Moze. Those flashbacks really set a tone for their connection."
-        pd_nvl "Wondering what you think of Ama, now that we got to spend more time around her?"
-        $ playerNVLNarration = "pickledDragons asked about Ama and Moze's relationship. Should I respond?"
+        pd_nvl "It was cool to see the Oakley in a truly lawless environment. Felt like we got to know the characters a lot better"
+        pd_nvl "Especially the whole relationship between Ama and Moze. Those flashbacks really set a tone for their connection"
+        pd_nvl "Wondering what you think of Ama, now that we got to spend some time with her?"
+        $ playerNVLNarration = "pickledDragons asked how I feel about Ama. Should I respond?"
         show screen NVLnarration
         menu:
             "•I think she did the best she could.":
                 hide screen NVLnarration
                 $ pdEngagement += 1
-                player_nvl "Honestly, I think she did the best she could."
-                player_nvl "I mean, we saw that one flashback with the gun, where she basically threatened to kill Moze. And that's not cool."
-                player_nvl "But she was trying to do her best to teach Moze so she could survive on her own."
-                player_nvl "It's kinda what we're doing with MAC, and I really like that parallel."
-                pd_nvl "I see what you mean. There's clearly still some kind of connection between Ama and Moze. Hard to just throw that away."
+                player_nvl "Honestly, I think she did the best she could"
+                player_nvl "I mean, we saw that one flashback with the gun, where she basically threatened to kill Moze. And that's not cool"
+                player_nvl "But she was trying to do her best to teach Moze so she could survive on her own"
+                player_nvl "It's kinda what we're doing with MAC, and I really like that parallel"
+                pd_nvl "I see what you mean. There's clearly still some kind of connection between Ama and Moze. Hard to just throw that away"
                 pd_nvl "Yes! I like that you pointed out that parallel!"
                 if vig3_bcRepSaved == True:
                     pd_nvl "Is that why you decided to save the BigCorp rep?"
                     menu:
                         "•Yeah, I don't want MAC to turn out like Moze.":
-                            player_nvl "Yeah, especially with MAC watching me in that moment."
-                            player_nvl "Felt like Moze should model some sort of morality for him."
+                            player_nvl "Yeah, especially with MAC watching me in that moment"
+                            player_nvl "Felt like Moze should model some sort of morality for him"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
                                     pd_nvl "I guess not."
                         "•No, I just thought it was right to save him.":
-                            player_nvl "I actually wasn't thinking about MAC in that moment."
-                            player_nvl "I just didn't think it was right for Moze to standby and let someone die."
+                            player_nvl "I actually wasn't thinking about MAC in that moment"
+                            player_nvl "I just didn't think it was right for Moze to standby and let someone die"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
-                                    pd_nvl "I guess not."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
+                                    pd_nvl "I guess not"
                         "•I don't know.":
-                            player_nvl "I don't really know what motivated that decision."
-                            player_nvl "I guess it just felt right in the moment to me."
+                            player_nvl "I don't really know what motivated that decision"
+                            player_nvl "I guess it just felt right in the moment to me"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
-                                    pd_nvl "I guess not."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
+                                    pd_nvl "I guess not"
                     pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
                     pd_nvl "I heard you can get Ama to fight on your side!"
                     menu:
                         "•That sounds exciting!":
                             player_nvl "Really!? That's so exciting!"
-                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "Would be awesome to get the Snakehawks back together!"
                             player_nvl "As long as Ama plays nice with the Oakley crew haha"
                             pd_nvl "I know right! Could be so cool to fight alongside her!"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                         "•Ooh I don't know about that.":
-                            player_nvl "Ooh I don't know about that."
-                            player_nvl "She's so antagonistic in episode 3."
-                            player_nvl "If they don't handle it well, that could feel kinda cheap."
-                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            player_nvl "Ooh I don't know about that"
+                            player_nvl "She's so antagonistic in episode 3"
+                            player_nvl "If they don't handle it well, that could feel kinda cheap"
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                 else:
                     pd_nvl "Is that why you let Ama kill the BigCorp rep?"
                     menu:
                         "•Yes, I think MAC needs to learn the hard lessons.":
-                            player_nvl "Yeah. I don't think Moze should teach MAC by like pointing a gun at him (obviously)."
+                            player_nvl "Yeah. I don't think Moze should teach MAC by like pointing a gun at him (obviously)"
                             player_nvl "But being a life or death situation like that and learning that sometimes you have to put your own safety above others..."
-                            player_nvl "I think that's a lesson he has to learn in this galaxy."
-                            pd_nvl "Yeah, I think that makes a lot of sense."
-                            pd_nvl "Tough to learn that at a young age, whether you're a kid or a robot."
+                            player_nvl "I think that's a lesson he has to learn in this galaxy"
+                            pd_nvl "Yeah, I think that makes a lot of sense"
+                            pd_nvl "Tough to learn that at a young age, whether you're a kid or a robot"
                         "•No, I was concerned for MAC's safety.":
-                            player_nvl "It wasn't about teaching MAC anything actually."
-                            player_nvl "It just seemed like a bad idea to get in Ama's way."
-                            player_nvl "I thought maybe that would...I dunno, help her blow off some steam hahaha"
-                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down."
+                            player_nvl "It wasn't about teaching MAC anything actually"
+                            player_nvl "It just seemed like a bad idea to get in Ama's way"
+                            player_nvl "I thought maybe that would... I dunno, help her blow off some steam hahaha"
+                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down"
                         "•I don't know.":
-                            player_nvl "I don't really know what motivated that decision."
-                            player_nvl "I guess it just felt right in the moment to me."
+                            player_nvl "I don't really know what motivated that decision"
+                            player_nvl "I guess it just felt right in the moment to me"
                     pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
                     pd_nvl "I heard you can get Ama to fight on your side!"
                     menu:
                         "•That sounds exciting!":
                             player_nvl "Really!? That's so exciting!"
-                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "Would be awesome to get the Snakehawks back together!"
                             player_nvl "As long as Ama plays nice with the Oakley crew haha"
                             pd_nvl "I know right! Could be so cool to fight alongside her!"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                         "•Ooh I don't know about that.":
                             player_nvl "Ooh I don't know about that."
-                            player_nvl "She's so antagonistic in episode 3."
-                            player_nvl "If they don't handle it well, that could feel kinda cheap."
-                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            player_nvl "She's so antagonistic in episode 3"
+                            player_nvl "If they don't handle it well, that could feel kinda cheap"
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
             "•I think she was a bad influence on Moze.":
                 hide screen NVLnarration
                 $ pdEngagement += 1
-                player_nvl "Honestly, I think she was a bad influence on Moze."
-                player_nvl "Like, you saw that one flashback with the gun, where she basically threatened to kill Moze. Not cool."
-                player_nvl "And that connection is clearly weighing on Moze in a way that isn't healthy."
-                player_nvl "It's also interesting how they're drawing parallels between that relationship and Moze and MAC."
-                pd_nvl "I get that, but there's clearly still some kind of connection between Ama and Moze. Hard to just throw that away."
+                player_nvl "Honestly, I think she was a bad influence on Moze"
+                player_nvl "Like, you saw that one flashback with the gun, where she basically threatened to kill Moze. Not cool"
+                player_nvl "And that connection is clearly weighing on Moze in a way that isn't healthy"
+                player_nvl "It's also interesting how they're drawing parallels between that relationship and Moze and MAC"
+                pd_nvl "I get that, but there's clearly still some kind of connection between Ama and Moze. Hard to just throw that away"
                 pd_nvl "Yes! I like that you pointed out that parallel with MAC!"
                 if vig3_bcRepSaved == True:
                     pd_nvl "Is that why you decided to save the BigCorp rep?"
                     menu:
                         "•Yeah, I don't want MAC to turn out like Moze.":
-                            player_nvl "Yeah, especially with MAC watching me in that moment."
-                            player_nvl "Felt like Moze should model some sort of morality for him."
+                            player_nvl "Yeah, especially with MAC watching me in that moment"
+                            player_nvl "Felt like Moze should model some sort of morality for him"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
-                                    pd_nvl "I guess not."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
+                                    pd_nvl "I guess not"
                             pd_nvl "Idk, I think Moze "
                         "•No, I just thought it was right to save him.":
-                            player_nvl "I actually wasn't thinking about MAC in that moment."
-                            player_nvl "I just didn't think it was right for Moze to standby and let someone die."
+                            player_nvl "I actually wasn't thinking about MAC in that moment"
+                            player_nvl "I just didn't think it was right for Moze to standby and let someone die"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
-                                    pd_nvl "I guess not."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
+                                    pd_nvl "I guess not"
                         "•I don't know.":
-                            player_nvl "I don't really know what motivated that decision."
-                            player_nvl "I guess it just felt right in the moment to me."
+                            player_nvl "I don't really know what motivated that decision"
+                            player_nvl "I guess it just felt right in the moment to me"
                             pd_nvl "Even though the guy turned around and threatened MAC immediately?"
                             menu:
                                 "•If I'd known that I would've acted differently.":
                                     player_nvl "Well if I had known he was gonna turn around and try to kick MAC then I would've let Ama kill his ass haha"
                                     player_nvl "But we make the choices we make with the information we have, y'know?"
-                                    pd_nvl "That's a fair point. I think I would've let him die."
+                                    pd_nvl "That's a fair point. I think I would've let him die"
                                 "•Yeah, even knowing that I would've done the same thing.":
-                                    player_nvl "Yeah, even knowing that I would've saved him."
-                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die."
-                                    pd_nvl "I guess not."
+                                    player_nvl "Yeah, even knowing that I would've saved him"
+                                    player_nvl "Just because he's an asshole doesn't mean he deserves to die"
+                                    pd_nvl "I guess not"
                     pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
                     pd_nvl "I heard you can get Ama to fight on your side!"
                     menu:
                         "•That sounds exciting!":
                             player_nvl "Really!? That's so exciting!"
-                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "Would be awesome to get the Snakehawks back together!"
                             player_nvl "As long as Ama plays nice with the Oakley crew haha"
                             pd_nvl "I know right! Could be so cool to fight alongside her!"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                         "•Ooh I don't know about that.":
-                            player_nvl "Ooh I don't know about that."
-                            player_nvl "She's so antagonistic in episode 3."
-                            player_nvl "If they don't handle it well, that could feel kinda cheap."
-                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            player_nvl "Ooh I don't know about that"
+                            player_nvl "She's so antagonistic in episode 3"
+                            player_nvl "If they don't handle it well, that could feel kinda cheap"
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                 else:
                     pd_nvl "So then why did you let Ama kill the BigCorp rep?"
                     menu:
                         "•It felt like what Moze would do.":
-                            player_nvl "It just felt like what Moze would do in that situation."
-                            player_nvl "Cause she's not perfect. She's trying to do better, but she still doesn't do the right thing all the time."
-                            pd_nvl "Hmm, I like that. Characters who are trying to change and have trouble."
-                            pd_nvl "Feels very true to life."
+                            player_nvl "It just felt like what Moze would do in that situation"
+                            player_nvl "Cause she's not perfect. She's trying to do better, but she still doesn't do the right thing all the time"
+                            pd_nvl "Hmm, I like that. Characters who are trying to change and have trouble"
+                            pd_nvl "Feels very true to life"
                         "•I was concerned for MAC's safety.":
-                            player_nvl "It wasn't about teaching MAC anything."
-                            player_nvl "It just seemed like a bad idea to get in Ama's way."
-                            player_nvl "I thought maybe that would...I dunno, help her blow off some steam hahaha"
-                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down."
+                            player_nvl "It wasn't about teaching MAC anything"
+                            player_nvl "It just seemed like a bad idea to get in Ama's way"
+                            player_nvl "I thought maybe that would... I dunno, help her blow off some steam hahaha"
+                            pd_nvl "Lol from her character it does seem like the kinda thing that might've calmed her down"
                         "•I don't know.":
-                            player_nvl "I don't really know what motivated that decision."
-                            player_nvl "I guess it just felt right in the moment to me."
+                            player_nvl "I don't really know what motivated that decision"
+                            player_nvl "I guess it just felt right in the moment to me"
                     pd_nvl "So, you heard rumblings of this secret \"Ama Alliance\" route in the last episode?"
                     pd_nvl "I heard you can get Ama to fight on your side!"
                     menu:
                         "•That sounds exciting!":
                             player_nvl "Really!? That's so exciting!"
-                            player_nvl "Would be awesome to get the SnakeHawks back together!"
+                            player_nvl "Would be awesome to get the Snakehawks back together!"
                             player_nvl "As long as Ama plays nice with the Oakley crew haha"
                             pd_nvl "I know right! Could be so cool to fight alongside her!"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                         "•Ooh I don't know about that.":
-                            player_nvl "Ooh I don't know about that."
-                            player_nvl "She's so antagonistic in episode 3."
-                            player_nvl "If they don't handle it well, that could feel kinda cheap."
-                            pd_nvl "Maybe, but I feel like they'll set it up pretty well."
+                            player_nvl "Ooh I don't know about that"
+                            player_nvl "She's so antagonistic in episode 3"
+                            player_nvl "If they don't handle it well, that could feel kinda cheap"
+                            pd_nvl "Maybe, but I feel like they'll set it up pretty well"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
             "•Don't respond.":
                 hide screen NVLnarration
@@ -5781,41 +5786,41 @@ label vig3_macro_viewerChat_1():
         #Coriolis convo about Rec
         "Coriolis sent me a message on Loop'd."
         cs_nvl "Hey, [username], wanted to say thanks for a great stream!"
-        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite."
-        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment."
+        cs_nvl "It was a really fun to get to meet so many different characters. They were all really cool, but I think Rec was my favorite"
+        cs_nvl "I think it sucks how we had to break his heart in the end. Just wanted to see how you're feeling about that moment"
         if vig3_recResponse == "Confused":
-            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            cs_nvl "I was kind of surprised that you had Moze say she was confused about killing Allistar"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It reflected how I felt as a player.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "I made that choice cause it was what I felt the most in that moment."
-                    player_nvl "I wasn't expecting it and it was so tense."
+                    player_nvl "I made that choice cause it was what I felt the most in that moment"
+                    player_nvl "I wasn't expecting it and it was so tense"
                     if misclick == True:
                         cs_nvl "Right, I remember you said you didn't even mean to do it, right? Like it was a misclick?"
-                        player_nvl "Yeah. So that choice just felt like what my actual response was."
+                        player_nvl "Yeah. So that choice just felt like what my actual response was"
                     else:
                         pass
-                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player."
-                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "It may not have been the most fun or the most sincere from Moze's perspective, but it was what I felt as a player"
+                    cs_nvl "That makes a lot of sense, I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5824,28 +5829,28 @@ label vig3_macro_viewerChat_1():
                 "•It felt the most honest from Moze.":
                     hide screen NVLnarration
                     $ csEngagement += 1
-                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze."
-                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar."
-                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore."
-                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too."
+                    player_nvl "I know it seems odd, but I think it was the most honest response from Moze"
+                    player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar"
+                    player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore"
+                    player_nvl "Here's this character who puts on the air of the confident Captain, but maybe she's insecure and confused a lot of the time too"
                     cs_nvl "Ooh interesting. I really like that take!"
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5856,34 +5861,34 @@ label vig3_macro_viewerChat_1():
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
-            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It's a story Moze has to believe in.":
                     hide screen NVLnarration
-                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself."
-                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality."
-                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode."
-                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality."
-                    cs_nvl "I don't like what Moze did, but I do feel for her."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "Yeah, I agree, I think this whole \"I didn't have a choice\" thing is just a story Moze keeps telling herself"
+                    player_nvl "It's how she copes with having to deal with the darkness of this galaxy. But it's not the reality"
+                    player_nvl "It also closes the loop on Allistar's death in a really impactful way. I'm glad they brought Rec back for this episode"
+                    cs_nvl "Yeah me too. I feel like it's so easy to fall into the \"I didn't have a choice\" mentality"
+                    cs_nvl "I don't like what Moze did, but I do feel for her"
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5904,7 +5909,7 @@ label vig3_macro_viewerChat_1():
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
                             player_nvl "Like, don't get me wrong, it's still a game."
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5924,39 +5929,39 @@ label vig3_macro_viewerChat_1():
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
-            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it."
-            $ playerNVLNarration = "Coriolis is asking my feelings on telling Rec about Allistar's death. Should I respond?"
+            cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it"
+            $ playerNVLNarration = "Coriolis asked my feelings about Rec. Should I respond?"
             show screen NVLnarration
             menu:
                 "•It was harsh but true.":
                     hide screen NVLnarration
                     $ csEngagement -= 1
-                    player_nvl "It was harsh, but it was true."
-                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec."
-                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences."
-                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma."
-                    cs_nvl "No I get that...I guess I just didn't read that in Moze's character."
+                    player_nvl "It was harsh, but it was true"
+                    player_nvl "I feel like saying any of the other options just wasn't being honest to Rec"
+                    player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences"
+                    player_nvl "And I'd rather be direct with Rec than try to sugarcoat the trauma"
+                    cs_nvl "No I get that... I guess I just didn't read that in Moze's character"
                     if misclick == True:
-                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally."
-                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character."
-                    cs_nvl "It's not what I would have done, but I see your perspective."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                        cs_nvl "And I guess I'm kind of surprised considering you said it was a misclick originally"
+                        player_nvl "That's fair, but I've had time to think about it and I think it makes sense for her character"
+                    cs_nvl "It's not what I would have done, but I see your perspective"
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -5964,28 +5969,28 @@ label vig3_macro_viewerChat_1():
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
                     hide screen NVLnarration
-                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh."
-                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it to."
-                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar...but damn."
-                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again."
-                    player_nvl "No chance."
-                    cs_nvl "I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh"
+                    player_nvl "The thing that got me was the looks from the crew after Moze admitted it"
+                    player_nvl "Like, I didn't want to try to sugarcoat it to Allistar... but damn"
+                    cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again"
+                    player_nvl "No chance"
+                    cs_nvl "I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
-                            player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
-                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
-                            cs_nvl "Seriously, it's why I don't play these games that much tbh. So much pressure haha."
+                            player_nvl "Yeah, I don't think it ever gets easier tbh"
+                            player_nvl "Like, don't get me wrong, it's still a game"
+                            player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates"
+                            cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
                         "•It's actually getting easier.":
-                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently."
-                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much."
-                            player_nvl "And that makes it more fun to experiment with different kinds of chocies."
+                            player_nvl "I used to be more stressed out about the decisions, but they've gotten easier to make recently"
+                            player_nvl "Maybe it's just how many of these games I've played. I've learned not to stress about them too much"
+                            player_nvl "And that makes it more fun to experiment with different kinds of chocies"
                             cs_nvl "That's a really cool perspective!"
-                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha."
+                            cs_nvl "I could never, making these kinds of choices always stresses me out too much haha"
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
                             player_nvl "Hahaha I'm glad you think so!"
                             cs_nvl "Thanks for the chat [username]! See you next week!"
@@ -6089,10 +6094,10 @@ label vig3_macro_brother_cedric():
     bro_nvl "Actually, yeah, I got an A on Mrs. Weber's mid-term!"
     menu:
         "•That's great!":
-            player_nvl "That's great, El! Should take some of the pressure off the final."
+            player_nvl "That's great, El! Should take some of the pressure off the final"
             bro_nvl "Yeah, it's a relief for sure :)"
-            player_nvl "...anything else to report on?"
-            bro_nvl "Nothing too important really."
+            player_nvl "... anything else to report on?"
+            bro_nvl "Nothing too important really"
             player_nvl "suuuuure"
             bro_nvl ">:)"
         "•Who cares? I want boy news!":
@@ -6100,8 +6105,8 @@ label vig3_macro_brother_cedric():
             bro_nvl "Who?"
             player_nvl "YOU KNOW WHO, EL!"
             bro_nvl "lmao >:)"
-    player_nvl "Spill it."
-    bro_nvl "I asked Cedric out on a date."
+    player_nvl "Spill it"
+    bro_nvl "I asked Cedric out on a date"
     menu:
         "•What did he say?":
             player_nvl "El! That's amazing!"
@@ -6110,7 +6115,7 @@ label vig3_macro_brother_cedric():
         "•YESSSS!":
             player_nvl "YESSS!"
             player_nvl "WHOOOO!"
-            player_nvl "So proud of you, El!"
+            player_nvl "So proud of you!"
             player_nvl "How did you do it? Was it like a big production like a prom thing? Were you like wearing a suit or something?"
             player_nvl "Wait, what did he say?"
     bro_nvl "lmao"
@@ -6121,71 +6126,71 @@ label vig3_macro_brother_cedric():
             player_nvl "Best. Day. Ever."
         "•I'm gonna cry.":
             #player_nvl "They grow up so fast!"
-            player_nvl "Omg, I'm legit gonna cry."
+            player_nvl "Omg, I'm legit gonna cry"
     bro_nvl "It's not your crush haha"
-    player_nvl "No, but like."
-    bro_nvl "But thank you."
+    player_nvl "No, but like"
+    bro_nvl "But thank you"
     player_nvl "You made the move"
-    bro_nvl "I know."
+    bro_nvl "I know"
     player_nvl "You put yourself out there"
-    bro_nvl "Yeah."
-    player_nvl "That's huge."
+    bro_nvl "Yeah"
+    player_nvl "That's huge"
     bro_nvl "I know! I'm like giddy all over!"
     player_nvl "So how did it happen?"
-    bro_nvl "Well, it wasn't a big production."
-    bro_nvl "I took your advice from a couple weeks back and just kept making the effort to chat with him these past couple weeks."
-    player_nvl "Uh huh."
-    bro_nvl "It was tough, but I kept thinking about what you said."
+    bro_nvl "Well, it wasn't a big production"
+    bro_nvl "I took your advice from a couple weeks back and just kept making the effort to chat with him these past couple weeks"
+    player_nvl "Uh huh"
+    bro_nvl "It was tough, but I kept thinking about what you said"
     if vig1_overthink == True:
-        bro_nvl "\"Don't overthink it.\""
+        bro_nvl "\"Don't overthink it\""
     else:
-        bro_nvl "Talking to someone you like is \"never not weird.\""
-    bro_nvl "So I just tried to be myself and we started walking home from school together like almost every day."
-    player_nvl "Cuuuuute."
-    bro_nvl "And when we got to our block today...I don't know."
-    bro_nvl "I just asked if he'd like to go on a date with me."
-    bro_nvl "I didn't even realize I was doing it until I heard myself say the word \"date.\""
+        bro_nvl "Talking to someone you like is \"never not weird\""
+    bro_nvl "So I just tried to be myself and we started walking home from school together like almost every day"
+    player_nvl "Cuuuuute"
+    bro_nvl "And when we got to our block today... I don't know"
+    bro_nvl "I just asked if he'd like to go on a date with me"
+    bro_nvl "I didn't even realize I was doing it until I heard myself say the word \"date\""
     player_nvl "And then?"
     bro_nvl "He said yes..."
     bro_nvl "And kissed me on the cheek :)"
-    player_nvl "I'm dying."
+    player_nvl "I'm dying"
     bro_nvl "lol"
-    player_nvl "No, for real, I couldn't write a better story for you two."
+    player_nvl "No, for real, I couldn't write a better story for you two"
     player_nvl "You got plans for the date??"
     bro_nvl "Yeah, he's gonna take me to see a movie next Friday!"
     $ playerNVLNarration = "Next Friday? You've got something next Friday too..."
     show screen NVLnarration with dissolve
     pause
-    $ playerNVLNarration = "Oh! That's the day of your last Oakley 2 stream!"
+    $ playerNVLNarration = "Oh! That's the day of your last {i}Oakley 2{/i} stream!"
     pause
     menu:
         "•That's the same day as the last Oakley stream.":
             hide screen NVLnarration
-            player_nvl "Funny, that's the same day as my last Oakley stream."
-            bro_nvl "I know! I'm sorry I won't be able to make it!"
+            player_nvl "Funny, that's the same day as my last Oakley stream"
+            bro_nvl "I know! I'm sorry I won't be able to make it"
             bro_nvl "It's the only night Cedric's free!"
-            player_nvl "Nononono your date is way more important."
+            player_nvl "Nononono your date is way more important"
             player_nvl "We'll catch up on Oakley 2 when I get back for Thanksgiving!"
             bro_nvl "Yes!"
             player_nvl "And I'll be sending you the best vibes for a good date from a distant galaxy!"
-            bro_nvl "I promise they will be received haha."
+            bro_nvl "I promise they will be received haha"
         "•You? In a movie theater?":
             hide screen NVLnarration
-            player_nvl "Since when do you go see movies in theathers Mr. \"Classical Music is the Only Real Theatre.\""
-            bro_nvl "Since my crush started giving me shit about my lack of pop culture knowledge."
-            player_nvl "You know what, fair."
-            player_nvl "I did try to get into MOBAs just to impress my crush a couple years back so I guess I can't talk."
+            player_nvl "Since when do you go see movies in theathers Mr. \"Classical Music is the Only Real Theatre\""
+            bro_nvl "Since my crush started giving me shit about my lack of pop culture knowledge"
+            player_nvl "You know what, fair"
+            player_nvl "I did try to get into MOBAs just to impress my crush a couple years back so I guess I can't talk"
             bro_nvl "Yeah, I remember that. Fun streams!"
-            player_nvl "My kda was like 0.3."
-            bro_nvl "I didn't say they were fun for you."
-            player_nvl "Shut up."
+            player_nvl "My kda was like 0.3"
+            bro_nvl "I didn't say they were fun for you"
+            player_nvl "Shut up"
             bro_nvl "Love you too <3"
-            bro_nvl "I know this means I won't make it to the final Oakley 2 stream, but I figured you would understand."
+            bro_nvl "I know this means I won't make it to the final Oakley 2 stream, but I figured you would understand"
             player_nvl "Oh, of course. This is way more important!"
             player_nvl "You have fun and don't even think about worrying about it!"
             bro_nvl "Thanks [player] :)"
     if vig3_brotherChat == 1:
-        bro_nvl "Soooo yeah, that's my big news."
+        bro_nvl "Soooo yeah, that's my big news"
         bro_nvl "What's up with you? How's the stream going'?"
         jump vig3_macro_brother_stream
     else:
@@ -6193,385 +6198,387 @@ label vig3_macro_brother_cedric():
 
 label vig3_macro_brother_stream():
     $ vig3_brotherChat += 1
+    player_nvl "Great, I wanted to tell you about the stream today"
+    bro_nvl "Ooh yes, gimme the deets!"
     menu:
         "•Stream is great!":
             player_nvl "The stream is great!"
             bro_nvl "Love hearing that!"
             if energy >= 5:
-                bro_nvl "Just based on the VODs it looks like you're having a good time."
+                bro_nvl "Just based on the VODs it looks like you're having a good time"
             else:
-                bro_nvl "Glad you're not like beaten down by the push for Affiliate."
+                bro_nvl "Glad you're not like beaten down by the push for Affiliate"
             if viewershipLow == True:
-                bro_nvl "Though it seems like not too many people stuck around after that raid."
-                player_nvl "Yeah, the chat isn't too crazy, but it's still bigger than I'm used to."
+                bro_nvl "Though it seems like not too many people stuck around after that raid"
+                player_nvl "Yeah, the chat isn't too crazy, but it's still bigger than I'm used to"
                 menu:
                     "•It can get a little overwhelming.":
                         $ energy -= 1
-                        player_nvl "Tbh it can feel a little overwhelming."
+                        player_nvl "Tbh it can feel a little overwhelming"
                     "•It's super fun!":
                         $ energy += 1
-                        player_nvl "It's super fun! But I'm also still learning how to manage that chaos."
+                        player_nvl "It's super fun! But I'm also still learning how to manage that chaos"
             else:
-                bro_nvl "Plus it looks like people have stuck around after that raid a while back."
-                player_nvl "Yeah the chat is popping off on a regular basis these days."
+                bro_nvl "Plus it looks like people have stuck around after that raid a while back"
+                player_nvl "Yeah the chat is popping off on a regular basis these days"
                 menu:
                     "•It can get a little overwhelming.":
                         $ energy -= 1
-                        player_nvl "Tbh it can feel a little overwhelming, but still fun."
+                        player_nvl "Tbh it can feel a little overwhelming, but still fun"
                     "•It's super fun!":
                         $ energy += 1
-                        player_nvl "It's super fun! But also like really chaotic."
+                        player_nvl "It's super fun! But also like really chaotic"
             bro_nvl "For sure, so what are you enjoying the most?"
             menu:
                 "•The game.":
                     $ energy += 1
                     player_nvl "The game, for sure!"
-                    bro_nvl "Yeaaah, Oakley 2 does look sick."
-                    bro_nvl "Bummed I'll have to wait till the holidays to get it for myself."
-                    player_nvl "It's cool. I mean the art is so good."
-                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3."
-                    bro_nvl "There's already a sick lofi remix on utube I'm using to help me study."
+                    bro_nvl "Yeaaah, Oakley 2 does look sick"
+                    bro_nvl "Bummed I'll have to wait till the holidays to get it for myself"
+                    player_nvl "It's cool. I mean the art is so good"
+                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3"
+                    bro_nvl "There's already a sick lofi remix on utube I'm using to help me study"
                     if vibes == True:
-                        player_nvl "Yeah and game has a great vibe in general. Very easy to stream, but still really engaging."
+                        player_nvl "Yeah and game has a great vibe in general. Very easy to stream, but still really engaging"
                     elif humour == True:
-                        player_nvl "Plus it's just a funny game. Script has a lot of good one-liners."
+                        player_nvl "Plus it's just a funny game. Script has a lot of good one-liners"
                     elif story == True:
-                        player_nvl "And the story builds on the themes from the first game so well."
-                        player_nvl "The characters especially are really well done."
+                        player_nvl "And the story builds on the themes from the first game so well"
+                        player_nvl "The characters especially are really well done"
                     else:
-                        player_nvl "And the story builds on the themes from the first game so well."
-                        player_nvl "The characters especially are really well done."
+                        player_nvl "And the story builds on the themes from the first game so well"
+                        player_nvl "The characters especially are really well done"
                     bro_nvl "Yep, I was already bummed I couldn't play it at launch and keeping up with your playthrough is just increasing the fomo"
-                    player_nvl "Lol, sorry."
+                    player_nvl "Lol, sorry"
                     bro_nvl "Ahh it's fine. This way I get to see you make all the mistakes and then do the better choices for me >:)"
                     player_nvl "Always so selfless"
-                    bro_nvl "You know me."
+                    bro_nvl "You know me"
                 "•The chat.":
                     $ enthusiasm += 1
-                    player_nvl "I'm having a lot of fun interacting with the chat."
+                    player_nvl "I'm having a lot of fun interacting with the chat"
                     if viewershipHigh == True:
-                        player_nvl "Like I said, there are way more people around now and it's really cool to be hanging out with everyone."
-                        player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes."
+                        player_nvl "Like I said, there are way more people around now and it's really cool to be hanging out with everyone"
+                        player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes"
                     else:
-                        player_nvl "It's not that many more people than I'm used to, but even so, there's a lot more going on there now."
-                        player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes."
-                    player_nvl "Plus it feels like everyone in chat is really starting to vibe and be like friends."
-                    bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                        player_nvl "It's not that many more people than I'm used to, but even so, there's a lot more going on there now"
+                        player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes"
+                    player_nvl "Plus it feels like everyone in chat is really starting to vibe and be like friends"
+                    bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat"
                     bro_nvl "And I'm really glad it's been a positive experience for you!"
                 "•Being on camera.":
                     $ energy += 1
-                    player_nvl "I think it's just being on camera."
-                    player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly."
-                    player_nvl "It's nice to just be in the habit of performing for people."
-                    player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter."
-                    bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while."
+                    player_nvl "I think it's just being on camera"
+                    player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly"
+                    player_nvl "It's nice to just be in the habit of performing for people"
+                    player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter"
+                    bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while"
                     bro_nvl "Definitely good to keep up the habit!"
                 "•Playing Outlaw." if outlaw >= marshal - 2:
                     $ enthusiasm += 2
-                    player_nvl "I'm really enjoying playing the more Outlaw side of things."
-                    player_nvl "It's a totally different perspective of the characters than I normally have."
+                    player_nvl "I'm really enjoying playing the more Outlaw side of things"
+                    player_nvl "It's a totally different perspective of the characters than I normally have"
                     menu:
                         "•It's been a fun experiment.":
-                            player_nvl "It's been a really fun experiment to just see how the game changes."
-                            player_nvl "And people in the chat respond to it really well."
+                            player_nvl "It's been a really fun experiment to just see how the game changes"
+                            player_nvl "And people in the chat respond to it really well"
                             player_nvl "Feels kinda like we're playing along all together!"
-                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat"
                             bro_nvl "And I'm really glad it's been a positive experience for you!"
                         "•I feel kind of guilty about it, actually.":
-                            player_nvl "It's weird, I actually feel kinda guilty about that."
+                            player_nvl "It's weird, I actually feel kinda guilty about that"
                             player_nvl "Like, should I be enjoying playing this problematic protagonist?"
-                            bro_nvl "I don't think you need to feel guilty about that."
-                            bro_nvl "They designed the game to be played in multiple ways."
-                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work."
-                            player_nvl "That's a good point."
+                            bro_nvl "I don't think you need to feel guilty about that"
+                            bro_nvl "They designed the game to be played in multiple ways"
+                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work"
+                            player_nvl "That's a good point"
                             bro_nvl "Y'know, as long as you're not going around blowing up aid ships in your free time lol"
-                            player_nvl "Hahaha haven't gotten there yet."
+                            player_nvl "Hahaha haven't gotten there yet"
                             bro_nvl "Good, but now I gotta keep an eye on you ;)"
         "•It's going well.":
-            player_nvl "Yeah, it's going well."
-            bro_nvl "Ooh, not the period."
+            player_nvl "It's going well."
+            bro_nvl "Ooh, not the period"
             bro_nvl "What's up?"
             menu:
                 "•Nothing.":
-                    player_nvl "Nothing's up."
+                    player_nvl "Nothing's up"
                     bro_nvl "You sure?"
                     menu:
                         "•Yes.":
-                            player_nvl "Yeah, things are good."
-                            player_nvl "They're just not great."
-                            player_nvl "They're not shit. But they're not great."
+                            player_nvl "Yeah, things are good"
+                            player_nvl "They're just not great"
+                            player_nvl "They're not shit. But they're not great"
                             #Could cut the following three conditional statements
                             if enthusiasm >= reluctance:
-                                player_nvl "Trying to get Affiliate is a bit of a slog, but playing the game and hanging with chat has been really fulfilling."
+                                player_nvl "Trying to get Affiliate is a bit of a slog, but playing the game and hanging with chat has been really fulfilling"
                             if energy < 5:
-                                player_nvl "I feel pretty tired, but not like exhausted."
+                                player_nvl "I feel pretty tired, but not like exhausted"
                             if outlaw > marshal and enthusiasm >= reluctance:
-                                player_nvl "And I'm having fun experimenting with the game's Outlaw choices."
-                                player_nvl "But the episodies can get long too."
-                            bro_nvl "Sounds like the life of someone who turned their passion into work."
-                            player_nvl "Yeah, but that work isn't even paying me anything."
+                                player_nvl "And I'm having fun experimenting with the game's Outlaw choices"
+                                player_nvl "But the episodies can get long too"
+                            bro_nvl "Sounds like the life of someone who turned their passion into work"
+                            player_nvl "Yeah, but that work isn't even paying me anything"
                             bro_nvl "It can't be all boring and tough though?"
                             bro_nvl "What's something you're enjoying about it?"
                             menu:
                                 "•The game.":
                                     $ energy += 1
-                                    player_nvl "I still really like the game."
-                                    bro_nvl "Yeaaah, Oakley 2 does look sick."
-                                    bro_nvl "Bummed I'll have to wait till the holidays to get it for myself."
-                                    player_nvl "It's cool. I mean the characters, story, and art are so good."
-                                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3."
-                                    bro_nvl "There's a sick lofi remix on vibefy that I'm using to help me study."
+                                    player_nvl "I still really like the game"
+                                    bro_nvl "Yeaaah, Oakley 2 does look sick"
+                                    bro_nvl "Bummed I'll have to wait till the holidays to get it for myself"
+                                    player_nvl "It's cool. I mean the characters, story, and art are so good"
+                                    bro_nvl "The soundtrack too. Heard that little futuristic baroque piece in Episode 3"
+                                    bro_nvl "There's a sick lofi remix on vibefy that I'm using to help me study"
                                     bro_nvl "I was already bummed I couldn't play it at launch and keeping up with your playthrough is just increasing the fomo"
-                                    player_nvl "Lol, sorry."
+                                    player_nvl "Lol, sorry"
                                     bro_nvl "Ahh it's fine. This way I get to see you make all the mistakes and then do the better choices for me >:)"
                                     player_nvl "Always so selfless"
-                                    bro_nvl "You know me."
+                                    bro_nvl "You know me"
                                 "•The chat.":
                                     $ enthusiasm += 1
-                                    player_nvl "I'm enjoying interacting with the chat."
+                                    player_nvl "I'm enjoying interacting with the chat"
                                     if viewershipHigh == True:
-                                        player_nvl "Like I said, there are way more people around there now and it's cool to be hanging out with everyone."
-                                        player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes."
+                                        player_nvl "Like I said, there are way more people around there now and it's cool to be hanging out with everyone"
+                                        player_nvl "I get to hear more perpsectives on the game's moral choices. Wacky stories. Crazy jokes"
                                     else:
-                                        player_nvl "It's not that many more people than I'm used to, but even so, there's more going on there than I'm used to."
-                                        player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes."
-                                    player_nvl "Plus it feels like the people in chat are really starting to vibe and be like friends."
-                                    bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                                        player_nvl "It's not that many more people than I'm used to, but even so, there's more going on there than I'm used to"
+                                        player_nvl "I like hearing people's different perspectives on the game's moral choices and seeing their wacky jokes"
+                                    player_nvl "Plus it feels like the people in chat are really starting to vibe and be like friends"
+                                    bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat"
                                     bro_nvl "And I'm really glad it's been a positive experience for you!"
                                 "•Being on camera.":
                                     $ energy += 1
-                                    player_nvl "I think it's just being on camera."
-                                    player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly."
-                                    player_nvl "It's nice to be in the habit of performing for people."
-                                    player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter."
-                                    bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while."
+                                    player_nvl "I think it's just being on camera"
+                                    player_nvl "When I'm not trying to get Affiliate, I stream a bit less regularly"
+                                    player_nvl "It's nice to be in the habit of performing for people"
+                                    player_nvl "It can get tiring, don't get me wrong. But I have so much fun that it doesn't matter"
+                                    bro_nvl "I'm glad! I know you always feel a bit \"off\" if you go without streaming for a while"
                                     bro_nvl "Definitely good to keep up the habit!"
                                 "•Playing Outlaw." if outlaw >= marshal - 2:
                                     $ enthusiasm += 2
-                                    player_nvl "I'm really enjoying playing the more Outlaw side of things."
-                                    player_nvl "It's a totally different perspective of the characters than I normally have."
+                                    player_nvl "I'm really enjoying playing the more Outlaw side of things"
+                                    player_nvl "It's a totally different perspective of the characters than I normally have"
                                     menu:
                                         "•It's been a fun experiment.":
-                                            player_nvl "It's been a fun experiment to just see how the game changes."
-                                            player_nvl "And people in the chat respond to it really well."
+                                            player_nvl "It's been a fun experiment to just see how the game changes"
+                                            player_nvl "And people in the chat respond to it really well"
                                             player_nvl "Feels kinda like we're playing along all together!"
-                                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat."
+                                            bro_nvl "Yeah, honestly half the fun of watching the VODs is seeing what goes on in your chat"
                                             bro_nvl "And I'm really glad it's been a positive experience for you!"
                                         "•I feel kind of guilty about it, actually.":
-                                            player_nvl "It's weird, I actually feel kinda guilty about that."
+                                            player_nvl "It's weird, I actually feel kinda guilty about that"
                                             player_nvl "Like, should I be enjoying playing this problematic protagonist?"
-                                            bro_nvl "I don't think you need to feel guilty about that."
-                                            bro_nvl "They designed the game to be played in multiple ways."
-                                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work."
-                                            player_nvl "That's a good point."
+                                            bro_nvl "I don't think you need to feel guilty about that"
+                                            bro_nvl "They designed the game to be played in multiple ways"
+                                            bro_nvl " I'm sure the devs would love to know that people are enjoying both sides of their work"
+                                            player_nvl "That's a good point"
                                             bro_nvl "Y'know, as long as you're not going around blowing up aid ships in your free time lol"
-                                            player_nvl "Hahaha haven't gotten there yet."
+                                            player_nvl "Hahaha haven't gotten there yet"
                                             bro_nvl "Good, but now I gotta keep an eye on you ;)"
-                            bro_nvl "Hey, I know streaming is kind of like work, but I also know you."
-                            bro_nvl "I know you love games and the community that comes from the stream."
+                            bro_nvl "Hey, I know streaming is kind of like work, but I also know you"
+                            bro_nvl "I know you love games and the community that comes from the stream"
                             bro_nvl "I just hope the good of that stuff always outweighs the bad. And if it starts to flip, then you can stop. No one is making you do this, y'know?"
-                            player_nvl "You're right. Thanks, El."
-                            bro_nvl "Anytime."
+                            player_nvl "You're right. Thanks, El"
+                            bro_nvl "Anytime"
                         "•Actually...":
-                            player_nvl "Actually, yeah some things are bugging me."
+                            player_nvl "Actually, yeah some things are bugging me"
                             bro_nvl "I knew it. Like what?"
                             menu:
                                 "•The grind for Affiliate sucks.":
                                     $ energy -= 1
-                                    player_nvl "The grind for Affiliate just sucks."
-                                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
-                                    player_nvl "But jamming out smaller streams is just exhausting."
+                                    player_nvl "The grind for Affiliate just sucks"
+                                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular"
+                                    player_nvl "But jamming out smaller streams is just exhausting"
                                     if energy < 5:
-                                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes."
+                                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes"
                                         player_nvl "Well that's kinda embarrassing lol"
-                                        bro_nvl "I mean, I don't think anyone else would notice."
-                                        bro_nvl "But like, I can tell when you're running on low energy."
+                                        bro_nvl "I mean, I don't think anyone else would notice"
+                                        bro_nvl "But like, I can tell when you're running on low energy"
                                         bro_nvl "Sibling shit, y'know?"                            
                                     else:
-                                        bro_nvl "Really? On the VODs you look energized."
-                                        player_nvl "That's good to hear."
-                                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough."
-                                    bro_nvl "Mom always says life has its ups and downs."
-                                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows."
-                                    bro_nvl "Otherwise you wouldn't bother."
-                                    bro_nvl "Like, just think about the people you've met from it that you wouldn't have otherwise."
-                                    player_nvl "You're right. Thanks, El."
-                                    bro_nvl "Anytime."
+                                        bro_nvl "Really? On the VODs you look energized"
+                                        player_nvl "That's good to hear"
+                                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough"
+                                    bro_nvl "Mom always says life has its ups and downs"
+                                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows"
+                                    bro_nvl "Otherwise you wouldn't bother"
+                                    bro_nvl "Like, just think about the people you've met from it that you wouldn't have otherwise"
+                                    player_nvl "You're right. Thanks, El"
+                                    bro_nvl "Anytime"
                                 "•I feel pressure from the viewers.":
                                     $ reluctance += 1
-                                    player_nvl "Honestly, I feel pressure from the viewers."
-                                    player_nvl "Especially since the raid."
+                                    player_nvl "Honestly, I feel pressure from the viewers"
+                                    player_nvl "Especially since the raid"
                                     if viewershipHigh == True:
-                                        player_nvl "It's kinda like people are expecting me to play Outlaw."
+                                        player_nvl "It's kinda like people are expecting me to play Outlaw"
                                     else:
-                                        player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more."
-                                    player_nvl "Idk, it feels a bit weird now."
-                                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are.\""
-                                    player_nvl "I think you're paraphrasing there."
-                                    bro_nvl "A bit, yeah, but the point still stands."
-                                    bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented."
+                                        player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more"
+                                    player_nvl "Idk, it feels a bit weird now"
+                                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are\""
+                                    player_nvl "I think you're paraphrasing there"
+                                    bro_nvl "A bit, yeah, but the point still stands"
+                                    bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented"
                                     bro_nvl "If you feel pressure from the audience, I dunno, screw 'em. Just do you!"
-                                    player_nvl "Thanks, El. You're really good at being encouraging."
+                                    player_nvl "Thanks, El. You're really good at being encouraging"
                                     bro_nvl "I learned from the best :)"
                                 "•I don't know.":
                                     player_nvl "Honestly, I don't know."
-                                    bro_nvl "Come on, it has to be something."
+                                    bro_nvl "Come on, it has to be something"
                                     bro_nvl "Is it the game? Do you not like it?"
                                     menu:
                                         "•No, that's not it.":
-                                            player_nvl "No, I really like the game."
+                                            player_nvl "No, I really like the game"
                                         "•Maybe.":
-                                            player_nvl "Maybe. It's been different than what I expected."
+                                            player_nvl "Maybe. It's been different than what I expected"
                                     bro_nvl "Was it something someone said in chat?"
                                     menu:
                                         "•I don't think so.":
-                                            player_nvl "I don't think so. People have been really friendly for the most part."
+                                            player_nvl "I don't think so. People have been really friendly for the most part"
                                         "•No.":
-                                            player_nvl "No, the people in chat have been really good."
-                                    bro_nvl "Damn, I'm sorry. Wish there was something I could do to help."
-                                    player_nvl "No, I don't think this thing is like \"solvable.\""
-                                    player_nvl "I'm just feeling a type of way right now."
-                                    player_nvl "But you are helping, just talking like this."
-                                    player_nvl "Thanks, El."
+                                            player_nvl "No, the people in chat have been really good"
+                                    bro_nvl "Damn, I'm sorry. Wish there was something I could do to help"
+                                    player_nvl "No, I don't think this thing is like \"solvable\""
+                                    player_nvl "I'm just feeling a type of way right now"
+                                    player_nvl "But you are helping, just talking like this"
+                                    player_nvl "Thanks, El"
                                     bro_nvl "Anytime!"
                 "•The grind for Affiliate sucks.":
                     $ energy -= 1
-                    player_nvl "The grind for Affiliate just sucks."
-                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
-                    player_nvl "But jamming out smaller streams is just exhausting."
+                    player_nvl "The grind for Affiliate just sucks"
+                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular"
+                    player_nvl "But jamming out smaller streams is just exhausting"
                     if energy < 5:
-                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes."
+                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes"
                         player_nvl "Well that's kinda embarrassing lol"
-                        bro_nvl "I mean, I don't think anyone else would notice."
-                        bro_nvl "But like, I can tell when you're running on low energy."
-                        bro_nvl "Sibling shit, y'know.?"                            
+                        bro_nvl "I mean, I don't think anyone else would notice"
+                        bro_nvl "But like, I can tell when you're running on low energy"
+                        bro_nvl "Sibling shit, y'know"                            
                     else:
-                        bro_nvl "Really? On the VODs you look energized."
-                        player_nvl "That's good to hear."
-                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough."
-                    bro_nvl "Mom always says life has its ups and downs."
-                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows."
-                    bro_nvl "Otherwise you wouldn't bother."
-                    bro_nvl "Like just think about the people you've met from it that you wouldn't have otherwise."
-                    player_nvl "You're right. Thanks, El."
-                    bro_nvl "Anytime."
+                        bro_nvl "Really? On the VODs you look energized"
+                        player_nvl "That's good to hear"
+                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough"
+                    bro_nvl "Mom always says life has its ups and downs"
+                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows"
+                    bro_nvl "Otherwise you wouldn't bother"
+                    bro_nvl "Like just think about the people you've met from it that you wouldn't have otherwise"
+                    player_nvl "You're right. Thanks, El"
+                    bro_nvl "Anytime"
                 "•Genuinely, things are just fine.":
-                    player_nvl "No, genuinely, things are just good."
-                    player_nvl "School is hectic, especially with the grind for Affiliate, but my studies are still manageable."
-                    player_nvl "I'm excited to come back home for Thanksgiving."
-                    player_nvl "And the stream feels good."
-                    player_nvl "Not like, incredible. But I like where I'm at."
-                    player_nvl "That's kind of all I can ask for."
+                    player_nvl "No, genuinely, things are just good"
+                    player_nvl "School is hectic, especially with the grind for Affiliate, but my studies are still manageable"
+                    player_nvl "I'm excited to come back home for Thanksgiving"
+                    player_nvl "And the stream feels good"
+                    player_nvl "Not like, incredible. But I like where I'm at"
+                    player_nvl "That's kind of all I can ask for"
                     bro_nvl "You dating anyone?"
-                    player_nvl "lmao well that came out of nowhere."
+                    player_nvl "lmao well that came out of nowhere"
                     bro_nvl "I'm just saying it's been a while ok!"
-                    player_nvl "I've been too busy recently. But I promise I will try to get back on the horse. For you."
+                    player_nvl "I've been too busy recently. But I promise I will try to get back on the horse. For you"
                     bro_nvl "Good :)"
         "•It's getting pretty tough.":
-            player_nvl "Honestly, it feels pretty rough out there."
-            bro_nvl "Ah, I'm sorry to hear that."
+            player_nvl "Honestly, it feels pretty rough out there"
+            bro_nvl "Ah, I'm sorry to hear that"
             bro_nvl "What's up?"
             menu:
                 "•The grind for Affiliate sucks.":
                     $ energy -= 1
-                    player_nvl "The grind for Affiliate just sucks."
-                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular."
-                    player_nvl "But jamming out smaller streams is just exhausting."
+                    player_nvl "The grind for Affiliate just sucks"
+                    player_nvl "Like I'm playing this game and it's bringing in more viewers on the regular"
+                    player_nvl "But jamming out smaller streams is just exhausting"
                     if energy < 5:
-                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes."
+                        bro_nvl "Yeah, ngl, you look a bit tired in the streams sometimes"
                         player_nvl "Well that's kinda embarrassing lol"
-                        bro_nvl "I mean, I don't think anyone else would notice."
-                        bro_nvl "But like, I can tell when you're running on low energy."
+                        bro_nvl "I mean, I don't think anyone else would notice"
+                        bro_nvl "But like, I can tell when you're running on low energy"
                         bro_nvl "Sibling shit, y'know?"                            
                     else:
-                        bro_nvl "Really? On the VODs you look energized."
-                        player_nvl "That's good to hear."
-                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough."
-                    bro_nvl "Mom always says life has its ups and downs."
-                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows."
-                    bro_nvl "Otherwise you wouldn't bother."
-                    bro_nvl "Like just think about the people you've met from it that you wouldn't have otherwise."
-                    player_nvl "You're right. Thanks, El."
-                    bro_nvl "Anytime."
+                        bro_nvl "Really? On the VODs you look energized"
+                        player_nvl "That's good to hear"
+                        player_nvl "Sometimes I stream and I feel really good. Other times, it's rough"
+                    bro_nvl "Mom always says life has its ups and downs"
+                    bro_nvl "But I know you. And I know that you stream because it has way more highs than lows"
+                    bro_nvl "Otherwise you wouldn't bother"
+                    bro_nvl "Like just think about the people you've met from it that you wouldn't have otherwise"
+                    player_nvl "You're right. Thanks, El"
+                    bro_nvl "Anytime"
                 "•I feel pressure from the viewers.":
                     $ reluctance += 1
-                    player_nvl "Honestly, I feel pressure from the viewers."
-                    player_nvl "Especially since the raid."
+                    player_nvl "Honestly, I feel pressure from the viewers"
+                    player_nvl "Especially since the raid"
                     if viewershipHigh == True:
-                        player_nvl "It's kinda like people are expecting me to play Outlaw."
+                        player_nvl "It's kinda like people are expecting me to play Outlaw"
                     else:
-                        player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more."
-                    player_nvl "Idk, it feels a bit weird now."
-                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are.\""
-                    player_nvl "I think you're paraphrasing there."
-                    bro_nvl "A bit, yeah, but the point still stands."
-                    bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented."
+                        player_nvl "Not a ton of people stuck around after Episode 2. So I'm wondering if I like should've changed my playstyle more"
+                    player_nvl "Idk, it feels a bit weird now"
+                    bro_nvl "You know, a wise person once said: \"just be yourself, and they'll see you for the warm, smart, and talented person you are\""
+                    player_nvl "I think you're paraphrasing there"
+                    bro_nvl "A bit, yeah, but the point still stands"
+                    bro_nvl "You're gonna hit Affiliate because you're awesome and smart and talented"
                     bro_nvl "If you feel pressure from the audience, I dunno, screw 'em. Just do you!"
-                    player_nvl "Thanks, El. You're really good at being encouraging."
+                    player_nvl "Thanks, El. You're really good at being encouraging"
                     bro_nvl "I learned from the best :)"
                 "•I don't know.":
-                    player_nvl "Honestly, I don't know."
-                    bro_nvl "Come on, it has to be something."
+                    player_nvl "Honestly, I don't know"
+                    bro_nvl "Come on, it has to be something"
                     bro_nvl "Is it the game? Do you not like it?"
                     menu:
                         "•No, that's not it.":
-                            player_nvl "No, I really like the game."
+                            player_nvl "No, I really like the game"
                         "•Maybe.":
-                            player_nvl "Maybe. It's been different than what I expected."
+                            player_nvl "Maybe. It's been different than what I expected"
                     bro_nvl "Was it something someone said in chat?"
                     menu:
                         "•I don't think so.":
-                            player_nvl "I don't think so. People have been really friendly, actually."
+                            player_nvl "I don't think so. People have been really friendly, actually"
                         "•No.":
-                            player_nvl "No, the people in chat have been really good."
-                    bro_nvl "Damn, I'm sorry. Wish there was something I could do to help."
-                    player_nvl "No I don't think this thing is like \"solvable.\""
-                    player_nvl "You're helping right now, just talking like this."
-                    player_nvl "Thanks, El."
+                            player_nvl "No, the people in chat have been really good"
+                    bro_nvl "Damn, I'm sorry. Wish there was something I could do to help"
+                    player_nvl "No I don't think this thing is like \"solvable\""
+                    player_nvl "You're helping right now, just talking like this"
+                    player_nvl "Thanks, El"
                     bro_nvl "Anytime!"
-    player_nvl "Playing Oakley on stream is so different."
-    player_nvl "Definitely not like back when it was just you and me."
-    bro_nvl "Aahh good times."
+    player_nvl "Playing Oakley on stream is so different"
+    player_nvl "Definitely not like back when it was just you and me"
+    bro_nvl "Aahh good times"
     bro_nvl "Remember when I ripped the controller from you cause you threatened to insult Allistar?"
     player_nvl "I was teasing you a bit too much haha"
-    bro_nvl "Now look at us."
+    bro_nvl "Now look at us"
     bro_nvl "Or you. Big bad outlaw >:)"
     menu:
         "•Yeah, sorry about Allistar.":
             player_nvl "Yeah, sorry about that"
             bro_nvl "lolwut"
             bro_nvl "Why are you apologizing?"
-            player_nvl "For killing Allistar. I know he's your favorite character."
+            player_nvl "For killing Allistar. I know he's your favorite character"
             bro_nvl "Oh, seriously? Don't worry about it"
             menu:
                 "•But it wasn't even on purpose.":
-                    player_nvl "But like, I didn't even do it on purpose."
+                    player_nvl "But like, I didn't even do it on purpose"
                     bro_nvl "So what?"
-                    bro_nvl "I mean yeah, if it were me, I probably would've stunned him. But it's your game."
-                    bro_nvl "I know how many times you tried to play Outlaw Moze in Oakley 1."
+                    bro_nvl "I mean yeah, if it were me, I probably would've stunned him. But it's your game"
+                    bro_nvl "I know how many times you tried to play Outlaw Moze in {i}Oakley 1{/i}"
                     bro_nvl "If a misclick actually got you to do it and see what that's all about, I'm happy for you!"
                 "•Thanks for understanding.":
-                    player_nvl "Thanks for understanding."
-                    player_nvl "I figured you'd be disappointed you didn't get to see his story."
+                    player_nvl "Thanks for understanding"
+                    player_nvl "I figured you'd be disappointed you didn't get to see his story"
                     bro_nvl "Pfft that's your loss lol"
-                    bro_nvl "I'm romancing the hell out of that hunk when I start my playthrough."
+                    bro_nvl "I'm romancing the hell out of that hunk when I start my playthrough"
         "•I'm not that much of an Outlaw.":
             player_nvl "I'm not {i}that{/i} much of an outlaw."
             if marshal > outlaw + 5: #testing if I can check how much more one variable is greater than another
-                bro_nvl "I know, I know, I've been watching the VODs."
+                bro_nvl "I know, I know, I've been watching the VODs"
                 bro_nvl "Still gotta give you some guff for offing Allistar haha"
             elif marshal > outlaw:
                 bro_nvl "Ehhhh"
-                bro_nvl "Let's be real, you're on the borderline."
+                bro_nvl "Let's be real, you're on the borderline"
             else:
                 bro_nvl "Srsly?"
-                bro_nvl "I caught up on the VODs. I seen {i}everything{/i}."
+                bro_nvl "I caught up on the VODs. I seen {i}everything{/i}"
             bro_nvl "But you do you. That's how you gotta stream, right?"
             if vig2_marshalEpilogue == True:
-                bro_nvl "I will say, I am glad you didn't side with Matticus."
-                bro_nvl "What a skeeve."
+                bro_nvl "I will say, I am glad you didn't side with Matticus"
+                bro_nvl "What a skeeve"
             else:
-                bro_nvl "That Matticus alignment at the end of Episode 2 shocked me even more than the Allistar thing tbh."
+                bro_nvl "That Matticus alignment at the end of Episode 2 shocked me even more than the Allistar thing tbh"
             #bro_nvl "I'm excited to check out Episode 3 when it goes up!"
         "•Outlaw life is good!":
             player_nvl "Outlaw life is good!"
@@ -6580,48 +6587,48 @@ label vig3_macro_brother_stream():
                 bro_nvl "I caught up on the VODs, I know you're back to goody two-shoes Moze haha"
             elif marshal > outlaw:
                 bro_nvl "Ehhhh"
-                bro_nvl "Let's be real, you're on the borderline."
+                bro_nvl "Let's be real, you're on the borderline"
             else:
-                bro_nvl "Good, it looks like you're really into it on stream."
+                bro_nvl "Good, it looks like you're really into it on stream"
                 bro_nvl "And I know how many times you tried to play Outlaw Moze in Oakley 1."
-                bro_nvl "Glad you're getting the chance now."
+                bro_nvl "Glad you're making it happen now"
     if vig3_brotherChat == 2:
-        bro_nvl "Oooh maybe I should see if Cedric is down to play this game."
-        player_nvl "Oh yeah, if he gets to take you to movies, you get to make him play games."
+        bro_nvl "Oooh maybe I should see if Cedric is down to play this game"
+        player_nvl "Oh yeah, if he gets to take you to movies, you get to make him play games"
         bro_nvl "And test his moral compass at the same time >:)"
     else:
-        bro_nvl "Can't wait till I get the chance to play this game."
+        bro_nvl "Can't wait till I get the chance to play this game"
         player_nvl "I'm excited to hear your thoughts when you get your hands on it!"
     if vig3_brotherChat == 1:
-        player_nvl "That's enough about me though."
+        player_nvl "That's enough about me though"
         player_nvl "What's up with you? Got any life updates?"
         jump vig3_macro_brother_cedric
     else:
         jump vig3_macro_brother_end
 
 label vig3_macro_brother_end():
-    bro_nvl "Alright, I gotta go. High school never ends."
+    bro_nvl "Alright, I gotta go. High school never ends"
     player_nvl "Orchestra stuff?"
     bro_nvl "Nope, I gotta panic and figure out what I'm gonna wear on my date!"
-    player_nvl "Lmao you have so much time."
-    bro_nvl "Not when I'm trying to fit in outfit planning between all the 'OMG I CAN'T BELIEVE I'M GOING OUT WITH HIM' mini panic attacks I'll be having all week!"
-    player_nvl "hahahaha you're gonna figure it out and it's gonna be a great time."
-    player_nvl "Seriously, I'm so excited for you! Cedric's one lucky guy."
-    bro_nvl "Thanks, [player]! I {i}really{/i} appreciate all your advice and just you listening to me when I freak out."
-    player_nvl "Hey, I appreciate you listening when I need to talk about stream stuff."
+    player_nvl "Lmao you have so much time"
+    bro_nvl "Not when I'm trying to fit in outfit planning between the 'OMG I CAN'T BELIEVE I'M GOING OUT WITH HIM' mini panic attacks I'll be having all week!"
+    player_nvl "hahahaha you're gonna figure it out and it's gonna be a great time"
+    player_nvl "Seriously, I'm so excited for you! Cedric's one lucky guy"
+    bro_nvl "Thanks, [player]! I {i}really{/i} appreciate all your advice and just you listening to me when I freak out"
+    player_nvl "Hey, I appreciate you listening when I need to talk about stream stuff"
     bro_nvl "Fair, haha"
-    bro_nvl "Guess we have each other's backs."
-    player_nvl "Always."
+    bro_nvl "Guess we have each other's backs"
+    player_nvl "Always"
     bro_nvl "Love you, [player], have a good night!"
     player_nvl "Love you too, El! Take care!"
     hide discordview with dissolve
     scene bg black with dissolve
     stop music fadeout 8.0
     "You close Loop'D and turn off your computer for the night."
-    "The conversation with your brother eased some of the nerves you were feeling about finishing Oakley 2."
+    "The conversation with your brother eased some of the nerves you were feeling about finishing {i}Oakley 2{/i}."
     "It was nice to chat with him."
     "And good to feel encouragement."
-    "He's really growing up and into his own."
+    "He's really growing up and coming into his own."
     "You spend the rest of your waking night thinking about how much your brother has grown."
     "Then, eventually, you drift off to sleep."
     nvl clear

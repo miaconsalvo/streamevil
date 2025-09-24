@@ -788,7 +788,7 @@ label vig4_sc6_defend_5():
         $ csEngagement += 1
         $ vig4_reggieReturn = True
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
-        "A familiar voice...but from where?"
+        "A familiar voice... but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't—"
         hide vega with dissolve
@@ -820,7 +820,7 @@ label vig4_sc6_defend_5():
         menu:
             goon "So take care of whatever you got to do on the ground. We'll handle the air shit."
             "Thank you.":
-                mS "Reginald...thank you."
+                mS "Reginald... thank you."
                 goon "Now don't go getting soft on me."
                 goon "You just do your job and I'll do mine."
                 goon "Even though it's a massive pain."

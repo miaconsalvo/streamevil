@@ -140,7 +140,7 @@ screen nvl_phonetext(dialogue):
                         $ message_icon = "images/socials/profilepics/profile4.png"
                     elif d.who == "El":
                         $ message_icon = "images/socials/profilepics/profile3.png"
-                    elif d.who == "PickledDragons": ### For establishing the viewer characters' proper profile pics
+                    elif d.who == "pickledDragons": ### For establishing the viewer characters' proper profile pics
                         $ message_icon = "images/socials/profilepics/profilepickled.png"
                     elif d.who == "Coriolis":
                         $ message_icon = "images/socials/profilepics/profilecoriolis.png"

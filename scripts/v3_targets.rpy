@@ -1340,7 +1340,7 @@ label vig3_sc14_recfindsout_noremorse():
             pause 0.5
         "That was cold.":
             $ reactImage = "stream ui/reactshocked.png"
-            player "Wow maybe that was too far?"
+            player "Wow, maybe that was too far?"
             player "Even if Allistar deserved it..."
             player "Might've been too cruel."
             $ AddChatter(vig3_sc14_rec_react_comment12)
@@ -1646,7 +1646,7 @@ label vig3_analytics_topfan():
         "It's nice to have someone who's less didactic about \"Marshal\" this or \"Outlaw\" that."
         "For them, it's all about MAC. And maybe that's more reflective of Moze's view than anyone else's."
     elif topfan == "pickledDragons":
-        "pickledDragons brings so much energy to the chat it's remarkable."
+        "pickledDragons brings so much energy to the stream, it's remarkable."
         "It feels like whenever chat pops off, they're there inciting more activity."
         "Every chat needs someone who's making sure that people are having fun."        
     else:
@@ -1665,9 +1665,9 @@ label vig3_analytics_audience():
     $ flinchCheck += 1
     $ flinch_audienceCheck = True
     if viewershipHigh == True:
-        "We made it! 50 Followers!"
+        "You made it! 50 Followers!"
         "That means you won't have to collect any new follows for the last stream."
-        "But you'll still have to keep the average viewership number above ten."
+        "But you'll still have to keep the average viewership above ten."
         "After all the people watching this week though, that shouldn't be an issue."
         "Cross your fingers."
     else:
@@ -1720,7 +1720,7 @@ label vig3_analytics_viewcount2():
             $ vig3_viewership = "High"
             "The viewership is stable and looks comfortably above the Affiliate requirement."
             "You won't know for certain until after the last stream, but the calculations are looking good."
-            "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, it looks like you're good."
+            "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, you should be solid."
             "Cross your fingers."
             jump vig3_analytics_viewcount2
         "Playing with chat is interesting." if flinchViewershipChat == False:
