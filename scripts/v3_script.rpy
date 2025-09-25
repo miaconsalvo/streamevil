@@ -147,7 +147,7 @@ label vig3outlawstart():
     $ AddChatter(vig3_outlawstart_comment17)
     mS "Please."
     show teresa stream upset
-    enS "SHE WON'T EVEN LOOK AT ME MOZE!"
+    enS "{i}She won't even look at me Moze!{/i}"
     $ AddChatter(vig3_outlawstart_comment18)
     $ reactTarget = "vig3_sc1_out"
     show screen streamerCommentary
@@ -1024,10 +1024,10 @@ label vig3_sc5():
     hide mac with dissolve
     show akarplaza_flashback_stream at topleft onlayer background with dissolve
     "I'm taken back to the plaza several years back, rowdy and riotous."
-    "BANG BANG" #sound effect style tests
+    "{b}BANG BANG{/b}" #sound effect style tests
     "BigCorp officers are scattered around attempting to suppress the riot."
     "With small fires everywhere Teresa holds onto the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
-    enS "We're gonna be *HICK* glorkin *HICK* LEGENDS HAHA!!!"
+    enS "We're gonna be *{b}HICK{/b}* glorkin *{b}HICK{/b}* {i}legends hahaha{/i}!!!"
     if viewershipHigh == True:
         $ AddChatter (vig3_sc5_akarplaza_comment2)
     pS "Pffffft! Glorkin?"
@@ -1274,7 +1274,7 @@ label vig3_sc6():
     show rec stream surprised
     $ reactTarget = "vig3_sc6_crewspat"#timestamp 6:30
     show screen streamerCommentary
-    recS "WOAH! How about I go and get us another round."
+    recS "{i}Woah!{/i} How about I go and get us another round."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc6_bbpub_comment9)
     show rec stream happy
@@ -1609,10 +1609,10 @@ label vig3_sc6():
                 $ AddChatter (vig3_sc6_recmac_comment17)
             "A woman from the table flanks him, she rivals him in size."
             enS "So does that mean you're ready to play?"
-            zan "HAHA, I like you, moxie!"
+            zan "{i}Haha!{/i} I like you, moxie!"
             $ AddChatter (vig3_sc6_recmac_comment18)
             pS "Moxie's our middle name."
-            zan "That is strange... but ZAN APPROVES!"
+            zan "That is strange... but {i}Zan approves!{/i}"
             $ AddChatter (vig3_sc6_recmac_comment19)
             "He lifts up two thumbs and points to himself, then speaks to the woman in a language I don't understand."
             "She nods and picks up a large table to make the play area. Jennica and Zan speak for a moment before shaking hands."
@@ -1866,7 +1866,7 @@ label vig3_sc6():
             $ AddChatter (vig3_sc6_barfight_comment9)
             mS "Oh typical, you don't what? Know me? Don't even remember proposing to me do you?"
             $ AddChatter (vig3_sc6_barfight_comment10)
-            wifenpc "PROPOSE!?"
+            wifenpc "{i}Propose!?{/i}"
             $ AddChatter (vig3_sc6_barfight_comment11)
             pause 0.5
             $ AddChatter (vig3_sc6_barfight_comment12)
@@ -1923,17 +1923,17 @@ label vig3_sc6():
             "They're slamming the floor, the room is shaking."
             "Over the roaring cheers, I cut the rope."
             "The scream that is let out is so high, I couldn't believe it came from Zan."
-            zan "YEEEEEEOWWWWWWWW!!"
+            zan "{i}Yeeeeeoooowww!{/i}"
             $ AddChatter (vig3_sc6_cutrope_comment7)
             if viewershipHigh == True:
                 pause 0.5
                 $ AddChatter (vig3_sc6_cutrope_comment8)
                 pause 0.5
                 $ AddChatter (vig3_sc6_cutrope_comment9)
-            zan "They're alive!!!"
+            zan "They're alive!"
             "He's swatting at them like whack-a-moles. One plant's head pops like a grape."
             enS "Stein get these out of here."
-            zan "Ah ah AHHHHHHHHHHH!!"
+            zan "Ah ah {i}Ahhhhhh!{/i}"
             $ AddChatter (vig3_sc6_cutrope_comment10)
             pause 0.5
             $ AddChatter (vig3_sc6_cutrope_comment11)
@@ -2011,7 +2011,7 @@ label vig3_sc6():
             "Is that?"
             "No."
             "My vision is still betraying me and I don't have time to get a better look."
-            zan "FOR MY LOYAL FANS!"
+            zan "{i}For my loyal fans!{/i}"
             $ AddChatter (vig3_sc6_shootzan_comment5)
             "Zan does a messy cheers to Ovid, teeters his chair back to knock the shot into his mouth."
             $ AddChatter (vig3_sc6_shootzan_comment7)
@@ -2025,7 +2025,7 @@ label vig3_sc6():
             "Zan falls hard. The pub is silent."
             $ AddChatter (vig3_sc6_shootzan_comment9)
             show screen streamerCommentary
-            pS "HELL YEAH!"
+            pS "{i}Hell yeah!{/i}"
             show jennica stream neutral at stream_left
             show teresa stream happy at stream_right
             "The crowd erupts. Zan's crew is visibly miffed, but the rest of the bar is patting Teresa and Jennica on the back."
@@ -2037,9 +2037,9 @@ label vig3_sc6():
             $ AddChatter (vig3_sc6_shootzan_comment12)
             "The door swings closed."
             ovid "Thank the Makers it's over."
-            zan "Good, good! NOW!"
+            zan "Good, good! {i}Now!{/i}"
             $ AddChatter (vig3_sc6_shootzan_comment13) 
-            zan "I must go and throw up. HAHA!"
+            zan "I must go and throw up. {i}Haha!{/i}"
             "The three exchange handshakes as Zan passes by me and stops."
             $ AddChatter (vig3_sc6_shootzan_comment14)
             hide jennica with dissolve
@@ -3096,7 +3096,7 @@ label vig3_sc10():
     mS "You don't know anything about me!"
     amaS "We're done here."
     "Ama raises the blaster and points it at me. My body freezes."
-    "BANG!"
+    "{b}BANG{/b}!"
     if viewershipHigh == True:
         $ AddChatter (vig3_sc10_memory_comment9)
     "I move out of the way just as the impact hits my shoulder, a hair's breadth away from my heart."
@@ -3514,9 +3514,9 @@ label vig3_sc12():
             $ AddChatter (vig3_sc12_balcony_comment14)
             pause 0.5
             $ AddChatter (vig3_sc12_balcony_comment15)
-            "BANG!"
+            "{b}BANG!{/b}"
             "A chunk of the rail explodes out into the open air."
-            macS "STOP IT!"
+            macS "{i}Stop it!{/i}"
             $ AddChatter (vig3_sc12_balcony_comment16)
             pause 0.5
             $ AddChatter (vig3_sc12_balcony_comment17)
@@ -3845,9 +3845,9 @@ label vig3_sc12():
             "I struggle against her strength as we yank the rifle back and forth."
             $ AddChatter (vig3_sc12_balcony_comment15)
             play audio "lazer.wav"
-            "BANG!"
+            "{b}BANG!{/b}"
             "A chunk of the rail explodes out into the open air."
-            macS "STOP IT!"
+            macS "{i}Stop it!{/i}"
             $ AddChatter (vig3_sc12_balcony_comment16)
             pause 0.5
             $ AddChatter (vig3_sc12_balcony_comment17)
@@ -4527,7 +4527,7 @@ label vig3_sc14():
     amaS "Please, I'm not the one who wanted to be selfish and weigh him down."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment20)
-    amaS "That kid had so much talent and potential, and you just wanted him to ROT in a shop!"
+    amaS "That kid had so much talent and potential, and you just wanted him to {i}rot{/i} in a shop!"
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment21)
     recS "We had a good life!"
@@ -4690,7 +4690,7 @@ label vig3_sc14():
             mS "I couldn't let him leave, I did what—"
             recS "Bullshit!"
             "Tears are pouring from Rec's eyes."
-            recS "Know who else is important? MY LITTLE BROTHER!"
+            recS "Know who else is important? {i}My little brother!{/i}"
             $ AddChatter(vig3_sc14_hadto_comment6)
             pause 0.5
             $ AddChatter(vig3_sc14_hadto_comment7)
@@ -4991,7 +4991,7 @@ label vig3_epilogue():
     player "Alright, everyone, looks like that's the end of the episode."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment42)
-    player "Next week we've got the fourth and FINAL episode of {i}Oakley 2{/i}."
+    player "Next week we've got the fourth and {i}final{/i} episode of {i}Oakley 2{/i}."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment43)
     player "So be sure to swing by, and join us for a big finale!"

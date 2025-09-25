@@ -166,7 +166,7 @@ label vig4_sc1_1():
                     enS "Don't worry, I'm not touching any critical functions."
                     macS "My optical drives have shut down. I can no longer see."
                     show teresa stream shock
-                    enS "WHAT!?"
+                    enS "{i}What!?{/i}"
                     macS "Joking. I can see fine."
                     $ reactTarget = "vig4_sc1_macjokes"
                     show screen streamerCommentary
@@ -2228,7 +2228,7 @@ label vig4_sc3_2_teresa():
     enS "First, take all those dice, mix them up in the cup, and then slam it back on the table."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc3_2_resa_comment7)
-    "The wooden cup makes a deep \"thunk\" as the dice rattle around underneath."
+    "The wooden cup makes a deep \"{b}THUNK{/b}\" as the dice rattle around underneath."
     "I look under my cup: There are two 2's, two 4's, and one 6."
     "The person opposite me starts."
     diceP1 "three 4's."
@@ -3840,7 +3840,7 @@ label vig4_sc5_0():
     $ AddChatter(vig4_sc5_0_comment5)
     pS "Just act natural."
     enS "Posing is, fundamentally, not natural."
-    enS "I've already told you Jenn, I don't li—AAAAHHH"
+    enS "I've already told you Jenn, I don't li—{i}aaaaaahhh{/i}"
     pause 2.0
     ##*streamer reaction 
     jump vig4_sc5_1
@@ -4319,7 +4319,7 @@ label vig4_sc7_2():
     macS "Moze!"
     show mac stream neutral at stream_right5mac with Dissolve (0.3)
     "I whip around to see MAC careening toward the open door."
-    "{i}whoosh{/i}"
+    "{b}WHOOOSH!{/b}"
     "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
     "An energy shield."
     $ AddChatter(vig4_sc7_2_comment3)
