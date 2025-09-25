@@ -6,12 +6,15 @@ label vig4_sc1_pdParanoia():
     menu:
         "Is Moze over her paranoia?"
         "For sure.":
+            $ reactImage = "stream ui/reactthumbsup.png"
             player "Oh yeah, I think she was able to work through a lot of that in the last episode."
             player "Especially if the crew isn't at each other's throats anymore."
         "No way.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             player "No way. You don't just magically get over that stuff."
             player "I'd expect we're in for some hallucinations or maybe a trippy dream sequence."            
         "I don't know.":
+            $ reactImage = "stream ui/reactconversational.png"   
             player "Hmm interesting idea. Honestly, idk."
             player "They're not in as stressful a position anymore, but that's not something you just like get over."
     if reactVariable == True:
@@ -35,18 +38,21 @@ label vig4_sc1_csRomance():
     menu:
         "The Chat is asking who I want to romance again."
         "I'm team Jennica.":
+            $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
             $ kcEngagement -=1
             player "Oh, I'm team Jennica for sure."
             player "Friendly, sensitive, and a crack pilot. What's not to love?"
             $ AddChatter(vig4_sc1_interact_comment1)
         "I'm team Teresa.":
+            $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement -=1
             $ kcEngagement += 1
             player "Oh, I'm team Teresa for sure."
             player "Smart, loyal, and a clever engineer in the clutch. What's not to love?"
             $ AddChatter(vig4_sc1_interact_comment2)
         "I'm still hoping for Ama." if deadeyeApproval >= 2:
+            $ reactImage = "stream ui/reactconfident.png"
             $ pdEngagement += 2
             $ csEngagement += 1
             $ kcEngagement += 1
@@ -58,6 +64,7 @@ label vig4_sc1_csRomance():
             pause 0.5
             $ AddChatter(vig4_sc1_interact_comment5)
         "I'm not feeling a romance.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             $ csEngagement -= 1
             $ kcEngagement -= 1
             $ pdEngagement += 1
@@ -87,16 +94,19 @@ label vig4_sc1_kcPrediction():
     menu:
         "How do I think the story's going to play out?"
         "I have no idea.":
+            $ reactImage = "stream ui/reactconversational.png"
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             player "I have no clue to be honest."
             player "I've learned that you can't predict where things are going to go with this story."
         "The Alliance is gonna be the real big bad.":
+            $ reactImage = "stream ui/reactthinking.png"
             $ csEngagement += 1
             player "I agree with pickledDragons, I think the Alliance is gonna be a factor at the end here."
             player "Feels like they could be the real big bad and then set up Oakley 3 nicely."
             $ AddChatter(vig4_sc2_interact_comment1)
         "Ama's going to come back for sure.":
+            $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 1
             $ pdEngagement += 1
             player "I think Ama's going to kidnap MAC, and we're gonna have to fight her and BigCorp to get him back."
@@ -126,6 +136,7 @@ label vig4_sc2_rube():
             player "..."
             pass
         "Rube!":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "Rube!"
             $ AddChatter(vig4_sc2_1_comment9)
             pause 0.5
@@ -153,8 +164,10 @@ label vig4_sc2_peacefulTown():
     menu:
         "Do I believe Polaris is a peaceful town."
         "No way.":
+            $ reactImage = "stream ui/reactthinking.png"
             player "No way. There's something going on here that he's not telling us."
         "I buy it.":
+            $ reactImage = "stream ui/reactthumbsup.png"
             player "It seemed pretty chill while we were walking in. They're at least not actively hostile, that's for sure."
     if reactVariable == True:
         "Where was I?"
@@ -191,6 +204,7 @@ label vig4_sc2_elliotEntrance():
     menu:
         "Elliot joined the chat!"
         "Aren't you supposed to be on a date?":
+            $ reactImage = "stream ui/reactthinking.png"
             player "Hey El! Aren't you supposed to be on a date right now?"
             $ AddChatter(vig4_bro_comment1)
             pause 1.0
@@ -199,6 +213,7 @@ label vig4_sc2_elliotEntrance():
             menu:
                 player "Oh my god that's so sweet! It's great to have you here!"
                 "Everyone say \"hi\" to my brother!":
+                    $ reactImage = "stream ui/reactthumbsup.png"
                     player "El, meet Chat. Chat, say \"hi\" to my lil bro!"
                     $ AddChatter(vig4_bro_comment4)
                     pause 0.5
@@ -246,6 +261,7 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
                 "Let's catch Elliot up to speed.":
+                    $ reactImage = "stream ui/reactconversational.png"
                     player "Alright El, so basically, we landed on this moon called Polaris and found the Dragonflies."
                     player "Their leader is this old engineer guy named Coil who helped create MAC with Dr. Vanas back in the day."
                     $ AddChatter(vig4_bro_comment15)
@@ -274,6 +290,7 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
         "So good to see you!":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "El! It's so good to have you in chat!"
             $ AddChatter(vig4_bro_comment2)
             player "Oh wow, that's so sweet! It's great to have you here!"
@@ -281,6 +298,7 @@ label vig4_sc2_elliotEntrance():
             menu:
                 player "Oh wow, that's so sweet! It's great to have you here!"
                 "Everyone say \"hi\" to my brother!":
+                    $ reactImage = "stream ui/reactthumbsup.png"
                     player "El, meet Chat. Chat, say \"hi\" to my lil bro!"
                     $ AddChatter(vig4_bro_comment4)
                     pause 0.5
@@ -328,6 +346,7 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
                 "Let's catch Elliot up to speed.":
+                    $ reactImage = "stream ui/reactconversational.png"
                     player "Alright El, so basically, we landed on this moon called Polaris and found the Dragonflies."
                     player "Their leader is this old engineer guy named Coil who helped create MAC with Dr. Vanas back in the day."
                     $ AddChatter(vig4_bro_comment15)
@@ -356,6 +375,7 @@ label vig4_sc2_elliotEntrance():
                     "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
         "Everyone say hi to my brother!":
+            $ reactImage = "stream ui/reactconfident.png"
             player "El, meet Chat. Chat, say \"hi\" to my lil bro!"
             $ AddChatter(vig4_bro_comment4)
             pause 0.5
@@ -425,12 +445,14 @@ label vig4_sc3_festivalRomance():
     menu:
         "kitcat's asking why I'm not romancing Jennica or Teresa."
         "We can't if we want to romance Ama.":
-            player "I saw a thread on BlueIt that said we can't romance Jenn or Teresa if we want to romance Ama."
+            $ reactImage = "stream ui/reactconversational.png"
+            player "I saw a thread on blueit that said we can't romance Jenn or Teresa if we want to romance Ama."
             player "And I'm still holding out hope for the Ama drama!"
             $ AddChatter(vig4_sc3_interact_comment1)
             pause 0.5
             $ AddChatter(vig4_sc3_interact_comment2)
         "I want to get to know Vega more.":
+            $ reactImage = "stream ui/reactthinking.png"
             player "I know, I know, but I want to get to know Vega better."
             player "Maybe we can learn more about Coil from her too."
             $ AddChatter(vig4_sc3_interact_comment3)
@@ -457,12 +479,14 @@ label vig4_sc3_pdCoilCommentary():
     menu:
         "How do I feel about Coil's actions?"
         "I don't like him.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             player "I don't like him. I feel like he didn't even try to make a case for us."
             $ AddChatter(vig4_sc3_interact_comment4)
             if viewershipHigh == True:
                 pause 0.5
                 $ AddChatter(vig4_sc3_interact_comment5)
         "I think he's right.":
+            $ reactImage = "stream ui/reactthinking.png"
             player "The thing is, what he's saying isn't necessarily wrong."
             player "Maybe we haven't been the best parental figure for MAC."
             $ AddChatter(vig4_sc3_interact_comment6)
@@ -487,6 +511,7 @@ label vig4_sc3_csCoilCommentary():
     menu:
         "How do I feel about Coil's actions?"
         "I don't like him.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             $ pdEngagement += 1
             $ csEngagement -= 1
             player "I don't like him. I feel like he didn't even try to make a case for us."
@@ -494,6 +519,7 @@ label vig4_sc3_csCoilCommentary():
             pause 0.5
             $ AddChatter(vig4_sc3_interact_comment5)
         "I think he's right.":
+            $ reactImage = "stream ui/reactthinking.png"
             $ pdEngagement -= 1
             $ csEngagement += 1
             player "The thing is, what he's saying isn't necessarily wrong."
@@ -520,6 +546,7 @@ label vig4_sc4_kcNoOffer():
     menu:
         "Why didn't I choose to ally with Ama?"
         "Cause she's been trying to kill us.":
+            $ reactImage = "stream ui/reactconversational.png"
             player "Ama's been trying to kill us for months, and now she just decides to swap sides?"
             player "We can't just forgive her that fast. She has to earn it."
             $ AddChatter(vig4_sc4_interact_comment1)
@@ -527,12 +554,14 @@ label vig4_sc4_kcNoOffer():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc4_interact_comment2)
         "We don't need her.":
+            $ reactImage = "stream ui/reactconfident.png"
             player "We don't need her. Our crew is tough enough to handle what's coming up on our own."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc4_interact_comment3)
                 pause 0.5
             $ AddChatter(vig4_sc4_interact_comment4)
         "We can't trust her.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             player "I mean, we just can't trust her."
             player "Especially after Episode 3, I wouldn't want her watching my back."
             $ AddChatter(vig4_sc4_interact_comment4)
@@ -574,6 +603,7 @@ label vig4_sc5_oscarReturn():
     menu:
         "swayy0scar! They were in chat for the first stream, but haven't been around since."
         "Welcome back!":
+            $ reactImage = "stream ui/reactthumbsup.png"
             player "Hey, Oscar! Welcome back!"
             player "It's been a while, what's going on with you?"
             $ AddChatter(vig4_sc5_interact_comment1)
@@ -606,6 +636,7 @@ label vig4_sc6_ripTank():
     menu:
         "Chat seems sad about the tank being destroyed."
         "RIP.":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "Another fallen soldier. Get those RIPs in chat."
             $ AddChatter(vig4_sc6_interact_comment1)
             pause 0.5
@@ -640,6 +671,7 @@ label vig4_sc6_pdGoodPerson():
     menu:
         "Chat is talking about Moze's morality."
         "Moze's flexibility is what makes her a good character.":
+            $ reactImage = "stream ui/reactthinking.png"
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ csEngagement += 1
@@ -650,11 +682,13 @@ label vig4_sc6_pdGoodPerson():
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment7)
         "Who cares about Moze's morality, this is fun!":
+            $ reactImage = "stream ui/reactcelebrate.png"
             $ pdEngagement += 1
             $ csEngagement == 1
             player "Who cares about her character arc. This is just a good time!"
             $ AddChatter(vig4_sc6_interact_comment8)
         "Moze getting \"worse\" is also a good story.":
+            $ reactImage = "stream ui/reactconfident.png"
             $ pdEngagement += 1
             player "Moze failing at \"doing better\" and actually \"doing worse\" is an interesting story."
             player "I think it reflects the complexity of the galaxy and how hard it is for her to change. Especially considering her mentor."
@@ -663,6 +697,7 @@ label vig4_sc6_pdGoodPerson():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_interact_comment10)
         "It does feel inconsistent with the game's themes.":
+            $ reactImage = "stream ui/reactunsure.png"
             $ pdEngagement -= 1
             player "Yeah, I'll admit, a lot of Outlaw Moze's decisions do feel kind of inconsistent with the game's themes."
             $ AddChatter(vig4_sc6_interact_comment11)
@@ -689,6 +724,7 @@ label vig4_sc6_reggieReaction():
     menu:
         "Chat is reacting to Reginald's return."
         "REGGIE!":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "REGGIE!"
             player "HE'S BACK!"
             $ AddChatter(vig4_sc6_interact_comment14)
@@ -701,6 +737,7 @@ label vig4_sc6_reggieReaction():
             pause 0.5
             $ AddChatter(vig4_sc6_interact_comment18)
         "Is Matticus going to want something?":
+            $ reactImage = "stream ui/reactunsure.png"
             player "Oh god, is Matticus going to want something for this?"
             $ AddChatter(vig4_sc6_interact_comment13)
         "Say nothing.":
@@ -726,11 +763,13 @@ label vig4_sc7_kcWhyNoRomance():
     menu:
         "kitcat wants to know why I backed out of romancing Ama."
         "They're not right for each other.":
+            $ reactImage = "stream ui/reactthumbsdown.png"
             player "I don't think they're right for each other."
             player "Plus, Ama's kind of a mother figure to Moze."
             player "It didn't end up feeling good in the end. Sorry, chat."
             $ AddChatter(vig4_sc7_interact_comment2)
         "Too soon.":
+            $ reactImage = "stream ui/reactunsure.png"
             player "I think there's something between them, but saying \"I love you\" right now feels a bit rushed."
             $ AddChatter(vig4_sc7_interact_comment1)
         "Say nothing.":
@@ -756,6 +795,7 @@ label vig4_pdEndFeeling():
     menu:
         "How am I feeling now that I'm at the end of the game?"
         "Tired.":
+            $ reactImage = "stream ui/reactunsure.png"
             player "I'll be honest Chat, I'm beat haha."
             player "This has been a long time coming. It's been super fun, but I am tired."
             player "A bit relieved to be bringing this to a closed."
@@ -766,6 +806,7 @@ label vig4_pdEndFeeling():
                 pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Ecstatic.":
+            $ reactImage = "stream ui/reactcelebrate.png"
             player "Oh I feel amazing, ecstatic even!"
             player "That climax was so cool and all the drama between the characters was amazing!"
             player "I think I'm gonna be riding this high for a while haha."
@@ -776,6 +817,7 @@ label vig4_pdEndFeeling():
                 pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Kind of sad.":
+            $ reactImage = "stream ui/reactconversational.png"
             player "In all honesty, I'm a bit sad that it's over."
             player "This has been so much fun and it's ending really well."
             player "I just wish there was more!"
@@ -786,6 +828,7 @@ label vig4_pdEndFeeling():
                 pause 0.5
             $ AddChatter(vig4_epilogue_interact_comment3)
         "Not sure.":
+            $ reactImage = "stream ui/reactthinking.png"
             player "Honestly, I don't know what to feel."
             player "I'm like sad, but also happy."
             player "It just feels surreal for this gaming to actually be coming to an end."

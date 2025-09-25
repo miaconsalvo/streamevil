@@ -18,7 +18,7 @@ label vig3_sc1_out():
             $ AddChatter(vig3_sc1_out_react_comment2)
             pause 0.5
         "Brutal!":
-            $ reactImage = "stream ui/reactconfident.png"
+            $ reactImage = "stream ui/reactthinking.png"
             player "Hate to see the crew fighting." 
             $ AddChatter(vig3_sc1_out_react_comment1)
             pause 0.5

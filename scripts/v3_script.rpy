@@ -471,10 +471,11 @@ label vig3_sc3():
     pS "Alright, buddy we'll see what we can do."
     show mac stream neutral at stream_left5mac with move
     "I almost didn't see the guy as he pushes past Teresa, getting a bit too close for comfort..." ##HOUND LEADER (early forties)##
+    show houndleader stream neutral at stream_right5 with dissolve
+    with hpunch
     show teresa stream upset at stream_right
     show jennica stream angry at stream_left
     enS "Hey! Care to watch yourself?"
-    show houndleader stream neutral at stream_right5 with dissolve
     houndleaderunknown "Aw, smile a bit sweetcheeks, it's a celebration!"
     $ AddChatter (vig3_sc3_akarstreet_comment12)
     if viewershipHigh == True:
