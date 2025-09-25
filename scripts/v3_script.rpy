@@ -298,9 +298,9 @@ label vig3_sc2():
     if viewershipHigh == True:
         $ AddChatter(vig3_sc2_cockpit_comment4)
     $ AddChatter(vig3_sc2_cockpit_comment5)
-    dflycontact "Captain Moze of the Oakley. My name is {b}static{/b} of the Dragonflies."
+    dflycontact "Captain Moze of the Oakley. My name is {b}STATIC{/b} of the Dragonflies."
     "The cockpit is silent."
-    dflycontact "I know you {b}static{/b} Dr. Vanas' work. And we are contacting {b}static{/b} drop-off {b}static{/b}."
+    dflycontact "I know you {b}STATIC{/b} Dr. Vanas' work. And we are contacting {b}STATIC{/b} drop-off {b}STATIC{/b}."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc2_cockpit_comment6)
     mS "Teresa can you get this any clearer?!?"
@@ -311,7 +311,7 @@ label vig3_sc2():
     pS "Needed an upgrade anyway, but I've been puttin' it off for..."
     "Jennica looks at MAC."
     pS "A while..."
-    dflycontact "...at a planet known as {b}static{/b} sector, coordinates {b}static{/b} message {b}static{/b} lost {b}static{/b} reattempt {b}static{/b} five days. Over and {b}static{/b}."
+    dflycontact "...at a planet known as {b}STATIC{/b} sector, coordinates {b}STATIC{/b} message {b}STATIC{/b} lost {b}STATIC{/b} reattempt {b}STATIC{/b} five days. Over and {b}STATIC{/b}."
     enS "I've recorded the message for what it's worth, but if we want those coordinates in five days we'll need better gear."
     pS "That ain't much time."
     menu:
@@ -997,7 +997,7 @@ label vig3_sc5():
     show akarplaza_stream at topleft onlayer background with dissolve
     play music "soundtrack/akar(night).wav" volume 0.8
     hide reccshop_stream 
-    "When Rec leads us to the plaza, I'm almost startstruck with how it looks." ###REC takes the Oakley Crew to the Plaza. In front is Rec and MOZE with JENNICA and TERESA taking up the rear with MAC in between them.##
+    "When Rec leads us to the plaza, I'm almost starstruck with how it looks." ###REC takes the Oakley Crew to the Plaza. In front is Rec and MOZE with JENNICA and TERESA taking up the rear with MAC in between them.##
     "The space is abundant with life."
     "The shops and bars on the outer ring of the roundabout shine, bursting with patrons." 
     "Music and reverie pour out like sections of a cacophonous orchestra."
@@ -4540,7 +4540,7 @@ label vig3_sc14():
     amaS "Where is Allistar?"
     amaS "Last I checked, I left him with you."
     show rec stream surprised
-    "Rec's eyes fix to me, finally catching me in my lie."
+    "Rec's eyes fix to me."
     $ AddChatter(vig3_sc14_escape_comment23)
     recS "What?"
     amaS "Oh, you didn't know?"
@@ -4571,7 +4571,7 @@ label vig3_sc14():
         $ AddChatter(vig3_sc14_escape_comment31)
     "Rec's eyes widen, as they step back, horrified."
     recS "No."
-    recS "That's not right."
+    recS "That's not true."
     "They look around at all of us. Jenn and Teresa can't look them in the eyes."
     $ AddChatter(vig3_sc14_escape_comment32)
     pause 0.5
@@ -4789,7 +4789,7 @@ label vig3_sc14():
             "They look at me and Ama."
             recS "You two deserve each other."
             $ AddChatter(vig3_sc14_deservedit_comment17)
-            "Rec grabs the blaster off of Teresa and fires a shot."
+            "Rec grabs the blaster off Teresa and fires a shot."
             show jennica stream fight at stream_center with vpunch
             "With a quick move from Jennica the bullet hits the shuttle ceiling."
             show rec with vpunch

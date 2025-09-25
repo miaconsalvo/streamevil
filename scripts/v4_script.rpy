@@ -3098,7 +3098,7 @@ label vig4_sc3_5():
                 "MAC rolls forward, readying the pulse fire from his arm."
             else:
                 "MAC rolls forward, preparing the EMP charge in his antenna."
-            vS "Shhhhshhshh."
+            vS "{i}Shhhhshhshh.{/i}"
             "Vega steps forward and restrains him."
             vS "I'm really sorry, MAC. This is for your own good."
             macS "How do you know what's for my own good?"
