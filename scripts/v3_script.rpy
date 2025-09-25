@@ -1025,7 +1025,7 @@ label vig3_sc5():
     hide mac with dissolve
     show akarplaza_flashback_stream at topleft onlayer background with dissolve
     "I'm taken back to the plaza several years back, rowdy and riotous."
-    "{b}BANG BANG{/b}" #sound effect style tests
+    "{b}BANG BANG!{/b}" #sound effect style tests
     "BigCorp officers are scattered around attempting to suppress the riot."
     "With small fires everywhere Teresa holds onto the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
     enS "We're gonna be *{b}HICK{/b}* glorkin *{b}HICK{/b}* {i}legends hahaha{/i}!!!"
@@ -1043,14 +1043,14 @@ label vig3_sc5():
     mS "Okay okay, you're in!"
     enS "No, no, do the call, it's not real without it."
     mS "The call isn't real, get down from there."
-    enS "I KNOW IT'S REAL!"
+    enS "{i}I know it's real!{/i}"
     "Another bullet narrowly misses Teresa"
     "She pulls out her blaster and hits her mark."
     pS "Better do the call, Cap."
-    enS "SEE!!! THERE IS ONE!!"
+    enS "{i}See! There is one!{/i}"
     "These two together are gonna be a problem."
     "I take a deep breath."
-    mS "CAW CAW HISS HISS"
+    mS "{b}CAW CAW HISS HISS!{/b}"
     $ AddChatter (vig3_sc5_akarplaza_comment4)
     "We all laugh"
     if viewershipHigh == True:
@@ -1059,7 +1059,7 @@ label vig3_sc5():
         $ AddChatter (vig3_sc5_akarplaza_comment6)
         pause 0.5
     $ AddChatter (vig3_sc5_akarplaza_comment7)
-    enS "LEGENDS!! LONG LIVE THE OAKLEY!!!"
+    enS "{i}Legends! Long live the Oakley!{/i}"
     if viewershipHigh == True:
         $ AddChatter (vig3_sc5_akarplaza_comment8)
         pause 0.5
@@ -1164,7 +1164,7 @@ label vig3_sc6():
     show mac stream neutral at stream_left5mac with dissolve
     macS "Cozy."
     "In the back, someone yells and is then quickly tossed through a window."
-    "MAC's face drops and he clings to my leg."
+    "MAC's expression sinks as he clings to my leg."
     show mac stream shock at stream_left5mac
     macS "Aren't there children around outside?"
     pS "That's why he was tossed out the back window."
@@ -1754,7 +1754,7 @@ label vig3_sc6():
             macS "But I—"
             mS "I know you want to help but some things work better with less people."               
     macS "But I'm part of this crew too!"
-    "That was my voice."
+    "MAC's words echo through my head, but in my voice."
     $ AddChatter (vig3_sc6_bbpub_comment48)
     "Upset, scared of being left behind."
     $ AddChatter (vig3_sc6_bbpub_comment49)
@@ -2481,7 +2481,7 @@ label vig3_sc8():
     $ AddChatter (vig3_sc9_inventorsfair_comment2)
     pause 0.5
     $ AddChatter (vig3_sc9_inventorsfair_comment3)
-    "Finely dressed guests being served by Reynar's android wait staff." 
+    "Finely dressed guests are being served by Reynar's android wait staff." 
     hide screen streamerCommentary
     "Carefully plated exotic food and drink fill the silver trays that circulate the a gallery-style showroom."
     $ AddChatter (vig3_sc9_inventorsfair_comment4)
@@ -3408,11 +3408,11 @@ label vig3_sc12():
                 pause 0.5
             $ AddChatter (vig3_sc12_help_comment11)
             bcrep "Do you have any idea how terrible this has been?"
-            bcrep "The shit storm YOU caused!"
+            bcrep "The shit storm {i}you{/i} caused!"
             mS "Realy polite for someone who saved your life."
             bcrep "Please that barely paid me back for the trouble you caused."
             "He walks up to MAC."
-            bcrep "But now that we have you, I have no use for this STUPID. PIECE. OF. JUNK!!!"
+            bcrep "But now that we have you, I have no use for this {i}stupid piece of junk!{/i}"
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc12_help_comment12)
             "They're moving to kick MAC off the balcony."
@@ -3452,10 +3452,10 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_rush_comment3)
                     amaS "Not likely Mozely."
                     $ AddChatter (vig3_sc12_rush_comment4)
-                    amaS "Now we're gonna be nice and civil and you can start by tossing that blaster of yours."
-                    amaS "Toss it."
+                    amaS "Now we're gonna be nice and civil."
+                    amaS "Hands where I can seem them. {i}Now.{/i}"
                     $ AddChatter (vig3_sc12_rush_comment5)
-                    "I toss my blaster away and turn to her slowly."
+                    "I freeze and turn to her slowly."
                     "Ama stands with her rifle in hand aimed at me."
                     "The commotion is enough to stop the rep in his tracks."
                 "You can't react fast enough.":
@@ -3473,7 +3473,6 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_freeze_comment4)
                     "Then I hear Ama's rifle cock and I freeze on reflex."
             "The rep backs away."
-            "The rifle turns to me."
             amaS "Save the tantrum kid."
             $ AddChatter (vig3_sc12_balcony_comment6)
             amaS "Now Mozely, we're gonna be nice an cooperative."
@@ -4547,7 +4546,7 @@ label vig3_sc14():
     amaS "Oh, you didn't know?"
     "Guilt stains all of our faces."
     $ AddChatter(vig3_sc14_escape_comment24)
-    "The walls of the shuttle feel like they're choking the air out of me."
+    "My mouth goes dry and the air feels like it's being choked out of me."
     $ AddChatter(vig3_sc14_escape_comment25)
     recS "Is this true?"
     "I don't answer."
@@ -4823,6 +4822,8 @@ label vig3_epilogue():
     $ viewCheck10 = viewCount
     stop music fadeout 4.0
     hide screen streamerCommentary
+    show akarstreet_stream at topleft onlayer background with dissolve
+    hide exteriorvineyard_stream
     "The Vineyard is alight with fireworks in the distance."
     $ AddChatter(vig3_epilogue_comment1)
     "The screens on the platform end their ads and a live feed begins."
@@ -4859,7 +4860,7 @@ label vig3_epilogue():
     "And I remember what he left in my pocket."
     hide reynar with dissolve
     show shiphub_stream at topleft onlayer background with dissolve
-    hide exteriorvineyard_stream
+    hide akarstreet_stream
     $ AddChatter(vig3_epilogue_comment14)
     "Teresa outfits the Oakley best she can."
     "And with Reynar's gift, we get access to fly the Oakley out through restricted sky."

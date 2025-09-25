@@ -387,7 +387,7 @@ label GibianVCustomsMarshal():
             play audio "ding.wav" volume 8.0
             "He's instantly jolted out of his stupor, looking bewildered."
             "In his panic, I notice a wedding band on his ring finger."
-            agent1 "GAAH!"
+            agent1 "{i}Gaah!{/i}"
             mS "Sorry bout that!"
             "His face begins to relax."
             $ AddChatter(vig2_sc2_mar_comment6)
@@ -1438,7 +1438,7 @@ label commsBase_DataCenter():
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
     "Reginald shoves his gun into the technician's face."
-    goon "NOW!"
+    goon "{i}Now!{/i}"
     show jennica stream angry at stream_left with Dissolve(0.4)
     pS "What'd he say?"
     worker "Why do you want the tracking coordinates of an aid shipment?"

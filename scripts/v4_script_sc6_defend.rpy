@@ -739,7 +739,7 @@ label vig4_sc6_defend_5():
     $ AddChatter(vig4_sc6_defend_5_comment9)
     "I stagger to my feet."
     mS "Vega, I have to go."
-    show vega at stream_center with dissolve
+    show vega at stream_center with move
     vS "What? What do you mean \"go?\""
     vS "We have to fight!"
     pS "Moze!"

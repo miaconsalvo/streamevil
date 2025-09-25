@@ -903,7 +903,7 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment23)
             cS "You should treat \"relics\" with more respect."       
-        "Don't threaten my crew (draw weapon).":
+        "Signal Teresa and draw your weapon.":
             $ pdEngagement += 1
             $ kcEngagement += 1
             $ outlaw += 1
@@ -998,6 +998,7 @@ label vig4_sc2_4():
     hide jennica with dissolve
     hide vega with dissolve
     hide teresa with dissolve
+    show coil at stream_left with move
     show mac at stream_right_mac with move
     #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
@@ -1022,6 +1023,7 @@ label vig4_sc2_4():
             "I take my aim off of the old man and signal Teresa to let him pass."
             mS "If he says it's ok."
     "He turns to MAC."
+    show coil at stream_center with move
     cS "Hello, little one. It is nice to finally meet you."
     cS "I am Coil. What is your name?"
     "MAC looks from me to Teresa, to Jennica, and then back to Coil."
@@ -4372,7 +4374,7 @@ label vig4_sc7_2():
     hide screen streamerCommentary
     menu:
         cS "What will it be, Moze?"
-        "Side with Coil; Kill Ama.":
+        "Save Coil.":
             $ csEngagement += 3
             $ kcEngagement -= 2
             $ pdEngagement -= 3
@@ -4405,7 +4407,7 @@ label vig4_sc7_2():
                 $ AddChatter(vig4_sc7_2_comment30)
             "I can feel the hate like a heatwave."
             jump vig4_sc7_3_coil
-        "Side with Ama; Kill Coil.":
+        "Help Ama.":
             $ csEngagement -= 2
             $ kcEngagement += 2
             $ pdEngagement += 3

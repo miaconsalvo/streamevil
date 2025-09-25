@@ -204,7 +204,7 @@ label vig3_break():
     player "There's definitely a lot to unpack."
 
     menu: 
-        "How does meeting Rec feel without Allistar."
+        "How does meeting Rec feel without Allistar?"
         "Not having Allistar adds some good tension.":
             player "I really like how tense the story is."
             $ AddChatter (vig3break_rec_tense_comment1)

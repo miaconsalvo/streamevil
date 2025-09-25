@@ -1554,7 +1554,7 @@ label vig3break_tense10():
         "How do you even respond to that."
         "I hope you're joking.":
             player "I'm going to assume that's a joke."
-            player "But I appreciate the energy!."
+            player "But I appreciate the energy!"
         "When it's narratively relevant.":
             player "Narrative relevant scarring is important."
             player "Cornerstone to a good story."
