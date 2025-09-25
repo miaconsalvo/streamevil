@@ -572,7 +572,7 @@ label vig3_sc4():
     show teresa stream happy at stream_right
     show rec stream happy
     play music "soundtrack/theme.wav"
-    pS "REC!"
+    pS "{i}Rec!{/i}"
     "Jennica runs up to hug Rec. They embrace and Jenn lifts them off the ground."
     $ AddChatter (vig3_sc4_shop_comment5)
     pS "It's wonderful to see you, kid."
@@ -4215,7 +4215,7 @@ label vig3_sc13():
             enS "He gets it from you!"
             show rec stream thinking at stream_left5
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
-            mS "REC LOOK FORWARD!"
+            mS "{i}Rec look forward!{/i}"
             show rec stream surprised at stream_left5
             "In their distracted state they mindlessly slam into a couple going hot and heavy."
             "No doubt using the garden to avoid any possible scandal..."
@@ -4236,7 +4236,7 @@ label vig3_sc13():
             pS "How 'bout ya start showing up!"
             show rec stream happy
             recS "How about that terrarium!"
-            mS "REC!"
+            mS "{i}Rec!{/i}"
             "I can see the exit to the shuttles just in reach."
             reynar "Having fun Mozely?"
             $ AddChatter (vig3_sc13_dash_comment11)
