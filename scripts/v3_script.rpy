@@ -1574,7 +1574,7 @@ label vig3_sc6():
             hide mac with dissolve
             hide rec with dissolve
             hide screen streamerCommentary
-            show zan stream at stream_center with dissolve
+            show zan stream neutral at stream_center with dissolve
             zan "Patrons! Who is brave enough to ride Karousel!"
             $ AddChatter (vig3_sc6_recmac_comment7)
             if viewershipHigh == True:
@@ -1588,10 +1588,12 @@ label vig3_sc6():
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc6_recmac_comment10)
             show jennica stream neutral at stream_left with dissolve
+            show zan stream laugh
             zan "So small, already tipping over, I fear you may not survive haha!"
             $ AddChatter (vig3_sc6_recmac_comment11)
             "A small group of patrons at a table behind him laugh."
             pS "Then you have nothin' to worry about."
+            show zan stream neutral
             zan "Apologies, but I will not pick you up from the floor when you lose."
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc6_recmac_comment12)
@@ -1688,7 +1690,7 @@ label vig3_sc6():
     "Shit."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show zan stream at stream_center with dissolve
+    show zan stream neutral at stream_center with dissolve
     "A small man with dark hair and modified gray skin steps to the table."
     pS "Talkin' to us about bein' small and your guy is thinner than my jacket."
     $ AddChatter (vig3_sc6_bbpub_comment36)
@@ -1696,6 +1698,7 @@ label vig3_sc6():
     enS "That tends to be where they go, yes."
     ovid "Zan, must we always play this game whenever we go out?"
     zan "..."
+    show zan stream laugh
     zan "YES!"
     $ AddChatter (vig3_sc6_bbpub_comment37)
     pause 0.5
@@ -1821,9 +1824,10 @@ label vig3_sc6():
     enS "Can't do that while we play."
     mS "I got it covered, just stay standing until I do."
     "The game resumes and I step away."
-    show zan stream at stream_center with dissolve
+    show zan stream laugh at stream_center with dissolve
     zan "Now! Moxie!"
     "I scan my options."
+    show zan stream neutral
     "If I start a fight I'm sure I can get someone slammed into the table." 
     "That should take care of some of the issues."
     "I look at the ceiling where the carnivorous plants lie waiting and salivating."
@@ -1881,7 +1885,7 @@ label vig3_sc6():
             "The youg woman hits him with a one-two combo that almost lands her a spot on the Oakley." 
             "He fumbles onto Ovid and the table."
             "Cards fly everywhere and, before I can process what happens, Zan has the man in a chokehold."
-            show zan stream at stream_center with dissolve
+            show zan stream mad at stream_center with dissolve
             zan "You interrupt the Karousel!"
             "It's hand fifteen, and half the bar is up in arms."
             $ AddChatter (vig3_sc6_barfight_comment16)
@@ -1912,7 +1916,7 @@ label vig3_sc6():
             $ AddChatter (vig3_sc6_cutrope_comment6)
             "I push my way to the wall and lean just behind it."
             "The rounds continue."
-            show zan stream at stream_center with dissolve
+            show zan stream neutral at stream_center with dissolve
             zan "Another victory, another shot for you."
             show jennica stream angry at stream_left with dissolve
             pS "Fine meathead, you got it."
@@ -1924,6 +1928,7 @@ label vig3_sc6():
             "They're slamming the floor, the room is shaking."
             "Over the roaring cheers, I cut the rope."
             "The scream that is let out is so high, I couldn't believe it came from Zan."
+            show zan stream mad
             zan "{i}Yeeeeeoooowww!{/i}"
             $ AddChatter (vig3_sc6_cutrope_comment7)
             if viewershipHigh == True:
@@ -1965,7 +1970,7 @@ label vig3_sc6():
         $ AddChatter (vig3_sc6_bbpub_comment68)
     show teresa stream neutral at stream_right with dissolve 
     enS "Not likely."
-    show zan stream at stream_center with dissolve
+    show zan stream neutral at stream_center with dissolve
     zan "Hehehe, I say I am impressed. And having the best of times!"
     show jennica stream neutral at stream_left with dissolve
     pS "Not after this you aren't."
@@ -2031,17 +2036,19 @@ label vig3_sc6():
             show teresa stream happy at stream_right
             "The crowd erupts. Zan's crew is visibly miffed, but the rest of the bar is patting Teresa and Jennica on the back."
             $ AddChatter (vig3_sc6_shootzan_comment10)
-            show zan stream at stream_center with dissolve
+            show zan stream neutral at stream_center with dissolve
             "Zan gets up to accept defeat. Ovid has fully crawled under the table."
             $ AddChatter (vig3_sc6_shootzan_comment11)
             "I look over again to the crew, but that table is empty."
             $ AddChatter (vig3_sc6_shootzan_comment12)
             "The door swings closed."
             ovid "Thank the Makers it's over."
+            show zan stream laugh
             zan "Good, good! {i}Now!{/i}"
             $ AddChatter (vig3_sc6_shootzan_comment13) 
             zan "I must go and throw up. {i}Haha!{/i}"
             "The three exchange handshakes as Zan passes by me and stops."
+            show zan stream neutral
             $ AddChatter (vig3_sc6_shootzan_comment14)
             hide jennica with dissolve
             hide teresa with dissolve
@@ -2049,6 +2056,7 @@ label vig3_sc6():
             menu: 
                 "Respond to Zan."
                 "And what's it to you?":
+                    show zan stream mad
                     mS "And what's it to you?"
                     zan "You have a good crew, good moxie."
                     $ AddChatter (vig3_sc6_shootzan_comment15)
@@ -2056,6 +2064,7 @@ label vig3_sc6():
                     $ AddChatter (vig3_sc6_shootzan_comment16)
                     mS "I'm aware."
                 "The one and only!":
+                    show zan stream mad
                     mS "The one and only!"
                     zan "You have a good crew, good moxie."
                     $ AddChatter (vig3_sc6_shootzan_comment15)
@@ -2149,9 +2158,10 @@ label vig3_sc6():
                 pS "But alls well—"
                 "... I'm truly losing it."
                 "Just then Zan comes over to us and kneels."
-                show zan at stream_center with dissolve
+                show zan stream neutral at stream_center with dissolve
                 zan "I must make good on promise."
                 $ AddChatter (vig3_sc6_bbpub_comment78)
+                show zan stream laugh
                 "Teresa and Jeneca each take a seat on one flexed arm."
                 "Zan hoists them in the are and parades them around the bar."
                 $ AddChatter (vig3_sc6_bbpub_comment79)
@@ -2192,11 +2202,12 @@ label vig3_sc6():
                 pS "But we must press on! *hick*"
                 "... I'm truly losing it."
                 "Just then Zan comes over to us."
-                show zan at stream_center with dissolve
+                show zan stream neutral at stream_center with dissolve
                 zan "You must make good on promise."
                 $ AddChatter (vig3_sc6_bbpub_comment84)
                 "Teresa helps Jennica get up and they stand on the Karousel table."
                 "Zan yells for music." #The melody is "C'est a ton tour"
+                show zan stream laugh
                 "Teresa and Jennica begin to sing"
                 pS "Zan is the man! Zan has a plan! Zan's got the muscles to beat any man." 
                 enS "Ovid's the best! Above all the rest! With muscles inside to pass any test."
