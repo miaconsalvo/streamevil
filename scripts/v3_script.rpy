@@ -3043,7 +3043,7 @@ label vig3_sc9():
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment70) 
     "Because there she is, full ballgown staring at me with that same condescending look I've always known."
-    show ama stream neutral at stream_center with Dissolve(2.0)
+    show ama stream formal neutral at stream_center with Dissolve(2.0)
     $ reactTarget = "vig3_sc9_amasurprise"#timestamp 6:50
     show screen streamerCommentary
     $ AddChatter (vig3_sc9_inventorsfair_comment71)
@@ -3081,6 +3081,7 @@ label vig3_sc10():
     show ama stream neutral at stream_center with dissolve
     amaS "Kid, if you're gonna jump everytime someone shoots at you, they'll be playing target practice with your head."
     mS "I'm trying."
+    show ama stream upset
     amaS "You're scared."
     mS "I'm not scared. I'm a Snakehawk!"
     $ AddChatter (vig3_sc10_memory_comment2)
@@ -3093,6 +3094,7 @@ label vig3_sc10():
         $ AddChatter (vig3_sc10_memory_comment4)
         pause 0.5
         $ AddChatter (vig3_sc10_memory_comment5)
+    show ama stream neutral
     amaS "Please..."
     mS "Let me prove myself."
     if viewershipHigh == True:
@@ -3103,10 +3105,12 @@ label vig3_sc10():
         pause 0.5
         $ AddChatter (vig3_sc10_memory_comment8)
     mS "Oh yeah, like Jenn is any better."
+    show ama stream upset
     amaS "She can fire a blaster without flinching."
     "I feel tears well up in my eyes."
     mS "You don't know anything about me!"
     amaS "We're done here."
+    show ama stream gun
     "Ama raises the blaster and points it at me. My body freezes."
     "{b}BANG{/b}!"
     if viewershipHigh == True:
@@ -3114,10 +3118,12 @@ label vig3_sc10():
     "I move out of the way just as the impact hits my shoulder, a hair's breadth away from my heart."
     "My arm is limp, but there's no blood."
     "She set it to stun."
+    show ama stream neutral
     if viewershipHigh == True:
         $ AddChatter (vig3_sc10_memory_comment10)
     "Ama walks up to me, and turns the blaster, handle pointed at me."
     "The insignia of the Snakehawks branded on it."
+    show ama stream happy
     amaS "Ready to try again?"
     "I get up and take the blaster. I grip the handle it like it's mine. Because it is." 
     "I point it at the target."
@@ -3130,7 +3136,7 @@ label vig3_sc11():
     play music "soundtrack/akar(fair).wav" fadein 2.0
     hide bg black
     #Int. Inventor's Fair. 
-    show ama stream neutral at stream_center with dissolve
+    show ama stream formal neutral at stream_center with dissolve
     menu:
         "Ama stands in front of me with a steely gaze."
         "Of course you found us...": #Flirt
@@ -3138,6 +3144,7 @@ label vig3_sc11():
             mS "Of course you found us..."
             $ AddChatter (vig3_sc11_ofcourse_comment1)
             mS "I shouldn't have expected less from the great Deadeye."
+            show ama stream formal smug
             amaS "You flatter me."
             amaS "Gotta say getting into an event like this is impressive."
             amaS "You look... well."
@@ -3146,6 +3153,7 @@ label vig3_sc11():
             $ csEngagement += 1
             mS "Impossible."
             mS "How could you have possibly found us?"
+            show ama stream formal smug
             $ AddChatter (vig3_sc11_impossible_comment1)
             amaS "You think so little of me."
             amaS "Thought that stunt on Gibian V was going to keep me away?"
@@ -3155,6 +3163,7 @@ label vig3_sc11():
             $ pdEngagement += 1
             mS "Still playing the obedient lapdog, I see?"
             mS "Money must be good."
+            show ama stream formal angry
             $ AddChatter (vig3_sc11_lapdog_comment1)
             amaS "Even now you're still that arrogant little girl."
             amaS "How has playing the hero been? Finally found that purpose you've been missing?"
@@ -3162,6 +3171,7 @@ label vig3_sc11():
     "Her tone is playful but there's no mistaking that her rifle is folded behind her."
     "BigCorp's presentation continues, and I hope that the crew has taken this as a moment to leave."
     "It's up to Resa and Jenn now."
+    show ama stream formal neutral
     amaS "So tell me how is that little crew of yours, the Willow?"
     mS "The Oakley."
     if viewershipHigh == True:
@@ -3187,6 +3197,7 @@ label vig3_sc11():
             mS "All this stress will give you wrinkles."
             $ AddChatter (vig3_sc11_party_comment1)
             show screen streamerCommentary
+            show ama stream formal smug
             "A smile forms on her face, anger mixed with something else."
             amaS "You little shit..."
             $ AddChatter (vig3_sc11_party_comment2)
@@ -3194,6 +3205,7 @@ label vig3_sc11():
         "I don't have the droid you're looking for.":
             $ csEngagement += 1
             mS "I don't have it."
+            show ama stream formal smug
             amaS "Are you playing dumb with me?"
             mS "I lost it, he's not with me."
             "Ama furrows her brow."
@@ -3211,6 +3223,7 @@ label vig3_sc11():
             show screen streamerCommentary
             "Ama turns to the platform then back at me, unimpressed."
             $ AddChatter (vig3_sc11_platform_comment2)
+            show ama stream formal smug
             amaS "Don't quit your day job Moze."
             amaS "I want that droid and I want it now."
     "Ama stalks towards me, and I know what's coming."
@@ -3218,10 +3231,11 @@ label vig3_sc11():
     "I move to my blaster hidden in my clothes."#choice here?
     "I'm sorry, Resa."
     hide screen streamerCommentary
-    show ama stream neutral at stream_left with move
+    show ama stream formal shocked at stream_left with move
     show reynar stream neutral at stream_right with dissolve
     reynar "Ladies, I hope your evening is going well."
     $ AddChatter (vig3_sc11_fairint_comment7)
+    show ama stream formal neutral
     amaS "Reynar."
     $ AddChatter (vig3_sc11_fairint_comment8)
     reynar "Hello, Ama, a pleasure as always."
@@ -3252,6 +3266,7 @@ label vig3_sc11():
     $ AddChatter (vig3_sc11_fairint_comment17)
     pause 0.5
     $ AddChatter (vig3_sc11_fairint_comment18)
+    show ama stream formal upset
     amaS "Respectfully this is BigCorp buisness."
     $ AddChatter (vig3_sc11_fairint_comment20)
     reynar "Is it now? Funny, I don't remember giving them jurisdiction to conduct buisness in {i}my{/i} Vineyard."
@@ -3265,6 +3280,7 @@ label vig3_sc11():
         "Bold coming from you.": 
             $ deadeyeApproval += 0 #Is this supposed to be a 0? or a 1?
             mS "Bold coming from you."
+            show ama stream formal angry
             amaS "Oh? You're speaking now?"
             mS "Hard to get a word in when you love hearing yourself talk."
             $ AddChatter (vig3_sc11_bold_comment1)
@@ -3276,6 +3292,7 @@ label vig3_sc11():
         "We're not here to cause trouble.":
             mS "We're not here to cause trouble."
             mS "Just a rocky reunion."
+            show ama stream formal angry
             amaS "Don't speak for me. Ever."
             $ AddChatter (vig3_sc11_trouble_comment1)
             reynar "With how this is going you should count yourself lucky."
@@ -3294,6 +3311,7 @@ label vig3_sc11():
     reynar "Well you can leave your information with Ryo and we'd be happy to oblige you after the festivities."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc11_fairint_comment25)
+    show ama stream formal neutral
     "Ama chuckles under her breath."
     mS "I'd like to have this matter resolved as soon as possible."
     if viewershipHigh == True:
@@ -3304,6 +3322,7 @@ label vig3_sc11():
     "With a snap of his fingers Ryo reemerges."
     reynar "Please take our guests to the east balcony. They could use the privacy."
     $ AddChatter (vig3_sc11_fairint_comment27)
+    show ama stream formal smug
     "A nasty smile creeps on Ama's face."
     $ AddChatter (vig3_sc11_fairint_comment28)
     "I can feel the eyes around me."
@@ -3337,7 +3356,7 @@ label vig3_sc12():
     "Clearly this space is meant for more quiet buisness."
     "In the distance, I see Akar, lights gleaming like little stars."
     "It's so far away..."
-    show ama stream neutral at stream_left with dissolve
+    show ama stream formal neutral at stream_left with dissolve
     show customs agent at stream_center with dissolve
     show mac stream neutral at stream_right_mac with dissolve
     bcrep "Absolute garbage!"
@@ -3354,12 +3373,14 @@ label vig3_sc12():
     show screen streamerCommentary
     "I forgot how fast Ama was. How deadly."
     $ AddChatter (vig3_sc12_balcony_comment4)
+    show ama stream formal upset
     amaS "I suggest you watch that mouth of yours."
     bcrep "My... bosses... sign... your checks."
     $ AddChatter (vig3_sc12_balcony_comment5)
     amaS "Yes, {i}they{/i} do."
     "Her grip tightens."
-    "I see MAC on the ground just passed them, he's still."
+    "I see MAC on the ground just past them, he's still."
+    show ama stream formal angry
     hide screen streamerCommentary
     menu: 
         "I have to do something."
@@ -3378,6 +3399,7 @@ label vig3_sc12():
             bcrep "P-lease..."
             mS "That's enough Ama."
             $ AddChatter (vig3_sc12_help_comment3)
+            show ama stream formal smug
             amaS "You're really all over the place, Mozely."
             amaS "Didn't think you had heart for BigCorp."
             $ AddChatter (vig3_sc12_help_comment4)
@@ -3394,6 +3416,7 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_help_comment6)
                     pause 0.5
                     $ AddChatter (vig3_sc12_help_comment7)
+                    show ama stream formal neutral
                     amaS "Don't worry I'll get to you later..."
                 "That was unnecessary.":
                     mS "That was unnecessary."
@@ -3402,6 +3425,7 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_help_comment7)
                     amaS "You should just let me handle business."
                     amaS "But don't worry."
+                    show ama stream formal neutral
                     amaS "I'll get to you soon."
             "The representative coughs and steadies himself."
             bcrep "Who's this? One of Reynar's goons?"
@@ -3440,6 +3464,7 @@ label vig3_sc12():
                     "I raise my blaster on instinct."
                     mS "Hands off him!"
                     $ AddChatter (vig3_sc12_blaster_comment2)
+                    show ama stream formal gun
                     "Then I hear Ama's rifle cock and I freeze on reflex."
                     $ AddChatter (vig3_sc12_blaster_comment3)
                     pause 0.5
@@ -3459,6 +3484,7 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_rush_comment1)
                     "I rush the rep ready to tackle him to the ground."
                     $ AddChatter (vig3_sc12_rush_comment2)
+                    show ama stream formal gun
                     "Then I hear Ama's rifle cock and I stop dead on reflex."
                     $ AddChatter (vig3_sc12_rush_comment3)
                     amaS "Not likely Mozely."
@@ -3480,6 +3506,7 @@ label vig3_sc12():
                     $ AddChatter (vig3_sc12_freeze_comment3)
                     bcrep "...JUNK!"
                     "Just as the rep attempts to land his kick, he's stopped by the sound of Ama's rifle cocking."
+                    show ama stream formal gun
                     amaS "Hold it!"
                     $ AddChatter (vig3_sc12_freeze_comment4)
                     "Then I hear Ama's rifle cock and I freeze on reflex."
@@ -3497,6 +3524,7 @@ label vig3_sc12():
             "The three of us stop in our tracks and turn to MAC."
             $ reactTarget = "vig3_sc12_amafindsout"#timestamp 7:18
             show screen streamerCommentary
+            show ama stream formal smug
             amaS "That's it, isn't it?"
             $ AddChatter (vig3_sc12_balcony_comment9)
             amaS "All that struggle. All that runnin'..."            
@@ -3506,12 +3534,14 @@ label vig3_sc12():
             amaS "Was it worth it?"
             "I look at MAC and then Ama."
             "Before I even realize it, I start walking towards her."
+            show ama stream formal upset
             amaS "Woah now, stay right there."
             hide screen streamerCommentary
             "I take another step."
             amaS "I'm warnin' ya Mozely."
             "She's hesitating."
             "Another step."
+            show ama stream formal gun
             amaS "You're gonna make me shoot you?"
             "Until I'm close enough."
             "I pause."
@@ -3547,6 +3577,7 @@ label vig3_sc12():
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who is resolute in his stance."
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
@@ -3564,6 +3595,7 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment7)
                 amaS "Well then, let's—"
                 $ AddChatter (vig3_sc12_macshoots_comment8)
+                show ama stream formal shocked
                 "The blaster rings out and before I can react Ama is on the ground clutching her side."
                 amaS "Bastard!" 
                 macS "I have been provoked and damaged, I will defend myself."
@@ -3572,11 +3604,13 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment10)
                 "The rep is shaking and I almost forget the rifle in my hand."
                 "MAC slowly rolls towards me passing Ama without even looking at her."
+                show ama stream formal angry
                 amaS "You won't get out here you know."
                 macS "Will you stop us. I can remove you if necessary."
                 $ AddChatter (vig3_sc12_macshoots_comment11)
                 pause 0.5
                 $ AddChatter (vig3_sc12_macshoots_comment12)
+                show ama stream formal shocked
                 amaS "I—"
                 macS "We should leave, yes?"
                 $ AddChatter (vig3_sc12_balcony_comment22)
@@ -3595,6 +3629,7 @@ label vig3_sc12():
                 "He fires the blaster in between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
@@ -3614,6 +3649,7 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment8)
                 macS "I know you don't want BigCorp to succeed anymore than we do."
                 amaS "I don't know I'm being paid quite well."
+                show ama stream formal shocked
                 "Another fire from the blaster, right in front of Ama's face."
                 macS "Then I'll shoot you if I must."
                 $ AddChatter (vig3_sc12_macshoots_comment9)
@@ -3644,6 +3680,7 @@ label vig3_sc12():
                 $ vig3_macAlign = "PeacePessimism"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 bcrep "Makers!" 
+                show ama stream formal smug
                 "Ama just stares at MAC who is resolute in his stance."
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
@@ -3672,6 +3709,7 @@ label vig3_sc12():
                 "I can feel Ama loosen her grip."
                 "This is my chance."
                 $ AddChatter (vig3_sc12_balcony_comment22)
+                show ama stream formal shocked
                 "With a proper shove I get Ama off balance and aim her rifle at her."
                 mS "Enough nerve for ya?"
                 $ AddChatter (vig3_sc12_balcony_comment22)
@@ -3698,6 +3736,7 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment3)
                 pause 0.5
                 $ AddChatter (vig3_sc12_macshoots_comment4)
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment5)
                 amaS "If you're gonna shoot, you better shoot straight."
@@ -3714,6 +3753,7 @@ label vig3_sc12():
                 amaS "Sorry but I'm not feeling very charitable at the moment."
                 "There's a moment as the two stare at each other."
                 macS "I know you still have love for Moze." 
+                show ama stream formal shocked
                 amaS "..."
                 $ AddChatter (vig3_sc12_macshoots_comment14)
                 amaS "What did you say?"
@@ -3769,6 +3809,7 @@ label vig3_sc12():
             hide customs agent with dissolve
             $ AddChatter (vig3_sc12_nothing_comment6)
             "Ama's shoulders rise and fall as she takes deep breaths."
+            show ama stream formal neutral
             "Then she turns her attention on me."
             "I freeze, just between her and MAC."
             $ AddChatter (vig3_sc12_nothing_comment4)
@@ -3787,12 +3828,14 @@ label vig3_sc12():
                     mS "I know better than to get between you and your prey."
                     $ AddChatter (vig3_sc12_prey_comment1)
                     amaS "A good lesson, but it sounds like you've forgotten that you {i}are{/i} my prey."
+            show ama stream formal upset
             amaS "Now then, I'm only going to ask one more time."        
             amaS "Where is the droid?"
             "A low whir escapes from MAC."
             "My heart feels like it falls out of my stomach."
             $ AddChatter (vig3_sc12_balcony_comment6)
             "Ama's eyes snap from me to MAC, then back to me."
+            show ama stream formal gun
             "In the blink of an eye her rifle is drawn and pointed at my chest."
             $ AddChatter (vig3_sc12_balcony_comment8)
             amaS "Blaster on the ground, Mozely."
@@ -3801,6 +3844,7 @@ label vig3_sc12():
             amaS "That's it, isn't it?"
             $ reactTarget = "vig3_sc12_amafindsout"#timestamp 7:18
             show screen streamerCommentary   
+            show ama stream formal smug
             "A thin smile creeps across her face."
             $ AddChatter (vig3_sc12_balcony_comment9)
             amaS "You almost had it too."
@@ -3832,6 +3876,7 @@ label vig3_sc12():
                     mS "If I knew it would come up short like this?"
                     mS "No. But it was worth a shot."
                     mS "I figured you of all people would understand that."
+            show ama stream formal shocked
             "What happens next unfolds in a split second."
             "A shadow flickers across Ama's gaze."
             "Her eyes, alert, focused, dead to all the world except her prey, falter."
@@ -3850,7 +3895,9 @@ label vig3_sc12():
             #amaS "You little shit!"
             #"We both lunge for each other, grappling at one another's shoulders, trying to get the advantage on the other."
             #"I'm holding my own, but then the tide starts to turn. She's just too strong."
+            show ama stream formal angry
             amaS "You little shit!"
+            show ama stream formal gun
             "I try to pry it from her hands, but she's as strong as I remember."
             $ AddChatter (vig3_sc12_balcony_comment14)
             "I struggle against her strength as we yank the rifle back and forth."
@@ -3858,6 +3905,7 @@ label vig3_sc12():
             play audio "lazer.wav"
             "{b}BANG!{/b}"
             "A chunk of the rail explodes out into the open air."
+            show ama stream formal shocked
             macS "{i}Stop it!{/i}"
             $ AddChatter (vig3_sc12_balcony_comment16)
             pause 0.5
@@ -3875,6 +3923,7 @@ label vig3_sc12():
                 $ vig3_macShootAma = True
                 "He fires the blaster in-between us. It hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
@@ -3892,14 +3941,17 @@ label vig3_sc12():
                 amaS "Well then, let's—"
                 $ AddChatter (vig3_sc12_macshoots_comment8)
                 "The blaster rings out and before I can react Ama is on the ground clutching her side."
+                show ama stream formal shocked
                 amaS "Bastard!" 
                 macS "I have been provoked and damaged, I will defend myself."
                 $ AddChatter (vig3_sc12_macshoots_comment9)
                 macS "I will defend my Captain."
                 $ AddChatter (vig3_sc12_macshoots_comment10)
                 "MAC slowly rolls towards me, passing Ama without even looking at her."
+                show ama stream formal angry
                 amaS "You won't get out of here, you know."
                 macS "Will you stop us? I can remove you if necessary."
+                show ama stream formal shocked
                 $ AddChatter (vig3_sc12_macshoots_comment11)
                 pause 0.5
                 $ AddChatter (vig3_sc12_macshoots_comment12)
@@ -3920,6 +3972,7 @@ label vig3_sc12():
                 $ vig3_macAlign = "ViolentHope"
                 "He fires the blaster in between us, it hits the wall with a definitive smack." 
                 "Ama just stares at MAC who holds the gun steady but with noticeable apprehension."
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
@@ -3938,12 +3991,15 @@ label vig3_sc12():
                 $ AddChatter (vig3_sc12_macshoots_comment8)
                 macS "I know you don't want BigCorp to succeed anymore than we do."
                 amaS "I don't know I'm being paid quite well."
+                show ama stream formal shocked
                 "Another fire from the blaster, right in front of Ama's face."
                 macS "Then I'll shoot you if I must."
                 $ AddChatter (vig3_sc12_macshoots_comment9)
+                show ama stream formal angry
                 amaS "You little bastard."
                 $ AddChatter (vig3_sc12_macshoots_comment10)
                 "This is my chance."
+                show ama stream formal shocked
                 "With a proper shove, I get Ama off balance and aim her rifle at her."
                 mS "MAC, let's go!" 
                 macS "Yes Captain!"
@@ -3968,6 +4024,7 @@ label vig3_sc12():
                 $ vig3_macAlign = "PeacePessimism"
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
+                show ama stream formal smug
                 amaS "You gonna do something with that baby blaster?"
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
@@ -3994,6 +4051,7 @@ label vig3_sc12():
                 "I can feel Ama loosen her grip."
                 "This is my chance."
                 $ AddChatter (vig3_sc12_balcony_comment22)
+                show ama stream formal shocked
                 "With a proper shove, I get Ama off balance and aim her rifle at her."
                 mS "Enough nerve for ya?"
                 if viewershipHigh == True:
@@ -4011,6 +4069,7 @@ label vig3_sc12():
                 $ vig3_macReadAma = True
                 "He fires the blaster in-between us, it hits the wall with a definitive smack."
                 "Ama just stares at MAC who is resolute in his stance."
+                show ama stream formal smug
                 $ AddChatter (vig3_sc12_macshoots_comment1)
                 pause 0.5
                 $ AddChatter (vig3_sc12_macshoots_comment2)
@@ -4033,6 +4092,7 @@ label vig3_sc12():
                 amaS "Sorry, but I'm not feeling very charitable at the moment."
                 "There's a moment as the two stare at each other."
                 macS "I know you still have love for Moze." 
+                show ama stream formal shocked
                 amaS "..."
                 $ AddChatter (vig3_sc12_macshoots_comment14)
                 amaS "What did you say?"
@@ -4479,6 +4539,7 @@ label vig3_sc14():
     houndleader "Then let's get the hell out of here."
     houndleader "I need a drink after this."
     "I'm unsurprised as Ama walks in and takes her spot near the door."
+    show ama stream formal neutral at stream_right5 with dissolve
     "She holds out some credits and the Hound Leader takes it."
     houndleader "Job's done, let's move."
     "The hounds leave just as quickly as they came."
@@ -4488,7 +4549,7 @@ label vig3_sc14():
     "We stay there in dangerous slience."
 
     hide mac with dissolve
-    show ama stream neutral at stream_right5 with vpunch
+    show ama stream formal neutral at stream_right5 with vpunch
     "Then I'm thrown against the wall and there's Ama, knife in hand at my throat."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment8)
@@ -4506,6 +4567,7 @@ label vig3_sc14():
     pS "Don't make us send you back in a body bag."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment11)
+    show ama stream formal upset
     amaS "Then you'll need to make room for two."
     "She presses harder against my throat."
     amaS "Now, how about we all stay still and quiet, and do as I—"
@@ -4513,7 +4575,7 @@ label vig3_sc14():
     $ AddChatter(vig3_sc14_escape_comment12)
     hide jennica with dissolve
     hide teresa with dissolve
-    show ama stream neutral at stream_right with move
+    show ama stream formal neutral at stream_right with move
     show rec stream surprised at stream_left with dissolve
     play music "soundtrack/decisionTime.wav"
     recS "Deadeye..."
@@ -4526,6 +4588,7 @@ label vig3_sc14():
     "The shuttle hums as it takes off down to Akar."
     recS "Screw you..."
     $ AddChatter(vig3_sc14_escape_comment15)
+    show ama stream formal smug
     amaS "Oh? They speak?"
     $ AddChatter(vig3_sc14_escape_comment16)
     pause 0.5
@@ -4547,6 +4610,7 @@ label vig3_sc14():
     recS "And I stayed in Akar because I knew that's the only way I could see him."
     "Ama looks around expectantly."
     "A realization creeps across her face."
+    show ama stream formal neutral
     amaS "Mozely..."
     amaS "Where is Allistar?"
     amaS "Last I checked, I left him with you."
@@ -4653,6 +4717,7 @@ label vig3_sc14():
             "The shuttle doors open. Reccrin walks out and out of sight."
             hide rec with Dissolve(2.0)
             $ AddChatter(vig3_sc14_justhappened_comment13)
+            show ama stream formal smug
             amaS "How disappointing, he was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
@@ -4733,6 +4798,7 @@ label vig3_sc14():
             "They turn to walk away."
             hide rec with Dissolve(2.0)
             show screen streamerCommentary
+            show ama stream formal smug
             amaS "How disappointing, Allistar was a talented kid."
             "Ama looks to Teresa and Jennica."
             "Ama takes the knife off my neck. And shoves me into the group."
@@ -4776,6 +4842,7 @@ label vig3_sc14():
             "I can hear Ama chuckle under her breath."
             $ AddChatter(vig3_sc14_deservedit_comment7)
             mS "I killed Allistar, and that spineless traitor got exactly what he deserved!"
+            show ama stream formal shocked
             $ AddChatter(vig3_sc14_deservedit_comment8)
             pause 0.5
             $ AddChatter(vig3_sc14_deservedit_comment9)
@@ -4813,6 +4880,7 @@ label vig3_sc14():
             "When the doors open, Jennica lets go of Rec."
             "They run out of the shuttle doors onto the platform. And out of sight."
             hide rec with Dissolve(2.0)
+            show ama stream formal smug
             "Ama leans in close."
             amaS "That was cold Mozely, even for me."
             "Ama takes the knife off my neck. And shoves me into the group."
