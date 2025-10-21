@@ -1009,7 +1009,7 @@ label vig4_sc7_1_defend():
     "I step across the threshold into a wide room."
     show vig2_datacenter_stream onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
-    show ama stream neutral at stream_left with dissolve
+    show ama stream gun at stream_left with dissolve
     hide vig1_town_stream
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment9)
@@ -1039,6 +1039,7 @@ label vig4_sc7_1_defend():
             mS "Not that you'd know anything about that."
     if viewershipHigh == True or viewershipMed == True: 
         $ AddChatter(vig4_sc7_1_defend_comment13)
+    show ama stream upset
     amaS "Watch your tongue, kid."   
     amaS "I'm calling the shots here." 
     cS "So you think."
@@ -1074,6 +1075,7 @@ label vig4_sc7_1_defend():
             cS "And you have done an admirable job." 
             cS "Without you, we probably would already be overrun."
     amaS "I've heard enough!"
+    show ama stream gun
     "Ama moves to fire her rifle."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:

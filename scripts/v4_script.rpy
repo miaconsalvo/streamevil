@@ -4166,12 +4166,14 @@ label vig4_sc5_2():
     "Perched on a rock higher up the ridge, Ama sits with a rifle relaxed against her shoulder."
     if jennicaRomance == False and teresaRomance == False and viewershipHigh == True:
         $ AddChatter(vig4_sc5_2_comment2)
+    show ama stream happy
     amaS "Hello ladies. Good to see you all again."
     if jennicaRomance == False and teresaRomance == False and viewershipHigh == True:
         $ AddChatter(vig4_sc5_2_comment3)
     show jennica stream angry
     "Ama drops off the rock and struts up to us."
     $ AddChatter(vig4_sc5_2_comment4)
+    show ama stream neutral
     enS "Reyes."
     amaS "Prismari."
     if viewershipHigh == True:
@@ -4225,6 +4227,7 @@ label vig4_sc5_2():
         $ reactTarget = "vig4_sc5_viewershipBump"
         show screen streamerCommentary
     pS "Wish I could say the same, Ama."
+    show ama stream happy
     amaS "Judging by the lack of firearms pointed at my head, Mozely has told you about our deal."
     enS "She mentioned it."
     pS "Don't mean we're happy about it."
@@ -4239,22 +4242,31 @@ label vig4_sc5_2():
         "Get your hand off me.":
             $ deadeyeApproval -= 1
             mS "Get your hand off me, Ama."
+            show ama stream confused
             "She calmly retracts her arm."
             $ AddChatter(vig4_sc5_2_comment6)
             mS "We're working together for this mission. But we're not friends."
             amaS "Understood."
+            show ama stream neutral
         "I learned from the best.":
             $ deadeyeApproval += 1
             mS "I learned from the best."
             "Ama pats my shoulder twice."
             amaS "Flatterer."
+            show ama stream neutral
             $ AddChatter(vig4_sc5_2_comment7)
     amaS "Let's move. Can't be wasting time."
+    show jennica stream crossed
+    show teresa stream upset
+    show ama stream confused
     enS "Hold it."
     pS "We're not following you."
     pS "It's Cap's call."
     $ AddChatter(vig4_sc5_2_comment8)
     stop music fadeout 4.0
+    show ama stream happy
+    show jennica stream neutral
+    show teresa stream neutral
     "All three women turn to look at me."
     amaS "Hahahaha true loyalty, how about that?"
     amaS "Alright then, \"Captain,\" what's the play?"
@@ -4263,6 +4275,7 @@ label vig4_sc5_2():
     enS "Roger."
     pS "Can do."
     "Jennica and Teresa look at Ama."
+    show ama stream neutral
     $ AddChatter(vig4_sc5_2_comment9)
     amaS "I'll behave, don't worry."
     $ AddChatter(vig4_sc5_1_comment24)
@@ -4341,6 +4354,7 @@ label vig4_sc7_2():
     $ AddChatter(vig4_sc7_2_comment6)
     # show tower_glass windows
     cS "Within you is a war, between the forces of good and those of evil."
+    show ama stream neutral
     amaS "Don't listen to this guy, kid."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_2_comment7)
@@ -4402,6 +4416,7 @@ label vig4_sc7_2():
                     $ AddChatter(vig4_sc7_2_comment31)
                     mS "Ama, I'm sorry."
             $ AddChatter(vig4_sc7_2_comment29)
+            show ama stream angry
             "Ama glares at me, then Coil. Then her gaze falls back to me."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_2_comment30)
@@ -4444,6 +4459,7 @@ label vig4_sc7_3_ama():
     # play badass climax music
     play music "soundtrack/saveTheGalaxy.wav" volume 0.7
     "Everyone is still."
+    show ama stream upset
     "Ama makes the first move, dropping her rifle and lunging at Coil."
     "He leans to the side, faster than I would expect his elderly physique to move."
     if viewershipHigh == True:
@@ -4495,10 +4511,11 @@ label vig4_sc7_3_ama():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment10)
             cS "I'm sure you will."
-    show ama stream neutral at stream_left with dissolve
+    show ama stream death at stream_left with dissolve
     "Ama puts a hand on my shoulder."
     "Her other hand is holding her side."
     $ AddChatter(vig4_sc7_3_ama_comment11)
+    show ama stream upset
     amaS "Sorry, kid, took a bad knock there. But I'm back in the hunt."
     amaS "Seems like guns won't work here. We'll have to do this the old-fashioned way."
     $ AddChatter(vig4_sc7_3_ama_comment12)
@@ -4562,9 +4579,9 @@ label vig4_sc7_3_ama():
             $ AddChatter(vig4_sc7_3_ama_comment21)
             "I don't have time to stand."
     amaS "Moze!"
-    show ama stream neutral at stream_left with Dissolve(0.2)
-    show ama stream neutral at stream_right with move
-    show ama stream neutral with hpunch
+    show ama stream upset at stream_left with Dissolve(0.2)
+    show ama stream upset at stream_right with move
+    show ama stream upset with hpunch
     "Ama leaps in front of Coil, and thrusts her hand forward."
     "A blast of energy slams her back to the floor."
     hide ama with Dissolve(0.5)
@@ -4684,7 +4701,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment45)
     "Ama."
     hide vega with dissolve
-    show ama stream neutral at stream_right with dissolve
+    show ama stream death at stream_right with dissolve
     "I rush over to Ama's body and turn her onto her side."
     amaS "Ahhh, shit."
     hide screen streamerCommentary
@@ -4697,11 +4714,14 @@ label vig4_sc7_3_ama():
         "I did.":
             $ deadeyeApproval += 1
             mS "Well, I did the hard work."
+            show ama stream happy
             amaS "Bullshit, you would've been toast if I didn't stab the old man."
         "Yes, we got him.":
             mS "Yeah, we got him."
+            show ama stream happy
             amaS "Good. Old man was a pain in the ass."
     "Gingerly, I help Ama into a sitting position. She glances to the side."
+    show ama stream neutral
     "MAC hasn't entered the room yet."
     amaS "Time to rebuild your family."
     $ AddChatter(vig4_sc7_3_ama_comment47)
@@ -4716,6 +4736,7 @@ label vig4_sc7_3_ama():
         "You belong." if vig4_amaOffer == True:
             $ vig4_amaCrew = True
             mS "If you want a place in the crew, it's not too late."
+            show ama stream happy
             $ AddChatter(vig4_sc7_3_ama_comment53)
             amaS "Heh, after all I've done? Jenn and Teresa will probably have something to say about that."
             $ AddChatter(vig4_sc7_3_ama_comment54)
@@ -4726,6 +4747,7 @@ label vig4_sc7_3_ama():
         "You're right.":
             $ vig4_amaCrew = False
             mS "You're right. But we're grateful for your help."
+            show ama stream happy
             $ AddChatter(vig4_sc7_3_ama_comment53)
             amaS "Aah, you'll find some way to repay me I'm sure."
             $ AddChatter(vig4_sc7_3_ama_comment54)
@@ -4737,6 +4759,7 @@ label vig4_sc7_3_ama():
             $ vig4_amaCrew = True
             mS "Ama, I don't want to live without you."
             "She looks at me, almost confused."
+            show ama stream confused
             amaS "Mozely, I don't know what you're saying."
             menu:
                 amaS "Mozely, I don't know what you're saying."
@@ -4747,6 +4770,7 @@ label vig4_sc7_3_ama():
                     $ amaRomance = True
                     mS "Ama, I love you."
                     mS "I know it doesn't make sense, bu—"
+                    show ama stream happy
                     "She grabs my face with her two hands and pulls me into a kiss."
                     $ AddChatter(vig4_sc7_3_ama_comment57)
                     "I wrap my arms around her."
@@ -4765,12 +4789,14 @@ label vig4_sc7_3_ama():
                     mS "I don't either."
                     $ AddChatter(vig4_sc7_3_ama_comment56)
                     mS "But stick around, and we'll figure it out."
+                    show ama stream happy
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_ama_comment61)
     amaS "Not bad, Moze. Not bad at all."
     "She tilts her head at MAC."
+    show ama stream neutral
     amaS "Now go. He needs you."
     $ vig4_sc7_3_ama_comment56.click = False
     $ AddChatter(vig4_sc7_3_ama_comment62)
@@ -4873,6 +4899,7 @@ label vig4_sc7_3_ama():
         macS "Bury your family, Vega. And take care."
         $ AddChatter(vig4_sc7_3_ama_comment81)
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
+        hide vega with dissolve
     "MAC rolls up to me and Ama."
     macS "We should go."
     mS "Yeah, we should."
@@ -4886,6 +4913,7 @@ label vig4_sc7_3_coil():
     #play badass climax music
     play music "soundtrack/saveTheGalaxy.wav" volume 0.7
     "Everyone is still."
+    show ama stream gun
     "Ama makes the first move, raising her rifle in my direction."
     $ AddChatter(vig4_sc7_3_coil_comment1)
     menu:
@@ -4906,6 +4934,7 @@ label vig4_sc7_3_coil():
     "Ama lifts the rifle to aim at me again."
     "Coil reaches his hands forward. Devices like shield generators are strapped to his palms."
     "A burst of energy suddenly blasts from them, striking Ama's rifle and rending it to pieces."
+    show ama stream angry
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment3)
     "She takes a moment to look at the destroyed gun, then tosses it to the side."
@@ -4927,6 +4956,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment7)
     vS "Pops!"
     "Ama draws a knife from her boot."
+    show ama stream happy
     amaS "Now then, Mozely. Where were we?"
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_coil_comment8)
@@ -4937,6 +4967,7 @@ label vig4_sc7_3_coil():
         "You were about to surrender.":
             mS "I think you were about to surrender."
     amaS "Hah! Isn't that rich?"
+    show ama stream angry
     "Flicking the knife back and forth, Ama steps close to me and crouches into a fighting stance."
     $ AddChatter(vig4_sc7_3_coil_comment9)
     macS "Moze, be careful!"
@@ -4989,6 +5020,7 @@ label vig4_sc7_3_coil():
     "I'm stunned, flat on my back on the ground."
     $ AddChatter(vig4_sc7_3_coil_comment18)
     "Ama steps up to me."
+    show ama stream upset
     amaS "What an ungrateful child!"
     amaS "After everything I did for you, all that I taught you."
     amaS "And you just throw it away."
@@ -5008,6 +5040,7 @@ label vig4_sc7_3_coil():
     hide ama with dissolve
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment22)
+    show ama stream angry
     amaS "Maker—you're going to regret that old man."
     "I can't turn my head but I hear the sounds of battle to my right."
     "The charge of Coil's energy pulses, the sound of Ama's fists hitting flesh."
@@ -5023,6 +5056,7 @@ label vig4_sc7_3_coil():
     "Coil slumps to the ground, his back leaning against the wall."
     $ AddChatter(vig4_sc7_3_coil_comment24)
     hide coil with Dissolve(0.6)
+    show ama stream death
     "Ama holds her side. One of her arms is almost limp."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment25)
@@ -5038,14 +5072,17 @@ label vig4_sc7_3_coil():
             mS "I want this."
             $ AddChatter(vig4_sc7_3_coil_comment26)
             "Ama nods."
+            show ama stream upset
             amaS "Good."
         "You gave me no choice.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             mS "You didn't give me a choice."
             $ AddChatter(vig4_sc7_3_coil_comment27)
+            show ama stream happy
             "Ama chuckles."
             amaS "Classic Mozely."
+    show ama stream angry
     amaS "Let's finish it."
     "Resolve beats through my heart."
     "I step forward."
@@ -5054,6 +5091,7 @@ label vig4_sc7_3_coil():
     "I easily dodge it and thrust my fist into her chest."
     "Ramming my knee into her groin, I grab her by the back and throw her across the floor."
     "She tumbles and slams into the side of the wall."
+    show ama stream death
     $ AddChatter(vig4_sc7_3_coil_comment28)
     "I cross the room and stand over Ama."
     "Gasping for air, she leans onto her back."
@@ -5811,12 +5849,14 @@ label vig4_epilogue_ama():
             $ AddChatter(vig4_sc7_epilogue_ama_comment12)
         if amaRomance == True:
             "I step up behind Ama's chair, and reach for her hand."
+            show ama stream happy
             "Almost automatically, as if we've been doing it for years, she takes it."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_epilogue_ama_comment14)
         else:
             pass
         mS "What seems to be the trouble, Ama?"
+        show ama stream confused
         amaS "Does anyone else see anything funny out there?"
         "The visual in the cockpit just shows empty space."
         pS "Looks like normal space stuff to me."
@@ -5828,6 +5868,7 @@ label vig4_epilogue_ama():
         $ AddChatter(vig4_sc7_epilogue_ama_comment15)
         mS "See what?"
         macS "It was a little flicker in front of one of the stars!"
+        show ama stream neutral
         amaS "So I'm not going crazy."
         "As I gaze into the vastness of space, I start to notice it too."
         "Some of the stars are flickering."
@@ -5851,6 +5892,7 @@ label vig4_epilogue_ama():
         "They're heading in our direction."
         $ AddChatter(vig4_sc7_epilogue_ama_comment20)
         mS "What the hell is that!"
+        show ama stream angry
         amaS "Dragonfly space station. Shit!"
         "Ama jams thrusters back and frenetically starts snapping switches on control consoles."
         "We immediately turn around and start flying away from the station."
@@ -5881,6 +5923,7 @@ label vig4_epilogue_ama():
         if amaRomance == True:
             hide mac with dissolve
             "I move to follow, but a hand on my shoulder stops me."
+            show ama stream happy
             amaS "Hey."
             "We kiss. Briefly. But passionately."
             amaS "Knock 'em dead, Mozely."

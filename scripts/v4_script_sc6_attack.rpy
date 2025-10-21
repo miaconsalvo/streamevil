@@ -50,15 +50,18 @@ label vig4_sc6_attack_1_ama():
         amaS "We take that, we don't have to worry about hiding and cover anymore."
         "You can't be serious.":
             mS "You can't be serious, Ama."
+            show ama stream happy
             amaS "Think about it, we get more firepower, safety from enemy fire."
             amaS "Who's going to be able to stop us?"
             amaS "I think it's genius."
             $ AddChatter(vig4_sc6_attack_1_ama_comment9)
         "Genius.":
             mS "Genius idea."
+            show ama stream happy
             $ AddChatter(vig4_sc6_attack_1_ama_comment9)
     enS "I don't know if I'd go that far."
     pS "We still have to steal the damn thing."
+    show ama stream neutral
     amaS "Simple, wait for that group to wander off, then take out the crew. Easy maneuver."
     $ AddChatter(vig4_sc6_attack_1_ama_comment10)
     pS "No way, if we're doing this then we should help those people."
@@ -109,7 +112,7 @@ label vig4_sc6_attack_1_assault_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
-    show ama at stream_left with move
+    show ama stream gun at stream_left with move
     "Ama and I shift down the ruins, moving away from the tank." 
     "The battalion is about to move on."
     show bc_enforcer at stream_center with dissolve
@@ -141,6 +144,7 @@ label vig4_sc6_attack_1_assault_ama():
     "Rifle poised in hand, she fires at a constant, controlled rate, tagging a handful of enforcers before she too has to duck behind cover."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment8)
     "She tilts her head in the direction of the tank."
+    show ama stream happy
     amaS "Got a pretty good crew, Mozely."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment9)
     "I peek just over the rubble as a shot whizzes past my head."
@@ -161,10 +165,12 @@ label vig4_sc6_attack_1_assault_ama():
         "Let's dance.":
             $ deadeyeApproval += 1
             mS "Let's dance."
+            show ama stream gun
         "Bet I get more.":
             $ deadeyeApproval += 2
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
+            show ama stream gun
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment12)
     "I whip around the cover, firing shots immediately down the street."
@@ -188,12 +194,14 @@ label vig4_sc6_attack_1_assault_ama():
     "Some lay motionless on the ground."
     "The sounds of battle in the distance are quieting down."
     "Ama steps up next to me."
+    show ama stream neutral
     amaS "Pretty good shots Moze. Accuracy could use some work though."
     menu:
         amaS "Pretty good shots Moze. Accuracy could use some work though."
         "I got more.":
             mS "Who cares."
             mS "By my count, I got four and you got three."
+            show ama stream happy
             amaS "Oh ho, still got that fierceness in you, I see."
             if jennicaRomance == False and teresaRomance == False:
                 $ AddChatter(vig4_sc6_attack_1_assault_ama_comment16)
@@ -202,6 +210,7 @@ label vig4_sc6_attack_1_assault_ama():
         "Yours is slipping.":
             $ deadeyeApproval += 1
             mS "Yours isn't what it used to be either."
+            show ama stream happy
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
@@ -212,6 +221,7 @@ label vig4_sc6_attack_1_assault_ama():
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment17)
     play music "soundtrack/polaris.wav"
+    show ama stream neutral
     dflyGuard "Captain Moze?"
     show dflyguard at stream_center with dissolve
     "The leader of the Dragonflies squad approaches me."
@@ -277,6 +287,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             hide dflyguard with Dissolve(0.5)
+            show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ reactTarget = "vig4_sc6_attack_killdflies"
             show screen streamerCommentary
@@ -286,9 +297,11 @@ label vig4_sc6_attack_1_assault_ama():
             "The rest of the Dragonflies look up, confusion rampant on their faces as Ama and I draw our weapons."
             "Our blasters echo in the night."
             "Each of the Dragonflies drops to the ground. Dead."
+            show ama stream neutral
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
             hide screen streamerCommentary
     "Ama claps me on the back."
+    show ama stream happy
     amaS "That's the Mozely I remember."
     amaS "Now, let's see the vessel we've commandeered!"
     stop music fadeout 2.0
@@ -301,6 +314,7 @@ label vig4_sc6_attack_1_split_ama():
     mS "We'll wait for the battalion to split off, then take the tank when it's just a skeleton crew."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment2)
     mS "Jennica and Teresa, take care of the tank. Ama, we'll take the leftover squad."
+    show ama stream happy
     amaS "Strike from a place of advantage. Good."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment3)
     enS "Behind you."
@@ -309,7 +323,7 @@ label vig4_sc6_attack_1_split_ama():
     hide teresa with dissolve
     hide jennica with dissolve
     "Staying in cover, Jennica and Teresa cycle around the rubble, getting close to the tank without revealing themselves."
-    show ama stream neutral at stream_left with move
+    show ama stream gun at stream_left with move
     "Ama and I duck close together."
     enforcer "Alright you maggots, break time's over. Time to get moving."
     "The sound of dozens of steps as the battalion moves off down the road."
@@ -326,8 +340,10 @@ label vig4_sc6_attack_1_split_ama():
             mS "Let's dance."
         "Bet I get more.":
             $ deadeyeApproval += 2
+            show ama stream happy
             mS "Bet you I tag more than you."
             amaS "You're on, kid."
+            show ama stream gun
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment12)
     play audio "lazer.wav"
@@ -359,12 +375,14 @@ label vig4_sc6_attack_1_split_ama():
     "Jennica and Teresa are busy pummeling the tank crew on the ground."
     "A simple maneuver."
     "The sounds of battle in the distance start to quiet."
+    show ama stream neutral
     "Ama steps up next to me."
     amaS "Pretty good shots Moze. Accuracy could use some work though."
     menu:
         amaS "Pretty good shots Moze. Accuracy could use some work though."
         "I got more.":
             mS "Who cares."
+            show ama stream happy
             mS "By my count, I got four and you got three."
             amaS "Oh ho, still got that fierceness in you, I see."
             if jennicaRomance == False and teresaRomance == False:
@@ -374,6 +392,7 @@ label vig4_sc6_attack_1_split_ama():
         "Yours is slipping.":
             $ deadeyeApproval += 1
             mS "Yours isn't what it used to be either."
+            show ama stream happy
             amaS "You calling me \"old,\" kid?"
             mS "I didn't say that."
             mS "Though it's true."
@@ -425,6 +444,8 @@ label vig4_sc6_attack_2_ama():
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
     $ AddChatter(vig4_sc6_attack_2_ama_comment5)
+    show jennica stream neutral
+    show teresa stream happy
     mS "MAC!"
     pS "Hey, little guy!"
     enS "Good to see you, MAC!"
@@ -442,6 +463,8 @@ label vig4_sc6_attack_2_ama():
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
+        show teresa stream neutral
+        show jennica stream shock
         enS "That's not fair, MAC."
         pS "We're a family."
         macS "It's what {i}she{/i} said."
@@ -460,6 +483,7 @@ label vig4_sc6_attack_2_ama():
                 mS "Just tell us where you are, and we'll be there for you. Always."
                 $ AddChatter(vig4_sc6_attack_2_ama_comment9)
                 "MAC pauses for a moment. As if pondering what I've said."
+                show jennica stream neutral
             "The job's not finished.":
                 $ kcEngagement -= 1
                 $ pdEngagement += 1
@@ -470,6 +494,7 @@ label vig4_sc6_attack_2_ama():
                 $ AddChatter(vig4_sc6_attack_2_ama_comment10)
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
+                show jennica stream neutral
     macS "I am okay."
     macS "But Coil has brought me into the plaza tower and away from the fighting."
     if macViolence >= macPeace:
@@ -503,6 +528,7 @@ label vig4_sc6_attack_2_ama():
     play audio "cutCall.wav"
     hide mac with dissolve
     "The signal is cut short."
+    show jennica stream angry
     enS "That was Coil's voice."
     $ AddChatter(vig4_sc6_attack_2_ama_comment14)
     pS "No doubt. So he has MAC at the top of the tower."
@@ -510,10 +536,12 @@ label vig4_sc6_attack_2_ama():
     $ AddChatter(vig4_sc6_attack_2_ama_comment15)
     mS "We won't have to on our own."
     $ AddChatter(vig4_sc6_attack_2_ama_comment16)
+    show jennica stream neutral
     pS "Cap?"
     mS "That enforcer said BC was preparing a second assault." 
     mS "This first one must have just been to soften up Polaris's defenses."
     mS "When BC launches their next attack, we can use the chaos to break through and get into the tower."
+    show ama stream happy
     amaS "Oh, I {i}like{/i} this plan, Mozely."
     $ AddChatter(vig4_sc6_attack_2_ama_comment17)
     enS "Efficient and clever."
@@ -525,6 +553,7 @@ label vig4_sc6_attack_2_ama():
     "A line of dropships careen through the air to Polaris."
     $ AddChatter(vig4_sc6_attack_2_ama_comment19)
     mS "The second attack is starting."
+    show ama stream neutral
     amaS "Just in time."
     mS "Agreed. Jenn, take us to the plaza."
     $ AddChatter(vig4_sc6_attack_2_ama_comment20)
@@ -842,8 +871,10 @@ label vig4_sc6_attack_3_ama():
             mS "Ama."
             "She looks at me."
             mS "It's good to have you here."
+            show ama stream happy
             "She winks."
             amaS "Good to be here, kid."
+            show ama stream neutral
     $ AddChatter(vig4_sc6_attack_3_ama_comment54)
     "We both turn to look at the burning horizon as Polaris crumbles."
     play music "soundtrack/theme.wav"
@@ -963,7 +994,7 @@ label vig4_sc6_attack_3_ama():
                 $ AddChatter(vig4_sc6_zan_comment10)
         hide zan with dissolve
         show jennica stream neutral at stream_left with dissolve
-    show ama at stream_center with dissolve
+    show ama at stream neutral stream_center with dissolve
     pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
@@ -1024,7 +1055,7 @@ label vig4_sc6_attack_3_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     "I hop down to the ground."
-    show ama at stream_left with move
+    show ama stream neutral at stream_left with move
     "Ama steps up to my side."
     amaS "Ready?"
     mS "Ready."
@@ -1034,6 +1065,7 @@ label vig4_sc6_attack_3_ama():
     jump vig4_sc7_1_attack_ama
 
 label vig4_sc7_1_attack_ama():
+    hide ama with dissolve
     hide vig1_town_stream with Dissolve(1.5)
     stop music fadeout 2.0
     "As soon as the doors close behind us, the sounds of battle become muffled."
@@ -1065,6 +1097,7 @@ label vig4_sc7_1_attack_ama():
     $ AddChatter(vig4_sc7_1_defend_comment9)
     show vig2_datacenter_stream onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
+    show ama stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
@@ -1097,6 +1130,7 @@ label vig4_sc7_1_attack_ama():
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
+                show ama stream happy
                 cS "I meant the bloodlust."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1112,6 +1146,7 @@ label vig4_sc7_1_attack_ama():
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
+                show ama stream confused
                 cS "I meant the altruistic urge to help other people."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1140,6 +1175,7 @@ label vig4_sc7_1_attack_ama():
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
+                show ama stream happy
                 amaS "Mozely can be quite stubborn."
                 cS "I meant the bloodlust."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -1156,6 +1192,7 @@ label vig4_sc7_1_attack_ama():
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
+                show ama stream confused
                 cS "I meant the altruistic urge to help other people."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1163,6 +1200,7 @@ label vig4_sc7_1_attack_ama():
                 amaS "Guess that has been a phase recently."
                 hide screen streamerCommentary
                 $ AddChatter(vig4_sc7_1_attack_ama_comment9)
+    show ama stream neutral
     "Coil steps away from the devices, directly in front of me and Ama."
     cS "Tell me truthfully, Moze. What was your plan in coming here?"
     menu:
@@ -1177,6 +1215,7 @@ label vig4_sc7_1_attack_ama():
             cS "I'm disappointed. After everything that happened, you couldn't just walk away."
             $ AddChatter(vig4_sc7_1_defend_comment15)
             cS "MAC is gone."
+            show ama stream upset
             amaS "Bullshit."
             amaS "If that were true you wouldn't still be here."
             cS "How perceptive. And yet you still have no idea what you're doing."
@@ -1200,13 +1239,16 @@ label vig4_sc7_1_attack_ama():
                 cS "And is this why you've brought this hunter?"
                 "He gestures at Ama."
                 cS "This \"Deadeye.\""
+                show ama stream happy
                 amaS "Good to know the name means something all the way out here."
                 cS "It means a half-life. A ghost who has no place in this galaxy anymore."
+                show ama stream upset
                 $ AddChatter(vig4_sc7_1_defend_comment16)
                 amaS "I'll show you what this ghost is capable of."
                 $ AddChatter(vig4_sc7_1_defend_comment17)
                 cS "I'm sure you will."
             cS "Is this what your help means, Moze?"
+    show ama stream gun
     "Ama suddenly draws her rifle and aims at Coil."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
@@ -1221,6 +1263,7 @@ label vig4_sc7_1_attack_ama():
     play audio "lazer.wav"
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
+    show ama stream confused
     "Eyes wide, Ama fires again. And again."
     "Every shot is absorbed by the shield."
     $ AddChatter(vig4_sc7_1_defend_comment20)
@@ -2280,10 +2323,11 @@ label vig4_sc7_1_attack():
                 cS "He got it from you after all."
                 hide screen streamerCommentary
                 amaS "Mozely can be quite stubborn."
-                show ama stream neutral at stream_right with dissolve
+                show ama stream gun at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the bloodlust."
+                show ama stream happy
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -2300,10 +2344,11 @@ label vig4_sc7_1_attack():
                 cS "He got it from you after all."
                 hide screen streamerCommentary
                 amaS "Mozely can be quite stubborn."
-                show ama stream neutral at stream_right with dissolve
+                show ama stream gun at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the urge to help other people."
+                show ama stream confused
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -2334,9 +2379,10 @@ label vig4_sc7_1_attack():
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
-                show ama stream neutral at stream_right with dissolve
+                show ama stream gun at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
+                show ama stream happy
                 cS "I meant the bloodlust."
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -2356,6 +2402,7 @@ label vig4_sc7_1_attack():
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 amaS "Mozely can be quite stubborn."
+                show ama stream confused
                 cS "I meant the altruistic urge to help other people."
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -2365,6 +2412,7 @@ label vig4_sc7_1_attack():
                 amaS "Guess that has been a phase recently."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment9)
     "Ama turns her gaze on me."
+    show ama stream neutral
     amaS "Hello Mozely, it's good to see you again."
     amaS "I suppose I should thank you for leading me here."
     menu:
@@ -2374,6 +2422,7 @@ label vig4_sc7_1_attack():
         "Was wondering when you would show up.":
             mS "I was wondering when you would show up."
             mS "Slower than I expected."
+    show ama stream upset
     amaS "Watch your tongue, kid."   
     amaS "I'm calling the shots here." 
     cS "So you think."
@@ -2419,6 +2468,7 @@ label vig4_sc7_1_attack():
                 cS "Here we stand, in the midst of a war. And you happen to be at the center of it."
             cS "Is this what your help means, Moze?"
     amaS "I've heard enough!"
+    show ama stream gun
     "Ama moves to fire her rifle."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
@@ -2433,6 +2483,7 @@ label vig4_sc7_1_attack():
     play audio "lazer.wav"
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
+    show ama stream confused
     "Eyes wide, Ama fires again. And again."
     "Every shot is absorbed by the shield."
     $ AddChatter(vig4_sc7_1_defend_comment20)
