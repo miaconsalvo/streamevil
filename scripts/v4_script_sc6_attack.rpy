@@ -949,7 +949,7 @@ label vig4_sc6_attack_3_ama():
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
             show showgirl stream at stream_left5 with dissolve
-            showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
+            showgirl "Reynar heard that some trouble was brewing round these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
             mS "Daisy? But I thought—"
@@ -981,7 +981,7 @@ label vig4_sc6_attack_3_ama():
                 mS "Thank you, Zan."
                 zan "It is no problem."
                 zan "Now, show them your mama's back!"
-                mS "My wha—."
+                mS "My wha—"
                 pS "Our Moxie."
                 zan "Moxie!"
                 $ AddChatter(vig4_sc6_zan_comment8)

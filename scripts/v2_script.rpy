@@ -176,7 +176,7 @@ label Vig2BridgeScene():
             mS "Yeah. He always did have a... {i}flexible{/i} moral compass."
             pS "So flexible it's like water. Fills any container."
             mS "I wouldn't be surprised if this isn't even his main palace."
-            pS "Bet he's gotta a ranch or somethin' on the other side of the planet."
+            pS "Bet he's got a ranch or somethin' on the other side of the planet."
             enS "You think someone who has the money to spend on a ranch would buy one on Gibian V?"
             "Jennica looks puzzled for a moment."
             pS "Fair 'nough."
@@ -448,7 +448,7 @@ label GibianVCustomsMarshal():
     "A muffled voice perks up from the crate."
     play audio "macPing.wav" volume 2.0
     macS "Penitentiary. Noun. A place for imprisoning crim—"
-    enS "SHUSH!"
+    enS "{i}Shush!{/i}"
     "The door creaks ajar."
     show customs agent at stream_center with Dissolve(0.2)
     "The customs official peeks his head through the door."
@@ -506,7 +506,7 @@ label GibianVCustomsOutlaw():
     "A muffled voice perks up from the crate."
     play audio "macPing.wav" volume 1.5
     macS "Conflagrant. Adjective. Burning or bl-."
-    enS "SHUSH!"
+    enS "{i}Shush!{/i}"
     $ AddChatter(vig2_sc2_out_comment5)
     show jennica stream shock at stream_left
     pS "Conflagrant? You lost your damn mind!?"
@@ -584,8 +584,8 @@ label matticusDoor():
     "Jennica's eyes widen as we first see the gates."
     hide screen streamerCommentary
     pS "Holy smokes!"
-    "The gates dwarf the rest of the block."
-    "They're taller than the whole building across the street, and shining with gaudy golden accents and initials."
+    "The gates dwarf the rest of the town."
+    "They're taller than any building we've seen here, and shining with gaudy golden accents and initials."
     $ AddChatter(vig2_sc3_comment1)
     show teresa stream neutral at stream_right with dissolve
     enS "Understated. How classy."
@@ -603,7 +603,7 @@ label matticusDoor():
     enS "Quiet!"
     "I press on the intercom button outside the gate."
     play audio "callRing.wav" volume 2.0
-    "A dial tone begins to play"
+    "A dial tone begins to play."
     show jennica stream neutral at stream_left
     mattdoorbell "Name and ID?"
     mS "We're old friends of Sav."
@@ -1294,7 +1294,7 @@ label commsBase_OUT1():
             "Jennica dives into cover next to me."
     mS "There's only one left!"
     mS "Teresa has him pinned down."
-    pS "I'll get'em!"
+    pS "I'll get em!"
     "Jennica leaps out of cover and begins running towards the guard."
     "Three more guards emerge from the door, guns drawn."
     pS "Shit! We got company!"
@@ -1455,7 +1455,7 @@ label commsBase_DataCenter():
     $ AddChatter(vig2_sc7_comment3)
     show jennica stream shock at stream_left
     pS "I knew this was too damn easy!"
-    hide data
+    hide data with dissolve
     play audio "macAlarmed.wav"
     show mac stream neutral at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
@@ -1470,10 +1470,11 @@ label commsBase_DataCenter():
     $ reactTarget = "vig2_sc7_bigreveal"
     show screen streamerCommentary
     mS "So what happens if the town doesn't get that aid?"
-    show data agent scared at stream_left5
+    show data agent scared at stream_left5 with dissolve
     worker "Sallent? There's an outbreak of Gray fever there. They need that medicine!"
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
+    hide data with dissolve
     $ AddChatter(vig2_sc7_comment4)
     show teresa stream think at stream_right with Dissolve(0.4)
     show jennica stream crossed at stream_left with Dissolve(0.4)

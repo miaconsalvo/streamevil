@@ -880,6 +880,7 @@ label vig4_sc2_4():
             $ AddChatter(vig4_sc2_4_comment17)
             "She's aiming a shotgun directly at Teresa."
             $ AddChatter(vig4_sc2_4_comment18)
+            show teresa stream fight
             "In a flash, Teresa and I lift our blasters. Teresa aims at the old man while I keep my eye on the woman."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment19)
@@ -898,6 +899,7 @@ label vig4_sc2_4():
             mS "Teresa, stand d—"
             "A bolt fires from Teresa's blaster."
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
+            show teresa stream shock
             $ reactTarget = "vig4_sc2_coilshield"
             show screen streamerCommentary
             if viewershipHigh == True or viewershipMed == True:
@@ -913,6 +915,7 @@ label vig4_sc2_4():
             mS "Sounds like a threat."
             mS "And nobody threatens my crew."
             "Teresa and I both draw our blasters, and point them at the old man."
+            show teresa stream fight
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment26)
             mS "Now, you're going to answer our questions, or you're going to wake up with a mean headache."
@@ -938,6 +941,7 @@ label vig4_sc2_4():
                     mS "Teresa, stand d—"
                     "A bolt fires from Teresa's blaster."
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
+                    show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
                     cS "Your discipline is wanting."
@@ -950,6 +954,7 @@ label vig4_sc2_4():
             "A young woman steps out from the back."
             $ AddChatter(vig4_sc2_4_comment27)
             "She's aiming a shotgun directly at Teresa. I shift my blaster in her direction."
+            show teresa stream fight
             vS "I see we have... guests?"
             $ AddChatter(vig4_sc2_4_comment28)
             cS "Nothing to worry about, Vega."
@@ -968,9 +973,11 @@ label vig4_sc2_4():
             $ AddChatter(vig4_sc2_4_comment30)
         show mac stream neutral
         macS "Threat neutralized."
+        show teresa stream neutral
         $ AddChatter(vig4_sc2_4_comment31)
     else:
         "His antenna glows blue and then releases a wave of light."
+        show teresa stream shock
         enS "Shit!"
         "Teresa drops her blaster."
         vS "Ow, it's hot!"
@@ -980,6 +987,7 @@ label vig4_sc2_4():
         "The young woman drops the rifle."
         show mac stream neutral
         macS "Situation deescalated."
+        show teresa stream neutral
         $ AddChatter(vig4_sc2_4_comment31)
     ##* streamer reaction to start a MAC chant - if you do this, then later in the game we'll trigger a chant from the chat automatically. Probably on the return to Polaris alongside Moze's "speech"
     $ reactTarget = "vig4_sc2_macchant"
@@ -3854,7 +3862,7 @@ label vig4_sc5_1():
     "There's an acrid smell in the air."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc5_1_comment1)
-    mS "*cough* *cough* *cough*"
+    mS "{b}*cough* *cough* *cough*{/b}"
     "My body lurches forward as I start to cough."
     $ AddChatter(vig4_sc5_1_comment2)
     if jennicaRomance == True:

@@ -251,7 +251,7 @@ label vig3marshalstart():
     show screen streamerCommentary
     "Jennica smacks her glass away, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
     "I set my cup down gently."
-    pS "We're doing better, and that's all fine and good. And hell I'll stand by what I said."
+    pS "We're doing better, and that's all fine and good. And hell, I'll stand by what I said."
     pS "But we need to be more united on things if we're gonna make it."
     "I don't respond." #Consider adding multiple options#
     pS "I like the kid. But we've been over our heads from the start..." 
@@ -373,7 +373,7 @@ label vig3_sc2():
             #Pessimism
         "MAC, it's not safe.":
             $ kcEngagement += 1 #Logic: Kitcat likes the focus on keeping MAC safe and the more gentle omment
-            mS "MAC, don't go poking into BigCorp networks. After all the work the keep you safe." #more gentle way of chiding MAC about being inconspicuous#
+            mS "MAC, don't go poking into BigCorp networks. After all the work to keep you safe." #more gentle way of chiding MAC about being inconspicuous#
     "MAC's head lowers." ## this reaction can differ based on choices##
     macS "I just wanted to be helpful..."
     "I let out a heavy sigh."
@@ -411,7 +411,7 @@ label vig3_sc3():
     show akarstreet_stream at topleft onlayer background with dissolve
     play music "soundtrack/akar(day).wav" volume 0.8 #fadein 1.0
     $ viewCheck2 = viewCount
-    "Well off to side of the road, the familiar streets of Akar are alive in front of us."
+    "Well off to the side of the road, the familiar streets of Akar are alive in front of us."
     $ AddChatter (vig3_sc3_akarstreet_comment1)
     "It's beaming with colour and life, red and orange banners bridge the spaces between the buildings, a jubilant feeling in the air."
     "Being attached to the Vineyard, Akar's blend of nature and technology are a sight to be sure." ## Rich and vibrant plant life merging with the surrounding infrastructure brightly adorned by lights and striking signage - think eco-futurist Vegas.##
@@ -653,14 +653,17 @@ label vig3_sc4():
         "Teresa did you program that?":
             $ pdEngagement += 1 #Logic: A funny choice pickledDragons would like (also kind of demeans MAC which is why kitcat doesn't get a bonus)
             mS "That's the last time I let you touch our gear Teresa."
+            show teresa stream shock at stream_right with dissolve
             enS "Excuse me?"
             "I give her a look."
+            show teresa stream neutral
             enS "Oh haha yeah... of course Cap."
             $ AddChatter (vig3_sc4_program_comment1)
             pause 0.5
             $ AddChatter (vig3_sc4_program_comment2)
             pause 0.5
             $ AddChatter (vig3_sc4_program_comment3)
+            hide teresa
     #^All of these feel mean....could use a rewrite#
     show rec stream thinking
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
@@ -786,7 +789,7 @@ label vig3_sc4():
     $ AddChatter (vig3_sc4_shop_comment35)
     houndleader "That's what I like about you, Rec, so reasonable."
     "We stand back as the group rummages through the store, knocking over shelves and taking random items." 
-    "They're armed to the teeth and now I understand why Rec is so quick to comply."
+    "They're armed to the teeth. Now I understand why Rec is so quick to comply."
     ###Describe the wreck this group is leaving and give the players two opportunities to intervene or continue to comply silently.###
     "Like restless children, they stick their hands in every possible shelf and knock over part after part."
     "It's a big show. They snicker to each other, incoherently mumble protocols and giggle."
@@ -815,7 +818,7 @@ label vig3_sc4():
                         pause 0.5
                         $ AddChatter (vig3_sc4_enough_comment2)
                 "Stay quiet.":
-                    "They continue to trash the shop. More carnage. They're laughing to each other, tossing equipment like a hackey sac."
+                    "They continue to trash the shop. More carnage. They're laughing to each other, tossing equipment like a hackey sack."
                     $ AddChatter (vig3_sc4_continue_comment2)
                     "I see one of them try to head to the back room."
                     mS "Alright that's enough!"
@@ -912,7 +915,7 @@ label vig3_sc4():
             $ csEngagement += 2 #Logic: Coriolis likes the attempt to solve problem nonviolently
             $ pdEngagement -= 1 #Logic: pickledDragons does not
             $ kcEngagement += 1 #Logic: kitcat also likes solving problem nonviolently
-            "I take out my communicator,"
+            "I take out my communicator."
             mS "Listen this doesn't need to be ugly, we'll pay the tarriff and get out of your hair."
             $ AddChatter (vig3_sc4_bribe_comment1)
             houndleader "Finally a sensible idea." #it doesnt work right? they need to take the antenna to force the crew to keep looking
@@ -938,7 +941,7 @@ label vig3_sc4():
             pS "Maybe we can use him as our antennae instead."
             $ AddChatter (vig3_sc4_shop_comment40)
             mS "Now that's a thought. Rec, you know those guys?"
-    "They pull out five glasses. And drop a bottle of brandy on the counter."
+    "They pull out five glasses. And drops the bottle of brandy on the counter."
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in giving it to MAC."
     show mac stream happy 
     $ AddChatter (vig3_sc4_shop_comment41)
@@ -1028,7 +1031,7 @@ label vig3_sc5():
     "{b}BANG BANG!{/b}" #sound effect style tests
     "BigCorp officers are scattered around attempting to suppress the riot."
     "With small fires everywhere Teresa holds onto the arm of a statue of a man in a lab coat, Jennica and I look on, blasters in hand."
-    enS "We're gonna be *{b}HICK{/b}* glorkin *{b}HICK{/b}* {i}legends hahaha{/i}!!!"
+    enS "We're gonna be *{b}HICK{/b}* glorkin *{b}HICK{/b}* {i}legends{/i} hahaha!"
     if viewershipHigh == True:
         $ AddChatter (vig3_sc5_akarplaza_comment2)
     pS "Pffffft! Glorkin?"
@@ -1044,7 +1047,7 @@ label vig3_sc5():
     enS "No, no, do the call, it's not real without it."
     mS "The call isn't real, get down from there."
     enS "{i}I know it's real!{/i}"
-    "Another bullet narrowly misses Teresa"
+    "Another bullet narrowly misses Teresa."
     "She pulls out her blaster and hits her mark."
     pS "Better do the call, Cap."
     enS "{i}See! There is one!{/i}"
@@ -1052,7 +1055,7 @@ label vig3_sc5():
     "I take a deep breath."
     mS "{b}CAW CAW HISS HISS!{/b}"
     $ AddChatter (vig3_sc5_akarplaza_comment4)
-    "We all laugh"
+    "We all laugh."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc5_akarplaza_comment5)
         pause 0.5
@@ -1073,7 +1076,7 @@ label vig3_sc5():
     enS "Hehe catch me!"
     "I'm barely able to catch her in time."
     mS "I got ya!"
-    "BOOM" #sound effect style test
+    "{b}BOOM!{/b}" #sound effect style test
     "I carry Teresa in my arms, Jennica trailing quickly behind just as the bomb detonates and blows the statue sky high."
     hide akarplaza_flashback_stream with dissolve
     show teresa stream happy at stream_right with dissolve
@@ -1157,7 +1160,7 @@ label vig3_sc6():
     show bbpub_stream at topleft onlayer background with dissolve
     "The Burnt Bulb Pub feels like it's been stuck in time." 
     "Its wooden paneling, the carnivorous plants that line its ceilings."
-    "There's a warmth to this place, I feel like that young Outlaw scared out of my mind, clinging to Ama and hoping I won't get bulldozed at my first brawl."
+    "There's a warmth to this place, I feel like that young outlaw scared out of my mind, clinging to Ama and hoping I won't get bulldozed at my first brawl."
     show rec stream happy at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
@@ -1218,7 +1221,7 @@ label vig3_sc6():
             $ AddChatter (vig3_sc6_surely_comment2)
             "We move through the bar and I scan for any familiar faces."
             "Or any face that seems friendly."
-            "Apart from a waitress who waved at us or of courtesy, no one."
+            "Apart from a waitress who waved at us out of courtesy, no one."
             "When we find our table, I gently push off a passed-out patron lying on it."
             "Teresa and Rec come back to us with our first round." 
             "I buy us the next one."
@@ -1271,7 +1274,7 @@ label vig3_sc6():
     show teresa stream upset at stream_right
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b—"
-    show mac stream shock at stream_center with move 
+    show mac stream shock at stream_center_mac with move 
     show rec stream surprised
     $ reactTarget = "vig3_sc6_crewspat"#timestamp 6:30
     show screen streamerCommentary
@@ -1481,7 +1484,7 @@ label vig3_sc6():
                 $ AddChatter (vig3_sc6_recmac_comment4)
             "Rec and MAC are chatting at the bar, I get the tail end of their conversation."
             show rec stream drunk at stream_right with dissolve
-            show mac stream neutral at stream_left with dissolve
+            show mac stream neutral at stream_left_mac with dissolve
             recS "You know when you've lived here for so long you get used to it, truly."
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc6_recmac_comment5)
@@ -2208,11 +2211,11 @@ label vig3_sc6():
                 "Teresa helps Jennica get up and they stand on the Karousel table."
                 "Zan yells for music." #The melody is "C'est a ton tour"
                 show zan stream laugh
-                "Teresa and Jennica begin to sing"
+                "Teresa and Jennica begin to sing."
                 pS "Zan is the man! Zan has a plan! Zan's got the muscles to beat any man." 
                 enS "Ovid's the best! Above all the rest! With muscles inside to pass any test."
                 "When they look back I give them a nod like I'm ready to turn in."
-                "They continue in broken harmony" 
+                "They continue in broken harmony." 
                 hide teresa with dissolve
                 hide jennica with dissolve 
                 hide zan with dissolve        
@@ -2342,7 +2345,7 @@ label vig3_sc7():
     "I know Teresa and Jennica are screaming for him, but I can't hear them. I can't hear anything but my heart pounding in my chest."
     $ AddChatter (vig3_sc7_akarplaza_comment7)
     "Where is he?"
-    "WHERE IS HE?"
+    "{i}Where is he!?{/i}"
     $ AddChatter (vig3_sc7_akarplaza_comment8)
     "Then I see him, far in the distance, wheeling himself slowly to a group of people."
     if viewershipHigh == True:
@@ -4318,8 +4321,10 @@ label vig3_sc13():
             hide jennica with dissolve
             hide mac with dissolve
             hide teresa with dissolve
-            show reynar stream angry at stream_center
-            "We stop dead in our tracks as reynar appears."
+            show reynar stream angry at stream_center with dissolve
+            show houndgoon stream neutral at stream_left with dissolve
+            show houndleader stream neutral at stream_right with dissolve
+            "We stop dead in our tracks as Reynar appears."
             "Flanked by the hounds."
             reynar "*sigh* You've been making quite the mess of things. Haven't you."
             $ AddChatter (vig3_sc13_dash_comment13)
@@ -4334,7 +4339,9 @@ label vig3_sc13():
             "We struggle against the Hounds as we're overwhelmed by Reynar's forces."
             "I can hear the faint sounds of clapping as we're pulled out of the garden."
             "Reynar turns his back to us as he renters the gallery."
+            hide houndgoon with dissolve
             hide reynar with dissolve
+            hide houndleader with dissolve
             jump vig3_sc14
         
 label vig3outlawcomms():
@@ -4979,7 +4986,7 @@ label vig3_epilogue():
     dflycontact "We are contacting you regarding the drop off point."
     $ AddChatter(vig3_epilogue_comment26)
     #dflycontact "We are stationed at a planet known as Polaris." #They don't know about Polaris when they first show up to it in Vignette 4. But they have the coordinates, so I just commented this out.
-    dflycontact "Brevifolia sector coordinates 11 03 7"
+    dflycontact "Brevifolia sector coordinates 11 03 7."
     dflycontact "This is the last attempt, should this message be lost, then so is our hope."
     if viewershipHigh == True:
         $ AddChatter(vig3_epilogue_comment27)
@@ -5035,7 +5042,7 @@ label vig3_epilogue():
     "The walk to my quarters is long."
     "Then I'm intercepted."
     show mac stream neutral at stream_center_mac with dissolve
-    "... by Mac."
+    "... by MAC."
     $ AddChatter(vig3_epilogue_comment32)
     "We stare at each other in silence."
     "I don't know what to say."
