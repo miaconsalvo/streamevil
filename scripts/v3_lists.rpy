@@ -1098,7 +1098,7 @@ default vig3break_ama_kiss_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 6:57{/
 default vig3break_ama_kiss_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\nI love where they're taking the characters, even Jenn and Teresa.", 4, "#ffffff")
 default vig3break_ama_kiss_comment8 = ChatEntry(False, "{b}_lostinmetr0  - 6:58{/b}\nIt's been nice to see the team develop", 4, "#ffffff")
 default vig3break_ama_kiss_comment9 = ChatEntry(False, "{b}kitcat - 6:58{/b}\nMAC's three moms!", 4, "#ffffff")
-default vig3break_ama_kiss_comment10 = ChatEntry(True, "{b}Coriolis - 6:58{/b}\I think we can make him a proper Outlaw", 4, "#ffffff", "vig3break_kiss10")
+default vig3break_ama_kiss_comment10 = ChatEntry(True, "{b}Coriolis - 6:58{/b}\nI think we can make him a proper Outlaw", 4, "#ffffff", "vig3break_kiss10")
 default vig3break_ama_kiss_comment11= ChatEntry(False, "{b}kitcat - 6:59{/b}\nLeave the baby alone!", 4, "#ffffff")
     #So how dead do you think we are?#
 default vig3break_ama_dead_comment1 = ChatEntry(False, "{b}Coriolis - 6:55{/b}\nItss not looking good.", 4, "#ffffff")

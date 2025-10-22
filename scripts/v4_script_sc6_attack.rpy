@@ -994,7 +994,7 @@ label vig4_sc6_attack_3_ama():
                 $ AddChatter(vig4_sc6_zan_comment10)
         hide zan with dissolve
         show jennica stream neutral at stream_left with dissolve
-    show ama at stream neutral stream_center with dissolve
+    show ama stream neutral stream_center with dissolve
     pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve

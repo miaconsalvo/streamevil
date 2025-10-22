@@ -388,11 +388,13 @@ label vig3_sc2():
     "For a moment, the Oakley falls away from my view."
     show bg black at topleft onlayer background with dissolve
     hide ship_hallway_stream
+    hide mac with dissolve
     $ AddChatter(vig3_sc2_hallway_comment5)
     "The low hum of the ship replaced by a crowded bar, the starting lines of song that will bellow out to bustling streets."
     "An old crew of outlaws, drunk off a job well done."
     show ship_hallway_stream at topleft onlayer background with dissolve
     hide bg black
+    show mac stream neutral at stream_center_mac
     if viewershipHigh == True:
         $ AddChatter(vig3_sc2_hallway_comment6)
     macS "Now there seems to be a significant amount of criminal activity, the crime rate is actually quite abnormal—"
@@ -511,7 +513,7 @@ label vig3_sc3():
             "I lift my arm and flash the Snakehawks tattoo on my left hand."
             mS "I really wouldn't do that."
             $ AddChatter (vig3_sc3_snakehawk_comment2)
-    "The two men back away and fall back. They're well built but not sharp enough for a fight like this."
+    "The two men back away and retreat. They're well built but not sharp enough for a fight like this."
     "I give the signal to Jennica as she lets their friend scramble up and run off after them."
     hide screen streamerCommentary
     "The city moves as normal, uninterested in what just happened."
@@ -523,7 +525,7 @@ label vig3_sc3():
 
 label vig3_sc4():
     show mac stream neutral at stream_center_mac with dissolve   
-    "We arrive at the storefront of Specs and Steele, a small body shop just off the side of the main road."
+    "We arrive at the storefront of Specs and Steele, a small ship mechanic shop just off the side of the main road."
     macS "Is this the most suitable store for our needs?"
     mS "Definitely. Run by an old friend. Probably one of the only ones that won't shoot first before taking our credits."
     "MAC pauses for a moment, thinking through something."
@@ -856,7 +858,8 @@ label vig3_sc4():
             $ csEngagement += 1 #Logic: Coriolis wants to stand up for Rec
             "I get into his face — let him pry my gear from my cold, dead hands." 
             $ AddChatter (vig3_sc4_fight_comment1)
-            "He smiles and throws the first punch before I can react." 
+            "He smiles and throws the first punch before I can react."
+            with hpunch 
             "It knocks the wind out of me, and I hit the ground."
             "Then impact after impact to my stomach before I can catch my breath. He gets low, right to my ear."
             houndleader "You should've died with the rest of the Snakehawks."
@@ -5388,7 +5391,7 @@ label vig3_macro_viewerChat_1():
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
                     hide screen NVLnarration
-                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh"
+                    player_nvl "I wasn't expecting it to be that harsh either tbh"
                     player_nvl "The thing that got me was the looks from the crew after Moze admitted it"
                     player_nvl "Like, I didn't want to try to sugarcoat it to Allistar... but damn"
                     cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again"
@@ -6057,7 +6060,7 @@ label vig3_macro_viewerChat_1():
                             "Don't really want to keep the conversation going, but it was nice to chat with Coriolis for a bit."
                 "•It surprised me too.":
                     hide screen NVLnarration
-                    player_nvl "I wasn't expecting it to be {i}that{/i} harsh either tbh"
+                    player_nvl "I wasn't expecting it to be that harsh either tbh"
                     player_nvl "The thing that got me was the looks from the crew after Moze admitted it"
                     player_nvl "Like, I didn't want to try to sugarcoat it to Allistar... but damn"
                     cs_nvl "Yeah, she really tore into his memory. Feel like there's no way Rec ever speaks to us again"
@@ -6651,7 +6654,7 @@ label vig3_macro_brother_stream():
                     bro_nvl "Pfft that's your loss lol"
                     bro_nvl "I'm romancing the hell out of that hunk when I start my playthrough"
         "•I'm not that much of an Outlaw.":
-            player_nvl "I'm not {i}that{/i} much of an outlaw."
+            player_nvl "I'm not that much of an outlaw."
             if marshal > outlaw + 5: #testing if I can check how much more one variable is greater than another
                 bro_nvl "I know, I know, I've been watching the VODs"
                 bro_nvl "Still gotta give you some guff for offing Allistar haha"
@@ -6660,7 +6663,7 @@ label vig3_macro_brother_stream():
                 bro_nvl "Let's be real, you're on the borderline"
             else:
                 bro_nvl "Srsly?"
-                bro_nvl "I caught up on the VODs. I seen {i}everything{/i}"
+                bro_nvl "I caught up on the VODs. I seen everything"
             bro_nvl "But you do you. That's how you gotta stream, right?"
             if vig2_marshalEpilogue == True:
                 bro_nvl "I will say, I am glad you didn't side with Matticus"
@@ -6702,7 +6705,7 @@ label vig3_macro_brother_end():
     bro_nvl "Not when I'm trying to fit in outfit planning between the 'OMG I CAN'T BELIEVE I'M GOING OUT WITH HIM' mini panic attacks I'll be having all week!"
     player_nvl "hahahaha you're gonna figure it out and it's gonna be a great time"
     player_nvl "Seriously, I'm so excited for you! Cedric's one lucky guy"
-    bro_nvl "Thanks, [player]! I {i}really{/i} appreciate all your advice and just you listening to me when I freak out"
+    bro_nvl "Thanks, [player]! I really appreciate all your advice and just you listening to me when I freak out"
     player_nvl "Hey, I appreciate you listening when I need to talk about stream stuff"
     bro_nvl "Fair, haha"
     bro_nvl "Guess we have each other's backs"
