@@ -47,8 +47,6 @@ label vignette2Start():
     show screen streamDetails
     show screen streamChat
     "You begin the stream and then boot up the game."
-    $ reactTarget = "vig2_sc1_openingstream"
-    show screen streamerCommentary
     "You load the save file you were previously playing, and are ready to go."
     jump vig2Start
 
@@ -64,7 +62,8 @@ label vig2Start():
     $ viewCount += 3
     play audio "shipAlarmShort.wav"
     "The \"Approaching Planet\" alarm jolts me out of bed."
-    hide screen streamerCommentary
+    $ reactTarget = "vig2_sc1_openingstream"
+    show screen streamerCommentary
     $ AddChatter(vig2_sc1_comment1)
     pause 1.0
     $ AddChatter(vig2_sc1_comment2)
@@ -72,6 +71,7 @@ label vig2Start():
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
     "I haven't been able to get any real sleep since Allistar forced my hand."
+    hide screen streamerCommentary
     "What did he think I was gonna do? Just let him go?"
     $ vig2_sc1_comment2.click = False
     $ reactTarget = "vig2_sc1_mentionallistar"

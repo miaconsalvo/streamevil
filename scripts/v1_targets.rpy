@@ -291,7 +291,7 @@ label vig1_sc3_banditConvo():
             player "She's the reason the Oakley gets anywhere!"
             $ AddChatter(vig1_sc3_comment3_bandit11)
             pause 1.0
-            player "Definitely haha" 
+            player "Definitely hahaha!" 
             player "Well, let's get back to the game!"
     $ macroChoice = False
     $ narrator = reg_narrator

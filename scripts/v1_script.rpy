@@ -791,7 +791,7 @@ label escapePodConfrontation:
     pS "Are you okay!?"
     mS "I am, but Allistar..."
     mS "I had to kill him."
-    enS "{i}WHAT{/i}!?"
+    enS "{i}What!?{/i}"
     pS "Allistar's dead!?"
     mS "I had to protect my crew. He was a threat we can't afford."
     pS "I understand Cap, it's just... I can't believe it."
@@ -970,7 +970,7 @@ label modConvo_Day1_Bandit():
             streamer_nvl "My first instinct was to reload a save"
             streamer_nvl "But I didn't think that would feel right"
             mod_nvl "For sure, plus the chat was eating it up"
-            mod_nvl "They {i}feasted{/i} on that"
+            mod_nvl "They feasted on that"
         "•I just had to roll with it.":
             streamer_nvl "I didn't meant to do that!"
             streamer_nvl "I just had to roll with it"
@@ -981,7 +981,7 @@ label modConvo_Day1_Bandit():
             else:
                 mod_nvl "I didn't notice"
                 mod_nvl "I glanced away for a sec cause I was like \"Oh for sure going stun\""
-                mod_nvl "Then I looked back and just {i}death{/i} lol"
+                mod_nvl "Then I looked back and just death lol"
                 mod_nvl "Chat seemed to love it tho"
     mod_nvl "I guess 8bitBANDIT went the Marshal route there"
     mod_nvl "There's a blueit thread saying that like 95\% of people stunned Allistar"
@@ -1000,7 +1000,7 @@ label modConvo_Day1_Bandit():
     mod_nvl "Oh?"
     streamer_nvl "How many viewers do I need to average per week to get to Affiliate?"
     mod_nvl "10"
-    mod_nvl "I remember cause you wound up at 9 last time and {i}just{/i} missed it"
+    mod_nvl "I remember cause you wound up at 9 last time and just missed it"
     streamer_nvl "Right"
     streamer_nvl "So, what do you think about this:"
     menu:
