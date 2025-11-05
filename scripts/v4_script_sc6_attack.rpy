@@ -4,10 +4,12 @@
 label vig4_sc6_attack_1_ama():
     show vig1_town_stream onlayer background with dissolve
     hide targetbase_stream
+    play backAudio "fireBackground.wav" volume 0.2
     "Polaris burns."
     $ viewCount += 1
     $ viewCheck7 = viewCount
     $ AddChatter(vig4_sc6_attack_1_ama_comment1)
+    play backAudio2 "lazerFire.wav" volume 0.1
     "The dull roar of battle echoes in the distance as we navigate the town's outskirts."
     $ AddChatter(vig4_sc6_attack_1_ama_comment2)
     "No enemies on the street. No danger on the rooftops."
@@ -18,6 +20,7 @@ label vig4_sc6_attack_1_ama():
     hide teresa with dissolve
     $ vig4_sc6_attack_1_ama_comment1.click = False
     "The four of us dive over the rubble of a nearby building and crouch behind the ruined stones."
+    play backAudio3 "tankRumble.wa" volume 0.5
     "A low rumble gets closer, muddying the sound of several voices."
     $ AddChatter(vig4_sc6_attack_1_ama_comment4)
     "One breaks through, shouting."
@@ -123,7 +126,7 @@ label vig4_sc6_attack_1_assault_ama():
         "Open Fire.":
             pass
     mS "Now!"
-    play music "soundtrack/saveTheGalaxy.wav"
+    play music "soundtrack/saveTheGalaxy.wav" volume 0.8
     play audio "lazer.wav"
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
     if vig4_nickName_bool == True:
@@ -131,13 +134,20 @@ label vig4_sc6_attack_1_assault_ama():
     else:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment6)
     play audio "lazer.wav"
+    pause 0.55
+    play audio "scream.wav" volume 2.0
     "Ama does the same, taking out the lead enforcer, while Jennica and Teresa stay in cover and shift along the side of the rubble."
+    $ renpy.music.set_volume(0.7, 0.5, "backAudio2")
     "There's a moment of pause before the rain of blaster fire hits mine and Ama's position."
     amaS "Hope this isn't suicide, Mozely."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment7)
-    "I hear the tank rumble as it shifts its position. The sound of a shot charging resonates from its chamber."
+    "I hear the tank rumble as it shifts its position." 
+    play audio "tankCharge.wav" volume 1.5
+    "The sound of a shot charging resonates from its chamber."
     mS "Just follow my lead."
+    play audio "tankShot.wav" volume 1.5
     "I rush out of cover, leaping over the rubble as the tank's blast erupts."
+    play audio "explosion.wav" volume 1.2
     "The explosion propels me through the air."
     "Landing in the dirt, I roll quickly as blaster bolts thud into the ground around me."
     "I slam my back into another piece of ruined building as Ama strafes to my side."
@@ -148,14 +158,18 @@ label vig4_sc6_attack_1_assault_ama():
     amaS "Got a pretty good crew, Mozely."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment9)
     "I peek just over the rubble as a shot whizzes past my head."
+    play audio "tankCharge.wav" volume 1.5
     "The tank is charging its cannon again and turning to aim at our position."
     "But Teresa and Jennica have already climbed on top of it."
     "Teresa stabs something into its top hatch while Jennica grabs the cannon and drags it to aim at a group of nearby enforcers."
+    play audio "tankShot.wav" volume 1.5
     "The shot fires, sending the enforcers flying into the air as the top hatch of the tank pops open."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment10)
     "Amdist the chaos, the captive Dragonflies have dispersed."
     "Some run into the shelter of buildings while others start brawling with BC goons."
+    play audio "repeatedPunches.wav" volume 0.9
     "Teresa and Jennica have dragged some goons out of the tank hatch and are busy pummeling them on the ground."
+    stop backAudio3 fadeout 2.0
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment11)
     "Seven BC enforcers are closing in on mine and Ama's position."
     "Ama winks at me."
@@ -176,18 +190,25 @@ label vig4_sc6_attack_1_assault_ama():
     "I whip around the cover, firing shots immediately down the street."
     "One of the enforcers goes down as a grenade lands behind my cover."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment13)
+    play audio "grenade.wav" volume 1.5
     "I roll to the side, away from the explosion and fire back."
     "Ama has appeared around the corner and is advancing toward the enforcers."
     "No fear. Just the constant repeating of her rifle."
     "I blast back at our enemies, rushing toward them with reckless abandon."
     "Two drop before I get in close to the final one."
+    play audio "grunt.wav" volume 3.0
     "Tackling him to the ground, I pull up and look him in the eyes."
     "He puts his hands up in front of his face."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment14)
     "I fire two quick shots into his chest."
+    play audio "lazer.wav" volume 4.0
+    pause 0.5
+    play audio "lazer.wav" volume 4.5
     "His body goes cold."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment15)
     hide bc_enforcer with dissolve
+    stop backAudio2 fadeout 4.0
+    stop music fadeout 3.0
     "The world around me has gone quiet again."
     "Standing up, I see the Dragonflies gathering around one another."
     "The ones who lived."
@@ -195,9 +216,9 @@ label vig4_sc6_attack_1_assault_ama():
     "The sounds of battle in the distance are quieting down."
     "Ama steps up next to me."
     show ama stream neutral
-    amaS "Pretty good shots Moze. Accuracy could use some work though."
+    amaS "Pretty good shots, Moze. Accuracy could use some work though."
     menu:
-        amaS "Pretty good shots Moze. Accuracy could use some work though."
+        amaS "Pretty good shots, Moze. Accuracy could use some work though."
         "I got more.":
             mS "Who cares."
             mS "By my count, I got four and you got three."
@@ -220,7 +241,7 @@ label vig4_sc6_attack_1_assault_ama():
             amaS "Careful Mozely, age begets wisdom."
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment17)
-    play music "soundtrack/polaris.wav"
+    play music "soundtrack/theme.wav"
     show ama stream neutral
     dflyGuard "Captain Moze?"
     show dflyguard at stream_center with dissolve
@@ -283,10 +304,13 @@ label vig4_sc6_attack_1_assault_ama():
             $ csEngagement -= 2
             $ pdEngagement += 2
             $ vig4_killDflies = True
+            stop music
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
-            play audio "lazer.wav"
-            hide dflyguard with Dissolve(0.5)
+            play audio "lazer.wav" volume 5.0
+            pause 0.5
+            play audio "deathGasp" 2.0
+            hide dflyguard with Dissolve(0.3)
             show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ reactTarget = "vig4_sc6_attack_killdflies"
@@ -295,8 +319,9 @@ label vig4_sc6_attack_1_assault_ama():
             pause 0.5
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment29)
             "The rest of the Dragonflies look up, confusion rampant on their faces as Ama and I draw our weapons."
+            play audio "lazerFire.wav" volume 0.7
             "Our blasters echo in the night."
-            "Each of the Dragonflies drops to the ground. Dead."
+            "Each Dragonfly drops to the ground. Dead."
             show ama stream neutral
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
             hide screen streamerCommentary
@@ -346,7 +371,7 @@ label vig4_sc6_attack_1_split_ama():
             show ama stream gun
     if jennicaRomance == False and teresaRomance == False:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment12)
-    play audio "lazer.wav"
+    play audio "lazer.wav" volume 5.0
     play music "soundtrack/saveTheGalaxy.wav"
     "Whipping around the cover, I take aim and fire two quick shots."
     if vig4_nickName_bool == True:
@@ -357,9 +382,11 @@ label vig4_sc6_attack_1_split_ama():
     "Ama follows with a blast from her rifle."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment6)
     "Two BC enforcers drop dead as the rest scramble for cover."
+    $ renpy.music.set_volume(0.7, 0.5, "backAudio2")
     "Ama and I advance confidently. My pistol firing rapidly alongside the steady cadence of her rifle."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment8)
     "Out of the corner of my eye, I see Jennica and Teresa leap onto the tank."
+    play audio "tankCharge.wav" volume 1.5
     "The sound of charging resonates in its central cannon as it turns to aim at Ama and me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
@@ -372,8 +399,11 @@ label vig4_sc6_attack_1_split_ama():
     "We rip them to shreds, leaving none standing."
     hide bc_enforcer with dissolve
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment15)
+    play audio "repeatedPunches.wav" volume 1.5
     "Jennica and Teresa are busy pummeling the tank crew on the ground."
+    stop backAudio3 fadeout 3.0
     "A simple maneuver."
+    stop backAudio2 fadeout 2.0
     "The sounds of battle in the distance start to quiet."
     show ama stream neutral
     "Ama steps up next to me."
@@ -412,6 +442,7 @@ label vig4_sc6_attack_1_split_ama():
     jump vig4_sc6_attack_2_ama
 
 label vig4_sc6_attack_2_ama():
+    stop backAudio fadeout 1.0
     show jennica stream neutral at stream_left with dissolve
     "As I climb in through the tank's hatch, Jennica is already sitting in a chair near the front."
     "She's examining a string of buttons and sticks in front of her."
@@ -440,6 +471,7 @@ label vig4_sc6_attack_2_ama():
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac phone neutral at stream_right5mac with dissolve
     play music "soundtrack/theme.wav" fadein 2.0
+    play audio "macPing.wav" volume 1.5
     "It's MAC."
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -460,6 +492,7 @@ label vig4_sc6_attack_2_ama():
     mS "Are you okay? Are you hurt?"
     hide screen streamerCommentary
     if rudeMACGoodbye == True:
+        play audio "macGrumble.wav" volume 1.0
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
@@ -467,6 +500,7 @@ label vig4_sc6_attack_2_ama():
         show jennica stream shock
         enS "That's not fair, MAC."
         pS "We're a family."
+        play audio "macPester.wav" volume 1.0
         macS "It's what {i}she{/i} said."
         $ AddChatter(vig4_sc6_attack_2_ama_comment8)
         menu:
@@ -495,6 +529,7 @@ label vig4_sc6_attack_2_ama():
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
                 show jennica stream neutral
+    play audio "macOK.wav" volume 1.0
     macS "I am okay."
     macS "But Coil has brought me into the plaza tower and away from the fighting."
     if macViolence >= macPeace:
@@ -525,7 +560,7 @@ label vig4_sc6_attack_2_ama():
     mS "MAC, I'm—"
     cS "That's enough, MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment13)
-    play audio "cutCall.wav"
+    play audio "cutCall.wav" volume 1.5
     hide mac with dissolve
     "The signal is cut short."
     show jennica stream angry
@@ -548,6 +583,7 @@ label vig4_sc6_attack_2_ama():
     pS "A lot of people are going to die. But I guess that's unavoidable at this point."
     $ AddChatter(vig4_sc6_attack_2_ama_comment18)
     mS "As long as we get MAC. That's what matters."
+    play backAudio "siren.wav" volume 0.7
     "As I finish speaking, a siren rings out from Polaris's plaza."
     "I peer through the tank's scope at the Cruiser hovering in the night sky, like a hammer poised above an anvil."
     "A line of dropships careen through the air to Polaris."
@@ -556,8 +592,10 @@ label vig4_sc6_attack_2_ama():
     show ama stream neutral
     amaS "Just in time."
     mS "Agreed. Jenn, take us to the plaza."
+    $ renpy.music.set_volume(0.2, 0.5, "backAudio")
     $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     "The tank accelerates, and we glide smoothly over the ground. On our way to battle."
+    play backAudio2 "tankRumble.wav" volume 0.3
     stop music fadeout 2.0
     hide ama with dissolve
     hide jennica with dissolve
@@ -569,12 +607,14 @@ label vig4_sc6_attack_3_ama():
     "Smoke billows all around us as we navigate Polaris's ruined roads."
     "Flames lick at the sides of buildings."
     "Even in the tank, we can feel the heat from outside."
+    play backAudio3 "lazerFire.wav" volume 0.6
     "The sounds of battle have struck up again. And they get louder with each second we advance."
     mS "Everyone, get ready."
     $ AddChatter(vig4_sc6_attack_3_ama_comment1)
     "We turn onto the main street."
     "Instant chaos."
     play music "soundtrack/saveTheGalaxy.wav"
+    play audio "shipFlyBy.wav" volume 1.0
     "A BC dropship screeches by overhead, turrets strafing positions defended by Dragonflies."
     $ AddChatter(vig4_sc6_attack_3_ama_comment2)
     "The Dragonflies have consolidated their defenses behind an enormous barricade blocking the main street into the plaza."
@@ -616,13 +656,17 @@ label vig4_sc6_attack_3_ama():
             "Ama grabs the machine gun controls, and whips them around, aiming for the squads positioned on nearby rooftops."
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             $ AddChatter(vig4_sc6_attack_3_ama_comment12)
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
             enS "Tough hit, but shields are still at 85\% and holding."
             "I grip the cannon controls, and point at a squad of Dragonflies huddled behind nearby cover."
+            play audio "tankCharge.wav" volume 1.5
             "The whole tank thrums with energy as the cannon charges."
             $ AddChatter(vig4_sc6_attack_3_ama_comment13)
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking through the rubble."
+            play audio "explosion.wav" volume 1.5
             "A pillar of flame erupts into the air where the cannon impacts the ground."
             "There's no evidence of the Dragonflies who were hiding behind cover."
             $ AddChatter(vig4_sc6_attack_3_ama_comment14)
@@ -632,13 +676,16 @@ label vig4_sc6_attack_3_ama():
             "Ama hasn't let go of the machine gun trigger. Almost all of the Dragonflies duck behind cover."
             "A group tries to take shots at us from a rooftop."
             "I aim the cannon at the base of the building."
+            play audio "tankChargeShot.wav" volume 1.5
             "The thrum of energy."
             "The blue light."
+            play audio "explosion.wav" volume 1.5
             "Another pillar of flame and the memory of human presence."
             $ AddChatter(vig4_sc6_attack_3_ama_comment16)
             "We keep advancing."
             enS "Contact on the rooftops!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment17)
+            play audio "grenade.wav" volume 1.5
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
@@ -649,6 +696,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "I know, I see them too!"
             "Ama aims the machine gun at the direction of the squad and begins firing, but it's too late."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "Another rocket streaks through the air, and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
@@ -665,10 +713,13 @@ label vig4_sc6_attack_3_ama():
             mS "Jenn, hit the thurst forward. Hard!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
+            play audio "shipCrash.wav" volume 2.0
             "The barricade shatters as the cannon's blast collides with it."
             $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
@@ -695,6 +746,7 @@ label vig4_sc6_attack_3_ama():
             "As the tank accelerates forward, confusion spreads throughout the BC army, throwing them into disarray."
             $ AddChatter(vig4_sc6_attack_3_ama_comment25)
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
             enS "Shields are at 70\%. We're taking a lot of hits."
@@ -702,8 +754,11 @@ label vig4_sc6_attack_3_ama():
             "A dropship angles toward us."
             mS "We can dish them out too."
             "I grip the controls for the main cannon."
+            play audio "tankCharge.wav" volume 1.5
             "The whole tank thrums with energy as it charges."
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
+            play audio "explosion.wav" volume 1.5
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment27)
@@ -713,6 +768,7 @@ label vig4_sc6_attack_3_ama():
             pS "We're close, just a bit further!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment28)
             enS "Captain, we're starting to take less fire from the Dragonflies."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
@@ -722,9 +778,12 @@ label vig4_sc6_attack_3_ama():
             "They're reloading the launchers and preparing for another volley."
             $ AddChatter(vig4_sc6_attack_3_ama_comment31)
             "I whip the main cannon controls around, aiming them at the base of the building."
+            play audio "tankCharge.wav" volume 1.5
             "The cannon charges."
             "The rocket streaks through the air."
+            play audio "tankShot.wav" volume 1.5
             "The beam of blue light strikes the building as a pillar of flame erupts into the night."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
             $ AddChatter(vig4_sc6_attack_3_ama_comment32)
@@ -741,10 +800,13 @@ label vig4_sc6_attack_3_ama():
             mS "Jenn, hit the thurst forward. Hard!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
+            play audio "shipCrash.wav" volume 2.0
             "The barricade shatters as the cannon's blast collides with it."
             $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
@@ -776,16 +838,21 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment37)
             "Confusion spreads through both sides as blaster fire pings off the tank's shell."
             enS "Shields are at 85\%, Captain."
+            play audio "tankCharge.wav" volume 1.5
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
             hide screen streamerCommentary
+            play audio "shipFlyBy.wav" volume 1.2
             show vig1_town_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
             $ AddChatter(vig4_sc6_attack_3_ama_comment38)
+            play audio "explosion.wav" volume 1.2
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             mS "Jenn, how are we doing?"
             $ AddChatter(vig4_sc6_attack_3_ama_comment39)
             pS "We're close, just a bit further!"
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "An explosion suddenly detonates against our side."
             mS "Teresa, report!"
@@ -795,16 +862,21 @@ label vig4_sc6_attack_3_ama():
             "I locate the smoke streaking through the air."
             "Dragonflies on a nearby building are loading rocket launchers."
             $ AddChatter(vig4_sc6_attack_3_ama_comment40)
+            play audio "tankCharge.wav" volume 1.5
             "I drop the cannon to aim at the base of the building, charging up another blast."
             "But I'm too late."
+            play audio "tankShot.wav" volume 1.5
             "A bright flashing rocket streaks toward us just as I fire the cannon."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "The rocket impacts on our side, but at the same time, the tank's blast detonates on the building."
+            play audio "explosion.wav" volume 1.3
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
             $ AddChatter(vig4_sc6_attack_3_ama_comment41)
             amaS "They're throwing grenades!"
             "Ama lays on the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "They detonate, jostling the vehicle."
             $ AddChatter(vig4_sc6_attack_3_ama_comment42)
@@ -820,10 +892,13 @@ label vig4_sc6_attack_3_ama():
             mS "Jenn, hit the thurst forward. Hard!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
+            play audio "shipCrash.wav" volume 2.0
             "The barricade shatters as the cannon's blast collides with it."
             $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
@@ -832,7 +907,9 @@ label vig4_sc6_attack_3_ama():
     "But Jennica wrangles it under control as we careen to a stop at the base of the tower."
     $ AddChatter(vig4_sc6_attack_3_ama_comment43)
     "I open the top hatch and scramble out."
+    #stop backAudio2 fadeout 2.0
     "The barricade at the entrance to the plaza begins to crumble as the Dragonflies disperse."
+    stop backAudio fadeout 4.0
     $ AddChatter(vig4_sc6_attack_3_ama_comment44)
     "BC closes in on the plaza."
     $ AddChatter(vig4_sc6_attack_3_ama_comment45)
@@ -888,6 +965,7 @@ label vig4_sc6_attack_3_ama():
         "A familiar voice... but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't—"
+        play audio "shipFlyBy.wav" volume 2.0
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
@@ -947,8 +1025,8 @@ label vig4_sc6_attack_3_ama():
         "Immense guns emerge from the ships, opening fire on BC's forces."
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
-            showgirl "This beats the hell out of working the Nova Casino beat!"
-            show showgirl stream at stream_left5 with dissolve
+            showgirl "This beats the hell out of working the Nova Casino script!"
+            show daisy stream neutral at stream_left5 with dissolve
             showgirl "Reynar heard that some trouble was brewing round these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
@@ -1062,6 +1140,9 @@ label vig4_sc6_attack_3_ama():
     "Ama and I rush toward the tower's tall doors."
     "Behind us, we hear shouts of BC enforcers as they pour into the plaza, the echo of blaster fire."
     "And the warm vibration of a tank's cannon charging up to full power."
+    stop backAudio fadeout 2.0
+    stop backAudio2 fadeout 2.0
+    stop backAudio3 fadeout 2.0
     jump vig4_sc7_1_attack_ama
 
 label vig4_sc7_1_attack_ama():
@@ -1256,15 +1337,19 @@ label vig4_sc7_1_attack_ama():
         "Ama, no!":
             mS "Ama, no!"
             "Too late."
+            play audio "lazer.wav" volume 5.0
             "Ama fires."
         "Say nothing.":
             "The rifle is ready."
+            play audio "lazer.wav" volume 5.0
             "Ama fires."
-    play audio "lazer.wav"
+    play audio "shield.wav" volume 2.0
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
     show ama stream confused
+    play audio "lazer.wav" volume 5.0
     "Eyes wide, Ama fires again. And again."
+    play audio "shield.wav" volume 2.0
     "Every shot is absorbed by the shield."
     $ AddChatter(vig4_sc7_1_defend_comment20)
     jump vig4_sc7_2
@@ -1282,9 +1367,11 @@ label vig4_sc6_attack_1():
     show vig1_town_stream onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
+    play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
     $ viewCount += 1
     $ viewCheck7 = viewCount
     $ AddChatter(vig4_sc6_attack_1_ama_comment1)
+    play backAudio2 "lazerFire.wav" volume 0.1 fadein 1.0
     "The dull roar of battle echoes in the distance as we navigate the town's outskirts."
     $ AddChatter(vig4_sc6_attack_1_ama_comment2)
     "No enemies on the street."
@@ -1296,6 +1383,7 @@ label vig4_sc6_attack_1():
     $ AddChatter(vig4_sc6_attack_1_ama_comment3)
     hide teresa with dissolve
     "The three of us dive over the rubble of the building and crouch behind the ruined stones."
+    play backAudio3 "tankRumble.wa" volume 0.5
     "A low rumble gets closer, muddying the sound of several voices."
     $ AddChatter(vig4_sc6_attack_1_ama_comment4)
     "One breaks through, shouting."
@@ -1387,18 +1475,23 @@ label vig4_sc6_attack_1_assault():
         "Open Fire.":
             pass
     play music "soundtrack/saveTheGalaxy.wav"
-    play audio "lazer.wav"
+    play audio "lazer.wav" volume 5.0
+    pause 0.55
+    play audio "scream.wav" volume 2.0
     "I pop out of cover and fire two quick shots, landing them directly into the backs of two enforcers."
-    play audio "lazer.wav"
     if vig4_nickName_bool == True:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment5)
     else:
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment6)
     show bc_enforcer at stream_center with dissolve
     "Jennica and Teresa stay in cover and shift along the side of the rubble."
+    $ renpy.music.set_volume(0.7, 0.5, "backAudio2")
     "There's a moment of pause before the rain of blaster fire hits my position."
+    play audio "tankCharge.wav" volume 1.5
     "I hear the tank rumble as it shifts its position. The sound of a shot charging resonates from its chamber."
+    play audio "tankShot.wav" volume 1.5
     "I rush out of cover, leaping over the rubble as the tank's blast erupts."
+    play audio "explosion.wav" volume 1.2
     "The explosion propels me through the air."
     "Landing in the dirt, I roll quickly as blaster bolts thud into the ground where I was just a moment before."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment13)
@@ -1406,10 +1499,13 @@ label vig4_sc6_attack_1_assault():
     "As I do so, I watch Jennica and Teresa scramble up the back of the unguarded tank."
     "The enforcers are all focused on me."
     "They don't even notice as Teresa stabs something into its top hatch." 
+    play audio "tankCharge.wav" volume 1.5
     "The cannon begins to charge again, but Jennica grabs it and drags it to aim at a group of nearby enforcers."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment10)
+    play audio "tankShot.wav" volume 1.5
     "The shot fires, sending the enforcers flying into the air as the top hatch of the tank pops open."
     "Amdist the chaos, the Dragonflies disperse."
+    play audio "repeatedPunches.wav" volume 0.9
     "Some run into the shelter of buildings while others start brawling with BC goons."
     "Teresa and Jennica drag some goons out of the hatch."
     "Jennica scrambles inside while Teresa makes quick work of them with her pistol."
@@ -1429,10 +1525,13 @@ label vig4_sc6_attack_1_assault():
         $ AddChatter(vig4_sc6_attack_1_assault_comment1)
     enforcer "Tell your crew to stand down!"
     play audio "lazer.wav"
+    pause 0.55
+    play audio "deathGasp.wav" volume 2.0
     hide bc_enforcer with dissolve
     "The enforcer goes silent. I hear his body fall to the ground."
     "Whipping around, I don't see anyone around me."
     $ AddChatter(vig4_sc6_attack_1_assault_comment2)
+    stop backAudio3 fadeout 2.0
     "Jennica and Teresa have fully taken over the tank, and the people of Polaris have routed the battalion."
     "A shadow moves."
     "Faintly, on a rooftop in the distance and silhouetted by fire, a dark figure drops to the ground."
@@ -1499,11 +1598,14 @@ label vig4_sc6_attack_1_assault():
             $ csEngagement -= 2
             $ pdEngagement += 2
             $ reactTarget = "vig4_sc6_attack_killdflies"
+            stop music
             show screen streamerCommentary
             $ vig4_killDflies = True
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
+            pause 0.5
+            play audio "deathGasp" 2.0
             hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
@@ -1511,9 +1613,9 @@ label vig4_sc6_attack_1_assault():
                 pause 0.5
                 $ AddChatter(vig4_sc6_attack_1_assault_ama_comment29)
             "The rest of the Dragonflies look up, confusion rampant on their faces as I draw my weapon."
-            play audio "lazer.wav"
+            play audio "lazerFire.wav" volume 0.8
             "Six blaster shots echo in the night."
-            "Each of the Dragonflies drops to the ground. Dead."
+            "Each Dragonfly drops to the ground. Dead."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
             hide screen streamerCommentary
     "I turn my back on the quiet street, and stride toward the tank."
@@ -1547,16 +1649,19 @@ label vig4_sc6_attack_1_split():
         "Fire.":
             pass
     play music "soundtrack/saveTheGalaxy.wav"
-    play audio "lazer.wav"
+    play audio "lazer.wav" volume 5.0
+    pause 0.5
+    play audio "lazer.wav" volume 5.0
     "Whipping around the cover, I take aim and fire two quick shots."
-    play audio "lazer.wav"
     if vig4_nickName_bool == True:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment4)
     else:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment5)
     "Two BC enforcers drop dead as the rest scramble for cover."
+    $ renpy.music.set_volume(0.7, 0.5, "backAudio2")
     "I rush to a piece of cover opposite the tank, drawing the enforcers' attention as their bullets cascade by me."
     "Out of the corner of my eye, I see Jennica and Teresa leap onto the tank."
+    play audio "tankCharge.wav" volume 1.5
     "The sound of charging resonates in its central cannon as it turns to aim at me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
@@ -1573,6 +1678,7 @@ label vig4_sc6_attack_1_split():
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment14)
     hide bc_enforcer with dissolve
     "He drops dead."
+    stop backAudio2 fadeout 2.0
     "A simple maneuver."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_attack_1_split_ama_comment15)
@@ -1587,6 +1693,8 @@ label vig4_sc6_attack_1_split():
     mS "Easy."
     enforcer "I'm giving the orders here!"
     play audio "lazer.wav"
+    pause 0.55
+    play audio "deathGasp.wav" volume 2.0
     hide bc_enforcer with dissolve
     "The enforcer goes silent. I hear his body fall to the ground."
     "Whipping around, I don't see anyone around me."
@@ -1596,6 +1704,7 @@ label vig4_sc6_attack_1_split():
     "And vanishes."
     $ AddChatter(vig4_sc6_attack_1_assault_comment3)
     enS "Hey, captain?"
+    play audio "gunCock.wav" volume 2.0
     "I whip around, drawing my pistol."
     show teresa stream shock at stream_center with dissolve
     "The barrel of my blaster points directly at Teresa's forehead."
@@ -1657,6 +1766,7 @@ label vig4_sc6_attack_2():
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac phone neutral at stream_center_mac with dissolve
     play music "soundtrack/theme.wav"
+    play audio "macPing.wav" volume 1.5
     "It's MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment5)
     mS "MAC!"
@@ -1674,12 +1784,14 @@ label vig4_sc6_attack_2():
             mS "Yes, MAC! We came back to ensure you're safety."
     mS "Are you okay? Are you hurt?"
     if rudeMACGoodbye == True:
+        play audio "macGrumble.wav" volume 1.0
         macS "Why do you care? Wasn't this just your mission?"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
         enS "That's not fair, MAC."
         pS "We're a family."
+        play audio "macPester.wav" volume 1.0
         macS "It's what {i}she{/i} said."
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_attack_2_ama_comment8)
@@ -1707,6 +1819,7 @@ label vig4_sc6_attack_2():
                 $ AddChatter(vig4_sc6_attack_2_ama_comment10)
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
+    play audio "macOK.wav" volume 1.0
     macS "I am okay."
     hide screen streamerCommentary
     macS "But Coil has brought me into the plaza tower and away from the fighting."
@@ -1740,7 +1853,7 @@ label vig4_sc6_attack_2():
     mS "MAC, I'm—"
     cS "That's enough, MAC."
     $ AddChatter(vig4_sc6_attack_2_ama_comment13)
-    play audio "cutCall.wav"
+    play audio "cutCall.wav" volume 1.5
     hide mac with dissolve
     "The signal is cut short."
     enS "That was Coil's voice."
@@ -1760,13 +1873,16 @@ label vig4_sc6_attack_2():
     pS "A lot of people are gonna die. But I guess that's unavoidable at this point."
     $ AddChatter(vig4_sc6_attack_2_ama_comment18)
     mS "As long as we get MAC. That's what matters."
+    play backAudio "siren.wav" volume 0.7
     "As I finish speaking, a siren rings out from Polaris's plaza."
     "I peer through the tank's scope at the Cruiser hovering in the night sky."
     "A line of dropships have begun careening through the air to Polaris."
     $ AddChatter(vig4_sc6_attack_2_ama_comment19)
     mS "The second attack is starting. Jenn, take us to the plaza."
+    $ renpy.music.set_volume(0.2, 0.5, "backAudio")
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_attack_2_ama_comment20)
+    play backAudio2 "tankRumble.wav" volume 0.3
     "The tank accelerates, and we glide smoothly over the ground as a calm before the storm settles over Polaris."
     stop music fadeout 2.0
     hide jennica with dissolve
@@ -1778,6 +1894,7 @@ label vig4_sc6_attack_3():
     "Smoke billows all around us as we navigate Polaris's ruined roads."
     "Flames lick at the sides of buildings."
     "Even in the tank, we can feel the heat from outside."
+    play backAudio3 "lazerFire.wav" volume 0.6
     "The sounds of battle have struck up again. And they get louder with each second we advance."
     mS "Everyone, get ready."
     if viewershipHigh == True or viewershipMed == True:
@@ -1785,6 +1902,7 @@ label vig4_sc6_attack_3():
     "We turn onto the main street."
     play music "soundtrack/saveTheGalaxy.wav"
     "Instant chaos."
+    play audio "shipFlyBy.wav" volume 1.0
     "A dropship screeches by overhead, turrets strafing positions defended by Dragonflies."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_attack_3_ama_comment2)
@@ -1826,14 +1944,18 @@ label vig4_sc6_attack_3():
             "Teresa grabs the machine gun controls, and aims for the Dragonfly squads positioned on nearby rooftops."
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             hide screen streamerCommentary
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
             enS "Tough hit, but shields are still at 85\% and holding."
             "I grip the cannon controls, and point at a squad of Dragonflies huddled behind nearby cover."
+            play audio "tankCharge.wav" volume 1.5
             "The whole tank thrums with energy as the cannon charges."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment13)
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking through the rubble."
+            play audio "explosion.wav" volume 1.5
             "A pillar of flame erupts into the air where the cannon impacted the ground."
             "There's no evidence of the Dragonflies who were hiding behind cover."
             $ AddChatter(vig4_sc6_attack_3_ama_comment14)
@@ -1843,14 +1965,17 @@ label vig4_sc6_attack_3():
             "Teresa's fire with the machine guns have forced almost all of the Dragonflies into cover."
             "A group tries to take shots at us from a rooftop."
             "I aim the cannon at the base of the building."
+            play audio "tankChargeShot.wav" volume 1.5
             "The thrum of energy."
             "The blue light."
+            play audio "explosion.wav" volume 1.5
             "Another pillar of flame and the memory of human presence."
             $ AddChatter(vig4_sc6_attack_3_ama_comment16)
             "We keep advancing."
             enS "Contact on the rooftops!"
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment17)
+            play audio "grenade.wav" volume 1.5
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
@@ -1861,6 +1986,7 @@ label vig4_sc6_attack_3():
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             enS "I'm trying!"
             "Teresa aims the machine gun at the direction of the squad and begins firing, but too late."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "Another rocket streaks through the air, and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
@@ -1878,11 +2004,14 @@ label vig4_sc6_attack_3():
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
             "The barricade shatters as the cannon's blast collides with it."
+            play audio "shipCrash.wav" volume 2.0
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment22)
             "Our shields sparkle, the tank ramming into the wall and splitting it apart."
@@ -1910,6 +2039,7 @@ label vig4_sc6_attack_3():
                 $ AddChatter(vig4_sc6_attack_3_ama_comment25)
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
             hide screen streamerCommentary
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
             enS "Shields are at 70\%. We're taking a lot of hits."
@@ -1917,8 +2047,11 @@ label vig4_sc6_attack_3():
             "A dropship begins to aim down toward us."
             mS "We can dish them out too."
             "I grip the controls for the main cannon."
+            play audio "tankCharge.wav" volume 1.5
             "The whole tank thrums with energy as the cannon charges."
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
+            play audio "explosion.wav" volume 1.5
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             $ AddChatter(vig4_sc6_attack_3_ama_comment27)
             pause 0.5
@@ -1927,6 +2060,7 @@ label vig4_sc6_attack_3():
             pS "We're close, just a bit further!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment28)
             enS "Captain, we're starting to take less fire from the Dragonflies."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
@@ -1936,9 +2070,12 @@ label vig4_sc6_attack_3():
             "They're reloading the launchers and preparing for another volley."
             $ AddChatter(vig4_sc6_attack_3_ama_comment31)
             "I whip the main cannon controls around, aiming them at the base of the building."
+            play audio "tankCharge.wav" volume 1.5
             "The cannon charges."
             "The rocket streaks through the air."
+            play audio "tankShot.wav" volume 1.5
             "The beam of blue light strikes the building as another pillar of flame erupts into the night air."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
             $ AddChatter(vig4_sc6_attack_3_ama_comment32)
@@ -1956,11 +2093,14 @@ label vig4_sc6_attack_3():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             $ vig4_sc6_attack_3_ama_comment19.click = False
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
+            play audio "shipCrash.wav" volume 2.0
             "The barricade shatters as the cannon's blast collides with it."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment22)
@@ -1990,17 +2130,22 @@ label vig4_sc6_attack_3():
             "Teresa lays on the trigger hard, striking Dragonflies on the rooftops, then BC enforcers on the ground."
             "Confusion spreads through both sides as blaster fire pings off the tank's sides."
             enS "Shields are at 90\%, Captain."
+            play audio "tankCharge.wav" volume 1.5
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
             hide screen streamerCommentary
+            play audio "shipFlyBy.wav" volume 1.2
             show vig1_town_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
+            play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
             $ AddChatter(vig4_sc6_attack_3_ama_comment38)
+            play audio "explosion.wav" volume 1.2
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             mS "Jenn, how are we doing?"
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_comment39)
             pS "We're close, just a bit further!"
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "An explosion suddenly detonates against our side."
             $ AddChatter(vig4_sc6_attack_3_ama_comment30)
@@ -2011,16 +2156,21 @@ label vig4_sc6_attack_3():
             "Dragonflies on a nearby building are loading rocket launchers."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment40)
+            play audio "tankCharge.wav" volume 1.5
             "I drop the cannon to aim at the base of the building, charging up another blast."
             "But I'm too late."
+            play audio "tankShot.wav" volume 1.5
             "A bright flashing rocket streaks toward us just as I fire the cannon."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "The rocket impacts on our side, but at the same time, the tank's blast detonates on the building."
+            play audio "explosion.wav" volume 1.3
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
             $ AddChatter(vig4_sc6_attack_3_ama_comment41)
             pS "They're throwing grenades!"
             "Teresa fires the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
+            play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "They detonate, jostling the vehicle."
             $ AddChatter(vig4_sc6_attack_3_ama_comment42)
@@ -2036,11 +2186,14 @@ label vig4_sc6_attack_3():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment21)
             pS "Aye aye, Cap!" 
+            play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
             $ vig4_sc6_attack_3_ama_comment19.click = False
             enS "Ready, captain!"
             mS "Launch!"
+            play audio "tankShot.wav" volume 1.5
             "Fire erupts from the cannon at the same time as we rush forward."
+            play audio "shipCrash.wav" volume 2.0
             "The barricade shatters as the cannon's blast collides with it."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment22)
@@ -2086,6 +2239,7 @@ label vig4_sc6_attack_3():
         "A familiar voice... but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't—"
+        play audio "shipFlyBy.wav" volume 2.0
         show vig1_town_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         if viewershipHigh == True or viewershipMed == True:
@@ -2253,11 +2407,14 @@ label vig4_sc6_attack_3():
     "I hop down to the ground and rush toward the tower's tall doors."
     "Behind me, I hear the shouts of BC enforcers as they pour into the plaza, the echo of blaster fire."
     "And the warm vibration of a tank's cannon charging up to full power."
+    stop backAudio fadeout 2.0
+    stop backAudio2 fadeout 2.0
+    stop backAudio3 fadeout 2.0
     jump vig4_sc7_1_attack
 
 label vig4_sc7_1_attack():
     hide vig1_town_stream with dissolve
-    stop music fadeout 1.0
+    stop music fadeout 2.0
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."
     if viewershipHigh == True or viewershipMed == True:
@@ -2476,15 +2633,19 @@ label vig4_sc7_1_attack():
         "Ama, no!":
             mS "Ama, no!"
             "Too late."
+            play audio "lazer.wav" volume 5.0
             "Ama fires."
         "Say nothing.":
             "The rifle is ready."
+            play audio "lazer.wav" volume 5.0
             "Ama fires."
-    play audio "lazer.wav"
+    play audio "shield.wav" volume 2.0
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
     show ama stream confused
+    play audio "lazer.wav" volume 5.0
     "Eyes wide, Ama fires again. And again."
+    play audio "shield.wav" volume 2.0
     "Every shot is absorbed by the shield."
     $ AddChatter(vig4_sc7_1_defend_comment20)
     jump vig4_sc7_2

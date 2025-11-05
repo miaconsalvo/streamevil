@@ -67,6 +67,7 @@ label vig2Start():
     $ AddChatter(vig2_sc1_comment1)
     pause 1.0
     $ AddChatter(vig2_sc1_comment2)
+    play backAudio "shipHum.wav" volume 0.4 loop fadein 2.0
     shipcom "Alert! Approaching Planet Gibian V. All hands on deck."
     mS "Ugh..."
     "I'd be annoyed if I was actually sleeping."
@@ -83,6 +84,7 @@ label vig2Start():
     $ AddChatter(vig2_sc1_comment3)
     hide screen streamerCommentary
     "Better get down there."
+    stop backAudio fadeout 4.0
 
     jump Vig2BridgeScene
 
@@ -240,7 +242,7 @@ label GibianVCustomsDepot():
     "Teresa's eyes dart around the depot facilities."
     show jennica stream neutral at stream_left with dissolve
     hide screen streamerCommentary
-    pS "Well getting a permit to fly our ship 'round here would attract a lot more attention."
+    pS "Well, getting a permit to fly our ship 'round here would attract a lot more attention."
     pS "And would require an inspection of all cargo."
     $ reactTarget = "vig2_sc2_whywedidntfly"
     show screen streamerCommentary ###I would cut this one. It feels like too many right in a row
@@ -288,9 +290,9 @@ label GibianVCustomsDepot():
     enS "An employee-of-the-month type will report us to BigCorp in a heartbeat!"
     $ AddChatter(vig2_sc2_comment7)
     pS "As opposed to causing a stampede?"
-    pS "Whole bunch of injured innocent bystanders aint't exactly clandestine."
+    pS "Whole bunch of injured innocent bystanders ain't exactly clandestine."
     "The crew looks to me."
-    enS "It's your call captain. What say you?"
+    enS "It's your call, Captain. What do you say?"
     "Jennica has a point. There's a ton of innocent people here, it's very likely someone will get hurt if we cause a panic."
     "Teresa's point is just as valid, if one of these officials reports us to BigCorp then we might be looking at the inside of a jail cell quick."
     "MAC is quiet, but I can feel him toss delicately around in the crate."
@@ -467,7 +469,7 @@ label GibianVCustomsMarshal():
     "The agent wordlessly tips his hat before disappearing through the door."
     hide customs agent with Dissolve (0.4)
     show teresa stream think at stream_right
-    pS "Simple as it gets! Right sweetheart?"
+    pS "Simple as it gets! Right, sweetheart?"
     enS "Yes. Almost too much so..."
     #stop music fadeout 2.0
     $ viewCheck4 += viewCount
@@ -542,33 +544,42 @@ label GibianVCustomsOutlaw():
     "Jennica carefully walks by the customs declaration box and slips the device inside."
     "As soon as Jennica begins making her way back to us, Teresa presses a button on her wrist computer."
     enS "Let's show these rubes a good time."
+    stop music fadeout 3.0
     # music should get more exciting here?
+    play backAudio2 "fireBackground.wav" volume 1.5 loop fadein 1.0
     "A thin plume of white smoke begins to emanate from the box."
     "As the smoke grows thicker, security officials approach the box to investigate."
     $ AddChatter(vig2_sc2_out_comment9)
     "A commotion begins to spread across the depot as more and more of the crowd notices the smoke."
-    $ renpy.music.set_volume(5.0, 2.0, "backAudio")
+    $ renpy.music.set_volume(5.0, 1.0, "backAudio")
     enS "Get ready."
     "Once the security guards close in on the box, Teresa activates the device again."
+    play audio "grenade.wav" volume 2.0
+    $ renpy.music.set_volume(2.0, 0.5, "backAudio2")
     "A powerful blaze erupts from the box."
+    play backAudio3 "siren.wav" volume 1.0
     "Black smoke begins to billow into the depot as the fire alarm starts blaring."
+    #stop backAudio fadeout 2.0
+    play backAudio "crowdChaos.wav" volume 1.2
+    "The crowd explodes into a panic. Hordes of bodies rush towards the exit."
     pS "Time to haul ass."
     mS "You read my mind."
-    $ renpy.music.set_volume(10.0, 1.0, "backAudio")
-    "The crowd explodes into a panic. Hordes of bodies rush towards the exit."
     "It's easy enough to slip through the crowd unnoticed."
     $ AddChatter(vig2_sc2_out_comment10)
     "Whatever security was covering the exit is long gone by the time we reach the doors."
     "The doors burst open as the crowd pours out of the depot."
     $ AddChatter(vig2_sc2_out_comment11)
+    stop backAudio2 fadeout 1.0
     mS "Let's get off the main street!"
     "Teresa and Jennica nod as I point towards a small alleyway."
+    stop backAudio3 fadeout 4.0
     stop backAudio fadeout 3.0
     "We're out and on our way to Matticus's compound."
     $ viewCheck4 += viewCount
-    #Rstop music fadeout 2.0
+    #stop music fadeout 2.0
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
+    play music "soundtrack/gibianV.wav" volume 0.8 loop fadein 2.0
     jump matticusDoor
 
 ###SCENE 3###
@@ -626,6 +637,7 @@ label matticusDoor():
             $ marshal += 1
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright give me a sec."
+            play audio "cutCall.wav" volume 1.5
             "The line goes quiet."
             $ AddChatter(vig2_sc3_lore_comment1)
             $ pilotApproval -= 1
@@ -648,6 +660,7 @@ label matticusDoor():
             $ AddChatter(vig2_sc3_threat_comment1)
             mS "Tell him Moze is going to do to this gate what he did to that bar on Forsteuk if you don't let her in."
             mattdoorbell "Fine. Have it your way."
+            play audio "cutCall.wav" volume 1.5
             "The line goes quiet."
             $ AddChatter(vig2_sc3_threat_comment2)
             $ engineerApproval -= 1
@@ -670,6 +683,7 @@ label meetingMatticus():
     $ AddChatter(vig2_sc4_comment1)
     $ viewCheck5 += viewCount
     "The dingy warehouse has a hint of stale air."
+    play audio "door.wav" volume 1.5
     "Just as I think to look how long we've been waiting, the doors swing open."
     play music "soundtrack/matticus.wav"
     show matticus stream at stream_center with dissolve
@@ -722,7 +736,7 @@ label meetingMatticus():
     play audio "macPing.wav" volume 3.0
     macS "Kick the hornet's nest. Idiom. Provoking a situation whi—"
     show reginald stream bigmad at stream_right with Dissolve (0.2)
-    goon "What the hell!?"
+    mattGoon "What the hell!?"
     "Matticus's guards spring into action and draw their weapons."
     show mac stream shock at stream_center_mac with Dissolve(0.5)
     play audio "macSad.wav" volume 1.5
@@ -933,7 +947,7 @@ label approachingBase():
     "Jennica and Teresa nod to me."
     show mac stream neutral at stream_center_mac with Dissolve(0.5)
     "The brief silence is broken by MAC."
-    play audio "macPing.wav" volume 1.5
+    play audio "macNeutral.wav" volume 1.5
     macS "What is a \"cheapo planet?\" My database has no\"cheapo\" category."
     "Jennica laughs."
     pS "Similar to po-dunk."
@@ -946,6 +960,7 @@ label approachingBase():
     enS "And we \"lost\" the last mechanic we knew who could help out with that."
     mS "I'll protect him. It's my responsibility."
     mS "MAC, you're going to stick to me like glue, got it?"
+    play audio "macOK.wav" volume 1.5
     macS "Like an adhesive? I don't want to damage your clothes."
     show teresa stream upset
     "Jennica chuckles under her breath."
@@ -960,6 +975,7 @@ label approachingBase():
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
             $ AddChatter(vig2_sc5_comment3)
+            play audio "macAffirmative.wav" volume 1.5
             macS "I understand. I will stay close to Captain."
             show teresa stream neutral
             $ reactTarget = "vig2_sc5_macquestion"
@@ -975,6 +991,7 @@ label approachingBase():
             mS "We don't have the time to discuss it right now."
             $ AddChatter(vig2_sc5_comment5)
             mS "You just need to stay close to me."
+            play audio "macAffirmative.wav" volume 1.5
             macS "I understand. I will stay close to Captain."
             show teresa stream neutral
             $ reactTarget = "vig2_sc5_macquestion"
@@ -1090,6 +1107,7 @@ label commsBase_MAR1():
     "The devices begins to beep and its lights flicker on and off."
     "Teresa mutters under her breath."
     enS "Child's play."
+    play audio "door.wav"
     "The door unlocks and pops ajar."
     hide teresa with dissolve
     show vig2_compound_hall_stream at topleft onlayer background with dissolve
@@ -1109,7 +1127,7 @@ label commsBase_MAR1():
             "I instantly flick my blaster to stun before shooting him in the chest."
             $ AddChatter(vig2_sc6_mar_choice1_stun_comment1)
             "He can barely react as the stunning blast ripples through his body, incapacitating him."
-            play audio "lazer.wav" volume 1.0
+            play audio "stunLazer.wav" volume 1.5
             "As he slumps to the ground, his eyes stare back at me with... confusion?"
             "He seems completely dumbfounded as to why we're here."
             hide guard1 stream with dissolve
@@ -1166,7 +1184,7 @@ label commsBase_MAR2():
             "Once everyone's ready, I kick the door open."
             $ AddChatter(vig2_sc6_mar_choice2_stun_comment2)
             "It's over in a flash, the guards barely have time to react."
-            play audio "lazerFire.wav" volume 1.0
+            play audio "stunLazer.wav" volume 1.5
             "Like clockwork, they all fall to the ground."
             show jennica stream neutral at stream_left
             show teresa stream upset at stream_right
@@ -1214,6 +1232,7 @@ label commsBase_MAR2():
             "Reginald signals us to follow him."
             goon "The main datacentre is through this door here."
             "Reginald opens the door."
+            play audio "door.wav" volume 1.0
             hide screen streamerCommentary
             hide teresa with Dissolve(0.5)
             hide jennica with Dissolve(0.5)
@@ -1227,7 +1246,7 @@ label commsBase_OUT1():
     show jennica stream fight at stream_left with Dissolve(0.5)
     "Teresa begins placing the charge on the front door."
     "We line up on either side of the entrance."
-    play audio "macGrumble.wav"
+    play audio "macGrumble.wav" volume 1.5
     show mac stream neutral at stream_center_mac with Dissolve(0.5)
     "I notice MAC looks a little worried."
     menu:
@@ -1240,20 +1259,21 @@ label commsBase_OUT1():
             $ macPessimism += 1
             mS "Things are going to get hectic in there, MAC."
             mS "Just stay close to me."
-    play audio "macAffirmative.wav"
+    play audio "macAffirmative.wav" volume 1.5
     macS "Affirmative. Sticking to Captain."
     $ AddChatter(vig2_sc6_out_comment5)
     hide mac with Dissolve(0.5)
     "I give the signal to Teresa."
     hide jennica
     hide teresa
+    play audio "explosion.wav" volume 1.2
     play music "soundtrack/saveTheGalaxy.wav" volume 1.2
     show vig2_compound_hall_stream at topleft onlayer background with vpunch
     "With a deafening bang, the door is obliterated into countless pieces."
     "An instant later I'm running through the smoke."
     play backAudio "lazerFire.wav" volume 2.0
-    play audio "macSpin.wav" volume 0.5
-    "MAC's motor whirs behind me."
+    #play audio "macSpin.wav" volume 0.5
+    #"MAC's motor whirs behind me."
     "I make a dive for a piece of rubble as shots fly around me."
     $ AddChatter(vig2_sc6_out_comment6)
     "I peek out from cover."
@@ -1306,7 +1326,7 @@ label commsBase_OUT1():
     "I pull out a grenade and lob it at the guards."
     $ AddChatter(vig2_sc6_out_comment12)
     hsguard1 "GRENADE! GET DOWN!"
-    #explosion sound here?
+    play audio "grenade.wav" volume 1.5
     "Two of the guards are able to dive out of the way in time."
     $ AddChatter(vig2_sc6_out_comment13)
     "The grenade detonates with an unnerving concussive thump."
@@ -1349,6 +1369,8 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_spare_comment2)
             hsguard1 "Thank you miss! I—"
             play audio "lazer.wav" volume 5.0
+            pause 0.55
+            play audio "deathGasp.wav" volume 2.0
             hide guard1 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show reginald stream neutral at stream_center with dissolve
@@ -1388,6 +1410,8 @@ label commsBase_OUT1():
             hsguard1 "Miss, I have kids."
             $ AddChatter(vig2_sc6_out_execute_comment4)
             play audio "lazer.wav" volume 5.0
+            pause 0.55
+            play audio "deathGasp.wav" volume 2.0
             hide guard1 stream with Dissolve(0.1)
             "His body slumps to the ground lifelessly."
             $ AddChatter(vig2_sc6_out_execute_comment5)
@@ -1414,6 +1438,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_execute_comment14)
             goon "Come on. We're almost done."
             $ AddChatter(vig2_sc6_out_execute_comment15)
+    play audio "door.wav" volume 1.5
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
     hide reginald with Dissolve(0.5)
@@ -1437,6 +1462,7 @@ label commsBase_DataCenter():
     show reginald stream bigmad at stream_right5
     goon "Shut it! What's the next shipment's tracking coordinates!?"
     worker "The aid shipm—"
+    play audio "gunCock.wav" volume 2.0
     "Reginald shoves his gun into the technician's face."
     goon "{i}Now!{/i}"
     show jennica stream angry at stream_left with Dissolve(0.4)
@@ -1456,12 +1482,12 @@ label commsBase_DataCenter():
     show jennica stream shock at stream_left
     pS "I knew this was too damn easy!"
     hide data with dissolve
-    play audio "macAlarmed.wav"
+    play audio "macAlarmed.wav" volume 1.5
     show mac stream neutral at stream_center_mac with dissolve
     macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
-    hide mac with Dissolve(0.1)
-    show teresa stream shock at stream_right with Dissolve(0.2)
+    hide mac with Dissolve(0.5)
+    show teresa stream shock at stream_right with Dissolve(0.5)
     enS "Well they were still cops."
     goon "Look. This is the mission. Don't act like you've never done worse."
     goon "I've heard stories of what you all did."
@@ -1474,7 +1500,7 @@ label commsBase_DataCenter():
     worker "Sallent? There's an outbreak of Gray fever there. They need that medicine!"
     goon "People from a town you've never heard of until now {i}might{/i} die."
     goon "You really care that much about them?"
-    hide data with dissolve
+    #hide data with dissolve
     $ AddChatter(vig2_sc7_comment4)
     show teresa stream think at stream_right with Dissolve(0.4)
     show jennica stream crossed at stream_left with Dissolve(0.4)
@@ -1545,6 +1571,7 @@ label commsBase_DataCenter_MAR():
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
     show reginald stream bigmad at stream_right5 with Dissolve(0.3)
     goon "Oh you have got to be kidding me."
+    play audio "gunCock.wav" volume 1.5
     "Reginald points his blaster at me."
     $ reactTarget = "vig2_sc8_mar_reacttoregi"
     show screen streamerCommentary
@@ -1563,7 +1590,7 @@ label commsBase_DataCenter_MAR():
             $ macViolence += 1
             "I look over to Jennica and give her the signal."
             show jennica stream fight at stream_left
-            play audio "lazer.wav" volume 5.0
+            play audio "stunLazer.wav" volume 1.5
             "Reginald is struck by the stun bolt. His body seizes up and shakes before he falls to the floor, incapacitated."
             hide reginald with Dissolve(0.2)
             show jennica stream neutral at stream_left
@@ -1573,15 +1600,16 @@ label commsBase_DataCenter_MAR():
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
             $ reactTarget = "vig2_sc8_mar_reacttoregistun"
             show screen streamerCommentary
-            show mac stream happy at stream_center_mac with Dissolve(0.2)
+            show mac stream happy at stream_center_mac with Dissolve(0.5)
             #We could use a conditional here based on Mac's violence trait to alter his respone to Reggie getting tagged.
+            play audio "macNeutral.wav" volume 1.5
             macS "Take that \"skeeve!\""
             show teresa stream neutral at stream_right
             enS "I suppose the die is cast then."
             enS "So where are we to find someone to help cover our tracks now?"
             pS "Beats me."
             hide screen streamerCommentary
-            hide mac with Dissolve(0.2)
+            hide mac with Dissolve(0.5)
         "Bribe Reginald.":
             $ reginaldChoice = False
             $ marshal += 1
@@ -1607,6 +1635,7 @@ label commsBase_DataCenter_MAR():
             goon "Pleasure doing business."
             $ AddChatter(vig2_sc7_mar_bribe_comment2)
             "Reginald looks us over one more time before turning around and briskly leaving."
+            play audio "door.wav" volume 1.2
             $ reactTarget = "vig2_sc8_mar_reacttoregibribe"
             show screen streamerCommentary
             hide reginald with dissolve
@@ -1616,7 +1645,7 @@ label commsBase_DataCenter_MAR():
             show teresa stream upset at stream_right
             enS "We have bigger problems. Where are we to find someone to help us cover our tracks now?"
             show jennica stream neutral at stream_left
-            "I notice MAC watching Reginald run away, lost in thought."
+            "I notice MAC watching Reginald leave, lost in thought."
             hide screen streamerCommentary
     show data agent neutral at stream_center with move
     worker "I uh... Couldn't help but overhear your predicament..."
@@ -1738,7 +1767,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment18)
     show teresa stream neutral at stream_right
     enS "What do we do with him?"
-    "Teresa gesture to the technician."
+    "Teresa gestures to the technician."
     if shnzi == True:
         $ AddChatter(vig2_sc7_out_comment19_shnzi)
     else:
@@ -1849,6 +1878,7 @@ label commsBase_DataCenter_OUT():
     hide jennica with Dissolve(0.5)
     hide teresa with Dissolve(0.5)
     hide reginald with Dissolve(0.5)
+    play backAudio "jetEngines.wav" volume 1.0 fadein 2.0
     jump shuttleDestruction
 
 label shuttleDestruction():
@@ -1857,7 +1887,8 @@ label shuttleDestruction():
     show vig2_orbit_stream at topleft onlayer background with Dissolve(0.7)
     show reginald stream neutral at stream_center with dissolve
     show jennica stream crossed at stream_left with dissolve
-    show teresa stream neutral at stream_right with dissolve       
+    show teresa stream neutral at stream_right with dissolve 
+    $ renpy.music.set_volume(0.4, 2.0, "backAudio")      
     "Once we're in low orbit, it's only a matter of time before the shuttle shows up."
     goon "You're sure we're in the right spot?"
     pS "Think I can't read a damn tracking code?"
@@ -1874,14 +1905,17 @@ label shuttleDestruction():
     mS "Yeah. Hit it."
     $ AddChatter(vig2_sc7_out_comment26)
     "Jennica pulls the trigger."
+    play audio "tankShot.wav" volume 2.0
     "A rush of momentum shakes the shuttle as the missile flies out from under it."
     $ reactTarget = "vig2_sc8_out_reflect"
     show screen streamerCommentary
+    play aduio "explosion.wav" volume 2.0
     "The missile races across the sky before colliding with the ship, obliterating it."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
     $ AddChatter(vig2_sc7_out_comment27)
     pS "Hope this is worth it."
+    stop backAudio fadeout 2.0
     hide screen streamerCommentary
     $ AddChatter(vig2_sc7_out_comment28)
     hide teresa with Dissolve(0.5)
@@ -1959,6 +1993,7 @@ label vig2epilogue_MAR():
             macS "But how do you know if a law is bad?"
             mS "That's up to you to decide. That's why we're outlaws. There's no one-size-fits-all rule."
             mS "The universe is just more complicated than that."
+            play audio "macHum.wav" volume 1.5
             macS "I see. The universe is confusing."
             mS "Agreed."
         "The universe is bad and we can't trust anyone.":
@@ -1971,6 +2006,7 @@ label vig2epilogue_MAR():
             macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             mS "To change bad things, sometimes we have to do dangerous things."
+            play audio "macOK.wav" volume 1.5
             macS "I see. The universe is confusing."
             mS "Agreed."
     $ narrator = reg_narrator
@@ -2012,7 +2048,7 @@ label vig2epilogue_OUT():
     show matticus phone neutral at stream_center_mac with dissolve
     show jennica stream crossed
     "Matticus appears on the ship computer."
-    smatt "Oh Moze. Its been so wonderful working with you again."
+    smatt "Oh, Moze. Its been so wonderful working with you again."
     smatt "We have to catch up some time!"
     "Jennica is visibly annoyed."
     mS "And your end of the deal?"
@@ -2084,6 +2120,7 @@ label vig2epilogue_OUT():
             mS "There's no one-size-fits-all rule."
             $ AddChatter(vig2_epilogue_out_comment16)
             mS "If we didn't help Matticus, we might've gotten caught. And then a lot more innocent people would be hurt."
+            play audio "macOK.wav" volume 1.5
             macS "I see. The universe is confusing."
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
@@ -2100,6 +2137,7 @@ label vig2epilogue_OUT():
             mS "The universe was dangerous before us and it'll be the same after we're gone. Following the rules won't change that."
             $ AddChatter(vig2_epilogue_out_comment16)
             mS "To change bad things, sometimes we have to do dangerous things."
+            play audio "macOK.wav" volume 1.5
             macS "I see. The universe is confusing."
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."

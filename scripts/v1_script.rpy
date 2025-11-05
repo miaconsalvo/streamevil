@@ -23,7 +23,7 @@ label returnToWorkshop():
     show screen chatTutorial2
     $ reactTarget = "vig1_sc1_startStream"
     call screen streamFreeze
-    play music "soundtrack/theme.wav" volume 0.8 loop fadein 2.0
+    play music "soundtrack/theme.wav" volume 0.6 loop fadein 2.0
     "Thermal paste in hand I return to Allistar's workshop."
     show vig1_allistar_workshop at topleft onlayer background with dissolve
     hide vig1_town_stream
@@ -110,10 +110,12 @@ label shipCall:
     play audio "callRing.wav" volume 1.5
     #"{i}beep beep beeeep{/i}"
     "My communicator rings. Jennica's voice crackles out."
+    show jennica phone neutral at stream_left_mac with Dissolve(0.5)
     stop music fadeout 6.0
     pS "Moze? We've got some trouble: there's a long range caller insisting on speaking with you."
     pS "Says they want to warn us about something. Teresa confirmed it's not BigCorp."
     mS "Patch the call through."
+    hide jennica with Dissolve(0.5)
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
@@ -173,10 +175,11 @@ label shipCall:
     "Allistar is perfectly still."
     "Then he rushes to a nearby drawer, lifts out a blaster, and sets it to stun."
     show allistar stream mad
+    play audio "gunCock.wav" volume 1.5
     aS "It's a straight shot to the spaceport. Our best bet is a full sprint."
     $ AddChatter(vig1_sc2_comment6)
     pause 0.5
-    "I follow Allistar to the front door. He grips the handle."
+    "I follow Allistar to the front door."
     macS "Captain, what's happening?"
     menu:
         macS "Captain, what's happening?"
@@ -187,8 +190,9 @@ label shipCall:
         "Everything's going to be okay.":
             mS "We've run into a bit of trouble, but it's okay, Allistar and I can handle it."
             mS "We're going to run back to the ship. Just stay close to me and, if I tell you to run, don't stop until you get to the ship."
-    play audio "macAffirmative.wav" volume 1.5
-    "MAC hums back an affirmative beep."
+    #play audio "macAffirmative.wav" volume 1.5
+    play audio "macOK.wav" volume 1.5
+    "MAC hums back in affirmation."
     aS "You ready?"
     "What should I set my blaster to?"
     $ vig1_sc2_comment6.click = False
@@ -207,13 +211,14 @@ label setBlasterVig1():
             "Hm, that feels a bit unnecessary. They're just regular goons after all."
             #$ narrator = alt_narrator
             jump setBlasterVig1
-    "Allistar nods and swings the door open. Light bursts into my eyes."
+    "Allistar nods and opens the door. Light bursts into my eyes."
     hide mac with Dissolve (0.1)
     hide allistar with Dissolve (0.1)
     jump streetShootout
 
 label streetShootout:
     play music "soundtrack/savethegalaxy.wav" volume 1.0 loop fadein 1.5
+    play audio "door.wav" volume 1.5
     show vig1_town_stream at topleft onlayer background with Fade(0.5, 0.5, 0.5, color="#FFFFFF")
     hide vig1_allistar_workshop
     "Allistar, MAC, and I rush into the town's deserted main street."
@@ -254,7 +259,7 @@ label streetShootout:
             mS "Can you locate those other enforcers?"
     macS "Right."
     mS "Thank you."
-    play audio "macPing.wav" volume 1.5
+    play audio "macAlarmed.wav" volume 1.5
     macS "No, Captain. Right. As in East."
     "I glance to my right. There's a single enforcer riding a light speeder between buildings. It's making a beeline for MAC."
     aS "Moze, on the building!"
@@ -282,6 +287,7 @@ label streetShootout:
             hide mac with Dissolve(0.3)
             show bc_enforcer at stream_center with move
             "Knocking the blaster out of his hand, I tackle him to the ground."
+            play audio "grunt.wav" volume 3.0
             "We roll over one another as he reaches for his gun."
             "He's too slow."
             "I pull my pistol to his chest and fire two rapid shots."
@@ -296,7 +302,9 @@ label streetShootout:
             "I fire at it, but every shot goes wide."
             "The speeder is almost at MAC, the enforcer reaching down to lift him up."
             play audio "lazer.wav" volume 6.0
-            "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
+            "A blaster bolt collides with the back of the speeder."
+            play audio "grenade.wav" volume 1.5
+            "The engine goes up into a fireball, sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
             show allistar stream mad at stream_right with Dissolve (0.3)
             "I turn back around. Allistar holds a smoking blaster upright."
@@ -328,11 +336,14 @@ label streetShootout:
             play audio "lazer.wav" volume 5.0
             hide mac with Dissolve(0.3)
             "The blast goes wide and I tackle him to the ground."
+            play audio "grunt.wav" volume 3.0
             show bc_enforcer at stream_center with move
             "We roll over each other. Biting, punching, kicking. But he lands on top of me and wraps his hands around my throat."
             "He starts squeezing as I frantically push my hands up against his face, trying to find purchase, trying to knock him off."
             play audio "lazer.wav" volume 4.0
-            enforcer "Aiieea!"
+            pause 0.5
+            play audio "scream.wav" volume 3.0
+            #enforcer "Aiieea!"
             hide bc_enforcer with Dissolve (0.3)
             "The enforcer reels up and falls to the ground."
             show allistar stream mad at stream_right with Dissolve (0.3)
@@ -369,7 +380,9 @@ label streetShootout:
             "I fire at it, but every shot goes wide."
             "The speeder is almost at MAC, the enforcer reaching down to lift him up."
             play audio "lazer.wav" volume 6.0
-            "A blaster bolt collides with the back of the speeder, turning the engine into a fireball and sending the enforcer flying through the air."
+            "A blaster bolt collides with the back of the speeder."
+            play audio "grenade.wav" volume 1.5
+            "The egine goes up in a fireball, sending the enforcer flying through the air."
             "He skids into the dirt and lays still."
             "Allistar holds his shoulder, wincing in pain."
             show screen chatTutorial2
@@ -383,6 +396,7 @@ label streetShootout:
     hide allistar with Dissolve(0.5)
     show mac stream neutral at stream_center_mac with Dissolve (0.5)
     mS "MAC!"
+    play audio "macPing.wav" volume 1.5
     "MAC stops and turns to face us."
     macS "Captain, the probability of our safe escape has risen to nearly 100\%!"
     stop music fadeout 2.0
@@ -418,6 +432,8 @@ label saveMAC():
             show mac stream shock
             macS "Captain!?"
             play audio "lazer.wav" volume 2.0
+            pause 0.5
+            play audio "scream.wav" volume 1.5
             "The sound of another shot fired and a body hitting the ground from a tall height."
             show mac stream neutral
             show allistar stream neutral at stream_right with dissolve
@@ -426,6 +442,7 @@ label saveMAC():
             "Allistar crouches beside me and wraps my right arm over his shoulder."
             mS "The sniper?"
             aS "I got him."
+            play audio "macPester.wav" volume 1.5
             macS "Captain, your vitals have spiked."
             mS "I'm fine, MAC."
             macS "But my sensors indicate you are in great pain."
@@ -442,7 +459,7 @@ label saveMAC():
                     "I grimace."
                     mS "I am in pain, MAC."
                     mS "But we have to go."
-                    play audio "macPing.wav" volume 1.0
+                    play audio "macPing.wav" volume 1.5
             "Allistar helps me to my feet."
             aS "Can you run?"
             mS "I have to."
@@ -482,6 +499,7 @@ label spacePortEscape():
     pS "Copy!"
     hide teresa with dissolve
     show jennica stream angry at stream_center with dissolve
+    play audio "shipWarmUp.wav" volume 2.0
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
     show allistar stream neutral at stream_right with Dissolve (0.5)
     show mac stream neutral at stream_left_mac with Dissolve(0.5)
@@ -500,14 +518,17 @@ label spacePortEscape():
     "And then the attack stops. The turbulence on the ship dissipates. We're floating in space."
     "Jennica breathes a sigh of relief and punches something in on a keypad."
     "With a flick of a switch, the Oakley lurches forward into hyperspace."
+    play audio "enterHyperspace.wav" volume 2.0
     hide jennica with dissolve
     hide mac with dissolve
     hide allistar with dissolve
+    pause 1.5
     jump councilDebrief
 
 label councilDebrief():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     show shiphub_stream at topleft onlayer background with dissolve
+    #play backAudio "shipHum.wav" volume 0.7 loop fadein 1.0
     hide vig1_spaceport
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
@@ -520,10 +541,10 @@ label councilDebrief():
     mS "We'll need to be more careful in the future, and find a way to stay under the radar."
     pS "Any ideas?"
     mS "Maybe. I need to think."
-    "We're all quiet. No {i}bzzrts{/i}, no random facts about our past lives or percentage calculations."
+    "We're all quiet. No {i}bzzrts{/i}, no random dictionary definitions or percentage calculations."
     "... no MAC."
     mS "Does anyone know where MAC is?"
-    play backAudio "shipAlarm.wav" volume 0.8
+    play backAudio2 "shipAlarm.wav" volume 0.8
     shipcom "Attention crew, escape pod procedure activated."
     $ viewCount += 1
     $ AddChatter(vig1_sc3_raid_comment1)
@@ -537,6 +558,7 @@ label councilDebrief():
     $ AddChatter(vig1_sc3_raid_comment4)
     $ narrator = reg_narrator
     "Woah, that view count can't be right."
+    $ renpy.music.set_volume(0.4, 1,"backAudio2")
     $ renpy.music.set_volume(0.4, 1,"backAudio")
     pause 0.05
     $ viewCount += 17
@@ -553,7 +575,8 @@ label councilDebrief():
     "I rush out of the council room."
     hide teresa with dissolve
     hide jennica with dissolve
-    stop backAudio fadeout 1.0
+    stop backAudio2 fadeout 1.0
+    #stop backAudio fadeout 1.0
     $ narrator = reg_narrator
     $ renpy.sound.play("audio/ReceiveText.ogg")
     pause 0.5
@@ -651,6 +674,7 @@ label escapePodConfrontation:
     $ AddChatter(vig1_sc3_comment6)
     show mac stream shock at stream_grab_mac with MoveTransition(0.15)
     "As I step into the light, Allistar sees me and reaches for MAC."
+    play audio "macAlarmed.wav" volume 1.5
     macS "Ahhhh! Captain, help me!"
     "I pull my blaster and point it at Allistar, but by the time I do he has already grabbed MAC, and holds him in the air between us."
     $ AddChatter(vig1_sc3_comment7)
@@ -722,6 +746,7 @@ label escapePodConfrontation:
     $ macViolence += 1
     show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
+    play audio "deathGasp.wav" volume 2.0
     "He slumps to the ground."
     hide allistar with Dissolve(0.2)
     hide mac with Dissolve(0.5)
@@ -804,6 +829,7 @@ label escapePodConfrontation:
     #play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I gently move toward MAC and crouch down in front of him."
     mS "Hey, I'm sorry about that."
+    play audio "macSad.wav" volume 1.5
     macS "Is he... is he dead?"
     "I glance back at the body."
     mS "Yes."
@@ -826,7 +852,7 @@ label escapePodConfrontation:
             $ macViolence += 1
             mS "I couldn't take a risk on him."
             mS "I have to take care of my crew."
-    macS "So this ship is still safe?"
+    macS "So, this ship is still safe?"
     $ AddChatter(vig1_sc3_shot_comment9)
     pause 0.5
     "I reach out my hand toward Mac."
@@ -1139,12 +1165,14 @@ label blueitVignette1_2():
 label vig1_brother_1():
     $ menu = nvl_menu
     nvl clear
+    stop music fadeout 2.0
     scene bg black with dissolve
     "As you close Blueit, you remember that your little brother asked to chat at 9:30."
     "It's 8pm so you have a bit of time."
     "You decide to make a late dinner and start catching up on the new season of Iron Goddess."
     "After finishing an episode, you wash your dishes then sit back down at your computer and shoot Elliot a message."
     scene discordview with dissolve
+    play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.5
     player_nvl "Hey El! How's it going?"
     bro_nvl "Hey [player], things are good!"
     bro_nvl "School is busy, but I'm managing. There's a concert coming up for orchestra that I'm kinda anxious about tbh"

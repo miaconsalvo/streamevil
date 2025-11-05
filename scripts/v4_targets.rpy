@@ -201,6 +201,7 @@ label vig4_sc2_elliotEntrance():
     $ vig4_sc2_6_comment43.click = False
     $ narrator = reg_narrator
     $ commentVariable = True
+    play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.0
     menu:
         "Elliot joined the chat!"
         "Aren't you supposed to be on a date?":
