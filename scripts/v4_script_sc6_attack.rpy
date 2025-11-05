@@ -309,7 +309,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav" volume 5.0
             pause 0.5
-            play audio "deathGasp" 2.0
+            play audio "deathGasp.wav" volume 2.0
             hide dflyguard with Dissolve(0.3)
             show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
@@ -1072,7 +1072,7 @@ label vig4_sc6_attack_3_ama():
                 $ AddChatter(vig4_sc6_zan_comment10)
         hide zan with dissolve
         show jennica stream neutral at stream_left with dissolve
-    show ama stream neutral stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
@@ -1605,7 +1605,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             pause 0.5
-            play audio "deathGasp" 2.0
+            play audio "deathGasp.wav" volume 2.0
             hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)

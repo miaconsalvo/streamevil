@@ -2277,7 +2277,7 @@ label vig4_sc3_2_teresa():
     "The wooden cup makes a deep \"{b}THUNK{/b}\" as the dice rattle around underneath."
     "I look under my cup: There are two 2's, two 4's, and one 6."
     "The person opposite me starts."
-    diceP1 "three 4's."
+    diceP1 "Three 4's."
     diceP2 "Only three, come on Alex, that's not even a real bet!"
     diceP1 "She's running the table with us, Adam, what do want me to do?"
     $ AddChatter(vig4_sc3_2_resa_comment8)
@@ -2539,7 +2539,7 @@ label vig4_sc3_2_teresa_2():
         $ AddChatter(vig4_sc3_2_resa_comment36)
     enS "I'm so grateful I met the two of you. You both changed my life, tremendously for the better."
     enS "But sometimes I wonder what could have been."
-    enS "If I didn't get my doctorate? If I didn't disobey my parents? If I went to Alliance space instead of The Outposts?"
+    enS "If I didn't get my doctorate? If I didn't disobey my parents? If I went to Alliance space instead of the Outposts?"
     $ AddChatter(vig4_sc3_2_resa_comment37)
     enS "All these moments where I made decisions that could have legitimately gone another way."
     enS "But this is the reality that I ended up in, whether I'm happy about it or not."

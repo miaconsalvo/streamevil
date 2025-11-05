@@ -15,7 +15,7 @@ label vig4_sc1_pdParanoia():
             player "I'd expect we're in for some hallucinations or maybe a trippy dream sequence."            
         "I don't know.":
             $ reactImage = "stream ui/reactconversational.png"   
-            player "Hmm interesting idea. Honestly, idk."
+            player "Hmm interesting idea. Honestly, I don't know."
             player "They're not in as stressful a position anymore, but that's not something you just like get over."
     if reactVariable == True:
         "Where was I?"
