@@ -264,6 +264,7 @@ label vig4_sc1_2():
     pause 0.5
     $ AddChatter(vig4_sc1_2_comment10)
     enS "And this colony is so small that neither group cares."
+    show teresa stream think
     play audio "macPester.wav" volume 1.5
     macS "Po-dunk?"
     ##Could cut from here to "I'll run a scan for BigCorp signatures" - have Jennica say "maybe" - saves 20 lines
@@ -303,6 +304,7 @@ label vig4_sc1_2():
             mS "What if there are people down there we don't want to meet?"
             $ AddChatter(vig4_sc1_2_comment11)
     pS "I'll run a scan for BigCorp signatures."
+    show teresa stream neutral
     "A green line appears on screen and sweeps over the moon's landscape."
     play audio "macPing.wav" volume 1.5
     if macViolence > macPeace:
@@ -324,9 +326,11 @@ label vig4_sc1_2():
     pS "With any luck we won't have to."
     "The scan finishes."
     pS "Welp, no BC signatures. Not even a spaceport."
+    show teresa stream shock
     pS "It's quieter than a Glorak's nest in matin' season."
     enS "I don't want to know how you know that."
     pS "Your loss, it's a fun story."
+    show teresa stream neutral
     $ AddChatter(vig4_sc1_2_comment18)
     pS "There's just one small town."
     "The screen zooms in on a wireframe of a collection of buildings nestled into the crook of a mountain range."
@@ -345,6 +349,7 @@ label vig4_sc1_2():
             mS "Jennica, you and MAC stay with the ship. If we radio in that the situation's bad, you take off immediately."
             pS "Aye aye, Cap."
     play audio "macAlarmed.wav" volume 1.5
+    show mac stream shock
     macS "Stay on the ship!?"
     if macPessimism > macHope:
         macS "But if it's a trap, you'll need reinforcements."
@@ -370,6 +375,7 @@ label vig4_sc1_2():
             mS "Stay. On. The. Ship."
             $ AddChatter(vig4_sc1_2_comment23)
     play audio "macGrumble.wav" volume 1.5
+    show mac stream neutral
     macS "I understand."
     #macS "I don't like it, but I understand."
     pS "They'll be safe, MAC. And it means more pal time for the two of us!"
@@ -389,6 +395,7 @@ label vig4_sc1_2():
             mS "We have to stay focused until the mission is complete."
             mS "So lock in and stay alert. Just a couple more hours and we'll be in the clear."
     mS "And we'll make those BC bastards choke on our trail of stardust."
+    show teresa stream happy
     pS "Aye aye!"
     enS "Well said."
     mS "To your stations."
@@ -463,6 +470,7 @@ label vig4_sc2_1():
                     $ pdEngagement += 1
                     $ engineerApproval += 1
                     mS "Oh, right, the \"star shower.\" I completely forgot about that."
+                    with vpunch
                     "As I speak, Teresa snaps the stun rod out and jabs it into the man's neck."
                     "The sack of grain slumps to the ground, followed by his body."
                     hide customs agent with dissolve
@@ -501,6 +509,7 @@ label vig4_sc2_1():
             $ AddChatter(vig4_sc2_1_comment13)
             townguy "As you can see, the whole town's gettin' ready for a festival."
             "Teresa steps up close to the man."
+            show teresa stream upset
             enS "We appreciate the invite, but we really should make our repairs and be on our way."
             "Her hand is on a stun rod in her belt."
             menu:
@@ -510,7 +519,9 @@ label vig4_sc2_1():
                     $ pdEngagement += 1
                     $ outlaw += 1
                     $ engineerApproval += 1
+                    show teresa stream neutral
                     "She snaps the stun rod out and jabs it into the man's neck."
+                    with vpunch
                     "The sack of grain slumps to the ground, followed by his body."
                     hide customs agent with dissolve
                     if viewershipHigh == True:
@@ -524,6 +535,7 @@ label vig4_sc2_1():
                     $ marshal += 1
                     $ csEngagement += 1
                     $ engineerApproval -= 1
+                    show teresa stream neutral
                     "I give Teresa the signal to stand down."
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_1_comment14)
@@ -558,16 +570,20 @@ label vig4_sc2_2_solo():
             mS "After the Vineyard, I think I've had my fill of parties."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc2_solo_comment2)
+            show teresa stream happy
             enS "Couldn't agree more."
+            show teresa stream neutral
     "I check the tracker. We're on the right path."
     "I glance up as we step out of the plaza."
     "A camera tilts to the side, following us. Then pans back in the other direction."
     enS "I saw it too."
+    show teresa stream think
     $ AddChatter(vig4_sc2_2_comment1)
     enS "Think it could be BC?"
     mS "Maybe, but it doesn't matter."
     $ AddChatter(vig4_sc2_2_comment2)
     mS "No turning back now."
+    show teresa stream neutral
     if viewershipHigh == True:
         $ AddChatter(vig4_sc2_2_comment3)
     stop backAudio fadeout 2.0
@@ -593,12 +609,14 @@ label vig4_sc2_2_accompanied():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc2_accompanied_comment1)
     "Teresa steps up to my side and whispers."
+    show teresa stream upset
     enS "What the hell? We don't want some rube around us right now."
     $ AddChatter(vig4_sc2_1_comment8)
     mS "At least it'll help us blend in."
     enS "And if he's a BC spy?"
     "I check the scanner quckly. We're on the right path to the coordinates."
     mS "We're going the right way for now. Let's keep things calm."
+    show teresa stream neutral
     "We make our way through the crowd, following our guide."
     "Without breaking step, the townsfolk we pass by look up to smile at us and tip their caps."
     "I try to smile back. But my face feels tight."
@@ -647,6 +665,7 @@ label vig2_sc2_3():
                 enS "Wanted to see what you think of it?"
                 "I hadn't noticed":
                     mS "I didn't notice."
+                    show teresa stream think
                     hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_3_comment4)
                     enS "It's as if he's starting to talk like us."
@@ -659,6 +678,7 @@ label vig2_sc2_3():
                     mS "Now that you mention it, yeah he is talking differently."
                     hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_3_comment2)
+                    show teresa stream think
                     enS "It's as if he's starting to talk like us."
                     enS "It's a little... disconcerting."
                     $ AddChatter(vig4_sc2_3_comment3)
@@ -675,17 +695,20 @@ label vig2_sc2_3():
                             enS "I suppose that's true."
                             if viewershipHigh == True:
                                 $ AddChatter(vig4_sc2_3_comment10)
+                            show teresa stream neutral
                         "I'll keep an eye on it.":
                             mS "Thanks for bringing it up. I'll keep an eye on it and talk with him about it."
                             if viewershipHigh == True or viewershipMed == True:
                                 $ AddChatter(vig4_sc2_3_comment7)
                             enS "Sounds like a good idea. He responds better to you than me and Jenn."
+                            show teresa stream neutral
         "Like his speech patterns?":
             mS "You mean his speech patterns?"
             mS "They're becoming less robotic."
             enS "Exactly!"
             enS "Jennica noticed it after we left Solara."
             enS "It's as if he's starting to talk like us."
+            show teresa stream think
             hide screen streamerCommentary
             $ AddChatter(vig4_sc2_3_comment6)
             enS "It's a little... disconcerting."
@@ -702,11 +725,13 @@ label vig2_sc2_3():
                     enS "I suppose that's true."
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_3_comment10)
+                    show teresa stream neutral
                 "I'll keep an eye on it.":
                     mS "Thanks for bringing it up. I'll keep an eye on it and talk with him about it."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_3_comment7)
                     enS "Sounds like a good idea. He responds better to you than me and Jenn."
+                    show teresa stream neutral
         "He's not listening to me like he used to.":
             mS "Yeah, he's not listening to me like he used to."
             enS "That too, but I meant more subtly."
@@ -715,6 +740,7 @@ label vig2_sc2_3():
             enS "It's his speech patterns. They're becoming less robotic."
             enS "Jennica noticed it after we left Solara."
             enS "It's as if he's starting to talk like us."
+            show teresa stream think
             $ AddChatter(vig4_sc2_3_comment6)
             enS "It's a little... disconcerting."
             menu:
@@ -730,11 +756,13 @@ label vig2_sc2_3():
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_3_comment10)
                     enS "I suppose that's true."
+                    show teresa stream neutral
                 "I'll keep an eye on it.":
                     mS "Thanks for bringing it up. I'll keep an eye on it and talk with him about it."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_3_comment7)
                     enS "Sounds like a good idea. He responds better to you than me and Jenn."
+                    show teresa stream neutral
     "We get to the end of the road."
     "It's dead quiet."
     "No one is around. No prying eyes, no crowds of people."
@@ -745,6 +773,7 @@ label vig2_sc2_3():
     enS "This is it?"
     mS "This is it."
     enS "I was expecting... more."
+    show teresa stream think
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc2_3_comment13)
     "Teresa scans our surroundings."
@@ -758,6 +787,7 @@ label vig2_sc2_3():
             mS "I wish we had more info."
             mS "Feels like we're aiming without a scope."
     enS "I know what you mean."
+    show teresa stream neutral
     enS "How do you want to play this?"
     menu:
         enS "How do you want to play this?"
@@ -824,10 +854,12 @@ label vig4_sc2_4():
                 $ AddChatter(vig4_sc2_4_comment7)
             else:
                 cS "Maybe even one who you abandoned in a bustling plaza."
+            show teresa stream shock
             "I feel Teresa tense up."
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
             cS "Intelligence of all kinds is my business."
+            show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment6)
         "We're just passing through.":
             mS "We're just some travelers passing through. Need some repairs for our ship."
@@ -837,10 +869,12 @@ label vig4_sc2_4():
             else:
                 cS "Travelers who abandon kind guides offering to help them?"
                 $ AddChatter(vig4_sc2_4_comment8)
+            show teresa stream shock
             "I feel Teresa tense up."
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
             cS "Intelligence of all kinds is my business."
+            show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment6)        
             mS "We're just looking for repairs, and maybe a soft bed to spend the night."
             cS "Polaris can be that. But we don't have much else."
@@ -881,6 +915,7 @@ label vig4_sc2_4():
             "He looks us up and down again."
             cS "Self-interest."
             $ AddChatter(vig4_sc2_4_comment14)
+            show teresa stream upset
             enS "\"Self-interest!?\""
             "Teresa's voice reaches a fever pitch instantly."
             enS "Listen here you old coot, you have no idea what we've had to do to be standing here right now."
@@ -1187,6 +1222,8 @@ label vig4_sc2_6():
                             mS "How could you build this?"
                             enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                             cS "You'll have to ask a man named Reynar about that."
+                            show jennica stream shock
+                            show teresa stream shock
                             pS "Reynar's a Dragonfly!?"
                             hide screen streamerCommentary
                             $ AddChatter(vig4_sc2_6_comment5)
@@ -1194,6 +1231,8 @@ label vig4_sc2_6():
                             vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                             $ AddChatter(vig4_sc2_6_comment6)
                             vS "That deal allowed us make this place a reality."
+                            show jennica stream neutral
+                            show teresa stream neutral
                             if viewershipHigh == True:
                                 $ AddChatter(vig4_sc2_6_comment7)
                             jump vig4_sc2_6
@@ -1205,6 +1244,8 @@ label vig4_sc2_6():
                     mS "I don't understand. How could you build this?"
                     enS "The cost of setting up the artificial atmosphere alone would be astronomical."
                     cS "You'll have to ask a man named Reynar about that."
+                    show jennica stream shock
+                    show teresa stream shock
                     pS "Reynar's a Dragonfly!?"
                     hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_6_comment5)
@@ -1212,6 +1253,8 @@ label vig4_sc2_6():
                     vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                     $ AddChatter(vig4_sc2_6_comment6)
                     vS "That deal finally let us make this place a reality."
+                    show jennica stream neutral
+                    show teresa stream neutral
                     $ vig4_sc2_6_comment1.click = False
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_6_comment7)
@@ -1327,6 +1370,8 @@ label vig4_sc2_6():
                 $ AddChatter(vig4_sc2_6_comment26)
             $ reactTarget = "vig4_sc2_macstays"
             show screen streamerCommentary
+            show jennica stream shock
+            show teresa stream shock
             enS "What!?"
             pS "You're jokin', right?"
             macS "Captain?"
@@ -1342,6 +1387,8 @@ label vig4_sc2_6():
                     mS "Like hell you're taking him without us!"
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_6_comment27)
+                    show jennica stream angry
+                    show teresa stream neutral
                     pS "This family don't break up."
                     $ AddChatter(vig4_sc2_6_comment28)
                     enS "Seconded."
@@ -1362,6 +1409,8 @@ label vig4_sc2_6():
                     mS "This was the deal when we accepted the mission."
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_6_comment31) 
+                    show jennica stream angry
+                    show teresa stream think
                     pS "Yeah, but..."
                     $ AddChatter(vig4_sc2_6_comment32)
                     enS "I guess I wanted to forget that part."
@@ -1376,6 +1425,8 @@ label vig4_sc2_6():
             $ AddChatter(vig4_sc2_6_comment36) 
             cS "It will take some time to reach the Dragonflies and the festival will begin shortly."
             cS "This is a true achievement. You should go and celebrate."
+            show teresa stream neutral
+            show jennica stream neutral
             $ AddChatter(vig4_sc2_6_comment37) 
             cS "These days we have precious few excuses to simply enjoy life."
             "Coil stands, and reaches out a hand."
@@ -1997,11 +2048,13 @@ label vig4_sc3_2_jennica():
                     $ kcEngagement -= 2
                     $ pilotApproval += 1
                     "Pushing my thrusters full throttle, I lay on the guns."
+                    show jennica stream shock
                     pS "Oh, so we're doin' it this way?"
                     mS "You know it!"
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc3_2_jenn_comment23)
                     "Jennica lays on her throttle too."
+                    show jennica stream neutral
                     "Our shields are ripped to shreds. It's just our hulls, hurtling toward one another."
                     "The ships collide. The screen goes white."
                     "\"Tie Game\" flashes across both game screens."
@@ -2074,6 +2127,7 @@ label vig4_sc3_2_jennica_2():
         $ AddChatter(vig4_sc3_2_jenn_comment31)
     pS "He came into my class and asked who wanted to be a pilot. So I raised my hand."
     "Jennica looks up toward the plaza. It's like she's looking at something much further away."
+    show jennica stream angry
     pS "Bastard took one look at me and laughed."
     pS "Didn't have the implants yet, so he just saw this scrawny kid with degenerative eyesight."
     pS "I'll never forget what he said: \"Not one in a billion chance you could ever be a pilot.\""
@@ -2081,9 +2135,11 @@ label vig4_sc3_2_jennica_2():
         $ AddChatter(vig4_sc3_2_jenn_comment32)
     "Jennica clenches her fist."
     $ AddChatter(vig4_sc3_2_jenn_comment33)
+    show jennica stream crossed
     pS "I made it. It wasn't handed to me, it didn't just happen. I worked my ass off."
     pS "And I'm a damn good pilot now. His words shouldn't matter."
     pS "But whenever I remember what he said, all I want to do is go back in time and kick that guy's ass."
+    show jennica stream neutral
     "Jennica's whole body relaxes."
     "She looks to me and our eyes lock."
     $ AddChatter(vig4_sc3_2_jenn_comment34)
@@ -2091,8 +2147,10 @@ label vig4_sc3_2_jennica_2():
         "She looks to me and our eyes lock."
         "You're so incredible, Jenn.":
             mS "Jenn, you're so incredible."
+            show jennica stream shock
             "She blushes and looks away briefly before turning back to me."
             $ AddChatter(vig4_sc3_2_jenn_comment39)
+            show jennica stream neutral
             pS "Thanks, Cap."
             mS "No I really mean it. You've achieved amazing things." 
             mS "There's no one I could possibly trust more at the helm of the Oakley."
@@ -2112,6 +2170,7 @@ label vig4_sc3_2_jennica_2():
                         $ csEngagement += 3
                         $ pdEngagement -= 1
                         $ jennicaRomance = True
+                        show jennica stream shock
                         pS "Oh!"
                         "Jennica's face goes entirely red."
                         pS "Wow, I, uh, wasn't expectin' that."
@@ -2126,8 +2185,8 @@ label vig4_sc3_2_jennica_2():
                                 mS "You don't have to say it."
                                 "She freezes completely still, her eyes locked on mine."
                                 "I move forward and kiss Jennica."
+                                show jennica stream neutral
                                 $ AddChatter(vig4_sc3_2_jenn_comment42)
-                                hide jennica with dissolve
                             "Wait for her.":
                                 "I wait, patiently."
                                 "Jennica meets my eyes."
@@ -2135,6 +2194,7 @@ label vig4_sc3_2_jennica_2():
                                 pS "I love you too, Moze."
                                 "I feel myself smiling before I even consciously do it myself."
                                 "I move forward and kiss Jennica."
+                                show jennica stream neutral
                         $ AddChatter(vig4_sc3_2_jenn_comment42)
                         $ reactTarget = "vig4_sc3_jenndatekiss"
                         show screen streamerCommentary
@@ -2161,6 +2221,7 @@ label vig4_sc3_2_jennica_2():
                         $ kcEngagement += 1
                         $ csEngagement -= 1
                         $ pdEngagement += 1
+                        show jennica stream shock
                         pS "Oh, that's not what I was expectin'."
                         "My heart drops."
                         mS "What do you mean?"
@@ -2171,6 +2232,7 @@ label vig4_sc3_2_jennica_2():
                         mS "So, you don't feel the same?"
                         $ AddChatter(vig4_sc3_2_jenn_comment49)
                         "Jennica takes a long moment. She looks deeply into my eyes."
+                        show jennica stream neutral
                         pS "Sorry, Cap, but I don't."
                         if viewershipHigh == True or viewershipMed == True:
                             $ AddChatter(vig4_sc3_2_jenn_comment50)
@@ -2206,9 +2268,11 @@ label vig4_sc3_2_jennica_2():
                     $ pdEngagement -= 1 #PickledDragons probably doesn't respect starting to go for the romance and then backing out
                     mS "I should check on the party. Maybe Coil has some updates."
                     $ AddChatter(vig4_sc3_2_jenn_comment35)
+                    show jennica stream shock
                     "Jennica freezes for a moment."
                     $ AddChatter(vig4_sc3_2_jenn_comment36)
                     "Then she stands up from the wall."
+                    show jennica stream neutral
                     pS "Yeah, of course, that makes sense."
                     $ AddChatter(vig4_sc3_2_jenn_comment37)
                     "I step back toward the plaza when Jennica calls out."
@@ -2561,6 +2625,7 @@ label vig4_sc3_2_teresa_2():
                 "Her eyes do not leave mine."
                 "Resa, I love you." if jennicaRomance == False:
                     mS "What else could it be, Resa: love."
+                    show teresa stream shock
                     enS "What!?"
                     mS "I love you, Teresa."
                     $ AddChatter(vig4_sc3_2_resa_comment45)
@@ -2591,6 +2656,7 @@ label vig4_sc3_2_teresa_2():
                                 $ AddChatter(vig4_sc3_2_resa_comment46)
                         $ reactTarget = "vig4_sc3_teresadatekiss"
                         show screen streamerCommentary
+                        show teresa stream happy
                         "Our arms wrap around each other, holding one another tightly."
                         "It feels good. To hold and be held. Like we could stay here for hours, days, longer even."
                         $ AddChatter(vig4_sc3_2_resa_comment47)
@@ -2620,6 +2686,7 @@ label vig4_sc3_2_teresa_2():
                         "Teresa looks to the dice, then back to me."
                         $ AddChatter(vig4_sc3_2_resa_comment51)
                         "She sighs."
+                        show teresa stream neutral
                         if viewershipHigh == True or viewershipMed == True:
                             $ AddChatter(vig4_sc3_2_resa_comment52)
                         $ AddChatter(vig4_sc3_2_resa_comment53)
@@ -2698,6 +2765,7 @@ label vig4_sc3_3():
     "They're all looking at MAC, as he waves his hands in the air."
     play audio "macNeutral.wav" volume 1.5
     if macViolence >= macPeace and customsStampede == True:
+        show mac stream happy
         macS "So then Dr. Prismari begins the {i}conflagrant{/i} phase and the booth explodes!"
         $ AddChatter(vig4_sc3_3_comment1)
         macS "Everyone starts running wildly, and we sneak under security's nose!"
@@ -2711,6 +2779,7 @@ label vig4_sc3_3():
             $ AddChatter(vig4_sc3_3_comment4)
         macS "We did not have time to check on people. We had to go meet a \"skeeve\" named Matticus."
     elif macPeace > macViolence and vig2_marshalEpilogue == True and reginaldChoice == False:
+        show mac stream happy
         macS "So then I said, \"take that skeeve\" and we took care of Reggie."
         $ AddChatter(vig4_sc3_3_comment1)
         macS "Captain Moze saved the aid ship and Sallent was saved!"
@@ -2727,12 +2796,14 @@ label vig4_sc3_3():
         macS "So then I picked up the gun and aimed it right at Ama."
         $ AddChatter(vig4_sc3_3_comment1)
         macS "I shot her in the side, giving Captain Moze the chance to disarm her!"
+        show mac stream happy
         macS "That's how we escaped the Deadeye's clutches!"
         townguy "My word, The Deadeye sounds dreadful!"
         macS "Indeed, but she cannot hope to stand up to the Oakley!"
     elif vig3_macReadAma == True:
         macS "So then I threatened Ama with the gun."
         macS "But I knew I didn't need it."
+        show mac stream happy
         macS "I accurately read her emotions and calculated a response to throw her off guard."
         macS "That gave Captain Moze the chance to disarm her, and together we escaped The Deadeye's clutches!"
         townguy "My word, the Deadeye sounds dreadful!"
@@ -2741,6 +2812,7 @@ label vig4_sc3_3():
         macS "So then I chased after the Hounds and got captured."
         macS "But I escaped in the laundry and got rid of the bad BC prototype."
         $ AddChatter(vig4_sc3_3_comment1)
+        show mac stream happy
         macS "Captain Moze found me, and together we fought our way out of BC's evil clutches!"
         "There are gasps throughout the crowd."
         townguy "My word, the Hounds sound dreadful!"

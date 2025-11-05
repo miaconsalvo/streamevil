@@ -1569,7 +1569,7 @@ label commsBase_DataCenter_MAR():
     enS "That's what \"secure\" means right!?"
     hide mac with dissolve
     "The technician perks up. He begins gingerly raising his hand before he's interrupted by Reginald."
-    show reginald stream bigmad at stream_right5 with Dissolve(0.3)
+    show reginald stream bigmad at stream_right5
     goon "Oh you have got to be kidding me."
     play audio "gunCock.wav" volume 1.5
     "Reginald points his blaster at me."
@@ -1748,12 +1748,12 @@ label commsBase_DataCenter_OUT():
     "Reginald turns to the technician."
     $ AddChatter(vig2_sc7_out_comment10)
     show data agent scared at stream_left5
-    show reginald stream mad at stream_right
+    show reginald stream mad at stream_right with move
     goon "I'm not going to ask nicely again. The tracking code, now."
     $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
     worker "44s-73f-94c-21o."
-    show reginald stream impressed at stream_right5
+    show reginald stream impressed at stream_right5 with move
     $ AddChatter(vig2_sc7_out_comment12)
     $ AddChatter(vig2_sc7_out_comment13)
     worker "You realise these people have nothing right?"
@@ -1765,7 +1765,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment16)
     $ AddChatter(vig2_sc7_out_comment17)
     $ AddChatter(vig2_sc7_out_comment18)
-    show teresa stream neutral at stream_right
+    show teresa stream neutral at stream_right with dissolve
     enS "What do we do with him?"
     "Teresa gestures to the technician."
     if shnzi == True:
@@ -1780,7 +1780,7 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment23)
     $ AddChatter(vig2_sc7_out_comment24)
     hide reginald with dissolve
-    show jennica stream neutral at stream_left
+    show jennica stream neutral at stream_left with dissolve
     $ viewCheck9 += viewCount
     menu:
         "Reginald walks out of the room."
