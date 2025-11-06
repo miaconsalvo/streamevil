@@ -4133,6 +4133,7 @@ label vig4_sc5_1():
     "Teresa puts a hand on both of our shoulders."
     "We stand there. Motionless. Together. Slowly, imperceptibly getting closer and closer."
     "Until Teresa pulls us all into a hug."
+    show teresa stream happy
     enS "She was a good girl."
     pS "The best."
     menu:
@@ -4155,10 +4156,14 @@ label vig4_sc5_1():
                 $ AddChatter(vig4_sc5_1_comment12)
     play audio "explosion.wav" volume 0.8
     "The immense sound of an explosion suddenly comes from over the ridge."
+    show teresa stream shock
+    show jennica stream shock
     hide screen streamerCommentary
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc5_1_comment13)
     mS "What was that?"
+    show teresa stream neutral
+    show jennica stream neutral
     enS "BC must have started the attack."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc5_1_comment14)
@@ -4194,6 +4199,8 @@ label vig4_sc5_1():
     "Turrets and weapons are being positioned around the area."
     "That's when I see him."
     mS "MAC!"
+    show teresa stream shock
+    show jennica stream shock
     enS "What!?"
     pS "Where!?"
     mS "He's in the plaza!"
@@ -4228,6 +4235,8 @@ label vig4_sc5_1():
     "Then I see Coil. He stands in front of the plaza's tower."
     $ AddChatter(vig4_sc5_1_comment22)
     "Making eye contact with Vega, he shouts something and then enters the immense structure."
+    show jennica stream neutral
+    show teresa stream neutral
     pS "Cap, what's going on?"
     "I remove the binoculars."
     mS "It looks like the Dragonflies have set up a command center in the plaza at the center of town."
@@ -4237,10 +4246,12 @@ label vig4_sc5_1():
     mS "I don't think they're going to last much longer."
     if vig4_defendPolaris == True:
         pS "Well then, we better get down there!"
+        show teresa stream think
         enS "Knowing Coil, he's probably working on a plan."
         enS "We have to make sure he can complete whatever he's got up his sleeve."
         mS "Agreed."
         $ AddChatter(vig4_sc5_1_comment24)
+        show teresa stream neutral
         mS "It's time."
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc5_1_comment25)
@@ -5676,12 +5687,16 @@ label vig4_epilogue_coil():
             mS "I've got the perfect thing."
             $ AddChatter(vig4_sc7_epilogue_coil_comment9)
             "Slowly, but surely I begin tracing the outline."
+            show teresa stream think
+            show jennica stream shock
             enS "I see what you're going for."
             pS "Oh no, not like that. You gotta make the curve wider."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_epilogue_coil_comment10)
             "I put the brush down."
             $ AddChatter(vig4_sc7_epilogue_coil_comment11)
+            show teresa stream happy
+            show jennica stream neutral
             mS "There, all done."
             mS "MAC, you're now the proud owner of a \"Snakehawk\" tattoo!"
             play audio "macPing.wav" volume 1.5
@@ -5691,11 +5706,15 @@ label vig4_epilogue_coil():
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_coil_comment6)
+            show teresa stream think
+            show jennica stream shock
             enS "I see what you're going for."
             pS "Come on, Cap, you don't want the lines to be perfectly straight."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_epilogue_coil_comment7)
             "I put the brush down."
+            show jennica stream neutral
+            show teresa stream happy
             mS "There, all done."
             $ AddChatter(vig4_sc7_epilogue_coil_comment8)
             mS "MAC, you're now the proud owner of a \"Dragonfly\" tattoo!"
@@ -5706,10 +5725,14 @@ label vig4_epilogue_coil():
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_comment23)
+            show teresa stream think
+            show jennica stream shock
             enS "I see what you're going for."
             pS "It's abstract but good, Cap. You're really capturing her essence."
             $ AddChatter(vig4_sc7_epilogue_comment24)
             "I put the brush down."
+            show teresa stream happy
+            show jennica stream neutral
             mS "There, all done."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_epilogue_comment25)
@@ -5720,6 +5743,8 @@ label vig4_epilogue_coil():
     macS "Thank you, Captain."
     play audio "macLove.wav" volume 1.5
     macS "I love you."
+    show jennica stream shock
+    show teresa stream shock
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_epilogue_comment26)
         pause 0.5
@@ -5736,6 +5761,8 @@ label vig4_epilogue_coil():
         "I love you too.":
             mS "I love you too, MAC."
             $ AddChatter(vig4_sc7_epilogue_comment30)
+    show teresa stream happy
+    show jennica stream neutral
     "Jennica and Teresa bend down and wrap their arms around us as well."
     $ AddChatter(vig4_sc7_epilogue_comment31)
     "Then the ship's alert system activates."
@@ -5774,6 +5801,8 @@ label vig4_epilogue_coil():
     vS "Just watch."
     "As I gaze into the vastness of space, I start to notice it too."
     "Some of the stars are flickering."
+    show jennica stream shock
+    show teresa stream think
     "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
     "Then it starts."
     enS "What the—?"
@@ -6006,11 +6035,15 @@ label vig4_epilogue_ama():
                 $ AddChatter(vig4_sc7_epilogue_ama_comment9)
             "Slowly, but surely I begin tracing the outline."
             enS "I see what you're going for."
+            show teresa stream think
             pS "Oh no, not like that. You gotta make the curve wider."
+            show jennica stream shock
             $ AddChatter(vig4_sc7_epilogue_ama_comment10)
             "I put the brush down."
             $ AddChatter(vig4_sc7_epilogue_ama_comment11)
             mS "There, all done."
+            show jennica stream neutral
+            show teresa stream happy
             mS "MAC, you're now the proud owner of a \"Snakehawk\" tattoo!"
             play audio "macPing.wav" volume 1.5
             macS "Snakehawk!? Really!?"
@@ -6020,10 +6053,14 @@ label vig4_epilogue_ama():
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_comment23)
+            show teresa stream think
+            show jennica stream shock
             enS "I see what you're going for."
             pS "It's abstract but good, Cap. You're really capturing her essence."
             $ AddChatter(vig4_sc7_epilogue_comment24)
             "I put the brush down."
+            show jennica stream neutral
+            show teresa stream happy
             mS "There, all done."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_epilogue_comment25)
@@ -6033,7 +6070,9 @@ label vig4_epilogue_ama():
     "Without hesitation, MAC swerves around and wraps his arms around me."
     macS "Thank you, Captain."
     play audio "macLove.wav" volume 1.5
-    macS "I love you."
+    macS "I love you."    
+    show jennica stream shock
+    show teresa stream shock
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_epilogue_comment26)
         pause 0.5
@@ -6050,6 +6089,8 @@ label vig4_epilogue_ama():
         "I love you.":
             mS "I love you too, MAC."
             $ AddChatter(vig4_sc7_epilogue_comment30)
+    show jennica stream neutral
+    show teresa stream happy
     "Jennica and Teresa bend down and wrap their arms around us as well."
     $ AddChatter(vig4_sc7_epilogue_comment31)
     "Then the ship's alert system activates."
@@ -6103,6 +6144,8 @@ label vig4_epilogue_ama():
         "Some of the stars are flickering."
         "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
         "Then it starts."
+        show teresa stream shock
+        show jennica stream shock
         enS "What the—?"
         "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
         if viewershipHigh == True or viewershipMed == True:
@@ -6128,6 +6171,8 @@ label vig4_epilogue_ama():
         amaS "We've got to reverse fast before they hit us with a tractor beam."
         if viewershipHigh == True:
             $ AddChatter(vig4_sc7_epilogue_ama_comment21)
+        show jennica stream neutral
+        show teresa stream neutral
         amaS "Transferring control to co-pilot. Brown, you take over."
         "Jennica leaps into the co-pilot chair."
         pS "On it."
@@ -6187,6 +6232,8 @@ label vig4_epilogue_ama():
         "Some of the stars are flickering."
         "Or rather, it's as if something is passing in front of them and obscuring them for a brief moment."
         "Then it starts."
+        show jennica stream shock
+        show teresa stream shock
         enS "What the—?"
         "Cascading from one end of the cockpit screen to another, ripples like waves distorting the light in front of us."
         if viewershipHigh == True or viewershipMed == True:
@@ -6209,6 +6256,8 @@ label vig4_epilogue_ama():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc7_epilogue_ama_comment21)
         "We immediately turn around and start flying away from the station."
+        show jennica stream angry
+        show teresa stream neutral
         pS "We've got to reverse fast before they hit us with a tractor beam."
         mS "Teresa, head down to engines, make sure power is routed where we need it to go."
         enS "Aye aye, captain."
