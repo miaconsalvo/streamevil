@@ -1753,13 +1753,13 @@ label commsBase_DataCenter_OUT():
     $ AddChatter(vig2_sc7_out_comment11)
     "The technician looks terrified as he clicks through the various menus on the computer."
     worker "44s-73f-94c-21o."
-    show reginald stream impressed at stream_right5 with move
+    show reginald stream impressed at stream_right5 with MoveTransition(1.5)
     $ AddChatter(vig2_sc7_out_comment12)
     $ AddChatter(vig2_sc7_out_comment13)
     worker "You realise these people have nothing right?"
     $ AddChatter(vig2_sc7_out_comment14)
     $ AddChatter(vig2_sc7_out_comment15)
-    show reginald at stream_left with move
+    show reginald at stream_left with MoveTransition(2)
     "Reginald walks past the technician as he logs the code into his agenda."
     goon "I don't get paid to realise things."
     $ AddChatter(vig2_sc7_out_comment16)
