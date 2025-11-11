@@ -443,7 +443,7 @@ label vig4_sc2_1():
     mS "We gotta follow these crowds."
     enS "We should stay hidden and stick to the alleys if we can."
     townguy "Hello, strangers, you must be here for the star shower!"
-    show customs agent at stream_left with dissolve
+    show townsperson stream neutral at stream_left with dissolve
     "A man with a sack of grain hanging over his left shoulder approaches Teresa and I from the alley."
     townguy "We get visitors so rarely. It's lovely to have you!"
     if viewershipHigh == True or viewershipMed == True:
@@ -473,7 +473,7 @@ label vig4_sc2_1():
                     with vpunch
                     "As I speak, Teresa snaps the stun rod out and jabs it into the man's neck."
                     "The sack of grain slumps to the ground, followed by his body."
-                    hide customs agent with dissolve
+                    hide townsperson stream neutral with dissolve
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_1_comment7)
                     enS "Figured we didn't want some rube hanging around us."
@@ -523,7 +523,7 @@ label vig4_sc2_1():
                     "She snaps the stun rod out and jabs it into the man's neck."
                     with vpunch
                     "The sack of grain slumps to the ground, followed by his body."
-                    hide customs agent with dissolve
+                    hide townsperson stream neutral with dissolve
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_1_comment7)
                     enS "Figured we didn't want some rube hanging on to us."
@@ -627,7 +627,7 @@ label vig4_sc2_2_accompanied():
     "Then we move out of the road, emerging into a wide plaza where the crowds of poeple are setting up tables, chairs, and stalls."
     "At the north end of the plaza, an immense tower stretches up into the sky. It almost feels like a church."
     "The plaza is thick with people. It's an opportunity."
-    hide customs agent with dissolve
+    hide townsperson stream neutral with dissolve
     $ AddChatter(vig4_sc2_accompanied_comment3)
     "Teresa and I dart into an alley and out of sight."
     "We emerge from the alley onto another road."
@@ -932,7 +932,8 @@ label vig4_sc2_4():
             show vega stream neutral at stream_left with dissolve
             "A young woman steps out from the back."
             $ AddChatter(vig4_sc2_4_comment17)
-            "She's aiming a shotgun directly at Teresa."
+            show vega stream gun
+            "She's aiming a blaster directly at Teresa."
             $ AddChatter(vig4_sc2_4_comment18)
             show teresa stream fight
             "In a flash, Teresa and I lift our blasters. Teresa aims at the old man while I keep my eye on the woman."
@@ -1015,6 +1016,7 @@ label vig4_sc2_4():
             show vega stream neutral at stream_left with dissolve
             "A young woman steps out from the back."
             $ AddChatter(vig4_sc2_4_comment27)
+            show vega stream gun
             "She's aiming a shotgun directly at Teresa. I shift my blaster in her direction."
             show teresa stream fight
             vS "I see we have... guests?"
@@ -1038,6 +1040,7 @@ label vig4_sc2_4():
         show mac stream neutral
         play audio "macHum.wav" volume 1.5
         macS "Threat neutralized."
+        show vega stream neutral
         show teresa stream neutral
         $ AddChatter(vig4_sc2_4_comment31)
     else:
@@ -1054,6 +1057,7 @@ label vig4_sc2_4():
         show mac stream neutral
         play audio "macHum.wav" volume 1.5
         macS "Situation deescalated."
+        show vega stream neutral
         show teresa stream neutral
         $ AddChatter(vig4_sc2_4_comment31)
     ##* streamer reaction to start a MAC chant - if you do this, then later in the game we'll trigger a chant from the chat automatically. Probably on the return to Polaris alongside Moze's "speech"
@@ -1206,12 +1210,14 @@ label vig4_sc2_6():
                     mS "You mean everyone in this town is a Dragonfly?"
                     cS "Not everyone. Some of us are just people."
                     cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing or the Alliance's bureaucracy."
+                    show vega stream happy
                     vS "People who want to be free."
                     $ AddChatter(vig4_sc2_6_comment2)
                     cS "I'm sure you are all well aware how difficult it can be to get here."
                     $ reactTarget = "vig4_sc2_longjourney"
                     show screen streamerCommentary
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
+                    show vega stream neutral
                     $ vig4_sc2_6_comment1.click = False
                     $ AddChatter(vig4_sc2_6_comment3)
                     pause 0.5
@@ -1228,11 +1234,13 @@ label vig4_sc2_6():
                             hide screen streamerCommentary
                             $ AddChatter(vig4_sc2_6_comment5)
                             cS "No, but he was amenable to a deal when we caught up with him fifteen years ago."
+                            show vega stream happy
                             vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                             $ AddChatter(vig4_sc2_6_comment6)
                             vS "That deal allowed us make this place a reality."
                             show jennica stream neutral
                             show teresa stream neutral
+                            show vega stream neutral
                             if viewershipHigh == True:
                                 $ AddChatter(vig4_sc2_6_comment7)
                             jump vig4_sc2_6
@@ -1250,11 +1258,13 @@ label vig4_sc2_6():
                     hide screen streamerCommentary
                     $ AddChatter(vig4_sc2_6_comment5)
                     cS "No, but he was amenable to a deal when we caught up with him fifteen years ago."
+                    show vega stream happy
                     vS "We helped him with some trouble on Solara. He gave us the technology we needed."
                     $ AddChatter(vig4_sc2_6_comment6)
                     vS "That deal finally let us make this place a reality."
                     show jennica stream neutral
                     show teresa stream neutral
+                    show vega stream neutral
                     $ vig4_sc2_6_comment1.click = False
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_6_comment7)
@@ -1264,12 +1274,14 @@ label vig4_sc2_6():
                             mS "You mean everyone in this town is a Dragonfly?"
                             cS "Not everyone. Some of us are just people."
                             cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing or the Alliance's bureaucracy."
+                            show vega stream happy
                             vS "People who want to be free."
                             $ AddChatter(vig4_sc2_6_comment2)
                             cS "I'm sure you are all well aware how difficult it can be to get here."
                             $ reactTarget = "vig4_sc2_longjourney"
                             show screen streamerCommentary
                             cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
+                            show vega stream neutral
                             $ AddChatter(vig4_sc2_6_comment3)
                             pause 0.5
                             $ AddChatter(vig4_sc2_6_comment4)
@@ -1323,6 +1335,7 @@ label vig4_sc2_6():
             "Coil turns to look at Vega."
             cS "Until I met Vega."
             cS "A young scrapper with the biggest heart and the sharpest mind I ever met."
+            show vega stream happy
             vS "Oh come on, Pops, you say it the same way every time."
             cS "It only gets more true the more I say it."
             $ AddChatter(vig4_sc2_6_comment15)
@@ -1339,6 +1352,7 @@ label vig4_sc2_6():
                 $ AddChatter(vig4_sc2_6_comment18)
             vS "Together."
             cS "Together."
+            show vega stream neutral
             jump vig4_sc2_6
         "So, what's the plan?" if polarisQuestion == True and vegacoilQuestion == True:
             mS "Ok, so we've made it. What's next?"
@@ -1349,6 +1363,7 @@ label vig4_sc2_6():
             cS "We appreciate everything that you've done."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_6_comment20)
+            show vega stream happy
             vS "It means the galaxy to us."
             cS "What I can tell you, is that you arrived just in the nick of time."
             cS "Tomorrow, we will take MAC to rendezvous with the Dragonflies' headquarters."
@@ -1356,6 +1371,7 @@ label vig4_sc2_6():
             "Coil pauses and leans forward, locking eyes with me."
             $ AddChatter(vig4_sc2_6_comment21)
             cS "No, Captain Mozely, you do not understand."
+            show vega stream neutral
             cS "We will be taking MAC. Just MAC." 
             cS "Not you and your crew."
             $ AddChatter(vig4_sc2_6_comment22)
@@ -1511,6 +1527,7 @@ label vig4_sc3_1():
             vS "About MAC?"
             mS "About a lot of things."
     vS "I know you're worried about what's going to happen with MAC. You have every right to be."
+    show vega stream happy
     vS "But it's a festival! When was the last time you celebrated something?"
     $ AddChatter(vig4_sc3_1_comment3)
     mS "I don't know."
@@ -1566,6 +1583,7 @@ label vig4_sc3_2_vega():
     "Vega turns  and takes off into the crowd."
     "I follow close behind, weaving around groups of people and trying not to step on kids as they careen through the plaza."
     vS "Here! Hope it's not too on the nose."
+    show vega stream neutral
     $ vig4_sc3_2_vega_comment2.click = False
     $ AddChatter(vig4_sc3_1_comment11)
     "The stall in front of us has four toy rifles laying on a counter."
@@ -1574,6 +1592,7 @@ label vig4_sc3_2_vega():
     "The operator pushes a button and a series of cardboard cutouts begin cycling between the houses and hills."
     "Cardboard cutouts in the likeness of BigCorp enforcers, dropships, and tanks."
     "The four teens shout as they fire short sparks off in rapid succession at the targets."
+    show vega stream happy
     vS "What do you think? Up for a round, just you and me?"
     $ AddChatter(vig4_sc3_2_vega_comment5)
     menu:
@@ -1589,6 +1608,7 @@ label vig4_sc3_2_vega():
     vS "Come on, grab a rifle. I want to see what you're made of."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc3_2_vega_comment6)
+    show vega stream gun
     "Vega grabs one of the guns and aims it down range."
     "The rifle is light in my hands. Almost too light for comfort."
     menu:
@@ -1646,11 +1666,13 @@ label vig4_sc3_2_vega():
         $ AddChatter(vig4_sc3_2_vega_comment12)
         vS "Ahhh damn, if I just got those last ones I would have beat you."
     mS "Well done, it was an impressive showing!"
+    show vega stream happy
     vS "Thanks! That means a lot coming from you."
     "We put the toy rifles back on the counter and step aside as new players take their positions."
     jump vig4_sc3_2_vega_2
 
 label vig4_sc3_2_vega_2():
+    show vega stream neutral
     "We walk back toward the center of the plaza, but Vega stops at the periphery, looking over the crowd."
     "She isn't scanning for anything or anyone in particular. She's just taking it all in."
     "I picture the ready warrior I competed against in the carnival game."
@@ -1665,11 +1687,13 @@ label vig4_sc3_2_vega_2():
             $ csEngagement += 1
             $ kcEngagement += 1
             mS "Vega, do you like living on Polaris?"
+            show vega stream happy
             "She smiles, still keeping her gaze on the festival."
             vS "It has its charm."
             vS "Getting to work with Coil in peace and quiet has been a dream come true."
             $ AddChatter(vig4_sc3_2_vega_comment15)
             vS "Still, the nature of our job means I've been here, and only here, for fifteen years."
+            show vega stream neutral
             vS "It's a long time to be in any one place."
             menu:
                 vS "It's a long time to be in any one place."
@@ -1711,10 +1735,12 @@ label vig4_sc3_2_vega_2():
             vS "Please, fire away."
             mS "Have you ever killed anyone before."
             "Vega looks at me, her eyebrows raised in shock. Then she breaks into laughter."
+            show vega stream happy
             $ AddChatter(vig4_sc3_2_vega_comment18)
             vS "So direct! An outlaw's priority I take it."
             "She steadies herself and shrugs."
             $ AddChatter(vig4_sc3_2_vega_comment19)
+            show vega stream neutral
             vS "I have, yeah. I'm not proud of it."
             mS "With the Dragonflies?"
             if viewershipHigh == True:
@@ -1745,13 +1771,17 @@ label vig4_sc3_2_vega_2():
                             $ kcEngagement -= 1
                             mS "You missed."
                             "Vega shrugs."
+                            show vega stream happy
                             vS "How do you know? Maybe it's a boomerang bullet."
                             vS "It could be coming back around for you any second."
+                            show vega stream neutral
                         "Act like you get hit.":
                             $ kcEngagement += 1
                             "I place a hand to my chest and lean my head back."
+                            show vega stream happy
                             mS "Ughhhh, right in the heart."
                             vS "Like I told you. Sharp."
+                            show vega stream neutral
                 "Finding peace is hard.":
                     $ csEngagement += 1
                     mS "It's hard to find a place where you can leave that behind."
@@ -1768,6 +1798,7 @@ label vig4_sc3_2_vega_2():
         vS "It meant a lot to fight alongside the captain of the Oakley, even if it was just pretend."
         "I enjoyed it too.":
             mS "I appreciate that. And I enjoyed fighting alongside a Dragonfly."
+            show vega stream happy
             "Vega smiles and blushes."
         "Think about joining us?":
             $ kcEngagement += 1
@@ -1776,6 +1807,7 @@ label vig4_sc3_2_vega_2():
             mS "What do you think about joining us? The Oakley always has room for a sharp new recruit."
             $ AddChatter(vig4_sc3_2_vega_comment26)
             "Vega's eyes go wide for an instant."
+            show vega stream happy
             vS "Bahahaha!"
             "Then she doubles over, laughing."
             vS "Sorry, sorry, it just took me a second to realize that you're serious."
@@ -1783,11 +1815,13 @@ label vig4_sc3_2_vega_2():
             vS "You know, if I was younger, I would have said 'yes' in a heartbeat."
             vS "I'm flattered. Deeply. But I'm going to have to politely decline."
             $ AddChatter(vig4_sc3_2_vega_comment27)
+            show vega stream neutral
             vS "My place is with Coil and the Dragonflies. I'm sure you understand."
             mS "Of course. Figured I'd extend the invite."
             $ AddChatter(vig4_sc3_2_vega_comment28)
             vS "And it is very much appreciated."
     vS "You should probably go check in with your crew, Coil might have news."
+    show vega stream neutral
     mS "I was just thinking the same thing."
     vS "Take care, Captain Moze."
     mS "Take care, Vega."
@@ -3187,7 +3221,7 @@ label vig4_sc3_5():
                 $ AddChatter(vig4_sc3_5_comment8)
             show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
-            show vega stream neutral at stream_left with dissolve
+            show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             $ AddChatter(vig4_sc3_5_comment9)
             show teresa stream neutral at stream_right5 with dissolve
@@ -3226,6 +3260,7 @@ label vig4_sc3_5():
             vS "{i}Shhhhshhshh.{/i}"
             "Vega steps forward and restrains him."
             vS "I'm really sorry, MAC. This is for your own good."
+            show vega stream neutral
             play audio "macAlarmed.wav" volume 1.5
             macS "How do you know what's for my own good?"
             $ AddChatter(vig4_sc3_5_comment15)
@@ -3345,7 +3380,7 @@ label vig4_sc3_5():
             hide mac with dissolve
             show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
-            show vega stream neutral at stream_left with dissolve
+            show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             $ reactTarget = "vig4_sc3_coil2"
             show screen streamerCommentary
@@ -3382,6 +3417,7 @@ label vig4_sc3_5():
                 "MAC rolls forward, preparing the EMP charge in his antenna."
             vS "Shhhhshhshh."
             "Vega steps forward and restrains him."
+            show vega stream neutral
             vS "I'm really sorry, MAC. This is for your own good."
             play audio "macAlarmed.wav" volume 1.5
             macS "How do you know what's for my own good?"
@@ -3507,7 +3543,7 @@ label vig4_sc3_5():
             "Coil steps up from an alleyway."
             hide screen streamerCommentary
             cS "But there's no need to be mean to the child."
-            show vega stream neutral at stream_left5 with dissolve
+            show vega stream gun at stream_left5 with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             $ reactTarget = "vig4_sc3_coil2"
             show screen streamerCommentary
@@ -3578,7 +3614,7 @@ label vig4_sc3_5():
             cS "Let them go."
             $ AddChatter(vig4_sc3_5_comment17)
             hide coil with dissolve
-            hide vega with dissolve
+            hide vega with dissolve #do we need this? she gets hidden earlier i think
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
@@ -4509,7 +4545,7 @@ label vig4_sc7_2():
     "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
     "An energy shield."
     $ AddChatter(vig4_sc7_2_comment3)
-    show vega stream neutral at stream_left5 with dissolve
+    show vega stream gun at stream_left5 with dissolve
     vS "Pops!"
     "Vega rushes up the stairs and kneels down to MAC's side."
     $ AddChatter(vig4_sc7_2_comment4)
@@ -4877,7 +4913,7 @@ label vig4_sc7_3_ama():
     show screen streamerCommentary
     "His eyes go cold. But there's an odd light to them. As if he was smiling."
     hide coil with Dissolve(2.0)
-    show vega stream neutral at stream_left with dissolve
+    show vega stream upset at stream_left with dissolve
     vS "No!"
     "The energy shield at the doorway dissipates. Vega rushes to Coil's side."
     if viewershipHigh == True:
@@ -5028,7 +5064,7 @@ label vig4_sc7_3_ama():
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
     $ AddChatter(vig4_sc7_3_ama_comment66)
     "Ama is standing now. She points across the room."
-    show vega stream neutral at stream_left with dissolve
+    show vega stream upset at stream_left with dissolve
     "Vega sits, still cradling Coil's head in her hands."
     $ AddChatter(vig4_sc7_3_ama_comment67)
     "The tears that were streaking down her face have stopped."
@@ -5360,7 +5396,7 @@ label vig4_sc7_3_coil():
     $ reactTarget = "vig4_sc7_killama"
     show screen streamerCommentary
     hide ama with Dissolve(2.0)
-    show vega stream neutral at stream_center with dissolve
+    show vega stream upset at stream_center with dissolve
     vS "Pops!"
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment41)
@@ -5438,7 +5474,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment50)
     "We step back and I stand up."
     show coil stream neutral at stream_right with dissolve
-    show vega stream neutral at stream_left with dissolve
+    show vega stream happy at stream_left with dissolve
     "Coil leans against Vega as the two approach."
     vS "So, Pops, how's Moze's case for joining the Dragonflies look now?"
     if viewershipHigh == True or viewershipMed == True:
@@ -5798,6 +5834,7 @@ label vig4_epilogue_coil():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_epilogue_coil_comment15)
     mS "What do you mean?"
+    show vega stream happy
     vS "Just watch."
     "As I gaze into the vastness of space, I start to notice it too."
     "Some of the stars are flickering."
