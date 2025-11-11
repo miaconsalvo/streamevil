@@ -1000,7 +1000,7 @@ label vig4_sc6_defend_5():
             mS "No way, you two are coming with me! I'm not leaving you!"
             enS "You're not leaving anything."
             pS "We're just splittin' up to make the mission succeed."
-            jenter "We've got this."
+            enS "We've got this."
             if jennicaRomance == True:
                 "Jennica steps up close to me. She faces me dead on."
                 "I can't move."
