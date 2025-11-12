@@ -1,14 +1,15 @@
 label vignette1Start():
+    $ newGame = False
     $ macroChoice = False
     $ vignette1 = True
     $ vignette2 = False
     $ vignette3 = False
     $ vignette4 = False
-    scene streamview
-    show screen streamChat
-    show screen streamDetails
+    #scene streamview
+    #show screen streamChat
+    #show screen streamDetails
     show vig1_town_stream at topleft onlayer background with dissolve
-    $ narrator = alt_narrator
+    #$ narrator = alt_narrator
     $ viewCheck1 = 2
     $ viewCheck2 = 3
     $ viewCheck3 = 4
@@ -22,6 +23,7 @@ label vignette1Start():
 label returnToWorkshop():
     show screen chatTutorial2
     $ reactTarget = "vig1_sc1_startStream"
+    #$ screenFreeze = True #- Trying to resolve the issue with the yellow highlight not moving during bandit convo and elliot entrance
     call screen streamFreeze
     play music "soundtrack/theme.wav" volume 0.6 loop fadein 2.0
     "Thermal paste in hand I return to Allistar's workshop."
@@ -39,7 +41,7 @@ label returnToWorkshop():
     pause 0.5
     aS "\"Father\"?"
     macS "Yes, Dr. Vanas. He built and educated me. Before he died that is."
-    aS "Vanas...Why do I know that name?"
+    aS "Vanas... Why do I know that name?"
     mS "He was BigCorp's head of research and development. Was working on a top secret project before he ran off with company secrets."
     aS "What project?"
     "Allistar looks up to me, then back to MAC."
@@ -119,6 +121,7 @@ label shipCall:
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
+    show ama stream silhouette phone at stream_left_mac with dissolve
     amaS "My dear Mozely. It's good to hear your voice again."
     show allistar stream surprised
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."
@@ -132,7 +135,7 @@ label shipCall:
     amaS "Several squads have been dispatched to apprehend you and your crew." 
     mS "Why are you telling me this?"
     amaS "BC hired me to hunt you down and return that little droid you've stolen."
-    amaS "It's nothing personal, dear. Just business."
+    amaS "It's nothing personal, kid. Just business."
     amaS "Of course, I won't get any reward if BC apprehends you themselves." 
     amaS "So why don't you run along to your little ship and set sail."
     amaS "Oh, and take Allistar with you." 
@@ -140,12 +143,14 @@ label shipCall:
     show allistar stream mad
     amaS "Take care, Mozely. Do try to make this hunt interesting."
     play audio "cutCall.wav" volume 1.5
+    hide ama
     "The line cuts. The room is silent."
+    play audio "macSad.wav" volume 1.2
     macS "Captain? You appear distressed."
     play audio "callRing.wav" volume 1.5
     "Another ring from the communicator. It's Teresa; her voice is frantic and rushed."
     show teresa phone neutral at stream_left_mac with Dissolve(0.5)
-    enS "Captain! We just identified several BC land cruisers heading toward Grand Junction."
+    enS "Captain! We just identified several BC land cruisers heading our way."
     play backAudio "lazerFireCall.wav" volume 1.0 loop
     "The sound of blaster fire erupts through the coms."
     pS "Light speeders have already dropped a couple squads in the port. They're firing on the ship!"
@@ -180,6 +185,7 @@ label shipCall:
     $ AddChatter(vig1_sc2_comment6)
     pause 0.5
     "I follow Allistar to the front door."
+    play audio "macPester.wav" volume 1.5
     macS "Captain, what's happening?"
     menu:
         macS "Captain, what's happening?"
@@ -241,6 +247,7 @@ label streetShootout:
     aS "We can't get pinned down!"
     "A light bump taps me on the knee."
     show mac stream neutral at stream_center_mac with Dissolve(0.5)
+    play audio "macPing.wav" volume 1.5
     macS "Affirmative, our survival rate in the current situation is 5\%."
     menu:
         macS "Affirmative, our survival rate in the current situation is 5\%."
@@ -287,7 +294,7 @@ label streetShootout:
             hide mac with Dissolve(0.3)
             show bc_enforcer at stream_center with move
             "Knocking the blaster out of his hand, I tackle him to the ground."
-            play audio "grunt.wav" volume 3.0
+            play audio "grunt.wav" volume 4.0
             "We roll over one another as he reaches for his gun."
             "He's too slow."
             "I pull my pistol to his chest and fire two rapid shots."
@@ -328,6 +335,7 @@ label streetShootout:
             "A hail of blaster bolts go in both directions, but as they move to get closer, I manage to land a shot in one of their chests, knocking them down."
             show bc_enforcer at stream_left with Dissolve(0.3)
             stop backAudio
+            play audio "gunCock.wav" volume 2.0
             enforcer "Freeze!"
             hide allistar with Dissolve(0.3)
             "The enforcer on the ground rounds the corner, but that single word of hesitation gives me just enough time."
@@ -336,7 +344,7 @@ label streetShootout:
             play audio "lazer.wav" volume 5.0
             hide mac with Dissolve(0.3)
             "The blast goes wide and I tackle him to the ground."
-            play audio "grunt.wav" volume 3.0
+            play audio "grunt.wav" volume 4.0
             show bc_enforcer at stream_center with move
             "We roll over each other. Biting, punching, kicking. But he lands on top of me and wraps his hands around my throat."
             "He starts squeezing as I frantically push my hands up against his face, trying to find purchase, trying to knock him off."
@@ -430,6 +438,7 @@ label saveMAC():
             "Pain explodes in my left shoulder as I fall to the ground."
             aS "Moze!"
             show mac stream shock
+            play audio "macAlarmed.wav" volume 1.5
             macS "Captain!?"
             play audio "lazer.wav" volume 2.0
             pause 0.5
@@ -512,6 +521,8 @@ label spacePortEscape():
     play audio "jetLaunch.wav" volume 4.0
     play backAudio "jetEngines.wav" volume 1.0
     "Jennica slams a thruster forward and the ship lurches into the air."
+    show cockpit_stream at topleft onlayer background with dissolve
+    hide vig1_spaceport
     "Bolts fire from the cruisers and detonate all around us as we ascend into the atmosphere."
     stop music fadeout 4.0
     stop backAudio fadeout 4.0
@@ -523,13 +534,13 @@ label spacePortEscape():
     hide mac with dissolve
     hide allistar with dissolve
     pause 1.5
+    hide cockpit_stream with dissolve
     jump councilDebrief
 
 label councilDebrief():
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
-    show shiphub_stream at topleft onlayer background with dissolve
+    show shiphub_stream at topleft onlayer background with Dissolve(2.0)
     #play backAudio "shipHum.wav" volume 0.7 loop fadein 1.0
-    hide vig1_spaceport
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     pS "We've been in hyperspace for about an hour. And we got out before the cruisers were within range of us." 
@@ -541,7 +552,7 @@ label councilDebrief():
     mS "We'll need to be more careful in the future, and find a way to stay under the radar."
     pS "Any ideas?"
     mS "Maybe. I need to think."
-    "We're all quiet. No {i}bzzrts{/i}, no random dictionary definitions or percentage calculations."
+    "We're all quiet. No {i}bzzrts{/i}, no random dictionary definitions, no percentage calculations."
     "... no MAC."
     mS "Does anyone know where MAC is?"
     play backAudio2 "shipAlarm.wav" volume 0.8
@@ -648,8 +659,9 @@ label councilDebrief():
                     player "So welcome aboard, and let's settle some scores!"
     $ reactImage = "stream ui/reactneutral.png"
     $ AddChatter(vig1_sc3_comment3_bandit0)
+    #$ screenFreeze = True
     call screen raidFreeze
-    "Shit, was that cringey?"
+    "Shit, was that cringey? I hope it wasn't cringey"
     $ viewCheck9 = viewCount
     $ macroChoice = False    
     $ narrator = alt_narrator
@@ -661,13 +673,15 @@ label escapePodConfrontation:
     $ macroChoice = False
     "I run down the halls of the ship and leap over the railing leading down to the escape pod bay."
     #$ AddChatter(vig1_sc3_comment4)
+    stop music fadeout 3.0
     "As I near the pods, I hear Allistar's voice."
     aS "Come on Mac, you can trust me. We can live a safe life. You don't have to be on the run all the time."
+    play audio "macNeutral.wav" volume 1.0
     macS "But Captain said to stay close to her."
-    aS "I know Mac. But Moze isn't always right. This place is dangerous."
+    aS "I know, Mac. But Moze isn't always right. This place is dangerous."
     $ AddChatter(vig1_sc3_comment5)
     "I turn the corner."
-    play music "soundtrack/decisionTime.wav" volume 1.2 fadein 1.0
+    play music "soundtrack/decisionTime.wav" volume 1.2 #fadein 1.0
     show allistar stream surprised at stream_right with dissolve
     show mac stream neutral at stream_center_mac with dissolve
     "MAC is in the center of the hall. Allistar has one foot inside an open escape pod."
@@ -735,8 +749,8 @@ label escapePodConfrontation:
             $ outlaw += 3
             $ narrator = reg_narrator
             "I go to select the stun option."
-            show streamview with vpunch
             play audio "disruptiveBang.wav" volume 6.0
+            show streamview with vpunch
             "But as I hover the mouse over the choice, a loud bang comes from down the apartment above me."
             "I jolt a little bit."
             "My cursor slips."
@@ -746,7 +760,7 @@ label escapePodConfrontation:
     $ macViolence += 1
     show allistar stream surprised
     "I fire a bolt. It lands right between Allistar's eyes."
-    play audio "deathGasp.wav" volume 2.0
+    #play audio "deathGasp.wav" volume 2.0
     "He slumps to the ground."
     hide allistar with Dissolve(0.2)
     hide mac with Dissolve(0.5)
@@ -818,7 +832,7 @@ label escapePodConfrontation:
     mS "I had to kill him."
     enS "{i}What!?{/i}"
     pS "Allistar's dead!?"
-    mS "I had to protect my crew. He was a threat we can't afford."
+    mS "I had to protect my crew. He was a threat we couldn't afford."
     pS "I understand Cap, it's just... I can't believe it."
     enS "Is MAC okay?"
     mS "I don't know. I could use some help with the body."
@@ -900,7 +914,7 @@ label escapePodConfrontation:
             player "Thanks to everyone in chat!"
     $ AddChatter(vig1_sc3_signoff_comment1)
     pause 0.5
-    player "This was awesome and I hope to see y'all around next time!"
+    player "This was awesome, and I hope to see y'all around next time!"
     $ AddChatter(vig1_sc3_signoff_comment2)
     pause 0.7
     $ viewCount -= 5
@@ -1098,7 +1112,7 @@ label webPage_vig1():
     scene streamview with dissolve
     $ menu = adv_menu
     $ screenComplete = True
-    "Jessie's right, checking out the forums on Blueit would be a good call."
+    "Jessie's right, checking out the forums on blueit would be a good call."
     "You can also check on the analytics from Flinch for the past stream."
     show screen webNavTutorial
     call screen webNavigation_vig1
@@ -1169,16 +1183,16 @@ label vig1_brother_1():
     scene bg black with dissolve
     "As you close Blueit, you remember that your little brother asked to chat at 9:30."
     "It's 8pm so you have a bit of time."
-    "You decide to make a late dinner and start catching up on the new season of Iron Goddess."
+    "You decide to make a late dinner, and start catching up on the new season of Iron Goddess."
     "After finishing an episode, you wash your dishes then sit back down at your computer and shoot Elliot a message."
     scene discordview with dissolve
-    play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.5
+    play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.0
     player_nvl "Hey El! How's it going?"
     bro_nvl "Hey [player], things are good!"
     bro_nvl "School is busy, but I'm managing. There's a concert coming up for orchestra that I'm kinda anxious about tbh"
     menu:
         "•Is it the conductor again?":
-            player_nvl "Ahhh"
+            player_nvl "Ahhh the struggles of mr. 1st violin"
             player_nvl "Is Doc Frida getting on your guys' case again?"
             bro_nvl "Always"
             bro_nvl "You know how she gets before a concert"
@@ -1210,7 +1224,7 @@ label vig1_brother_1():
     bro_nvl "Well, I sort of have this crush"
     menu:
         "•YES!":
-            player_nvl "YOOOOO!"
+            player_nvl "YESSSS!"
             player_nvl "What's his name?"
             player_nvl "Do you have a picture?"
             player_nvl "Nvm just gimme his insta, I'll stalk the shit out of him"
@@ -1334,7 +1348,7 @@ label vig1_brother_2():
     "You say goodnight to Elliot then brush your teeth and get in bed."
     "After watching a couple more episodes of Iron Goddess on your phone, you start scrolling through social media."
     "A couple posts are advertising the new game {i}Oakley 2: Settle the Score{/i}."
-    "You turn off the phone and close your eyes, ready to fall asleep."
+    "You turn off the phone, and close your eyes, ready to fall asleep."
     "Just as your eyes start to get heavy, a memory comes to you, almost like a dream."
     "It's three years ago, you're still living back home, and you and Elliot are sitting in front of a TV."
     "You hand a game controller to Elliot."

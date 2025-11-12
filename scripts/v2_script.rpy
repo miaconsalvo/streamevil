@@ -1759,7 +1759,7 @@ label commsBase_DataCenter_OUT():
     worker "You realise these people have nothing right?"
     $ AddChatter(vig2_sc7_out_comment14)
     $ AddChatter(vig2_sc7_out_comment15)
-    show reginald at stream_left with MoveTransition(2)
+    show reginald at stream_left with MoveTransition(2.0)
     "Reginald walks past the technician as he logs the code into his agenda."
     goon "I don't get paid to realise things."
     $ AddChatter(vig2_sc7_out_comment16)

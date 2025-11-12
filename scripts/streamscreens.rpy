@@ -21,8 +21,12 @@ screen streamChat():
         ypadding 20
         viewport: #id "vp": #creates a viewport so chat can be scrolled through and there won't be overflow
             yadjustment yadj #Using the "yadj" values determined at start of main script, this should set the viewport to adjust to the bottom whenever it's updated. It's only working 70ish% of the time though
-            draggable True #allows scrollbar to be dragged
-            mousewheel True #allows mousewheel to scroll viewport
+            if screenFreeze == False:
+                draggable True #allows scrollbar to be dragged
+                mousewheel True #allows mousewheel to scroll viewport
+            else: #My idea to fix the issue with the highlight not moving with BANDI or Elliot's comments is to disable to ability to scroll the chat in those moments. This doesn't work unfortunately.
+                draggable False
+                mousewheel False
             scrollbars "vertical" #sets vertical scroll bar
             yinitial 1.0 #should place scrollbar at bottom of viewport by default - not working though
             vbox:             #Establishes a "vertical box" that displays the objects in chats_list
@@ -106,7 +110,8 @@ screen streamDetails():
             ysize 72
             align (0.85, 0.85)
         image "[profilePic]" align (1, 0.91) size (100, 100) #displays a profile pic for the streamer
-        image "[reactImage]" align (-0.02, 0.105) size (263.1, 131.7)
+        if newGame == False:
+            image "[reactImage]" align (-0.02, 0.105) size (263.1, 131.7)
         #image ["stream ui/reactalert.png"] align (0.13, 0.125) size (40, 40)
 
         #DEBUG MODE

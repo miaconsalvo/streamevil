@@ -5,12 +5,13 @@
 label vig1_sc1_startStream():
     $ macroChoice = True
     $ narrator = reg_narrator
+    #$ screenFreeze = False
     hide screen streamerCommentary
     hide screen chatTutorial2
     $ reactImage = "stream ui/reactconfident.png"
-    player "Alright, gang, sorry for the extended break! Roommate needed help moving some furniture."
-    player "Let's catch up to speed."
-    player "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities and we are {i}not{/i} giving him back."
+    player "Alright, gang, sorry for the break! Really needed that water."
+    player "Let's go over what we've got so far."
+    player "We're on the run from BigCorp cause we stole our new robot friend MAC from their facilities, and we are {i}not{/i} giving him back."
     player "But he's been having some wiring issues that we gotta fix before we drop him off with the humanitarian organization."
     player "So we hit up our old pal Allistar the mechanic to fix up MAC, and had to grab some thermal paste from the local shop." 
     player "And I'll be honest, that shopkeep was quite rude."
@@ -44,7 +45,7 @@ label vig1_sc2_whoQuestion():
             pause 0.5
         "Explain Snakehawks.":
             $ reactImage = "stream ui/reactconfident.png"
-            player "The Snakehawks were the gang that Moze and Jennica ran with before they became mercenaries."
+            player "The Snakehawks were the gang that Moze and Jennica ran with before they got their own ship."
             player "Allistar was part of the gang too, that's why he has the same tattoo as Moze."
             player "They used to be a big deal in the Outposts until most of 'em got wiped out."
             player "This was all lore stuff from before the first game, actually."
@@ -195,12 +196,13 @@ label vig1_sc3_banditConvo():
     $ vig1_sc3_comment3_bandit0.click = False
     $ narrator = reg_narrator
     $ commentVariable = True
+    #$ screenFreeze = False
     menu:
-        "Bandit asked if I'm a big Oakley fan"
+        "Bandit asked if I'm a big Oakley fan."
         "Massive!":
             $ reactImage = "stream ui/reactthumbsup.png"
             player "Oh yeah, big time!"
-            player "My brother and I got hooked on the first game, played it a bunch of times."
+            player "My brother and I got hooked on the first game, played it a bunch of times together."
             player "What about you?"
             $ reactImage = "stream ui/reactneutral.png"
             $ AddChatter(vig1_sc3_comment3_bandit1)
@@ -224,6 +226,7 @@ label vig1_sc3_banditConvo():
             player "I like the game, but honestly my little brother is a bigger fan than me."
             player "We got hooked on the first game, played it a bunch of times."
             player "He read up on all the prequel comics and stuff after that."
+            player "What about you?"
             $ reactImage = "stream ui/reactneutral.png"
             $ AddChatter(vig1_sc3_comment3_bandit1)
             pause 3.0
@@ -283,7 +286,7 @@ label vig1_sc3_banditConvo():
             player "This hunky mechanic has good vibes."
             $ AddChatter(vig1_sc3_comment3_banditAllistar)
             pause 2.0
-            "That's...ominous. Let's get back to the game."
+            "That's... ominous. Let's get back to the game."
         "Jennica.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ csEngagement += 1
@@ -374,7 +377,7 @@ label vig1_analytics_audience():
     menu:
         "Not everyone from the raid will stick around next time though."
         "Think about your last attempt.":
-            "Last time you tried this you missed by just one viewer."
+            "Last time you tried this, you missed by just one viewer."
             "It was brutal."
         "Think about your conversation with Jessie.":
             "Playing the Outlaw route might help with that."
@@ -382,7 +385,7 @@ label vig1_analytics_audience():
     "You said this would be your last try to get Affiliate."
     "If you don't, you'll probably stop streaming."
     "It's just hard to justify the time while your schoolwork is so busy."
-    "It wouldn't be the end of the world...but it would suck."
+    "It wouldn't be the end of the world... but it would suck."
     ###The clause below this will check to see if we should consider the scene as finished
     if flinchCheck >= 3:
         $ screenComplete = True

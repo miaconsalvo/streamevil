@@ -14,6 +14,8 @@ default alt_narrator = Character(None, what_font="Lato-Regular.ttf", window_styl
 
 define player = Character("[my_name]", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf") #represents the protagonist's name which will be defined by the player via an input screen.
 define streamer = Character("[username]") #represents protagonist's username on Flinch
+default username = ""
+default my_name = ""
 define mod = Character("Jessie", what_font="Mukta-Regular.ttf")
 define bro = Character("Elliot", who_font="Mukta-Regular.ttf", what_font="Mukta-Regular.ttf")
 define player_nvl = Character("[my_name]", what_font="Mukta-Regular.ttf", kind = nvl, image = "images/socials/profilepics/profile2.png")
@@ -100,7 +102,7 @@ default pingText = "Sound is Off"
 default pingImage = "stream ui/soundon.png"
 default playerNVLNarration = ""
 default reactTarget = "vig1_sc1_startStream"
-default profilePic = "images/socials/profilepics/profile2.png"
+default profilePic = "images/socials/profilepics/defaultProfile.png"
 default reactImage = "stream ui/reactneutral.png"
 default reactVariable = False
 default commentVariable = False
@@ -242,6 +244,8 @@ default vbar8 = 0
 default vbar9 = 0
 default vbar10 = 0
 default max_viewers = 40
+default screenFreeze = False
+default newGame = True
 
 ###Variables to make free navigation of pos-stream scenes possible:
 default flinchView = False #When set to "True," this will turn off the button to open the Flinch page
@@ -325,8 +329,13 @@ label start:
     $ chatter_list = [vig1_sc1_comment1, vig1_sc1_comment2, vig1_sc1_comment3, vig1_sc1_comment4, vig1_sc1_comment5, vig1_sc1_comment6, vig1_sc1_comment7, vig1_sc1_comment8]
 
     show bg black at topleft onlayer background
+    "Do you want to start the testing version of Stream Evil, or the new opening?"
+    menu:
+        "New Opening.":
+            jump beginGame
+        "Test Version.":
+            jump userName
 
-    "Hello, welcome to Stream Evil!"
 #    "Please note: we ask that you do not redistribute or replicate any portion of this game."
 #    "The copy you have downloaded is for testing purposes only."
 #    "By clicking \"Continue\" to play the game you acknowledge this fact. Thank you."
@@ -335,9 +344,49 @@ label start:
 #        "Continue":
 #            pass
 #    "This is the start of a new game."
-    jump userName
+    #jump userName
+
+label beginGame():
+    "Sometimes it's nerve-wracking taking a break while you stream, but you were really parched and needed some water."
+    "You were so excited to start playing {i}Oakley 2: Settle the Score{/i} on-stream today that you practically ran home after your last class finished and booted it up immediately."
+    "And it's not like you're leaving tons of people waiting anyway."
+    "You sit down at your computer, and take stock of the stream before you turn your camera back on."
+    scene streamview with dissolve
+    show screen streamDetails
+    show screen streamChat
+    "Huh, that's weird, your username and profile picture aren't showing up properly."
+    "You should try resetting them to see if that fixes the issue."
+    jump userNameNew
+
+label userNameNew():
+    "What's the username you go by as a streamer?"
+    $ username = renpy.input("Your username is: ", length = 16)
+    "The name that will show up on your stream and that viewers will refer to you by will be: {b}\"[username]\"{/b}. Is this correct?"
+    menu:
+        "The name that will show up on your stream and that viewers will refer to you by will be: {b}\"[username]\"{/b}. Is this correct?"
+        "Yes.":
+            jump playerNameNew
+        "No.":
+            jump userNameNew
+
+label playerNameNew():
+    "And what's the name you go by in real life?"
+    $ my_name = renpy.input("Your character's real name is: ", length = 16)
+    "The name that friends and family will refer to you by will be: {b}\"[my_name]\"{/b}. Is this correct?"
+    menu:
+        "The name that friends and family will refer to you by will be: {b}\"[my_name]\"{/b}. Is this correct?"
+        "Yes.":
+            pass
+        "No.":
+            jump playerNameNew
+    "What's the profile picture for your streaming account?"
+    call screen selectProfilePic
+    "Alright, that looks a lot better."
+    "Now you can get back to doing what you love!"
+    jump vignette1Start
 
 label userName:
+    "Hello, welcome to Stream Evil!"
     "Please tell me your streamer username."
     $ username = renpy.input("Your username is: ", length = 16)
     "Your streamer username will be {b}\"[username]\"{/b}. Is this correct?"

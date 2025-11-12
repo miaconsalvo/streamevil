@@ -197,6 +197,7 @@ label vig4_sc2_peacefulTown():
 #    return
 
 label vig4_sc2_elliotEntrance():
+    #$ screenFreeze = False
     $ macroChoice = True
     $ vig4_sc2_6_comment43.click = False
     $ narrator = reg_narrator
