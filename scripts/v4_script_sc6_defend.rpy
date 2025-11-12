@@ -919,7 +919,7 @@ label vig4_sc6_defend_5():
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be—"
-        show zan stream at stream_right5 with dissolve
+        show zan stream laugh at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment2)
@@ -930,7 +930,7 @@ label vig4_sc6_defend_5():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
-            show showgirl stream at stream_left5 with dissolve
+            show daisy stream neutral at stream_left5 with dissolve
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
@@ -952,7 +952,7 @@ label vig4_sc6_defend_5():
         "Every BC ship touched by the pulse drops out of the sky."
         $ AddChatter(vig4_sc6_zan_comment7)
         hide houndleader with dissolve
-        hide showgirl with dissolve
+        hide daisy with dissolve
         "Exposed to fire by the air, the BC forces have to regroup while the Dragonflies cheer and go on the offensive."
         "But the cruiser remains resolute in the air. Dozens of more ships emerge from its hangars, this time attack ships and bombers."
         "The battle has just begun."

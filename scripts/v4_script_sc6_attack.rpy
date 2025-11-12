@@ -1042,7 +1042,7 @@ label vig4_sc6_attack_3_ama():
         show teresa stream shock at stream_right with dissolve
         $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be—"
-        show zan stream at stream_right5 with dissolve
+        show zan stream laugh at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         $ AddChatter(vig4_sc6_zan_comment2)
         "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
@@ -1074,7 +1074,7 @@ label vig4_sc6_attack_3_ama():
         "Every BC ship touched by the pulse drops out of the sky."
         $ AddChatter(vig4_sc6_zan_comment7)
         hide houndleader with dissolve
-        hide showgirl with dissolve
+        hide daisy with dissolve
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
         zan "You go, do what you must."
@@ -2316,7 +2316,7 @@ label vig4_sc6_attack_3():
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be—"
-        show zan stream at stream_right5 with dissolve
+        show zan stream laugh at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment2)
@@ -2327,7 +2327,7 @@ label vig4_sc6_attack_3():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
-            show showgirl stream at stream_left5 with dissolve
+            show daisy stream neutral at stream_left5 with dissolve
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
@@ -2349,7 +2349,7 @@ label vig4_sc6_attack_3():
         "Every BC ship touched by the pulse drops out of the sky."
         $ AddChatter(vig4_sc6_zan_comment7)
         hide houndleader with dissolve
-        hide showgirl with dissolve
+        hide daisy with dissolve
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
         zan "You go, do what you must."

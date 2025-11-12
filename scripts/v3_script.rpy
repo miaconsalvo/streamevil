@@ -1133,15 +1133,17 @@ label vig3_sc5():
         $ AddChatter (vig3_sc5_akarplaza_comment12)
     "When I come to I realize I've scared the young showgirl behind me near to death."
     hide teresa with dissolve
-    show showgirl stream at stream_center with dissolve
+    show daisy stream shock at stream_center with dissolve
     mS "What?"
     $ reactTarget = "vig3_sc5_amahallu" #timestamp is 6:28
     show screen streamerCommentary
     "She stares wide eyed and is taken her off script."
     showgirl "Uh um, name's Daisy, do you bet?"
     mS "Do I bet if your name is Daisy?"
+    show daisy stream think
     showgirl "Well if you did you'd be a winner..."
     "She pauses, recalling the words back to her."
+    show daisy stream neutral
     showgirl "And you can win bigger at {i}Nova Casino{/i}!"
     showgirl "First 50 Credits are on us!"
     "She attempts to hand me a casino card, it's holographic with an animation of a supernova and 50 credits in big lettering."
@@ -1150,7 +1152,7 @@ label vig3_sc5():
     showgirl "Have a nice day!"
     hide streamerCommentary
     "Daisy hurriedly leaves and heads to another group to perform the same spiel. I see her carefully get their attention this time."
-    hide showgirl with dissolve
+    hide daisy with dissolve
     show teresa stream shock at stream_right with dissolve
     show jennica stream shock at stream_left with dissolve
     show mac stream shock at stream_left5mac with dissolve
@@ -2708,7 +2710,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_letitbe_comment8)
             "I move on, scanning the gallery, I see Teresa looking in her element, gliding through various groups with a natural grace. Never lingering too long."
             showgirl "Weren't they a piece of work."
-            show showgirl stream at stream_center with dissolve
+            show daisy stream neutral at stream_center with dissolve
             $ reactTarget = "vig3_sc9_daisyreturns"
             show screen streamerCommentary
             "A familiar batch of feathers block my view. Daisy stands in all her showgirl glory with some added refinement."
@@ -2716,6 +2718,7 @@ label vig3_sc9():
             showgirl "Thankfully not everyone."
             mS "Daisy, was it?"
             $ AddChatter (vig3_sc9_inventorsfair_comment28)
+            show daisy stream think
             showgirl "You bet?"
             $ AddChatter (vig3_sc9_inventorsfair_comment29)
             mS "50 Credits at Nova Casino."
@@ -2723,6 +2726,7 @@ label vig3_sc9():
                 $ AddChatter (vig3_sc9_inventorsfair_comment30)
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
+            show daisy stream neutral
             "We both laugh, a genuine laugh."
             $ AddChatter (vig3_sc9_inventorsfair_comment31)
             if viewershipHigh == True:
@@ -2770,7 +2774,7 @@ label vig3_sc9():
             "I move on, scanning the gallery. I see Teresa looking in her element, gliding through various groups with a natural grace. Never lingering too long."
             $ AddChatter (vig3_sc9_takehimdown_comment4)
             showgirl "I saw that, you know..."
-            show showgirl stream at stream_center with dissolve
+            show daisy stream think at stream_center with dissolve
             $ reactTarget = "vig3_sc9_daisyreturns"#timestamp 6:46
             show screen streamerCommentary
             "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory. With some added refinement."
@@ -2784,6 +2788,7 @@ label vig3_sc9():
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
             "We both laugh, a genuine laugh."
+            show daisy stream neutral
             $ AddChatter (vig3_sc9_inventorsfair_comment31)
             if viewershipHigh == True:
                 pause 0.5
@@ -2812,9 +2817,10 @@ label vig3_sc9():
                 $ AddChatter (vig3_sc9_inventorsfair_comment38)
     
     #Have an extra scene with Daisy, change it to fit which you decided.
-            
+    show daisy stream think
     showgirl "Well, I should be off then."
     mS "Actually, wait! Daisy."
+    show daisy stream shock
     showgirl "Oh? What is it?"
     hide screen streamerCommentary
     menu: 
@@ -2822,6 +2828,7 @@ label vig3_sc9():
         "Ask her about the missing parts.":
             $ csEngagement += 1 #Logic: coriolis likes the directness
             mS "You seem like you know your way around here."
+            show daisy stream neutral
             showgirl "A girl has her ways."
             mS "I'm looking for something that was taken, wouldn't happen to know where I could find it?"
             $ AddChatter (vig3_sc9_parts_comment1)
@@ -2839,6 +2846,7 @@ label vig3_sc9():
             $ kcEngagement += 1 #Logic: kitcat is here for the flirting
             mS "I'm sure you're busy. But care to have a drink with me?"
             $ AddChatter (vig3_sc9_bar_comment1)
+            show daisy stream neutral
             showgirl "You mean pilfer Reynar's open bar?"
             $ AddChatter (vig3_sc9_bar_comment2)
             mS "Couldn't have said it better myself."
@@ -2856,6 +2864,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_flustered_comment1)
             "Makers she's so pretty."
             $ AddChatter (vig3_sc9_flustered_comment2)
+            show daisy stream neutral
             "She luckily giggles."
             showgirl "Is the great Captain of the Oakley getting flustered?"
             $ AddChatter (vig3_sc9_flustered_comment3)
@@ -2875,6 +2884,7 @@ label vig3_sc9():
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected. Turns out they've been keeping all the legit stuff on this side of the Vineyard."
     "Daisy's face has adopted an adorable red hue."
+    show daisy stream think
     showgirl "Not without attracting some serious attention."
     "She takes a sip from her glass."
     showgirl "What's so important anyway?"
@@ -2882,6 +2892,7 @@ label vig3_sc9():
     showgirl "You're joking—"
     mS "Wish I was, but the fate of the galaxy depends on it!"
     $ AddChatter (vig3_sc9_inventorsfair_comment41)
+    show daisy stream neutral
     showgirl "Sounds like a big extender."
     "I let out a heavy sigh. Letting the joke fly over my head."
     showgirl "Guests aren't able to explore off-floor pieces."
@@ -2892,18 +2903,22 @@ label vig3_sc9():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment44)
+    show daisy stream think
     showgirl "The BigCorp showcase should be happening in fifteen minutes. Hear you'll get a killer view from the door near that vase over there."
     "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it." 
     "I'm still trying to process what she just said."
     mS "BigCorp is here?"
+    show daisy stream neutral
     showgirl "Oh yeah, big reveal!"
     showgirl "Heard Reynar is hedging new investments and property in the Outposts, hard to expand without greasing some palms."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment45)
     "Just then I hear an annoyingly recognizeable voice."
     invfairnpc2 "Is that Akar's own Daisy."
+    show daisy stream upset
     "Daisy's eyes widen. She forces a smile."
     $ AddChatter (vig3_sc9_inventorsfair_comment46)
+    show daisy stream neutral
     showgirl "Mills! Look at you. You clean up... well."
     "I almost choke on my drink."
     invfairnpc2 "Nice to see you still have your humor."
@@ -2917,6 +2932,7 @@ label vig3_sc9():
     $ AddChatter (vig3_sc9_inventorsfair_comment48)
     "I can already tell how this is gonna go."
     "Mills is moving closer to Daisy."
+    show daisy stream think
     showgirl "No need to be hasty, I'll get to everyone."
     "Mills puts himself in between us, their back turned to me."
     "Intervening here is risky, but I can't just leave Daisy out to dry."
@@ -2935,11 +2951,13 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_standup_comment1)
             pause 0.5
             $ AddChatter (vig3_sc9_standup_comment2)
+            show daisy stream neutral
             "They turn to me."
             invfairnpc2 "Oh? and what are you?"
             mS "I'm about to be your next big problem."
             show screen streamerCommentary
             "I move forward to tower over him, and he takes a step back."
+            show daisy stream think
             showgirl "Moze..."
             invfairnpc2 "You don't want to do this."
             $ AddChatter (vig3_sc9_standup_comment3)
@@ -2947,6 +2965,7 @@ label vig3_sc9():
             "Before anything can happen, Ryo emerges from the ether."
             vyattend "Is there a problem?"
             "Shit."
+            show daisy stream neutral
             showgirl "No, Ryo, of course not. I was just about to make my rounds."
             $ AddChatter (vig3_sc9_standup_comment4)
             "Ryo seperates me from Mills who he ushers away. Daisy moves to greet the rest of the guests."
@@ -2954,7 +2973,7 @@ label vig3_sc9():
             showgirl "I'll see you around, Moze."
             showgirl "Be sure to check out that view."
             $ AddChatter (vig3_sc9_standup_comment5)
-            hide showgirl with dissolve
+            hide daisy with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
             show reynar stream angry at stream_center with dissolve
@@ -2970,15 +2989,17 @@ label vig3_sc9():
             play audio "gunCock.wav" volume 1.5
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
+            show daisy stream shock
             invfairnpc2 "You little—"
             $ AddChatter (vig3_sc9_standup_comment1)
             mS "Now let's not make a scene."
             mS "The lady said she'll get to you soon. Right?"
             show screen streamerCommentary
+            show daisy stream neutral
             "The initial shock falls from her face and is replaced with a devilish smile."
             $ AddChatter (vig3_sc9_standup_comment6)
             showgirl "Right..."
-            invfairnpc2 "What do you want then."
+            invfairnpc2 "What do you want then?"
             mS "I want you to take your drink and walk away."
             $ AddChatter (vig3_sc9_standup_comment3)
             mS "And if you so much as look at her the wrong way."
@@ -2994,7 +3015,7 @@ label vig3_sc9():
             "Daisy gives me a wink and slowly leaves the bar to greet the rest of the guests."
             $ AddChatter (vig3_sc9_standup_comment4)
             "So many feathers."
-            hide showgirl with dissolve
+            hide daisy with dissolve
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
             show reynar stream gatsby at stream_center with dissolve
@@ -3011,6 +3032,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_attention_comment1)
             invfairnpc2 "So Daisy, shall I steal you away?"
             show screen streamerCommentary
+            show daisy stream neutral
             "He leans closer."
             $ AddChatter (vig3_sc9_attention_comment2)
             showgirl "I'm with a guest at the moment."
@@ -3023,6 +3045,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_attention_comment4)
             pause 0.5
             $ AddChatter (vig3_sc9_attention_comment5)
+            show daisy stream upset
             showgirl "A fabulous idea."
             "In a quick motion Daisy grabs a blade from her corset and stabs it betweeen Mills'fingers."
             invfairnpc2 "I—"
@@ -3034,7 +3057,7 @@ label vig3_sc9():
             showgirl "Thank you for the drink. Excuse me, please."
             $ AddChatter (vig3_sc9_attention_comment7)
             "Daisy slowly leaves the bar to greet the rest of the guests."
-            hide showgirl with dissolve
+            hide daisy with dissolve
             $ AddChatter (vig3_sc9_attention_comment8)
             "I finish my drink and find the rest of my crew."
             "I see Reynar up on his balcony."
