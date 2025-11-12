@@ -186,7 +186,7 @@ label vig4_sc1_2():
     $ viewCheck1 = viewCount
     hide mac with dissolve
     hide teresa with dissolve
-    show cockpit_stream onlayer background with dissolve
+    show cockpit_stream at topleft onlayer background with dissolve
     hide shiphub_stream
     stop backAudio fadeout 1.0
     play music "soundtrack/vig1scratchtrack.wav" volume 1.2 fadein 1.0
@@ -1127,12 +1127,10 @@ label vig4_sc2_4():
     cS "Thank you."
     hide coil with dissolve
     hide mac with dissolve
-    hide warehouse_stream with dissolve
     jump vig4_sc2_5
 
 label vig4_sc2_5():
     $ renpy.music.set_volume(0.8, 2.0)
-    show warehouse_stream at topleft onlayer background with dissolve
     show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
     show mac stream neutral at stream_right5mac with dissolve
@@ -4043,7 +4041,7 @@ label vig4_sc5_1():
     if jennicaRomance == True:
         pS "Teresa! She's startin' to wake up!"
         "My eyes stutter open."
-        show vig2_orbit_stream onlayer background with dissolve
+        show vig2_orbit_stream at topleft onlayer background with dissolve
         show jennica stream neutral at stream_left with dissolve
         "Jennica's smiling face is the first thing I see."
         $ AddChatter(vig4_sc5_1_comment3)
@@ -4095,7 +4093,7 @@ label vig4_sc5_1():
     else:
         enS "Jenn! She's starting to wake up!"
         "My eyes stutter open."
-        show vig2_orbit_stream onlayer background with dissolve
+        show vig2_orbit_stream at topleft onlayer background with dissolve
         show teresa stream happy at stream_right with dissolve
         "Teresa's smiling face is the first thing I see."
         $ AddChatter(vig4_sc5_1_comment3)
@@ -4555,6 +4553,8 @@ label vig4_sc7_2():
     show streamview with hpunch
     play audio "shipFlyBy.wav" volume 0.7
     "A sudden shudder from the windows overlooking Polaris."
+    show tower_no_star_ship_stream at topleft onlayer background with dissolve
+    hide tower_no_star_stream
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_2_comment5)
     cS "This is your moment."
@@ -4586,6 +4586,8 @@ label vig4_sc7_2():
     "Then I see it."    
     $ reactTarget = "vig4_sc7_starshower"
     show screen streamerCommentary
+    show tower_star_shower_ship_stream at topleft onlayer background with dissolve
+    hide tower_no_star_ship_stream    
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
@@ -5552,8 +5554,8 @@ label vig4_sc7_3_coil():
 label vig4_epilogue_coil():
     play music "soundtrack/theme.wav"
     $ viewCheck10 = viewCount
-    show shiphub_stream onlayer background with dissolve
-    hide vig2_datacenter_stream    
+    show ama_shiphub_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream    
     $ AddChatter(vig4_sc7_epilogue_comment1)
     play backAudio "shipHum.wav" volume 0.3
     "The perpetual purr of space travel thrums through the ship."
@@ -5810,7 +5812,7 @@ label vig4_epilogue_coil():
     hide jennica with dissolve
     hide teresa with dissolve
     hide shiphub_stream with dissolve
-    show cockpit_stream onlayer background with dissolve
+    show cockpit_stream at topleft onlayer background with dissolve
     show jennica stream neutral at stream_left5 with dissolve
     show teresa stream neutral at stream_right5 with dissolve
     show coil stream neutral at stream_right with dissolve
@@ -5886,8 +5888,8 @@ label vig4_epilogue_coil():
 label vig4_epilogue_ama():
     play music "soundtrack/theme.wav"
     $ viewCheck10 = viewCount
-    show shiphub_stream onlayer background with dissolve
-    hide vig2_datacenter_stream
+    show ama_shiphub_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream  
     $ AddChatter(vig4_sc7_epilogue_comment1)
     play backAudio "shipHum.wav" volume 0.3
     "The perpetual purr of space travel thrums through the ship."
@@ -6144,7 +6146,7 @@ label vig4_epilogue_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     hide shiphub_stream with dissolve
-    show cockpit_stream onlayer background with dissolve
+    show cockpit_stream at topleft onlayer background with dissolve
     if vig4_amaCrew == True:
         show jennica stream neutral at stream_left with dissolve
         show teresa stream neutral at stream_right with dissolve

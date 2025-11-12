@@ -2,7 +2,7 @@
 
 ###Attacking Polaris with Ama
 label vig4_sc6_attack_1_ama():
-    show vig1_town_stream onlayer background with dissolve
+    show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     play backAudio "fireBackground.wav" volume 0.2
     "Polaris burns."
@@ -1202,7 +1202,7 @@ label vig4_sc7_1_attack_ama():
     "The stairs flatten out."
     "Ama and I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
-    show vig2_datacenter_stream onlayer background with dissolve
+    show vig2_datacenter_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
     show ama stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
@@ -1390,7 +1390,7 @@ label vig4_sc7_1_attack_ama():
 
 
 label vig4_sc6_attack_1():
-    show vig1_town_stream onlayer background with dissolve
+    show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
     play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
@@ -2472,7 +2472,7 @@ label vig4_sc7_1_attack():
     "There's a wide room in front of me, and two voices shouting within."
     "I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
-    show vig2_datacenter_stream onlayer background with dissolve
+    show tower_no_star_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment10)

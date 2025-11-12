@@ -1,7 +1,7 @@
 ####This script contains the code for the Polaris Defense route of Vignette 4 up until Moze makes her choice about siding with Coil and Ama
 
 label vig4_sc6_defend_1():
-    show vig1_town_stream onlayer background with dissolve
+    show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
     play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
@@ -426,7 +426,7 @@ label vig4_sc6_defend_2():
             $ AddChatter(vig4_sc6_defend_2_comment4)
     "As Vega directs us toward the plaza, we pass by ruined, burning buildings."
     "Even as its people defend it, Polaris lies in ruins."
-    #show plaza onlayer background with dissolve
+    #show plaza at topleft onlayer background with dissolve
     #hide previous scene
     "We arrive at the plaza's perimeter, just in front of the central barriade." 
     "Dragonflies stand atop the barricade, cheering at our arrival."
@@ -1082,7 +1082,7 @@ label vig4_sc7_1_defend():
     if viewershipHigh == True: 
         $ AddChatter(vig4_sc7_1_defend_comment8)
     "I step across the threshold into a wide room."
-    show vig2_datacenter_stream onlayer background with dissolve
+    show tower_no_star_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
     show ama stream gun at stream_left with dissolve
     hide vig1_town_stream
