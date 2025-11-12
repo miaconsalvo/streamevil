@@ -309,7 +309,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav" volume 5.0
             pause 0.5
-            play audio "deathGasp" 2.0
+            play audio "deathGasp" volume 2.0
             hide dflyguard with Dissolve(0.3)
             show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
@@ -1605,7 +1605,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             pause 0.5
-            play audio "deathGasp" 2.0
+            play audio "deathGasp" volume 2.0
             hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
