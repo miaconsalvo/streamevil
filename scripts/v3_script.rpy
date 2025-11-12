@@ -5839,7 +5839,7 @@ label vig3_macro_viewerChat_1():
                                 "•Yeah, even knowing that I would've done the same thing.":
                                     player_nvl "Yeah, even knowing that I would've saved him"
                                     player_nvl "Just because he's an asshole doesn't mean he deserves to die"
-                                    pd_nvl "I guess not."
+                                    pd_nvl "I guess not"
                         "•No, I just thought it was right to save him.":
                             player_nvl "I actually wasn't thinking about MAC in that moment"
                             player_nvl "I just didn't think it was right for Moze to standby and let someone die"
@@ -5908,7 +5908,7 @@ label vig3_macro_viewerChat_1():
                             pd_nvl "I know right! Could be so cool to fight alongside her!"
                             pd_nvl "Can't wait for the next episode. See ya next week [username]!"
                         "•Ooh I don't know about that.":
-                            player_nvl "Ooh I don't know about that."
+                            player_nvl "Ooh I don't know about that"
                             player_nvl "She's so antagonistic in episode 3"
                             player_nvl "If they don't handle it well, that could feel kinda cheap"
                             pd_nvl "Maybe, but I feel like they'll set it up pretty well"
@@ -6134,14 +6134,14 @@ label vig3_macro_viewerChat_1():
                     player_nvl "Maybe she stuns Allistar and he gets some time to come around and isn't a threat to the crew after that point."
                     player_nvl "But could Moze really have taken that risk?"
                     player_nvl "I don't know that she would have. And I think it's interesting to explore this character who has such a black and white outlook on that kind of thing."
-                    cs_nvl "Hmmm I see what you're saying."
+                    cs_nvl "Hmmm I see what you're saying"
                     cs_nvl "I think I still agree with Rec (and Allistar), but it's a good point. Moze is put in a LOT of tough situations."
-                    cs_nvl "And I appreciate how much thought you put into these choices."
-                    cs_nvl "So many of them seem really tough."
+                    cs_nvl "And I appreciate how much thought you put into these choices"
+                    cs_nvl "So many of them seem really tough"
                     menu:
                         "•Yeah, they're hard to make.":
                             player_nvl "Yeah, I don't think it ever gets easier tbh."
-                            player_nvl "Like, don't get me wrong, it's still a game."
+                            player_nvl "Like, don't get me wrong, it's still a game"
                             player_nvl "But when you're really connected to these characters, it's always kinda tense when you're deciding their fates."
                             cs_nvl "Seriously, it's why I don't play these kinda games on my own really. So much pressure haha."
                             cs_nvl "You handle it all really well though! It's a lot of fun watching you work through the moral quagmires!"
@@ -6798,7 +6798,7 @@ label vig3_macro_brother_stream():
                     bro_nvl "Pfft that's your loss lol"
                     bro_nvl "I'm romancing the hell out of that hunk when I start my playthrough"
         "•I'm not that much of an Outlaw.":
-            player_nvl "I'm not that much of an outlaw."
+            player_nvl "I'm not that much of an outlaw"
             if marshal > outlaw + 5: #testing if I can check how much more one variable is greater than another
                 bro_nvl "I know, I know, I've been watching the VODs"
                 bro_nvl "Still gotta give you some guff for offing Allistar haha"
@@ -6825,7 +6825,7 @@ label vig3_macro_brother_stream():
                 bro_nvl "Let's be real, you're on the borderline"
             else:
                 bro_nvl "Good, it looks like you're really into it on stream"
-                bro_nvl "And I know how many times you tried to play Outlaw Moze in Oakley 1."
+                bro_nvl "And I know how many times you tried to play Outlaw Moze in Oakley 1"
                 bro_nvl "Glad you're making it happen now"
     if vig3_brotherChat == 2:
         bro_nvl "Oooh maybe I should see if Cedric is down to play this game"
