@@ -1105,7 +1105,7 @@ default vig3break_ama_dead_comment1 = ChatEntry(False, "{b}Coriolis - 6:55{/b}\n
 default vig3break_ama_dead_comment2 = ChatEntry(False, "{b}turb0g00se  - 6:55{/b}\nWecan take her", 4, "#ffffff")
 default vig3break_ama_dead_comment3 = ChatEntry(False, "{b}J4MIR0QU4I - 6:56{/b}\nWho knows she might not want to kill us.", 4, "#ffffff")
 default vig3break_ama_dead_comment4 = ChatEntry(False, "{b}J4MIR0QU4I - 6:56{/b}\nFamily and all that.", 4, "#ffffff")
-default vig3break_ama_dead_comment5 = ChatEntry(False, "{b}AFKAngel  - 6:56{/b}\nAma romance mabeee???", 4, "#ffffff")
+default vig3break_ama_dead_comment5 = ChatEntry(False, "{b}AFKAngel - 6:56{/b}\nAma romance mabeee???", 4, "#ffffff")
 default vig3break_ama_dead_comment6 = ChatEntry(False, "{b}R4dioRobbie - 6:57{/b}\nNot a want but a neeeeeed", 4, "#ffffff")
 default vig3break_ama_dead_comment7 = ChatEntry(False, "{b}J4MIR0QU4I - 6:57{/b}\nThat too.", 4, "#ffffff")
     #So how dead do you think we are?(Reprise)#

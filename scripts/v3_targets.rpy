@@ -1515,7 +1515,7 @@ label vig3break_dead11():
         "I prefer the newer characters.":
             player "Seeing everyone is nice."
             player "But it's better to meet the newer folks."
-            player "I think they make the sotry more interesting."           
+            player "I think they make the story more interesting."           
     $ macroChoice = True
     if macroChoice == False: 
         $ narrator = alt_narrator

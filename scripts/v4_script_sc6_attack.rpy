@@ -2,7 +2,7 @@
 
 ###Attacking Polaris with Ama
 label vig4_sc6_attack_1_ama():
-    show vig1_town_stream onlayer background with dissolve
+    show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     play backAudio "fireBackground.wav" volume 0.2
     "Polaris burns."
@@ -597,9 +597,6 @@ label vig4_sc6_attack_2_ama():
     "The tank accelerates, and we glide smoothly over the ground. On our way to battle."
     play backAudio2 "tankRumble.wav" volume 0.3
     stop music fadeout 2.0
-    hide ama with dissolve
-    hide jennica with dissolve
-    hide teresa with dissolve
     jump vig4_sc6_attack_3_ama
 
 label vig4_sc6_attack_3_ama():
@@ -645,6 +642,7 @@ label vig4_sc6_attack_3_ama():
             pause 0.5
             $ AddChatter(vig4_sc6_attack_3_ama_comment8)
             mS "Jennica, get us there as quick as you can without being suspicious."
+            show jennica stream neutral
             pS "Roger, Cap."
             "The tank advances on the barricade."
             $ AddChatter(vig4_sc6_attack_3_ama_comment10)
@@ -653,12 +651,14 @@ label vig4_sc6_attack_3_ama():
             hide screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             amaS "Oh, I've been waiting for this!"
+            show ama stream happy
             "Ama grabs the machine gun controls, and whips them around, aiming for the squads positioned on nearby rooftops."
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
+            show teresa stream think
             enS "Tough hit, but shields are still at 85\% and holding."
             "I grip the cannon controls, and point at a squad of Dragonflies huddled behind nearby cover."
             play audio "tankCharge.wav" volume 1.5
@@ -683,6 +683,7 @@ label vig4_sc6_attack_3_ama():
             "Another pillar of flame and the memory of human presence."
             $ AddChatter(vig4_sc6_attack_3_ama_comment16)
             "We keep advancing."
+            show teresa stream neutral
             enS "Contact on the rooftops!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment17)
             play audio "grenade.wav" volume 1.5
@@ -693,6 +694,7 @@ label vig4_sc6_attack_3_ama():
             "It's a group of Dragonflies armed with rocket launchers, stationed a couple of buildings away from us."
             "They're reloading the launchers and preparing another volley."
             mS "Teresa, direct shields against those launchers. Ama—"
+            show ama stream angry
             $ AddChatter(vig4_sc6_attack_3_ama_comment19)
             amaS "I know, I see them too!"
             "Ama aims the machine gun at the direction of the squad and begins firing, but it's too late."
@@ -700,14 +702,18 @@ label vig4_sc6_attack_3_ama():
             show vig1_town_stream with hpunch
             "Another rocket streaks through the air, and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
+            show teresa stream think
             enS "Bad hits. We're at 45\% shields, but holding. We just don't want to take two more of those."
+            show jennica stream shock
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
             $ vig4_sc6_attack_3_ama_comment19.click = False
             $ AddChatter(vig4_sc6_attack_3_ama_comment20)
             "Jenn's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
+            show teresa stream shock
             enS "Are you sure that's—"
+            show ama stream happy
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
@@ -715,6 +721,7 @@ label vig4_sc6_attack_3_ama():
             pS "Aye aye, Cap!" 
             play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
+            show teresa stream neutral
             enS "Ready, captain!"
             mS "Launch!"
             play audio "tankShot.wav" volume 1.5
@@ -735,11 +742,14 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment24)
             mS "Jenn, get us to that barricade as fast as you can."
             pS "Aye!"
+            show jennica stream angry
             $ AddChatter(vig4_sc6_attack_3_ama_comment10)
             mS "Resa, keep those shields up."
             $ AddChatter(vig4_sc6_attack_3_ama_comment11)
+            show teresa stream think
             enS "Roger, we're at 95\% currently!"
             mS "Ama, open fire on any BC goons you see."
+            show ama stream happy
             amaS "I don't like losing the element of surprise, but I do like killing some BC goons."
             $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             "Ama grabs the machine gun controls, and whips them around, aiming for the enforcers at the frontline."
@@ -749,6 +759,7 @@ label vig4_sc6_attack_3_ama():
             play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
+            show teresa stream shock
             enS "Shields are at 70\%. We're taking a lot of hits."
             $ AddChatter(vig4_sc6_attack_3_ama_comment26)
             "A dropship angles toward us."
@@ -767,6 +778,7 @@ label vig4_sc6_attack_3_ama():
             mS "Jenn, how are we doing?"
             pS "We're close, just a bit further!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment28)
+            show teresa stream neutral
             enS "Captain, we're starting to take less fire from the Dragonflies."
             play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
@@ -787,7 +799,9 @@ label vig4_sc6_attack_3_ama():
             show vig1_town_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
             $ AddChatter(vig4_sc6_attack_3_ama_comment32)
+            show teresa stream shock
             enS "Shields are at 30\%! Another hit and we're toast!"
+            show jennica stream shock
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
             "She's right, we're closing in."
@@ -799,6 +813,8 @@ label vig4_sc6_attack_3_ama():
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment21)
+            show jennica stream neutral
+            show teresa stream neutral
             pS "Aye aye, Cap!" 
             play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
@@ -828,6 +844,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment11)
             enS "Roger, we're at 95\% currently!"
             mS "Ama, fire at will."
+            show ama stream happy
             amaS "Oh, I've been waiting for this!"    
             $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             "Ama grabs the machine gun controls, and whips them around."
@@ -837,6 +854,7 @@ label vig4_sc6_attack_3_ama():
             "It's a methodical madness. One I'm familiar with."
             $ AddChatter(vig4_sc6_attack_3_ama_comment37)
             "Confusion spreads through both sides as blaster fire pings off the tank's shell."
+            show teresa stream think
             enS "Shields are at 85\%, Captain."
             play audio "tankCharge.wav" volume 1.5
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
@@ -851,6 +869,7 @@ label vig4_sc6_attack_3_ama():
             "The ship explodes in a fireball as wreckage falls into Polaris, crashing into the BC swarm."
             mS "Jenn, how are we doing?"
             $ AddChatter(vig4_sc6_attack_3_ama_comment39)
+            show jennica stream angry
             pS "We're close, just a bit further!"
             play audio "grenade.wav" volume 1.0
             show vig1_town_stream with hpunch
@@ -858,6 +877,7 @@ label vig4_sc6_attack_3_ama():
             mS "Teresa, report!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment30)
             "I whip the monitor around, looking for the assailants."
+            show teresa stream neutral
             enS "Shields are down to 60\%. We're taking fire from both sides and losing energy rapidlly!"
             "I locate the smoke streaking through the air."
             "Dragonflies on a nearby building are loading rocket launchers."
@@ -873,6 +893,7 @@ label vig4_sc6_attack_3_ama():
             play audio "explosion.wav" volume 1.3
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
             $ AddChatter(vig4_sc6_attack_3_ama_comment41)
+            show ama stream upset
             amaS "They're throwing grenades!"
             "Ama lays on the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
@@ -880,6 +901,8 @@ label vig4_sc6_attack_3_ama():
             show vig1_town_stream with hpunch
             "They detonate, jostling the vehicle."
             $ AddChatter(vig4_sc6_attack_3_ama_comment42)
+            show teresa stream shock
+            show jennica stream shock
             enS "Shields are down to 30\%! We can't take much more of this!"
             pS "Cap! We're almost at the barricade!"
             "I turn to look ahead."
@@ -887,10 +910,13 @@ label vig4_sc6_attack_3_ama():
             "She's right, we're closing in."
             mS "Alright, Resa, direct our power into engine thrusts and tell me when it's ready to go. We're going to ram through it."
             enS "Are you sure that's—"
+            show ama stream happy
             amaS "Oh, yes!"
             mS "Just do it!"
             mS "Jenn, hit the thurst forward. Hard!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment21)
+            show jennica stream neutral
+            show teresa stream neutral
             pS "Aye aye, Cap!" 
             play audio "tankCharge.wav" volume 1.5
             "The main cannon charges. Our engines hum with excitement."
@@ -1016,7 +1042,7 @@ label vig4_sc6_attack_3_ama():
         show teresa stream shock at stream_right with dissolve
         $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be—"
-        show zan stream at stream_right5 with dissolve
+        show zan stream laugh at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         $ AddChatter(vig4_sc6_zan_comment2)
         "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
@@ -1048,7 +1074,7 @@ label vig4_sc6_attack_3_ama():
         "Every BC ship touched by the pulse drops out of the sky."
         $ AddChatter(vig4_sc6_zan_comment7)
         hide houndleader with dissolve
-        hide showgirl with dissolve
+        hide daisy with dissolve
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
         zan "You go, do what you must."
@@ -1072,7 +1098,7 @@ label vig4_sc6_attack_3_ama():
                 $ AddChatter(vig4_sc6_zan_comment10)
         hide zan with dissolve
         show jennica stream neutral at stream_left with dissolve
-    show ama stream neutral stream_center with dissolve
+    show ama stream neutral at stream_center with dissolve
     pS "Uh, gang, y'all should get a move on." 
     mS "Not without you two."
     show teresa stream neutral at stream_right with dissolve
@@ -1176,7 +1202,7 @@ label vig4_sc7_1_attack_ama():
     "The stairs flatten out."
     "Ama and I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
-    show vig2_datacenter_stream onlayer background with dissolve
+    show vig2_datacenter_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
     show ama stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
@@ -1364,7 +1390,7 @@ label vig4_sc7_1_attack_ama():
 
 
 label vig4_sc6_attack_1():
-    show vig1_town_stream onlayer background with dissolve
+    show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
     play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
@@ -2290,7 +2316,7 @@ label vig4_sc6_attack_3():
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment1)
         enS "Wait, that has to be—"
-        show zan stream at stream_right5 with dissolve
+        show zan stream laugh at stream_right5 with dissolve
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment2)
@@ -2301,7 +2327,7 @@ label vig4_sc6_attack_3():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
-            show showgirl stream at stream_left5 with dissolve
+            show daisy stream neutral at stream_left5 with dissolve
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
@@ -2323,7 +2349,7 @@ label vig4_sc6_attack_3():
         "Every BC ship touched by the pulse drops out of the sky."
         $ AddChatter(vig4_sc6_zan_comment7)
         hide houndleader with dissolve
-        hide showgirl with dissolve
+        hide daisy with dissolve
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
         zan "You go, do what you must."
@@ -2446,7 +2472,7 @@ label vig4_sc7_1_attack():
     "There's a wide room in front of me, and two voices shouting within."
     "I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
-    show vig2_datacenter_stream onlayer background with dissolve
+    show tower_no_star_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment10)
