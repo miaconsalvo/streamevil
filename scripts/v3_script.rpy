@@ -50,7 +50,7 @@ label vignette3Start():
     #$ kcEngagement = 0
     #$ pdEngagement = 0
     "It's been one week since you last streamed {i}Oakley 2: Settle the Score{/i}."
-    "Episode 3 released today so you have a stream scheduled this evening."
+    "Episode 3 released today so you have a stream scheduled for this evening."
     scene streamview with dissolve
     show screen streamDetails
     show screen streamChat
@@ -6322,7 +6322,7 @@ label vig3_macro_brother_1():
     "It's reassuring that Jessie feels good about the stream."
     "And there's just one more episode to go."
     "One way or another, this thing will come to an end."
-    play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.5
+    play music "soundtrack/elsGroove.wav" volume 0.8 fadein 1.0
     "You start absentmindedly scrolling through Loop'D when you notice that Elliot is online."
     "It's been a while since you had a proper chat so you decide to shoot him a message."
     scene discordview with dissolve

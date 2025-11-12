@@ -43,7 +43,7 @@ label vig2_sc1_matticusopinion():
         "What did I think of Matticus in game 1?"
         "He was the worst.":
             $ reactImage = "stream ui/reactthumbsdown.png"
-            player "Ugh, no this guy has always been the worst"
+            player "Ugh, no. This guy has always been the worst"
             $ AddChatter(vig2_sc1_kitcat_comment1)
             pause 0.5
         "He was fine.":
@@ -505,7 +505,7 @@ label vig2_sc2_firstproblem():
             pause 0.5
         "We're definitely getting exposed.":
             $ reactImage = "stream ui/reactunsure.png"
-            player "Well if Ama wasn't here already, she'll definitely be on her way after this."
+            player "Well, if Ama wasn't here already, she'll definitely be on her way after this."
             $ AddChatter(vig2_sc2_reactcomment12)
             pause 0.5
             $ AddChatter(vig2_sc2_reactcomment13)
@@ -768,7 +768,7 @@ label vig2_sc6_mar_reflect():
             pause 0.5
         "Definitely the right way.":
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "Quick and quient, best strategy."
+            player "Quick and quiet, best strategy."
             $ AddChatter(vig2_sc6_mar_reactcomment3)
             pause 0.5
         "We're gonna get caught for sure!":
@@ -805,7 +805,7 @@ label vig2_sc7_bigreveal():
             pause 0.5
         "This is another level though.":
             $ reactImage = "stream ui/reactshocked.png"
-            player "Listen I've done some terrible things, but destroying an aid ship is crazy."
+            player "Listen, I've done some terrible things, but destroying an aid ship is crazy."
             $ AddChatter(vig2_sc7_reactcomment3)
             pause 0.5
             $ AddChatter(vig2_sc7_reactcomment4)
@@ -1086,7 +1086,7 @@ label vig2_sc9_mar_end():
     $ reactVariable = True
     menu:
         "Reflect on the Marshal choice."
-        "Too easy tbh.":
+        "Too , tbh.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "That was a bit too convenient, to be honest."
             $ AddChatter(vig2_sc9_mar_reactcomment1)
@@ -1095,7 +1095,7 @@ label vig2_sc9_mar_end():
             pause 0.5
         "Sweet!":
             $ reactImage = "stream ui/reactthumbsup.png"
-            player "Honestly couldn't ask to be in a better spot."
+            player "Honestly, couldn't ask to be in a better spot."
             $ AddChatter(vig2_sc9_mar_reactcomment3)
             pause 0.5
             $ AddChatter(vig2_sc9_mar_reactcomment4)
@@ -1235,10 +1235,10 @@ label vig2_analytics_topfan():
         "Even though you've got so many new people in chat, Coriolis is still holding down the fort."
         if vig2_outlawEpilogue == True:
             "It's a bit surprising considering some of the turns your stream has taken."
-        "They're support feels really genuine."
+        "Their support feels really genuine."
     elif topfan == "kitcat":
         "kitcat is a real hoot."
-        "They're obsession with MAC is truly next level."
+        "Their obsession with MAC is truly next level."
         "Crazy that they just lucked into your stream."
         "It's already kind of hard to imagine playing the game without them."
     elif topfan == "pickledDragons":
@@ -1250,7 +1250,7 @@ label vig2_analytics_topfan():
         "Even though you've got so many new people in chat, Coriolis is still holding down the fort."
         if vig2_outlawEpilogue == True:
             "It's a bit surprising considering some of the turns your stream has taken."
-        "They're support feels really genuine."
+        "Their support feels really genuine."
     if flinchCheck >= 3:
         $ screenComplete = True
     else:
