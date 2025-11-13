@@ -285,6 +285,7 @@ default blueitImage = ""
 default yb = 0 #this sets how long the viewport of the blueit threads will scroll down to
 default blueitChoiceCheck = False
 default blueitLaunchCheck = False
+default writeUp_list = []
 
 ###Final Write Up Variables###
 default blueitPostTitle = ""
@@ -327,7 +328,6 @@ label start:
     $ quick_menu = True #- for when we don't want players to be able to go "back" in the game
     $ macroChoice = True
     $ chatter_list = [vig1_sc1_comment1, vig1_sc1_comment2, vig1_sc1_comment3, vig1_sc1_comment4, vig1_sc1_comment5, vig1_sc1_comment6, vig1_sc1_comment7, vig1_sc1_comment8]
-
     show bg black at topleft onlayer background
     "Do you want to start the testing version of Stream Evil, or the new opening?"
     menu:
@@ -386,6 +386,7 @@ label playerNameNew():
     jump vignette1Start
 
 label userName:
+    $ newGame = False
     "Hello, welcome to Stream Evil!"
     "Please tell me your streamer username."
     $ username = renpy.input("Your username is: ", length = 16)

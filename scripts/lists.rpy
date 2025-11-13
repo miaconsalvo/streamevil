@@ -42,6 +42,15 @@ init python:
             pass #Is there a "Pass" syntax?
         return
 
+    def addWriteUp(paragraph):
+        global writeUp_list
+        global yadj
+
+        writeUp_list.append(paragraph)
+        renpy.pause(0.01)
+        yadj.change(float('inf'))
+        return
+
     def AddRandomChatter():
 
         global comment_list

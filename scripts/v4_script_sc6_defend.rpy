@@ -26,7 +26,7 @@ label vig4_sc6_defend_1():
     hide teresa with dissolve
     hide jennica with dissolve
     "The three of us dive over the rubble of a nearby building and and crouch behind the ruined stones."
-    play backAudio3 "tankRumble.wa" volume 0.5
+    play backAudio3 "tankRumble.wav" volume 0.5
     $ AddChatter(vig4_sc6_defend_1_comment4)
     "A low rumble gets closer, muddying the sound of several voices."
     "One breaks through, shouting."
@@ -194,7 +194,6 @@ label vig4_sc6_defend_1():
     enS "It's a cannon, not rocket science."
     enS "And I understand rocket science too."
     vS "Good."
-    stop backAudio fadeout 5.0
     vS "We repelled BigCorp's first attack, but we know they're not giving up."
     "She puts a hand on the vehicle."
     vS "With this, we might stand a chance."
@@ -225,6 +224,7 @@ label vig4_sc6_defend_1():
     vS "I'll be your navigator. But we don't have a lot of time."
     $ AddChatter(vig4_sc6_defend_1_comment31) 
     vS "BC's sure to—"
+    stop music
     play backAudio "siren.wav" volume 0.7
     "As Vega speaks, a siren goes up from Polaris's plaza."
     "Dropships swarm out of the cruiser, angling toward the town."
@@ -874,7 +874,7 @@ label vig4_sc6_defend_5():
             $ AddChatter(vig4_sc6_defend_5_comment17)
         "A fleet of attack ships."
         pS "Who the—that's one hell of a pilot?"
-        show reginald at stream_center with dissolve
+        show reginald stream bigmad at stream_center with dissolve
         $ AddChatter(vig4_sc6_defend_5_comment18)
         goon "I really don't get paid enough for this shit."
         show jennica stream shock at stream_left

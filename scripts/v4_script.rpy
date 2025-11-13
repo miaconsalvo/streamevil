@@ -235,7 +235,7 @@ label vig4_sc1_2():
             mS "You wanted to see me?"
     pS "Yeah, I'm about to bring us out of hyperspace."
     pS "Figured ya'd want to be here when we arrived."
-    play audio "exitHyperspace" volume 1.0
+    play audio "exitHyperspace.wav" volume 1.0
     "The waves of light surrounding the ship slow down as we emerge from hyperlight travel into the vastness of space."
     "A giant orb of swirling red and orange hangs in front of us."
     menu:
@@ -663,7 +663,7 @@ label vig2_sc2_3():
             enS "Wanted to see what you think of it?"
             menu:
                 enS "Wanted to see what you think of it?"
-                "I hadn't noticed":
+                "I hadn't noticed.":
                     mS "I didn't notice."
                     show teresa stream think
                     hide screen streamerCommentary
@@ -954,7 +954,7 @@ label vig4_sc2_4():
             mS "Teresa, stand d—"
             play audio "lazer.wav" volume 5.0
             "A bolt fires from Teresa's blaster."
-            play audio "shield" volume 1.5
+            play audio "shield.wav" volume 1.5
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
             show teresa stream shock
             $ reactTarget = "vig4_sc2_coilshield"
@@ -3055,6 +3055,7 @@ label vig4_sc3_4():
     macS "Moze! Isn't this wonderful!"
     mS "MAC, we should talk."
     macS "Of course, that would be nice. Shall we take a walk around the plaza?"
+    stop backAudio fadeout 4.0
     $ AddChatter(vig4_sc3_4_comment1)
     "The two of us head to the outskirts of the plaza."
     "Every step feels heavy. As if my boots are filled with lead."
@@ -4669,7 +4670,7 @@ label vig4_sc7_2():
 
 label vig4_sc7_3_ama():
     # play badass climax music
-    play music "soundtrack/finale.wav" volume 0.7
+    play music "soundtrack/finale.wav" volume 1.0
     "Everyone is still."
     show ama stream upset
     "Ama makes the first move, dropping her rifle and lunging at Coil."
@@ -5141,7 +5142,7 @@ label vig4_sc7_3_ama():
 
 label vig4_sc7_3_coil():
     #play badass climax music
-    play music "soundtrack/finale.wav" volume 0.7
+    play music "soundtrack/finale.wav" volume 1.0
     "Everyone is still."
     show ama stream gun
     "Ama makes the first move, raising her rifle in my direction."
@@ -6777,18 +6778,21 @@ label vig4_macro_writeUp():
     "I should post something... It's kind of cheesy, but I think it might be a good way to sum up my experience."
     "Let me start with a small introduction."
     pause 1.0
+    #$ summaryIntroduction = "Hey everyone! My name is [streamer] and I just finished streaming Oakley2! I wanted to share my thoughts on the end game for our lovely community of galactic cowboys."
     $ summaryIntroduction = "Hey everyone! My name is [streamer] and I just finished streaming Oakley2! I wanted to share my thoughts on the end game for our lovely community of galactic cowboys."
+    $ addWriteUp(summaryIntroduction)
     "It's a good start."
     jump vig4_macro_writeUp_2
     
 label vig4_macro_writeUp_2():
-    $ mozeReflection = ""
+    #$ mozeReflection = ""
     "For the first part, I want to reflect on what it was like to play as Moze."
     menu:
         #"For the first part, I want to reflect on what it was like to play as Moze."
         "I lost myself in the character...":
             pause 1.0
             $ mozeReflection = "Playing as Moze… tbh it was weird how easily I slipped into Moze’s mindset. Like, the choices weren’t just in character – they were my choices. Moze’s inner turmoil really spoke to me and I found myself acting in unexpected ways because of it."
+            $ addWriteUp(mozeReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6798,6 +6802,7 @@ label vig4_macro_writeUp_2():
                     jump vig4_macro_writeUp_2
         "I always felt a bit outside of Moze...":
             $ mozeReflection = "The PC design was interesting. Moze is like the kind of friend I love telling stories about and am decently worried for but I only reach out like 3 times a year max because I know she’d do more harm than good to my life. It felt more like I was putting on a costume when I played as her, or like I was trying to help my problematic friend figure out her life."
+            $ addWriteUp(mozeReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6807,6 +6812,7 @@ label vig4_macro_writeUp_2():
                     jump vig4_macro_writeUp_2
         "Moze and I are nothing alike...":
             $ mozeReflection = "I came in I think with this idea of who the character would be, but the more I played the more Moze shifted. Her story isn’t one I relate to, or can even fathom for myself like in the slightest – but it was still a really fun ride. She and I may have nothing in common but I’ll always be rooting for my problematic captain!"
+            $ addWriteUp(mozeReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6817,12 +6823,13 @@ label vig4_macro_writeUp_2():
     jump vig4_macro_writeUp_3
 
 label vig4_macro_writeUp_3():
-    $ choiceReflection = ""
+    #$ choiceReflection = ""
     "Okay, that was good. Now I should say something about the kinds of choices I was making in the game..."
     menu:
         #"Okay, that was good. Now I should say something about the kinds of choices I was making in the game..."
         "I just followed the momentum...":
             $ choiceReflection = "The game led me where I think we needed to go. I streamed the whole thing, and I think the chat hive mind plus what made sense with the story hit this nice synthesis where I felt less like a driver and more like a passenger of this well-crafted roller coaster."
+            $ addWriteUp(choiceReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6832,6 +6839,7 @@ label vig4_macro_writeUp_3():
                     jump vig4_macro_writeUp_3
         "Making the hard choices was a breeze...":
             $ choiceReflection = "I steered the crew of the Oakley every step of the way. I streamed the whole thing and though not everyone agreed with my choices I stand by them; that’s what it means to be the captain I guess!"
+            $ addWriteUp(choiceReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6841,6 +6849,7 @@ label vig4_macro_writeUp_3():
                     jump vig4_macro_writeUp_3
         "I froze a bit...":
             $ choiceReflection = "Man there were some tough moments in the sequel. I never knew what the ‘right’ move was. I streamed the whole game and sometimes chat would be a chorus of a million different opinions, and I wouldn’t be able to even tell you up from down let alone right choice vs wrong choice. We got through it though! Even if we did it mostly in panic mode."
+            $ addWriteUp(choiceReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6851,12 +6860,13 @@ label vig4_macro_writeUp_3():
     jump vig4_macro_writeUp_4
 
 label vig4_macro_writeUp_4():
-    $ streamReflection = ""
+    #$ streamReflection = ""
     "Oh, I should add something on the experience of streaming Oakley 2."
     menu:
         #"Oh, I should add something on the experience of streaming Oakley 2."
         "The chat shaped everything...":
             $ streamReflection = "I kept thinking I was making my own decisions but looking back now the chat definitely had a bigger pull than I thought. Their reactions, jokes, even silence… it shaped my entire playthrough. Upon reflection, it’s a bit scary how much power an audience has!"
+            $ addWriteUp(streamReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6866,6 +6876,7 @@ label vig4_macro_writeUp_4():
                     jump vig4_macro_writeUp_4                
         "Streaming kept me grounded...":
             $ streamReflection = "Honestly? Chat helped me a ton. When things got too intense or felt like they were becoming almost personal, I looked over and saw my audience reacting with me. It felt less like a one-player game and more like a shared experience – not just playing for people but with a great group of friends!"
+            $ addWriteUp(streamReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6875,6 +6886,7 @@ label vig4_macro_writeUp_4():
                     jump vig4_macro_writeUp_4
         "I didn't even notice chat half the time...":
             $ streamReflection = "The game was so fast-paced and immersive that I ended up being so locked in that I barely glanced at the chat. I know they were there and reacting/talking to each other but in the game moments I was too concentrated to notice. Not sure if that makes me a bad streamer or it shows how good Oakley 2 was…"
+            $ addWriteUp(streamReflection)
             "Is that what I want to say?"
             menu:
                 #"Is that what I want to say?"
@@ -6885,13 +6897,14 @@ label vig4_macro_writeUp_4():
     jump vig4_macro_writeUp_5
 
 label vig4_macro_writeUp_5():
-    $ affiliateReflection = ""
+    #$ affiliateReflection = ""
     if Affiliate == True:
         "I guess I'll finish it with my thoughts on making affiliate."
         menu:
             #"I guess I'll finish it with my thoughts on making affiliate."
             "I feel positive about achieving Affiliate...":
                 $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I went full dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
+                $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -6901,6 +6914,7 @@ label vig4_macro_writeUp_5():
                         jump vig4_macro_writeUp_5
             "I feel kind of negative about achieving Affiliate...":
                 $ affiliateReflection = "So, I made affiliate… and if I’m being real, though it feels weird admitting it, I’m not too thrilled. I don’t really feel good about the way I played the game… I wasn’t me: I played it up, leaned into some stuff I don’t normally do. It’s what got me to my goal, but now I’m feeling guilty instead of excited."
+                $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -6914,6 +6928,7 @@ label vig4_macro_writeUp_5():
             "I guess I'll finish it with my thoughts on not making affiliate."
             "I'm feeling positive about not achieving affiliate...":
                 $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. I played how I wanted to play. I made the choices that felt honest and good, even if they didn’t blow the streaming world up. And honestly? I’d rather be me than gain an audience being something I’m not. I’m glad the game ended the way it did for my first stream of it!"
+                $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -6923,6 +6938,7 @@ label vig4_macro_writeUp_5():
                         jump vig4_macro_writeUp_5
             "I'm feeling negative about not achieving affiliate...":
                 $ affiliateReflection = "Still not affiliate… I said this was going to be my last go at it. I checked the numbers hoping they would tick but they didn’t and ngl it does suck. I wanted this to be the stream that changed that… maybe I did play it too safe. Or maybe the way I play is just not something people want to watch."
+                $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
