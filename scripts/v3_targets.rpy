@@ -1643,7 +1643,7 @@ label vig3_analytics_topfan():
         "But they'll always be a welcoming voice. Every chat needs that."
     elif topfan == "kitcat":
         "kitcat has really gotten comfortable in the chat."
-        "It's nice to have someone who's less didactic about \"Marshal\" this or \"Outlaw\" that."
+        "It's nice to have someone who cares less about \"Marshal\" this or \"Outlaw\" that."
         "For them, it's all about MAC. And maybe that's more reflective of Moze's view than anyone else's."
     elif topfan == "pickledDragons":
         "pickledDragons brings so much energy to the stream, it's remarkable."
