@@ -23,7 +23,7 @@ label vig3_break():
     player "It looks like there's a problem with the game files."
     player "Must've been something wrong when I updated."
     $ AddChatter (vig3break_crash_comment9)
-    pause 0.5
+    pause 1.0
     $ AddChatter (vig3break_crash_comment10)
     "You'll need to kill time while it gets fixed."
     menu:
@@ -38,6 +38,7 @@ label vig3_break():
             pause 0.5 
             $ AddChatter (vig3break_brb_comment3)
             player "I kid, I kid."
+            $ vig3break_crash_comment10.click = False
             player "Let's get some water and stretch those legs so we can lock in!"
             $ AddChatter (vig3break_brb_comment4)
             player "See ya in a bit!"
@@ -46,6 +47,7 @@ label vig3_break():
             player "I'm sorry guys, it looks like it'll take some time to fix."
             player "Especially sorry that it happened to be such a wild cliffhanger."
             $ AddChatter (vig3break_brb_comment5)
+            $ vig3break_crash_comment10.click = False
             player "So let's get some water, stretch our legs."
             player "And then we can chat while we wait!"
             $ AddChatter (vig3break_brb_comment5add)
@@ -56,17 +58,18 @@ label vig3_break():
             player "..."
             player "Oh wow that's gonna take a while."
             $ AddChatter (vig3break_brb_comment6)
+            $ vig3break_crash_comment10.click = False
             player "I'm gonna grab some water and stretch my legs."
             player "Be right back!"
             player "Hopefully it'll be all fixed by then."
             $ AddChatter (vig3break_brb_comment7)
             $ AddChatter (vig3break_brb_comment8)
     #show bg black with dissolve
-    "Leaving the stream for a bit can always feel really nice."
+    "Leaving the stream for a bit can feel really nice."
     "The hallway is much cooler than your room, which has undoubtly been storing your body heat."
     "Your roomate is gone for the night, so at least you know you aren't disturbing them."
     "You pass through the quiet of your apartment."
-    "Grab some water and stand in the kitchen for a moment."
+    "Grab some water, and stand in the kitchen for a moment."
     menu: 
         "Streaming is..."
         "Tiring.":
@@ -105,10 +108,11 @@ label vig3_break():
     player "We'll be back soon, no worries."
     "Let's get the chat hyped about what comes next."
     player "But can we talk about Ama for a second!"
-
+    $ vig3break_brb_comment12.click = False
     menu: 
         "Let's talk about Ama."
-        "Y'all I think we can take her.":
+        "Y'all I think we can take her?":
+            player "What do y'all think? Can we take her?"
             $ AddChatter (vig3break_ama_take_comment1)
             pause 0.5
             $ AddChatter (vig3break_ama_take_comment2)
@@ -140,8 +144,11 @@ label vig3_break():
             player "The world is feeling so much bigger!"
             player "With a bigger cast."
             player "Speaking of the cast..."
+            $ vig3break_ama_take_comment7.click = False
+            $ vig3break_ama_take_comment10.click = False
 
         "She is just *chef's kiss*.":
+            player "Her design is just *chef's kiss*."
             $ AddChatter (vig3break_ama_kiss_comment1)
             pause 0.5
             $ AddChatter (vig3break_ama_kiss_comment2)
@@ -166,8 +173,10 @@ label vig3_break():
             $ AddChatter (vig3break_ama_kiss_comment11)
             player "Gotta make sure we keep the family safe!" 
             player "Speaking of family..."
+            $ vig3break_ama_kiss_comment10.click = False
 
         "So how dead do you think we are?":
+            player "Alright, chat, how dead are we?"
             $ AddChatter (vig3break_ama_dead_comment1)
             pause 0.5
             $ AddChatter (vig3break_ama_dead_comment2)
@@ -196,6 +205,7 @@ label vig3_break():
 
     player "We gotta talk about Rec."
     player "It's amazing we get to see them again."
+    $ vig3break_ama_dead_comment11.click = False
     $ AddChatter (vig3break_rec_comment1)
     pause 0.5 
     $ AddChatter (vig3break_rec_comment2)
@@ -263,6 +273,9 @@ label vig3_break():
             $ AddChatter (vig3break_rec_reunion_comment12)
             player "We're definitely not out of the woods yet!"
             player "There's a whole chapter to play through."
+    $ vig3break_rec_tense_comment4.click = False
+    $ vig3break_rec_reunion_comment3.click = False
+    $ vig3break_rec_reunion_comment9.click = False
 
     "You hear the unmistakable sound of a MYST notification."
     "The fix is done."
@@ -289,6 +302,11 @@ label vig3_break():
     "You boot up the game again."
     "Open on your recovered save."
     "And pick up right where you left off."
+    $ vig3break_crash_comment10.click = False
+    $ vig3break_brb_comment12.click = False
+    $ vig3break_ama_take_comment7.click = False
+    $ vig3break_ama_take_comment10.click = False
+    $ vig3break_ama_kiss_comment10.click = False
     $ vig3break_ama_dead_comment11.click = False
     $ vig3break_rec_tense_comment4.click = False
     $ vig3break_rec_tense_comment10.click = False

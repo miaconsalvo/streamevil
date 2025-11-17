@@ -1387,6 +1387,7 @@ label vig3break_crash10():
     $ macroChoice = True
     $ vig3break_crash_comment10.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "So do you think this was intentional?"
         "I hope not, I hate those games!":
@@ -1404,12 +1405,14 @@ label vig3break_crash10():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_brb12():
     $ macroChoice = True
     $ vig3break_brb_comment12.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How's your progress?"
         "It's gonna be a while...":
@@ -1426,12 +1429,14 @@ label vig3break_brb12():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_take7():
     $ macroChoice = True
     $ vig3break_ama_take_comment7.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Do you think you can escape Ama again?"
         "There's always a way out!":
@@ -1448,12 +1453,14 @@ label vig3break_take7():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_take10():
     $ macroChoice = True
     $ vig3break_ama_take_comment10.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "What do you think about the new locations?"
         "Hot take, but I love Gibian V.":
@@ -1475,12 +1482,14 @@ label vig3break_take10():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_kiss10():
     $ macroChoice = True
     $ vig3break_ama_kiss_comment10.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How do you feel about Outlaw MAC"
         "MAC's learning from the best.":
@@ -1497,6 +1506,7 @@ label vig3break_kiss10():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 #label vig3break_dead4():
@@ -1505,6 +1515,7 @@ label vig3break_dead11():
     $ macroChoice = True
     $ vig3break_ama_dead_comment11.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How'do you feel about the other Snakehawks?"
         "It feels nostalgic.":
@@ -1522,12 +1533,14 @@ label vig3break_dead11():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_tense4():
     $ macroChoice = True
     $ vig3break_rec_tense_comment4.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "Are you Outlaws?"
         "We're a different kind of Outlaw.":
@@ -1544,12 +1557,14 @@ label vig3break_tense4():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_tense10():
     $ macroChoice = True
     $ vig3break_rec_tense_comment10.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How do you even respond to that."
         "I hope you're joking.":
@@ -1568,12 +1583,14 @@ label vig3break_tense10():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_reunion3():
     $ macroChoice = True
     $ vig3break_rec_reunion_comment3.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "How do you feel about Rec and Allistar's lost reunion?"
         "That's just what happens.":
@@ -1590,12 +1607,14 @@ label vig3break_reunion3():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_reunion9():
     $ macroChoice = True
     $ vig3break_rec_reunion_comment9.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "What about an Ama romance?"
         "I'd do anything!":
@@ -1612,12 +1631,14 @@ label vig3break_reunion9():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 label vig3break_end5():
     $ macroChoice = True
-    $ vig3break_rec_reunion_comment9.click = False
+    $ vig3break_end_comment5.click = False
     $ narrator = reg_narrator
+    $ commentVariable = True
     menu:
         "MOXIE?"
         "MOXIE! MOXIE! MOXIE!":
@@ -1630,6 +1651,7 @@ label vig3break_end5():
     else:
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
+    $ commentVariable = False
     return
 
 #####MACRO GAME TARGETS FOR FLINCH #######
@@ -1712,7 +1734,7 @@ label vig3_analytics_viewcount2():
             $ vig3_viewership = "Low"
             "The viewership is stable, but it's barely enough to make Affiliate."
             "There's basically no margin for losing anyone."
-            "If the numbers drop for the last episode..."
+            "If the numbers drop for the last stream..."
             "You don't really want to think about it."
             jump vig3_analytics_viewcount2
         "It looks like Affiliate's in the bag!" if viewershipHigh == True and flinchViewershipAffiliate == False:
