@@ -34,9 +34,17 @@ screen streamChat():
                 #yalign 1.0 #This will place these at the bottom
                 spacing 9
                 for c in (chatter_list): #checks through chatter_list and displays the objects within that list in the vertical boxes.
-                    if c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
+                    if c.click == True and c.tag == 5: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
                         textbutton c.prompt:
-                            action Call(c.target, from_current = True)
+                            action [Return(), Call(c.target)]
+                            text_color c.colour #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+                            text_hover_color "#ffffffa1" 
+                            text_selected_color "#ffffff4f"
+                            background "#eeff00cb" #this will highlight textbuttons in yellow. Because of this, I have the text still appearing as white
+                            text_size 24
+                    elif c.click == True: #if one of the ChatEntry objects in chats_list has "self.click = True," it will create a textbutton.
+                        textbutton c.prompt:
+                            action [Return(), Call(c.target, from_current = True)]
                             text_color c.colour #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
                             text_hover_color "#ffffffa1" 
                             text_selected_color "#ffffff4f"
@@ -231,28 +239,28 @@ screen raidFreeze():
         xsize 1920
         ysize 1080
         background Solid("#00000000")
-        imagebutton:
-            xsize 298
-            ysize 135
-            xalign 0.965
-            yalign .753
-            idle "#eeff0081"
-            hover "#eeff0060"
-            action [Return(), Call("vig1_sc3_banditConvo")] #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
+        #imagebutton:
+        #    xsize 298
+        #    ysize 135
+        #    xalign 0.965
+        #    yalign .753
+        #    idle "#eeff0081"
+        #    hover "#eeff0060"
+        #    action [Return(), Call("vig1_sc3_banditConvo")] #could set the Call to like "[curent_analytics_viewcount]" - and then before making the jump, make sure to set $current_analytics_viewcount to the appropriate string
 
 screen vig4_streamFreeze():
     frame:
         xsize 1920
         ysize 1080
         background Solid("#00000000")
-        imagebutton:
-            xsize 298
-            ysize 135
-            xalign 0.965
-            yalign .753
-            idle "#eeff0065"
-            hover "#eeff0044"
-            action [Return(), Call("vig4_sc2_elliotEntrance")]
+        #imagebutton:
+        #    xsize 298
+        #    ysize 135
+        #    xalign 0.965
+        #    yalign .753
+        #    idle "#eeff0065"
+        #    hover "#eeff0044"
+        #    action [Return(), Call("vig4_sc2_elliotEntrance")]
 
 #screen for selecting profile picture
 screen selectProfilePic():

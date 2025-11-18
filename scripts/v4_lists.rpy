@@ -198,8 +198,8 @@ default vig4_sc2_6_comment39 = ChatEntry(False, "{b}bacon8r_6 - 6:44{/b}\nNot wh
 default vig4_sc2_6_comment40 = ChatEntry(False, "{b}R4dioRobbie - 6:44{/b}\nIf you don't come back with good news Shield Papa, we're razing this place to the ground", 4, "#ffffff")
 default vig4_sc2_6_comment41 = ChatEntry(False, "{b}llamabama22 - 6:44{/b}\nI mean, the man deserves a {i}bit{/i} of respect at least, no?", 4, "#ffffff")
 default vig4_sc2_6_comment42 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nHey [player]! So glad I could make it!", 4, "#ffffff")
-default vig4_sc2_6_comment43 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nWow there are a lot of peeps in chat. What'd I miss so far?", 4, "#ffffff", "vig4_sc2_elliotEntrance")
-default vig4_sc2_6_comment44 = ChatEntry(False, "{b}treb.ell - 6:45{/b}\nWhat'd I miss so far?", 4, "#ffffff", "vig4_sc2_elliotEntrance")
+default vig4_sc2_6_comment43 = ChatEntry(True, "{b}treb.ell - 6:45{/b}\nWow there are a lot of peeps in chat. What'd I miss so far?", 5, "#ffffff", "vig4_sc2_elliotEntrance")
+default vig4_sc2_6_comment44 = ChatEntry(True, "{b}treb.ell - 6:45{/b}\nWhat'd I miss so far?", 5, "#ffffff", "vig4_sc2_elliotEntrance")
 
 
 ###Comments vig4_bro - For the interaction when your brother enters chat

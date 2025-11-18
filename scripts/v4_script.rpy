@@ -1470,14 +1470,15 @@ label vig4_sc2_6():
             stop music fadeout (2.0)
             hide coil with dissolve
             hide vega with dissolve
+            play music "soundtrack/festival.wav" volume 0.3 fadein 4.0
             "The sounds from outside are suddenly loud and lively."
-            play music "soundtrack/festival.wav" volume 0.3 fadein 3.0
             "Music drifts in through the windows and the cries of laughter and joy hang in the air."
             pause 0.5
             $ viewCount += 1
             $ AddChatter(vig4_sc2_6_comment42)
             pause 1.0
             $ narrator = reg_narrator
+            stop music fadeout 2.0
             "What? That's Elliot's username in chat."
             "But he's supposed to be on a date with Cedric."
             if viewershipHigh == True or viewershipMed == True:
@@ -1495,7 +1496,7 @@ label vig4_sc2_6():
 
 label vig4_sc3_1():
     #$ renpy.music.set_volume(0.8, 2.0)
-    play music "soundtrack/festival.wav" volume 0.8
+    play music "soundtrack/festival.wav" volume 0.7
     show polarisplazanight_stream at topleft onlayer background with dissolve
     hide coilworkshop_stream
     play backAudio "crowdParty.wav" volume 0.4

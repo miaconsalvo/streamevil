@@ -198,6 +198,7 @@ label vig4_sc2_peacefulTown():
 
 label vig4_sc2_elliotEntrance():
     #$ screenFreeze = False
+    stop music fadeout 1.0
     $ macroChoice = True
     $ vig4_sc2_6_comment43.click = False
     $ narrator = reg_narrator
@@ -426,6 +427,7 @@ label vig4_sc2_elliotEntrance():
             $ AddChatter(vig4_bro_comment26)
             "Alright, alright, let's get back to it."
             $ AddChatter(vig4_bro_comment27)
+    stop music fadeout 2.0
     if reactVariable == True:
         "Where was I?"
         $ narrator = reg_narrator

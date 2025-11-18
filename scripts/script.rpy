@@ -428,6 +428,9 @@ label playerName:
     menu:
         "Which Vignette would you like to begin with?"
         "Vignette 1":
+            scene streamview with dissolve
+            show screen streamDetails
+            show screen streamChat
             jump vignette1Start
         "Vignette 2":
             jump testing_jumpahead_vig2
