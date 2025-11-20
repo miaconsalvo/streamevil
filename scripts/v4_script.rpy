@@ -4588,11 +4588,13 @@ label vig4_sc7_2():
     "Then I see it."    
     $ reactTarget = "vig4_sc7_starshower"
     show screen streamerCommentary
-    show tower_star_shower_ship_stream at topleft onlayer background with dissolve
+    show tower_star_shower_ship_early_stream at topleft onlayer background with dissolve
     hide tower_no_star_ship_stream    
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
+    show tower_star_shower_ship_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_early_ship_stream 
     "Dozens. Hundreds. Thousands of glimmering lights, streaking across the sky."
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
@@ -5019,6 +5021,8 @@ label vig4_sc7_3_ama():
                     show ama stream happy
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
+    show tower_explosion_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream
     play audio "explosion.wav" volume 1.5
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_ama_comment61)
@@ -5026,6 +5030,8 @@ label vig4_sc7_3_ama():
     "She tilts her head at MAC."
     show ama stream neutral
     amaS "Now go. He needs you."
+    show tower_star_shower_stream at topleft onlayer background with dissolve
+    hide tower_explosion_stream
     $ vig4_sc7_3_ama_comment56.click = False
     $ AddChatter(vig4_sc7_3_ama_comment62)
     hide ama with dissolve
@@ -5429,8 +5435,10 @@ label vig4_sc7_3_coil():
             mS "It wasn't a problem."
             mS "You did well for an old man."
             cS "Hah. You know, I think I could have done better."
-    "An unbearable groaning sound suddenly reverberates across Polaris."
+    show tower_explosion_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream 
     play audio "explosion.wav" volume 1.5
+    "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_coil_comment45)
     "Coil glances to the side."
@@ -5444,6 +5452,8 @@ label vig4_sc7_3_coil():
     hide coil with dissolve
     show mac at stream_center_mac with move
     "I take a step toward MAC."
+    show tower_star_shower_stream at topleft onlayer background with dissolve
+    hide tower_explosion_stream 
     mS "MAC."
     "He turns his attention toward me."
     menu:
