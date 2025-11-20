@@ -1294,6 +1294,8 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment7)
     "Two of the guards are dead already from the explosion."
     $ AddChatter(vig2_sc6_out_comment8)
+    show guard1 stream at stream_left5 with dissolve
+    show guard2 stream at stream_right with dissolve
     "Two more are shooting at us from the other side of the room."
     $ AddChatter(vig2_sc6_out_comment9)
     "I think I have a good shot on one of them."
@@ -1305,6 +1307,7 @@ label commsBase_OUT1():
             "I take a deep breath and fire my blaster."
             play audio "lazer.wav" volume 1.0
             "The guard's head snaps back before he slumps over."
+            hide guard1 stream with Dissolve(0.3)
             $ AddChatter(vig2_sc6_out_shoot_comment1)
             $ AddChatter(vig2_sc6_out_shoot_comment2)
             $ AddChatter(vig2_sc6_out_shoot_comment3)
@@ -1323,6 +1326,7 @@ label commsBase_OUT1():
             $ AddChatter(vig2_sc6_out_suppress_comment2)
             "Shots ring out from behind me, hitting one of the guards."
             play audio "lazerFire.wav" volume 0.5
+            hide guard1 stream with Dissolve(0.3)
             pS "Thanks for the cover!"
             show jennica stream fight at stream_left with Dissolve(0.2)
             "Jennica dives into cover next to me."
@@ -1330,6 +1334,8 @@ label commsBase_OUT1():
     mS "Teresa has him pinned down."
     pS "I'll get em!"
     "Jennica leaps out of cover and begins running towards the guard."
+    show guard3 stream at stream_right5 with dissolve
+    show guard4 stream at stream_center with dissolve
     "Three more guards emerge from the door, guns drawn."
     pS "Shit! We got company!"
     $ AddChatter(vig2_sc6_out_comment11)
@@ -1341,12 +1347,16 @@ label commsBase_OUT1():
     $ AddChatter(vig2_sc6_out_comment12)
     hsguard1 "GRENADE! GET DOWN!"
     play audio "grenade.wav" volume 1.5
+    with hpunch
     "Two of the guards are able to dive out of the way in time."
     $ AddChatter(vig2_sc6_out_comment13)
+    hide guard4 stream with Dissolve(0.4)
     "The grenade detonates with an unnerving concussive thump."
     "I peek out of cover and spot one of the guards running."
+    show guard3 stream at stream_left with move
     play audio "lazer.wav" volume 1.0
     "Jennica fires her blaster, hitting the fleeing guard."
+    hide guard3 stream with Dissolve(0.3)
     $ AddChatter(vig2_sc6_out_comment14)
     play audio "lazerFire.wav" volume 0.5
     "Teresa continues shooting."
@@ -1354,7 +1364,7 @@ label commsBase_OUT1():
     stop backAudio fadeout 1.0
     $ renpy.music.set_volume(0.4, 1.0)
     $ AddChatter(vig2_sc6_out_comment15)
-    show guard1 stream at stream_center with Dissolve(0.4)
+    show guard2 stream at stream_center with MoveTransition(0.7)
     hsguard1 "I surrender!"
     mS "Stand up and put your hands where I can see them!"
     "The guard complies."
@@ -1385,7 +1395,7 @@ label commsBase_OUT1():
             play audio "lazer.wav" volume 5.0
             pause 0.55
             play audio "deathGasp.wav" volume 2.0
-            hide guard1 stream with Dissolve (0.1)
+            hide guard2 stream with Dissolve (0.1)
             "A shot rings out and the guard falls over, lifelessly."
             show reginald stream neutral at stream_center with dissolve
             "Reginald stands over the corpse."
@@ -1426,7 +1436,7 @@ label commsBase_OUT1():
             play audio "lazer.wav" volume 5.0
             pause 0.55
             play audio "deathGasp.wav" volume 2.0
-            hide guard1 stream with Dissolve(0.1)
+            hide guard2 stream with Dissolve(0.1)
             "His body slumps to the ground lifelessly."
             $ AddChatter(vig2_sc6_out_execute_comment5)
             $ AddChatter(vig2_sc6_out_execute_comment6)
