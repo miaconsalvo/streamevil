@@ -20,7 +20,7 @@ label vig4_sc6_attack_1_ama():
     hide teresa with dissolve
     $ vig4_sc6_attack_1_ama_comment1.click = False
     "The four of us dive over the rubble of a nearby building and crouch behind the ruined stones."
-    play backAudio3 "tankRumble.wa" volume 0.5
+    play backAudio3 "tankRumble.wav" volume 0.5
     "A low rumble gets closer, muddying the sound of several voices."
     $ AddChatter(vig4_sc6_attack_1_ama_comment4)
     "One breaks through, shouting."
@@ -245,6 +245,7 @@ label vig4_sc6_attack_1_assault_ama():
     show ama stream neutral
     dflyGuard "Captain Moze?"
     show dflyguard at stream_center with dissolve
+    show ff soldier2 at stream_right with dissolve
     "The leader of the Dragonflies squad approaches me."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment18)
     dflyGuard "We thought we were dead."
@@ -278,6 +279,7 @@ label vig4_sc6_attack_1_assault_ama():
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide screen streamerCommentary
             hide dflyguard with dissolve
+            hide ff soldier2 with dissolve
         "It wasn't about you.":
             $ pdEngagement += 1
             $ csEngagement -= 1
@@ -299,6 +301,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment26)
             "He turns and rejoins his comrades. Together, they walk down the street toward the plaza."
             hide dflyguard with dissolve
+            hide ff soldier2 with dissolve
         "I wanted to kill you myself.":
             $ deadeyeApproval += 1
             $ csEngagement -= 2
@@ -322,6 +325,7 @@ label vig4_sc6_attack_1_assault_ama():
             play audio "lazerFire.wav" volume 0.7
             "Our blasters echo in the night."
             "Each Dragonfly drops to the ground. Dead."
+            hide ff soldier2 with Dissolve(0.3)
             show ama stream neutral
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment30)
             hide screen streamerCommentary

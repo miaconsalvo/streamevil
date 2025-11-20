@@ -3104,7 +3104,7 @@ label vig3_sc9():
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
     $ AddChatter (vig3_sc9_inventorsfair_comment51)
     "The music dies down as a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
-    show bcRep at stream_right with dissolve
+    show bcrep stream at stream_right with dissolve
     "A finely dressed man walks up to the platform and wheels in something covered by a blanket."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment52)
@@ -3137,7 +3137,7 @@ label vig3_sc9():
     play audio "macNeutral.wav" volume 1.0
     macS "Hi, MAC..."
     $ AddChatter (vig3_sc9_inventorsfair_comment63)
-    hide bcRep with dissolve
+    hide bcrep stream with dissolve
     "The room chuckles as the representative keeps talking. I look over at the crew who are frozen, unsure of how to proceed." 
     $ AddChatter (vig3_sc9_inventorsfair_comment64)
     pause 0.5
@@ -3473,7 +3473,7 @@ label vig3_sc12():
     "It's so far away..."
     play music "soundtrack/decisionTime.wav"
     show ama stream formal neutral at stream_left with dissolve
-    show bcrep at stream_center with dissolve
+    show bcrep stream at stream_center with dissolve
     bcrep "Absolute garbage!"
     $ AddChatter (vig3_sc12_balcony_comment2)
     play audio "dropGun.wav" volume 1.0
@@ -3486,6 +3486,7 @@ label vig3_sc12():
     bcrep "I swear to the Makers if you screwed up again!"
     "The representative hasn't noticed me yet."
     play audio "grunt.wav" volume 2.8
+    show bcrep stream at stream_left5 with MoveTransition(0.2)
     "And soon has more pressing matters as he strains against Ama's grip on his throat."
     $ AddChatter (vig3_sc12_balcony_comment3)
     $ reactTarget = "vig3_sc12_amachoke"#timestamp 7:15
@@ -3526,6 +3527,7 @@ label vig3_sc12():
             mS "But you're going too far."
             $ AddChatter (vig3_sc12_help_comment5)
             "When Ama lets him go, he spills to the ground, tears in his eyes."
+            show bcrep stream at stream_center with move
             menu: 
                 "Say something."
                 "You're rough as always.": 
@@ -3949,7 +3951,7 @@ label vig3_sc12():
             "Ama's fist snaps closed, accompanied by a dull crunching sound."
             $ AddChatter (vig3_sc12_nothing_comment5)
             "She lets go of her grip. The body falls to the ground, limp."
-            hide bcrep with dissolve
+            hide bcrep stream with dissolve
             $ AddChatter (vig3_sc12_nothing_comment6)
             "Ama's shoulders rise and fall as she takes deep breaths."
             show ama stream formal neutral
