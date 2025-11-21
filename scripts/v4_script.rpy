@@ -445,6 +445,7 @@ label vig4_sc2_1():
     townguy "Hello, strangers, you must be here for the star shower!"
     show townsperson stream neutral at stream_left with dissolve
     "A man with a sack of grain hanging over his left shoulder approaches Teresa and I from the alley."
+    show townsperson at stream_left5 with move
     townguy "We get visitors so rarely. It's lovely to have you!"
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc2_1_comment3)
@@ -2338,13 +2339,16 @@ label vig4_sc3_2_teresa():
     $ csEngagement -= 1
     hide vega with dissolve
     hide jennica with dissolve
-    show teresa stream neutral at stream_center with move
+    show teresa stream neutral at stream_right5 with move
     $ AddChatter(vig4_sc3_2_resa_comment1)
     "I wind my way through the crowd to stand next to Teresa."
     $ AddChatter(vig4_sc3_2_resa_comment2)
     pause 0.5
     $ AddChatter(vig4_sc3_2_resa_comment3)
     "She and three other people are watching each other intently, holding upside down cups."
+    show polaris civilian stream at stream_right with dissolve
+    show polaris2 civilian stream at stream_left5 with dissolve
+    show townsperson2 stream neutral at stream_left with dissolve
     "The one sitting on Teresa's left throws a small bunch of credits on the table and stands up."
     $ AddChatter(vig4_sc3_1_comment11)
     townguy "Damn it!"
@@ -2352,6 +2356,8 @@ label vig4_sc3_2_teresa():
     "Teresa shrugs."
     enS "You should've called."
     townguy "Apparently. I'm out. Getting too rich for my blood."
+    hide polaris2 civilian with dissolve
+    show teresa stream happy at stream_center with move
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc3_2_resa_comment4)
     "As the man leaves, Teresa glances up at me."
@@ -2472,6 +2478,8 @@ label vig4_sc3_2_teresa():
             mS "Well played."
             diceP2 "Thank you kindly."
             "The two players get up from the table and wander off into the plaza."
+            hide townsperson2 stream neutral with dissolve
+            hide polaris civilian stream with dissolve
             "Teresa doesn't move to take the credits. She continues to stare at the uncovered dice on the table."
             $ AddChatter(vig4_sc3_2_resa_comment25)
             enS "But that's mathematically improbable."
@@ -2536,6 +2544,8 @@ label vig4_sc3_2_teresa():
                     mS "Well played."
                     diceP2 "Thank you kindly."
                     "The two players get up from the table and wander off into the plaza."
+                    hide townsperson2 stream neutral with dissolve
+                    hide polaris civilian stream with dissolve
                     "Teresa continues to stare at the uncovered dice on the table."
                     $ AddChatter(vig4_sc3_2_resa_comment25)
                     enS "But that's mathematically improbable."
@@ -2795,6 +2805,8 @@ label vig4_sc3_3():
     "A crowd just to my left suddenly gets my attention."
     "There's a small semi-circle of people, their heads inclined downwards."
     show mac stream neutral at stream_center_mac with dissolve
+    show townsperson stream neutral at stream_right with dissolve
+    show polaris2 civilian stream at stream_left with dissolve
     "They're all looking at MAC, as he waves his hands in the air."
     play audio "macNeutral.wav" volume 1.5
     if macViolence >= macPeace and customsStampede == True:
@@ -2853,6 +2865,8 @@ label vig4_sc3_3():
             $ AddChatter(vig4_sc3_3_comment5)
         macS "They were, but they're no match for the Snakehawks!"
     hide mac with dissolve
+    hide polaris2 civilian stream with dissolve
+    hide townsperson stream neutral with dissolve
     "I chuckle a bit to myself."
     cS "He has many more stories like that one."
     $ renpy.music.set_volume(0.4, 1.0)
@@ -3224,6 +3238,7 @@ label vig4_sc3_5():
             show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             $ AddChatter(vig4_sc3_5_comment9)
+            show ff soldier2 at stream_center with Dissolve(0.2)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
             if viewershipHigh == True or viewershipMed == True:
@@ -3234,6 +3249,7 @@ label vig4_sc3_5():
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment11)
+            hide ff soldier with dissolve
             hide dflyguard with dissolve
             hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
@@ -3385,6 +3401,7 @@ label vig4_sc3_5():
             $ reactTarget = "vig4_sc3_coil2"
             show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
+            show ff soldier at stream_center with Dissolve(0.3)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
             show dflyguard at stream_right with dissolve
@@ -3393,6 +3410,7 @@ label vig4_sc3_5():
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment34)
+            hide ff soldier with dissolve
             hide dflyguard with dissolve
             hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
@@ -3539,15 +3557,16 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment40)
             cS "I appreciate the honesty, Moze."
             hide mac with dissolve
-            show coil stream neutral at stream_left with dissolve
+            show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
             hide screen streamerCommentary
             cS "But there's no need to be mean to the child."
-            show vega stream gun at stream_left5 with dissolve
+            show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
             $ reactTarget = "vig4_sc3_coil2"
             show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
+            show ff soldier at stream_center with Dissolve(0.3)
             show teresa stream neutral at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
             show dflyguard at stream_right with dissolve
@@ -3555,6 +3574,7 @@ label vig4_sc3_5():
             enS "They had a feeling we were gonna try something."
             dflyGuard "I found your friends trying to grab your weapons from the storage stall."
             $ AddChatter(vig4_sc3_5_comment34)
+            hide ff soldier with dissolve
             hide dflyguard with dissolve
             hide teresa with dissolve
             hide vega with dissolve
@@ -4588,11 +4608,13 @@ label vig4_sc7_2():
     "Then I see it."    
     $ reactTarget = "vig4_sc7_starshower"
     show screen streamerCommentary
-    show tower_star_shower_ship_stream at topleft onlayer background with dissolve
+    show tower_star_shower_ship_early_stream at topleft onlayer background with dissolve
     hide tower_no_star_ship_stream    
     "An arc of pale green light shimmering over the cruiser."
     "Then another."
     "And another."
+    show tower_star_shower_ship_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_early_ship_stream 
     "Dozens. Hundreds. Thousands of glimmering lights, streaking across the sky."
     "They collide with the cruiser, thousands of tiny impacts exploding all at once."
     "Dropships are obliterated before they can even reach Polaris."
@@ -5019,6 +5041,8 @@ label vig4_sc7_3_ama():
                     show ama stream happy
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
+    show tower_explosion_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream
     play audio "explosion.wav" volume 1.5
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_ama_comment61)
@@ -5026,6 +5050,8 @@ label vig4_sc7_3_ama():
     "She tilts her head at MAC."
     show ama stream neutral
     amaS "Now go. He needs you."
+    show tower_star_shower_stream at topleft onlayer background with dissolve
+    hide tower_explosion_stream
     $ vig4_sc7_3_ama_comment56.click = False
     $ AddChatter(vig4_sc7_3_ama_comment62)
     hide ama with dissolve
@@ -5429,8 +5455,10 @@ label vig4_sc7_3_coil():
             mS "It wasn't a problem."
             mS "You did well for an old man."
             cS "Hah. You know, I think I could have done better."
-    "An unbearable groaning sound suddenly reverberates across Polaris."
+    show tower_explosion_stream at topleft onlayer background with dissolve
+    hide tower_star_shower_ship_stream 
     play audio "explosion.wav" volume 1.5
+    "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_coil_comment45)
     "Coil glances to the side."
@@ -5444,6 +5472,8 @@ label vig4_sc7_3_coil():
     hide coil with dissolve
     show mac at stream_center_mac with move
     "I take a step toward MAC."
+    show tower_star_shower_stream at topleft onlayer background with dissolve
+    hide tower_explosion_stream 
     mS "MAC."
     "He turns his attention toward me."
     menu:

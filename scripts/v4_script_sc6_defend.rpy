@@ -145,6 +145,7 @@ label vig4_sc6_defend_1():
     "Her weapon is still drawn, aiming at me."
     $ AddChatter(vig4_sc6_defend_1_comment17)
     show dflyguard at stream_right with dissolve
+    show ff soldier at stream_left with dissolve
     "Additional Dragonflies emerge from behind her, they aim rifles at Jennica and Teresa who stand on the tank with their arms raised in the air."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_1_comment18)
@@ -186,6 +187,7 @@ label vig4_sc6_defend_1():
         pass
     vS "But we need you."
     hide dflyguard with dissolve
+    hide ff soldier with dissolve
     "She walks past me toward the tank and I follow her."
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve

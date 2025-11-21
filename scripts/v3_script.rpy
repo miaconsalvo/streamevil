@@ -2546,7 +2546,7 @@ label vig3_sc8():
     $ reactTarget = "vig3_sc8_teresabluff"
     show screen streamerCommentary#timestamp 6:43
     pS "You're a bit scary when you're proper."
-    show rec stream thinking at stream_center with dissolve
+    show rec stream formal thinking at stream_center with dissolve
     mS "You sure what just happened back there was alright?"
     enS "If Reynar really wanted us gone he would've kicked us out already."
     pS "So why didn't he..."
@@ -2555,7 +2555,7 @@ label vig3_sc8():
     enS "We're in, that's what matters."
     mS "Got it."
     enS "And thank you, Reccrin. Couldn't have done it without you getting us ready."
-    show rec stream neutral
+    show rec stream formal neutral
     recS "I've been here for years and never set foot in the Inventor's Fair. I'd give you my whole shop if ya needed."
     $ AddChatter (vig3_sc8_vineyardext_comment17)
     pause 0.5
@@ -2602,7 +2602,7 @@ label vig3_sc8():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment11)
-    show rec stream neutral at stream_center with dissolve
+    show rec stream formal neutral at stream_center with dissolve
     recS "Reynar likes to personally assess what the Hounds find so they're probably holding MAC somewhere close by."
     pS "Let's rough up some suits and find out where they've got him."
     $ AddChatter (vig3_sc9_inventorsfair_comment12)
@@ -2652,7 +2652,7 @@ label vig3_sc8():
     $ AddChatter (vig3_sc9_inventorsfair_comment19)
     pS "I ain't much of a talker..."
     $ AddChatter (vig3_sc9_inventorsfair_comment20)
-    show rec stream happy
+    show rec stream formal happy
     recS "How about we do this together, Jenn? I'd like to see the work maybe even chat up some of the researchers here."
     $ AddChatter (vig3_sc9_inventorsfair_comment21)
     pause 0.5
@@ -3078,7 +3078,7 @@ label vig3_sc9():
     hide screen streamerCommentary
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show rec stream neutral at stream_center with dissolve
+    show rec stream formal neutral at stream_center with dissolve
     "I quickly catch everyone up about the info I got from Daisy."
     pS "We're real in it now."
     enS "I fear we didn't get much distance after all."
@@ -3088,7 +3088,7 @@ label vig3_sc9():
     enS "Oh, I assume chained to a factory for the rest of our natural lives."
     pS "I'd rather a bullet to the eyes."
     mS "We need to find MAC and get the hell out of here."
-    show rec stream thinking
+    show rec stream formal thinking
     recS "If we can trust your friend Daisy, we might find whatever storeroom they put him in, hell maybe even your range extender on the way."
     mS "Makers willing."
     $ AddChatter (vig3_sc9_inventorsfair_comment50)
@@ -3104,7 +3104,7 @@ label vig3_sc9():
     invfairannounce "And now a feature presentation from the Big Corp laboratories."
     $ AddChatter (vig3_sc9_inventorsfair_comment51)
     "The music dies down as a platform rises from the center of the gallery. Spotlights alight on it and people halfheartedly turn to the center."
-    show bcRep at stream_right with dissolve
+    show bcrep stream at stream_right with dissolve
     "A finely dressed man walks up to the platform and wheels in something covered by a blanket."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment52)
@@ -3137,7 +3137,7 @@ label vig3_sc9():
     play audio "macNeutral.wav" volume 1.0
     macS "Hi, MAC..."
     $ AddChatter (vig3_sc9_inventorsfair_comment63)
-    hide bcRep with dissolve
+    hide bcrep stream with dissolve
     "The room chuckles as the representative keeps talking. I look over at the crew who are frozen, unsure of how to proceed." 
     $ AddChatter (vig3_sc9_inventorsfair_comment64)
     pause 0.5
@@ -3473,7 +3473,7 @@ label vig3_sc12():
     "It's so far away..."
     play music "soundtrack/decisionTime.wav"
     show ama stream formal neutral at stream_left with dissolve
-    show bcrep at stream_center with dissolve
+    show bcrep stream at stream_center with dissolve
     bcrep "Absolute garbage!"
     $ AddChatter (vig3_sc12_balcony_comment2)
     play audio "dropGun.wav" volume 1.0
@@ -3486,6 +3486,7 @@ label vig3_sc12():
     bcrep "I swear to the Makers if you screwed up again!"
     "The representative hasn't noticed me yet."
     play audio "grunt.wav" volume 2.8
+    show bcrep stream at stream_left5 with MoveTransition(0.2)
     "And soon has more pressing matters as he strains against Ama's grip on his throat."
     $ AddChatter (vig3_sc12_balcony_comment3)
     $ reactTarget = "vig3_sc12_amachoke"#timestamp 7:15
@@ -3526,6 +3527,7 @@ label vig3_sc12():
             mS "But you're going too far."
             $ AddChatter (vig3_sc12_help_comment5)
             "When Ama lets him go, he spills to the ground, tears in his eyes."
+            show bcrep stream at stream_center with move
             menu: 
                 "Say something."
                 "You're rough as always.": 
@@ -3949,7 +3951,7 @@ label vig3_sc12():
             "Ama's fist snaps closed, accompanied by a dull crunching sound."
             $ AddChatter (vig3_sc12_nothing_comment5)
             "She lets go of her grip. The body falls to the ground, limp."
-            hide bcrep with dissolve
+            hide bcrep stream with dissolve
             $ AddChatter (vig3_sc12_nothing_comment6)
             "Ama's shoulders rise and fall as she takes deep breaths."
             show ama stream formal neutral
@@ -4360,7 +4362,7 @@ label vig3_sc13():
     play audio "gunCock.wav" volume 2.0
     show mac stream shock at stream_right5mac with move
     "Two blasters are pointed at my face as the door swings open."
-    show rec stream surprised at stream_left5 with Dissolve(0.5)
+    show rec stream formal surprised at stream_left5 with Dissolve(0.5)
     show teresa stream fight at stream_right with Dissolve(0.5)
     show jennica stream fight at stream_left with Dissolve(0.5)
     mS "Well, don't be too happy to see me!"
@@ -4376,7 +4378,7 @@ label vig3_sc13():
     show teresa stream happy
     show jennica stream neutral
     show mac stream neutral
-    show rec stream happy
+    show rec stream formal happy
     enS "Good to see you, buddy."
     $ AddChatter (vig3_sc13_fairint_comment16)
     pS "Where's Deadeye?"
@@ -4391,7 +4393,7 @@ label vig3_sc13():
     mS "At the Fair? For what?"
     recS "He's one of the featured designers! A big name in biomechanical engineering."
     pS "He's got some good-lookin' work."
-    show rec stream drunk
+    show rec stream formal thinking
     recS "And some good-lookin' muscles."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc13_fairint_comment17)
@@ -4403,7 +4405,7 @@ label vig3_sc13():
         $ AddChatter (vig3_sc13_fairint_comment19)
         pause 0.5
         $ AddChatter (vig3_sc13_fairint_comment20)
-    show rec stream happy
+    show rec stream formal happy
     mS "Okay let's focus up. What's going on here."
     $ AddChatter (vig3_sc13_fairint_comment21)
     show teresa stream neutral
@@ -4454,10 +4456,10 @@ label vig3_sc13():
             pS "Jeez this kid's goin' fast and furious."
             show teresa stream happy at stream_right with dissolve
             enS "He gets it from you!"
-            show rec stream thinking at stream_left5
+            show rec stream formal thinking at stream_left5
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
             mS "{i}Rec, look forward!{/i}"
-            show rec stream surprised at stream_left5
+            show rec stream formal surprised at stream_left5
             "In their distracted state they mindlessly slam into a couple going hot and heavy."
             "No doubt using the garden to avoid any possible scandal."
             invfairnpc2 "Watch yourself!"
@@ -4475,7 +4477,7 @@ label vig3_sc13():
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc13_dash_comment10)
             pS "How 'bout ya start showing up!"
-            show rec stream happy
+            show rec stream formal happy
             recS "How about that terrarium!"
             mS "{i}Rec!{/i}"
             "I can see the exit to the shuttles just in reach."
@@ -4530,7 +4532,7 @@ label vig3outlawcomms():
     mS "We're not here for pleasantries."
     $ AddChatter (vig3_outlawcomms_comment5)
     recS "I almost forgot what he was like."
-    show rec stream neutral
+    show rec stream formal neutral
     smatt "Is that little Reccrin?"
     smatt "Been a while, kid."
     recS "You know I'm the older one, right?"
@@ -4596,7 +4598,7 @@ label vig3marshalcomms():
     pS "Disrespectfully, we didn't call you."
     "This is bad."
     smatt "Oh no? Were you perchance hoping I was some young redheaded datacenter intern?"
-    show rec stream neutral
+    show rec stream formal neutral
     $ AddChatter (vig3_marshalcomms_comment2)
     recS "Sounds like a nicer face to look at."
     smatt "Oh is that little Reccrin? The Snakehawk dropout?"
@@ -4763,14 +4765,14 @@ label vig3_sc14():
     hide jennica with dissolve
     hide teresa with dissolve
     show ama stream formal neutral at stream_right with move
-    show rec stream surprised at stream_left with dissolve
+    show rec stream formal surprised at stream_left with dissolve
     play music "soundtrack/decisionTime.wav"
     recS "Deadeye..."
     amaS "Well well..."
     $ AddChatter(vig3_sc14_escape_comment13)
     amaS "If it isn't Reccrin."
     amaS "Right where we left him."
-    show rec stream angry
+    show rec stream formal angry
     $ AddChatter(vig3_sc14_escape_comment14)
     "The shuttle hums as it takes off down to Akar."
     recS "Screw you..."
@@ -4801,7 +4803,7 @@ label vig3_sc14():
     amaS "Mozely..."
     amaS "Where is Allistar?"
     amaS "Last I checked, I left him with you."
-    show rec stream surprised
+    show rec stream formal surprised
     "Rec's eyes fix to me."
     $ AddChatter(vig3_sc14_escape_comment23)
     recS "What?"
@@ -4817,7 +4819,7 @@ label vig3_sc14():
     "MAC catches my eyes from the back of the shuttle."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment27)
-    show rec stream angry
+    show rec stream formal angry
     recS "{i}Moze{/i}!"
     mS "It is..."
     recS "Well!?"
@@ -4964,7 +4966,7 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_hadto_comment8)
             pause 0.5
             $ AddChatter(vig3_sc14_hadto_comment9)
-            show rec stream angry at stream_left5 with move
+            show rec stream formal angry at stream_left5 with move
             show teresa stream neutral at stream_center with vpunch
             $ AddChatter(vig3_sc14_hadto_comment10)
             "Rec lunges for me and is caught by Teresa."
@@ -4981,7 +4983,7 @@ label vig3_sc14():
             "Final stop: Akar station."
             play audio "door.wav" volume 1.5
             "When the doors open, Teresa pushes Rec out onto the platform."
-            show rec stream angry at stream_left with vpunch
+            show rec stream formal angry at stream_left with vpunch
             recS "Fine! I'm not going to stick around for this."
             recS "I hope it was all worth it!"
             "They turn to walk away."
