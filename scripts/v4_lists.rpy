@@ -617,7 +617,7 @@ default vig4_sc5_2_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:25{/b}\nCom
 default vig4_sc5_2_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 7:26{/b}\nKeep her at a distance, smart", 4, "#ffffff")
 default vig4_sc5_2_comment7 = ChatEntry(False, "{b}kitcat - 7:26{/b}\nI love their back and forth", 4, "#ffffff")
 default vig4_sc5_2_comment8 = ChatEntry(False, "{b}AFKAngel - 7:26{/b}\nNow that's a crew right there", 4, "#ffffff")
-default vig4_sc5_2_comment9 = ChatEntry(False, "{b}pickledDragons - 7:26{/b}\nCome on, Ama, get on board", 4, "#ffffff")
+default vig4_sc5_2_comment9 = ChatEntry(False, "{b}pickledDragons - 7:24{/b}\nCome on, Ama, get on board", 4, "#ffffff")
 default vig4_sc5_2_comment10 = ChatEntry(False, "{b}turb0g00se - 7:26{/b}\nRiding to war with the Deadeye!", 4, "#ffffff")
 
 ###Comments for if you go Ama with low viewership
