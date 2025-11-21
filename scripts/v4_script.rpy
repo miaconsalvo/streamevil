@@ -6805,6 +6805,7 @@ label blueitVignette4_2():
 
 label vig4_macro_writeUp():
     stop music fadeout 10.0
+    scene blueit_finalpostlayout with dissolve
     show screen finalWriteUp
     "I should post something... It's kind of cheesy, but I think it might be a good way to sum up my experience."
     "Let me start with a small introduction."

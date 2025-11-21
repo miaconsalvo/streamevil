@@ -120,15 +120,15 @@ screen blueitThread():
 
 
 screen finalWriteUp():
-    text "[blueitPostTitle]" align (0.64, 0.38)
+    text "[blueitPostTitle]" align (0.36, 0.2575)
     default blueit_scroll_adj = ui.adjustment()
     viewport:
         yadjustment yadj
-        draggable True
+        #draggable True
         mousewheel True
         scrollbars "vertical"
         yinitial 1.0
-        area (430, 460, 1050, 580)
+        area (500, 460, 1335, 380)
         vbox:
             spacing 10
             for p in (writeUp_list):
