@@ -481,7 +481,7 @@ label vig3_sc3():
     play audio "macPing.wav" volume 1.5
     macS "But I require that."
     $ AddChatter (vig3_sc3_akarstreet_comment11)
-    show mac stream neutral at stream_left5mac with move
+    show mac stream neutral reflect at stream_left5mac with move
     "As MAC start to wheel towards the treat, Jennica thankfully picks him up."
     pS "Alright, buddy we'll see what we can do."
     "I almost don't see the guy as he pushes past Teresa, getting a bit too close for comfort..." ##HOUND LEADER (early forties)##
@@ -636,7 +636,7 @@ label vig3_sc4():
     recS "Well you're in luck."
     pS "Hell yeah!"
     show rec stream happy at stream_right5 with move
-    show mac stream neutral at stream_left5mac with dissolve
+    show mac stream neutral reflect at stream_left5mac with dissolve
     play audio "macPing.wav" volume 1.5
     macS "Vira Brandy is the first alcohol product that uses edible chimaeron fruit. Which is quite odd."
     $ AddChatter (vig3_sc4_shop_comment16)
@@ -759,7 +759,7 @@ label vig3_sc4():
             macS "Yes, Captain."
             $ AddChatter (vig3_sc4_nolove_comment1)
     "Reccrin comes out after a brief moment with a long antenna and some internal parts for our comms."
-    show mac stream neutral at stream_left5mac with move
+    show mac stream neutral reflect  at stream_left5mac with move
     show rec stream happy at stream_right5 with dissolve
     recS "Definitely an older model but she should work better than what you got. Need an install?"
     enS "I could use the hand."
@@ -907,7 +907,7 @@ label vig3_sc4():
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
-            show mac stream neutral at stream_left5mac with dissolve
+            show mac stream neutral reflect at stream_left5mac with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             macS "Captain are you hurt?" 
@@ -935,7 +935,7 @@ label vig3_sc4():
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
-            show mac stream neutral at stream_left5mac with dissolve
+            show mac stream neutral reflect at stream_left5mac with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             macS "Captain are you hurt?" 
@@ -971,7 +971,7 @@ label vig3_sc4():
             hide houndgoon with dissolve
             hide houndleader with dissolve
             show rec stream neutral at stream_right5 with dissolve
-            show mac stream neutral at stream_left5mac with dissolve
+            show mac stream neutral reflect at stream_left5mac with dissolve
             show jennica stream neutral at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             macS "Captain, are you hurt?" 
@@ -988,7 +988,7 @@ label vig3_sc4():
     show mac stream happy 
     $ AddChatter (vig3_sc4_shop_comment41)
     macS "Thank you!"
-    show mac stream neutral at stream_left with move
+    show mac stream neutral reflect at stream_left with move
     recS "They're the Hounds. Reynar's new security detail."
     recS "Usually they're more of a nuisance than anything. Shaking down shops and the like."
     recS "But with the Inventor's Fair they've gotten more excitable. Not surprised they'd come by here, just terrible timing is all."
@@ -1053,7 +1053,7 @@ label vig3_sc5():
     "It has a massive hole blown out of it."
     show rec stream happy at stream_right5 with dissolve
     recS "Alright, Oakley, it's been a while, but welcome to the Plaza!"
-    show mac stream neutral at stream_left5mac with dissolve
+    show mac stream neutral reflect at stream_left5mac with dissolve
     macS "Wow..."
     show jennica stream neutral at stream_left with dissolve
     pS "Surprised it's still standing."
@@ -1160,7 +1160,7 @@ label vig3_sc5():
     hide daisy with dissolve
     show teresa stream shock at stream_right with dissolve
     show jennica stream shock at stream_left with dissolve
-    show mac stream shock at stream_left5mac with dissolve
+    show mac stream shock reflect at stream_left5mac with dissolve
     show rec stream surprised at stream_right5 with dissolve
     pS "Alright alright, what's this about?"
     $ AddChatter (vig3_sc5_akarplaza_comment13)
@@ -1175,7 +1175,7 @@ label vig3_sc5():
     show teresa stream neutral
     show jennica stream neutral
     show rec stream neutral
-    show mac stream neutral
+    show mac stream neutral reflect
     recS "You know, most of the shops are closing for the day. Let's set you up somewhere for the night."
     $ AddChatter (vig3_sc5_akarplaza_comment18)
     recS "I think the Burnt Bulb has a deal on pints."
@@ -1198,7 +1198,7 @@ label vig3_sc5():
     "They're tall and well built with a wide brimmed hat, in dark leather, and long familiar black hair."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc5_akarplaza_comment17)
-    show mac stream happy at stream_left_mac with dissolve
+    show mac stream happy reflect at stream_left_mac with dissolve
     play audio "macPester.wav" volume 1.5
     macS "Are you coming, Captain?"
     "I stare at the crew as they walk away."
@@ -1220,12 +1220,12 @@ label vig3_sc6():
     show rec stream happy at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    show mac stream neutral at stream_left5mac with dissolve
+    show mac stream neutral reflect at stream_left5mac with dissolve
     macS "Cozy."
     play audio "scream.wav" volume 1.0
     "In the back, someone yells and is then quickly tossed through a window."
     "MAC's expression sinks as he clings to my leg."
-    show mac stream shock at stream_left5mac
+    show mac stream shock reflect at stream_left5mac
     play audio "macNeutral.wav" volume 1.5
     macS "Aren't there children around outside?"
     pS "That's why he was tossed out the back window."
@@ -1234,7 +1234,7 @@ label vig3_sc6():
         pause 0.5
     $ AddChatter (vig3_sc6_bbpub_comment2)
     enS "This is a respectable place after all."
-    show mac stream neutral
+    show mac stream neutral reflect
     recS "Only the best for the Oakley."
     $ AddChatter (vig3_sc6_bbpub_comment4)
     pause 0.5 
@@ -1309,7 +1309,7 @@ label vig3_sc6():
     "And then another."
     "And another."
     show jennica stream neutral at stream_left with move
-    show mac stream neutral at stream_left5mac with move
+    show mac stream neutral reflect at stream_left5mac with move
     show rec stream drunk at stream_right5 with dissolve
     recS "So I said, \"You should've been more specific about the screw!\""
     $ AddChatter (vig3_sc6_bbpub_comment6)

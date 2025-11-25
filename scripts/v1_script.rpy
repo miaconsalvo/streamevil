@@ -511,7 +511,7 @@ label spacePortEscape():
     play audio "shipWarmUp.wav" volume 2.0
     "We all rush up to the ship's bridge as Jennica begins liftoff procedures."
     show allistar stream neutral at stream_right with Dissolve (0.5)
-    show mac stream neutral at stream_left_mac with Dissolve(0.5)
+    show mac stream neutral reflect at stream_left_mac with Dissolve(0.5)
     pause 0.5
     stop backAudio fadeout 16.0
     pS "Nice of y'all to join us. Remind me to never visit Cromuu again."
