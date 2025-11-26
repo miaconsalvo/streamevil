@@ -214,6 +214,7 @@ label vig4_sc2_elliotEntrance():
     stop music fadeout 1.0
     $ macroChoice = True
     $ vig4_sc2_6_comment43.click = False
+    $ vig4_sc2_6_comment44.click = False
     $ narrator = reg_narrator
     $ commentVariable = True
     play music "soundtrack/elsGroove.wav" volume 1.0 fadein 1.0

@@ -846,7 +846,7 @@ label vig4_sc2_4():
     pause 0.5
     $ AddChatter(vig4_sc2_4_comment4)
     menu:
-        objectiveS "Outsiders. What are you doing in Polaris?"
+        oS "Outsiders. What are you doing in Polaris?"
         "We're looking for someone.":
             mS "We're looking for someone."
             oS "And \"someone\" you have found."
@@ -1486,8 +1486,8 @@ label vig4_sc2_6():
                 $ AddChatter(vig4_sc2_6_comment43)
             else:
                 $ AddChatter(vig4_sc2_6_comment44)
-            call vig4_sc2_elliotEntrance # - for if the comment is broken
-            #call screen vig4_streamFreeze
+            #call vig4_sc2_elliotEntrance # - for if the comment is broken
+            call screen vig4_streamFreeze
             ##Will handle all the fallout that comes from Elliot entering chat in the targets script
             $ narrator = alt_narrator
             "We step outside into the cool night."
