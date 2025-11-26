@@ -266,7 +266,7 @@ label vig4_sc1_2():
     pause 0.5
     $ AddChatter(vig4_sc1_2_comment10)
     #enS "And this colony is so small that neither group cares."
-    play audio "macPester.wav" volume 1.5
+    play audio "macPester.wav" volume 1.2
     macS "Po-dunk?"
     ##Could cut from here to "I'll run a scan for BigCorp signatures" - have Jennica say "maybe" - saves 20 lines
     enS "Maybe. That artificial atmosphere is intriguing though."
@@ -307,7 +307,7 @@ label vig4_sc1_2():
     pS "I'll run a scan for BigCorp signatures."
     show teresa stream neutral
     "A green line appears on screen and sweeps over the moon's landscape."
-    play audio "macPing.wav" volume 1.5
+    play audio "macPing.wav" volume 1.2
     if macViolence > macPeace:
         macS "If BC is there, we can just smash 'em."
         $ AddChatter(vig4_sc1_2_comment15)
@@ -375,12 +375,12 @@ label vig4_sc1_2():
             macS "But that was—"
             mS "Stay. On. The. Ship."
             $ AddChatter(vig4_sc1_2_comment23)
-    play audio "macGrumble.wav" volume 1.5
+    play audio "macGrumble.wav" volume 1.2
     show mac stream neutral
     macS "I understand."
     #macS "I don't like it, but I understand."
     pS "They'll be safe, MAC. And it means more pal time for the two of us!"
-    play audio "macSad.wav" volume 1.5
+    play audio "macSad.wav" volume 1.2
     "MAC hums low in response."
     "The crew turns to face me."
     menu:
@@ -836,7 +836,7 @@ label vig4_sc2_4():
             mS "Mind if I ask you a few questions?"
         "Step up and ring a bell.":
             "I step up and ring the bell on the counter."
-            play audio "ding.wav" volume 5.0
+            play audio "ding.wav" volume 3.0
             mS "Excuse me."
     "The old man doesn't move. Except for his eyes."
     "They glance sidelong, looking me up and down while his hands stay perfectly still."
@@ -1040,7 +1040,7 @@ label vig4_sc2_4():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc2_4_comment30)
         show mac stream neutral
-        play audio "macHum.wav" volume 1.5
+        play audio "macHum.wav" volume 1.0
         macS "Threat neutralized."
         show vega stream neutral
         show teresa stream neutral
@@ -1057,7 +1057,7 @@ label vig4_sc2_4():
             $ AddChatter(vig4_sc2_4_comment30)
         "The young woman drops the rifle."
         show mac stream neutral
-        play audio "macHum.wav" volume 1.5
+        play audio "macHum.wav" volume 1.0
         macS "Situation deescalated."
         show vega stream neutral
         show teresa stream neutral
@@ -1407,7 +1407,7 @@ label vig4_sc2_6():
                     pS "This family don't break up."
                     $ AddChatter(vig4_sc2_6_comment28)
                     enS "Seconded."
-                    play audio "macAffirmative.wav" volume 1.5
+                    play audio "macAffirmative.wav" volume 1.2
                     macS "Thirded!"
                     $ AddChatter(vig4_sc2_6_comment29)
                     $ AddChatter(vig4_sc2_6_comment30)
@@ -2810,7 +2810,7 @@ label vig4_sc3_3():
     show townsperson stream neutral at stream_right with dissolve
     show polaris2 civilian stream at stream_left with dissolve
     "They're all looking at MAC, as he waves his hands in the air."
-    play audio "macNeutral.wav" volume 1.5
+    play audio "macNeutral.wav" volume 1.2
     if macViolence >= macPeace and customsStampede == True:
         show mac stream happy
         macS "So then Dr. Prismari begins the {i}conflagrant{/i} phase and the booth explodes!"
@@ -3206,7 +3206,7 @@ label vig4_sc3_5():
             mS "Sounds like it could get a bit boring."
     macS "Yes."
     "MAC freezes absolutely still."
-    play audio "macHum.wav" volume 1.5
+    play audio "macHum.wav" volume 1.2
     macS "I don't want to leave the Oakley."
     $ AddChatter(vig4_sc3_5_comment2)
     pause 0.5
@@ -3260,7 +3260,7 @@ label vig4_sc3_5():
             "I look down and—"
             show mac stream neutral at stream_center_mac with dissolve
             "MAC is hiding behind my legs, arms wrapped around me."
-            play audio "macNeutral.wav" volume 1.5
+            play audio "macNeutral.wav" volume 1.2
             macS "Do something, Moze!"
             $ AddChatter(vig4_sc3_5_comment13)
             if macViolence >= macPeace:
@@ -3280,7 +3280,7 @@ label vig4_sc3_5():
             "Vega steps forward and restrains him."
             vS "I'm really sorry, MAC. This is for your own good."
             show vega stream neutral
-            play audio "macAlarmed.wav" volume 1.5
+            play audio "macAlarmed.wav" volume 1.2
             macS "How do you know what's for my own good?"
             $ AddChatter(vig4_sc3_5_comment15)
             pause 0.5
@@ -3311,7 +3311,7 @@ label vig4_sc3_5():
             hide coil with dissolve
             hide vega with dissolve
             "Coil nods at Vega, and she lets go of him."
-            play audio "macGrumble.wav" volume 1.5
+            play audio "macGrumble.wav" volume 0.8
             macS "But I don't want to."
             $ AddChatter(vig4_sc3_5_comment19)
             mS "I don't either."
@@ -3540,7 +3540,7 @@ label vig4_sc3_5():
             "He has to stay here. I can't tell him the truth."
             mS "MAC, this was just a mission."
             $ AddChatter(vig4_sc3_5_comment35)
-            play audio "macSad.wav" volume 1.5
+            play audio "macSad.wav" volume 1.2
             macS "What?"
             mS "All this was about bringing you here. Nothing else."
             $ AddChatter(vig4_sc3_5_comment36)
@@ -3552,7 +3552,7 @@ label vig4_sc3_5():
             macS "But—"
             $ AddChatter(vig4_sc3_5_comment38)
             mS "That's an order from your captain, MAC!"
-            play audio "macAlarmed.wav" volume 1.5
+            play audio "macAlarmed.wav" volume 1.2
             "MAC recoils."
             $ AddChatter(vig4_sc3_5_comment39)
             macS "I don't believe you."
@@ -3591,12 +3591,12 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment14)
             "His head is pointed directly at the ground."
             if outlaw >= marshal:
-                play audio "macPing.wav" volume 1.5
+                play audio "macPing.wav" volume 1.2
                 macS "You were probably thinking of shooting the place up, weren't you?"
                 enS "That's not—"
                 macS "It's what we always do!"
             else:
-                play audio "macPing.wav" volume 1.5
+                play audio "macPing.wav" volume 1.2
                 macS "You were probably going to look for some tunnels to sneak through, weren't you?"
                 pS "It was just in—"
                 macS "It's what we always do!"
@@ -4003,7 +4003,7 @@ label vig4_sc4_3():
     pS "Brace for impact!"
     hide teresa with Dissolve(0.1)
     hide jennica with Dissolve(0.1)
-    play audio "shipCrash.wav" volume 2.0
+    play audio "shipCrash.wav" volume 3.0
     show cockpit_stream with vpunch
     "The Oakley slams into the dirt and everything goes black."
     ##*streamer reaction here?
@@ -4388,7 +4388,7 @@ label vig4_sc5_1():
         jump vig4_sc5_2
 
 label vig4_sc5_2():
-    play music "soundtrack/deadeye.wav" volume 0.6 fadein 1.0
+    play music "soundtrack/deadeye.wav" volume 0.6 #fadein 1.0
     amaS "Sounds like we have to make our move now."
     if jennicaRomance == False and teresaRomance == False and viewershipHigh == True:
         $ AddChatter(vig4_sc5_2_comment1)
@@ -4767,7 +4767,7 @@ label vig4_sc7_3_ama():
     amaS "Sorry, kid, took a bad knock there. But I'm back in the hunt."
     amaS "Seems like guns won't work here. We'll have to do this the old-fashioned way."
     $ AddChatter(vig4_sc7_3_ama_comment12)
-    play audio "macAlarmed.wav" volume 1.5
+    play audio "macAlarmed.wav" volume 1.2
     macS "Captain!"
     show mac stream neutral at stream_center_mac with Dissolve(0.3)
     "MAC is just behind the energy shield, watching intently."
@@ -4877,10 +4877,10 @@ label vig4_sc7_3_ama():
             cS "We always have a choice, Moze."
             $ AddChatter(vig4_sc7_3_ama_comment28)
     "I step forward."
-    play audio "energyPulse.wav" volume 0.6
+    play audio "energyPulse.wav" volume 0.7
     "He raises his good hand toward me and fires a pulse."
     "But it's taking longer for the energy blast to charge. I easily dodge it."
-    play audio "punch.wav" volume 1.0
+    play audio "punch.wav" volume 1.4
     "My fist strikes his chest with barely any resistance."
     "Ramming my knee into his groin, I grab his coat by the back and throw him across the floor."
     "He tumbles and slams into the side of the wall."
@@ -4892,7 +4892,7 @@ label vig4_sc7_3_ama():
     "Coil reaches out his good hand."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment31)
-    play audio "energyPulse.wav" volume 0.6
+    play audio "energyPulse.wav" volume 0.7
     "I step back as the energy pulse sails harmlessly into the ceiling."
     stop music fadeout 4.0
     "Coil staggers to his feet."
@@ -4934,7 +4934,7 @@ label vig4_sc7_3_ama():
     "He closes his eyes."
     cS "Elijah... Is that you?"
     "I thrust the blade forward."
-    play audio "deathGasp.wav" volume 1.5
+    #play audio "deathGasp.wav" volume 1.2
     "Coil's body slumps to the floor."
     "Blood pools around his throat."
     $ AddChatter(vig4_sc7_3_ama_comment40)
@@ -5084,7 +5084,7 @@ label vig4_sc7_3_ama():
             macS "I think so. But I am still processing the events I have witnessed."
             mS "MAC, can you ever forgive me?"
     "MAC looks down for a moment, then back up to my face."
-    play audio "macSad.wav" volume 1.5
+    play audio "macSad.wav" volume 1.2
     macS "Am I a Snakehawk now?"
     "I smile."
     mS "Better, you're family."
@@ -5095,7 +5095,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment63)
     mS "I missed you."
     $ AddChatter(vig4_sc7_3_ama_comment64)
-    play audio "macHum.wav" volume 1.5
+    play audio "macHum.wav" volume 1.2
     macS "I missed you too, Moze."
     $ AddChatter(vig4_sc7_3_ama_comment65)
     "We step back and I stand up."
@@ -5167,7 +5167,7 @@ label vig4_sc7_3_ama():
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
         hide vega with dissolve
     "MAC rolls up to me and Ama."
-    play audio "macNeutral.wav" volume 1.5
+    play audio "macNeutral.wav" volume 1.2
     macS "We should go."
     mS "Yeah, we should."
     "Together, MAC, Ama, and I leave the room, and descend the tower."
@@ -5878,7 +5878,7 @@ label vig4_epilogue_coil():
     macS "Oh! I see it!"
     $ AddChatter(vig4_sc7_epilogue_coil_comment14)
     mS "See what?"
-    play audio "macPing.wav" volume 1.5
+    play audio "macPing.wav" volume 1.2
     macS "There! It was a little flicker in front of one of the stars!"
     cS "He has sharp eyes."
     if viewershipHigh == True or viewershipMed == True:
@@ -6049,7 +6049,7 @@ label vig4_epilogue_ama():
         "Come on up, MAC.":
             $ kcEngagement += 2
             mS "Come on, MAC, join the pile."
-            play audio "macPester.wav" volume 1.5
+            play audio "macPester.wav" volume 1.2
             macS "Are you sure, Captain?"
             macS "Will my treads not stain the couch?"
             $ AddChatter(vig4_sc7_epilogue_comment17)
@@ -6060,7 +6060,7 @@ label vig4_epilogue_ama():
             "We all roll back onto the couch in a pile, with MAC in the center."
             $ AddChatter(vig4_sc7_epilogue_comment18)
             show mac stream happy
-            play audio "macHappy.wav" volume 1.5
+            play audio "macHappy.wav" volume 1.2
             macS "Wheeee!"
             $ AddChatter(vig4_sc7_epilogue_comment20)
             macS "Being on the couch is fun."
@@ -6079,7 +6079,7 @@ label vig4_epilogue_ama():
             $ kcEngagement += 1
             mS "Come here, MAC."
             $ AddChatter(vig4_sc7_epilogue_comment19)
-            play audio "macHum.wav" volume 1.5
+            play audio "macHum.wav" volume 1.2
             "I put my hand on his head and feel the vibrations thrumming through his body."
             "I feel his attention on me. It's like we're making eye contact."
             mS "You did good, MAC."
@@ -6087,7 +6087,7 @@ label vig4_epilogue_ama():
             mS "I'm proud of you."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_epilogue_comment21)
-            play audio "macHappy.wav" volume 1.5
+            play audio "macHappy.wav" volume 1.2
             macS "Aww, Captain. Thank you."
             pS "Yeah, kid, you kept your cool."
             enS "I'm impressed."
@@ -6132,7 +6132,7 @@ label vig4_epilogue_ama():
             show jennica stream neutral
             show teresa stream happy
             mS "MAC, you're now the proud owner of a \"Snakehawk\" tattoo!"
-            play audio "macPing.wav" volume 1.5
+            play audio "macPing.wav" volume 1.2
             macS "Snakehawk!? Really!?"
         #third tattoo?
         "The Oakley.":
@@ -6152,7 +6152,7 @@ label vig4_epilogue_ama():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_epilogue_comment25)
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
-            play audio "macPing.wav" volume 1.5
+            play audio "macPing.wav" volume 1.2
             macS "Oakley!? That's amazing!"
     "Without hesitation, MAC swerves around and wraps his arms around me."
     macS "Thank you, Captain."
@@ -6220,7 +6220,7 @@ label vig4_epilogue_ama():
         amaS "Keep looking."
         "A minute goes by as we scan the vastness of space."
         amaS "There! Did anyone see that!"
-        play audio "macPing.wav" volume 1.5
+        play audio "macPing.wav" volume 1.2
         macS "Oh! I see it!"
         $ AddChatter(vig4_sc7_epilogue_ama_comment15)
         mS "See what?"
@@ -6268,7 +6268,7 @@ label vig4_epilogue_ama():
         hide teresa with dissolve
         hide jennica with dissolve
         "A tug at my sleeve."
-        play audio "macPester.wav" volume 1.5
+        play audio "macPester.wav" volume 1.2
         macS "What about me?"
         menu:
             macS "What about me?"
@@ -6310,7 +6310,7 @@ label vig4_epilogue_ama():
         mS "Could it be a faulty alarm system?"
         macS "Let's wait and observe before we jump to conclusions."
         "A minute goes by as we scan the vastness of space."
-        play audio "macPing.wav" volume 1.5
+        play audio "macPing.wav" volume 1.2
         macS "Oh! I see it!"
         $ AddChatter(vig4_sc7_epilogue_ama_comment15)
         mS "See what?"

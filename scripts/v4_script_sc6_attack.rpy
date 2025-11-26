@@ -20,7 +20,7 @@ label vig4_sc6_attack_1_ama():
     hide teresa with dissolve
     $ vig4_sc6_attack_1_ama_comment1.click = False
     "The four of us dive over the rubble of a nearby building and crouch behind the ruined stones."
-    play backAudio3 "tankRumble.wav" volume 0.5
+    play backAudio3 "tankRumble.wav" volume 0.3
     "A low rumble gets closer, muddying the sound of several voices."
     $ AddChatter(vig4_sc6_attack_1_ama_comment4)
     "One breaks through, shouting."
@@ -135,7 +135,7 @@ label vig4_sc6_attack_1_assault_ama():
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment6)
     play audio "lazer.wav"
     pause 0.55
-    play audio "scream.wav" volume 2.0
+    play audio "scream.wav" volume 1.5
     "Ama does the same, taking out the lead enforcer, while Jennica and Teresa stay in cover and shift along the side of the rubble."
     $ renpy.music.set_volume(0.7, 0.5, "backAudio2")
     "There's a moment of pause before the rain of blaster fire hits mine and Ama's position."
@@ -312,7 +312,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav" volume 5.0
             pause 0.5
-            play audio "deathGasp" volume 2.0
+            play audio "deathGasp" volume 1.5
             hide dflyguard with Dissolve(0.3)
             show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through her skull."
@@ -477,7 +477,7 @@ label vig4_sc6_attack_2_ama():
     "At the front of the tank, a blue hologram slowly starts to take shape."
     show mac phone neutral at stream_right5mac with dissolve
     play music "soundtrack/theme.wav" fadein 2.0
-    play audio "macPing.wav" volume 1.5
+    play audio "macPing.wav" volume 1.2
     "It's MAC."
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -498,7 +498,7 @@ label vig4_sc6_attack_2_ama():
     mS "Are you okay? Are you hurt?"
     hide screen streamerCommentary
     if rudeMACGoodbye == True:
-        play audio "macGrumble.wav" volume 1.0
+        play audio "macGrumble.wav" volume 0.8
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
@@ -598,7 +598,7 @@ label vig4_sc6_attack_2_ama():
     show ama stream neutral
     amaS "Just in time."
     mS "Agreed. Jenn, take us to the plaza."
-    $ renpy.music.set_volume(0.2, 0.5, "backAudio")
+    $ renpy.music.set_volume(0.1, 2.0, "backAudio")
     $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     "The tank accelerates, and we glide smoothly over the ground. On our way to battle."
     play backAudio2 "tankRumble.wav" volume 0.3
@@ -1415,7 +1415,7 @@ label vig4_sc6_attack_1():
     $ AddChatter(vig4_sc6_attack_1_ama_comment3)
     hide teresa with dissolve
     "The three of us dive over the rubble of the building and crouch behind the ruined stones."
-    play backAudio3 "tankRumble.wa" volume 0.5
+    play backAudio3 "tankRumble.wav" volume 0.3
     "A low rumble gets closer, muddying the sound of several voices."
     $ AddChatter(vig4_sc6_attack_1_ama_comment4)
     "One breaks through, shouting."
@@ -1558,7 +1558,7 @@ label vig4_sc6_attack_1_assault():
     enforcer "Tell your crew to stand down!"
     play audio "lazer.wav"
     pause 0.55
-    play audio "deathGasp.wav" volume 2.0
+    play audio "deathGasp.wav" volume 1.5
     hide bc_enforcer with dissolve
     "The enforcer goes silent. I hear his body fall to the ground."
     "Whipping around, I don't see anyone around me."
@@ -1637,7 +1637,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             pause 0.5
-            play audio "deathGasp" volume 2.0
+            play audio "deathGasp" volume 1.5
             hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
@@ -1696,7 +1696,7 @@ label vig4_sc6_attack_1_split():
     play audio "tankCharge.wav" volume 1.5
     "The sound of charging resonates in its central cannon as it turns to aim at me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
-    play audio "tankShot.wav" volume 1.2
+    play audio "tankShot.wav" volume 1.5
     "The blast sails harmlessly into the air."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment10)
@@ -1913,7 +1913,7 @@ label vig4_sc6_attack_2():
     "A line of dropships have begun careening through the air to Polaris."
     $ AddChatter(vig4_sc6_attack_2_ama_comment19)
     mS "The second attack is starting. Jenn, take us to the plaza."
-    $ renpy.music.set_volume(0.2, 0.5, "backAudio")
+    $ renpy.music.set_volume(0.1, 2.0, "backAudio")
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_attack_2_ama_comment20)
     play backAudio2 "tankRumble.wav" volume 0.3
