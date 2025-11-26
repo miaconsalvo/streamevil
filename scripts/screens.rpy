@@ -257,7 +257,12 @@ style input:
 screen choice(items):
     style_prefix "choice"
 
-    if macroChoice == True:
+    if macroChoice == True and endGame == True:
+        vbox:
+            style "choice_vboxEndGame" #The location for choices during blueit write up.
+            for i in items:
+                textbutton i.caption action i.action
+    elif macroChoice == True:
         vbox:
             style "choice_vbox" #The default location of menu for making choices in the macro game.
             for i in items:
@@ -287,6 +292,12 @@ style choice_vboxMicroGame:
     yanchor 0.5
 
     spacing 20
+
+style choice_vboxEndGame:
+    xalign 0.7
+    ypos 850
+    
+    spacing 10
 
 style choice_button is default:
     properties gui.button_properties("choice_button")

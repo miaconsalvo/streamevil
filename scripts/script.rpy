@@ -86,10 +86,10 @@ define bcrep = Character("Big Corp Representative", what_font="Play-Regular.ttf"
 define reynar = Character("Reynar", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 
 #vig4 Characters
-define cS = Character ("Coil", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#b60873", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
-define oS = Character ("Old Man", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#b60873", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
-define yS = Character ("Young Woman", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#dd6819", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
-define vS = Character ("Vega", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#dd6819", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
+define cS = Character ("Coil", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#149603", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
+define oS = Character ("Old Man", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "images/characters/Vignette 4/coil.png", window_background="images/textbox/stream textbox npc.png")
+define yS = Character ("Young Woman", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
+define vS = Character ("Vega", what_font="Play-Regular.ttf", window_style = "ig_character", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#c56423", what_color = "#000000", image = "images/characters/Vignette 4/vega.png", window_background="images/textbox/stream textbox npc.png")
 define townguy = Character("Townsperson", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define diceP1 = Character("Dice Player", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
 define diceP2 = Character("Older Dice Player", what_font="Play-Regular.ttf", window_style = "ig_window", what_style = "ig_dial", namebox_xpos = 250, namebox_ypos = 50, who_color = "#000000", what_color = "#000000", window_background="images/textbox/stream textbox npc.png")
@@ -288,6 +288,7 @@ default yb = 0 #this sets how long the viewport of the blueit threads will scrol
 default blueitChoiceCheck = False
 default blueitLaunchCheck = False
 default writeUp_list = []
+default endGame = False
 
 ###Final Write Up Variables###
 default blueitPostTitle = ""
@@ -305,9 +306,9 @@ default affiliateReflection = ""
     #yadj.value = yadjValue
 
 init: 
-    $ stream_left = Position (xpos=0.13, ypos=0.82) #stream view
-    $ stream_right = Position (xpos = 0.67, ypos=0.82)
-    $ stream_center = Position (xpos=0.40, ypos=0.82)
+    $ stream_left = Position (xpos=0.13, ypos=0.8185) #stream view
+    $ stream_right = Position (xpos = 0.67, ypos=0.8185)
+    $ stream_center = Position (xpos=0.40, ypos=0.8185)
     $ stream_center_mac = Position (xpos=0.40, ypos=0.70)
     $ stream_left_mac = Position (xpos=0.13, ypos=0.70)
     $ stream_right_mac =  Position (xpos = 0.67, ypos=0.70)
@@ -315,10 +316,11 @@ init:
     $ screen_left = Position (xpos = 0.2, ypos = 0.6) #non-stream view
     $ screen_right = Position (xpos = 0.7, ypos = 0.6)
     $ screen_center = Position(xpos = 0.4, ypos = 0.6)
-    $ stream_left5 = Position (xpos=0.3, ypos=0.82) #for five models on screen
-    $ stream_right5 = Position (xpos=0.5, ypos=0.82)
+    $ stream_left5 = Position (xpos=0.3, ypos=0.8185) #for five models on screen
+    $ stream_right5 = Position (xpos=0.5, ypos=0.8185)
     $ stream_left5mac = Position (xpos=0.27, ypos=0.70)
     $ stream_right5mac = Position (xpos=0.54, ypos=0.70)
+    $ stream_center_phonemac = Position (xpos=0.40, ypos=0.62) 
     $ renpy.music.register_channel("backAudio")
     $ renpy.music.register_channel("backAudio2")
     $ renpy.music.register_channel("backAudio3")

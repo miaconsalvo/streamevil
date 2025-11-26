@@ -249,7 +249,7 @@ label vig4_sc6_attack_1_assault_ama():
     "The leader of the Dragonflies squad approaches me."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment18)
     dflyGuard "We thought we were dead."
-    "He glances at the bodies in the street."
+    "She glances at the bodies in the street."
     dflyGuard "We didn't all make it, but you gave us a chance to fight back."
     $ AddChatter(vig4_sc6_attack_1_assault_ama_comment19)
     dflyGuard "I know we didn't leave on the best of terms. But, thank you for saving us."
@@ -315,7 +315,7 @@ label vig4_sc6_attack_1_assault_ama():
             play audio "deathGasp" volume 2.0
             hide dflyguard with Dissolve(0.3)
             show ama stream gun
-            "The guard has half a second to look stunned before a blaster bolt rips through his skull."
+            "The guard has half a second to look stunned before a blaster bolt rips through her skull."
             $ reactTarget = "vig4_sc6_attack_killdflies"
             show screen streamerCommentary
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
@@ -393,6 +393,8 @@ label vig4_sc6_attack_1_split_ama():
     play audio "tankCharge.wav" volume 1.5
     "The sound of charging resonates in its central cannon as it turns to aim at Ama and me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
+    play audio "tankShot.wav" volume 1.2
+    "The blast sails harmlessly into the air."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment10)
     "Ama and I keep advancing on the enforcers who cower behind cover."
@@ -1694,6 +1696,8 @@ label vig4_sc6_attack_1_split():
     play audio "tankCharge.wav" volume 1.5
     "The sound of charging resonates in its central cannon as it turns to aim at me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
+    play audio "tankShot.wav" volume 1.2
+    "The blast sails harmlessly into the air."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
     $ AddChatter(vig4_sc6_attack_1_split_ama_comment10)
     "I exchange fire with the enforcers."

@@ -99,12 +99,12 @@ label vig4_sc1_kcPrediction():
             $ kcEngagement -= 1
             player "I have no clue to be honest."
             player "I've learned that you can't predict where things are going to go with this story."
-        "The Alliance is gonna be the real big bad.":
+        "Something's gonna go wrong.":
             $ reactImage = "stream ui/reactthinking.png"
             $ csEngagement += 1
-            player "I agree with pickledDragons, I think the Alliance is gonna be a factor at the end here."
-            player "Feels like they could be the real big bad and then set up Oakley 3 nicely."
-            $ AddChatter(vig4_sc2_interact_comment1)
+            player "Whatever it is, I just know something's gonna go wrong."
+            player "Can't have an epic finale without some drama."
+            #$ AddChatter(vig4_sc2_interact_comment1)
         "Ama's going to come back for sure.":
             $ reactImage = "stream ui/reactconfident.png"
             $ kcEngagement += 1
@@ -261,7 +261,7 @@ label vig4_sc2_elliotEntrance():
                     $ AddChatter(vig4_bro_comment24)
                     pause 0.5
                     $ AddChatter(vig4_bro_comment25)
-                    "Alright, alright, let's get back to it."
+                    player "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
                 "Let's catch Elliot up to speed.":
                     $ reactImage = "stream ui/reactconversational.png"
@@ -290,7 +290,7 @@ label vig4_sc2_elliotEntrance():
                     $ AddChatter(vig4_bro_comment24)
                     pause 0.5
                     $ AddChatter(vig4_bro_comment25)
-                    "Alright, alright, let's get back to it."
+                    player "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
         "So good to see you!":
             $ reactImage = "stream ui/reactcelebrate.png"
@@ -346,7 +346,7 @@ label vig4_sc2_elliotEntrance():
                     $ AddChatter(vig4_bro_comment24)
                     pause 0.5
                     $ AddChatter(vig4_bro_comment25)
-                    "Alright, alright, let's get back to it."
+                    player "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
                 "Let's catch Elliot up to speed.":
                     $ reactImage = "stream ui/reactconversational.png"
@@ -375,9 +375,9 @@ label vig4_sc2_elliotEntrance():
                     $ AddChatter(vig4_bro_comment24)
                     pause 0.5
                     $ AddChatter(vig4_bro_comment25)
-                    "Alright, alright, let's get back to it."
+                    player "Alright, alright, let's get back to it."
                     $ AddChatter(vig4_bro_comment26)
-        "Everyone say hi to my brother!":
+        "Everyone, say hi to my brother!":
             $ reactImage = "stream ui/reactconfident.png"
             player "El, meet Chat. Chat, say \"hi\" to my lil bro!"
             $ AddChatter(vig4_bro_comment4)
@@ -425,7 +425,7 @@ label vig4_sc2_elliotEntrance():
             $ AddChatter(vig4_bro_comment25)
             pause 0.5
             $ AddChatter(vig4_bro_comment26)
-            "Alright, alright, let's get back to it."
+            player "Alright, alright, let's get back to it."
             $ AddChatter(vig4_bro_comment27)
     stop music fadeout 2.0
     if reactVariable == True:
@@ -874,7 +874,7 @@ label vig4_sc1_macjokes():
         "That's so cute!":
             $ reactImage = "stream ui/reactshocked.png"
             player "Holy crap, MAC's a lil joker!"
-            player "ADORABLE!!!"
+            player "Adorable!"
             $ AddChatter (vig4_sc1_react_comment3)
             pause 0.5
     $ macroChoice = False
@@ -1170,7 +1170,7 @@ label vig4_sc2_macstays():
         "No way!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
-            player "What!? No!!"
+            player "What!? No!"
             player "No chance we're letting that happen chat!"
             $ AddChatter(vig4_sc2_react_comment27)
             pause 0.5
@@ -1341,11 +1341,11 @@ label vig4_sc3_jenndatekiss():
     $ reactVariable = True
     menu:
         "Moze and Jennica kissed!"
-        "WOOOO!!":
+        "WOOOO!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Finally!!"
-            player "Best ship is finally canon, chat!!"
+            player "Finally!"
+            player "Best ship is finally canon, chat!"
             $ AddChatter(vig4_sc3jenn_react_comment10)
             pause 0.5
             if viewershipHigh == True or viewershipMed == True:
@@ -1355,7 +1355,7 @@ label vig4_sc3_jenndatekiss():
             $ csEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
             player "Awwwwww."
-            player "They're perfect for each other, chat!!"
+            player "They're perfect for each other, chat"
             $ AddChatter(vig4_sc3jenn_react_comment11)
             pause 0.5
             if viewershipHigh == True or viewershipMed == True:
@@ -1503,10 +1503,10 @@ label vig4_sc3_teresadatekiss():
     $ reactVariable = True
     menu:
         "Moze and Teresa kissed!"
-        "WOOOO!!":
+        "WOOOO!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
-            player "Finally!!"
+            player "Finally!"
             player "Best ship is finally canon!"
             $ AddChatter(vig4_sc3tere_react_comment8)
             $ AddChatter(vig4_sc3tere_react_comment10)
@@ -1581,11 +1581,11 @@ label vig4_sc3_coil1():
     $ reactVariable = True
     menu:
         "Coil is telling you to leave without MAC."
-        "Wow brutal.":
+        "Wow, brutal.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactconversational.png"
-            player "Wow that really sucks chat."
-            player "All this work to get MAC here and just like that."
+            player "Wow, that really sucks chat."
+            player "All this work to get MAC here and just like that..."
             player "Pushed aside."
             $ AddChatter(vig4_sc3coil1_react_comment1)
             pause 0.5

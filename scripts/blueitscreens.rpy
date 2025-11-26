@@ -120,11 +120,11 @@ screen blueitThread():
 
 
 screen finalWriteUp():
-    text "[blueitPostTitle]" align (0.36, 0.2575)
+    text "[blueitPostTitle]" xpos 620 ypos 268
     default blueit_scroll_adj = ui.adjustment()
     viewport:
         yadjustment yadj
-        #draggable True
+        draggable False
         mousewheel True
         scrollbars "vertical"
         yinitial 1.0
@@ -133,11 +133,11 @@ screen finalWriteUp():
             spacing 10
             for p in (writeUp_list):
                 text p size 25
-            #text "[summaryIntroduction]" size 25
-            #text "[mozeReflection]" size 25
-            #text "[choiceReflection]" size 25
-            #text "[streamReflection]" size 25
-            #text "[affiliateReflection]" size 25
+                #text "[summaryIntroduction]" size 25
+                #text "[mozeReflection]" size 25
+                #text "[choiceReflection]" size 25
+                #text "[streamReflection]" size 25
+                #text "[affiliateReflection]" size 25
 
 
 

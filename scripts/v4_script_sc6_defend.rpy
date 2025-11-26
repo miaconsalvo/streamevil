@@ -4,7 +4,7 @@ label vig4_sc6_defend_1():
     show vig1_town_stream at topleft onlayer background with dissolve
     hide targetbase_stream
     "Polaris burns."
-    play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
+    play backAudio "fireBackground.wav" volume 0.3 fadein 1.0
     $ viewCount += 1
     $ viewCheck7 = viewCount
     play backAudio2 "lazerFire.wav" volume 0.1 fadein 1.0
@@ -26,7 +26,7 @@ label vig4_sc6_defend_1():
     hide teresa with dissolve
     hide jennica with dissolve
     "The three of us dive over the rubble of a nearby building and and crouch behind the ruined stones."
-    play backAudio3 "tankRumble.wav" volume 0.5
+    play backAudio3 "tankRumble.wav" volume 0.3
     $ AddChatter(vig4_sc6_defend_1_comment4)
     "A low rumble gets closer, muddying the sound of several voices."
     "One breaks through, shouting."
@@ -35,7 +35,7 @@ label vig4_sc6_defend_1():
     enforcer "Halt! Halt I said!"
     show bc_enforcer at stream_center with dissolve
     "I peek over the ruins."
-    "A squad BC enforcers round the corner and stop just a few meters away."
+    "A squad of BC enforcers round the corner and stop just a few meters away."
     #show hover tank at stream_left
     "Behind them, the source of the rumbling: an immense hover tank drives into view, its laborious engine humming."
     enforcer "Alright, you heard the orders. We're going to lock this area down and wait for the next assault."
@@ -97,6 +97,8 @@ label vig4_sc6_defend_1():
     "The sound of charging resonates in the tank's central cannon as it turns to aim at me."
     "Then Jennica grabs the cannon's barrel and heaves it to the side, pointing it up and away."
     $ AddChatter(vig4_sc6_defend_1_comment12)
+    play audio "tankShot.wav" volume 1.2
+    "The blast sails harmlessly into the air."
     "Teresa stabs something into the tank's top hatch. Smoke spurts out from the metal."
     "I exchange fire with the enforcers."
     "They have the numbers, but not the skill."
@@ -126,9 +128,9 @@ label vig4_sc6_defend_1():
     enforcer "Tell your crew to stand down!"
     mS "Easy."
     enforcer "I'm giving the orders here!"
-    play audio "lazer.wav"
+    play audio "lazer.wav" volume 3.0
     pause 0.55
-    play audio "deathGasp.wav" volume 2.0
+    play audio "deathGasp.wav" volume 1.0
     hide bc_enforcer with dissolve
     $ AddChatter(vig4_sc6_defend_1_comment15)
     "The enforcer goes silent as his body falls to the ground."
@@ -136,7 +138,7 @@ label vig4_sc6_defend_1():
     show vega stream gun at stream_center with dissolve
     play music "soundtrack/polaris.wav"
     $ AddChatter(vig4_sc6_defend_1_comment16)
-    "I whip around to see Vega standing just a few meters away, smoke spilling out from the shotgun in her hands."
+    "I whip around to see Vega standing just a few meters away, smoke spilling out from the gun in her hands."
     mS "Vega!"
     $ reactTarget = "vig4_sc6_defend_findingvega"
     show screen streamerCommentary
@@ -199,7 +201,7 @@ label vig4_sc6_defend_1():
     vS "We repelled BigCorp's first attack, but we know they're not giving up."
     "She puts a hand on the vehicle."
     vS "With this, we might stand a chance."
-    vS "Right now Coil is putting the final touches on our backup plan."
+    vS "Right now, Coil is putting the final touches on our backup plan."
     mS "Which is?"
     vS "The plaza tower can be convered into a rocket."
     $ AddChatter(vig4_sc6_defend_1_comment25)
@@ -227,7 +229,7 @@ label vig4_sc6_defend_1():
     $ AddChatter(vig4_sc6_defend_1_comment31) 
     vS "BC's sure to—"
     stop music
-    play backAudio "siren.wav" volume 0.7
+    play backAudio "siren.wav" volume 0.5
     "As Vega speaks, a siren goes up from Polaris's plaza."
     "Dropships swarm out of the cruiser, angling toward the town."
     $ AddChatter(vig4_sc6_defend_1_comment32)
@@ -248,7 +250,7 @@ label vig4_sc6_defend_1():
         $ AddChatter(vig4_sc6_defend_1_comment33)
     "I open my palm and hold it out in front of me."
     "A blue hologram projects up from the disc."
-    show mac phone neutral at stream_center_mac with dissolve
+    show mac phone neutral at stream_center_phonemac with dissolve
     play music "soundtrack/theme.wav" volume 0.7 fadein 1.0 
     $ reactTarget = "vig4_sc6_both_maccall"
     show screen streamerCommentary
@@ -321,11 +323,11 @@ label vig4_sc6_defend_1():
                 mS "We have to keep you safe."
                 mS "But I'm proud of you for fighting so hard."
     else:
-        macS "And I was helping so many people with the first aid!"
+        macS "And I was helping so many people with first aid!"
         if viewershipHigh == True:
             $ AddChatter(vig4_sc6_defend_1_comment41)
         menu:
-            macS "And I was helping so many people with the first aid!"
+            macS "And I was helping so many people with first aid!"
             "I know, I saw!":
                 mS "I know MAC, I saw it!"
                 mS "You were incredible."
@@ -335,6 +337,7 @@ label vig4_sc6_defend_1():
                 mS "But I'm proud of you for protecting people."
     macS "Thank you, Captain!"
     mS "MAC, I'm—"
+    $ renpy.music.set_volume(0.7, 1.0, "backAudio")
     "The sirens get louder."
     "I look up. The dropships are approaching."
     $ AddChatter(vig4_sc6_defend_1_comment42)
@@ -342,7 +345,7 @@ label vig4_sc6_defend_1():
     menu:
         macS "Captain?"
         "We're going to make it through this.":
-            mS "We're going to make it through this MAC."
+            mS "We're going to make it through this, MAC."
             mS "I don't know how. But we will."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc6_defend_1_comment43)
@@ -389,6 +392,8 @@ label vig4_sc6_defend_1():
         pass
     "The wave of destruction rushes towards us."
     mS "We stop them here."
+    $ renpy.music.set_volume(0.1, 2.0, "backAudio")
+    stop music fadeout 3.0
     hide jennica with dissolve
     hide teresa with dissolve
     jump vig4_sc6_defend_2
@@ -397,7 +402,6 @@ label vig4_sc6_defend_2():
     show vega stream neutral at stream_right5 with dissolve
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
-    $ renpy.music.set_volume(0.2, 0.5, "backAudio")
     "I climb into the tank last."
     "Jennica is already sitting in a chair near the front while Vega sits to one side, peering through a scope."
     "Teresa situates herself off to one side, monitoring several screens."
@@ -408,13 +412,12 @@ label vig4_sc6_defend_2():
     pS "I'll take maneuverin'. Teresa, take care of our shields and engine power."
     enS "Makes sense."
     pS "Vega, if you're on navigation, use that scope and give me directions."
-    show vega stream happy
     vS "Gotcha."
     pS "Cap, you stay in the center, be our spotter and operate the main cannon."
     mS "Roger, let's roll out."
     $ AddChatter(vig4_sc6_defend_2_comment2)
     pS "Aye aye."
-    play backAudio2 "tankRumble.wav" volume 0.3
+    play backAudio2 "tankRumble.wav" volume 0.3 fadein 0.5
     "The tank accelerates as Jennica shifts the sticks in front of her forward."
     "I turn to Vega."
     mS "Welcome to the Oakley, Vega."
@@ -423,9 +426,11 @@ label vig4_sc6_defend_2():
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_defend_2_comment3)
     else:
+        show vega stream happy
         vS "It's a pleasure!"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_defend_2_comment4)
+    show vega stream neutral
     "As Vega directs us toward the plaza, we pass by ruined, burning buildings."
     "Even as its people defend it, Polaris lies in ruins."
     #show plaza at topleft onlayer background with dissolve
@@ -441,7 +446,7 @@ label vig4_sc6_defend_2():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_2_comment5)
     enS "Shields holding firm."
-    vS "Guess they figured out we aren't friendly."
+    pS "Guess they figured out we ain't friendly."
     "Looking through a monitor, I see dropships landing at the outskirts of Polaris and dropping off battalions of BC enforcers."
     "Dragonflies move across the ruined rooftops, and rush past the tank on the ground to take cover in the ruins of the street."
     if viewershipHigh == True:
@@ -449,7 +454,7 @@ label vig4_sc6_defend_2():
     play backAudio3 "lazerFire.wav" volume 0.6
     "They bring the fight to the approaching army, firing at the advancing BC forces."
     "The true battle for Polaris begins."
-    play music "soundtrack/saveTheGalaxy.wav" volume 1.0 fadein 1.0
+    play music "soundtrack/saveTheGalaxy.wav" volume 1.2
     "A dropship careens down toward the central street, as if to fly directly overhead."
     mS "Vega, use the machine guns and hit the enforcers with suppressing fire."
     $ AddChatter(vig4_sc6_defend_2_comment7)
@@ -463,7 +468,7 @@ label vig4_sc6_defend_2():
     play audio "explosion.wav" volume 1.0
     "It collides with the dropship, creating a fireball in the sky."
     $ AddChatter(vig4_sc6_defend_2_comment8)
-    "As the pieces crash into Polaris, additional flames catch ignite on the buildings."
+    "As the pieces crash into Polaris, additional flames ignite on the buildings."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_2_comment9)
         pause 0.5
@@ -471,16 +476,16 @@ label vig4_sc6_defend_2():
         $ AddChatter(vig4_sc6_defend_2_comment10)
     show bc_enforcer at stream_left5 with dissolve
     "A horde of BC enforcers stream down the road toward us, a hail of blaster bolts clatter on our hull."
-    enS "Shields slowly dropping but we're still at 90\%."
-    show vega stream happy
+    enS "Shields slowly dropping, but we're still at 90\%."
+    show vega stream gun
     vS "BC scum!"
     "Vega turns the machine gun on the battalions and lets loose, bolts of blue light ripping into the frontlines."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_2_comment11)
     play audio "tankChargeShot.wav" volume 1.5
     "I charge the cannon again and unleash its blast at another dropship." 
-    play audio "explosion.wav" volume 1.5
     "Its shell also slams into the ground, this time close to us."
+    play audio "explosion.wav" volume 1.5
     show vig1_town_stream with hpunch
     "The explosion shakes the tank."
     $ AddChatter(vig4_sc6_defend_2_comment12)
@@ -531,7 +536,7 @@ label vig4_sc6_defend_2():
             $ csEngagement -=2
             $ outlaw += 1
             jump vig4_sc6_defend_3_barricade
-        "Support the frontline. Leave the barricade":
+        "Support the frontline. Leave the barricade.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             $ csEngagement += 2
@@ -633,7 +638,9 @@ label vig4_sc6_defend_3_frontline():
     vS "Thank you, Moze."
     show teresa stream shock
     enS "Shields at 75\%. We don't have a lot of room for error here!"
+    show vega stream gun
     vS "Hit them harder than they can hit us!"
+    show teresa stream neutral
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_3_frontline_comment4)
     play audio "tankChargeShot.wav" volume 1.5
@@ -654,8 +661,8 @@ label vig4_sc6_defend_3_frontline():
     vS "Get out of there, now! We'll cover you!"
     show teresa stream neutral
     "The Dragonfly squad turns their back on the BC army and starts rushing back toward the barricade."
-    "One of them, their leader, glances at us. Even though he can't see me, it's as if we're making eye contact."
-    "He nods quickly."
+    "One of them, their leader, glances at us. Even though she can't see me, it's as if we're making eye contact."
+    "She nods quickly."
     $ AddChatter(vig4_sc6_defend_3_frontline_comment8)
     pause 0.5
     $ AddChatter(vig4_sc6_defend_3_frontline_comment9)
@@ -690,12 +697,12 @@ label vig4_sc6_defend_3_frontline():
     enS "Shields at 25\%!"
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_3_frontline_comment13)
-    mS "It'll have to do, Jenn, pull us back to the barricade!"
     play audio "tankChargeShot.wav" volume 1.5
+    mS "It'll have to do, Jenn, pull us back to the barricade!"
     "I fire one last blast from the cannon." 
     $ AddChatter(vig4_sc6_defend_3_frontline_comment14)
-    play audio "explosion.wav" volume 1.0
     "It rips through a drop ship that collides into the street, taking more soldiers out with it."
+    play audio "explosion.wav" volume 1.0
     pS "Aye!"
     "The tank rumbles as Jennica pulls it in reverse, slamming it back toward the barricade as fast as it can go."
     "We peel into a stop, just a few meters from the barricade."
@@ -737,7 +744,8 @@ label vig4_sc6_defend_4():
     stop backAudio2
     hide bc_enforcer with dissolve
     "Behind me, I feel the heat against my back as the rocket detonates against the tank."
-    play audio "shipCrash.wav" volume 2.0
+    play audio "shipCrash.wav" volume 3.0
+    with hpunch
     "A shockwave ripples out, sending me flying through the air and rolling into the dirt."
     "Picking myself up, I turn around to see the hull of the tank burning."
     if viewershipHigh == True:
@@ -788,12 +796,14 @@ label vig4_sc6_defend_5():
     hide bc_enforcer with dissolve
     "The world disappears."
     pause 1.0
-    play audio "scream.wav" volume 2.0
+    play audio "lazer.wav" volume 4.0
+    pause 0.5
+    play audio "scream.wav" volume 1.0
     mS "{i}gasp{/i}"
     show vig1_town_stream with Dissolve(0.5)
     "Then I fall to the floor as something thuds next to me."
     "Staggering to my knees, I see that the enforcer has a smoking hole in the back of his head."
-    show vega stream neutral at stream_left with Dissolve(0.5)
+    show vega stream gun at stream_left with Dissolve(0.5)
     show bc_enforcer at stream_center with Dissolve(0.5)
     "Behind him, Vega grapples with the other enforcer."
     "I draw the pistol from the dead body's belt and fire."
@@ -802,9 +812,10 @@ label vig4_sc6_defend_5():
     hide bc_enforcer with dissolve
     "She falls to her hands and knees, gasping for air."
     "I look around. The rest of the Dragonflies are focused on defending the barricades."
+    show vega stream neutral
     "No one's even looking at us."
     $ AddChatter(vig4_sc6_defend_5_comment7)
-    "Who shot my assailant?"
+    "Who saved me?"
     "Then I see it."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc6_defend_5_comment8)
@@ -816,8 +827,8 @@ label vig4_sc6_defend_5():
     vS "What? What do you mean \"go?\""
     vS "We have to fight!"
     pS "Moze!"
-    show teresa stream neutral at stream_right with dissolve
     show jennica stream neutral at stream_left with dissolve
+    show teresa stream neutral at stream_right with dissolve
     enS "Are you okay?"
     "Jennica and Teresa rush to my side, helping me steady myself."
     mS "MAC. She's trying to take MAC."
@@ -843,7 +854,7 @@ label vig4_sc6_defend_5():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_defend_5_comment10)
             "Vega's eyes go wide."
-            vS "No! But Coil's in the tower!"
+            vS "No! Coil's in the tower!"
     mS "I'll go. I can handle this."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc6_defend_5_comment11)
@@ -912,6 +923,8 @@ label vig4_sc6_defend_5():
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 2 
+        play audio "exitHyperspace.wav" volume 1.5
+        pause 0.5
         unknown "MOXIE!"
         pS "Cap, we're pickin' up a new signal!"
         hide vega with dissolve
@@ -925,6 +938,11 @@ label vig4_sc6_defend_5():
         zan "Have no fear! The great Dr. Zan is here!"
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_zan_comment2)
+        play audio "exitHyperspace.wav" volume 1.5
+        pause 0.2
+        play audio "exitHyperspace.wav" volume 1.5
+        pause 0.4
+        play audio "exitHyperspace.wav" volume 1.5
         "A half dozen sounds like thunderclaps boom out as six ships exit hyperspace all around Polaris."
         zan "For my loyal fans!"
         $ AddChatter(vig4_sc6_zan_comment3)
@@ -960,6 +978,7 @@ label vig4_sc6_defend_5():
         "The battle has just begun."
         #if vig2_outlawEpilogue == True:
         #    "Reginald's fighters careen up into the sky, angling to do battle with BC's forces."
+        show zan stream neutral
         zan "You go, do what you must."
         zan "We will handle corporate stooges."
         menu:
@@ -970,6 +989,7 @@ label vig4_sc6_defend_5():
                 zan "Now, show them your mama's back!"
                 mS "My wha—."
                 pS "Our Moxie."
+                show zan stream laugh
                 zan "Moxie!"
                 if viewershipHigh == True:
                     $ AddChatter(vig4_sc6_zan_comment8)
@@ -1018,7 +1038,7 @@ label vig4_sc6_defend_5():
                 enS "Go do what you do best, Moze."                
             else:
                 pass
-            mS "I want a clean escape route when I come down with MAC."
+            mS "Alright. But I want a clean escape route when I come down with MAC."
             pS "You betcha."
             enS "Affirmative."
         "Thank you.":
@@ -1158,7 +1178,7 @@ label vig4_sc7_1_defend():
     menu:
         "Ama moves to fire her rifle."
         "Ama, no!":
-            mS "Ama no!"
+            mS "Ama, no!"
             "Too late."
             play audio "lazer.wav" volume 5.0
             "Ama fires."
@@ -1167,7 +1187,7 @@ label vig4_sc7_1_defend():
             play audio "lazer.wav" volume 5.0
             "Ama fires."
     play audio "shield.wav" volume 2.0
-    "The bolt diffuses harmlessly into his shield."
+    "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
     show ama stream confused
     play audio "lazer.wav" volume 5.0

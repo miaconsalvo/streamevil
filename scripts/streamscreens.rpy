@@ -488,14 +488,20 @@ screen webNavigation_vig4():
     #        align (0.98, 0.007)
 
 screen closeComputer():
-    textbutton "Close Computer":
+    imagebutton:
         action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]
-        background Solid("#a03f2eff")
-        text_color "#ffffffff"
-        text_hover_color "#ffffffce" 
-        text_selected_color "#ffffffff"
-        text_size 20
-        align (0.98, 0.007)
+        #background Solid("#a03f2eff")
+        idle Solid("#eff3176b")
+        hover Solid("#eff317b9")
+        xsize 145
+        ysize 44
+        xpos 1695
+        ypos 188
+        #text_color "#ffffffff"
+        #text_hover_color "#ffffffce" 
+        #text_selected_color "#ffffffff"
+        #text_size 20
+        #align (0.95, 0.18)
 
 ###PLAYTESTING RECORD SCREEN###
 screen playtestRecord():
