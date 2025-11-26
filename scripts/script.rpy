@@ -288,15 +288,21 @@ default yb = 0 #this sets how long the viewport of the blueit threads will scrol
 default blueitChoiceCheck = False
 default blueitLaunchCheck = False
 default writeUp_list = []
-default endGame = False
 
 ###Final Write Up Variables###
+default endGame = False
 default blueitPostTitle = ""
 default summaryIntroduction = ""
 default mozeReflection = ""
 default choiceReflection = ""
 default streamReflection = ""
 default affiliateReflection = ""
+
+###Variables for checking interactions with stream###
+default vig1_interactions = 0
+default vig2_interactions = 0
+default vig3_interactions = 0
+default vig4_interactions = 0
 
 #default yadj = ui.adjustment()
 

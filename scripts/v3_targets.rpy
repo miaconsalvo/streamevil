@@ -11,6 +11,7 @@ label vig3_sc1_out():
         "Teresa's upset."
         "Wow it's weighing heavily on her.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Wow, crazy to see it weighing so heavily on Teresa!"
             player "She's usually so stoic!"
             $ AddChatter(vig3_sc1_out_react_comment1)
@@ -19,6 +20,7 @@ label vig3_sc1_out():
             pause 0.5
         "Brutal!":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Hate to see the crew fighting." 
             $ AddChatter(vig3_sc1_out_react_comment1)
             pause 0.5
@@ -26,6 +28,7 @@ label vig3_sc1_out():
             pause 0.5
         "This is what she wanted.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "Wasn't Teresa the one saying we needed to do this?"
             player "C'mon girl, this is what you wanted!"
             $ AddChatter(vig3_sc1_out_react_comment2)
@@ -56,6 +59,7 @@ label vig3_sc1_mar():
         "Jennica's upset."
         "It was always risky.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Damn it's weighing heavily on her."
             player "Definitely was risky."
             $ AddChatter(vig3_sc1_mar_react_comment1)
@@ -66,6 +70,7 @@ label vig3_sc1_mar():
             pause 0.5
         "They're fighting!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Hate to see the crew fighting." 
             $ AddChatter(vig3_sc1_mar_react_comment1)
             pause 0.5
@@ -73,6 +78,7 @@ label vig3_sc1_mar():
             pause 0.5
         "This is what she wanted.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "Wasn't Jennica saying this was what we needed to do?"
             player "C'mon girl this is what you wanted!"
             $ AddChatter(vig3_sc1_mar_react_comment5)
@@ -140,6 +146,7 @@ label vig3_sc3_maccandy():
         "MAC is so innocent!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Wow MAC is too innocent for this world!"
             $ AddChatter(vig3_sc2_react_comment1)
             pause 0.5
@@ -149,6 +156,7 @@ label vig3_sc3_maccandy():
             pause 0.5
         "Watch out MAC!":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Oh god, MAC's gonna get in trouble!"
             player "He's so out of his element!"
             $ AddChatter(vig3_sc2_react_comment3)
@@ -157,6 +165,7 @@ label vig3_sc3_maccandy():
             pause 0.5
         "This will end badly hahaha!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Oh god, MAC's gonna be a problem here."
             player "We're about to get scammed!"
             $ AddChatter(vig3_sc2_react_comment5)
@@ -187,6 +196,7 @@ label vig3_sc3_firstfight():
         "Wow badass!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Holy smokes look at them go!"
             player "Jenn and Resa kicking butt!"
             $ AddChatter(vig3_sc3_react_comment1)
@@ -195,6 +205,7 @@ label vig3_sc3_firstfight():
         "Bit of an overreaction.":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "Well that seemed uneccesary!"
             player "Not saying that he wasn't gross, but still!"
             $ AddChatter(vig3_sc3_react_comment5)
@@ -204,6 +215,7 @@ label vig3_sc3_firstfight():
         "This will come back around.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "We really shouldn't be antagonizing people."
             player "This is going to come back to bite us!"
             $ firstfightprediction == True
@@ -233,6 +245,7 @@ label vig3_sc4_houndraid():
         "Told you!" if firstfightprediction == True:
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "I knew it!"
             player "See chat! I knew they would be back!"
             $ AddChatter(vig3_sc4_react_comment1)
@@ -240,12 +253,14 @@ label vig3_sc4_houndraid():
             $ AddChatter(vig3_sc4_react_comment2)
         "They better not take the antenna.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Oh no! They're going to take the part we need!"
             #player "Things bout to get complicated!" #Think this is better with just the one line
             $ AddChatter(vig3_sc4_react_comment3)
             pause 0.5
         "Let's fight 'em!":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             #player "We can take 'em!" #similar as above, I think one line is stronger here.
             player "Let's rumble. They ain't so tough!"
             $ AddChatter(vig3_sc4_react_comment5)
@@ -273,6 +288,7 @@ label vig3_sc5_amahallu():
         "Moze's paranoia is getting pretty intense."
         "Damn Moze is flipping out.":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Moze is pulling guns on showgirls!"
             player "She's seeing ghosts!"
             $ AddChatter(vig3_sc5_react_comment1)
@@ -283,6 +299,7 @@ label vig3_sc5_amahallu():
             $ AddChatter(vig3_sc5_react_comment3)
         "That's the second time now!":
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "This is the second time!"
             player "Chat, Moze is shook!"
             player "Talk about paranoia."
@@ -290,6 +307,7 @@ label vig3_sc5_amahallu():
             pause 0.5
         "Spooky!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Damn, it's hard to know if we're actually being tailed!"
             player "Chat, I'm spooked!"
             if viewershipHigh == True:
@@ -320,6 +338,7 @@ label vig3_sc6_crewspat():
         "The crew's mad at each other."
         "They're at each other's throats.":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             #player "Oh damn! The girls are angry!"
             player "Oh damn, this isn't like normal banter."
             player "They're throwing some serious shade!"
@@ -330,6 +349,7 @@ label vig3_sc6_crewspat():
         "Jennica's so protective of MAC.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Awww, Jennica doesn't want MAC to hear the bad words!"
             player "Cute!"
             $ AddChatter(vig3_sc6_react_comment3)
@@ -337,6 +357,7 @@ label vig3_sc6_crewspat():
         "Relax Jennica, he's a bot.":
             $ kcEngagement -= 1 
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "I mean he's just a robot."
             player "C'mon now, his database definitely has worse, no?"
             $ AddChatter(vig3_sc6_react_comment4)
@@ -363,6 +384,7 @@ label vig3_sc6_stranger():
         "Moze is following a stranger."
         "Moze is super paranoid.":
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "Damn Moze is following strangers now!"
             player "I don't like the looks of this!"
             $ AddChatter(vig3_sc6_react_comment5)
@@ -373,6 +395,7 @@ label vig3_sc6_stranger():
                 $ AddChatter(vig3_sc6_react_comment7)
         "This seems dangerous.":
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ vig3_interactions += 1
             player "Oh god, this is going to go badly!"
             player "What you doing Moze!"
             $ AddChatter(vig3_sc6_react_comment8)
@@ -404,6 +427,7 @@ label vig3_sc6_recbonding():
         "Rec is cool!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Rec is so cool!"
             player "Really love their character!"
             $ AddChatter(vig3_sc6_react_comment10)
@@ -415,6 +439,7 @@ label vig3_sc6_recbonding():
         "Rec is cute!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Rec is so cute!"
             player "Really love their design!"
             $ AddChatter(vig3_sc6_react_comment10)
@@ -431,6 +456,7 @@ label vig3_sc6_recbonding():
             $ csEngagement += 1
             $ pdEngagement -= 1
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Rec is so cool! But every time I think that, I remember we killed their brother."
             player "So much guilt!"
             $ AddChatter(vig3_sc6_react_comment10)
@@ -465,6 +491,7 @@ label vig3_sc6_shipbet1():
         "Did they actually bet the ship on this game?"
         "Classic Jenn and Resa.":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Oh damn! Bit of an overbet!"
             player "Now we gotta win!"
             $ AddChatter(vig3_sc6_react_comment21)
@@ -474,6 +501,7 @@ label vig3_sc6_shipbet1():
             $ AddChatter(vig3_sc6_react_comment22)
         "What the hell!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Holy smokes!"
             player "Now we gotta win!"
             $ AddChatter(vig3_sc6_react_comment20)
@@ -482,6 +510,7 @@ label vig3_sc6_shipbet1():
             pause 0.5
         "I don't buy it.":
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "Naw chat. I'm calling cap on this."
             player "They're reckless but not like that."
             $ shipbetprediction == True
@@ -512,6 +541,7 @@ label vig3_sc6_trustcrew():
         "Got to have integrity.":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "They got themselves into this mess."
             player "They'll have to get themselves out of it!"
             if viewershipHigh == True:
@@ -525,6 +555,7 @@ label vig3_sc6_trustcrew():
         "I trust Jennica and Teresa.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Trust the crew!"
             player "Jenn and Resa got this!"
             $ AddChatter(vig3_sc6_react_comment29)
@@ -535,6 +566,7 @@ label vig3_sc6_trustcrew():
         "Oh no I hope they win!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Crap this there's a lot riding on this!"
             player "Was this a mistake?"
             $ AddChatter(vig3_sc6_react_comment29)
@@ -564,6 +596,7 @@ label vig3_sc6_shootingzan():
         "Blast 'em!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Get blasted, Zan!"
             $ AddChatter(vig3_sc6_react_comment31)
             pause 0.5
@@ -571,6 +604,7 @@ label vig3_sc6_shootingzan():
             pause 0.5
         "Wow crazy!":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Woah, that was awesome!"
             player "Crazy!"
             $ AddChatter(vig3_sc6_react_comment33)
@@ -580,6 +614,7 @@ label vig3_sc6_shootingzan():
         "That was cheating!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ vig3_interactions += 1
             player "Damn, feels weird that we had to cheat to win."
             $ AddChatter(vig3_sc6_react_comment35)
             pause 0.5
@@ -609,6 +644,7 @@ label vig3_sc6_shipbet2():
         "Turns out, the crew didn't actually bet the ship."
         "What a relief.":
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "Phew. That's a relief."
             player "That could've been bad!"
             $ AddChatter(vig3_sc6_react_comment38)
@@ -616,6 +652,7 @@ label vig3_sc6_shipbet2():
         "I knew it!" if shipbetprediction == True:
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "I called it chat!"
             player "No way they'd bet the ship!"
             $ AddChatter(vig3_sc6_react_comment39)
@@ -624,6 +661,7 @@ label vig3_sc6_shipbet2():
             pause 0.5
         "Wow, cop out.":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Hahaha"
             player "Of course they didn't bet the ship."
             player "What a cop out."
@@ -654,6 +692,7 @@ label vig3_sc7_lostmac():
         "MAC got taken by the Hounds!"
         "Oh no!":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "MAC!"
             player "Nooooo!"
             $ AddChatter(vig3_sc7_react_comment1)
@@ -662,6 +701,7 @@ label vig3_sc7_lostmac():
             pause 0.5
         "The plot thickens.":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Oh damn, did not expect that to happen."
             player "Things are getting complicated on Solara!"
             $ AddChatter(vig3_sc7_react_comment3)
@@ -690,6 +730,7 @@ label vig3_sc8_teresabluff():
         "Teresa's in her element.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Wow, Teresa knows her way around high society."
             $ AddChatter(vig3_sc8_react_comment1)
             pause 0.5
@@ -697,6 +738,7 @@ label vig3_sc8_teresabluff():
             pause 0.5
         "How lucky.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             #player "Wow."
             player "We're lucky Teresa was here."
             $ AddChatter(vig3_sc8_react_comment3)
@@ -704,6 +746,7 @@ label vig3_sc8_teresabluff():
         "This is boring.": #maybe have this only if you stealthed into the commsbase in vig2 or maybe different based on vig2
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ vig3_interactions += 1
             player "Jeez. More stealth?"
             player "Really seems like that's always an option."
             player "Wish we could go loud!"
@@ -734,6 +777,7 @@ label vig3_sc9_daisyreturns():
         "We met up with Daisy at the Inventor's Fair."
         "She's back!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Daisy returns!"
             player "Love it! She's the realest person in this room."
             $ AddChatter(vig3_sc9_react_comment1)
@@ -743,6 +787,7 @@ label vig3_sc9_daisyreturns():
                 pause 0.5
         "Maybe she's following us?":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Oh damn! Maybe she was following us?"
             player "Pretty sus chat."
             $ AddChatter(vig3_sc9_react_comment3)
@@ -752,6 +797,7 @@ label vig3_sc9_daisyreturns():
             $ AddChatter(vig3_sc9_react_comment5)
         "Cute!":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "She's so cute!"
             player "I love her design!"
             $ AddChatter(vig3_sc9_react_comment6)
@@ -781,11 +827,13 @@ label vig3_sc9_daisybar():
         "Mills continues to be a real pain."
         "Maybe there was a better way of handling this...":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Idk chat, maybe there was a better way of handling this..."
             $ AddChatter(vig3_sc9_react_comment18)
             pause 0.5
         "Get him!" if vig3_daisyChoice == 1:
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Yeah, Mills! What are you gonna do about it?"
             $ AddChatter(vig3_sc9_react_comment13)
             pause 0.5
@@ -793,6 +841,7 @@ label vig3_sc9_daisybar():
             pause 0.5
         "Get him!" if vig3_daisyChoice == 2:
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "And what are you gonna do about it, Mills?"
             $ AddChatter(vig3_sc9_react_comment13)
             pause 0.5
@@ -802,6 +851,7 @@ label vig3_sc9_daisybar():
             pause 0.5
         "Don't want to attract attention." if vig3_daisyChoice == 3:
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "I want to mess with him so bad."
             player "But we can't take the risk."
             $ AddChatter(vig3_sc9_react_comment15)
@@ -833,6 +883,7 @@ label vig3_sc9_amasurprise():
         "Oh no!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "This is bad!"
             player "This is really bad!"
             $ AddChatter(vig3_sc9_react_comment8)
@@ -842,12 +893,14 @@ label vig3_sc9_amasurprise():
         "Not so paranoid after all!":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "Oh wow, guess Moze wasn't being paranoid after all!"
             $ AddChatter(vig3_sc9_react_comment10)
             pause 0.5
         "It's go time.":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Oh, it's time to rumble."
             player "Let's get loud!"
             $ AddChatter(vig3_sc9_react_comment11)
@@ -878,6 +931,7 @@ label vig3_sc11_amabacksass():
         "Burn, Ama!":
             $ csEngagement += 1
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             #player "Damn Ama!"
             player "Get roasted, Ama!"
             $ AddChatter(vig3_sc11_react_comment1)
@@ -885,6 +939,7 @@ label vig3_sc11_amabacksass():
         "Love this sass.":
             $ kcEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Feels like they haven't missed a step!"
             player "Just like old times hahaha!"
             $ AddChatter(vig3_sc11_react_comment2)
@@ -894,6 +949,7 @@ label vig3_sc11_amabacksass():
         "Let them fight!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ vig3_interactions += 1
             player "Boo. Let me fight."
             player "She's got a whole lot coming to her."
             $ AddChatter(vig3_sc11_react_comment4)
@@ -922,6 +978,7 @@ label vig3_sc12_amachoke():
         "Ama's choking the BigCorp representative."
         "Don't mess with Ama.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             #player "Damn!"
             player "Good reminder: do not piss off Ama."
             $ AddChatter(vig3_sc12_react_comment1)
@@ -934,6 +991,7 @@ label vig3_sc12_amachoke():
                 $ AddChatter(vig3_sc12_react_comment5)
         "Better call HR!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Better file an HR report!"
             player "Terrible workplace conduct from Ama!"
             $ AddChatter(vig3_sc12_react_comment2)
@@ -967,6 +1025,7 @@ label vig3_sc12_amafindsout():
         "Ama realized that's the real MAC!"
         "The jig is up!":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "This is really bad!"
             player "Ama figured it out!"
             $ AddChatter(vig3_sc12_react_comment6)
@@ -980,6 +1039,7 @@ label vig3_sc12_amafindsout():
             pause 0.5
         "Time to fight!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Finally time for some battle!"
             player "Don't get between Mozely and our MAC!"
             $ AddChatter(vig3_sc12_react_comment10)
@@ -1012,6 +1072,7 @@ label vig3_sc12_macalignment_violencepessimism():
         "MAC shot Ama!"
         "MAC's a badass!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Wow, he shot her!"
             player "Zero hesitation! Ice cold!"
             player "MAC for the win! Crack shot!"
@@ -1023,6 +1084,7 @@ label vig3_sc12_macalignment_violencepessimism():
             pause 0.5
         "MAC, no!":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Noooo!"
             player "MAC you're supposed to be better than us!"
             $ AddChatter(vig3_sc12_macAlignVP_comment2)
@@ -1033,6 +1095,7 @@ label vig3_sc12_macalignment_violencepessimism():
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "What!?"
             player "Has MAC been learning this whole time?"
             $ AddChatter(vig3_sc12_macAlignVP_comment6)
@@ -1064,6 +1127,7 @@ label vig3_sc12_macalignment_violenceoptimism():
         "MAC almost shot Ama!"
         "MAC's a badass!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Damn! MAC's a crack shot!"
             player "Zero hesitation! Warning shot right a hair away from her face!"
             player "So cool!"
@@ -1077,6 +1141,7 @@ label vig3_sc12_macalignment_violenceoptimism():
             pause 0.5
         "So much for MAC's innocence.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Did MAC just fire a warning shot a hair away from her face?"
             player "Damn MAC, you're supposed to be better..."
             $ AddChatter(vig3_sc12_macAlignVO_comment2)
@@ -1087,6 +1152,7 @@ label vig3_sc12_macalignment_violenceoptimism():
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "What!?"
             player "Has MAC been learning this whole time?"
             $ AddChatter(vig3_sc12_macAlignVP_comment6)
@@ -1118,6 +1184,7 @@ label vig3_sc12_macalignment_peacepessimism():
         "MAC just tried to intimidate Ama!"
         "Good thing Moze is here!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "MAC with the distraction!"
             player "Good thing Moze is here to take advantage though!"
             $ AddChatter(vig3_sc12_macAlignPP_comment1)
@@ -1130,6 +1197,7 @@ label vig3_sc12_macalignment_peacepessimism():
             pause 0.5
         "MAC is so innocent!":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Oh MAC!"
             player "Too pure for this world!"
             $ AddChatter(vig3_sc12_macAlignPP_comment1)
@@ -1141,6 +1209,7 @@ label vig3_sc12_macalignment_peacepessimism():
             $ AddChatter(vig3_sc12_macAlignPP_comment6)
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "What!?"
             player "Has MAC been learning this whole time?"
             $ AddChatter(vig3_sc12_macAlignVP_comment6)
@@ -1172,6 +1241,7 @@ label vig3_sc12_macalignment_peaceoptimism():
         "MAC just read Ama perfectly!"
         "Did MAC just do that?":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "What!?"
             player "Did MAC just hard read Ama!?"
             player "She's a softie underneath it all!"
@@ -1185,6 +1255,7 @@ label vig3_sc12_macalignment_peaceoptimism():
             pause 0.5
         "Mac for the win!":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ vig3_interactions += 1
             player "Did MAC just grow up!?"
             player "Like he just saw right through Ama!"
             $ AddChatter(vig3_sc12_macAlignPO_comment4)
@@ -1193,6 +1264,7 @@ label vig3_sc12_macalignment_peaceoptimism():
             pause 0.5
         "Is this because of our choices?":
             $ reactImage = "stream ui/reactthinking.png"
+            $ vig3_interactions += 1
             player "What!?"
             player "Has MAC been learning this whole time?"
             $ AddChatter(vig3_sc12_macAlignVP_comment6)
@@ -1225,6 +1297,7 @@ label vig3_sc14_recfindsout_regret():
         "Moze confessed to Rec that she killed Allistar."
         "Finally coming clean.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "Wow. Brutal."
             player "But at least she's finally telling Rec."
             $ AddChatter(vig3_sc14_rec_react_comment1)
@@ -1235,6 +1308,7 @@ label vig3_sc14_recfindsout_regret():
             pause 0.5
         "Sorry, Rec.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Noooo!"
             player "This is so sad chat."
             $ AddChatter(vig3_sc14_rec_react_comment2)
@@ -1244,6 +1318,7 @@ label vig3_sc14_recfindsout_regret():
             $ AddChatter(vig3_sc14_rec_react_comment5)
         "Sorry, not sorry.":
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ vig3_interactions += 1
             player "I guess it was the right thing to do."
             player "Not sure we should be apologizing though."
             $ AddChatter(vig3_sc14_rec_react_comment6)
@@ -1276,6 +1351,7 @@ label vig3_sc14_recfindsout_ihadto():
         "Moze confessed to Rec that she killed Allistar."
         "Damn right.":
             $ reactImage = "stream ui/reactunsure.png"
+            $ vig3_interactions += 1
             player "I mean she's right. Allistar betrayed them."
             player "What do you expect?"
             $ AddChatter(vig3_sc14_rec_react_comment11)
@@ -1285,6 +1361,7 @@ label vig3_sc14_recfindsout_ihadto():
             $ AddChatter(vig3_sc14_rec_react_comment10)
         "Moze with the cop out!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "\"I had no choice!\""
             player "Classic Moze!"
             player "We never have any choice hahahaha!"
@@ -1296,6 +1373,7 @@ label vig3_sc14_recfindsout_ihadto():
             pause 0.5
         "Sorry, not sorry.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ vig3_interactions += 1
             player "Yeah, I guess that was the right thing to do."
             player "They shouldn't expect an apology though. Allistar crossed us!"
             $ AddChatter(vig3_sc14_rec_react_comment6)
@@ -1328,6 +1406,7 @@ label vig3_sc14_recfindsout_noremorse():
         "Moze confessed to Rec that she killed Allistar."
         "No remorse!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ vig3_interactions += 1
             player "Hell yeah!"
             player "Allistar deserved it! No regrets."
             $ AddChatter(vig3_sc14_rec_react_comment12)
@@ -1340,6 +1419,7 @@ label vig3_sc14_recfindsout_noremorse():
             pause 0.5
         "That was cold.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ vig3_interactions += 1
             player "Wow, maybe that was too far?"
             player "Even if Allistar deserved it..."
             player "Might've been too cruel."
@@ -1351,6 +1431,7 @@ label vig3_sc14_recfindsout_noremorse():
             pause 0.5
         "Hahaha get owned Rec!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ vig3_interactions += 1
             player "Hahahaha!"
             player "f's in the chat for Rec!"
             player "Traitor brother got what he deserved."
