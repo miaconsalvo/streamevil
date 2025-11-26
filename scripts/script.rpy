@@ -303,6 +303,7 @@ default vig1_interactions = 0
 default vig2_interactions = 0
 default vig3_interactions = 0
 default vig4_interactions = 0
+default vig3_highViews = False
 
 #default yadj = ui.adjustment()
 

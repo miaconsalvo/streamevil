@@ -38,7 +38,7 @@ label vignette3Start():
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
-    if vig2_outlawEpilogue == True:
+    if vig2_outlawEpilogue == True and vig2_interactions > 7:
         $ viewershipHigh = True
         $ viewershipMed = False
         $ viewershipLow = False
