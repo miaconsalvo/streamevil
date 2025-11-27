@@ -1151,6 +1151,7 @@ label vig4_sc7_1_defend():
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
             "Coil sighs."
+            show coil stream upset
             cS "I assumed that was the case."
             cS "I must say I am disappointed."
             if viewershipHigh == True: 
@@ -1164,15 +1165,19 @@ label vig4_sc7_1_defend():
             if viewershipHigh == True: 
                 $ AddChatter(vig4_sc7_1_defend_comment16)
             cS "Flailing around in the darkness with no purpose."
+            show coil stream neutral
             if viewershipHigh == True: 
                 $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
             $ csEngagement += 1
             mS "I came to help fight off BigCorp."
+            show coil stream happy
             cS "And you have done an admirable job." 
             cS "Without you, we probably would already be overrun."
+            show coil stream neutral
     amaS "I've heard enough!"
     show ama stream gun
+    show coil stream fight
     "Ama moves to fire her rifle."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
@@ -1186,6 +1191,7 @@ label vig4_sc7_1_defend():
             "The rifle is ready."
             play audio "lazer.wav" volume 5.0
             "Ama fires."
+    show coil stream shield with hpunch
     play audio "shield.wav" volume 2.0
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)

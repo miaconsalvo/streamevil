@@ -850,6 +850,7 @@ label vig4_sc2_4():
         "We're looking for someone.":
             mS "We're looking for someone."
             oS "And \"someone\" you have found."
+            show coil stream upset
             oS "Probably dozens of someones."
             "He lifts his eyebrows, as if pointing them at me."
             if stunGuy == True:
@@ -862,10 +863,12 @@ label vig4_sc2_4():
             show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
+            show coil stream neutral
             oS "Intelligence of all kinds is my business."
             $ AddChatter(vig4_sc2_4_comment6)
         "We're just passing through.":
             mS "We're just some travelers passing through. Need some repairs for our ship."
+            show coil stream upset
             if stunGuy == True:
                 oS "Travelers who stun amicable locals?"
                 $ AddChatter(vig4_sc2_4_comment7)
@@ -877,6 +880,7 @@ label vig4_sc2_4():
             show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
+            show coil stream neutral
             oS "Intelligence of all kinds is my business."
             $ AddChatter(vig4_sc2_4_comment6)        
             mS "We're just looking for repairs, and maybe a soft bed to spend the night."
@@ -897,6 +901,7 @@ label vig4_sc2_4():
             mS "Peace is hard to come by. You don't have any troubles here?"
             oS "Only those that come from outsiders."
     enS "Is that a threat?"
+    show coil stream upset
     $ AddChatter(vig4_sc2_4_comment11)
     oS "It's a fact."
     if viewershipHigh == True or viewershipMed == True:
@@ -942,6 +947,7 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment19)
             yS "I see we have... guests?"
+            show coil stream fight
             oS "Nothing to worry about, Vega."
             $ AddChatter(vig4_sc2_4_comment20)
             oS "We are just having a conversation."
@@ -957,8 +963,10 @@ label vig4_sc2_4():
             play audio "lazer.wav" volume 5.0
             "A bolt fires from Teresa's blaster."
             play audio "shield.wav" volume 1.5
+            show coil stream shield with hpunch
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
             show teresa stream shock
+            show coil stream fight
             $ reactTarget = "vig4_sc2_coilshield"
             show screen streamerCommentary
             if viewershipHigh == True or viewershipMed == True:
@@ -979,6 +987,7 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment26)
             mS "Now, you're going to answer our questions, or you're going to wake up with a mean headache."
+            show coil stream fight
             oS "Go ahead. Shoot."
             enS "What?"
             oS "I mean it. Do what you do best."
@@ -992,9 +1001,11 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "I pull the trigger on my blaster."
                     play audio "shield" volume 1.5
+                    show coil stream shield with hpunch
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
+                    show coil stream fight
                     cS "And now that your blaster has failed you, will you stoop to beating an old man?"
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_4_comment23)
@@ -1004,10 +1015,12 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
                     play audio "shield" volume 1.5
+                    show coil stream shield
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
+                    show coil stream fight
                     oS "Your discipline is wanting."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_4_comment23)
@@ -1079,7 +1092,7 @@ label vig4_sc2_4():
     hide jennica with dissolve
     hide vega with dissolve
     hide teresa with dissolve
-    show coil at stream_left with move
+    show coil stream happy at stream_left with move
     show mac at stream_right_mac with move
     #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
@@ -1104,7 +1117,7 @@ label vig4_sc2_4():
             "I take my aim off of the old man and signal Teresa to let him pass."
             mS "If he says it's ok."
     "He turns to MAC."
-    show coil at stream_center with move
+    show coil stream happy at stream_center with move
     oS "Hello, little one. It is nice to finally meet you."
     cS "I am Coil. What is your name?"
     "MAC looks from me to Teresa, to Jennica, and then back to Coil."
@@ -1162,18 +1175,22 @@ label vig4_sc2_5():
             mS "Things were a bit tense. It happens." 
             $ AddChatter(vig4_sc2_5_comment4)
             mS "Thanks for the apology."
+            show coil stream happy
             cS "I appreciate you taking it so well."
             $ AddChatter(vig4_sc2_5_comment5)
             cS "You must have questions."
+            show coil stream neutral
         "I would have done the same thing.":
             $ macHope += 1
             $ kcEngagement += 1
             mS "I would have done the same thing in your position."
             $ AddChatter(vig4_sc2_5_comment6)
             mS "Being careful keeps you alive."
+            show coil stream happy
             cS "I appreciate you taking it so well."
             $ AddChatter(vig4_sc2_5_comment7)
             cS "You must have questions."
+            show coil stream neutral
         "I still don't trust you.":
             $ macPessimism -= 1
             $ pdEngagement += 1
@@ -1208,6 +1225,7 @@ label vig4_sc2_6():
                 cS "It is also an outpost for the Dragonflies network."
                 "Everyone in this town is a Dragonfly?":
                     mS "You mean everyone in this town is a Dragonfly?"
+                    show coil stream happy
                     cS "Not everyone. Some of us are just people."
                     cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing."
                     show vega stream happy
@@ -1218,6 +1236,7 @@ label vig4_sc2_6():
                     show screen streamerCommentary
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                     show vega stream neutral
+                    show coil stream neutral
                     $ vig4_sc2_6_comment1.click = False
                     $ AddChatter(vig4_sc2_6_comment3)
                     pause 0.5
@@ -1272,6 +1291,7 @@ label vig4_sc2_6():
                         vS "That deal finally let us make this place a reality."
                         "So everyone in this town is a Dragonfly?":
                             mS "You mean everyone in this town is a Dragonfly?"
+                            show coil stream happy
                             cS "Not everyone. Some of us are just people."
                             cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing."
                             show vega stream happy
@@ -1282,6 +1302,7 @@ label vig4_sc2_6():
                             show screen streamerCommentary
                             cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                             show vega stream neutral
+                            show coil stream neutral
                             $ AddChatter(vig4_sc2_6_comment3)
                             pause 0.5
                             $ AddChatter(vig4_sc2_6_comment4)
@@ -1299,22 +1320,26 @@ label vig4_sc2_6():
             hide screen streamerCommentary
             mS "So who are you two, exactly? How'd you end up here?"
             cS "Many years ago, I was a doctoral researcher studying cogitive circuitry."
+            show coil stream happy
             cS "During my studies, I met a colleague. Someone whose work far outstripped my own." 
             play audio "macSad.wav" volume 1.2
             macS "Elijah Vanas."
             cS "Yes, MAC. Your father."
             cS "We became... close, and started collaborating."
             $ AddChatter(vig4_sc2_6_comment8)
+            show coil stream neutral
             cS "When we graduated, BigCorp offered us an exorbitant grant to conduct our research."
             #$ AddChatter(vig4_sc2_6_comment9)
             cS "Under the provision that they would own our work in its entirety."
             cS "I had reservations about the deal, but Elijah convinced me." 
             cS "He said we could do more good with their resources than they could do bad with our work."
+            show coil stream upset
             cS "Shortsighted fool."
             cS "But a shortsighted fool who I could not say \"no\" to."
             $ reactTarget = "vig4_sc2_coilbackstory"
             show screen streamerCommentary
             mS "What were the two of you working on?"
+            show coil stream neutral
             cS "Our little friend here."
             $ AddChatter(vig4_sc2_6_comment10)
             cS "At least, I was around for the first prototypes."
@@ -1332,6 +1357,7 @@ label vig4_sc2_6():
                 $ AddChatter(vig4_sc2_6_comment13)
             hide screen streamerCommentary
             cS "You can probably guess what happened next. I wandered the stars, lost myself in the bottle."
+            show coil stream happy
             "Coil turns to look at Vega."
             cS "Until I met Vega."
             cS "A young scrapper with the biggest heart and the sharpest mind I ever met."
@@ -1353,12 +1379,14 @@ label vig4_sc2_6():
             vS "Together."
             cS "Together."
             show vega stream neutral
+            show coil stream neutral
             jump vig4_sc2_6
         "So, what's the plan?" if polarisQuestion == True and vegacoilQuestion == True:
             mS "Ok, so we've made it. What's next?"
             "Coil and Vega look at one another."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc2_6_comment19)
+            show coil stream upset
             cS "I'm afraid I cannot tell you in detail."
             cS "We appreciate everything that you've done."
             if viewershipHigh == True or viewershipMed == True:
@@ -1368,6 +1396,7 @@ label vig4_sc2_6():
             cS "Tomorrow, we will take MAC to rendezvous with the Dragonflies' headquarters."
             mS "Okay, great. We'll get our ship outfitted and ready to go at dawn."
             "Coil pauses and leans forward, locking eyes with me."
+            show coil stream neutral
             $ AddChatter(vig4_sc2_6_comment21)
             cS "No, Captain Mozely, you do not understand."
             show vega stream neutral
@@ -1433,11 +1462,13 @@ label vig4_sc2_6():
                     hide screen streamerCommentary 
             cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
             $ AddChatter(vig4_sc2_6_comment34) 
+            show coil stream happy
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
             $ AddChatter(vig4_sc2_6_comment35) 
             cS "After all you have been through, they might listen."
             vS "Pops can be very persuasive. Trust him."
             $ AddChatter(vig4_sc2_6_comment36) 
+            show coil stream neutral
             cS "It will take some time to reach the Dragonflies and the festival will begin shortly."
             cS "This is a true achievement. You should go and celebrate."
             show teresa stream neutral
@@ -1451,6 +1482,7 @@ label vig4_sc2_6():
                 "Shake his hand.":
                     $ csEngagement += 1
                     $ kcEngagement -= 1
+                    show coil stream happy
                     "I stand and shake his hand."
                     "Coil nods at me."
                     if viewershipHigh == True or viewershipMed == True:
@@ -1461,10 +1493,12 @@ label vig4_sc2_6():
                     $ kcEngagement += 1
                     $ csEngagement -= 1
                     "I stand and turn to look at my crew."
+                    show coil stream upset
                     mS "Come on, let's see what this festival is all about."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_6_comment41)
                     "Coil lets his hand fall and sighs." 
+            show coil stream neutral
             cS "Vega, you go to the festival. I'll join you after making contact."
             vS "Okay, Pops."
             "Coil turns around and heads to the back of the shop."
@@ -2878,10 +2912,12 @@ label vig4_sc3_3():
     cS "I spoke with him earlier."
     $ AddChatter(vig4_sc3_3_comment7)
     if marshal > outlaw:
+        show coil stream happy
         cS "All he seems to talk about is how heroic you and your crew are."
         cS "How he wants to be as selfless as you."
         $ AddChatter(vig4_sc3_3_comment8)
     else:
+        show coil stream happy
         cS "He seems fascinated by how protective of your crew you are."
         cS "How you'll go to any lengths to ensure their safety."
         $ AddChatter(vig4_sc3_3_comment9)
@@ -2901,6 +2937,7 @@ label vig4_sc3_3():
                 $ AddChatter(vig4_sc3_3_comment10)
                 "Coil sighs."
             else:
+                show coil stream upset
                 cS "To speak candidly, I wish that too."
                 "I feel my body tense up instinctually."
                 $ AddChatter(vig4_sc3_3_comment11)
@@ -2918,6 +2955,7 @@ label vig4_sc3_3():
                         if viewershipHigh == True or viewershipMed == True:
                             $ AddChatter(vig4_sc3_3_comment15)
                         mS "But I don't have the luxury to second-guess my decisions."
+                        show coil stream neutral
                         cS "True. Perhaps I've forgotten how difficult life on the run can be."
                         $ AddChatter(vig4_sc3_3_comment16)
                         "Coil sighs."
@@ -2931,6 +2969,7 @@ label vig4_sc3_3():
                         mS "I do what is necessary."
                         cS "And {i}that{/i} is what worries me."
                         $ AddChatter(vig4_sc3_3_comment19)
+                        show coil stream neutral
                         "Coil sighs."
         "That's a good thing.":
             if outlaw > marshal:
@@ -2938,6 +2977,7 @@ label vig4_sc3_3():
             else:
                 $ marshal += 1
             mS "He was alone when we found him. Someone had to show him how to survive."
+            show coil stream neutral
             cS "He has to know how to live as well."
             $ AddChatter(vig4_sc3_3_comment20)
             menu:
@@ -2945,6 +2985,7 @@ label vig4_sc3_3():
                 "We gave him a family.":
                     mS "We gave him a family."
                     mS "What's more important than that?"
+                    show coil stream happy
                     cS "Little."
                     cS "But maturing is also understanding the bigger picture, extending empathy to more than your own family."
                     if marshal > outlaw:
@@ -2954,6 +2995,7 @@ label vig4_sc3_3():
                     else:
                         cS "He seems to be obsessed with just his family."
                         cS "What does that say about you?"
+                        show coil stream upset
                         $ AddChatter(vig4_sc3_3_comment11)
                         "Coil sighs."
                         $ AddChatter(vig4_sc3_3_comment12)
@@ -2966,6 +3008,7 @@ label vig4_sc3_3():
                     "Coil sighs."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc3_3_comment22)
+    show coil stream neutral
     cS "I got in touch with the Dragonflies."
     cS "They won't allow you or your crew to transit with MAC."
     if viewershipHigh == True or viewershipMed == True:
@@ -2983,6 +3026,7 @@ label vig4_sc3_3():
         cS "I tried my best to convince them otherwise, but they don't trust you."
         $ AddChatter(vig4_sc3_3_comment28)
     else:
+        show coil stream upset
         cS "I must say, I agree with them."
         cS "You're too dangerous to the people around you."
         $ AddChatter(vig4_sc3_3_comment29)
@@ -2990,6 +3034,7 @@ label vig4_sc3_3():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc3_3_comment30)
         cS "Worse still, the people you love do not realize it either."
+    show coil stream neutral
     cS "I'm sorry."
     $ reactTarget = "vig4_sc3_coil1"
     show screen streamerCommentary
@@ -3005,6 +3050,7 @@ label vig4_sc3_3():
             mS "You think I'm going to let you rip my family apart like this!"
             if customsStampede == True:
                 $ AddChatter(vig4_sc3_3_comment33)
+            show coil stream upset
             cS "He's not \"your\" family."
             cS "I was there when he was conceived. Elijah and I created him together."
             cS "We are more family than you will ever be."
@@ -3033,9 +3079,11 @@ label vig4_sc3_3():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_3_comment38)
             mS "Promise me you'll take care of him."
+            show coil stream happy
             cS "Of course. I promise you, he will be safe."
             $ AddChatter(vig4_sc3_3_comment39)
             mS "Good. That's all that matters."
+    show coil stream neutral
     cS "I can give you some time to say goodbye."
     cS "I will alert your crew. You have fifteen minutes."
     "Coil turns and leaves."
@@ -3236,7 +3284,7 @@ label vig4_sc3_5():
             show screen streamerCommentary
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc3_5_comment8)
-            show coil stream neutral at stream_left5 with dissolve
+            show coil stream upset at stream_left5 with dissolve
             "Coil steps up from an alleyway."
             show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
@@ -3560,7 +3608,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment40)
             cS "I appreciate the honesty, Moze."
             hide mac with dissolve
-            show coil stream neutral at stream_left5 with dissolve
+            show coil stream upset at stream_left5 with dissolve
             "Coil steps up from an alleyway."
             hide screen streamerCommentary
             cS "But there's no need to be mean to the child."
@@ -3581,6 +3629,7 @@ label vig4_sc3_5():
             hide dflyguard with dissolve
             hide teresa with dissolve
             hide vega with dissolve
+            show coil stream neutral
             cS "Moze. I'm sorry. It's time to say goodbye."
             hide screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment13)
@@ -3632,6 +3681,7 @@ label vig4_sc3_5():
                     $ csEngagement += 1
                     mS "Thanks."
                     "The word is like a boot in my mouth."
+            show coil stream upset
             "Coil shakes his head."
             $ AddChatter(vig4_sc3_5_comment16)
             cS "Let them go."
@@ -4561,6 +4611,7 @@ label vig4_sc7_2():
     $ viewCheck9 = viewCount
     play music "soundtrack/decisionTime.wav" volume 1.0
     cS "The time has come."
+    show coil stream fight
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_2_comment1)
         pause 0.5
@@ -4588,6 +4639,7 @@ label vig4_sc7_2():
     hide tower_no_star_stream
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_2_comment5)
+    show coil stream neutral
     cS "This is your moment."
     play audio "explosion.wav" volume 0.4
     "Outside, dropships explode in the air."
@@ -4690,12 +4742,15 @@ label vig4_sc7_2():
                 "It's over.":
                     $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, it's over."
+                    show coil stream upset
                 "I'm sorry.":
                     $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, I'm sorry."
+                    show coil stream upset
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_2_comment21)
             "Coil sighs."
+            show coil stream fight
             $ AddChatter(vig4_sc7_2_comment22)
             cS "So be it."
             jump vig4_sc7_3_ama

@@ -1215,9 +1215,11 @@ label vig4_sc7_1_attack_ama():
     $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
     if vig4_killDflies == True:
+        show coil stream upset
         cS "You had to murder some good people to do it." 
         cS "But you arrived."
         $ AddChatter(vig4_sc7_1_attack_ama_comment1)
+        show coil stream neutral
     else:
         pass
     "Coil turns to face us. His face looks haggard, his eyes bloodshot."
@@ -1229,21 +1231,25 @@ label vig4_sc7_1_attack_ama():
         "Where is MAC?":
             mS "Where is MAC?"
             $ AddChatter(vig4_sc7_1_attack_ama_comment2)
+            show coil stream upset
             cS "Always so direct."
             cS "MAC is no longer any of your concern, Moze."
             cS "You delivered him, he is our responsibility."
             $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             cS "And he is safe."
+            show coil stream neutral
             if macViolence > macPeace:
                 cS "You know he insisted on operating a turret when BigCorp arrived."
                 cS "Said he would \"make those BC scum pay.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
+                show coil stream upset
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
-                amaS "Mozely can be quite stubborn."
                 show ama stream happy
+                amaS "Mozely can be quite stubborn."
+                show coil stream neutral
                 cS "I meant the bloodlust."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1255,11 +1261,13 @@ label vig4_sc7_1_attack_ama():
                 cS "Said he had to \"take care of the people around him.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
+                show coil stream happy
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 show ama stream confused
+                show coil stream neutral
                 cS "I meant the altruistic urge to help other people."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1274,10 +1282,12 @@ label vig4_sc7_1_attack_ama():
             cS "We will be able to finish the mission, where you failed."
             $ AddChatter(vig4_sc7_1_attack_ama_comment7)
             mS "And you're okay with all of Polaris dying while you escape?"
+            show coil stream upset
             cS "It breaks my heart."
             cS "But we have done what we could. What we were supposed to do."
             $ AddChatter(vig4_sc7_1_attack_ama_comment8)
             cS "MAC is no longer any of your concern, Moze."
+            show coil stream neutral
             cS "You delivered him, he is our responsibility."
             $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             if macViolence > macPeace:
@@ -1285,11 +1295,13 @@ label vig4_sc7_1_attack_ama():
                 cS "Said he would \"make those BC scum pay.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
+                show coil stream upset
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
                 show ama stream happy
                 amaS "Mozely can be quite stubborn."
+                show coil stream neutral
                 cS "I meant the bloodlust."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1301,11 +1313,13 @@ label vig4_sc7_1_attack_ama():
                 cS "Said he had to \"take care of the people around him.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
+                show coil stream happy
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
                 amaS "Mozely can be quite stubborn."
                 show ama stream confused
+                show coil stream neutral
                 cS "I meant the altruistic urge to help other people."
                 $ AddChatter(vig4_sc7_1_attack_ama_comment5)
                 "Ama tilts her head."
@@ -1323,6 +1337,7 @@ label vig4_sc7_1_attack_ama():
             mS "I came for MAC."
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
+            show coil stream upset
             "Coil sighs."
             cS "I assumed that was the case."
             cS "I'm disappointed. After everything that happened, you couldn't just walk away."
@@ -1338,6 +1353,7 @@ label vig4_sc7_1_attack_ama():
         "I came to help.":
             mS "I came to help, to fight off BigCorp."
             $ AddChatter(vig4_sc7_1_attack_ama_comment10)
+            show coil stream upset
             "Coil tilts his head, as if inspecting me."
             cS "Help?"
             $ AddChatter(vig4_sc7_1_attack_ama_comment11)
@@ -1362,6 +1378,7 @@ label vig4_sc7_1_attack_ama():
                 cS "I'm sure you will."
             cS "Is this what your help means, Moze?"
     show ama stream gun
+    show coil stream fight
     "Ama suddenly draws her rifle and aims at Coil."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
@@ -1375,6 +1392,7 @@ label vig4_sc7_1_attack_ama():
             "The rifle is ready."
             play audio "lazer.wav" volume 5.0
             "Ama fires."
+    show coil stream shield with hpunch
     play audio "shield.wav" volume 2.0
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
@@ -2499,16 +2517,19 @@ label vig4_sc7_1_attack():
         "Where is MAC?":
             mS "Where is MAC?"
             $ AddChatter(vig4_sc7_1_attack_ama_comment2)
+            show coil stream upset
             cS "Always so direct."
             cS "MAC is no longer any of your concern, Moze."
             cS "You delivered him, he is our responsibility."
             $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             cS "And he is safe."
+            show coil stream neutral
             if macViolence > macPeace:
                 cS "You know he insisted on operating a turret when BigCorp arrived."
                 cS "Said he would \"make those BC scum pay.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
+                show coil stream upset
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
@@ -2517,6 +2538,7 @@ label vig4_sc7_1_attack():
                 show ama stream gun at stream_right with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
+                show coil stream neutral
                 cS "I meant the bloodlust."
                 show ama stream happy
                 if viewershipHigh == True or viewershipMed == True:
@@ -2530,6 +2552,7 @@ label vig4_sc7_1_attack():
                 cS "Said he had to \"take care of the people around him.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
+                show coil stream happy
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
@@ -2539,6 +2562,7 @@ label vig4_sc7_1_attack():
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the urge to help other people."
+                show coil stream neutral
                 show ama stream confused
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -2555,17 +2579,20 @@ label vig4_sc7_1_attack():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_1_attack_ama_comment7)
             mS "And you're okay with all of Polaris dying while you escape?"
+            show coil stream upset
             cS "It breaks my heart."
             cS "But we have done what we could. What we were supposed to do."
             $ AddChatter(vig4_sc7_1_attack_ama_comment8)
             cS "MAC is no longer any of your concern, Moze."
             cS "You delivered him, he is our responsibility."
+            show coil stream neutral
             $ AddChatter(vig4_sc7_1_attack_ama_comment3)
             if macViolence > macPeace:
                 cS "You know he insisted on operating a turret when BigCorp arrived."
                 cS "Said he would \"make those BC scum pay.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Sitting in a turret on the frontlines. Is that really what you consider \"safe\"?"
+                show coil stream upset
                 cS "No. But he insisted."
                 cS "And as I'm sure you're aware, he can be quite strong-willed."
                 cS "He got it from you after all."
@@ -2574,6 +2601,7 @@ label vig4_sc7_1_attack():
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 show ama stream happy
+                show coil stream neutral
                 cS "I meant the bloodlust."
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -2586,6 +2614,7 @@ label vig4_sc7_1_attack():
                 cS "Said he had to \"take care of the people around him.\""
                 $ AddChatter(vig4_sc7_1_attack_ama_comment4)
                 mS "Being a frontline medic isn't exactly what I would consider \"safe.\""
+                show coil stream happy
                 cS "No. But he insisted." 
                 cS "And I'm sure you're aware he can be quite strong-willed."
                 cS "He got it from you after all."
@@ -2594,6 +2623,7 @@ label vig4_sc7_1_attack():
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 amaS "Mozely can be quite stubborn."
                 show ama stream confused
+                show coil stream neutral
                 cS "I meant the altruistic urge to help other people."
                 if viewershipHigh == True or viewershipMed == True:
                     $ AddChatter(vig4_sc7_1_attack_ama_comment5)
@@ -2627,6 +2657,7 @@ label vig4_sc7_1_attack():
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
             "Coil sighs."
+            show coil stream upset
             cS "I assumed that was the case."
             cS "I'm disappointed. After everything that happened, you couldn't just walk away."
             if viewershipHigh == True:
@@ -2638,6 +2669,7 @@ label vig4_sc7_1_attack():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_1_defend_comment16)
             cS "Flailing around in the darkness with no purpose."
+            show coil stream neutral
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
@@ -2645,6 +2677,7 @@ label vig4_sc7_1_attack():
             mS "I came to help, to fight off BigCorp."
             $ AddChatter(vig4_sc7_1_attack_ama_comment10)
             "Coil tilts his head, as if inspecting me."
+            show coil stream upset
             cS "Help?"
             cS "I think we've had enough of your \"help.\""
             cS "You had to come back and visit more destruction upon us."
@@ -2657,9 +2690,11 @@ label vig4_sc7_1_attack():
             else:
                 cS "But it's always so hard to know with you, isn't it, Moze."
                 cS "Here we stand, in the midst of a war. And you happen to be at the center of it."
+            show coil stream neutral
             cS "Is this what your help means, Moze?"
     amaS "I've heard enough!"
     show ama stream gun
+    show coil stream fight
     "Ama moves to fire her rifle."
     $ AddChatter(vig4_sc7_1_defend_comment18)
     menu:
@@ -2673,6 +2708,7 @@ label vig4_sc7_1_attack():
             "The rifle is ready."
             play audio "lazer.wav" volume 5.0
             "Ama fires."
+    show coil stream shield with hpunch
     play audio "shield.wav" volume 2.0
     "The bolt diffuses harmlessly into Coil's shield."
     $ AddChatter(vig4_sc7_1_defend_comment19)
