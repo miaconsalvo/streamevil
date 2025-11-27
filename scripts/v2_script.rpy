@@ -1507,7 +1507,7 @@ label commsBase_DataCenter():
     pS "I knew this was too damn easy!"
     hide data with dissolve
     play audio "macAlarmed.wav" volume 1.5
-    show mac stream neutral at stream_center_mac with dissolve
+    show mac stream neutral reflect at stream_left5mac with dissolve
     macS "They were not \"skeeves?\""
     pS "They were rent-a-cops!"
     hide mac with Dissolve(0.5)
@@ -1526,8 +1526,8 @@ label commsBase_DataCenter():
     goon "You really care that much about them?"
     #hide data with dissolve
     $ AddChatter(vig2_sc7_comment4)
-    show teresa stream think at stream_right with Dissolve(0.4)
-    show jennica stream crossed at stream_left with Dissolve(0.4)
+    show teresa stream think at stream_right
+    show jennica stream crossed at stream_left
     enS "As much as I loathe to admit it, I agree."
     enS "We came here to cover our trail."
     $ AddChatter(vig2_sc7_comment5)
@@ -1755,7 +1755,7 @@ label commsBase_DataCenter_OUT():
     enS "If you have a better way to cover our trail do share. Please."
     "There's a long moment before Jennica answers." 
     pS "I thought we were tryin' to be better than this..."
-    "Teresa turns away from her"
+    "Teresa turns away from her."
     $ AddChatter(vig2_sc7_out_comment5)
     mS "We can't do better if we're in jail, and considering how close we got last time..."
     mS "I can't lose you guys. You're all I've got."
@@ -1908,7 +1908,7 @@ label commsBase_DataCenter_OUT():
     jump shuttleDestruction
 
 label shuttleDestruction():
-    show bg black topleft onlayer background with dissolve
+    show bg black at topleft onlayer background with dissolve
     hide vig2_targetbase_stream 
     show vig2_orbit_stream at topleft onlayer background with Dissolve(0.7)
     show reginald stream neutral at stream_center with dissolve
@@ -1935,7 +1935,7 @@ label shuttleDestruction():
     "A rush of momentum shakes the shuttle as the missile flies out from under it."
     $ reactTarget = "vig2_sc8_out_reflect"
     show screen streamerCommentary
-    play aduio "explosion.wav" volume 2.0
+    play audio "explosion.wav" volume 2.0
     "The missile races across the sky before colliding with the ship, obliterating it."
     "Pieces of debris scatter from the site of impact."
     "Jennica sighs."
