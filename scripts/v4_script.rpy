@@ -4769,18 +4769,23 @@ label vig4_sc7_3_ama():
         "Jump Coil.":
             "I leap at Coil, throwing a kick at his exposed side."
             $ AddChatter(vig4_sc7_3_ama_comment2)
+            show coil stream shield
             play audio "shield.wav" volume 1.0
             "It slows slightly at his shield, but doesn't stop completely."
             "He quickly spins away."
+            show coil stream neutral
             $ AddChatter(vig4_sc7_3_ama_comment3)
         "Shoot Coil.":
+            show coil stream shield
             play audio "shield.wav" volume 1.0
             "I raise my pistol and fire two quick shots, but they dissipate into his shields."
             $ AddChatter(vig4_sc7_3_ama_comment2)
             cS "You should know that won't work, dear."
+            show coil stream neutral
             $ AddChatter(vig4_sc7_3_ama_comment3)
     amaS "Over here!"
     "Ama continues her barrage, drawing a knife and stabbing at Coil's head."
+    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment4)
     "He dodges and leans away from the blade, then crouches into a stance with his palms open outward toward Ama."
@@ -4788,13 +4793,16 @@ label vig4_sc7_3_ama():
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment5)
     hide ama with dissolve
+    show coil stream shield with hpunch
     play audio "energyPulse.wav" volume 1.2
     "A burst of energy suddenly blasts from his palms, striking Ama in the chest and sending her and her knife flying."
     $ AddChatter(vig4_sc7_3_ama_comment6)
+    show coil stream fight
     "Sweat drips from my forehead."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment7)
     "Coil's posture straightens. He starts to circle around me."
+    show coil stream neutral
     "I parallel his movements, keeping us at a distance."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment8)
@@ -4832,6 +4840,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment14)
     amaS "Yeah, we got that!"
     hide mac with dissolve
+    show coil stream fight
     "Coil takes a step towards us."
     cS "Do you even know what it means to sacrifice?"
     $ AddChatter(vig4_sc7_3_ama_comment15)
@@ -4852,11 +4861,13 @@ label vig4_sc7_3_ama():
             "As I approach, he opens one palm in either of our directions."
             cS "I also know what it means to lose the ones you love."
             "I dive to the side, but Ama's already committed to an attack."
+            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "The energy pulse rushes by me. But another one hits Ama directly in the chest, knocking her to the floor."
             hide ama with dissolve
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment19)
+            show coil stream fight
             cS "And I know what it means to continue on in their stead."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment20)
@@ -4866,21 +4877,27 @@ label vig4_sc7_3_ama():
         "Charge and let Ama be back up.":
             "I charge in at Coil's side with a fist, while Ama pulls another knife from her boot and crosses behind me."
             "It's a classic move."
+            show coil stream shield
             play audio "shield.wav" volume 1.0
             "Coil steps into my attack, slowing my movement just enough to mess up my timing, then spins away."
             $ AddChatter(vig4_sc7_3_ama_comment18)
+            show coil stream fight
             cS "I also grew up in this galaxy."
             "Ama lunges at him with the knife."
+            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "He opens one palm and hits her with an energy blast, knocking her to the floor."
             hide ama with dissolve
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment19)
+            show coil stream fight
             cS "I also know what it means to lose the ones you love."
             "Coil takes aim at me."
+            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "I dive out of the way as a pulse of energy rushes by me."
             cS "And I know what it means to continue on in their stead."
+            show coil stream fight
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment20)
             "I'm on the floor facing Coil. He opens a palm in my direction."
@@ -4891,9 +4908,11 @@ label vig4_sc7_3_ama():
     show ama stream upset at stream_right with move
     show ama stream upset with hpunch
     "Ama leaps in front of Coil, and thrusts her hand forward."
+    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "A blast of energy slams her back to the floor."
     hide ama with Dissolve(0.5)
+    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment22)
         pause 0.5
@@ -4902,6 +4921,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment24)
     mS "Ama!"
     cS "{i}aagghhhh!{/i}"
+    show coil stream hurt
     "Then I notice it, a knife impaled through one of Coil's hands."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment25)
@@ -4922,35 +4942,44 @@ label vig4_sc7_3_ama():
             mS "No."
             mS "I want this."
             $ AddChatter(vig4_sc7_3_ama_comment27)
+            show coil stream fight
             "Coil nods."
             cS "Of course."
         "You gave me no choice.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             mS "You didn't give me a choice."
+            show coil stream fight
             "Coil chuckles."
             cS "We always have a choice, Moze."
             $ AddChatter(vig4_sc7_3_ama_comment28)
     "I step forward."
+    show coil stream shield
     play audio "energyPulse.wav" volume 0.7
     "He raises his good hand toward me and fires a pulse."
     "But it's taking longer for the energy blast to charge. I easily dodge it."
     play audio "punch.wav" volume 1.4
+    hide coil with Dissolve (0.2)
     "My fist strikes his chest with barely any resistance."
     "Ramming my knee into his groin, I grab his coat by the back and throw him across the floor."
     "He tumbles and slams into the side of the wall."
     $ AddChatter(vig4_sc7_3_ama_comment29)
+    show vega stream upset at stream_center with dissolve
     vS "Pops! Get up!"
     $ AddChatter(vig4_sc7_3_ama_comment30)
     "I cross the room and stand over Coil."
     vS "Get up! Please!"
+    hide vega with Dissolve (0.2)
+    show coil stream fight at stream_center with dissolve
     "Coil reaches out his good hand."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment31)
+    show coil stream shield
     play audio "energyPulse.wav" volume 0.7
     "I step back as the energy pulse sails harmlessly into the ceiling."
     stop music fadeout 4.0
     "Coil staggers to his feet."
+    show coil stream neutral
     cS "Please. Just let her go."
     menu:
         cS "Please. Just let her go."
@@ -4961,16 +4990,20 @@ label vig4_sc7_3_ama():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment32)
             cS "My sins?"
+            show coil stream happy
             "Coil chuckles."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment33)
+            show coil stream upset
             cS "You don't know the half of them."
         "Would you, if you were me?":
             mS "Would you, if you were me?"
+            show coil stream upset
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment34)
             cS "I am not you."
             $ AddChatter(vig4_sc7_3_ama_comment35)
+    show coil stream fight
     "Coil lunges forward, ripping the knife out of his hand and slashing it toward my head."
     $ AddChatter(vig4_sc7_3_ama_comment36)
     "Blood spatters across my face."
@@ -4980,6 +5013,7 @@ label vig4_sc7_3_ama():
     "He drops to his knees."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment37)
+    show coil stream hurt
     "I turn his wrists. The knife points directly at his throat."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment38)
@@ -5236,6 +5270,7 @@ label vig4_sc7_3_coil():
     "Everyone is still."
     play music "soundtrack/finale.wav" volume 1.0
     show ama stream gun
+    show coil stream fight
     "Ama makes the first move, raising her rifle in my direction."
     $ AddChatter(vig4_sc7_3_coil_comment1)
     menu:
@@ -5257,9 +5292,11 @@ label vig4_sc7_3_coil():
             amaS "Ah ah ah, can't end things too quickly, Mozely." 
     "Ama lifts the rifle to aim at me again."
     "Coil reaches his hands forward. Devices like shield generators are strapped to his palms."
+    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "A burst of energy suddenly blasts from them, striking Ama's rifle and rending it to pieces."
     show ama stream confused
+    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment3)
     "She takes a moment to look at the destroyed gun, then tosses it to the side."
@@ -5267,17 +5304,22 @@ label vig4_sc7_3_coil():
         $ AddChatter(vig4_sc7_3_coil_comment4)
     show ama stream angry
     amaS "Well, aren't you just full of surprises?"
+    show coil stream upset
     cS "Don't assume I've spent my entire life cooped up in a lab."
     "Ama straightens her back and cracks her knuckles."
+    show coil stream fight
     $ AddChatter(vig4_sc7_3_coil_comment5)
     "Ama charges in my direction as Coil's blasters charge."
+    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "But it's a feint."
     "As the energy releases, Ama doubles back, heading toward Coil, while the energy blasts sail wide of her."
+    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment6)
     "Before Coil can move, Ama has closed the distance and swings."
     "It's a haymaker, and Coil wasn't ready."
+    show coil stream hurt
     play audio "punch.wav" volume 2.0
     play audio "shield.wav"
     hide coil with Dissolve(0.3)
@@ -5285,7 +5327,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment7)
     vS "Pops!"
     "Ama draws a knife from her boot."
-    show ama stream happy
+    show ama stream happy at stream_center with move
     amaS "Now then, Mozely. Where were we?"
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_coil_comment8)
@@ -5345,6 +5387,7 @@ label vig4_sc7_3_coil():
             "I swing my knife up toward her chest."
     play audio "punch.wav" volume 2.0
     "Ama's knee slams into my jaw before I realize what happened."
+    with hpunch
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment17)
     "She baited me."
@@ -5389,8 +5432,8 @@ label vig4_sc7_3_coil():
     stop backAudio fadeout 1.0
     stop backAudio2 fadeout 1.0
     "Finally, I push myself into a sitting position."
-    show ama stream neutral at stream_center with dissolve
-    show coil stream neutral at stream_left with dissolve
+    show ama stream angry at stream_center with dissolve
+    show coil stream hurt at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
     "Coil slumps to the ground, his back leaning against the wall."
@@ -5500,7 +5543,7 @@ label vig4_sc7_3_coil():
         $ AddChatter(vig4_sc7_3_coil_comment41)
     "The energy shield dissipates. Vega rushes to Coil's side."
     vS "No. Don't go. Don't go. Don't leave me."
-    show coil stream neutral at stream_left with dissolve
+    show coil stream hurt at stream_left with dissolve
     "Coil opens his eyes."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment42)
@@ -5510,10 +5553,12 @@ label vig4_sc7_3_coil():
     "A small spurt of blood pools in his shirt."
     cS "The blade did not cut too deep."
     hide screen streamerCommentary
+    show coil stream neutral
     $ AddChatter(vig4_sc7_3_coil_comment43)
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_coil_comment44)
     "He looks to me."
+    show coil stream happy
     cS "Thank you for taking care of the rest."
     menu:
         cS "Thank you for taking care of the rest."
@@ -5583,6 +5628,7 @@ label vig4_sc7_3_coil():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment51)
     if vig4_defendPolaris == True:
+        show coil stream happy
         cS "I would say it looks all but certain."
         cS "Captain Moze, Polaris may be in ruins, but its people will endure. In no small part thanks to your actions today."
         if viewershipHigh == True or viewershipMed == True:
@@ -5604,14 +5650,17 @@ label vig4_sc7_3_coil():
                 $ AddChatter(vig4_sc7_3_coil_comment56)
                 cS "You shall have it."
     elif vig4_defendPolaris == False and vig4_killDflies == False:
+        show coil stream happy
         cS "The chances are certainly much higher now."
         cS "Although your methods are... messy, Captain Moze, without your presence, Vega and I would likely be dead."
         cS "We can offer you and your crew sanctuary while you rest and recover."
         $ AddChatter(vig4_sc7_3_coil_comment56)
         cS "You and your crew have earned that, at least."
     else:
+        show coil stream upset
         cS "The carnage from this battle won't go over well with the higher-ups."
         cS "But considering we'd be dead without her, I'd say we'll have to take her on board."
+        show coil stream happy
         cS "At least for the time being while we all catch our breath."
         $ AddChatter(vig4_sc7_3_coil_comment56)
     mS "And MAC?"
@@ -5935,6 +5984,7 @@ label vig4_epilogue_coil():
     mS "See what?"
     play audio "macPing.wav" volume 1.2
     macS "There! It was a little flicker in front of one of the stars!"
+    show coil stream happy
     cS "He has sharp eyes."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_epilogue_coil_comment15)
