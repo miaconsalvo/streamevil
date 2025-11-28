@@ -1813,7 +1813,8 @@ label vig3_analytics_viewcount():
     else:
         "The viewership numbers for this week are similar to last week."
         "That's not bad, but it's a bit disappointing that they didn't grow at all."
-        "If you lose people next week, you might not make it..."
+        "If you lose people next week, you might not make it."
+        "You wonder if making Outlaw choices would increase your viewership numbers."
     jump vig3_analytics_viewcount2
 
 label vig3_analytics_viewcount2():
