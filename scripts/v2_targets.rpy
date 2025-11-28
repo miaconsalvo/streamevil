@@ -1344,7 +1344,7 @@ label vig2_analytics_audience():
     else:
         "Just one more follower this time around."
         "Not ideal."
-        "Maybe you should think about itneracting with the chat more?"
+        "Maybe you should think about interacting with the chat more?"
         "People tend to stick around when they feel seen."
     "How do you feel?"
     menu:
