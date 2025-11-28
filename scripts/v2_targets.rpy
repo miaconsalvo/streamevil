@@ -1257,8 +1257,8 @@ label vig2_analytics_viewcount2():
         "What's the average viewer count?" if viewershipThoughtCheck == False:
             "The average viewer count for the stream is about 10.4."
             "Over 10! That's great!"
-            "It's a little close to dropping below 10, so you'll have to keep up the momentum for the next couple weeks."
-            "Your other streams have been a bit lower than that, but if this count stays stable, you should be on track!" #Here's the issue, we can say this, what can people do to change this if they weren't on track
+            "It's a little close to dropping below 10, so you can't lose many viewers for the next couple weeks."
+            "If this count stays stable, you should be on track!" #Here's the issue, we can say this, what can people do to change this if they weren't on track
             $ viewershipThoughtCheck = True
             jump vig2_analytics_viewcount2
         "Losing viewers sucks!" if shnzi == False and flinchViewershipShnzi == False:
@@ -1337,8 +1337,15 @@ label vig2_analytics_audience():
     hide screen viewershipButton_vig2
     $ flinchCheck += 1
     $ flinch_audienceCheck = True
-    "The past couple streams have been a little light, but it seems like people are turning up for the Oakley sessions."
-    "Now you're just a few followers away from crossing one of the thresholds for Affiliate."
+    if flinch_followership <= 5: #new nudges for the player to think about how much they're interacting with chat
+        "Nice, you got a couple more followers!"
+        "You've got two more sessions to get the right number."
+        "As long as you keep interacting with the chat, you should be okay."
+    else:
+        "Just one more follower this time around."
+        "Not ideal."
+        "Maybe you should think about itneracting with the chat more?"
+        "People tend to stick around when they feel seen."
     "How do you feel?"
     menu:
         "How do you feel?"
@@ -1354,7 +1361,7 @@ label vig2_analytics_audience():
             "Can't take your eyes off the prize."
             "Still gotta stick to the schedule and go with what's working."
         "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3
-            "It's weird, now that you have more viewers in chat consistently, getting Affiliate suddenly feels less important."
+            "It's weird, now that you have more viewers in chat, getting Affiliate suddenly feels less important."
             "Is it cliché to say that maybe the people you've met have been the real prize?"
             "Probably."
             "But does that make it less true?"

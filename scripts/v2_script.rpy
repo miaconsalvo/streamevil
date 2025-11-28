@@ -2216,6 +2216,12 @@ label vig2_macro_start():
         $ topfan = "pickledDragons"
     else:
         $ topfan = "Coriolis"
+    if vig2_interactions >= 11:
+        $ flinch_followership -= 3
+    elif vig2_interactions >= 7:
+        $ flinch_followership -= 2
+    else:
+        $ flinch_followership -= 1
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     scene black with Dissolve(2.0)
     $ narrator = reg_narrator

@@ -46,10 +46,6 @@ label vignette4Start():
         $ viewershipHigh = False
         $ viewershipMed = True
         $ viewershipLow = False
-    elif vig3_outlaw >= 3 and vig2_outlawEpilogue == True:
-        $ viewershipHigh = False
-        $ viewershipMed = True
-        $ viewershipLow = False
     elif vig3_outlaw < 3 and vig2_outlawEpilogue == True:
         $ viewershipHigh = False
         $ viewershipMed = True
@@ -850,7 +846,6 @@ label vig4_sc2_4():
         "We're looking for someone.":
             mS "We're looking for someone."
             oS "And \"someone\" you have found."
-            show coil stream upset
             oS "Probably dozens of someones."
             "He lifts his eyebrows, as if pointing them at me."
             if stunGuy == True:
@@ -863,12 +858,10 @@ label vig4_sc2_4():
             show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
-            show coil stream neutral
             oS "Intelligence of all kinds is my business."
             $ AddChatter(vig4_sc2_4_comment6)
         "We're just passing through.":
             mS "We're just some travelers passing through. Need some repairs for our ship."
-            show coil stream upset
             if stunGuy == True:
                 oS "Travelers who stun amicable locals?"
                 $ AddChatter(vig4_sc2_4_comment7)
@@ -880,7 +873,6 @@ label vig4_sc2_4():
             show teresa stream neutral
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
-            show coil stream neutral
             oS "Intelligence of all kinds is my business."
             $ AddChatter(vig4_sc2_4_comment6)        
             mS "We're just looking for repairs, and maybe a soft bed to spend the night."
@@ -901,7 +893,6 @@ label vig4_sc2_4():
             mS "Peace is hard to come by. You don't have any troubles here?"
             oS "Only those that come from outsiders."
     enS "Is that a threat?"
-    show coil stream upset
     $ AddChatter(vig4_sc2_4_comment11)
     oS "It's a fact."
     if viewershipHigh == True or viewershipMed == True:
@@ -947,7 +938,6 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment19)
             yS "I see we have... guests?"
-            show coil stream fight
             oS "Nothing to worry about, Vega."
             $ AddChatter(vig4_sc2_4_comment20)
             oS "We are just having a conversation."
@@ -963,10 +953,8 @@ label vig4_sc2_4():
             play audio "lazer.wav" volume 5.0
             "A bolt fires from Teresa's blaster."
             play audio "shield.wav" volume 1.5
-            show coil stream shield with hpunch
             "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
             show teresa stream shock
-            show coil stream fight
             $ reactTarget = "vig4_sc2_coilshield"
             show screen streamerCommentary
             if viewershipHigh == True or viewershipMed == True:
@@ -987,7 +975,6 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment26)
             mS "Now, you're going to answer our questions, or you're going to wake up with a mean headache."
-            show coil stream fight
             oS "Go ahead. Shoot."
             enS "What?"
             oS "I mean it. Do what you do best."
@@ -1001,11 +988,9 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "I pull the trigger on my blaster."
                     play audio "shield" volume 1.5
-                    show coil stream shield with hpunch
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
-                    show coil stream fight
                     cS "And now that your blaster has failed you, will you stoop to beating an old man?"
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_4_comment23)
@@ -1015,12 +1000,10 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
                     play audio "shield" volume 1.5
-                    show coil stream shield
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
-                    show coil stream fight
                     oS "Your discipline is wanting."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_4_comment23)
@@ -1092,7 +1075,7 @@ label vig4_sc2_4():
     hide jennica with dissolve
     hide vega with dissolve
     hide teresa with dissolve
-    show coil stream happy at stream_left with move
+    show coil at stream_left with move
     show mac at stream_right_mac with move
     #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
@@ -1117,7 +1100,7 @@ label vig4_sc2_4():
             "I take my aim off of the old man and signal Teresa to let him pass."
             mS "If he says it's ok."
     "He turns to MAC."
-    show coil stream happy at stream_center with move
+    show coil at stream_center with move
     oS "Hello, little one. It is nice to finally meet you."
     cS "I am Coil. What is your name?"
     "MAC looks from me to Teresa, to Jennica, and then back to Coil."
@@ -1175,22 +1158,18 @@ label vig4_sc2_5():
             mS "Things were a bit tense. It happens." 
             $ AddChatter(vig4_sc2_5_comment4)
             mS "Thanks for the apology."
-            show coil stream happy
             cS "I appreciate you taking it so well."
             $ AddChatter(vig4_sc2_5_comment5)
             cS "You must have questions."
-            show coil stream neutral
         "I would have done the same thing.":
             $ macHope += 1
             $ kcEngagement += 1
             mS "I would have done the same thing in your position."
             $ AddChatter(vig4_sc2_5_comment6)
             mS "Being careful keeps you alive."
-            show coil stream happy
             cS "I appreciate you taking it so well."
             $ AddChatter(vig4_sc2_5_comment7)
             cS "You must have questions."
-            show coil stream neutral
         "I still don't trust you.":
             $ macPessimism -= 1
             $ pdEngagement += 1
@@ -1225,7 +1204,6 @@ label vig4_sc2_6():
                 cS "It is also an outpost for the Dragonflies network."
                 "Everyone in this town is a Dragonfly?":
                     mS "You mean everyone in this town is a Dragonfly?"
-                    show coil stream happy
                     cS "Not everyone. Some of us are just people."
                     cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing."
                     show vega stream happy
@@ -1236,7 +1214,6 @@ label vig4_sc2_6():
                     show screen streamerCommentary
                     cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                     show vega stream neutral
-                    show coil stream neutral
                     $ vig4_sc2_6_comment1.click = False
                     $ AddChatter(vig4_sc2_6_comment3)
                     pause 0.5
@@ -1291,7 +1268,6 @@ label vig4_sc2_6():
                         vS "That deal finally let us make this place a reality."
                         "So everyone in this town is a Dragonfly?":
                             mS "You mean everyone in this town is a Dragonfly?"
-                            show coil stream happy
                             cS "Not everyone. Some of us are just people."
                             cS "Farmers, doctors, soldiers, engineers. People who are tired of BC's squeezing."
                             show vega stream happy
@@ -1302,7 +1278,6 @@ label vig4_sc2_6():
                             show screen streamerCommentary
                             cS "We keep it that way. A safehouse for the Dragonflies and for anyone else who needs a home."
                             show vega stream neutral
-                            show coil stream neutral
                             $ AddChatter(vig4_sc2_6_comment3)
                             pause 0.5
                             $ AddChatter(vig4_sc2_6_comment4)
@@ -1320,26 +1295,22 @@ label vig4_sc2_6():
             hide screen streamerCommentary
             mS "So who are you two, exactly? How'd you end up here?"
             cS "Many years ago, I was a doctoral researcher studying cogitive circuitry."
-            show coil stream happy
             cS "During my studies, I met a colleague. Someone whose work far outstripped my own." 
             play audio "macSad.wav" volume 1.2
             macS "Elijah Vanas."
             cS "Yes, MAC. Your father."
             cS "We became... close, and started collaborating."
             $ AddChatter(vig4_sc2_6_comment8)
-            show coil stream neutral
             cS "When we graduated, BigCorp offered us an exorbitant grant to conduct our research."
             #$ AddChatter(vig4_sc2_6_comment9)
             cS "Under the provision that they would own our work in its entirety."
             cS "I had reservations about the deal, but Elijah convinced me." 
             cS "He said we could do more good with their resources than they could do bad with our work."
-            show coil stream upset
             cS "Shortsighted fool."
             cS "But a shortsighted fool who I could not say \"no\" to."
             $ reactTarget = "vig4_sc2_coilbackstory"
             show screen streamerCommentary
             mS "What were the two of you working on?"
-            show coil stream neutral
             cS "Our little friend here."
             $ AddChatter(vig4_sc2_6_comment10)
             cS "At least, I was around for the first prototypes."
@@ -1357,7 +1328,6 @@ label vig4_sc2_6():
                 $ AddChatter(vig4_sc2_6_comment13)
             hide screen streamerCommentary
             cS "You can probably guess what happened next. I wandered the stars, lost myself in the bottle."
-            show coil stream happy
             "Coil turns to look at Vega."
             cS "Until I met Vega."
             cS "A young scrapper with the biggest heart and the sharpest mind I ever met."
@@ -1379,14 +1349,12 @@ label vig4_sc2_6():
             vS "Together."
             cS "Together."
             show vega stream neutral
-            show coil stream neutral
             jump vig4_sc2_6
         "So, what's the plan?" if polarisQuestion == True and vegacoilQuestion == True:
             mS "Ok, so we've made it. What's next?"
             "Coil and Vega look at one another."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc2_6_comment19)
-            show coil stream upset
             cS "I'm afraid I cannot tell you in detail."
             cS "We appreciate everything that you've done."
             if viewershipHigh == True or viewershipMed == True:
@@ -1396,7 +1364,6 @@ label vig4_sc2_6():
             cS "Tomorrow, we will take MAC to rendezvous with the Dragonflies' headquarters."
             mS "Okay, great. We'll get our ship outfitted and ready to go at dawn."
             "Coil pauses and leans forward, locking eyes with me."
-            show coil stream neutral
             $ AddChatter(vig4_sc2_6_comment21)
             cS "No, Captain Mozely, you do not understand."
             show vega stream neutral
@@ -1462,13 +1429,11 @@ label vig4_sc2_6():
                     hide screen streamerCommentary 
             cS "It's not up to me. Even Vanas was to be left behind if he made it this far."
             $ AddChatter(vig4_sc2_6_comment34) 
-            show coil stream happy
             cS "But give me a chance. I can get in touch with my superiors and make a case for you."
             $ AddChatter(vig4_sc2_6_comment35) 
             cS "After all you have been through, they might listen."
             vS "Pops can be very persuasive. Trust him."
             $ AddChatter(vig4_sc2_6_comment36) 
-            show coil stream neutral
             cS "It will take some time to reach the Dragonflies and the festival will begin shortly."
             cS "This is a true achievement. You should go and celebrate."
             show teresa stream neutral
@@ -1482,7 +1447,6 @@ label vig4_sc2_6():
                 "Shake his hand.":
                     $ csEngagement += 1
                     $ kcEngagement -= 1
-                    show coil stream happy
                     "I stand and shake his hand."
                     "Coil nods at me."
                     if viewershipHigh == True or viewershipMed == True:
@@ -1493,12 +1457,10 @@ label vig4_sc2_6():
                     $ kcEngagement += 1
                     $ csEngagement -= 1
                     "I stand and turn to look at my crew."
-                    show coil stream upset
                     mS "Come on, let's see what this festival is all about."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_6_comment41)
                     "Coil lets his hand fall and sighs." 
-            show coil stream neutral
             cS "Vega, you go to the festival. I'll join you after making contact."
             vS "Okay, Pops."
             "Coil turns around and heads to the back of the shop."
@@ -2912,12 +2874,10 @@ label vig4_sc3_3():
     cS "I spoke with him earlier."
     $ AddChatter(vig4_sc3_3_comment7)
     if marshal > outlaw:
-        show coil stream happy
         cS "All he seems to talk about is how heroic you and your crew are."
         cS "How he wants to be as selfless as you."
         $ AddChatter(vig4_sc3_3_comment8)
     else:
-        show coil stream happy
         cS "He seems fascinated by how protective of your crew you are."
         cS "How you'll go to any lengths to ensure their safety."
         $ AddChatter(vig4_sc3_3_comment9)
@@ -2937,7 +2897,6 @@ label vig4_sc3_3():
                 $ AddChatter(vig4_sc3_3_comment10)
                 "Coil sighs."
             else:
-                show coil stream upset
                 cS "To speak candidly, I wish that too."
                 "I feel my body tense up instinctually."
                 $ AddChatter(vig4_sc3_3_comment11)
@@ -2955,7 +2914,6 @@ label vig4_sc3_3():
                         if viewershipHigh == True or viewershipMed == True:
                             $ AddChatter(vig4_sc3_3_comment15)
                         mS "But I don't have the luxury to second-guess my decisions."
-                        show coil stream neutral
                         cS "True. Perhaps I've forgotten how difficult life on the run can be."
                         $ AddChatter(vig4_sc3_3_comment16)
                         "Coil sighs."
@@ -2969,7 +2927,6 @@ label vig4_sc3_3():
                         mS "I do what is necessary."
                         cS "And {i}that{/i} is what worries me."
                         $ AddChatter(vig4_sc3_3_comment19)
-                        show coil stream neutral
                         "Coil sighs."
         "That's a good thing.":
             if outlaw > marshal:
@@ -2977,7 +2934,6 @@ label vig4_sc3_3():
             else:
                 $ marshal += 1
             mS "He was alone when we found him. Someone had to show him how to survive."
-            show coil stream neutral
             cS "He has to know how to live as well."
             $ AddChatter(vig4_sc3_3_comment20)
             menu:
@@ -2985,7 +2941,6 @@ label vig4_sc3_3():
                 "We gave him a family.":
                     mS "We gave him a family."
                     mS "What's more important than that?"
-                    show coil stream happy
                     cS "Little."
                     cS "But maturing is also understanding the bigger picture, extending empathy to more than your own family."
                     if marshal > outlaw:
@@ -2995,7 +2950,6 @@ label vig4_sc3_3():
                     else:
                         cS "He seems to be obsessed with just his family."
                         cS "What does that say about you?"
-                        show coil stream upset
                         $ AddChatter(vig4_sc3_3_comment11)
                         "Coil sighs."
                         $ AddChatter(vig4_sc3_3_comment12)
@@ -3008,7 +2962,6 @@ label vig4_sc3_3():
                     "Coil sighs."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc3_3_comment22)
-    show coil stream neutral
     cS "I got in touch with the Dragonflies."
     cS "They won't allow you or your crew to transit with MAC."
     if viewershipHigh == True or viewershipMed == True:
@@ -3026,7 +2979,6 @@ label vig4_sc3_3():
         cS "I tried my best to convince them otherwise, but they don't trust you."
         $ AddChatter(vig4_sc3_3_comment28)
     else:
-        show coil stream upset
         cS "I must say, I agree with them."
         cS "You're too dangerous to the people around you."
         $ AddChatter(vig4_sc3_3_comment29)
@@ -3034,7 +2986,6 @@ label vig4_sc3_3():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc3_3_comment30)
         cS "Worse still, the people you love do not realize it either."
-    show coil stream neutral
     cS "I'm sorry."
     $ reactTarget = "vig4_sc3_coil1"
     show screen streamerCommentary
@@ -3050,7 +3001,6 @@ label vig4_sc3_3():
             mS "You think I'm going to let you rip my family apart like this!"
             if customsStampede == True:
                 $ AddChatter(vig4_sc3_3_comment33)
-            show coil stream upset
             cS "He's not \"your\" family."
             cS "I was there when he was conceived. Elijah and I created him together."
             cS "We are more family than you will ever be."
@@ -3079,11 +3029,9 @@ label vig4_sc3_3():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_3_comment38)
             mS "Promise me you'll take care of him."
-            show coil stream happy
             cS "Of course. I promise you, he will be safe."
             $ AddChatter(vig4_sc3_3_comment39)
             mS "Good. That's all that matters."
-    show coil stream neutral
     cS "I can give you some time to say goodbye."
     cS "I will alert your crew. You have fifteen minutes."
     "Coil turns and leaves."
@@ -3284,7 +3232,7 @@ label vig4_sc3_5():
             show screen streamerCommentary
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc3_5_comment8)
-            show coil stream upset at stream_left5 with dissolve
+            show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
             show vega stream gun at stream_left with dissolve
             "Vega is behind him, along with ten men in guard uniforms holding stun rods."
@@ -3608,7 +3556,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment40)
             cS "I appreciate the honesty, Moze."
             hide mac with dissolve
-            show coil stream upset at stream_left5 with dissolve
+            show coil stream neutral at stream_left5 with dissolve
             "Coil steps up from an alleyway."
             hide screen streamerCommentary
             cS "But there's no need to be mean to the child."
@@ -3629,7 +3577,6 @@ label vig4_sc3_5():
             hide dflyguard with dissolve
             hide teresa with dissolve
             hide vega with dissolve
-            show coil stream neutral
             cS "Moze. I'm sorry. It's time to say goodbye."
             hide screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment13)
@@ -3681,7 +3628,6 @@ label vig4_sc3_5():
                     $ csEngagement += 1
                     mS "Thanks."
                     "The word is like a boot in my mouth."
-            show coil stream upset
             "Coil shakes his head."
             $ AddChatter(vig4_sc3_5_comment16)
             cS "Let them go."
@@ -4611,7 +4557,6 @@ label vig4_sc7_2():
     $ viewCheck9 = viewCount
     play music "soundtrack/decisionTime.wav" volume 1.0
     cS "The time has come."
-    show coil stream fight
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_2_comment1)
         pause 0.5
@@ -4639,7 +4584,6 @@ label vig4_sc7_2():
     hide tower_no_star_stream
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_2_comment5)
-    show coil stream neutral
     cS "This is your moment."
     play audio "explosion.wav" volume 0.4
     "Outside, dropships explode in the air."
@@ -4742,15 +4686,12 @@ label vig4_sc7_2():
                 "It's over.":
                     $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, it's over."
-                    show coil stream upset
                 "I'm sorry.":
                     $ AddChatter(vig4_sc7_2_comment32)
                     mS "Coil, I'm sorry."
-                    show coil stream upset
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_2_comment21)
             "Coil sighs."
-            show coil stream fight
             $ AddChatter(vig4_sc7_2_comment22)
             cS "So be it."
             jump vig4_sc7_3_ama
@@ -4769,23 +4710,18 @@ label vig4_sc7_3_ama():
         "Jump Coil.":
             "I leap at Coil, throwing a kick at his exposed side."
             $ AddChatter(vig4_sc7_3_ama_comment2)
-            show coil stream shield
             play audio "shield.wav" volume 1.0
             "It slows slightly at his shield, but doesn't stop completely."
             "He quickly spins away."
-            show coil stream neutral
             $ AddChatter(vig4_sc7_3_ama_comment3)
         "Shoot Coil.":
-            show coil stream shield
             play audio "shield.wav" volume 1.0
             "I raise my pistol and fire two quick shots, but they dissipate into his shields."
             $ AddChatter(vig4_sc7_3_ama_comment2)
             cS "You should know that won't work, dear."
-            show coil stream neutral
             $ AddChatter(vig4_sc7_3_ama_comment3)
     amaS "Over here!"
     "Ama continues her barrage, drawing a knife and stabbing at Coil's head."
-    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment4)
     "He dodges and leans away from the blade, then crouches into a stance with his palms open outward toward Ama."
@@ -4793,16 +4729,13 @@ label vig4_sc7_3_ama():
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment5)
     hide ama with dissolve
-    show coil stream shield with hpunch
     play audio "energyPulse.wav" volume 1.2
     "A burst of energy suddenly blasts from his palms, striking Ama in the chest and sending her and her knife flying."
     $ AddChatter(vig4_sc7_3_ama_comment6)
-    show coil stream fight
     "Sweat drips from my forehead."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment7)
     "Coil's posture straightens. He starts to circle around me."
-    show coil stream neutral
     "I parallel his movements, keeping us at a distance."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment8)
@@ -4840,7 +4773,6 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment14)
     amaS "Yeah, we got that!"
     hide mac with dissolve
-    show coil stream fight
     "Coil takes a step towards us."
     cS "Do you even know what it means to sacrifice?"
     $ AddChatter(vig4_sc7_3_ama_comment15)
@@ -4861,13 +4793,11 @@ label vig4_sc7_3_ama():
             "As I approach, he opens one palm in either of our directions."
             cS "I also know what it means to lose the ones you love."
             "I dive to the side, but Ama's already committed to an attack."
-            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "The energy pulse rushes by me. But another one hits Ama directly in the chest, knocking her to the floor."
             hide ama with dissolve
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment19)
-            show coil stream fight
             cS "And I know what it means to continue on in their stead."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment20)
@@ -4877,27 +4807,21 @@ label vig4_sc7_3_ama():
         "Charge and let Ama be back up.":
             "I charge in at Coil's side with a fist, while Ama pulls another knife from her boot and crosses behind me."
             "It's a classic move."
-            show coil stream shield
             play audio "shield.wav" volume 1.0
             "Coil steps into my attack, slowing my movement just enough to mess up my timing, then spins away."
             $ AddChatter(vig4_sc7_3_ama_comment18)
-            show coil stream fight
             cS "I also grew up in this galaxy."
             "Ama lunges at him with the knife."
-            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "He opens one palm and hits her with an energy blast, knocking her to the floor."
             hide ama with dissolve
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment19)
-            show coil stream fight
             cS "I also know what it means to lose the ones you love."
             "Coil takes aim at me."
-            show coil stream shield
             play audio "energyPulse.wav" volume 1.2
             "I dive out of the way as a pulse of energy rushes by me."
             cS "And I know what it means to continue on in their stead."
-            show coil stream fight
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment20)
             "I'm on the floor facing Coil. He opens a palm in my direction."
@@ -4908,11 +4832,9 @@ label vig4_sc7_3_ama():
     show ama stream upset at stream_right with move
     show ama stream upset with hpunch
     "Ama leaps in front of Coil, and thrusts her hand forward."
-    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "A blast of energy slams her back to the floor."
     hide ama with Dissolve(0.5)
-    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment22)
         pause 0.5
@@ -4921,7 +4843,6 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment24)
     mS "Ama!"
     cS "{i}aagghhhh!{/i}"
-    show coil stream hurt
     "Then I notice it, a knife impaled through one of Coil's hands."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment25)
@@ -4942,44 +4863,35 @@ label vig4_sc7_3_ama():
             mS "No."
             mS "I want this."
             $ AddChatter(vig4_sc7_3_ama_comment27)
-            show coil stream fight
             "Coil nods."
             cS "Of course."
         "You gave me no choice.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             mS "You didn't give me a choice."
-            show coil stream fight
             "Coil chuckles."
             cS "We always have a choice, Moze."
             $ AddChatter(vig4_sc7_3_ama_comment28)
     "I step forward."
-    show coil stream shield
     play audio "energyPulse.wav" volume 0.7
     "He raises his good hand toward me and fires a pulse."
     "But it's taking longer for the energy blast to charge. I easily dodge it."
     play audio "punch.wav" volume 1.4
-    hide coil with Dissolve (0.2)
     "My fist strikes his chest with barely any resistance."
     "Ramming my knee into his groin, I grab his coat by the back and throw him across the floor."
     "He tumbles and slams into the side of the wall."
     $ AddChatter(vig4_sc7_3_ama_comment29)
-    show vega stream upset at stream_center with dissolve
     vS "Pops! Get up!"
     $ AddChatter(vig4_sc7_3_ama_comment30)
     "I cross the room and stand over Coil."
     vS "Get up! Please!"
-    hide vega with Dissolve (0.2)
-    show coil stream fight at stream_center with dissolve
     "Coil reaches out his good hand."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment31)
-    show coil stream shield
     play audio "energyPulse.wav" volume 0.7
     "I step back as the energy pulse sails harmlessly into the ceiling."
     stop music fadeout 4.0
     "Coil staggers to his feet."
-    show coil stream neutral
     cS "Please. Just let her go."
     menu:
         cS "Please. Just let her go."
@@ -4990,20 +4902,16 @@ label vig4_sc7_3_ama():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment32)
             cS "My sins?"
-            show coil stream happy
             "Coil chuckles."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment33)
-            show coil stream upset
             cS "You don't know the half of them."
         "Would you, if you were me?":
             mS "Would you, if you were me?"
-            show coil stream upset
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment34)
             cS "I am not you."
             $ AddChatter(vig4_sc7_3_ama_comment35)
-    show coil stream fight
     "Coil lunges forward, ripping the knife out of his hand and slashing it toward my head."
     $ AddChatter(vig4_sc7_3_ama_comment36)
     "Blood spatters across my face."
@@ -5013,7 +4921,6 @@ label vig4_sc7_3_ama():
     "He drops to his knees."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment37)
-    show coil stream hurt
     "I turn his wrists. The knife points directly at his throat."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment38)
@@ -5270,7 +5177,6 @@ label vig4_sc7_3_coil():
     "Everyone is still."
     play music "soundtrack/finale.wav" volume 1.0
     show ama stream gun
-    show coil stream fight
     "Ama makes the first move, raising her rifle in my direction."
     $ AddChatter(vig4_sc7_3_coil_comment1)
     menu:
@@ -5292,11 +5198,9 @@ label vig4_sc7_3_coil():
             amaS "Ah ah ah, can't end things too quickly, Mozely." 
     "Ama lifts the rifle to aim at me again."
     "Coil reaches his hands forward. Devices like shield generators are strapped to his palms."
-    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "A burst of energy suddenly blasts from them, striking Ama's rifle and rending it to pieces."
     show ama stream confused
-    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment3)
     "She takes a moment to look at the destroyed gun, then tosses it to the side."
@@ -5304,22 +5208,17 @@ label vig4_sc7_3_coil():
         $ AddChatter(vig4_sc7_3_coil_comment4)
     show ama stream angry
     amaS "Well, aren't you just full of surprises?"
-    show coil stream upset
     cS "Don't assume I've spent my entire life cooped up in a lab."
     "Ama straightens her back and cracks her knuckles."
-    show coil stream fight
     $ AddChatter(vig4_sc7_3_coil_comment5)
     "Ama charges in my direction as Coil's blasters charge."
-    show coil stream shield
     play audio "energyPulse.wav" volume 1.2
     "But it's a feint."
     "As the energy releases, Ama doubles back, heading toward Coil, while the energy blasts sail wide of her."
-    show coil stream fight
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment6)
     "Before Coil can move, Ama has closed the distance and swings."
     "It's a haymaker, and Coil wasn't ready."
-    show coil stream hurt
     play audio "punch.wav" volume 2.0
     play audio "shield.wav"
     hide coil with Dissolve(0.3)
@@ -5327,7 +5226,7 @@ label vig4_sc7_3_coil():
     $ AddChatter(vig4_sc7_3_coil_comment7)
     vS "Pops!"
     "Ama draws a knife from her boot."
-    show ama stream happy at stream_center with move
+    show ama stream happy
     amaS "Now then, Mozely. Where were we?"
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_coil_comment8)
@@ -5387,7 +5286,6 @@ label vig4_sc7_3_coil():
             "I swing my knife up toward her chest."
     play audio "punch.wav" volume 2.0
     "Ama's knee slams into my jaw before I realize what happened."
-    with hpunch
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment17)
     "She baited me."
@@ -5432,8 +5330,8 @@ label vig4_sc7_3_coil():
     stop backAudio fadeout 1.0
     stop backAudio2 fadeout 1.0
     "Finally, I push myself into a sitting position."
-    show ama stream angry at stream_center with dissolve
-    show coil stream hurt at stream_left with dissolve
+    show ama stream neutral at stream_center with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Just in time to see Ama plunge her knife into Coil's chest."
     vS "No!"
     "Coil slumps to the ground, his back leaning against the wall."
@@ -5543,7 +5441,7 @@ label vig4_sc7_3_coil():
         $ AddChatter(vig4_sc7_3_coil_comment41)
     "The energy shield dissipates. Vega rushes to Coil's side."
     vS "No. Don't go. Don't go. Don't leave me."
-    show coil stream hurt at stream_left with dissolve
+    show coil stream neutral at stream_left with dissolve
     "Coil opens his eyes."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment42)
@@ -5553,12 +5451,10 @@ label vig4_sc7_3_coil():
     "A small spurt of blood pools in his shirt."
     cS "The blade did not cut too deep."
     hide screen streamerCommentary
-    show coil stream neutral
     $ AddChatter(vig4_sc7_3_coil_comment43)
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_coil_comment44)
     "He looks to me."
-    show coil stream happy
     cS "Thank you for taking care of the rest."
     menu:
         cS "Thank you for taking care of the rest."
@@ -5628,7 +5524,6 @@ label vig4_sc7_3_coil():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment51)
     if vig4_defendPolaris == True:
-        show coil stream happy
         cS "I would say it looks all but certain."
         cS "Captain Moze, Polaris may be in ruins, but its people will endure. In no small part thanks to your actions today."
         if viewershipHigh == True or viewershipMed == True:
@@ -5650,17 +5545,14 @@ label vig4_sc7_3_coil():
                 $ AddChatter(vig4_sc7_3_coil_comment56)
                 cS "You shall have it."
     elif vig4_defendPolaris == False and vig4_killDflies == False:
-        show coil stream happy
         cS "The chances are certainly much higher now."
         cS "Although your methods are... messy, Captain Moze, without your presence, Vega and I would likely be dead."
         cS "We can offer you and your crew sanctuary while you rest and recover."
         $ AddChatter(vig4_sc7_3_coil_comment56)
         cS "You and your crew have earned that, at least."
     else:
-        show coil stream upset
         cS "The carnage from this battle won't go over well with the higher-ups."
         cS "But considering we'd be dead without her, I'd say we'll have to take her on board."
-        show coil stream happy
         cS "At least for the time being while we all catch our breath."
         $ AddChatter(vig4_sc7_3_coil_comment56)
     mS "And MAC?"
@@ -5984,7 +5876,6 @@ label vig4_epilogue_coil():
     mS "See what?"
     play audio "macPing.wav" volume 1.2
     macS "There! It was a little flicker in front of one of the stars!"
-    show coil stream happy
     cS "He has sharp eyes."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_epilogue_coil_comment15)
@@ -6638,6 +6529,27 @@ label vig4_macro_start():
         $ topfan = "pickledDragons"
     else:
         $ topfan = "Coriolis"
+    if vig4_interactions >= 20:
+        $ flinch_followership -= 4
+    elif vig4_interactions >= 12:
+        $ flinch_followership -= 3
+    else:
+        $ flinch_followership -= 2
+    
+    #For determining if you reached Affiliate. Got the requisite number of Followers and viewers.
+    if viewershipHigh == True and flinch_followership <= 0:
+        $ Affiliate = True
+        $ flinch_followership = 500
+    elif viewershipHigh == True and flinch_followership > 0:
+        $ Affiliate = False
+    elif viewershipMed == True and flinch_followership <= 0:
+        $ Affiliate = True
+        $ flinch_followership = 500
+    elif viewershipMed == True and flinch_followership > 0:
+        $ Affiliate = True
+    else:
+        $ Affiliate = False
+
     "That was the last stream."
     "It's the moment of truth." 
     "Time to check Flinch."
@@ -6742,15 +6654,6 @@ label FlinchAnalytics_vig4():
     $ screenComplete = False
     $ flinchView = True
     $ flinchCheck = 0
-    if viewershipHigh == True:
-        $ Affiliate = True
-        $ followerGoal = 500
-    elif viewershipMed == True:
-        $ Affiliate = True
-        $ followerGoal = 500
-    else:
-        $ Affiliate = False
-        $ followerGoal = 0
     #scene flinch_v4screen with dissolve
     if Affiliate == True and vig3_viewership == "High":
         scene flinch_v4screen1 with dissolve
@@ -6772,40 +6675,37 @@ label FlinchAnalytics_vig4():
     $ vbar10 += viewCheck10
     "You navigate to the Flinch analytics page."
     "And there it is."
-    if Affiliate == False:
-        "You missed Affiliate..."
-        "9.4 average viewers."
+    if Affiliate == False and flinch_followership <= 0:
+        "You missed Affiliate."
+        "You got the total number of followers, but..."
+        "9.4 average viewers over the month."
         "You missed by less than one average viewer."
         "..."
         "How do you feel?"
         menu:
             "How do you feel?"
             "I feel horrible.":
-                "Screw you, you stupid game. How do you think I feel?"
                 "Like crap."
-                "I put in all this work, all this time, and I didn't get what I wanted."
+                "You put in all this work, all this time, and didn't get what you wanted."
                 "Does that mean it wasn't worth it?"
                 menu:
                     "Does that mean it wasn't worth it?"
                     "It wasn't.":
-                        "I see what you're trying to go for."
-                        "That whole \"it's about the journey, not the destination\" cliche."
-                        "And I get it."
-                        "But I wanted this."
+                        "People say \"it's about the journey, not the destination\"."
+                        "But you wanted this."
                         "{i}Real bad.{/i}"
-                        "I'm sorry. I didn't mean to be that harsh."
-                        "And I know it doesn't really matter in the long run."
+                        "You know it doesn't really matter in the long run."
                         "It's just..."
-                        "I really wanted to make it this time."
+                        "You really wanted to make it this time."
                         "It sucks."
                     "No it was.":
-                        "No, you're right. It was worth it."
-                        "I got to make some interesting connections and explore the game in a way I normally wouldn't have."
+                        "In some ways, it was worth it."
+                        "You got to make some interesting connections and explore the game in a way you normally wouldn't have."
                         "So it was still a worthwhile experience."
-                        "But I didn't get the outcome I wanted."
+                        "But you didn't get the outcome I wanted."
                         "And that sucks."
-                        "I know it doesn't really matter in the long run."
-                        "I just really wanted to make it this time."
+                        "You know it doesn't really matter in the long run."
+                        "You just really wanted to make it this time."
             "It doesn't matter.":
                 "Strangely, it doesn't feel like it matters that much to you."
                 "After all this time and all that work, maybe getting to Affiliate wasn't the goal."
@@ -6813,42 +6713,109 @@ label FlinchAnalytics_vig4():
                 menu:
                     "Then what was the goal?"
                     "Community.":
-                        "My goal was to build a sense of community with my stream."
-                        "Whether Flinch's metrics reward that or not, I think I achieved that."
-                        "And that's more important to me."
+                        "Your goal was to build a sense of community with the stream."
+                        "Whether Flinch's metrics reward that or not, you achieved that."
+                        "And that's more important."
                     "Integrity.":
-                        "I wanted to do this my way, not change just to get Flinch's recognition."
-                        "I'm proud of myself for sticking to my guns."
-                        "Even though I didn't get what I thought I wanted, I feel good about my choices."
+                        "You wanted to do this your way, not change just to get Flinch's recognition."
+                        "You're proud of myself for sticking to your guns."
+                        "Even though you didn't get what you thought you wanted, you feel good about your choices."
                     "Having fun.":
-                        "I just wanted to have fun."
-                        "And Flinch's metrics don't reflect the joy I had during this experience."
-                        "Whether it was the community I built, or the choices I made, I had fun doing it all."
+                        "You just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy you had during this experience."
+                        "Whether it was the community you built, or the choices you made, you had fun doing it all."
             "I'm glad I didn't make it.":
                 "It's strange, for some reason, you feel... happy to not make Affiliate."
                 "Why is that?"
                 menu:
                     "Why is that?"
                     "Flinch doesn't dictate my happiness.":
-                        "I just wanted to have fun."
-                        "And Flinch's metrics don't reflect the joy I had during this experience."
-                        "Whether it was the community I built, or the choices I made, I had fun doing it all."
-                        "I'm happy because Flinch doesn't get to dictate my happiness."
+                        "You just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy you had during this experience."
+                        "Whether it was the community you built, or the choices you made, you had fun doing it all."
+                        "Your happy because Flinch doesn't get to dictate your happiness."
                     "My community is what matters.":
-                        "My goal was to build a sense of community with my stream."
-                        "Whether Flinch's metrics reward that or not, I think I achieved that."
-                        "And that's more important to me."
+                        "Your goal was to build a sense of community with your stream."
+                        "Whether Flinch's metrics reward that or not, you think you achieved that."
+                        "And that's more important."
                     "My integrity is what matters.":
-                        "I wanted to do this my way, not change just to get Flinch's recognition."
-                        "I'm proud of myself for sticking to my guns."
-                        "Even though I didn't get what I thought I wanted, I feel good about my choices."
+                        "You wanted to do this your way, not change just to get Flinch's recognition."
+                        "You're proud of yourself for sticking to your guns."
+                        "Even though you didn't get what you thought you wanted, you feel good about your choices."
+    if Affiliate == False and flinch_followership > 0:
+        "You missed Affiliate."
+        "You had an average weekly viewership over 10, but..."
+        "You didn't get the 50 follower goal."
+        "You were so close. You {i}just{i} missed it."
+        "..."
+        "How do you feel?"
+        menu:
+            "How do you feel?"
+            "I feel horrible.":
+                "Like crap."
+                "You put in all this work, all this time, and didn't get what you wanted."
+                "Does that mean it wasn't worth it?"
+                menu:
+                    "Does that mean it wasn't worth it?"
+                    "It wasn't.":
+                        "People say \"it's about the journey, not the destination\"."
+                        "But you wanted this."
+                        "{i}Real bad.{/i}"
+                        "You know it doesn't really matter in the long run."
+                        "It's just..."
+                        "You really wanted to make it this time."
+                        "It sucks."
+                    "No it was.":
+                        "In some ways, it was worth it."
+                        "You got to make some interesting connections and explore the game in a way you normally wouldn't have."
+                        "So it was still a worthwhile experience."
+                        "But you didn't get the outcome I wanted."
+                        "And that sucks."
+                        "You know it doesn't really matter in the long run."
+                        "You just really wanted to make it this time."
+            "It doesn't matter.":
+                "Strangely, it doesn't feel like it matters that much to you."
+                "After all this time and all that work, maybe getting to Affiliate wasn't the goal."
+                "Then what was the goal?"
+                menu:
+                    "Then what was the goal?"
+                    "Community.":
+                        "Your goal was to build a sense of community with the stream."
+                        "Whether Flinch's metrics reward that or not, you achieved that."
+                        "And that's more important."
+                    "Integrity.":
+                        "You wanted to do this your way, not change just to get Flinch's recognition."
+                        "You're proud of myself for sticking to your guns."
+                        "Even though you didn't get what you thought you wanted, you feel good about your choices."
+                    "Having fun.":
+                        "You just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy you had during this experience."
+                        "Whether it was the community you built, or the choices you made, you had fun doing it all."
+            "I'm glad I didn't make it.":
+                "It's strange, for some reason, you feel... happy to not make Affiliate."
+                "Why is that?"
+                menu:
+                    "Why is that?"
+                    "Flinch doesn't dictate my happiness.":
+                        "You just wanted to have fun."
+                        "And Flinch's metrics don't reflect the joy you had during this experience."
+                        "Whether it was the community you built, or the choices you made, you had fun doing it all."
+                        "Your happy because Flinch doesn't get to dictate your happiness."
+                    "My community is what matters.":
+                        "Your goal was to build a sense of community with your stream."
+                        "Whether Flinch's metrics reward that or not, you think you achieved that."
+                        "And that's more important."
+                    "My integrity is what matters.":
+                        "You wanted to do this your way, not change just to get Flinch's recognition."
+                        "You're proud of yourself for sticking to your guns."
+                        "Even though you didn't get what you thought you wanted, you feel good about your choices."
     else:
         "You did it!"
         if viewershipHigh == True:
             "Not only did you do it, you smashed the average viewership requirement!"
-            "You probably didn't even have to do that last stream and you would have made it!"
+            "And you cleared the followership goal!"
         else:
-            "It's not by that much, but you cleared the average viewership requirement!"
+            "It's not by that much, but you cleared the average viewership requirement and got all the required followers!"
             "Good thing you had all those viewers for that last stream!"
         "Congratulations, Affiliate!"
         "How does it feel?"
@@ -6856,23 +6823,23 @@ label FlinchAnalytics_vig4():
             "How does it feel?"
             "It feels good.":
                 "It feels so good!"
-                "I've been trying to get here for years!"
-                "I know it's not much in the grand scheme of things, but just to be here after starting from nothing means a lot."
-                "I'm proud of myself for persevering. And it just feels really good!"
+                "You've been trying to get here for years!"
+                "You know it's not much in the grand scheme of things, but just to be here after starting from nothing means a lot."
+                "You're proud of yourself for persevering. And it just feels really good!"
             "It's a relief.":
                 "It's more of a relief than anything."
-                "This has been a weight on my back for a long time."
-                "But now to finally be at the end of this journey, it feels like I can let go and just enjoy the ride again."
+                "This has been a weight on you're back for a long time."
+                "But now to finally be at the end of this journey, it feels like you can let go and just enjoy the ride again."
             "I'm so tired.":
-                "I'm so tired."
+                "You're so tired."
                 "This whole process has been such a grind."
-                "I'm sure I'll be happy in a little bit."
-                "But right now, I just want to sleep."
+                "You're sure you'll be happy in a little bit."
+                "But right now, you just want to sleep."
             "It's a bit disappointing.":
-                "I don't know why exactly, but I feel... disappointed?"
-                "Maybe this wasn't as important to me as I thought it was."
+                "You don't know why exactly, but you feel... disappointed?"
+                "Maybe this wasn't as important to as you thought it was."
                 "Maybe something changed over these past few weeks."
-                "Maybe I'll feel differently in a couple days."
+                "Maybe you'll feel differently in a couple days."
                 "But right now it feels kind of hollow."
     "You could probably stare at this page for hours."
     $ renpy.sound.play("audio/ReceiveText.ogg")

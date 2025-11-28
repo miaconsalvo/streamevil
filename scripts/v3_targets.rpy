@@ -1767,20 +1767,34 @@ label vig3_analytics_audience():
     hide screen viewershipButton_vig3
     $ flinchCheck += 1
     $ flinch_audienceCheck = True
-    if viewershipHigh == True:
-        "You made it! 50 Followers!"
-        "That means you won't have to collect any new follows for the last stream."
-        "But you'll still have to keep the average viewership above ten."
-        "After all the people watching this week though, that shouldn't be an issue."
-        "Cross your fingers."
-    else:
-        "49 followers? You're one away!"
-        "You were hoping to cross that threshold already, but at least you're close."
-        "It shouldn't be too much of an issue. You just need to grab one extra follow by the end of the next stream."
-        "That should be doable."
-        "You'll also have to keep the average viewership over 10."
-        "This week was a little close for comfort. Hopefully next week will be stable."
-        "Cross your fingers."
+    if flinch_followership <= 2:
+        "Almost have enough followers to make Affiliate."
+        "You've been doing a great job at keeping up with the chat and interacting with everyone."
+        "It really feels like you've started to build a community."
+        "You still need a few more followers, but if you keep doing what you're doing, it should work out."
+    elif flinch_followership < 4:
+        "Still need a few more followers, but you're not too far away."
+        "The final episode will probably draw some new people in so you'll have a chance to close the distance next week."
+        "Just make sure you're paying attention to chat when you can."
+    elif flinch_followership >= 4:
+        "You're pretty far away from the followership goal."
+        "Maybe you haven't been interacting with the chat enough to get people to follow you."
+        "It's not over yet. The last episode should bring in a bunch of people, so you have a chance to make it up."
+        "But this is the last chance. You'll have to make the most out of your opportunities to interact with the chat."
+    #if viewershipHigh == True:
+    #    "You made it! 50 Followers!"
+    #    "That means you won't have to collect any new follows for the last stream."
+    #    "But you'll still have to keep the average viewership above ten."
+    #    "After all the people watching this week though, that shouldn't be an issue."
+    #    "Cross your fingers."
+    #else:
+    #    "49 followers? You're one away!"
+    #    "You were hoping to cross that threshold already, but at least you're close."
+    #    "It shouldn't be too much of an issue. You just need to grab one extra follow by the end of the next stream."
+    #    "That should be doable."
+    #    "You'll also have to keep the average viewership over 10."
+    #    "This week was a little close for comfort. Hopefully next week will be stable."
+    #    "Cross your fingers."
     if flinchCheck >= 3:
         $ screenComplete = True
     else:
@@ -1795,10 +1809,11 @@ label vig3_analytics_viewcount():
     if viewershipHigh == True:
         "The viewership numbers for this week are up compared to last week."
         "That's a good sign!"
+        "Hopefully next week will keep up the average viewership."
     else:
         "The viewership numbers for this week are similar to last week."
         "That's not bad, but it's a bit disappointing that they didn't grow at all."
-    "Hopefully next week will keep up the average viewership."
+        "If you lose people next week, you might not make it..."
     jump vig3_analytics_viewcount2
 
 label vig3_analytics_viewcount2():
@@ -1826,7 +1841,7 @@ label vig3_analytics_viewcount2():
             "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, you should be solid."
             "Cross your fingers."
             jump vig3_analytics_viewcount2
-        "Playing with chat is interesting." if flinchViewershipChat == False:
+        "Playing with chat is interesting." if flinchViewershipChat == False and vig3_interactions >= 5:
             $ flinchViewershipChat = True
             "Playing this game along with the chat is interesting."
             "You're hearing about so many people's perspectives on the choices before you even make them."

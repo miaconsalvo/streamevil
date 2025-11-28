@@ -269,6 +269,7 @@ default flinch_viewcountCheck = False
 default flinch_topfanCheck = False
 default flinch_audienceCheck = False
 default viewershipThoughtCheck = False
+default flinch_followership = 7
 
 ##vignette 2 flinch variables
 default flinchViewershipShnzi = False

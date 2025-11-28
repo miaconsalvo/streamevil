@@ -38,7 +38,7 @@ label vignette3Start():
     $ screenComplete = False
     $ macroChoice = False
     $ chatter_list = []
-    if vig2_outlawEpilogue == True and vig2_interactions > 7:
+    if vig2_outlawEpilogue == True:
         $ viewershipHigh = True
         $ viewershipMed = False
         $ viewershipLow = False
@@ -5305,6 +5305,12 @@ label vig3_macro_start():
         $ topfan = "pickledDragons"
     else:
         $ topfan = "Coriolis"
+    if vig3_interactions >= 14:
+        $ flinch_followership -= 3
+    elif vig3_interactions >= 9:
+        $ flinch_followership -= 2
+    else:
+        $ flinch_followership -= 1
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True

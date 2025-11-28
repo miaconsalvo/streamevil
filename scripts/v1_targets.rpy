@@ -359,6 +359,8 @@ label vig1_analytics_viewcount():
             "You were just lucky."
             "But luck is opportunity plus preparation."
     "Hopefully you can keep up this momentum."
+    "You'll have to keep an average of ten viewers per stream to get Affiliate."
+    "People seemed excited by the Outlaw choices. Maybe that will help get more viewers."
     ###The clause below this will check to see if we should consider the scene as finished
     if flinchCheck >= 3:
         $ screenComplete = True
@@ -372,7 +374,8 @@ label vig1_analytics_audience():
     $ audienceCheck = True
     hide screen viewershipButton
     "That spike from the raid got you a bunch of new followers!"
-    "You'll still have to get several more followers and keep an average viewership of ten per stream to get Affiliate."
+    "You'll still have to get seven more before the end of the month to make Affiliate."
+    "Interacting with the chat is important for getting people to come back consistently." #new line to indicate what interacting with the chat will do
     "Not everyone from the raid will stick around next time though."
     menu:
         "Not everyone from the raid will stick around next time though."
