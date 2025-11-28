@@ -1000,7 +1000,7 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
                     play audio "shield" volume 1.5
-                    "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
+                    "A thin green veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
@@ -4567,7 +4567,7 @@ label vig4_sc7_2():
     "I whip around to see MAC careening toward the open door."
     play audio "shield.wav" volume 1.5
     #"{b}WHOOOSH!{/b}"
-    "A blue veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
+    "A veil of light flashes as MAC tries to cross the threshold, then gets knocked back."
     "An energy shield."
     $ AddChatter(vig4_sc7_2_comment3)
     show vega stream gun at stream_left5 with dissolve
@@ -4847,7 +4847,7 @@ label vig4_sc7_3_ama():
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment25)
     "Blood streaks down his arm. The device in his palm short circuits."
-    "The thin veil of blue light around him sparks inconsistently."
+    "The thin veil of green light around him sparks inconsistently."
     "Ama is motionless on the floor."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment26)
