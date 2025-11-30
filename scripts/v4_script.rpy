@@ -4233,7 +4233,7 @@ label vig4_sc5_1():
     "I give one last look back at the Oakley, then Jennica gives me her arm for support."
     "I feel the heat on my back all the way up the hill."
     hide oakley_ruin with Dissolve(2.0)
-    show targetbase_stream at topleft onlayer background with dissolve
+    show polarisfight_stream at topleft onlayer background with dissolve
     play music "soundtrack/theme.wav"
     play backAudio "lazerFire.wav" volume 0.2
     play backAudio2 "siren.wav" volume 0.2

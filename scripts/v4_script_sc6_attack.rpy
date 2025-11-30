@@ -2,8 +2,7 @@
 
 ###Attacking Polaris with Ama
 label vig4_sc6_attack_1_ama():
-    show vig1_town_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
+    show polarisfight_stream at topleft onlayer background with dissolve
     play backAudio "fireBackground.wav" volume 0.2
     "Polaris burns."
     $ viewCount += 1
@@ -662,7 +661,7 @@ label vig4_sc6_attack_3_ama():
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             $ AddChatter(vig4_sc6_attack_3_ama_comment12)
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
             show teresa stream think
             enS "Tough hit, but shields are still at 85\% and holding."
@@ -693,7 +692,7 @@ label vig4_sc6_attack_3_ama():
             enS "Contact on the rooftops!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment17)
             play audio "grenade.wav" volume 1.5
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
             $ AddChatter(vig4_sc6_attack_3_ama_comment18)
@@ -705,7 +704,7 @@ label vig4_sc6_attack_3_ama():
             amaS "I know, I see them too!"
             "Ama aims the machine gun at the direction of the squad and begins firing, but it's too late."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another rocket streaks through the air, and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
             show teresa stream think
@@ -763,7 +762,7 @@ label vig4_sc6_attack_3_ama():
             $ AddChatter(vig4_sc6_attack_3_ama_comment25)
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
             show teresa stream shock
             enS "Shields are at 70\%. We're taking a lot of hits."
@@ -787,7 +786,7 @@ label vig4_sc6_attack_3_ama():
             show teresa stream neutral
             enS "Captain, we're starting to take less fire from the Dragonflies."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
             "It's a group of BC enforcers armed with rocket launchers." 
@@ -802,7 +801,7 @@ label vig4_sc6_attack_3_ama():
             play audio "tankShot.wav" volume 1.5
             "The beam of blue light strikes the building as a pillar of flame erupts into the night."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
             $ AddChatter(vig4_sc6_attack_3_ama_comment32)
             show teresa stream shock
@@ -866,7 +865,7 @@ label vig4_sc6_attack_3_ama():
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
             hide screen streamerCommentary
             play audio "shipFlyBy.wav" volume 1.2
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
             play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
@@ -878,7 +877,7 @@ label vig4_sc6_attack_3_ama():
             show jennica stream angry
             pS "We're close, just a bit further!"
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "An explosion suddenly detonates against our side."
             mS "Teresa, report!"
             $ AddChatter(vig4_sc6_attack_3_ama_comment30)
@@ -894,7 +893,7 @@ label vig4_sc6_attack_3_ama():
             play audio "tankShot.wav" volume 1.5
             "A bright flashing rocket streaks toward us just as I fire the cannon."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "The rocket impacts on our side, but at the same time, the tank's blast detonates on the building."
             play audio "explosion.wav" volume 1.3
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
@@ -904,7 +903,7 @@ label vig4_sc6_attack_3_ama():
             "Ama lays on the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "They detonate, jostling the vehicle."
             $ AddChatter(vig4_sc6_attack_3_ama_comment42)
             show teresa stream shock
@@ -998,7 +997,7 @@ label vig4_sc6_attack_3_ama():
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't—"
         play audio "shipFlyBy.wav" volume 2.0
-        show vig1_town_stream with hpunch
+        show polarisfight_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         $ AddChatter(vig4_sc6_defend_5_comment16)
         "Its wings open into attack formation as green bolts of light rip into a dropship, sending it to the ground."
@@ -1179,7 +1178,7 @@ label vig4_sc6_attack_3_ama():
 
 label vig4_sc7_1_attack_ama():
     hide ama with dissolve
-    hide vig1_town_stream with Dissolve(1.5)
+    hide polarisfight_stream with Dissolve(1.5)
     stop music fadeout 2.0
     "As soon as the doors close behind us, the sounds of battle become muffled."
     "The tower is utterly silent."
@@ -1414,8 +1413,7 @@ label vig4_sc7_1_attack_ama():
 
 
 label vig4_sc6_attack_1():
-    show vig1_town_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
+    show polarisfight_stream at topleft onlayer background with dissolve
     "Polaris burns."
     play backAudio "fireBackground.wav" volume 0.2 fadein 1.0
     $ viewCount += 1
@@ -1997,7 +1995,7 @@ label vig4_sc6_attack_3():
             "The rapid fire of the machine gun tears into the squads, sending them into a retreat."
             hide screen streamerCommentary
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "A grenade explodes next to us, sending BC enforcers flying and shaking our hull."
             enS "Tough hit, but shields are still at 85\% and holding."
             "I grip the cannon controls, and point at a squad of Dragonflies huddled behind nearby cover."
@@ -2028,7 +2026,7 @@ label vig4_sc6_attack_3():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_attack_3_ama_comment17)
             play audio "grenade.wav" volume 1.5
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
             $ AddChatter(vig4_sc6_attack_3_ama_comment18)
@@ -2039,7 +2037,7 @@ label vig4_sc6_attack_3():
             enS "I'm trying!"
             "Teresa aims the machine gun at the direction of the squad and begins firing, but too late."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another rocket streaks through the air, and collides with us just as the bolts from the machine gun rip into their bodies."
             mS "Resa, how're we doing?"
             enS "Bad hits. We're at 40\% shields, but holding. We can't take many more of those."
@@ -2092,7 +2090,7 @@ label vig4_sc6_attack_3():
             "Our shields continue to take hits from both sides as blaster fire rattles against our hull."
             hide screen streamerCommentary
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "A grenade explodes at our side, shaking the tank slightly."
             enS "Shields are at 70\%. We're taking a lot of hits."
             $ AddChatter(vig4_sc6_attack_3_ama_comment26)
@@ -2113,7 +2111,7 @@ label vig4_sc6_attack_3():
             $ AddChatter(vig4_sc6_attack_3_ama_comment28)
             enS "Captain, we're starting to take less fire from the Dragonflies."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Another detonation on the side of the tank."
             "I whip a monitor around to view the assailants."
             "It's a group of BC enforcers armed with rocket launchers."
@@ -2128,7 +2126,7 @@ label vig4_sc6_attack_3():
             play audio "tankShot.wav" volume 1.5
             "The beam of blue light strikes the building as another pillar of flame erupts into the night air."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "The rocket detonates close to us, but not a direct hit."
             $ AddChatter(vig4_sc6_attack_3_ama_comment32)
             enS "Shields are at 30\%."
@@ -2186,7 +2184,7 @@ label vig4_sc6_attack_3():
             "I grip the controls for the main cannon. The entire tank thrums with energy as it charges."
             hide screen streamerCommentary
             play audio "shipFlyBy.wav" volume 1.2
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "Above, a dropship aims down toward our position, turrets sending fire against our hull."
             play audio "tankShot.wav" volume 1.5
             "A beam of blue light bursts from the cannon, striking the dropship out of the sky."
@@ -2198,7 +2196,7 @@ label vig4_sc6_attack_3():
                 $ AddChatter(vig4_sc6_attack_3_comment39)
             pS "We're close, just a bit further!"
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "An explosion suddenly detonates against our side."
             $ AddChatter(vig4_sc6_attack_3_ama_comment30)
             mS "Teresa, report!"
@@ -2214,7 +2212,7 @@ label vig4_sc6_attack_3():
             play audio "tankShot.wav" volume 1.5
             "A bright flashing rocket streaks toward us just as I fire the cannon."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "The rocket impacts on our side, but at the same time, the tank's blast detonates on the building."
             play audio "explosion.wav" volume 1.3
             "A pillar of flame erupts into the sky as the edifice crumbles to the ground."
@@ -2223,7 +2221,7 @@ label vig4_sc6_attack_3():
             "Teresa fires the machine gun full auto as BC enforcers break ranks to move toward our position."
             "Most of them are cut down, but a couple are able to lob grenades that land at our side."
             play audio "grenade.wav" volume 1.0
-            show vig1_town_stream with hpunch
+            show polarisfight_stream with hpunch
             "They detonate, jostling the vehicle."
             $ AddChatter(vig4_sc6_attack_3_ama_comment42)
             enS "Shields are down to 30\%! We can't take much more of this!"
@@ -2292,7 +2290,7 @@ label vig4_sc6_attack_3():
         $ AddChatter(vig4_sc6_defend_5_comment15)
         enS "Captain, we're being hailed by a new signal, I don't—"
         play audio "shipFlyBy.wav" volume 2.0
-        show vig1_town_stream with hpunch
+        show polarisfight_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_defend_5_comment16)
@@ -2465,7 +2463,7 @@ label vig4_sc6_attack_3():
     jump vig4_sc7_1_attack
 
 label vig4_sc7_1_attack():
-    hide vig1_town_stream with dissolve
+    hide polarisfight_stream with dissolve
     stop music fadeout 2.0
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."

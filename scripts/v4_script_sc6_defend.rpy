@@ -1,8 +1,7 @@
 ####This script contains the code for the Polaris Defense route of Vignette 4 up until Moze makes her choice about siding with Coil and Ama
 
 label vig4_sc6_defend_1():
-    show vig1_town_stream at topleft onlayer background with dissolve
-    hide targetbase_stream
+    show polarisfight_stream at topleft onlayer background with dissolve
     "Polaris burns."
     play backAudio "fireBackground.wav" volume 0.3 fadein 1.0
     $ viewCount += 1
@@ -486,7 +485,7 @@ label vig4_sc6_defend_2():
     "I charge the cannon again and unleash its blast at another dropship." 
     "Its shell also slams into the ground, this time close to us."
     play audio "explosion.wav" volume 1.5
-    show vig1_town_stream with hpunch
+    show polarisfight_stream with hpunch
     "The explosion shakes the tank."
     $ AddChatter(vig4_sc6_defend_2_comment12)
     play audio "tankChargeShot.wav" volume 1.5
@@ -605,7 +604,7 @@ label vig4_sc6_defend_3_barricade():
             "The barricade is too important. I couldn't risk it on them."
             $ AddChatter(vig4_sc6_defend_3_barricade_comment6)
     play audio "grenade.wav" volume 1.0
-    show vig1_town_stream with vpunch
+    show polarisfight_stream with vpunch
     "A grenade explodes at our side."
     enS "Shields are at 60\%. We can maintain this position for a bit longer."
     vS "Scumbags!"
@@ -617,7 +616,7 @@ label vig4_sc6_defend_3_barricade():
     enS "Shields holding at 45\%."
     mS "Alright, time to reposition, find a way to recharge those shields."
     play audio "grenade.wav" volume 1.0
-    show vig1_town_stream with hpunch
+    show polarisfight_stream with hpunch
     "The tank jerks to the side as an explosion detonates on our side."
     $ AddChatter(vig4_sc6_defend_3_frontline_comment12)
     pause 0.5
@@ -679,7 +678,7 @@ label vig4_sc6_defend_3_frontline():
             "They're lucky I didn't leave them to die."
             $ AddChatter(vig4_sc6_defend_3_frontline_comment11)
     play audio "grenade.wav" volume 1.0
-    show vig1_town_stream with vpunch
+    show polarisfight_stream with vpunch
     "A grenade explodes at our side."
     show jennica stream angry
     pS "Damn, maneuverability is getting a little wonky. How much longer do we have to stay out here?"
@@ -721,7 +720,7 @@ label vig4_sc6_defend_4():
     "Smoke streaks through the air."
     $ AddChatter(vig4_sc6_defend_4_comment2)
     play audio "grenade.wav" volume 1.5
-    show vig1_town_stream with hpunch
+    show polarisfight_stream with hpunch
     "The rocket slams into the tank's side."
     play audio "shipAlarmShort.wav" volume 1.0
     "Alarms start blaring, red lights flashing all around the tank's interior."
@@ -790,7 +789,7 @@ label vig4_sc6_defend_5():
     "He grabs me by the throat and lifts me into the air."
     "I flail at his arms, scratch at his face, but he's massive and I can't get purchase."
     $ AddChatter(vig4_sc6_defend_5_comment5)
-    hide vig1_town_stream with Dissolve(2.0)
+    hide polarisfight_stream with Dissolve(2.0)
     "The periphery of my vision starts to go dark."
     $ AddChatter(vig4_sc6_defend_5_comment6)
     hide bc_enforcer with dissolve
@@ -800,7 +799,7 @@ label vig4_sc6_defend_5():
     pause 0.5
     play audio "scream.wav" volume 1.0
     mS "{i}gasp{/i}"
-    show vig1_town_stream with Dissolve(0.5)
+    show polarisfight_stream with Dissolve(0.5)
     "Then I fall to the floor as something thuds next to me."
     "Staggering to my knees, I see that the enforcer has a smoking hole in the back of his head."
     show vega stream gun at stream_left with Dissolve(0.5)
@@ -877,7 +876,7 @@ label vig4_sc6_defend_5():
         enS "Captain, we're being hailed by a new signal, I don't—"
         hide vega with dissolve
         play audio "shipFlyBy.wav" volume 2.0
-        show vig1_town_stream with hpunch
+        show polarisfight_stream with hpunch
         "A ship suddenly streaks overhead, careening toward the BC dropships."
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc6_defend_5_comment16)
@@ -1071,7 +1070,7 @@ label vig4_sc6_defend_5():
     jump vig4_sc7_1_defend
 
 label vig4_sc7_1_defend():
-    hide vig1_town_stream with dissolve
+    hide polarisfight_stream with dissolve
     stop music fadeout 1.0
     "As soon as the doors close behind me, the sounds of battle become muffled."
     "The tower is utterly silent."
@@ -1107,7 +1106,7 @@ label vig4_sc7_1_defend():
     show tower_no_star_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
     show ama stream gun at stream_left with dissolve
-    hide vig1_town_stream
+    hide polarisfight_stream
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment9)
     "Ama holds her rifle, aiming it at Coil's back."
