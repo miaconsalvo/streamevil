@@ -1497,10 +1497,12 @@ label vig3break_brb12():
     menu:
         "How's your progress?"
         "It's gonna be a while...":
+            $ csEngagement += 1
             player "It's gonna be a while."
             player "But that gives us more time to chat!"
             player "It's great to see all the new faces."
         "Rough for sure.":
+            $ kcEngagement += 1
             player "It's rough out here."
             player "But it's also been rough for the Oakley."
             player "Maybe they can also use the break."           
@@ -1525,6 +1527,7 @@ label vig3break_take7():
             player "I think we got this one!"
             player "We're not leaving without MAC."
         "Not without serious force.":
+            $ pdEngagement += 1
             player "Ama is not gonna let us go easily."
             player "We'll probably need to fight our way out."
             player "Gotta do it for MAC."          
@@ -1574,10 +1577,12 @@ label vig3break_kiss10():
     menu:
         "How do you feel about Outlaw MAC"
         "MAC's learning from the best.":
+            $ pdEngagement += 1
             player "The Oakley are the best in the buisness."
             player "The world's first robot Outlaw!"
             player "He just needs a little hat."
         "MAC is for something bigger than Outlaw life.":
+            $ csEngagement += 1
             player "We're not supposed to make him an Outlaw."
             player "We're sending him to the Dragonflies."
             player "Plus he's just a little guy."          
@@ -1600,11 +1605,13 @@ label vig3break_dead11():
     menu:
         "How'do you feel about the other Snakehawks?"
         "It feels nostalgic.":
+            $ csEngagement += 1
             player "It's nice to see them all again."
             player "Even if it's under stressful circumstance."
             player "And you know..."
             player "We killed one."
         "I prefer the newer characters.":
+            $ kcEngagement += 1
             player "Seeing everyone is nice."
             player "But it's better to meet the newer folks."
             player "I think they make the story more interesting."           
@@ -1629,6 +1636,7 @@ label vig3break_tense4():
             player "The SnakeHawks had a different code."
             player "We have an important goal now."
         "We are!":
+            $ pdEngagement += 1
             player "Hundred percent."
             player "We do what we need to."
             player "At any cost."           
@@ -1675,10 +1683,12 @@ label vig3break_reunion3():
     menu:
         "How do you feel about Rec and Allistar's lost reunion?"
         "That's just what happens.":
+            $ pdEngagement += 1
             player "It's a part of life."
             player "That could've happened even without our intervention."
             player "It'd be the same thing."
         "I know the feeling.":
+            $ csEngagement += 1
             player "I know..."
             player "It's hard being away from a sibling for that long."
             player "Especially when you can't even talk to them."      
@@ -1699,6 +1709,7 @@ label vig3break_reunion9():
     menu:
         "What about an Ama romance?"
         "I'd do anything!":
+            $ kcEngagement += 1
             player "I really want that to happen."
             player "That would be so awesome if we could."
             player "Probably need to survive first."

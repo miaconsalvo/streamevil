@@ -112,6 +112,7 @@ label vig3_break():
     menu: 
         "Let's talk about Ama."
         "Y'all I think we can take her?":
+            $ csEngagement += 1
             player "What do y'all think? Can we take her?"
             $ AddChatter (vig3break_ama_take_comment1)
             pause 0.5
@@ -148,6 +149,7 @@ label vig3_break():
             $ vig3break_ama_take_comment10.click = False
 
         "She is just *chef's kiss*.":
+            $ kcEngagement += 1
             player "Her design is just *chef's kiss*."
             $ AddChatter (vig3break_ama_kiss_comment1)
             pause 0.5
@@ -176,6 +178,7 @@ label vig3_break():
             $ vig3break_ama_kiss_comment10.click = False
 
         "So how dead do you think we are?":
+            $ pdEngagement += 1
             player "Alright, chat, how dead are we?"
             $ AddChatter (vig3break_ama_dead_comment1)
             pause 0.5
@@ -216,6 +219,7 @@ label vig3_break():
     menu: 
         "How does meeting Rec feel without Allistar?"
         "Not having Allistar adds some good tension.":
+            $ pdEngagement += 1
             player "I really like how tense the story is."
             $ AddChatter (vig3break_rec_tense_comment1)
             pause 0.5 
@@ -246,6 +250,7 @@ label vig3_break():
             player "We'll let it play out."
             player "I'm sure there are plenty more surprises waiting for us."
         "I wish I could've seen their reunion.":
+            $ csEngagement += 1
             player "I wish I saw that reunion."
             $ AddChatter (vig3break_rec_reunion_comment1)
             pause 0.5 
