@@ -365,6 +365,7 @@ label vig4_sc1_2():
             enS "Don't worry MAC, I'll have the captain's back."
         "This time you'll follow my orders, MAC.":
             $ kcEngagement -= 1
+            $ setEngagement()
             mS "MAC, this time you'll follow my orders."
             mS "No wandering off like you did in Akar."
             $ AddChatter(vig4_sc1_2_comment22)
@@ -467,6 +468,7 @@ label vig4_sc2_1():
                     $ stunGuy = True
                     $ outlaw += 1
                     $ pdEngagement += 1
+
                     $ engineerApproval += 1
                     mS "Oh, right, the \"star shower.\" I completely forgot about that."
                     with vpunch
@@ -483,6 +485,7 @@ label vig4_sc2_1():
                 "We're just passing through.":
                     $ marshal += 1
                     $ csEngagement += 1
+                    $ setEngagement()
                     $ engineerApproval -= 1
                     mS "We're just passing through."
                     mS "Our ship was having a bit of trouble so we decided to make a quick landing and see about some repairs."
@@ -516,6 +519,7 @@ label vig4_sc2_1():
                 "Signal Teresa to stun him.":
                     $ stunGuy = True
                     $ pdEngagement += 1
+                    $ setEngagement()
                     $ outlaw += 1
                     $ engineerApproval += 1
                     show teresa stream neutral
@@ -533,6 +537,7 @@ label vig4_sc2_1():
                 "Signal Teresa to stand down.":
                     $ marshal += 1
                     $ csEngagement += 1
+                    $ setEngagement()
                     $ engineerApproval -= 1
                     show teresa stream neutral
                     "I give Teresa the signal to stand down."
@@ -685,6 +690,7 @@ label vig2_sc2_3():
                         enS "It's a little... disconcerting."
                         "We just have to get him to the Dragonflies.":
                             $ kcEngagement -= 1
+                            $ setEngagement()
                             mS "We're almost there. All we have to do is get him to the Dragonflies."
                             if viewershipHigh == True or viewershipMed == True:
                                 $ AddChatter(vig4_sc2_3_comment8)
@@ -715,6 +721,7 @@ label vig2_sc2_3():
                 enS "It's a little... disconcerting."
                 "We just have to get him to the Dragonflies.":
                     $ kcEngagement -= 1
+                    $ setEngagement()
                     mS "We're almost there. All we have to do is get him to the Dragonflies."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_3_comment8)
@@ -746,6 +753,7 @@ label vig2_sc2_3():
                 enS "It's a little... disconcerting."
                 "We just have to get him to the Dragonflies.":
                     $ kcEngagement -= 1
+                    $ setEngagement()
                     mS "We're almost there. All we have to do is get him to the Dragonflies."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_3_comment8)
@@ -904,6 +912,7 @@ label vig4_sc2_4():
         "I think we got off on the wrong foot.":
             $ csEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             $ marshal += 1
             mS "I think we got off on the wrong foot here."
             mS "We've come a long way to deliver something important."
@@ -963,6 +972,7 @@ label vig4_sc2_4():
         "Signal Teresa and draw your weapon.":
             $ pdEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             $ outlaw += 1
             $ engineerApproval += 1
             "I give Teresa a signal under the counter."
@@ -1099,6 +1109,7 @@ label vig4_sc2_4():
             $ kcEngagement += 1
             "I take my aim off of the old man and signal Teresa to let him pass."
             mS "If he says it's ok."
+    $ setEngagement()
     "He turns to MAC."
     show coil at stream_center with move
     oS "Hello, little one. It is nice to finally meet you."
@@ -1179,6 +1190,7 @@ label vig4_sc2_5():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_5_comment9)
             cS "I understand. You must have several."
+    $ setEngagement()
     enS "Plenty."
     pS "A whole heap."
     if viewershipHigh == True:
@@ -1393,6 +1405,7 @@ label vig4_sc2_6():
                     $ pdEngagement += 1
                     $ kcEngagement += 2
                     $ csEngagement += 1
+                    $ setEngagement()
                     $ engineerApproval += 1
                     $ pilotApproval += 1
                     mS "Like hell you're taking him without us!"
@@ -1414,6 +1427,7 @@ label vig4_sc2_6():
                     $ csEngagement += 1
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
+                    $ setEngagement()
                     "I take a long breath."
                     "The stale atmosphere sticks in my throat. But I hold steady."
                     mS "Teresa, Jennica, this was always part of the plan, remember?"
@@ -1461,6 +1475,7 @@ label vig4_sc2_6():
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_6_comment41)
                     "Coil lets his hand fall and sighs." 
+            $ setEngagement()
             cS "Vega, you go to the festival. I'll join you after making contact."
             vS "Okay, Pops."
             "Coil turns around and heads to the back of the shop."
@@ -1570,6 +1585,7 @@ label vig4_sc3_2_vega():
     $ kcEngagement += 2 #Vega is effectively the "neutral" romance option with no viewer characters disliking it
     $ pdEngagement += 1
     $ csEngagement += 1
+    $ setEngagement()
     $ AddChatter(vig4_sc3_2_vega_comment1)
     mS "Actually, I'd like to get to know you better. How about you show me around?"
     $ AddChatter(vig4_sc3_2_vega_comment2)
@@ -1654,6 +1670,7 @@ label vig4_sc3_2_vega():
             "As the final targets pop into position, I aim true."
             "My shots hit the targets just before Vega's."
             $ AddChatter(vig4_sc3_2_vega_comment13)
+    $ setEngagement()
     "The cycle stops as the game ends."
     if vig4_vegaVictory == True:
         "Vega wins by just one target."
@@ -1684,6 +1701,7 @@ label vig4_sc3_2_vega_2():
         "Do you like living here?":
             $ csEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             mS "Vega, do you like living on Polaris?"
             show vega stream happy
             "She smiles, still keeping her gaze on the festival."
@@ -1729,6 +1747,7 @@ label vig4_sc3_2_vega_2():
         "Have you killed anyone before?":
             $ kcEngagement += 1
             $ pdEngagement += 1
+            $ setEngagement()
             mS "This question might be out of the ordinary, but I'm curious about something."
             vS "Please, fire away."
             mS "Have you ever killed anyone before."
@@ -1767,6 +1786,7 @@ label vig4_sc3_2_vega_2():
                         "Don't react.":
                             $ pdEngagement += 1
                             $ kcEngagement -= 1
+                            $ setEngagement()
                             mS "You missed."
                             "Vega shrugs."
                             show vega stream happy
@@ -1775,6 +1795,7 @@ label vig4_sc3_2_vega_2():
                             show vega stream neutral
                         "Act like you get hit.":
                             $ kcEngagement += 1
+                            $ setEngagement()
                             "I place a hand to my chest and lean my head back."
                             show vega stream happy
                             mS "Ughhhh, right in the heart."
@@ -1782,6 +1803,7 @@ label vig4_sc3_2_vega_2():
                             show vega stream neutral
                 "Finding peace is hard.":
                     $ csEngagement += 1
+                    $ setEngagement()
                     mS "It's hard to find a place where you can leave that behind."
                     vS "True, it's why I'm grateful we're here. Even if it can get boring."
         "Don't say anything.":
@@ -1802,6 +1824,7 @@ label vig4_sc3_2_vega_2():
             $ kcEngagement += 1
             $ pdEngagement += 1
             $ csEngagement += 1
+            $ setEngagement()
             mS "What do you think about joining us? The Oakley always has room for a sharp new recruit."
             $ AddChatter(vig4_sc3_2_vega_comment26)
             "Vega's eyes go wide for an instant."
@@ -1832,6 +1855,7 @@ label vig4_sc3_2_jennica():
     $ csEngagement += 2
     $ pdEngagement -= 1
     $ kcEngagement -= 1
+    $ setEngagement()
     hide vega with dissolve
     hide teresa stream neutral with dissolve
     show jennica stream neutral at stream_center with move
@@ -1875,6 +1899,7 @@ label vig4_sc3_2_jennica():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc3_2_jenn_comment5)
             pS "Yep! I'm kinda surprised you knew that, Cap."
+    $ setEngagement()
     pS "It's a classic. Used to play on a machine back in my hometown when I was just a kid."
     pS "No jokes, this game taught me to be a pilot."
     $ AddChatter(vig4_sc3_2_jenn_comment6)
@@ -1938,6 +1963,7 @@ label vig4_sc3_2_jennica():
                         "Make an aggressive attack.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
+                            $ setEngagement()
                             "Pressing my advantage, I drive my ship onto her tail as she drops into a barrel roll."
                             pS "Damn, Cap, looks like ya got me."
                             mS "Only a matter of time."
@@ -1967,6 +1993,7 @@ label vig4_sc3_2_jennica():
                         "Get ahead and set a trap.":
                             $ kcEngagement += 1
                             $ csEngagement += 2
+                            $ setEngagement()
                             $ pilotApproval += 1
                             "I push my ship forward, trying to get ahead of Jennica."
                             pS "Oh, I see what you're going for."
@@ -2009,6 +2036,7 @@ label vig4_sc3_2_jennica():
                             $ csEngagement += 2
                             $ pdEngagement += 1
                             $ kcEngagement -= 2
+                            $ setEngagement()
                             $ pilotApproval += 1
                             "Pushing my thrusters full throttle, I lay on the guns."
                             pS "Oh, so we're doin' it this way?"
@@ -2034,6 +2062,7 @@ label vig4_sc3_2_jennica():
                         "Bait her in.":
                             $ kcEngagement -= 1
                             $ csEngagement -= 1
+                            $ setEngagement()
                             "I turn my ship around and try to bait her in."
                             pS "Runnin' scared, Cap?"
                             if viewershipHigh == True or viewershipMed == True:
@@ -2078,6 +2107,7 @@ label vig4_sc3_2_jennica():
                     $ csEngagement += 2
                     $ pdEngagement += 1
                     $ kcEngagement -= 2
+                    $ setEngagement()
                     $ pilotApproval += 1
                     "Pushing my thrusters full throttle, I lay on the guns."
                     show jennica stream shock
@@ -2106,6 +2136,7 @@ label vig4_sc3_2_jennica():
                 "Bait her in.":
                     $ kcEngagement -= 1
                     $ csEngagement -= 1
+                    $ setEngagement()
                     "I turn my ship around and try to bait her in."
                     pS "Runnin' scared, Cap?"
                     if viewershipHigh == True or viewershipMed == True:
@@ -2201,6 +2232,7 @@ label vig4_sc3_2_jennica_2():
                         $ kcEngagement -= 2
                         $ csEngagement += 3
                         $ pdEngagement -= 1
+                        $ setEngagement()
                         $ jennicaRomance = True
                         show jennica stream shock
                         pS "Oh!"
@@ -2253,6 +2285,7 @@ label vig4_sc3_2_jennica_2():
                         $ kcEngagement += 1
                         $ csEngagement -= 1
                         $ pdEngagement += 1
+                        $ setEngagement()
                         show jennica stream shock
                         pS "Oh, that's not what I was expectin'."
                         "My heart drops."
@@ -2298,6 +2331,7 @@ label vig4_sc3_2_jennica_2():
                 "Let's get back to the party.":
                     $ csEngagement -= 2
                     $ pdEngagement -= 1 #PickledDragons probably doesn't respect starting to go for the romance and then backing out
+                    $ setEngagement()
                     mS "I should check on the party. Maybe Coil has some updates."
                     $ AddChatter(vig4_sc3_2_jenn_comment35)
                     show jennica stream shock
@@ -2316,6 +2350,7 @@ label vig4_sc3_2_jennica_2():
         "Screw that guy.":
             $ csEngagement -= 2
             $ kcEngagement += 1
+            $ setEngagement()
             mS "Screw that guy. He's probably dead now anyway."
             $ AddChatter(vig4_sc3_2_jenn_comment35)
             pS "Bahahaha"
@@ -2335,6 +2370,7 @@ label vig4_sc3_2_teresa():
     $ kcEngagement += 2
     $ pdEngagement += 1
     $ csEngagement -= 1
+    $ setEngagement()
     hide vega with dissolve
     hide jennica with dissolve
     show teresa stream neutral at stream_right5 with move
@@ -2456,6 +2492,7 @@ label vig4_sc3_2_teresa():
         "Call.":
             $ kcEngagement -= 1
             $ csEngagement -= 1
+            $ setEngagement()
             mS "Why not, let's call it."
             "We all lift our cups."
             "Teresa has five 2's."
@@ -2522,6 +2559,7 @@ label vig4_sc3_2_teresa():
                 "Call.":
                     $ kcEngagement += 2
                     $ pdEngagement += 1
+                    $ setEngagement()
                     mS "Bullshit, I call."
                     "We all lift our cups."
                     "Teresa has five 2's."
@@ -2576,6 +2614,7 @@ label vig4_sc3_2_teresa():
                 "Raise.":
                     $ kcEngagement -=1
                     $ pdEngagement -=1
+                    $ setEngagement()
                     mS "Why not? Nine 2's."
                     $ AddChatter(vig4_sc3_2_resa_comment33)
                     diceP2 "Nope, gotta call that."
@@ -2674,6 +2713,7 @@ label vig4_sc3_2_teresa_2():
                         $ csEngagement -= 2
                         $ kcEngagement += 3
                         $ pdEngagement -= 1
+                        $ setEngagement()
                         $ teresaRomance = True
                         "Teresa face is immediately bright red."
                         enS "Oh, wow, this is really happening?"
@@ -2721,6 +2761,7 @@ label vig4_sc3_2_teresa_2():
                         $ kcEngagement -= 1
                         $ csEngagement += 1
                         $ pdEngagement += 1
+                        $ setEngagement()
                         enS "Oh! That's... not what I was expecting."
                         "My heart drops a little."
                         mS "What do you mean?"
@@ -2759,6 +2800,7 @@ label vig4_sc3_2_teresa_2():
                 "I don't know.":
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
+                    $ setEngagement()
                     mS "I don't think it's for me to say, Resa."
                     $ AddChatter(vig4_sc3_2_resa_comment39)
                     mS "That's something you have to figure out for yourself."
@@ -2777,6 +2819,7 @@ label vig4_sc3_2_teresa_2():
         "Who cares about probabilities.":
             $ kcEngagement -= 2
             $ csEngagement += 1
+            $ setEngagement()
             mS "All those alternate timelines you're imagining: screw 'em."
             $ AddChatter(vig4_sc3_2_resa_comment39)
             mS "What matters is what you've decided."
@@ -2955,6 +2998,7 @@ label vig4_sc3_3():
                         $ AddChatter(vig4_sc3_3_comment12)
                 "That's not my responsibility.":
                     $ kcEngagement -= 1
+                    $ setEngagement()
                     mS "That wasn't my responsibility."
                     mS "I had to make sure he was safe."
                     $ AddChatter(vig4_sc3_3_comment21)
@@ -2997,6 +3041,7 @@ label vig4_sc3_3():
             $ kcEngagement += 1
             $ csEngagement -= 1
             $ pdEngagement += 1
+            $ setEngagement()
             mS "Like hell, Coil!"
             mS "You think I'm going to let you rip my family apart like this!"
             if customsStampede == True:
@@ -3018,6 +3063,7 @@ label vig4_sc3_3():
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pdEngagement -= 1
+            $ setEngagement()
             "I take a deep breath and exhale slowly."
             "In my mind's eye I see MAC, hiding behind the console where his creator's dead body slumps."
             "Lost, confused, scared."
@@ -3121,6 +3167,7 @@ label vig4_sc3_4():
         macS "What do we do now?"
         "We help others.":
             $ csEngagement += 2
+            $ setEngagement()
             $ macPeace += 3
             $ macHope += 2
             $ marshal += 1
@@ -3152,6 +3199,7 @@ label vig4_sc3_4():
                     mS "But being here now, maybe you can start to change that."
         "We look out for ourselves.":
             $ pdEngagement += 2
+            $ setEngagement()
             $ macViolence += 3
             $ macPessimism += 2
             $ outlaw += 1
@@ -3215,6 +3263,7 @@ label vig4_sc3_5():
             $ kcEngagement += 2
             $ csEngagement -= 2
             $ pdEngagement += 1
+            $ setEngagement()
             "I can't leave him."
             $ AddChatter(vig4_sc3_5_comment5)
             pause 0.5
@@ -3289,6 +3338,7 @@ label vig4_sc3_5():
                 macS "None of you even know what \"good\" is!"
                 "MAC, it's over.":
                     $ kcEngagement -= 1
+                    $ setEngagement()
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
                     mS "Our journey together is over."
@@ -3296,6 +3346,7 @@ label vig4_sc3_5():
                     mS "It's time to say goodbye."
                 "MAC, you have to decide that now.":
                     $ kcEngagement += 1
+                    $ setEngagement()
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
                     mS "You're right. None of us know anything. We're all messed up, we're all broken."
@@ -3371,6 +3422,7 @@ label vig4_sc3_5():
             $ kcEngagement -= 2
             $ pdEngagement -= 1
             $ csEngagement += 1
+            $ setEngagement()
             "He has to stay here. It hurts, but everything would be for nothing if he leaves with me."
             mS "I would like that too. But it's not in the cards."
             $ AddChatter(vig4_sc3_5_comment30)
@@ -3463,6 +3515,7 @@ label vig4_sc3_5():
                     mS "You have to decide that for yourself now."
                     "Tears, unbidden, flood my eyelids."
                     mS "But now, it's time to say goodbye."
+            $ setEngagement()
             "MAC shakes his head."
             "Coil nods at Vega, and she lets go of him."
             hide coil with dissolve
@@ -3532,6 +3585,7 @@ label vig4_sc3_5():
             $ kcEngagement -= 3 #is it possible kitcat really likes this for the drama?
             #$ csEngagement += 1
             $ pdEngagement += 1
+            $ setEngagement()
             $ rudeMACGoodbye = True
             "He has to stay here. I can't tell him the truth."
             mS "MAC, this was just a mission."
@@ -3628,6 +3682,7 @@ label vig4_sc3_5():
                     $ csEngagement += 1
                     mS "Thanks."
                     "The word is like a boot in my mouth."
+            $ setEngagement()
             "Coil shakes his head."
             $ AddChatter(vig4_sc3_5_comment16)
             cS "Let them go."
@@ -3791,6 +3846,7 @@ label vig4_sc4_1():
             $ csEngagement += 2
             $ kcEngagement -= 2
             $ pdEngagement -= 3
+            $ setEngagement()
             $ vig4_amaOffer = False
             mS "You're living in the past, Ama."
             $ AddChatter(vig4_sc4_1_comment31)
@@ -3813,6 +3869,7 @@ label vig4_sc4_1():
             $ pdEngagement += 3
             $ kcEngagement += 2
             $ csEngagement -= 1
+            $ setEngagement()
             $ vig4_amaOffer = True
             mS "Alright, Ama. I'm in."
             if viewershipHigh == True or viewershipMed == True:
@@ -3915,6 +3972,7 @@ label vig4_sc4_2():
                     $ marshal += 3
                     $ csEngagement += 3
                     $ pdEngagement -= 2
+                    $ setEngagement()
                     mS "No, we're not."
                     $ AddChatter(vig4_sc4_2_comment11)
                     mS "BigCorp wants to wipe out freedom in the Outposts. We won't let them."
@@ -3931,6 +3989,7 @@ label vig4_sc4_2():
                     $ outlaw += 3
                     $ csEngagement -= 2
                     $ pdEngagement += 3
+                    $ setEngagement()
                     mS "No, we're not."
                     $ AddChatter(vig4_sc4_2_comment13)
                     mS "The Dragonflies already compromised MAC's safety."
@@ -4268,6 +4327,7 @@ label vig4_sc5_1():
     if macPeace > macViolence:
         $ csEngagement += 1
         $ kcEngagement += 1
+        $ setEngagement()
         "Wounded townsfolk are laid out in rows on the ground."
         mS "MAC is going along with someone else, helping to administer first aid to the wounded."
         $ AddChatter(vig4_sc5_1_comment21)
@@ -4282,6 +4342,7 @@ label vig4_sc5_1():
     else:
         $ pdEngagement += 1
         $ kcEngagement += 1
+        $ setEngagement()
         mS "MAC is sitting in the seat of a turret aimed up at the sky."
         $ AddChatter(vig4_sc5_1_comment20)
         "He's firing at will, taking out some of the dropships before they can even reach the town."
@@ -4333,6 +4394,7 @@ label vig4_sc5_1():
                 mS "Now we're going to break them."
                 mS "This is for the Oakley."
                 $ AddChatter(vig4_sc5_1_comment26)
+        $ setEngagement()
         mS "Let's move."
         $ AddChatter(vig4_sc5_1_comment27)
         hide teresa with dissolve
@@ -4370,6 +4432,7 @@ label vig4_sc5_1():
                 mS "Now we're gonna break them."
                 mS "This is for the Oakley."
                 $ AddChatter(vig4_sc5_1_comment26)
+        $ setEngagement()
         mS "Let's move."
         $ AddChatter(vig4_sc5_1_comment27)
         hide jennica with dissolve
@@ -4530,6 +4593,7 @@ label vig4_sc5_2():
             mS "Now we're going to break them."
             mS "This is for the Oakley."
             $ AddChatter(vig4_sc5_1_comment26)
+    $ setEngagement()
     mS "Let's move."
     stop music fadeout 2.0
     $ AddChatter(vig4_sc5_2_comment10)
@@ -4633,6 +4697,7 @@ label vig4_sc7_2():
             $ csEngagement += 3
             $ kcEngagement -= 2
             $ pdEngagement -= 3
+            $ setEngagement()
             mS "You're right, Coil. This has gone too far."
             $ AddChatter(vig4_sc7_2_comment23)
             if viewershipHigh == True or viewershipMed == True:
@@ -4667,6 +4732,7 @@ label vig4_sc7_2():
             $ csEngagement -= 2
             $ kcEngagement += 2
             $ pdEngagement += 3
+            $ setEngagement()
             mS "You're right, Ama. I can't trust him."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_2_comment15)
@@ -4872,6 +4938,7 @@ label vig4_sc7_3_ama():
             "Coil chuckles."
             cS "We always have a choice, Moze."
             $ AddChatter(vig4_sc7_3_ama_comment28)
+    $ setEngagement()
     "I step forward."
     play audio "energyPulse.wav" volume 0.7
     "He raises his good hand toward me and fires a pulse."
@@ -5021,6 +5088,7 @@ label vig4_sc7_3_ama():
                     $ kcEngagement += 3
                     $ pdEngagement += 2
                     $ csEngagement += 1
+                    $ setEngagement()
                     $ amaRomance = True
                     mS "Ama, I love you."
                     mS "I know it doesn't make sense, bu—"
@@ -5040,6 +5108,7 @@ label vig4_sc7_3_ama():
                 "Neither do I.":
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
+                    $ setEngagement()
                     mS "I don't either."
                     $ AddChatter(vig4_sc7_3_ama_comment56)
                     mS "But stick around, and we'll figure it out."
@@ -5127,6 +5196,7 @@ label vig4_sc7_3_ama():
         $ pdEngagement += 2
         $ kcEngagement += 1
         $ csEngagement -= 2
+        $ setEngagement()
         $ vig4_MACKill = True
         play audio "lazer.wav" volume 5.0
         "MAC lifts his arm and fires a bolt of energy."
@@ -5148,6 +5218,7 @@ label vig4_sc7_3_ama():
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 1
+        $ setEngagement()
         macS "You have as much right to vengeance as they did."
         macS "But not today."
         if viewershipHigh == True:
@@ -5363,6 +5434,7 @@ label vig4_sc7_3_coil():
             show ama stream happy
             "Ama chuckles."
             amaS "Classic Mozely."
+    $ setEngagement()
     show ama stream angry
     amaS "Let's finish it."
     "Resolve beats through my heart."
@@ -5640,12 +5712,14 @@ label vig4_epilogue_coil():
     "They move over and sit on the couch with me."
     if jennicaRomance == True:
         $ csEngagement += 1
+        $ setEngagement()
         "Jennica sidles up next to me and leans her head on my shoulder."
         "I take her hand in mine."
         $ AddChatter(vig4_sc7_epilogue_comment9)
         pS "How ya feeling, Cap?"
     elif teresaRomance == True:
         $ kcEngagement += 1
+        $ setEngagement()
         "Teresa sits down next to me and folds her legs over my lap."
         "I take her hand in mine."
         $ AddChatter(vig4_sc7_epilogue_comment10)
@@ -5704,6 +5778,7 @@ label vig4_epilogue_coil():
         "MAC rolls up next to us."
         "Come on up, MAC.":
             $ kcEngagement += 2
+            $ setEngagement()
             mS "Come on, MAC, join the pile."
             play audio "macPester.wav" volume 1.2
             macS "Are you sure, Captain?"
@@ -5728,6 +5803,7 @@ label vig4_epilogue_coil():
             "I slide out and open a nearby closet."
         "Rub his head.":
             $ kcEngagement += 1
+            $ setEngagement()
             mS "Come here, MAC."
             $ AddChatter(vig4_sc7_epilogue_comment19)
             play audio "macHum.wav" volume 1.2
@@ -5765,6 +5841,7 @@ label vig4_epilogue_coil():
         "I stare at the clear space of MAC's back panel. What image would go perfectly there?"
         "A Snakehawk.":
             $ pdEngagement += 2
+            $ setEngagement()
             mS "I've got the perfect thing."
             $ AddChatter(vig4_sc7_epilogue_coil_comment9)
             "Slowly, but surely I begin tracing the outline."
@@ -5784,6 +5861,7 @@ label vig4_epilogue_coil():
             macS "Snakehawk!? Really!?"
         "A Dragonfly.":
             $ csEngagement += 2
+            $ setEngagement()
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_coil_comment6)
@@ -5803,6 +5881,7 @@ label vig4_epilogue_coil():
             macS "Dragonfly!? I hope they're as friendly as you all!"
         "The Oakley.":
             $ kcEngagement += 2
+            $ setEngagement()
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_comment23)
@@ -5820,6 +5899,7 @@ label vig4_epilogue_coil():
             mS "MAC, you're now the proud owner of the first ever \"Oakley\" tattoo!"
             play audio "macPing.wav" volume 1.2
             macS "Oakley!? That's amazing!"
+    
     "Without hesitation, MAC swerves around and wraps his arms around me."
     macS "Thank you, Captain."
     play audio "macLove.wav" volume 1.5
@@ -6044,6 +6124,7 @@ label vig4_epilogue_ama():
         "MAC rolls up next to us."
         "Come on up, MAC.":
             $ kcEngagement += 2
+            $ setEngagement()
             mS "Come on, MAC, join the pile."
             play audio "macPester.wav" volume 1.2
             macS "Are you sure, Captain?"
@@ -6073,6 +6154,7 @@ label vig4_epilogue_ama():
             "I slide out and open a nearby closet."
         "Rub his head.":
             $ kcEngagement += 1
+            $ setEngagement()
             mS "Come here, MAC."
             $ AddChatter(vig4_sc7_epilogue_comment19)
             play audio "macHum.wav" volume 1.2
@@ -6113,6 +6195,7 @@ label vig4_epilogue_ama():
         "I stare at the clear space of MAC's back panel. What image would go perfectly there?"
         "A Snakehawk.":
             $ pdEngagement += 2
+            $ setEngagement()
             mS "I've got the perfect thing."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_epilogue_ama_comment9)
@@ -6133,6 +6216,7 @@ label vig4_epilogue_ama():
         #third tattoo?
         "The Oakley.":
             $ kcEngagement += 2
+            $ setEngagement()
             mS "I've got the perfect thing."
             "Slowly, but surely I begin tracing the outline."
             $ AddChatter(vig4_sc7_epilogue_comment23)
