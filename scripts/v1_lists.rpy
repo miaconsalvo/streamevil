@@ -3,6 +3,7 @@
 
 
 #Chats that are already present when the game starts - scene 1
+default vig1_sc1_comment0 = ChatEntry( False, "{b}_lostinmetr0 - 5:34{/b}\nHey everyone, welcome to the stream! Have fun, but keep it respectful!", 1, "#ffffffff")
 default vig1_sc1_comment1 = ChatEntry( False, "{b}Coriolis - 5:36{/b}\nHey [streamer]! So excited to start a new game!", 1, "#ffffffff")
 default vig1_sc1_comment2 = ChatEntry( False, "{b}swayy0scar - 5:45{/b}\nYo sick space battle! This game has more action than I was expecting", 1, "#ffffffff")
 default vig1_sc1_comment3 = ChatEntry( False, "{b}_lostinmetr0 - 5:47{/b}\nIts got some moments, but it's mostly a dialogue-based game", 1, "#ffffffff")
@@ -51,7 +52,7 @@ default vig1_sc3_raid_comment10 = ChatEntry( False, "{b}llamabama22 - 7:19{/b}\n
 default vig1_sc3_raid_comment11 = ChatEntry( False, "{b}virgom00n - 7:19{/b}\nPut 'em up, this is a Bandit raid!", 1, "#ffffffff")
 default vig1_sc3_raid_comment12 = ChatEntry( False, "{b}shnzi - 7:19{/b}\nPut 'em up, this is a Bandit raid!", 1, "#ffffffff")
 default vig1_sc3_raid_comment13 = ChatEntry( False, "{b}duckduckdi3 - 7:19{/b}\nPut 'em up, this is a Bandit raid!", 1, "#ffffffff")
-default vig1_sc3_comment2 = ChatEntry( False, "{b}Coriolis - 7:19{/b}\nWelcome!", 1, "#ffffffff")
+default vig1_sc3_comment2 = ChatEntry( False, "{b}_lostinmetr0 - 7:19{/b}\nWelcome!", 1, "#ffffffff")
 default vig1_sc3_comment3_bandit0 = ChatEntry( True, "{b}8bitBANDIT - 7:20{/b}\nHiya [streamer], good to be here! You a big Oakley fan?", 5, "#ffffffff", "vig1_sc3_banditConvo")
 default vig1_sc3_comment3_bandit1 = ChatEntry( False, "{b}8bitBANDIT - 7:21{/b}\nNice! Wouldn't say I'm a huge fan or anything. Got to Oakely 1 just a couple months ago, but really into the world and characters!", 1, "#ffffffff")
 default vig1_sc3_comment3_bandit2 = ChatEntry( False, "{b}8bitBANDIT - 7:21{/b}\nYou a Marshal or Outlaw Moze?", 1, "#ffffffff")
@@ -97,7 +98,7 @@ default vig1_sc3_shot_shout_comment3 = ChatEntry( False, "{b}8bitBANDIT - 7:34{/
 default vig1_sc3_shot_shout_comment4 = ChatEntry( False, "{b}duckduckdi3 - 7:34{/b}\nOmega dead", 1, "#ffffffff")
 default vig1_sc3_shot_comment4 = ChatEntry( False, "{b}shnzi - 7:34{/b}\nProbly both tbh", 1, "#ffffffff")
 default vig1_sc3_shot_comment5 = ChatEntry( False, "{b}8bitBANDIT - 7:35{/b}\nCan't believe you can actually kill off Allistar", 1, "#ffffffff")
-default vig1_sc3_shot_comment6 = ChatEntry( False, "{b}AFKAngel - 7:35{/b}\n[streamer] the real outlaw", 1, "#ffffffff")
+default vig1_sc3_shot_comment6 = ChatEntry( False, "{b}LethalEthan - 7:35{/b}\n[streamer] the real outlaw", 1, "#ffffffff")
 default vig1_sc3_shot_comment7 = ChatEntry( False, "{b}darthMEOW94 - 7:35{/b}\nUltra omega dead", 1, "#ffffffff")
 default vig1_sc3_shot_comment8 = ChatEntry( False, "{b}kitcat - 7:36{/b}\nhis circuits can't compute! *hug emoji*", 1, "#ffffffff")
 default vig1_sc3_shot_comment9 = ChatEntry( False, "{b}pickledDragons - 7:36{/b}\nI'm so curious how this will change the story", 1, "#ffffffff")
@@ -110,7 +111,7 @@ default vig1_sc3_end_next_comment1 = ChatEntry( False, "{b}kitcat - 7:39{/b}\nMA
 default vig1_sc3_signoff_comment1 = ChatEntry( False, "{b}swayy0scar - 7:39{/b}\nI might just pick this game up myself. Thanks for the stream!", 1, "#ffffffff")
 default vig1_sc3_signoff_comment2 = ChatEntry ( False, "{b}LethalEthan - 7:39{/b}\nsayonara", 1, "#ffffffff")
 default vig1_sc3_signoff_comment3 = ChatEntry( False, "{b}darthMEOW94 - 7:39{/b}\nadios!", 1, "#ffffffff")
-default vig1_sc3_signoff_comment4 = ChatEntry( False, "{b}Coriolis - 7:39{/b}\nFor anyone who wants to join for the next one, we'll be back here every Wednesday when the next episode drops!", 1, "#ffffffff")
+default vig1_sc3_signoff_comment4 = ChatEntry( False, "{b}_lostinmetr0 - 7:39{/b}\nFor anyone who wants to join for the next one, we'll be back here every Wednesday when the next episode drops!", 1, "#ffffffff")
 default vig1_sc3_signoff_comment5 = ChatEntry( False, "{b}8bitBANDIT - 7:39{/b}\nGreat stream! Night everyone!", 1, "#ffffffff")
 default vig1_sc3_signoff_comment6 = ChatEntry( False, "{b}virgom00n - 7:39{/b}\nBye!", 1, "#ffffffff")
 default vig1_sc3_signoff_comment7 = ChatEntry( False, "{b}turbog00se1 - 7:39{/b}\nFun times!", 1, "#ffffffff")

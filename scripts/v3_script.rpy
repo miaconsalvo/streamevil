@@ -82,6 +82,7 @@ label vig3outlawstart():
     play backAudio "shipHum.wav" volume 0.2 fadein 1.0
     "The Oakley is quiet today, and this coffee feels like I'm trying to cure every sleepless night I've had for the past few days."
     "It's nice always being the first one up, if it's even morning?"
+    $ AddChatter(vig3_startstream_comment0)
     "I check the clock on the wall."
     $ AddChatter(vig3_outlawstart_comment1)
     mS "Yep, morning."

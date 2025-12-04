@@ -1864,12 +1864,12 @@ label vig3_analytics_viewcount():
         "The viewership numbers for this week are up compared to last week."
         "That's a good sign!"
         "Hopefully next week will keep up the average viewership."
-        "You wonder if making Outlaw choices has increased your number of viewers."
+        "It really feels like making Outlaw choices has increased your number of viewers."
     else:
         "The viewership numbers for this week are similar to last week."
         "That's not bad, but it's disappointing that they didn't grow at all."
         "If you lose people next week, you might not make it."
-        "You wonder if making Outlaw choices would increase your viewership numbers."
+        "You have a gut feeling that making Outlaw choices next time would increase your viewership."
     jump vig3_analytics_viewcount2
 
 label vig3_analytics_viewcount2():
@@ -1895,7 +1895,9 @@ label vig3_analytics_viewcount2():
             $ vig3_viewership = "High"
             "The viewership is stable and looks comfortably above the Affiliate requirement."
             "You won't know for certain until after the last stream, but the calculations are looking good."
-            "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, you should be solid."
+            "Average viewership is well above 10 per stream, so as long as something drastic doesn't happen at the end, you should be solid on this front."
+            if flinch_followership >= 3:
+                "You just have to get a few more followers and you'll be all good."
             "Cross your fingers."
             jump vig3_analytics_viewcount2
         "Playing with chat is interesting." if flinchViewershipChat == False and vig3_interactions >= 5:

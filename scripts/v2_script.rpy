@@ -97,9 +97,10 @@ label Vig2BridgeScene():
     #repeat for additional characters
     play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "As I step onto the bridge, Jennica, Teresa and Mac are discussing the visualization on the ship's computer."
-    $ AddChatter(vig2_sc1_comment4)
+    $ AddChatter(vig2_sc1_comment0)
     enS "Oh swell, Gibian V, another backwater frontier planet."
     "A backwater with a certain old associate running it."
+    $ AddChatter(vig2_sc1_comment4)
     $ viewCount += 3
     mS "We ready to land?"
     $ AddChatter(vig2_sc1_comment5)

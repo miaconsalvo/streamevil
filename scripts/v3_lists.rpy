@@ -3,6 +3,7 @@
 ###IMPORTANT COMMENT IN GREEN ARE ONLY MEANT TO APPEAR IF VIEWERSHIP IS HIGH###
 
 ###Comments vig3_startstream - Booting up the stream
+default vig3_startstream_comment0 = ChatEntry( False, "{b}_lostinmetr0 - 6:01:{/b}\nWelcome to the stream everyone! Grab a snack, get comfortable, let's get into it!", 3, "#ffffff")
 default vig3_startstream_comment1 = ChatEntry( False, "{b}turb0g00se - 6:01{/b}\nhey everyone!!", 4, "#ffffff")
 default vig3_startstream_comment2 = ChatEntry( False, "{b}R4dioRobbie - 6:01{/b}\nhi guys!", 4, "#ffffff")
 default vig3_startstream_comment3 = ChatEntry( False, "{b}pickledDragons - 6:01{/b}\nwhats up!!", 4, "#ffffff")
@@ -28,10 +29,10 @@ default vig3_outlawstart_comment14= ChatEntry( False, "{b}turb0g00se - 6:07{/b}\
 default vig3_outlawstart_comment15= ChatEntry( False, "{b}R4dioRobbie - 6:07{/b}\nrip moze already hating herself now this", 4, "#ffffff")
 
 default vig3_outlawstart_comment16= ChatEntry( False, "{b}J4MIR0QU4I - 6:09{/b}\nGUYS lets just watch where it goes", 4, "#ffffff")
-default vig3_outlawstart_comment17= ChatEntry( False, "{b}_lostinmetr0 - 6:09{/b}\n^^exactly, see shes making sense", 4, "#ffffff")
+default vig3_outlawstart_comment17= ChatEntry( False, "{b}pickledDragons - 6:09{/b}\n^^exactly, see shes making sense", 4, "#ffffff")
 default vig3_outlawstart_comment18= ChatEntry( False, "{b}R4dioRobbie - 6:09{/b}\noop", 4, "#ffffff")
 default vig3_outlawstart_comment19= ChatEntry( False, "{b}turb0g00se - 6:10{/b}\nno fr maybe jennica should see it that way too", 4, "#ffffff")
-default vig3_outlawstart_comment20= ChatEntry( False, "{b}_lostinmetr0 - 6:10{/b}\nnah I wont hear jenn hate let her deal w it how she deals", 4, "#ffffff")
+default vig3_outlawstart_comment20= ChatEntry( False, "{b}Coriolis - 6:10{/b}\nnah I wont hear jenn hate let her deal w it how she deals", 4, "#ffffff")
 default vig3_outlawstart_comment21= ChatEntry( False, "{b}AFKAngel - 6:11{/b}\neVeR since wE tOoK mAc are you fr?????? Like youre not outlaws with a terrible track record?????", 4, "#ffffff")
 
 ###Comments vig3_outlawstart - Moze deals with Teresa before the Cockpit
@@ -216,7 +217,7 @@ default vig3_sc6_bbpub_comment6 = ChatEntry(False, "{b}R4dioRobbie - 6:29{/b}\nD
 default vig3_sc6_bbpub_comment7 = ChatEntry(False, "{b}llamabama22 - 6:29{/b}\nmy poor baby mac gets to witness murder but not ready for the birds and the bees", 3, "#ffffff")
 default vig3_sc6_bbpub_comment8 = ChatEntry(False, "{b}J4MIR0QU4I - 6:29{/b}\noh wow the philosophical battle", 3, "#ffffff")
 default vig3_sc6_bbpub_comment9 = ChatEntry(False, "{b}marxky8 - 6:30{/b}\nthank you rec", 3, "#ffffff")
-default vig3_sc6_bbpub_comment10 = ChatEntry(False, "{b}_lostinmetr0 - 6:30{/b}\nwait is that... MOZE? Taking RESPONSIBILITY?", 3, "#ffffff")
+default vig3_sc6_bbpub_comment10 = ChatEntry(False, "{b}AFKAngel - 6:30{/b}\nwait is that... MOZE? Taking RESPONSIBILITY?", 3, "#ffffff")
 default vig3_sc6_bbpub_comment11 = ChatEntry(False, "{b}turb0g00se - 6:30{/b}\nI WAS GONNA SAY", 3, "#ffffff")
 default vig3_sc6_bbpub_comment12 = ChatEntry(False, "{b}AFKAngel - 6:30{/b}\ndw moze we forgive you <3", 3, "#ffffff")
 default vig3_sc6_bbpub_comment13 = ChatEntry(False, "{b}R4dioRobbie - 6:30{/b}\nmom, mommy, and mama back together again <3", 3, "#ffffff")
@@ -233,8 +234,8 @@ default vig3_sc6_stranger_comment5 = ChatEntry(False, "{b}R4dioRobbie - 6:31{/b}
 default vig3_sc6_stranger_comment6 = ChatEntry(False, "{b}AFKAngel - 6:31{/b}\nHAHA", 3, "#ffffff")
 
 default vig3_sc6_flirt_comment1 = ChatEntry(False, "{b}AFKAngel - 6:32{/b}\nthis is why we're here guys: someone raises a knife to our throat and our immediate reaction is a little turned on", 3, "#ffffff")
-default vig3_sc6_flirt_comment2 = ChatEntry(False, "{b}kitcat - 6:32{/b}\nGUYS HAHA", 3, "#ffffff")
-default vig3_sc6_flirt_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 6:32{/b}\nwe just get each other <3", 3, "#ffffff")
+default vig3_sc6_flirt_comment2 = ChatEntry(False, "{b}_lostinmetr0 - 6:32{/b}\nGUYS HAHA", 3, "#ffffff")
+default vig3_sc6_flirt_comment3 = ChatEntry(False, "{b}kitcat - 6:32{/b}\nwe just get each other <3", 3, "#ffffff")
 default vig3_sc6_flirt_comment4 = ChatEntry(False, "{b}R4dioRobbie - 6:32{/b}\nwhat a beautiful little community", 3, "#ffffff")
 default vig3_sc6_walkaway_comment1 = ChatEntry(False, "{b}pickledDragons - 6:32{/b}\nthe safe call since they mentioned how inexperienced she is... ", 3, "#ffffff")
 default vig3_sc6_walkaway_comment2 = ChatEntry(False, "{b}kitcat - 6:32{/b}\nbut the other choices were so interesting", 3, "#ffffff")
@@ -268,7 +269,7 @@ default vig3_sc6_right_comment4 = ChatEntry(False, "{b}AFKAngel - 6:31{/b}\nwont
 default vig3_sc6_right_comment5 = ChatEntry(False, "{b}turb0g00se - 6:31{/b}\nadmire the way we imparted our wisdom onto your bro <3", 3, "#ffffff")
 default vig3_sc6_right_comment6 = ChatEntry(False, "{b}R4dioRobbie - 6:31{/b}\nparted wisdom by parting his head from his body </3", 3, "#ffffff")
 
-default vig3_sc6_moving_comment1 = ChatEntry(False, "{b}_lostinmetr0 - 6:31{/b}\nyeah because that worked out SO WELL for allistar", 3, "#ffffff")
+default vig3_sc6_moving_comment1 = ChatEntry(False, "{b}bacon8r_6 - 6:31{/b}\nyeah because that worked out SO WELL for allistar", 3, "#ffffff")
 default vig3_sc6_moving_comment2 = ChatEntry(False, "{b}R4dioRobbie - 6:31{/b}\nmaybe a fresh start is what they need (aftertheyfindouttheresnothingleftforthemhere) who said that?", 3, "#ffffff")
 default vig3_sc6_moving_comment3 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:31{/b}\nbro the TENSION", 3, "#ffffff")
 default vig3_sc6_moving_comment4 = ChatEntry(False, "{b}turb0g00se - 6:31{/b}\nliterally no one killed allistar like we are the only ones experiencing this rn guaranteed", 3, "#ffffff")
@@ -307,7 +308,7 @@ default vig3_sc6_bbpub_comment25 = ChatEntry(False, "{b}R4dioRobbie - 6:33{/b}\n
 default vig3_sc6_bbpub_comment26 = ChatEntry(False, "{b}_lostinmetr0 - 6:33{/b}\nstop omg", 3, "#ffffff")
 default vig3_sc6_bbpub_comment27 = ChatEntry(False, "{b}R4dioRobbie - 6:33{/b}\nwe stopped that FOR SURE", 3, "#ffffff")
 default vig3_sc6_bbpub_comment28 = ChatEntry(False, "{b}turb0g00se - 6:33{/b}\nHAHA GUYS", 3, "#ffffff")
-default vig3_sc6_bbpub_comment29 = ChatEntry(False, "{b}_lostinmetr0 - 6:33{/b}\nokay so... we all agree with moze here?", 3, "#ffffff")
+default vig3_sc6_bbpub_comment29 = ChatEntry(False, "{b}llamabama22 - 6:33{/b}\nokay so... we all agree with moze here?", 3, "#ffffff")
 default vig3_sc6_bbpub_comment30 = ChatEntry(False, "{b}bacon8r_6 - 6:33{/b}\nyeah definitely ", 3, "#ffffff")
 default vig3_sc6_bbpub_comment31 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:33{/b}\n1000000%", 3, "#ffffff")
 default vig3_sc6_bbpub_comment32 = ChatEntry(False, "{b}turb0g00se - 6:34{/b}\njenn's competitive ass for sure just bet our ship", 3, "#ffffff")
@@ -375,7 +376,7 @@ default vig3_sc6_cutrope_comment7 = ChatEntry(False, "{b}AFKAngel - 6:35{/b}\nom
 default vig3_sc6_cutrope_comment8 = ChatEntry(False, "{b}J4MIR0QU4I - 6:35{/b}\nZAN DOES NOT APPROVE", 3, "#ffffff")
 default vig3_sc6_cutrope_comment9 = ChatEntry(False, "{b}J4MIR0QU4I - 6:35{/b}\nMOXIE", 3, "#ffffff")
 default vig3_sc6_cutrope_comment10 = ChatEntry(False, "{b}R4dioRobbie - 6:36{/b}\nsee nobody DIED so no harm no foul", 3, "#ffffff")
-default vig3_sc6_cutrope_comment11 = ChatEntry(False, "{b}_lostinmetr0 - 6:36{/b}\nyeah exactly ", 3, "#ffffff")
+default vig3_sc6_cutrope_comment11 = ChatEntry(False, "{b}llamabama22 - 6:36{/b}\nyeah exactly ", 3, "#ffffff")
 default vig3_sc6_cutrope_comment12 = ChatEntry(False, "{b}AFKAngel - 6:36{/b}\neverything went to plan", 3, "#ffffff")
 default vig3_sc6_cutrope_comment13 = ChatEntry(False, "{b}kitcat - 6:36{/b}\nimagine having to \"subdue\" plants", 3, "#ffffff")
 default vig3_sc6_cutrope_comment14 = ChatEntry(False, "{b}R4dioRobbie - 6:36{/b}\nbro id be so embarrassed to tell that story", 3, "#ffffff")
@@ -446,7 +447,7 @@ default vig3_sc6_bbpub_comment94 = ChatEntry(False, "{b}J4MIR0QU4I - 6:39{/b}\ni
 default vig3_sc6_bbpub_comment95 = ChatEntry(False, "{b}turb0g00se - 6:39{/b}\nSO WHY COULDN'T HE HAVE JUST BEEN CHILL TO START", 3, "#ffffff")
 default vig3_sc6_bbpub_comment96 = ChatEntry(False, "{b}pickledDragons - 6:39{/b}\nhey if you aren't cool with kidnapping and murder you cant be here", 3, "#ffffff")
 default vig3_sc6_bbpub_comment97 = ChatEntry(False, "{b}R4dioRobbie - 6:39{/b}\nif you hesitate at the kidnapping, whatre you gonna do at the MURDER", 3, "#ffffff")
-default vig3_sc6_bbpub_comment98 = ChatEntry(False, "{b}_lostinmetr0 - 6:39{/b}\nhe had to go", 3, "#ffffff")
+default vig3_sc6_bbpub_comment98 = ChatEntry(False, "{b}bacon8r_6 - 6:39{/b}\nhe had to go", 3, "#ffffff")
 default vig3_sc6_bbpub_comment99 = ChatEntry(False, "{b}P0tat0Pr0phet - 6:39{/b}\nGUYS IM DYING", 3, "#ffffff")
 default vig3_sc6_bbpub_comment100 = ChatEntry(False, "{b}turb0g00se - 6:39{/b}\nHAHA", 3, "#ffffff")
 
@@ -599,7 +600,7 @@ default vig3_sc9_attention_comment2 = ChatEntry(False, "{b}R4dioRobbie - 6:48{/b
 default vig3_sc9_attention_comment3 = ChatEntry(False, "{b}J4MIR0QU4I - 6:48{/b}\ncome on we gotta save a maiden in need lol", 3, "#ffffff")
 default vig3_sc9_attention_comment4 = ChatEntry(False, "{b}Coriolis - 6:48{/b}\nshe needs us and we're gonna leave her w creepy bro?", 3, "#ffffff")
 default vig3_sc9_attention_comment5 = ChatEntry(False, "{b}turb0g00se - 6:48{/b}\nROFL", 3, "#ffffff")
-default vig3_sc9_attention_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 6:48{/b}\noh yeah okay so youre gonna make daisy take care of herself?", 3, "#ffffff")
+default vig3_sc9_attention_comment6 = ChatEntry(False, "{b}AFKAngel - 6:48{/b}\noh yeah okay so youre gonna make daisy take care of herself?", 3, "#ffffff")
 default vig3_sc9_attention_comment7 = ChatEntry(False, "{b}R4dioRobbie - 6:48{/b}\nWOO YEAH DAISY", 3, "#ffffff")
 default vig3_sc9_attention_comment8 = ChatEntry(False, "{b}pickledDragons - 6:48{/b}\ncmon we shoulda done that ", 3, "#ffffff")
 
@@ -614,7 +615,7 @@ default vig3_sc9_inventorsfair_comment56 = ChatEntry(False, "{b}R4dioRobbie - 6:
 default vig3_sc9_inventorsfair_comment57 = ChatEntry(False, "{b}_lostinmetr0 - 6:49{/b}\nNO", 3, "#ffffff")
 default vig3_sc9_inventorsfair_comment58 = ChatEntry(False, "{b}turb0g00se - 6:49{/b}\nohhhh \"machine automated courier\" that makes so much sense", 3, "#ffffff")
 default vig3_sc9_inventorsfair_comment59 = ChatEntry(False, "{b}J4MIR0QU4I - 6:49{/b}\nCRAP NO", 3, "#ffffff")
-default vig3_sc9_inventorsfair_comment60 = ChatEntry(False, "{b}_lostinmetr0 - 6:49{/b}\nHAHA WDYM NO??? NOW MURDER IS THE ONLY WAY OUT", 3, "#ffffff")
+default vig3_sc9_inventorsfair_comment60 = ChatEntry(False, "{b}llamabama22 - 6:49{/b}\nHAHA WDYM NO??? NOW MURDER IS THE ONLY WAY OUT", 3, "#ffffff")
 default vig3_sc9_inventorsfair_comment61 = ChatEntry(False, "{b}R4dioRobbie - 6:49{/b}\nGUYS", 3, "#ffffff")
 default vig3_sc9_inventorsfair_comment62 = ChatEntry(False, "{b}bacon8r_6 - 6:49{/b}\nOHHHHHHHH", 3, "#ffffff")
 default vig3_sc9_inventorsfair_comment63 = ChatEntry(False, "{b}AFKAngel - 6:49{/b}\nnot the Hi MAC", 3, "#ffffff")
@@ -745,7 +746,7 @@ default vig3_sc12_nothing_comment2 = ChatEntry(False, "{b}turb0g00se - 7:15{/b}\
 default vig3_sc12_nothing_comment3 = ChatEntry(False, "{b}R4dioRobbie - 7:16{/b}\neyes locking oh yeah come to mama little guy", 3, "#ffffff")
 default vig3_sc12_nothing_comment4 = ChatEntry(False, "{b}AFKAngel - 7:16{/b}\nplease MAC you snuck away from us, sneak back now", 3, "#ffffff")
 default vig3_sc12_nothing_comment5 = ChatEntry(False, "{b}J4MIR0QU4I - 7:16{/b}\noh ama is for sure not happy with her current employment", 3, "#ffffff")
-default vig3_sc12_nothing_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 7:16{/b}\noh awesome he's just dead", 3, "#ffffff")
+default vig3_sc12_nothing_comment6 = ChatEntry(False, "{b}_lostinmetr0 - 7:16{/b}\naaaaand now he's dead", 3, "#ffffff")
 
 default vig3_sc12_bag_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 7:17{/b}\noh shut up AMA", 3, "#ffffff")
 default vig3_sc12_bag_comment2 = ChatEntry(False, "{b}turb0g00se - 7:17{/b}\nliterally????????", 3, "#ffffff")
@@ -891,7 +892,7 @@ default vig3_sc14_nothing_comment1 = ChatEntry(False, "{b}_lostinmetr0 - 7:26{/b
 default vig3_sc14_nothing_comment2 = ChatEntry(False, "{b}R4dioRobbie - 7:26{/b}\nyeah I lowkey don't want to say anything either I don't wanna jinx us...", 3, "#ffffff")
 default vig3_sc14_nothing_comment3 = ChatEntry(False, "{b}kitcat - 7:26{/b}\nshouldn't have typed that", 3, "#ffffff")
 
-default vig3_sc14_escape_comment7 = ChatEntry(False, "{b}_lostinmetr0 - 7:27{/b}\nbro does she ever just CHILL", 3, "#ffffff")
+default vig3_sc14_escape_comment7 = ChatEntry(False, "{b}_lostinmetr0 - 7:27{/b}\ndoes she ever just CHILL", 3, "#ffffff")
 default vig3_sc14_escape_comment8 = ChatEntry(False, "{b}marxky8 - 7:27{/b}\nwe need to find the stop button", 3, "#ffffff")
 default vig3_sc14_escape_comment9 = ChatEntry(False, "{b}llamabama22 - 7:27{/b}\n:') ", 3, "#ffffff")
 default vig3_sc14_escape_comment10 = ChatEntry(False, "{b}R4dioRobbie - 7:27{/b}\nplease ama just leave us alone they cant be paying you THAT MUCH", 3, "#ffffff")
@@ -940,7 +941,7 @@ default vig3_sc14_justhappened_comment12 = ChatEntry(False, "{b}R4dioRobbie - 7:
 default vig3_sc14_justhappened_comment13 = ChatEntry(False, "{b}Coriolis - 7:30{/b}\naw at least we got to hear the rare moze apology", 3, "#ffffff")
 
 default vig3_sc14_hadto_comment1 = ChatEntry(False, "{b}turb0g00se - 7:30{/b}\nCLASSIC MOZELY", 3, "#ffffff")
-default vig3_sc14_hadto_comment2 = ChatEntry(False, "{b}_lostinmetr0 - 7:30{/b}\nI love that every time we have done something actually truly, diabolically evil we hit em w the \"it was outta my hands\"", 3, "#ffffff")
+default vig3_sc14_hadto_comment2 = ChatEntry(False, "{b}P0tat0Pr0phet - 7:30{/b}\nI love that every time we have done something actually truly, diabolically evil we hit em w the \"it was outta my hands\"", 3, "#ffffff")
 default vig3_sc14_hadto_comment3 = ChatEntry(False, "{b}AFKAngel - 7:30{/b}\nthat's right moze, MAC IS important", 3, "#ffffff")
 default vig3_sc14_hadto_comment4 = ChatEntry(False, "{b}R4dioRobbie - 7:30{/b}\nplease try to see reason recc, your bro couldn't hang so he had to go", 3, "#ffffff")
 default vig3_sc14_hadto_comment5 = ChatEntry(False, "{b}turb0g00se - 7:30{/b}\nLMAO", 3, "#ffffff")

@@ -1303,7 +1303,7 @@ label vig2_analytics_viewcount():
     if vig2_outlawEpilogue == True:
         "Maybe going Outlaw and siding with Matticus at the end will get more viewers to come in next time."
     else:
-        "Will picking Marshall and going against Matticus bring in fewer viewers next time?"
+        "Will picking Marshal and going against Matticus bring in fewer viewers next time?"
     jump vig2_analytics_viewcount2
 
 label vig2_analytics_viewcount2():
@@ -1345,7 +1345,7 @@ label vig2_analytics_viewcount2():
             jump vig2_analytics_viewcount2
         "Will the Marshal route bring in fewer viewers?" if vig2_marshalEpilogue == True and flinchViewershipMarshal == False:
             "There was one person in the chat who said they wanted to see the stream with the \"evil MC.\""
-            "You wonder if you missed an opportunity to get more viewers by going Marshal at the end of this episode."
+            "You wonder if fewer people will join the next stream because you went Marshal today."
             $ flinchViewershipMarshal = True
             jump vig2_analytics_viewcount2
         "Go back to the main Flinch page." if viewershipThoughtCheck == True:

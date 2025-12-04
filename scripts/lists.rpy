@@ -62,6 +62,10 @@ init python:
         return
 
     def setEngagement():
+        global csEngagement
+        global kcEngagement
+        global pdEngagement
+
         if csEngagement > 15:
             csEngagement = 15
         elif csEngagement < -15:

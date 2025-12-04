@@ -199,6 +199,7 @@ screen discordNotification():
         ysize 230
         right_margin 200
         background Solid("#000000ff")
+        text "_lostinmetr0"
         text "[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!"
         textbutton "Close Notification":
             action Return() #Hide("discordNotification")
