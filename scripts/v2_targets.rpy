@@ -1299,12 +1299,16 @@ label vig2_analytics_viewcount():
     $ flinch_viewcountCheck = True
     hide screen viewershipButton_vig2
     "The view counts are much more stable than the last Oakley stream."
-    "No crazy spikes like the raid, but much more consistent viewership overall."
+    "No crazy spikes like the raid, but more consistent viewership overall."
+    if vig2_outlawEpilogue == True:
+        "Maybe going Outlaw and siding with Matticus at the end will get more viewers to come in next time."
+    else:
+        "Will picking Marshall and going against Matticus bring in fewer viewers next time?"
     jump vig2_analytics_viewcount2
 
 label vig2_analytics_viewcount2():
     menu:
-        "No crazy spikes like the raid, but much more consistent viewership overall."
+        #"No crazy spikes like the raid, but more consistent viewership overall."
         "What's the average viewer count?" if viewershipThoughtCheck == False:
             "The average viewer count for the stream is about 10.4."
             "Over 10! That's great!"
@@ -1320,7 +1324,7 @@ label vig2_analytics_viewcount2():
             $ flinchViewershipShnzi = True
             jump vig2_analytics_viewcount2
         "The assault on the base was crazy!" if gunsBlazing == True and flinchViewershipAssault == False:
-            "The action scene at the datacentre was nuts."
+            "The action scene at the datacentre was nuts!"
             "So many people commenting it was hard to pay attention to the game."
             menu:
                 "So many people commenting it was hard to pay attention to the game."
@@ -1328,7 +1332,7 @@ label vig2_analytics_viewcount2():
                     "It was a lot less intense than the raid though."
                     "You think you're getting better at managing the chat."
                     "It feels good!"
-                "I'm still getting used to it.":
+                "Still getting used to it.":
                     "You're not used to hearing so many people's opinions about the game."
                     "Sometimes it's tough to figure out what you think about it."
                     "You think it'll get easier though."
@@ -1339,9 +1343,9 @@ label vig2_analytics_viewcount2():
             "You wonder if going Outlaw at the end of this episode will bring more people to the stream next time."
             $ flinchViewershipOutlaw = True
             jump vig2_analytics_viewcount2
-        "Will the Marshal route deter people from viewing?" if vig2_marshalEpilogue == True and flinchViewershipMarshal == False:
+        "Will the Marshal route bring in fewer viewers?" if vig2_marshalEpilogue == True and flinchViewershipMarshal == False:
             "There was one person in the chat who said they wanted to see the stream with the \"evil MC.\""
-            "You wonder if you maybe missed an opportunity to get more viewers by going Marshal at the end of this episode."
+            "You wonder if you missed an opportunity to get more viewers by going Marshal at the end of this episode."
             $ flinchViewershipMarshal = True
             jump vig2_analytics_viewcount2
         "Go back to the main Flinch page." if viewershipThoughtCheck == True:
