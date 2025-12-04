@@ -87,6 +87,7 @@ label vig4_sc6_attack_1_ama():
             $ csEngagement += 2
             $ kcEngagement += 1
             $ pdEngagement -= 1
+            $ setEngagement()
             $ marshal += 1
             jump vig4_sc6_attack_1_assault_ama
         "Wait for the group to split.":
@@ -94,6 +95,7 @@ label vig4_sc6_attack_1_ama():
             $ csEngagement -= 1
             $ kcEngagement -= 1
             $ pdEngagement += 2
+            $ setEngagement()
             $ outlaw += 1
             jump vig4_sc6_attack_1_split_ama
 
@@ -262,6 +264,7 @@ label vig4_sc6_attack_1_assault_ama():
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
+            $ setEngagement()
             mS "You were just doing your job. I understand what that's like."
             $ reactTarget = "vig4_sc6_attack_sparedflies"
             show screen streamerCommentary
@@ -282,6 +285,7 @@ label vig4_sc6_attack_1_assault_ama():
         "It wasn't about you.":
             $ pdEngagement += 1
             $ csEngagement -= 1
+            $ setEngagement()
             mS "You're welcome, but it wasn't about you."
             $ reactTarget = "vig4_sc6_attack_sparedflies"
             show screen streamerCommentary
@@ -305,6 +309,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ deadeyeApproval += 1
             $ csEngagement -= 2
             $ pdEngagement += 2
+            $ setEngagement()
             $ vig4_killDflies = True
             stop music
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
@@ -534,6 +539,7 @@ label vig4_sc6_attack_2_ama():
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
                 show jennica stream neutral
+    $ setEngagement()
     play audio "macOK.wav" volume 1.0
     macS "I am okay."
     macS "But Coil has brought me into the plaza tower and away from the fighting."
@@ -640,6 +646,7 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement += 2
             $ csEngagement -= 2
             $ kcEngagement -= 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadesurprise"
             show screen streamerCommentary
             mS "Ama's right. Keep our weapons aimed at the Dragonfly position."
@@ -741,6 +748,7 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadeassault"
             show screen streamerCommentary
             mS "No. BigCorp is still the enemy."
@@ -837,6 +845,7 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadechaos"
             show screen streamerCommentary
             mS "Screw it."
@@ -990,6 +999,7 @@ label vig4_sc6_attack_3_ama():
         $ pdEngagement += 3
         $ kcEngagement += 2
         $ csEngagement += 1
+        $ setEngagement()
         $ vig4_reggieReturn = True
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         hide ama with dissolve
@@ -1038,6 +1048,7 @@ label vig4_sc6_attack_3_ama():
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 2 
+        $ setEngagement()
         unknown "MOXIE!"
         hide ama with dissolve
         show jennica stream neutral at stream_left with dissolve
@@ -1123,13 +1134,15 @@ label vig4_sc6_attack_3_ama():
             jenter "We've got this."
             if jennicaRomance == True:
                 $ csEngagement += 1
+                $ setEngagement()
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
                 $ AddChatter(vig4_sc6_defend_5_comment28)
                 pS "Go do what you do best, Moze."
             elif teresaRomance == True:
-                $ kcEngagement += 2
+                $ kcEngagement += 1
+                $ setEngagement()
                 "Teresa suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
@@ -1333,6 +1346,7 @@ label vig4_sc7_1_attack_ama():
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
         "I came for MAC.":
             $ kcEngagement += 1
+            $ setEngagement()
             mS "I came for MAC."
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
@@ -1491,12 +1505,14 @@ label vig4_sc6_attack_1():
             $ csEngagement += 1
             $ kcEngagement += 1
             $ pdEngagement -= 1
+            $ setEngagement()
             $ marshal += 1
             jump vig4_sc6_attack_1_assault
         "Wait for the group to split.":
             $ csEngagement -= 1
             $ kcEngagement -= 1
             $ pdEngagement += 1
+            $ setEngagement()
             $ outlaw += 1
             jump vig4_sc6_attack_1_split
 
@@ -1609,6 +1625,7 @@ label vig4_sc6_attack_1_assault():
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_sparedflies"
             show screen streamerCommentary
             mS "You were just doing your job. I understand what that's like."
@@ -1628,6 +1645,7 @@ label vig4_sc6_attack_1_assault():
         "It wasn't about you.":
             $ pdEngagement += 1
             $ csEngagement -= 1
+            $ setEngagement()
             mS "You're welcome, but it wasn't about you."
             mS "I deprived BC of strategic leverage."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment24)
@@ -1645,6 +1663,7 @@ label vig4_sc6_attack_1_assault():
         "I wanted to kill you myself.":
             $ csEngagement -= 2
             $ pdEngagement += 2
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_killdflies"
             stop music
             show screen streamerCommentary
@@ -1850,6 +1869,7 @@ label vig4_sc6_attack_2():
             "I'm sorry, MAC.":
                 $ kcEngagement += 1
                 $ csEngagement += 1
+                $ setEngagement()
                 mS "I'm sorry, MAC."
                 mS "I didn't mean it."
                 mS "I thought that would make saying goodbye easier."
@@ -1862,6 +1882,7 @@ label vig4_sc6_attack_2():
             "The job's not finished.":
                 $ kcEngagement -= 1
                 $ pdEngagement += 1
+                $ setEngagement()
                 mS "It is a job MAC, and it was, without a doubt, personal."
                 mS "But the job's not done."
                 mS "BC is here for you, and we're not going to let them take you away."
@@ -1975,6 +1996,7 @@ label vig4_sc6_attack_3():
             $ vig4_killDflies = True
             $ pdEngagement += 2
             $ csEngagement -= 2
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadesurprise"
             show screen streamerCommentary
             mS "Keep our weapons aimed at the Dragonfly position."
@@ -2071,6 +2093,7 @@ label vig4_sc6_attack_3():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadeassault"
             show screen streamerCommentary
             mS "No. BigCorp is still the enemy."
@@ -2162,6 +2185,7 @@ label vig4_sc6_attack_3():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
+            $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadechaos"
             show screen streamerCommentary
             mS "Screw it."
@@ -2285,6 +2309,7 @@ label vig4_sc6_attack_3():
         $ pdEngagement += 3
         $ kcEngagement += 2
         $ csEngagement += 1
+        $ setEngagement()
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice... but from where?"
         $ AddChatter(vig4_sc6_defend_5_comment15)
@@ -2332,6 +2357,7 @@ label vig4_sc6_attack_3():
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 2 
+        $ setEngagement()
         unknown "MOXIE!"
         pS "Cap, we're pickin' up a new signal!"
         #if vig2_outlawEpilogue == True:
@@ -2417,6 +2443,7 @@ label vig4_sc6_attack_3():
             jenter "We've got this."
             if jennicaRomance == True:
                 $ csEngagement += 1
+                $ setEngagement()
                 "Jennica suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
@@ -2424,6 +2451,7 @@ label vig4_sc6_attack_3():
                 pS "Go do what you do best, Moze."
             elif teresaRomance == True:
                 $ kcEngagement += 2
+                $ setEngagement()
                 "Teresa suddenly comes up from the tank. She faces me dead on."
                 "I can't move."
                 "She grabs my head and pulls me in for a kiss."
@@ -2651,6 +2679,7 @@ label vig4_sc7_1_attack():
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
         "I came for MAC.":
             $ kcEngagement += 1
+            $ setEngagement()
             mS "I came for MAC."
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
@@ -2671,7 +2700,7 @@ label vig4_sc7_1_attack():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
-            $ csEngagement += 1
+            $ setEngagement()
             mS "I came to help, to fight off BigCorp."
             $ AddChatter(vig4_sc7_1_attack_ama_comment10)
             "Coil tilts his head, as if inspecting me."

@@ -170,6 +170,7 @@ label vig4_sc6_defend_1():
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_defend_1_comment20)
             mS "We have to show BigCorp that they can't take our freedom without a fight."
+    $ setEngagement()
     "Vega holds for a moment."
     $ AddChatter(vig4_sc6_defend_1_comment21)
     "The sounds of battle in the distance are quiet."
@@ -305,6 +306,7 @@ label vig4_sc6_defend_1():
                 $ AddChatter(vig4_sc6_defend_1_comment39)
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
+    $ setEngagement()
     play audio "macOK.wav" volume 1.0
     macS "I am okay."
     macS "But Coil has brought me away from the fighting."
@@ -533,12 +535,14 @@ label vig4_sc6_defend_2():
             $ pdEngagement += 2
             $ kcEngagement += 1
             $ csEngagement -=2
+            $ setEngagement()
             $ outlaw += 1
             jump vig4_sc6_defend_3_barricade
         "Support the frontline. Leave the barricade.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             $ csEngagement += 2
+            $ setEngagement()
             $ marshal += 1
             jump vig4_sc6_defend_3_frontline
 
@@ -603,6 +607,7 @@ label vig4_sc6_defend_3_barricade():
             $ kcEngagement += 1
             "The barricade is too important. I couldn't risk it on them."
             $ AddChatter(vig4_sc6_defend_3_barricade_comment6)
+    $ setEngagement()
     play audio "grenade.wav" volume 1.0
     show polarisfight_stream with vpunch
     "A grenade explodes at our side."
@@ -677,6 +682,7 @@ label vig4_sc6_defend_3_frontline():
             $ pdEngagement += 1
             "They're lucky I didn't leave them to die."
             $ AddChatter(vig4_sc6_defend_3_frontline_comment11)
+    $ setEngagement()
     play audio "grenade.wav" volume 1.0
     show polarisfight_stream with vpunch
     "A grenade explodes at our side."
@@ -869,6 +875,7 @@ label vig4_sc6_defend_5():
         $ pdEngagement += 3
         $ kcEngagement += 2
         $ csEngagement += 1
+        $ setEngagement()
         $ vig4_reggieReturn = True
         unknown "Ugh, and here I thought you all would have toughened up in the last two weeks."
         "A familiar voice... but from where?"
@@ -922,6 +929,7 @@ label vig4_sc6_defend_5():
         $ pdEngagement += 1
         $ kcEngagement += 3
         $ csEngagement += 2 
+        $ setEngagement()
         play audio "exitHyperspace.wav" volume 1.5
         pause 0.5
         unknown "MOXIE!"
@@ -1146,6 +1154,7 @@ label vig4_sc7_1_defend():
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
         "I came for MAC.":
             $ kcEngagement += 1
+            $ setEngagement()
             mS "I came for MAC."
             mS "I'm not leaving without him."
             $ AddChatter(vig4_sc7_1_defend_comment14)
@@ -1169,6 +1178,7 @@ label vig4_sc7_1_defend():
                 $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
             $ csEngagement += 1
+            $ setEngagement()
             mS "I came to help fight off BigCorp."
             show coil stream happy
             cS "And you have done an admirable job." 
