@@ -384,6 +384,8 @@ screen navigation():
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
+        textbutton _("Credits") action ShowMenu("credits")
+
         if _in_replay:
 
             textbutton _("End Replay") action EndReplay(confirm=True)
@@ -606,6 +608,31 @@ style return_button:
     yalign 1.0
     yoffset -45
 
+
+## Credits screen ##################
+
+screen credits():
+    tag menu
+    use game_menu(_("Credits"), scroll="viewport"):
+        #style_prefix "about"
+        vbox:
+            xpos 0
+            ypos 0
+            spacing 20
+            label "{u}{b}mLab\nProductions:{/b}{/u}" #size 50
+            text "Beck de Heuvel" size 40
+            text "E. Jules Maier-Zucchino" size 40
+            text "Justin Roberts" size 40
+            text "Joshua Spatzner" size 40
+            text "Mia Consalvo" size 40
+        vbox:
+            ypos 50
+            spacing 20
+            label "{u}{b}Special Thanks To:{/b}{/u}" #size 35
+            text "Visual Novel Design - {a=https://www.youtube.com/@vimi/featured}Ren'Py Essentials Tutorial{/a}" size 30
+            text "Nighten - {a=https://nighten.itch.io/yet-another-phone-renpy}yet another phone for renpy{/a}" size 30
+            text "BadMustard_AVN - {a=https://old.reddit.com/r/RenPy/comments/wnxqbz/health_bars_in_renpy_like_phoenix_wright/}Simple Ren'Py Bar{a}" size 30
+            text "Ren'Py Discord Community - Programming Assistance" size 30
 
 ## About screen ################################################################
 ##
