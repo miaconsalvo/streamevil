@@ -48,6 +48,7 @@ label vig3_sc1_out():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc1_mar():
@@ -96,6 +97,7 @@ label vig3_sc1_mar():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc2_macdad(): #I commented this out of the main game script. MAC references Vanas as his father in episode 1, this wouldn't be a surprise.
@@ -183,6 +185,7 @@ label vig3_sc3_maccandy():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc3_firstfight():
@@ -232,6 +235,7 @@ label vig3_sc3_firstfight():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc4_houndraid():
@@ -254,6 +258,7 @@ label vig3_sc4_houndraid():
         "They better not take the antenna.":
             $ reactImage = "stream ui/reactshocked.png"
             $ vig3_interactions += 1
+            $ csEngagement += 1
             player "Oh no! They're going to take the part we need!"
             #player "Things bout to get complicated!" #Think this is better with just the one line
             $ AddChatter(vig3_sc4_react_comment3)
@@ -261,6 +266,7 @@ label vig3_sc4_houndraid():
         "Let's fight 'em!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ vig3_interactions += 1
+            $ pdEngagement += 1
             #player "We can take 'em!" #similar as above, I think one line is stronger here.
             player "Let's rumble. They ain't so tough!"
             $ AddChatter(vig3_sc4_react_comment5)
@@ -277,6 +283,7 @@ label vig3_sc4_houndraid():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc5_amahallu():
@@ -327,6 +334,7 @@ label vig3_sc5_amahallu():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_crewspat():
@@ -373,6 +381,7 @@ label vig3_sc6_crewspat():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_stranger():
@@ -415,6 +424,7 @@ label vig3_sc6_stranger():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_recbonding():
@@ -480,6 +490,7 @@ label vig3_sc6_recbonding():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_shipbet1():
@@ -528,6 +539,7 @@ label vig3_sc6_shipbet1():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_trustcrew():
@@ -563,7 +575,7 @@ label vig3_sc6_trustcrew():
             if viewershipHigh == True:
                 $ AddChatter(vig3_sc6_react_comment30)
                 pause 0.5
-        "Oh no I hope they win!":
+        "Oh no, I hope they win!":
             $ pdEngagement += 1
             $ reactImage = "stream ui/reactshocked.png"
             $ vig3_interactions += 1
@@ -584,6 +596,7 @@ label vig3_sc6_trustcrew():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_shootingzan():
@@ -633,6 +646,7 @@ label vig3_sc6_shootingzan():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc6_shipbet2():
@@ -645,6 +659,7 @@ label vig3_sc6_shipbet2():
         "What a relief.":
             $ reactImage = "stream ui/reactunsure.png"
             $ vig3_interactions += 1
+            $ csEngagement += 1
             player "Phew. That's a relief."
             player "That could've been bad!"
             $ AddChatter(vig3_sc6_react_comment38)
@@ -662,6 +677,7 @@ label vig3_sc6_shipbet2():
         "Wow, cop out.":
             $ reactImage = "stream ui/reactconfident.png"
             $ vig3_interactions += 1
+            $ pdEngagement += 1
             player "Hahaha"
             player "Of course they didn't bet the ship."
             player "What a cop out."
@@ -680,6 +696,7 @@ label vig3_sc6_shipbet2():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc7_lostmac():
@@ -717,6 +734,7 @@ label vig3_sc7_lostmac():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc8_teresabluff():
@@ -765,6 +783,7 @@ label vig3_sc8_teresabluff():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc9_daisyreturns():
@@ -815,6 +834,7 @@ label vig3_sc9_daisyreturns():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc9_daisybar():
@@ -870,6 +890,7 @@ label vig3_sc9_daisybar():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc9_amasurprise():
@@ -918,6 +939,7 @@ label vig3_sc9_amasurprise():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc11_amabacksass():
@@ -966,6 +988,7 @@ label vig3_sc11_amabacksass():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_amachoke():
@@ -1013,6 +1036,7 @@ label vig3_sc12_amachoke():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_amafindsout():
@@ -1061,6 +1085,7 @@ label vig3_sc12_amafindsout():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_macalignment_violencepessimism():
@@ -1116,6 +1141,7 @@ label vig3_sc12_macalignment_violencepessimism():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_macalignment_violenceoptimism():
@@ -1173,6 +1199,7 @@ label vig3_sc12_macalignment_violenceoptimism():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_macalignment_peacepessimism():
@@ -1230,6 +1257,7 @@ label vig3_sc12_macalignment_peacepessimism():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc12_macalignment_peaceoptimism():
@@ -1285,6 +1313,7 @@ label vig3_sc12_macalignment_peaceoptimism():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc14_recfindsout_regret():
@@ -1339,6 +1368,7 @@ label vig3_sc14_recfindsout_regret():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc14_recfindsout_ihadto():
@@ -1394,6 +1424,7 @@ label vig3_sc14_recfindsout_ihadto():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig3_sc14_recfindsout_noremorse():
@@ -1461,6 +1492,7 @@ label vig3_sc14_recfindsout_noremorse():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 ### Mid-Stream Break Chat Responses ###
@@ -1487,6 +1519,7 @@ label vig3break_crash10():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_brb12():
@@ -1513,6 +1546,7 @@ label vig3break_brb12():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_take7():
@@ -1538,6 +1572,7 @@ label vig3break_take7():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_take10():
@@ -1567,6 +1602,7 @@ label vig3break_take10():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_kiss10():
@@ -1593,6 +1629,7 @@ label vig3break_kiss10():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 #label vig3break_dead4():
@@ -1622,6 +1659,7 @@ label vig3break_dead11():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_tense4():
@@ -1647,6 +1685,7 @@ label vig3break_tense4():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_tense10():
@@ -1673,6 +1712,7 @@ label vig3break_tense10():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_reunion3():
@@ -1699,6 +1739,7 @@ label vig3break_reunion3():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_reunion9():
@@ -1724,6 +1765,7 @@ label vig3break_reunion9():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig3break_end5():
@@ -1744,6 +1786,7 @@ label vig3break_end5():
         $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 #####MACRO GAME TARGETS FOR FLINCH #######

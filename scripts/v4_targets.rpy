@@ -31,6 +31,7 @@ label vig4_sc1_pdParanoia():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc1_csRomance():
@@ -91,6 +92,7 @@ label vig4_sc1_csRomance():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc1_kcPrediction():
@@ -133,6 +135,7 @@ label vig4_sc1_kcPrediction():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_rube():
@@ -165,6 +168,7 @@ label vig4_sc2_rube():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_peacefulTown():
@@ -193,6 +197,7 @@ label vig4_sc2_peacefulTown():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 #label vig4_sc2_AFKDream(): #I commented out the chat that would lead to this label
@@ -453,6 +458,7 @@ label vig4_sc2_elliotEntrance():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_festivalRomance():
@@ -489,6 +495,7 @@ label vig4_sc3_festivalRomance():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_pdCoilCommentary():
@@ -523,6 +530,7 @@ label vig4_sc3_pdCoilCommentary():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_csCoilCommentary():
@@ -560,6 +568,7 @@ label vig4_sc3_csCoilCommentary():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc4_kcNoOffer():
@@ -605,6 +614,7 @@ label vig4_sc4_kcNoOffer():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 #label vig4_sc5_csClimax(): #Made this noninteractable to make managing the vignette a bit easier
@@ -654,6 +664,7 @@ label vig4_sc5_oscarReturn():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_ripTank():
@@ -690,6 +701,7 @@ label vig4_sc6_ripTank():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_pdGoodPerson():
@@ -747,6 +759,7 @@ label vig4_sc6_pdGoodPerson():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_reggieReaction():
@@ -788,6 +801,7 @@ label vig4_sc6_reggieReaction():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc7_kcWhyNoRomance():
@@ -822,6 +836,7 @@ label vig4_sc7_kcWhyNoRomance():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 label vig4_pdEndFeeling():
@@ -890,6 +905,7 @@ label vig4_pdEndFeeling():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
+    $ setEngagement()
     return
 
 ### Streamer Reacts ##########################
@@ -928,6 +944,7 @@ label vig4_sc1_macjokes():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_trustvillager():
@@ -976,6 +993,7 @@ label vig4_sc2_trustvillager():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_macischanging():
@@ -1026,6 +1044,7 @@ label vig4_sc2_macischanging():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_coilshield():
@@ -1075,6 +1094,7 @@ label vig4_sc2_coilshield():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_macchant():
@@ -1130,6 +1150,7 @@ label vig4_sc2_macchant():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_longjourney():
@@ -1165,6 +1186,7 @@ label vig4_sc2_longjourney():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_coilbackstory():
@@ -1213,6 +1235,7 @@ label vig4_sc2_coilbackstory():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc2_macstays():
@@ -1269,6 +1292,7 @@ label vig4_sc2_macstays():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_jenndatelose():
@@ -1312,6 +1336,7 @@ label vig4_sc3_jenndatelose():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_jenndatewin():
@@ -1337,7 +1362,6 @@ label vig4_sc3_jenndatewin():
             $ AddChatter(vig4_sc3jenn_react_comment5)
             pause 0.5
         "Cute!":
-            $ csEngagement += 1
             $ reactImage = "stream ui/reactthumbsup.png"
             $ vig4_interactions += 1
             player "Awww Jennica's so cute!"
@@ -1356,6 +1380,7 @@ label vig4_sc3_jenndatewin():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_jenndatetie():
@@ -1399,6 +1424,7 @@ label vig4_sc3_jenndatetie():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_jenndatekiss():
@@ -1444,6 +1470,7 @@ label vig4_sc3_jenndatekiss():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_jenndaterejection():
@@ -1485,6 +1512,7 @@ label vig4_sc3_jenndaterejection():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_teresadatewin():
@@ -1527,6 +1555,7 @@ label vig4_sc3_teresadatewin():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_teresadatelose():
@@ -1569,6 +1598,7 @@ label vig4_sc3_teresadatelose():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_teresadatekiss():
@@ -1611,6 +1641,7 @@ label vig4_sc3_teresadatekiss():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_teresadaterejection():
@@ -1651,6 +1682,7 @@ label vig4_sc3_teresadaterejection():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_coil1():
@@ -1710,6 +1742,7 @@ label vig4_sc3_coil1():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_coil2():
@@ -1765,6 +1798,7 @@ label vig4_sc3_coil2():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_macgoodbyekind():
@@ -1810,6 +1844,7 @@ label vig4_sc3_macgoodbyekind():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_macgoodbyerude():
@@ -1859,6 +1894,7 @@ label vig4_sc3_macgoodbyerude():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc3_machug(): # dont know if were using this one 
@@ -1896,6 +1932,7 @@ label vig4_sc3_machug(): # dont know if were using this one
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc4_amaoffer():
@@ -1951,6 +1988,7 @@ label vig4_sc4_amaoffer():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc4_amaofferaccept():
@@ -1992,6 +2030,7 @@ label vig4_sc4_amaofferaccept():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc4_amaofferrejectdefend():
@@ -2032,6 +2071,7 @@ label vig4_sc4_amaofferrejectdefend():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc4_amaofferrejectattack():
@@ -2074,6 +2114,7 @@ label vig4_sc4_amaofferrejectattack():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 #label vig4_sc5_oakleypicture(): might not need this one if we have one reacting to the explosion
@@ -2116,6 +2157,7 @@ label vig4_sc4_amaofferrejectattack():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc5_oakleydestroyed():
@@ -2159,6 +2201,7 @@ label vig4_sc5_oakleydestroyed():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc5_amashowsup():
@@ -2209,6 +2252,7 @@ label vig4_sc5_amashowsup():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc5_viewershipBump():
@@ -2264,6 +2308,7 @@ label vig4_sc5_viewershipBump():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_killdflies():
@@ -2314,6 +2359,7 @@ label vig4_sc6_attack_killdflies():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_sparedflies():
@@ -2363,6 +2409,7 @@ label vig4_sc6_attack_sparedflies():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_both_maccall():
@@ -2410,6 +2457,7 @@ label vig4_sc6_both_maccall():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_barricadesurprise():
@@ -2463,6 +2511,7 @@ label vig4_sc6_attack_barricadesurprise():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_barricadeassault():
@@ -2508,6 +2557,7 @@ label vig4_sc6_attack_barricadeassault():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_barricadechaos():
@@ -2557,6 +2607,7 @@ label vig4_sc6_attack_barricadechaos():
             $ narrator = reg_narrator
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
+    $ setEngagement()
     return
 
 label vig4_sc6_attack_finding_coil():

@@ -32,6 +32,7 @@ label vig2_sc1_testquestion():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -65,6 +66,7 @@ label vig2_sc1_matticusopinion():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -101,6 +103,7 @@ label vig2_sc2_mar_consistency():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -158,6 +161,7 @@ label vig2_sc2_out_romance():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -203,6 +207,7 @@ label vig2_sc4_gameplan():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -237,6 +242,7 @@ label vig2_sc7_toofar():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -288,6 +294,7 @@ label vig2_sc7_rips():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -319,6 +326,7 @@ label vig2_epilogue_outlaw():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ commentVariable = False
     return
@@ -362,6 +370,7 @@ label vig2_sc1_openingstream():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -375,6 +384,7 @@ label vig2_sc1_mentionallistar():
         "Talk about Allistar?"
         "I still feel bad about that.":
             $ reactImage = "stream ui/reactunsure.png"
+            $ kcEngagement += 1
             $ vig2_interactions += 1
             player "Not gonna lie, I feel a bit bad for that one."
             $ AddChatter(vig2_sc1_reactcomment3)
@@ -383,6 +393,7 @@ label vig2_sc1_mentionallistar():
             pause 0.5
         "Don't mess with MAC!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ csEngagement += 1
             $ vig2_interactions += 1
             player "Listen, you mess with MAC, you mess with me!"
             $ AddChatter(vig2_sc1_reactcomment5)
@@ -396,6 +407,7 @@ label vig2_sc1_mentionallistar():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -430,6 +442,7 @@ label vig2_sc1_matticusjennicaopinion():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -472,6 +485,7 @@ label vig2_sc2_landingongibian():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -486,12 +500,14 @@ label vig2_sc2_whywedidntfly():
         "MAC's so cool!":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ vig2_interactions += 1
+            $ kcEngagement += 1
             player "MAC best cargo confirmed."
             $ AddChatter(vig2_sc2_reactcomment5)
             pause 0.5
             $ AddChatter(vig2_sc2_reactcomment6)
             pause 0.5
         "MAC would get away with it.":
+            $ kcEngagement += 1
             $ reactImage = "stream ui/reactconfident.png"
             $ vig2_interactions += 1
             player "I think they would just let MAC go they're too cute."
@@ -508,6 +524,7 @@ label vig2_sc2_whywedidntfly():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -551,6 +568,7 @@ label vig2_sc2_firstproblem():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -564,6 +582,7 @@ label vig2_sc2_customsdecision():
         "Think about if you made the right choice."
         "All good!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ csEngagement += 1
             $ vig2_interactions += 1
             player "This will be fine!"
             $ AddChatter(vig2_sc2_reactcomment14)
@@ -572,11 +591,13 @@ label vig2_sc2_customsdecision():
             pause 0.5
         "Maybe we should reload.":
             $ reactImage = "stream ui/reactthinking.png"
+            $ pdEngagement -= 1
             $ vig2_interactions += 1
             player "We can always save scum right?"
             pause 0.5
         "It's so over.":
             $ reactImage = "stream ui/reactconversational.png"
+            $ kcEngagement += 1
             $ vig2_interactions += 1
             player "We're so boned, but we're boned together!"
             $ AddChatter(vig2_sc2_reactcomment16)
@@ -590,6 +611,7 @@ label vig2_sc2_customsdecision():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -619,6 +641,7 @@ label vig2_sc3_aftercustoms():
         "Weak.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             player "Honestly that was a bit disappointing."
+            $ pdEngagement += 1
             $ vig2_interactions += 1
             $ AddChatter(vig2_sc3_reactcomment4)
             pause 0.5
@@ -633,6 +656,7 @@ label vig2_sc3_aftercustoms():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -646,6 +670,7 @@ label vig2_sc4_meetingmatticus():
         "Tell the chat how you feel about Matticus."
         "This guy sucks.":
             $ reactImage = "stream ui/reactthumbsdown.png"
+            $ csEngagement += 1
             $ vig2_interactions += 1
             player "I wonder if he ever thought about not breathing... forever."
             $ AddChatter(vig2_sc4_reactcomment1)
@@ -654,12 +679,14 @@ label vig2_sc4_meetingmatticus():
             pause 0.5
         "Cool design!":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ kcEngagement += 1
             $ vig2_interactions += 1
             player "Ooooo cool character redesign!"
             $ AddChatter(vig2_sc4_reactcomment3)
             pause 0.5
         "Oh boy, here comes chaos!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ pdEngagement += 1
             $ vig2_interactions += 1
             player "This is gonna be so bad, I'm so excited!"
             $ AddChatter(vig2_sc4_reactcomment4)
@@ -675,6 +702,7 @@ label vig2_sc4_meetingmatticus():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -716,6 +744,7 @@ label vig2_sc4_plancheckin():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -729,6 +758,7 @@ label vig2_sc5_macquestion():
         "Inquire about MAC's learning."
         "MAC seems inquisitive.":
             $ reactImage = "stream ui/reactthinking.png"
+            $ csEngagement += 1
             $ vig2_interactions += 1
             player "MAC is asking a lot of questions, maybe I should be more careful."
             $ AddChatter(vig2_sc5_reactcomment1)
@@ -737,12 +767,14 @@ label vig2_sc5_macquestion():
             pause 0.5
         "Is MAC remembering everything?":
             $ reactImage = "stream ui/reactconversational.png"
+            $ pdEngagement += 1
             $ vig2_interactions += 1
             player "Do y'all think MAC will develop based on what we do?"
             $ AddChatter(vig2_sc5_reactcomment3)
             pause 0.5
         "MAC, shield your eyes!":
             $ reactImage = "stream ui/reactconfident.png"
+            $ kcEngagement += 1
             $ vig2_interactions += 1
             player "MAC, not gonna lie to you buddy, we might kill so many people."
             $ AddChatter(vig2_sc5_reactcomment4)
@@ -758,6 +790,7 @@ label vig2_sc5_macquestion():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -777,6 +810,8 @@ label vig2_sc6_out_reflect():
             pause 0.5
         "I messed up.":
             $ reactImage = "stream ui/reactshocked.png"
+            $ csEngagement += 1
+            $ pdEngagement -= 1
             $ vig2_interactions += 1
             player "Definitely could've done that a lot better."
             $ AddChatter(vig2_sc6_out_reactcomment2)
@@ -785,6 +820,8 @@ label vig2_sc6_out_reflect():
             pause 0.5
         "Hell yeah!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ pdEngagement += 1
+            $ csEngagement -= 1
             $ vig2_interactions += 1
             player "Yeah that feels like the way that should've gone."
             $ AddChatter(vig2_sc6_out_reactcomment4)
@@ -798,6 +835,7 @@ label vig2_sc6_out_reflect():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -812,6 +850,7 @@ label vig2_sc6_mar_reflect():
         "We just had to sneak in?":
             $ reactImage = "stream ui/reactthumbsdown.png"
             $ vig2_interactions += 1
+            $ pdEngagement += 1
             player "So that was the big stealth mission?"
             $ AddChatter(vig2_sc6_mar_reactcomment1)
             pause 0.5
@@ -819,6 +858,7 @@ label vig2_sc6_mar_reflect():
             pause 0.5
         "Definitely the right way.":
             $ reactImage = "stream ui/reactthumbsup.png"
+            $ csEngagement += 1
             $ vig2_interactions += 1
             player "Quick and quiet, best strategy."
             $ AddChatter(vig2_sc6_mar_reactcomment3)
@@ -838,6 +878,7 @@ label vig2_sc6_mar_reflect():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -877,6 +918,7 @@ label vig2_sc7_bigreveal():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -900,6 +942,8 @@ label vig2_sc8_out_postchoice():
             pause 0.5
         "It's good to be bad!":
             $ reactImage = "stream ui/reactcelebrate.png"
+            $ pdEngagement += 1
+            $ csEngagement -= 1
             $ vig2_interactions += 1
             player "That felt better than I expected."
             $ AddChatter(vig2_sc8_out_reactcomment4)
@@ -920,6 +964,7 @@ label vig2_sc8_out_postchoice():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -972,6 +1017,7 @@ label vig2_sc8_out_reflect():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -1016,6 +1062,7 @@ label vig2_sc9_out_end():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -1060,6 +1107,7 @@ label vig2_sc8_mar_reacttoregi():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -1102,6 +1150,7 @@ label vig2_sc8_mar_reacttoregistun():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -1147,6 +1196,7 @@ label vig2_sc8_mar_reacttoregibribe():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return
@@ -1158,7 +1208,7 @@ label vig2_sc9_mar_end():
     $ reactVariable = True
     menu:
         "Reflect on the Marshal choice."
-        "Too , tbh.":
+        "Too convenient, tbh.":
             $ reactImage = "stream ui/reactthumbsdown.png"
             $ vig2_interactions += 1
             player "That was a bit too convenient, to be honest."
@@ -1191,6 +1241,7 @@ label vig2_sc9_mar_end():
             $ narrator = alt_narrator
         else:
             $ narrator = reg_narrator
+    $ setEngagement()
     $ reactImage = "stream ui/reactneutral.png"
     $ reactVariable = False
     return

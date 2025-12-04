@@ -184,6 +184,7 @@ label vig3outlawstart():
             mS "You can't go in like that. Fix yourself, I'll see you there."
             $ AddChatter(vig3_outlawstart_firm_comment24)
             #increase approval
+    $ setEngagement()
     "I wait until I can feel her shoulder relax and walk out and down the hall, alone."
     hide teresa with dissolve
     jump vig3_sc2
@@ -276,6 +277,7 @@ label vig3marshalstart():
             $ csEngagement -= 1
             mS "You can't go in like that. Fix yourself, I'll see you there."
             $ AddChatter(vig3_marshalstart_firm_comment7)
+    $ setEngagement()
     "When Jennica's shoulder relaxes I walk out and down the hall, alone."
     hide jennica with dissolve
     jump vig3_sc2
@@ -382,6 +384,7 @@ label vig3_sc2():
             $ kcEngagement += 1 #Logic: Kitcat likes the focus on keeping MAC safe and the more gentle omment
             mS "MAC, don't go poking into BigCorp networks. After all the work to keep you safe." #more gentle way of chiding MAC about being inconspicuous#
     play audio "macGrumble.wav" volume 1.0
+    $ setEngagement()
     "MAC's head lowers." ## this reaction can differ based on choices##
     macS "I just wanted to be helpful..."
     "I let out a heavy sigh."
@@ -530,6 +533,7 @@ label vig3_sc3():
             "I lift my arm and flash the Snakehawks tattoo on my left hand."
             mS "I really wouldn't do that."
             $ AddChatter (vig3_sc3_snakehawk_comment2)
+    $ setEngagement()
     "The two men back away and retreat. They're well built but not sharp enough for a fight like this."
     "I give the signal to Jennica as she lets their friend scramble up and run off after them."
     hide screen streamerCommentary
@@ -691,6 +695,7 @@ label vig3_sc4():
             pause 0.5
             $ AddChatter (vig3_sc4_program_comment3)
             hide teresa
+    $ setEngagement()
     #^All of these feel mean....could use a rewrite#
     show rec stream thinking
     "MAC looks unsure if he should respond. Rec looks between the two of us for an answer."
@@ -758,6 +763,7 @@ label vig3_sc4():
             play audio "macOK.wav" volume 1.2
             macS "Yes, Captain."
             $ AddChatter (vig3_sc4_nolove_comment1)
+    $ setEngagement()
     "Reccrin comes out after a brief moment with a long antenna and some internal parts for our comms."
     show mac stream neutral reflect  at stream_left5mac with move
     show rec stream happy at stream_right5 with dissolve
@@ -855,6 +861,7 @@ label vig3_sc4():
                     $ AddChatter (vig3_sc4_continue_comment2)
                     "I see one of them try to head to the back room."
                     mS "Alright that's enough!"
+    $ setEngagement()
     houndgoon "You'd best to stay out of official business."
     "Another uniform chimes in."
     houndgoon "We're under orders to collect contraband."
@@ -982,6 +989,7 @@ label vig3_sc4():
             pS "Maybe we can use him as our antennae instead."
             $ AddChatter (vig3_sc4_shop_comment40)
             mS "Now that's a thought. Rec, you know those guys?"
+    $ setEngagement()
     "They pull out five glasses. And drops the bottle of brandy on the counter."
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in, giving it to MAC."
     play audio "macHum.wav" volume 1.0
@@ -1306,6 +1314,7 @@ label vig3_sc6():
             "When we find our table, I gently push off a passed-out patron lying on it."
             "Teresa and Rec come back to us with our first round." 
             "I buy us the next one."
+    $ setEngagement()
     "And then another."
     "And another."
     show jennica stream neutral at stream_left with move
@@ -1411,6 +1420,7 @@ label vig3_sc6():
             $ pdEngagement += 1
             $ csEngagement -= 1 #Logic: cs doesn't like leaving the crew alone
             $ reactTarget = "vig3_sc6_stranger"#timestamp 6:31
+            $ setEngagement()
             show screen streamerCommentary
             "I follow the stranger out of the bar and every fiber in my being is yelling at me that this is a bad idea."
             play audio "door.wav" volume 1.5
@@ -1446,6 +1456,7 @@ label vig3_sc6():
                     $ kcEngagement += 1 #Logic: Crowd pleaser moment. Everyone likes a good flirt and romance, right?
                     $ pdEngagement += 1
                     $ csEngagement += 1 #Logic: I could see Coriolis losing engagement here, viewing it as being irresponsible
+                    $ setEngagement()
                     mS "Oh, I'm far from disappointed." #flirt
                     "A small smile rises on her face."
                     show stranger stream smile
@@ -1469,6 +1480,7 @@ label vig3_sc6():
                     $ kcEngagement -= 1 #Logic: pd and kc both dislike going here and doing nothing
                     $ pdEngagement -= 1
                     $ csEngagement += 1 #Logic: coriolis likes that you're "the bigger person"
+                    $ setEngagement()
                     mS "Look, this got out of hand."
                     "I hold my hands up and start at her trying to relax the situation."
                     strngr1 "Ha, what can't follow through?"
@@ -1487,6 +1499,7 @@ label vig3_sc6():
                 "Wrestle the knife away.":
                     $ pdEngagement += 1 #Logic: pickledDragons likes Moze asserting herself; kitcat doesn't have strong feelings about this interaction
                     $ csEngagement -= 1 #Logic: Coriolis dislikes the use of force
+                    $ setEngagement()
                     mS "I don't have time for this."
                     show stranger stream stabbed
                     "I grab her wrist before she can cut me open and twist her arm down and away."
@@ -1498,6 +1511,7 @@ label vig3_sc6():
                             $ csEngagement -= 2 #Logic: Coriolis REALLY doesn't like that.
                             $ kcEngagement -= 1 #Logic: It's going too far for kitcat
                             $ pdEngagement += 1
+                            $ setEngagement()
                             $ outlaw += 1
                             "She yells as something snaps."
                             $ AddChatter (vig3_sc6_knifeyes_comment1)
@@ -1538,6 +1552,7 @@ label vig3_sc6():
             $ csEngagement += 1 #Logic: cs likes that you're finding out more about Rec, kc likes that you're sticking with MAC
             $ kcEngagement += 1
             $ pdEngagement -= 1 #Logic: pd is just a little disappointed
+            $ setEngagement()
             "I can't follow paranoid hunches, I gotta stick to my crew."
             $ AddChatter (vig3_sc6_recmac_comment1)
             pause 0.5
@@ -1563,6 +1578,7 @@ label vig3_sc6():
                     $ csEngagement += 1 #Logic: This is a good lesson for the kid to be learning
                     $ kcEngagement += 1
                     $ macHope += 1
+                    $ setEngagement()
                     mS "They're right, just because something is difficult doesn't mean you need to worry all the time."
                     mS "How you work through that is more important."
                     $ AddChatter (vig3_sc6_right_comment1)
@@ -1590,6 +1606,7 @@ label vig3_sc6():
                 "Rec should really consider moving.":
                     $ macPessimism += 1
                     $ pdEngagement -= 1 #Logic: pickledDragons would wonder why you'd leave just cause it's hard
+                    $ setEngagement()
                     ##Logic: I think the other viewers would not have much of a reaction to this one, specifically because it's focused on Rec, not MAC.
                     mS "Rec, ever thought that moving would be the right call?"
                     recS "Oh that's rich coming from you."
@@ -1616,6 +1633,7 @@ label vig3_sc6():
                     $ csEngagement -= 1 #Logic: Coriolis would agree with the sentiment, but Akar is a messed up place to them
                     $ kcEngagement += 1 #Logic: kc and pd like this idea
                     $ pdEngagement += 1
+                    $ setEngagement()
                     mS "It may not look it, but Akar is beautiful."
                     $ AddChatter (vig3_sc6_beautiful_comment1)
                     if viewershipHigh == True:
@@ -1824,6 +1842,7 @@ label vig3_sc6():
         "Absolutely not!":
             $ kcEngagement -= 1 #Logic: mean to MAC, kc doesn't like
             $ csEngagement -= 1 #Logic: It's mean for Coriolis too
+            $ setEngagement()
             mS "You will sit down and say nothing and let me handle it."
             $ AddChatter (vig3_sc6_macquestion_comment1)
             play audio "macGrumble.wav" volume 1.2
@@ -1928,6 +1947,7 @@ label vig3_sc6():
             $ kcEngagement += 1
             $ csEngagement -= 1 #Logic: Coriolis is uninterested in another fight
             $ macViolence += 1
+            $ setEngagement()
             "I see a young couple pinning each other on a pillar near the table." 
             "They're really in it."
             "Ah, young love, so easy to break."
@@ -1981,6 +2001,7 @@ label vig3_sc6():
             $ pdEngagement += 1 #Logic: this option is just fun. Everyone likes it
             $ kcEngagement += 1
             $ csEngagement += 1
+            $ setEngagement()
             "I take a look at the frayed rope and the netting that is so carefully holding back the plants."
             "How has no one changed the rope yet?"
             $ AddChatter (vig3_sc6_cutrope_comment1)
@@ -2083,6 +2104,7 @@ label vig3_sc6():
             $ pdEngagement += 2 #Logic: pd's perspective: make sure you win
             $ kcEngagement -= 1 #Logic: kc and cs both really like Zan so this is unnecessarily rude in their view
             $ csEngagement -= 1
+            $ setEngagement()
             $ vig3_zanApproval = False
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
             $ AddChatter (vig3_sc6_shootzan_comment1)
@@ -2188,6 +2210,7 @@ label vig3_sc6():
             $ csEngagement += 2 #Logic: Coriolis likes Moze trusting in her crew
             $ kcEngagement += 1 #Logic: kitcat likes not shooting Zan
             $ pdEngagement -= 1 #Logic: pickledDragons wants to shoot Zan
+            $ setEngagement()
             $ vig3_zanApproval = True
             #need a variable to determine if they win or not.
             $ reactTarget = "vig3_sc6_trustcrew" #timestamp 6:37
@@ -2411,6 +2434,7 @@ label vig3_sc7():
             $ csEngagement += 1
             mS "We need to do everything we can to get that part but we can't cause problems."
             enS "Go for option A, option B if necessary."
+    $ setEngagement()
     enS "I'll head to the plaza, Jennica the outskirts. Moze you take MAC and do another sweep of the shops near Rec."
     mS "Perfect, Resa, let's get started then. Now, MAC—"
     if viewershipHigh == True:
@@ -2640,6 +2664,7 @@ label vig3_sc8():
             $ AddChatter (vig3_sc9_teresa_comment1)
             pS "But MAC's as good as gone if we don't do anything."
             enS "Jenn, you must understand."
+    $ setEngagement()
     enS "The reason Reynar is using the Hounds in the first place is because all of his actual security is here. Look around." 
     $ AddChatter (vig3_sc9_jennica_comment2)
     "I'm almost embarrassed by how long it took me to realize."
@@ -2701,6 +2726,7 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: coriolis wants you to play it lowkey
             $ pdEngagement -= 1 #Logic: pickledDragons wants you to do something
             $ kcEngagement -= 1 #Logic: kitcat is morally outraged about this guy
+            $ setEngagement()
             "I can feel the anger boiling up to my throat."
             "It's so tempting just to trip these snobs into the drink table."
             $ AddChatter (vig3_sc9_letitbe_comment1)
@@ -2767,6 +2793,7 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             "Now, I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gently on the fabric of their flared pants."
             "They tumble over knocking several drinks onto themselves."
             $ AddChatter (vig3_sc9_takehimdown_comment1)
@@ -2838,6 +2865,7 @@ label vig3_sc9():
         "Maybe Daisy can help us?"
         "Ask her about the missing parts.":
             $ csEngagement += 1 #Logic: coriolis likes the directness
+            $ setEngagement()
             mS "You seem like you know your way around here."
             show daisy stream neutral
             showgirl "A girl has her ways."
@@ -2855,6 +2883,7 @@ label vig3_sc9():
             "I nod and head over."
         "Invite her to the bar.":
             $ kcEngagement += 1 #Logic: kitcat is here for the flirting
+            $ setEngagement()
             mS "I'm sure you're busy. But care to have a drink with me?"
             $ AddChatter (vig3_sc9_bar_comment1)
             show daisy stream neutral
@@ -2871,6 +2900,7 @@ label vig3_sc9():
             "She nods and we head over."
         "Mumble incoherently.":
             $ pdEngagement += 2 #Logic: pickledDragons finds it outrageous (and fun) that you intentionally choose the "fail" option
+            $ setEngagement()
             mS "Well...I...you see..."
             $ AddChatter (vig3_sc9_flustered_comment1)
             "Makers she's so pretty."
@@ -2954,6 +2984,7 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
+            $ setEngagement()
             $ vig3_daisyApproval = False
             $ vig3_daisyChoice = 1
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
@@ -2994,6 +3025,7 @@ label vig3_sc9():
             $ csEngagement -= 1 #Logic: very violent for cs
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
+            $ setEngagement()
             $ vig3_daisyApproval = True
             $ vig3_daisyChoice = 2
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
@@ -3035,6 +3067,7 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: As mentioned several times, cs appreciates a "sacrifice" for the greater good
             $ kcEngagement -= 1 #Logic: kitcat wants you to stand up for Daisy, pickledDragons doesn't like you being passive
             $ pdEngagement -= 1
+            $ setEngagement()
             $ vig3_daisyApproval = False
             $ vig3_daisyChoice = 3
             $ reactTarget = "vig3_sc9_daisybar"#timestamp 6:48
@@ -3283,6 +3316,7 @@ label vig3_sc11():
             amaS "Even now you're still that arrogant little girl."
             amaS "How has playing the hero been? Finally found that purpose you've been missing?"
             $ AddChatter (vig3_sc11_lapdog_comment2)
+    $ setEngagement()
     "Her tone is playful but there's no mistaking that her rifle is folded behind her."
     "BigCorp's presentation continues, and I hope that the crew has taken this as a moment to leave."
     "It's up to Resa and Jenn now."
@@ -3341,6 +3375,7 @@ label vig3_sc11():
             show ama stream formal smug
             amaS "Don't quit your day job Moze."
             amaS "I want that droid and I want it now."
+    $ setEngagement()
     "Ama stalks towards me, and I know what's coming."
     $ AddChatter (vig3_sc11_fairint_comment6)
     "I move to my blaster hidden in my clothes."#choice here?
@@ -3510,6 +3545,7 @@ label vig3_sc12():
             $ kcEngagement += 1 #Logic: kitcat likes intervening in the murder, Coriolis really likes it 
             $ csEngagement += 3
             $ pdEngagement -= 2 #Logic: pickledDragons thinks he should die
+            $ setEngagement()
             $ vig3_bcRepSaved = True
             "When MAC's eyes lock on mine, he perks up."
             "I put my finger to my lips."
@@ -3578,6 +3614,7 @@ label vig3_sc12():
                     $ pdEngagement += 1 #Logic: you get pd back a bit for this
                     $ kcEngagement += 2 #Logic: kitcat would say you have to defend MAC
                     $ csEngagement -= 1 #Logic: coriolis would prefer you rush them instead of try to shoot
+                    $ setEngagement()
                     $ macViolence += 1
                     $ macPessimism += 1
                     "Absolutely not!"
@@ -3601,6 +3638,7 @@ label vig3_sc12():
                     $ pdEngagement += 1 #Logic: similar as the above, but kitcat finds it less impactful of a defense while Coriolis actually does approve somewhat
                     $ kcEngagement += 1
                     $ csEngagement += 1
+                    $ setEngagement()
                     $ macViolence += 1
                     mS "No!"
                     $ AddChatter (vig3_sc12_rush_comment1)
@@ -3620,6 +3658,7 @@ label vig3_sc12():
                 "You can't react fast enough.":
                     $ csEngagement += 1 #Logic: Coriolis likes you not going aggressive
                     $ kcEngagement -= 2 #Logic: kitcat is appalled you didn't do anything; pickledDragons is mixed - it's inaction but also a moment of choosing failure which they find interesting
+                    $ setEngagement()
                     "This is crazy."
                     $ AddChatter (vig3_sc12_freeze_comment1)
                     "All of this, we are so over our heads."
@@ -3699,6 +3738,7 @@ label vig3_sc12():
                 $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
+                $ setEngagement()
                 $ vig3_macShootAma = True
                 $ vig3_macAlign = "ViolentPessimism"
                 $ vig3_outlaw += 1
@@ -3757,6 +3797,7 @@ label vig3_sc12():
                 $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
                 $ csEngagement -= 1
                 $ kcEngagement += 2
+                $ setEngagement()
                 $ vig3_outlaw += 1
                 $ vig3_macAlign = "ViolentHope"
                 play audio "lazer.wav" volume 5.0
@@ -3814,6 +3855,7 @@ label vig3_sc12():
                 $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
                 $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
                 $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
+                $ setEngagement()
                 $ vig3_macAlign = "PeacePessimism"
                 play audio "lazer.wav" volume 4.5
                 "He fires the blaster in-between us, it hits the wall with a definitive crack."
@@ -3864,6 +3906,7 @@ label vig3_sc12():
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favourite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ setEngagement()
                 $ vig3_macAlign = "PeaceHope"
                 $ vig3_macReadAma = True
                 play audio "lazer.wav" volume 4.5
@@ -3935,6 +3978,7 @@ label vig3_sc12():
             $ macPessimism += 2
             $ pdEngagement += 2 #Logic: pickledDragons thinks the rep should die
             $ csEngagement -= 2 #Logic: Coriolis is appalled; kitcat is somewhat mixed. Would prefer to not let the rep die, but is also not disengaged by this choice
+            $ setEngagement()
             $ vig3_bcRepSaved = False
             "When MAC's eyes lock on mine, he perks up."
             "I put a finger to my lips as I slowly shift around Ama toward him."
@@ -4023,6 +4067,7 @@ label vig3_sc12():
                     mS "If I knew it would come up short like this?"
                     mS "No. But it was worth a shot."
                     mS "I figured you of all people would understand that."
+            $ setEngagement()
             show ama stream formal shocked
             "What happens next unfolds in a split second."
             "A shadow flickers across Ama's gaze."
@@ -4067,6 +4112,7 @@ label vig3_sc12():
                 $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
+                $ setEngagement()
                 $ vig3_macAlign = "ViolentPessimism"
                 $ vig3_macShootAma = True
                 play audio "lazer.wav" volume 5.0
@@ -4122,6 +4168,7 @@ label vig3_sc12():
                 $ pdEngagement += 2 #Logic: similar as above but pd and cs are lessened
                 $ csEngagement -= 1
                 $ kcEngagement += 2
+                $ setEngagement()
                 $ vig3_macAlign = "ViolentHope"
                 play audio "lazer.wav" volume 5.0
                 "He fires the blaster in between us, it hits the wall with a definitive crack." 
@@ -4178,6 +4225,7 @@ label vig3_sc12():
                 $ csEngagement += 1  #Logic: Coriolis likes that MAC is not going to fire, but is worried about his attitude
                 $ pdEngagement += 1 #Logic: pickledDragons likes MAC's attitude but does want him to do more
                 $ kcEngagement += 2 #Logic: same as above. Kitcat likes MAC's action, but not his attitude
+                $ setEngagement()
                 $ vig3_macAlign = "PeacePessimism"
                 play audio "lazer.wav" volume 4.5
                 "He fires the blaster in-between us, it hits the wall with a definitive crack."
@@ -4225,6 +4273,7 @@ label vig3_sc12():
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favourite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ setEngagement()
                 $ vig3_macAlign = "PeaceHope"
                 $ vig3_macReadAma = True
                 play audio "lazer.wav" volume 5.0
@@ -4352,6 +4401,7 @@ label vig3_sc13():
             $ AddChatter (vig3_sc13_disposed_comment1)
             pause 0.5
             $ AddChatter (vig3_sc13_disposed_comment2)
+    $ setEngagement()
     play audio "macPing.wav" volume 1.5
     macS "In here!"
     "MAC stops us at a door, I can hear muffled arguing beyond it."
@@ -4520,6 +4570,7 @@ label vig3outlawcomms():
     $ pdEngagement += 1  #Logic: pickledDragons like that you are continuing to have a relationship with Matticus
     $ kcEngagement -= 1 #Logic: kitcat and coriolis don't like Matticus
     $ csEngagement -= 1
+    $ setEngagement()
     smatt "Well hello ladies! Need a hand from little ol' me?"
     $ AddChatter (vig3_outlawcomms_comment1)
     "Matticus smiles in that shit-eating grin that he loves."
@@ -4592,6 +4643,7 @@ label vig3marshalcomms():
     show matticus phone neutral at stream_center_mac with dissolve
     show jennica stream angry
     $ pdEngagement += 1 #Logic: pickledDragons finds this development interesting; the other two are neutral
+    $ setEngagement()
     smatt "Well hello ladies! To what do I owe the pleasure?"
     "Matticus smiles in that shit-eating grin that he loves."
     $ AddChatter (vig3_marshalcomms_comment1)
@@ -4863,6 +4915,7 @@ label vig3_sc14():
             else:
                 $ csEngagement += 1  #Logic: if you didn't identify a misclick, they're just sympathetic in general
             $ kcEngagement -= 1 #Logic: even kitcat doesn't really like that response: DEFEND MAC!
+            $ setEngagement()
             $ deadeyeApproval -= 2
             $ macPeace += 1 #I feel like MAC would understand this as expressing remorse for actions, teaching him to ask for forgivness and not just stubbornly assert that you are correct.
             $ macHope += 1
@@ -4939,6 +4992,7 @@ label vig3_sc14():
             $ csEngagement += 1
             $ kcEngagement += 3 #Logic: kitcat might legit feel like you didn't have a choice: MAC was threatened after all
             #I feel like Ama would be neutral on this front
+            $ setEngagement()
             $ macViolence += 1
             $ macPessimism += 2
             $ reactTarget = "vig3_sc14_recfindsout_ihadto"
@@ -5013,6 +5067,7 @@ label vig3_sc14():
             $ pdEngagement += 3 #Logic: pd loves this attitude; the other two liked Allistar
             $ csEngagement -= 2
             $ kcEngagement -= 1
+            $ setEngagement()
             $ deadeyeApproval += 2
             $ macViolence += 3
             $ macPessimism += 3
@@ -5423,6 +5478,7 @@ label vig3_macro_viewerChat_1():
                 "•It reflected how I felt as a player.":
                     hide screen NVLnarration
                     $ csEngagement += 1
+                    $ setEngagement()
                     player_nvl "I made that choice cause it was what I felt the most in that moment"
                     player_nvl "I wasn't expecting it and it was so tense"
                     if misclick == True:
@@ -5456,6 +5512,7 @@ label vig3_macro_viewerChat_1():
                 "•It felt the most honest from Moze.":
                     hide screen NVLnarration
                     $ csEngagement += 1
+                    $ setEngagement()
                     player_nvl "I know it seems odd, but I think it was the most honest response from Moze"
                     player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar"
                     player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore"
@@ -5486,6 +5543,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
             cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that"
@@ -5554,6 +5612,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it"
@@ -5563,6 +5622,7 @@ label vig3_macro_viewerChat_1():
                 "•It was harsh but true.":
                     hide screen NVLnarration
                     $ csEngagement -= 1
+                    $ setEngagement()
                     player_nvl "It was harsh, but it was true"
                     player_nvl "I feel like saying any of the other options just wasn't being honest to Rec"
                     player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences"
@@ -5626,6 +5686,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
 
     elif topfan == "kitcat": #kitcat Convo
@@ -5643,6 +5704,7 @@ label vig3_macro_viewerChat_1():
                 "•I thought it was great!":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "That scene was so crazy!"
                     player_nvl "I get what you're saying, but I think it makes a lot of sense for his character and this universe"
                     player_nvl "We've had to do a lot of not great things just to survive"
@@ -5669,6 +5731,7 @@ label vig3_macro_viewerChat_1():
                 "•I'm also conflicted.":
                     hide screen NVLnarration
                     $ kcEngagement += 2
+                    $ setEngagement()
                     player_nvl "I see where you're coming from. I'm also feeling a bit conflicted about it"
                     player_nvl "Like, the galaxy is a tough place, and he has to know how to survive"
                     player_nvl "But is him becoming just like Moze really the best thing?"
@@ -5694,6 +5757,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=3
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_macAlign == "ViolentHope":
             kc_nvl "What a great move by him! Taking a shot to distract Ama so you could get the upperhand!"
@@ -5705,6 +5769,7 @@ label vig3_macro_viewerChat_1():
                 "•I was nervous about that too.":
                     hide screen NVLnarration
                     $ kcEngagement += 2
+                    $ setEngagement()
                     player_nvl "I totally agree, thought that move by him was super fun!"
                     player_nvl "I was also holding my breath in that moment. Seriously didn't know which way it was gonna go"
                     player_nvl "Glad he didn't shoot her. I know MAC has to learn how to survive in this galaxy, but him knowing the difference between survival and cruelty feels pretty important"
@@ -5728,6 +5793,7 @@ label vig3_macro_viewerChat_1():
                 "•I kind of wish he'd hit Ama.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "I actually kind of wish he'd taken a shot at her"
                     player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option"
                     player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
@@ -5751,6 +5817,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=3
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_macAlign == "PeacePessimism":
             kc_nvl "It was so heartbreaking seeing him falter!"
@@ -5762,6 +5829,7 @@ label vig3_macro_viewerChat_1():
                 "•It paralleled Moze's flashback so well too.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "Yeah, that moment really got me as well. Plus it parallels Moze's flashback with Ama really nicely"
                     player_nvl "The whole episode did a really good job at drawing those connections"
                     player_nvl "I feel for MAC. Just trying to do his best"
@@ -5785,6 +5853,7 @@ label vig3_macro_viewerChat_1():
                 "•I kind of wish he'd taken the shot.":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "I actually kind of wish he'd taken a shot at her"
                     player_nvl "I mean, I do like him going for a less harmful maneuver. But that's not always going to be an option"
                     player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
@@ -5808,6 +5877,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=3
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             kc_nvl "And he didn't even use it!"
@@ -5820,6 +5890,7 @@ label vig3_macro_viewerChat_1():
                 "•He's gotten so clever!":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "I know, I thought that was a great move from him as well!"
                     player_nvl "Really cool to see how Moze's influence is affecting him, makes the whole \"doing better\" thing feel rewarding imo"
                     player_nvl "Gotta love him learning to be clever and not just \"tough\""
@@ -5843,6 +5914,7 @@ label vig3_macro_viewerChat_1():
                 "•I kind of wish he'd taken the shot":
                     hide screen NVLnarration
                     $ kcEngagement += 1
+                    $ setEngagement()
                     player_nvl "I actually kind of wish he'd taken a shot at her"
                     player_nvl "I mean, I do like how this reflects Moze's actions. But talking your way out of situations may not always be an option"
                     player_nvl "Moze might not be around to keep him safe forever. Eventually, he's going to have to make these tough calls for himself"
@@ -5866,6 +5938,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ kcEngagement -=3
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
     elif topfan == "pickledDragons": #pickledDragons Convo
         #pickledDragons convo - Ama! and flashbacks
@@ -5880,6 +5953,7 @@ label vig3_macro_viewerChat_1():
             "•I think she did the best she could.":
                 hide screen NVLnarration
                 $ pdEngagement += 1
+                $ setEngagement()
                 player_nvl "Honestly, I think she did the best she could"
                 player_nvl "I mean, we saw that one flashback with the gun, where she basically threatened to kill Moze. And that's not cool"
                 player_nvl "But she was trying to do her best to teach Moze so she could survive on her own"
@@ -5978,6 +6052,7 @@ label vig3_macro_viewerChat_1():
             "•I think she was a bad influence on Moze.":
                 hide screen NVLnarration
                 $ pdEngagement += 1
+                $ setEngagement()
                 player_nvl "Honestly, I think she was a bad influence on Moze"
                 player_nvl "Like, you saw that one flashback with the gun, where she basically threatened to kill Moze. Not cool"
                 player_nvl "And that connection is clearly weighing on Moze in a way that isn't healthy"
@@ -6076,6 +6151,7 @@ label vig3_macro_viewerChat_1():
             "•Don't respond.":
                 hide screen NVLnarration
                 $ pdEngagement -=1
+                $ setEngagement()
                 "Nah, don't really want to encourage a parasocial relationship."
 
     else: #Coriolis Convo
@@ -6092,6 +6168,7 @@ label vig3_macro_viewerChat_1():
                 "•It reflected how I felt as a player.":
                     hide screen NVLnarration
                     $ csEngagement += 1
+                    $ setEngagement()
                     player_nvl "I made that choice cause it was what I felt the most in that moment"
                     player_nvl "I wasn't expecting it and it was so tense"
                     if misclick == True:
@@ -6125,6 +6202,7 @@ label vig3_macro_viewerChat_1():
                 "•It felt the most honest from Moze.":
                     hide screen NVLnarration
                     $ csEngagement += 1
+                    $ setEngagement()
                     player_nvl "I know it seems odd, but I think it was the most honest response from Moze"
                     player_nvl "I feel like even she doesn't know why she did it, especially since she could so easily have stunned Allistar"
                     player_nvl "I mean, I'm thinking like in terms of her character and less myself. But I think that's fun to explore"
@@ -6155,6 +6233,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         elif vig3_recResponse == "Classic":
             cs_nvl "I thought the attempt to use Moze's classic line made sense, and I liked how Rec called her on that"
@@ -6223,6 +6302,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
         else:
             cs_nvl "I'll be honest, I thought it was harsh the way Moze was so adamant about justifying it"
@@ -6232,6 +6312,7 @@ label vig3_macro_viewerChat_1():
                 "•It was harsh but true.":
                     hide screen NVLnarration
                     $ csEngagement -= 1
+                    $ setEngagement()
                     player_nvl "It was harsh, but it was true"
                     player_nvl "I feel like saying any of the other options just wasn't being honest to Rec"
                     player_nvl "Like, straight up, Allistar betrayed our trust. That has to have consequences"
@@ -6295,6 +6376,7 @@ label vig3_macro_viewerChat_1():
                 "•Don't respond.":
                     hide screen NVLnarration
                     $ csEngagement -= 2
+                    $ setEngagement()
                     "Nah, don't really want to encourage a parasocial relationship."
     $ screenComplete = True
     call screen webNavigation_vig3

@@ -61,6 +61,30 @@ init python:
         comments_list.remove(comments_list[0])
         return
 
+    def setEngagement():
+        if csEngagement > 15:
+            csEngagement = 15
+        elif csEngagement < -15:
+            csEngagement = -15
+        else:
+            pass
+        
+        if kcEngagement > 15:
+            kcEngagement = 15
+        elif kcEngagement < -15:
+            kcEngagement = -15
+        else:
+            pass
+
+        if pdEngagement > 15:
+            pdEngagement = 15
+        elif pdEngagement < -15:
+            pdEngagement = -15
+        else:
+            pass
+
+        return
+
 label TurnSound():
     #$ commentPing = ! commentPing #There's a one liner for this but I don't know the syntax
     #so we do it unwieldy

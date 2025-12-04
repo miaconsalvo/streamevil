@@ -306,6 +306,7 @@ label GibianVCustomsDepot():
             $ kcEngagement += 1
             $ engineerApproval += 1
             $ macViolence += 2
+            $ setEngagement()
             #$ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
@@ -316,6 +317,7 @@ label GibianVCustomsDepot():
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pilotApproval += 1
+            $ setEngagement()
             #$ customsDistraction = False
             jump GibianVCustomsMarshal
 
@@ -656,6 +658,7 @@ label matticusDoor():
             $ macViolence += 1
             $ outlaw += 1
             $ pdEngagement += 1
+            $ setEngagement()
             mS "Listen buddy. Just let us in."
             mS "Do you wanna explain to him that you pissed off his old merc crew?"
             mattdoorbell "No, I just—"
@@ -899,6 +902,7 @@ label meetingMatticus():
             $ engineerApproval += 1
         "Piss off.":
             $ pdEngagement += 1
+            $ setEngagement()
             $ pilotApproval += 1
             $ engineerApproval -=1
             mS "Get bent you ugly warthog."
@@ -976,6 +980,7 @@ label approachingBase():
         "They're bad people.":
             $ macPessimism += 1
             $ pdEngagement -= 1
+            $ setEngagement()
             $ AddChatter(vig2_sc5_comment2)
             mS "Yes. They're bad people."
             $ AddChatter(vig2_sc5_comment3)
@@ -1038,6 +1043,7 @@ label approachingBase():
             $ csEngagement -= 1
             $ engineerApproval += 2
             $ macViolence += 3
+            $ setEngagement()
             "We don't know what kind of security we're walking into."
             $ AddChatter(vig2_sc6_out_comment1)
             "Getting caught off guard is a risk we can't afford to take."
@@ -1074,6 +1080,7 @@ label approachingBase():
             $ kcEngagement -= 1
             $ pilotApproval += 2
             $ macPeace += 2
+            $ setEngagement()
             $ AddChatter(vig2_sc6_mar_comment1)
             "Quick and quiet would be safer."
             mS "Jennica's right, lets try to avoid attention."
@@ -1131,6 +1138,7 @@ label commsBase_MAR1():
         "My instincts take over."
         "Stun him.":
             $ kcEngagement -= 1
+            $ setEngagement()
             $ engineerApproval += 1
             "I instantly flick my blaster to stun before shooting him in the chest."
             $ AddChatter(vig2_sc6_mar_choice1_stun_comment1)
@@ -1149,6 +1157,7 @@ label commsBase_MAR1():
             $ pdEngagement += 1
             $ csEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             $ pilotApproval += 1
             $ macPeace += 1
             mS "Hey! How's it going?"
@@ -1222,6 +1231,7 @@ label commsBase_MAR2():
             $ csEngagement += 1
             $ kcEngagement -= 1
             $ pdEngagement -= 1
+            $ setEngagement()
             "We can get through without firing a shot."
             "Quick and quiet."
             "I signal to Teresa to prepare a fake radio diversion."
@@ -1304,6 +1314,7 @@ label commsBase_OUT1():
         "Shoot to kill.":
             $ pdEngagement += 1
             $ csEngagement -= 1
+            $ setEngagement()
             "I take a deep breath and fire my blaster."
             play audio "lazer.wav" volume 1.0
             "The guard's head snaps back before he slumps over."
@@ -1319,6 +1330,7 @@ label commsBase_OUT1():
             "Jennica dives into cover next to me."
         "Suppressing fire.":
             $ kcEngagement += 1
+            $ setEngagement()
             "Too risky."
             $ AddChatter(vig2_sc6_out_suppress_comment1)
             "I fire a few more shots from cover."
@@ -1387,6 +1399,7 @@ label commsBase_OUT1():
             $ pdEngagement -= 1
             $ kcEngagement += 1
             $ csEngagement += 1
+            $ setEngagement()
             $ AddChatter(vig2_sc6_out_spare_comment1)
             "This guy was just doing his job."
             mS "Alright."
@@ -1426,6 +1439,7 @@ label commsBase_OUT1():
             $ engineerApproval += 1
             $ pdEngagement += 1
             $ csEngagement -= 1
+            $ setEngagement()
             "The less witnesses the better."
             $ AddChatter(vig2_sc6_out_execute_comment1)
             $ AddChatter(vig2_sc6_out_execute_comment2)
@@ -1555,6 +1569,7 @@ label commsBase_DataCenter():
             $ engineerApproval -= 1
             $ macHope += 3
             $ macPeace += 1
+            $ setEngagement()
             "This is just plain wrong."
             "We have to be better."
             "Or at least we have to try to be."
@@ -1568,6 +1583,7 @@ label commsBase_DataCenter():
             $ kcEngagement += 1
             $ engineerApproval += 2
             $ pilotApproval -= 2
+            $ setEngagement()
             #This way, either choice produces the same difference in micro-game NPC Approval
             #BUT if we want to do things where like only certain dialogues trigger if Approval with
             #someone is high enough, the difference in individual scales can matter
@@ -1819,6 +1835,7 @@ label commsBase_DataCenter_OUT():
             $ kcEngagement += 1
             $ pilotApproval += 1
             $ engineerApproval += 1
+            $ setEngagement()
             "We don't need to hurt him. Just need to make him think we will."
             mS "Look, it's in your best interest that you forget everything that happened here."
             $ AddChatter(vig2_sc7_out_coerce_comment1)
@@ -1855,6 +1872,7 @@ label commsBase_DataCenter_OUT():
             $ kcEngagement -= 1
             $ pilotApproval -= 1
             $ engineerApproval += 1
+            $ setEngagement()
             $ AddChatter(vig2_sc7_out_execute_comment1)
             "Only one way to make sure this never leaves the building."
             $ AddChatter(vig2_sc7_out_execute_comment2)
@@ -2015,6 +2033,7 @@ label vig2epilogue_MAR():
             $ marshal += 1
             $ pdEngagement -= 1
             $ csEngagement += 1
+            $ setEngagement()
             mS "Sometimes the people in power are bad, and to do good we need to hide from them."
             macS "But we broke the law many times. How can we be doing good by breaking the law?"
             mS "Laws aren't always good. Sometimes they're put in place by bad people."
@@ -2029,6 +2048,7 @@ label vig2epilogue_MAR():
             $ outlaw += 1
             $ pdEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
             macS "But we broke the law many times. How can we be good if we make the universe more dangerous?"
@@ -2141,6 +2161,7 @@ label vig2epilogue_OUT():
             $ pdEngagement += 2
             $ csEngagement -= 2
             $ kcEngagement += 1
+            $ setEngagement()
             mS "Sometimes we have to do bad things so that we can do better things later."
             macS "But we hurt innocent people. Doesn't that make us skeeves?"
             $ AddChatter(vig2_epilogue_out_comment15)
@@ -2158,6 +2179,7 @@ label vig2epilogue_OUT():
             $ pdEngagement += 2
             $ csEngagement += 1
             $ kcEngagement += 1
+            $ setEngagement()
             mS "The universe is a dangerous place. We can never know who's looking to stab us in the back."
             mS "Better to hide than risk that I'd say."
             $ AddChatter(vig2_epilogue_out_comment15)
@@ -2649,6 +2671,7 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ csEngagement -= 2
                     "Nah, don't really want to encourage a parasocial relationship."
+        $ setEngagement()
         jump vig2_macro_bro1
 
 
@@ -2770,6 +2793,7 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ kcEngagement -=5
                     "Nah, don't really want to encourage a parasocial relationship."
+        $ setEngagement()
         jump vig2_macro_bro1
 
 
@@ -2889,6 +2913,7 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ pdEngagement -= 1
                     "Nah, don't really want to encourage a parasocial relationship."
+        $ setEngagement()
         jump vig2_macro_bro1
     
     else:
@@ -2951,6 +2976,7 @@ label vig2_macro_viewerChat_1():
                     hide screen NVLnarration
                     $ csEngagement -= 3
                     "Nah, don't really want to encourage a parasocial relationship."
+        $ setEngagement()
         jump vig2_macro_bro1
 
 label vig2_macro_bro1():
