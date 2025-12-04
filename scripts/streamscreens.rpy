@@ -150,6 +150,9 @@ screen streamDetails():
             text "Reluctance: [reluctance]" xpos 1000 ypos 5 size 30 color"#00ff0d"
             text "Enthusiasm: [enthusiasm]" xpos 1250 ypos 5 size 30 color"#00ff0d"
             text "Energy: [energy]" xpos 1500 ypos 5 size 30 color"#00ff0d"
+            text "vig2 ints: [vig2_interactions]" xpos 300 ypos 50 size 30 color"#54d6fd"
+            text "vig3 ints: [vig3_interactions]" xpos 500 ypos 50 size 30 color"#54d6fd"
+            text "vig4 ints: [vig4_interactions]" xpos 700 ypos 50 size 30 color"#54d6fd"
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():
