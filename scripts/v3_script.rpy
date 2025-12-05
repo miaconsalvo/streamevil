@@ -5015,7 +5015,7 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_hadto_comment6)
             pause 0.5
             $ AddChatter(vig3_sc14_hadto_comment7)
-            "I see MAC clutch Jennica's leg"
+            "I see MAC clutch Jennica's leg."
             recS "You didn't have to do anything."
             recS "You screwed up and needed an easy way to be bailed out."
             $ AddChatter(vig3_sc14_hadto_comment8)
