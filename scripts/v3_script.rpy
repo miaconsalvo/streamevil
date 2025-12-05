@@ -5058,6 +5058,7 @@ label vig3_sc14():
             "For a moment we stand on the empty platform."
             "Unsure how to continue."
             hide mac with dissolve
+            hide teresa with dissolve
 
 
         "I did it because he deserved it.":
@@ -5144,6 +5145,7 @@ label vig3_sc14():
             "My crew can barely look at me."
             mS "Everyone, I—"
             hide mac with dissolve
+            hide jennica with dissolve
     hide exteriorvineyard_stream with Dissolve(1.5)
     jump vig3_epilogue
 
