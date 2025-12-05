@@ -4700,7 +4700,7 @@ label vig3marshalcomms():
     hide jennica with dissolve
     hide mac with dissolve
     hide rec with dissolve
-    show houndleader at stream_center with dissolve
+    show houndleader stream neutral at stream_center with dissolve
     #stop music
     houndleader "Well hello there, sweetcheeks."
     $ AddChatter (vig3_marshalcomms_comment5)
