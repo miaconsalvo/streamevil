@@ -5208,12 +5208,33 @@ label vig4_sc7_3_ama():
             $ AddChatter(vig4_sc7_3_ama_comment74)
         $ AddChatter(vig4_sc7_3_ama_comment75)
         hide vega with Dissolve(2.0)
+        $ AddChatter(vig4_sc7_3_ama_comment76)
+        $ AddChatter(vig4_sc7_3_ama_comment82)
+        if viewershipMed == True or viewershipHigh == True:
+            $ AddChatter(vig4_sc7_3_ama_comment91)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment77)
+        pause 0.5
+        if viewershipHigh == True:
+            $ AddChatter(vig4_sc7_3_ama_comment90)
+            pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment84)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment78)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment85)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment83)
+        pause 0.5
+        $ AddChatter(vig4_sc7_3_ama_comment86)
+        pause 2.0
+        $ AddChatter(vig4_sc7_3_ama_comment88)
+        pause 1.0
+        $ AddChatter(vig4_sc7_3_ama_comment89)
+        pause 0.5
         $ reactTarget = "vig4_sc7_mackillsvega"
         show screen streamerCommentary
         macS "Threat. Neutralized."
-        $ AddChatter(vig4_sc7_3_ama_comment77)
-        pause 0.5
-        $ AddChatter(vig4_sc7_3_ama_comment78)
     else:
         $ pdEngagement += 1
         $ kcEngagement += 3
@@ -5233,6 +5254,7 @@ label vig4_sc7_3_ama():
         $ AddChatter(vig4_sc7_3_ama_comment81)
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
         hide vega with dissolve
+    $ AddChatter(vig4_sc7_3_ama_comment87)
     "MAC rolls up to me and Ama."
     play audio "macNeutral.wav" volume 1.2
     macS "We should go."

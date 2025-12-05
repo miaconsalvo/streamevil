@@ -2924,13 +2924,15 @@ label vig4_sc7_mackillsvega():
             player "MAC what'd you do!?"
             $ AddChatter(vig4_sc7_killvega_react_comment1)
             pause 0.5
-            if viewershipHigh == True or viewershipMed == True:
-                $ AddChatter(vig4_sc7_killvega_react_comment2)
-                pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment2)
+            pause 0.5
             $ AddChatter(vig4_sc7_killvega_react_comment3)
             pause 0.5
             $ AddChatter(vig4_sc7_killvega_react_comment4)
             pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment8)
+            pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment9)
         "Tough, but had to be done.":
             $ reactImage = "stream ui/reactconversational.png"
             $ vig4_interactions += 1
@@ -2939,13 +2941,24 @@ label vig4_sc7_mackillsvega():
                 $ AddChatter(vig4_sc7_killvega_react_comment5)
                 pause 0.5
             $ AddChatter(vig4_sc7_killvega_react_comment6)
+            pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment2)
+            pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment8)
+            pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment9)
         "Right on.":
             $ reactImage = "stream ui/reactthumbsup.png"
             $ vig4_interactions += 1
             player "Unfortunate, but that's what you gotta do as an Outlaw."
             player "Can't leave someone alive who's just gonna stab you in the back later."
+            $ AddChatter(vig4_sc7_killvega_react_comment2)
+            pause 0.5
             $ AddChatter(vig4_sc7_killvega_react_comment7)
             pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment8)
+            pause 0.5
+            $ AddChatter(vig4_sc7_killvega_react_comment9)
     if commentVariable == True:
         "Where was I?"
         $ narrator = reg_narrator

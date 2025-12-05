@@ -1120,11 +1120,23 @@ default vig4_sc7_3_ama_comment73 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\n
 default vig4_sc7_3_ama_comment74 = ChatEntry(False, "{b}xXpearlXx - 8:12{/b}\nWhat!?", 4, "#ffffff")
 default vig4_sc7_3_ama_comment75 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nAH!", 4, "#ffffff")
 default vig4_sc7_3_ama_comment76 = ChatEntry(False, "{b}swayy0scar - 8:12{/b}\nNow that's DARK", 4, "#ffffff")
-default vig4_sc7_3_ama_comment77 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nOooooh now I don't know how I feel about this", 4, "#ffffff")
+default vig4_sc7_3_ama_comment77 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nI don't know how I feel about this", 4, "#ffffff")
 default vig4_sc7_3_ama_comment78 = ChatEntry(False, "{b}pickledDragons - 8:12{/b}\nLegit was not expecting that", 4, "#ffffff")
 default vig4_sc7_3_ama_comment79 = ChatEntry(False, "{b}xXpearlXx - 8:12{/b}\nIs MAC wise now?", 4, "#ffffff")
 default vig4_sc7_3_ama_comment80 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nYeah no, he's like smarter than Moze", 4, "#ffffff")
 default vig4_sc7_3_ama_comment81 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nCan I have MAC as a therapist??", 4, "#ffffff")
+default vig4_sc7_3_ama_comment82 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nSafe to say \"doing better\" is officially off the table", 4, "#ffffff")
+default vig4_sc7_3_ama_comment83 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nMAC WHYYYY!!!!????", 4, "#ffffff")
+default vig4_sc7_3_ama_comment84 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nI'm shook...and I was on team blast everyone", 4, "#ffffff")
+default vig4_sc7_3_ama_comment85 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\n:(", 4, "#ffffff")
+default vig4_sc7_3_ama_comment86 = ChatEntry(False, "{b}treb.ell - 8:12{/b}\nWhat a tragic way for this story to go. MAC loves Moze so much he's emulating her worst traits, and he probably doesn't even realize it. It's kind of beautiful", 4, "#ffffff")
+default vig4_sc7_3_ama_comment87 = ChatEntry(False, "{b}treb.ell - 8:12{/b}\nAwww he learned to forgive. What a beautiful way to wrap up his growth!", 4, "#ffffff")
+default vig4_sc7_3_ama_comment88 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nIt sucks!", 4, "#ffffff")
+default vig4_sc7_3_ama_comment89 = ChatEntry(False, "{b}treb.ell - 8:12{/b}\nBig time! But it's still neat storytelling", 4, "#ffffff")
+default vig4_sc7_3_ama_comment90 = ChatEntry(False, "{b}P0tat0Pr0phet - 8:12{/b}\nCoil sucked...but Vega was cool", 4, "#ffffff")
+default vig4_sc7_3_ama_comment91 = ChatEntry(False, "{b}marxky8 - 8:12{/b}\nVega... :(", 4, "#ffffff")
+
+
 
 ###Comments vig4_sc7_3_coil - Final boss vs Ama
 default vig4_sc7_3_coil_comment1 = ChatEntry(False, "{b}_lostinmetr0 - 8:02{/b}\nNo polite society in the vineyard to hold us back now", 4, "#ffffff")
@@ -1570,12 +1582,14 @@ default vig4_sc7_killcoil_react_comment5 = ChatEntry(False, "{b}P0tat0Pr0phet - 
 default vig4_sc7_killcoil_react_comment6 = ChatEntry(False, "{b}bacon8r_6 - 8:09{/b}\nRip Polaris.", 4, "#ffffff")
 
 default vig4_sc7_killvega_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 8:12{/b}\nYou told him you could do what he wanted!", 4, "#ffffff")
-default vig4_sc7_killvega_react_comment2 = ChatEntry(False, "{b}marxky8 - 8:12{/b}\nDid--did we raise a murder bot?", 4, "#ffffff")
-default vig4_sc7_killvega_react_comment3 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\nShe was threatening to kill us, it's not as out of pocket as it seems", 4, "#ffffff")
-default vig4_sc7_killvega_react_comment4 = ChatEntry(False, "{b}_lostinmetr0 - 8:12{/b}\n...it is really dark tho", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment2 = ChatEntry(False, "{b}AFKAngel - 8:12{/b}\nDid--did we raise a murder bot?", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment3 = ChatEntry(False, "{b}llamabama22 - 8:12{/b}\nShe was threatening to kill us, it's not as out of pocket as it seems", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment4 = ChatEntry(False, "{b}llamabama22 - 8:12{/b}\n...it is really dark tho", 4, "#ffffff")
 default vig4_sc7_killvega_react_comment5 = ChatEntry(False, "{b}bacon8r_6 - 8:12{/b}\nYeah...I'll admit though, that was jarring, even for me lol", 4, "#ffffff")
-default vig4_sc7_killvega_react_comment6 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nAlways weird when your child shoots someone for the first time", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment6 = ChatEntry(False, "{b}R4dioRobbie - 8:12{/b}\nAlways weird when your child murders someone for the first time", 4, "#ffffff")
 default vig4_sc7_killvega_react_comment7 = ChatEntry(False, "{b}pickledDragons - 8:12{/b}\nAnd MAC has learned that lesson", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment8 = ChatEntry(False, "{b}turb0g00se - 8:12{/b}\nAt least he's our murder bot...right?", 4, "#ffffff")
+default vig4_sc7_killvega_react_comment9 = ChatEntry(False, "{b}kitcat - 8:12{/b}\nI'll say it, I don't like this for MAC :(", 4, "#ffffff")
 
 default vig4_sc7_sparevega_react_comment1 = ChatEntry(False, "{b}J4MIR0QU4I - 8:12{/b}\nHe had a great momma!", 4, "#ffffff")
 default vig4_sc7_sparevega_react_comment2 = ChatEntry(False, "{b}Coriolis - 8:12{/b}\nHe's all grown up!", 4, "#ffffff")

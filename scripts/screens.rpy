@@ -618,7 +618,7 @@ screen credits():
         vbox:
             xpos 0
             ypos 0
-            spacing 20
+            spacing 15
             label "{u}{b}mLab\nProductions:{/b}{/u}" #size 50
             text "Beck de Heuvel" size 40
             text "E. Jules Maier-Zucchino" size 40
@@ -626,13 +626,17 @@ screen credits():
             text "Joshua Spatzner" size 40
             text "Mia Consalvo" size 40
         vbox:
-            ypos 50
-            spacing 20
+            ypos 15
+            spacing 10
             label "{u}{b}Special Thanks To:{/b}{/u}" #size 35
-            text "Visual Novel Design - {a=https://www.youtube.com/@vimi/featured}Ren'Py Essentials Tutorial{/a}" size 30
-            text "Nighten - {a=https://nighten.itch.io/yet-another-phone-renpy}yet another phone for renpy{/a}" size 30
-            text "BadMustard_AVN - {a=https://old.reddit.com/r/RenPy/comments/wnxqbz/health_bars_in_renpy_like_phoenix_wright/}Simple Ren'Py Bar{a}" size 30
-            text "Ren'Py Discord Community - Programming Assistance" size 30
+            text "•The Social Sciences and Humanities Research Council (SSHRC) - Funding" size 30
+            text "•Concordia University mLab - Funding" size 30
+            text "•All our lovely and gracious playtesters!" size 30
+            text "•Visual Novel Design - {a=https://www.youtube.com/@vimi/featured}Ren'Py Essentials Tutorial{/a}" size 30
+            text "•Nighten - {a=https://nighten.itch.io/yet-another-phone-renpy}yet another phone for renpy{/a}" size 30
+            text "•BadMustard_AVN - {a=https://old.reddit.com/r/RenPy/comments/wnxqbz/health_bars_in_renpy_like_phoenix_wright/}Simple Ren'Py Bar{a}" size 30
+            text "•Ren'Py Discord Community - Programming Assistance" size 30
+            text "•Tamyres Lucas - Concept Art" size 30
 
 ## About screen ################################################################
 ##
