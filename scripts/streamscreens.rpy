@@ -330,7 +330,9 @@ screen webNavigation_vig1():
             hover Solid("#eff317b9")
             xsize 128
             ysize 40
-            align (0.4095, 0.007)          
+            align (0.4095, 0.007)
+            image ["stream ui/tab highlight socials.png"] xpos 400 ypos 200 xsize 192 ysize 120
+          
 
     if blueitView == False and screenComplete == True:
         imagebutton:
@@ -340,6 +342,7 @@ screen webNavigation_vig1():
             xsize 128
             ysize 40
             align (0.4845, 0.007)
+            image ["stream ui/tab highlight socials.png"] xpos 600 ypos 200 xsize 192 ysize 120
 
     if flinchView == True and blueitView == True and screenComplete == True:
         textbutton "Close Computer":
@@ -350,6 +353,7 @@ screen webNavigation_vig1():
             text_selected_color "#ffffffff"
             text_size 20
             align (0.98, 0.007)
+            image ["stream ui/tab highlight socials.png"] xpos 600 ypos 200 xsize 192 ysize 120
 
 
 #### WEBNAV SCREEN FOR VIG2####
