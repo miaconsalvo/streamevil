@@ -1068,7 +1068,7 @@ label vig3_sc5():
     pS "Surprised it's still standing."
     show teresa stream happy at stream_right with dissolve
     enS "Did they change the statue?"
-    recS "Oh yeah they did, because *someone* blew up the last one."
+    recS "Oh yeah they did, because {i}someone{/i} blew up the last one."
     $ AddChatter (vig3_sc5_akarplaza_comment1)
     enS "Fabulous."
     macS "Someone?"
