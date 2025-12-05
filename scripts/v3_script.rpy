@@ -4690,7 +4690,7 @@ label vig3marshalcomms():
     mS "Let's get out of here."
     play audio "shipAlarmShort.wav" volume 0.8
     "Just then an annoucement echoes from the hall."
-    invfairannounce "Unauthorized personnel in comms room 45B"
+    invfairannounce "Unauthorized personnel in comms room 45B."
     "I look at the placard next to the door."
     "Shit."
     "Before we can even leave, boots swarm the hall outside."
