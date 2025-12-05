@@ -813,7 +813,7 @@ label vig3_sc4():
     hide teresa with dissolve
     mS "Didn't know Akar hired rent-a-cops."
     show houndgoon stream neutral at stream_right with dissolve
-    "A smaller goon moves up next to him" 
+    "A smaller goon moves up next to him." 
     $ AddChatter (vig3_sc4_shop_comment32)
     "She's tough and with something to prove."
     houndgoon "I suggest you get yourself and your crew in order and stay out of the way."
