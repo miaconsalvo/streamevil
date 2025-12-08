@@ -1003,7 +1003,7 @@ label vig4_sc2_4():
                     $ setAlignment()
                     play audio "lazer.wav" volume 5.0
                     "I pull the trigger on my blaster."
-                    play audio "shield" volume 1.5
+                    play audio "shield.wav" volume 1.5
                     "A thin veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
@@ -1016,7 +1016,7 @@ label vig4_sc2_4():
                     mS "Teresa, stand d—"
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
-                    play audio "shield" volume 1.5
+                    play audio "shield.wav" volume 1.5
                     "A thin green veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
@@ -4048,6 +4048,7 @@ label vig4_sc4_3():
     pS "Brace for impact, somethin' big is comin' in right on top of us!"
     show teresa stream neutral
     "Just as Jennica finishes her warning, it appears."
+    #show cockpit_stream_cruiser
     play audio "exitHyperspace.wav" volume 2.5
     "A BC cruiser blasts directly out of hyperspace into Polaris's atmosphere."
     $ AddChatter(vig4_sc4_3_comment2)
@@ -5024,6 +5025,7 @@ label vig4_sc7_3_ama():
     "He closes his eyes."
     cS "Elijah... Is that you?"
     "I thrust the blade forward."
+    show coil stream hurt
     #play audio "deathGasp.wav" volume 1.2
     "Coil's body slumps to the floor."
     "Blood pools around his throat."
@@ -5142,9 +5144,9 @@ label vig4_sc7_3_ama():
                     show ama stream happy
                     amaS "I guess I can manage that."
                     "An unbearable groaning sound suddenly reverberates across Polaris."
+    play audio "explosion.wav" volume 1.0
     show tower_explosion_stream at topleft onlayer background with dissolve
     hide tower_star_shower_ship_stream
-    play audio "explosion.wav" volume 1.5
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_ama_comment61)
     amaS "Not bad, Moze. Not bad at all."
@@ -5290,6 +5292,8 @@ label vig4_sc7_3_ama():
     hide screen streamerCommentary
     hide ama with dissolve
     hide mac with dissolve
+    hide tower_star_shower_stream with dissolve
+    pause 1.0
     jump vig4_epilogue_ama
 
 label vig4_sc7_3_coil():
@@ -5586,9 +5590,9 @@ label vig4_sc7_3_coil():
             mS "It wasn't a problem."
             mS "You did well for an old man."
             cS "Hah. You know, I think I could have done better."
+    play audio "explosion.wav" volume 1.0
     show tower_explosion_stream at topleft onlayer background with dissolve
     hide tower_star_shower_ship_stream 
-    play audio "explosion.wav" volume 1.5
     "An unbearable groaning sound suddenly reverberates across Polaris."
     "We glance out the windows to watch as the hulk of the BC cruiser crumbles into flames."
     $ AddChatter(vig4_sc7_3_coil_comment45)
@@ -5984,7 +5988,7 @@ label vig4_epilogue_coil():
     hide jennica with dissolve
     hide teresa with dissolve
     #hide tower_star_shower_ship_early_stream
-    show cockpit_stream at topleft onlayer background with dissolve
+    show ama_cockpit at topleft onlayer background with dissolve
     hide ama_shiphub_stream with dissolve
     show jennica stream neutral at stream_left5 with dissolve
     show teresa stream neutral at stream_right5 with dissolve
@@ -6055,7 +6059,7 @@ label vig4_epilogue_coil():
             macS "Ready, Captain Moze!"
     stop backAudio fadeout 2.0
     hide mac with Dissolve (2.0)
-    hide cockpit_stream with dissolve
+    hide ama_cockpit with dissolve
     jump vig4_signoff
 
 label vig4_epilogue_ama():
@@ -6323,7 +6327,7 @@ label vig4_epilogue_ama():
     hide jennica with dissolve
     hide teresa with dissolve
     hide ama_shiphub_stream with dissolve
-    show cockpit_stream at topleft onlayer background with dissolve
+    show ama_cockpit at topleft onlayer background with dissolve
     if vig4_amaCrew == True:
         show jennica stream neutral at stream_left with dissolve
         show teresa stream neutral at stream_right with dissolve
@@ -6429,7 +6433,7 @@ label vig4_epilogue_ama():
     else:
         show jennica stream neutral at stream_left with dissolve
         show teresa stream neutral at stream_right with dissolve
-        show mac stream neutral at stream__center_mac with dissolve
+        show mac stream neutral at stream_center_mac with dissolve
         "Jennica takes over control from the auto-pilot as we move up to the cockpit."
         if viewershipHigh == True or viewershipMed == True:
             $ AddChatter(vig4_sc7_epilogue_ama_comment13)
@@ -6512,7 +6516,7 @@ label vig4_epilogue_ama():
             macS "Ready, Captain Moze!"
     "The ship lurches forward as we accelerate into space."
     hide mac with Dissolve (2.0)
-    hide cockpit_stream with dissolve
+    hide ama_cockpit with dissolve
     jump vig4_signoff
 
 label vig4_signoff():
@@ -6668,6 +6672,8 @@ label vig4_macro_start():
         $ flinch_followership -= 3
     else:
         $ flinch_followership -= 2
+    $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
+    $ avgViews = totalViews/10
     
     #For determining if you reached Affiliate. Got the requisite number of Followers and viewers.
     if viewershipHigh == True and flinch_followership <= 0:
@@ -6679,7 +6685,7 @@ label vig4_macro_start():
         $ Affiliate = True
         $ flinch_followership = 500
     elif viewershipMed == True and flinch_followership > 0:
-        $ Affiliate = True
+        $ Affiliate = False
     else:
         $ Affiliate = False
 

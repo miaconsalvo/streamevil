@@ -1495,20 +1495,20 @@ label vig4_sc6_attack_1():
     if viewershipHigh == True: 
         $ AddChatter(vig4_sc6_attack_1_ama_comment10)
     pS "No way, if we're doing this then we should help those people."
-    enS "Wait a minute, look at that guy!"
+    enS "Wait a minute, look!"
     show dflyguard at stream_center with dissolve
     "Teresa points at one of the captive Dragonflies."
     enS "Isn't that?"
-    pS "Oh yeah! That's the guy who roughed us up at the festival."
+    pS "Oh yeah! She's the one who roughed us up at the festival."
     if viewershipHigh == True: 
         $ AddChatter(vig4_sc6_attack_1_ama_comment11)
-    enS "Guess he and his squad were more bark than bite after all."
+    enS "Guess she and her squad were more bark than bite after all."
     if viewershipHigh == True: 
         $ AddChatter(vig4_sc6_attack_1_ama_comment12)
     pS "They're still hostages. We should help them."
     if viewershipHigh == True: 
         $ AddChatter(vig4_sc6_attack_1_ama_comment13)
-    hide dfly guard with dissolve
+    hide dflyguard with dissolve
     enS "What's the call, Captain?"
     $ AddChatter(vig4_sc6_attack_1_ama_comment14)
     menu:

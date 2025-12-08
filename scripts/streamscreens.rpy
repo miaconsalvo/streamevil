@@ -349,15 +349,27 @@ screen webNavigation_vig1():
         image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12 #xsize 192 ysize 120
 
     if flinchView == True and blueitView == True and screenComplete == True:
-        textbutton "Close Computer":
-            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("vig1_brother_1")]
-            background Solid("#a03f2eff")
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.98, 0.007)
+        imagebutton:
+            action [Show("shutDownComputerv1")]#, Hide("webNavigation_vig1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff317b9")
+            xsize 26
+            ysize 27
+            xpos 20
+            ypos 16
+            #align (0.98, 0.007)
+        image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
 
+screen shutDownComputerv1():
+    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+    imagebutton:
+        action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
+        idle Solid("#74747473")
+        hover Solid("#eff31786")
+        xpos 20
+        ypos 107
+        xsize 237
+        ysize 17
 
 #### WEBNAV SCREEN FOR VIG2####
 screen webNavigation_vig2():
@@ -398,71 +410,102 @@ screen webNavigation_vig2():
         image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12
 
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
-        #imagebutton:
-        #    action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")]
-        #    idle Solid("#a03f2e85")
-        #    hover Solid("#a03f2eff")
-        #    xsize 128
-        #    ysize 40
-        #    align (0.4845, 0.007)
-        textbutton "Close Computer":
-            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_viewerChat_1")]
-            background Solid("#a03f2eff")
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.98, 0.007)      
+        imagebutton:
+            action [Show("shutDownComputerv2")]
+            idle Solid("#eff31773")
+            hover Solid("#eff317b9")
+            xsize 26
+            ysize 27
+            xpos 20
+            ypos 16
+            #align (0.98, 0.007)
+        image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+
+screen shutDownComputerv2():
+    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+    imagebutton:
+        action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
+        idle Solid("#74747473")
+        hover Solid("#eff31786")
+        xpos 20
+        ypos 107
+        xsize 237
+        ysize 17
 
 #### WEBNAV SCREEN FOR VIG3#####
 screen webNavigation_vig3():
     if loopdView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_viewerChat_1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.334, 0.007)           
+            xsize 118
+            ysize 24
+            xpos 601
+            ypos 15
+            #align (0.334, 0.007)    
+        image ["stream ui/tab highlight socials.png"] xpos 596 ypos 12               
 
     if flinchView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig3")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4095, 0.007)  
+            xsize 118
+            ysize 24
+            xpos 736
+            ypos 15
+            #align (0.4095, 0.007)   
+        image ["stream ui/tab highlight socials.png"] xpos 731 ypos 12 #xsize 192 ysize 120   
 
     if blueitView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("blueitVignette3_1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4845, 0.007)
+            xsize 118
+            ysize 24
+            xpos 871
+            ypos 15
+            #align (0.4845, 0.007)
+        image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12
 
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
-        textbutton "Close Computer":
-            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_brother_1")]
-            background Solid("#a03f2eff")
-            text_color "#ffffffff"
-            text_hover_color "#ffffffce" 
-            text_selected_color "#ffffffff"
-            text_size 20
-            align (0.98, 0.007)
+        imagebutton:
+            action [Show("shutDownComputerv3")]
+            idle Solid("#eff31773")
+            hover Solid("#eff317b9")
+            xsize 26
+            ysize 27
+            xpos 20
+            ypos 16
+            #align (0.98, 0.007)
+        image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+
+screen shutDownComputerv3():
+    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+    imagebutton:
+        action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
+        idle Solid("#74747473")
+        hover Solid("#eff31786")
+        xpos 20
+        ypos 107
+        xsize 237
+        ysize 17
 
 #### WEBNAV SCREEN FOR VIG4 ###### 
 screen webNavigation_vig4():
     if loopdView == False and flinchView == True and blueitView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("vig4_macro_viewerChat_1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.334, 0.007)           
+            xsize 118
+            ysize 24
+            xpos 601
+            ypos 15
+            #align (0.334, 0.007)    
+        image ["stream ui/tab highlight socials.png"] xpos 596 ypos 12          
 
     #if flinchView == False and screenComplete == True:
     #    imagebutton:
@@ -476,11 +519,14 @@ screen webNavigation_vig4():
     if blueitView == False and flinchView == True and loopdView == True and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("blueitVignette4_1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4845, 0.007)
+            xsize 118
+            ysize 24
+            xpos 871
+            ypos 15
+            #align (0.4845, 0.007)
+        image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12
 
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         imagebutton:
@@ -490,11 +536,14 @@ screen webNavigation_vig4():
             #text_hover_color "#ffffffce" 
             #text_selected_color "#ffffffff"
             #text_size 20
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 330
-            ysize 60
-            align (0.96, 0.32)        
+            xsize 311
+            ysize 45
+            xpos 1537
+            ypos 334
+            #align (0.96, 0.32)      
+        image ["stream ui/new post highlight.png"] xpos 1528 ypos 325
 
 ##The button below this is a replication of the close computer button in case we want to use it
     #if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
@@ -508,20 +557,41 @@ screen webNavigation_vig4():
     #        align (0.98, 0.007)
 
 screen closeComputer():
-    imagebutton:
-        action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]
+    #imagebutton:
+    #    action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]
         #background Solid("#a03f2eff")
-        idle Solid("#eff3176b")
-        hover Solid("#eff317b9")
-        xsize 145
-        ysize 44
-        xpos 1695
-        ypos 188
+    #    idle Solid("#eff3176b")
+    #    hover Solid("#eff317b9")
+    #    xsize 145
+    #    ysize 44
+    #    xpos 1695
+    #    ypos 188
         #text_color "#ffffffff"
         #text_hover_color "#ffffffce" 
         #text_selected_color "#ffffffff"
         #text_size 20
         #align (0.95, 0.18)
+    imagebutton:
+        action [Show("shutDownComputerv4")]
+        idle Solid("#eff31773")
+        hover Solid("#eff317b9")
+        xsize 26
+        ysize 27
+        xpos 20
+        ypos 16
+        #align (0.98, 0.007)
+    image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+
+screen shutDownComputerv4():
+    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+    imagebutton:
+        action [Hide("shutDownComputerv4"), Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]        
+        idle Solid("#74747473")
+        hover Solid("#eff31786")
+        xpos 20
+        ypos 107
+        xsize 237
+        ysize 17
 
 ###PLAYTESTING RECORD SCREEN###
 screen playtestRecord():

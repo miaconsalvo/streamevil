@@ -1868,8 +1868,12 @@ label vig3_analytics_viewcount():
     else:
         "The viewership numbers for this week are similar to last week."
         "That's not bad, but it's disappointing that they didn't grow at all."
-        "If you lose people next week, you might not make it."
-        "You have a gut feeling that making Outlaw choices next time would increase your viewership."
+        if vig3_outlaw < 3:
+            "If you lose people next week, you might not make it."
+            "You have a gut feeling that making Outlaw choices next time would increase your viewership."
+        else:
+            "But you have a gut feeling that you'll get more viewers next stream thanks to some of your choices today."
+            "You've still got a chance."
     jump vig3_analytics_viewcount2
 
 label vig3_analytics_viewcount2():

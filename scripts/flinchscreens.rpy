@@ -12,7 +12,8 @@ screen streamAnalytics_Details():
         text "{b}[username]{/b}" align(0.5, 0.5) size 30 #xpos 40 ypos 380  #align (0.078, 0.37) size 30
     text "{b}[topfan]{/b}" align (0.28, 0.51) size 30
     text "{b}[flinch_followership] fans{/b}" align (0.527, 0.908) size 40 
-    text "{b}Average Viewers: [avgViews]{/b}" xpos 1425 ypos 260
+    text "{b}Latest Avg. Viewers:{/b}" xpos 1325 ypos 260
+    text "{b}[avgViews]{/b}" xpos 1725 ypos 260
 
 
 #The frame below this is for the viewership analytics

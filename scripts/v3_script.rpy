@@ -5406,6 +5406,8 @@ label vig3_macro_start():
         $ flinch_followership -= 2
     else:
         $ flinch_followership -= 1
+    $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
+    $ avgViews = totalViews/10
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     $ narrator = reg_narrator
     #$ macroNarration = True
