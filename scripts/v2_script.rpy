@@ -308,6 +308,7 @@ label GibianVCustomsDepot():
             $ engineerApproval += 1
             $ macViolence += 2
             $ setEngagement()
+            $ setAlignment()
             #$ customsDistraction = True
             jump GibianVCustomsOutlaw
         "Follow Jennica and bribe a guard.":
@@ -319,6 +320,7 @@ label GibianVCustomsDepot():
             $ kcEngagement -= 1
             $ pilotApproval += 1
             $ setEngagement()
+            $ setAlignment()
             #$ customsDistraction = False
             jump GibianVCustomsMarshal
 
@@ -641,6 +643,7 @@ label matticusDoor():
         "Bring up an old debt.": #Lore
             $ macPeace += 1
             $ marshal += 1
+            $ setAlignment()
             mS "Remind him that he owes me his whole ass for saving him on Tiber III."
             mattdoorbell "Alright, give me a sec."
             play audio "cutCall.wav" volume 1.5
@@ -660,6 +663,7 @@ label matticusDoor():
             $ outlaw += 1
             $ pdEngagement += 1
             $ setEngagement()
+            $ setAlignment()
             mS "Listen buddy. Just let us in."
             mS "Do you wanna explain to him that you pissed off his old merc crew?"
             mattdoorbell "No, I just—"
@@ -1045,6 +1049,7 @@ label approachingBase():
             $ engineerApproval += 2
             $ macViolence += 3
             $ setEngagement()
+            $ setAlignment()
             "We don't know what kind of security we're walking into."
             $ AddChatter(vig2_sc6_out_comment1)
             "Getting caught off guard is a risk we can't afford to take."
@@ -1082,6 +1087,7 @@ label approachingBase():
             $ pilotApproval += 2
             $ macPeace += 2
             $ setEngagement()
+            $ setAlignment()
             $ AddChatter(vig2_sc6_mar_comment1)
             "Quick and quiet would be safer."
             mS "Jennica's right, lets try to avoid attention."
@@ -1401,6 +1407,7 @@ label commsBase_OUT1():
             $ kcEngagement += 1
             $ csEngagement += 1
             $ setEngagement()
+            $ setAlignment()
             $ AddChatter(vig2_sc6_out_spare_comment1)
             "This guy was just doing his job."
             mS "Alright."
@@ -1441,6 +1448,7 @@ label commsBase_OUT1():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ setEngagement()
+            $ setAlignment()
             "The less witnesses the better."
             $ AddChatter(vig2_sc6_out_execute_comment1)
             $ AddChatter(vig2_sc6_out_execute_comment2)
@@ -1571,6 +1579,7 @@ label commsBase_DataCenter():
             $ macHope += 3
             $ macPeace += 1
             $ setEngagement()
+            $ setAlignment()
             "This is just plain wrong."
             "We have to be better."
             "Or at least we have to try to be."
@@ -1629,6 +1638,7 @@ label commsBase_DataCenter_MAR():
             $ pilotApproval += 1
             $ engineerApproval += 1
             $ macViolence += 1
+            $ setAlignment()
             "I look over to Jennica and give her the signal."
             show jennica stream fight at stream_left
             play audio "stunLazer.wav" volume 1.5
@@ -1655,6 +1665,7 @@ label commsBase_DataCenter_MAR():
             $ reginaldChoice = False
             $ marshal += 1
             $ macPeace += 1
+            $ setAlignment()
             "I signal to Jennica to wait."
             mS "How much do you really like working for Sav?"
             goon "Like?"
@@ -1901,6 +1912,7 @@ label commsBase_DataCenter_OUT():
             $ vig2_sc7_out_execute_comment4.click = False
             "MAC begins to follow."
             hide mac with Dissolve(2.0)
+    $ setAlignment()
     show vig2_targetbase_stream at topleft onlayer background with dissolve
     hide vig2_datacenter_stream
     show reginald stream neutral at stream_center with Dissolve(0.5)
@@ -2058,6 +2070,7 @@ label vig2epilogue_MAR():
             play audio "macOK.wav" volume 1.2
             macS "I see. The universe is confusing."
             mS "Agreed."
+    $ setAlignment()
     $ narrator = reg_narrator
     #$ macroNarration = True
     $ macroChoice = True
@@ -2192,6 +2205,7 @@ label vig2epilogue_OUT():
             macS "I see. The universe is confusing."
             $ AddChatter(vig2_epilogue_out_comment17)
             mS "Agreed."
+    $ setAlignment()
     $ narrator = reg_narrator
     #$ macroNarration = True
     $ macroChoice = True
@@ -2245,6 +2259,8 @@ label vig2_macro_start():
         $ flinch_followership -= 2
     else:
         $ flinch_followership -= 1
+    $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
+    $ avgViews = totalViews/10
     play music "soundtrack/postStreamGroove.wav" volume 0.8 loop fadein 2.0
     scene black with Dissolve(2.0)
     $ narrator = reg_narrator

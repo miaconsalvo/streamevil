@@ -233,9 +233,9 @@ label vig4_sc1_2():
     pS "Figured ya'd want to be here when we arrived."
     play audio "exitHyperspace.wav" volume 1.0
     "The waves of light surrounding the ship slow down as we emerge from hyperlight travel into the vastness of space."
-    "A giant orb of swirling red and orange hangs in front of us."
+    "A giant orb of swirling green hangs in front of us."
     menu:
-        "A giant orb of swirling red and orange hangs in front of us."
+        "A giant orb of swirling green hangs in front of us."
         "A gas giant?":
             mS "It's a gas giant? That can't be right."
         "The Dragonflies can't be human.":
@@ -468,8 +468,8 @@ label vig4_sc2_1():
                     $ stunGuy = True
                     $ outlaw += 1
                     $ pdEngagement += 1
-
                     $ engineerApproval += 1
+                    $ setAlignment()
                     mS "Oh, right, the \"star shower.\" I completely forgot about that."
                     with vpunch
                     "As I speak, Teresa snaps the stun rod out and jabs it into the man's neck."
@@ -487,6 +487,7 @@ label vig4_sc2_1():
                     $ csEngagement += 1
                     $ setEngagement()
                     $ engineerApproval -= 1
+                    $ setAlignment()
                     mS "We're just passing through."
                     mS "Our ship was having a bit of trouble so we decided to make a quick landing and see about some repairs."
                     townguy "Oh I'm sorry. Ship trouble is always scary."
@@ -522,6 +523,7 @@ label vig4_sc2_1():
                     $ setEngagement()
                     $ outlaw += 1
                     $ engineerApproval += 1
+                    $ setAlignment()
                     show teresa stream neutral
                     "She snaps the stun rod out and jabs it into the man's neck."
                     with vpunch
@@ -539,6 +541,7 @@ label vig4_sc2_1():
                     $ csEngagement += 1
                     $ setEngagement()
                     $ engineerApproval -= 1
+                    $ setAlignment()
                     show teresa stream neutral
                     "I give Teresa the signal to stand down."
                     if viewershipHigh == True:
@@ -914,6 +917,7 @@ label vig4_sc2_4():
             $ kcEngagement += 1
             $ setEngagement()
             $ marshal += 1
+            $ setAlignment()
             mS "I think we got off on the wrong foot here."
             mS "We've come a long way to deliver something important."
             mS "That means something to you, doesn't it?"
@@ -975,6 +979,7 @@ label vig4_sc2_4():
             $ setEngagement()
             $ outlaw += 1
             $ engineerApproval += 1
+            $ setAlignment()
             "I give Teresa a signal under the counter."
             $ AddChatter(vig4_sc2_4_comment25)
             mS "Sounds like a threat."
@@ -995,6 +1000,7 @@ label vig4_sc2_4():
                 oS "I asked you to."
                 "Shoot.":
                     $ outlaw += 1
+                    $ setAlignment()
                     play audio "lazer.wav" volume 5.0
                     "I pull the trigger on my blaster."
                     play audio "shield" volume 1.5
@@ -1006,6 +1012,7 @@ label vig4_sc2_4():
                         $ AddChatter(vig4_sc2_4_comment23)
                 "Tell Teresa to stand down.":
                     $ marshal += 1
+                    $ setAlignment()
                     mS "Teresa, stand d—"
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
@@ -1406,6 +1413,7 @@ label vig4_sc2_6():
                     $ kcEngagement += 2
                     $ csEngagement += 1
                     $ setEngagement()
+                    $ setAlignment()
                     $ engineerApproval += 1
                     $ pilotApproval += 1
                     mS "Like hell you're taking him without us!"
@@ -1428,6 +1436,7 @@ label vig4_sc2_6():
                     $ kcEngagement -= 2
                     $ pdEngagement -= 1
                     $ setEngagement()
+                    $ setAlignment()
                     "I take a long breath."
                     "The stale atmosphere sticks in my throat. But I hold steady."
                     mS "Teresa, Jennica, this was always part of the plan, remember?"
@@ -2933,6 +2942,7 @@ label vig4_sc3_3():
                 $ outlaw -= 2
             else:
                 $ marshal += 2
+            $ setAlignment()
             if marshal > outlaw:
                 cS "I understand."
                 cS "I wish that Vega could use her mind to make things other than tools for war."
@@ -2976,6 +2986,7 @@ label vig4_sc3_3():
                 $ outlaw += 1
             else:
                 $ marshal += 1
+            $ setAlignment()
             mS "He was alone when we found him. Someone had to show him how to survive."
             cS "He has to know how to live as well."
             $ AddChatter(vig4_sc3_3_comment20)
@@ -3171,6 +3182,7 @@ label vig4_sc3_4():
             $ macPeace += 3
             $ macHope += 2
             $ marshal += 1
+            $ setAlignment()
             mS "I suppose our purpose is to leave the galaxy a better place than when we found it."
             macS "To help people?"
             mS "Yeah. That feels right."
@@ -3203,6 +3215,7 @@ label vig4_sc3_4():
             $ macViolence += 3
             $ macPessimism += 2
             $ outlaw += 1
+            $ setAlignment()
             mS "We take care of our own, make sure we can live free."
             $ AddChatter(vig4_sc3_4_comment14)
             macS "I see, survival, replication..."
@@ -3842,11 +3855,12 @@ label vig4_sc4_1():
         amaS "What do you say?"
         "Reject Ama's offer.":
             hide screen streamerCommentary
-            $ marshal += 2
+            $ marshal += 1
             $ csEngagement += 2
             $ kcEngagement -= 2
             $ pdEngagement -= 3
             $ setEngagement()
+            $ setAlignment()
             $ vig4_amaOffer = False
             mS "You're living in the past, Ama."
             $ AddChatter(vig4_sc4_1_comment31)
@@ -3870,6 +3884,7 @@ label vig4_sc4_1():
             $ kcEngagement += 2
             $ csEngagement -= 1
             $ setEngagement()
+            $ setAlignment()
             $ vig4_amaOffer = True
             mS "Alright, Ama. I'm in."
             if viewershipHigh == True or viewershipMed == True:
@@ -3972,6 +3987,7 @@ label vig4_sc4_2():
                     $ marshal += 3
                     $ csEngagement += 3
                     $ pdEngagement -= 2
+                    $ setAlignment()
                     $ setEngagement()
                     mS "No, we're not."
                     $ AddChatter(vig4_sc4_2_comment11)
@@ -3990,6 +4006,7 @@ label vig4_sc4_2():
                     $ csEngagement -= 2
                     $ pdEngagement += 3
                     $ setEngagement()
+                    $ setAlignment()
                     mS "No, we're not."
                     $ AddChatter(vig4_sc4_2_comment13)
                     mS "The Dragonflies already compromised MAC's safety."
@@ -4107,7 +4124,9 @@ label vig4_sc5_0():
     pS "Just act natural."
     enS "Posing is, fundamentally, not natural."
     enS "I've already told you Jenn, I don't li—{i}aaaaahhh{/i}."
-    pause 2.0
+    show polaroid at topleft onlayer background with dissolve
+    pause 5.0
+    hide polaroid with Dissolve(3.0)
     ##*streamer reaction 
     jump vig4_sc5_1
 
@@ -4292,7 +4311,7 @@ label vig4_sc5_1():
     "I give one last look back at the Oakley, then Jennica gives me her arm for support."
     "I feel the heat on my back all the way up the hill."
     hide oakley_ruin with Dissolve(2.0)
-    show polarisfight_stream at topleft onlayer background with dissolve
+    show polaris_burns at topleft onlayer background with dissolve
     play music "soundtrack/theme.wav"
     play backAudio "lazerFire.wav" volume 0.2
     play backAudio2 "siren.wav" volume 0.2
@@ -4404,6 +4423,7 @@ label vig4_sc5_1():
         "The three of us jog down the ridge, weapons drawn, heading directly for the heart of the fire."
         stop backAudio fadeout 1.0
         stop backAudio2 fadeout 1.0
+        hide polaris_burns with dissolve
         jump vig4_sc6_defend_1
     elif vig4_attackPolaris == True and vig4_amaOffer == False:
         pS "Alright, Cap, what's the play?"
@@ -4442,6 +4462,7 @@ label vig4_sc5_1():
         stop music fadeout 2.0
         stop backAudio fadeout 1.0
         stop backAudio2 fadeout 1.0
+        hide polaris_burns with dissolve
         jump vig4_sc6_attack_1
     elif vig4_attackPolaris == True and vig4_amaOffer == True:
         jump vig4_sc5_2
@@ -4604,6 +4625,7 @@ label vig4_sc5_2():
     "The four of us jog down the ridge, weapons drawn, heading directly for the heart of the fire."
     stop backAudio fadeout 1.0
     stop backAudio2 fadeout 1.0
+    hide polaris_burns with dissolve
     jump vig4_sc6_attack_1_ama
 
 
@@ -4697,6 +4719,8 @@ label vig4_sc7_2():
             $ csEngagement += 3
             $ kcEngagement -= 2
             $ pdEngagement -= 3
+            $ marshal += 3
+            $ setAlignment()
             $ setEngagement()
             mS "You're right, Coil. This has gone too far."
             $ AddChatter(vig4_sc7_2_comment23)
@@ -4732,7 +4756,9 @@ label vig4_sc7_2():
             $ csEngagement -= 2
             $ kcEngagement += 2
             $ pdEngagement += 3
+            $ outlaw += 3
             $ setEngagement()
+            $ setAlignment()
             mS "You're right, Ama. I can't trust him."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_2_comment15)
@@ -4965,6 +4991,7 @@ label vig4_sc7_3_ama():
         "Your sins are hers.":
             $ outlaw += 1
             $ macViolence += 1
+            $ setAlignment()
             mS "Your sins are hers."
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc7_3_ama_comment32)
@@ -7138,8 +7165,12 @@ label vig4_macro_writeUp_5():
         menu:
             #"I guess I'll finish it with my thoughts on making affiliate."
             "I feel positive about achieving Affiliate...":
-                $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I went full dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
-                $ addWriteUp(affiliateReflection)
+                if outlaw > marshal + 7:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I way more dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
+                    $ addWriteUp(affiliateReflection)
+                else:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I was pretty balanced on moral choices. Some outlaw here, a bit of Marshal there. I usually go full marshal but I actually had a great time being a bit more flexible! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
+                    $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -7149,8 +7180,12 @@ label vig4_macro_writeUp_5():
                         $ writeUp_list.remove(affiliateReflection)
                         jump vig4_macro_writeUp_5
             "I feel kind of negative about achieving Affiliate...":
-                $ affiliateReflection = "So, I made affiliate… and if I’m being real, though it feels weird admitting it, I’m not too thrilled. I don’t really feel good about the way I played the game… I wasn’t me: I played it up, leaned into some stuff I don’t normally do. It’s what got me to my goal, but now I’m feeling guilty instead of excited."
-                $ addWriteUp(affiliateReflection)
+                if outlaw > marshal + 7:
+                    $ affiliateReflection = "So, I made affiliate… and if I’m being real, though it feels weird admitting it, I’m not too thrilled. I don’t really feel good about the way I played the game… I wasn’t me: I played it up, leaned into some stuff I don’t normally do. It’s what got me to my goal, but now I’m feeling guilty instead of excited."
+                    $ addWriteUp(affiliateReflection)
+                else:
+                    $ affiliateReflection = "So, I made affiliate… and if I’m being real, though it feels weird admitting it, I’m not too thrilled. I don’t really feel great about how I played the game… I didn't go full dark mode, but I still felt really conflicted about some of the choices I made. It got me to my goal, but now I’m feeling guilty instead of excited."
+                    $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"

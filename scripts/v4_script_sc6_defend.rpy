@@ -536,14 +536,16 @@ label vig4_sc6_defend_2():
             $ kcEngagement += 1
             $ csEngagement -=2
             $ setEngagement()
-            $ outlaw += 1
+            $ outlaw += 2
+            $ setAlignment()
             jump vig4_sc6_defend_3_barricade
         "Support the frontline. Leave the barricade.":
             $ pdEngagement -= 1
             $ kcEngagement -= 1
             $ csEngagement += 2
             $ setEngagement()
-            $ marshal += 1
+            $ marshal += 2
+            $ setAlignment()
             jump vig4_sc6_defend_3_frontline
 
 ##*Should we have some reactions here in these sections?
@@ -600,11 +602,15 @@ label vig4_sc6_defend_3_barricade():
         "How does it feel?"
         "Got what they deserved.":
             $ pdEngagement += 1
+            $ outlaw += 1
+            $ setAlignment()
             "They got what they deserved."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc6_defend_3_barricade_comment5)
         "I couldn't risk the barricade.":
             $ kcEngagement += 1
+            $ marshal += 1
+            $ setAlignment()
             "The barricade is too important. I couldn't risk it on them."
             $ AddChatter(vig4_sc6_defend_3_barricade_comment6)
     $ setEngagement()
@@ -675,11 +681,15 @@ label vig4_sc6_defend_3_frontline():
         "How does it feel?"
         "They didn't deserve to die.":
             $ csEngagement += 1
+            $ marshal += 1
+            $ setAlignment()
             "They were just doing their job. That doesn't mean they deserve to die."
             $ AddChatter(vig4_sc6_defend_3_frontline_comment10)
         "Lucky bastard.":
             $ kcEngagement += 1
             $ pdEngagement += 1
+            $ outlaw += 1
+            $ setAlignment()
             "They're lucky I didn't leave them to die."
             $ AddChatter(vig4_sc6_defend_3_frontline_comment11)
     $ setEngagement()
@@ -1154,6 +1164,8 @@ label vig4_sc7_1_defend():
         cS "Tell me truthfully, Moze. What was your plan in coming here?"
         "I came for MAC.":
             $ kcEngagement += 1
+            $ outlaw += 1
+            $ setAlignment()
             $ setEngagement()
             mS "I came for MAC."
             mS "I'm not leaving without him."
@@ -1178,7 +1190,9 @@ label vig4_sc7_1_defend():
                 $ AddChatter(vig4_sc7_1_defend_comment17)
         "I came to help.":
             $ csEngagement += 1
+            $ marshal += 1
             $ setEngagement()
+            $ setAlignment()
             mS "I came to help fight off BigCorp."
             show coil stream happy
             cS "And you have done an admirable job." 

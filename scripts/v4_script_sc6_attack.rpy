@@ -89,6 +89,7 @@ label vig4_sc6_attack_1_ama():
             $ pdEngagement -= 1
             $ setEngagement()
             $ marshal += 1
+            $ setAlignment()
             jump vig4_sc6_attack_1_assault_ama
         "Wait for the group to split.":
             $ deadeyeApproval += 1
@@ -97,6 +98,7 @@ label vig4_sc6_attack_1_ama():
             $ pdEngagement += 2
             $ setEngagement()
             $ outlaw += 1
+            $ setAlignment()
             jump vig4_sc6_attack_1_split_ama
 
 label vig4_sc6_attack_1_assault_ama():
@@ -264,7 +266,9 @@ label vig4_sc6_attack_1_assault_ama():
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
+            $ marshal += 1
             $ setEngagement()
+            $ setAlignment()
             mS "You were just doing your job. I understand what that's like."
             $ reactTarget = "vig4_sc6_attack_sparedflies"
             show screen streamerCommentary
@@ -309,7 +313,9 @@ label vig4_sc6_attack_1_assault_ama():
             $ deadeyeApproval += 1
             $ csEngagement -= 2
             $ pdEngagement += 2
+            $ outlaw += 3
             $ setEngagement()
+            $ setAlignment()
             $ vig4_killDflies = True
             stop music
             mS "Don't thank me. I just wanted the pleasure of killing you myself."
@@ -646,7 +652,9 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement += 2
             $ csEngagement -= 2
             $ kcEngagement -= 1
+            $ outlaw += 3
             $ setEngagement()
+            $ setAlignment()
             $ reactTarget = "vig4_sc6_attack_barricadesurprise"
             show screen streamerCommentary
             mS "Ama's right. Keep our weapons aimed at the Dragonfly position."
@@ -748,7 +756,9 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            $ marshal += 2
             $ setEngagement()
+            $ setAlignment()
             $ reactTarget = "vig4_sc6_attack_barricadeassault"
             show screen streamerCommentary
             mS "No. BigCorp is still the enemy."
@@ -845,6 +855,8 @@ label vig4_sc6_attack_3_ama():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
+            $ outlaw += 1
+            $ setAlignment()
             $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadechaos"
             show screen streamerCommentary
@@ -1506,7 +1518,8 @@ label vig4_sc6_attack_1():
             $ kcEngagement += 1
             $ pdEngagement -= 1
             $ setEngagement()
-            $ marshal += 1
+            $ marshal += 2
+            $ setAlignment()
             jump vig4_sc6_attack_1_assault
         "Wait for the group to split.":
             $ csEngagement -= 1
@@ -1514,6 +1527,7 @@ label vig4_sc6_attack_1():
             $ pdEngagement += 1
             $ setEngagement()
             $ outlaw += 1
+            $ setAlignment()
             jump vig4_sc6_attack_1_split
 
 label vig4_sc6_attack_1_assault():
@@ -1625,6 +1639,8 @@ label vig4_sc6_attack_1_assault():
         "You were just doing your job.":
             $ csEngagement += 1
             $ pdEngagement -= 1
+            $ marshal += 1
+            $ setAlignment()
             $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_sparedflies"
             show screen streamerCommentary
@@ -1663,7 +1679,9 @@ label vig4_sc6_attack_1_assault():
         "I wanted to kill you myself.":
             $ csEngagement -= 2
             $ pdEngagement += 2
+            $ outlaw += 3
             $ setEngagement()
+            $ setAlignment()
             $ reactTarget = "vig4_sc6_attack_killdflies"
             stop music
             show screen streamerCommentary
@@ -1996,7 +2014,9 @@ label vig4_sc6_attack_3():
             $ vig4_killDflies = True
             $ pdEngagement += 2
             $ csEngagement -= 2
+            $ outlaw += 3
             $ setEngagement()
+            $ setAlignment()
             $ reactTarget = "vig4_sc6_attack_barricadesurprise"
             show screen streamerCommentary
             mS "Keep our weapons aimed at the Dragonfly position."
@@ -2093,6 +2113,7 @@ label vig4_sc6_attack_3():
             $ pdEngagement -= 1
             $ csEngagement += 1
             $ kcEngagement -= 1
+            $ marshal += 2
             $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadeassault"
             show screen streamerCommentary
@@ -2185,6 +2206,8 @@ label vig4_sc6_attack_3():
             $ pdEngagement += 1
             $ csEngagement -= 1
             $ kcEngagement += 1
+            $ outlaw += 1
+            $ setAlignment()
             $ setEngagement()
             $ reactTarget = "vig4_sc6_attack_barricadechaos"
             show screen streamerCommentary

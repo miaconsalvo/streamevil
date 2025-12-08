@@ -326,23 +326,27 @@ screen webNavigation_vig1():
     if flinchView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("FlinchAnalytics_vig1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4095, 0.007)
-            image ["stream ui/tab highlight socials.png"] xpos 400 ypos 200 xsize 192 ysize 120
+            xsize 118
+            ysize 24
+            xpos 736
+            ypos 15
+            #align (0.4095, 0.007)
+        image ["stream ui/tab highlight socials.png"] xpos 731 ypos 12 #xsize 192 ysize 120
           
 
     if blueitView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("blueitVignette1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4845, 0.007)
-            image ["stream ui/tab highlight socials.png"] xpos 600 ypos 200 xsize 192 ysize 120
+            xsize 118
+            ysize 24
+            xpos 871
+            ypos 15
+            #align (0.4845, 0.007)
+        image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12 #xsize 192 ysize 120
 
     if flinchView == True and blueitView == True and screenComplete == True:
         textbutton "Close Computer":
@@ -353,7 +357,6 @@ screen webNavigation_vig1():
             text_selected_color "#ffffffff"
             text_size 20
             align (0.98, 0.007)
-            image ["stream ui/tab highlight socials.png"] xpos 600 ypos 200 xsize 192 ysize 120
 
 
 #### WEBNAV SCREEN FOR VIG2####
@@ -361,29 +364,38 @@ screen webNavigation_vig2():
     if loopdView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_modStart")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.334, 0.007)          
+            xsize 118
+            ysize 24
+            xpos 601
+            ypos 15
+            #align (0.334, 0.007)    
+        image ["stream ui/tab highlight socials.png"] xpos 596 ypos 12     
 
     if flinchView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig2")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4095, 0.007)          
+            xsize 118
+            ysize 24
+            xpos 736
+            ypos 15
+            #align (0.4095, 0.007)   
+        image ["stream ui/tab highlight socials.png"] xpos 731 ypos 12 #xsize 192 ysize 120       
 
     if blueitView == False and screenComplete == True:
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("blueitVignette2_1")]
-            idle Solid("#eff3176b")
+            idle Solid("#eff31700")
             hover Solid("#eff317b9")
-            xsize 128
-            ysize 40
-            align (0.4845, 0.007)
+            xsize 118
+            ysize 24
+            xpos 871
+            ypos 15
+            #align (0.4845, 0.007)
+        image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12
 
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         #imagebutton:

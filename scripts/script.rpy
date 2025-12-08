@@ -248,6 +248,8 @@ default vbar10 = 0
 default max_viewers = 40
 default screenFreeze = False
 default newGame = True
+default totalViews = 0
+default avgViews = 0
 
 ###Variables to make free navigation of pos-stream scenes possible:
 default flinchView = False #When set to "True," this will turn off the button to open the Flinch page

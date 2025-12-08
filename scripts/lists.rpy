@@ -89,6 +89,26 @@ init python:
 
         return
 
+    def setAlignment():
+        global marshal
+        global outlaw
+
+        if marshal > 15:
+            marshal = 15
+        elif marshal < -15:
+            marshal = -15
+        else:
+            pass
+        
+        if outlaw > 15:
+            outlaw = 15
+        elif outlaw < -15:
+            outlaw = -15
+        else:
+            pass
+
+        return
+
 label TurnSound():
     #$ commentPing = ! commentPing #There's a one liner for this but I don't know the syntax
     #so we do it unwieldy

@@ -522,6 +522,7 @@ label vig3_sc3():
             $ engineerApproval += 1 #Logic: Teresa likes the show of force
             $ macViolence += 1
             $ pdEngagement += 1 #Logic: pickledDragons likes the direct intervention
+            $ outlaw += 1
             play audio "gunCock.wav" volume 2.0
             "I pull out my gun in the direction of the sound." 
             mS "Not likely, boys."
@@ -531,10 +532,12 @@ label vig3_sc3():
             $ macPeace += 1
             $ csEngagement += 1 #Logic: kitcat and Coriolis both like the use of "lore" for intervention
             $ kcEngagement += 1
+            $ marshal += 1
             "I lift my arm and flash the Snakehawks tattoo on my left hand."
             mS "I really wouldn't do that."
             $ AddChatter (vig3_sc3_snakehawk_comment2)
     $ setEngagement()
+    $ setAlignment()
     "The two men back away and retreat. They're well built but not sharp enough for a fight like this."
     "I give the signal to Jennica as she lets their friend scramble up and run off after them."
     hide screen streamerCommentary
@@ -741,6 +744,7 @@ label vig3_sc4():
             $ macHope += 1
             $ csEngagement += 1 #Logic: Coriolis likes your honesty, pickledDragons wants you to stand by your previous choice.
             $ pdEngagement -= 1
+            $ marshal += 1
             mS "MAC I'll be honest, I'm not being fair. But we need their help and that's a conversation for after."
             mS "Okay?"
             play audio "macOK.wav" volume 1.2
@@ -759,11 +763,13 @@ label vig3_sc4():
             $ macViolence += 1
             $ pdEngagement += 1 #Logic: pickledDragons likes sticking by the outlaw choice
             $ csEngagement -= 1
+            $ outlaw += 1
             mS "I'm not about to apologize for what I needed to do. They'll find out eventually."
             mS "Understood?"
             play audio "macOK.wav" volume 1.2
             macS "Yes, Captain."
             $ AddChatter (vig3_sc4_nolove_comment1)
+    $ setAlignment()
     $ setEngagement()
     "Reccrin comes out after a brief moment with a long antenna and some internal parts for our comms."
     show mac stream neutral reflect  at stream_left5mac with move
@@ -843,6 +849,7 @@ label vig3_sc4():
                 $ AddChatter (vig3_sc4_enough_comment2)
             $ pdEngagement += 1 #Logic: pickledDragons likes the assertion of power from an outlaw perspective
             $ csEngagement += 1 #Logic: Coriolis likes the intervention to help Allistar
+            $ marshal += 1
         "Let them continue.":
             $ kcEngagement += 1 #Logic: kitcat likes that keeping quiet keeps MAC safer
             "They're relentless." #we only trigger these changes for this instance since they'll happen later no matter what
@@ -895,6 +902,7 @@ label vig3_sc4():
             $ pdEngagement += 2 #Logic: pickledDragons wants you to fight
             $ kcEngagement -= 1 #Logic: kitcat doesn't like putting the crew at risk
             $ csEngagement += 1 #Logic: Coriolis wants to stand up for Rec
+            $ outlaw += 1
             "I get into his face— let him pry my gear from my cold, dead hands." 
             $ AddChatter (vig3_sc4_fight_comment1)
             "He smiles and throws the first punch before I can react."
@@ -962,6 +970,7 @@ label vig3_sc4():
             $ csEngagement += 2 #Logic: Coriolis likes the attempt to solve problem nonviolently
             $ pdEngagement -= 1 #Logic: pickledDragons does not
             $ kcEngagement += 1 #Logic: kitcat also likes solving problem nonviolently
+            $ marshal += 1
             "I take out my communicator."
             mS "Listen this doesn't need to be ugly, we'll pay the tarriff and get out of your hair."
             $ AddChatter (vig3_sc4_bribe_comment1)
@@ -1481,6 +1490,8 @@ label vig3_sc6():
                     $ kcEngagement -= 1 #Logic: pd and kc both dislike going here and doing nothing
                     $ pdEngagement -= 1
                     $ csEngagement += 1 #Logic: coriolis likes that you're "the bigger person"
+                    $ marshal += 1
+                    $ setAlignment()
                     $ setEngagement()
                     mS "Look, this got out of hand."
                     "I hold my hands up and start at her trying to relax the situation."
@@ -1500,6 +1511,8 @@ label vig3_sc6():
                 "Wrestle the knife away.":
                     $ pdEngagement += 1 #Logic: pickledDragons likes Moze asserting herself; kitcat doesn't have strong feelings about this interaction
                     $ csEngagement -= 1 #Logic: Coriolis dislikes the use of force
+                    $ outlaw += 1
+                    $ setAlignment()
                     $ setEngagement()
                     mS "I don't have time for this."
                     show stranger stream stabbed
@@ -1514,6 +1527,7 @@ label vig3_sc6():
                             $ pdEngagement += 1
                             $ setEngagement()
                             $ outlaw += 1
+                            $ setAlignment()
                             "She yells as something snaps."
                             $ AddChatter (vig3_sc6_knifeyes_comment1)
                             pause 0.5
@@ -2106,6 +2120,7 @@ label vig3_sc6():
             $ kcEngagement -= 1 #Logic: kc and cs both really like Zan so this is unnecessarily rude in their view
             $ csEngagement -= 1
             $ setEngagement()
+            $ setAlignment()
             $ vig3_zanApproval = False
             "I can't leave it up to chance, the crowd is completely absorbed by this game."
             $ AddChatter (vig3_sc6_shootzan_comment1)
@@ -2212,6 +2227,7 @@ label vig3_sc6():
             $ kcEngagement += 1 #Logic: kitcat likes not shooting Zan
             $ pdEngagement -= 1 #Logic: pickledDragons wants to shoot Zan
             $ setEngagement()
+            $ setAlignment()
             $ vig3_zanApproval = True
             #need a variable to determine if they win or not.
             $ reactTarget = "vig3_sc6_trustcrew" #timestamp 6:37
@@ -2727,7 +2743,9 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: coriolis wants you to play it lowkey
             $ pdEngagement -= 1 #Logic: pickledDragons wants you to do something
             $ kcEngagement -= 1 #Logic: kitcat is morally outraged about this guy
+            $ marshal += 1
             $ setEngagement()
+            $ setAlignment()
             "I can feel the anger boiling up to my throat."
             "It's so tempting just to trip these snobs into the drink table."
             $ AddChatter (vig3_sc9_letitbe_comment1)
@@ -2794,7 +2812,9 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 1
+            $ outlaw += 1
             $ setEngagement()
+            $ setAlignment()
             "Now, I know I'm supposed to be on my best behavior, but I have limits. Just as Mills steps towards a drink tray I make sure to step ever so gently on the fabric of their flared pants."
             "They tumble over knocking several drinks onto themselves."
             $ AddChatter (vig3_sc9_takehimdown_comment1)
@@ -2985,6 +3005,8 @@ label vig3_sc9():
             $ csEngagement -= 1
             $ pdEngagement += 1
             $ kcEngagement += 2 #Logic: kitcat likes how loud this defense of Daisy is.
+            $ outlaw += 1
+            $ setAlignment()
             $ setEngagement()
             $ vig3_daisyApproval = False
             $ vig3_daisyChoice = 1
@@ -3026,6 +3048,8 @@ label vig3_sc9():
             $ csEngagement -= 1 #Logic: very violent for cs
             $ pdEngagement += 2 #Logic: likes the slickness of this
             $ kcEngagement += 1 #Logic: likes helping out Daisy
+            $ marshal += 1
+            $ setAlignment()
             $ setEngagement()
             $ vig3_daisyApproval = True
             $ vig3_daisyChoice = 2
@@ -3429,7 +3453,6 @@ label vig3_sc11():
     menu: 
         "Get in the mix."
         "Bold coming from you.": 
-            $ deadeyeApproval += 0 #Is this supposed to be a 0? or a 1?
             mS "Bold coming from you."
             show ama stream formal angry
             amaS "Oh? You're speaking now?"
@@ -3543,10 +3566,12 @@ label vig3_sc12():
         "Help the representative.":
             $ macPeace += 3
             $ macHope += 2
+            $ marshal += 2
             $ kcEngagement += 1 #Logic: kitcat likes intervening in the murder, Coriolis really likes it 
             $ csEngagement += 3
             $ pdEngagement -= 2 #Logic: pickledDragons thinks he should die
             $ setEngagement()
+            $ setAlignment()
             $ vig3_bcRepSaved = True
             "When MAC's eyes lock on mine, he perks up."
             "I put my finger to my lips."
@@ -3615,6 +3640,8 @@ label vig3_sc12():
                     $ pdEngagement += 1 #Logic: you get pd back a bit for this
                     $ kcEngagement += 2 #Logic: kitcat would say you have to defend MAC
                     $ csEngagement -= 1 #Logic: coriolis would prefer you rush them instead of try to shoot
+                    $ outlaw += 1
+                    $ setAlignment()
                     $ setEngagement()
                     $ macViolence += 1
                     $ macPessimism += 1
@@ -3739,6 +3766,8 @@ label vig3_sc12():
                 $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
+                $ outlaw += 1
+                $ setAlignment()
                 $ setEngagement()
                 $ vig3_macShootAma = True
                 $ vig3_macAlign = "ViolentPessimism"
@@ -3907,6 +3936,8 @@ label vig3_sc12():
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favourite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ marshal += 1
+                $ setAlignment()
                 $ setEngagement()
                 $ vig3_macAlign = "PeaceHope"
                 $ vig3_macReadAma = True
@@ -3979,6 +4010,8 @@ label vig3_sc12():
             $ macPessimism += 2
             $ pdEngagement += 2 #Logic: pickledDragons thinks the rep should die
             $ csEngagement -= 2 #Logic: Coriolis is appalled; kitcat is somewhat mixed. Would prefer to not let the rep die, but is also not disengaged by this choice
+            $ outlaw += 1
+            $ setAlignment()
             $ setEngagement()
             $ vig3_bcRepSaved = False
             "When MAC's eyes lock on mine, he perks up."
@@ -4113,6 +4146,8 @@ label vig3_sc12():
                 $ pdEngagement += 3 #Logic: pickledDragons likes the outlaw version of MAC
                 $ csEngagement -= 2 #Logic: coriolis is freaked out by MAC here. Kitcat doesn't like what MAC is learning, but likes that he's standing up for himself.
                 $ kcEngagement += 1
+                $ outlaw += 1
+                $ setAlignment()
                 $ setEngagement()
                 $ vig3_macAlign = "ViolentPessimism"
                 $ vig3_macShootAma = True
@@ -4274,6 +4309,8 @@ label vig3_sc12():
                 $ kcEngagement += 3 #Logic: for kitcat, this is peak. Might even be her favourite moment of the whole game
                 $ pdEngagement -= 2
                 $ csEngagement += 2
+                $ marshal += 1
+                $ setAlignment()
                 $ setEngagement()
                 $ vig3_macAlign = "PeaceHope"
                 $ vig3_macReadAma = True

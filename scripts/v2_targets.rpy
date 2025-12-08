@@ -1310,10 +1310,15 @@ label vig2_analytics_viewcount2():
     menu:
         #"No crazy spikes like the raid, but more consistent viewership overall."
         "What's the average viewer count?" if viewershipThoughtCheck == False:
-            "The average viewer count for the stream is about 10.4."
-            "Over 10! That's great!"
-            "It's a little close to dropping below 10, so you can't lose many viewers for the next couple weeks."
-            "If this count stays stable, you should be on track!" #Here's the issue, we can say this, what can people do to change this if they weren't on track
+            "The average viewer count for the stream is about [avgViews]."
+            if avgViews >= 10:
+                "Over 10! That's great!"
+                "It's a little close to dropping below 10, so you can't lose many viewers for the next couple weeks."
+                "If this count stays stable, you should be on track!" #Here's the issue, we can say this, what can people do to change this if they weren't on track
+            else:
+                "Just a bit below 10."
+                "Considering last week's raid, you shouldn't be out of this yet."
+                "But you will have to get more viewers for the next two streams."
             $ viewershipThoughtCheck = True
             jump vig2_analytics_viewcount2
         "Losing viewers sucks!" if shnzi == False and flinchViewershipShnzi == False:
@@ -1394,7 +1399,7 @@ label vig2_analytics_audience():
     $ flinch_audienceCheck = True
     if flinch_followership <= 5: #new nudges for the player to think about how much they're interacting with chat
         "Nice, you got a couple more followers!"
-        "You've got two more sessions to get the right number."
+        "You've got two more sessions to get the threshold for Affiliate."
         "As long as you keep interacting with the chat, you should be okay."
     else:
         "Just one more follower this time around."

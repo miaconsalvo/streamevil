@@ -955,6 +955,8 @@ label modConvo_Day1():
     $ macroChoice = True
     $ narrator = reg_narrator
     $ menu = nvl_menu
+    $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
+    $ avgViews = totalViews/10
     "That was crazy."
     "The most viewers you ever had in stream before was thirteen."
     "And that felt like a ton."
