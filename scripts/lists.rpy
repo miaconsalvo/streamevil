@@ -93,17 +93,17 @@ init python:
         global marshal
         global outlaw
 
-        if marshal > 15:
-            marshal = 15
-        elif marshal < -15:
-            marshal = -15
+        if marshal > 20:
+            marshal = 20
+        elif marshal < -20:
+            marshal = -20
         else:
             pass
         
-        if outlaw > 15:
-            outlaw = 15
-        elif outlaw < -15:
-            outlaw = -15
+        if outlaw > 20:
+            outlaw = 20
+        elif outlaw < -20:
+            outlaw = -20
         else:
             pass
 
