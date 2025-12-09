@@ -92,20 +92,20 @@ init python:
     def setAlignment():
         global marshal
         global outlaw
-
-        if marshal > 20:
-            marshal = 20
-        elif marshal < -20:
-            marshal = -20
-        else:
-            pass
+        pass
+        #if marshal > 20:
+        #    marshal = 20
+        #elif marshal < -20:
+        #    marshal = -20
+        #else:
+        #    pass
         
-        if outlaw > 20:
-            outlaw = 20
-        elif outlaw < -20:
-            outlaw = -20
-        else:
-            pass
+        #if outlaw > 20:
+        #    outlaw = 20
+        #elif outlaw < -20:
+        #    outlaw = -20
+        #else:
+        #    pass
 
         return
 
