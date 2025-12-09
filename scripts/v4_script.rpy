@@ -616,7 +616,7 @@ label vig4_sc2_2_accompanied():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc2_accompanied_comment1)
     "Teresa steps up to my side and whispers."
-    show teresa stream upset
+    show teresa stream angry
     enS "What the hell? We don't want some rube around us right now."
     $ AddChatter(vig4_sc2_1_comment8)
     mS "At least it'll help us blend in."
@@ -866,7 +866,7 @@ label vig4_sc2_4():
                 oS "Maybe even one who you abandoned in a bustling plaza."
             show teresa stream shock
             "I feel Teresa tense up."
-            show teresa stream neutral
+            show teresa stream angry
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
             oS "Intelligence of all kinds is my business."
@@ -881,7 +881,7 @@ label vig4_sc2_4():
                 $ AddChatter(vig4_sc2_4_comment8)
             show teresa stream shock
             "I feel Teresa tense up."
-            show teresa stream neutral
+            show teresa stream angry
             $ AddChatter(vig4_sc2_4_comment5)
             enS "How do you know about that?"
             oS "Intelligence of all kinds is my business."
@@ -927,7 +927,7 @@ label vig4_sc2_4():
             "He looks us up and down again."
             oS "Self-interest."
             $ AddChatter(vig4_sc2_4_comment14)
-            show teresa stream upset
+            show teresa stream angry
             enS "\"Self-interest!?\""
             "Teresa's voice reaches a fever pitch instantly."
             enS "Listen here you old coot, you have no idea what we've had to do to be standing here right now."
@@ -1078,7 +1078,7 @@ label vig4_sc2_4():
     ##* streamer reaction to start a MAC chant - if you do this, then later in the game we'll trigger a chant from the chat automatically. Probably on the return to Polaris alongside Moze's "speech"
     $ reactTarget = "vig4_sc2_macchant"
     show screen streamerCommentary
-    show jennica stream neutral at stream_left5 with Dissolve(0.5)
+    show jennica stream shock at stream_left5 with Dissolve(0.5)
     pS "Cap, I'm so sorry! I was checkin' the engine lines an' he just ran off—"
     "Jennica freezes as she recognizes the situation."
     pS "Butter my biscuit..."
@@ -1420,7 +1420,7 @@ label vig4_sc2_6():
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_6_comment27)
                     show jennica stream angry
-                    show teresa stream neutral
+                    show teresa stream angry
                     pS "This family don't break up."
                     $ AddChatter(vig4_sc2_6_comment28)
                     enS "Seconded."
@@ -1443,7 +1443,7 @@ label vig4_sc2_6():
                     mS "This was the deal when we accepted the mission."
                     if viewershipHigh == True:
                         $ AddChatter(vig4_sc2_6_comment31) 
-                    show jennica stream angry
+                    show jennica stream sad
                     show teresa stream think
                     pS "Yeah, but..."
                     $ AddChatter(vig4_sc2_6_comment32)
@@ -2207,7 +2207,7 @@ label vig4_sc3_2_jennica_2():
         $ AddChatter(vig4_sc3_2_jenn_comment32)
     "Jennica clenches her fist."
     $ AddChatter(vig4_sc3_2_jenn_comment33)
-    show jennica stream crossed
+    show jennica stream sad
     pS "I made it. It wasn't handed to me, it didn't just happen. I worked my ass off."
     pS "And I'm a damn good pilot now. His words shouldn't matter."
     pS "But whenever I remember what he said, all I want to do is go back in time and kick that guy's ass."
@@ -2306,7 +2306,7 @@ label vig4_sc3_2_jennica_2():
                         mS "So, you don't feel the same?"
                         $ AddChatter(vig4_sc3_2_jenn_comment49)
                         "Jennica takes a long moment. She looks deeply into my eyes."
-                        show jennica stream neutral
+                        show jennica stream sad
                         pS "Sorry, Cap, but I don't."
                         if viewershipHigh == True or viewershipMed == True:
                             $ AddChatter(vig4_sc3_2_jenn_comment50)
@@ -2326,6 +2326,7 @@ label vig4_sc3_2_jennica_2():
                         pS "But it doesn't feel right to me."
                         $ AddChatter(vig4_sc3_2_jenn_comment54)
                         mS "No, I get it. I'm glad you were honest with me."
+                        show jennica stream neutral
                         pS "Always."
                         mS "I should check on the party. Maybe Coil has some updates."
                         $ AddChatter(vig4_sc3_2_jenn_comment55)
@@ -2739,6 +2740,7 @@ label vig4_sc3_2_teresa_2():
                             "Wait for her.":
                                 "I wait, patiently."
                                 "Teresa suddenly stops moving and meets my eyes."
+                                show teresa stream happy
                                 "We hold each other's gaze."
                                 enS "I love you too, Moze."
                                 "I feel myself smiling before I even register to do it myself."
@@ -3395,7 +3397,7 @@ label vig4_sc3_5():
             hide screen streamerCommentary
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment22)
-            show jennica stream neutral at stream_left with dissolve
+            show jennica stream sad at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
@@ -3466,7 +3468,7 @@ label vig4_sc3_5():
             show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
             show ff soldier at stream_center with Dissolve(0.3)
-            show teresa stream neutral at stream_right5 with dissolve
+            show teresa stream angry at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
             show dflyguard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
@@ -3557,7 +3559,7 @@ label vig4_sc3_5():
             hide screen streamerCommentary
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment22)
-            show jennica stream neutral at stream_left with dissolve
+            show jennica stream sad at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
@@ -3633,7 +3635,7 @@ label vig4_sc3_5():
             show screen streamerCommentary
             $ AddChatter(vig4_sc3_5_comment9)
             show ff soldier at stream_center with Dissolve(0.3)
-            show teresa stream neutral at stream_right5 with dissolve
+            show teresa stream angry at stream_right5 with dissolve
             "Teresa and Jennica are in between the guards."
             show dflyguard at stream_right with dissolve
             "The guard directly behind them pushes them in the back, forcing them to stumble forward."
@@ -3702,7 +3704,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment17)
             hide coil with dissolve
             hide vega with dissolve #do we need this? she gets hidden earlier i think
-            show jennica stream neutral at stream_left with dissolve
+            show jennica stream sad at stream_left with dissolve
             show teresa stream neutral at stream_right with dissolve
             "Teresa and Jennica move to my side."
             if jennicaRomance == True:
@@ -3738,7 +3740,7 @@ label vig4_sc4_1():
     $ viewCheck5 = viewCount
     show shiphub_stream at topleft onlayer background with dissolve
     hide polarisplazanight_stream
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream sad at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     "We don't speak a word to each other on the way back to the ship."
     "The Oakley is quiet and cold as I step onto the bridge."
@@ -4046,7 +4048,7 @@ label vig4_sc4_3():
     show jennica stream angry
     pS "Shit!"
     pS "Brace for impact, somethin' big is comin' in right on top of us!"
-    show teresa stream neutral
+    show teresa stream angry
     "Just as Jennica finishes her warning, it appears."
     #show cockpit_stream_cruiser
     play audio "exitHyperspace.wav" volume 2.5
@@ -4302,8 +4304,8 @@ label vig4_sc5_1():
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc5_1_comment13)
     mS "What was that?"
-    show teresa stream neutral
-    show jennica stream neutral
+    show teresa stream angry
+    show jennica stream angry
     enS "BC must have started the attack."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc5_1_comment14)

@@ -134,6 +134,7 @@ label vig3outlawstart():
     enS "But Sallent. Nothing. Not even a distress signal. Not a single report since we left Gibian V."
     mS "Hard to ask people to risk Gray Fever for a check-in. Hell, who knows if anyone is working comms there anymore."
     "There's a long pause."
+    show teresa stream upset
     enS "I don't... this isn't proper to say."
     enS "I wondering if you— if we— made the right choice."
     "She's looking away from me now, its not regret it's just the weight of it all."
@@ -142,6 +143,7 @@ label vig3outlawstart():
     $ AddChatter(vig3_outlawstart_comment14)
     pause 0.5
     $ AddChatter(vig3_outlawstart_comment15)
+    show teresa stream neutral
     enS "We did what we did to keep safe and what we're doing requires... tough choices. Such is the nature of our mission."
     mS "Resa..."
     $ AddChatter(vig3_outlawstart_comment16)
@@ -149,7 +151,7 @@ label vig3outlawstart():
     $ AddChatter(vig3_outlawstart_comment17)
     mS "Please."
     play audio "disruptiveBang.wav" volume 1.2
-    show teresa stream upset
+    show teresa stream angry
     enS "{i}She won't even look at me Moze!{/i}"
     $ AddChatter(vig3_outlawstart_comment18)
     $ reactTarget = "vig3_sc1_out"
@@ -221,7 +223,7 @@ label vig3marshalstart():
     $ AddChatter(vig3_marshalstart_comment4)
     "I find myself staring off into the distance." 
     "With my back to the door I don't see Jennica come in."
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream sad at stream_left with dissolve
     "She's wearing her usual clothes, but her eyes are dark from exhaustion."
     pS "Up early?"
     mS "Surprisingly so are you."
@@ -234,9 +236,11 @@ label vig3marshalstart():
     pS "Don't know 'bout her, I've been camping in the cockpit so I don't find out."
     mS "Luckily there isn't a bathroom in there."
     pS "Takes a brave woman to go relieve herself in times like these."
+    show jennica stream neutral
     "Jennica's joke ends in a forced chuckle. The room goes quiet and cold for moment."
     pS "I'm not just staying in the cockpit to avoid Resa..."
     "I straighten myself."
+    show jennica stream sad
     pS "I keep dreaming about getting a hit on the scanners, and I don't make it to the helm in time."
     mS "You're not the only who can fly the Oakley."
     pS "No, but I'm the only one that can outrun Ama. We got lucky but— no offense to our saving grace— I don't like not knowing how much distance we may or may not have."
@@ -250,8 +254,8 @@ label vig3marshalstart():
     pS "But we gotta be okay with the tough choices sometimes, be more logical, make the hard call."
     mS "Is that really how you're feeling?"
     "Jennica goes quiet."
-    pS "She can barely look at me Moze..."
     show jennica stream angry
+    pS "She can barely look at me Moze..."
     $ reactTarget = "vig3_sc1_mar"
     show screen streamerCommentary
     "Jennica smacks her glass away, it falls to the ground with a clang. She takes a quiet moment to calm herself." 
@@ -260,7 +264,7 @@ label vig3marshalstart():
     pS "But we need to be more united on things if we're gonna make it."
     "I don't respond." #Consider adding multiple options#
     pS "I like the kid. But we've been over our heads from the start..." 
-    show jennica stream neutral
+    show jennica stream sad
     pS "She's gonna find us, and I'm sure BigCorp isn't hung up on whether we're brought back in one piece."
     "Jennica lets out a defeated sigh. Teresa's voice echoes through the speaker before I can answer."
     hide screen streamerCommentary
@@ -295,7 +299,7 @@ label vig3_sc2():
     "The Cockpit is a mess, Jennica has made quick work at holing up in here. MAC's sitting patiently in the corner, he's been spending more time in here than usual."
     "Teresa is working to get the message on the screen while Jennica hangs back next to him."
     $ AddChatter(vig3_sc2_cockpit_comment1)
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream sad at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     enS "Here it is..."
     if viewershipHigh == True:
@@ -343,10 +347,13 @@ label vig3_sc2():
     mS "What's going on, bud?"
     play audio "macSad.wav" volume 1.2
     macS "I— do not know."
-    show jennica stream neutral at stream_left
+    show jennica stream shock at stream_left
+    show teresa stream shock at stream_right
     pS "Well, that's a first." #(multiple=2) #might break the dialogue box positions
     enS "That's remarkable." #(multiple=2) #might break the dialogue box positions
     "The two exchange a quick look before turning away, remembering that they're still fighting. I turn the focus away from MAC."
+    show jennica stream angry
+    show teresa stream angry
     $ AddChatter(vig3_sc2_cockpit_comment10)
     mS "Let's consider our options, come up with a plan to get our comms back in working order. Meet at the Bridge in an hour to debrief."
     #hide screen streamerCommentary
@@ -453,6 +460,7 @@ label vig3_sc3():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc3_akarstreet_comment7)
+    show teresa stream think
     enS "It's risky, even by your standards."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc3_akarstreet_comment8)
@@ -463,6 +471,7 @@ label vig3_sc3():
     else:
         pass
     show jennica stream neutral at stream_left
+    show teresa stream neutral
     pS "I think you're too nostalgic."
     enS "And eager to get arrested."
     $ AddChatter (vig3_sc3_akarstreet_comment9)
@@ -491,7 +500,7 @@ label vig3_sc3():
     "I almost don't see the guy as he pushes past Teresa, getting a bit too close for comfort..." ##HOUND LEADER (early forties)##
     show houndleader stream neutral at stream_right5 with dissolve
     with hpunch
-    show teresa stream upset at stream_right
+    show teresa stream angry at stream_right
     show jennica stream angry at stream_left
     enS "Hey! Care to watch yourself?"
     houndleaderunknown "Aw, smile a bit sweetcheeks, it's a celebration!"
@@ -505,7 +514,7 @@ label vig3_sc3():
     play audio "punch.wav" volume 1.5
     "Before anyone can respond, Jennica punches the man in the face." 
     play audio "grunt.wav" volume 2.5
-    show teresa stream neutral
+    show teresa stream happy
     "He falls down hard and she puts her boot on his throat. Teresa leans over him, grinning." 
     $ AddChatter (vig3_sc3_akarstreet_comment15)
     hide houndleader with vpunch
@@ -539,10 +548,11 @@ label vig3_sc3():
     $ setEngagement()
     $ setAlignment()
     "The two men back away and retreat. They're well built but not sharp enough for a fight like this."
+    show jennica stream angry
     "I give the signal to Jennica as she lets their friend scramble up and run off after them."
     hide screen streamerCommentary
     "The city moves as normal, uninterested in what just happened."
-    show teresa stream happy
+    show teresa stream neutral
     enS "It's good to be back."
     hide teresa with Dissolve(0.5)
     hide jennica with Dissolve(0.5)
@@ -772,7 +782,7 @@ label vig3_sc4():
     $ setAlignment()
     $ setEngagement()
     "Reccrin comes out after a brief moment with a long antenna and some internal parts for our comms."
-    show mac stream neutral reflect  at stream_left5mac with move
+    show mac stream neutral reflect at stream_left5mac with move
     show rec stream happy at stream_right5 with dissolve
     recS "Definitely an older model but she should work better than what you got. Need an install?"
     enS "I could use the hand."
@@ -808,6 +818,7 @@ label vig3_sc4():
     houndleader "Alright Reccrin, you know the drill! Mandatory sweep!"
     houndleader "Don't cause any—"
     houndleader "Oh!"
+    show teresa stream angry
     enS "You must be joking."
     $ AddChatter (vig3_sc4_shop_comment30)
     houndleader "Sweetcheeks."
@@ -1040,7 +1051,7 @@ label vig3_sc4():
     hide rec with dissolve
     "I stop the glass at my lips and nearly drop it. Whipping my head around, I almost grab for my gun until I catch Jennica's eyes."
     $ AddChatter (vig3_sc4_shop_comment50)
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream sad at stream_left with dissolve
     pS "All right, Cap?"
     $ AddChatter (vig3_sc4_shop_comment51)
     "I compose myself and try to calm down."
@@ -1354,6 +1365,7 @@ label vig3_sc6():
     show teresa stream upset at stream_right
     enS "Why must you be so emotional about everything?"
     pS "And why ya gotta be a cold hearted b—"
+    show teresa stream angry
     show mac stream shock at stream_center_mac with move 
     show rec stream surprised
     $ reactTarget = "vig3_sc6_crewspat"#timestamp 6:30
@@ -1375,7 +1387,7 @@ label vig3_sc6():
     $ AddChatter (vig3_sc6_bbpub_comment11)
     hide screen streamerCommentary
     show teresa stream neutral at stream_right
-    show jennica stream neutral at stream_left
+    show jennica stream sad at stream_left
     mS "I'm not going to say that I regret what we did in Gibian V, that doesn't matter now."
     mS "But I can't have the two of you blowing up at each other over something I decided."
     $ AddChatter (vig3_sc6_bbpub_comment12)
@@ -1706,7 +1718,7 @@ label vig3_sc6():
             pS "Please."
             $ AddChatter (vig3_sc6_recmac_comment13)
             "Teresa sidles up next to Jennica."
-            show teresa stream neutral at stream_right with dissolve
+            show teresa stream angry at stream_right with dissolve
             enS "The lady said she'd like to ride the Karousel."
             $ AddChatter (vig3_sc6_recmac_comment14)
             zan "Two of you! I'll need a bigger mop!"
@@ -2036,7 +2048,7 @@ label vig3_sc6():
             zan "Another victory, another shot for you."
             show jennica stream angry at stream_left with dissolve
             pS "Fine meathead, you got it."
-            show teresa stream neutral at stream_right with dissolve
+            show teresa stream angry at stream_right with dissolve
             enS "Makers this is insanity."
             "Then I get an idea."
             mS "Drink! Drink! Drink! Drink!"
@@ -2520,7 +2532,7 @@ label vig3_sc8():
     "Nothing short of the worst case scenario."
     show exteriorvineyard_stream at topleft onlayer background with dissolve
     hide bg black
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream formal neutral at stream_left with dissolve
     pS "You know I'm not a fancy sort of gal, but my butt looks fantastic in this."
     $ AddChatter (vig3_sc8_vineyardext_comment1)
     "Jennica has not stopped looking at herself in every reflective surface since she put on the new clothes." 
@@ -2532,7 +2544,7 @@ label vig3_sc8():
     pS "Sorry, Jimmy, gotta make sure the girls are in order before I do some serious ass-kicking."
     $ AddChatter (vig3_sc8_vineyardext_comment4)
     "Jimmy is a friend of Rec's who owns a luxury cruiser company and thankfully owed them a favour."
-    show teresa stream neutral at stream_right with dissolve
+    show teresa stream formal neutral at stream_right with dissolve
     enS "Can you give it a rest. There are people around."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc8_vineyardext_comment7)
@@ -2547,7 +2559,7 @@ label vig3_sc8():
     "I relax my shoulders as an attendant walks over to us."
     vyattend "Good afternoon, my name's Ryo, and it is my pleasure to welcome you to the Vineyard." 
     vyattend "Are you perhaps here for the Inventor's Fair?"
-    show teresa stream happy
+    show teresa stream formal happy
     enS "Pleased to make your acquaintance, Ryo. Please check the list for Vira Prismari and retinue."
     "They raise an eyebrow before checking a screen."
     vyattend "Prismari?"
@@ -2583,7 +2595,7 @@ label vig3_sc8():
     reynar "We are pleased to have you back, Miss Prismari."
     "Reynar nods to us and walks away cooly. Leaving to welcome in other guests."
     hide reynar stream with dissolve
-    show teresa stream neutral
+    show teresa stream formal neutral
     $ reactTarget = "vig3_sc8_teresabluff"
     show screen streamerCommentary#timestamp 6:43
     pS "You're a bit scary when you're proper."
@@ -2628,13 +2640,13 @@ label vig3_sc8():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment6)
-    show teresa stream happy at stream_right with dissolve
+    show teresa stream formal happy at stream_right with dissolve
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
     $ AddChatter (vig3_sc9_inventorsfair_comment7)
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment8)
-    show jennica stream neutral at stream_left with dissolve
+    show jennica stream formal neutral at stream_left with dissolve
     pS "That why some of these statues don't have arms?"
     enS "I think they're being loose with the theme."
     $ AddChatter (vig3_sc9_inventorsfair_comment9)
@@ -2651,7 +2663,7 @@ label vig3_sc8():
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment13)
     "Teresa turns around and stops us in our tracks."
-    show teresa stream neutral
+    show teresa stream formal neutral
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment14)
         pause 0.5
@@ -2711,7 +2723,7 @@ label vig3_sc8():
     "Jenn tips an imaginary hat and walks away with Rec."
     hide jennica with dissolve
     hide rec with dissolve
-    show teresa stream upset
+    show teresa stream formal upset
     enS "We're doomed."
     mS "Just might be."
     hide teresa with dissolve
@@ -3134,8 +3146,8 @@ label vig3_sc9():
             "Looking disappointed."
     hide reynar with dissolve
     hide screen streamerCommentary
-    show jennica stream neutral at stream_left with dissolve
-    show teresa stream neutral at stream_right with dissolve
+    show jennica stream formal neutral at stream_left with dissolve
+    show teresa stream formal neutral at stream_right with dissolve
     show rec stream formal neutral at stream_center with dissolve
     "I quickly catch everyone up about the info I got from Daisy."
     pS "We're real in it now."
@@ -4451,8 +4463,8 @@ label vig3_sc13():
     show mac stream shock at stream_right5mac with move
     "Two blasters are pointed at my face as the door swings open."
     show rec stream formal surprised at stream_left5 with Dissolve(0.5)
-    show teresa stream fight at stream_right with Dissolve(0.5)
-    show jennica stream fight at stream_left with Dissolve(0.5)
+    show teresa stream formal fight at stream_right with Dissolve(0.5)
+    show jennica stream formal fight at stream_left with Dissolve(0.5)
     mS "Well, don't be too happy to see me!"
     enS "Captain!"
     if viewershipHigh == True:
@@ -4463,8 +4475,8 @@ label vig3_sc13():
         pause 0.5
         $ AddChatter (vig3_sc13_fairint_comment15)
     "MAC rushes past me to grab Teresa's legs. The door closes behind me as I walk in." 
-    show teresa stream happy
-    show jennica stream neutral
+    show teresa stream formal happy
+    show jennica stream formal neutral
     show mac stream neutral
     show rec stream formal happy
     enS "Good to see you, buddy."
@@ -4496,8 +4508,8 @@ label vig3_sc13():
     show rec stream formal happy
     mS "Okay let's focus up. What's going on here."
     $ AddChatter (vig3_sc13_fairint_comment21)
-    show teresa stream neutral
-    show jennica stream neutral
+    show teresa stream formal neutral
+    show jennica stream formal neutral
     enS "Rec found a private comms room. We were hoping to at least catch our breath before we head out."
     pS "Can't go back through the party."
     if viewershipHigh == True:
@@ -4540,9 +4552,9 @@ label vig3_sc13():
             $ AddChatter (vig3_sc13_dash_comment4)
             "When we set off, we didn't imagine it would be this close to the fair."
             "Dodging through the side garden to the entrance shuttles, I pray that Reynar isn't too upset with our escape plan."
-            show jennica stream shock at stream_left with dissolve
+            show jennica stream formal shock at stream_left with dissolve
             pS "Jeez this kid's goin' fast and furious."
-            show teresa stream happy at stream_right with dissolve
+            show teresa stream formal happy at stream_right with dissolve
             enS "He gets it from you!"
             show rec stream formal thinking at stream_left5
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
@@ -4556,7 +4568,7 @@ label vig3_sc13():
             $ AddChatter (vig3_sc13_dash_comment6)
             pause 0.5
             $ AddChatter (vig3_sc13_dash_comment7)
-            show jennica stream neutral
+            show jennica stream formal neutral
             pS "Keep up y'all I'm the only one in heels and I'm leagues ahead!"
             $ AddChatter (vig3_sc13_dash_comment8)
             pause 0.5
@@ -4604,7 +4616,7 @@ label vig3_sc13():
         
 label vig3outlawcomms():
     show matticus phone neutral at stream_center_mac with dissolve
-    show jennica stream angry
+    show jennica stream formal angry
     $ pdEngagement += 1  #Logic: pickledDragons like that you are continuing to have a relationship with Matticus
     $ kcEngagement -= 1 #Logic: kitcat and coriolis don't like Matticus
     $ csEngagement -= 1
@@ -4679,7 +4691,7 @@ label vig3outlawcomms():
 
 label vig3marshalcomms():
     show matticus phone neutral at stream_center_mac with dissolve
-    show jennica stream angry
+    show jennica stream formal angry
     $ pdEngagement += 1 #Logic: pickledDragons finds this development interesting; the other two are neutral
     $ setEngagement()
     smatt "Well hello ladies! To what do I owe the pleasure?"
@@ -4832,8 +4844,8 @@ label vig3_sc14():
     "Then I'm thrown against the wall, and there's Ama, knife in hand at my throat."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment8)
-    show teresa stream fight at stream_right
-    show jennica stream fight at stream_left
+    show teresa stream formal fight at stream_right
+    show jennica stream formal fight at stream_left
     "Teresa and Jen are quick to act."
     if viewershipHigh == True:
         $ AddChatter(vig3_sc14_escape_comment9)
@@ -5059,7 +5071,7 @@ label vig3_sc14():
             pause 0.5
             $ AddChatter(vig3_sc14_hadto_comment9)
             show rec stream formal angry at stream_left5 with move
-            show teresa stream neutral at stream_center with vpunch
+            show teresa stream formal neutral at stream_center with vpunch
             $ AddChatter(vig3_sc14_hadto_comment10)
             "Rec lunges for me and is caught by Teresa."
             $ AddChatter(vig3_sc14_hadto_comment11)
@@ -5154,7 +5166,7 @@ label vig3_sc14():
             $ AddChatter(vig3_sc14_deservedit_comment17)
             play audio "lazer.wav" volume 5.0
             "Rec grabs the blaster off Teresa and fires a shot."
-            show jennica stream fight at stream_center with vpunch
+            show jennica stream formal fight at stream_center with vpunch
             "With a quick move from Jennica the bullet hits the shuttle ceiling."
             show rec with vpunch
             show jennica with vpunch

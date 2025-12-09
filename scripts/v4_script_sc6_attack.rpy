@@ -512,7 +512,7 @@ label vig4_sc6_attack_2_ama():
         macS "Why do you care? Wasn't this just your mission?"
         $ AddChatter(vig4_sc6_attack_2_ama_comment7)
         "The world goes cold."
-        show teresa stream neutral
+        show teresa stream shock
         show jennica stream shock
         enS "That's not fair, MAC."
         pS "We're a family."
@@ -533,7 +533,7 @@ label vig4_sc6_attack_2_ama():
                 mS "Just tell us where you are, and we'll be there for you. Always."
                 $ AddChatter(vig4_sc6_attack_2_ama_comment9)
                 "MAC pauses for a moment. As if pondering what I've said."
-                show jennica stream neutral
+                show jennica stream sad
             "The job's not finished.":
                 $ kcEngagement -= 1
                 $ pdEngagement += 1
@@ -544,7 +544,7 @@ label vig4_sc6_attack_2_ama():
                 $ AddChatter(vig4_sc6_attack_2_ama_comment10)
                 mS "So tell us where you are. Tell us how we can help you."
                 "MAC pauses for a moment. As if pondering what I've said."
-                show jennica stream neutral
+                show jennica stream sad
     $ setEngagement()
     play audio "macOK.wav" volume 1.0
     macS "I am okay."
