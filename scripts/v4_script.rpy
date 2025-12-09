@@ -7173,11 +7173,20 @@ label vig4_macro_writeUp_5():
         menu:
             #"I guess I'll finish it with my thoughts on making affiliate."
             "I feel positive about achieving Affiliate...":
-                if outlaw > marshal + 7:
-                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I way more dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
+                if outlaw > marshal + 13:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I went way more dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
+                    $ addWriteUp(affiliateReflection)
+                elif outaw > marshal + 6:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I went mostly Outlaw route this time, but not like all the way. I usually go full Marshal but I actually had a great time being more flexible with my choices! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
+                    $ addWriteUp(affiliateReflection)
+                elif outlaw >= marshal:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I was pretty balanced on moral choices. Some Outlaw here, a bit of Marshal there. I usually go full Marshal but I actually had a great time being a bit more flexible! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
+                    $ addWriteUp(affiliateReflection)
+                elif marshal > outlaw:
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I actually still went Marshal overall, but definitely dabbled in the Outlaw path. I usually go full Marshal so even just that little bit of dark mode felt big for me! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
                     $ addWriteUp(affiliateReflection)
                 else:
-                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I was pretty balanced on moral choices. Some outlaw here, a bit of Marshal there. I usually go full marshal but I actually had a great time being a bit more flexible! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
+                    $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I was pretty balanced on moral choices. Some Outlaw here, a bit of Marshal there. I usually go full Marshal but I actually had a great time being a bit more flexible! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
                     $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
@@ -7248,17 +7257,61 @@ label vig4_macro_brother_1():
 
 label endgame():
     "The post is uploaded to blueit successfully."
-    hide screen finalWriteUp with Dissolve(2.0)
-    scene bg black with dissolve
+    hide screen finalWriteUp with dissolve
+    scene streamview with dissolve
     "I should go."
     "Been on this screen for a bit too long today."
     "Maybe I can hit up Jessie to grab some ramen."
     "And next week I take a flight back home for Thanksgiving."
     "Can't wait to catch up with El in person."
+    scene bg black with Dissolve(2.0)
+    pause 2.0
+    "Congratulations, you have finished {i}Stream Evil{/i}!"
+    "For playing through to the end, you've received a badge based on your choices."
+    "Your badge is..."
+    if outlaw > marshal + 6 and flinch_followership <= -2 and viewershipHigh == True:
+        scene high_evil_high_audience with dissolve
+        "ICON OF EVIL"
+    elif outlaw > marshal + 6 and flinch_followership <= 1 and viewershipHigh == True:
+        scene high_evil_mid_audience with dissolve
+        "MID TABLE VILLAINY"
+    elif outlaw > marshal + 6 and flinch_followership <= 1 and viewershipMed == True:
+        scene high_evil_mid_audience with dissolve
+        "MID TABLE VILLAINY"
+    elif outlaw > marshal + 6 and flinch_followership > 1:
+        scene high_evil_low_audience with dissolve
+        "WHAT WAS THE POINT OF ALL THOSE HORRIBLE THINGS YOU DID?"
+    elif marshal > outlaw + 6 and flinch_followership <= -2 and viewershipHigh == True:
+        scene high_marshal_high_audience with dissolve
+        "THE PEOPLE'S PRINCESS"
+    elif marshal > outlaw + 6 and flinch_followership <= 1 and viewershipHigh == True:
+        scene high_marshal_mid_audience with dissolve
+        "POPULAR AT YOUR LOCAL HIGH SCHOOL"
+    elif marshal > outlaw + 6 and flinch_followership <= 1 and viewershipMed == True:
+        scene high_marshal_mid_audience with dissolve
+        "POPULAR AT YOUR LOCAL HIGH SCHOOL"
+    elif marshal > outlaw + 6 and flinch_followership > 1:
+        scene high_marshal_low_audience with dissolve
+        "HEROIC PARIAH"
+    elif flinch_followership <= -2 and viewershipHigh == True:
+        scene mid_morals_high_audience with dissolve
+        "CORRUPTIBLE RULER"
+    elif flinch_followership <= 1 and viewershipHigh == True:
+        scene mid_morals_mid_audience with dissolve
+        "TRUE NEUTRAL"
+    elif flinch_followership <= 1 and viewershipMed == True:
+        scene mid_morals_mid_audience with dissolve
+        "TRUE NEUTRAL"
+    elif flinch_followership > 1:
+        scene mid_morals_low_audience with dissolve
+        "UNPRINCIPLED AND UNPOPULAR"
+    else:
+        scene mid_morals_mid_audience with dissolve
+        "TRUE NEUTRAL"
     pause 2.0
     scene game_main_menu with dissolve
-    "Congratulations, you have finished {i}Stream Evil{/i}!"
     "On behalf of the entire team at mLab productions, we would like to say:"
     "THANK YOU!"
-    "We hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
+    "It's been an honor having you play our game!"
+    "And we hope you have a wonderful day!\n-Beck, Josh, Jules, Justin, and Mia"
     $ renpy.full_restart()

@@ -71,9 +71,9 @@ label vig4_sc6_attack_1_ama():
     show dflyguard at stream_right5 with dissolve
     "Teresa points at one of the captive Dragonflies."
     enS "Isn't that?"
-    pS "Oh yeah! That's the guy who roughed us up at the festival."
+    pS "Oh yeah! She's the one who roughed us up at the festival."
     $ AddChatter(vig4_sc6_attack_1_ama_comment11)
-    enS "Guess he and his squad were more bark than bite after all."
+    enS "Guess she and her squad were more bark than bite after all."
     $ AddChatter(vig4_sc6_attack_1_ama_comment12)
     pS "They're still hostages. We should help them."
     $ AddChatter(vig4_sc6_attack_1_ama_comment13)
@@ -322,7 +322,7 @@ label vig4_sc6_attack_1_assault_ama():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav" volume 5.0
             pause 0.5
-            play audio "deathGasp" volume 1.5
+            play audio "deathGasp.wav" volume 1.5
             hide dflyguard with Dissolve(0.3)
             show ama stream gun
             "The guard has half a second to look stunned before a blaster bolt rips through her skull."
@@ -1690,7 +1690,7 @@ label vig4_sc6_attack_1_assault():
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment27)
             play audio "lazer.wav"
             pause 0.5
-            play audio "deathGasp" volume 1.5
+            play audio "deathGasp.wav" volume 1.5
             hide dflyguard with Dissolve(0.5)
             "The guard has half a second to look stunned before a blaster bolt rips through his skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)

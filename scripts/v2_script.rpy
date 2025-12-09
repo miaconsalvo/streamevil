@@ -249,7 +249,7 @@ label GibianVCustomsDepot():
     $ reactTarget = "vig2_sc2_whywedidntfly"
     show screen streamerCommentary ###I would cut this one. It feels like too many right in a row
     "Jennica gestures to the small crate holding MAC."
-    $ viewCount += 2
+    $ viewCount += 3
     pS "Which is a nonstarter."
     hide screen streamerCommentary
     "Teresa rolls her eyes as we get in the line marked \"New Arrivals.\""
