@@ -7448,7 +7448,8 @@ label endgame():
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
         "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
-    pause 2.0
+    pause 1.0
+    scene bg black with Dissolve(3.0)
     scene game_main_menu with dissolve
     "On behalf of the entire team at mLab productions, we would like to say:"
     "THANK YOU!"
