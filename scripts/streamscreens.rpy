@@ -349,6 +349,24 @@ screen webNavigation_vig1():
         image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12 #xsize 192 ysize 120
 
     if flinchView == True and blueitView == True and screenComplete == True:
+        #frame:
+            #ypos 56
+            #xpos 850 
+            #xpos 530
+            #ypos 653
+        #    xalign 0.0
+        #    yalign 1.0
+        #    xsize 1000
+        #    ysize 230
+        #    right_margin 200
+        #    background Image("images/stream ui/tutorialUI.png")
+        #    text "Now that you've visited all the relevant web pages, you can go to shutdown your computer by clicking the button at the top left."
+            #textbutton "Close Tutorial":
+            #    action Hide("webNavTutorial")
+            #    text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            #    text_hover_color "#ffffffd5" 
+            #    text_selected_color "#ffffffff"
+            #    align (1.35, 1.0)  
         imagebutton:
             action [Show("shutDownComputerv1")]#, Hide("webNavigation_vig1")]
             idle Solid("#eff31700")
@@ -359,17 +377,19 @@ screen webNavigation_vig1():
             ypos 16
             #align (0.98, 0.007)
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+        image ["stream ui/reactalert.png"] xpos 40 ypos 0 size (30, 30)
 
 screen shutDownComputerv1():
     image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
     imagebutton:
         action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
-        idle Solid("#74747473")
+        idle Solid("#eff31700")
         hover Solid("#eff31786")
-        xpos 20
+        xpos 22
         ypos 107
-        xsize 237
-        ysize 17
+        xsize 233
+        ysize 15
+    image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG2####
 screen webNavigation_vig2():
@@ -425,7 +445,7 @@ screen shutDownComputerv2():
     image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
     imagebutton:
         action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
-        idle Solid("#74747473")
+        idle Solid("#eff31700")
         hover Solid("#eff31786")
         xpos 20
         ypos 107
@@ -486,7 +506,7 @@ screen shutDownComputerv3():
     image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
     imagebutton:
         action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
-        idle Solid("#74747473")
+        idle Solid("#eff31700")
         hover Solid("#eff31786")
         xpos 20
         ypos 107

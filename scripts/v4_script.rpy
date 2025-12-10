@@ -7269,45 +7269,71 @@ label endgame():
     "Congratulations, you have finished {i}Stream Evil{/i}!"
     "For playing through to the end, you've received a badge based on your choices."
     "Your badge is..."
-    if outlaw > marshal + 6 and flinch_followership <= -2 and viewershipHigh == True:
+    if outlaw > marshal + 10 and flinch_followership <= -2 and viewershipHigh == True:
         scene high_evil_high_audience with dissolve
         "ICON OF EVIL"
-    elif outlaw > marshal + 6 and flinch_followership <= 1 and viewershipHigh == True:
+        "You didn't just take a walk on the wild side, you did a full-on sprint!"
+        "You took the path less travelled and earned a ton of notoriety. Your exploits will be discussed as streaming lore for years to come."
+    elif outlaw > marshal + 5 and flinch_followership <= 0 and viewershipHigh == True:
         scene high_evil_mid_audience with dissolve
         "MID TABLE VILLAINY"
-    elif outlaw > marshal + 6 and flinch_followership <= 1 and viewershipMed == True:
+        "You leaned into your darker nature and flourished!"
+        "While you didn't fully put the galaxy to the torch, you did immerse yourself in the dark side, earning a decent following in the process."
+    elif outlaw > marshal + 5 and flinch_followership <= 0 and viewershipMed == True:
         scene high_evil_mid_audience with dissolve
         "MID TABLE VILLAINY"
-    elif outlaw > marshal + 6 and flinch_followership > 1:
+        "You leaned into your darker nature and flourished!"
+        "While you didn't fully put the galaxy to the torch, you did immerse yourself in the dark side, earning a decent following in the process."
+    elif outlaw > marshal + 6 and flinch_followership >= 1:
         scene high_evil_low_audience with dissolve
         "WHAT WAS THE POINT OF ALL THOSE HORRIBLE THINGS YOU DID?"
-    elif marshal > outlaw + 6 and flinch_followership <= -2 and viewershipHigh == True:
+        "Who needs to be a good guy? Not you!"
+        "You leaned into your darker side, but didn't quite reach your goal. Only you can decide if it was worth it or not."
+    elif marshal > outlaw + 10 and flinch_followership <= -2 and viewershipHigh == True:
         scene high_marshal_high_audience with dissolve
         "THE PEOPLE'S PRINCESS"
-    elif marshal > outlaw + 6 and flinch_followership <= 1 and viewershipHigh == True:
+        "Champion of the weak, compassionate savior of the galaxy, you did it!"
+        "We don't know how you did it. This shouldn't be possible. But by sticking to your guns, you've proven that where there's a will there's a way."
+    elif marshal > outlaw + 5 and flinch_followership <= 0 and viewershipHigh == True:
         scene high_marshal_mid_audience with dissolve
         "POPULAR AT YOUR LOCAL HIGH SCHOOL"
-    elif marshal > outlaw + 6 and flinch_followership <= 1 and viewershipMed == True:
+        "Who needs to be a bad guy to be popular? Not you!"
+        "Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+    elif marshal > outlaw + 5 and flinch_followership <= 0 and viewershipMed == True:
         scene high_marshal_mid_audience with dissolve
         "POPULAR AT YOUR LOCAL HIGH SCHOOL"
-    elif marshal > outlaw + 6 and flinch_followership > 1:
+        "Who needs to be a bad guy to be popular? Not you!"
+        "Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+    elif marshal > outlaw + 6 and flinch_followership >= 1:
         scene high_marshal_low_audience with dissolve
         "HEROIC PARIAH"
+        "Who cares about being popular? Not you!"
+        "You stuck to your guns and did your best to save the galaxy. It came at a cost for your streaming career, but you have your integrity, and that's what matters most."
     elif flinch_followership <= -2 and viewershipHigh == True:
         scene mid_morals_high_audience with dissolve
         "CORRUPTIBLE RULER"
+        "You performed the ultimate balancing act."
+        "You could not be swayed one way or the other, threading the needle between good and evil while still getting where you wanted to go. It was tough to manage, but you did it."
     elif flinch_followership <= 1 and viewershipHigh == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
+        "Who needs to pick a side? Not you!"
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
     elif flinch_followership <= 1 and viewershipMed == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
+        "Who needs to pick a side? Not you!"
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
     elif flinch_followership > 1:
         scene mid_morals_low_audience with dissolve
         "UNPRINCIPLED AND UNPOPULAR"
+        "You are the paragon of both sides."
+        "You find nuance in the smallest details, and exploring those intricacies was more important than getting a ton of followers. Only you can decide if it was worth it."
     else:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
+        "Who needs to pick a side? Not you!"
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
     pause 2.0
     scene game_main_menu with dissolve
     "On behalf of the entire team at mLab productions, we would like to say:"
