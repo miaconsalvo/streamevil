@@ -1014,7 +1014,7 @@ label vig3_sc4():
     "They pull out five glasses. And drops the bottle of brandy on the counter."
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in, giving it to MAC."
     play audio "macHum.wav" volume 1.0
-    show mac stream happy 
+    show mac stream happy reflect
     $ AddChatter (vig3_sc4_shop_comment41)
     macS "Thank you!"
     show mac stream neutral reflect at stream_left with move
@@ -2723,7 +2723,7 @@ label vig3_sc8():
     "Jenn tips an imaginary hat and walks away with Rec."
     hide jennica with dissolve
     hide rec with dissolve
-    show teresa stream formal upset
+    show teresa stream formal angry
     enS "We're doomed."
     mS "Just might be."
     hide teresa with dissolve
