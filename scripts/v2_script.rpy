@@ -461,7 +461,7 @@ label GibianVCustomsMarshal():
     macS "Penitentiary. Noun. A place for imprisoning crim—"
     enS "{i}Shush!{/i}"
     "The door creaks ajar."
-    show jennica stream happy
+    show jennica stream neutral
     show teresa stream neutral
     show customs agent at stream_center with Dissolve(0.2)
     "The customs official peeks his head through the door."
