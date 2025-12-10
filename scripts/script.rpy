@@ -300,6 +300,7 @@ default mozeReflection = ""
 default choiceReflection = ""
 default streamReflection = ""
 default affiliateReflection = ""
+default flinchFinalCheck = 1
 
 ###Variables for checking interactions with stream###
 default vig1_interactions = 0

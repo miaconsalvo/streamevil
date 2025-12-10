@@ -815,7 +815,7 @@ label vig4_sc6_defend_5():
     pause 0.5
     play audio "scream.wav" volume 1.0
     mS "{i}gasp{/i}"
-    show polarisfight_stream with Dissolve(0.5)
+    show polarisfight_stream at topleft onlayer background with Dissolve(0.5)
     "Then I fall to the floor as something thuds next to me."
     "Staggering to my knees, I see that the enforcer has a smoking hole in the back of his head."
     show vega stream gun at stream_left with Dissolve(0.5)
@@ -910,7 +910,7 @@ label vig4_sc6_defend_5():
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
-        goon "Said he had a debt that needed paying off."
+        goon "Said something about a debt from Tiber III that needed paying off."
         $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, destroying them."

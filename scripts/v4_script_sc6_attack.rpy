@@ -1034,7 +1034,7 @@ label vig4_sc6_attack_3_ama():
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
-        goon "Said he had a debt that needed paying off."
+        goon "Said something about a debt from Tiber III that needed paying off."
         $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, delaying their advance."
@@ -2355,7 +2355,7 @@ label vig4_sc6_attack_3():
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
-        goon "Said he had a debt that needed paying off."
+        goon "Said something about a debt from Tiber III that needed paying off."
         $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, delaying their advance."

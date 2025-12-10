@@ -380,16 +380,17 @@ screen webNavigation_vig1():
         image ["stream ui/reactalert.png"] xpos 40 ypos 0 size (30, 30)
 
 screen shutDownComputerv1():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
-        idle Solid("#eff31700")
-        hover Solid("#eff31786")
-        xpos 22
-        ypos 107
-        xsize 233
-        ysize 15
-    image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG2####
 screen webNavigation_vig2():
@@ -442,15 +443,17 @@ screen webNavigation_vig2():
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
 
 screen shutDownComputerv2():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
-        idle Solid("#eff31700")
-        hover Solid("#eff31786")
-        xpos 20
-        ypos 107
-        xsize 237
-        ysize 17
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG3#####
 screen webNavigation_vig3():
@@ -503,15 +506,17 @@ screen webNavigation_vig3():
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
 
 screen shutDownComputerv3():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
-        idle Solid("#eff31700")
-        hover Solid("#eff31786")
-        xpos 20
-        ypos 107
-        xsize 237
-        ysize 17
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG4 ###### 
 screen webNavigation_vig4():
@@ -606,12 +611,13 @@ screen shutDownComputerv4():
     image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
     imagebutton:
         action [Hide("shutDownComputerv4"), Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]        
-        idle Solid("#74747473")
+        idle Solid("#eff31700")
         hover Solid("#eff31786")
-        xpos 20
+        xpos 22
         ypos 107
-        xsize 237
-        ysize 17
+        xsize 233
+        ysize 15
+    image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 ###PLAYTESTING RECORD SCREEN###
 screen playtestRecord():
