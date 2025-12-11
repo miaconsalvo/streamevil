@@ -967,7 +967,7 @@ label vig4_sc6_defend_5():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
-            show daisy stream neutral at stream_left5 with dissolve
+            show daisy stream formal neutral at stream_left5 with dissolve
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
