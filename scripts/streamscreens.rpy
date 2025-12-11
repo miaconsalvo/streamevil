@@ -194,20 +194,21 @@ screen chatTutorial2():
 screen discordNotification():
     frame:
         ypos 653
-        xpos 731 
+        xpos 531 
         xsize 1000
         ysize 230
         right_margin 200
-        background Solid("#000000ff")
-        #text "_lostinmetr0"
-        text "[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!"
+        background Image("images/stream ui/LoopdUI.png")
+        #background Solid("#000000ff")
+        text "{b}_lostinmetr0{/b}" align (0.7, 0.0)
+        text "\n[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!" align (0.2, 0.1)
         textbutton "Close Notification":
             action Return() #Hide("discordNotification")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            background "#44444100"
+            align (0.75, 1.0)
 
 screen streamFreeze():
     #frame:

@@ -128,7 +128,7 @@ screen finalWriteUp():
         mousewheel True
         scrollbars "vertical"
         yinitial 1.0
-        area (500, 460, 1335, 380)
+        area (500, 467, 1335, 300)
         vbox:
             spacing 10
             for p in (writeUp_list):

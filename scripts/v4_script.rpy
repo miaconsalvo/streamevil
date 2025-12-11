@@ -3926,7 +3926,7 @@ label vig4_sc4_1():
             amaS "Be seeing you, Mozely."
             $ vig4_sc4_1_comment31.click = False
             $ AddChatter(vig4_sc4_1_comment34)
-            hide ama phone neutral
+            hide ama phone neutral with dissolve
             play audio "cutCall.wav" volume 1.5
         "Agree to Ama's offer.":
             hide screen streamerCommentary
@@ -3958,7 +3958,7 @@ label vig4_sc4_1():
                     amaS "I'll make contact once I've reached the moon."
                     $ AddChatter(vig4_sc4_1_comment29)
                     amaS "Be seeing you, Mozely."
-                    hide ama phone neutral
+                    hide ama phone neutral with dissolve
                     play audio "cutCall.wav" volume 1.5
                 "This is for MAC.":
                     mS "But this isn't for you, or the Snakehawks."
@@ -3971,7 +3971,7 @@ label vig4_sc4_1():
                     $ AddChatter(vig4_sc4_1_comment29)
                     amaS "I'll make contact once I've reached the moon."
                     amaS "Be seeing you, Mozely."
-                    hide ama phone neutral
+                    hide ama phone neutral with dissolve
                     play audio "cutCall.wav" volume 1.5
     "BigCorp is coming for MAC. BigCorp is coming for MAC."
     play audio "shipWarmUp.wav" volume 1.0
@@ -7326,7 +7326,7 @@ label vig4_macro_writeUp_5():
             #"I guess I'll finish it with my thoughts on not making affiliate."
             "I'm feeling positive about not achieving affiliate...":
                 if flinchFinalCheck > 0:
-                    $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. Wasn't able to get the right amount of followers. Maybe I could have done more to grow my community, but I feel good about how I played, even if I didn’t blow the streaming world up. And honestly? I feel grateful for my community and all the folks who joined me on this journey!"
+                    $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. Wasn't able to get the right amount of followers. Maybe I could have done more to grow my community, but I feel good about how I played, even if I didn’t blow the streaming world up. And honestly? I feel grateful for all the folks who did join me on this journey!"
                     $ addWriteUp(affiliateReflection)
                 else:
                     $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. I played how I wanted to play. I made the choices that felt honest and good, even if they didn’t blow the streaming world up. And honestly? I’d rather be me than gain an audience being something I’m not. I’m glad the game ended the way it did for my first stream of it!"
@@ -7442,17 +7442,17 @@ label endgame():
         "CORRUPTIBLE RULER"
         "You performed the ultimate balancing act."
         "You could not be swayed one way or the other, threading the needle between good and evil while still getting where you wanted to go. It was tough to manage, but you did it."
-    elif flinchFinalCheck <= 1 and viewershipHigh == True:
+    elif flinchFinalCheck <= 0 and viewershipHigh == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
         "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
-    elif flinchFinalCheck <= 1 and viewershipMed == True:
+    elif flinchFinalCheck <= 0 and viewershipMed == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
         "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
-    elif flinchFinalCheck > 1:
+    elif flinchFinalCheck >= 1:
         scene mid_morals_low_audience with dissolve
         "UNPRINCIPLED AND UNPOPULAR"
         "You are the paragon of both sides."
