@@ -1051,7 +1051,7 @@ label vig3_sc4():
     hide rec with dissolve
     "I stop the glass at my lips and nearly drop it. Whipping my head around, I almost grab for my gun until I catch Jennica's eyes."
     $ AddChatter (vig3_sc4_shop_comment50)
-    show jennica stream sad at stream_left with dissolve
+    show jennica stream neutral at stream_left with dissolve
     pS "All right, Cap?"
     $ AddChatter (vig3_sc4_shop_comment51)
     "I compose myself and try to calm down."
@@ -2640,7 +2640,7 @@ label vig3_sc8():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment6)
-    show teresa stream formal happy at stream_right with dissolve
+    show teresa stream formal neutral at stream_right with dissolve
     enS "Apparently the theme is Lost Renaissance, remembering a time long past..."
     $ AddChatter (vig3_sc9_inventorsfair_comment7)
     if viewershipHigh == True:
@@ -4554,7 +4554,7 @@ label vig3_sc13():
             "Dodging through the side garden to the entrance shuttles, I pray that Reynar isn't too upset with our escape plan."
             show jennica stream formal shock at stream_left with dissolve
             pS "Jeez this kid's goin' fast and furious."
-            show teresa stream formal happy at stream_right with dissolve
+            show teresa stream formal shock at stream_right with dissolve
             enS "He gets it from you!"
             show rec stream formal thinking at stream_left5
             recS "This architecture is incredible, the bio-tech is so seemlessly integrated into the material of the wall."
@@ -4573,6 +4573,7 @@ label vig3_sc13():
             $ AddChatter (vig3_sc13_dash_comment8)
             pause 0.5
             $ AddChatter (vig3_sc13_dash_comment9)
+            show teresa stream formal neutral
             enS "Stop showing off!"
             if viewershipHigh == True:
                 $ AddChatter (vig3_sc13_dash_comment10)
@@ -5453,7 +5454,7 @@ label vig3_macro_mod_1():
     else:
         mod_nvl "No growth in viewership from the previous stream" #Maybe cause you went a little too Marshal in Episode 2."
         mod_nvl "But it was still good numbers" 
-        mod_nvl "As long as you don't lose anyone from this week to next, you should be all set!"
+        mod_nvl "As long as you pick up some new followers and don't lose anyone from this week to next, you should be all set!"
         menu:
             "•You think we'll make it?":
                 player_nvl "Do you really think we'll make it to where we need to go?"

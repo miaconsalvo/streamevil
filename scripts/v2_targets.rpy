@@ -1338,7 +1338,7 @@ label vig2_analytics_viewcount2():
                     "You think you're getting better at managing the chat."
                     "It feels good!"
                 "Still getting used to it.":
-                    "You're not used to hearing so many people's opinions about the game."
+                    "You're not used to seeing so many people's opinions about the game all at once."
                     "Sometimes it's tough to figure out what you think about it."
                     "You think it'll get easier though."
             $ flinchViewershipAssault = True
@@ -1409,15 +1409,23 @@ label vig2_analytics_audience():
     "How do you feel?"
     menu:
         "How do you feel?"
-        "You can taste it!":
+        "You can taste it!" if flinch_followership <= 5:
             $ energy += 1
             $ enthusiasm += 1
             "You're so close!"
             "Just a couple more weeks and all the metrics are pointing in the right direction."
             "You can't wait to celebrate with Jessie and El."
+        "A little worried." if flinch_followership >= 5:
+            $ energy -= 1
+            "You're a little worried."
+            "You still have a couple weeks to make up ground."
+            "But you were hoping to make more progress by this point."
         "Average viewership is harder to crack.":
             $ energy += 1
-            "Getting the follower number is good, but the average viewership is what held you back last time."
+            if flinch_followership <= 5:
+                "Getting the follower number is good, but the average viewership is what held you back last time."
+            else:
+                "You'll have to interact with the chat to get more followers, but keeping up average viewership will also be difficult."
             "Can't take your eyes off the prize."
             "Still gotta stick to the schedule and go with what's working."
         "Maybe Affiliate isn't so important.": #I think this would be better at the end of vignette 3

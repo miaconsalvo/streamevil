@@ -1,5 +1,6 @@
 label vig3_break():
     $ narrator = reg_narrator
+    $ macroChoice = True
     show bg black at topleft onlayer background with pixellate
     hide inventorsfairgallery_stream
     "What was that?"

@@ -898,9 +898,9 @@ label vig4_sc2_4():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_4_comment10)
     "The old man removes his fingers from the circuit board and places it down on the counter."
-    cS "We are a peaceful town here. And that peace is hard won from the chaos of this galaxy."
+    oS "We are a peaceful town here. And that peace is hard won from the chaos of this galaxy."
     menu:
-        cS "We are a peaceful town here. And that peace is hard won from the chaos of this galaxy."
+        oS "We are a peaceful town here. And that peace is hard won from the chaos of this galaxy."
         "It seems lovely.":
             mS "It seems like a nice, quiet little slice of heaven."
             oS "And we like to keep it that way." 
@@ -2960,7 +2960,7 @@ label vig4_sc3_3():
     $ AddChatter(vig4_sc3_3_comment6)
     cS "I spoke with him earlier."
     $ AddChatter(vig4_sc3_3_comment7)
-    if marshal > outlaw:
+    if marshal > outlaw + 2:
         show coil stream happy
         cS "All he seems to talk about is how heroic you and your crew are."
         cS "How he wants to be as selfless as you."
@@ -3039,7 +3039,7 @@ label vig4_sc3_3():
                     show coil stream happy
                     cS "Little."
                     cS "But maturing is also understanding the bigger picture, extending empathy to more than your own family."
-                    if marshal > outlaw:
+                    if marshal > outlaw + 2:
                         $ AddChatter(vig4_sc3_3_comment10)
                         cS "He can do that. And it's a testament to you that he understands this."
                         "Coil sighs."
@@ -4177,7 +4177,7 @@ label vig4_sc5_0():
     pS "Just act natural."
     enS "Posing is, fundamentally, not natural."
     enS "I've already told you Jenn, I don't li—{i}aaaaahhh{/i}."
-    show polaroid at topleft onlayer background with dissolve
+    show polaroid at topleft onlayer background with Dissolve(2.0)
     pause 5.0
     hide polaroid with Dissolve(3.0)
     ##*streamer reaction 
@@ -4320,6 +4320,7 @@ label vig4_sc5_1():
     enS "I'm sorry, Moze. We got you out right before the whole thing went up."
     "Teresa's the only one who can talk."
     "I can feel Jennica shaking next to me."
+    show jennica stream sad
     pS "Every time I turn around, I wish it weren't real."
     "She turns her back on the shell."
     "Teresa puts a hand on both of our shoulders."
@@ -7385,7 +7386,8 @@ label vig4_macro_brother_1():
 
 label endgame():
     "The post is uploaded to blueit successfully."
-    hide screen finalWriteUp with dissolve
+    hide screen finalWriteUp with Dissolve(2.0)
+    pause 1.0
     scene streamview with dissolve
     "I should go."
     "Been on this screen for a bit too long today."
@@ -7393,7 +7395,7 @@ label endgame():
     "And next week I take a flight back home for Thanksgiving."
     "Can't wait to catch up with El in person."
     scene bg black with Dissolve(2.0)
-    pause 2.0
+    pause 1.0
     "Congratulations, you have finished {i}Stream Evil{/i}!"
     "For playing through to the end, you've received a badge based on your choices."
     "Your badge is..."
@@ -7463,8 +7465,8 @@ label endgame():
         "Who needs to pick a side? Not you!"
         "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
     pause 1.0
-    scene bg black with Dissolve(3.0)
-    scene game_main_menu with dissolve
+    scene bg black with Dissolve(2.0)
+    scene game_main_menu with Dissolve(2.0)
     "On behalf of the entire team at mLab productions, we would like to say:"
     "THANK YOU!"
     "It's been an honor having you play our game!"

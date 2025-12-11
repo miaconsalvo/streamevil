@@ -814,7 +814,7 @@ label vig4_sc6_defend_5():
     play audio "lazer.wav" volume 4.0
     pause 0.5
     play audio "scream.wav" volume 1.0
-    mS "{i}gasp{/i}"
+    mS "*{b}gasp{/b}*"
     show polarisfight_stream at topleft onlayer background with Dissolve(0.5)
     "Then I fall to the floor as something thuds next to me."
     "Staggering to my knees, I see that the enforcer has a smoking hole in the back of his head."
