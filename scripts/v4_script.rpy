@@ -1028,10 +1028,12 @@ label vig4_sc2_4():
                     play audio "lazer.wav" volume 5.0
                     "A bolt fires from Teresa's blaster."
                     play audio "shield.wav" volume 1.5
+                    show coil stream shield
                     "A thin green veil of light sparks in front of the old man's face. The blaster bolt dissipates into the air."
                     show teresa stream shock
                     $ reactTarget = "vig4_sc2_coilshield"
                     show screen streamerCommentary
+                    show coil stream upset
                     oS "Your discipline is wanting."
                     if viewershipHigh == True or viewershipMed == True:
                         $ AddChatter(vig4_sc2_4_comment23)
@@ -1050,6 +1052,7 @@ label vig4_sc2_4():
             oS "Nothing to worry about, Vega."
             $ AddChatter(vig4_sc2_4_comment29)
             oS "We are just having a conversation."
+            show coil stream fight
             oS "Now, where were we?"
     #hide coil with Dissolve (0.5)
     play audio "macAlarmed.wav" volume 1.5
@@ -1403,11 +1406,11 @@ label vig4_sc2_6():
             if viewershipHigh == True or viewershipMed == True:
                 $ AddChatter(vig4_sc2_6_comment20)
             vS "It means the galaxy to us."
+            show coil stream neutral
             cS "What I can tell you, is that you arrived just in the nick of time."
             cS "Tomorrow, we will take MAC to rendezvous with the Dragonflies' headquarters."
             mS "Okay, great. We'll get our ship outfitted and ready to go at dawn."
             "Coil pauses and leans forward, locking eyes with me."
-            show coil stream neutral
             $ AddChatter(vig4_sc2_6_comment21)
             cS "No, Captain Mozely, you do not understand."
             show vega stream neutral
@@ -1915,7 +1918,7 @@ label vig4_sc3_2_jennica():
             "I tap her on the shoulder."
             "She snaps around immediately."
             pS "Oh jeez! Howdy, Cap, how—how's your evenin'?"
-        "Clear throat.":
+        "Clear your throat.":
             mS "Uhem."
             "As I clear my throat, Jennica snaps to attention."
             pS "Oh, sir! I mean, Cap! You're look—How's your evenin', Moz—Cap?"
@@ -3227,7 +3230,7 @@ label vig4_sc3_4():
             $ setEngagement()
             $ macPeace += 3
             $ macHope += 2
-            $ marshal += 1
+            $ marshal += 2
             $ setAlignment()
             mS "I suppose our purpose is to leave the galaxy a better place than when we found it."
             macS "To help people?"
@@ -3260,7 +3263,7 @@ label vig4_sc3_4():
             $ setEngagement()
             $ macViolence += 3
             $ macPessimism += 2
-            $ outlaw += 1
+            $ outlaw += 2
             $ setAlignment()
             mS "We take care of our own, make sure we can live free."
             $ AddChatter(vig4_sc3_4_comment14)
@@ -4085,7 +4088,7 @@ label vig4_sc4_2():
 label vig4_sc4_3():
     pS "Alright, I'll turn the ol' girl around."
     stop music fadeout 1.0
-    play backAudio2 "shipAlarm.wav" volume 0.7 loop
+    play backAudio2 "shipAlarm.wav" volume 0.5 loop
     "Suddenly, a light above Teresa's head starts flashing red."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc4_3_comment1)
@@ -4098,19 +4101,20 @@ label vig4_sc4_3():
     "Just as Jennica finishes her warning, it appears."
     play audio "exitHyperspace.wav" volume 2.5
     show cockpit_battle_stream onlayer background
+    hide cockpit_stream
     "A BC cruiser blasts directly out of hyperspace into Polaris's atmosphere."
     $ AddChatter(vig4_sc4_3_comment2)
     "It's immense, like a spearhead struck through the sky."
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc4_3_comment3)
     "I have one second to take it in."
-    show cockpit_stream with hpunch
+    show cockpit_battle_stream with hpunch
     stop backAudio
     "Then the jet stream hits us."
     "Heavy winds from the cruiser's momentum pelt the Oakley, tossing it around in the air."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc4_3_comment4)
-    show cockpit_stream with vpunch
+    show cockpit_battle_stream with vpunch
     "Teresa and I brace ourselves in our chairs as best we can."
     "Clenching her teeth, Jennica holds the helm."
     $ AddChatter(vig4_sc4_3_comment5)
@@ -4125,11 +4129,11 @@ label vig4_sc4_3():
     hide teresa with Dissolve(0.1)
     hide jennica with Dissolve(0.1)
     play audio "shipCrash.wav" volume 3.0
-    show cockpit_stream with vpunch
+    show cockpit_battle_stream with vpunch
     "The Oakley slams into the dirt and everything goes black."
     ##*streamer reaction here?
     #show bg black at topleft onlayer background with dissolve
-    hide cockpit_stream with dissolve
+    hide cockpit_battle_stream with dissolve
     $ AddChatter(vig4_sc4_3_comment6)
     pause 0.5
     if viewershipHigh == True or viewershipMed == True:
@@ -5011,12 +5015,12 @@ label vig4_sc7_3_ama():
     "Then I notice it, a knife impaled through one of Coil's hands."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment25)
-    "Blood streaks down his arm. The device in his palm short circuits."
+    show coil stream fight at stream_center with move
+    "Blood streaks down his arm. The device in his palm short circuits as he prepares to keep fighting."
     "The thin veil of green light around him sparks inconsistently."
     "Ama is motionless on the floor."
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment26)
-    show coil stream neutral at stream_center with move
     "Coil and I lock eye contact."
     "Behind him, the ruin of the BC cruiser lists toward the ground of Polaris as the star shower pummels its hull."
     cS "Will you do what you have to do?"
@@ -5102,7 +5106,7 @@ label vig4_sc7_3_ama():
     if viewershipHigh == True:
         $ AddChatter(vig4_sc7_3_ama_comment37)
     "I turn his wrists. The knife points directly at his throat."
-    show coil stream hurt
+    #show coil stream hurt
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_ama_comment38)
         pause 0.5
@@ -6774,6 +6778,8 @@ label vig4_macro_start():
         $ flinch_followership -= 4
     elif vig4_interactions >= 12:
         $ flinch_followership -= 3
+    elif vig4_interactions < 5:
+        $ flinch_followership -= 0
     else:
         $ flinch_followership -= 2
     $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
@@ -7276,10 +7282,10 @@ label vig4_macro_writeUp_5():
         menu:
             #"I guess I'll finish it with my thoughts on making affiliate."
             "I feel positive about achieving Affiliate...":
-                if outlaw > marshal + 13:
+                if outlaw > marshal + 10:
                     $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! It’s so funny: I went way more dark mode for this stream and the chaos totally pulled people in. You know what though? I had so much fun. I never would have played like that off-stream so I’m grateful for the audience that pushed me to be so diabolical. I’m glad this is how it all worked out. I have no regrets, none at all."
                     $ addWriteUp(affiliateReflection)
-                elif outlaw > marshal + 6:
+                elif outlaw > marshal + 4:
                     $ affiliateReflection = "BUT I DID IT! WE MADE AFFILIATE FINALLY! And it feels oh-so good! I went mostly Outlaw route this time, but not like all the way. I usually go full Marshal but I actually had a great time being more flexible with my choices! I don't know if I would have played like that off-stream so I’m grateful for the audience that joined me. I’m glad this is how it all worked out. No regrets at all."
                     $ addWriteUp(affiliateReflection)
                 elif outlaw >= marshal:
@@ -7319,8 +7325,12 @@ label vig4_macro_writeUp_5():
         menu:
             #"I guess I'll finish it with my thoughts on not making affiliate."
             "I'm feeling positive about not achieving affiliate...":
-                $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. I played how I wanted to play. I made the choices that felt honest and good, even if they didn’t blow the streaming world up. And honestly? I’d rather be me than gain an audience being something I’m not. I’m glad the game ended the way it did for my first stream of it!"
-                $ addWriteUp(affiliateReflection)
+                if flinchFinalCheck > 0:
+                    $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. Wasn't able to get the right amount of followers. Maybe I could have done more to grow my community, but I feel good about how I played, even if I didn’t blow the streaming world up. And honestly? I feel grateful for my community and all the folks who joined me on this journey!"
+                    $ addWriteUp(affiliateReflection)
+                else:
+                    $ affiliateReflection = "Didn’t hit affiliate in the end but I’m okay with it. I played how I wanted to play. I made the choices that felt honest and good, even if they didn’t blow the streaming world up. And honestly? I’d rather be me than gain an audience being something I’m not. I’m glad the game ended the way it did for my first stream of it!"
+                    $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -7330,8 +7340,12 @@ label vig4_macro_writeUp_5():
                         $ writeUp_list.remove(affiliateReflection)
                         jump vig4_macro_writeUp_5
             "I'm feeling negative about not achieving affiliate...":
-                $ affiliateReflection = "Still not affiliate… I said this was going to be my last go at it. I checked the numbers hoping they would tick but they didn’t and ngl it does suck. I wanted this to be the stream that changed that… maybe I did play it too safe. Or maybe the way I play is just not something people want to watch."
-                $ addWriteUp(affiliateReflection)
+                if flinchFinalCheck > 0:
+                    $ affiliateReflection = "Still not affiliate… I said this was going to be my last go at it. I checked the numbers hoping I'd get the last couple followers but it didn't happen and ngl it does suck. Maybe I could have done more to grow my community, hyped chat up a bit or checked in with them more. I could do \"what-ifs\" for days. I know it's not the end of the world, but it's still disappointing."
+                    $ addWriteUp(affiliateReflection)
+                else:
+                    $ affiliateReflection = "Still not affiliate… I said this was going to be my last go at it. I checked the numbers hoping they would tick but they didn’t and ngl it does suck. I wanted this to be the stream that changed that… maybe I did play it too safe. Or maybe the way I play is just not something people want to watch."
+                    $ addWriteUp(affiliateReflection)
                 "Is that what I want to say?"
                 menu:
                     #"Is that what I want to say?"
@@ -7383,7 +7397,7 @@ label endgame():
     "Congratulations, you have finished {i}Stream Evil{/i}!"
     "For playing through to the end, you've received a badge based on your choices."
     "Your badge is..."
-    if outlaw > marshal + 10 and flinchFinalCheck <= -2 and viewershipHigh == True:
+    if outlaw > marshal + 5 and flinchFinalCheck <= -2 and viewershipHigh == True:
         scene high_evil_high_audience with dissolve
         "ICON OF EVIL"
         "You didn't just take a walk on the wild side, you did a full-on sprint!"

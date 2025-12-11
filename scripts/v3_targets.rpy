@@ -1894,7 +1894,7 @@ label vig3_analytics_viewcount2():
             "You don't really want to think about it."
             "Could going Outlaw for the final stream bring enough people in?"
             jump vig3_analytics_viewcount2
-        "It looks like Affiliate's in the bag!" if viewershipHigh == True and flinchViewershipAffiliate == False:
+        "So close to Affiliate!" if viewershipHigh == True and flinchViewershipAffiliate == False:
             $ flinchViewershipAffiliate = True
             $ vig3_viewership = "High"
             "The viewership is stable and looks comfortably above the Affiliate requirement."

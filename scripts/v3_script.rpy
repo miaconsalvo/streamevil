@@ -5416,6 +5416,8 @@ label vig3_macro_start():
         $ flinch_followership -= 3
     elif vig3_interactions >= 9:
         $ flinch_followership -= 2
+    elif vig3_interactions < 4:
+        $ flinch_followership -= 0
     else:
         $ flinch_followership -= 1
     $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
@@ -5438,7 +5440,7 @@ label vig3_macro_mod_1():
     mod_nvl "Another great stream!" 
     if viewershipHigh == True:
         mod_nvl "The viewership numbers were crazy"
-        mod_nvl "I wouldn't be surprised if we already hit all the marks to make Affiliate!"
+        mod_nvl "I wouldn't be surprised if we already crossed the average viewership to make Affiliate!"
         menu:
             "•You think so??":
                 player_nvl "You think I made it already?"

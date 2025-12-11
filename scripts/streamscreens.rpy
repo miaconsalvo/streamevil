@@ -327,7 +327,7 @@ screen webNavigation_vig1():
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("FlinchAnalytics_vig1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -340,7 +340,7 @@ screen webNavigation_vig1():
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("blueitVignette1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -370,7 +370,7 @@ screen webNavigation_vig1():
         imagebutton:
             action [Show("shutDownComputerv1")]#, Hide("webNavigation_vig1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
@@ -398,7 +398,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_modStart")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -410,7 +410,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig2")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -422,7 +422,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("blueitVignette2_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -433,8 +433,8 @@ screen webNavigation_vig2():
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         imagebutton:
             action [Show("shutDownComputerv2")]
-            idle Solid("#eff31773")
-            hover Solid("#eff317b9")
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
@@ -461,7 +461,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_viewerChat_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -473,7 +473,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig3")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -485,7 +485,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("blueitVignette3_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -496,8 +496,8 @@ screen webNavigation_vig3():
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         imagebutton:
             action [Show("shutDownComputerv3")]
-            idle Solid("#eff31773")
-            hover Solid("#eff317b9")
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
@@ -524,7 +524,7 @@ screen webNavigation_vig4():
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("vig4_macro_viewerChat_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -545,7 +545,7 @@ screen webNavigation_vig4():
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("blueitVignette4_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -562,7 +562,7 @@ screen webNavigation_vig4():
             #text_selected_color "#ffffffff"
             #text_size 20
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 311
             ysize 45
             xpos 1537
@@ -598,8 +598,8 @@ screen closeComputer():
         #align (0.95, 0.18)
     imagebutton:
         action [Show("shutDownComputerv4")]
-        idle Solid("#eff31773")
-        hover Solid("#eff317b9")
+        idle Solid("#eff31700")
+        hover Solid("#eff31786")
         xsize 26
         ysize 27
         xpos 20
