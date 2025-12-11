@@ -2723,7 +2723,7 @@ label vig3_sc8():
     "Jenn tips an imaginary hat and walks away with Rec."
     hide jennica with dissolve
     hide rec with dissolve
-    show teresa stream formal angry
+    show teresa stream formal upset
     enS "We're doomed."
     mS "Just might be."
     hide teresa with dissolve
