@@ -122,7 +122,7 @@ screen streamDetails():
             image "[reactImage]" align (-0.02, 0.105) size (263.1, 131.7)
         #image ["stream ui/reactalert.png"] align (0.13, 0.125) size (40, 40)
 
-        #DEBUG MODE
+        #DEBUG MODE - TURNOFF
         textbutton "Debug Mode: [debugText]": 
             align(0.05, 1.0)
             action Call("turnDebug", from_current = True)

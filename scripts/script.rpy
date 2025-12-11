@@ -347,6 +347,7 @@ label start:
     menu:
         "New Opening.":
             jump beginGame
+        #TURNOFF
         "Test Version.":
             jump userName
 
