@@ -373,12 +373,14 @@ label vig4_sc1_2():
             mS "Stay. On. The. Ship."
             $ AddChatter(vig4_sc1_2_comment23)
     play audio "macGrumble.wav" volume 1.2
-    show mac stream neutral
+    show mac stream angry
     macS "I understand."
     #macS "I don't like it, but I understand."
     pS "They'll be safe, MAC. And it means more pal time for the two of us!"
+    show mad stream sad
     play audio "macSad.wav" volume 1.2
     "MAC hums low in response."
+    show mac stream neutral
     "The crew turns to face me."
     menu:
         "The crew turns to face me."
@@ -1066,7 +1068,7 @@ label vig4_sc2_4():
         hide screen streamerCommentary
         if viewershipHigh == True:
             $ AddChatter(vig4_sc2_4_comment30)
-        show mac stream neutral
+        show mac stream angry
         play audio "macHum.wav" volume 1.0
         macS "Threat neutralized."
         show vega stream neutral
@@ -1093,6 +1095,7 @@ label vig4_sc2_4():
     $ reactTarget = "vig4_sc2_macchant"
     show screen streamerCommentary
     show jennica stream shock at stream_left5 with Dissolve(0.5)
+    show mac stream neutral
     pS "Cap, I'm so sorry! I was checkin' the engine lines an' he just ran off—"
     "Jennica freezes as she recognizes the situation."
     pS "Butter my biscuit..."
@@ -1107,7 +1110,7 @@ label vig4_sc2_4():
     hide vega with dissolve
     hide teresa with dissolve
     show coil stream happy at stream_left with move
-    show mac at stream_right_mac with move
+    show mac stream neutral at stream_right_mac with move
     #show coil at stream_center with dissolve
     "The old man's eyes have gone wide. They're locked on MAC."
     oS "At last..."
@@ -3298,6 +3301,7 @@ label vig4_sc3_4():
 
 label vig4_sc3_5():
     stop music fadeout 3.0
+    show mac stream sad
     macS "I do not know how to feel about my purpose."
     macS "Coil says I am to go with him and Vega."
     macS "We'll help build new communities for people running from BigCorp."
@@ -3332,11 +3336,13 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment6)
             mS "I don't want to leave here without you either, MAC."
             play audio "macPing.wav" volume 1.2
+            show mac stream neutral
             macS "Then let's leave! Right now!"
             macS "We can fight! You, me, Jennica, Teresa, we can take on anyone!"
             $ AddChatter(vig4_sc3_5_comment7)
             "My heart pounds fast."
             mS "You're right, we need a plan!"
+            show mac stream shock
             cS "You do not."
             hide mac with dissolve
             $ reactTarget = "vig4_sc3_coil2"
@@ -3365,7 +3371,7 @@ label vig4_sc3_5():
             cS "Moze. I'm sorry. It's time to say goodbye."
             $ AddChatter(vig4_sc3_5_comment12)
             "I look down and—"
-            show mac stream neutral at stream_center_mac with dissolve
+            show mac stream sad at stream_center_mac with dissolve
             "MAC is hiding behind my legs, arms wrapped around me."
             play audio "macNeutral.wav" volume 1.2
             macS "Do something, Moze!"
@@ -3384,10 +3390,12 @@ label vig4_sc3_5():
             else:
                 "MAC rolls forward, preparing the EMP charge in his antenna."
             vS "{i}Shhhhshhshh.{/i}"
+            show mac stream shock
             "Vega steps forward and restrains him."
             vS "I'm really sorry, MAC. This is for your own good."
             show vega stream neutral
             play audio "macAlarmed.wav" volume 1.2
+            show mac stream angry
             macS "How do you know what's for my own good?"
             $ AddChatter(vig4_sc3_5_comment15)
             pause 0.5
@@ -3403,6 +3411,7 @@ label vig4_sc3_5():
                     $ setEngagement()
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
+                    show mac stream sad
                     mS "Our journey together is over."
                     "Tears, unbidden, flood my eyelids."
                     mS "It's time to say goodbye."
@@ -3411,6 +3420,7 @@ label vig4_sc3_5():
                     $ setEngagement()
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
+                    show mac stream sad
                     mS "You're right. None of us know anything. We're all messed up, we're all broken."
                     mS "No one can tell you what's right or wrong, good or bad."
                     mS "You have to decide that for yourself now."
@@ -3490,6 +3500,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment30)
             play audio "macPester.wav" volume 1.2
             macS "But, why?"
+            show mac stream neutral
             mS "They just want you. The rest of us—we're a liability."
             $ AddChatter(vig4_sc3_5_comment31)
             "MAC inches closer to me."
@@ -3500,6 +3511,7 @@ label vig4_sc3_5():
             "He gets right up to my feet."
             play audio "macPester.wav" volume 1.2
             macS "Why?"
+            show mac stream shock
             mS "Because this galaxy is all screwed up!"
             play audio "macOK.wav" volume 1.2
             "MAC recoils a bit."
@@ -3528,7 +3540,7 @@ label vig4_sc3_5():
             hide teresa with dissolve
             cS "Moze. I'm sorry. It's time to say goodbye."
             "I look down and—"
-            show mac stream neutral at stream_center_mac with dissolve
+            show mac stream sad at stream_center_mac with dissolve
             "MAC is hiding behind my legs, his arms wrapped around me."
             play audio "macNeutral.wav" volume 1.2
             macS "Do something, Moze!"
@@ -3541,6 +3553,7 @@ label vig4_sc3_5():
             "I look down and shake my head."
             $ AddChatter(vig4_sc3_5_comment14)
             mS "MAC..."
+            show mac stream angry
             macS "No!"
             if macViolence >= macPeace:
                 "MAC rolls forward, readying the pulse fire from his arm."
@@ -3565,6 +3578,7 @@ label vig4_sc3_5():
                     $ kcEngagement -= 1
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
+                    show mac stream sad
                     mS "Our journey together is over."
                     "Tears, unbidden, flood my eyelids."
                     mS "It's time to say goodbye."
@@ -3572,6 +3586,7 @@ label vig4_sc3_5():
                     $ kcEngagement += 1
                     mS "MAC."
                     "I take a knee, and reach a hand out to him."
+                    show mac stream sad
                     mS "You're right. None of us know anything. We're all messed up, we're all broken."
                     mS "No one can tell you what's right or wrong, good or bad."
                     mS "You have to decide that for yourself now."
@@ -3653,6 +3668,7 @@ label vig4_sc3_5():
             mS "MAC, this was just a mission."
             $ AddChatter(vig4_sc3_5_comment35)
             play audio "macSad.wav" volume 1.2
+            show mac stream angry
             macS "What?"
             mS "All this was about bringing you here. Nothing else."
             $ AddChatter(vig4_sc3_5_comment36)
@@ -3663,6 +3679,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment37)
             macS "But—"
             $ AddChatter(vig4_sc3_5_comment38)
+            show mac stream sad
             mS "That's an order from your captain, MAC!"
             play audio "macAlarmed.wav" volume 1.2
             "MAC recoils."
@@ -3699,17 +3716,19 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment13)
             hide coil with dissolve
             "I look down and—"
-            show mac stream neutral at stream_center_mac with dissolve
+            show mac stream sad at stream_center_mac with dissolve
             "MAC is frozen still."
             $ AddChatter(vig4_sc3_5_comment14)
             "His head is pointed directly at the ground."
             if outlaw >= marshal:
                 play audio "macPing.wav" volume 1.2
+                show mac stream angry
                 macS "You were probably thinking of shooting the place up, weren't you?"
                 enS "That's not—"
                 macS "It's what we always do!"
             else:
                 play audio "macPing.wav" volume 1.2
+                show mac stream angry
                 macS "You were probably going to look for some tunnels to sneak through, weren't you?"
                 pS "It was just in—"
                 macS "It's what we always do!"
@@ -3718,6 +3737,7 @@ label vig4_sc3_5():
             "MAC turns around and rolls up to Vega."
             "She drops to a knee and puts a hand on his head."
             play audio "macSad.wav" volume 2.0
+            show mac stream sad
             macS "Maybe I should have let Allistar take me."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment41)
@@ -3765,6 +3785,7 @@ label vig4_sc3_5():
             $ AddChatter(vig4_sc3_5_comment18)
             enS "Farewell, MAC. Remember, no snitches."
             pS "Bye lil' guy. Don't listen to anyone who says ya can't do somethin'."
+            show mac stream neutral
             "MAC doesn't move."
             stop music fadeout 2.0
             macS "Goodbye, engineer Prismari. Goodbye, pilot Brown."
@@ -4924,7 +4945,7 @@ label vig4_sc7_3_ama():
     $ AddChatter(vig4_sc7_3_ama_comment12)
     play audio "macAlarmed.wav" volume 1.2
     macS "Captain!"
-    show mac stream neutral at stream_center_mac with Dissolve(0.3)
+    show mac stream shock at stream_center_mac with Dissolve(0.3)
     "MAC is just behind the energy shield, watching intently."
     "Vega is behind him, her hands covering her mouth."
     $ AddChatter(vig4_sc7_3_ama_comment13)
@@ -5258,22 +5279,26 @@ label vig4_sc7_3_ama():
         "I'm so sorry.":
             mS "MAC, I'm so sorry."
             mS "I never should have let you go."
+            show mac stream sad
             macS "Why did you?"
             mS "I thought it was the right thing to do."
             mS "It was a mistake."
             mS "Can you forgive me?"
         "I never thought I'd see you again.":
             mS "MAC, I never thought I'd see you again."
+            show mac stream sad
             macS "I didn't think I would see you again either."
             mS "Are you glad to see me?"
             macS "I think so. But I am still processing the events I have witnessed."
             mS "MAC, can you ever forgive me?"
     "MAC looks down for a moment, then back up to my face."
     play audio "macSad.wav" volume 1.2
+    show mac stream neutral
     macS "Am I a Snakehawk now?"
     "I smile."
     mS "Better, you're family."
     "MAC's face turns into a smile."
+    show mac stream happy
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
     "I hold him tight and drop my face against his body."
@@ -5286,6 +5311,7 @@ label vig4_sc7_3_ama():
     "We step back and I stand up."
     show ama stream neutral at stream_right with dissolve
     amaS "Hate to ruin the moment, but we have one more piece of business to take care of."
+    show mac stream neutral
     $ AddChatter(vig4_sc7_3_ama_comment66)
     "Ama is standing now. She points across the room."
     show vega stream upset at stream_left with dissolve
@@ -5318,6 +5344,7 @@ label vig4_sc7_3_ama():
         $ csEngagement -= 2
         $ setEngagement()
         $ vig4_MACKill = True
+        show mac stream angry
         play audio "lazer.wav" volume 5.0
         "MAC lifts his arm and fires a bolt of energy."
         "It lands square between Vega's eyes."
@@ -5360,6 +5387,7 @@ label vig4_sc7_3_ama():
         $ kcEngagement += 3
         $ csEngagement += 1
         $ setEngagement()
+        show mac stream sad
         macS "You have as much right to vengeance as they did."
         macS "But not today."
         if viewershipHigh == True:
@@ -5375,6 +5403,7 @@ label vig4_sc7_3_ama():
         "Vega doesn't say anything. She looks back to Coil's face, unmoving."
         hide vega with dissolve
     $ AddChatter(vig4_sc7_3_ama_comment87)
+    show mac stream neutral
     "MAC rolls up to me and Ama."
     play audio "macNeutral.wav" volume 1.2
     macS "We should go."
@@ -5720,21 +5749,25 @@ label vig4_sc7_3_coil():
         "I'm so sorry.":
             mS "MAC, I'm so sorry."
             mS "I never should have let you go."
+            show mac stream sad
             macS "Why did you?"
             mS "I thought it was the right thing to do."
             mS "It was a mistake."
             mS "Can you forgive me?"
         "I never thought I'd see you again.":
             mS "MAC, I never thought I'd see you again."
+            show mac stream sad
             macS "I didn't think I would see you again either."
             mS "Are you glad to see me."
             macS "I think so. But I am still processing the events I have witnessed."
             mS "MAC, can you ever forgive me?"
     "MAC looks down for a moment, then back up to my face."
     play audio "macSad.wav" volume 1.2
+    show mac stream neutral
     macS "Am I a Snakehawk now?"
     "I smile."
     mS "Better, you're family."
+    show mac stream happy
     "MAC's face turns into a smile."
     macS "I'm glad to be with my family again."
     "I drop to my knees as he rushes into my arms."
@@ -5750,6 +5783,7 @@ label vig4_sc7_3_coil():
     show vega stream happy at stream_left with dissolve
     "Coil leans against Vega as the two approach."
     vS "So, Pops, how's Moze's case for joining the Dragonflies look now?"
+    show mac stream neutral
     if viewershipHigh == True or viewershipMed == True:
         $ AddChatter(vig4_sc7_3_coil_comment51)
     if vig4_defendPolaris == True:

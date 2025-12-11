@@ -926,7 +926,7 @@ label meetingMatticus():
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     "MAC pipes up from his crate."
-    show mac stream shock at stream_right5 with dissolve
+    show mac stream angry at stream_right5 with dissolve
     play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
     show reginald stream mad at stream_center
@@ -1662,7 +1662,7 @@ label commsBase_DataCenter_MAR():
             "I can see the burning hatred in his eyes, as if to say, \"This isn't over!\""
             $ reactTarget = "vig2_sc8_mar_reacttoregistun"
             show screen streamerCommentary
-            show mac stream happy at stream_center_mac with Dissolve(0.5)
+            show mac stream angry at stream_center_mac with Dissolve(0.5)
             #We could use a conditional here based on Mac's violence trait to alter his respone to Reggie getting tagged.
             play audio "macNeutral.wav" volume 1.5
             macS "Take that \"skeeve!\""
@@ -1881,7 +1881,7 @@ label commsBase_DataCenter_OUT():
             worker "Yes! I won't breathe a word of this to anyone else!"
             mS "Glad to hear it. Let's move."
             hide data with dissolve
-            show mac stream neutral at stream_center_mac with Dissolve(0.5)
+            show mac stream sad at stream_center_mac with Dissolve(0.5)
             "MAC stares at the terrified technician."
             show teresa stream neutral
             show jennica stream sad
@@ -1920,7 +1920,7 @@ label commsBase_DataCenter_OUT():
             $ AddChatter(vig2_sc7_out_execute_comment4)
             enS "Perhaps. But now we can be certain he won't expose us."
             play audio "macSad.wav" volume 1.0
-            show mac stream neutral
+            show mac stream sad
             macS "Dead..."
             show jennica stream angry at stream_left
             mS "Enough blabbing. Lets go."

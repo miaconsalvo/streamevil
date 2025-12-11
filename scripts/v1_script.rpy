@@ -839,7 +839,7 @@ label escapePodConfrontation:
     enS "Roger, I'll be right down."
     $ AddChatter(vig1_sc3_shot_comment6)
     pause 0.5
-    show mac stream neutral at stream_center_mac with Dissolve (0.5)
+    show mac stream sad at stream_center_mac with Dissolve (0.5)
     #play music "soundtrack/vig1scratchtrack.wav" volume 0.7 loop fadein 1.0
     "I gently move toward MAC and crouch down in front of him."
     mS "Hey, I'm sorry about that."
@@ -852,6 +852,7 @@ label escapePodConfrontation:
         pause 0.5
     macS "Why?"
     mS "He threatened you. He made his choice."
+    show mac stream neutral
     macS "But, did he have to die?"
     $ AddChatter(vig1_sc3_shot_comment8)
     pause 0.5
