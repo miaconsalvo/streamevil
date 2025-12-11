@@ -24,7 +24,7 @@ screen blueit():
     #        text_size 20
     #        align (0.395, 0.007)
     viewport:
-        area (430, 460, 1050, 580)
+        area (430, 460, 1060, 580)
         draggable True #allows scrollbar to be dragged
         mousewheel True #allows mousewheel to scroll viewport
         scrollbars "vertical" #sets vertical scroll bar
@@ -112,7 +112,7 @@ screen blueitButtonCheck():
 
 screen blueitThread():
     viewport:
-        area (430, 460, 1050, 580)
+        area (430, 460, 1060, 580)
         draggable True #allows scrollbar to be dragged
         mousewheel True #allows mousewheel to scroll viewport
         scrollbars "vertical" #sets vertical scroll bar
@@ -128,7 +128,7 @@ screen finalWriteUp():
         mousewheel True
         scrollbars "vertical"
         yinitial 1.0
-        area (500, 460, 1335, 380)
+        area (500, 467, 1335, 300)
         vbox:
             spacing 10
             for p in (writeUp_list):

@@ -121,7 +121,7 @@ label shipCall:
     "Faint static crunches as the lines switch."
     mS "This is Captain Moze of the Oakley. Who is this?"
     play music "soundtrack/deadeye.wav" volume 1.0 loop fadein 2.0
-    show ama stream silhouette at stream_left with dissolve #we can change this to phone version when we have a finished ama phone image
+    show ama phone silhouette at stream_left_mac with dissolve #we can change this to phone version when we have a finished ama phone image
     amaS "My dear Mozely. It's good to hear your voice again."
     show allistar stream surprised
     "I almost drop the communicator. Allistar goes stiff, his eyes wide with disbelief."

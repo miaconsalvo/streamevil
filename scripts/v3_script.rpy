@@ -1014,7 +1014,7 @@ label vig3_sc4():
     "They pull out five glasses. And drops the bottle of brandy on the counter."
     "As they start to pour, they stop themselves at the fifth and grab an oil can and pour it in, giving it to MAC."
     play audio "macHum.wav" volume 1.0
-    show mac stream happy 
+    show mac stream happy reflect
     $ AddChatter (vig3_sc4_shop_comment41)
     macS "Thank you!"
     show mac stream neutral reflect at stream_left with move
@@ -2723,7 +2723,7 @@ label vig3_sc8():
     "Jenn tips an imaginary hat and walks away with Rec."
     hide jennica with dissolve
     hide rec with dissolve
-    show teresa stream formal upset
+    show teresa stream formal angry
     enS "We're doomed."
     mS "Just might be."
     hide teresa with dissolve
@@ -5416,6 +5416,8 @@ label vig3_macro_start():
         $ flinch_followership -= 3
     elif vig3_interactions >= 9:
         $ flinch_followership -= 2
+    elif vig3_interactions < 4:
+        $ flinch_followership -= 0
     else:
         $ flinch_followership -= 1
     $ totalViews = viewCheck1 + viewCheck2 + viewCheck3 + viewCheck4 + viewCheck5 + viewCheck6 + viewCheck7 + viewCheck8 + viewCheck9 + viewCheck10
@@ -5438,7 +5440,7 @@ label vig3_macro_mod_1():
     mod_nvl "Another great stream!" 
     if viewershipHigh == True:
         mod_nvl "The viewership numbers were crazy"
-        mod_nvl "I wouldn't be surprised if we already hit all the marks to make Affiliate!"
+        mod_nvl "I wouldn't be surprised if we already crossed the average viewership to make Affiliate!"
         menu:
             "•You think so??":
                 player_nvl "You think I made it already?"

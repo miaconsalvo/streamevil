@@ -194,20 +194,21 @@ screen chatTutorial2():
 screen discordNotification():
     frame:
         ypos 653
-        xpos 731 
+        xpos 531 
         xsize 1000
         ysize 230
         right_margin 200
-        background Solid("#000000ff")
-        #text "_lostinmetr0"
-        text "[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!"
+        background Image("images/stream ui/LoopdUI.png")
+        #background Solid("#000000ff")
+        text "{b}_lostinmetr0{/b}" align (0.7, 0.0)
+        text "\n[my_name], it's a raid!\n8bitBANDIT just finished their stream of the game and brought a bunch of people in!" align (0.2, 0.1)
         textbutton "Close Notification":
             action Return() #Hide("discordNotification")
             text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
             text_hover_color "#ffffffd5" 
             text_selected_color "#ffffffff"
-            background "#000000ff"
-            align (0.5, 1.0)
+            background "#44444100"
+            align (0.75, 1.0)
 
 screen streamFreeze():
     #frame:
@@ -327,7 +328,7 @@ screen webNavigation_vig1():
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("FlinchAnalytics_vig1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -340,7 +341,7 @@ screen webNavigation_vig1():
         imagebutton:
             action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton"), Hide("streamAnalytics_Details"), Hide("webNavTutorial"), Jump("blueitVignette1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -349,27 +350,48 @@ screen webNavigation_vig1():
         image ["stream ui/tab highlight socials.png"] xpos 866 ypos 12 #xsize 192 ysize 120
 
     if flinchView == True and blueitView == True and screenComplete == True:
+        #frame:
+            #ypos 56
+            #xpos 850 
+            #xpos 530
+            #ypos 653
+        #    xalign 0.0
+        #    yalign 1.0
+        #    xsize 1000
+        #    ysize 230
+        #    right_margin 200
+        #    background Image("images/stream ui/tutorialUI.png")
+        #    text "Now that you've visited all the relevant web pages, you can go to shutdown your computer by clicking the button at the top left."
+            #textbutton "Close Tutorial":
+            #    action Hide("webNavTutorial")
+            #    text_color "#ffffffb9" #this applies colors to the text. It will appear as plain white text after selection because it will default back to its c.colour property. 
+            #    text_hover_color "#ffffffd5" 
+            #    text_selected_color "#ffffffff"
+            #    align (1.35, 1.0)  
         imagebutton:
             action [Show("shutDownComputerv1")]#, Hide("webNavigation_vig1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
             ypos 16
             #align (0.98, 0.007)
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+        image ["stream ui/reactalert.png"] xpos 40 ypos 0 size (30, 30)
 
 screen shutDownComputerv1():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
-        idle Solid("#74747473")
-        hover Solid("#eff31786")
-        xpos 20
-        ypos 107
-        xsize 237
-        ysize 17
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig1"), Hide("viewership"), Hide("viewershipButton_vig1"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv1"), Jump("vig1_brother_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG2####
 screen webNavigation_vig2():
@@ -377,7 +399,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("vig2_macro_modStart")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -389,7 +411,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig2")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -401,7 +423,7 @@ screen webNavigation_vig2():
         imagebutton:
             action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Jump("blueitVignette2_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -412,8 +434,8 @@ screen webNavigation_vig2():
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         imagebutton:
             action [Show("shutDownComputerv2")]
-            idle Solid("#eff31773")
-            hover Solid("#eff317b9")
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
@@ -422,15 +444,17 @@ screen webNavigation_vig2():
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
 
 screen shutDownComputerv2():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
-        idle Solid("#74747473")
-        hover Solid("#eff31786")
-        xpos 20
-        ypos 107
-        xsize 237
-        ysize 17
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig2"), Hide("viewership"), Hide("viewershipButton_vig2"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv2"), Jump("vig2_macro_viewerChat_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG3#####
 screen webNavigation_vig3():
@@ -438,7 +462,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("vig3_macro_viewerChat_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -450,7 +474,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("FlinchAnalytics_vig3")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 736
@@ -462,7 +486,7 @@ screen webNavigation_vig3():
         imagebutton:
             action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Jump("blueitVignette3_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -473,8 +497,8 @@ screen webNavigation_vig3():
     if flinchView == True and blueitView == True and loopdView == True and screenComplete == True:
         imagebutton:
             action [Show("shutDownComputerv3")]
-            idle Solid("#eff31773")
-            hover Solid("#eff317b9")
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
             xsize 26
             ysize 27
             xpos 20
@@ -483,15 +507,17 @@ screen webNavigation_vig3():
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
 
 screen shutDownComputerv3():
-    image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
-    imagebutton:
-        action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
-        idle Solid("#74747473")
-        hover Solid("#eff31786")
-        xpos 20
-        ypos 107
-        xsize 237
-        ysize 17
+    if screenComplete == True:
+        image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
+        imagebutton:
+            action [Hide("webNavigation_vig3"), Hide("viewership"), Hide("viewershipButton_vig3"), Hide("streamAnalytics_Details"), Hide("shutDownComputerv3"), Jump("vig3_macro_brother_1")]
+            idle Solid("#eff31700")
+            hover Solid("#eff31786")
+            xpos 22
+            ypos 107
+            xsize 233
+            ysize 15
+        image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 #### WEBNAV SCREEN FOR VIG4 ###### 
 screen webNavigation_vig4():
@@ -499,7 +525,7 @@ screen webNavigation_vig4():
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("vig4_macro_viewerChat_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 601
@@ -520,7 +546,7 @@ screen webNavigation_vig4():
         imagebutton:
             action [Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("blueitVignette4_1")]
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 118
             ysize 24
             xpos 871
@@ -537,7 +563,7 @@ screen webNavigation_vig4():
             #text_selected_color "#ffffffff"
             #text_size 20
             idle Solid("#eff31700")
-            hover Solid("#eff317b9")
+            hover Solid("#eff31786")
             xsize 311
             ysize 45
             xpos 1537
@@ -573,8 +599,8 @@ screen closeComputer():
         #align (0.95, 0.18)
     imagebutton:
         action [Show("shutDownComputerv4")]
-        idle Solid("#eff31773")
-        hover Solid("#eff317b9")
+        idle Solid("#eff31700")
+        hover Solid("#eff31786")
         xsize 26
         ysize 27
         xpos 20
@@ -586,12 +612,13 @@ screen shutDownComputerv4():
     image ["stream ui/shut down tabs.png"] xpos 20 ypos 45
     imagebutton:
         action [Hide("shutDownComputerv4"), Hide("webNavigation_vig4"), Hide("viewership"), Hide("viewershipButton_vig4"), Hide("streamAnalytics_Details"), Jump("endgame")]        
-        idle Solid("#74747473")
+        idle Solid("#eff31700")
         hover Solid("#eff31786")
-        xpos 20
+        xpos 22
         ypos 107
-        xsize 237
-        ysize 17
+        xsize 233
+        ysize 15
+    image ["stream ui/shutdown highlight.png"] xpos 20 ypos 107
 
 ###PLAYTESTING RECORD SCREEN###
 screen playtestRecord():

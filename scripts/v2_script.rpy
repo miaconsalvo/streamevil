@@ -461,7 +461,7 @@ label GibianVCustomsMarshal():
     macS "Penitentiary. Noun. A place for imprisoning crim—"
     enS "{i}Shush!{/i}"
     "The door creaks ajar."
-    show jennica stream happy
+    show jennica stream neutral
     show teresa stream neutral
     show customs agent at stream_center with Dissolve(0.2)
     "The customs official peeks his head through the door."
@@ -1575,7 +1575,7 @@ label commsBase_DataCenter():
     menu:
         "MAC is almost completely quiet. He's been looking at me the entire time." 
         "This has gone too far.":
-            $ marshal += 5
+            $ marshal += 3
             $ csEngagement += 3
             $ pdEngagement -= 3
             $ kcEngagement += 1
@@ -1592,7 +1592,7 @@ label commsBase_DataCenter():
         "We don't have a choice.":
             $ macViolence += 3
             $ macPessimism += 1
-            $ outlaw += 5
+            $ outlaw += 3
             $ csEngagement -= 3
             $ pdEngagement +=3
             $ kcEngagement += 1

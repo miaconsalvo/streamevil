@@ -1034,7 +1034,7 @@ label vig4_sc6_attack_3_ama():
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
-        goon "Said he had a debt that needed paying off."
+        goon "Said something about a debt from Tiber III that needed paying off."
         $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, delaying their advance."
@@ -1232,7 +1232,7 @@ label vig4_sc7_1_attack_ama():
     "The stairs flatten out."
     "Ama and I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
-    show vig2_datacenter_stream at topleft onlayer background with dissolve
+    show tower_no_star_stream at topleft onlayer background with dissolve
     show coil stream neutral at stream_right with dissolve
     show ama stream neutral at stream_left with dissolve
     "Coil stands in the center, in front of a massive computer console."
@@ -1597,6 +1597,7 @@ label vig4_sc6_attack_1_assault():
         $ AddChatter(vig4_sc6_attack_1_assault_ama_comment14)
     "I start to move toward the fighting."
     stop music fadeout 1.0
+    show bc_enforcer at stream_center with Dissolve(0.5)
     enforcer "Freeze!"
     "An enforcer taps my back with his gun."
     if viewershipHigh == True:
@@ -1692,7 +1693,7 @@ label vig4_sc6_attack_1_assault():
             pause 0.5
             play audio "deathGasp.wav" volume 1.5
             hide dflyguard with Dissolve(0.5)
-            "The guard has half a second to look stunned before a blaster bolt rips through his skull."
+            "The guard has half a second to look stunned before a blaster bolt rips through her skull."
             $ AddChatter(vig4_sc6_attack_1_assault_ama_comment28)
             if viewershipHigh == True:
                 pause 0.5
@@ -1774,6 +1775,7 @@ label vig4_sc6_attack_1_split():
     "Where's the sixth?"
     stop music fadeout 1.0
     enforcer "Freeze!"
+    show bc_enforcer at stream_center with Dissolve(0.5)
     "An enforcer taps my back with his gun."
     $ AddChatter(vig4_sc6_attack_1_assault_comment1)
     enforcer "Tell your crew to stand down!"
@@ -2355,7 +2357,7 @@ label vig4_sc6_attack_3():
         pS "Reginald!?"
         $ AddChatter(vig4_sc6_defend_5_comment19)
         goon "Matticus sends his regards."
-        goon "Said he had a debt that needed paying off."
+        goon "Said something about a debt from Tiber III that needed paying off."
         $ AddChatter(vig4_sc6_defend_5_comment20)
         show jennica stream neutral
         "The swarm of attack ships engage the BC dropships, delaying their advance."
@@ -2548,7 +2550,7 @@ label vig4_sc7_1_attack():
     "I step across the threshold into a wide room."
     $ AddChatter(vig4_sc7_1_defend_comment9)
     show tower_no_star_stream at topleft onlayer background with dissolve
-    show coil stream neutral at stream_left with dissolve
+    show coil stream neutral at stream_right with dissolve
     "Coil stands in the center, in front of a massive computer console."
     $ AddChatter(vig4_sc7_1_defend_comment10)
     cS "Well, you made it."
@@ -2558,11 +2560,11 @@ label vig4_sc7_1_attack():
             $ AddChatter(vig4_sc7_1_attack_ama_comment1)
     else:
         pass
-    "Coil turns to face us. His face looks haggard, his eyes bloodshot."
+    "Coil turns to face me. His face looks haggard, his eyes bloodshot."
     $ reactTarget = "vig4_sc6_attack_finding_coil"
     show screen streamerCommentary
     menu:
-        "Coil turns to face us. His face looks haggard, his eyes bloodshot."
+        "Coil turns to face me. His face looks haggard, his eyes bloodshot."
         "Where is MAC?":
             mS "Where is MAC?"
             $ AddChatter(vig4_sc7_1_attack_ama_comment2)
@@ -2607,7 +2609,7 @@ label vig4_sc7_1_attack():
                 cS "He got it from you after all."
                 hide screen streamerCommentary
                 amaS "Mozely can be quite stubborn."
-                show ama stream gun at stream_right with dissolve
+                show ama stream gun at stream_left with dissolve
                 "I whip around."
                 "Ama steps into the wide room, rifle drawn, aimed directly at Coil."
                 cS "I meant the urge to help other people."
