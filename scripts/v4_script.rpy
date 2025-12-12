@@ -7408,12 +7408,13 @@ label endgame():
         scene high_evil_mid_audience with dissolve
         "MID TABLE VILLAINY"
         "You leaned into your darker nature and flourished!"
-        "While you didn't fully put the galaxy to the torch, you did immerse yourself in the dark side, earning a decent following in the process."
+        "You immersed yourself in the Outlaw lifestyle and earned a decent following in the process. Only you can decide if it was worth it in the end."
+        #"While you didn't fully put the galaxy to the torch, you did immerse yourself in the dark side, earning a decent following in the process."
     elif outlaw > marshal + 5 and flinchFinalCheck <= 0 and viewershipMed == True:
         scene high_evil_mid_audience with dissolve
         "MID TABLE VILLAINY"
         "You leaned into your darker nature and flourished!"
-        "While you didn't fully put the galaxy to the torch, you did immerse yourself in the dark side, earning a decent following in the process."
+        "You immersed yourself in the Outlaw lifestyle and earned a decent following in the process. Only you can decide if it was worth it in the end."
     elif outlaw > marshal + 5 and flinchFinalCheck >= 1:
         scene high_evil_low_audience with dissolve
         "WHAT WAS THE POINT OF ALL THOSE HORRIBLE THINGS YOU DID?"
@@ -7422,48 +7423,49 @@ label endgame():
     elif marshal > outlaw + 10 and flinchFinalCheck <= -2 and viewershipHigh == True:
         scene high_marshal_high_audience with dissolve
         "THE PEOPLE'S PRINCESS"
-        "Champion of the weak, compassionate savior of the galaxy, you did it!"
-        "We don't know how you did it. This shouldn't be possible. But by sticking to your guns, you've proven that where there's a will there's a way."
+        "Champion of the weak. Compassionate savior of the galaxy. You did it!"
+        "You modeled the Marshal lifestyle, sticking to your principles and bolstering your popularity while doing so. Was that the ideal path? Only you can decide."
+        #"We don't know how you did it. This shouldn't be possible. But by sticking to your guns, you've proven that where there's a will there's a way."
     elif marshal > outlaw + 5 and flinchFinalCheck <= 0 and viewershipHigh == True:
         scene high_marshal_mid_audience with dissolve
         "POPULAR AT YOUR LOCAL HIGH SCHOOL"
         "Who needs to be a bad guy to be popular? Not you!"
-        "Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+        "Maybe you didn't set the streaming world on fire, but you accomplished your goal and did it your way."
     elif marshal > outlaw + 5 and flinchFinalCheck <= 0 and viewershipMed == True:
         scene high_marshal_mid_audience with dissolve
         "POPULAR AT YOUR LOCAL HIGH SCHOOL"
         "Who needs to be a bad guy to be popular? Not you!"
-        "Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+        "Maybe you didn't set the streaming world on fire, but you accomplished your goal and did it your way."
     elif marshal > outlaw + 5 and flinchFinalCheck >= 1:
         scene high_marshal_low_audience with dissolve
         "HEROIC PARIAH"
         "Who cares about being popular? Not you!"
-        "You stuck to your guns and did your best to save the galaxy. It came at a cost for your streaming career, but you have your integrity, and that's what matters most."
+        "You stuck to your guns and did your best to save the galaxy. Your streaming career may not have flourished, but you have your integrity, and that's what matters most."
     elif flinchFinalCheck <= -2 and viewershipHigh == True:
         scene mid_morals_high_audience with dissolve
         "CORRUPTIBLE RULER"
         "You performed the ultimate balancing act."
-        "You could not be swayed one way or the other, threading the needle between good and evil while still getting where you wanted to go. It was tough to manage, but you did it."
+        "You could not be swayed one way or the other, threading the needle between good and evil while still accomplishing your goal. It was tough to manage, but you did it."
     elif flinchFinalCheck <= 0 and viewershipHigh == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
-        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you accomplished your goal and did it your way."
     elif flinchFinalCheck <= 0 and viewershipMed == True:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
-        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you accomplished your goal and did it your way."
     elif flinchFinalCheck >= 1:
         scene mid_morals_low_audience with dissolve
         "UNPRINCIPLED AND UNPOPULAR"
         "You are the paragon of both sides."
-        "You find nuance in the smallest details, and exploring those intricacies was more important than getting a ton of followers. Only you can decide if it was worth it."
+        "You found nuance in the smallest details, and exploring those intricacies was more important than getting a ton of followers. Only you can decide if it was worth it."
     else:
         scene mid_morals_mid_audience with dissolve
         "TRUE NEUTRAL"
         "Who needs to pick a side? Not you!"
-        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you got to where you wanted to go and did it your way."
+        "You found balance between good and evil, making decisions based on what felt right in the moment. Maybe you didn't set the streaming world on fire, but you accomplished your goal and did it your way."
     pause 1.0
     scene bg black with Dissolve(2.0)
     scene game_main_menu with Dissolve(2.0)

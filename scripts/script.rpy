@@ -340,17 +340,19 @@ init:
     #fade out whenever we transition to another label
 
 label start:
-    $ quick_menu = True #- for when we don't want players to be able to go "back" in the game
+    $ quick_menu = False #- for when we don't want players to be able to go "back" in the game
     $ macroChoice = True
     $ chatter_list = [vig1_sc1_comment1, vig1_sc1_comment2, vig1_sc1_comment3, vig1_sc1_comment4, vig1_sc1_comment5, vig1_sc1_comment6, vig1_sc1_comment7, vig1_sc1_comment8]
     show bg black at topleft onlayer background
-    "Do you want to start the testing version of Stream Evil, or the new opening?"
-    menu:
-        "New Opening.":
-            jump beginGame
+    jump beginGame
+    ###TEST OPENING###
+    #"Do you want to start the testing version of Stream Evil, or the new opening?"
+    #menu:
+        #"New Opening.":
+        #    jump beginGame
         #TURNOFF
-        "Test Version.":
-            jump userName
+        #"Test Version.":
+        #    jump userName
 
 #    "Please note: we ask that you do not redistribute or replicate any portion of this game."
 #    "The copy you have downloaded is for testing purposes only."
