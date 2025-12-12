@@ -340,17 +340,20 @@ init:
     #fade out whenever we transition to another label
 
 label start:
-    $ quick_menu = True #- for when we don't want players to be able to go "back" in the game
+    $ quick_menu = False #- for when we don't want players to be able to go "back" in the game
     $ macroChoice = True
     $ chatter_list = [vig1_sc1_comment1, vig1_sc1_comment2, vig1_sc1_comment3, vig1_sc1_comment4, vig1_sc1_comment5, vig1_sc1_comment6, vig1_sc1_comment7, vig1_sc1_comment8]
-    show bg black at topleft onlayer background
-    "Do you want to start the testing version of Stream Evil, or the new opening?"
-    menu:
-        "New Opening.":
-            jump beginGame
+    show bg black at topleft onlayer background with dissolve
+    pause 1.0
+    jump beginGame
+    ###TEST OPENING###
+    #"Do you want to start the testing version of Stream Evil, or the new opening?"
+    #menu:
+        #"New Opening.":
+        #    jump beginGame
         #TURNOFF
-        "Test Version.":
-            jump userName
+        #"Test Version.":
+        #    jump userName
 
 #    "Please note: we ask that you do not redistribute or replicate any portion of this game."
 #    "The copy you have downloaded is for testing purposes only."
@@ -365,8 +368,8 @@ label start:
 label beginGame():
     "Sometimes it's nerve-wracking taking a break while you stream, but you were really parched and needed some water."
     "You were so excited to start playing {i}Oakley 2: Settle the Score{/i} on-stream today that you practically ran home after your last class finished and booted it up immediately."
-    "And it's not like you're leaving tons of people waiting anyway."
-    "You sit down at your computer, and take stock of the stream before you turn your camera back on."
+    "And it's not like you're leaving tons of people waiting in the chat anyway. Maybe 3 or 4 people. The regulars mostly."
+    "You sit back down at your computer, and take stock of the stream before you turn your camera back on."
     scene streamview with dissolve
     show screen streamDetails
     show screen streamChat

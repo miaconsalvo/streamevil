@@ -123,36 +123,36 @@ screen streamDetails():
         #image ["stream ui/reactalert.png"] align (0.13, 0.125) size (40, 40)
 
         #DEBUG MODE - TURNOFF
-        textbutton "Debug Mode: [debugText]": 
-            align(0.05, 1.0)
-            action Call("turnDebug", from_current = True)
-            text_color "#11a7d4"
-            text_hover_color "#11a6d4d8"
-        if debugMode == True:
-            text "Marshal: [marshal]" align(0.25, 0.85) size 30 color"#d31c1c"
-            text "Outlaw: [outlaw]" align(0.25, 0.90) size 30 color"#17c9e0"
-            text "Coriolis: [csEngagement]" align(0.35, 0.85) size 30 color"#ee24ee"
-            text "KitCat: [kcEngagement]" align(0.35, 0.9) size 30 color"#11fdaf"
-            text "pickledDragons: [pdEngagement]" align(0.35, 0.95) size 30 color"#ebe717"
-            text "MAC Peace: [macPeace]" align(0.53, 0.85) size 30 color"#ffffff"
-            text "MAC Violence: [macViolence]" align(0.53, 0.89) size 30 color"#ffffff"
-            text "MAC Hope: [macHope]" align(0.53, 0.93) size 30 color"#ffffff"
-            text "MAC Pessimism: [macPessimism]" align(0.53, 0.97) size 30 color"#ffffff"
-            text "Jennica: [pilotApproval]" align(0.66, 0.85) size 30 color"#eea112"
-            text "Teresa: [engineerApproval]" align(0.66, 0.9) size 30 color"#e41a1a"
-            text "Ama: [deadeyeApproval]" align(0.66, 0.95) size 30 color"#14eb75"
-            if viewershipHigh == True:
-                text "Viewership: High" xpos 1250 ypos 50 size 30 color"#ffe926"
-            elif viewershipMed == True:
-                text "Viewership: Med" xpos 1250 ypos 50 size 30 color"#ffe926"
-            else:
-                text "Viewership: Low" xpos 1250 ypos 50 size 30 color"#ffe926"
-            text "Reluctance: [reluctance]" xpos 1000 ypos 5 size 30 color"#00ff0d"
-            text "Enthusiasm: [enthusiasm]" xpos 1250 ypos 5 size 30 color"#00ff0d"
-            text "Energy: [energy]" xpos 1500 ypos 5 size 30 color"#00ff0d"
-            text "vig2 ints: [vig2_interactions]" xpos 300 ypos 50 size 30 color"#54d6fd"
-            text "vig3 ints: [vig3_interactions]" xpos 500 ypos 50 size 30 color"#54d6fd"
-            text "vig4 ints: [vig4_interactions]" xpos 700 ypos 50 size 30 color"#54d6fd"
+        #textbutton "Debug Mode: [debugText]": 
+        #    align(0.05, 1.0)
+        #    action Call("turnDebug", from_current = True)
+        #    text_color "#11a7d4"
+        #    text_hover_color "#11a6d4d8"
+        #if debugMode == True:
+        #    text "Marshal: [marshal]" align(0.25, 0.85) size 30 color"#d31c1c"
+        #    text "Outlaw: [outlaw]" align(0.25, 0.90) size 30 color"#17c9e0"
+        #    text "Coriolis: [csEngagement]" align(0.35, 0.85) size 30 color"#ee24ee"
+        #    text "KitCat: [kcEngagement]" align(0.35, 0.9) size 30 color"#11fdaf"
+        #    text "pickledDragons: [pdEngagement]" align(0.35, 0.95) size 30 color"#ebe717"
+        #    text "MAC Peace: [macPeace]" align(0.53, 0.85) size 30 color"#ffffff"
+        #    text "MAC Violence: [macViolence]" align(0.53, 0.89) size 30 color"#ffffff"
+        #    text "MAC Hope: [macHope]" align(0.53, 0.93) size 30 color"#ffffff"
+        #    text "MAC Pessimism: [macPessimism]" align(0.53, 0.97) size 30 color"#ffffff"
+        #    text "Jennica: [pilotApproval]" align(0.66, 0.85) size 30 color"#eea112"
+        #    text "Teresa: [engineerApproval]" align(0.66, 0.9) size 30 color"#e41a1a"
+        #    text "Ama: [deadeyeApproval]" align(0.66, 0.95) size 30 color"#14eb75"
+        #    if viewershipHigh == True:
+        #        text "Viewership: High" xpos 1250 ypos 50 size 30 color"#ffe926"
+        #    elif viewershipMed == True:
+        #        text "Viewership: Med" xpos 1250 ypos 50 size 30 color"#ffe926"
+        #    else:
+        #        text "Viewership: Low" xpos 1250 ypos 50 size 30 color"#ffe926"
+        #    text "Reluctance: [reluctance]" xpos 1000 ypos 5 size 30 color"#00ff0d"
+        #    text "Enthusiasm: [enthusiasm]" xpos 1250 ypos 5 size 30 color"#00ff0d"
+        #    text "Energy: [energy]" xpos 1500 ypos 5 size 30 color"#00ff0d"
+        #    text "vig2 ints: [vig2_interactions]" xpos 300 ypos 50 size 30 color"#54d6fd"
+        #    text "vig3 ints: [vig3_interactions]" xpos 500 ypos 50 size 30 color"#54d6fd"
+        #    text "vig4 ints: [vig4_interactions]" xpos 700 ypos 50 size 30 color"#54d6fd"
 
 ###Tutorial screens for vignette 1
 screen chatTutorial():

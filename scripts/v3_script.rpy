@@ -2731,7 +2731,7 @@ label vig3_sc8():
     "Jenn tips an imaginary hat and walks away with Rec."
     hide jennica with dissolve
     hide rec with dissolve
-    show teresa stream formal angry
+    show teresa stream formal upset
     enS "We're doomed."
     mS "Just might be."
     hide teresa with dissolve
@@ -2786,7 +2786,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_letitbe_comment8)
             "I move on, scanning the gallery, I see Teresa looking in her element, gliding through various groups with a natural grace. Never lingering too long."
             showgirl "Weren't they a piece of work."
-            show daisy stream neutral at stream_center with dissolve
+            show daisy stream formal neutral at stream_center with dissolve
             $ reactTarget = "vig3_sc9_daisyreturns"
             show screen streamerCommentary
             "A familiar batch of feathers block my view. Daisy stands in all her showgirl glory with some added refinement."
@@ -2794,7 +2794,7 @@ label vig3_sc9():
             showgirl "Thankfully not everyone."
             mS "Daisy, was it?"
             $ AddChatter (vig3_sc9_inventorsfair_comment28)
-            show daisy stream think
+            show daisy stream formal think
             showgirl "You bet?"
             $ AddChatter (vig3_sc9_inventorsfair_comment29)
             mS "50 Credits at Nova Casino."
@@ -2802,7 +2802,7 @@ label vig3_sc9():
                 $ AddChatter (vig3_sc9_inventorsfair_comment30)
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
-            show daisy stream neutral
+            show daisy stream formal neutral
             "We both laugh, a genuine laugh."
             $ AddChatter (vig3_sc9_inventorsfair_comment31)
             if viewershipHigh == True:
@@ -2853,7 +2853,7 @@ label vig3_sc9():
             "I move on, scanning the gallery. I see Teresa looking in her element, gliding through various groups with a natural grace. Never lingering too long."
             $ AddChatter (vig3_sc9_takehimdown_comment4)
             showgirl "I saw that, you know..."
-            show daisy stream think at stream_center with dissolve
+            show daisy stream formal think at stream_center with dissolve
             $ reactTarget = "vig3_sc9_daisyreturns"#timestamp 6:46
             show screen streamerCommentary
             "A familiar batch of feathers block my view, Daisy stands in all her showgirl glory. With some added refinement."
@@ -2867,7 +2867,7 @@ label vig3_sc9():
             showgirl "What a terrible deal. That barely gets you a few good spins, not even a buy-in at a low ball table."
             mS "I guess the only big win anyone is getting is at the bar."
             "We both laugh, a genuine laugh."
-            show daisy stream neutral
+            show daisy stream formal neutral
             $ AddChatter (vig3_sc9_inventorsfair_comment31)
             if viewershipHigh == True:
                 pause 0.5
@@ -2896,7 +2896,7 @@ label vig3_sc9():
                 $ AddChatter (vig3_sc9_inventorsfair_comment38)
     
     #Have an extra scene with Daisy, change it to fit which you decided.
-    show daisy stream think
+    show daisy stream formal think
     showgirl "Well, I should be off then."
     mS "Actually, wait! Daisy."
     #show daisy stream shock
@@ -2908,7 +2908,7 @@ label vig3_sc9():
             $ csEngagement += 1 #Logic: coriolis likes the directness
             $ setEngagement()
             mS "You seem like you know your way around here."
-            show daisy stream neutral
+            show daisy stream formal neutral
             showgirl "A girl has her ways."
             mS "I'm looking for something that was taken, wouldn't happen to know where I could find it?"
             $ AddChatter (vig3_sc9_parts_comment1)
@@ -2927,7 +2927,7 @@ label vig3_sc9():
             $ setEngagement()
             mS "I'm sure you're busy. But care to have a drink with me?"
             $ AddChatter (vig3_sc9_bar_comment1)
-            show daisy stream neutral
+            show daisy stream formal neutral
             showgirl "You mean pilfer Reynar's open bar?"
             $ AddChatter (vig3_sc9_bar_comment2)
             mS "Couldn't have said it better myself."
@@ -2946,7 +2946,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_flustered_comment1)
             "Makers she's so pretty."
             $ AddChatter (vig3_sc9_flustered_comment2)
-            show daisy stream neutral
+            show daisy stream formal neutral
             "She luckily giggles."
             showgirl "Is the great Captain of the Oakley getting flustered?"
             $ AddChatter (vig3_sc9_flustered_comment3)
@@ -2966,14 +2966,14 @@ label vig3_sc9():
     mS "Could she?"
     "This Vira Brandy is a lot stronger than I expected. Turns out they've been keeping all the legit stuff on this side of the Vineyard."
     "Daisy's face has adopted an adorable red hue."
-    show daisy stream think
+    show daisy stream formal think
     showgirl "Not without attracting some serious attention."
     "She takes a sip from her glass."
     showgirl "What's so important anyway?"
     mS "A range extender..."
     showgirl "You're joking—"
     mS "Wish I was, but the fate of the galaxy depends on it!"
-    show daisy stream neutral
+    show daisy stream formal neutral
     $ AddChatter (vig3_sc9_inventorsfair_comment41)
     showgirl "Sounds like a big extender."
     "I let out a heavy sigh. Letting the joke fly over my head."
@@ -2985,22 +2985,22 @@ label vig3_sc9():
     if viewershipHigh == True:
         pause 0.5
         $ AddChatter (vig3_sc9_inventorsfair_comment44)
-    show daisy stream think
+    show daisy stream formal think
     showgirl "The BigCorp showcase should be happening in fifteen minutes. Hear you'll get a killer view from the door near that vase over there."
     "She points to a large ornate vase at the side of the ballroom. There's an unmanned service door just behind it." 
     "I'm still trying to process what she just said."
     mS "BigCorp is here?"
-    show daisy stream neutral
+    show daisy stream formal neutral
     showgirl "Oh yeah, big reveal!"
     showgirl "Heard Reynar is hedging new investments and property in the Outposts, hard to expand without greasing some palms."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc9_inventorsfair_comment45)
     "Just then I hear an annoyingly recognizeable voice."
-    show daisy stream upset
+    show daisy stream formal upset
     invfairnpc2 "Is that Akar's own Daisy."
     "Daisy's eyes widen. She forces a smile."
     $ AddChatter (vig3_sc9_inventorsfair_comment46)
-    show daisy stream neutral
+    show daisy stream formal neutral
     showgirl "Mills! Look at you. You clean up... well."
     "I almost choke on my drink."
     invfairnpc2 "Nice to see you still have your humor."
@@ -3014,7 +3014,7 @@ label vig3_sc9():
     $ AddChatter (vig3_sc9_inventorsfair_comment48)
     "I can already tell how this is gonna go."
     "Mills is moving closer to Daisy."
-    show daisy stream think
+    show daisy stream formal think
     showgirl "No need to be hasty, I'll get to everyone."
     "Mills puts himself in between us, their back turned to me."
     "Intervening here is risky, but I can't just leave Daisy out to dry."
@@ -3036,13 +3036,13 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_standup_comment1)
             pause 0.5
             $ AddChatter (vig3_sc9_standup_comment2)
-            show daisy stream neutral
+            show daisy stream formal neutral
             "They turn to me."
             invfairnpc2 "Oh? and what are you?"
             mS "I'm about to be your next big problem."
             show screen streamerCommentary
             "I move forward to tower over him, and he takes a step back."
-            show daisy stream think
+            show daisy stream formal think
             showgirl "Moze..."
             invfairnpc2 "You don't want to do this."
             $ AddChatter (vig3_sc9_standup_comment3)
@@ -3050,7 +3050,7 @@ label vig3_sc9():
             "Before anything can happen, Ryo emerges from the ether."
             vyattend "Is there a problem?"
             "Shit."
-            show daisy stream neutral
+            show daisy stream formal neutral
             showgirl "No, Ryo, of course not. I was just about to make my rounds."
             $ AddChatter (vig3_sc9_standup_comment4)
             "Ryo seperates me from Mills who he ushers away. Daisy moves to greet the rest of the guests."
@@ -3077,13 +3077,13 @@ label vig3_sc9():
             play audio "gunCock.wav" volume 1.5
             "I grab my blaster and push it into Mills' side."
             "Out of view from the prying eyes."
-            show daisy stream shock
+            show daisy stream formal shock
             invfairnpc2 "You little—"
             $ AddChatter (vig3_sc9_standup_comment1)
             mS "Now let's not make a scene."
             mS "The lady said she'll get to you soon. Right?"
             show screen streamerCommentary
-            show daisy stream neutral
+            show daisy stream formal neutral
             "The initial shock falls from her face and is replaced with a devilish smile."
             $ AddChatter (vig3_sc9_standup_comment6)
             showgirl "Right..."
@@ -3121,7 +3121,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_attention_comment1)
             invfairnpc2 "So Daisy, shall I steal you away?"
             show screen streamerCommentary
-            show daisy stream neutral
+            show daisy stream formal neutral
             "He leans closer."
             $ AddChatter (vig3_sc9_attention_comment2)
             showgirl "I'm with a guest at the moment."
@@ -3134,7 +3134,7 @@ label vig3_sc9():
             $ AddChatter (vig3_sc9_attention_comment4)
             pause 0.5
             $ AddChatter (vig3_sc9_attention_comment5)
-            show daisy stream upset
+            show daisy stream formal upset
             showgirl "A fabulous idea."
             "In a quick motion Daisy grabs a blade from her corset and stabs it betweeen Mills'fingers."
             invfairnpc2 "I—"

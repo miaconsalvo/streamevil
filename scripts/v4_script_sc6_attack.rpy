@@ -1080,7 +1080,7 @@ label vig4_sc6_attack_3_ama():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino script!"
-            show daisy stream neutral at stream_left5 with dissolve
+            show daisy stream formal neutral at stream_left5 with dissolve
             showgirl "Reynar heard that some trouble was brewing round these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
@@ -2402,7 +2402,7 @@ label vig4_sc6_attack_3():
         enS "Zan!? What are you doing here?"
         if vig3_daisyApproval == True:
             showgirl "This beats the hell out of working the Nova Casino beat!"
-            show daisy stream neutral at stream_left5 with dissolve
+            show daisy stream formal neutral at stream_left5 with dissolve
             showgirl "Reynar heard some trouble was brewing roundabout these coordinates."
             $ AddChatter(vig4_sc6_zan_comment4)
             showgirl "Thought y'all could use some help!"
