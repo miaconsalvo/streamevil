@@ -1849,7 +1849,7 @@ label vig3_sc6():
     hide jennica with dissolve
     hide teresa with dissolve
     hide zan with dissolve
-    show mac neutral stream at stream_right_mac with dissolve
+    show mac stream neutral at stream_right_mac with dissolve
     show rec stream drunk at stream_left with dissolve
     macS "They're cheating."
     show rec stream surprised
@@ -1857,7 +1857,7 @@ label vig3_sc6():
     mS "Of course! We've been out of the game too long."
     if viewershipHigh == True:
         $ AddChatter (vig3_sc6_bbpub_comment45)
-    show mac stream angry
+    #show mac stream angry
     macS "We must tell someone, this is improper."
     show rec stream drunk
     mS "MAC I'm going to lay this out for you. No one cares if something is improper here."
@@ -1888,7 +1888,7 @@ label vig3_sc6():
             macS "But I—"
             mS "I know you want to help but some things work better with less people."               
     play audio "macPester.wav" volume 1.5
-    show mac stream angry
+    #show mac stream angry
     macS "But I'm part of this crew too!"
     "MAC's words echo through my head, but in my voice."
     $ AddChatter (vig3_sc6_bbpub_comment48)
@@ -3212,7 +3212,7 @@ label vig3_sc9():
     $ AddChatter (vig3_sc9_inventorsfair_comment62)
     bcrep "Now a demonstration. Say hi, M.A.C!"
     "There's a small pause."
-    show mac stream sad
+    #show mac stream sad
     play audio "macNeutral.wav" volume 1.0
     macS "Hi, MAC..."
     $ AddChatter (vig3_sc9_inventorsfair_comment63)
@@ -3594,6 +3594,7 @@ label vig3_sc12():
             $ setEngagement()
             $ setAlignment()
             $ vig3_bcRepSaved = True
+            show mac stream neutral
             "When MAC's eyes lock on mine, he perks up."
             "I put my finger to my lips."
             $ AddChatter (vig3_sc12_help_comment1)
@@ -4046,6 +4047,7 @@ label vig3_sc12():
             $ setAlignment()
             $ setEngagement()
             $ vig3_bcRepSaved = False
+            show mac stream neutral
             "When MAC's eyes lock on mine, he perks up."
             "I put a finger to my lips as I slowly shift around Ama toward him."
             bcrep "P-please..."
@@ -4068,7 +4070,7 @@ label vig3_sc12():
             show ama stream formal neutral
             "Then she turns her attention on me."
             "I freeze, just between her and MAC."
-            show mac stream sad
+            show mac stream neutral
             $ AddChatter (vig3_sc12_nothing_comment4)
             amaS "Well, Mozely, where were your heroics for him?"
             menu:

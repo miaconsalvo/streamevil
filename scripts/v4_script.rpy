@@ -373,11 +373,10 @@ label vig4_sc1_2():
             mS "Stay. On. The. Ship."
             $ AddChatter(vig4_sc1_2_comment23)
     play audio "macGrumble.wav" volume 1.2
-    show mac stream angry
+    show mad stream sad
     macS "I understand."
     #macS "I don't like it, but I understand."
     pS "They'll be safe, MAC. And it means more pal time for the two of us!"
-    show mad stream sad
     play audio "macSad.wav" volume 1.2
     "MAC hums low in response."
     show mac stream neutral
@@ -3668,7 +3667,7 @@ label vig4_sc3_5():
             mS "MAC, this was just a mission."
             $ AddChatter(vig4_sc3_5_comment35)
             play audio "macSad.wav" volume 1.2
-            show mac stream angry
+            show mac stream neutral
             macS "What?"
             mS "All this was about bringing you here. Nothing else."
             $ AddChatter(vig4_sc3_5_comment36)
@@ -3722,22 +3721,22 @@ label vig4_sc3_5():
             "His head is pointed directly at the ground."
             if outlaw >= marshal:
                 play audio "macPing.wav" volume 1.2
-                show mac stream angry
                 macS "You were probably thinking of shooting the place up, weren't you?"
                 enS "That's not—"
+                show mac stream angry
                 macS "It's what we always do!"
             else:
                 play audio "macPing.wav" volume 1.2
-                show mac stream angry
                 macS "You were probably going to look for some tunnels to sneak through, weren't you?"
                 pS "It was just in—"
+                show mac stream angry
                 macS "It's what we always do!"
             "MAC looks up to me."
             macS "It's what {i}you{/i} always do."
             "MAC turns around and rolls up to Vega."
             "She drops to a knee and puts a hand on his head."
             play audio "macSad.wav" volume 2.0
-            show mac stream sad
+            show mac stream neutral
             macS "Maybe I should have let Allistar take me."
             if viewershipHigh == True:
                 $ AddChatter(vig4_sc3_5_comment41)
@@ -5387,7 +5386,7 @@ label vig4_sc7_3_ama():
         $ kcEngagement += 3
         $ csEngagement += 1
         $ setEngagement()
-        show mac stream sad
+        show mac stream neutral
         macS "You have as much right to vengeance as they did."
         macS "But not today."
         if viewershipHigh == True:

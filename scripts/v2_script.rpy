@@ -926,7 +926,10 @@ label meetingMatticus():
     "Reginald turns to us."
     goon "Alright. So first we need to get the tracking coordinates for this ship."
     "MAC pipes up from his crate."
-    show mac stream angry at stream_right5 with dissolve
+    if macViolence >= macPeace:
+        show mac stream angry at stream_right5 with dissolve
+    else:
+        show mac stream shock at stream_right5 with dissolve
     play audio "macAlarmed.wav" volume 2.0
     macS "Another \"skeeve?\""
     show reginald stream mad at stream_center
@@ -955,7 +958,8 @@ label approachingBase():
     show jennica stream neutral at stream_left with dissolve
     show teresa stream neutral at stream_right with dissolve
     stop backAudio fadeout 5.0
-    $ renpy.music.set_volume(0.7, 1)
+    stop music fadeout 3.0
+    #$ renpy.music.set_volume(0.7, 1)
     #play music "soundtrack/gibianV.wav" fadein 2.0
     "The shuttle lands on the ground near the base."
     "Hardly a base, more of an outpost with a big antenna."
