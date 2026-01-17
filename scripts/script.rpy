@@ -173,7 +173,7 @@ default romanceTeresa = False
 default baseGuardKilled = False #if you killed the guard at the commsbase  = true (outlaw route)
 default gunsBlazing = False
 default technicianChoice = False #if you spared the technician = false (outlaw route)
-default reginaldChoice = False #if you stunned reginald = true (marshal route)
+default reginaldChoice = True #if you stunned reginald = true (marshal route)
 default customsSpeculation = False
 default vig2_marshalEpilogue = False
 default vig2_outlawEpilogue = False

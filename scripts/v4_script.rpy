@@ -2910,7 +2910,7 @@ label vig4_sc3_3():
         if viewershipHigh == True:
             $ AddChatter(vig4_sc3_3_comment4)
         macS "We did not have time to check on people. We had to go meet a \"skeeve\" named Matticus."
-    elif macPeace > macViolence and vig2_marshalEpilogue == True and reginaldChoice == False:
+    elif macPeace > macViolence and vig2_marshalEpilogue == True and reginaldChoice == True:
         show mac stream happy
         macS "So then I said, \"take that skeeve\" and we took care of Reggie."
         $ AddChatter(vig4_sc3_3_comment1)

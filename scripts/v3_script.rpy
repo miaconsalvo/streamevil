@@ -995,7 +995,7 @@ label vig3_sc4():
                 $ AddChatter (vig3_sc4_bribe_comment2)
             else:
                 "I check the communicator."
-                "Shit, there's not enough..."
+                "Shit, I transferred Reginald too much. There's not enough left..."
                 houndleader "Problem?"
                 mS "No, I just—"
             play audio "punch.wav" volume 1.3

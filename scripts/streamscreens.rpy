@@ -442,6 +442,7 @@ screen webNavigation_vig2():
             ypos 16
             #align (0.98, 0.007)
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+        image ["stream ui/reactalert.png"] xpos 40 ypos 0 size (30, 30)
 
 screen shutDownComputerv2():
     if screenComplete == True:
@@ -505,6 +506,7 @@ screen webNavigation_vig3():
             ypos 16
             #align (0.98, 0.007)
         image ["stream ui/shut down arrow.png"] xpos 17 ypos 14
+        image ["stream ui/reactalert.png"] xpos 40 ypos 0 size (30, 30)
 
 screen shutDownComputerv3():
     if screenComplete == True:
