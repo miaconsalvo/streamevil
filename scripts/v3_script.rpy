@@ -979,7 +979,7 @@ label vig3_sc4():
             pS "Maybe we can use him as our antenna instead."
             $ AddChatter (vig3_sc4_shop_comment40)
             mS "Now that's a thought. Rec, you know those guys?"
-        "Try and bribe them." if reginaldChoice == False: #This option shoudl still be here but different outcomes based on the variable.
+        "Try and bribe them.": #This option shoudl still be here but different outcomes based on the variable.
             $ macPeace += 1
             $ macHope += 1
             $ csEngagement += 2 #Logic: Coriolis likes the attempt to solve problem nonviolently
@@ -990,8 +990,14 @@ label vig3_sc4():
             mS "Listen this doesn't need to be ugly, we'll pay the tarriff and get out of your hair."
             $ AddChatter (vig3_sc4_bribe_comment1)
             houndleader "Finally, a sensible idea." #it doesnt work right? they need to take the antenna to force the crew to keep looking
-            "We do the transfer."
-            $ AddChatter (vig3_sc4_bribe_comment2)
+            if reginaldChoice == True:
+                "We do the transfer."
+                $ AddChatter (vig3_sc4_bribe_comment2)
+            else:
+                "I check the communicator."
+                "Shit, there's not enough..."
+                houndleader "Problem?"
+                mS "No, I just—"
             play audio "punch.wav" volume 1.3
             with hpunch
             "And I'm hit with a punch without warning."
